@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Entrenador de exámenes</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#F4F7FA">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Entrenador">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;600;800&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@400;500&family=Playfair+Display:ital,wght@1,900&family=Pinyon+Script&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,100,1&family=Lora:wght@600;700&display=swap" rel="stylesheet">
 <script>
@@ -533,7 +540,7 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 <div class="wrap">
 <section id="vMenu">
 <div class="hero">
-<div class="topline"><button class="statsbtn" id="statsbtn">📊 Ver estadísticas</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><span class="sync" id="sync1">Guardando solo en este navegador</span></div>
+<div class="topline"><button class="statsbtn" id="statsbtn">📊 Ver estadísticas</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><span class="sync" id="sync1">Guardando solo en este navegador</span></div>
 <h1>¿Qué vas a <i>estudiar</i> hoy?</h1>
 <p>Pasa el cursor (o toca) un cuaderno para ver qué exámenes y prácticas tiene. Cada uno trae sus temas en orden de dificultad y un simulacro final.</p>
 </div>
@@ -1827,6 +1834,24 @@ if(cloudDone)firstCheck();else{onCloud.push(firstCheck);setTimeout(()=>{if(!clou
 tmTick();
 
 renderMenu();
+})();
+</script>
+<script>
+/* ===== PWA: service worker + botón de instalar ===== */
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))
+    addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  const btn=document.getElementById('installbtn');if(!btn)return;
+  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  let deferred=null;
+  addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;btn.hidden=false});
+  addEventListener('appinstalled',()=>{deferred=null;btn.hidden=true});
+  if(ios&&!standalone)btn.hidden=false;
+  btn.addEventListener('click',async()=>{
+    if(deferred){deferred.prompt();try{await deferred.userChoice}catch(e){}deferred=null;btn.hidden=true;return}
+    if(ios)alert('Para instalar en iPhone/iPad:\n\n1. Abre esta página en Safari.\n2. Toca el botón Compartir (el cuadrado con la flecha hacia arriba).\n3. Elige «Agregar a pantalla de inicio».');
+  });
 })();
 </script>
 </body>
