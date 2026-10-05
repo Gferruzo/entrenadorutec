@@ -6,6 +6,12 @@
 <title>Entrenador de exámenes</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F4F7FA">
+<script>
+(function(){var t=null;try{t=localStorage.getItem('ent-theme')}catch(e){}
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);
+var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+document.querySelector('meta[name="theme-color"]').content=d?'#0F1726':'#F4F7FA';})();
+</script>
 <link rel="icon" type="image/png" href="favicon-64.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
@@ -534,13 +540,39 @@ mark.hl.flash{outline:2.5px solid var(--ink);outline-offset:1px}
 details.blteo{margin:10px 0;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px}
 details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 
+
+/* ===== MODO CLARO / OSCURO ===== */
+:root[data-theme="dark"]{color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark}}
+.themebtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;font-size:1rem;line-height:1;cursor:pointer;flex:none}
+.themebtn:hover,.themebtn:focus-visible{box-shadow:2px 2px 0 var(--ink)}
+#vMenu .themebtn{border-color:#2B2B2B;background:#fff;color:#2B2B2B;width:38px;height:38px;box-shadow:none}
+#vMenu .themebtn:hover{background:#2B2B2B;color:#fff}
+:root[data-theme="dark"] body:has(#vMenu:not([hidden])){background-color:#0F1726;background-image:linear-gradient(#22324F 1.5px,transparent 1.5px),linear-gradient(90deg,#22324F 1.5px,transparent 1.5px);color-scheme:dark}
+:root[data-theme="dark"] #vMenu{color:#E6ECF5}
+:root[data-theme="dark"] #vMenu .statsbtn,:root[data-theme="dark"] #vMenu .themebtn{border-color:#DCE3EE;background:#131D30;color:#E6ECF5}
+:root[data-theme="dark"] #vMenu .statsbtn:hover,:root[data-theme="dark"] #vMenu .themebtn:hover{background:#E6ECF5;color:#0F1726}
+:root[data-theme="dark"] #vMenu .sync{color:#8C9AB3}
+:root[data-theme="dark"] #vMenu .hero h1{color:#EEF2F8}
+:root[data-theme="dark"] #vMenu .hero p{color:#B7C3D6}
+:root[data-theme="dark"] .nbname{color:#DCE3EE}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) body:has(#vMenu:not([hidden])){background-color:#0F1726;background-image:linear-gradient(#22324F 1.5px,transparent 1.5px),linear-gradient(90deg,#22324F 1.5px,transparent 1.5px);color-scheme:dark}
+:root:not([data-theme="light"]) #vMenu{color:#E6ECF5}
+:root:not([data-theme="light"]) #vMenu .statsbtn,:root:not([data-theme="light"]) #vMenu .themebtn{border-color:#DCE3EE;background:#131D30;color:#E6ECF5}
+:root:not([data-theme="light"]) #vMenu .statsbtn:hover,:root:not([data-theme="light"]) #vMenu .themebtn:hover{background:#E6ECF5;color:#0F1726}
+:root:not([data-theme="light"]) #vMenu .sync{color:#8C9AB3}
+:root:not([data-theme="light"]) #vMenu .hero h1{color:#EEF2F8}
+:root:not([data-theme="light"]) #vMenu .hero p{color:#B7C3D6}
+:root:not([data-theme="light"]) .nbname{color:#DCE3EE}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 <section id="vMenu">
 <div class="hero">
-<div class="topline"><button class="statsbtn" id="statsbtn">📊 Ver estadísticas</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><span class="sync" id="sync1">Guardando solo en este navegador</span></div>
+<div class="topline"><button class="statsbtn" id="statsbtn">📊 Ver estadísticas</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="themebtn" id="themebtn1" type="button">🌙</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><span class="sync" id="sync1">Guardando solo en este navegador</span></div>
 <h1>¿Qué vas a <i>estudiar</i> hoy?</h1>
 <p>Pasa el cursor (o toca) un cuaderno para ver qué exámenes y prácticas tiene. Cada uno trae sus temas en orden de dificultad y un simulacro final.</p>
 </div>
@@ -549,7 +581,7 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 
 <section id="vCourse" hidden>
 <div class="hero">
-<div class="topline"><button class="back" id="back">← Cursos</button><span class="clock" id="clock">⏱ 00:00:00</span><button class="modebtn" id="modebtn2">⏱ Modo de estudio</button><span class="sync" id="sync2"></span></div>
+<div class="topline"><button class="back" id="back">← Cursos</button><span class="clock" id="clock">⏱ 00:00:00</span><button class="modebtn" id="modebtn2">⏱ Modo de estudio</button><button class="themebtn" id="themebtn2" type="button">🌙</button><span class="sync" id="sync2"></span></div>
 <h1 id="cTitle"></h1>
 <p>Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente.</p>
 <div class="total"><div class="meter"><i id="tbar"></i></div><span id="ttxt"></span></div>
@@ -1852,6 +1884,22 @@ renderMenu();
     if(deferred){deferred.prompt();try{await deferred.userChoice}catch(e){}deferred=null;btn.hidden=true;return}
     if(ios)alert('Para instalar en iPhone/iPad:\n\n1. Abre esta página en Safari.\n2. Toca el botón Compartir (el cuadrado con la flecha hacia arriba).\n3. Elige «Agregar a pantalla de inicio».');
   });
+})();
+</script>
+<script>
+(function(){
+  const root=document.documentElement,mq=matchMedia('(prefers-color-scheme: dark)');
+  const meta=document.querySelector('meta[name="theme-color"]');
+  const isDark=()=>{const t=root.getAttribute('data-theme');return t?t==='dark':mq.matches};
+  function paint(){const d=isDark();
+    document.querySelectorAll('.themebtn').forEach(b=>{b.textContent=d?'☀️':'🌙';
+      const l=d?'Cambiar a modo claro':'Cambiar a modo oscuro';b.title=l;b.setAttribute('aria-label',l)});
+    if(meta)meta.content=d?'#0F1726':'#F4F7FA'}
+  function toggle(){const n=isDark()?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('ent-theme',n)}catch(e){}paint()}
+  document.querySelectorAll('.themebtn').forEach(b=>b.addEventListener('click',toggle));
+  mq.addEventListener&&mq.addEventListener('change',paint);
+  paint();
 })();
 </script>
 </body>
