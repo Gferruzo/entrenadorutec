@@ -149,6 +149,8 @@ mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .back{border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:6px;padding:5px 11px;font:600 .85rem Figtree;cursor:pointer}
 .sync{font-size:.8rem;color:var(--muted);margin-left:auto}
 .sync.on{color:var(--ok)}
+.sync.clk{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+.sync.clk:hover{color:var(--ink,#222)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:.35em 0 .1em}
 .tag{border:1.5px solid var(--for);background:var(--for-bg);color:var(--for);border-radius:999px;padding:2px 10px;font:600 .78rem Figtree;cursor:pointer}
 .tag[aria-expanded="true"]{background:var(--for);color:#fff}
@@ -789,7 +791,7 @@ let cloud=null,pushT=null,cloudDone=false,onCloud=[];
 const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,updated:Date.now()});
 function saveLocal(){S.set('ent-st',ST)}
 function setSync(t,on){[$('sync1'),$('sync2')].forEach(s=>{s.textContent=t;s.classList.toggle('on',!!on)})}
-function push(delay){if(!cloud)return;clearTimeout(pushT);pushT=setTimeout(()=>{cloud.set(cloudDoc()).then(()=>setSync('☁️ Sincronizado',true)).catch(()=>setSync('Sin conexión: guardado local'))},delay==null?1200:delay)}
+function push(delay){if(!cloud)return;clearTimeout(pushT);pushT=setTimeout(()=>{cloud.set(cloudDoc()).then(()=>setSync(okLabel(),true)).catch(()=>setSync('Sin conexión: guardado local'))},delay==null?1200:delay)}
 function save(){saveLocal();push()}
 function better(a,b){if(!a)return b;if(!b)return a;const k=x=>[x.simBest||0,x.complete?1:0,x.acc||0,x.solved||0];const ka=k(a),kb=k(b);for(let i=0;i<4;i++){if(ka[i]!==kb[i])return ka[i]>kb[i]?a:b}return a}
 const QF=['q','lr','b','dn','bq'];function takeQ(d,s){QF.forEach(k=>{if(s[k]===undefined)delete d[k];else d[k]=s[k]})}
@@ -805,19 +807,60 @@ function mergeC(a,b){if(!a)return b;if(!b)return a;const best=better(a.best,b.be
   o.hl=Object.assign({},a.hl||{});for(const k in(b.hl||{})){const x=o.hl[k],y=b.hl[k];if(!x||(y.ts||0)>(x.ts||0))o.hl[k]=y}
   o.bl=Object.assign({},a.bl||{});for(const k in(b.bl||{})){const x=o.bl[k],y=b.bl[k];if(!x||(y.ts||0)>(x.ts||0))o.bl[k]=y}
   o.best=best;return o}
-(async function(){try{
-  if(!window.claude||!window.claude.use)return setSync('Guardando solo en este navegador');
+/* ================= CLOUD: claude.ai o Firebase ================= */
+const FB_CFG={apiKey:"AIzaSyB9G4iWj8yCxrVP3MRlYLigiiLDAB91IGc",authDomain:"entrenadorutec.firebaseapp.com",projectId:"entrenadorutec",storageBucket:"entrenadorutec.firebasestorage.app",messagingSenderId:"841954228208",appId:"1:841954228208:web:e6c793c0bc81f07df60f35"};
+const FBV='10.12.2';
+let FBA=null,UNAME='';
+const okLabel=()=>'☁️ Sincronizado'+(UNAME?' · '+UNAME:'');
+function cloudFinish(){if(cloudDone)return;cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}
+function rerender(){try{if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();if(typeof modeUI==='function')modeUI()}catch(e){}}
+function mergeRemote(remote,rm){remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
+  if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}}
+function syncClick(){if(!FBA)return;if(FBA.auth.currentUser)FBA.logout();else FBA.login()}
+[$('sync1'),$('sync2')].forEach(s=>{s.addEventListener('click',syncClick);s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();syncClick()}})});
+function markClickable(){[$('sync1'),$('sync2')].forEach(s=>{const c=!!FBA;s.classList.toggle('clk',c);if(c){s.setAttribute('role','button');s.tabIndex=0;s.title=FBA.auth.currentUser?'Tocar para cerrar sesión':'Tocar para iniciar sesión con Google'}})}
+async function claudeSync(){try{
   const [db,user]=await Promise.all([claude.use('db'),claude.use('user')]);
   if(!db||!user)return setSync('Guardando solo en este navegador');
   const uid=await user.id();if(!uid)return setSync('Guardando solo en este navegador');
   const ref=db.doc('data/users/'+uid+'/progress');const snap=await ref.get();
   let remote={};
   if(snap.exists){const d=snap.data();if(d.st)remote=d.st;else if(d.prog){for(const c in d.prog){remote[c]=blank();for(const id in d.prog[c])if(d.prog[c][id])remote[c].ex[id]={s:1,f:1,a:1}}}}
-  const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
-  if(snap.exists){const rm=(snap.data()||{}).mode;if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}}
-  cloud=ref;saveLocal();await ref.set(cloudDoc());setSync('☁️ Sincronizado',true);
-  if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();
-}catch(e){setSync('Guardando solo en este navegador')}finally{cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}})();
+  mergeRemote(remote,snap.exists?(snap.data()||{}).mode:null);
+  cloud=ref;saveLocal();await ref.set(cloudDoc());setSync(okLabel(),true);rerender();
+}catch(e){setSync('Guardando solo en este navegador')}finally{cloudFinish()}}
+async function firebaseSync(){
+  setSync('Conectando…');
+  const B='https://www.gstatic.com/firebasejs/'+FBV+'/';
+  const [A,AU,FS]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-auth.js'),import(B+'firebase-firestore.js')]);
+  const app=A.initializeApp(FB_CFG),auth=AU.getAuth(app),db=FS.getFirestore(app);
+  const prov=new AU.GoogleAuthProvider();prov.setCustomParameters({prompt:'select_account'});
+  FBA={auth,
+    login:async()=>{try{await AU.signInWithPopup(auth,prov)}catch(e){const c=e&&e.code;
+      if(c==='auth/popup-blocked'||c==='auth/operation-not-supported-in-this-environment'){try{await AU.signInWithRedirect(auth,prov)}catch(e2){alert('No se pudo iniciar sesión. Intenta de nuevo.')}}
+      else if(c!=='auth/popup-closed-by-user'&&c!=='auth/cancelled-popup-request')alert('No se pudo iniciar sesión ('+(c||'error')+'). Intenta de nuevo.')}},
+    logout:async()=>{if(!confirm('¿Cerrar sesión?\n\nTu progreso queda guardado en tu cuenta y se borrará de este navegador.'))return;
+      clearTimeout(pushT);try{if(cloud)await cloud.set(cloudDoc())}catch(e){}
+      cloud=null;try{await AU.signOut(auth)}catch(e){}
+      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode')}catch(e){}
+      location.reload()}};
+  AU.getRedirectResult(auth).catch(()=>{});
+  AU.onAuthStateChanged(auth,async u=>{
+    if(!u){cloud=null;UNAME='';setSync('🔑 Inicia sesión para guardar tu progreso');markClickable();cloudFinish();return}
+    UNAME=(u.displayName||u.email||'').split(' ')[0];
+    try{setSync('Sincronizando…');markClickable();
+      const ref=FS.doc(db,'users',u.uid,'data','progress');
+      const snap=await FS.getDoc(ref);
+      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode)}
+      cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode}),updated:d.updated})};
+      saveLocal();await cloud.set(cloudDoc());setSync(okLabel(),true);rerender();
+    }catch(e){cloud=null;setSync('Sin conexión: guardado local')}finally{markClickable();cloudFinish()}
+  });
+}
+(async function(){try{
+  if(window.claude&&window.claude.use)await claudeSync();
+  else await firebaseSync();
+}catch(e){setSync('Guardando solo en este navegador');cloudFinish()}})();
 
 /* ================= TIME ================= */
 let view='menu',C=null,T=null,F=null,st=null,X=null;
