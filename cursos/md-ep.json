@@ -1,0 +1,4725 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso con lo esencial (el examen probablemente no trae formulario).</p>\n<div class=\"fgrid\">\n<div><b>Condicional</b><br>\\(p\\to q\\) es F solo si \\(p=V,\\ q=F\\); \\(p\\to q\\equiv\\neg p\\vee q\\)</div>\n<div><b>Otras</b><br>\\(p\\leftrightarrow q\\): V si coinciden · \\(p\\veebar q\\): V si difieren</div>\n<div><b>De Morgan</b><br>\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q,\\ \\ \\neg(p\\vee q)\\equiv\\neg p\\wedge\\neg q\\)</div>\n<div><b>Negación de la condicional</b><br>\\(\\neg(p\\to q)\\equiv p\\wedge\\neg q\\)</div>\n<div><b>Implicaciones</b><br>Recíproca \\(q\\to p\\) · inversa \\(\\neg p\\to\\neg q\\) · contrarrecíproca \\(\\neg q\\to\\neg p\\equiv p\\to q\\)</div>\n<div><b>Leyes</b><br>Distributiva, absorción \\(p\\vee(p\\wedge q)\\equiv p\\), tercio excluido \\(p\\vee\\neg p\\equiv V\\)</div>\n<div><b>Reglas de inferencia</b><br>MP: \\(p\\to q,\\ p\\therefore q\\) · MT: \\(p\\to q,\\ \\neg q\\therefore\\neg p\\) · disyuntivo: \\(p\\vee q,\\ \\neg p\\therefore q\\)</div>\n<div><b>Falacias</b><br>\\(p\\to q,\\ q\\therefore p\\) · \\(p\\to q,\\ \\neg p\\therefore\\neg q\\)</div>\n<div><b>Cuantificadores</b><br>\\(\\neg\\forall x\\,P\\equiv\\exists x\\,\\neg P,\\ \\ \\neg\\exists x\\,P\\equiv\\forall x\\,\\neg P\\)</div>\n<div><b>Divisibilidad</b><br>\\(a\\mid b\\iff b=ac\\) · par \\(2k\\), impar \\(2k+1\\) · \\(a=bq+r,\\ 0\\le r\\lt b\\)</div>\n<div><b>MCD</b><br>Euclides: \\(\\text{mcd}(a,b)=\\text{mcd}(b,r)\\) · Bézout \\(ax+by\\) · \\(\\text{mcm}=\\frac{|ab|}{\\text{mcd}}\\)</div>\n<div><b>Bases</b><br>\\((d_k\\dots d_0)_b=\\sum d_ib^i\\) · divisiones sucesivas, restos al revés</div>\n<div><b>Conjuntos</b><br>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\) · \\(|\\mathcal P(A)|=2^n\\) · \\(|A\\times B|=|A||B|\\)</div>\n<div><b>Métodos</b><br>Directa · contraposición · contradicción · contraejemplo (refuta ∀)</div>\n</div>",
+ "formSim": false,
+ "id": "md-ep",
+ "code": "CS6005",
+ "name": "Matemáticas Discretas I",
+ "exam": "Examen parcial 2026-2",
+ "topics": [
+  {
+   "id": "reales",
+   "name": "Números reales e inecuaciones",
+   "teo": "<p>\\(\\mathbb{N}\\subset\\mathbb{Z}\\subset\\mathbb{Q}\\subset\\mathbb{R}\\). Un número es <strong>racional</strong> si se escribe como \\(\\frac ab\\) con \\(a,b\\in\\mathbb{Z}\\), \\(b\\neq0\\). La suma, resta y producto de racionales es racional; \\(\\sqrt2\\) y \\(\\pi\\) son irracionales. Racional no nulo por irracional da irracional, pero dos irracionales pueden sumar un racional (\\(\\sqrt2+(-\\sqrt2)=0\\)).</p>\n<p><strong>Orden:</strong> multiplicar o dividir una desigualdad por un número negativo invierte el sentido. \\(x^2\\ge0\\) para todo real.</p>\n<p><strong>Inecuaciones:</strong> factoriza, ubica los puntos críticos (raíces del numerador y del denominador), haz la tabla de signos y elige los intervalos. Las raíces del numerador se incluyen si la desigualdad es \\(\\le\\) o \\(\\ge\\); las del denominador <strong>nunca</strong>.</p>",
+   "form": [
+    "\\(\\frac ab\\in\\mathbb{Q}\\iff a,b\\in\\mathbb{Z},\\ b\\ne0\\)",
+    "\\(a\\lt b,\\ c\\lt0\\Rightarrow ac\\gt bc\\)",
+    "\\(x^2\\le k\\iff -\\sqrt k\\le x\\le\\sqrt k\\)",
+    "\\(x^2\\ge0\\ \\ \\forall x\\in\\mathbb{R}\\)",
+    "Denominador: puntos siempre abiertos"
+   ],
+   "ex": [
+    {
+     "id": "r1",
+     "lvl": 1,
+     "title": "Racional o irracional",
+     "q": "<p>¿Cuál de estos números es racional?</p>",
+     "checks": [
+      {
+       "p": "Racional",
+       "o": [
+        "\\(0{,}\\overline{3}\\)",
+        "\\(\\sqrt2\\)",
+        "\\(\\pi\\)",
+        "\\(\\sqrt3\\)",
+        "\\(1+\\sqrt5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Racional = se puede escribir como fracción de enteros \\(\\frac ab\\). \\(0{,}\\overline3=0{,}333\\ldots=\\frac13\\): es racional.",
+      "Los demás no se pueden escribir como fracción (son irracionales, como \\(\\sqrt2\\) o \\(\\pi\\))."
+     ],
+     "ans": "\\(0{,}\\overline3\\)",
+     "hint": "Periódico = racional.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "racdef",
+       "divsuc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r2",
+     "lvl": 1,
+     "title": "Racionales: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) La suma de dos racionales es racional.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) La suma de dos irracionales siempre es irracional.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) Un racional no nulo multiplicado por un irracional es irracional.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) Dos fracciones sumadas dan otra fracción: \\(\\frac ab+\\frac cd=\\frac{ad+bc}{bd}\\). <b>Verdadero</b>.",
+      "b) Basta un contraejemplo: \\(\\sqrt2+(-\\sqrt2)=0\\), y 0 es racional. <b>Falso</b>.",
+      "c) Si \\(q\\cdot x\\) fuera un racional r, entonces \\(x=\\frac rq\\) sería racional, y no lo es. <b>Verdadero</b>."
+     ],
+     "ans": "V, F, V",
+     "hint": "Busca contraejemplos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "ejce"
+      ],
+      [
+       "racdef"
+      ]
+     ]
+    },
+    {
+     "id": "r3",
+     "lvl": 1,
+     "title": "Inecuación cuadrática",
+     "q": "<p>Resuelve \\(x(8-x)\\ge0\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\([0,8]\\)",
+        "\\((0,8)\\)",
+        "\\((-\\infty,0]\\cup[8,\\infty)\\)",
+        "\\([8,\\infty)\\)",
+        "\\(\\mathbb{R}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El producto vale 0 en \\(x=0\\) y \\(x=8\\). Esos puntos parten la recta en tres zonas.",
+      "Prueba un número por zona: \\(x=-1\\): \\((-1)(9)\\lt0\\); \\(x=1\\): \\((1)(7)\\gt0\\); \\(x=9\\): \\((9)(-1)\\lt0\\).",
+      "Queremos \\(\\ge0\\): la zona del medio, con los extremos incluidos porque ahí vale 0: \\([0,8]\\)."
+     ],
+     "ans": "\\([0,8]\\)",
+     "hint": "Tabla de signos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "signos"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "r4",
+     "lvl": 2,
+     "title": "Cuadrado acotado",
+     "q": "<p>Resuelve \\((x+4)^2\\le4\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\([-6,-2]\\)",
+        "\\([-2,2]\\)",
+        "\\((-\\infty,-6]\\cup[-2,\\infty)\\)",
+        "\\([-4,0]\\)",
+        "\\([2,6]\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Un cuadrado es \\(\\le4\\) cuando el número está entre −2 y 2: \\(-2\\le x+4\\le2\\).",
+      "Resta 4 en las tres partes: \\(-6\\le x\\le-2\\). Solución: \\([-6,-2]\\)."
+     ],
+     "ans": "\\([-6,-2]\\)",
+     "hint": "\\(u^2\\le k\\iff|u|\\le\\sqrt k\\).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "orden"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r5",
+     "lvl": 2,
+     "title": "Suma de un cuadrado",
+     "q": "<p>Resuelve \\((x-5)^2+4\\lt0\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\(\\varnothing\\)",
+        "\\(\\mathbb{R}\\)",
+        "\\((3,7)\\)",
+        "\\(\\{5\\}\\)",
+        "\\((-\\infty,5)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Un cuadrado nunca es negativo, así que \\((x-5)^2+4\\) vale 4 o más.",
+      "Nunca será menor que 0: no hay solución, \\(\\varnothing\\)."
+     ],
+     "ans": "\\(\\varnothing\\)",
+     "hint": "Un cuadrado nunca es negativo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "orden"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r6",
+     "lvl": 3,
+     "title": "Inecuación racional (lista del curso)",
+     "q": "<p>Resuelve \\(\\dfrac{x^2-5x+6}{x^2+x-42}\\ge0\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\((-\\infty,-7)\\cup[2,3]\\cup(6,\\infty)\\)",
+        "\\((-\\infty,-7]\\cup[2,3]\\cup[6,\\infty)\\)",
+        "\\([-7,2]\\cup[3,6]\\)",
+        "\\((-7,2)\\cup(3,6)\\)",
+        "\\([2,3]\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Factoriza: arriba \\((x-2)(x-3)\\), abajo \\((x+7)(x-6)\\). Puntos críticos: \\(-7,\\ 2,\\ 3,\\ 6\\).",
+      "Prueba un número en cada zona: \\((-\\infty,-7)\\): +; \\((-7,2)\\): −; \\((2,3)\\): +; \\((3,6)\\): −; \\((6,\\infty)\\): +. Queremos las zonas con +.",
+      "Los ceros de arriba (2 y 3) se incluyen porque ahí vale 0; los de abajo (−7 y 6) se excluyen porque no se divide entre 0."
+     ],
+     "ans": "\\((-\\infty,-7)\\cup[2,3]\\cup(6,\\infty)\\)",
+     "hint": "El denominador nunca se incluye.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "signos"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "r7",
+     "lvl": 3,
+     "title": "Ordena la demostración: el promedio está en medio",
+     "q": "<p>Demostrar: si \\(a\\lt b\\), entonces \\(a\\lt\\frac{a+b}{2}\\lt b\\).</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Partimos de la hipótesis \\(a\\lt b\\).",
+        "Sumando \\(a\\) a ambos lados: \\(2a\\lt a+b\\).",
+        "Dividiendo entre 2 (positivo, no cambia el sentido): \\(a\\lt\\frac{a+b}2\\).",
+        "Sumando \\(b\\) a \\(a\\lt b\\): \\(a+b\\lt2b\\), luego \\(\\frac{a+b}2\\lt b\\).",
+        "Juntando ambas: \\(a\\lt\\frac{a+b}2\\lt b\\). \\(\\blacksquare\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Es una demostración directa: partes de \\(a\\lt b\\) y pruebas cada mitad por separado. Izquierda: sumas a (\\(2a\\lt a+b\\)) y divides entre 2. Derecha: sumas b (\\(a+b\\lt2b\\)) y divides entre 2.",
+      "Dividir entre 2 no voltea la desigualdad porque 2 es positivo."
+     ],
+     "ans": "Hipótesis → 2a < a+b → a < (a+b)/2 → (a+b)/2 < b → conclusión",
+     "hint": "Primero una desigualdad, luego la otra.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "r8",
+     "lvl": 3,
+     "title": "¿Por dónde empezar?",
+     "q": "<p>Quieres demostrar que si \\(a\\) y \\(b\\) son racionales, entonces \\(a+b\\) es racional. ¿Cuál es el primer paso correcto?</p>",
+     "checks": [
+      {
+       "p": "Primer paso",
+       "o": [
+        "Escribir \\(a=\\frac mn,\\ b=\\frac pq\\) con \\(m,n,p,q\\in\\mathbb{Z}\\) y \\(n,q\\neq0\\)",
+        "Tomar \\(a=1,\\ b=2\\) y verificar",
+        "Suponer que \\(a+b\\) es racional",
+        "Escribir \\(a=\\frac mn,\\ b=\\frac mn\\)",
+        "Usar que \\(\\sqrt2\\) es irracional"
+       ]
+      }
+     ],
+     "steps": [
+      "Para demostrar algo general se parte de la definición: racional = fracción de enteros. Escribe cada número con letras distintas: \\(a=\\frac mn\\), \\(b=\\frac pq\\) (con \\(n,q\\ne0\\)). Con las mismas letras estarías diciendo que a = b.",
+      "Luego \\(a+b=\\frac{mq+pn}{nq}\\), una fracción de enteros.",
+      "Probar con 1 y 2 es solo un ejemplo (no demuestra), y suponer la conclusión es hacer trampa (razonamiento circular)."
+     ],
+     "ans": "Usar la definición con letras distintas",
+     "hint": "Parte de la definición.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "racdef",
+       "paridad"
+      ],
+      [
+       "signos"
+      ],
+      [
+       "ejce"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los reales se organizan en conjuntos anidados; las inecuaciones se resuelven con propiedades de orden y tablas de signos.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\mathbb N\\subset\\mathbb Z\\subset\\mathbb Q\\subset\\mathbb R\\); racional = \\(\\frac ab\\), \\(b\\ne0\\).</li><li>Racional no nulo por irracional = irracional.</li><li>Multiplicar por negativo invierte la desigualdad.</li><li>Racionales: el denominador nunca se incluye.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(0{,}\\overline{3}=\\frac13\\) es racional.</div>\n<div class=\"err\"><b>Error común:</b> multiplicar la inecuación por un denominador con \\(x\\).</div>"
+  },
+  {
+   "id": "div",
+   "name": "Divisibilidad y paridad",
+   "teo": "<p>\\(a\\mid b\\) (\"\\(a\\) divide a \\(b\\)\") si existe \\(c\\in\\mathbb{Z}\\) con \\(b=ac\\). Equivale a \"\\(a\\) es divisor de \\(b\\)\" o \"\\(b\\) es múltiplo de \\(a\\)\". Todo entero divide a 0; 0 solo divide a 0.</p>\n<p>\\(n\\) es <strong>par</strong> si \\(n=2k\\); <strong>impar</strong> si \\(n=2k+1\\) (\\(k\\in\\mathbb{Z}\\)). Propiedades: si \\(a\\mid b\\) y \\(a\\mid c\\), entonces \\(a\\mid(bx+cy)\\); si \\(a\\mid b\\) y \\(b\\mid c\\), entonces \\(a\\mid c\\).</p>\n<p><strong>Algoritmo de la división:</strong> para \\(b\\gt0\\), existen únicos \\(q,r\\) con \\(a=bq+r\\) y \\(0\\le r\\lt b\\). El resto nunca es negativo.</p>\n<p>Para demostrar con divisibilidad: escribe cada hipótesis con la definición <strong>usando letras distintas</strong>, opera y factoriza hasta mostrar el divisor.</p>",
+   "form": [
+    "\\(a\\mid b\\iff\\exists c\\in\\mathbb{Z}:\\ b=ac\\)",
+    "Par: \\(2k\\); impar: \\(2k+1\\)",
+    "\\(a\\mid b,\\ a\\mid c\\Rightarrow a\\mid bx+cy\\)",
+    "\\(a=bq+r,\\ 0\\le r\\lt b\\)"
+   ],
+   "ex": [
+    {
+     "id": "dv1",
+     "lvl": 1,
+     "title": "¿Divide o no?",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(-3\\mid12\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(0\\mid5\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) \\(7\\mid0\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a\\mid b\\) («a divide a b») significa que b = a · (algún entero). a) \\(12=(-3)(-4)\\): <b>Verdadero</b>.",
+      "b) ¿Hay un entero c con \\(5=0\\cdot c\\)? No: 0 por cualquier cosa da 0. <b>Falso</b>.",
+      "c) \\(0=7\\cdot0\\): todo entero divide a 0. <b>Verdadero</b>."
+     ],
+     "ans": "V, F, V",
+     "hint": "Busca el c de la definición.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "defdiv"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "dv2",
+     "lvl": 1,
+     "title": "Resto con negativos",
+     "q": "<p>Al dividir \\(-17\\) entre 5 con el algoritmo de la división, ¿cuál es el resto?</p>",
+     "checks": [
+      {
+       "p": "Resto",
+       "o": [
+        "\\(3\\)",
+        "\\(-2\\)",
+        "\\(2\\)",
+        "\\(-3\\)",
+        "\\(4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "En el algoritmo de la división el resto debe cumplir \\(0\\le r\\lt5\\): nunca es negativo. \\(-17=5(-3)-2\\) tiene resto −2, no vale.",
+      "Baja una vez más el cociente: \\(-17=5(-4)+3\\). Ahora el resto es 3 y cumple."
+     ],
+     "ans": "\\(r=3\\)",
+     "hint": "El resto está entre 0 y 4.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "algdiv"
+      ]
+     ]
+    },
+    {
+     "id": "dv3",
+     "lvl": 2,
+     "title": "Ordena la demostración",
+     "q": "<p>Demostrar: si \\(3\\mid a\\) y \\(3\\mid b\\), entonces \\(3\\mid a+7b\\).</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Como \\(3\\mid a\\), existe \\(k\\in\\mathbb{Z}\\) tal que \\(a=3k\\).",
+        "Como \\(3\\mid b\\), existe \\(m\\in\\mathbb{Z}\\) tal que \\(b=3m\\).",
+        "Entonces \\(a+7b=3k+21m\\).",
+        "Factorizando: \\(a+7b=3(k+7m)\\).",
+        "Como \\(k+7m\\in\\mathbb{Z}\\), concluimos que \\(3\\mid a+7b\\). \\(\\blacksquare\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Receta para «demostrar que 3 divide a algo»: escribe ese algo como 3 · (entero). Por hipótesis \\(a=3k\\) y \\(b=3m\\) (letras distintas porque a y b pueden ser distintos).",
+      "Reemplaza: \\(a+7b=3k+21m=3(k+7m)\\). Como \\(k+7m\\) es entero, \\(3\\mid a+7b\\)."
+     ],
+     "ans": "Definición → sustituir → factorizar → concluir",
+     "hint": "Las hipótesis van primero.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "defdiv",
+       "paridad"
+      ],
+      [
+       "fact"
+      ]
+     ]
+    },
+    {
+     "id": "dv4",
+     "lvl": 2,
+     "title": "El paso clave",
+     "q": "<p>Para demostrar que si \\(3\\mid a\\) y \\(3\\mid b\\) entonces \\(9\\mid ab\\), ¿cuál es el paso clave?</p>",
+     "checks": [
+      {
+       "p": "Paso clave",
+       "o": [
+        "\\(ab=(3k)(3m)=9km\\), con \\(km\\in\\mathbb{Z}\\)",
+        "\\(ab=3k+3m=3(k+m)\\)",
+        "\\(ab=(3k)(3k)=9k^2\\)",
+        "\\(a=9\\) y \\(b=9\\)",
+        "\\(3\\cdot3=9\\), así que listo"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(a=3k\\) y \\(b=3m\\), multiplica: \\(ab=(3k)(3m)=9km\\). Aparece el 9 y \\(km\\) es entero, así que \\(9\\mid ab\\)."
+     ],
+     "ans": "\\(ab=9km\\)",
+     "hint": "Multiplica, no sumes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "defdiv",
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "dv5",
+     "lvl": 2,
+     "title": "¿Qué método usar?",
+     "q": "<p>Para demostrar que el producto de dos enteros consecutivos \\(n(n+1)\\) es par, ¿qué estrategia es la más natural?</p>",
+     "checks": [
+      {
+       "p": "Estrategia",
+       "o": [
+        "Por casos: n par o n impar",
+        "Con un ejemplo: 3·4 = 12",
+        "Suponer que el producto es impar sin más",
+        "Usando el algoritmo de Euclides",
+        "No se puede demostrar"
+       ]
+      }
+     ],
+     "steps": [
+      "Todo entero es par o impar: revisa los dos casos. Si \\(n=2k\\): \\(n(n+1)=2k(2k+1)\\) tiene un factor 2.",
+      "Si \\(n=2k+1\\): \\(n+1=2(k+1)\\), así que el producto también tiene un factor 2. En los dos casos es par (un ejemplo como 3 · 4 no basta)."
+     ],
+     "ans": "Por casos",
+     "hint": "Todo entero es par o impar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad",
+       "ejce"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "dv6",
+     "lvl": 3,
+     "title": "Verifica la demostración (IA)",
+     "q": "<p>Una IA escribió: <em>«Sean \\(a\\) y \\(b\\) impares, \\(a=2k+1\\) y \\(b=2k+1\\). Entonces \\(a+b=4k+2=2(2k+1)\\), que es par.»</em> ¿Es correcta?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "No: usa la misma k para a y b, así que solo prueba el caso a = b",
+        "Sí, es completamente correcta",
+        "No: la suma de impares es impar",
+        "No: debió usar 2k − 1",
+        "Sí, porque 4k + 2 es par"
+       ]
+      }
+     ],
+     "steps": [
+      "El error: usó la misma letra k para a y b, que es como decir que a = b. Solo probó ese caso.",
+      "Correcto: \\(a=2k+1\\), \\(b=2m+1\\), entonces \\(a+b=2k+2m+2=2(k+m+1)\\), par."
+     ],
+     "ans": "Incorrecta: pierde generalidad",
+     "hint": "¿Por qué a y b tendrían la misma k?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "verif"
+      ],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "dv7",
+     "lvl": 3,
+     "title": "Múltiplos de 5",
+     "q": "<p>Si \\(x-2\\) es múltiplo de 5, ¿qué igualdad demuestra que \\(x+23\\) también lo es?</p>",
+     "checks": [
+      {
+       "p": "Igualdad",
+       "o": [
+        "\\(x+23=(x-2)+25=5k+25=5(k+5)\\)",
+        "\\(x+23=5k+23\\)",
+        "\\(x+23=x-2+21=5(k+21)\\)",
+        "\\(x+23=5(x+23)\\)",
+        "\\(x=5k\\Rightarrow x+23=5k+23\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "«Múltiplo de 5» = 5 · (entero). Por hipótesis \\(x-2=5k\\).",
+      "Truco: escribe \\(x+23\\) usando \\(x-2\\): \\(x+23=(x-2)+25=5k+25=5(k+5)\\), y \\(k+5\\) es entero."
+     ],
+     "ans": "\\(5(k+5)\\)",
+     "hint": "Escribe x + 23 usando x − 2.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "defdiv"
+      ],
+      [
+       "fact"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>La divisibilidad se trabaja con la definición: \\(a\\mid b\\) significa que \\(b\\) es un múltiplo entero de \\(a\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(a\\mid b\\iff b=ac\\), \\(c\\in\\mathbb Z\\).</li><li>Par \\(2k\\), impar \\(2k+1\\).</li><li>\\(a\\mid b\\) y \\(a\\mid c\\Rightarrow a\\mid(bx+cy)\\).</li><li>División: \\(a=bq+r,\\ 0\\le r\\lt b\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(-17=5(-4)+3\\): el resto es 3, no −2.</div>\n<div class=\"err\"><b>Error común:</b> dar restos negativos.</div>"
+  },
+  {
+   "id": "mcd",
+   "name": "MCD, Euclides y primos",
+   "teo": "<p>\\(\\text{mcd}(a,b)\\) es el mayor entero positivo que divide a ambos. Propiedades: \\(\\text{mcd}(a,b)=\\text{mcd}(b,a)\\); todo divisor común divide al mcd; \\(\\text{mcd}(a,0)=|a|\\); los signos no importan. \\(a\\) y \\(b\\) son <strong>coprimos</strong> si \\(\\text{mcd}(a,b)=1\\) (por ejemplo, \\(n\\) y \\(n+1\\)).</p>\n<p><strong>Algoritmo de Euclides:</strong> divide el mayor entre el menor, luego el divisor entre el resto, y así hasta que el resto sea 0: el último resto no nulo es el mcd. <strong>Bézout:</strong> existen enteros \\(x,y\\) con \\(\\text{mcd}(a,b)=ax+by\\); se hallan recorriendo Euclides hacia atrás.</p>\n<p>\\(\\text{mcm}(a,b)\\cdot\\text{mcd}(a,b)=|ab|\\). Un <strong>primo</strong> es un entero \\(p\\gt1\\) cuyos únicos divisores positivos son 1 y \\(p\\).</p>",
+   "form": [
+    "\\(a=bq+r\\Rightarrow\\text{mcd}(a,b)=\\text{mcd}(b,r)\\)",
+    "Bézout: \\(\\text{mcd}(a,b)=ax+by\\)",
+    "\\(\\text{mcm}(a,b)=\\frac{|ab|}{\\text{mcd}(a,b)}\\)",
+    "Coprimos: \\(\\text{mcd}=1\\)"
+   ],
+   "ex": [
+    {
+     "id": "m1",
+     "lvl": 1,
+     "title": "Divisores comunes",
+     "q": "<p>¿Cuánto vale \\(\\text{mcd}(42,70)\\)?</p>",
+     "checks": [
+      {
+       "p": "mcd",
+       "o": [
+        "14",
+        "7",
+        "2",
+        "21",
+        "210"
+       ]
+      }
+     ],
+     "steps": [
+      "Divisores de 42: 1, 2, 3, 6, 7, 14, 21, 42. Divisores de 70: 1, 2, 5, 7, 10, 14, 35, 70.",
+      "Comunes: 1, 2, 7, 14. El mayor es 14."
+     ],
+     "ans": "14",
+     "hint": "Lista los divisores comunes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "setops"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "m2",
+     "lvl": 1,
+     "title": "Propiedades: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(n\\) y \\(n+1\\) son coprimos para todo \\(n\\in\\mathbb{Z}^+\\).",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) Si \\(a\\ne0\\), \\(\\text{mcd}(a,0)=|a|\\).",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Si \\(a\\mid b\\), entonces \\(\\text{mcd}(a,b)=b\\).",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) Si d divide a n y a n + 1, divide a su resta, que es 1. Solo 1 divide a 1: son coprimos. <b>Verdadero</b>.",
+      "b) Todo número divide a 0, así que el mayor divisor común de a y 0 es \\(|a|\\). <b>Verdadero</b>.",
+      "c) Si a divide a b, el mcd es \\(|a|\\) (el más pequeño), no b. Ejemplo: mcd(2, 6) = 2. <b>Falso</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "Si a | b, el mayor divisor común es a.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "m3",
+     "lvl": 2,
+     "title": "Algoritmo de Euclides",
+     "q": "<p>Calcula \\(\\text{mcd}(360,150)\\) con Euclides.</p>",
+     "checks": [
+      {
+       "p": "mcd",
+       "o": [
+        "30",
+        "60",
+        "15",
+        "10",
+        "150"
+       ]
+      }
+     ],
+     "steps": [
+      "Euclides: divide el grande entre el chico y repite con el divisor y el resto, hasta que el resto sea 0. \\(360=2\\cdot150+60\\)",
+      "\\(150=2\\cdot60+30\\)",
+      "\\(60=2\\cdot30+0\\). El último resto que no fue 0 es 30."
+     ],
+     "ans": "30",
+     "hint": "Hasta que el resto sea 0.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "euclid"
+      ],
+      [],
+      [
+       "algdiv"
+      ]
+     ]
+    },
+    {
+     "id": "m4",
+     "lvl": 2,
+     "title": "Mínimo común múltiplo",
+     "q": "<p>¿Cuánto vale \\(\\text{mcm}(12,18)\\)?</p>",
+     "checks": [
+      {
+       "p": "mcm",
+       "o": [
+        "36",
+        "216",
+        "72",
+        "6",
+        "18"
+       ]
+      }
+     ],
+     "steps": [
+      "Fórmula: \\(\\text{mcm}(a,b)=\\dfrac{a\\cdot b}{\\text{mcd}(a,b)}\\), con \\(\\text{mcd}(12,18)=6\\).",
+      "\\(\\text{mcm}=\\frac{12\\cdot18}{6}=36\\). Comprobación: 36 es múltiplo de 12 y de 18."
+     ],
+     "ans": "36",
+     "hint": "mcm · mcd = producto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "mcm"
+      ]
+     ]
+    },
+    {
+     "id": "m5",
+     "lvl": 2,
+     "title": "Primos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) 1 es un número primo.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) 2 es el único primo par.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) 2025 es primo.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) Un primo debe ser mayor que 1 y tener exactamente dos divisores; el 1 tiene uno solo. <b>Falso</b>.",
+      "b) Cualquier otro par es divisible entre 2, así que tiene más de dos divisores. <b>Verdadero</b>.",
+      "c) 2025 termina en 5, así que es divisible entre 5. <b>Falso</b>."
+     ],
+     "ans": "F, V, F",
+     "hint": "Revisa la definición.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "paridad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "m6",
+     "lvl": 3,
+     "title": "Bézout (clase)",
+     "q": "<p>Sabiendo que \\(\\text{mcd}(42,70)=14\\), halla enteros con \\(42x+70y=14\\).</p>",
+     "checks": [
+      {
+       "p": "\\((x,y)\\)",
+       "o": [
+        "\\((2,-1)\\)",
+        "\\((-1,2)\\)",
+        "\\((1,1)\\)",
+        "\\((3,-2)\\)",
+        "\\((-2,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Paso 1, Euclides (anota cada división): \\(70=1\\cdot42+28\\); \\(42=1\\cdot28+14\\); \\(28=2\\cdot14\\).",
+      "Paso 2, despeja el 14: \\(14=42-28\\). Reemplaza \\(28=70-42\\): \\(14=42-(70-42)=2\\cdot42-1\\cdot70\\).",
+      "Entonces \\(x=2,\\ y=-1\\). Comprobación: \\(84-70=14\\) ✓."
+     ],
+     "ans": "\\(x=2,\\ y=-1\\)",
+     "hint": "Despeja los restos de abajo hacia arriba.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "euclid"
+      ],
+      [
+       "bezout"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "m7",
+     "lvl": 3,
+     "title": "Bézout con coprimos",
+     "q": "<p>\\(\\text{mcd}(250,11)=1\\). ¿Qué par cumple \\(250x+11y=1\\)?</p>",
+     "checks": [
+      {
+       "p": "\\((x,y)\\)",
+       "o": [
+        "\\((-4,91)\\)",
+        "\\((4,-91)\\)",
+        "\\((1,-22)\\)",
+        "\\((-3,68)\\)",
+        "\\((3,-68)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Euclides: \\(250=22\\cdot11+8\\); \\(11=1\\cdot8+3\\); \\(8=2\\cdot3+2\\); \\(3=1\\cdot2+1\\).",
+      "Despeja el 1 y sube reemplazando cada resto: \\(1=3-2=3-(8-2\\cdot3)=3\\cdot3-8\\); con \\(3=11-8\\): \\(1=3\\cdot11-4\\cdot8\\); con \\(8=250-22\\cdot11\\): \\(1=91\\cdot11-4\\cdot250\\).",
+      "Entonces \\(x=-4,\\ y=91\\). Comprobación: \\(-1000+1001=1\\) ✓."
+     ],
+     "ans": "\\(x=-4,\\ y=91\\)",
+     "hint": "Verifica sustituyendo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "euclid",
+       "base10"
+      ],
+      [
+       "bezout"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>El MCD es el mayor divisor común; Euclides lo calcula con divisiones sucesivas.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\text{mcd}(a,b)=\\text{mcd}(b,r)\\).</li><li>Coprimos: mcd = 1.</li><li>Bézout: \\(\\text{mcd}=ax+by\\).</li><li>\\(\\text{mcm}=\\frac{|ab|}{\\text{mcd}}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\text{mcd}(84,36)\\): \\(84=2\\cdot36+12\\), \\(36=3\\cdot12\\): mcd = 12.</div>\n<div class=\"err\"><b>Error común:</b> tomar el último cociente en vez del último resto no nulo.</div>"
+  },
+  {
+   "id": "base",
+   "name": "Representación en base n",
+   "teo": "<p>En base \\(b\\), \\((d_kd_{k-1}\\dots d_0)_b=d_kb^k+\\dots+d_1b+d_0\\), con dígitos de 0 a \\(b-1\\). En hexadecimal, A = 10, …, F = 15.</p>\n<p><strong>De base b a base 10:</strong> multiplica cada dígito por su potencia y suma. <strong>De base 10 a base b:</strong> divisiones sucesivas entre \\(b\\) y lee los restos <strong>de abajo hacia arriba</strong>. Entre base 2 y base 16, cada dígito hexadecimal equivale a 4 bits.</p>",
+   "form": [
+    "\\((d_k\\dots d_0)_b=\\sum d_ib^i\\)",
+    "Dígitos: 0 a b − 1",
+    "Divisiones sucesivas, restos de abajo hacia arriba",
+    "1 hex = 4 bits"
+   ],
+   "ex": [
+    {
+     "id": "b1",
+     "lvl": 1,
+     "title": "Binario a decimal",
+     "q": "<p>\\((1011)_2\\) en base 10 es:</p>",
+     "checks": [
+      {
+       "p": "Valor",
+       "o": [
+        "11",
+        "13",
+        "1011",
+        "9",
+        "7"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada posición vale una potencia de 2, de derecha a izquierda: 1, 2, 4, 8. \\((1011)_2=8+0+2+1=11\\)."
+     ],
+     "ans": "11",
+     "hint": "Potencias de 2 desde la derecha.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "base10"
+      ]
+     ]
+    },
+    {
+     "id": "b2",
+     "lvl": 1,
+     "title": "Decimal a binario",
+     "q": "<p>25 en base 2 es:</p>",
+     "checks": [
+      {
+       "p": "Binario",
+       "o": [
+        "\\((11001)_2\\)",
+        "\\((10011)_2\\)",
+        "\\((11010)_2\\)",
+        "\\((10101)_2\\)",
+        "\\((11101)_2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Divide entre 2 una y otra vez y anota los restos: 25 → 1; 12 → 0; 6 → 0; 3 → 1; 1 → 1.",
+      "Lee los restos de abajo hacia arriba: \\((11001)_2\\). Comprobación: \\(16+8+1=25\\) ✓."
+     ],
+     "ans": "\\((11001)_2\\)",
+     "hint": "Lee los restos al revés.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "euclid"
+      ],
+      [
+       "divsuc"
+      ]
+     ]
+    },
+    {
+     "id": "b3",
+     "lvl": 1,
+     "title": "Bases: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\((129)_8\\) es un número válido en base 8.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) \\((1A)_{16}=26\\).",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) En base 5 los dígitos van de 0 a 5.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) En base 8 los dígitos van del 0 al 7: el 9 no existe. <b>Falso</b>.",
+      "b) En base 16, A vale 10: \\(1\\cdot16+10=26\\). <b>Verdadero</b>.",
+      "c) En base 5 los dígitos van del 0 al 4 (siempre hasta base − 1). <b>Falso</b>."
+     ],
+     "ans": "F, V, F",
+     "hint": "Dígitos de 0 a b − 1.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "base10"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "b4",
+     "lvl": 2,
+     "title": "Base 4 a decimal",
+     "q": "<p>\\((213)_4\\) en base 10 es:</p>",
+     "checks": [
+      {
+       "p": "Valor",
+       "o": [
+        "39",
+        "213",
+        "27",
+        "35",
+        "57"
+       ]
+      }
+     ],
+     "steps": [
+      "Posiciones en base 4: 16, 4, 1. \\(2\\cdot16+1\\cdot4+3\\cdot1=39\\)."
+     ],
+     "ans": "39",
+     "hint": "\\(4^2=16\\).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "base10"
+      ]
+     ]
+    },
+    {
+     "id": "b5",
+     "lvl": 2,
+     "title": "Ordena la conversión",
+     "q": "<p>Convierte 45 a base 2 ordenando los pasos.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "\\(45=2\\cdot22+1\\)",
+        "\\(22=2\\cdot11+0\\)",
+        "\\(11=2\\cdot5+1\\)",
+        "\\(5=2\\cdot2+1\\)",
+        "\\(2=2\\cdot1+0\\)",
+        "\\(1=2\\cdot0+1\\)",
+        "Restos de abajo hacia arriba: \\((101101)_2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Divide entre 2, anota el resto y vuelve a dividir el cociente hasta llegar a 0. Los restos se leen de abajo hacia arriba.",
+      "Comprobación: \\((101101)_2=32+8+4+1=45\\) ✓."
+     ],
+     "ans": "\\((101101)_2\\)",
+     "hint": "Cada paso divide el cociente anterior.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "racdef",
+       "divsuc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "b6",
+     "lvl": 3,
+     "title": "Base 10 a base 3",
+     "q": "<p>100 en base 3 es:</p>",
+     "checks": [
+      {
+       "p": "Base 3",
+       "o": [
+        "\\((10201)_3\\)",
+        "\\((10210)_3\\)",
+        "\\((1021)_3\\)",
+        "\\((10102)_3\\)",
+        "\\((2101)_3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Divide entre 3 y anota restos: 100 → 1; 33 → 0; 11 → 2; 3 → 0; 1 → 1.",
+      "De abajo hacia arriba: \\((10201)_3\\). Comprobación: \\(81+2\\cdot9+1=100\\) ✓."
+     ],
+     "ans": "\\((10201)_3\\)",
+     "hint": "Comprueba al final.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "divsuc"
+      ]
+     ]
+    },
+    {
+     "id": "b7",
+     "lvl": 3,
+     "title": "Hexadecimal a binario",
+     "q": "<p>\\((2F)_{16}\\) en base 2 es:</p>",
+     "checks": [
+      {
+       "p": "Binario",
+       "o": [
+        "\\((101111)_2\\)",
+        "\\((111101)_2\\)",
+        "\\((100111)_2\\)",
+        "\\((10001111)_2\\)",
+        "\\((101011)_2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Truco: cada dígito hexadecimal son 4 dígitos binarios. 2 = 0010 y F (15) = 1111.",
+      "Juntos: 0010 1111. Sin los ceros de la izquierda: \\((101111)_2\\), que vale 47."
+     ],
+     "ans": "\\((101111)_2\\)",
+     "hint": "Cada dígito hex son 4 bits.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "base10"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un número en base \\(b\\) es una suma de potencias de \\(b\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\((d_k\\dots d_0)_b=\\sum d_ib^i\\).</li><li>De base 10 a base \\(b\\): divisiones sucesivas, restos al revés.</li><li>Hex: A = 10 … F = 15; 1 dígito hex = 4 bits.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\((1011)_2=8+2+1=11\\).</div>\n<div class=\"err\"><b>Error común:</b> leer los restos de arriba hacia abajo.</div>"
+  },
+  {
+   "id": "prop",
+   "name": "Proposiciones y tablas de verdad",
+   "teo": "<p>Una <strong>proposición</strong> es un enunciado al que se le asigna V o F, pero no ambos. No lo son las exclamaciones, órdenes, preguntas ni los enunciados con variables libres (\"x es entero\").</p>\n<p>Conectores: \\(\\neg\\) (no), \\(\\wedge\\) (y), \\(\\vee\\) (o), \\(\\veebar\\) (o exclusivo), \\(\\to\\) (si… entonces) y \\(\\leftrightarrow\\) (si y solo si). La condicional \\(p\\to q\\) <strong>solo es falsa cuando \\(p\\) es V y \\(q\\) es F</strong>.</p>\n<p>En \\(p\\to q\\): \\(p\\) es <strong>condición suficiente</strong> para \\(q\\), y \\(q\\) es <strong>condición necesaria</strong> para \\(p\\). \"\\(q\\) si \\(p\\)\" y \"\\(p\\) solo si \\(q\\)\" también se escriben \\(p\\to q\\).</p>\n<p><strong>Deducir valores:</strong> si una condicional es falsa, el antecedente es V y el consecuente F; si una disyunción es falsa, ambas partes son F; si una conjunción es verdadera, ambas son V.</p>",
+   "form": [
+    "\\(p\\to q\\) es F solo con \\(V\\to F\\)",
+    "\\(p\\vee q\\) es F solo si ambas son F",
+    "\\(p\\veebar q\\) es V si difieren",
+    "Suficiente \\(\\to\\) necesaria",
+    "\\(p\\leftrightarrow q\\) es V si coinciden"
+   ],
+   "ex": [
+    {
+     "id": "p1",
+     "lvl": 1,
+     "title": "¿Es una proposición?",
+     "q": "<p>¿Cuál de estos enunciados es una proposición lógica?</p>",
+     "checks": [
+      {
+       "p": "Proposición",
+       "o": [
+        "17 es un número par",
+        "¡Qué bonita mañana!",
+        "Levántate y haz tus ejercicios",
+        "El número x es entero",
+        "¿Qué hora es?"
+       ]
+      }
+     ],
+     "steps": [
+      "Una proposición es una frase que se puede calificar como verdadera o falsa (y solo una de las dos).",
+      "«17 es un número par» es falsa, pero eso no importa: tiene valor de verdad, así que sí es proposición.",
+      "Las otras no: una exclamación o una orden no son V ni F, una pregunta tampoco, y «x es entero» depende de quién sea x (es un predicado)."
+     ],
+     "ans": "17 es un número par",
+     "hint": "Ser falsa no impide ser proposición.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p2",
+     "lvl": 1,
+     "title": "Completa las tablas",
+     "q": "<p>Completa la columna de resultado.</p>",
+     "checks": [
+      {
+       "t": "tt",
+       "p": "Condicional \\(p\\to q\\)",
+       "vars": [
+        "p",
+        "q"
+       ],
+       "cols": [
+        {
+         "h": "p\\to q",
+         "v": [
+          "V",
+          "F",
+          "V",
+          "V"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "tt",
+       "p": "Disyunción exclusiva \\(p\\veebar q\\)",
+       "vars": [
+        "p",
+        "q"
+       ],
+       "cols": [
+        {
+         "h": "p\\veebar q",
+         "v": [
+          "F",
+          "V",
+          "V",
+          "F"
+         ]
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La condicional \\(p\\to q\\) es como una promesa: solo se rompe (F) cuando p pasa (V) y q no pasa (F). Filas VV, VF, FV, FF: V, F, V, V.",
+      "La o exclusiva \\(p\\veebar q\\) es V cuando p y q son distintas y F cuando son iguales: F, V, V, F."
+     ],
+     "ans": "VFVV y FVVF",
+     "hint": "La condicional solo falla en V → F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "conect"
+      ]
+     ]
+    },
+    {
+     "id": "p3",
+     "lvl": 1,
+     "title": "Valores de verdad: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) «1 + 4 = 7 ⇒ 3 < 4» es verdadera.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) «223 es primo ⇒ 62 es impar» es falsa.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(p\\vee q\\) es falsa solo si \\(p\\) y \\(q\\) son falsas.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) «1 + 4 = 7» es falsa. Una condicional con el «si…» falso siempre es V (la promesa no se rompe). La afirmación es <b>Verdadera</b>.",
+      "b) «223 es primo» es V y «62 es impar» es F: queda \\(V\\to F\\), que es F. La afirmación dice justo eso, así que es <b>Verdadera</b>.",
+      "c) Una «o» es F solo si las dos partes son F. <b>Verdadera</b>."
+     ],
+     "ans": "V, V, V",
+     "hint": "Evalúa antecedente y consecuente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond"
+      ],
+      [
+       "paridad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "p4",
+     "lvl": 2,
+     "title": "Deducir valores",
+     "q": "<p>Si \\((\\neg p\\wedge q)\\to p\\) es falsa, ¿cuáles son los valores de \\(p\\) y \\(q\\)?</p>",
+     "checks": [
+      {
+       "p": "\\((p,q)\\)",
+       "o": [
+        "p = F, q = V",
+        "p = V, q = V",
+        "p = F, q = F",
+        "p = V, q = F",
+        "No se puede determinar"
+       ]
+      }
+     ],
+     "steps": [
+      "Si una condicional es falsa, solo hay una posibilidad: lo de antes de la flecha es V y lo de después es F.",
+      "Lo de después es p, así que \\(p=F\\).",
+      "Lo de antes, \\(\\neg p\\wedge q\\), debe ser V. Una «y» es V solo si ambas partes son V: \\(\\neg p=V\\) (ya lo sabemos) y \\(q=V\\). Respuesta: \\(p=F,\\ q=V\\)."
+     ],
+     "ans": "p = F, q = V",
+     "hint": "Condicional falsa ⇒ V → F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p5",
+     "lvl": 2,
+     "title": "Condición necesaria y suficiente",
+     "q": "<p>Formaliza cada enunciado.</p>",
+     "checks": [
+      {
+       "p": "«Es suficiente que \\(-2\\lt a\\lt2\\) para que \\(|a|\\lt2\\)»",
+       "o": [
+        "\\((-2\\lt a\\lt2)\\to(|a|\\lt2)\\)",
+        "\\((|a|\\lt2)\\to(-2\\lt a\\lt2)\\)",
+        "\\((-2\\lt a\\lt2)\\wedge(|a|\\lt2)\\)",
+        "\\(\\neg(-2\\lt a\\lt2)\\to\\neg(|a|\\lt2)\\)",
+        "\\((-2\\lt a\\lt2)\\vee(|a|\\lt2)\\)"
+       ]
+      },
+      {
+       "p": "«Una condición necesaria para que \\(a^2+b^2+c^2=0\\) es que \\(a=b=c=0\\)»",
+       "o": [
+        "\\((a^2+b^2+c^2=0)\\to(a=0\\wedge b=0\\wedge c=0)\\)",
+        "\\((a=0\\wedge b=0\\wedge c=0)\\to(a^2+b^2+c^2=0)\\)",
+        "\\((a^2+b^2+c^2=0)\\to(a=0\\vee b=0\\vee c=0)\\)",
+        "\\((a^2+b^2+c^2=0)\\wedge(a=b=c=0)\\)",
+        "\\((a=b=c=0)\\leftrightarrow\\neg(a^2+b^2+c^2=0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Truco: lo <b>suficiente</b> va antes de la flecha; lo <b>necesario</b> va después.",
+      "Primera: «\\(-2\\lt a\\lt2\\)» es lo suficiente, va primero: \\((-2\\lt a\\lt2)\\to(|a|\\lt2)\\).",
+      "Segunda: «\\(a=b=c=0\\)» es lo necesario, va después: \\((a^2+b^2+c^2=0)\\to(a=0\\wedge b=0\\wedge c=0)\\)."
+     ],
+     "ans": "Suficiente → antecedente; necesaria → consecuente",
+     "hint": "«Necesaria» va después de la flecha.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond",
+       "necsuf"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p6",
+     "lvl": 2,
+     "title": "De código a lenguaje natural",
+     "q": "<p>¿Qué dice en lenguaje natural la condición de Java <code>if (x &gt; 0 || (x &lt;= 0 &amp;&amp; y &gt; 100))</code>?</p>",
+     "checks": [
+      {
+       "p": "Enunciado",
+       "o": [
+        "x es positivo, o x no es positivo y y es mayor que 100",
+        "x es positivo y y es mayor que 100",
+        "x no es positivo o y es menor que 100",
+        "x es positivo solo si y es mayor que 100",
+        "Ni x es positivo ni y es mayor que 100"
+       ]
+      }
+     ],
+     "steps": [
+      "En Java, <code>||</code> significa «o» y <code>&amp;&amp;</code> significa «y».",
+      "Se lee tal cual: «x es positivo, o (x no es positivo y y es mayor que 100)». (Equivale a «x > 0 o y > 100».)"
+     ],
+     "ans": "x > 0 o (x ≤ 0 y y > 100)",
+     "hint": "|| es o; && es y.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conect"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "p7",
+     "lvl": 3,
+     "title": "Sentencias en el ordenador",
+     "q": "<p>Con \\(x=1\\) antes de cada sentencia: a) <code>if 2+3=5 then x:=x+1</code>; b) <code>if (1+1=5) OR (2+2=5) then x:=x+1</code>; c) <code>if (1+1=2) XOR (1+2=3) then x:=x+1</code>. Valores finales de x en a, b y c:</p>",
+     "checks": [
+      {
+       "p": "(a, b, c)",
+       "o": [
+        "(2, 1, 1)",
+        "(2, 1, 2)",
+        "(2, 2, 1)",
+        "(1, 1, 1)",
+        "(2, 2, 2)"
+       ]
+      }
+     ],
+     "steps": [
+      "La instrucción solo suma 1 si la condición es V.",
+      "a) 2 + 3 = 5 es V: x pasa a 2.",
+      "b) Las dos igualdades son F, y «F o F» es F: x se queda en 1.",
+      "c) Las dos son V. El XOR es V solo si son distintas; aquí son iguales, da F: x se queda en 1."
+     ],
+     "ans": "(2, 1, 1)",
+     "hint": "XOR con ambas verdaderas es F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p8",
+     "lvl": 3,
+     "title": "Deducción en cadena (lista del curso)",
+     "q": "<p>Si son falsas \\([\\neg(p\\to q)\\to r]\\to(s\\wedge r)\\) y \\(\\neg p\\vee q\\), halla el valor de verdad de:</p>",
+     "checks": [
+      {
+       "p": "a) \\([(t\\to p)\\wedge\\neg r]\\to p\\)",
+       "o": [
+        "Verdadero",
+        "Falso",
+        "Depende de t",
+        "No se puede determinar",
+        "Es una contradicción"
+       ]
+      },
+      {
+       "p": "b) \\(s\\to(p\\leftrightarrow t)\\)",
+       "o": [
+        "Verdadero",
+        "Falso",
+        "Depende de t",
+        "No se puede determinar",
+        "Es una contradicción"
+       ]
+      }
+     ],
+     "steps": [
+      "Empieza por la más fácil: \\(\\neg p\\vee q\\) es falsa. Una «o» falsa obliga a que ambas partes sean F: \\(\\neg p=F\\) (o sea \\(p=V\\)) y \\(q=F\\).",
+      "Entonces \\(p\\to q=V\\to F=F\\), y su negación \\(\\neg(p\\to q)=V\\).",
+      "La primera proposición es una condicional falsa: lo de antes, \\(\\neg(p\\to q)\\to r\\), es V, y lo de después, \\(s\\wedge r\\), es F. Como \\(V\\to r\\) debe ser V, \\(r=V\\); y \\(s\\wedge r=F\\) con \\(r=V\\) obliga a \\(s=F\\).",
+      "a) Lo de después de la flecha es \\(p=V\\). Si el final es V, la condicional es V: <b>Verdadero</b>.",
+      "b) Lo de antes de la flecha es \\(s=F\\). Si el inicio es F, la condicional es V (no importa t): <b>Verdadero</b>."
+     ],
+     "ans": "Ambas verdaderas",
+     "hint": "Empieza por la disyunción falsa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "cond"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p9",
+     "lvl": 3,
+     "title": "Tipo parcial: deducir desde un bicondicional",
+     "q": "<p>Se sabe que \\((\\neg p\\to q)\\leftrightarrow(r\\leftrightarrow s)\\) es <b>falsa</b> y que \\(r\\) y \\(s\\) tienen el <b>mismo</b> valor de verdad. Halla el valor de verdad de:</p>",
+     "checks": [
+      {
+       "p": "a) \\((p\\vee\\neg q)\\wedge(r\\to s)\\)",
+       "o": [
+        "Verdadero",
+        "Falso",
+        "Depende de r y s",
+        "No se puede determinar",
+        "Es una contradicción"
+       ]
+      },
+      {
+       "p": "b) \\((p\\leftrightarrow q)\\to(r\\wedge\\neg s)\\)",
+       "o": [
+        "Falso",
+        "Verdadero",
+        "Depende de r y s",
+        "No se puede determinar",
+        "Es una contradicción"
+       ]
+      }
+     ],
+     "steps": [
+      "Si r y s valen lo mismo, \\(r\\leftrightarrow s=V\\).",
+      "El bicondicional grande es falso, así que sus lados son distintos: como la derecha es V, la izquierda es F: \\(\\neg p\\to q=F\\).",
+      "Una condicional falsa es V → F: \\(\\neg p=V\\) (o sea \\(p=F\\)) y \\(q=F\\).",
+      "a) \\(p\\vee\\neg q=F\\vee V=V\\). Y \\(r\\to s\\): como r y s son iguales, nunca es V → F, así que es V. \\(V\\wedge V=V\\): <b>Verdadero.</b>",
+      "b) \\(p\\leftrightarrow q\\): las dos son F, coinciden, da V. \\(r\\wedge\\neg s\\): si r y s son iguales, una de r o ¬s es F, así que da F. \\(V\\to F=F\\): <b>Falso.</b>"
+     ],
+     "ans": "a) Verdadero; b) Falso",
+     "hint": "Primero calcula r ↔ s.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "cond"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "p10",
+     "lvl": 3,
+     "title": "Tipo parcial: varias pistas a la vez",
+     "q": "<p>Se sabe que \\((p\\veebar q)\\wedge(r\\to s)\\) es verdadera, que \\(s\\) es falsa y que \\(p\\to r\\) es verdadera.</p>",
+     "checks": [
+      {
+       "p": "a) Valores de \\(p,\\ q,\\ r\\)",
+       "o": [
+        "p = F, q = V, r = F",
+        "p = V, q = F, r = F",
+        "p = F, q = V, r = V",
+        "p = V, q = F, r = V",
+        "No se pueden determinar"
+       ]
+      },
+      {
+       "p": "b) Valor de \\((q\\wedge\\neg r)\\to(p\\vee s)\\)",
+       "o": [
+        "Falso",
+        "Verdadero",
+        "Depende de r y s",
+        "No se puede determinar",
+        "Es una contradicción"
+       ]
+      }
+     ],
+     "steps": [
+      "Una «y» verdadera: sus dos partes son V. Entonces \\(p\\veebar q=V\\) y \\(r\\to s=V\\).",
+      "\\(r\\to s=V\\) con \\(s=F\\): para no ser V → F, necesitamos \\(r=F\\).",
+      "\\(p\\to r=V\\) con \\(r=F\\): por lo mismo, \\(p=F\\).",
+      "\\(p\\veebar q=V\\) significa que p y q son distintas: como \\(p=F\\), \\(q=V\\).",
+      "b) \\(q\\wedge\\neg r=V\\wedge V=V\\) y \\(p\\vee s=F\\vee F=F\\). Queda \\(V\\to F=F\\): <b>Falso.</b>"
+     ],
+     "ans": "p = F, q = V, r = F; Falso",
+     "hint": "Empieza por s = F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cond"
+      ],
+      [],
+      [
+       "conect"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una proposición es V o F; con conectores armas proposiciones compuestas cuya verdad calculas con tablas.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\neg,\\wedge,\\vee,\\veebar,\\to,\\leftrightarrow\\).</li><li>\\(p\\to q\\) es F solo si \\(p=V\\) y \\(q=F\\).</li><li>Con \\(n\\) variables hay \\(2^n\\) filas.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> «Si llueve, llevo paraguas» es falsa solo si llueve y no llevo paraguas.</div>\n<div class=\"err\"><b>Error común:</b> considerar proposición a una pregunta o a «x es par».</div>"
+  },
+  {
+   "id": "equiv",
+   "name": "Equivalencias y formas normales",
+   "teo": "<p><strong>Tautología:</strong> siempre V. <strong>Contradicción:</strong> siempre F. <strong>Contingencia:</strong> ni una ni otra. Dos proposiciones son <strong>equivalentes</strong> (\\(\\equiv\\)) si tienen la misma tabla, es decir, si \\(p_1\\leftrightarrow p_2\\) es tautología.</p>\n<p><strong>Leyes clave:</strong> De Morgan \\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\), \\(\\neg(p\\vee q)\\equiv\\neg p\\wedge\\neg q\\); condicional \\(p\\to q\\equiv\\neg p\\vee q\\); contrarrecíproca \\(p\\to q\\equiv\\neg q\\to\\neg p\\); doble negación; distributiva; absorción \\(p\\vee(p\\wedge q)\\equiv p\\); tercio excluido \\(p\\vee\\neg p\\equiv V\\); contradicción \\(p\\wedge\\neg p\\equiv F\\).</p>\n<p><strong>Forma normal disyuntiva (FND):</strong> disyunción de conjunciones de literales. <strong>Forma normal conjuntiva (FNC):</strong> conjunción de disyunciones. Una <strong>fórmula bien formada</strong> se construye con variables, \\(\\neg A\\) y \\((A\\circ B)\\), con paréntesis balanceados y cada conector binario entre dos fórmulas.</p>",
+   "form": [
+    "\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\)",
+    "\\(\\neg(p\\vee q)\\equiv\\neg p\\wedge\\neg q\\)",
+    "\\(p\\to q\\equiv\\neg p\\vee q\\)",
+    "\\(\\neg(p\\to q)\\equiv p\\wedge\\neg q\\)",
+    "\\(p\\to q\\equiv\\neg q\\to\\neg p\\)",
+    "\\(p\\leftrightarrow q\\equiv(p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\)"
+   ],
+   "ex": [
+    {
+     "id": "e1",
+     "lvl": 1,
+     "title": "De Morgan",
+     "q": "<p>¿A qué es equivalente \\(\\neg(p\\wedge q)\\)?</p>",
+     "checks": [
+      {
+       "p": "Equivalente",
+       "o": [
+        "\\(\\neg p\\vee\\neg q\\)",
+        "\\(\\neg p\\wedge\\neg q\\)",
+        "\\(p\\vee q\\)",
+        "\\(\\neg p\\wedge q\\)",
+        "\\(p\\to\\neg q\\) no es equivalente"
+       ]
+      }
+     ],
+     "steps": [
+      "De Morgan: al meter la negación dentro del paréntesis, se niega cada letra y la «y» se cambia por «o».",
+      "\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\). En palabras: «no pasan las dos» = «al menos una no pasa»."
+     ],
+     "ans": "\\(\\neg p\\vee\\neg q\\)",
+     "hint": "Niega y cambia el conector.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad",
+       "demorgan"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "e2",
+     "lvl": 1,
+     "title": "Clasificación: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\neg p\\vee p\\) es una tautología.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\([(p\\wedge q)\\vee q]\\wedge\\neg q\\) es una contradicción.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(p\\to q\\equiv q\\to p\\).",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) \\(\\neg p\\vee p\\): o p es V o lo es su negación, así que siempre da V. Es tautología: <b>Verdadero</b>.",
+      "b) \\((p\\wedge q)\\vee q\\) vale lo mismo que q (si q es V todo es V; si q es F todo es F). Queda \\(q\\wedge\\neg q\\), que nunca es V: contradicción. <b>Verdadero</b>.",
+      "c) \\(q\\to p\\) es la recíproca y no vale lo mismo: con p = V y q = F, la primera da F y la segunda V. <b>Falso</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "La recíproca no es equivalente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyes"
+      ],
+      [],
+      [
+       "contrar",
+       "verif"
+      ]
+     ]
+    },
+    {
+     "id": "e3",
+     "lvl": 2,
+     "title": "Tabla y clasificación",
+     "q": "<p>Analiza \\(p\\vee\\neg(p\\wedge q)\\).</p>",
+     "checks": [
+      {
+       "t": "tt",
+       "p": "Completa la tabla",
+       "vars": [
+        "p",
+        "q"
+       ],
+       "cols": [
+        {
+         "h": "p\\vee\\neg(p\\wedge q)",
+         "v": [
+          "V",
+          "V",
+          "V",
+          "V"
+         ]
+        }
+       ]
+      },
+      {
+       "p": "La proposición es una…",
+       "o": [
+        "Tautología",
+        "Contradicción",
+        "Contingencia",
+        "Equivalencia",
+        "Falacia"
+       ]
+      }
+     ],
+     "steps": [
+      "Separa en dos casos según p.",
+      "Si \\(p=V\\): «V o lo que sea» es V. Si \\(p=F\\): \\(p\\wedge q=F\\), su negación es V, y «algo o V» es V.",
+      "En todas las filas da V: es una tautología."
+     ],
+     "ans": "Tautología",
+     "hint": "Separa los casos p = V y p = F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "taut"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "e4",
+     "lvl": 2,
+     "title": "Negar una condicional",
+     "q": "<p>¿A qué es equivalente \\(\\neg(p\\to q)\\)?</p>",
+     "checks": [
+      {
+       "p": "Equivalente",
+       "o": [
+        "\\(p\\wedge\\neg q\\)",
+        "\\(\\neg p\\to\\neg q\\)",
+        "\\(\\neg p\\wedge q\\)",
+        "\\(\\neg p\\vee q\\)",
+        "\\(q\\to p\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero escribe la condicional como «o»: \\(p\\to q\\equiv\\neg p\\vee q\\).",
+      "Ahora niega con De Morgan: \\(\\neg(\\neg p\\vee q)\\equiv p\\wedge\\neg q\\). En palabras: la promesa «si p, entonces q» se rompe cuando p pasa y q no."
+     ],
+     "ans": "\\(p\\wedge\\neg q\\)",
+     "hint": "Primero pásala a disyunción.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyes"
+      ],
+      [
+       "demorgan"
+      ]
+     ]
+    },
+    {
+     "id": "e5",
+     "lvl": 3,
+     "title": "Forma normal disyuntiva",
+     "q": "<p>¿Cuál es una FND de \\(p\\leftrightarrow q\\)?</p>",
+     "checks": [
+      {
+       "p": "FND",
+       "o": [
+        "\\((p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\)",
+        "\\((p\\wedge\\neg q)\\vee(\\neg p\\wedge q)\\)",
+        "\\((\\neg p\\vee q)\\wedge(p\\vee\\neg q)\\)",
+        "\\((p\\vee q)\\wedge(\\neg p\\vee\\neg q)\\)",
+        "\\(p\\wedge q\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La FND se arma con las filas donde la fórmula es V: una «y» por fila, y todas unidas con «o».",
+      "\\(p\\leftrightarrow q\\) es V cuando p y q son iguales: filas (V,V) y (F,F). Eso da \\((p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\). Ojo: \\((\\neg p\\vee q)\\wedge(p\\vee\\neg q)\\) también vale lo mismo, pero es una FNC (una «y» de «o»)."
+     ],
+     "ans": "\\((p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\)",
+     "hint": "FND: una conjunción por cada fila V.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conect"
+      ],
+      [
+       "fn"
+      ]
+     ]
+    },
+    {
+     "id": "e6",
+     "lvl": 3,
+     "title": "Fórmula bien formada",
+     "q": "<p>¿Cuál es una fórmula bien formada?</p>",
+     "checks": [
+      {
+       "p": "fbf",
+       "o": [
+        "\\(((p\\to q)\\wedge\\neg r)\\)",
+        "\\((p\\to\\vee q)\\)",
+        "\\(p\\neg\\wedge q\\)",
+        "\\(((p\\wedge q)\\)",
+        "\\(\\neg(p\\ q)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Revisa tres cosas: paréntesis que abren y cierran, cada conector \\(\\wedge,\\vee,\\to\\) entre dos fórmulas, y \\(\\neg\\) delante de una fórmula.",
+      "\\(((p\\to q)\\wedge\\neg r)\\) cumple todo. Las otras fallan: \\(\\to\\vee\\) junta dos conectores, \\(p\\neg\\wedge q\\) pone \\(\\neg\\) mal, \\(((p\\wedge q)\\) no cierra un paréntesis y \\(\\neg(p\\ q)\\) no tiene conector entre p y q."
+     ],
+     "ans": "\\(((p\\to q)\\wedge\\neg r)\\)",
+     "hint": "Revisa paréntesis y operandos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "e7",
+     "lvl": 3,
+     "title": "Ordena la simplificación",
+     "q": "<p>Demuestra que \\(\\neg(p\\vee\\neg q)\\vee(\\neg p\\wedge\\neg q)\\equiv\\neg p\\).</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "\\(\\neg(p\\vee\\neg q)\\vee(\\neg p\\wedge\\neg q)\\)",
+        "\\(\\equiv(\\neg p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\) — De Morgan y doble negación",
+        "\\(\\equiv\\neg p\\wedge(q\\vee\\neg q)\\) — distributiva",
+        "\\(\\equiv\\neg p\\wedge V\\) — tercio excluido",
+        "\\(\\equiv\\neg p\\) — identidad"
+       ]
+      }
+     ],
+     "steps": [
+      "Plan: quitar la negación de afuera, sacar factor común y simplificar. Primero, De Morgan y doble negación: \\(\\neg(p\\vee\\neg q)=\\neg p\\wedge q\\).",
+      "Factor común \\(\\neg p\\) (distributiva): \\((\\neg p\\wedge q)\\vee(\\neg p\\wedge\\neg q)=\\neg p\\wedge(q\\vee\\neg q)\\). Como \\(q\\vee\\neg q\\) siempre es V y «algo y V» es ese algo, queda \\(\\neg p\\)."
+     ],
+     "ans": "\\(\\neg p\\)",
+     "hint": "Primero elimina la negación exterior.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fact",
+       "leyes"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "e8",
+     "lvl": 3,
+     "title": "Tipo parcial: tabla de 8 filas y FND",
+     "q": "<p>La proposición \\(t\\) es verdadera solo cuando \\(p\\) y \\(q\\) tienen valores <b>distintos</b> y \\(r\\) es <b>verdadera</b>; en cualquier otro caso es falsa.</p>",
+     "checks": [
+      {
+       "t": "tt",
+       "p": "Completa la columna de t",
+       "vars": [
+        "p",
+        "q",
+        "r"
+       ],
+       "cols": [
+        {
+         "h": "t",
+         "v": [
+          "F",
+          "F",
+          "V",
+          "F",
+          "V",
+          "F",
+          "F",
+          "F"
+         ]
+        }
+       ]
+      },
+      {
+       "p": "Una FND de t",
+       "o": [
+        "\\((p\\wedge\\neg q\\wedge r)\\vee(\\neg p\\wedge q\\wedge r)\\)",
+        "\\((p\\wedge q\\wedge r)\\vee(\\neg p\\wedge\\neg q\\wedge r)\\)",
+        "\\((p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge q\\wedge\\neg r)\\)",
+        "\\((p\\wedge\\neg q\\wedge r)\\wedge(\\neg p\\wedge q\\wedge r)\\)",
+        "\\((\\neg p\\vee q\\vee\\neg r)\\wedge(p\\vee\\neg q\\vee\\neg r)\\)"
+       ]
+      },
+      {
+       "p": "¿Cuántos paréntesis tiene la FNC que sale directamente de la tabla?",
+       "o": [
+        "6",
+        "2",
+        "3",
+        "8",
+        "5"
+       ]
+      }
+     ],
+     "steps": [
+      "Traduce: «p y q distintas» es \\(p\\veebar q\\); «r verdadera» es \\(r\\). Entonces \\(t\\equiv(p\\veebar q)\\wedge r\\).",
+      "t es V solo en dos filas: VFV y FVV (p y q distintas, r = V). Columna: F F V F V F F F.",
+      "FND: una «y» por cada fila V, unidas con «o»: \\((p\\wedge\\neg q\\wedge r)\\vee(\\neg p\\wedge q\\wedge r)\\).",
+      "FNC: un paréntesis por cada fila F. Hay 8 − 2 = 6 filas F, así que salen 6 paréntesis."
+     ],
+     "ans": "FFVFVFFF; \\((p\\wedge\\neg q\\wedge r)\\vee(\\neg p\\wedge q\\wedge r)\\); 6",
+     "hint": "FND: filas V. FNC: filas F.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conect"
+      ],
+      [],
+      [
+       "fn"
+      ],
+      [
+       "fn"
+      ]
+     ]
+    },
+    {
+     "id": "e9",
+     "lvl": 3,
+     "title": "Tipo parcial: la mayoría manda",
+     "q": "<p>La proposición \\(t\\) es verdadera cuando <b>al menos dos</b> de \\(p,\\ q,\\ r\\) son verdaderas.</p>",
+     "checks": [
+      {
+       "t": "tt",
+       "p": "Completa la columna de t",
+       "vars": [
+        "p",
+        "q",
+        "r"
+       ],
+       "cols": [
+        {
+         "h": "t",
+         "v": [
+          "V",
+          "V",
+          "V",
+          "F",
+          "V",
+          "F",
+          "F",
+          "F"
+         ]
+        }
+       ]
+      },
+      {
+       "p": "Una FNC de t",
+       "o": [
+        "\\((\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\wedge(p\\vee q\\vee\\neg r)\\wedge(p\\vee q\\vee r)\\)",
+        "\\((p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(\\neg p\\vee\\neg q\\vee r)\\)",
+        "\\((\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\wedge(p\\vee q\\vee\\neg r)\\)",
+        "\\((p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(\\neg p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee\\neg q\\vee\\neg r)\\)",
+        "\\((p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge q\\wedge\\neg r)\\vee(\\neg p\\wedge\\neg q\\wedge r)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cuenta las V en cada fila. Con 2 o 3 V, t es V: VVV, VVF, VFV, FVV. Columna: V V V F V F F F.",
+      "FNC: usa las filas F: VFF, FVF, FFV y FFF.",
+      "Por cada una, una «o» al revés (\\(\\neg\\) donde hay V): VFF → \\(\\neg p\\vee q\\vee r\\); FVF → \\(p\\vee\\neg q\\vee r\\); FFV → \\(p\\vee q\\vee\\neg r\\); FFF → \\(p\\vee q\\vee r\\).",
+      "Únelas con «y». Si te olvidas de la fila FFF, la fórmula daría V en una fila donde t es F."
+     ],
+     "ans": "VVVFVFFF; FNC con 4 paréntesis",
+     "hint": "Cuenta cuántas V hay en cada fila.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "fn"
+      ],
+      [],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Dos fórmulas son equivalentes si tienen la misma tabla; las leyes permiten simplificar sin tablas.</p>\n<h3>Conceptos clave</h3><ul><li>De Morgan, condicional \\(p\\to q\\equiv\\neg p\\vee q\\).</li><li>Contrarrecíproca \\(p\\to q\\equiv\\neg q\\to\\neg p\\).</li><li>Absorción \\(p\\vee(p\\wedge q)\\equiv p\\).</li><li>Tautología / contradicción / contingencia.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\neg(p\\to q)\\equiv p\\wedge\\neg q\\).</div>\n<div class=\"err\"><b>Error común:</b> negar \\(p\\to q\\) como \\(\\neg p\\to\\neg q\\).</div>"
+  },
+  {
+   "id": "infer",
+   "name": "Reglas de inferencia",
+   "teo": "<p>Un argumento es <strong>válido</strong> si, siempre que las premisas son verdaderas, la conclusión también lo es; es decir, si \\((P_1\\wedge\\dots\\wedge P_n)\\to C\\) es tautología.</p>\n<p><strong>Reglas válidas:</strong> modus ponens (\\(p\\to q,\\ p\\ \\therefore q\\)); modus tollens (\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\)); generalización (\\(p\\ \\therefore p\\vee q\\)); especialización (\\(p\\wedge q\\ \\therefore p\\)); conjunción; silogismo disyuntivo o eliminación (\\(p\\vee q,\\ \\neg p\\ \\therefore q\\)); silogismo hipotético o transitividad (\\(p\\to q,\\ q\\to r\\ \\therefore p\\to r\\)).</p>\n<p><strong>Falacias:</strong> afirmación del consecuente (\\(p\\to q,\\ q\\ \\therefore p\\)) y negación del antecedente (\\(p\\to q,\\ \\neg p\\ \\therefore\\neg q\\)).</p>",
+   "form": [
+    "MP: \\(p\\to q,\\ p\\ \\therefore q\\)",
+    "MT: \\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\)",
+    "Silogismo disyuntivo: \\(p\\vee q,\\ \\neg p\\ \\therefore q\\)",
+    "Transitividad: \\(p\\to q,\\ q\\to r\\ \\therefore p\\to r\\)",
+    "Falacia: \\(p\\to q,\\ q\\ \\therefore p\\)"
+   ],
+   "ex": [
+    {
+     "id": "i1",
+     "lvl": 1,
+     "title": "Identifica la regla",
+     "q": "<p>\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\) es:</p>",
+     "checks": [
+      {
+       "p": "Regla",
+       "o": [
+        "Modus tollens",
+        "Modus ponens",
+        "Silogismo disyuntivo",
+        "Afirmación del consecuente",
+        "Generalización"
+       ]
+      }
+     ],
+     "steps": [
+      "Tenemos «si p, entonces q» y nos dicen que q NO pasó.",
+      "Si p hubiera pasado, q también habría pasado. Como q no pasó, p tampoco: \\(\\neg p\\). Eso es <b>modus tollens</b> (niegas el final, niegas el inicio)."
+     ],
+     "ans": "Modus tollens",
+     "hint": "Tollens = negar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond",
+       "reglas",
+       "falacia"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "i2",
+     "lvl": 1,
+     "title": "¿Es válido?",
+     "q": "<p>«Si llueve, la pista está mojada. La pista está mojada. Por lo tanto, llovió.»</p>",
+     "checks": [
+      {
+       "p": "El argumento es…",
+       "o": [
+        "Inválido: afirmación del consecuente",
+        "Válido por modus ponens",
+        "Válido por modus tollens",
+        "Inválido: negación del antecedente",
+        "Válido por silogismo disyuntivo"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma: «si llueve, la pista se moja» y «la pista está mojada»; se concluye «llovió».",
+      "Error: la pista pudo mojarse por otra causa (alguien la regó). Que pase el resultado no dice cuál fue la causa. Es la falacia de <b>afirmación del consecuente</b>."
+     ],
+     "ans": "Falacia de afirmación del consecuente",
+     "hint": "¿Hay otra forma de que la pista esté mojada?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "falacia"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "i3",
+     "lvl": 1,
+     "title": "Validez: V o F",
+     "q": "<p>Indica si cada argumento es válido.</p>",
+     "checks": [
+      {
+       "p": "a) \\(p\\to q,\\ p\\ \\therefore q\\) es válido.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(p\\vee q,\\ \\neg p\\ \\therefore q\\) es válido.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(p\\to q,\\ \\neg p\\ \\therefore\\neg q\\) es válido.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) Si p, entonces q; y pasó p: entonces pasa q. Modus ponens, <b>válido</b>.",
+      "b) Pasa p o pasa q; p no pasó: tiene que ser q. Silogismo disyuntivo, <b>válido</b>.",
+      "c) Si p, entonces q; y p no pasó: no sabemos nada de q (puede pasar por otra razón). Negación del antecedente: inválido, así que la afirmación es <b>Falsa</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "Cuidado con negar el antecedente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "reglas"
+      ],
+      [],
+      [
+       "cond",
+       "falacia"
+      ]
+     ]
+    },
+    {
+     "id": "i4",
+     "lvl": 2,
+     "title": "Aplica la regla (clase)",
+     "q": "<p>«Si la suma de los dígitos de 371 487 es divisible entre 3, entonces 371 487 es divisible entre 3. La suma de sus dígitos es divisible entre 3.» ¿Qué se concluye?</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "371 487 es divisible entre 3 (modus ponens)",
+        "371 487 no es divisible entre 3",
+        "Nada, es una falacia",
+        "La suma no es divisible entre 3",
+        "371 487 es primo"
+       ]
+      }
+     ],
+     "steps": [
+      "La primera frase es «si (la suma de dígitos es divisible entre 3), entonces (371 487 es divisible entre 3)». La segunda dice que sí se cumple lo del «si…».",
+      "Si se cumple el «si…», se cumple el «entonces…»: 371 487 es divisible entre 3 (modus ponens). Comprobación: \\(3+7+1+4+8+7=30\\)."
+     ],
+     "ans": "Divisible entre 3",
+     "hint": "Se afirma el antecedente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond",
+       "reglas"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "i5",
+     "lvl": 2,
+     "title": "Verifica la validez (clase)",
+     "q": "<p>¿Es válido \\(p\\to q,\\ r\\to\\neg q\\ \\therefore p\\to\\neg r\\)?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "Válido: la contrarrecíproca de r → ¬q es q → ¬r, y por transitividad p → ¬r",
+        "Inválido: afirmación del consecuente",
+        "Válido por modus ponens directo",
+        "Inválido: faltan premisas",
+        "Válido solo si p es verdadera"
+       ]
+      }
+     ],
+     "steps": [
+      "La idea es unir p con \\(\\neg r\\) con una cadena de flechas. \\(r\\to\\neg q\\) vale lo mismo que su contrarrecíproca \\(q\\to\\neg r\\) (se invierte y se niega).",
+      "Ahora tienes \\(p\\to q\\) y \\(q\\to\\neg r\\). Encadenadas (silogismo hipotético): \\(p\\to\\neg r\\). Es <b>válido</b>."
+     ],
+     "ans": "Válido",
+     "hint": "Usa la contrarrecíproca.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "contrar",
+       "verif"
+      ],
+      [
+       "reglas"
+      ]
+     ]
+    },
+    {
+     "id": "i6",
+     "lvl": 3,
+     "title": "Ordena la deducción",
+     "q": "<p>Premisas: \\(p\\to q\\), \\(q\\to r\\), \\(p\\). Deduce \\(r\\).</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "1. \\(p\\to q\\) (premisa)",
+        "2. \\(p\\) (premisa)",
+        "3. \\(q\\) (modus ponens en 1 y 2)",
+        "4. \\(q\\to r\\) (premisa)",
+        "5. \\(r\\) (modus ponens en 3 y 4)"
+       ]
+      }
+     ],
+     "steps": [
+      "Siempre que tengas «si A, entonces B» y tengas A, consigues B (modus ponens). Con \\(p\\to q\\) y \\(p\\) obtienes \\(q\\); con \\(q\\to r\\) y ese \\(q\\), obtienes \\(r\\)."
+     ],
+     "ans": "\\(r\\)",
+     "hint": "Primero consigue q.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond",
+       "reglas"
+      ]
+     ]
+    },
+    {
+     "id": "i7",
+     "lvl": 3,
+     "title": "Eliminación (clase)",
+     "q": "<p>Se sabe que \\(x-3=0\\) o \\(x+2=0\\), y que \\(x\\) no es negativo. ¿Qué se concluye y con qué regla?</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "\\(x=3\\), por silogismo disyuntivo",
+        "\\(x=-2\\), por modus ponens",
+        "\\(x=3\\) o \\(x=-2\\), no se puede decidir",
+        "\\(x=0\\), por especialización",
+        "Nada, es una falacia"
+       ]
+      }
+     ],
+     "steps": [
+      "El «o» dice: \\(x=3\\) o \\(x=-2\\). Pero x no es negativo, así que \\(x=-2\\) queda descartado.",
+      "Si de dos opciones una es imposible, queda la otra: \\(x=3\\). Esa regla es el silogismo disyuntivo."
+     ],
+     "ans": "\\(x=3\\)",
+     "hint": "Descarta una parte del «o».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "conect"
+      ]
+     ]
+    },
+    {
+     "id": "i8",
+     "lvl": 2,
+     "title": "Tipo parcial: encadenar tollens",
+     "q": "<p>¿Es válido el argumento: \\(p\\to\\neg r\\), \\(q\\to r\\), \\(\\neg s\\to p\\ \\ \\therefore\\ q\\to s\\)?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "Válido",
+        "Inválido: con q = V y s = F las premisas son verdaderas",
+        "Inválido: afirmación del consecuente",
+        "Válido solo si p es verdadera",
+        "Inválido: falta una premisa con s"
+       ]
+      }
+     ],
+     "steps": [
+      "La conclusión es \\(q\\to s\\): supón \\(q\\) verdadera y trata de llegar a \\(s\\).",
+      "Con \\(q\\) y \\(q\\to r\\): \\(r\\) (modus ponens).",
+      "Con \\(r\\) verdadera, \\(\\neg r\\) es F. En \\(p\\to\\neg r\\) el final es F, así que \\(p\\) es F (modus tollens).",
+      "En \\(\\neg s\\to p\\), ahora \\(p\\) es F, así que \\(\\neg s\\) es F: \\(s\\) es V (modus tollens). Llegamos a s: <b>válido.</b>"
+     ],
+     "ans": "Válido",
+     "hint": "Supón q y avanza.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond"
+      ],
+      [
+       "reglas"
+      ],
+      [
+       "reglas"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "i9",
+     "lvl": 3,
+     "title": "Tipo parcial: ¿dilema al revés?",
+     "q": "<p>¿Es válido: \\((p\\to q)\\wedge(r\\to s)\\), \\(q\\vee s\\ \\ \\therefore\\ p\\vee r\\)?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "Inválido: con p = F, r = F y q = V las premisas son V y la conclusión F",
+        "Válido por dilema constructivo",
+        "Válido por modus ponens",
+        "Inválido: las premisas se contradicen",
+        "Válido por silogismo disyuntivo"
+       ]
+      }
+     ],
+     "steps": [
+      "Para ver si es inválido, busca una fila con premisas V y conclusión F.",
+      "Conclusión F: \\(p=F\\) y \\(r=F\\). Con antecedentes F, \\(p\\to q\\) y \\(r\\to s\\) son V sin importar q y s.",
+      "Falta que \\(q\\vee s\\) sea V: toma \\(q=V\\). Todas las premisas son V y la conclusión es F: <b>inválido.</b>",
+      "Es como afirmar el consecuente: que pasen q o s no dice si pasaron p o r."
+     ],
+     "ans": "Inválido",
+     "hint": "Busca un contraejemplo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cond"
+      ],
+      [],
+      [
+       "falacia"
+      ]
+     ]
+    },
+    {
+     "id": "i10",
+     "lvl": 3,
+     "title": "Tipo parcial: dilema destructivo",
+     "q": "<p>¿Es válido: \\((p\\to q)\\wedge(r\\to s)\\), \\(\\neg q\\vee\\neg s\\ \\ \\therefore\\ \\neg p\\vee\\neg r\\)?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "Válido (dilema destructivo)",
+        "Inválido: negación del antecedente",
+        "Inválido: con p = V y r = V las premisas son V",
+        "Válido solo si q es falsa",
+        "Inválido: afirmación del consecuente"
+       ]
+      }
+     ],
+     "steps": [
+      "Sabemos que falla q o falla s.",
+      "Caso 1: falla q (\\(\\neg q\\)). Con \\(p\\to q\\), por modus tollens, \\(\\neg p\\). Entonces \\(\\neg p\\vee\\neg r\\) es V.",
+      "Caso 2: falla s (\\(\\neg s\\)). Con \\(r\\to s\\), por modus tollens, \\(\\neg r\\). Entonces \\(\\neg p\\vee\\neg r\\) es V.",
+      "En los dos casos la conclusión es V: <b>válido.</b> Es el dilema destructivo (como el constructivo, pero con tollens)."
+     ],
+     "ans": "Válido",
+     "hint": "Revisa los dos casos del «o».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "reglas"
+      ],
+      [],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un argumento es válido si las premisas verdaderas garantizan la conclusión.</p>\n<h3>Conceptos clave</h3><ul><li>Modus ponens y tollens.</li><li>Silogismo hipotético y disyuntivo.</li><li>Falacias: afirmar el consecuente, negar el antecedente.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\) (tollens).</div>\n<div class=\"err\"><b>Error común:</b> aceptar \\(p\\to q,\\ q\\ \\therefore p\\).</div>"
+  },
+  {
+   "id": "pred",
+   "name": "Predicados y cuantificadores",
+   "teo": "<p>Un <strong>predicado</strong> (proposición abierta) tiene variables; se vuelve proposición al sustituir valores del <strong>dominio</strong> o al cuantificarlo. \\(\\forall x\\,P(x)\\): todos cumplen. \\(\\exists x\\,P(x)\\): al menos uno cumple.</p>\n<p><strong>Negación:</strong> \\(\\neg\\forall x\\,P(x)\\equiv\\exists x\\,\\neg P(x)\\) y \\(\\neg\\exists x\\,P(x)\\equiv\\forall x\\,\\neg P(x)\\). Con varios cuantificadores, se cambian todos y se niega el predicado del final. <strong>El orden importa:</strong> \\(\\forall x\\,\\exists y\\) no es lo mismo que \\(\\exists y\\,\\forall x\\).</p>\n<p>Un \\(\\forall\\) se <strong>refuta con un contraejemplo</strong>; un \\(\\exists\\) se <strong>prueba con un ejemplo</strong>. Limitación: la lógica proposicional no puede expresar «todos» o «algunos»; para eso están los predicados.</p>",
+   "form": [
+    "\\(\\neg\\forall x\\,P(x)\\equiv\\exists x\\,\\neg P(x)\\)",
+    "\\(\\neg\\exists x\\,P(x)\\equiv\\forall x\\,\\neg P(x)\\)",
+    "\\(\\neg\\forall x\\exists y\\,P\\equiv\\exists x\\forall y\\,\\neg P\\)",
+    "∀: se refuta con un contraejemplo",
+    "∃: se prueba con un ejemplo"
+   ],
+   "ex": [
+    {
+     "id": "q1",
+     "lvl": 1,
+     "title": "Evaluar un predicado (clase)",
+     "q": "<p>Sea \\(P(x):\\ x^2\\gt x\\) en \\(\\mathbb{R}\\). ¿Cuál es falsa?</p>",
+     "checks": [
+      {
+       "p": "Falsa",
+       "o": [
+        "\\(P(\\tfrac12)\\)",
+        "\\(P(2)\\)",
+        "\\(P(-\\tfrac12)\\)",
+        "\\(P(-3)\\)",
+        "\\(P(5)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Reemplaza cada valor y compara \\(x^2\\) con x. Con \\(x=\\tfrac12\\): \\(x^2=\\tfrac14\\), que NO es mayor que \\(\\tfrac12\\). Esa es la falsa. (Con 2, 5, −3 o −½ el cuadrado sí gana.)"
+     ],
+     "ans": "\\(P(\\tfrac12)\\)",
+     "hint": "Prueba con fracciones entre 0 y 1.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "q2",
+     "lvl": 1,
+     "title": "Negar un universal",
+     "q": "<p>¿Cuál es la negación de \\(\\forall x\\in\\mathbb{R}:\\ x^2\\ge0\\)?</p>",
+     "checks": [
+      {
+       "p": "Negación",
+       "o": [
+        "\\(\\exists x\\in\\mathbb{R}:\\ x^2\\lt0\\)",
+        "\\(\\forall x\\in\\mathbb{R}:\\ x^2\\lt0\\)",
+        "\\(\\exists x\\in\\mathbb{R}:\\ x^2\\ge0\\)",
+        "\\(\\forall x\\in\\mathbb{R}:\\ x^2\\le0\\)",
+        "\\(\\neg\\exists x:\\ x^2\\ge0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Negar «todos cumplen» es decir «hay al menos uno que no cumple»: el \\(\\forall\\) pasa a \\(\\exists\\) y \\(x^2\\ge0\\) se niega a \\(x^2\\lt0\\). Resultado: \\(\\exists x\\in\\mathbb{R}:\\ x^2\\lt0\\)."
+     ],
+     "ans": "\\(\\exists x:\\ x^2\\lt0\\)",
+     "hint": "Cambia el cuantificador y niega el predicado.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ]
+     ]
+    },
+    {
+     "id": "q3",
+     "lvl": 1,
+     "title": "Cuantificadores: V o F",
+     "q": "<p>Indica si cada proposición es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\exists n\\in\\mathbb{N}:\\ n\\) es primo y par.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\forall n\\in\\mathbb{N}:\\ n^2\\ge n\\).",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\exists x\\in\\mathbb{R}:\\ x^2+1=0\\).",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "Regla: un \\(\\exists\\) es V si encuentras un ejemplo; un \\(\\forall\\) es F si encuentras un contraejemplo. a) \\(n=2\\) es primo y par: <b>Verdadero</b>.",
+      "b) Multiplicar n por n (con n ≥ 1) no lo achica, y con n = 0 queda 0 ≥ 0: <b>Verdadero</b>.",
+      "c) \\(x^2\\) nunca es negativo, así que \\(x^2+1\\) vale 1 o más y nunca 0: <b>Falso</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "Busca un ejemplo o un contraejemplo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ejce"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "q4",
+     "lvl": 2,
+     "title": "Predicado de tres variables (clase)",
+     "q": "<p>\\(Q(a,b,c):\\ a^2+b^2=c^2\\) en \\(\\mathbb{N}\\). ¿Cuál es verdadera?</p>",
+     "checks": [
+      {
+       "p": "Verdadera",
+       "o": [
+        "\\(Q(3,4,5)\\)",
+        "\\(Q(1,1,1)\\)",
+        "\\(Q(1,7,9)\\)",
+        "\\(Q(2,2,4)\\)",
+        "\\(Q(5,12,14)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Reemplaza y revisa \\(a^2+b^2=c^2\\): \\(Q(3,4,5)\\): \\(9+16=25\\) ✓. Las demás fallan: \\(1+1\\ne1\\); \\(1+49\\ne81\\); \\(4+4\\ne16\\); \\(25+144\\ne196\\)."
+     ],
+     "ans": "\\(Q(3,4,5)\\)",
+     "hint": "Sustituye y compara.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "q5",
+     "lvl": 2,
+     "title": "Negar dos cuantificadores",
+     "q": "<p>Negación de \\(\\forall x\\,\\exists y:\\ x+y=0\\):</p>",
+     "checks": [
+      {
+       "p": "Negación",
+       "o": [
+        "\\(\\exists x\\,\\forall y:\\ x+y\\ne0\\)",
+        "\\(\\forall x\\,\\exists y:\\ x+y\\ne0\\)",
+        "\\(\\exists x\\,\\exists y:\\ x+y\\ne0\\)",
+        "\\(\\forall x\\,\\forall y:\\ x+y\\ne0\\)",
+        "\\(\\exists y\\,\\forall x:\\ x+y=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Para negar: cambia cada cuantificador (\\(\\forall\\leftrightarrow\\exists\\)) sin cambiar el orden y al final niega la condición. Queda \\(\\exists x\\,\\forall y:\\ x+y\\ne0\\)."
+     ],
+     "ans": "\\(\\exists x\\,\\forall y:\\ x+y\\ne0\\)",
+     "hint": "Cambia todos y niega el final.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ]
+     ]
+    },
+    {
+     "id": "q6",
+     "lvl": 3,
+     "title": "El orden importa",
+     "q": "<p>En \\(\\mathbb{Z}\\), indica el valor de verdad.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\forall x\\,\\exists y:\\ y\\gt x\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\exists y\\,\\forall x:\\ y\\gt x\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "Se lee de izquierda a derecha: el que aparece primero se elige primero. a) Te dan x y luego eliges y: basta \\(y=x+1\\). <b>Verdadero</b>.",
+      "b) Tendrías que elegir un y primero, uno solo mayor que todos los x. Pero con \\(x=y\\) falla (\\(y\\gt y\\) es falso). <b>Falso</b>."
+     ],
+     "ans": "V, F",
+     "hint": "¿El y puede depender de x?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "q7",
+     "lvl": 3,
+     "title": "Formalizar con predicados",
+     "q": "<p>Sea \\(P(n)\\): «n es primo». Formaliza: «Ningún número par mayor que 2 es primo».</p>",
+     "checks": [
+      {
+       "p": "Fórmula",
+       "o": [
+        "\\(\\forall n\\in\\mathbb{Z}:\\ (n\\ \\text{par}\\wedge n\\gt2)\\to\\neg P(n)\\)",
+        "\\(\\exists n\\in\\mathbb{Z}:\\ (n\\ \\text{par}\\wedge n\\gt2)\\wedge\\neg P(n)\\)",
+        "\\(\\forall n\\in\\mathbb{Z}:\\ (n\\ \\text{par}\\wedge n\\gt2)\\wedge\\neg P(n)\\)",
+        "\\(\\forall n\\in\\mathbb{Z}:\\ \\neg P(n)\\to(n\\ \\text{par}\\wedge n\\gt2)\\)",
+        "\\(\\neg\\forall n:\\ P(n)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "«Ningún A es B» significa «todo A no es B». Con \\(\\forall\\) se usa flecha: «para todo n, si n es par y mayor que 2, entonces n no es primo».",
+      "Si usaras \\(\\wedge\\) dirías que TODOS los enteros son pares, mayores que 2 y no primos, que no es lo que se quiere."
+     ],
+     "ans": "\\(\\forall n:\\ (\\text{par}\\wedge n\\gt2)\\to\\neg P(n)\\)",
+     "hint": "Con ∀ se usa →, no ∧.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "q8",
+     "lvl": 2,
+     "title": "Tipo parcial: fracciones y cuantificadores",
+     "q": "<p>Indica si cada proposición es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\exists x\\in\\mathbb{R}:\\ \\dfrac{x^2}{x^2+1}\\ge1\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) \\(\\forall x\\in\\mathbb{R}:\\ \\dfrac{1}{x^2+1}\\le1\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\exists x\\in\\mathbb{R}:\\ \\dfrac{1}{x^2+1}=1\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) El de abajo siempre es 1 más que el de arriba, así que la fracción siempre es menor que 1. Nunca llega a 1: <b>Falso.</b>",
+      "b) \\(x^2+1\\ge1\\), y 1 dividido entre algo que es 1 o más da 1 o menos. Vale para todos: <b>Verdadero.</b>",
+      "c) Basta un ejemplo: con \\(x=0\\), \\(\\frac{1}{0+1}=1\\). <b>Verdadero.</b>"
+     ],
+     "ans": "F, V, V",
+     "hint": "¿El denominador puede ser menor que 1?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ejce"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "q9",
+     "lvl": 2,
+     "title": "Tipo parcial: divisibilidad con ∀ y ∃",
+     "q": "<p>Indica si cada proposición es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\forall a\\in\\mathbb{Z}:\\ a\\mid a^2\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\exists a\\in\\mathbb{Z}:\\ a\\lt0\\ \\wedge\\ a\\mid1\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\forall a\\in\\mathbb{Z},\\ a\\ne0:\\ a\\mid(a+1)\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "Recuerda: \\(a\\mid b\\) significa \\(b=a\\cdot c\\) con c entero.",
+      "a) \\(a^2=a\\cdot a\\), y a es entero. Vale para todo a (incluso 0, porque \\(0=0\\cdot0\\)): <b>Verdadero.</b>",
+      "b) Ejemplo: \\(a=-1\\). Es negativo y \\(1=(-1)(-1)\\): <b>Verdadero.</b>",
+      "c) Contraejemplo: \\(a=2\\). ¿2 divide a 3? No. <b>Falso.</b>"
+     ],
+     "ans": "V, V, F",
+     "hint": "Para ∃ busca un ejemplo; para ∀, un contraejemplo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "defdiv"
+      ],
+      [],
+      [
+       "ejce"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "q10",
+     "lvl": 3,
+     "title": "Tipo parcial: ∀x ∃y en los reales",
+     "q": "<p>Indica si cada proposición es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\forall x\\in\\mathbb{R},\\ \\exists y\\in\\mathbb{R}:\\ y^3=x\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\forall x\\in\\mathbb{R},\\ \\exists y\\in\\mathbb{R}:\\ y^2=x+1\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) \\(\\exists y\\in\\mathbb{R},\\ \\forall x\\in\\mathbb{R}:\\ xy=0\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "En «\\(\\forall x\\,\\exists y\\)» primero te dan x y después tú eliges y (y puede depender de x).",
+      "a) Para cualquier x, elige \\(y=\\sqrt[3]{x}\\). La raíz cúbica existe también para negativos (\\(\\sqrt[3]{-8}=-2\\)): <b>Verdadero.</b>",
+      "b) Con \\(x=-2\\) se necesita \\(y^2=-1\\), imposible: <b>Falso.</b>",
+      "c) Aquí y se elige primero, uno solo para todos los x. Con \\(y=0\\): \\(x\\cdot0=0\\) siempre: <b>Verdadero.</b>"
+     ],
+     "ans": "V, F, V",
+     "hint": "¿Quién se elige primero?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "ejce"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "q11",
+     "lvl": 3,
+     "title": "Tipo parcial: ∃a ∀b en los enteros",
+     "q": "<p>Indica si cada proposición es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\exists a\\in\\mathbb{Z},\\ \\forall b\\in\\mathbb{Z}:\\ a\\le b^2\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\exists a\\in\\mathbb{Z},\\ \\forall b\\in\\mathbb{Z}:\\ ab=b\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\exists a\\in\\mathbb{Z},\\ \\forall b\\in\\mathbb{Z}:\\ a\\lt b\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "En «\\(\\exists a\\,\\forall b\\)» buscas un solo a que funcione con <b>todos</b> los b.",
+      "a) Con \\(a=0\\): \\(0\\le b^2\\) siempre, porque un cuadrado nunca es negativo. <b>Verdadero.</b>",
+      "b) Con \\(a=1\\): \\(1\\cdot b=b\\) siempre. <b>Verdadero.</b>",
+      "c) Elijas el a que elijas, prueba \\(b=a\\): \\(a\\lt a\\) es falso. Ningún a sirve: <b>Falso.</b> (Es igual que la pregunta 2d del parcial.)"
+     ],
+     "ans": "V, V, F",
+     "hint": "Busca un a «comodín».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [],
+      [
+       "ejce"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los cuantificadores convierten predicados en proposiciones.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\forall\\): todos; \\(\\exists\\): al menos uno.</li><li>\\(\\neg\\forall x\\,P\\equiv\\exists x\\,\\neg P\\).</li><li>El orden de cuantificadores importa.</li><li>Un contraejemplo refuta un \\(\\forall\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\neg\\forall x\\,(x^2\\gt0)\\equiv\\exists x\\,(x^2\\le0)\\) (verdadero con \\(x=0\\)).</div>\n<div class=\"err\"><b>Error común:</b> negar solo el cuantificador y no el predicado.</div>"
+  },
+  {
+   "id": "conj",
+   "name": "Conjuntos",
+   "teo": "<p>Un conjunto es una colección no ordenada y bien definida de objetos distintos: por extensión \\(\\{1,2,3\\}\\) o por comprensión \\(\\{x\\in A:\\ P(x)\\}\\). \\(\\{a,b\\}=\\{b,a\\}\\); el vacío \\(\\varnothing\\) es subconjunto de todo conjunto. No confundas \\(\\in\\) (pertenece un elemento) con \\(\\subseteq\\) (está contenido un conjunto).</p>\n<p><strong>Operaciones:</strong> \\(A\\cup B\\), \\(A\\cap B\\), \\(A-B\\) (en A y no en B), complemento \\(A'\\) (respecto al universo U). <strong>Producto cartesiano:</strong> \\(A\\times B=\\{(a,b)\\}\\), pares <em>ordenados</em>, \\(|A\\times B|=|A||B|\\). <strong>Conjunto potencia:</strong> \\(\\mathcal P(A)\\) es el conjunto de todos los subconjuntos, \\(|\\mathcal P(A)|=2^{|A|}\\). <strong>Cardinalidad:</strong> \\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</p>",
+   "form": [
+    "\\(A-B=A\\cap B'\\)",
+    "\\((A\\cup B)'=A'\\cap B'\\)",
+    "\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\)",
+    "\\(|A\\times B|=|A|\\cdot|B|\\)",
+    "\\(|\\mathcal P(A)|=2^{|A|}\\)"
+   ],
+   "ex": [
+    {
+     "id": "c1",
+     "lvl": 1,
+     "title": "Operaciones básicas",
+     "q": "<p>\\(A=\\{1,2,3,4\\}\\) y \\(B=\\{3,4,5\\}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(A\\cap B\\)",
+       "o": [
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,3,4,5\\}\\)",
+        "\\(\\{1,2\\}\\)",
+        "\\(\\{5\\}\\)",
+        "\\(\\varnothing\\)"
+       ]
+      },
+      {
+       "p": "\\(A-B\\)",
+       "o": [
+        "\\(\\{1,2\\}\\)",
+        "\\(\\{5\\}\\)",
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,5\\}\\)",
+        "\\(\\{1,2,3,4\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\cap B\\) (intersección): los que están en los dos: 3 y 4.",
+      "\\(A-B\\) (diferencia): los que están en A pero no en B: 1 y 2."
+     ],
+     "ans": "\\(\\{3,4\\}\\); \\(\\{1,2\\}\\)",
+     "hint": "Intersección = comunes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "setops"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c2",
+     "lvl": 1,
+     "title": "Conjuntos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\{a,b\\}=\\{b,a\\}\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\varnothing\\subseteq A\\) para todo conjunto A.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\{1\\}\\in\\{1,2\\}\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) En un conjunto el orden no importa. <b>Verdadero</b>.",
+      "b) El vacío no tiene elementos, así que no tiene ninguno fuera de A: siempre es subconjunto. <b>Verdadero</b>.",
+      "c) Los elementos de \\(\\{1,2\\}\\) son 1 y 2, no \\(\\{1\\}\\). Lo correcto es \\(1\\in\\{1,2\\}\\) o \\(\\{1\\}\\subseteq\\{1,2\\}\\). <b>Falso</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "∈ para elementos, ⊆ para conjuntos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "c3",
+     "lvl": 2,
+     "title": "Diagrama de Venn (2 conjuntos)",
+     "q": "<p>¿Qué diagrama representa \\(A-B\\)?</p>",
+     "checks": [
+      {
+       "p": "Región sombreada",
+       "o": [
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c1A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c1B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m1_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c1A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m1_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c2A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c2B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m2_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c2B)\"><g clip-path=\"url(#c2A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m2_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c3A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c3B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m3_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m3_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_0)\"/></g><g clip-path=\"url(#c3B)\"><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_1)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c4A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c4B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m4_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c4B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m4_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c5A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c5B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m5_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m5_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c5A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_0)\"/></g><g clip-path=\"url(#c5B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_1)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A-B\\) son los elementos de A que no están en B: en el dibujo, el círculo A sin la parte que comparte con B (una «luna»)."
+     ],
+     "ans": "Solo la parte exclusiva de A",
+     "hint": "La intersección no va.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad",
+       "setops"
+      ]
+     ]
+    },
+    {
+     "id": "c4",
+     "lvl": 2,
+     "title": "Contar elementos",
+     "q": "<p>\\(A=\\{a,b,c\\}\\) y \\(B=\\{1,2\\}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(|\\mathcal P(A)|\\)",
+       "o": [
+        "8",
+        "6",
+        "3",
+        "9",
+        "7"
+       ]
+      },
+      {
+       "p": "\\(|A\\times B|\\)",
+       "o": [
+        "6",
+        "5",
+        "8",
+        "9",
+        "3"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\mathcal P(A)\\) son todos los subconjuntos. Si A tiene n elementos, hay \\(2^n\\): \\(2^3=8\\).",
+      "\\(A\\times B\\) son todos los pares (de A, de B): \\(3\\cdot2=6\\)."
+     ],
+     "ans": "8 y 6",
+     "hint": "Potencia: 2 elevado a n.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "c5",
+     "lvl": 2,
+     "title": "Inclusión–exclusión",
+     "q": "<p>En un salón de 40 estudiantes, 25 llevan Discretas, 20 llevan Cálculo y 10 llevan ambos. ¿Cuántos no llevan ninguno?</p>",
+     "checks": [
+      {
+       "p": "Ninguno",
+       "o": [
+        "5",
+        "15",
+        "0",
+        "10",
+        "35"
+       ]
+      }
+     ],
+     "steps": [
+      "Si sumas 25 + 20, los 10 que llevan ambos se cuentan dos veces. Réstalos una vez: \\(25+20-10=35\\) llevan al menos uno.",
+      "Ninguno: \\(40-35=5\\)."
+     ],
+     "ans": "5",
+     "hint": "No cuentes dos veces a los de ambos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c6",
+     "lvl": 3,
+     "title": "Diagrama de Venn (3 conjuntos)",
+     "q": "<p>¿Qué diagrama representa \\((A\\cup B)-C\\)?</p>",
+     "checks": [
+      {
+       "p": "Región sombreada",
+       "o": [
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c6A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m6_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_0)\"/></g><g clip-path=\"url(#c6B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_1)\"/></g><g clip-path=\"url(#c6B)\"><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_2)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c7A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m7_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_3\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_4\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_5\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_0)\"/></g><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_1)\"/></g><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_2)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_3)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_4)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_5)\"/></g></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c8A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m8_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c8B)\"><g clip-path=\"url(#c8A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m8_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c9A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m9_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c9C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m9_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c10A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m10_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c10A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_0)\"/></g><g clip-path=\"url(#c10B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_1)\"/></g><g clip-path=\"url(#c10C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_2)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero pinta todo lo que está en A o en B; luego borra cualquier parte que toque C (también las zonas compartidas con C)."
+     ],
+     "ans": "A ∪ B sin nada de C",
+     "hint": "Quita todo lo que toque C.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "c7",
+     "lvl": 3,
+     "title": "Producto cartesiano",
+     "q": "<p>\\(A=\\{1,2\\}\\), \\(B=\\{x,y\\}\\). ¿Cuál es \\(A\\times B\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(A\\times B\\)",
+       "o": [
+        "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
+        "\\(\\{(x,1),(y,1),(x,2),(y,2)\\}\\)",
+        "\\(\\{1,2,x,y\\}\\)",
+        "\\(\\{(1,x),(2,y)\\}\\)",
+        "\\(\\{(1,2),(x,y)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\times B\\): pares con el primero de A y el segundo de B: \\((1,x),(1,y),(2,x),(2,y)\\).",
+      "Ojo: \\((x,1)\\) va al revés; eso sería \\(B\\times A\\)."
+     ],
+     "ans": "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
+     "hint": "Primero A, luego B.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c8",
+     "lvl": 3,
+     "title": "Conjunto potencia",
+     "q": "<p>¿Cuál es \\(\\mathcal P(\\{1,2\\})\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(\\mathcal P(\\{1,2\\})\\)",
+       "o": [
+        "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
+        "\\(\\{\\{1\\},\\{2\\}\\}\\)",
+        "\\(\\{1,2,\\{1,2\\}\\}\\)",
+        "\\(\\{\\varnothing,1,2\\}\\)",
+        "\\(\\{\\{1\\},\\{2\\},\\{1,2\\}\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Lista todos los subconjuntos de \\(\\{1,2\\}\\): el vacío, \\(\\{1\\}\\), \\(\\{2\\}\\) y el propio \\(\\{1,2\\}\\). Son \\(2^2=4\\); no olvides el vacío ni el completo."
+     ],
+     "ans": "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
+     "hint": "No olvides el vacío.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un conjunto es una colección sin orden ni repetidos; se opera con unión, intersección y diferencia.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\in\\) (elemento) vs \\(\\subseteq\\) (subconjunto).</li><li>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</li><li>\\(|\\mathcal P(A)|=2^n\\), \\(|A\\times B|=|A||B|\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\varnothing\\subseteq A\\) siempre, pero \\(\\varnothing\\in A\\) solo si está listado.</div>\n<div class=\"err\"><b>Error común:</b> sumar \\(|A|+|B|\\) sin restar la intersección.</div>"
+  },
+  {
+   "id": "demo",
+   "name": "Técnicas de demostración",
+   "teo": "<p>Dada \\(p\\to q\\): su <strong>recíproca</strong> es \\(q\\to p\\), su <strong>inversa</strong> es \\(\\neg p\\to\\neg q\\) y su <strong>contrarrecíproca</strong> es \\(\\neg q\\to\\neg p\\). Solo la contrarrecíproca es equivalente a la original.</p>\n<p><strong>Directa:</strong> suponer \\(p\\) y deducir \\(q\\). <strong>Contraposición:</strong> probar \\(\\neg q\\to\\neg p\\) (útil cuando la conclusión da poca información, como «n es par»). <strong>Contradicción:</strong> suponer la negación de lo que se quiere probar y llegar a un absurdo (útil para «es irracional», «no existe», «hay infinitos»). <strong>Contraejemplo:</strong> un solo caso que cumple la hipótesis y no la conclusión refuta un «para todo».</p>\n<p><strong>Verificar demostraciones (incluidas las de IA):</strong> revisa que no se asuma la conclusión, que las variables sean generales (letras distintas), que no se divida entre algo que puede ser cero, que no se demuestre la recíproca en lugar de la afirmación y que la afirmación sea realmente verdadera.</p>",
+   "form": [
+    "Recíproca \\(q\\to p\\) (no equivalente)",
+    "Inversa \\(\\neg p\\to\\neg q\\) (no equivalente)",
+    "Contrarrecíproca \\(\\neg q\\to\\neg p\\) (equivalente)",
+    "Contraejemplo refuta ∀",
+    "Contradicción: suponer ¬ y llegar a absurdo"
+   ],
+   "ex": [
+    {
+     "id": "t1",
+     "lvl": 1,
+     "title": "Contrarrecíproca",
+     "q": "<p>¿Cuál es la contrarrecíproca de «Si \\(n^2\\) es par, entonces \\(n\\) es par»?</p>",
+     "checks": [
+      {
+       "p": "Contrarrecíproca",
+       "o": [
+        "Si n es impar, entonces n² es impar",
+        "Si n es par, entonces n² es par",
+        "Si n² es impar, entonces n es impar",
+        "Si n es par, entonces n² es impar",
+        "n² es par y n es impar"
+       ]
+      }
+     ],
+     "steps": [
+      "Contrarrecíproca de «si p, entonces q»: «si no q, entonces no p» (inviertes y niegas las dos partes). Queda: «si n es impar, entonces n² es impar».",
+      "No la confundas: «si n es par, n² es par» es la recíproca (solo invierte, no niega)."
+     ],
+     "ans": "Si n es impar, n² es impar",
+     "hint": "Niega e invierte.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "contrar",
+       "verif"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "t2",
+     "lvl": 1,
+     "title": "Implicaciones: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) La recíproca de una implicación siempre es equivalente a ella.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) La contrarrecíproca siempre es equivalente a la implicación original.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Un ejemplo que cumple una afirmación universal la demuestra.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) La recíproca no vale lo mismo: «si es perro, es mamífero» es V, pero «si es mamífero, es perro» es F. <b>Falso</b>.",
+      "b) La contrarrecíproca siempre vale lo mismo que la original. <b>Verdadero</b>.",
+      "c) Un ejemplo que cumple no prueba un «para todo» (faltan los demás casos). Un ejemplo solo sirve para refutar. <b>Falso</b>."
+     ],
+     "ans": "F, V, F",
+     "hint": "Los ejemplos no demuestran un «para todo».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "ejce"
+      ]
+     ]
+    },
+    {
+     "id": "t3",
+     "lvl": 1,
+     "title": "Refutar con contraejemplo",
+     "q": "<p>Afirmación: «Si \\(x^2\\lt9\\), entonces \\(x^3\\gt x^2\\)». ¿Qué valor es un contraejemplo?</p>",
+     "checks": [
+      {
+       "p": "Contraejemplo",
+       "o": [
+        "\\(x=1\\)",
+        "\\(x=2\\)",
+        "\\(x=2{,}5\\)",
+        "\\(x=1{,}5\\)",
+        "\\(x=2{,}9\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Un contraejemplo cumple el «si…» y falla el «entonces…». \\(x=1\\): \\(1\\lt9\\) ✓, pero \\(1^3=1\\) no es mayor que \\(1^2=1\\). Falla: es el contraejemplo.",
+      "Los demás valores son mayores que 1, y para ellos \\(x^3\\gt x^2\\) sí se cumple."
+     ],
+     "ans": "\\(x=1\\)",
+     "hint": "Debe cumplir la hipótesis y fallar la conclusión.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "t4",
+     "lvl": 2,
+     "title": "Elige el método",
+     "q": "<p>¿Qué método conviene para «si \\(n^2\\) es par, entonces \\(n\\) es par»?</p>",
+     "checks": [
+      {
+       "p": "Método",
+       "o": [
+        "Contraposición",
+        "Directa, despejando n de n² = 2k",
+        "Contraejemplo",
+        "Por inducción",
+        "No se puede demostrar"
+       ]
+      }
+     ],
+     "steps": [
+      "Directa sería partir de \\(n^2=2k\\) y despejar \\(n=\\sqrt{2k}\\), que no ayuda.",
+      "Mejor la contraposición: «si n es impar, n² es impar», que vale lo mismo. Con \\(n=2k+1\\) sale fácil: \\(n^2=2(2k^2+2k)+1\\)."
+     ],
+     "ans": "Contraposición",
+     "hint": "¿Qué hipótesis es más fácil de usar?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "paridad",
+       "ejce",
+       "contrar"
+      ]
+     ]
+    },
+    {
+     "id": "t5",
+     "lvl": 2,
+     "title": "Irracionalidad",
+     "q": "<p>Para demostrar que \\(\\sqrt2\\) es irracional, ¿qué método se usa?</p>",
+     "checks": [
+      {
+       "p": "Método",
+       "o": [
+        "Contradicción",
+        "Directa",
+        "Contraejemplo",
+        "Contraposición sobre 2",
+        "Por casos"
+       ]
+      }
+     ],
+     "steps": [
+      "«Irracional» significa «no es racional». Para probar un «no», suele convenir la contradicción: se supone que \\(\\sqrt2\\) es una fracción y se llega a algo imposible."
+     ],
+     "ans": "Contradicción",
+     "hint": "Es una afirmación negativa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "racdef",
+       "contrad"
+      ]
+     ]
+    },
+    {
+     "id": "t6",
+     "lvl": 2,
+     "title": "Verifica la demostración (IA)",
+     "q": "<p>Una IA «demostró»: <em>«Si \\(a\\mid bc\\), entonces \\(a\\mid b\\) o \\(a\\mid c\\). Como \\(a\\mid bc\\), existe k con \\(bc=ak\\); luego \\(a\\) divide a alguno de los factores.»</em> ¿Qué opinas?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "Incorrecta: la afirmación es falsa; con a = 4, b = c = 2, 4 | 4 pero 4 ∤ 2",
+        "Correcta",
+        "Correcta solo si a es par",
+        "Incorrecta: debió usar contraposición, pero la afirmación es verdadera",
+        "Correcta por el algoritmo de la división"
+       ]
+      }
+     ],
+     "steps": [
+      "Prueba con números antes de creerle: \\(a=4,\\ b=2,\\ c=2\\). Entonces \\(bc=4\\) y \\(4\\mid4\\), pero 4 no divide a 2.",
+      "La afirmación es falsa, así que la «demostración» no puede ser correcta: la IA saltó a la conclusión. (Solo es cierto si a es primo.)"
+     ],
+     "ans": "Afirmación falsa: contraejemplo a = 4, b = c = 2",
+     "hint": "Antes de revisar pasos, prueba si la afirmación es cierta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "verif"
+      ],
+      [
+       "euclid"
+      ]
+     ]
+    },
+    {
+     "id": "t7",
+     "lvl": 3,
+     "title": "Ordena: √2 es irracional",
+     "q": "<p>Ordena la demostración por contradicción.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Supongamos que \\(\\sqrt2\\) es racional: \\(\\sqrt2=\\frac ab\\), con \\(a,b\\in\\mathbb{Z}\\), \\(b\\ne0\\) y \\(\\text{mcd}(a,b)=1\\).",
+        "Elevando al cuadrado: \\(a^2=2b^2\\), así que \\(a^2\\) es par y, por tanto, \\(a\\) es par: \\(a=2k\\).",
+        "Sustituyendo: \\(4k^2=2b^2\\), luego \\(b^2=2k^2\\) y \\(b\\) también es par.",
+        "Entonces 2 divide a \\(a\\) y a \\(b\\), lo que contradice \\(\\text{mcd}(a,b)=1\\).",
+        "Por lo tanto, \\(\\sqrt2\\) es irracional. \\(\\blacksquare\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Estructura de una contradicción: suponer lo contrario → deducir → llegar a algo imposible → concluir. Aquí lo imposible es que a y b sean pares cuando la fracción estaba simplificada (mcd = 1)."
+     ],
+     "ans": "Suposición → a par → b par → contradicción → conclusión",
+     "hint": "Siempre empieza suponiendo lo contrario.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "taut"
+      ]
+     ]
+    },
+    {
+     "id": "t8",
+     "lvl": 3,
+     "title": "Encuentra el error (IA)",
+     "q": "<p>Afirmación: «si \\(n^2\\) es impar, entonces \\(n\\) es impar». Una IA escribió: <em>«Sea \\(n\\) impar, \\(n=2k+1\\). Entonces \\(n^2=4k^2+4k+1=2(2k^2+2k)+1\\), que es impar. Por lo tanto, si \\(n^2\\) es impar, \\(n\\) es impar.»</em></p>",
+     "checks": [
+      {
+       "p": "Error",
+       "o": [
+        "Demostró la recíproca: supuso que n es impar, que es la conclusión",
+        "Error algebraico en n²",
+        "No hay error",
+        "Debió usar n = 2k",
+        "La afirmación es falsa"
+       ]
+      }
+     ],
+     "steps": [
+      "Se pedía «si n² es impar, entonces n es impar», pero la IA empezó con «sea n impar», que es la conclusión. Probó la recíproca.",
+      "Correcto: por contraposición, si n es par (\\(n=2k\\)), \\(n^2=4k^2=2(2k^2)\\) es par."
+     ],
+     "ans": "Demostró la recíproca",
+     "hint": "¿Qué supuso al inicio?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad",
+       "contrar",
+       "verif"
+      ],
+      [
+       "ejce"
+      ]
+     ]
+    },
+    {
+     "id": "t9",
+     "lvl": 3,
+     "title": "Ordena: contraposición",
+     "q": "<p>Demuestra: si \\(n^2\\) es par, entonces \\(n\\) es par.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Probaremos la contrarrecíproca: si \\(n\\) es impar, entonces \\(n^2\\) es impar.",
+        "Sea \\(n\\) impar: existe \\(k\\in\\mathbb{Z}\\) con \\(n=2k+1\\).",
+        "Entonces \\(n^2=4k^2+4k+1=2(2k^2+2k)+1\\).",
+        "Como \\(2k^2+2k\\in\\mathbb{Z}\\), \\(n^2\\) es impar.",
+        "Por contraposición, si \\(n^2\\) es par, entonces \\(n\\) es par. \\(\\blacksquare\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "1) Anuncia el método («probaremos la contrarrecíproca»). 2) Supón n impar, \\(n=2k+1\\), y calcula \\(n^2=2(2k^2+2k)+1\\): impar. 3) Concluye: si la contrarrecíproca es verdadera, la original también."
+     ],
+     "ans": "Anunciar → suponer n impar → calcular n² → impar → concluir",
+     "hint": "Anuncia primero el método.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "contrar",
+       "verif"
+      ]
+     ]
+    },
+    {
+     "id": "t10",
+     "lvl": 3,
+     "title": "Demuestra en tu cuaderno (lista del curso)",
+     "q": "<p>Demuestra que si \\(0\\lt x\\lt1\\), entonces \\(0\\lt x^2\\lt x\\lt1\\). Luego compara con el modelo.</p>",
+     "checks": [],
+     "steps": [
+      "Como \\(x\\gt0\\), multiplicar ambos lados por x no voltea la desigualdad. Multiplica \\(0\\lt x\\) por x: \\(0\\lt x^2\\).",
+      "Multiplica \\(x\\lt1\\) por x: \\(x^2\\lt x\\).",
+      "Junta todo con la hipótesis \\(x\\lt1\\): \\(0\\lt x^2\\lt x\\lt1\\). \\(\\blacksquare\\)",
+      "Autoevaluación: ¿dijiste que x > 0 para no voltear la desigualdad? ¿usaste las dos partes de la hipótesis? ¿escribiste la conclusión completa?"
+     ],
+     "ans": "Multiplicar por x > 0 conserva el sentido",
+     "hint": "Multiplica la hipótesis por x.",
+     "fig": null,
+     "draw": true,
+     "open": true,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "orden"
+      ],
+      [],
+      [
+       "paridad"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Demostrar es encadenar pasos válidos desde las hipótesis hasta la conclusión.</p>\n<h3>Conceptos clave</h3><ul><li>Directa: supón \\(p\\), llega a \\(q\\).</li><li>Contraposición: prueba \\(\\neg q\\to\\neg p\\).</li><li>Contradicción: supón lo contrario y llega a un absurdo.</li><li>Contraejemplo para refutar.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> «Si \\(n^2\\) es par, \\(n\\) es par»: por contraposición, si \\(n=2k+1\\), \\(n^2=2(2k^2+2k)+1\\) es impar.</div>\n<div class=\"err\"><b>Error común:</b> probar la recíproca en lugar de la proposición pedida.</div>"
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "racdef": {
+   "n": "Definición de racional",
+   "f": "\\(\\frac ab,\\ a,b\\in\\mathbb{Z},\\ b\\ne0\\)",
+   "x": "Para demostrar que algo es racional, escríbelo como cociente de enteros.",
+   "home": "reales"
+  },
+  "signos": {
+   "n": "Tabla de signos",
+   "f": "Puntos críticos → signo por intervalo",
+   "x": "El denominador nunca se incluye; el numerador sí con ≤ o ≥.",
+   "home": "reales"
+  },
+  "orden": {
+   "n": "Propiedades de orden",
+   "f": "Multiplicar por negativo invierte el sentido",
+   "x": "Por positivo lo conserva; \\(x^2\\ge0\\).",
+   "home": "reales"
+  },
+  "defdiv": {
+   "n": "Definición de divisibilidad",
+   "f": "\\(a\\mid b\\iff b=ac\\)",
+   "x": "Escribe cada hipótesis con la definición y letras distintas.",
+   "home": "div"
+  },
+  "fact": {
+   "n": "Factorizar el divisor",
+   "f": "\\(3(k+7m)\\)",
+   "x": "Muestra el divisor multiplicando a un entero.",
+   "home": "div"
+  },
+  "paridad": {
+   "n": "Par e impar",
+   "f": "\\(2k\\) y \\(2k+1\\)",
+   "x": "Todo entero es de una de las dos formas.",
+   "home": "div"
+  },
+  "algdiv": {
+   "n": "Algoritmo de la división",
+   "f": "\\(a=bq+r,\\ 0\\le r\\lt b\\)",
+   "x": "El resto nunca es negativo.",
+   "home": "div"
+  },
+  "euclid": {
+   "n": "Algoritmo de Euclides",
+   "f": "\\(\\text{mcd}(a,b)=\\text{mcd}(b,r)\\)",
+   "x": "El último resto no nulo es el mcd.",
+   "home": "mcd"
+  },
+  "bezout": {
+   "n": "Bézout",
+   "f": "\\(\\text{mcd}(a,b)=ax+by\\)",
+   "x": "Se recorre Euclides hacia atrás despejando restos.",
+   "home": "mcd"
+  },
+  "mcm": {
+   "n": "mcd · mcm",
+   "f": "\\(\\text{mcm}=\\frac{|ab|}{\\text{mcd}}\\)",
+   "x": "El producto de mcd y mcm es el producto de los números.",
+   "home": "mcd"
+  },
+  "base10": {
+   "n": "Base b a base 10",
+   "f": "\\(\\sum d_ib^i\\)",
+   "x": "Cada dígito por su potencia.",
+   "home": "base"
+  },
+  "divsuc": {
+   "n": "Divisiones sucesivas",
+   "f": "Restos de abajo hacia arriba",
+   "x": "De base 10 a base b.",
+   "home": "base"
+  },
+  "cond": {
+   "n": "La condicional",
+   "f": "\\(p\\to q\\) es F solo con V → F",
+   "x": "Antecedente falso ⇒ condicional verdadera.",
+   "home": "prop"
+  },
+  "necsuf": {
+   "n": "Necesaria y suficiente",
+   "f": "Suficiente → antecedente; necesaria → consecuente",
+   "x": "«p es suficiente para q» y «q es necesaria para p» son p → q.",
+   "home": "prop"
+  },
+  "conect": {
+   "n": "Conectores",
+   "f": "\\(\\wedge,\\vee,\\veebar,\\to,\\leftrightarrow\\)",
+   "x": "|| es ∨, && es ∧, XOR es ⊻.",
+   "home": "prop"
+  },
+  "demorgan": {
+   "n": "Leyes de De Morgan",
+   "f": "\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\)",
+   "x": "La negación cambia el conector.",
+   "home": "equiv"
+  },
+  "leyes": {
+   "n": "Leyes lógicas",
+   "f": "Distributiva, absorción, tercio excluido…",
+   "x": "Cada paso de una simplificación cita una ley.",
+   "home": "equiv"
+  },
+  "taut": {
+   "n": "Tautología y contradicción",
+   "f": "Siempre V / siempre F",
+   "x": "Contingencia: ni una ni otra.",
+   "home": "equiv"
+  },
+  "fn": {
+   "n": "Formas normales",
+   "f": "FND: ∨ de ∧ · FNC: ∧ de ∨",
+   "x": "Una conjunción por cada fila V da la FND.",
+   "home": "equiv"
+  },
+  "reglas": {
+   "n": "Reglas de inferencia",
+   "f": "MP, MT, silogismos",
+   "x": "Cada paso de una deducción cita una regla.",
+   "home": "infer"
+  },
+  "falacia": {
+   "n": "Falacias",
+   "f": "\\(p\\to q,\\ q\\ \\therefore p\\) no es válido",
+   "x": "Afirmar el consecuente o negar el antecedente.",
+   "home": "infer"
+  },
+  "negq": {
+   "n": "Negar cuantificadores",
+   "f": "\\(\\neg\\forall\\equiv\\exists\\neg\\)",
+   "x": "Cambia cada cuantificador y niega el predicado.",
+   "home": "pred"
+  },
+  "ejce": {
+   "n": "Ejemplo y contraejemplo",
+   "f": "∃ se prueba con un ejemplo; ∀ se refuta con un contraejemplo",
+   "x": "Un ejemplo nunca demuestra un ∀.",
+   "home": "pred"
+  },
+  "setops": {
+   "n": "Operaciones con conjuntos",
+   "f": "\\(\\cup,\\cap,-,'\\)",
+   "x": "A − B: en A y no en B.",
+   "home": "conj"
+  },
+  "card": {
+   "n": "Cardinalidad",
+   "f": "\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\)",
+   "x": "|P(A)| = 2ⁿ y |A×B| = |A||B|.",
+   "home": "conj"
+  },
+  "contrar": {
+   "n": "Recíproca, inversa y contrarrecíproca",
+   "f": "\\(\\neg q\\to\\neg p\\equiv p\\to q\\)",
+   "x": "Solo la contrarrecíproca es equivalente.",
+   "home": "demo"
+  },
+  "contrad": {
+   "n": "Demostración por contradicción",
+   "f": "Suponer lo contrario → absurdo",
+   "x": "Útil para «irracional», «no existe».",
+   "home": "demo"
+  },
+  "verif": {
+   "n": "Verificar una demostración",
+   "f": "¿Asume la conclusión? ¿Pierde generalidad?",
+   "x": "Revisa también si la afirmación es verdadera.",
+   "home": "demo"
+  }
+ },
+ "simEx": [
+  {
+   "id": "mds1",
+   "lvl": 3,
+   "title": "Inecuación racional",
+   "q": "<p>Resuelve \\(\\dfrac{(x-1)(x+3)}{x-2}\\le0\\).</p>",
+   "checks": [
+    {
+     "p": "Conjunto solución",
+     "o": [
+      "\\((-\\infty,-3]\\cup[1,2)\\)",
+      "\\((-\\infty,-3]\\cup[1,2]\\)",
+      "\\([-3,1]\\cup(2,\\infty)\\)",
+      "\\((-3,1)\\cup(2,\\infty)\\)",
+      "\\([1,2)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Puntos críticos: 1 y −3 (arriba) y 2 (abajo).",
+    "Prueba un número por zona: \\((-\\infty,-3)\\): −; \\((-3,1)\\): +; \\((1,2)\\): −; \\((2,\\infty)\\): +. Queremos \\(\\le0\\): incluye −3 y 1 (ahí vale 0) y excluye 2."
+   ],
+   "ans": "\\((-\\infty,-3]\\cup[1,2)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mds2",
+   "lvl": 3,
+   "title": "MCD y MCM",
+   "q": "<p>Para 84 y 36:</p>",
+   "checks": [
+    {
+     "p": "mcd",
+     "o": [
+      "12",
+      "6",
+      "4",
+      "36",
+      "3"
+     ]
+    },
+    {
+     "p": "mcm",
+     "o": [
+      "252",
+      "3024",
+      "126",
+      "84",
+      "504"
+     ]
+    }
+   ],
+   "steps": [
+    "Euclides: \\(84=2\\cdot36+12\\); \\(36=3\\cdot12+0\\). mcd = 12.",
+    "\\(\\text{mcm}=\\frac{84\\cdot36}{12}=252\\)."
+   ],
+   "ans": "12 y 252",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mds3",
+   "lvl": 3,
+   "title": "Deducir y evaluar",
+   "q": "<p>Si \\((p\\wedge q)\\to r\\) es falsa, ¿cuál es el valor de \\((p\\vee r)\\to\\neg q\\)?</p>",
+   "checks": [
+    {
+     "p": "Valor",
+     "o": [
+      "Verdadero",
+      "Falso",
+      "Depende de t",
+      "No se puede determinar",
+      "Es una contradicción"
+     ]
+    }
+   ],
+   "steps": [
+    "Condicional falsa → antes V y después F: \\(p\\wedge q=V\\) y \\(r=F\\). Una «y» verdadera obliga a \\(p=q=V\\).",
+    "\\((p\\vee r)\\to\\neg q=(V\\vee F)\\to F=V\\to F=F\\)."
+   ],
+   "ans": "Falso",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mds4",
+   "lvl": 3,
+   "title": "Refutar (IA)",
+   "q": "<p>Una IA afirma: «Todo entero divisible entre 4 es divisible entre 8». ¿Qué número la refuta?</p>",
+   "checks": [
+    {
+     "p": "Contraejemplo",
+     "o": [
+      "12",
+      "16",
+      "8",
+      "24",
+      "32"
+     ]
+    }
+   ],
+   "steps": [
+    "Buscamos un número divisible entre 4 que NO sea divisible entre 8: \\(12=4\\cdot3\\), pero \\(12\\div8=1{,}5\\). Es el contraejemplo.",
+    "16, 8, 24 y 32 sí son divisibles entre 8, así que no refutan nada."
+   ],
+   "ans": "12",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "pa1",
+   "lvl": 3,
+   "title": "Parcial 2026-1 · Pregunta 1",
+   "q": "<p>La proposición \\((q\\vee p)\\leftrightarrow(r\\wedge s)\\) es verdadera. Además, \\(r\\) y \\(s\\) tienen valores de verdad opuestos. Determine el valor de verdad de:</p>",
+   "checks": [
+    {
+     "p": "a) \\([(\\neg p\\wedge\\neg q)\\vee(r\\wedge s)]\\wedge\\neg p\\)",
+     "o": [
+      "Verdadero",
+      "Falso",
+      "Depende de r y s",
+      "No se puede determinar",
+      "Es una contradicción"
+     ]
+    },
+    {
+     "p": "b) \\([\\neg(p\\vee q)\\wedge(r\\vee s)]\\vee(\\neg p\\wedge q)\\)",
+     "o": [
+      "Verdadero",
+      "Falso",
+      "Depende de r y s",
+      "No se puede determinar",
+      "Es una contradicción"
+     ]
+    }
+   ],
+   "steps": [
+    "Empieza por el dato más fácil: \\(r\\) y \\(s\\) son opuestos (uno V y el otro F). Una «y» necesita que las dos sean V, así que \\(r\\wedge s=F\\).",
+    "El bicondicional \\(\\leftrightarrow\\) es V solo cuando sus dos lados valen lo mismo. El lado derecho es F, entonces el izquierdo también: \\(q\\vee p=F\\).",
+    "Una «o» es F solo si las dos partes son F: \\(p=F\\) y \\(q=F\\). Por lo tanto \\(\\neg p=V\\) y \\(\\neg q=V\\).",
+    "a) \\(\\neg p\\wedge\\neg q=V\\wedge V=V\\). Luego \\(V\\vee(r\\wedge s)=V\\) (una «o» con una parte V ya es V). Y \\(V\\wedge\\neg p=V\\wedge V=V\\). <b>Verdadero.</b>",
+    "b) \\(\\neg(p\\vee q)=\\neg F=V\\). Como \\(r\\) y \\(s\\) son opuestos, uno de los dos es V, así que \\(r\\vee s=V\\). El corchete da \\(V\\wedge V=V\\) y «V o lo que sea» es V. <b>Verdadero.</b>",
+    "Fíjate: nunca necesitamos saber cuál de \\(r\\) o \\(s\\) es la verdadera; basta con saber que son opuestas."
+   ],
+   "ans": "a) Verdadero; b) Verdadero",
+   "hint": "Empieza por r ∧ s: r y s son opuestos.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "conect"
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "pa2",
+   "lvl": 3,
+   "title": "Parcial 2026-1 · Pregunta 2",
+   "q": "<p>Para cada una de las siguientes proposiciones, determine si es verdadera o falsa:</p>",
+   "checks": [
+    {
+     "p": "a) \\(\\exists x\\in\\mathbb{R}:\\ \\dfrac{1}{x^2+1}\\gt1\\)",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    },
+    {
+     "p": "b) \\(\\forall a\\in\\mathbb{Z}:\\ a\\mid(a-1)\\)",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    },
+    {
+     "p": "c) \\(\\forall x\\in\\mathbb{R},\\ \\exists y\\in\\mathbb{R}:\\ y^2=x\\)",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    },
+    {
+     "p": "d) \\(\\exists a\\in\\mathbb{Z},\\ \\forall b\\in\\mathbb{Z}:\\ a\\le b+1\\)",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    }
+   ],
+   "steps": [
+    "Cómo atacarlas: un \\(\\exists\\) es V si encuentras <b>un</b> ejemplo; un \\(\\forall\\) es F si encuentras <b>un</b> caso que falle (contraejemplo).",
+    "a) Como \\(x^2\\ge0\\), el denominador \\(x^2+1\\) vale 1 o más. Dividir 1 entre algo que es 1 o más da 1 o menos. Lo más grande que se logra es 1 (con \\(x=0\\)), y nunca pasa de 1. No existe ese x: <b>Falso.</b>",
+    "b) Prueba \\(a=2\\): ¿2 divide a \\(2-1=1\\)? No, porque 1 no es 2 · (entero). Con un solo contraejemplo basta: <b>Falso.</b>",
+    "c) Prueba \\(x=-1\\): necesitarías un y con \\(y^2=-1\\), pero un cuadrado nunca es negativo. Contraejemplo: <b>Falso.</b>",
+    "d) Se pide un único \\(a\\) que sea \\(\\le b+1\\) para <b>todos</b> los b. Pero b puede ser tan negativo como quieras: con \\(b=a-2\\) queda \\(a\\le a-1\\), imposible. Ningún \\(a\\) sirve: <b>Falso.</b>",
+    "Ojo: las cuatro son falsas. En el examen no esperes que haya un reparto parejo de V y F; justifica cada una."
+   ],
+   "ans": "F, F, F, F",
+   "hint": "Para ∃ busca un ejemplo; para ∀, un contraejemplo.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "ejce"
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "pa3",
+   "lvl": 3,
+   "title": "Parcial 2026-1 · Pregunta 3",
+   "q": "<p>Para cada argumento, determine si es válido o inválido:</p><p>a) Premisas: \\(r\\to\\neg q\\), \\(p\\to q\\), \\(\\neg s\\to r\\). Conclusión: \\(\\therefore\\ p\\to s\\).</p><p>b) Premisas: \\((p\\to q)\\wedge(r\\to s)\\), \\(p\\vee r\\). Conclusión: \\(\\therefore\\ q\\vee s\\).</p>",
+   "checks": [
+    {
+     "p": "a) El argumento es…",
+     "o": [
+      "Válido",
+      "Inválido: con p = V y s = F todas las premisas pueden ser verdaderas",
+      "Inválido: es la falacia de afirmación del consecuente",
+      "Válido solo si r es verdadera",
+      "Inválido: las premisas se contradicen"
+     ]
+    },
+    {
+     "p": "b) El argumento es…",
+     "o": [
+      "Válido (dilema constructivo)",
+      "Inválido: con p = V, q = F y r = F la conclusión es falsa",
+      "Inválido: es la falacia de negación del antecedente",
+      "Válido solo si p y r son verdaderas a la vez",
+      "Inválido: falta saber el valor de s"
+     ]
+    }
+   ],
+   "steps": [
+    "a) La conclusión es una condicional \\(p\\to s\\). Para probarla: supón que \\(p\\) es V y trata de llegar a \\(s\\).",
+    "Con \\(p\\) y \\(p\\to q\\) obtienes \\(q\\) (modus ponens).",
+    "Si \\(q\\) es V, entonces \\(\\neg q\\) es F. En \\(r\\to\\neg q\\) el final es F, así que \\(r\\) tiene que ser F (si no, sería V → F). Eso es modus tollens: \\(\\neg r\\).",
+    "En \\(\\neg s\\to r\\), ahora \\(r\\) es F, así que \\(\\neg s\\) también debe ser F, es decir, \\(s\\) es V (modus tollens otra vez). Partimos de \\(p\\) y llegamos a \\(s\\): <b>válido.</b>",
+    "b) Sabemos que pasa \\(p\\) o pasa \\(r\\). Caso 1: si pasa \\(p\\), por \\(p\\to q\\) pasa \\(q\\), y \\(q\\vee s\\) es V. Caso 2: si pasa \\(r\\), por \\(r\\to s\\) pasa \\(s\\), y \\(q\\vee s\\) es V.",
+    "En cualquier caso la conclusión es V: <b>válido.</b> Esta forma se llama dilema constructivo.",
+    "Tip de examen: para mostrar que es <b>inválido</b> basta una fila con todas las premisas V y la conclusión F. Para mostrar que es <b>válido</b>, encadena reglas como aquí."
+   ],
+   "ans": "a) Válido; b) Válido",
+   "hint": "Supón el antecedente de la conclusión y avanza con las reglas.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "cond"
+    ],
+    [
+     "reglas"
+    ],
+    [
+     "reglas"
+    ],
+    [],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "pa4",
+   "lvl": 3,
+   "title": "Parcial 2026-1 · Pregunta 4",
+   "q": "<p>Sea \\(t\\) una proposición compuesta definida a partir de las proposiciones simples \\(p\\), \\(q\\) y \\(r\\), tal que \\(t\\) es verdadera cuando se cumplen las dos condiciones siguientes:</p><ul><li>al menos una de las proposiciones \\(p\\) y \\(q\\) es verdadera;</li><li>\\(r\\) es falsa,</li></ul><p>en cualquier otro caso \\(t\\) es falsa. Elabore la tabla de verdad de \\(t\\) (8 filas) y, a partir de ella, determine una forma normal disyuntiva y conjuntiva de \\(t\\).</p>",
+   "checks": [
+    {
+     "p": "Columna de t (filas en orden VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF)",
+     "o": [
+      "F V F V F V F F",
+      "V F V F V F F F",
+      "F V F V F V F V",
+      "F V F V F F F F",
+      "V V V V V V F F"
+     ]
+    },
+    {
+     "p": "Una forma normal disyuntiva (FND) de t",
+     "o": [
+      "\\((p\\wedge q\\wedge\\neg r)\\vee(p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge q\\wedge\\neg r)\\)",
+      "\\((p\\wedge q\\wedge r)\\vee(p\\wedge\\neg q\\wedge r)\\vee(\\neg p\\wedge q\\wedge r)\\)",
+      "\\((p\\wedge q\\wedge\\neg r)\\wedge(p\\wedge\\neg q\\wedge\\neg r)\\wedge(\\neg p\\wedge q\\wedge\\neg r)\\)",
+      "\\((p\\wedge q\\wedge\\neg r)\\vee(p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge\\neg q\\wedge\\neg r)\\)",
+      "\\((\\neg p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\)"
+     ]
+    },
+    {
+     "p": "Una forma normal conjuntiva (FNC) de t",
+     "o": [
+      "\\((\\neg p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(p\\vee\\neg q\\vee\\neg r)\\wedge(p\\vee q\\vee\\neg r)\\wedge(p\\vee q\\vee r)\\)",
+      "\\((\\neg p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(p\\vee\\neg q\\vee\\neg r)\\wedge(p\\vee q\\vee\\neg r)\\)",
+      "\\((p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee q\\vee r)\\wedge(\\neg p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee\\neg q\\vee\\neg r)\\)",
+      "\\((\\neg p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\)",
+      "\\((p\\vee q)\\vee\\neg r\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Traduce las condiciones: «al menos una de p y q es V» es \\(p\\vee q\\); «r es falsa» es \\(\\neg r\\). Las dos a la vez: \\(t\\equiv(p\\vee q)\\wedge\\neg r\\).",
+    "Tabla (orden VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF): t es V solo si \\(r=F\\) y no son \\(p=q=F\\). Eso pasa en VVF, VFF y FVF. Columna: <b>F V F V F V F F</b>.",
+    "<b>FND</b> (se arma con las filas V): por cada fila V escribe una «y» de las tres letras, con la letra tal cual si vale V y con \\(\\neg\\) si vale F. Luego únelas con «o».",
+    "Filas V: VVF → \\(p\\wedge q\\wedge\\neg r\\); VFF → \\(p\\wedge\\neg q\\wedge\\neg r\\); FVF → \\(\\neg p\\wedge q\\wedge\\neg r\\). FND: \\((p\\wedge q\\wedge\\neg r)\\vee(p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge q\\wedge\\neg r)\\).",
+    "<b>FNC</b> (se arma con las filas F): por cada fila F escribe una «o» <b>al revés</b>: con \\(\\neg\\) si la letra vale V y sin \\(\\neg\\) si vale F. Luego únelas con «y». Así cada paréntesis es F justo en su fila.",
+    "Filas F: VVV → \\(\\neg p\\vee\\neg q\\vee\\neg r\\); VFV → \\(\\neg p\\vee q\\vee\\neg r\\); FVV → \\(p\\vee\\neg q\\vee\\neg r\\); FFV → \\(p\\vee q\\vee\\neg r\\); FFF → \\(p\\vee q\\vee r\\). Se unen las cinco con \\(\\wedge\\).",
+    "Extra: \\((p\\vee q)\\wedge\\neg r\\) también es una FNC (una «y» de «o»), más corta. En el examen cualquiera vale si muestras de dónde sale."
+   ],
+   "ans": "Columna FVFVFVFF; FND con las filas V y FNC con las filas F",
+   "hint": "FND: filas V. FNC: filas F.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "conect"
+    ],
+    [],
+    [
+     "fn"
+    ],
+    [],
+    [
+     "fn"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "px1",
+   "lvl": 3,
+   "title": "Extra · Reales e inecuaciones",
+   "q": "<p>Considera la inecuación \\(\\dfrac{x^2-4}{x+1}\\ge0\\).</p>",
+   "checks": [
+    {
+     "p": "Conjunto solución",
+     "o": [
+      "\\([-2,-1)\\cup[2,\\infty)\\)",
+      "\\([-2,-1]\\cup[2,\\infty)\\)",
+      "\\((-\\infty,-2]\\cup(-1,2]\\)",
+      "\\((-2,-1)\\cup(2,\\infty)\\)",
+      "\\([2,\\infty)\\)"
+     ]
+    },
+    {
+     "p": "¿Es verdadera \\(\\forall x\\in\\mathbb{R}:\\ x\\ge2\\to\\dfrac{x^2-4}{x+1}\\ge0\\)?",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    }
+   ],
+   "steps": [
+    "Factoriza arriba: \\(x^2-4=(x-2)(x+2)\\). Puntos críticos: \\(-2\\) y \\(2\\) (arriba) y \\(-1\\) (abajo).",
+    "Prueba un número en cada zona: \\(x=-3\\): \\(\\frac{5}{-2}\\lt0\\); \\(x=-1{,}5\\): \\(\\frac{-1{,}75}{-0{,}5}\\gt0\\); \\(x=0\\): \\(\\frac{-4}{1}\\lt0\\); \\(x=3\\): \\(\\frac{5}{4}\\gt0\\).",
+    "Queremos \\(\\ge0\\): zonas positivas. Se incluyen \\(-2\\) y \\(2\\) (ahí vale 0) y se excluye \\(-1\\) (no se divide entre 0). Solución: \\([-2,-1)\\cup[2,\\infty)\\).",
+    "Segunda parte: todo \\(x\\ge2\\) está dentro de \\([2,\\infty)\\), que es parte de la solución. Entonces la condicional nunca es V → F: <b>Verdadero.</b>"
+   ],
+   "ans": "\\([-2,-1)\\cup[2,\\infty)\\); Verdadero",
+   "hint": "Factoriza el numerador y prueba un número en cada zona.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [],
+    [],
+    [
+     "cond"
+    ]
+   ]
+  },
+  {
+   "id": "px2",
+   "lvl": 3,
+   "title": "Extra · MCD, Bézout y bases",
+   "q": "<p>Para los números 252 y 198:</p>",
+   "checks": [
+    {
+     "p": "\\(\\text{mcd}(252,198)\\)",
+     "o": [
+      "18",
+      "6",
+      "9",
+      "36",
+      "54"
+     ]
+    },
+    {
+     "p": "Un par \\((x,y)\\) con \\(252x+198y=\\text{mcd}(252,198)\\)",
+     "o": [
+      "\\((4,-5)\\)",
+      "\\((-4,5)\\)",
+      "\\((5,-4)\\)",
+      "\\((4,5)\\)",
+      "\\((-5,4)\\)"
+     ]
+    },
+    {
+     "p": "252 escrito en base 5",
+     "o": [
+      "\\((2002)_5\\)",
+      "\\((2020)_5\\)",
+      "\\((2200)_5\\)",
+      "\\((1002)_5\\)",
+      "\\((20002)_5\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Euclides (anota cada división): \\(252=1\\cdot198+54\\); \\(198=3\\cdot54+36\\); \\(54=1\\cdot36+18\\); \\(36=2\\cdot18+0\\). El último resto no cero es <b>18</b>.",
+    "Bézout: despeja el 18 de la penúltima división: \\(18=54-36\\).",
+    "Reemplaza \\(36=198-3\\cdot54\\): \\(18=54-(198-3\\cdot54)=4\\cdot54-198\\). Reemplaza \\(54=252-198\\): \\(18=4\\cdot252-5\\cdot198\\). Par: \\((4,-5)\\). Comprobación: \\(1008-990=18\\) ✓.",
+    "Base 5: divide entre 5 y anota restos: \\(252\\to\\) resto 2; \\(50\\to\\) 0; \\(10\\to\\) 0; \\(2\\to\\) 2. De abajo hacia arriba: \\((2002)_5\\). Comprobación: \\(2\\cdot125+2=252\\) ✓."
+   ],
+   "ans": "18; \\((4,-5)\\); \\((2002)_5\\)",
+   "hint": "Euclides y luego despeja hacia atrás.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "euclid"
+    ],
+    [
+     "bezout"
+    ],
+    [],
+    [
+     "divsuc"
+    ]
+   ]
+  },
+  {
+   "id": "px3",
+   "lvl": 3,
+   "title": "Extra · Conjuntos",
+   "q": "<p>Sea \\(U=\\{1,2,\\dots,10\\}\\), \\(A=\\{x\\in U:\\ x\\ \\text{es par}\\}\\) y \\(B=\\{x\\in U:\\ x\\mid12\\}\\).</p>",
+   "checks": [
+    {
+     "p": "\\(A-B\\)",
+     "o": [
+      "\\(\\{8,10\\}\\)",
+      "\\(\\{1,3\\}\\)",
+      "\\(\\{2,4,6\\}\\)",
+      "\\(\\{8,10,12\\}\\)",
+      "\\(\\{1,3,8,10\\}\\)"
+     ]
+    },
+    {
+     "p": "\\(\\overline{A\\cup B}\\) (complemento respecto de U)",
+     "o": [
+      "\\(\\{5,7,9\\}\\)",
+      "\\(\\{1,3,5,7,9\\}\\)",
+      "\\(\\{5,7\\}\\)",
+      "\\(\\{8,10\\}\\)",
+      "\\(\\varnothing\\)"
+     ]
+    },
+    {
+     "p": "\\(|\\mathcal P(A\\cap B)|\\)",
+     "o": [
+      "8",
+      "3",
+      "6",
+      "9",
+      "4"
+     ]
+    }
+   ],
+   "steps": [
+    "Primero escribe los conjuntos por extensión: \\(A=\\{2,4,6,8,10\\}\\) y \\(B=\\{1,2,3,4,6\\}\\) (los divisores de 12 que están en U).",
+    "\\(A-B\\): los de A que no están en B: \\(\\{8,10\\}\\).",
+    "\\(A\\cup B=\\{1,2,3,4,6,8,10\\}\\). Lo que falta para completar U es el complemento: \\(\\{5,7,9\\}\\).",
+    "\\(A\\cap B=\\{2,4,6\\}\\) tiene 3 elementos, así que tiene \\(2^3=8\\) subconjuntos."
+   ],
+   "ans": "\\(\\{8,10\\}\\); \\(\\{5,7,9\\}\\); 8",
+   "hint": "Escribe A y B por extensión primero.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "setops"
+    ],
+    [
+     "setops"
+    ],
+    [
+     "card"
+    ]
+   ]
+  },
+  {
+   "id": "px4",
+   "lvl": 3,
+   "title": "Extra · Demostraciones",
+   "q": "<p>Se quiere demostrar: «Si \\(x,y\\in\\mathbb{R}\\) y \\(x+y\\ge20\\), entonces \\(x\\ge10\\) o \\(y\\ge10\\)».</p>",
+   "checks": [
+    {
+     "p": "a) El método más conveniente es…",
+     "o": [
+      "Contraposición",
+      "Directa, despejando x",
+      "Contraejemplo",
+      "Por casos: x = 10 o y = 10",
+      "Inducción"
+     ]
+    },
+    {
+     "p": "b) Con ese método, ¿qué se supone al inicio?",
+     "o": [
+      "\\(x\\lt10\\) y \\(y\\lt10\\)",
+      "\\(x\\lt10\\) o \\(y\\lt10\\)",
+      "\\(x+y\\lt20\\)",
+      "\\(x\\ge10\\) y \\(y\\ge10\\)",
+      "\\(x+y\\ge20\\)"
+     ]
+    },
+    {
+     "p": "c) ¿A qué se llega para terminar?",
+     "o": [
+      "\\(x+y\\lt20\\)",
+      "\\(x+y\\le20\\)",
+      "\\(x+y\\gt20\\)",
+      "\\(x\\lt10\\)",
+      "\\(x+y=20\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "La conclusión es un «o» (\\(x\\ge10\\) o \\(y\\ge10\\)). Probarlo directo es incómodo; la contrarrecíproca es más fácil: «si NO (x ≥ 10 o y ≥ 10), entonces NO (x + y ≥ 20)».",
+    "Niega la conclusión con De Morgan: «no (A o B)» = «no A y no B». Así que se supone \\(x\\lt10\\) <b>y</b> \\(y\\lt10\\).",
+    "Suma las dos desigualdades: \\(x+y\\lt10+10=20\\). Es decir, \\(x+y\\lt20\\), que es justo la negación de la hipótesis.",
+    "Como la contrarrecíproca es verdadera, la afirmación original también. \\(\\blacksquare\\) (Ojo: \\(x+y\\le20\\) no basta, porque permite \\(x+y=20\\).)"
+   ],
+   "ans": "Contraposición; suponer x < 10 y y < 10; llegar a x + y < 20",
+   "hint": "Niega la conclusión con De Morgan.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "contrar"
+    ],
+    [
+     "demorgan"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "pc1",
+   "lvl": 3,
+   "title": "Simbolización (ejemplos de clase)",
+   "q": "<p>Simbolice los siguientes enunciados:</p><p>1. Para todo \\(a\\) y \\(b\\) números reales positivos existe un número entero \\(n\\) tal que \\(na\\) es mayor o igual que \\(b\\).</p><p>2. Existe un número natural mayor que 5, de manera que su triple o su cuadrado sea menor que 30 y mayor que 20.</p>",
+   "checks": [
+    {
+     "p": "1) Simbolización",
+     "o": [
+      "\\(\\forall a,b\\in\\mathbb{R}^+,\\ \\exists n\\in\\mathbb{Z}\\ /\\ na\\ge b\\)",
+      "\\(\\exists n\\in\\mathbb{Z},\\ \\forall a,b\\in\\mathbb{R}^+\\ /\\ na\\ge b\\)",
+      "\\(\\forall a,b\\in\\mathbb{R}^+,\\ \\forall n\\in\\mathbb{Z}\\ /\\ na\\ge b\\)",
+      "\\(\\forall a,b\\in\\mathbb{R},\\ \\exists n\\in\\mathbb{Z}\\ /\\ na\\ge b\\)",
+      "\\(\\forall a,b\\in\\mathbb{R}^+,\\ \\exists n\\in\\mathbb{Z}\\ /\\ na\\le b\\)"
+     ]
+    },
+    {
+     "p": "1) ¿La proposición es verdadera?",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    },
+    {
+     "p": "2) Simbolización",
+     "o": [
+      "\\(\\exists n\\in\\mathbb{N}\\ /\\ n\\gt5\\wedge[(20\\lt3n\\lt30)\\vee(20\\lt n^2\\lt30)]\\)",
+      "\\(\\exists n\\in\\mathbb{N}\\ /\\ n\\gt5\\wedge(20\\lt3n\\lt30)\\wedge(20\\lt n^2\\lt30)\\)",
+      "\\(\\forall n\\in\\mathbb{N}\\ /\\ n\\gt5\\to[(20\\lt3n\\lt30)\\vee(20\\lt n^2\\lt30)]\\)",
+      "\\(\\exists n\\in\\mathbb{N}\\ /\\ n\\gt5\\vee[(20\\lt3n\\lt30)\\vee(20\\lt n^2\\lt30)]\\)",
+      "\\(\\exists n\\in\\mathbb{N}\\ /\\ n\\gt5\\wedge[(3n\\lt30)\\vee(n^2\\gt20)]\\)"
+     ]
+    },
+    {
+     "p": "2) ¿La proposición es verdadera?",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    }
+   ],
+   "steps": [
+    "Truco para simbolizar: busca las palabras clave. «Para todo» → \\(\\forall\\); «existe» → \\(\\exists\\); «tal que» o «de manera que» → «/». Escribe los cuantificadores en el mismo orden en que aparecen en la frase.",
+    "1) «Para todo a y b reales positivos» → \\(\\forall a,b\\in\\mathbb{R}^+\\). «Existe un entero n» → \\(\\exists n\\in\\mathbb{Z}\\). «tal que na es mayor o igual que b» → \\(na\\ge b\\). Resultado: \\(\\forall a,b\\in\\mathbb{R}^+,\\ \\exists n\\in\\mathbb{Z}\\ /\\ na\\ge b\\).",
+    "El orden importa: primero te dan a y b, y después eliges n (n puede depender de ellos). Con \\(\\exists n\\) al inicio dirías que un solo n sirve para todos los a y b, que es otra cosa.",
+    "¿Es verdadera? Sí: dados a y b positivos, elige un entero n mayor o igual que \\(\\frac ba\\); entonces \\(na\\ge b\\). Ejemplo: \\(a=0{,}3\\), \\(b=10\\): con \\(n=34\\), \\(34\\cdot0{,}3=10{,}2\\ge10\\). (Se llama propiedad arquimediana.)",
+    "2) «Existe un número natural» → \\(\\exists n\\in\\mathbb{N}\\). «mayor que 5» → \\(n\\gt5\\). «su triple o su cuadrado sea menor que 30 y mayor que 20»: cada uno entre 20 y 30, unidos con «o»: \\((20\\lt3n\\lt30)\\vee(20\\lt n^2\\lt30)\\).",
+    "Las dos exigencias sobre n van unidas con «y», y el «o» queda dentro del corchete: \\(\\exists n\\in\\mathbb{N}\\ /\\ n\\gt5\\wedge[(20\\lt3n\\lt30)\\vee(20\\lt n^2\\lt30)]\\).",
+    "¿Es verdadera? Prueba \\(n=7\\): \\(7\\gt5\\) y su triple es 21, que está entre 20 y 30. Hay un ejemplo, así que es verdadera.",
+    "Ojo: con \\(\\exists\\) se une con \\(\\wedge\\), no con \\(\\to\\). Con \\(\\forall\\) es al revés: ahí sí se usa \\(\\to\\)."
+   ],
+   "ans": "Ambas simbolizaciones con el orden de la frase; las dos son verdaderas",
+   "hint": "«Para todo» → ∀, «existe» → ∃, «tal que» → /.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "ejce"
+    ],
+    [],
+    [],
+    [],
+    [
+     "conect"
+    ],
+    [
+     "ejce"
+    ],
+    []
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 130,
+  "fixed": true,
+  "intro": "Es el <b>parcial real del ciclo 2026-1</b> (con sus pesos escalados), los <b>2 ejemplos de simbolización de clase</b> (el profesor dijo que uno vendrá en el parcial) y <b>4 preguntas extra</b> de temas que el 2026-1 no evaluó (reales, MCD y bases, conjuntos, demostraciones). Las preguntas son siempre las mismas. En el examen real debes justificar todo: aquí marcas la respuesta y después revisas la justificación en «Ver solución».",
+  "slots": [
+   {
+    "pts": 2,
+    "name": "P1 · Valores de verdad (parcial 2026-1)",
+    "pool": [
+     "pa1"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "P2 · Cuantificadores (parcial 2026-1)",
+    "pool": [
+     "pa2"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Simbolización (ejemplos de clase)",
+    "pool": [
+     "pc1"
+    ]
+   },
+   {
+    "pts": 2.5,
+    "name": "P3 · Validez de argumentos (parcial 2026-1)",
+    "pool": [
+     "pa3"
+    ]
+   },
+   {
+    "pts": 2.5,
+    "name": "P4 · Tabla de verdad, FND y FNC (parcial 2026-1)",
+    "pool": [
+     "pa4"
+    ]
+   },
+   {
+    "pts": 1.75,
+    "name": "Extra · Reales e inecuaciones",
+    "pool": [
+     "px1"
+    ]
+   },
+   {
+    "pts": 1.75,
+    "name": "Extra · MCD, Bézout y bases",
+    "pool": [
+     "px2"
+    ]
+   },
+   {
+    "pts": 1.75,
+    "name": "Extra · Conjuntos",
+    "pool": [
+     "px3"
+    ]
+   },
+   {
+    "pts": 1.75,
+    "name": "Extra · Demostraciones",
+    "pool": [
+     "px4"
+    ]
+   }
+  ]
+ },
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa del parcial 2026-1:</b> fue todo de lógica, y lo que más puntos dio fueron los cuantificadores (6 de 20), seguidos de argumentos (5), tabla de verdad con FND/FNC (5) y valores de verdad (4). Los ejercicios «Tipo parcial» de cada tema son versiones modificadas de ese examen.",
+ "guide": true
+}

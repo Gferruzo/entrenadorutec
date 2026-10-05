@@ -1,0 +1,3823 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso de fórmulas y reglas (no aparece en el simulacro).</p>\n<div class=\"fgrid\">\n<div><b>Equilibrio</b><br>\\(Q_d=Q_s\\): despeja \\(p^*\\) y reemplaza para \\(Q^*\\)</div>\n<div><b>Excesos</b><br>\\(p\\gt p^*\\): sobreproducción \\(Q_s-Q_d\\) · \\(p\\lt p^*\\): escasez \\(Q_d-Q_s\\)</div>\n<div><b>Movimiento vs desplazamiento</b><br>Precio del propio bien → movimiento · otro factor → desplazamiento</div>\n<div><b>Demanda</b><br>Ingreso (normal/inferior), sustitutos, complementos, gustos, población, expectativas, estacionalidad</div>\n<div><b>Oferta</b><br>Costos de insumos y salarios, tecnología, clima/desastres, número de productores</div>\n<div><b>Doble desplazamiento</b><br>D↑O↑: Q↑, P ? · D↓O↓: Q↓, P ? · D↑O↓: P↑, Q ? · D↓O↑: P↓, Q ?</div>\n<div><b>Utilidad marginal</b><br>\\(UMg=\\Delta UT/\\Delta Q\\) (decreciente)</div>\n<div><b>Producción</b><br>\\(PMe_L=Q/L\\) · \\(PMg_L=\\Delta Q/\\Delta L=dQ/dL\\)</div>\n<div><b>PMe máximo</b><br>\\(\\frac{d\\,PMe}{dL}=0\\) y ahí \\(PMe=PMg\\) (verifica que sea máximo)</div>\n<div><b>Costos</b><br>\\(CT=CF+CV\\) · CU \\(=CT/Q\\) · \\(CMg=\\Delta CT/\\Delta Q\\)</div>\n<div><b>Beneficio</b><br>UC \\(=IT-C_{Ex}\\) · BE \\(=IT-C_{Ex}-C_{Im}\\)</div>\n<div><b>Producción máxima</b><br>\\(PMg=0\\)</div>\n<div><b>Escala</b><br>CU ↓: economías · CU ↑: deseconomías · CU =: constantes · factores ×k y Q más que ×k → economías</div>\n</div>",
+ "formSim": false,
+ "id": "micro-ep",
+ "code": "AD1002",
+ "name": "Microeconomía Aplicada",
+ "exam": "Examen parcial 2026-2 (semana 8)",
+ "topics": [
+  {
+   "id": "b1",
+   "name": "Bloque 1 · Preguntas conceptuales",
+   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> cuestionario conceptual sobre el mercado y el comportamiento de los agentes. Para el 5 hay que <strong>estructurar, analizar y justificar</strong> todas las respuestas: afirmación → concepto → por qué.</p>\n<p>La <strong>escasez</strong> es el punto de partida: los recursos (dinero, trabajadores, capacidad de planta, tiempo) son limitados y las necesidades no. La <strong>economía</strong> es la ciencia social que estudia las decisiones que toman individuos, empresas y gobiernos para enfrentar esa escasez. La <strong>economía de la empresa</strong> estudia cómo asignar los recursos dentro de una empresa.</p>\n<p><strong>Tipos de economía:</strong> de mercado (<em>laissez-faire</em>: deciden los privados), centralizada (decide el Estado) y mixta (en la práctica, la mayoría). <strong>Ramas:</strong> la microeconomía estudia a individuos, empresas y mercados específicos (Adam Smith, 1776); la macroeconomía estudia la economía en conjunto: PBI, desempleo e inflación (Keynes, 1936).</p>\n<p>La teoría del consumidor explica cómo las personas eligen qué consumir. Cada consumidor busca <strong>maximizar su utilidad</strong> (bienestar, satisfacción) sujeto a restricciones: su ingreso y los precios. La utilidad no es solo material (la caridad o la autorrealización también dan valor), y los consumidores son racionales: consumen lo que creen que los hará más felices, a veces priorizando el hoy sobre el futuro.</p>\n<p><strong>Factores que afectan el valor percibido:</strong> precio de referencia, efecto calidad y restricción presupuestaria. <strong>Utilidad marginal (UMg):</strong> satisfacción adicional por consumir una unidad más; es <strong>decreciente</strong>: cada unidad extra satisface menos que la anterior.</p>\n<h4>Asignación de recursos</h4><p>Como hay escasez, toda economía tiene que decidir <strong>qué</strong> se produce, <strong>cómo</strong> se produce y <strong>para quién</strong>. Eso es la <strong>asignación de recursos</strong>. Una empresa enfrenta cuatro límites típicos: capacidad financiera, número finito de trabajadores calificados, capacidad de la planta y tiempo/gestión. Los <strong>individuos</strong> eligen qué consumir, las <strong>empresas</strong> qué y cuánto producir, y los <strong>gobiernos</strong> intervienen con políticas, regulación y bienes públicos.</p><h4>Restricción presupuestaria y elección óptima</h4><p>El consumidor quiere la mayor satisfacción posible, pero está limitado por su <strong>ingreso</strong> y por los <strong>precios</strong>: eso es la restricción presupuestaria. La <strong>elección óptima</strong> es la combinación de bienes que le da más utilidad total sin pasarse de su presupuesto.</p><h4>Efecto sustitución y efecto ingreso</h4><p>Cuando sube el precio de un bien pasan dos cosas a la vez:</p><ul><li><strong>Efecto sustitución:</strong> el bien se vuelve relativamente caro y lo reemplazas por otro parecido (sube el café → compras té).</li><li><strong>Efecto ingreso:</strong> tu dinero rinde menos (pierdes poder adquisitivo) y compras menos en general. Si el precio baja, sientes que tu dinero rinde más.</li></ul><p><strong>Bien Giffen:</strong> el efecto ingreso domina al de sustitución. Una familia pobre, al encarecerse el pan, ya no puede pagar alimentos más caros y termina comprando <em>más</em> pan. <strong>Bien Veblen:</strong> se desea más porque el precio alto da exclusividad. <strong>Bien de subsistencia:</strong> cubre necesidades básicas.</p><h4>Factores del valor percibido</h4><p>Un mismo producto vale distinto para cada persona. Influyen: <strong>exclusividad</strong> (lo difícil de conseguir parece más valioso), <strong>moda</strong>, <strong>precio de referencia</strong> (comparas con otro precio), <strong>efecto calidad</strong> (más caro = «debe ser mejor») y <strong>restricción presupuestaria</strong> (lo que puedes pagar). La utilidad también puede ser <strong>no material</strong>: caridad, práctica religiosa, autorrealización, sentido de propósito. Además, el consumidor racional pesa el <strong>presente y el futuro</strong>: algo puede dar placer hoy y problemas mañana.</p><h4>Para la empresa</h4><p>Entender al consumidor sirve para identificar qué valora, diseñar productos con valor real e innovar observando cambios en gustos, ingreso, precio, percepción de calidad y hábitos.</p><h4>Macroeconomía básica</h4><p><strong>PBI:</strong> valor de toda la producción de bienes y servicios de un país en un periodo. <strong>Desempleo:</strong> proporción de personas que buscan trabajo y no lo encuentran. <strong>Inflación:</strong> aumento <em>sostenido</em> del nivel <em>general</em> de precios (no de un solo producto). Las <strong>políticas económicas</strong> buscan crecimiento, empleo y estabilidad de precios: para reactivar se impulsa la demanda o se facilita la oferta; ante inflación se busca moderar los precios; ante desempleo, incentivar producción y contratación.</p>",
+   "form": [
+    "Escasez: recursos limitados, necesidades ilimitadas",
+    "Micro: individuos, empresas, mercados",
+    "Macro: PBI, desempleo, inflación",
+    "Mercado vs centralizada",
+    "\\(UMg=\\dfrac{\\Delta UT}{\\Delta Q}\\)",
+    "UMg decreciente",
+    "UT máxima cuando UMg = 0",
+    "Restricción: ingreso y precios",
+    "Justifica: afirmación → concepto → por qué",
+    "Efecto sustitución: lo reemplazo por otro · efecto ingreso: mi dinero rinde menos/más",
+    "Giffen: el efecto ingreso domina",
+    "Valor percibido: exclusividad, moda, referencia, calidad, presupuesto",
+    "Inflación: alza sostenida del nivel general de precios"
+   ],
+   "lesson": "<h3>▸ Fundamentos e historia</h3><h4>Idea central</h4><p>Toda la economía nace de un problema: <strong>no alcanza para todo</strong>. Una empresa tiene un presupuesto limitado, un número finito de trabajadores calificados, una planta con capacidad máxima y poco tiempo. Por eso debe <strong>elegir</strong>, y cada elección tiene un costo (lo que dejas de hacer).</p>\n<h4>Conceptos clave</h4><ul><li><strong>Economía:</strong> ciencia social que estudia las decisiones de individuos, empresas y gobiernos para enfrentar la escasez.</li><li><strong>Economía de la empresa:</strong> cómo asignar los recursos dentro de una empresa.</li><li><strong>Economía de mercado (laissez-faire):</strong> individuos y empresas privadas deciden qué producir y consumir.</li><li><strong>Economía centralizada:</strong> el Estado decide la producción y la distribución.</li><li><strong>Microeconomía:</strong> el comportamiento de individuos y empresas, la oferta, la demanda y los precios en mercados específicos. Obra fundacional: <em>La riqueza de las naciones</em>, Adam Smith (1776).</li><li><strong>Macroeconomía:</strong> la economía global: PBI, desempleo, inflación y políticas económicas. Obra clave: <em>Teoría general del empleo, el interés y el dinero</em>, Keynes (1936).</li></ul>\n<h4>Escuelas económicas (idea de cada una)</h4><ul><li><strong>Mercantilismo:</strong> la riqueza de un país es su oro y plata; hay que exportar más de lo que se importa.</li><li><strong>Fisiocracia:</strong> la tierra (agricultura) es la verdadera fuente de riqueza.</li><li><strong>Clásica</strong> (Smith, Ricardo): el mercado se autorregula con la «mano invisible»; importancia del trabajo y la especialización.</li><li><strong>Marxista:</strong> crítica del capitalismo; el valor viene del trabajo y existe explotación.</li><li><strong>Neoclásica / marginalista:</strong> las decisiones se toman «en el margen» (utilidad marginal, costo marginal).</li><li><strong>Keynesiana:</strong> en crisis, el Estado debe intervenir con gasto público para reactivar la demanda.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> «¿Cómo fija sus precios una panadería de Surco?» es una pregunta <strong>micro</strong> (una empresa, un mercado). «¿Por qué subió la inflación en el Perú?» es <strong>macro</strong>.</div>\n<div class=\"err\"><b>Error común:</b> creer que la microeconomía «es la economía de las cosas pequeñas». Estudia <em>unidades de decisión</em> (una persona, una empresa, un mercado), aunque sea una empresa enorme.</div><h3>▸ Teoría del consumidor</h3><h4>Idea central</h4><p>Para vender, una empresa debe entender el <strong>valor</strong> que el cliente percibe. El consumidor elige, dentro de lo que su presupuesto le permite, la combinación que más satisfacción le da.</p>\n<h4>Conceptos clave</h4><ul><li><strong>Utilidad:</strong> satisfacción o bienestar por consumir. No es solo material.</li><li><strong>Racionalidad:</strong> la gente consume lo que cree que la hará más feliz, aunque a veces priorice el presente (algo que gratifica hoy puede causar malestar mañana).</li><li><strong>Restricción presupuestaria:</strong> el ingreso y los precios limitan lo que se puede comprar.</li><li><strong>Precio de referencia:</strong> el precio funciona como señal de valor; un producto de S/ 48 parece barato junto a uno de S/ 89.</li><li><strong>Efecto calidad:</strong> un precio alto puede hacer que se perciba más calidad.</li><li><strong>Utilidad total (UT)</strong> y <strong>utilidad marginal (UMg)</strong>: la UMg es lo que suma la última unidad.</li></ul>\n<div class=\"ej\"><b>Ejemplo resuelto:</b> UT de helados: 1 → 10, 2 → 18, 3 → 24, 4 → 27. UMg: 10, 8, 6, 3. Cada helado adicional satisface menos: <strong>utilidad marginal decreciente</strong>. Si el quinto diera UT = 26, su UMg sería −1: ya no conviene comerlo; la UT máxima está en 4 helados.</div>\n<div class=\"err\"><b>Error común:</b> confundir utilidad total con marginal. La UT puede seguir subiendo aunque la UMg baje; solo cuando la UMg se vuelve negativa, la UT empieza a caer.</div><h3>▸ Del resumen de repaso</h3><h3>Asignación de recursos</h3><p>Como hay escasez, toda economía tiene que decidir <strong>qué</strong> se produce, <strong>cómo</strong> se produce y <strong>para quién</strong>. Eso es la <strong>asignación de recursos</strong>. Una empresa enfrenta cuatro límites típicos: capacidad financiera, número finito de trabajadores calificados, capacidad de la planta y tiempo/gestión. Los <strong>individuos</strong> eligen qué consumir, las <strong>empresas</strong> qué y cuánto producir, y los <strong>gobiernos</strong> intervienen con políticas, regulación y bienes públicos.</p><h3>Restricción presupuestaria y elección óptima</h3><p>El consumidor quiere la mayor satisfacción posible, pero está limitado por su <strong>ingreso</strong> y por los <strong>precios</strong>: eso es la restricción presupuestaria. La <strong>elección óptima</strong> es la combinación de bienes que le da más utilidad total sin pasarse de su presupuesto.</p><h3>Efecto sustitución y efecto ingreso</h3><p>Cuando sube el precio de un bien pasan dos cosas a la vez:</p><ul><li><strong>Efecto sustitución:</strong> el bien se vuelve relativamente caro y lo reemplazas por otro parecido (sube el café → compras té).</li><li><strong>Efecto ingreso:</strong> tu dinero rinde menos (pierdes poder adquisitivo) y compras menos en general. Si el precio baja, sientes que tu dinero rinde más.</li></ul><p><strong>Bien Giffen:</strong> el efecto ingreso domina al de sustitución. Una familia pobre, al encarecerse el pan, ya no puede pagar alimentos más caros y termina comprando <em>más</em> pan. <strong>Bien Veblen:</strong> se desea más porque el precio alto da exclusividad. <strong>Bien de subsistencia:</strong> cubre necesidades básicas.</p><h3>Factores del valor percibido</h3><p>Un mismo producto vale distinto para cada persona. Influyen: <strong>exclusividad</strong> (lo difícil de conseguir parece más valioso), <strong>moda</strong>, <strong>precio de referencia</strong> (comparas con otro precio), <strong>efecto calidad</strong> (más caro = «debe ser mejor») y <strong>restricción presupuestaria</strong> (lo que puedes pagar). La utilidad también puede ser <strong>no material</strong>: caridad, práctica religiosa, autorrealización, sentido de propósito. Además, el consumidor racional pesa el <strong>presente y el futuro</strong>: algo puede dar placer hoy y problemas mañana.</p><h3>Para la empresa</h3><p>Entender al consumidor sirve para identificar qué valora, diseñar productos con valor real e innovar observando cambios en gustos, ingreso, precio, percepción de calidad y hábitos.</p><h3>Macroeconomía básica</h3><p><strong>PBI:</strong> valor de toda la producción de bienes y servicios de un país en un periodo. <strong>Desempleo:</strong> proporción de personas que buscan trabajo y no lo encuentran. <strong>Inflación:</strong> aumento <em>sostenido</em> del nivel <em>general</em> de precios (no de un solo producto). Las <strong>políticas económicas</strong> buscan crecimiento, empleo y estabilidad de precios: para reactivar se impulsa la demanda o se facilita la oferta; ante inflación se busca moderar los precios; ante desempleo, incentivar producción y contratación.</p>",
+   "ex": [
+    {
+     "id": "mf1",
+     "lvl": 1,
+     "title": "¿Qué estudia la economía?",
+     "q": "<p>Según la clase, la economía es la ciencia social que estudia…</p>",
+     "checks": [
+      {
+       "p": "Definición",
+       "o": [
+        "Las decisiones de individuos, empresas y gobiernos para enfrentar la escasez",
+        "Solo cómo ganar más dinero",
+        "Únicamente el comportamiento de la bolsa de valores",
+        "Cómo producir sin restricciones",
+        "La contabilidad de las empresas"
+       ]
+      }
+     ],
+     "steps": [
+      "La palabra clave es <strong>escasez</strong>: como los recursos son limitados, hay que decidir cómo usarlos.",
+      "Por eso la economía es una ciencia de <strong>decisiones</strong>, y los que deciden son individuos, empresas y gobiernos.",
+      "Las otras opciones reducen la economía a una sola actividad (dinero, bolsa, contabilidad) o niegan la escasez."
+     ],
+     "ans": "Decisiones para enfrentar la escasez",
+     "hint": "Busca la palabra «escasez».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "escasez",
+       "exceso"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mf2",
+     "lvl": 1,
+     "title": "Conceptos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) En una economía centralizada, el Estado toma las decisiones importantes de producción y distribución.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) La microeconomía estudia la inflación y el PBI de un país.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) «Laissez-faire» describe una economía de mercado.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) V: esa es justamente la definición de economía centralizada.",
+      "b) F: inflación y PBI son variables <strong>agregadas</strong> de todo el país, así que son temas de macroeconomía.",
+      "c) V: <em>laissez-faire</em> («dejar hacer») significa que el Estado deja que los privados decidan."
+     ],
+     "ans": "V, F, V",
+     "hint": "PBI = todo el país.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tipos"
+      ],
+      [
+       "micmac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf3",
+     "lvl": 1,
+     "title": "¿Micro o macro?",
+     "q": "<p>Clasifica cada pregunta.</p>",
+     "checks": [
+      {
+       "p": "«¿Cuántos panes debería hornear una panadería de Surco al día?»",
+       "o": [
+        "Microeconomía",
+        "Macroeconomía",
+        "Ninguna",
+        "Ambas por igual",
+        "Economía centralizada"
+       ]
+      },
+      {
+       "p": "«¿Por qué subió la tasa de desempleo en el Perú?»",
+       "o": [
+        "Macroeconomía",
+        "Microeconomía",
+        "Economía de la empresa",
+        "Teoría del consumidor",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "La panadería es <strong>una empresa</strong> tomando una decisión de producción: eso es micro.",
+      "El desempleo del país es una variable <strong>agregada</strong> (suma de todos los mercados laborales): eso es macro."
+     ],
+     "ans": "Micro; macro",
+     "hint": "¿Una unidad o todo el país?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "micmac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf4",
+     "lvl": 2,
+     "title": "Autores y obras",
+     "q": "<p>Relaciona cada obra con su autor.</p>",
+     "checks": [
+      {
+       "p": "<em>La riqueza de las naciones</em> (1776)",
+       "o": [
+        "Adam Smith",
+        "John Maynard Keynes",
+        "Karl Marx",
+        "David Ricardo",
+        "Milton Friedman"
+       ]
+      },
+      {
+       "p": "<em>Teoría general del empleo, el interés y el dinero</em> (1936)",
+       "o": [
+        "John Maynard Keynes",
+        "Adam Smith",
+        "Alfred Marshall",
+        "Karl Marx",
+        "Friedrich Hayek"
+       ]
+      }
+     ],
+     "steps": [
+      "Adam Smith (1776) es el padre de la economía clásica y la clase lo asocia a la <strong>microeconomía</strong>.",
+      "Keynes (1936) escribió en plena Gran Depresión y dio origen a la <strong>macroeconomía</strong> moderna."
+     ],
+     "ans": "Smith; Keynes",
+     "hint": "Fíjate en los años.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "micmac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf5",
+     "lvl": 2,
+     "title": "Escuelas económicas",
+     "q": "<p>¿Qué escuela corresponde a cada idea?</p>",
+     "checks": [
+      {
+       "p": "«La riqueza de una nación se mide por el oro y la plata que acumula.»",
+       "o": [
+        "Mercantilismo",
+        "Fisiocracia",
+        "Escuela clásica",
+        "Keynesianismo",
+        "Marxismo"
+       ]
+      },
+      {
+       "p": "«En una crisis, el Estado debe aumentar el gasto público para reactivar la economía.»",
+       "o": [
+        "Keynesianismo",
+        "Escuela clásica",
+        "Fisiocracia",
+        "Mercantilismo",
+        "Laissez-faire puro"
+       ]
+      }
+     ],
+     "steps": [
+      "Los mercantilistas veían la riqueza en los metales preciosos, por eso buscaban exportar más que importar.",
+      "Keynes defendía la intervención del Estado cuando la demanda cae, lo contrario del <em>laissez-faire</em> clásico."
+     ],
+     "ans": "Mercantilismo; keynesianismo",
+     "hint": "Piensa en la época de cada escuela.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "tipos",
+       "rdec"
+      ]
+     ]
+    },
+    {
+     "id": "mf6",
+     "lvl": 3,
+     "title": "La escasez en la empresa",
+     "q": "<p>Una fábrica de helados no puede atender todos los pedidos del verano porque su planta tiene capacidad para 5 000 unidades diarias. ¿Qué concepto ilustra?</p>",
+     "checks": [
+      {
+       "p": "Concepto",
+       "o": [
+        "Escasez: los recursos de la empresa son limitados y obligan a elegir",
+        "Ley de la demanda",
+        "Economía centralizada",
+        "Bien Giffen",
+        "Utilidad marginal creciente"
+       ]
+      }
+     ],
+     "steps": [
+      "La capacidad de planta es uno de los límites que la clase menciona (junto con dinero, trabajadores y tiempo).",
+      "Como no puede producir todo lo que le piden, debe <strong>decidir</strong> a quién atender: esa es la esencia de la escasez."
+     ],
+     "ans": "Escasez",
+     "hint": "Un recurso limitado obliga a decidir.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "escasez",
+       "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "mc1",
+     "lvl": 1,
+     "title": "¿Qué es la utilidad?",
+     "q": "<p>En teoría del consumidor, la «utilidad» es…</p>",
+     "checks": [
+      {
+       "p": "Utilidad",
+       "o": [
+        "La satisfacción o bienestar que obtiene el consumidor",
+        "La ganancia de la empresa",
+        "El precio del producto",
+        "La cantidad producida",
+        "El ingreso del consumidor"
+       ]
+      }
+     ],
+     "steps": [
+      "En economía, «utilidad» no es ganancia contable: es <strong>satisfacción</strong>.",
+      "El consumidor busca maximizarla con su presupuesto."
+     ],
+     "ans": "Satisfacción o bienestar",
+     "hint": "No la confundas con utilidad contable.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "valor"
+      ]
+     ]
+    },
+    {
+     "id": "mc2",
+     "lvl": 1,
+     "title": "Consumidor: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) La utilidad solo proviene de bienes materiales.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) Con utilidad marginal decreciente, cada unidad adicional da menos satisfacción que la anterior.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) El ingreso y los precios limitan las elecciones del consumidor.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: la clase menciona la caridad, la práctica religiosa y la autorrealización como fuentes de utilidad.",
+      "b) V: esa es la definición.",
+      "c) V: es la restricción presupuestaria."
+     ],
+     "ans": "F, V, V",
+     "hint": "Piensa en la caridad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "valor"
+      ]
+     ]
+    },
+    {
+     "id": "mc3",
+     "lvl": 2,
+     "title": "Calcular la utilidad marginal",
+     "q": "<p>La utilidad total de comer helados es:</p><div class=\"tbl\"><table><tr><th>Helados</th><th>UT</th></tr><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>18</td></tr><tr><td>3</td><td>24</td></tr><tr><td>4</td><td>27</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "UMg del tercer helado",
+       "o": [
+        "6",
+        "24",
+        "8",
+        "3",
+        "18"
+       ]
+      },
+      {
+       "p": "¿Qué principio se observa?",
+       "o": [
+        "Utilidad marginal decreciente",
+        "Utilidad marginal creciente",
+        "Ley de la oferta",
+        "Bien Giffen",
+        "Economías de escala"
+       ]
+      }
+     ],
+     "steps": [
+      "La UMg es lo que <strong>añade</strong> la unidad: \\(UMg_3=UT_3-UT_2=24-18=6\\).",
+      "Las UMg son 10, 8, 6 y 3: cada vez menores.",
+      "Por eso hay utilidad marginal decreciente: el tercer helado gusta, pero menos que el primero."
+     ],
+     "ans": "6; UMg decreciente",
+     "hint": "Resta la UT anterior.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "umg"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mc4",
+     "lvl": 2,
+     "title": "Valor percibido",
+     "q": "<p>Una tienda coloca un polo de S/ 89 junto a otro de S/ 48, y el de S/ 48 «se ve barato». ¿Qué factor del valor percibido actúa?</p>",
+     "checks": [
+      {
+       "p": "Factor",
+       "o": [
+        "Precio de referencia",
+        "Efecto calidad",
+        "Restricción presupuestaria",
+        "Utilidad marginal",
+        "Bien Veblen"
+       ]
+      }
+     ],
+     "steps": [
+      "El precio de S/ 89 funciona como <strong>ancla o referencia</strong>: comparado con él, S/ 48 parece una oferta.",
+      "No es efecto calidad (no se asocia más calidad al más caro de los dos que compras)."
+     ],
+     "ans": "Precio de referencia",
+     "hint": "El ejemplo de clase: 40, 45, 48 y 89 soles.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "valor"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mc5",
+     "lvl": 3,
+     "title": "¿Cuándo dejar de consumir?",
+     "q": "<p>UT de porciones de pizza:</p><div class=\"tbl\"><table><tr><th>Porciones</th><th>UT</th></tr><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>20</td></tr><tr><td>3</td><td>25</td></tr><tr><td>4</td><td>27</td></tr><tr><td>5</td><td>26</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "¿Con cuántas porciones se maximiza la UT?",
+       "o": [
+        "4",
+        "5",
+        "3",
+        "1",
+        "2"
+       ]
+      },
+      {
+       "p": "UMg de la quinta porción",
+       "o": [
+        "−1",
+        "26",
+        "1",
+        "0",
+        "−26"
+       ]
+      }
+     ],
+     "steps": [
+      "UMg: 12, 8, 5, 2 y −1.",
+      "Mientras la UMg sea positiva, comer una porción más suma satisfacción. La quinta tiene UMg negativa: resta.",
+      "Por eso la UT es máxima en 4 porciones (27)."
+     ],
+     "ans": "4 porciones; UMg = −1",
+     "hint": "Para cuando la UMg se vuelve negativa.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "umg"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mb1",
+     "lvl": 3,
+     "title": "Justifica: elige el mejor argumento",
+     "q": "<p>En el examen no basta con marcar V o F: hay que <strong>justificar</strong>. Elige la respuesta con la justificación correcta.</p>",
+     "checks": [
+      {
+       "p": "a) «En una economía de mercado, los precios los fija el Estado.»",
+       "o": [
+        "Falso: en una economía de mercado los precios salen de las decisiones de compradores y vendedores (oferta y demanda)",
+        "Verdadero: el Estado siempre fija los precios para evitar abusos",
+        "Verdadero: laissez-faire significa que el Estado controla los precios",
+        "Falso: los precios los fijan solo las empresas más grandes"
+       ]
+      },
+      {
+       "p": "b) «Si la utilidad marginal de una porción más llega a ser negativa, conviene dejar de consumir antes de esa porción.»",
+       "o": [
+        "Verdadero: esa porción resta satisfacción, así que la utilidad total ya alcanzó su máximo",
+        "Falso: mientras la utilidad total sea positiva conviene seguir consumiendo",
+        "Verdadero: porque la utilidad total se vuelve cero",
+        "Falso: la utilidad marginal nunca puede ser negativa"
+       ]
+      },
+      {
+       "p": "c) «El sueldo que dejas de ganar por estudiar a tiempo completo es parte del costo de estudiar.»",
+       "o": [
+        "Verdadero: es un costo de oportunidad (costo implícito), la mejor alternativa a la que renuncias",
+        "Falso: solo cuentan los pagos de pensión y materiales",
+        "Verdadero: es un costo explícito porque implica dinero",
+        "Falso: el costo de oportunidad solo existe en las empresas"
+       ]
+      }
+     ],
+     "steps": [
+      "a) En la economía de mercado (laissez-faire) deciden los privados; el precio resulta de la interacción entre oferta y demanda.",
+      "b) Con UMg negativa, consumir esa unidad <strong>reduce</strong> la utilidad total: el máximo de la UT está justo antes (donde UMg ≈ 0).",
+      "c) No hay desembolso, pero sí se sacrifica algo valioso: eso es un <strong>costo implícito</strong> (costo de oportunidad).",
+      "Estructura de una buena justificación: <em>afirmación → concepto que aplica → por qué</em>."
+     ],
+     "ans": "F; V; V (con su porqué)",
+     "hint": "Fíjate en la razón, no solo en la palabra V o F.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tipos",
+       "just"
+      ],
+      [
+       "umg",
+       "just"
+      ],
+      [
+       "coport",
+       "just"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mr3",
+     "lvl": 1,
+     "title": "Asignación de recursos",
+     "q": "<p>Responde según el resumen de clase.</p>",
+     "checks": [
+      {
+       "p": "Decidir qué se produce, cómo se produce y para quién se produce se llama…",
+       "o": [
+        "Asignación de recursos",
+        "Restricción presupuestaria",
+        "Economía centralizada",
+        "Utilidad marginal",
+        "Equilibrio de mercado"
+       ]
+      },
+      {
+       "p": "Una fábrica no puede producir más porque su local es pequeño. ¿Qué limitación enfrenta?",
+       "o": [
+        "Capacidad de producción de la planta",
+        "Capacidad financiera limitada",
+        "Número finito de trabajadores calificados",
+        "Limitaciones en la gestión y el tiempo",
+        "Efecto ingreso"
+       ]
+      }
+     ],
+     "steps": [
+      "Las tres preguntas (qué, cómo, para quién) definen la <strong>asignación de recursos</strong>.",
+      "El tamaño del local es un límite físico: <strong>capacidad de la planta</strong>."
+     ],
+     "ans": "Asignación de recursos; capacidad de la planta",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "escasez"
+      ],
+      [
+       "escasez"
+      ]
+     ]
+    },
+    {
+     "id": "mr5",
+     "lvl": 1,
+     "title": "Utilidad no material y presente vs futuro",
+     "q": "<p>Elige la respuesta correctamente justificada.</p>",
+     "checks": [
+      {
+       "p": "a) «Donar a una ONG puede darle utilidad a una persona.»",
+       "o": [
+        "Verdadero: la utilidad también viene de beneficios no materiales, como ayudar a otros",
+        "Falso: la utilidad solo viene de bienes físicos",
+        "Falso: donar siempre reduce la utilidad",
+        "Verdadero: porque recibe un bien a cambio"
+       ]
+      },
+      {
+       "p": "b) «Un consumidor racional solo considera la satisfacción inmediata.»",
+       "o": [
+        "Falso: también valora las consecuencias futuras del consumo",
+        "Verdadero: la racionalidad es buscar placer ahora",
+        "Verdadero: el futuro no da utilidad",
+        "Falso: el consumidor racional no busca satisfacción"
+       ]
+      }
+     ],
+     "steps": [
+      "a) Caridad, religión o autorrealización también dan satisfacción.",
+      "b) La decisión racional pesa el placer de hoy y sus efectos posteriores."
+     ],
+     "ans": "V; F",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "umg"
+      ],
+      [
+       "umg"
+      ]
+     ]
+    },
+    {
+     "id": "mr1",
+     "lvl": 2,
+     "title": "Efecto sustitución y efecto ingreso",
+     "q": "<p>Identifica el efecto en cada caso.</p>",
+     "checks": [
+      {
+       "p": "a) Sube el precio del café y algunas personas empiezan a comprar té.",
+       "o": [
+        "Efecto sustitución",
+        "Efecto ingreso",
+        "Efecto calidad",
+        "Bien Veblen",
+        "Movimiento de la oferta"
+       ]
+      },
+      {
+       "p": "b) Baja el precio del arroz y una familia siente que su dinero le rinde más, así que compra más de todo.",
+       "o": [
+        "Efecto ingreso",
+        "Efecto sustitución",
+        "Precio de referencia",
+        "Bien Giffen",
+        "Desplazamiento de la oferta"
+       ]
+      },
+      {
+       "p": "c) En un bien Giffen…",
+       "o": [
+        "El efecto ingreso domina al efecto sustitución",
+        "El efecto sustitución domina al efecto ingreso",
+        "No hay efecto ingreso",
+        "El precio alto da exclusividad",
+        "La demanda depende solo de la moda"
+       ]
+      }
+     ],
+     "steps": [
+      "a) Cambias a un bien parecido más barato: <strong>sustitución</strong>.",
+      "b) El cambio de precio cambia tu poder adquisitivo: <strong>ingreso</strong>.",
+      "c) En el Giffen, la pérdida de poder adquisitivo pesa tanto que se compra <em>más</em> del bien básico aunque esté más caro."
+     ],
+     "ans": "Sustitución; ingreso; domina el efecto ingreso",
+     "hint": "¿Reemplazas el bien o cambia lo que te alcanza?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "efsi"
+      ],
+      [
+       "efsi"
+      ],
+      [
+       "giffen",
+       "efsi"
+      ]
+     ]
+    },
+    {
+     "id": "mr2",
+     "lvl": 2,
+     "title": "Factores del valor percibido",
+     "q": "<p>¿Qué factor del valor percibido actúa en cada caso?</p>",
+     "checks": [
+      {
+       "p": "a) Una marca lanza solo 500 pares de zapatillas numeradas.",
+       "o": [
+        "Exclusividad",
+        "Moda",
+        "Precio de referencia",
+        "Efecto calidad",
+        "Restricción presupuestaria"
+       ]
+      },
+      {
+       "p": "b) Un vaso térmico se vuelve viral en TikTok y todos lo quieren.",
+       "o": [
+        "Moda",
+        "Exclusividad",
+        "Precio de referencia",
+        "Efecto calidad",
+        "Restricción presupuestaria"
+       ]
+      },
+      {
+       "p": "c) «Este vino cuesta S/ 180, debe ser mucho mejor que el de S/ 40.»",
+       "o": [
+        "Efecto calidad",
+        "Exclusividad",
+        "Moda",
+        "Precio de referencia",
+        "Restricción presupuestaria"
+       ]
+      },
+      {
+       "p": "d) Un estudiante elige el menú de S/ 12 porque no le alcanza para otra cosa.",
+       "o": [
+        "Restricción presupuestaria",
+        "Exclusividad",
+        "Moda",
+        "Precio de referencia",
+        "Efecto calidad"
+       ]
+      }
+     ],
+     "steps": [
+      "a) Escaso y difícil de conseguir: <strong>exclusividad</strong>.",
+      "b) Lo socialmente deseado en ese momento: <strong>moda</strong>.",
+      "c) El precio alto se lee como señal de calidad: <strong>efecto calidad</strong>.",
+      "d) Lo que puede pagar limita su elección: <strong>restricción presupuestaria</strong>."
+     ],
+     "ans": "Exclusividad; moda; efecto calidad; restricción presupuestaria",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "valor"
+      ],
+      [
+       "valor"
+      ],
+      [
+       "valor"
+      ],
+      [
+       "valor"
+      ]
+     ]
+    },
+    {
+     "id": "mr4",
+     "lvl": 2,
+     "title": "Macro y políticas: V o F justificado",
+     "q": "<p>Elige la respuesta correctamente justificada.</p>",
+     "checks": [
+      {
+       "p": "a) «El PBI mide el valor de toda la producción de bienes y servicios de un país en un periodo.»",
+       "o": [
+        "Verdadero: esa es su definición",
+        "Falso: el PBI mide solo las exportaciones",
+        "Falso: mide el nivel general de precios",
+        "Verdadero: mide el ingreso de una sola empresa"
+       ]
+      },
+      {
+       "p": "b) «Si sube el precio del limón, el país tiene inflación.»",
+       "o": [
+        "Falso: la inflación es un aumento sostenido del nivel general de precios, no de un solo producto",
+        "Verdadero: cualquier alza de precio es inflación",
+        "Verdadero: el limón está en la canasta",
+        "Falso: la inflación es la baja de precios"
+       ]
+      },
+      {
+       "p": "c) «Ante presión inflacionaria, se buscan medidas para estimular todavía más la demanda.»",
+       "o": [
+        "Falso: se buscan medidas para moderar el crecimiento de los precios",
+        "Verdadero: más demanda baja los precios",
+        "Verdadero: así se reduce el desempleo sin costo",
+        "Falso: el Estado nunca interviene"
+       ]
+      }
+     ],
+     "steps": [
+      "a) V: definición de PBI.",
+      "b) F: hace falta un alza <strong>sostenida</strong> y del nivel <strong>general</strong>.",
+      "c) F: estimular la demanda empujaría aún más los precios; se busca moderarlos."
+     ],
+     "ans": "V; F; F",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "micmac"
+      ],
+      [
+       "micmac"
+      ],
+      [
+       "micmac"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b2",
+   "name": "Bloque 2 · Oferta y demanda: equilibrio y desplazamientos",
+   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> calcular el equilibrio en <strong>todos</strong> los casos y dibujar bien los desplazamientos de oferta y demanda en el gráfico de la empresa para cada escenario. Si solo calculas el equilibrio pero fallas los desplazamientos, bajas a 3.</p>\n<p><strong>Ley de la demanda:</strong> si el precio sube, la cantidad demandada baja (relación inversa, <em>ceteris paribus</em>), por el efecto sustitución y el efecto ingreso. <strong>Ley de la oferta:</strong> si el precio sube, la cantidad ofrecida sube (relación directa). Excepciones: bien <strong>Giffen</strong> (bienes de subsistencia) y bien <strong>Veblen</strong> (lujo).</p>\n<p><strong>Regla de oro:</strong> si cambia el <strong>precio del propio bien</strong>, hay un <strong>movimiento a lo largo</strong> de la curva. Si cambia <strong>cualquier otro factor</strong>, la curva se <strong>desplaza</strong> (derecha = aumento, izquierda = reducción).</p>\n<p>Desplazan la <strong>demanda:</strong> ingreso (normal ↑ / inferior ↓), precio de bienes relacionados (sustituto sube → D ↑; complemento sube → D ↓), gustos, población, expectativas y estacionalidad. Desplazan la <strong>oferta:</strong> costo de insumos y salarios, tecnología, clima o desastres, número de productores.</p>\n<p>El <strong>equilibrio</strong> ocurre donde se cruzan las curvas: la cantidad ofrecida es igual a la demandada (\\(Q_s=Q_d\\)), y no hay presión para que el precio cambie. Se halla igualando las ecuaciones, despejando \\(p^*\\) y reemplazando para obtener \\(Q^*\\).</p>\n<p>A un precio <strong>mayor</strong> que el de equilibrio, \\(Q_s\\gt Q_d\\): <strong>sobreproducción</strong> (exceso de oferta) de \\(Q_s-Q_d\\). A un precio <strong>menor</strong>, \\(Q_d\\gt Q_s\\): <strong>escasez</strong> (exceso de demanda) de \\(Q_d-Q_s\\).</p>\n<p><strong>Desplazamientos simultáneos:</strong> si ambas curvas se mueven, una de las dos variables (precio o cantidad) queda <strong>indeterminada</strong>, porque depende de cuál curva se mueve más.</p>\n<h4>Método de 4 pasos para cualquier gráfico</h4><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h4>Calcular el equilibrio, paso a paso</h4><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
+   "form": [
+    "Método: precio propio → movimiento; factor externo → desplazamiento",
+    "Precio del bien → movimiento en la curva",
+    "Otro factor → desplazamiento",
+    "Ingreso ↑: normal D→, inferior D←",
+    "Sustituto ↑ → D→; complemento ↑ → D←",
+    "Costos ↑ → O←; tecnología ↑ → O→",
+    "Equilibrio: \\(Q_d=Q_s\\)",
+    "\\(p\\gt p^*\\): sobreproducción \\(=Q_s-Q_d\\)",
+    "\\(p\\lt p^*\\): escasez \\(=Q_d-Q_s\\)",
+    "D↑ y O↑: Q sube, P indeterminado",
+    "D↑ y O↓: P sube, Q indeterminada",
+    "Estacionalidad y expectativas desplazan oferta y demanda"
+   ],
+   "lesson": "<h3>▸ Desplazamientos</h3><h4>Idea central</h4><p>Cada curva responde a una pregunta: la <strong>demanda</strong> dice cuánto quieren y pueden comprar los consumidores a cada precio; la <strong>oferta</strong>, cuánto quieren y pueden vender los productores a cada precio. Lo difícil del examen es saber <strong>qué curva</strong> se mueve y <strong>cómo</strong>.</p>\n<h4>Movimiento vs desplazamiento</h4><ul><li>Cambia el <strong>precio del propio bien</strong> → cambia la <strong>cantidad</strong> demandada u ofrecida: movimiento a lo largo de la curva. La curva no se mueve.</li><li>Cambia <strong>otro factor</strong> → cambia la demanda u oferta: la curva entera se desplaza.</li></ul>\n<h4>Factores de la demanda</h4><ul><li><strong>Ingreso:</strong> bien normal (ropa de marca, restaurantes) → D se desplaza a la derecha si sube el ingreso; bien inferior (ropa de segundo uso, transporte público) → a la izquierda.</li><li><strong>Bienes relacionados:</strong> sustitutos (pollo y res, laptops y tablets): si sube el precio del sustituto, D del original → derecha. Complementarios (impresora y cartucho, café y azúcar): si sube el precio del complemento, D del original → izquierda.</li><li><strong>Gustos, población, expectativas</strong> (si se espera que suba el precio, compro hoy: D → derecha) y <strong>estacionalidad</strong>.</li></ul>\n<h4>Factores de la oferta</h4><ul><li><strong>Costos:</strong> insumos o salarios más caros → O a la izquierda; más baratos → a la derecha.</li><li><strong>Tecnología</strong> más eficiente → O a la derecha.</li><li><strong>Clima, desastres, huelgas de proveedores</strong> → O a la izquierda.</li><li><strong>Número de productores</strong> ↑ → O a la derecha.</li></ul>\n<h4>Excepciones a la ley de la demanda</h4><ul><li><strong>Giffen:</strong> bienes de subsistencia en pobreza extrema (papas en la hambruna irlandesa, pan, arroz): al subir su precio se compran más.</li><li><strong>Veblen:</strong> bienes de lujo (Ferrari, Rolex): la exclusividad hace que un precio mayor aumente su atractivo.</li></ul>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de clase):</b> «Un fenómeno climático ahuyenta los peces que se usan como insumo» → afecta a los <strong>productores</strong> de enlatados (su insumo es más escaso y caro) → la <strong>oferta</strong> se desplaza a la <strong>izquierda</strong>. En cambio, «disminuye el precio de los enlatados» es el precio del propio bien → <strong>movimiento</strong> hacia abajo por la curva de oferta (se ofrece menos cantidad).</div>\n<div class=\"err\"><b>Errores comunes:</b> (1) decir que un cambio en el precio del bien «desplaza la curva»; (2) confundir sustitutos con complementarios; (3) mover la demanda cuando el shock es de costos (eso afecta a los productores, es oferta).</div><h3>▸ Equilibrio</h3><h4>Idea central</h4><p>El mercado «busca» el precio donde compradores y vendedores quieren la misma cantidad. Si el precio está por encima, sobra producto y los vendedores bajan precios; si está por debajo, falta producto y el precio sube.</p>\n<h4>Cómo calcular el equilibrio</h4><ol><li>Identifica cuál ecuación es la demanda (la que tiene <strong>−p</strong>: más precio, menos cantidad) y cuál la oferta (<strong>+p</strong>).</li><li>Iguala \\(Q_d=Q_s\\) y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en cualquiera de las dos ecuaciones para obtener \\(Q^*\\) (sale lo mismo en ambas: úsalo para comprobar).</li></ol>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de la leche):</b> \\(S=50+10p\\), \\(D=900-15p\\). Igualando: \\(50+10p=900-15p\\Rightarrow25p=850\\Rightarrow p^*=34\\). Cantidad: \\(S=50+340=390\\) (y \\(D=900-510=390\\) ✓). Si bajan los costos y la oferta pasa a \\(S=250+10p\\): \\(250+10p=900-15p\\Rightarrow p^*=26,\\ Q^*=510\\). Más oferta: <strong>baja el precio y sube la cantidad</strong>.</div>\n<h4>Escasez y sobreproducción</h4><p>Evalúa ambas ecuaciones en el precio dado y réstalas. Si \\(Q_d\\gt Q_s\\), hay escasez; si \\(Q_s\\gt Q_d\\), sobreproducción.</p>\n<h4>Desplazamientos simultáneos</h4><div class=\"tbl\"><table><tr><th>Cambio</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D ↑ y O ↑</td><td>Indeterminado</td><td>Sube</td></tr><tr><td>D ↓ y O ↓</td><td>Indeterminado</td><td>Baja</td></tr><tr><td>D ↑ y O ↓</td><td>Sube</td><td>Indeterminada</td></tr><tr><td>D ↓ y O ↑</td><td>Baja</td><td>Indeterminada</td></tr></table></div>\n<div class=\"err\"><b>Errores comunes:</b> (1) restar al revés y decir «escasez» cuando hay sobreproducción; (2) olvidar comprobar \\(Q^*\\) en ambas ecuaciones; (3) en las cuadráticas, quedarse con \\(p=0\\), que no tiene sentido económico.</div><h3>▸ Método y equilibrio explicados</h3><h3>Método de 4 pasos para cualquier gráfico</h3><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h3>Calcular el equilibrio, paso a paso</h3><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
+   "ex": [
+    {
+     "id": "mo1",
+     "lvl": 1,
+     "title": "Ley de la demanda",
+     "q": "<p>¿Qué establece la ley de la demanda (<em>ceteris paribus</em>)?</p>",
+     "checks": [
+      {
+       "p": "Ley",
+       "o": [
+        "Si el precio sube, la cantidad demandada baja",
+        "Si el precio sube, la cantidad demandada sube",
+        "Si el ingreso sube, la demanda baja",
+        "La oferta siempre iguala a la demanda",
+        "El precio no afecta la cantidad"
+       ]
+      }
+     ],
+     "steps": [
+      "Relación <strong>inversa</strong> entre precio y cantidad demandada, manteniendo todo lo demás constante.",
+      "Se explica por el efecto sustitución (me paso a otro bien) y el efecto ingreso (mi dinero rinde menos)."
+     ],
+     "ans": "Relación inversa",
+     "hint": "Ceteris paribus = todo lo demás constante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mo2",
+     "lvl": 1,
+     "title": "Desplazamientos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) Un cambio en el precio del propio bien desplaza su curva de demanda.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) Si sube el ingreso, la demanda de un bien inferior se reduce.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) En un bien Giffen, la cantidad demandada aumenta cuando sube su precio.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: el precio del propio bien produce un <strong>movimiento</strong> a lo largo de la curva, no un desplazamiento.",
+      "b) V: con más ingreso la gente cambia la ropa de segundo uso por ropa nueva, por ejemplo.",
+      "c) V: es la excepción a la ley de la demanda en bienes de subsistencia."
+     ],
+     "ans": "F, V, V",
+     "hint": "Precio propio = movimiento.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "movdes"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mo3",
+     "lvl": 1,
+     "title": "Caso: enlatados de pescado",
+     "q": "<p>Un fenómeno climático ahuyenta los peces que se usan como insumo. ¿Qué pasa en el mercado de enlatados de pescado?</p>",
+     "checks": [
+      {
+       "p": "Gráfico",
+       "o": [
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "El fenómeno afecta a los <strong>productores</strong>: el insumo se vuelve escaso y más caro.",
+      "Con el mismo precio de venta, los productores pueden ofrecer menos: la <strong>oferta se desplaza a la izquierda</strong>.",
+      "La demanda no cambia: los consumidores no tienen un motivo nuevo para comprar más o menos."
+     ],
+     "ans": "Oferta a la izquierda",
+     "hint": "¿A quién afecta: a compradores o vendedores?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oferta"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mo4",
+     "lvl": 2,
+     "title": "La trampa del precio propio",
+     "q": "<p>Disminuye el <strong>precio de los enlatados</strong> de pescado. ¿Qué gráfico representa el efecto sobre la oferta de enlatados?</p>",
+     "checks": [
+      {
+       "p": "Gráfico",
+       "o": [
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "Es el precio del <strong>propio bien</strong>: no desplaza ninguna curva.",
+      "Por la ley de la oferta, a menor precio se ofrece menos: hay un <strong>movimiento hacia abajo a lo largo de la curva de oferta</strong> (baja la cantidad ofrecida, no la oferta)."
+     ],
+     "ans": "Movimiento a lo largo de la oferta",
+     "hint": "Es el caso 1c de la semana 3.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "movdes"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mo5",
+     "lvl": 2,
+     "title": "Caso: carne de res y pollo",
+     "q": "<p>Sube el precio de la carne de pollo, que es un sustituto perfecto de la carne de res. ¿Qué pasa en el mercado de carne de res?</p>",
+     "checks": [
+      {
+       "p": "Gráfico",
+       "o": [
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "Pollo y res son <strong>sustitutos</strong>: si el pollo se encarece, la gente se pasa a la res.",
+      "A cualquier precio de la res se demanda más: la <strong>demanda de res se desplaza a la derecha</strong>."
+     ],
+     "ans": "Demanda a la derecha",
+     "hint": "Sustituto más caro → me paso al otro.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "relac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mr6",
+     "lvl": 2,
+     "title": "Aplica el método de 4 pasos",
+     "q": "<p>¿Qué pasa en cada mercado?</p>",
+     "checks": [
+      {
+       "p": "a) Llega el verano y la gente quiere más helados.",
+       "o": [
+        "La demanda se desplaza a la derecha: p y Q suben",
+        "La oferta se desplaza a la derecha: p baja y Q sube",
+        "Movimiento sobre la curva de demanda",
+        "La demanda se desplaza a la izquierda: p y Q bajan",
+        "La oferta se desplaza a la izquierda: p sube y Q baja"
+       ]
+      },
+      {
+       "p": "b) Un distrito recibe muchos nuevos vecinos y aumenta el número de compradores de pan.",
+       "o": [
+        "La demanda se desplaza a la derecha: p y Q suben",
+        "La oferta se desplaza a la derecha: p baja y Q sube",
+        "Movimiento sobre la curva de oferta",
+        "La demanda se desplaza a la izquierda: p y Q bajan",
+        "No cambia nada"
+       ]
+      },
+      {
+       "p": "c) Baja el precio de los enlatados de pescado.",
+       "o": [
+        "Movimiento sobre la curva (no hay desplazamiento)",
+        "La oferta se desplaza a la izquierda",
+        "La oferta se desplaza a la derecha",
+        "La demanda se desplaza a la derecha",
+        "La demanda se desplaza a la izquierda"
+       ]
+      },
+      {
+       "p": "d) Sube el salario de los trabajadores de las fábricas de enlatados.",
+       "o": [
+        "La oferta se desplaza a la izquierda: p sube y Q baja",
+        "La oferta se desplaza a la derecha: p baja y Q sube",
+        "La demanda se desplaza a la derecha: p y Q suben",
+        "Movimiento sobre la curva de oferta",
+        "La demanda se desplaza a la izquierda: p y Q bajan"
+       ]
+      }
+     ],
+     "steps": [
+      "a) Factor externo (estacionalidad) que afecta a compradores → D→ → p y Q suben.",
+      "b) Más población → D→ → p y Q suben.",
+      "c) Es el precio del propio bien → movimiento sobre la curva, no desplazamiento.",
+      "d) Sube el costo de producir → O← → p sube y Q baja."
+     ],
+     "ans": "D→; D→; movimiento; O←",
+     "hint": "Paso 1: ¿es el precio del propio bien?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "doble",
+       "movdes"
+      ],
+      [
+       "movdes"
+      ],
+      [
+       "movdes"
+      ],
+      [
+       "oferta"
+      ]
+     ]
+    },
+    {
+     "id": "mo6",
+     "lvl": 2,
+     "title": "Bien inferior",
+     "q": "<p>Aumenta el ingreso de los compradores de carne de res, <strong>asumiendo que es un bien inferior</strong>. ¿Qué pasa con su demanda?</p>",
+     "checks": [
+      {
+       "p": "Efecto",
+       "o": [
+        "La demanda se desplaza a la izquierda",
+        "La demanda se desplaza a la derecha",
+        "Movimiento a lo largo de la demanda",
+        "La oferta se desplaza a la derecha",
+        "No pasa nada"
+       ]
+      }
+     ],
+     "steps": [
+      "Un bien <strong>inferior</strong> se compra menos cuando el ingreso sube (se reemplaza por algo «mejor»).",
+      "El ingreso no es el precio del bien: es un factor externo, así que <strong>desplaza</strong> la curva, en este caso a la izquierda."
+     ],
+     "ans": "Demanda a la izquierda",
+     "hint": "Inferior = con más ingreso se compra menos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ingreso"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mo7",
+     "lvl": 2,
+     "title": "Complementarios",
+     "q": "<p>Sube mucho el precio de los cartuchos de tinta.</p>",
+     "checks": [
+      {
+       "p": "Impresoras y cartuchos son bienes…",
+       "o": [
+        "Complementarios",
+        "Sustitutos",
+        "Giffen",
+        "Veblen",
+        "Inferiores"
+       ]
+      },
+      {
+       "p": "¿Qué pasa con la demanda de impresoras?",
+       "o": [
+        "Se desplaza a la izquierda",
+        "Se desplaza a la derecha",
+        "Movimiento a lo largo",
+        "No cambia",
+        "Se vuelve un bien Giffen"
+       ]
+      }
+     ],
+     "steps": [
+      "Se usan <strong>juntos</strong>: son complementarios.",
+      "Si el cartucho se encarece, usar una impresora cuesta más, así que se compran menos impresoras a cualquier precio: la demanda se desplaza a la izquierda."
+     ],
+     "ans": "Complementarios; demanda a la izquierda",
+     "hint": "Se consumen juntos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "relac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mo8",
+     "lvl": 3,
+     "title": "Caso: televisores",
+     "q": "<p>Una innovación en la tecnología de pantallas reduce sus costos. ¿Qué pasa en el mercado de televisores?</p>",
+     "checks": [
+      {
+       "p": "Gráfico",
+       "o": [
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
+        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "La innovación baja los <strong>costos de producción</strong>: afecta a los productores.",
+      "Producir cada televisor cuesta menos, así que a cualquier precio pueden ofrecer más: la <strong>oferta se desplaza a la derecha</strong>."
+     ],
+     "ans": "Oferta a la derecha",
+     "hint": "Tecnología = oferta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oferta"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mo9",
+     "lvl": 3,
+     "title": "Giffen o Veblen",
+     "q": "<p>Clasifica cada caso.</p>",
+     "checks": [
+      {
+       "p": "Sube el precio del Rolex y se vende más",
+       "o": [
+        "Bien Veblen",
+        "Bien Giffen",
+        "Bien inferior",
+        "Bien normal",
+        "Bien complementario"
+       ]
+      },
+      {
+       "p": "En pobreza extrema sube el precio del pan y se compra más pan",
+       "o": [
+        "Bien Giffen",
+        "Bien Veblen",
+        "Bien de lujo",
+        "Bien sustituto",
+        "Bien normal"
+       ]
+      }
+     ],
+     "steps": [
+      "<strong>Veblen:</strong> lujo; el precio alto da exclusividad y estatus.",
+      "<strong>Giffen:</strong> subsistencia; al encarecerse el pan, las familias ya no pueden pagar otros alimentos y compran más pan para no pasar hambre."
+     ],
+     "ans": "Veblen; Giffen",
+     "hint": "Lujo vs subsistencia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "giffen"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mo10",
+     "lvl": 3,
+     "title": "Expectativas",
+     "q": "<p>Los consumidores esperan que el precio de los smartphones suba el próximo mes. ¿Qué pasa hoy con la demanda de smartphones?</p>",
+     "checks": [
+      {
+       "p": "Efecto",
+       "o": [
+        "Se desplaza a la derecha: compran ahora antes de que suba",
+        "Se desplaza a la izquierda",
+        "Movimiento a lo largo de la demanda",
+        "La oferta se desplaza a la izquierda",
+        "No cambia hasta el próximo mes"
+       ]
+      }
+     ],
+     "steps": [
+      "Las <strong>expectativas</strong> son un factor de la demanda.",
+      "Si creo que mañana estará más caro, adelanto mi compra: hoy se demanda más a cualquier precio."
+     ],
+     "ans": "Demanda a la derecha hoy",
+     "hint": "¿Qué harías tú?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "me1",
+     "lvl": 1,
+     "title": "¿Qué es el equilibrio?",
+     "q": "<p>El equilibrio de mercado se da cuando…</p>",
+     "checks": [
+      {
+       "p": "Equilibrio",
+       "o": [
+        "La cantidad ofrecida es igual a la cantidad demandada",
+        "El precio es el más alto posible",
+        "La oferta supera a la demanda",
+        "El gobierno fija el precio",
+        "No hay compradores"
+       ]
+      }
+     ],
+     "steps": [
+      "En el cruce de las curvas, \\(Q_s=Q_d\\): nadie tiene incentivo para cambiar el precio."
+     ],
+     "ans": "Qs = Qd",
+     "hint": "Donde se cruzan las curvas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ]
+     ]
+    },
+    {
+     "id": "me2",
+     "lvl": 1,
+     "title": "Precio sobre el equilibrio",
+     "q": "<p>Si el precio de mercado está <strong>por encima</strong> del precio de equilibrio, se produce:</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "Sobreproducción (exceso de oferta)",
+        "Escasez (exceso de demanda)",
+        "Equilibrio",
+        "Un bien Giffen",
+        "Desplazamiento de la demanda"
+       ]
+      }
+     ],
+     "steps": [
+      "Con un precio alto, los productores quieren vender más y los consumidores quieren comprar menos.",
+      "Entonces \\(Q_s\\gt Q_d\\): sobra producto (sobreproducción), y eso presiona el precio hacia abajo."
+     ],
+     "ans": "Sobreproducción",
+     "hint": "Precio alto: muchos venden, pocos compran.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oferta"
+      ],
+      [
+       "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "me3",
+     "lvl": 2,
+     "title": "Caso: mercado de la leche",
+     "q": "<p>\\(S=50+10p\\) y \\(D=900-15p\\).</p>",
+     "checks": [
+      {
+       "p": "Equilibrio inicial",
+       "o": [
+        "\\(p^*=34,\\ Q^*=390\\)",
+        "\\(p^*=26,\\ Q^*=510\\)",
+        "\\(p^*=34,\\ Q^*=850\\)",
+        "\\(p^*=38,\\ Q^*=330\\)",
+        "\\(p^*=17,\\ Q^*=220\\)"
+       ]
+      },
+      {
+       "p": "Bajan los costos y la oferta pasa a \\(S=250+10p\\). Nuevo equilibrio:",
+       "o": [
+        "\\(p^*=26,\\ Q^*=510\\)",
+        "\\(p^*=34,\\ Q^*=390\\)",
+        "\\(p^*=26,\\ Q^*=390\\)",
+        "\\(p^*=42,\\ Q^*=270\\)",
+        "\\(p^*=65,\\ Q^*=900\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Igualamos oferta y demanda: \\(50+10p=900-15p\\). Pasamos las \\(p\\) a un lado: \\(25p=850\\), así que \\(p^*=34\\).",
+      "Reemplazamos en la oferta: \\(50+10(34)=390\\). Comprobamos con la demanda: \\(900-15(34)=390\\) ✓.",
+      "Con la nueva oferta: \\(250+10p=900-15p\\Rightarrow25p=650\\Rightarrow p^*=26\\); \\(Q^*=250+260=510\\).",
+      "Interpretación: bajar los costos desplaza la oferta a la derecha, así que el precio baja (34 → 26) y la cantidad sube (390 → 510)."
+     ],
+     "ans": "(34; 390) y (26; 510)",
+     "hint": "Iguala y despeja p.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "me4",
+     "lvl": 2,
+     "title": "Caso: barras de chocolate",
+     "q": "<p>\\((1)\\ Q=16\\,000-30p\\) y \\((2)\\ Q=14\\,000+70p\\).</p>",
+     "checks": [
+      {
+       "p": "¿Cuál es la demanda?",
+       "o": [
+        "La ecuación (1)",
+        "La ecuación (2)",
+        "Ambas",
+        "Ninguna",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Equilibrio",
+       "o": [
+        "\\(p^*=20,\\ Q^*=15\\,400\\)",
+        "\\(p^*=10,\\ Q^*=15\\,700\\)",
+        "\\(p^*=20,\\ Q^*=16\\,000\\)",
+        "\\(p^*=30,\\ Q^*=15\\,100\\)",
+        "\\(p^*=2000,\\ Q^*=0\\)"
+       ]
+      },
+      {
+       "p": "A un precio de 50, hay…",
+       "o": [
+        "Sobreproducción de 3 000",
+        "Escasez de 3 000",
+        "Sobreproducción de 1 500",
+        "Escasez de 14 500",
+        "Equilibrio"
+       ]
+      }
+     ],
+     "steps": [
+      "La demanda tiene pendiente negativa (\\(-30p\\)): es la (1). La oferta tiene \\(+70p\\): es la (2).",
+      "Igualamos: \\(16\\,000-30p=14\\,000+70p\\Rightarrow2\\,000=100p\\Rightarrow p^*=20\\); \\(Q^*=16\\,000-600=15\\,400\\).",
+      "En \\(p=50\\): \\(Q_d=16\\,000-1\\,500=14\\,500\\) y \\(Q_s=14\\,000+3\\,500=17\\,500\\).",
+      "\\(Q_s\\gt Q_d\\): sobreproducción de \\(17\\,500-14\\,500=3\\,000\\). Tiene sentido: 50 está por encima del precio de equilibrio."
+     ],
+     "ans": "(1); (20; 15 400); sobreproducción de 3 000",
+     "hint": "El signo de p identifica la curva.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "equil"
+      ],
+      [],
+      [
+       "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "me5",
+     "lvl": 2,
+     "title": "Caso: pizzas",
+     "q": "<p>\\(Q_d=8\\,000-500p\\) y \\(Q_s=2\\,000+1\\,000p\\).</p>",
+     "checks": [
+      {
+       "p": "Equilibrio",
+       "o": [
+        "\\(p^*=4,\\ Q^*=6\\,000\\)",
+        "\\(p^*=6,\\ Q^*=5\\,000\\)",
+        "\\(p^*=4,\\ Q^*=8\\,000\\)",
+        "\\(p^*=3,\\ Q^*=6\\,500\\)",
+        "\\(p^*=5,\\ Q^*=7\\,000\\)"
+       ]
+      },
+      {
+       "p": "A un precio de 3, hay…",
+       "o": [
+        "Escasez de 1 500",
+        "Sobreproducción de 1 500",
+        "Escasez de 6 500",
+        "Sobreproducción de 5 000",
+        "Equilibrio"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(8\\,000-500p=2\\,000+1\\,000p\\Rightarrow6\\,000=1\\,500p\\Rightarrow p^*=4\\); \\(Q^*=8\\,000-2\\,000=6\\,000\\).",
+      "En \\(p=3\\): \\(Q_d=6\\,500\\) y \\(Q_s=5\\,000\\).",
+      "\\(Q_d\\gt Q_s\\): <strong>escasez</strong> de 1 500. Tiene sentido: el precio está debajo del de equilibrio, así que muchos quieren comprar y pocos vender."
+     ],
+     "ans": "(4; 6 000); escasez de 1 500",
+     "hint": "Precio bajo → escasez.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [],
+      [
+       "escasez",
+       "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "me6",
+     "lvl": 3,
+     "title": "Caso: tablets (cuadrático)",
+     "q": "<p>\\(Q_d=400p-2p^2\\) y \\(Q_s=100p+p^2\\). Halla el equilibrio.</p>",
+     "checks": [
+      {
+       "p": "Equilibrio",
+       "o": [
+        "\\(p^*=100,\\ Q^*=20\\,000\\)",
+        "\\(p^*=0,\\ Q^*=0\\)",
+        "\\(p^*=50,\\ Q^*=7\\,500\\)",
+        "\\(p^*=300,\\ Q^*=120\\,000\\)",
+        "\\(p^*=100,\\ Q^*=10\\,000\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Igualamos: \\(400p-2p^2=100p+p^2\\Rightarrow300p=3p^2\\).",
+      "Factorizamos: \\(3p(100-p)=0\\), con soluciones \\(p=0\\) o \\(p=100\\).",
+      "\\(p=0\\) no tiene sentido económico (nadie vende gratis), así que \\(p^*=100\\).",
+      "\\(Q^*=100(100)+100^2=20\\,000\\). Comprobación: \\(400(100)-2(100)^2=40\\,000-20\\,000=20\\,000\\) ✓."
+     ],
+     "ans": "(100; 20 000)",
+     "hint": "Descarta p = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "me7",
+     "lvl": 3,
+     "title": "Caso: libros electrónicos (tabla)",
+     "q": "<p>Datos del mercado:</p><div class=\"tbl\"><table><tr><th>Precio ($)</th><th>Ofrecen</th><th>Desean comprar</th></tr><tr><td>30</td><td>1 500</td><td>3 500</td></tr><tr><td>40</td><td>2 000</td><td>3 000</td></tr><tr><td>50</td><td>2 500</td><td>2 500</td></tr><tr><td>60</td><td>3 000</td><td>2 000</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "Equilibrio",
+       "o": [
+        "p = 50, Q = 2 500",
+        "p = 40, Q = 2 000",
+        "p = 60, Q = 3 000",
+        "p = 45, Q = 2 750",
+        "p = 30, Q = 3 500"
+       ]
+      },
+      {
+       "p": "A un precio de 40, hay…",
+       "o": [
+        "Escasez de 1 000",
+        "Sobreproducción de 1 000",
+        "Escasez de 3 000",
+        "Equilibrio",
+        "Sobreproducción de 2 000"
+       ]
+      }
+     ],
+     "steps": [
+      "Buscamos la fila donde lo que se ofrece es igual a lo que se desea comprar: a $50, ambos son 2 500.",
+      "A $40: se desean 3 000 y se ofrecen 2 000. Faltan 1 000 unidades: escasez."
+     ],
+     "ans": "(50; 2 500); escasez de 1 000",
+     "hint": "Busca la fila con cantidades iguales.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "escasez",
+       "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "me8",
+     "lvl": 3,
+     "title": "Desplazamientos simultáneos (helados)",
+     "q": "<p>Predice el efecto en el mercado de helados.</p>",
+     "checks": [
+      {
+       "p": "Aumenta el calor y baja el precio del azúcar (insumo)",
+       "o": [
+        "La cantidad sube; el precio es indeterminado",
+        "El precio sube; la cantidad baja",
+        "Ambos suben",
+        "Ambos bajan",
+        "El precio baja; la cantidad es indeterminada"
+       ]
+      },
+      {
+       "p": "Baja el precio del azúcar y llega un clima frío",
+       "o": [
+        "El precio baja; la cantidad es indeterminada",
+        "La cantidad sube; el precio es indeterminado",
+        "Ambos suben",
+        "Ambos bajan",
+        "El precio sube; la cantidad es indeterminada"
+       ]
+      }
+     ],
+     "steps": [
+      "Calor: más gente quiere helados (D → derecha). Azúcar más barata: producir cuesta menos (O → derecha).",
+      "Las dos empujan la cantidad hacia arriba, pero el precio: la demanda lo sube y la oferta lo baja. Depende de cuál se mueva más: <strong>indeterminado</strong>.",
+      "Segundo caso: azúcar barata (O → derecha) y frío (D → izquierda). Ambas bajan el precio; la cantidad sube por la oferta y baja por la demanda: <strong>indeterminada</strong>."
+     ],
+     "ans": "Q sube, P indet.; P baja, Q indet.",
+     "hint": "Mira qué variable empujan ambas en el mismo sentido.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "doble"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "me9",
+     "lvl": 3,
+     "title": "Caso: espárragos",
+     "q": "<p>Demanda \\(q=15\\,000-1\\,500p\\); oferta \\(q=1\\,500p\\).</p>",
+     "checks": [
+      {
+       "p": "Equilibrio",
+       "o": [
+        "\\(p^*=5,\\ q^*=7\\,500\\)",
+        "\\(p^*=10,\\ q^*=15\\,000\\)",
+        "\\(p^*=5,\\ q^*=15\\,000\\)",
+        "\\(p^*=6,\\ q^*=9\\,000\\)",
+        "\\(p^*=2{,}5,\\ q^*=3\\,750\\)"
+       ]
+      },
+      {
+       "p": "Sube el ingreso y la demanda pasa a \\(q=18\\,000-1\\,500p\\). Nuevo equilibrio:",
+       "o": [
+        "\\(p^*=6,\\ q^*=9\\,000\\)",
+        "\\(p^*=5,\\ q^*=7\\,500\\)",
+        "\\(p^*=12,\\ q^*=0\\)",
+        "\\(p^*=6,\\ q^*=7\\,500\\)",
+        "\\(p^*=4,\\ q^*=6\\,000\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(15\\,000-1\\,500p=1\\,500p\\Rightarrow3\\,000p=15\\,000\\Rightarrow p^*=5\\); \\(q^*=7\\,500\\).",
+      "Nueva demanda: \\(18\\,000-1\\,500p=1\\,500p\\Rightarrow p^*=6\\); \\(q^*=9\\,000\\).",
+      "Interpretación: con más ingreso (bien normal), la demanda se desplaza a la derecha: suben el precio y la cantidad."
+     ],
+     "ans": "(5; 7 500) y (6; 9 000)",
+     "hint": "Solo cambia la ecuación de demanda.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [],
+      [
+       "ingreso"
+      ]
+     ]
+    },
+    {
+     "id": "me10",
+     "lvl": 3,
+     "title": "Caso empresa: cafetería y sus escenarios",
+     "q": "<p>En el mercado de cafés de un distrito: \\(Q_d=1\\,200-40p\\) y \\(Q_s=200+60p\\).</p>",
+     "checks": [
+      {
+       "p": "Equilibrio inicial",
+       "o": [
+        "\\(p^*=10,\\ Q^*=800\\)",
+        "\\(p^*=20,\\ Q^*=400\\)",
+        "\\(p^*=10,\\ Q^*=1\\,200\\)",
+        "\\(p^*=14,\\ Q^*=640\\)",
+        "\\(p^*=8,\\ Q^*=880\\)"
+       ]
+      },
+      {
+       "p": "Escenario A: sube el precio de la leche (insumo). En el gráfico…",
+       "o": [
+        "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja",
+        "La demanda se desplaza a la izquierda: \\(p^*\\) y \\(Q^*\\) bajan",
+        "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
+        "Hay un movimiento a lo largo de la demanda; ninguna curva se desplaza",
+        "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben"
+       ]
+      },
+      {
+       "p": "Con el escenario A la oferta pasa a \\(Q_s=100+60p\\). Nuevo equilibrio:",
+       "o": [
+        "\\(p^*=11,\\ Q^*=760\\)",
+        "\\(p^*=9,\\ Q^*=840\\)",
+        "\\(p^*=11,\\ Q^*=860\\)",
+        "\\(p^*=10,\\ Q^*=700\\)",
+        "\\(p^*=13,\\ Q^*=680\\)"
+       ]
+      },
+      {
+       "p": "Escenario B: abre una universidad al costado (más compradores). En el gráfico…",
+       "o": [
+        "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
+        "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
+        "La demanda se desplaza a la izquierda: \\(p^*\\) y \\(Q^*\\) bajan",
+        "Movimiento a lo largo de la oferta; nada se desplaza",
+        "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja"
+       ]
+      }
+     ],
+     "steps": [
+      "Equilibrio: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
+      "A) La leche es un <strong>insumo</strong>: afecta al productor, no al comprador. Sube el costo → la oferta se va a la izquierda → en el gráfico, el nuevo cruce está más arriba (p sube) y más a la izquierda (Q baja).",
+      "Nuevo equilibrio: \\(1\\,200-40p=100+60p\\Rightarrow1\\,100=100p\\Rightarrow p^*=11\\); \\(Q^*=1\\,200-440=760\\). Confirma lo del gráfico: p sube de 10 a 11 y Q baja de 800 a 760.",
+      "B) Más compradores = <strong>número de consumidores</strong> ↑ → la demanda se va a la derecha → p y Q suben."
+     ],
+     "ans": "(10; 800); O←; (11; 760); D→",
+     "hint": "Insumo → oferta. Compradores → demanda.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [
+       "oferta",
+       "movdes"
+      ],
+      [
+       "equil"
+      ],
+      [
+       "movdes"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b3",
+   "name": "Bloque 3 · Producción: PMe, PMg, máximos y escala",
+   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> calcular bien el PMe y el PMg en todos los casos, el <strong>PMe máximo</strong> y la <strong>producción máxima</strong>, y además <strong>analizar si hay economías de escala</strong>. Ese último punto es el que separa el 5 del 4.</p>\n<h4>1. ¿Qué es la función de producción?</h4><p>Piensa en ella como la <strong>receta de la empresa</strong>: te dice cuánto produces (Q) según cuántos trabajadores (L) y cuánto capital (K: local, máquinas) usas. En el <strong>corto plazo</strong> el local y las máquinas no cambian (K está fijo); lo único que puedes mover es cuánta gente contratas. En el <strong>largo plazo</strong> puedes cambiarlo todo.</p><h4>2. Producto medio (PMe): el promedio</h4><p>\\(PMe=\\dfrac{Q}{L}\\). Responde: <em>«¿cuánto produce, en promedio, cada trabajador?»</em> Si 3 cocineros hacen 60 pizzas, el PMe es 60/3 = 20 pizzas por cocinero.</p><h4>3. Producto marginal (PMg): el aporte del último</h4><p>\\(PMg=\\dfrac{\\Delta Q}{\\Delta L}\\). Responde: <em>«¿cuánto agregó el último que entró?»</em> Si con 4 cocineros salen 72 pizzas, el cuarto aportó 72 − 60 = 12. Si te dan una fórmula, el PMg es la <strong>derivada</strong> \\(\\dfrac{dQ}{dL}\\).</p><h4>4. ¿Por qué el PMg termina cayendo?</h4><p>Imagina una cocina pequeña con un solo horno. Los primeros cocineros ayudan muchísimo, pero si sigues metiendo gente en el mismo espacio, empiezan a estorbarse y cada uno nuevo aporta menos. Eso es la <strong>ley de rendimientos decrecientes</strong>: con un factor fijo, el PMg tarde o temprano baja. Si sigues contratando, puede llegar a ser negativo.</p><h4>5. Cómo se relacionan PMe y PMg (como el promedio de notas)</h4><p>Si entra un alumno nuevo y saca <em>más</em> que el promedio del salón, el promedio sube; si saca <em>menos</em>, baja. Igual aquí:</p><ul><li>PMg &gt; PMe → el PMe está subiendo.</li><li>PMg &lt; PMe → el PMe está bajando.</li><li>PMg = PMe → el PMe está en su <strong>máximo</strong>.</li></ul><h4>6. Las cuatro cosas que te piden (con fórmula)</h4><div class=\"tbl\"><table><tr><th>Te piden</th><th>Qué haces</th><th>Ejemplo con \\(Q=30L^2-L^3\\)</th></tr><tr><td>PMe</td><td>Divide Q entre L</td><td>\\(30L-L^2\\)</td></tr><tr><td>PMg</td><td>Deriva Q</td><td>\\(60L-3L^2\\)</td></tr><tr><td>PMe máximo</td><td>Deriva el PMe e iguala a 0 (ahí PMe = PMg)</td><td>\\(30-2L=0\\Rightarrow L=15\\); PMe = 225</td></tr><tr><td>Producción máxima</td><td>Iguala el PMg a 0</td><td>\\(3L(20-L)=0\\Rightarrow L=20\\); Q = 4 000</td></tr></table></div><p>Siempre ocurre en este orden: primero el PMg llega a su tope, luego el PMe (L = 15) y al final la producción total (L = 20). Si tu PMe máximo sale <em>después</em> de la producción máxima, revisa tus cuentas.</p><h4>7. Economías de escala (largo plazo)</h4><p>Ahora la empresa crece completa: más local, más máquinas y más gente <em>a la vez</em>. La pregunta es: si multiplico <strong>todos</strong> los factores por k, ¿la producción crece más, igual o menos que k veces?</p><div class=\"tbl\"><table><tr><th>Factores ×2 y la producción…</th><th>Se llama</th><th>Qué pasa con el costo por unidad</th></tr><tr><td>más que se duplica (×2,3)</td><td>Rendimientos crecientes → <strong>economías de escala</strong></td><td>Baja</td></tr><tr><td>se duplica exacto</td><td>Rendimientos constantes</td><td>Igual</td></tr><tr><td>menos que se duplica (×1,7)</td><td>Rendimientos decrecientes → <strong>deseconomías</strong></td><td>Sube</td></tr></table></div><p>Para justificar en el examen: <em>«Al duplicar todos los factores, la producción aumenta en más del doble; por lo tanto hay rendimientos crecientes a escala y la empresa presenta economías de escala, porque su costo por unidad disminuye.»</em></p><h4>Trampas típicas</h4><ul><li>Calcular el PMg como Q/L (eso es el PMe).</li><li>Si L avanza de 10 en 10, olvidar dividir ΔQ entre 10.</li><li>No verificar que el punto crítico del PMe sea un máximo (si la parábola abre hacia arriba, es un mínimo).</li><li>Llamar «economías de escala» a agregar trabajadores con la planta fija: eso es corto plazo (rendimientos decrecientes del trabajo).</li></ul>",
+   "form": [
+    "\\(PMe_L=\\dfrac QL\\)",
+    "\\(PMg_L=\\dfrac{\\Delta Q}{\\Delta L}=\\dfrac{dQ}{dL}\\)",
+    "PMe máximo: \\(\\dfrac{d\\,PMe}{dL}=0\\) y \\(PMe=PMg\\)",
+    "CP: algún factor fijo; LP: todos variables",
+    "Producción máxima: \\(PMg=0\\)",
+    "Factores ×k → Q más que ×k: economías de escala"
+   ],
+   "lesson": "<h3>1. ¿Qué es la función de producción?</h3><p>Piensa en ella como la <strong>receta de la empresa</strong>: te dice cuánto produces (Q) según cuántos trabajadores (L) y cuánto capital (K: local, máquinas) usas. En el <strong>corto plazo</strong> el local y las máquinas no cambian (K está fijo); lo único que puedes mover es cuánta gente contratas. En el <strong>largo plazo</strong> puedes cambiarlo todo.</p><h3>2. Producto medio (PMe): el promedio</h3><p>\\(PMe=\\dfrac{Q}{L}\\). Responde: <em>«¿cuánto produce, en promedio, cada trabajador?»</em> Si 3 cocineros hacen 60 pizzas, el PMe es 60/3 = 20 pizzas por cocinero.</p><h3>3. Producto marginal (PMg): el aporte del último</h3><p>\\(PMg=\\dfrac{\\Delta Q}{\\Delta L}\\). Responde: <em>«¿cuánto agregó el último que entró?»</em> Si con 4 cocineros salen 72 pizzas, el cuarto aportó 72 − 60 = 12. Si te dan una fórmula, el PMg es la <strong>derivada</strong> \\(\\dfrac{dQ}{dL}\\).</p><h3>4. ¿Por qué el PMg termina cayendo?</h3><p>Imagina una cocina pequeña con un solo horno. Los primeros cocineros ayudan muchísimo, pero si sigues metiendo gente en el mismo espacio, empiezan a estorbarse y cada uno nuevo aporta menos. Eso es la <strong>ley de rendimientos decrecientes</strong>: con un factor fijo, el PMg tarde o temprano baja. Si sigues contratando, puede llegar a ser negativo.</p><h3>5. Cómo se relacionan PMe y PMg (como el promedio de notas)</h3><p>Si entra un alumno nuevo y saca <em>más</em> que el promedio del salón, el promedio sube; si saca <em>menos</em>, baja. Igual aquí:</p><ul><li>PMg &gt; PMe → el PMe está subiendo.</li><li>PMg &lt; PMe → el PMe está bajando.</li><li>PMg = PMe → el PMe está en su <strong>máximo</strong>.</li></ul><h3>6. Las cuatro cosas que te piden (con fórmula)</h3><div class=\"tbl\"><table><tr><th>Te piden</th><th>Qué haces</th><th>Ejemplo con \\(Q=30L^2-L^3\\)</th></tr><tr><td>PMe</td><td>Divide Q entre L</td><td>\\(30L-L^2\\)</td></tr><tr><td>PMg</td><td>Deriva Q</td><td>\\(60L-3L^2\\)</td></tr><tr><td>PMe máximo</td><td>Deriva el PMe e iguala a 0 (ahí PMe = PMg)</td><td>\\(30-2L=0\\Rightarrow L=15\\); PMe = 225</td></tr><tr><td>Producción máxima</td><td>Iguala el PMg a 0</td><td>\\(3L(20-L)=0\\Rightarrow L=20\\); Q = 4 000</td></tr></table></div><p>Siempre ocurre en este orden: primero el PMg llega a su tope, luego el PMe (L = 15) y al final la producción total (L = 20). Si tu PMe máximo sale <em>después</em> de la producción máxima, revisa tus cuentas.</p><h3>7. Economías de escala (largo plazo)</h3><p>Ahora la empresa crece completa: más local, más máquinas y más gente <em>a la vez</em>. La pregunta es: si multiplico <strong>todos</strong> los factores por k, ¿la producción crece más, igual o menos que k veces?</p><div class=\"tbl\"><table><tr><th>Factores ×2 y la producción…</th><th>Se llama</th><th>Qué pasa con el costo por unidad</th></tr><tr><td>más que se duplica (×2,3)</td><td>Rendimientos crecientes → <strong>economías de escala</strong></td><td>Baja</td></tr><tr><td>se duplica exacto</td><td>Rendimientos constantes</td><td>Igual</td></tr><tr><td>menos que se duplica (×1,7)</td><td>Rendimientos decrecientes → <strong>deseconomías</strong></td><td>Sube</td></tr></table></div><p>Para justificar en el examen: <em>«Al duplicar todos los factores, la producción aumenta en más del doble; por lo tanto hay rendimientos crecientes a escala y la empresa presenta economías de escala, porque su costo por unidad disminuye.»</em></p><h3>Trampas típicas</h3><ul><li>Calcular el PMg como Q/L (eso es el PMe).</li><li>Si L avanza de 10 en 10, olvidar dividir ΔQ entre 10.</li><li>No verificar que el punto crítico del PMe sea un máximo (si la parábola abre hacia arriba, es un mínimo).</li><li>Llamar «economías de escala» a agregar trabajadores con la planta fija: eso es corto plazo (rendimientos decrecientes del trabajo).</li></ul><h3>Ejemplos resueltos</h3><div class=\"ej\"><b>Ejemplo resuelto (tabla de clase):</b> L = 0, 1, 2, 3, 4, 5 y Q = 0, 100, 500, 600, 650, 660.<br>PMe: 100/1 = 100; 500/2 = 250; 600/3 = 200; 650/4 = 162,5; 660/5 = 132.<br>PMg: (100−0)/1 = 100; (500−100)/1 = 400; 100; 50; 10.<br>Desde el tercer trabajador el PMg cae: <strong>rendimientos decrecientes</strong>.</div><div class=\"ej\"><b>Ejemplo resuelto (con función):</b> \\(Q=90L^2-20L^3\\). \\(PMe=\\frac QL=90L-20L^2\\). \\(PMg=\\frac{dQ}{dL}=180L-60L^2\\). PMe máximo: derivamos el PMe e igualamos a cero: \\(90-40L=0\\Rightarrow L=2{,}25\\); \\(PMe=90(2{,}25)-20(2{,}25)^2=101{,}25\\). Comprobación: en \\(L=2{,}25\\), \\(PMg=101{,}25\\) también (el PMg corta al PMe en su máximo).</div><div class=\"err\"><b>Errores comunes:</b> (1) calcular el PMg dividiendo Q entre L (eso es el PMe); (2) si L avanza de 10 en 10, olvidar dividir ΔQ entre 10; (3) en el PMe máximo, no verificar que sea un máximo: si el PMe es una parábola que abre hacia arriba, el punto crítico es un <strong>mínimo</strong>.</div><div class=\"ej\"><b>Escala:</b> 2 trabajadores + 1 máquina → 100 unidades. Con 4 + 2 (todo ×2) → 230 unidades (×2,3): rendimientos crecientes, cada unidad cuesta menos: <strong>economías de escala</strong>.</div><div class=\"err\"><b>Error común:</b> decir «economías de escala» cuando solo se agregan trabajadores con la planta fija. Eso es corto plazo (rendimientos decrecientes del trabajo).</div>",
+   "ex": [
+    {
+     "id": "mp1",
+     "lvl": 1,
+     "title": "Corto plazo",
+     "q": "<p>En economía, el corto plazo es el período en que…</p>",
+     "checks": [
+      {
+       "p": "Corto plazo",
+       "o": [
+        "Al menos un factor de producción permanece fijo",
+        "Todos los factores son variables",
+        "Dura menos de un año",
+        "La empresa no produce",
+        "El precio es fijo"
+       ]
+      }
+     ],
+     "steps": [
+      "No es un plazo de calendario: depende de si la empresa puede cambiar <strong>todos</strong> sus factores.",
+      "Si al menos uno está fijo (por ejemplo, la planta), es corto plazo."
+     ],
+     "ans": "Algún factor fijo",
+     "hint": "No es cuestión de meses.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cp"
+      ]
+     ]
+    },
+    {
+     "id": "mp2",
+     "lvl": 1,
+     "title": "Producción: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) En el largo plazo todos los factores de producción son variables.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) El tamaño de la planta suele ser un factor fijo en el corto plazo.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(PMe_L=\\dfrac{\\Delta Q}{\\Delta L}\\).",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) V: el ejemplo de la fábrica de chocolates de 500 m².",
+      "c) F: esa es la fórmula del PMg; el PMe es \\(\\frac QL\\)."
+     ],
+     "ans": "V, V, F",
+     "hint": "PMe divide totales; PMg, cambios.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "pme"
+      ]
+     ]
+    },
+    {
+     "id": "mp3",
+     "lvl": 2,
+     "title": "Completa la tabla (clase)",
+     "q": "<p>El factor variable es el trabajo. Completa el PMe y el PMg.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa las celdas",
+       "head": [
+        "L",
+        "Q",
+        "PMe",
+        "PMg"
+       ],
+       "rows": [
+        [
+         1,
+         100,
+         {
+          "a": 100,
+          "tol": null
+         },
+         {
+          "a": 100,
+          "tol": null
+         }
+        ],
+        [
+         2,
+         500,
+         {
+          "a": 250,
+          "tol": null
+         },
+         {
+          "a": 400,
+          "tol": null
+         }
+        ],
+        [
+         3,
+         600,
+         {
+          "a": 200,
+          "tol": null
+         },
+         {
+          "a": 100,
+          "tol": null
+         }
+        ],
+        [
+         4,
+         650,
+         {
+          "a": 162.5,
+          "tol": null
+         },
+         {
+          "a": 50,
+          "tol": null
+         }
+        ],
+        [
+         5,
+         660,
+         {
+          "a": 132,
+          "tol": null
+         },
+         {
+          "a": 10,
+          "tol": null
+         }
+        ]
+       ],
+       "note": "PMg = (Q − Q anterior) / (L − L anterior); para L = 1, el anterior es L = 0, Q = 0."
+      }
+     ],
+     "steps": [
+      "PMe: divide cada Q entre su L. Por ejemplo, \\(650/4=162{,}5\\).",
+      "PMg: resta la Q anterior y divide entre el cambio de L (aquí 1). Por ejemplo, \\((500-100)/1=400\\).",
+      "Observa: el PMg sube hasta el segundo trabajador y luego cae (100, 50, 10): desde el tercero hay rendimientos decrecientes."
+     ],
+     "ans": "PMe: 100; 250; 200; 162,5; 132. PMg: 100; 400; 100; 50; 10",
+     "hint": "PMe = Q/L; PMg = ΔQ/ΔL.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [],
+      [
+       "rdec"
+      ]
+     ]
+    },
+    {
+     "id": "mp4",
+     "lvl": 2,
+     "title": "¿Desde cuándo hay rendimientos decrecientes?",
+     "q": "<p>Con la tabla anterior (PMg = 100, 400, 100, 50, 10), ¿desde qué trabajador se observan rendimientos decrecientes?</p>",
+     "checks": [
+      {
+       "p": "Desde el trabajador…",
+       "o": [
+        "3",
+        "1",
+        "2",
+        "5",
+        "Nunca"
+       ]
+      }
+     ],
+     "steps": [
+      "La ley dice que llega un punto en que el <strong>PMg empieza a disminuir</strong>.",
+      "El PMg sube de 100 a 400 con el segundo, y con el tercero cae a 100: desde ahí, cada trabajador aporta menos."
+     ],
+     "ans": "Desde el tercero",
+     "hint": "Mira cuándo empieza a caer el PMg.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [
+       "rdec"
+      ]
+     ]
+    },
+    {
+     "id": "mp5",
+     "lvl": 2,
+     "title": "Caso Matrix (función)",
+     "q": "<p>\\(Q=30L^2+200L-L^3\\) (capital fijo).</p>",
+     "checks": [
+      {
+       "p": "\\(PMe_L\\)",
+       "o": [
+        "\\(30L+200-L^2\\)",
+        "\\(60L+200-3L^2\\)",
+        "\\(30L^2+200-L^3\\)",
+        "\\(30L+200L-L^2\\)",
+        "\\(30+200L-L^2\\)"
+       ]
+      },
+      {
+       "p": "\\(PMg_L\\)",
+       "o": [
+        "\\(60L+200-3L^2\\)",
+        "\\(30L+200-L^2\\)",
+        "\\(60L+200L-3L^2\\)",
+        "\\(60+200-3L\\)",
+        "\\(30L^2+200L-L^3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "PMe = Q/L: dividimos cada término entre L: \\(\\frac{30L^2}{L}+\\frac{200L}{L}-\\frac{L^3}{L}=30L+200-L^2\\).",
+      "PMg = derivada de Q respecto de L: \\((30L^2)'=60L\\), \\((200L)'=200\\), \\((L^3)'=3L^2\\). Así \\(PMg=60L+200-3L^2\\)."
+     ],
+     "ans": "PMe \\(=30L+200-L^2\\); PMg \\(=60L+200-3L^2\\)",
+     "hint": "Divide para el PMe; deriva para el PMg.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [
+       "deriv"
+      ]
+     ]
+    },
+    {
+     "id": "mp6",
+     "lvl": 3,
+     "title": "PMe máximo",
+     "q": "<p>\\(Q=90L^2-20L^3\\). Halla el PMe máximo.</p>",
+     "checks": [
+      {
+       "p": "¿En qué L?",
+       "o": [
+        "\\(L=2{,}25\\)",
+        "\\(L=4{,}5\\)",
+        "\\(L=3\\)",
+        "\\(L=1{,}5\\)",
+        "\\(L=9\\)"
+       ]
+      },
+      {
+       "p": "Valor del PMe máximo",
+       "o": [
+        "\\(101{,}25\\)",
+        "\\(202{,}5\\)",
+        "\\(90\\)",
+        "\\(126{,}56\\)",
+        "\\(45\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero el PMe: \\(PMe=\\frac QL=90L-20L^2\\).",
+      "El máximo está donde su derivada vale cero: \\(\\frac{d\\,PMe}{dL}=90-40L=0\\Rightarrow L=2{,}25\\). Es un máximo porque el término \\(-20L^2\\) hace que la parábola abra hacia abajo.",
+      "Valor: \\(90(2{,}25)-20(2{,}25)^2=202{,}5-101{,}25=101{,}25\\).",
+      "Comprobación: \\(PMg=180L-60L^2=405-303{,}75=101{,}25\\). En el máximo del PMe, PMe = PMg ✓."
+     ],
+     "ans": "L = 2,25; PMe = 101,25",
+     "hint": "Deriva el PMe, no Q.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [
+       "deriv"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mp7",
+     "lvl": 3,
+     "title": "Completa la tabla (actividad semana 5)",
+     "q": "<p>L aumenta de 10 en 10. Completa PMe y PMg.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa las celdas",
+       "head": [
+        "L",
+        "Q",
+        "PMe",
+        "PMg"
+       ],
+       "rows": [
+        [
+         20,
+         "80 000",
+         {
+          "a": 4000,
+          "tol": null
+         },
+         {
+          "a": 6000,
+          "tol": null
+         }
+        ],
+        [
+         30,
+         "240 000",
+         {
+          "a": 8000,
+          "tol": null
+         },
+         {
+          "a": 16000,
+          "tol": null
+         }
+        ],
+        [
+         40,
+         "600 000",
+         {
+          "a": 15000,
+          "tol": null
+         },
+         {
+          "a": 36000,
+          "tol": null
+         }
+        ],
+        [
+         50,
+         "1 200 000",
+         {
+          "a": 24000,
+          "tol": null
+         },
+         {
+          "a": 60000,
+          "tol": null
+         }
+        ],
+        [
+         60,
+         "2 160 000",
+         {
+          "a": 36000,
+          "tol": null
+         },
+         {
+          "a": 96000,
+          "tol": null
+         }
+        ]
+       ],
+       "note": "Para L = 20, la fila anterior es L = 10, Q = 20 000."
+      }
+     ],
+     "steps": [
+      "PMe = Q/L. Por ejemplo, \\(240\\,000/30=8\\,000\\).",
+      "PMg = ΔQ/ΔL, y aquí ΔL = 10. Por ejemplo, para L = 30: \\((240\\,000-80\\,000)/10=16\\,000\\).",
+      "Error típico: olvidar dividir entre 10 y poner 160 000."
+     ],
+     "ans": "PMe: 4 000; 8 000; 15 000; 24 000; 36 000. PMg: 6 000; 16 000; 36 000; 60 000; 96 000",
+     "hint": "ΔL es 10, no 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mp8",
+     "lvl": 3,
+     "title": "Revisa la respuesta del material",
+     "q": "<p>Granja con \\(K=6\\): \\(PMe_L=720-144L+36L^2\\). La hoja de respuestas dice «PMe máximo: L = 2, PMe = 576». ¿Es correcto?</p>",
+     "checks": [
+      {
+       "p": "Veredicto",
+       "o": [
+        "No: la parábola abre hacia arriba (+36L²), así que L = 2 da el PMe mínimo, no el máximo",
+        "Sí, es el máximo",
+        "No: el máximo está en L = 4",
+        "No: el PMe máximo es 720",
+        "Sí, porque la derivada vale cero"
+       ]
+      }
+     ],
+     "steps": [
+      "La derivada \\(-144+72L=0\\) da \\(L=2\\), pero eso solo encuentra un punto crítico.",
+      "El coeficiente de \\(L^2\\) es \\(+36\\) (positivo): la parábola abre hacia arriba, así que \\(L=2\\) es un <strong>mínimo</strong> (PMe = 576).",
+      "Moraleja para el examen: después de derivar, revisa si es máximo o mínimo (signo del término cuadrático o segunda derivada)."
+     ],
+     "ans": "Es un mínimo, no un máximo",
+     "hint": "Mira el signo del término con L².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deriv"
+      ],
+      [
+       "pme"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mp9",
+     "lvl": 2,
+     "title": "Producción máxima",
+     "q": "<p>\\(Q=24L^2-L^3\\) (capital fijo). ¿Con cuántos trabajadores se alcanza la <strong>producción máxima</strong> y cuánto es?</p>",
+     "checks": [
+      {
+       "p": "¿En qué L?",
+       "o": [
+        "\\(L=16\\)",
+        "\\(L=12\\)",
+        "\\(L=8\\)",
+        "\\(L=24\\)",
+        "\\(L=20\\)"
+       ]
+      },
+      {
+       "p": "Producción máxima",
+       "o": [
+        "\\(2\\,048\\)",
+        "\\(1\\,728\\)",
+        "\\(1\\,024\\)",
+        "\\(144\\)",
+        "\\(4\\,096\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La producción total es máxima cuando el último trabajador ya no agrega nada: \\(PMg=0\\).",
+      "\\(PMg=\\frac{dQ}{dL}=48L-3L^2=3L(16-L)=0\\Rightarrow L=16\\).",
+      "\\(Q=24(16)^2-16^3=6\\,144-4\\,096=2\\,048\\).",
+      "No confundir: \\(L=12\\) es donde el PMe es máximo (\\(PMe=24L-L^2\\)); \\(L=8\\) es donde el PMg es máximo."
+     ],
+     "ans": "L = 16; Q = 2 048",
+     "hint": "Producción máxima ↔ PMg = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "qmax",
+       "deriv"
+      ],
+      [
+       "qmax"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mp10",
+     "lvl": 3,
+     "title": "Caso completo: taller de muebles",
+     "q": "<p>Un taller con capital fijo tiene \\(Q=30L^2-L^3\\). Completa el análisis que pide la rúbrica.</p>",
+     "checks": [
+      {
+       "p": "\\(PMe_L\\)",
+       "o": [
+        "\\(30L-L^2\\)",
+        "\\(60L-3L^2\\)",
+        "\\(30L^2-L^3\\)",
+        "\\(30-L\\)",
+        "\\(30L-L^3\\)"
+       ]
+      },
+      {
+       "p": "\\(PMg_L\\)",
+       "o": [
+        "\\(60L-3L^2\\)",
+        "\\(30L-L^2\\)",
+        "\\(60-6L\\)",
+        "\\(30L^2-3L\\)",
+        "\\(60L-L^2\\)"
+       ]
+      },
+      {
+       "p": "PMe máximo",
+       "o": [
+        "\\(225\\) en \\(L=15\\)",
+        "\\(300\\) en \\(L=20\\)",
+        "\\(225\\) en \\(L=10\\)",
+        "\\(4\\,000\\) en \\(L=20\\)",
+        "\\(450\\) en \\(L=15\\)"
+       ]
+      },
+      {
+       "p": "Producción máxima",
+       "o": [
+        "\\(4\\,000\\) en \\(L=20\\)",
+        "\\(3\\,375\\) en \\(L=15\\)",
+        "\\(225\\) en \\(L=15\\)",
+        "\\(4\\,500\\) en \\(L=30\\)",
+        "\\(2\\,000\\) en \\(L=10\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(PMe=\\frac QL=30L-L^2\\) y \\(PMg=\\frac{dQ}{dL}=60L-3L^2\\).",
+      "PMe máximo: \\(\\frac{d\\,PMe}{dL}=30-2L=0\\Rightarrow L=15\\); \\(PMe=450-225=225\\). Es máximo porque \\(-L^2\\) abre hacia abajo. Comprobación: \\(PMg(15)=900-675=225=PMe\\).",
+      "Producción máxima: \\(PMg=3L(20-L)=0\\Rightarrow L=20\\); \\(Q=30(400)-8\\,000=4\\,000\\).",
+      "Orden típico: primero el PMe toca su máximo (L = 15) y después la producción total (L = 20)."
+     ],
+     "ans": "PMe máx 225 (L=15); Q máx 4 000 (L=20)",
+     "hint": "PMe máx: deriva el PMe. Q máx: PMg = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [
+       "pme",
+       "deriv"
+      ],
+      [
+       "deriv",
+       "rdec"
+      ],
+      [
+       "qmax"
+      ]
+     ]
+    },
+    {
+     "id": "mp11",
+     "lvl": 3,
+     "title": "Economías de escala en la producción",
+     "q": "<p>Una fábrica produce 100 unidades con 2 trabajadores y 1 máquina. Analiza cada caso de <strong>largo plazo</strong> (cambian todos los factores).</p>",
+     "checks": [
+      {
+       "p": "a) Duplica todo (4 trabajadores y 2 máquinas) y produce 230.",
+       "o": [
+        "Rendimientos crecientes a escala (economías de escala)",
+        "Rendimientos constantes a escala",
+        "Rendimientos decrecientes a escala (deseconomías de escala)",
+        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "b) Triplica todo (6 trabajadores y 3 máquinas) y produce 300.",
+       "o": [
+        "Rendimientos constantes a escala",
+        "Rendimientos crecientes a escala (economías de escala)",
+        "Rendimientos decrecientes a escala (deseconomías de escala)",
+        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "c) Duplica todo y produce 170.",
+       "o": [
+        "Rendimientos decrecientes a escala (deseconomías de escala)",
+        "Rendimientos crecientes a escala (economías de escala)",
+        "Rendimientos constantes a escala",
+        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "d) Mantiene 1 máquina, pasa de 2 a 4 trabajadores y la producción sube de 100 a 150.",
+       "o": [
+        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
+        "Rendimientos crecientes a escala (economías de escala)",
+        "Rendimientos constantes a escala",
+        "Rendimientos decrecientes a escala (deseconomías de escala)",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Regla: si todos los factores se multiplican por <em>k</em>, compara la producción con <em>k</em> veces la inicial.",
+      "a) Factores ×2, producción ×2,3 (más que el doble): <strong>crecientes</strong>. Cada unidad sale más barata → economías de escala (el CU baja).",
+      "b) Factores ×3, producción ×3: <strong>constantes</strong> (el CU no cambia).",
+      "c) Factores ×2, producción ×1,7: <strong>decrecientes</strong> → deseconomías de escala (el CU sube).",
+      "d) Trampa: solo cambia el trabajo y la máquina sigue fija. Eso es corto plazo: ley de rendimientos decrecientes, no escala."
+     ],
+     "ans": "Crecientes; constantes; decrecientes; rend. decrecientes del trabajo",
+     "hint": "¿Cambian TODOS los factores o solo uno?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "escprod"
+      ],
+      [
+       "escprod"
+      ],
+      [
+       "escprod",
+       "escala"
+      ],
+      [
+       "rdec",
+       "cp"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b4",
+   "name": "Bloque 4 · Costos, costo de oportunidad y beneficio",
+   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> determinar el <strong>costo total</strong>, el <strong>costo unitario</strong> y el <strong>costo de oportunidad</strong> para llegar a la utilidad contable y al beneficio económico, con un procedimiento claro y ordenado.</p>\n<h4>1. Dos tipos de costos</h4><p><strong>Costo explícito:</strong> sale dinero de tu bolsillo y lo ves en una boleta: materiales, sueldos de empleados, alquiler que pagas, luz.</p><p><strong>Costo implícito (costo de oportunidad):</strong> no pagas nada, pero <em>renuncias</em> a algo valioso. Es el valor de tu <strong>mejor alternativa</strong>. Los tres que más aparecen en los casos:</p><ul><li>El <strong>sueldo que dejas</strong> por trabajar en tu propio negocio.</li><li>El <strong>alquiler que no cobras</strong> por usar tu propio local.</li><li>Los <strong>intereses que no ganas</strong> por usar tus ahorros (ojo: los intereses, no el capital entero).</li></ul><h4>2. Costos fijos y variables</h4><p><strong>CF:</strong> no cambian aunque produzcas más o menos (alquiler de la maquinaria). <strong>CV:</strong> crecen con cada unidad (materiales por mochila). Juntos dan el costo total: \\(CT=CF+CV\\).</p><h4>3. Costo unitario y costo marginal</h4><p><strong>Costo unitario</strong> \\(CU=\\dfrac{CT}{Q}\\): <em>«¿cuánto me cuesta, en promedio, cada unidad?»</em>. <strong>Costo marginal</strong> \\(CMg=\\dfrac{\\Delta CT}{\\Delta Q}\\): <em>«¿cuánto más gasto por producir una unidad más?»</em>.</p><div class=\"ej\"><b>Mini ejemplo:</b> CF = S/ 2 000, S/ 30 por mochila, 400 mochilas. CV = 30 × 400 = 12 000; CT = 14 000; CU = 14 000/400 = S/ 35. Cada mochila extra cuesta S/ 30 más: CMg = 30.</div><h4>4. Utilidad contable vs beneficio económico</h4><p>Imagina que el <strong>contador</strong> y el <strong>economista</strong> miran el mismo negocio:</p><ul><li>El contador solo cuenta lo que se pagó: <strong>Utilidad contable = IT − costos explícitos</strong>.</li><li>El economista además pregunta <em>«¿te fue mejor que en tu mejor alternativa?»</em>: <strong>Beneficio económico = Utilidad contable − costo de oportunidad</strong>.</li></ul><div class=\"tbl\"><table><tr><th>Si el beneficio económico es…</th><th>Significa</th><th>Decisión</th></tr><tr><td>Positivo</td><td>Ganas más que en tu mejor alternativa</td><td>Conviene</td></tr><tr><td>Cero</td><td>Ganas lo mismo (beneficio normal)</td><td>Te da igual</td></tr><tr><td>Negativo</td><td>Tu alternativa era mejor</td><td>No conviene, aunque la utilidad contable sea positiva</td></tr></table></div><h4>5. Receta para resolver cualquier caso</h4><ol><li>Separa los datos en <strong>explícitos</strong>, <strong>implícitos</strong> e <strong>ingresos</strong>.</li><li>\\(CT=CF+CV\\).</li><li>\\(CU=CT/Q\\).</li><li>\\(IT=p\\times Q\\).</li><li>Utilidad contable = IT − CT.</li><li>Suma los costos de oportunidad.</li><li>Beneficio económico = utilidad contable − costo de oportunidad, y <strong>concluye</strong> si conviene.</li></ol><div class=\"ej\"><b>Ejemplo (Ana):</b> vende S/ 12 000 al mes y paga 4 000 de insumos + 3 000 de sueldos + 500 de servicios = <strong>7 500 explícitos</strong>. Utilidad contable = 12 000 − 7 500 = <strong>4 500</strong>. Dejó un sueldo de 3 000 y no alquila su local (1 500): costo de oportunidad = <strong>4 500</strong>. Beneficio económico = 4 500 − 4 500 = <strong>0</strong>: le da igual seguir que volver a su empleo.</div><h4>6. Economías de escala con costos</h4><p>Compara el <strong>costo unitario</strong> al producir más, no el total (el total casi siempre sube). Si el CU baja → economías de escala; si sube → deseconomías; si no cambia → rendimientos constantes. Ejemplo: 9 aviones cuestan 9 millones (1 millón c/u) y 10 cuestan 9,5 millones (0,95 c/u): el CU baja, hay economías de escala.</p><h4>Trampas típicas</h4><ul><li>Olvidar el costo de oportunidad en el beneficio económico.</li><li>Restar todos los ahorros invertidos en vez de solo los intereses que dejarías de ganar.</li><li>Confundir costo unitario (CT/Q) con costo marginal (ΔCT/ΔQ).</li><li>Decidir la escala mirando el costo total.</li><li>Dar el número sin concluir: la rúbrica pide decir si conviene y por qué.</li></ul>",
+   "form": [
+    "Utilidad contable \\(=IT-C_{Ex}\\)",
+    "Beneficio económico \\(=IT-C_{Ex}-C_{Im}\\)",
+    "\\(CT=CF+CV\\)",
+    "Costo unitario \\(=\\dfrac{CT}{Q}\\)",
+    "\\(CMg=\\dfrac{\\Delta CT}{\\Delta Q}\\)",
+    "CU baja con Q → economías de escala",
+    "CO del capital propio = intereses que dejaría de ganar (no el capital entero)"
+   ],
+   "lesson": "<h3>1. Dos tipos de costos</h3><p><strong>Costo explícito:</strong> sale dinero de tu bolsillo y lo ves en una boleta: materiales, sueldos de empleados, alquiler que pagas, luz.</p><p><strong>Costo implícito (costo de oportunidad):</strong> no pagas nada, pero <em>renuncias</em> a algo valioso. Es el valor de tu <strong>mejor alternativa</strong>. Los tres que más aparecen en los casos:</p><ul><li>El <strong>sueldo que dejas</strong> por trabajar en tu propio negocio.</li><li>El <strong>alquiler que no cobras</strong> por usar tu propio local.</li><li>Los <strong>intereses que no ganas</strong> por usar tus ahorros (ojo: los intereses, no el capital entero).</li></ul><h3>2. Costos fijos y variables</h3><p><strong>CF:</strong> no cambian aunque produzcas más o menos (alquiler de la maquinaria). <strong>CV:</strong> crecen con cada unidad (materiales por mochila). Juntos dan el costo total: \\(CT=CF+CV\\).</p><h3>3. Costo unitario y costo marginal</h3><p><strong>Costo unitario</strong> \\(CU=\\dfrac{CT}{Q}\\): <em>«¿cuánto me cuesta, en promedio, cada unidad?»</em>. <strong>Costo marginal</strong> \\(CMg=\\dfrac{\\Delta CT}{\\Delta Q}\\): <em>«¿cuánto más gasto por producir una unidad más?»</em>.</p><div class=\"ej\"><b>Mini ejemplo:</b> CF = S/ 2 000, S/ 30 por mochila, 400 mochilas. CV = 30 × 400 = 12 000; CT = 14 000; CU = 14 000/400 = S/ 35. Cada mochila extra cuesta S/ 30 más: CMg = 30.</div><h3>4. Utilidad contable vs beneficio económico</h3><p>Imagina que el <strong>contador</strong> y el <strong>economista</strong> miran el mismo negocio:</p><ul><li>El contador solo cuenta lo que se pagó: <strong>Utilidad contable = IT − costos explícitos</strong>.</li><li>El economista además pregunta <em>«¿te fue mejor que en tu mejor alternativa?»</em>: <strong>Beneficio económico = Utilidad contable − costo de oportunidad</strong>.</li></ul><div class=\"tbl\"><table><tr><th>Si el beneficio económico es…</th><th>Significa</th><th>Decisión</th></tr><tr><td>Positivo</td><td>Ganas más que en tu mejor alternativa</td><td>Conviene</td></tr><tr><td>Cero</td><td>Ganas lo mismo (beneficio normal)</td><td>Te da igual</td></tr><tr><td>Negativo</td><td>Tu alternativa era mejor</td><td>No conviene, aunque la utilidad contable sea positiva</td></tr></table></div><h3>5. Receta para resolver cualquier caso</h3><ol><li>Separa los datos en <strong>explícitos</strong>, <strong>implícitos</strong> e <strong>ingresos</strong>.</li><li>\\(CT=CF+CV\\).</li><li>\\(CU=CT/Q\\).</li><li>\\(IT=p\\times Q\\).</li><li>Utilidad contable = IT − CT.</li><li>Suma los costos de oportunidad.</li><li>Beneficio económico = utilidad contable − costo de oportunidad, y <strong>concluye</strong> si conviene.</li></ol><div class=\"ej\"><b>Ejemplo (Ana):</b> vende S/ 12 000 al mes y paga 4 000 de insumos + 3 000 de sueldos + 500 de servicios = <strong>7 500 explícitos</strong>. Utilidad contable = 12 000 − 7 500 = <strong>4 500</strong>. Dejó un sueldo de 3 000 y no alquila su local (1 500): costo de oportunidad = <strong>4 500</strong>. Beneficio económico = 4 500 − 4 500 = <strong>0</strong>: le da igual seguir que volver a su empleo.</div><h3>6. Economías de escala con costos</h3><p>Compara el <strong>costo unitario</strong> al producir más, no el total (el total casi siempre sube). Si el CU baja → economías de escala; si sube → deseconomías; si no cambia → rendimientos constantes. Ejemplo: 9 aviones cuestan 9 millones (1 millón c/u) y 10 cuestan 9,5 millones (0,95 c/u): el CU baja, hay economías de escala.</p><h3>Trampas típicas</h3><ul><li>Olvidar el costo de oportunidad en el beneficio económico.</li><li>Restar todos los ahorros invertidos en vez de solo los intereses que dejarías de ganar.</li><li>Confundir costo unitario (CT/Q) con costo marginal (ΔCT/ΔQ).</li><li>Decidir la escala mirando el costo total.</li><li>Dar el número sin concluir: la rúbrica pide decir si conviene y por qué.</li></ul><h3>Ejemplos resueltos</h3><div class=\"ej\"><b>Ejemplo resuelto (Luis):</b> gana S/ 20 por hora en la academia, no va y pasa 10 horas sembrando con semillas de S/ 100; vende la cosecha en S/ 180.<br>Costo de oportunidad = 20 × 10 = S/ 200. Costo contable (explícito) = S/ 100.<br>Utilidad contable = 180 − 100 = <strong>S/ 80</strong> (sí tiene).<br>Beneficio económico = 180 − 100 − 200 = <strong>−S/ 120</strong>: económicamente le fue peor que dictar clases.</div><div class=\"ej\"><b>Ejemplo resuelto (escala):</b> Boeing: 9 aviones cuestan 9 millones (1 millón por avión) y 10 aviones cuestan 9,5 millones (0,95 millones por avión). El costo unitario baja: <strong>economías de escala</strong>.</div><div class=\"err\"><b>Errores comunes:</b> (1) olvidar el costo de oportunidad en el beneficio económico; (2) confundir costo unitario (CT/Q) con costo marginal (ΔCT/ΔQ); (3) decidir la escala mirando el costo total (que siempre sube) en vez del unitario.</div>",
+   "ex": [
+    {
+     "id": "mk1",
+     "lvl": 1,
+     "title": "Costo implícito",
+     "q": "<p>¿Cuál es un costo <strong>implícito</strong>?</p>",
+     "checks": [
+      {
+       "p": "Implícito",
+       "o": [
+        "El sueldo que el dueño deja de ganar por trabajar en su propio negocio",
+        "El alquiler del local",
+        "El salario de los trabajadores",
+        "La compra de materiales",
+        "El pago de la luz"
+       ]
+      }
+     ],
+     "steps": [
+      "Los otros cuatro requieren pagar dinero: son explícitos.",
+      "El sueldo que el dueño sacrifica no se paga a nadie, pero es un costo real: es un <strong>costo de oportunidad</strong> (implícito)."
+     ],
+     "ans": "El sueldo sacrificado",
+     "hint": "¿Sale dinero de la caja?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "coport"
+      ]
+     ]
+    },
+    {
+     "id": "mk2",
+     "lvl": 1,
+     "title": "Costos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) Utilidad contable = ingreso total − costos explícitos.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) El beneficio económico siempre es mayor o igual que la utilidad contable.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) El costo fijo cambia cuando cambia la cantidad producida.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) F: el beneficio económico resta además los costos implícitos, así que es <strong>menor o igual</strong>.",
+      "c) F: por definición, el costo fijo no varía con Q."
+     ],
+     "ans": "V, F, F",
+     "hint": "El beneficio económico resta más cosas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "benef"
+      ],
+      [
+       "cp"
+      ]
+     ]
+    },
+    {
+     "id": "mk3",
+     "lvl": 2,
+     "title": "Caso Luis (clase)",
+     "q": "<p>Luis gana S/ 20 por hora en una academia. Un día no va y pasa 10 horas sembrando semillas que le costaron S/ 100. Vende la cosecha en S/ 180.</p>",
+     "checks": [
+      {
+       "p": "Costo de oportunidad",
+       "o": [
+        "S/ 200",
+        "S/ 100",
+        "S/ 20",
+        "S/ 300",
+        "S/ 80"
+       ]
+      },
+      {
+       "p": "Utilidad contable",
+       "o": [
+        "S/ 80",
+        "−S/ 120",
+        "S/ 180",
+        "S/ −20",
+        "S/ 100"
+       ]
+      },
+      {
+       "p": "Beneficio económico",
+       "o": [
+        "−S/ 120",
+        "S/ 80",
+        "S/ 180",
+        "S/ 0",
+        "−S/ 20"
+       ]
+      }
+     ],
+     "steps": [
+      "Costo de oportunidad: lo que dejó de ganar en la academia: 20 × 10 = S/ 200.",
+      "Utilidad contable: solo se restan los costos explícitos (las semillas): 180 − 100 = S/ 80.",
+      "Beneficio económico: se restan explícitos e implícitos: 180 − 100 − 200 = −S/ 120.",
+      "Conclusión: aunque contablemente ganó, económicamente le convenía ir a la academia."
+     ],
+     "ans": "S/ 200; S/ 80; −S/ 120",
+     "hint": "Dos restas distintas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "coport"
+      ],
+      [
+       "benef"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mk4",
+     "lvl": 2,
+     "title": "Caso MatLab S.A.",
+     "q": "<p>MatLab planea un laboratorio: costos fijos y variables de US$ 1 000 000 al año e ingresos de US$ 1 200 000. Dejaría de lado una ampliación que generaría US$ 250 000.</p>",
+     "checks": [
+      {
+       "p": "Utilidad contable",
+       "o": [
+        "US$ 200 000",
+        "US$ 950 000",
+        "−US$ 50 000",
+        "US$ 1 200 000",
+        "US$ 250 000"
+       ]
+      },
+      {
+       "p": "Beneficio económico",
+       "o": [
+        "−US$ 50 000",
+        "US$ 200 000",
+        "US$ 450 000",
+        "US$ 0",
+        "US$ 250 000"
+       ]
+      },
+      {
+       "p": "¿Conviene diversificar?",
+       "o": [
+        "No: el beneficio económico es negativo",
+        "Sí: la utilidad contable es positiva",
+        "Sí, siempre conviene diversificar",
+        "No: la utilidad contable es negativa",
+        "Da igual"
+       ]
+      }
+     ],
+     "steps": [
+      "Costo de oportunidad: la ampliación que se deja de lado: US$ 250 000.",
+      "Utilidad contable = 1 200 000 − 1 000 000 = US$ 200 000.",
+      "Beneficio económico = 200 000 − 250 000 = −US$ 50 000.",
+      "La alternativa (ampliar) daba más: no conviene diversificar, aunque la utilidad contable sea positiva."
+     ],
+     "ans": "200 000; −50 000; no conviene",
+     "hint": "La decisión se toma con el beneficio económico.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "coport"
+      ],
+      [
+       "benef"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mk5",
+     "lvl": 2,
+     "title": "Completa la tabla de costos (clase)",
+     "q": "<p>CF = 3,00. Completa el costo total y el costo unitario.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa las celdas",
+       "head": [
+        "Q",
+        "CF",
+        "CV",
+        "CT",
+        "Costo unitario"
+       ],
+       "rows": [
+        [
+         1,
+         "3,00",
+         "0,30",
+         {
+          "a": 3.3,
+          "tol": null
+         },
+         {
+          "a": 3.3,
+          "tol": null
+         }
+        ],
+        [
+         2,
+         "3,00",
+         "0,80",
+         {
+          "a": 3.8,
+          "tol": null
+         },
+         {
+          "a": 1.9,
+          "tol": null
+         }
+        ],
+        [
+         3,
+         "3,00",
+         "1,50",
+         {
+          "a": 4.5,
+          "tol": null
+         },
+         {
+          "a": 1.5,
+          "tol": null
+         }
+        ],
+        [
+         4,
+         "3,00",
+         "2,40",
+         {
+          "a": 5.4,
+          "tol": null
+         },
+         {
+          "a": 1.35,
+          "tol": null
+         }
+        ],
+        [
+         5,
+         "3,00",
+         "3,50",
+         {
+          "a": 6.5,
+          "tol": null
+         },
+         {
+          "a": 1.3,
+          "tol": null
+         }
+        ]
+       ],
+       "note": "Costo unitario = CT / Q."
+      }
+     ],
+     "steps": [
+      "CT = CF + CV: por ejemplo, 3,00 + 2,40 = 5,40.",
+      "Costo unitario = CT/Q: por ejemplo, 5,40/4 = 1,35.",
+      "El costo unitario baja de 3,30 a 1,30: el costo fijo se reparte entre más unidades."
+     ],
+     "ans": "CT: 3,30; 3,80; 4,50; 5,40; 6,50. CU: 3,30; 1,90; 1,50; 1,35; 1,30",
+     "hint": "Suma primero, luego divide.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ct"
+      ],
+      [],
+      [
+       "cp"
+      ]
+     ]
+    },
+    {
+     "id": "mk6",
+     "lvl": 3,
+     "title": "Completa la tabla y decide la escala (actividad semana 7)",
+     "q": "<p>Cada trabajador cuesta S/ 100 por día y los costos fijos son S/ 200.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa el costo total y el costo unitario",
+       "head": [
+        "L",
+        "Q",
+        "CT",
+        "Costo unitario"
+       ],
+       "rows": [
+        [
+         1,
+         20,
+         {
+          "a": 300,
+          "tol": null
+         },
+         {
+          "a": 15,
+          "tol": null
+         }
+        ],
+        [
+         2,
+         50,
+         {
+          "a": 400,
+          "tol": null
+         },
+         {
+          "a": 8,
+          "tol": null
+         }
+        ],
+        [
+         3,
+         90,
+         {
+          "a": 500,
+          "tol": null
+         },
+         {
+          "a": 5.56,
+          "tol": 0.02
+         }
+        ],
+        [
+         4,
+         120,
+         {
+          "a": 600,
+          "tol": null
+         },
+         {
+          "a": 5,
+          "tol": null
+         }
+        ],
+        [
+         5,
+         140,
+         {
+          "a": 700,
+          "tol": null
+         },
+         {
+          "a": 5,
+          "tol": null
+         }
+        ],
+        [
+         6,
+         150,
+         {
+          "a": 800,
+          "tol": null
+         },
+         {
+          "a": 5.33,
+          "tol": 0.02
+         }
+        ],
+        [
+         7,
+         155,
+         {
+          "a": 900,
+          "tol": null
+         },
+         {
+          "a": 5.81,
+          "tol": 0.02
+         }
+        ]
+       ],
+       "note": "CT = 200 + 100·L; costo unitario = CT/Q (redondea a 2 decimales)."
+      },
+      {
+       "p": "¿Qué rendimientos a escala hay?",
+       "o": [
+        "Economías de escala hasta Q ≈ 120–140 y luego deseconomías",
+        "Solo economías de escala",
+        "Solo deseconomías de escala",
+        "Rendimientos constantes",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "CT = CF + CV = 200 + 100L: por ejemplo, con L = 3: 200 + 300 = 500.",
+      "Costo unitario = CT/Q: 500/90 ≈ 5,56.",
+      "El costo unitario baja de 15 a 5 (economías de escala) y desde Q = 150 sube a 5,33 y 5,81 (deseconomías)."
+     ],
+     "ans": "Economías y luego deseconomías",
+     "hint": "Mira cómo cambia el costo unitario.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ct"
+      ],
+      [],
+      [
+       "escala"
+      ]
+     ]
+    },
+    {
+     "id": "mk7",
+     "lvl": 3,
+     "title": "Tres empresas (actividad semana 7)",
+     "q": "<p>Costos totales por cantidad producida:</p><div class=\"tbl\"><table><tr><th>Q</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr><tr><td>Empresa A</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td><td>110</td><td>120</td></tr><tr><td>Empresa B</td><td>11</td><td>24</td><td>39</td><td>56</td><td>75</td><td>96</td><td>119</td></tr><tr><td>Empresa C</td><td>21</td><td>34</td><td>49</td><td>66</td><td>85</td><td>106</td><td>129</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "Empresa A",
+       "o": [
+        "Economías de escala",
+        "Deseconomías de escala",
+        "Rendimientos constantes",
+        "Primero economías y luego deseconomías",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Empresa B",
+       "o": [
+        "Deseconomías de escala",
+        "Economías de escala",
+        "Rendimientos constantes",
+        "Primero economías y luego deseconomías",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Empresa C",
+       "o": [
+        "Primero economías y luego deseconomías",
+        "Economías de escala",
+        "Deseconomías de escala",
+        "Rendimientos constantes",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Calcula el costo unitario CT/Q de cada empresa.",
+      "A: 60; 35; 26,7; 22,5; 20; 18,3; 17,1 → baja siempre: economías de escala.",
+      "B: 11; 12; 13; 14; 15; 16; 17 → sube siempre: deseconomías.",
+      "C: 21; 17; 16,3; 16,5; 17; 17,7; 18,4 → baja hasta Q = 3 y luego sube."
+     ],
+     "ans": "A economías; B deseconomías; C economías y luego deseconomías",
+     "hint": "No mires el CT: mira CT/Q.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ct"
+      ],
+      [
+       "escala"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "mk8",
+     "lvl": 2,
+     "title": "Caso: la cafetería de Ana",
+     "q": "<p>Ana deja un empleo donde ganaba S/ 3 000 al mes para abrir una cafetería en un local propio, que podría alquilar en S/ 1 500 al mes. Cada mes vende S/ 12 000 y paga S/ 4 000 en insumos, S/ 3 000 de sueldos a dos empleados y S/ 500 de luz y agua.</p>",
+     "checks": [
+      {
+       "p": "Costos explícitos",
+       "o": [
+        "S/ 7 500",
+        "S/ 12 000",
+        "S/ 4 500",
+        "S/ 4 000",
+        "S/ 9 000"
+       ]
+      },
+      {
+       "p": "Costo de oportunidad (implícito)",
+       "o": [
+        "S/ 4 500",
+        "S/ 3 000",
+        "S/ 1 500",
+        "S/ 7 500",
+        "S/ 0"
+       ]
+      },
+      {
+       "p": "Utilidad contable",
+       "o": [
+        "S/ 4 500",
+        "S/ 0",
+        "S/ 12 000",
+        "S/ 7 500",
+        "S/ 3 000"
+       ]
+      },
+      {
+       "p": "Beneficio económico",
+       "o": [
+        "S/ 0: gana justo lo mismo que en su mejor alternativa (beneficio normal)",
+        "S/ 4 500: le conviene mucho",
+        "−S/ 4 500: está perdiendo",
+        "S/ 3 000: le conviene",
+        "No se puede calcular sin el precio del café"
+       ]
+      }
+     ],
+     "steps": [
+      "Explícitos (salen de caja): 4 000 + 3 000 + 500 = S/ 7 500.",
+      "Implícitos: el sueldo que deja (S/ 3 000) + el alquiler que no cobra por usar su local (S/ 1 500) = S/ 4 500.",
+      "UC = 12 000 − 7 500 = S/ 4 500.",
+      "BE = 4 500 − 4 500 = S/ 0. Contablemente «gana», pero solo cubre lo que sacrifica: está indiferente."
+     ],
+     "ans": "Explícitos 7 500; CO 4 500; UC 4 500; BE 0",
+     "hint": "Su propio sueldo y su local también cuentan… como costo implícito.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "benef"
+      ],
+      [
+       "coport"
+      ],
+      [
+       "benef"
+      ],
+      [
+       "benef",
+       "coport"
+      ]
+     ]
+    },
+    {
+     "id": "mk9",
+     "lvl": 3,
+     "title": "Caso: fábrica de mochilas (costos completos)",
+     "q": "<p>Una fábrica alquila maquinaria por S/ 2 000 al mes (costo fijo) y gasta S/ 30 en materiales y mano de obra por mochila. Este mes produce y vende 400 mochilas a S/ 50 cada una. El dueño invirtió S/ 50 000 de sus ahorros, que en el banco le darían S/ 500 al mes, y dejó un trabajo de S/ 2 500 al mes.</p>",
+     "checks": [
+      {
+       "p": "Costo total",
+       "o": [
+        "S/ 14 000",
+        "S/ 12 000",
+        "S/ 2 030",
+        "S/ 20 000",
+        "S/ 17 000"
+       ]
+      },
+      {
+       "p": "Costo unitario",
+       "o": [
+        "S/ 35",
+        "S/ 30",
+        "S/ 50",
+        "S/ 5",
+        "S/ 42,50"
+       ]
+      },
+      {
+       "p": "Utilidad contable",
+       "o": [
+        "S/ 6 000",
+        "S/ 8 000",
+        "S/ 3 000",
+        "S/ 20 000",
+        "S/ 6 000 − 50 000 = −S/ 44 000"
+       ]
+      },
+      {
+       "p": "Beneficio económico y decisión",
+       "o": [
+        "S/ 3 000: conviene seguir",
+        "S/ 6 000: conviene seguir",
+        "−S/ 47 000: no conviene",
+        "S/ 0: le da igual",
+        "S/ 3 500: conviene seguir"
+       ]
+      }
+     ],
+     "steps": [
+      "CV = 30 × 400 = S/ 12 000. CT = CF + CV = 2 000 + 12 000 = S/ 14 000.",
+      "CU = CT/Q = 14 000/400 = S/ 35 por mochila (también: CF/Q + CV/Q = 5 + 30).",
+      "IT = 50 × 400 = S/ 20 000. UC = 20 000 − 14 000 = S/ 6 000.",
+      "Costo de oportunidad mensual = 500 (intereses) + 2 500 (sueldo) = S/ 3 000. Ojo: no se resta la inversión completa de S/ 50 000, solo lo que <em>dejaría de ganar</em> con ella.",
+      "BE = 6 000 − 3 000 = S/ 3 000 > 0: conviene."
+     ],
+     "ans": "CT 14 000; CU 35; UC 6 000; BE 3 000",
+     "hint": "El costo de oportunidad del capital son los intereses, no el capital entero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ct"
+      ],
+      [
+       "ct"
+      ],
+      [
+       "benef"
+      ],
+      [
+       "benef",
+       "coport"
+      ],
+      []
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "escasez": {
+   "n": "Escasez",
+   "f": "Recursos limitados, necesidades ilimitadas",
+   "x": "Obliga a decidir; toda decisión tiene un costo.",
+   "home": "b1"
+  },
+  "micmac": {
+   "n": "Micro vs macro",
+   "f": "Micro: una unidad o mercado · Macro: todo el país",
+   "x": "PBI, inflación y desempleo son macro.",
+   "home": "b1"
+  },
+  "tipos": {
+   "n": "Tipos de economía",
+   "f": "Mercado (laissez-faire) · centralizada",
+   "x": "En una decide el privado; en la otra, el Estado.",
+   "home": "b1"
+  },
+  "umg": {
+   "n": "Utilidad marginal",
+   "f": "\\(UMg=\\Delta UT/\\Delta Q\\)",
+   "x": "Es decreciente: cada unidad extra satisface menos.",
+   "home": "b1"
+  },
+  "valor": {
+   "n": "Valor percibido",
+   "f": "Exclusividad · moda · referencia · calidad · presupuesto",
+   "x": "El precio también comunica valor.",
+   "home": "b1"
+  },
+  "movdes": {
+   "n": "Movimiento vs desplazamiento",
+   "f": "Precio propio → movimiento; otro factor → desplazamiento",
+   "x": "La curva solo se desplaza si cambia algo distinto al precio del propio bien.",
+   "home": "b2"
+  },
+  "ingreso": {
+   "n": "Bien normal e inferior",
+   "f": "Ingreso ↑: normal D→, inferior D←",
+   "x": "El ingreso desplaza la demanda.",
+   "home": "b2"
+  },
+  "relac": {
+   "n": "Sustitutos y complementarios",
+   "f": "Sustituto ↑ → D→ · complemento ↑ → D←",
+   "x": "Sustitutos se reemplazan; complementarios se usan juntos.",
+   "home": "b2"
+  },
+  "oferta": {
+   "n": "Factores de la oferta",
+   "f": "Costos, tecnología, clima, productores",
+   "x": "Todo lo que afecta al productor mueve la oferta.",
+   "home": "b2"
+  },
+  "giffen": {
+   "n": "Giffen y Veblen",
+   "f": "Excepciones a la ley de la demanda",
+   "x": "Giffen: subsistencia, domina el efecto ingreso. Veblen: lujo y exclusividad.",
+   "home": "b2"
+  },
+  "equil": {
+   "n": "Equilibrio",
+   "f": "\\(Q_d=Q_s\\)",
+   "x": "Iguala las ecuaciones, despeja p y reemplaza para Q.",
+   "home": "b2"
+  },
+  "exceso": {
+   "n": "Escasez y sobreproducción",
+   "f": "p > p*: sobreproducción · p < p*: escasez",
+   "x": "Evalúa ambas ecuaciones y resta.",
+   "home": "b2"
+  },
+  "doble": {
+   "n": "Desplazamientos simultáneos",
+   "f": "Una variable queda indeterminada",
+   "x": "Depende de cuál curva se mueve más.",
+   "home": "b2"
+  },
+  "pme": {
+   "n": "Producto medio y marginal",
+   "f": "\\(PMe=Q/L,\\ PMg=\\Delta Q/\\Delta L\\)",
+   "x": "El PMe promedia; el PMg mide al último trabajador.",
+   "home": "b3"
+  },
+  "rdec": {
+   "n": "Rendimientos decrecientes",
+   "f": "Con un factor fijo, el PMg termina cayendo",
+   "x": "El PMg corta al PMe en su máximo.",
+   "home": "b3"
+  },
+  "deriv": {
+   "n": "Derivar para el PMg y el PMe máximo",
+   "f": "\\(PMg=dQ/dL\\); máx. PMe: \\(\\frac{d\\,PMe}{dL}=0\\)",
+   "x": "Revisa si el punto crítico es máximo o mínimo.",
+   "home": "b3"
+  },
+  "cp": {
+   "n": "Corto y largo plazo",
+   "f": "CP: algún factor fijo · LP: todo variable",
+   "x": "No es un plazo de calendario.",
+   "home": "b3"
+  },
+  "coport": {
+   "n": "Costo de oportunidad",
+   "f": "Valor de la mejor alternativa sacrificada",
+   "x": "Es un costo implícito.",
+   "home": "b4"
+  },
+  "benef": {
+   "n": "Utilidad contable vs beneficio económico",
+   "f": "UC \\(=IT-C_{Ex}\\); BE \\(=IT-C_{Ex}-C_{Im}\\)",
+   "x": "La decisión se toma con el beneficio económico.",
+   "home": "b4"
+  },
+  "ct": {
+   "n": "Costo total, unitario y marginal",
+   "f": "CT = CF + CV · CU = CT/Q · CMg = ΔCT/ΔQ",
+   "x": "El costo fijo se reparte entre más unidades.",
+   "home": "b4"
+  },
+  "escala": {
+   "n": "Economías de escala",
+   "f": "CU ↓ con Q: economías · CU ↑: deseconomías",
+   "x": "Decide con el costo unitario, no con el total.",
+   "home": "b4"
+  },
+  "just": {
+   "n": "Justificar respuestas",
+   "f": "Afirmación → concepto → por qué",
+   "x": "La rúbrica premia justificar, no solo marcar V o F.",
+   "home": "b1"
+  },
+  "qmax": {
+   "n": "Producción máxima",
+   "f": "\\(PMg=0\\)",
+   "x": "Ahí la producción total deja de crecer; después el PMg es negativo.",
+   "home": "b3"
+  },
+  "escprod": {
+   "n": "Rendimientos a escala",
+   "f": "Factores ×k → Q más que ×k: crecientes",
+   "x": "Crecientes = economías de escala (el CU baja). Es de largo plazo.",
+   "home": "b3"
+  },
+  "efsi": {
+   "n": "Efecto sustitución e ingreso",
+   "f": "Sustitución: lo reemplazo · ingreso: cambia lo que me alcanza",
+   "x": "En un Giffen domina el efecto ingreso.",
+   "home": "b1"
+  }
+ },
+ "simEx": [
+  {
+   "id": "mis1",
+   "lvl": 3,
+   "title": "Equilibrio y escasez",
+   "q": "<p>\\(Q_d=1\\,200-40p\\) y \\(Q_s=300+50p\\).</p>",
+   "checks": [
+    {
+     "p": "Equilibrio",
+     "o": [
+      "\\(p^*=10,\\ Q^*=800\\)",
+      "\\(p^*=15,\\ Q^*=600\\)",
+      "\\(p^*=10,\\ Q^*=1\\,200\\)",
+      "\\(p^*=9,\\ Q^*=840\\)",
+      "\\(p^*=20,\\ Q^*=400\\)"
+     ]
+    },
+    {
+     "p": "A un precio de 8, hay…",
+     "o": [
+      "Escasez de 180",
+      "Sobreproducción de 180",
+      "Escasez de 880",
+      "Sobreproducción de 700",
+      "Equilibrio"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(1\\,200-40p=300+50p\\Rightarrow900=90p\\Rightarrow p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
+    "En \\(p=8\\): \\(Q_d=880\\), \\(Q_s=700\\). Escasez de 180."
+   ],
+   "ans": "(10; 800); escasez de 180",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mis2",
+   "lvl": 3,
+   "title": "Caso TechInnova",
+   "q": "<p>TechInnova lanzaría una app con costos de US$ 800 000 e ingresos de US$ 1 500 000 al año, dejando un proyecto que generaría US$ 300 000.</p>",
+   "checks": [
+    {
+     "p": "Beneficio económico",
+     "o": [
+      "US$ 400 000",
+      "US$ 700 000",
+      "US$ 1 200 000",
+      "−US$ 300 000",
+      "US$ 1 000 000"
+     ]
+    },
+    {
+     "p": "¿Conviene?",
+     "o": [
+      "Sí: el beneficio económico es positivo",
+      "No: el costo de oportunidad es muy alto",
+      "No: la utilidad contable es negativa",
+      "Solo si baja el precio",
+      "Da igual"
+     ]
+    }
+   ],
+   "steps": [
+    "Utilidad contable = 1 500 000 − 800 000 = 700 000.",
+    "Beneficio económico = 700 000 − 300 000 = 400 000 > 0: conviene."
+   ],
+   "ans": "US$ 400 000; sí",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mis3",
+   "lvl": 3,
+   "title": "PMe máximo",
+   "q": "<p>\\(Q=60L^2-2L^3\\). ¿Cuál es el PMe máximo?</p>",
+   "checks": [
+    {
+     "p": "PMe máximo",
+     "o": [
+      "\\(450\\) en \\(L=15\\)",
+      "\\(900\\) en \\(L=15\\)",
+      "\\(450\\) en \\(L=30\\)",
+      "\\(600\\) en \\(L=20\\)",
+      "\\(225\\) en \\(L=7{,}5\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(PMe=60L-2L^2\\); \\(\\frac{d\\,PMe}{dL}=60-4L=0\\Rightarrow L=15\\).",
+    "\\(PMe=900-450=450\\). Es máximo porque \\(-2L^2\\) abre hacia abajo."
+   ],
+   "ans": "450 en L = 15",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mis4",
+   "lvl": 3,
+   "title": "Teoría mezclada",
+   "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+   "checks": [
+    {
+     "p": "a) Un aumento en el costo de los insumos desplaza la oferta a la derecha.",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    },
+    {
+     "p": "b) Si aumentan la demanda y la oferta a la vez, la cantidad de equilibrio sube.",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    },
+    {
+     "p": "c) El costo de oportunidad es un costo implícito.",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    },
+    {
+     "p": "d) El producto marginal es la producción total dividida entre el número de trabajadores.",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    }
+   ],
+   "steps": [
+    "a) F: a la izquierda (producir cuesta más).",
+    "b) V: ambas empujan la cantidad hacia arriba (el precio queda indeterminado).",
+    "c) V.",
+    "d) F: esa es la definición del producto medio."
+   ],
+   "ans": "F, V, V, F",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "mis5",
+   "lvl": 3,
+   "title": "Cuestionario conceptual con justificación",
+   "q": "<p>Elige la respuesta correctamente justificada.</p>",
+   "checks": [
+    {
+     "p": "a) «Si sube el precio de la gaseosa, su demanda disminuye.»",
+     "o": [
+      "Falso: disminuye la cantidad demandada (movimiento sobre la curva); la demanda no se desplaza",
+      "Verdadero: por la ley de la demanda, la curva se desplaza a la izquierda",
+      "Verdadero: la gaseosa se vuelve un bien inferior",
+      "Falso: la demanda aumenta porque la gaseosa se vuelve más valiosa"
+     ]
+    },
+    {
+     "p": "b) «La cuarta porción de pizza suele dar menos satisfacción adicional que la primera.»",
+     "o": [
+      "Verdadero: la utilidad marginal es decreciente",
+      "Falso: la utilidad marginal es constante",
+      "Verdadero: porque la utilidad total disminuye desde la primera porción",
+      "Falso: cada porción da más satisfacción que la anterior"
+     ]
+    },
+    {
+     "p": "c) «Un bien de Giffen es aquel cuya demanda sube cuando sube el ingreso.»",
+     "o": [
+      "Falso: eso describe a un bien normal; en un Giffen (bien de subsistencia) la cantidad comprada sube cuando sube su precio",
+      "Verdadero: es la definición de bien de Giffen",
+      "Falso: un Giffen es un bien de lujo que da estatus",
+      "Verdadero: los bienes Giffen son siempre bienes normales"
+     ]
+    },
+    {
+     "p": "d) «Si un negocio tiene utilidad contable positiva, siempre conviene continuar.»",
+     "o": [
+      "Falso: si el costo de oportunidad supera la utilidad contable, el beneficio económico es negativo",
+      "Verdadero: la utilidad contable ya incluye todos los costos",
+      "Verdadero: solo importan los costos explícitos",
+      "Falso: la utilidad contable siempre es menor que cero"
+     ]
+    },
+    {
+     "p": "e) «Cuando el PMg es mayor que el PMe, el PMe está subiendo.»",
+     "o": [
+      "Verdadero: si el último trabajador aporta más que el promedio, jala el promedio hacia arriba",
+      "Falso: el PMe siempre baja cuando el PMg sube",
+      "Verdadero: porque la producción total es máxima",
+      "Falso: el PMe y el PMg no se relacionan"
+     ]
+    }
+   ],
+   "steps": [
+    "a) Precio del propio bien → <strong>movimiento</strong> sobre la curva (cambia la cantidad demandada, no la demanda).",
+    "b) Utilidad marginal decreciente.",
+    "c) Bien normal: ingreso ↑ → demanda ↑. Giffen: excepción a la ley de la demanda (precio ↑ → se compra más).",
+    "d) La decisión se toma con el beneficio económico, que también resta los costos implícitos.",
+    "e) Mientras PMg > PMe, el PMe sube; cuando PMg = PMe, el PMe está en su máximo."
+   ],
+   "ans": "F; V; F; F; V",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "movdes",
+     "just"
+    ],
+    [
+     "umg"
+    ],
+    [
+     "giffen",
+     "ingreso"
+    ],
+    [
+     "benef"
+    ],
+    [
+     "pme",
+     "rdec"
+    ]
+   ]
+  },
+  {
+   "id": "mis6",
+   "lvl": 3,
+   "title": "Caso: empresa de bicicletas",
+   "q": "<p>Mercado de bicicletas urbanas: \\(Q_d=900-30p\\) y \\(Q_s=-100+20p\\) (p en cientos de soles).</p>",
+   "checks": [
+    {
+     "p": "Equilibrio inicial",
+     "o": [
+      "\\(p^*=20,\\ Q^*=300\\)",
+      "\\(p^*=16,\\ Q^*=420\\)",
+      "\\(p^*=20,\\ Q^*=900\\)",
+      "\\(p^*=25,\\ Q^*=150\\)",
+      "\\(p^*=18,\\ Q^*=360\\)"
+     ]
+    },
+    {
+     "p": "Una campaña de vida saludable cambia la demanda a \\(Q_d=1\\,150-30p\\). Nuevo equilibrio:",
+     "o": [
+      "\\(p^*=25,\\ Q^*=400\\)",
+      "\\(p^*=20,\\ Q^*=550\\)",
+      "\\(p^*=25,\\ Q^*=375\\)",
+      "\\(p^*=23,\\ Q^*=460\\)",
+      "\\(p^*=15,\\ Q^*=700\\)"
+     ]
+    },
+    {
+     "p": "El gobierno da un subsidio a los fabricantes. En el gráfico…",
+     "o": [
+      "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
+      "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
+      "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja",
+      "Movimiento a lo largo de la oferta",
+      "La demanda se desplaza a la izquierda"
+     ]
+    },
+    {
+     "p": "Sube el precio de los scooters eléctricos (sustituto). En el gráfico…",
+     "o": [
+      "La demanda de bicicletas se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
+      "La demanda de bicicletas se desplaza a la izquierda",
+      "La oferta de bicicletas se desplaza a la derecha",
+      "Movimiento a lo largo de la demanda de bicicletas",
+      "No pasa nada en el mercado de bicicletas"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(900-30p=-100+20p\\Rightarrow1\\,000=50p\\Rightarrow p^*=20\\); \\(Q^*=900-600=300\\).",
+    "\\(1\\,150-30p=-100+20p\\Rightarrow1\\,250=50p\\Rightarrow p^*=25\\); \\(Q^*=1\\,150-750=400\\) (demanda a la derecha: p y Q suben).",
+    "El subsidio abarata producir → oferta a la derecha → p baja, Q sube.",
+    "Sustituto más caro → la gente se pasa a las bicicletas → demanda a la derecha."
+   ],
+   "ans": "(20; 300); (25; 400); O→; D→",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "equil"
+    ],
+    [
+     "equil"
+    ],
+    [
+     "oferta"
+    ],
+    [
+     "relac"
+    ]
+   ]
+  },
+  {
+   "id": "mis7",
+   "lvl": 3,
+   "title": "Caso: fábrica de polos",
+   "q": "<p>Una fábrica de polos con capital fijo tiene \\(Q=48L^2-2L^3\\).</p>",
+   "checks": [
+    {
+     "p": "\\(PMg_L\\)",
+     "o": [
+      "\\(96L-6L^2\\)",
+      "\\(48L-2L^2\\)",
+      "\\(96-12L\\)",
+      "\\(48L^2-6L\\)",
+      "\\(96L-2L^2\\)"
+     ]
+    },
+    {
+     "p": "PMe máximo",
+     "o": [
+      "\\(288\\) en \\(L=12\\)",
+      "\\(576\\) en \\(L=12\\)",
+      "\\(288\\) en \\(L=16\\)",
+      "\\(4\\,096\\) en \\(L=16\\)",
+      "\\(144\\) en \\(L=6\\)"
+     ]
+    },
+    {
+     "p": "Producción máxima",
+     "o": [
+      "\\(4\\,096\\) en \\(L=16\\)",
+      "\\(3\\,456\\) en \\(L=12\\)",
+      "\\(288\\) en \\(L=12\\)",
+      "\\(6\\,144\\) en \\(L=24\\)",
+      "\\(2\\,048\\) en \\(L=8\\)"
+     ]
+    },
+    {
+     "p": "En el largo plazo, si duplica trabajadores y máquinas, la producción pasa de 2 000 a 4 600 polos. Hay…",
+     "o": [
+      "Rendimientos crecientes a escala (economías de escala)",
+      "Rendimientos constantes a escala",
+      "Rendimientos decrecientes a escala (deseconomías de escala)",
+      "Rendimientos decrecientes del trabajo (no es un tema de escala)",
+      "No se puede saber"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(PMg=\\frac{dQ}{dL}=96L-6L^2\\); \\(PMe=48L-2L^2\\).",
+    "PMe máx: \\(48-4L=0\\Rightarrow L=12\\); \\(PMe=576-288=288\\) (y \\(PMg(12)=1\\,152-864=288\\)).",
+    "Q máx: \\(6L(16-L)=0\\Rightarrow L=16\\); \\(Q=48(256)-2(4\\,096)=12\\,288-8\\,192=4\\,096\\).",
+    "Factores ×2 y producción ×2,3: rendimientos crecientes → economías de escala."
+   ],
+   "ans": "PMe máx 288 (L=12); Q máx 4 096 (L=16); economías de escala",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "deriv"
+    ],
+    [
+     "deriv",
+     "pme"
+    ],
+    [
+     "qmax"
+    ],
+    [
+     "escprod"
+    ]
+   ]
+  },
+  {
+   "id": "mis8",
+   "lvl": 3,
+   "title": "Caso: la imprenta de Carla",
+   "q": "<p>Carla dejó su trabajo de diseñadora (S/ 4 000 al mes) y abrió una imprenta en un local propio que podría alquilar en S/ 1 200 al mes. Sus costos fijos son S/ 6 000 al mes y el costo variable es S/ 2 por libro. Este mes imprime y vende 3 000 libros a S/ 6.</p>",
+   "checks": [
+    {
+     "p": "Costo total",
+     "o": [
+      "S/ 12 000",
+      "S/ 6 000",
+      "S/ 18 000",
+      "S/ 17 200",
+      "S/ 6 002"
+     ]
+    },
+    {
+     "p": "Costo unitario",
+     "o": [
+      "S/ 4",
+      "S/ 2",
+      "S/ 6",
+      "S/ 5,73",
+      "S/ 3"
+     ]
+    },
+    {
+     "p": "Utilidad contable",
+     "o": [
+      "S/ 6 000",
+      "S/ 12 000",
+      "S/ 800",
+      "S/ 18 000",
+      "S/ 0"
+     ]
+    },
+    {
+     "p": "Beneficio económico y decisión",
+     "o": [
+      "S/ 800: conviene seguir con la imprenta",
+      "S/ 6 000: conviene seguir",
+      "−S/ 4 400: no conviene",
+      "S/ 2 000: conviene seguir",
+      "−S/ 800: no conviene"
+     ]
+    }
+   ],
+   "steps": [
+    "CV = 2 × 3 000 = 6 000; CT = 6 000 + 6 000 = S/ 12 000.",
+    "CU = 12 000/3 000 = S/ 4.",
+    "IT = 6 × 3 000 = 18 000; UC = 18 000 − 12 000 = S/ 6 000.",
+    "Costo de oportunidad = 4 000 + 1 200 = 5 200; BE = 6 000 − 5 200 = S/ 800 > 0: conviene."
+   ],
+   "ans": "CT 12 000; CU 4; UC 6 000; BE 800",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "ct"
+    ],
+    [
+     "ct"
+    ],
+    [
+     "benef"
+    ],
+    [
+     "benef",
+     "coport"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 90,
+  "slots": [
+   {
+    "pts": 5,
+    "name": "Preguntas conceptuales",
+    "pool": [
+     "mis5",
+     "mis4",
+     "mb1",
+     "mf2",
+     "mo2",
+     "mk2",
+     "mp2",
+     "mr1",
+     "mr2",
+     "mr4"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Oferta y demanda: equilibrio y desplazamientos",
+    "pool": [
+     "me10",
+     "mis6",
+     "me9"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Producción: PMe, PMg, máximos y escala",
+    "pool": [
+     "mp10",
+     "mis7"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Costos y beneficio económico",
+    "pool": [
+     "mk9",
+     "mis8",
+     "mk8"
+    ]
+   }
+  ]
+ },
+ "free": true,
+ "intro": "Organizado según la rúbrica del parcial: 4 bloques de 5 puntos cada uno. Los bloques están abiertos, así que puedes empezar por el que más te cueste, y el simulacro siempre está disponible."
+}

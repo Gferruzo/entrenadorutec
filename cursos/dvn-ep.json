@@ -1,0 +1,3190 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso: lo esencial de las semanas 1 a 7 (en el examen no tendrás esta guía).</p>\n<div class=\"fgrid\">\n<div><b>Orden de las cláusulas</b><br><code>SELECT → FROM → JOIN … ON → WHERE → GROUP BY → HAVING → ORDER BY</code></div>\n<div><b>Básico</b><br><code>SELECT TOP n col AS alias</code> · <code>SELECT DISTINCT col</code></div>\n<div><b>Filtros</b><br><code>= &gt; &lt; &gt;= &lt;= &lt;&gt;</code> · <code>'texto'</code> · <code>AND</code> antes que <code>OR</code> · <code>IS NULL</code></div>\n<div><b>Agregación</b><br><code>COUNT(*) SUM AVG MIN MAX</code> (AVG ignora NULL) · <code>STDEV VAR</code></div>\n<div><b>Mediana</b><br><code>PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY col) OVER ()</code></div>\n<div><b>JOIN</b><br><code>INNER</code>: solo coincidencias · <code>LEFT</code>: todas las de la izquierda + NULL</div>\n<div><b>Limpieza</b><br><code>TRIM UPPER LEN REPLACE TRY_CAST(x AS DECIMAL(6,2))</code></div>\n<div><b>Duplicados</b><br><code>GROUP BY campos HAVING COUNT(*) &gt; 1</code></div>\n<div><b>Cambiar datos</b><br><code>UPDATE t SET col = v WHERE col IS NULL;</code> · <code>DELETE FROM t WHERE …;</code></div>\n<div><b>Transformar</b><br><code>CASE WHEN … THEN … ELSE … END AS nueva</code></div>\n<div><b>Imputación</b><br>Cuantitativa → media (o mediana) · cualitativa → moda · «Sin dato» si imputar inventaría</div>\n<div><b>Integridad</b><br>Entidad (PK única y no nula) · referencial (FK → PK existente) · dominio (tipo y rango)</div>\n<div><b>Descriptivos</b><br>Media > mediana → sesgo a la derecha · atípico > media + 2·DE</div>\n<div><b>Hallazgo</b><br>[Grupo] muestra [comportamiento], lo que podría deberse a [causa], y sugiere [acción]</div>\n</div>",
+ "formLabel": "📋 Guía rápida",
+ "formSim": false,
+ "id": "dvn-ep",
+ "code": "IN6013",
+ "name": "Data, Visualization y Storytelling",
+ "exam": "Examen parcial 2026-2 (Teoría 1)",
+ "topics": [
+  {
+   "id": "tipos",
+   "name": "Datos y tipos de datos",
+   "teo": "<p>Un <strong>dato</strong> representa un hecho, evento o característica que se puede guardar y procesar para generar información y decidir.</p>\n<p><strong>Según su estructura:</strong> estructurados (filas y columnas: bases de datos, Excel), semiestructurados (sin tabla rígida pero con etiquetas o claves: JSON, XML, correos con metadatos) y no estructurados (sin formato fijo: texto libre, imágenes, audio, video; requieren IA o procesamiento de lenguaje).</p>\n<p><strong>Según su naturaleza:</strong> cualitativos (describen cualidades: sexo, estado civil, nivel educativo) y cuantitativos (cantidades con las que se opera: edad, ingreso, número de reclamos). Un número que solo identifica (DNI, código) es cualitativo.</p>\n<p><strong>Fuentes:</strong> internas (ERP, CRM, ventas, call center: confiables y baratas, pero limitadas a la empresa) y externas (INEI, censos, Google Trends, open data: muestran el mercado, pero su calidad y costo varían).</p>\n<p><strong>Calidad</strong> (¿correctos, completos, oportunos?), <strong>consistencia</strong> (¿las mismas reglas y formatos en toda la empresa?) y <strong>confiabilidad</strong> (¿vienen de una fuente verificada que refleja la realidad?).</p>",
+   "form": [
+    "Estructurado: filas y columnas",
+    "Semiestructurado: etiquetas o claves (JSON, XML)",
+    "No estructurado: texto, imagen, audio, video",
+    "Cualitativo vs cuantitativo",
+    "Interna vs externa",
+    "Calidad · consistencia · confiabilidad"
+   ],
+   "ex": [
+    {
+     "id": "dd1",
+     "lvl": 1,
+     "title": "¿Qué estructura tiene?",
+     "q": "<p>Una app de delivery guarda cada pedido como un archivo JSON con claves como <code>\"cliente\"</code>, <code>\"items\"</code> y <code>\"total\"</code>. Estos datos son:</p>",
+     "checks": [
+      {
+       "p": "Estructura",
+       "o": [
+        "Semiestructurados",
+        "Estructurados",
+        "No estructurados",
+        "Cuantitativos",
+        "Externos"
+       ]
+      }
+     ],
+     "steps": [
+      "No están en una tabla rígida, pero sí tienen claves que organizan la información: son semiestructurados."
+     ],
+     "ans": "Semiestructurados",
+     "hint": "¿Hay filas y columnas o hay etiquetas?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "estr"
+      ]
+     ]
+    },
+    {
+     "id": "dd2",
+     "lvl": 1,
+     "title": "Cualitativo o cuantitativo: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) «Número de reclamos» es una variable cualitativa.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) «Estado civil» es una variable cualitativa.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) El DNI, aunque tiene números, es cualitativo.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: es un conteo, se puede operar.",
+      "b) V: describe una cualidad.",
+      "c) V: identifica, no mide; sumar DNIs no tiene sentido."
+     ],
+     "ans": "F, V, V",
+     "hint": "¿Tiene sentido promediarlo?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nat"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "dd3",
+     "lvl": 1,
+     "title": "¿Interna o externa?",
+     "q": "<p>Una cadena de tiendas usa datos del INEI sobre la población de cada distrito de Lima. Esa fuente es:</p>",
+     "checks": [
+      {
+       "p": "Fuente",
+       "o": [
+        "Externa",
+        "Interna",
+        "No estructurada",
+        "Primaria interna",
+        "Transaccional"
+       ]
+      }
+     ],
+     "steps": [
+      "Viene de fuera de la organización y ayuda a entender el entorno: es externa."
+     ],
+     "ans": "Externa",
+     "hint": "¿Quién generó el dato?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fuente"
+      ]
+     ]
+    },
+    {
+     "id": "dd4",
+     "lvl": 2,
+     "title": "Calidad, consistencia o confiabilidad (caso Gargate)",
+     "q": "<p>En la empresa Gargate S.A.C. se detectan tres situaciones. Identifica qué problema es cada una.</p>",
+     "checks": [
+      {
+       "p": "El sistema registra la producción de un día como −500 botellas",
+       "o": [
+        "Calidad",
+        "Consistencia",
+        "Confiabilidad",
+        "Fuente externa",
+        "Estructura"
+       ]
+      },
+      {
+       "p": "Producción reporta 8 500 unidades; Logística, 8.5 millares; Ventas, 8500",
+       "o": [
+        "Consistencia",
+        "Calidad",
+        "Confiabilidad",
+        "Duplicado",
+        "Integridad referencial"
+       ]
+      },
+      {
+       "p": "Producción informa 10 000 unidades y el ERP, 8 950",
+       "o": [
+        "Confiabilidad",
+        "Consistencia",
+        "Calidad",
+        "Dato no estructurado",
+        "Fuente externa"
+       ]
+      }
+     ],
+     "steps": [
+      "−500 es imposible: el dato no es correcto (calidad).",
+      "El mismo valor con formatos y reglas distintas entre áreas: consistencia.",
+      "Dos fuentes dicen cosas distintas: ¿en cuál confiar? Confiabilidad."
+     ],
+     "ans": "Calidad, consistencia, confiabilidad",
+     "hint": "Consistencia = mismas reglas; confiabilidad = ¿a quién le creo?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ccc"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "dd5",
+     "lvl": 2,
+     "title": "Ventajas de las fuentes internas",
+     "q": "<p>¿Cuál es una ventaja típica de una fuente de información <strong>interna</strong>?</p>",
+     "checks": [
+      {
+       "p": "Ventaja",
+       "o": [
+        "Alta confiabilidad y menor costo de obtención",
+        "Muestra el comportamiento de todo el mercado",
+        "Permite hacer benchmarking con la competencia",
+        "Siempre está libre de sesgos",
+        "Refleja tendencias externas"
+       ]
+      }
+     ],
+     "steps": [
+      "Las fuentes internas son específicas del negocio, confiables y baratas.",
+      "Su desventaja: se limitan a la empresa y pueden tener sesgos."
+     ],
+     "ans": "Alta confiabilidad y menor costo",
+     "hint": "Las otras opciones describen fuentes externas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fuente"
+      ],
+      [
+       "mm"
+      ]
+     ]
+    },
+    {
+     "id": "dd6",
+     "lvl": 3,
+     "title": "Clasificación completa",
+     "q": "<p>Una empresa analiza a sus clientes. Clasifica cada dato.</p>",
+     "checks": [
+      {
+       "p": "«Tiempo como cliente (meses)»",
+       "o": [
+        "Cuantitativo",
+        "Cualitativo",
+        "No estructurado",
+        "Semiestructurado",
+        "Fuente externa"
+       ]
+      },
+      {
+       "p": "«Reseñas escritas en la app»",
+       "o": [
+        "No estructurado",
+        "Estructurado",
+        "Cuantitativo",
+        "Semiestructurado",
+        "Cualitativo estructurado"
+       ]
+      },
+      {
+       "p": "«Nivel educativo»",
+       "o": [
+        "Cualitativo (con orden)",
+        "Cuantitativo continuo",
+        "Cuantitativo discreto",
+        "No estructurado",
+        "Sin clasificación"
+       ]
+      }
+     ],
+     "steps": [
+      "Meses: cantidad con la que se opera.",
+      "Texto libre sin formato fijo: no estructurado.",
+      "Describe una cualidad; tiene un orden (primaria < secundaria < superior)."
+     ],
+     "ans": "Cuantitativo; no estructurado; cualitativo",
+     "hint": "Pregúntate si se puede operar y si tiene formato fijo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "estr"
+      ],
+      [
+       "nat"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un dato es un hecho registrado; se convierte en información cuando responde una pregunta. Clasificarlo bien decide cómo guardarlo y analizarlo.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Estructurados:</strong> filas y columnas (Excel, bases de datos).</li><li><strong>Semiestructurados:</strong> con etiquetas o claves, sin tabla rígida (JSON, XML).</li><li><strong>No estructurados:</strong> texto libre, imágenes, audio, video.</li><li><strong>Cuantitativos</strong> (discretos o continuos) vs <strong>cualitativos</strong> (nominales u ordinales).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> el correo de un cliente es semiestructurado (remitente y fecha son etiquetas; el cuerpo es texto libre).</div>\n<div class=\"err\"><b>Error común:</b> tratar un código numérico (DNI, código postal) como cuantitativo: no tiene sentido promediarlo.</div>"
+  },
+  {
+   "id": "bd",
+   "name": "Bases de datos relacionales",
+   "teo": "<p>Una <strong>base de datos relacional</strong> es un conjunto de tablas independientes conectadas mediante relaciones. Cada tabla guarda un solo tipo de información, y las relaciones permiten reconstruir la información completa sin repetirla.</p>\n<p><strong>Tabla</strong> = datos de una entidad (ESTUDIANTES). <strong>Registro</strong> = una fila (los datos de Ana Torres). <strong>Campo</strong> = una columna (DNI, correo).</p>\n<p><strong>Clave primaria (PK):</strong> identifica cada registro de forma única; no puede repetirse ni quedar vacía. <strong>Clave foránea (FK):</strong> campo que conecta con otra tabla; es la PK de esa otra tabla copiada como referencia.</p>\n<p><strong>Modelo entidad–relación:</strong> entidades (rectángulos), atributos y relaciones con cardinalidad (1 a N, N a M). Una relación N a M (un estudiante lleva muchos cursos y un curso tiene muchos estudiantes) se resuelve con una <strong>tabla intermedia</strong> (MATRÍCULA) que tiene dos FK.</p>",
+   "form": [
+    "Tabla · registro (fila) · campo (columna)",
+    "PK: única y no vacía",
+    "FK: PK de otra tabla como referencia",
+    "1:N → FK en el lado N",
+    "N:M → tabla intermedia con 2 FK"
+   ],
+   "ex": [
+    {
+     "id": "db1",
+     "lvl": 1,
+     "title": "Elementos de una tabla",
+     "q": "<p>En la tabla ESTUDIANTES, la fila completa con los datos de Ana Torres es un:</p>",
+     "checks": [
+      {
+       "p": "Es un",
+       "o": [
+        "Registro",
+        "Campo",
+        "Atributo",
+        "Tipo de dato",
+        "Esquema"
+       ]
+      }
+     ],
+     "steps": [
+      "Fila = registro; columna = campo."
+     ],
+     "ans": "Registro",
+     "hint": "Fila vs columna.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "db2",
+     "lvl": 1,
+     "title": "Claves: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) Una clave primaria puede repetirse si los nombres son distintos.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) Una clave primaria no puede quedar vacía.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Una clave foránea es la clave primaria de otra tabla copiada como referencia.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: nunca se repite.",
+      "b) V.",
+      "c) V: así se conectan las tablas."
+     ],
+     "ans": "F, V, V",
+     "hint": "La PK identifica de forma única.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "db3",
+     "lvl": 2,
+     "title": "Relación muchos a muchos",
+     "q": "<p>Un estudiante puede matricularse en varios cursos, y un curso tiene varios estudiantes. ¿Cómo se modela correctamente?</p>",
+     "checks": [
+      {
+       "p": "Modelo",
+       "o": [
+        "Con una tabla intermedia MATRÍCULA que tiene la FK del estudiante y la FK del curso",
+        "Poniendo una FK de curso en ESTUDIANTES",
+        "Poniendo una FK de estudiante en CURSOS",
+        "Juntando todo en una sola tabla",
+        "Repitiendo los datos del curso en cada estudiante"
+       ]
+      }
+     ],
+     "steps": [
+      "Es una relación N:M.",
+      "Una FK en una sola tabla solo permite 1:N; por eso se crea MATRÍCULA con codigo_estudiante (FK) y codigo_curso (FK)."
+     ],
+     "ans": "Tabla intermedia con dos FK",
+     "hint": "¿Cuántos cursos puede tener un estudiante?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nm"
+      ],
+      [
+       "fk"
+      ]
+     ]
+    },
+    {
+     "id": "db4",
+     "lvl": 2,
+     "title": "Leer una tabla",
+     "q": "<p>MATRÍCULA tiene los campos <code>id_matricula</code>, <code>codigo_estudiante</code>, <code>codigo_curso</code>, <code>semestre</code> y <code>fecha_matricula</code>.</p>",
+     "checks": [
+      {
+       "p": "¿Cuál es la clave primaria?",
+       "o": [
+        "id_matricula",
+        "codigo_estudiante",
+        "codigo_curso",
+        "semestre",
+        "fecha_matricula"
+       ]
+      },
+      {
+       "p": "¿Cuáles son claves foráneas?",
+       "o": [
+        "codigo_estudiante y codigo_curso",
+        "id_matricula y semestre",
+        "Solo codigo_curso",
+        "Solo id_matricula",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "id_matricula identifica cada matrícula de forma única.",
+      "codigo_estudiante y codigo_curso apuntan a las PK de ESTUDIANTES y CURSOS."
+     ],
+     "ans": "PK id_matricula; FK codigo_estudiante y codigo_curso",
+     "hint": "¿Qué campos vienen de otras tablas?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pk"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "db5",
+     "lvl": 3,
+     "title": "Cardinalidad 1 a N",
+     "q": "<p>Un profesor dicta varios cursos, pero cada curso tiene un solo profesor. ¿Dónde va la clave foránea?</p>",
+     "checks": [
+      {
+       "p": "Diseño",
+       "o": [
+        "codigo_profesor como FK en CURSOS",
+        "codigo_curso como FK en PROFESORES",
+        "En una tabla intermedia obligatoria",
+        "En ambas tablas",
+        "No hace falta FK"
+       ]
+      }
+     ],
+     "steps": [
+      "Relación 1 (profesor) a N (cursos).",
+      "La FK va en el lado N: cada curso guarda el código de su único profesor."
+     ],
+     "ans": "FK codigo_profesor en CURSOS",
+     "hint": "La FK siempre va en el lado «muchos».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "pk",
+       "fk"
+      ]
+     ]
+    },
+    {
+     "id": "db6",
+     "lvl": 3,
+     "title": "Modelo entidad–relación: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) En el modelo ER, cada entidad se convierte en una tabla.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) Las claves relacionadas deben tener el mismo tipo de dato en ambas tablas.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Una relación N:M se implementa poniendo una FK en cada tabla.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) V: está en el checklist de verificación del modelo.",
+      "c) F: se necesita una tabla intermedia."
+     ],
+     "ans": "V, V, F",
+     "hint": "Recuerda MATRÍCULA.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "nm",
+       "imp"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una base de datos relacional guarda cada tipo de información en su propia tabla y las conecta con claves, para no repetir datos.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Tabla</strong> = entidad; <strong>registro</strong> = fila; <strong>campo</strong> = columna.</li><li><strong>PK:</strong> identifica cada fila; única y no nula.</li><li><strong>FK:</strong> campo que apunta a la PK de otra tabla.</li><li>Relación 1 a muchos: la FK va en la tabla del lado «muchos».</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> VENTAS tiene <code>ID_cliente</code> (FK) que apunta a CLIENTES(<code>ID_cliente</code>, PK).</div>\n<div class=\"err\"><b>Error común:</b> usar el nombre como PK: puede repetirse.</div>"
+  },
+  {
+   "id": "integ",
+   "name": "Organización e integridad",
+   "teo": "<p><strong>Organización:</strong> cada tabla guarda un solo tipo de información; evitar <strong>redundancia</strong> (si un dato se obtiene por relación, no se repite); y usar nombres de campos consistentes (si una tabla usa ID_cliente, todas lo llaman igual).</p>\n<p><strong>Integridad de entidad:</strong> toda tabla tiene PK, que no se repite ni queda vacía. <strong>Integridad referencial:</strong> toda FK apunta a una PK que sí existe (evita «referencias fantasma»). <strong>Integridad de dominio:</strong> cada campo acepta solo valores del tipo y rango correctos (sin texto en campos numéricos ni fechas imposibles).</p>",
+   "form": [
+    "Entidad: PK única y no nula",
+    "Referencial: FK → PK existente",
+    "Dominio: tipo y rango válidos",
+    "Evitar redundancia: usar FK"
+   ],
+   "ex": [
+    {
+     "id": "ig1",
+     "lvl": 1,
+     "title": "Venta fantasma",
+     "q": "<p>Una venta tiene <code>ID_cliente = 9999</code>, pero ese cliente no existe en CLIENTES. ¿Qué integridad se viola?</p>",
+     "checks": [
+      {
+       "p": "Integridad",
+       "o": [
+        "Referencial",
+        "De entidad",
+        "De dominio",
+        "Consistencia",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "La FK apunta a una PK inexistente: integridad referencial."
+     ],
+     "ans": "Referencial",
+     "hint": "¿Apunta a algo que existe?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pk",
+       "fk",
+       "integ"
+      ]
+     ]
+    },
+    {
+     "id": "ig2",
+     "lvl": 1,
+     "title": "Texto en un campo numérico",
+     "q": "<p>En la tabla CLIENTES aparece <code>Edad = 'veinticinco'</code>. ¿Qué integridad se viola?</p>",
+     "checks": [
+      {
+       "p": "Integridad",
+       "o": [
+        "De dominio",
+        "De entidad",
+        "Referencial",
+        "De redundancia",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "Un campo numérico con texto: el valor está fuera de su dominio."
+     ],
+     "ans": "De dominio",
+     "hint": "Tipo y rango del campo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "integ"
+      ]
+     ]
+    },
+    {
+     "id": "ig3",
+     "lvl": 1,
+     "title": "Organización: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) Guardar el nombre y la ciudad del cliente en cada venta es buena práctica.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) Si una tabla usa ID_cliente, las demás que lo referencien deben llamarlo igual.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Dos registros con la misma PK violan la integridad de entidad.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: es redundancia; si el cliente se muda hay que corregir muchas filas.",
+      "b) V.",
+      "c) V."
+     ],
+     "ans": "F, V, V",
+     "hint": "Redundancia = repetir lo que ya se obtiene con una FK.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "redun"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ig4",
+     "lvl": 2,
+     "title": "Encuentra los errores",
+     "q": "<p>Tabla MATRÍCULAS:</p><div class=\"tbl\"><table><tr><th>ID_matricula</th><th>ID_estudiante</th><th>ID_seccion</th><th>Nota_final</th></tr><tr><td>1</td><td>101</td><td>S01</td><td>17</td></tr><tr><td>1</td><td>102</td><td>S02</td><td>catorce</td></tr><tr><td>3</td><td>(vacío)</td><td>S01</td><td>15</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "El ID_matricula = 1 repetido viola la integridad…",
+       "o": [
+        "De entidad",
+        "Referencial",
+        "De dominio",
+        "Consistencia",
+        "Ninguna"
+       ]
+      },
+      {
+       "p": "La nota «catorce» viola la integridad…",
+       "o": [
+        "De dominio",
+        "De entidad",
+        "Referencial",
+        "Confiabilidad",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "La PK se repite: entidad.",
+      "Un texto en un campo numérico: dominio.",
+      "La fila 3 tiene la FK del estudiante vacía: esa matrícula no se puede vincular a ningún estudiante."
+     ],
+     "ans": "Entidad; dominio",
+     "hint": "Revisa la PK, los tipos y las FK.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pk"
+      ],
+      [
+       "integ"
+      ],
+      [
+       "fk"
+      ]
+     ]
+    },
+    {
+     "id": "ig5",
+     "lvl": 2,
+     "title": "Mal organizado vs bien organizado",
+     "q": "<p>Una tabla VENTAS guarda en cada fila el nombre y la ciudad del cliente. Ana Ruiz tiene 40 ventas y se muda. ¿Cuál es la mejor solución?</p>",
+     "checks": [
+      {
+       "p": "Solución",
+       "o": [
+        "Separar una tabla CLIENTES y dejar en VENTAS solo ID_cliente como FK",
+        "Corregir las 40 filas cada vez",
+        "Borrar las ventas antiguas",
+        "Crear una columna Ciudad_nueva",
+        "Guardar la ciudad solo en la primera venta"
+       ]
+      }
+     ],
+     "steps": [
+      "Con CLIENTES aparte, la ciudad se corrige en una sola fila y VENTAS la obtiene por la FK."
+     ],
+     "ans": "Separar CLIENTES y usar FK",
+     "hint": "Evita redundancia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fk",
+       "redun"
+      ]
+     ]
+    },
+    {
+     "id": "ig6",
+     "lvl": 3,
+     "title": "Checklist del modelo",
+     "q": "<p>¿Cuál de estas <strong>no</strong> es parte del checklist de verificación de un modelo de base de datos?</p>",
+     "checks": [
+      {
+       "p": "No es parte",
+       "o": [
+        "Todas las tablas deben tener la misma cantidad de campos",
+        "Cada FK tiene una PK correspondiente en otra tabla",
+        "Las claves relacionadas usan el mismo tipo de dato",
+        "Toda relación N:M se resuelve con una tabla intermedia",
+        "Las tablas se conectan según el funcionamiento real del caso"
+       ]
+      }
+     ],
+     "steps": [
+      "Las cuatro otras están en el checklist de la semana 3.",
+      "El número de campos depende de cada entidad."
+     ],
+     "ans": "«Misma cantidad de campos»",
+     "hint": "Piensa en lo que realmente garantiza integridad.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una base bien organizada evita redundancia y garantiza que los datos sean confiables mediante reglas de integridad.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Entidad:</strong> toda tabla tiene PK única y no nula.</li><li><strong>Referencial:</strong> toda FK apunta a una PK existente.</li><li><strong>Dominio:</strong> cada campo respeta su tipo y rango.</li><li>Nombres de campos consistentes entre tablas.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> una venta con <code>ID_cliente = 999</code> que no existe en CLIENTES rompe la integridad referencial.</div>\n<div class=\"err\"><b>Error común:</b> confundir integridad de dominio (valor válido) con referencial (relación válida).</div>"
+  },
+  {
+   "id": "sel",
+   "name": "SQL: SELECT básico",
+   "teo": "<p>SQL es un lenguaje <strong>declarativo</strong>: dices <em>qué</em> quieres, no cómo obtenerlo. Estructura: <code>SELECT columnas FROM tabla;</code></p>\n<p><code>SELECT *</code> trae todas las columnas; <code>SELECT TOP 5 ...</code> limita a las primeras filas (en SQL Server; si hay menos filas, trae las que haya); <code>AS</code> renombra una columna solo en el resultado; <code>DISTINCT</code> devuelve valores únicos.</p>\n<p>Errores comunes: escribir mal el nombre de una columna (los acentos y espacios dan error; mayúsculas y minúsculas no), confundir el orden (primero SELECT, luego FROM) y usar SELECT * cuando solo necesitas dos columnas.</p>",
+   "form": [
+    "<code>SELECT col1, col2 FROM tabla;</code>",
+    "<code>SELECT TOP n * FROM tabla;</code>",
+    "<code>SELECT col AS alias</code>",
+    "<code>SELECT DISTINCT col FROM tabla;</code>"
+   ],
+   "ex": [
+    {
+     "id": "sq1",
+     "lvl": 1,
+     "title": "Elegir columnas",
+     "q": "<p>Quieres ver solo el nombre y el precio de los productos. ¿Qué consulta es correcta?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT Nombre_producto, Precio FROM Productos;</code>",
+        "<code>SELECT * FROM Productos;</code>",
+        "<code>SELECT FROM Productos Nombre_producto, Precio;</code>",
+        "<code>SELECT Nombre_producto AND Precio FROM Productos;</code>",
+        "<code>FROM Productos SELECT Nombre_producto, Precio;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Columnas separadas por coma después de SELECT, y la tabla después de FROM.",
+      "<code>SELECT *</code> traería todas las columnas."
+     ],
+     "ans": "SELECT Nombre_producto, Precio FROM Productos;",
+     "hint": "Primero qué, luego de dónde.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "sq2",
+     "lvl": 1,
+     "title": "TOP con pocas filas",
+     "q": "<p>La tabla Productos tiene 52 filas. ¿Cuántas filas devuelve <code>SELECT TOP 100 * FROM Productos;</code>?</p>",
+     "checks": [
+      {
+       "p": "Filas",
+       "o": [
+        "52",
+        "100",
+        "0 (da error)",
+        "48",
+        "1"
+       ]
+      }
+     ],
+     "steps": [
+      "TOP es un máximo: si hay menos filas, devuelve todas las que existan."
+     ],
+     "ans": "52",
+     "hint": "TOP no inventa filas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "top"
+      ]
+     ]
+    },
+    {
+     "id": "sq3",
+     "lvl": 1,
+     "title": "SELECT: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) DISTINCT elimina los valores repetidos del resultado.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) AS cambia el nombre de la columna en la tabla original.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) SQL es un lenguaje declarativo.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) F: el alias solo existe en el resultado de esa consulta.",
+      "c) V."
+     ],
+     "ans": "V, F, V",
+     "hint": "El alias no modifica la tabla.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "top"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "sq4",
+     "lvl": 2,
+     "title": "¿Qué devuelve DISTINCT?",
+     "q": "<p>Con esta tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><p>¿Cuántas filas devuelve <code>SELECT DISTINCT Categoria FROM Productos;</code>?</p>",
+     "checks": [
+      {
+       "p": "Filas",
+       "o": [
+        "3",
+        "6",
+        "2",
+        "1",
+        "4"
+       ]
+      }
+     ],
+     "steps": [
+      "Categorías únicas: Bebidas, Snacks y Abarrotes."
+     ],
+     "ans": "3",
+     "hint": "Cuenta categorías distintas, no productos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "distinct"
+      ]
+     ]
+    },
+    {
+     "id": "sq5",
+     "lvl": 2,
+     "title": "Encuentra el error",
+     "q": "<p>¿Por qué falla esta consulta?</p><pre class=\"code\">SELECT Nombre producto FROM Productos;</pre>",
+     "checks": [
+      {
+       "p": "Error",
+       "o": [
+        "El nombre de la columna tiene un espacio: debe ser Nombre_producto",
+        "Falta el asterisco",
+        "FROM va antes que SELECT",
+        "Falta TOP",
+        "Las mayúsculas están mal"
+       ]
+      }
+     ],
+     "steps": [
+      "Los espacios y acentos en nombres de columna dan error; las mayúsculas no importan."
+     ],
+     "ans": "Nombre de columna mal escrito",
+     "hint": "Compara con el nombre real del campo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "sq6",
+     "lvl": 3,
+     "title": "Combinar TOP, AS y columnas",
+     "q": "<p>¿Qué consulta muestra los primeros 10 productos, con Nombre_producto renombrado como «Producto», y su Categoria?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT TOP 10 Nombre_producto AS Producto, Categoria FROM Productos;</code>",
+        "<code>SELECT Nombre_producto AS Producto, Categoria TOP 10 FROM Productos;</code>",
+        "<code>SELECT TOP 10 Producto AS Nombre_producto, Categoria FROM Productos;</code>",
+        "<code>SELECT Nombre_producto AS Producto, Categoria FROM Productos LIMIT 10;</code>",
+        "<code>SELECT TOP 10 AS Producto Nombre_producto, Categoria FROM Productos;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "TOP va justo después de SELECT.",
+      "El alias va después de la columna: columna AS alias.",
+      "LIMIT es de MySQL; en SQL Server (el del curso) se usa TOP."
+     ],
+     "ans": "SELECT TOP 10 Nombre_producto AS Producto, Categoria FROM Productos;",
+     "hint": "En SQL Server se usa TOP, no LIMIT.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel",
+       "top"
+      ],
+      [],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>SQL es declarativo: describes qué quieres obtener y el motor decide cómo.</p>\n<h3>Conceptos clave</h3><ul><li><code>SELECT col1, col2 FROM tabla;</code></li><li><code>SELECT *</code> trae todo; <code>TOP n</code> limita filas; <code>AS</code> renombra en el resultado.</li><li><code>DISTINCT</code> quita repetidos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT DISTINCT Categoria FROM Productos;</code> lista cada categoría una sola vez.</div>\n<div class=\"err\"><b>Error común:</b> escribir mal un nombre de columna o poner <code>TOP</code> después de las columnas.</div>"
+  },
+  {
+   "id": "agg",
+   "name": "Filtrar, ordenar y agregar",
+   "teo": "<p><code>WHERE</code> filtra filas: operadores <code>= &gt; &lt; &gt;= &lt;= &lt;&gt;</code>; los textos van entre comillas simples (<code>&#x27;Bebidas&#x27;</code>), los números no. <code>AND</code> exige todas las condiciones (reduce más); <code>OR</code> basta con una. Usa paréntesis al mezclarlos.</p><p><code>ORDER BY col ASC|DESC</code> ordena (ASC es el valor por defecto). Funciones de agregación: <code>COUNT SUM AVG MIN MAX</code>; sin GROUP BY resumen toda la tabla en <strong>una sola fila</strong>. <code>GROUP BY</code> junta filas con el mismo valor y resume cada grupo; si pides una columna normal junto a una agregación, necesitas GROUP BY. <code>HAVING</code> filtra <em>grupos</em> (WHERE filtra filas antes de agrupar).</p>\n<p>Orden de las cláusulas: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY.</p>",
+   "form": [
+    "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+    "Texto con comillas simples",
+    "<code>COUNT(*) SUM AVG MIN MAX</code>",
+    "WHERE filtra filas; HAVING filtra grupos",
+    "AND reduce más que OR"
+   ],
+   "ex": [
+    {
+     "id": "ag1",
+     "lvl": 1,
+     "title": "Filtrar texto",
+     "q": "<p>¿Qué filtro trae solo los productos de la categoría Bebidas?</p>",
+     "checks": [
+      {
+       "p": "Filtro",
+       "o": [
+        "<code>WHERE Categoria = &#x27;Bebidas&#x27;</code>",
+        "<code>WHERE Categoria = Bebidas</code>",
+        "<code>WHERE Categoria == &#x27;Bebidas&#x27;</code>",
+        "<code>HAVING Categoria = &#x27;Bebidas&#x27;</code>",
+        "<code>WHERE &#x27;Categoria&#x27; = Bebidas</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Los textos van entre comillas simples y la comparación usa un solo =."
+     ],
+     "ans": "<code>WHERE Categoria = &#x27;Bebidas&#x27;</code>",
+     "hint": "Comillas simples en el texto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "where"
+      ]
+     ]
+    },
+    {
+     "id": "ag2",
+     "lvl": 1,
+     "title": "¿Cuántas filas?",
+     "q": "<p>La tabla Ventas tiene 2 000 filas. ¿Cuántas filas devuelve esta consulta?</p><pre class=\"code\">SELECT COUNT(*) AS Total_ventas, SUM(Monto) AS Monto_total,\n       AVG(Monto) AS Ticket_promedio\nFROM Ventas;</pre>",
+     "checks": [
+      {
+       "p": "Filas",
+       "o": [
+        "1",
+        "2 000",
+        "3",
+        "0",
+        "Depende de los montos"
+       ]
+      }
+     ],
+     "steps": [
+      "Sin GROUP BY, las agregaciones resumen toda la tabla en una sola fila."
+     ],
+     "ans": "1",
+     "hint": "Las agregaciones resumen.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "redun",
+       "aggf",
+       "gb"
+      ]
+     ]
+    },
+    {
+     "id": "ag3",
+     "lvl": 1,
+     "title": "Cláusulas: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) AND siempre reduce más los resultados que OR.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) ASC es el orden por defecto de ORDER BY.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) ORDER BY se escribe antes que WHERE.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) V.",
+      "c) F: SELECT → FROM → WHERE → ... → ORDER BY."
+     ],
+     "ans": "V, V, F",
+     "hint": "El orden de las cláusulas importa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "ag4",
+     "lvl": 2,
+     "title": "Predice el resultado",
+     "q": "<p>Con esta tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><pre class=\"code\">SELECT COUNT(*) FROM Productos\nWHERE Categoria = &#x27;Snacks&#x27; AND Precio &lt; 3.50;</pre>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "2",
+        "3",
+        "1",
+        "4",
+        "5"
+       ]
+      }
+     ],
+     "steps": [
+      "Snacks: Papas 4.20, Galletas 3.20 y Chifles 3.00.",
+      "Con precio menor a 3.50: Galletas y Chifles."
+     ],
+     "ans": "2",
+     "hint": "Aplica las dos condiciones a la vez.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ag5",
+     "lvl": 2,
+     "title": "Agrupar y ordenar",
+     "q": "<p>Con la misma tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><pre class=\"code\">SELECT Categoria, AVG(Precio) AS Precio_promedio\nFROM Productos\nGROUP BY Categoria\nORDER BY Precio_promedio DESC;</pre>",
+     "checks": [
+      {
+       "p": "¿Qué muestra la primera fila?",
+       "o": [
+        "Abarrotes, 5.50",
+        "Snacks, 3.47",
+        "Bebidas, 3.15",
+        "Snacks, 4.20",
+        "Abarrotes, 3.70"
+       ]
+      }
+     ],
+     "steps": [
+      "Promedios: Abarrotes 5.50; Snacks (4.20 + 3.20 + 3.00)/3 ≈ 3.47; Bebidas (2.50 + 3.80)/2 = 3.15.",
+      "DESC ordena de mayor a menor: primero Abarrotes."
+     ],
+     "ans": "Abarrotes, 5.50",
+     "hint": "Calcula el promedio de cada grupo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "ag6",
+     "lvl": 2,
+     "title": "AND y OR juntos",
+     "q": "<p>¿Qué filtro trae productos de Bebidas <strong>o</strong> Snacks que además cuesten más de 5?</p>",
+     "checks": [
+      {
+       "p": "Filtro",
+       "o": [
+        "<code>WHERE (Categoria = &#x27;Bebidas&#x27; OR Categoria = &#x27;Snacks&#x27;) AND Precio &gt; 5</code>",
+        "<code>WHERE Categoria = &#x27;Bebidas&#x27; OR Categoria = &#x27;Snacks&#x27; AND Precio &gt; 5</code>",
+        "<code>WHERE Categoria = &#x27;Bebidas&#x27; AND &#x27;Snacks&#x27; AND Precio &gt; 5</code>",
+        "<code>WHERE Categoria = &#x27;Bebidas&#x27; OR &#x27;Snacks&#x27; OR Precio &gt; 5</code>",
+        "<code>WHERE (Categoria = &#x27;Bebidas&#x27; AND Categoria = &#x27;Snacks&#x27;) OR Precio &gt; 5</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "AND se evalúa antes que OR: sin paréntesis, la segunda opción traería todas las Bebidas sin importar el precio.",
+      "Los paréntesis agrupan la condición de categoría."
+     ],
+     "ans": "Con paréntesis alrededor del OR",
+     "hint": "AND tiene prioridad sobre OR.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "andor"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ag7",
+     "lvl": 3,
+     "title": "Error clásico de agregación",
+     "q": "<p>¿Por qué da error esta consulta?</p><pre class=\"code\">SELECT Categoria, SUM(Monto)\nFROM Ventas;</pre>",
+     "checks": [
+      {
+       "p": "Error",
+       "o": [
+        "Falta GROUP BY Categoria",
+        "SUM no existe en SQL Server",
+        "Falta WHERE",
+        "Falta ORDER BY",
+        "Monto debe ir entre comillas"
+       ]
+      }
+     ],
+     "steps": [
+      "Una columna normal junto a una agregación exige agrupar por esa columna."
+     ],
+     "ans": "Falta GROUP BY Categoria",
+     "hint": "Columna normal + agregación = GROUP BY.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gb"
+      ]
+     ]
+    },
+    {
+     "id": "ag8",
+     "lvl": 3,
+     "title": "Filtrar grupos",
+     "q": "<p>¿Qué consulta muestra las categorías que tienen <strong>más de 5 productos</strong>?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT Categoria, COUNT(*) FROM Productos GROUP BY Categoria HAVING COUNT(*) &gt; 5;</code>",
+        "<code>SELECT Categoria, COUNT(*) FROM Productos WHERE COUNT(*) &gt; 5 GROUP BY Categoria;</code>",
+        "<code>SELECT Categoria, COUNT(*) FROM Productos GROUP BY Categoria WHERE COUNT(*) &gt; 5;</code>",
+        "<code>SELECT Categoria FROM Productos HAVING Categoria &gt; 5;</code>",
+        "<code>SELECT COUNT(*) &gt; 5 FROM Productos GROUP BY Categoria;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El conteo existe recién después de agrupar, por eso se filtra con HAVING.",
+      "WHERE no puede usar funciones de agregación."
+     ],
+     "ans": "GROUP BY ... HAVING COUNT(*) > 5",
+     "hint": "WHERE filtra filas; HAVING, grupos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nat",
+       "gb"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ag9",
+     "lvl": 3,
+     "title": "Escribe la consulta",
+     "q": "<p>Escribe en tu cuaderno una consulta que muestre, <strong>por categoría</strong>, el precio mínimo de Productos, ordenado de menor a mayor. Luego compárala con la solución.</p>",
+     "checks": [],
+     "steps": [
+      "Modelo: <code>SELECT Categoria, MIN(Precio) AS Precio_minimo FROM Productos GROUP BY Categoria ORDER BY Precio_minimo ASC;</code>",
+      "Autoevaluación: ¿usaste MIN? ¿agrupaste por Categoria? ¿ordenaste con ORDER BY (ASC o sin nada)? ¿el alias está bien escrito?"
+     ],
+     "ans": "Consulta con MIN, GROUP BY y ORDER BY",
+     "hint": "Reto de la semana 4.",
+     "fig": null,
+     "draw": true,
+     "open": true,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf",
+       "gb",
+       "orden"
+      ],
+      [
+       "top"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Primero filtras qué filas entran, luego las agrupas y resumes, y al final ordenas.</p>\n<h3>Conceptos clave</h3><ul><li>Orden: <code>SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY</code>.</li><li><code>WHERE</code> filtra filas; <code>HAVING</code> filtra grupos.</li><li><code>COUNT SUM AVG MIN MAX</code>; <code>AVG</code> ignora NULL.</li><li><code>AND</code> se evalúa antes que <code>OR</code>: usa paréntesis.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT Categoria, AVG(Precio) FROM Productos GROUP BY Categoria HAVING AVG(Precio) &gt; 50;</code></div>\n<div class=\"err\"><b>Error común:</b> usar <code>WHERE</code> con una función de agregación: eso va en <code>HAVING</code>.</div>"
+  },
+  {
+   "id": "join",
+   "name": "JOIN",
+   "teo": "<p>La información está repartida en varias tablas (para evitar redundancia), así que casi toda pregunta de negocio necesita <strong>combinarlas</strong>. Un JOIN une filas de dos tablas usando una columna en común, normalmente PK con FK.</p>\n<p><code>INNER JOIN</code>: solo las filas que tienen coincidencia en <strong>ambas</strong> tablas. <code>LEFT JOIN</code>: <strong>todas</strong> las filas de la tabla de la izquierda, tengan o no pareja (las que no, salen con NULL). Pregunta clave: ¿me interesan los casos «sin pareja»?</p>\n<p>Los alias de tabla (<code>Ventas v</code>) acortan la escritura. Se pueden encadenar varios JOIN, cada uno con su ON. Errores comunes: olvidar ON (producto cartesiano), comparar columnas equivocadas en el ON, usar INNER cuando se necesitaban los casos sin pareja, y no usar alias cuando una columna existe en ambas tablas.</p>",
+   "form": [
+    "<code>FROM A a INNER JOIN B b ON a.id = b.id</code>",
+    "INNER: solo coincidencias",
+    "LEFT: todas las de la izquierda (+ NULL)",
+    "Una columna del ON no tiene que estar en SELECT"
+   ],
+   "ex": [
+    {
+     "id": "jn1",
+     "lvl": 1,
+     "title": "¿Qué hace INNER JOIN?",
+     "q": "<p>¿Qué filas devuelve un INNER JOIN?</p>",
+     "checks": [
+      {
+       "p": "Devuelve",
+       "o": [
+        "Solo las que tienen coincidencia en ambas tablas",
+        "Todas las de la tabla izquierda",
+        "Todas las de ambas tablas",
+        "Solo las que no tienen pareja",
+        "Las de la tabla derecha"
+       ]
+      }
+     ],
+     "steps": [
+      "INNER = intersección por la columna en común."
+     ],
+     "ans": "Solo coincidencias",
+     "hint": "Inner = interior.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "join"
+      ]
+     ]
+    },
+    {
+     "id": "jn2",
+     "lvl": 1,
+     "title": "JOIN: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) LEFT JOIN permite ver a los clientes que nunca compraron.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) Una columna usada en el ON debe aparecer también en el SELECT.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) Olvidar la condición ON combina cada fila de una tabla con cada fila de la otra.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) V: aparecen con la venta en NULL.",
+      "b) F: se usa para unir aunque no se muestre.",
+      "c) V: producto cartesiano."
+     ],
+     "ans": "V, F, V",
+     "hint": "ON solo define cómo unir.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "jn3",
+     "lvl": 2,
+     "title": "Cuenta las filas",
+     "q": "<p>Tablas Clientes y Ventas:</p><div class=\"tbl\"><table><tr><th>ID_cliente</th><th>Nombre</th></tr><tr><td>1</td><td>Ana</td></tr><tr><td>2</td><td>Luis</td></tr><tr><td>3</td><td>Rosa</td></tr></table></div><div class=\"tbl\"><table><tr><th>ID_venta</th><th>ID_cliente</th><th>Monto</th></tr><tr><td>V1</td><td>1</td><td>20</td></tr><tr><td>V2</td><td>1</td><td>35</td></tr><tr><td>V3</td><td>2</td><td>15</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "<code>SELECT * FROM Clientes c INNER JOIN Ventas v ON c.ID_cliente = v.ID_cliente;</code> devuelve…",
+       "o": [
+        "3 filas",
+        "4 filas",
+        "2 filas",
+        "6 filas",
+        "9 filas"
+       ]
+      },
+      {
+       "p": "<code>SELECT * FROM Clientes c LEFT JOIN Ventas v ON c.ID_cliente = v.ID_cliente;</code> devuelve…",
+       "o": [
+        "4 filas",
+        "3 filas",
+        "6 filas",
+        "2 filas",
+        "9 filas"
+       ]
+      }
+     ],
+     "steps": [
+      "INNER: V1 y V2 de Ana y V3 de Luis = 3 filas (Rosa no compró).",
+      "LEFT: esas 3 filas más Rosa con la venta en NULL = 4."
+     ],
+     "ans": "3 y 4",
+     "hint": "¿Quién no tiene pareja?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "join"
+      ],
+      [
+       "nul"
+      ]
+     ]
+    },
+    {
+     "id": "jn4",
+     "lvl": 2,
+     "title": "El ON correcto",
+     "q": "<p>Quieres ver el nombre del producto de cada venta. ¿Qué JOIN es correcto?</p>",
+     "checks": [
+      {
+       "p": "JOIN",
+       "o": [
+        "<code>FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_producto</code>",
+        "<code>FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_tienda</code>",
+        "<code>FROM Ventas v JOIN Productos p</code>",
+        "<code>FROM Ventas v JOIN Productos p ON v.ID_venta = p.ID_producto</code>",
+        "<code>FROM Ventas, Productos WHERE Monto &gt; 0</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Se une la FK de Ventas con la PK de Productos: ambas ID_producto."
+     ],
+     "ans": "<code>ON v.ID_producto = p.ID_producto</code>",
+     "hint": "FK con su PK.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pk",
+       "fk",
+       "on"
+      ]
+     ]
+    },
+    {
+     "id": "jn5",
+     "lvl": 3,
+     "title": "Pregunta de negocio",
+     "q": "<p>¿Qué consulta muestra el número de ventas realizadas por cada tienda?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT t.Nombre_tienda, COUNT(*) AS Num_ventas FROM Ventas v JOIN Tiendas t ON v.ID_tienda = t.ID_tienda GROUP BY t.Nombre_tienda;</code>",
+        "<code>SELECT t.Nombre_tienda, COUNT(*) FROM Ventas v JOIN Tiendas t ON v.ID_tienda = t.ID_tienda;</code>",
+        "<code>SELECT t.Nombre_tienda, COUNT(*) FROM Ventas v JOIN Tiendas t ON v.ID_venta = t.ID_tienda GROUP BY t.Nombre_tienda;</code>",
+        "<code>SELECT Nombre_tienda, SUM(ID_venta) FROM Tiendas GROUP BY Nombre_tienda;</code>",
+        "<code>SELECT COUNT(*) FROM Tiendas GROUP BY ID_tienda;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "JOIN Ventas–Tiendas por ID_tienda (no hace falta Productos).",
+      "COUNT(*) por tienda exige GROUP BY.",
+      "La tercera une columnas equivocadas; la cuarta suma IDs, que no tiene sentido."
+     ],
+     "ans": "JOIN por ID_tienda + COUNT + GROUP BY",
+     "hint": "Reto final de la semana 5.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "join"
+      ],
+      [
+       "aggf",
+       "gb"
+      ],
+      [
+       "on"
+      ]
+     ]
+    },
+    {
+     "id": "jn6",
+     "lvl": 3,
+     "title": "¿INNER o LEFT?",
+     "q": "<p>La gerencia quiere un listado de <strong>todos</strong> los productos con su total vendido, incluyendo los que nunca se vendieron (para retirarlos). ¿Qué usas?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>FROM Productos p LEFT JOIN Ventas v ON p.ID_producto = v.ID_producto</code>",
+        "<code>FROM Productos p INNER JOIN Ventas v ON p.ID_producto = v.ID_producto</code>",
+        "<code>FROM Ventas v LEFT JOIN Productos p ON v.ID_producto = p.ID_producto</code>",
+        "<code>FROM Productos p JOIN Ventas v ON p.Precio = v.Monto</code>",
+        "Una sola tabla, sin JOIN"
+       ]
+      }
+     ],
+     "steps": [
+      "Los productos sin ventas deben aparecer: LEFT JOIN con Productos a la izquierda.",
+      "Con INNER desaparecerían justo los que se quieren detectar."
+     ],
+     "ans": "Productos LEFT JOIN Ventas",
+     "hint": "¿Qué tabla debe conservar todas sus filas?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "join"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Como los datos están repartidos en tablas, las preguntas de negocio suelen necesitar unirlas por su columna común.</p>\n<h3>Conceptos clave</h3><ul><li><strong>INNER JOIN:</strong> solo filas con pareja en ambas tablas.</li><li><strong>LEFT JOIN:</strong> todas las de la izquierda; sin pareja salen con NULL.</li><li>Sintaxis: <code>FROM A JOIN B ON A.id = B.id</code>.</li><li>Clientes sin compras: <code>LEFT JOIN</code> + <code>WHERE B.id IS NULL</code>.</li></ul>\n<div class=\"err\"><b>Error común:</b> usar INNER cuando la pregunta pide «todos los clientes, aunque no hayan comprado».</div>"
+  },
+  {
+   "id": "limp",
+   "name": "Preparación y limpieza de datos",
+   "teo": "<p>Los datos casi nunca llegan listos. El flujo: (1) <strong>importar e integrar</strong> fuentes (decidir qué columna de una corresponde a cuál de la otra), (2) <strong>limpiar</strong> formatos, espacios y mayúsculas, (3) decidir qué hacer con <strong>faltantes, duplicados y errores</strong>, y (4) <strong>transformar</strong> variables.</p>\n<p>Herramientas en SQL Server: <code>TRIM</code> (quita espacios al inicio y al final), <code>UPPER</code>, <code>LEN</code>, <code>REPLACE</code>, <code>TRY_CAST(texto AS DECIMAL(6,2))</code> (devuelve NULL si no puede convertir). Los nulos se buscan con <code>IS NULL</code> (nunca <code>= NULL</code>). Duplicados: <code>GROUP BY ... HAVING COUNT(*) &gt; 1</code>. Cambios: <code>UPDATE tabla SET col = valor WHERE ...</code> y <code>DELETE</code>. Transformar: crear un rango con <code>CASE WHEN ... THEN ... ELSE ... END</code>, separar una fecha o calcular Monto = Cantidad × Precio.</p>\n<p>Regla de oro: nunca rellenar un faltante «a ciegas» sin entender por qué falta, y antes de borrar un duplicado decidir qué versión conservar.</p>",
+   "form": [
+    "<code>UPDATE t SET col = UPPER(TRIM(col));</code>",
+    "<code>WHERE col IS NULL</code>",
+    "<code>GROUP BY ... HAVING COUNT(*) &gt; 1</code>",
+    "<code>TRY_CAST(x AS DECIMAL(6,2))</code> → NULL si falla",
+    "<code>CASE WHEN ... THEN ... END</code>"
+   ],
+   "ex": [
+    {
+     "id": "lp1",
+     "lvl": 1,
+     "title": "¿Cuántos clientes hay?",
+     "q": "<p>¿Cuántos clientes distintos representan estas filas?</p><div class=\"tbl\"><table><tr><th>Cliente</th><th>Distrito</th><th>Precio</th></tr><tr><td>Ana Ruiz</td><td>lima</td><td>S/ 25.00</td></tr><tr><td>ana ruiz</td><td>Lima</td><td>25</td></tr><tr><td>Luis Paredes</td><td>LIMA</td><td>25.0</td></tr></table></div>",
+     "checks": [
+      {
+       "p": "Clientes",
+       "o": [
+        "2",
+        "3",
+        "1",
+        "Imposible saberlo",
+        "4"
+       ]
+      }
+     ],
+     "steps": [
+      "«Ana Ruiz» y «ana ruiz» son la misma persona escrita distinto (duplicado parcial); Luis es otro cliente.",
+      "Los precios son el mismo valor con formatos distintos."
+     ],
+     "ans": "2",
+     "hint": "Mayúsculas y formatos distintos, mismo dato.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dup"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "lp2",
+     "lvl": 1,
+     "title": "Limpieza: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) Para buscar correos vacíos se escribe WHERE Correo = NULL.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) TRIM quita los espacios al inicio y al final de un texto.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Un faltante nunca debe rellenarse sin entender por qué falta.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: se usa IS NULL.",
+      "b) V.",
+      "c) V: regla general de la semana 6."
+     ],
+     "ans": "F, V, V",
+     "hint": "NULL no se compara con =.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "lp3",
+     "lvl": 2,
+     "title": "Detectar duplicados",
+     "q": "<p>¿Qué consulta muestra los clientes repetidos (mismo nombre y correo)?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT Nombre, Correo, COUNT(*) AS Veces FROM Clientes_Crudo GROUP BY Nombre, Correo HAVING COUNT(*) &gt; 1;</code>",
+        "<code>SELECT DISTINCT Nombre, Correo FROM Clientes_Crudo;</code>",
+        "<code>SELECT Nombre, Correo FROM Clientes_Crudo WHERE COUNT(*) &gt; 1;</code>",
+        "<code>SELECT * FROM Clientes_Crudo WHERE Nombre = Nombre;</code>",
+        "<code>SELECT Nombre, COUNT(*) FROM Clientes_Crudo GROUP BY Nombre HAVING COUNT(*) = 1;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Agrupa por los campos que definen el duplicado y filtra los grupos con más de una fila.",
+      "DISTINCT los ocultaría, no los detecta."
+     ],
+     "ans": "GROUP BY Nombre, Correo HAVING COUNT(*) > 1",
+     "hint": "Duplicado = grupo con más de una fila.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dup"
+      ],
+      [
+       "distinct"
+      ]
+     ]
+    },
+    {
+     "id": "lp4",
+     "lvl": 2,
+     "title": "Estandarizar texto",
+     "q": "<p>La columna Distrito tiene «lima», « Lima» y «LIMA». ¿Qué instrucción la deja estandarizada en la tabla?</p>",
+     "checks": [
+      {
+       "p": "Instrucción",
+       "o": [
+        "<code>UPDATE Clientes_Crudo SET Distrito = UPPER(TRIM(Distrito));</code>",
+        "<code>SELECT UPPER(TRIM(Distrito)) FROM Clientes_Crudo;</code>",
+        "<code>UPDATE Clientes_Crudo Distrito = UPPER(Distrito);</code>",
+        "<code>UPDATE Clientes_Crudo SET Distrito = &#x27;LIMA&#x27; WHERE Distrito IS NULL;</code>",
+        "<code>DELETE FROM Clientes_Crudo WHERE Distrito &lt;&gt; &#x27;LIMA&#x27;;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "SELECT solo muestra; para cambiar la tabla se usa UPDATE ... SET.",
+      "TRIM quita espacios y UPPER unifica mayúsculas."
+     ],
+     "ans": "<code>UPDATE ... SET Distrito = UPPER(TRIM(Distrito));</code>",
+     "hint": "Mostrar ≠ modificar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel",
+       "upd"
+      ],
+      [
+       "clean"
+      ]
+     ]
+    },
+    {
+     "id": "lp5",
+     "lvl": 2,
+     "title": "TRY_CAST",
+     "q": "<p>¿Qué devuelve <code>TRY_CAST(&#x27;abc&#x27; AS DECIMAL(6,2))</code>?</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "NULL",
+        "0",
+        "Un error que detiene la consulta",
+        "'abc'",
+        "-1"
+       ]
+      }
+     ],
+     "steps": [
+      "TRY_CAST intenta convertir; si no puede, devuelve NULL en lugar de fallar. Así se detectan precios inválidos."
+     ],
+     "ans": "NULL",
+     "hint": "TRY = intentar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul",
+       "clean"
+      ]
+     ]
+    },
+    {
+     "id": "lp6",
+     "lvl": 3,
+     "title": "Transformar a categoría",
+     "q": "<p>¿Qué valor de Rango_precio obtiene un Shampoo de 14.90?</p><pre class=\"code\">CASE WHEN Precio &lt; 5  THEN &#x27;Bajo&#x27;\n     WHEN Precio &lt; 15 THEN &#x27;Medio&#x27;\n     ELSE &#x27;Alto&#x27; END AS Rango_precio</pre>",
+     "checks": [
+      {
+       "p": "Rango",
+       "o": [
+        "Medio",
+        "Alto",
+        "Bajo",
+        "NULL",
+        "Error"
+       ]
+      }
+     ],
+     "steps": [
+      "CASE evalúa en orden: 14.90 no es menor que 5, pero sí menor que 15 → «Medio».",
+      "Es una transformación: no inventa datos, agrupa los existentes."
+     ],
+     "ans": "Medio",
+     "hint": "Se queda en la primera condición que se cumple.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trans"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "lp7",
+     "lvl": 3,
+     "title": "Ventas huérfanas",
+     "q": "<p>Se venden «Galletas Oreo Pack», pero ese producto no existe en Productos_Crudo. ¿Qué problema es y cómo lo detectas?</p>",
+     "checks": [
+      {
+       "p": "Problema y detección",
+       "o": [
+        "Integridad referencial; con NOT EXISTS o un LEFT JOIN buscando los NULL",
+        "Duplicado; con GROUP BY y HAVING",
+        "Dominio; con TRY_CAST",
+        "Faltante; con IS NULL en Ventas",
+        "No es un problema"
+       ]
+      }
+     ],
+     "steps": [
+      "La venta apunta a un producto inexistente: referencia fantasma.",
+      "<code>WHERE NOT EXISTS (SELECT 1 FROM Productos_Crudo p WHERE p.Nombre_producto = v.Nombre_producto_vendido)</code>"
+     ],
+     "ans": "Referencial; NOT EXISTS o LEFT JOIN",
+     "hint": "Laboratorio de la semana 6, ejercicio 15.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "integ"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los datos llegan sucios. Limpiar es hacerlos consistentes antes de analizarlos.</p>\n<h3>Conceptos clave</h3><ul><li>Flujo: importar → limpiar formatos → tratar faltantes y duplicados → transformar.</li><li><code>TRIM UPPER LEN REPLACE TRY_CAST</code>.</li><li>Duplicados: <code>GROUP BY campos HAVING COUNT(*) &gt; 1</code>.</li><li>Transformar: <code>CASE WHEN … THEN … END</code>.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> « lima» y «LIMA» se unifican con <code>UPPER(TRIM(Ciudad))</code>.</div>\n<div class=\"err\"><b>Error común:</b> borrar filas antes de entender por qué están mal.</div>"
+  },
+  {
+   "id": "impu",
+   "name": "Valores faltantes e imputación",
+   "teo": "<p>Ante un faltante hay tres caminos: <strong>eliminar</strong> la fila, <strong>imputar</strong> un valor estadístico o crear una <strong>categoría explícita</strong> («Sin dato»). No hay una única respuesta: se evalúa el <strong>razonamiento</strong>.</p>\n<p>Variable <strong>cuantitativa</strong> (Monto): se puede imputar con la media (o la mediana si hay atípicos). Variable <strong>cualitativa</strong> (Segmento): con la moda. Pero si imputar inventaría información relevante (distrito, método de pago, datos de contacto), mejor usa «Sin dato»: conserva el hecho de que no se sabe.</p>\n<p>En SQL: <code>AVG(Monto)</code> ya ignora los NULL; la moda sale con <code>GROUP BY ... ORDER BY COUNT(*) DESC</code>; la imputación es <code>UPDATE t SET col = valor WHERE col IS NULL;</code> y al final se verifica que no quede ningún NULL.</p>",
+   "form": [
+    "Cuantitativa → media (o mediana)",
+    "Cualitativa → moda",
+    "«Sin dato» si imputar inventaría",
+    "<code>AVG ignora NULL</code>",
+    "<code>UPDATE t SET col = v WHERE col IS NULL;</code>"
+   ],
+   "ex": [
+    {
+     "id": "im1",
+     "lvl": 1,
+     "title": "Faltante numérico",
+     "q": "<p>A 4 ventas les falta el Monto. ¿Qué imputación estadística es la típica?</p>",
+     "checks": [
+      {
+       "p": "Imputar con",
+       "o": [
+        "La media (o la mediana)",
+        "La moda",
+        "El texto «Sin dato»",
+        "El valor 0 siempre",
+        "El monto máximo"
+       ]
+      }
+     ],
+     "steps": [
+      "Monto es cuantitativo: media, o mediana si hay valores extremos.",
+      "«Sin dato» no es posible en un campo numérico."
+     ],
+     "ans": "La media",
+     "hint": "¿Qué tipo de variable es?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nat",
+       "imp",
+       "mm"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "im2",
+     "lvl": 1,
+     "title": "Faltante categórico",
+     "q": "<p>A 3 clientes les falta el Segmento. Si decides imputar con un estadístico, ¿cuál usas?</p>",
+     "checks": [
+      {
+       "p": "Estadístico",
+       "o": [
+        "La moda",
+        "La media",
+        "La mediana",
+        "La desviación estándar",
+        "El rango"
+       ]
+      }
+     ],
+     "steps": [
+      "Segmento es cualitativo: solo la moda (el valor más frecuente) tiene sentido."
+     ],
+     "ans": "La moda",
+     "hint": "La media no existe para categorías.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nat",
+       "imp"
+      ]
+     ]
+    },
+    {
+     "id": "im3",
+     "lvl": 1,
+     "title": "Imputación: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) AVG(Monto) cuenta los NULL como 0.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) La moda es la única medida de tendencia central que sirve para variables categóricas.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Reemplazar un correo faltante por el correo más frecuente es una buena idea.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: AVG ignora los NULL.",
+      "b) V.",
+      "c) F: inventaría contactos; mejor «Sin dato»."
+     ],
+     "ans": "F, V, F",
+     "hint": "Imputar no es inventar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf",
+       "nul"
+      ],
+      [],
+      [
+       "imp"
+      ]
+     ]
+    },
+    {
+     "id": "im4",
+     "lvl": 2,
+     "title": "La media correcta",
+     "q": "<p>¿Qué consulta calcula la media del Monto considerando solo las filas que sí tienen valor?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT AVG(Monto) FROM Ventas_Eval;</code>",
+        "<code>SELECT SUM(Monto) / COUNT(*) FROM Ventas_Eval;</code>",
+        "<code>SELECT AVG(Monto) FROM Ventas_Eval WHERE Monto = NULL;</code>",
+        "<code>SELECT MEDIA(Monto) FROM Ventas_Eval;</code>",
+        "<code>SELECT AVG(*) FROM Ventas_Eval;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "AVG ya excluye los NULL.",
+      "SUM/COUNT(*) divide entre todas las filas, incluidas las vacías: da un valor más bajo.",
+      "= NULL nunca es verdadero; MEDIA no existe."
+     ],
+     "ans": "<code>SELECT AVG(Monto) FROM Ventas_Eval;</code>",
+     "hint": "COUNT(*) cuenta también las filas con NULL.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf",
+       "nul"
+      ],
+      [],
+      [
+       "where"
+      ]
+     ]
+    },
+    {
+     "id": "im5",
+     "lvl": 2,
+     "title": "Aplicar la imputación",
+     "q": "<p>La media calculada fue 45.30. ¿Qué instrucción reemplaza los faltantes de Monto?</p>",
+     "checks": [
+      {
+       "p": "Instrucción",
+       "o": [
+        "<code>UPDATE Ventas_Eval SET Monto = 45.30 WHERE Monto IS NULL;</code>",
+        "<code>UPDATE Ventas_Eval SET Monto = 45.30;</code>",
+        "<code>SELECT Monto = 45.30 FROM Ventas_Eval WHERE Monto IS NULL;</code>",
+        "<code>UPDATE Ventas_Eval SET Monto = &#x27;Sin dato&#x27; WHERE Monto IS NULL;</code>",
+        "<code>INSERT INTO Ventas_Eval (Monto) VALUES (45.30);</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Sin WHERE se sobrescribirían todos los montos.",
+      "INSERT crearía filas nuevas; «Sin dato» no cabe en un campo numérico."
+     ],
+     "ans": "<code>UPDATE ... SET Monto = 45.30 WHERE Monto IS NULL;</code>",
+     "hint": "El WHERE protege los datos reales.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "upd"
+      ],
+      [
+       "imp"
+      ]
+     ]
+    },
+    {
+     "id": "im6",
+     "lvl": 2,
+     "title": "Encontrar la moda",
+     "q": "<p>¿Qué consulta ayuda a identificar el Segmento más frecuente?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT Segmento, COUNT(*) AS Frecuencia FROM Clientes_Eval GROUP BY Segmento ORDER BY Frecuencia DESC;</code>",
+        "<code>SELECT AVG(Segmento) FROM Clientes_Eval;</code>",
+        "<code>SELECT DISTINCT Segmento FROM Clientes_Eval;</code>",
+        "<code>SELECT MAX(Segmento) FROM Clientes_Eval;</code>",
+        "<code>UPDATE Clientes_Eval SET Segmento = MODA;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Contar por grupo y ordenar de mayor a menor: la primera fila es la moda.",
+      "MAX de un texto es el último alfabéticamente, no el más frecuente."
+     ],
+     "ans": "GROUP BY + COUNT + ORDER BY DESC",
+     "hint": "Moda = el que más se repite.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gb",
+       "imp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "im7",
+     "lvl": 3,
+     "title": "Justificar el tratamiento",
+     "q": "<p>A 3 clientes les falta el Distrito. ¿Cuál es la mejor decisión y su justificación?</p>",
+     "checks": [
+      {
+       "p": "Decisión",
+       "o": [
+        "Categoría «Sin dato»: imputar la moda inventaría ubicaciones y sesgaría el análisis por distrito",
+        "Imputar la moda: siempre es mejor tener un valor",
+        "Imputar la media del distrito",
+        "Borrar a los clientes",
+        "Dejarlo así sin documentar"
+       ]
+      }
+     ],
+     "steps": [
+      "El distrito es clave para segmentar geográficamente; asignar el más frecuente inflaría ese distrito con datos falsos.",
+      "«Sin dato» es honesto y permite analizar aparte a esos clientes."
+     ],
+     "ans": "«Sin dato», justificando el sesgo",
+     "hint": "Se evalúa el razonamiento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "imp"
+      ]
+     ]
+    },
+    {
+     "id": "im8",
+     "lvl": 3,
+     "title": "Verificación final",
+     "q": "<p>¿Qué consulta confirma que ya no queda ningún NULL en Segmento ni en Distrito?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT COUNT(*) FROM Clientes_Eval WHERE Segmento IS NULL OR Distrito IS NULL;</code>",
+        "<code>SELECT COUNT(*) FROM Clientes_Eval WHERE Segmento IS NULL AND Distrito IS NULL;</code>",
+        "<code>SELECT * FROM Clientes_Eval WHERE Segmento = NULL;</code>",
+        "<code>SELECT COUNT(Segmento) FROM Clientes_Eval;</code>",
+        "<code>SELECT DISTINCT Distrito FROM Clientes_Eval;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Con OR cuenta las filas que tengan <em>al menos</em> un NULL: debe dar 0.",
+      "Con AND solo contaría las que tienen ambos vacíos y podría ocultar faltantes."
+     ],
+     "ans": "WHERE ... IS NULL OR ... IS NULL → 0",
+     "hint": "¿Basta con que falte uno?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Ante un valor faltante no hay una respuesta única: se evalúa si tu decisión es razonable para el tipo de variable y su importancia.</p>\n<h3>Conceptos clave</h3><ul><li>Opciones: eliminar, imputar o crear la categoría «Sin dato».</li><li>Cuantitativa: media (o mediana si hay atípicos).</li><li>Cualitativa: moda.</li><li>Si imputar inventaría información clave (contacto, distrito), mejor «Sin dato».</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Montos con un atípico enorme: imputa con la mediana.</div>\n<div class=\"err\"><b>Error común:</b> imputar datos personales con la moda.</div>"
+  },
+  {
+   "id": "desc",
+   "name": "Análisis descriptivo",
+   "teo": "<p><strong>Tendencia central:</strong> media (sensible a extremos), mediana (valor del medio al ordenar; resistente a extremos) y moda (el más frecuente; única para categóricas). <strong>Dispersión:</strong> rango (máx − mín), varianza y desviación estándar (en las mismas unidades que el dato).</p>\n<p>Si la media es mayor que la mediana, la distribución está <strong>sesgada a la derecha</strong>: unos pocos valores altos «jalan» la media. Un criterio simple de <strong>atípico</strong>: estar a más de 2 desviaciones estándar de la media. Un atípico puede ser un error o información valiosa.</p>\n<p>En SQL Server: <code>AVG</code>, <code>PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Monto) OVER ()</code> (mediana), <code>VAR</code>, <code>STDEV</code>. Comparar grupos = GROUP BY + agregaciones. Mayor desviación estándar = grupo más impredecible.</p>",
+   "form": [
+    "Media · mediana · moda",
+    "Rango = máx − mín",
+    "DE = √varianza",
+    "Media > mediana → sesgo a la derecha",
+    "Atípico: > media + 2·DE",
+    "<code>STDEV VAR PERCENTILE_CONT(0.5)</code>"
+   ],
+   "ex": [
+    {
+     "id": "de1",
+     "lvl": 1,
+     "title": "Media y mediana",
+     "q": "<p>Montos: 2, 3, 3, 5, 12.</p>",
+     "checks": [
+      {
+       "p": "Media",
+       "o": [
+        "5",
+        "3",
+        "4",
+        "12",
+        "6"
+       ]
+      },
+      {
+       "p": "Mediana",
+       "o": [
+        "3",
+        "5",
+        "4",
+        "2",
+        "3.5"
+       ]
+      }
+     ],
+     "steps": [
+      "Media = 25/5 = 5.",
+      "Ordenados, el del medio es 3.",
+      "La moda también es 3; el 12 jala la media hacia arriba."
+     ],
+     "ans": "Media 5; mediana 3",
+     "hint": "Ordena antes de buscar la mediana.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "imp",
+       "mm"
+      ]
+     ]
+    },
+    {
+     "id": "de2",
+     "lvl": 1,
+     "title": "Descriptivos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) A la mediana no le afectan los valores extremos.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) La moda solo se puede calcular en variables numéricas.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) La desviación estándar está en las mismas unidades que el dato.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) V.",
+      "b) F: es la única que sirve para categóricas.",
+      "c) V: por eso se usa más que la varianza."
+     ],
+     "ans": "V, F, V",
+     "hint": "La varianza está al cuadrado.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "de3",
+     "lvl": 2,
+     "title": "Media vs mediana (laboratorio)",
+     "q": "<p>En Ventas, la media del Monto es S/ 16.82 y la mediana es S/ 13.50. ¿Qué sugiere?</p>",
+     "checks": [
+      {
+       "p": "Interpretación",
+       "o": [
+        "Sesgo a la derecha: unas pocas ventas altas jalan la media hacia arriba",
+        "Distribución simétrica",
+        "Sesgo a la izquierda",
+        "Que hay un error de cálculo",
+        "Que la mayoría compra más de S/ 16.82"
+       ]
+      }
+     ],
+     "steps": [
+      "Media > mediana: la cola de valores altos está a la derecha.",
+      "La mediana representa mejor al cliente típico."
+     ],
+     "ans": "Sesgo a la derecha",
+     "hint": "¿Quién jala a quién?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "imp",
+       "mm"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "de4",
+     "lvl": 2,
+     "title": "Rango y umbral de atípicos",
+     "q": "<p>Responde.</p>",
+     "checks": [
+      {
+       "p": "Rango de 4, 9, 15, 7, 30",
+       "o": [
+        "26",
+        "30",
+        "4",
+        "13",
+        "22"
+       ]
+      },
+      {
+       "p": "Umbral de atípico con media 16.82 y DE 12.46",
+       "o": [
+        "≈ 41.74",
+        "≈ 29.28",
+        "≈ 4.36",
+        "≈ 33.64",
+        "≈ 54.20"
+       ]
+      }
+     ],
+     "steps": [
+      "Rango = 30 − 4 = 26.",
+      "Umbral = 16.82 + 2(12.46) = 41.74 (coincide con el laboratorio de la semana 7)."
+     ],
+     "ans": "26; ≈ 41.74",
+     "hint": "Media + 2 DE.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "disp"
+      ],
+      [
+       "atip"
+      ]
+     ]
+    },
+    {
+     "id": "de5",
+     "lvl": 2,
+     "title": "Comparar grupos",
+     "q": "<p>Dos tiendas tienen el mismo ticket promedio, pero la Tienda B tiene el doble de desviación estándar. ¿Qué concluyes?</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "La Tienda B es más impredecible: sus montos varían más",
+        "La Tienda B vende más",
+        "Ambas son iguales",
+        "La Tienda A tiene más atípicos seguro",
+        "La Tienda B tiene un error"
+       ]
+      }
+     ],
+     "steps": [
+      "Igual promedio, pero más dispersión: es más difícil planificar inventario en B."
+     ],
+     "ans": "B es más impredecible",
+     "hint": "DE = variabilidad.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "imp",
+       "disp"
+      ]
+     ]
+    },
+    {
+     "id": "de6",
+     "lvl": 3,
+     "title": "Atípicos en SQL",
+     "q": "<p>¿Qué consulta lista las ventas con monto atípicamente alto?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT * FROM Ventas WHERE Monto &gt; (SELECT AVG(Monto) + 2 * STDEV(Monto) FROM Ventas);</code>",
+        "<code>SELECT * FROM Ventas WHERE Monto &gt; AVG(Monto) + 2 * STDEV(Monto);</code>",
+        "<code>SELECT * FROM Ventas HAVING Monto &gt; 2 * STDEV(Monto);</code>",
+        "<code>SELECT MAX(Monto) FROM Ventas;</code>",
+        "<code>SELECT * FROM Ventas WHERE Monto &gt; 2 * AVG(Monto);</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El umbral se calcula en una subconsulta, porque WHERE no acepta funciones de agregación directamente.",
+      "MAX solo da el mayor, no todos los atípicos."
+     ],
+     "ans": "Con subconsulta",
+     "hint": "WHERE no admite AVG directo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "atip"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "de7",
+     "lvl": 3,
+     "title": "La mediana en SQL Server",
+     "q": "<p>¿Cómo se calcula la mediana del Monto en SQL Server?</p>",
+     "checks": [
+      {
+       "p": "Consulta",
+       "o": [
+        "<code>SELECT DISTINCT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Monto) OVER () AS Mediana FROM Ventas;</code>",
+        "<code>SELECT MEDIAN(Monto) FROM Ventas;</code>",
+        "<code>SELECT AVG(Monto) FROM Ventas;</code>",
+        "<code>SELECT Monto FROM Ventas ORDER BY Monto;</code>",
+        "<code>SELECT MIDDLE(Monto) FROM Ventas;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "SQL Server no tiene MEDIAN: se usa el percentil 50 con PERCENTILE_CONT(0.5)."
+     ],
+     "ans": "PERCENTILE_CONT(0.5)",
+     "hint": "Mediana = percentil 50.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "on"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Resumir los datos con pocas medidas te dice cómo se comportan: dónde se concentran y cuánto varían.</p>\n<h3>Conceptos clave</h3><ul><li>Media (sensible a extremos), mediana (resistente), moda.</li><li>Rango, varianza y desviación estándar.</li><li>Media > mediana: sesgo a la derecha.</li><li>Atípico simple: más de 2 DE sobre la media.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> ventas 10, 12, 11, 90: media 30,75 y mediana 11,5; el 90 jala la media.</div>\n<div class=\"err\"><b>Error común:</b> reportar solo la media con atípicos.</div>"
+  },
+  {
+   "id": "hall",
+   "name": "Indicadores y hallazgos",
+   "teo": "<p>Un <strong>dato</strong> describe un hecho («se vendieron 3 unidades»). Un <strong>indicador</strong> es una variable calculada que resume una pregunta de negocio («ticket promedio = AVG(Monto)»). Un <strong>hallazgo</strong> conecta el número con una posible causa o acción.</p>\n<p>Estructura de un hallazgo: <em>«[Grupo] muestra [comportamiento], lo que podría deberse a [causa], y sugiere [acción]»</em>. Calcular no es interpretar: cuidado con promedios «maquillados» por atípicos y con diferencias entre grupos que la alta dispersión vuelve poco significativas.</p>\n<p>Y una idea de narración que ya practicaste: la misma historia se cuenta distinto según el público (lenguaje, ejemplos y nivel de detalle).</p>",
+   "form": [
+    "Dato → indicador → hallazgo",
+    "Hallazgo = grupo + comportamiento + causa + acción",
+    "Media con DE alta: interpretar con cuidado"
+   ],
+   "ex": [
+    {
+     "id": "hl1",
+     "lvl": 1,
+     "title": "¿Cuál es un indicador?",
+     "q": "<p>¿Cuál de estos es un <strong>indicador</strong>?</p>",
+     "checks": [
+      {
+       "p": "Indicador",
+       "o": [
+        "El ticket promedio: AVG(Monto)",
+        "El monto de la venta V001",
+        "El nombre del cliente",
+        "La fecha de una venta",
+        "El ID de la tienda"
+       ]
+      }
+     ],
+     "steps": [
+      "Un indicador resume muchas filas en un número con significado de negocio."
+     ],
+     "ans": "Ticket promedio",
+     "hint": "Resume, no describe un solo hecho.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hall"
+      ]
+     ]
+    },
+    {
+     "id": "hl2",
+     "lvl": 1,
+     "title": "Hallazgos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) «La tienda 2 tiene un promedio de 18.01» es un hallazgo.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) Un hallazgo conecta el número con una posible causa o acción.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) Monto = Cantidad × Precio_unitario es una variable creada a partir de otras.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: es solo un dato.",
+      "b) V.",
+      "c) V: es un indicador construido."
+     ],
+     "ans": "F, V, V",
+     "hint": "¿Dice por qué importa?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hall"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "hl3",
+     "lvl": 2,
+     "title": "El mejor hallazgo",
+     "q": "<p>¿Cuál es un hallazgo bien formulado?</p>",
+     "checks": [
+      {
+       "p": "Hallazgo",
+       "o": [
+        "La Tienda 3 vende en promedio 15% menos que las demás, posiblemente por su ubicación, lo que sugiere evaluar una campaña local",
+        "El promedio de la Tienda 3 es 15.60",
+        "Las ventas son variables",
+        "La Tienda 3 es mala",
+        "Hay 2 000 ventas en la base"
+       ]
+      }
+     ],
+     "steps": [
+      "Tiene grupo (Tienda 3), comportamiento (15% menos), posible causa (ubicación) y acción (campaña local)."
+     ],
+     "ans": "El de la Tienda 3 con causa y acción",
+     "hint": "Busca las cuatro partes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hall"
+      ]
+     ]
+    },
+    {
+     "id": "hl4",
+     "lvl": 2,
+     "title": "Del dato al indicador",
+     "q": "<p>La gerencia pregunta: «¿cuánto genera cada venta en promedio?». ¿Qué indicador la responde?</p>",
+     "checks": [
+      {
+       "p": "Indicador",
+       "o": [
+        "<code>AVG(Monto) AS Ticket_promedio</code>",
+        "<code>SUM(Monto)</code>",
+        "<code>COUNT(*)</code>",
+        "<code>MAX(Monto)</code>",
+        "<code>Monto</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El promedio por venta es el ticket promedio."
+     ],
+     "ans": "<code>AVG(Monto)</code>",
+     "hint": "Promedio por venta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "hl5",
+     "lvl": 3,
+     "title": "Interpretar la dispersión",
+     "q": "<p>Media del ticket: S/ 16.82; desviación estándar: S/ 12.46. ¿Qué implica para un negocio que quiere predecir cuánto venderá cada cliente?</p>",
+     "checks": [
+      {
+       "p": "Implicancia",
+       "o": [
+        "La variabilidad es muy alta (casi del tamaño de la media): el promedio solo no predice bien, conviene segmentar",
+        "Todas las ventas están cerca de S/ 16.82",
+        "La media es inútil y hay que borrarla",
+        "No hay atípicos",
+        "La mediana debe ser mayor que la media"
+       ]
+      }
+     ],
+     "steps": [
+      "Una DE casi igual a la media indica clientes muy distintos entre sí.",
+      "Segmentar (por tienda, categoría o tipo de cliente) da predicciones más útiles."
+     ],
+     "ans": "Alta variabilidad: segmentar",
+     "hint": "Compara la DE con la media.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "imp",
+       "disp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "hl6",
+     "lvl": 3,
+     "title": "Redacta un hallazgo",
+     "q": "<p>Con estos resultados, redacta en tu cuaderno un hallazgo preliminar: la Tienda 2 tiene el ticket promedio más alto (≈ 18.01) y la Tienda 3 el más bajo (≈ 15.60); hay 104 ventas atípicas altas (≈ 5%). Luego compáralo con el modelo.</p>",
+     "checks": [],
+     "steps": [
+      "Modelo: «La Tienda 3 tiene un ticket promedio ≈ 15% menor que la Tienda 2, lo que podría deberse a un mix de productos más barato o a su ubicación, y sugiere revisar su surtido o impulsar productos de mayor valor.»",
+      "Autoevaluación: ¿nombraste el grupo? ¿describiste el comportamiento con un número comparado? ¿propusiste una causa posible (no una certeza)? ¿terminaste con una acción?"
+     ],
+     "ans": "Hallazgo con grupo, comportamiento, causa y acción",
+     "hint": "Usa la estructura del laboratorio.",
+     "fig": null,
+     "draw": true,
+     "open": true,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "hall"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un número solo sirve si responde una pregunta de negocio y lleva a una acción.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Dato:</strong> hecho. <strong>Indicador:</strong> medida calculada. <strong>Hallazgo:</strong> interpretación con causa y acción.</li><li>Plantilla: «[Grupo] muestra [comportamiento], lo que podría deberse a [causa], y sugiere [acción]».</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> «Los clientes de Surco tienen el ticket promedio más alto, lo que podría deberse a mayor poder adquisitivo, y sugiere promociones premium ahí».</div>\n<div class=\"err\"><b>Error común:</b> describir el número sin causa ni acción.</div>"
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "estr": {
+   "n": "Estructura de los datos",
+   "f": "Estructurado · semiestructurado · no estructurado",
+   "x": "Tabla con filas y columnas; etiquetas o claves (JSON, XML); texto, imagen, audio o video.",
+   "home": "tipos"
+  },
+  "nat": {
+   "n": "Cualitativo vs cuantitativo",
+   "f": "¿Se puede operar con el valor?",
+   "x": "Cuantitativo: cantidades con las que se opera. Cualitativo: cualidades o identificadores.",
+   "home": "tipos"
+  },
+  "ccc": {
+   "n": "Calidad, consistencia y confiabilidad",
+   "f": "¿Correcto? ¿Mismas reglas? ¿Fuente verificada?",
+   "x": "Calidad: correcto y completo. Consistencia: mismo formato y reglas. Confiabilidad: fuente que refleja la realidad.",
+   "home": "tipos"
+  },
+  "fuente": {
+   "n": "Fuentes internas y externas",
+   "f": "Interna: la genera la empresa. Externa: viene de fuera.",
+   "x": "Internas: confiables y baratas. Externas: muestran el mercado.",
+   "home": "tipos"
+  },
+  "pk": {
+   "n": "Clave primaria (PK)",
+   "f": "Única y nunca vacía",
+   "x": "Identifica cada registro de forma única.",
+   "home": "bd"
+  },
+  "fk": {
+   "n": "Clave foránea (FK)",
+   "f": "PK de otra tabla, copiada como referencia",
+   "x": "Conecta tablas; va en el lado «muchos» de la relación.",
+   "home": "bd"
+  },
+  "nm": {
+   "n": "Relación N:M",
+   "f": "Se resuelve con una tabla intermedia",
+   "x": "La tabla intermedia (MATRÍCULA) tiene dos FK.",
+   "home": "bd"
+  },
+  "integ": {
+   "n": "Tipos de integridad",
+   "f": "Entidad · referencial · dominio",
+   "x": "Entidad: PK única y no nula. Referencial: FK → PK existente. Dominio: tipo y rango válidos.",
+   "home": "integ"
+  },
+  "redun": {
+   "n": "Redundancia",
+   "f": "No repetir lo que se obtiene con una FK",
+   "x": "Si un dato se repite, al cambiar hay que corregir muchas filas.",
+   "home": "integ"
+  },
+  "sel": {
+   "n": "SELECT … FROM",
+   "f": "SELECT qué FROM de dónde;",
+   "x": "SQL es declarativo: dices qué quieres.",
+   "home": "sel"
+  },
+  "top": {
+   "n": "TOP y alias",
+   "f": "SELECT TOP n col AS alias",
+   "x": "TOP es un máximo de filas; el alias solo existe en el resultado.",
+   "home": "sel"
+  },
+  "distinct": {
+   "n": "DISTINCT",
+   "f": "Valores únicos del resultado",
+   "x": "Oculta repetidos; no sirve para detectarlos.",
+   "home": "sel"
+  },
+  "where": {
+   "n": "WHERE y comillas",
+   "f": "WHERE col = 'texto'",
+   "x": "Textos con comillas simples; números sin comillas; NULL con IS NULL.",
+   "home": "agg"
+  },
+  "andor": {
+   "n": "AND y OR",
+   "f": "AND se evalúa antes que OR",
+   "x": "Usa paréntesis al mezclarlos; AND reduce más.",
+   "home": "agg"
+  },
+  "aggf": {
+   "n": "Funciones de agregación",
+   "f": "COUNT · SUM · AVG · MIN · MAX",
+   "x": "Sin GROUP BY resumen todo en una fila; AVG ignora NULL.",
+   "home": "agg"
+  },
+  "gb": {
+   "n": "GROUP BY y HAVING",
+   "f": "WHERE filtra filas; HAVING filtra grupos",
+   "x": "Columna normal + agregación exige GROUP BY.",
+   "home": "agg"
+  },
+  "orden": {
+   "n": "Orden de las cláusulas",
+   "f": "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+   "x": "ORDER BY siempre va al final; ASC es el orden por defecto.",
+   "home": "agg"
+  },
+  "join": {
+   "n": "INNER vs LEFT JOIN",
+   "f": "INNER: coincidencias. LEFT: todas las de la izquierda",
+   "x": "LEFT conserva las filas sin pareja (con NULL).",
+   "home": "join"
+  },
+  "on": {
+   "n": "La condición ON",
+   "f": "ON fk = pk",
+   "x": "Une la FK de una tabla con la PK de la otra.",
+   "home": "join"
+  },
+  "nul": {
+   "n": "Valores NULL",
+   "f": "WHERE col IS NULL",
+   "x": "NULL no se compara con =; COUNT(*) sí cuenta esas filas.",
+   "home": "limp"
+  },
+  "upd": {
+   "n": "UPDATE con WHERE",
+   "f": "UPDATE t SET col = v WHERE …",
+   "x": "Sin WHERE se modifica toda la columna.",
+   "home": "limp"
+  },
+  "clean": {
+   "n": "Funciones de limpieza",
+   "f": "TRIM · UPPER · REPLACE · TRY_CAST",
+   "x": "Estandarizan texto y detectan valores que no son números.",
+   "home": "limp"
+  },
+  "dup": {
+   "n": "Duplicados",
+   "f": "GROUP BY … HAVING COUNT(*) > 1",
+   "x": "Pueden ser exactos o parciales («Ana Ruiz» vs «ana ruiz»).",
+   "home": "limp"
+  },
+  "trans": {
+   "n": "Transformación de variables",
+   "f": "CASE WHEN … THEN … END",
+   "x": "Crear rangos o variables nuevas sin inventar datos.",
+   "home": "limp"
+  },
+  "imp": {
+   "n": "Imputación",
+   "f": "Cuantitativa → media; cualitativa → moda; o «Sin dato»",
+   "x": "Imputar no debe inventar información relevante.",
+   "home": "impu"
+  },
+  "mm": {
+   "n": "Media vs mediana",
+   "f": "Media > mediana → sesgo a la derecha",
+   "x": "La mediana resiste los extremos.",
+   "home": "desc"
+  },
+  "disp": {
+   "n": "Dispersión",
+   "f": "Rango · varianza · desviación estándar",
+   "x": "La DE mide la variabilidad en las unidades del dato.",
+   "home": "desc"
+  },
+  "atip": {
+   "n": "Valores atípicos",
+   "f": "Atípico: > media + 2·DE",
+   "x": "Puede ser error o información valiosa.",
+   "home": "desc"
+  },
+  "hall": {
+   "n": "Estructura de un hallazgo",
+   "f": "Grupo + comportamiento + causa + acción",
+   "x": "Un número solo es un dato; el hallazgo dice por qué importa.",
+   "home": "hall"
+  }
+ },
+ "simEx": [
+  {
+   "id": "ds1",
+   "lvl": 3,
+   "title": "Consulta con HAVING",
+   "q": "<p>Tabla Ventas:</p><div class=\"tbl\"><table><tr><th>ID_venta</th><th>ID_tienda</th><th>Monto</th></tr><tr><td>1</td><td>1</td><td>20</td></tr><tr><td>2</td><td>2</td><td>35</td></tr><tr><td>3</td><td>1</td><td>15</td></tr><tr><td>4</td><td>3</td><td>50</td></tr><tr><td>5</td><td>2</td><td>25</td></tr><tr><td>6</td><td>1</td><td>10</td></tr></table></div><pre class=\"code\">SELECT ID_tienda, SUM(Monto) AS Total\nFROM Ventas\nGROUP BY ID_tienda\nHAVING SUM(Monto) &gt; 48;</pre>",
+   "checks": [
+    {
+     "p": "¿Cuántas filas devuelve?",
+     "o": [
+      "2",
+      "3",
+      "1",
+      "6",
+      "0"
+     ]
+    },
+    {
+     "p": "¿Qué tiendas aparecen?",
+     "o": [
+      "2 y 3",
+      "1, 2 y 3",
+      "1 y 2",
+      "Solo 3",
+      "1 y 3"
+     ]
+    }
+   ],
+   "steps": [
+    "Totales: tienda 1 = 45, tienda 2 = 60, tienda 3 = 50.",
+    "HAVING deja las mayores a 48: tiendas 2 y 3."
+   ],
+   "ans": "2 filas: tiendas 2 y 3",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "ds2",
+   "lvl": 3,
+   "title": "Decidir el tratamiento",
+   "q": "<p>En Ventas_Eval faltan valores en Monto (4 filas) y en Metodo_pago (4 filas).</p>",
+   "checks": [
+    {
+     "p": "Monto",
+     "o": [
+      "Imputar con la media (o la mediana)",
+      "Categoría «Sin dato»",
+      "Imputar con la moda",
+      "Borrar la columna",
+      "Poner 0 siempre"
+     ]
+    },
+    {
+     "p": "Metodo_pago",
+     "o": [
+      "Categoría «Sin dato»: imputar la moda inventaría cómo pagó el cliente",
+      "Imputar con la media",
+      "Imputar con la mediana",
+      "Borrar las ventas",
+      "Poner «Efectivo» a todas"
+     ]
+    }
+   ],
+   "steps": [
+    "Monto es cuantitativo: media (o mediana si hay atípicos).",
+    "El método de pago es categórico y relevante para el negocio: asignar el más frecuente distorsionaría el análisis."
+   ],
+   "ans": "Media; «Sin dato»",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "ds3",
+   "lvl": 3,
+   "title": "Conceptos mezclados",
+   "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+   "checks": [
+    {
+     "p": "a) Una relación N:M necesita una tabla intermedia.",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    },
+    {
+     "p": "b) LEFT JOIN puede devolver más filas que INNER JOIN con las mismas tablas.",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "ord": [
+      0,
+      1
+     ]
+    },
+    {
+     "p": "c) WHERE puede filtrar usando COUNT(*).",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    },
+    {
+     "p": "d) Un correo electrónico sin estructura de tabla es un dato no estructurado.",
+     "o": [
+      "Falso",
+      "Verdadero"
+     ],
+     "ord": [
+      1,
+      0
+     ]
+    }
+   ],
+   "steps": [
+    "a) V.",
+    "b) V: agrega las filas sin pareja.",
+    "c) F: para eso está HAVING.",
+    "d) F: un correo tiene metadatos etiquetados (remitente, fecha, asunto): es semiestructurado."
+   ],
+   "ans": "V, V, F, F",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [],
+    [],
+    []
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 90,
+  "slots": [
+   {
+    "pts": 3,
+    "name": "Datos y bases de datos",
+    "pool": [
+     "dd6",
+     "db4",
+     "db6",
+     "ig4",
+     "ds3"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "Consultas SQL",
+    "pool": [
+     "ag8",
+     "ag5",
+     "sq6",
+     "ds1",
+     "ag6"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "JOIN",
+    "pool": [
+     "jn3",
+     "jn5",
+     "jn6"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "Limpieza e imputación",
+    "pool": [
+     "im7",
+     "im8",
+     "im4",
+     "ds2",
+     "lp6"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Análisis descriptivo",
+    "pool": [
+     "de4",
+     "de6",
+     "de3"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Indicadores y hallazgos",
+    "pool": [
+     "hl3",
+     "hl5",
+     "hl4"
+    ]
+   }
+  ]
+ }
+}

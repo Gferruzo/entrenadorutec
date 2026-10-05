@@ -1,0 +1,2397 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso de la EA5: cónicas, coordenadas polares y vectores.</p>\n<div class=\"fgrid\">\n<div><b>Circunferencia</b><br>\\((x-h)^2+(y-k)^2=r^2\\)</div>\n<div><b>Parábola</b><br>\\((x-h)^2=4p(y-k)\\) · foco a \\(|p|\\)</div>\n<div><b>Polar ↔ rect.</b><br>\\(x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ r^2=x^2+y^2\\)</div>\n<div><b>Circunferencias polares</b><br>\\(r=a\\cos\\theta\\): centro \\((\\frac a2,0)\\) · \\(r=a\\sin\\theta\\): centro \\((0,\\frac a2)\\)</div>\n<div><b>Intersecciones</b><br>Iguala \\(r_1=r_2\\) y revisa el polo aparte</div>\n<div><b>Simetrías</b><br>Eje polar \\(\\theta\\to-\\theta\\) · eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\) · polo \\(\\theta\\to\\theta+\\pi\\)</div>\n<div><b>Componentes</b><br>\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)</div>\n<div><b>Resultante</b><br>\\(|R|=\\sqrt{R_x^2+R_y^2}\\) · ángulo: corrige el cuadrante</div>\n</div>",
+ "formSim": false,
+ "id": "fc-ea5",
+ "code": "CC6101",
+ "name": "Fundamentos del Cálculo",
+ "exam": "EA5 (semanas 10 y 11)",
+ "topics": [
+  {
+   "id": "conic",
+   "name": "Cónicas: circunferencia y parábola",
+   "teo": "<p><strong>Circunferencia</strong>: \\((x-h)^2+(y-k)^2=r^2\\), centro \\((h,k)\\). Si viene desarrollada, <em>completa cuadrados</em>: a \\(x^2+bx\\) súmale \\(\\left(\\frac b2\\right)^2\\) en ambos lados.</p><p><strong>Parábola</strong>: \\((x-h)^2=4p(y-k)\\) abre arriba (\\(p\\gt0\\)) o abajo; \\((y-k)^2=4p(x-h)\\) abre a la derecha o izquierda. Foco a distancia \\(|p|\\) del vértice hacia donde abre; directriz a \\(|p|\\) del otro lado.</p><p>En la EA5 del ciclo pasado las cónicas salieron en <strong>polares</strong>: \\(r=a\\cos\\theta\\) y \\(r=a\\sin\\theta\\) son circunferencias que pasan por el origen.</p>",
+   "form": [
+    "\\((x-h)^2+(y-k)^2=r^2\\)",
+    "\\(x^2+bx=\\left(x+\\tfrac b2\\right)^2-\\tfrac{b^2}4\\)",
+    "\\((x-h)^2=4p(y-k)\\)",
+    "\\((y-k)^2=4p(x-h)\\)",
+    "Foco: \\(|p|\\) desde el vértice; directriz: \\(|p|\\) al lado opuesto"
+   ],
+   "lesson": "<h3>Idea central</h3><p>El sílabo pide circunferencia y parábola. Casi todo se reduce a llevar la ecuación a su forma canónica para leer centro, radio, vértice, foco y directriz.</p>\n<h3>Conceptos clave</h3><ul><li>Completar cuadrados: \\(x^2-6x=(x-3)^2-9\\).</li><li>Circunferencia que pasa por el origen: no tiene término independiente.</li><li>Parábola: la variable que <em>no</em> está al cuadrado indica hacia dónde abre.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa x con x y y con y.</li><li><strong>2.</strong> Completa cuadrados sumando lo mismo en ambos lados.</li><li><strong>3.</strong> Lee los elementos de la forma canónica.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(x^2+y^2-4x=0\\Rightarrow(x-2)^2+y^2=4\\): centro \\((2,0)\\), \\(r=2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar sumar en el lado derecho lo que agregaste al completar cuadrados.</div>",
+   "ex": [
+    {
+     "id": "cn1",
+     "lvl": 1,
+     "title": "Completar cuadrados",
+     "q": "<p>\\(x^2+y^2-6x+4y-3=0\\).</p>",
+     "checks": [
+      {
+       "p": "Centro",
+       "o": [
+        "\\((3,-2)\\)",
+        "\\((-3,2)\\)",
+        "\\((6,-4)\\)",
+        "\\((3,2)\\)",
+        "\\((-6,4)\\)"
+       ]
+      },
+      {
+       "p": "Radio",
+       "o": [
+        "4",
+        "16",
+        "3",
+        "\\(\\sqrt3\\)",
+        "2"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x^2-6x+9)+(y^2+4y+4)=3+9+4\\).",
+      "\\((x-3)^2+(y+2)^2=16\\): centro \\((3,-2)\\), radio 4."
+     ],
+     "ans": "Centro \\((3,-2)\\), \\(r=4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cn2",
+     "lvl": 1,
+     "title": "Escribir la ecuación",
+     "q": "<p>Circunferencia de centro \\((-1,2)\\) y radio 3.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\((x+1)^2+(y-2)^2=9\\)",
+        "\\((x-1)^2+(y+2)^2=9\\)",
+        "\\((x+1)^2+(y-2)^2=3\\)",
+        "\\((x-1)^2+(y-2)^2=9\\)",
+        "\\((x+2)^2+(y-1)^2=9\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Sustituye \\(h=-1\\), \\(k=2\\), \\(r^2=9\\) en \\((x-h)^2+(y-k)^2=r^2\\)."
+     ],
+     "ans": "\\((x+1)^2+(y-2)^2=9\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "cn3",
+     "lvl": 2,
+     "title": "Circunferencia que pasa por el origen",
+     "q": "<p>\\(x^2+y^2=8y\\).</p>",
+     "checks": [
+      {
+       "p": "Centro y radio",
+       "o": [
+        "\\((0,4)\\), \\(r=4\\)",
+        "\\((0,8)\\), \\(r=8\\)",
+        "\\((4,0)\\), \\(r=4\\)",
+        "\\((0,4)\\), \\(r=16\\)",
+        "\\((0,-4)\\), \\(r=4\\)"
+       ]
+      },
+      {
+       "p": "¿Pasa por el origen?",
+       "o": [
+        "Sí",
+        "No",
+        "Solo si \\(y\\gt0\\)",
+        "No se puede saber",
+        "Solo si \\(x=4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(y^2-8y+16)=16\\Rightarrow x^2+(y-4)^2=16\\).",
+      "\\((0,0)\\): \\(0=0\\) ✓. Este tipo de circunferencia aparece en la EA5 como \\(r=8\\sin\\theta\\)."
+     ],
+     "ans": "Centro \\((0,4)\\), \\(r=4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cn4",
+     "lvl": 1,
+     "title": "Parábola en forma vértice",
+     "q": "<p>\\(y=(x-2)^2-3\\).</p>",
+     "checks": [
+      {
+       "p": "Vértice",
+       "o": [
+        "\\((2,-3)\\)",
+        "\\((-2,-3)\\)",
+        "\\((2,3)\\)",
+        "\\((-3,2)\\)",
+        "\\((3,-2)\\)"
+       ]
+      },
+      {
+       "p": "Abre hacia",
+       "o": [
+        "Arriba",
+        "Abajo",
+        "La derecha",
+        "La izquierda",
+        "No abre"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma \\(y=a(x-h)^2+k\\): vértice \\((2,-3)\\).",
+      "Coeficiente \\(a=1\\gt0\\): abre hacia arriba."
+     ],
+     "ans": "Vértice \\((2,-3)\\), abre arriba",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "cn5",
+     "lvl": 2,
+     "title": "Foco y directriz",
+     "q": "<p>\\((x-1)^2=8(y+2)\\).</p>",
+     "checks": [
+      {
+       "p": "Vértice",
+       "o": [
+        "\\((1,-2)\\)",
+        "\\((-1,2)\\)",
+        "\\((1,2)\\)",
+        "\\((8,-2)\\)",
+        "\\((-2,1)\\)"
+       ]
+      },
+      {
+       "p": "Foco",
+       "o": [
+        "\\((1,0)\\)",
+        "\\((1,-4)\\)",
+        "\\((3,-2)\\)",
+        "\\((1,6)\\)",
+        "\\((1,-1)\\)"
+       ]
+      },
+      {
+       "p": "Directriz",
+       "o": [
+        "\\(y=-4\\)",
+        "\\(y=0\\)",
+        "\\(x=-1\\)",
+        "\\(y=-2\\)",
+        "\\(y=4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4p=8\\Rightarrow p=2\\); \\(x\\) al cuadrado y \\(p\\gt0\\): abre hacia arriba.",
+      "Foco: 2 arriba del vértice, \\((1,0)\\). Directriz: 2 abajo, \\(y=-4\\)."
+     ],
+     "ans": "Foco \\((1,0)\\), directriz \\(y=-4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cn6",
+     "lvl": 2,
+     "title": "Parábola horizontal",
+     "q": "<p>\\(y^2=-12x\\).</p>",
+     "checks": [
+      {
+       "p": "Foco",
+       "o": [
+        "\\((-3,0)\\)",
+        "\\((3,0)\\)",
+        "\\((0,-3)\\)",
+        "\\((-12,0)\\)",
+        "\\((0,3)\\)"
+       ]
+      },
+      {
+       "p": "Directriz y apertura",
+       "o": [
+        "\\(x=3\\), abre a la izquierda",
+        "\\(x=-3\\), abre a la derecha",
+        "\\(y=3\\), abre abajo",
+        "\\(x=3\\), abre a la derecha",
+        "\\(x=12\\), abre a la izquierda"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4p=-12\\Rightarrow p=-3\\); \\(y\\) al cuadrado: es horizontal y \\(p\\lt0\\) abre a la izquierda.",
+      "Foco \\((-3,0)\\), directriz \\(x=3\\)."
+     ],
+     "ans": "Foco \\((-3,0)\\), directriz \\(x=3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cn7",
+     "lvl": 3,
+     "title": "Parábola desde foco y vértice",
+     "q": "<p>Vértice en el origen y foco en \\((0,3)\\). ¿Ecuación? ¿Pasa por \\((6,3)\\)?</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2=12y\\)",
+        "\\(y^2=12x\\)",
+        "\\(x^2=3y\\)",
+        "\\(x^2=-12y\\)",
+        "\\(x^2=6y\\)"
+       ]
+      },
+      {
+       "p": "¿Pasa por \\((6,3)\\)?",
+       "o": [
+        "Sí",
+        "No",
+        "Solo si \\(p=6\\)",
+        "No se puede saber",
+        "Pasa por \\((3,6)\\), no por \\((6,3)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Foco arriba del vértice: \\(x^2=4py\\) con \\(p=3\\): \\(x^2=12y\\).",
+      "\\(6^2=36=12\\cdot3\\) ✓."
+     ],
+     "ans": "\\(x^2=12y\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cn8",
+     "lvl": 3,
+     "title": "Circunferencia por el origen",
+     "q": "<p>Centro \\((2,-5)\\) y pasa por el origen. Escribe su ecuación desarrollada.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2+y^2-4x+10y=0\\)",
+        "\\(x^2+y^2+4x-10y=0\\)",
+        "\\(x^2+y^2-4x+10y=29\\)",
+        "\\(x^2+y^2-2x+5y=0\\)",
+        "\\((x-2)^2+(y+5)^2=7\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r^2=2^2+(-5)^2=29\\).",
+      "\\((x-2)^2+(y+5)^2=29\\Rightarrow x^2-4x+4+y^2+10y+25=29\\Rightarrow x^2+y^2-4x+10y=0\\)."
+     ],
+     "ans": "\\(x^2+y^2-4x+10y=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "circ"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "polar",
+   "name": "Coordenadas polares e intersecciones",
+   "teo": "<p>Un punto \\((r,\\theta)\\) está a distancia \\(r\\) del polo y forma ángulo \\(\\theta\\) con el eje polar. \\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\), \\(r^2=x^2+y^2\\), \\(\\tan\\theta=\\frac yx\\) (cuidado con el cuadrante).</p><p>\\(r=a\\cos\\theta\\): circunferencia de centro \\(\\left(\\frac a2,0\\right)\\) y radio \\(\\frac{|a|}2\\). \\(r=a\\sin\\theta\\): centro \\(\\left(0,\\frac a2\\right)\\). Para probarlo multiplica por \\(r\\).</p><p><strong>Intersecciones</strong>: iguala \\(r_1=r_2\\) en \\([0,2\\pi)\\) y <em>luego revisa el polo</em>. La distancia al polo de un punto es \\(|r|\\).</p>",
+   "form": [
+    "\\(x=r\\cos\\theta,\\ y=r\\sin\\theta\\)",
+    "\\(r^2=x^2+y^2\\)",
+    "\\(r=a\\cos\\theta\\iff\\left(x-\\tfrac a2\\right)^2+y^2=\\tfrac{a^2}4\\)",
+    "\\(r=a\\sin\\theta\\iff x^2+\\left(y-\\tfrac a2\\right)^2=\\tfrac{a^2}4\\)",
+    "Intersecciones: iguala y revisa el polo"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La pregunta grande de la EA5 (10 de 20 puntos) son dos circunferencias polares: pasarlas a cartesianas, intersectarlas, convertir, medir la distancia y graficar.</p>\n<h3>Conceptos clave</h3><ul><li>Multiplicar por \\(r\\) convierte \\(\\cos\\theta\\) en \\(x\\) y \\(\\sin\\theta\\) en \\(y\\).</li><li>\\(a\\cos\\theta=b\\sin\\theta\\Rightarrow\\tan\\theta=\\frac ab\\).</li><li>El ángulo con \\(r\\lt0\\) repite un punto: no lo cuentes dos veces.</li><li>Distancia al polo = \\(|r|\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Pasa cada curva a cartesianas y lee centro y radio.</li><li><strong>2.</strong> Iguala las \\(r\\) y despeja \\(\\tan\\theta\\).</li><li><strong>3.</strong> Calcula \\(r\\) en ese \\(\\theta\\) y añade el polo.</li><li><strong>4.</strong> Convierte a \\((x,y)\\) y grafica ambas circunferencias.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r_1=4\\cos\\theta\\), \\(r_2=4\\sqrt3\\sin\\theta\\): \\(\\tan\\theta=\\frac1{\\sqrt3}\\), \\(\\theta=\\frac\\pi6\\), \\(r=2\\sqrt3\\), punto \\((3,\\sqrt3)\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el polo como punto de intersección.</div>",
+   "ex": [
+    {
+     "id": "pl1",
+     "lvl": 1,
+     "title": "Polar a rectangular",
+     "q": "<p>Convierte \\(\\left(4,\\frac\\pi3\\right)\\) a coordenadas rectangulares.</p>",
+     "checks": [
+      {
+       "p": "\\((x,y)\\)",
+       "o": [
+        "\\((2,\\ 2\\sqrt3)\\)",
+        "\\((2\\sqrt3,\\ 2)\\)",
+        "\\((4,\\ 60)\\)",
+        "\\((-2,\\ 2\\sqrt3)\\)",
+        "\\((2,\\ \\sqrt3)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=4\\cos\\frac\\pi3=2\\), \\(y=4\\sin\\frac\\pi3=2\\sqrt3\\)."
+     ],
+     "ans": "\\((2,2\\sqrt3)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polrect"
+      ]
+     ]
+    },
+    {
+     "id": "pl2",
+     "lvl": 1,
+     "title": "Rectangular a polar",
+     "q": "<p>Convierte \\((-2,2)\\) a polares con \\(r\\gt0\\) y \\(\\theta\\in[0,2\\pi)\\).</p>",
+     "checks": [
+      {
+       "p": "\\((r,\\theta)\\)",
+       "o": [
+        "\\(\\left(2\\sqrt2,\\tfrac{3\\pi}4\\right)\\)",
+        "\\(\\left(2\\sqrt2,-\\tfrac{\\pi}4\\right)\\)",
+        "\\(\\left(2\\sqrt2,\\tfrac{\\pi}4\\right)\\)",
+        "\\(\\left(4,\\tfrac{3\\pi}4\\right)\\)",
+        "\\(\\left(2\\sqrt2,\\tfrac{5\\pi}4\\right)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=\\sqrt{4+4}=2\\sqrt2\\).",
+      "El punto está en el II cuadrante: \\(\\theta=\\pi-\\frac\\pi4=\\frac{3\\pi}4\\). La calculadora daría \\(-\\frac\\pi4\\), que es el IV cuadrante."
+     ],
+     "ans": "\\(\\left(2\\sqrt2,\\tfrac{3\\pi}4\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polrect"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "pl3",
+     "lvl": 2,
+     "title": "r = a cos θ",
+     "q": "<p>Escribe \\(r=10\\cos\\theta\\) en cartesianas e identifica la figura.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\((x-5)^2+y^2=25\\)",
+        "\\(x^2+(y-5)^2=25\\)",
+        "\\((x-10)^2+y^2=100\\)",
+        "\\(x=10\\)",
+        "\\(x^2+y^2=10\\)"
+       ]
+      },
+      {
+       "p": "Figura",
+       "o": [
+        "Circunferencia de centro \\((5,0)\\) y radio 5",
+        "Recta vertical",
+        "Circunferencia de centro \\((0,5)\\)",
+        "Parábola",
+        "Circunferencia de centro \\((10,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Multiplica por \\(r\\): \\(r^2=10r\\cos\\theta\\Rightarrow x^2+y^2=10x\\).",
+      "Completa cuadrados: \\((x-5)^2+y^2=25\\)."
+     ],
+     "ans": "\\((x-5)^2+y^2=25\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polrect"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "pl4",
+     "lvl": 2,
+     "title": "r = a sin θ",
+     "q": "<p>Escribe \\(r=6\\sin\\theta\\) en cartesianas.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2+(y-3)^2=9\\)",
+        "\\((x-3)^2+y^2=9\\)",
+        "\\(x^2+(y-6)^2=36\\)",
+        "\\(y=6\\)",
+        "\\(x^2+y^2=6\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r^2=6r\\sin\\theta\\Rightarrow x^2+y^2=6y\\Rightarrow x^2+(y-3)^2=9\\)."
+     ],
+     "ans": "Circunferencia de centro \\((0,3)\\) y radio 3",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polrect"
+      ]
+     ]
+    },
+    {
+     "id": "pl5",
+     "lvl": 2,
+     "title": "Cartesiana a polar",
+     "q": "<p>Escribe \\(x^2+y^2=2x\\) en polares.</p>",
+     "checks": [
+      {
+       "p": "Ecuación polar",
+       "o": [
+        "\\(r=2\\cos\\theta\\)",
+        "\\(r=2\\sin\\theta\\)",
+        "\\(r=2\\)",
+        "\\(r^2=2\\cos\\theta\\)",
+        "\\(r=\\tfrac{2}{\\cos\\theta}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r^2=2r\\cos\\theta\\); divide entre \\(r\\) (el polo ya está incluido en \\(r=2\\cos\\theta\\) con \\(\\theta=\\frac\\pi2\\))."
+     ],
+     "ans": "\\(r=2\\cos\\theta\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polrect"
+      ]
+     ]
+    },
+    {
+     "id": "pl6",
+     "lvl": 2,
+     "title": "Intersección básica",
+     "q": "<p>Halla las intersecciones de \\(r=2\\cos\\theta\\) y \\(r=2\\sin\\theta\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos (polares)",
+       "o": [
+        "El polo y \\(\\left(\\sqrt2,\\frac\\pi4\\right)\\)",
+        "Solo \\(\\left(\\sqrt2,\\frac\\pi4\\right)\\)",
+        "El polo y \\(\\left(2,\\frac\\pi4\\right)\\)",
+        "\\(\\left(\\sqrt2,\\frac\\pi4\\right)\\) y \\(\\left(\\sqrt2,\\frac{5\\pi}4\\right)\\) como puntos distintos",
+        "No se cortan"
+       ]
+      },
+      {
+       "p": "Punto no nulo en rectangulares",
+       "o": [
+        "\\((1,1)\\)",
+        "\\((\\sqrt2,\\sqrt2)\\)",
+        "\\((2,2)\\)",
+        "\\(\\left(\\tfrac{\\sqrt2}2,\\tfrac{\\sqrt2}2\\right)\\)",
+        "\\((1,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2\\cos\\theta=2\\sin\\theta\\Rightarrow\\tan\\theta=1\\Rightarrow\\theta=\\frac\\pi4\\), \\(r=\\sqrt2\\). (\\(\\theta=\\frac{5\\pi}4\\) da \\(r=-\\sqrt2\\): es el mismo punto.)",
+      "Polo: la primera pasa con \\(\\theta=\\frac\\pi2\\) y la segunda con \\(\\theta=0\\). No sale al igualar, pero es intersección.",
+      "\\(x=\\sqrt2\\cos\\frac\\pi4=1\\), \\(y=1\\)."
+     ],
+     "ans": "Polo y \\((1,1)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polint"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "pl7",
+     "lvl": 3,
+     "title": "Tipo EA: intersección y distancia",
+     "q": "<p>\\(r_1=6\\sin\\theta\\) y \\(r_2=2\\sqrt3\\cos\\theta\\). Halla el punto de intersección distinto del polo y su distancia al polo.</p>",
+     "checks": [
+      {
+       "p": "\\(\\theta\\)",
+       "o": [
+        "\\(\\tfrac\\pi6\\)",
+        "\\(\\tfrac\\pi3\\)",
+        "\\(\\tfrac\\pi4\\)",
+        "\\(\\tfrac{2\\pi}3\\)",
+        "\\(\\tfrac{7\\pi}6\\)"
+       ]
+      },
+      {
+       "p": "Rectangulares",
+       "o": [
+        "\\(\\left(\\tfrac{3\\sqrt3}2,\\tfrac32\\right)\\)",
+        "\\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
+        "\\((3,\\sqrt3)\\)",
+        "\\((\\sqrt3,3)\\)",
+        "\\(\\left(3\\sqrt3,3\\right)\\)"
+       ]
+      },
+      {
+       "p": "Distancia al polo",
+       "o": [
+        "3",
+        "\\(2\\sqrt3\\)",
+        "6",
+        "\\(\\sqrt3\\)",
+        "\\(3\\sqrt3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(6\\sin\\theta=2\\sqrt3\\cos\\theta\\Rightarrow\\tan\\theta=\\frac{\\sqrt3}3\\Rightarrow\\theta=\\frac\\pi6\\).",
+      "\\(r=6\\sin\\frac\\pi6=3\\).",
+      "Rectangulares: \\(\\left(3\\cos\\frac\\pi6,3\\sin\\frac\\pi6\\right)=\\left(\\frac{3\\sqrt3}2,\\frac32\\right)\\). La distancia al polo es \\(|r|=3\\)."
+     ],
+     "ans": "Distancia 3",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polint"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "pl8",
+     "lvl": 2,
+     "title": "¿Por qué el polo?",
+     "q": "<p>Al igualar \\(r=4\\cos\\theta\\) y \\(r=4\\sin\\theta\\) solo sale \\(\\theta=\\frac\\pi4\\). ¿Por qué el polo también es intersección?</p>",
+     "checks": [
+      {
+       "p": "Razón",
+       "o": [
+        "Cada curva pasa por el polo, pero con distinto \\(\\theta\\)",
+        "Porque \\(\\tan\\frac\\pi4=1\\)",
+        "Todas las curvas polares pasan por el polo",
+        "Porque \\(r\\) siempre es positivo",
+        "No es intersección"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4\\cos\\theta=0\\) en \\(\\theta=\\frac\\pi2\\); \\(4\\sin\\theta=0\\) en \\(\\theta=0\\). El polo es el mismo punto para cualquier \\(\\theta\\).",
+      "Por eso en la EA siempre se revisa el polo aparte."
+     ],
+     "ans": "Distinto \\(\\theta\\), mismo punto",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polint"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cardio",
+   "name": "Curvas polares y simetrías",
+   "teo": "<p><strong>Pruebas de simetría</strong> (si la ecuación no cambia, hay simetría): eje polar con \\(\\theta\\to-\\theta\\); eje \\(\\theta=\\frac\\pi2\\) con \\(\\theta\\to\\pi-\\theta\\); polo con \\(r\\to-r\\) o \\(\\theta\\to\\theta+\\pi\\).</p><p>Si la prueba falla, da un <strong>contraejemplo</strong>: un punto de la curva cuyo reflejo no está en ella. Así justificas el «no» en la EA.</p><p>\\(r=a\\pm a\\cos\\theta\\): cardioide horizontal (simétrica respecto al eje polar). \\(r=a\\pm a\\sin\\theta\\): cardioide vertical (simétrica respecto al eje \\(\\frac\\pi2\\)).</p>",
+   "form": [
+    "Eje polar: \\(\\theta\\to-\\theta\\)",
+    "Eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\)",
+    "Polo: \\(\\theta\\to\\theta+\\pi\\) o \\(r\\to-r\\)",
+    "\\(\\cos(-\\theta)=\\cos\\theta,\\ \\sin(\\pi-\\theta)=\\sin\\theta\\)",
+    "\\(r=a(1\\pm\\cos\\theta)\\)",
+    "Cardioide: toca el polo una vez"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la EA5 vale 4 puntos: determinar las tres simetrías de una cardioide. Haz las tres pruebas y escribe el resultado de cada una.</p>\n<h3>Conceptos clave</h3><ul><li>Con coseno: simetría con el eje polar.</li><li>Con seno: simetría con el eje vertical.</li><li>Una cardioide nunca es simétrica respecto al polo.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Reemplaza \\(\\theta\\) por \\(-\\theta\\).</li><li><strong>2.</strong> Reemplaza \\(\\theta\\) por \\(\\pi-\\theta\\).</li><li><strong>3.</strong> Reemplaza \\(\\theta\\) por \\(\\theta+\\pi\\).</li><li><strong>4.</strong> Si una prueba falla, muestra un punto concreto como contraejemplo.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r=3-3\\cos\\theta\\): eje polar sí; eje \\(\\frac\\pi2\\) no (\\((6,\\pi)\\) está, \\((6,0)\\) no); polo no.</div>\n<div class=\"err\"><b>Error común:</b> concluir «no simétrica» solo porque la ecuación cambió de forma; la prueba formal es suficiente, pero un contraejemplo lo hace indiscutible.</div>",
+   "ex": [
+    {
+     "id": "cd1",
+     "lvl": 1,
+     "title": "Valores de una cardioide",
+     "q": "<p>\\(r=3+3\\cos\\theta\\).</p>",
+     "checks": [
+      {
+       "p": "\\(r(0)\\), \\(r(\\frac\\pi2)\\), \\(r(\\pi)\\)",
+       "o": [
+        "6, 3, 0",
+        "3, 6, 0",
+        "6, 0, 3",
+        "0, 3, 6",
+        "6, 3, 3"
+       ]
+      },
+      {
+       "p": "Tipo de curva",
+       "o": [
+        "Cardioide",
+        "Circunferencia",
+        "Rosa de 3 pétalos",
+        "Recta",
+        "Parábola"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r(0)=6\\), \\(r(\\frac\\pi2)=3\\), \\(r(\\pi)=3-3=0\\): toca el polo en \\(\\theta=\\pi\\).",
+      "Forma \\(a+a\\cos\\theta\\): cardioide que apunta hacia la derecha (la punta está en el polo)."
+     ],
+     "ans": "Cardioide",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "cd2",
+     "lvl": 2,
+     "title": "Tipo EA: simetrías con coseno",
+     "q": "<p>Analiza las simetrías de \\(r=2+2\\cos\\theta\\).</p>",
+     "checks": [
+      {
+       "p": "Eje polar",
+       "o": [
+        "Sí",
+        "No",
+        "Solo para \\(\\theta\\gt0\\)",
+        "Solo en el polo",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+       "o": [
+        "No",
+        "Sí",
+        "Solo en \\(\\theta=\\pi\\)",
+        "Sí, porque \\(\\cos\\) es par",
+        "Sí, porque pasa por el polo"
+       ]
+      },
+      {
+       "p": "Polo",
+       "o": [
+        "No",
+        "Sí",
+        "Sí, porque \\(r(\\pi)=0\\)",
+        "Solo si \\(r\\lt0\\)",
+        "Sí, porque es periódica"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\theta\\to-\\theta\\): \\(2+2\\cos(-\\theta)=2+2\\cos\\theta\\) ✓ simétrica respecto al eje polar.",
+      "\\(\\theta\\to\\pi-\\theta\\): \\(2-2\\cos\\theta\\ne\\) original. Contraejemplo: \\((4,0)\\) está en la curva, pero su reflejo \\((4,\\pi)\\) no (\\(r(\\pi)=0\\)).",
+      "\\(\\theta\\to\\theta+\\pi\\): \\(2-2\\cos\\theta\\); \\(r\\to-r\\): \\(-2-2\\cos\\theta\\). Ninguna coincide: no es simétrica respecto al polo."
+     ],
+     "ans": "Solo respecto al eje polar",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "simpol"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "cd3",
+     "lvl": 2,
+     "title": "Simetrías con seno",
+     "q": "<p>Analiza las simetrías de \\(r=4-4\\sin\\theta\\).</p>",
+     "checks": [
+      {
+       "p": "¿Respecto a qué es simétrica?",
+       "o": [
+        "Solo al eje \\(\\theta=\\frac\\pi2\\)",
+        "Solo al eje polar",
+        "Al eje polar y al polo",
+        "A los tres",
+        "A ninguno"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\theta\\to\\pi-\\theta\\): \\(\\sin(\\pi-\\theta)=\\sin\\theta\\), queda igual ✓.",
+      "\\(\\theta\\to-\\theta\\) da \\(4+4\\sin\\theta\\) ✗; el polo tampoco."
+     ],
+     "ans": "Eje vertical",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "simpol"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cd4",
+     "lvl": 2,
+     "title": "Rosa de 4 pétalos",
+     "q": "<p>Analiza las simetrías de \\(r=4\\cos(2\\theta)\\).</p>",
+     "checks": [
+      {
+       "p": "Simetrías",
+       "o": [
+        "Eje polar, eje \\(\\frac\\pi2\\) y polo",
+        "Solo eje polar",
+        "Solo polo",
+        "Eje polar y polo",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos(-2\\theta)=\\cos2\\theta\\) ✓; \\(\\cos(2\\pi-2\\theta)=\\cos2\\theta\\) ✓; \\(\\cos(2\\theta+2\\pi)=\\cos2\\theta\\) ✓."
+     ],
+     "ans": "Las tres",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "simpol"
+      ]
+     ]
+    },
+    {
+     "id": "cd5",
+     "lvl": 1,
+     "title": "Hacia dónde apunta",
+     "q": "<p>\\(r=2-2\\cos\\theta\\). ¿En qué dirección está su punto más lejano?</p>",
+     "checks": [
+      {
+       "p": "Punto más lejano",
+       "o": [
+        "\\((4,\\pi)\\): a la izquierda",
+        "\\((4,0)\\): a la derecha",
+        "\\((2,\\frac\\pi2)\\): arriba",
+        "\\((0,0)\\)",
+        "\\((2,\\pi)\\): a la izquierda"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r\\) es máximo cuando \\(\\cos\\theta=-1\\), es decir \\(\\theta=\\pi\\): \\(r=4\\). La punta está en el polo (\\(\\theta=0\\))."
+     ],
+     "ans": "\\((4,\\pi)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "cd6",
+     "lvl": 2,
+     "title": "Circunferencia con seno",
+     "q": "<p>\\(r=5\\sin\\theta\\). ¿Respecto a qué es simétrica?</p>",
+     "checks": [
+      {
+       "p": "Simetría",
+       "o": [
+        "Eje \\(\\theta=\\frac\\pi2\\)",
+        "Eje polar",
+        "Polo",
+        "Los tres",
+        "Ninguno"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sin(\\pi-\\theta)=\\sin\\theta\\) ✓. Tiene sentido: es la circunferencia de centro \\((0;2{,}5)\\), que está sobre el eje vertical."
+     ],
+     "ans": "Eje vertical",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "simpol"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vect1",
+   "name": "Vectores: componentes y resultante",
+   "teo": "<p>Un vector con magnitud \\(|F|\\) y dirección \\(\\theta\\) (desde el eje \\(x\\) positivo, antihorario) tiene componentes \\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)=F_x\\hat i+F_y\\hat j\\).</p><p><strong>Resultante</strong>: suma las \\(x\\) y las \\(y\\) por separado. \\(|R|=\\sqrt{R_x^2+R_y^2}\\). Dirección: \\(\\arctan\\frac{R_y}{R_x}\\) y <em>corrige el cuadrante</em> (si \\(R_x\\lt0\\), suma \\(180^\\circ\\)).</p>",
+   "form": [
+    "\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)",
+    "\\(\\vec R=\\vec F_1+\\vec F_2\\)",
+    "\\(|R|=\\sqrt{R_x^2+R_y^2}\\)",
+    "\\(\\alpha=\\arctan\\tfrac{R_y}{R_x}\\ (+180^\\circ\\ \\text{si}\\ R_x\\lt0)\\)",
+    "\\(\\hat u=\\tfrac{\\vec v}{|\\vec v|}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La pregunta de vectores de la EA5 (6 puntos) siempre es la misma: dos fuerzas con magnitud y ángulo → componentes → resultante, magnitud y dirección.</p>\n<h3>Conceptos clave</h3><ul><li>Componentes con cos y sen del ángulo medido desde el eje x positivo.</li><li>El cuadrante lo dicen los signos de \\(R_x\\) y \\(R_y\\).</li><li>Si los ángulos difieren \\(90^\\circ\\), \\(|R|=\\sqrt{F_1^2+F_2^2}\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Descompón cada fuerza.</li><li><strong>2.</strong> Suma componentes.</li><li><strong>3.</strong> Calcula la magnitud.</li><li><strong>4.</strong> Calcula el ángulo y ajusta el cuadrante.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> 60 N a \\(60^\\circ\\) y 80 N a \\(150^\\circ\\): \\(\\vec R\\approx(-39{,}28;\\ 91{,}96)\\), \\(|R|=100\\) N, \\(113{,}13^\\circ\\).</div>\n<div class=\"err\"><b>Error común:</b> dejar el ángulo negativo que da la calculadora cuando \\(R_x\\lt0\\).</div>",
+   "ex": [
+    {
+     "id": "v1",
+     "lvl": 1,
+     "title": "Componentes",
+     "q": "<p>Una fuerza de 50 N forma \\(60^\\circ\\) con el eje \\(x\\) positivo. Escríbela en componentes.</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec F\\)",
+       "o": [
+        "\\((25;\\ 25\\sqrt3)\\approx(25;\\ 43{,}30)\\ \\text{N}\\)",
+        "\\((25\\sqrt3;\\ 25)\\ \\text{N}\\)",
+        "\\((50;\\ 60)\\ \\text{N}\\)",
+        "\\((-25;\\ 25\\sqrt3)\\ \\text{N}\\)",
+        "\\((25;\\ 25)\\ \\text{N}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_x=50\\cos60^\\circ=25\\), \\(F_y=50\\sin60^\\circ=25\\sqrt3\\)."
+     ],
+     "ans": "\\((25,25\\sqrt3)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ]
+     ]
+    },
+    {
+     "id": "v2",
+     "lvl": 1,
+     "title": "Magnitud y dirección",
+     "q": "<p>Halla magnitud y dirección de \\(\\vec v=(-3,4)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(|\\vec v|\\)",
+       "o": [
+        "5",
+        "7",
+        "1",
+        "25",
+        "\\(\\sqrt7\\)"
+       ]
+      },
+      {
+       "p": "Dirección",
+       "o": [
+        "126{,}87^\\circ",
+        "-53{,}13^\\circ",
+        "53{,}13^\\circ",
+        "233{,}13^\\circ",
+        "143{,}13^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(|\\vec v|=\\sqrt{9+16}=5\\).",
+      "La calculadora da \\(\\arctan\\frac4{-3}=-53{,}13^\\circ\\), pero el vector está en el II cuadrante: \\(180^\\circ-53{,}13^\\circ=126{,}87^\\circ\\)."
+     ],
+     "ans": "5 y \\(126{,}87^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "resul"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "v3",
+     "lvl": 2,
+     "title": "Tercer cuadrante",
+     "q": "<p>Magnitud y dirección de \\((-4,-4)\\).</p>",
+     "checks": [
+      {
+       "p": "Magnitud y dirección",
+       "o": [
+        "\\(4\\sqrt2\\) a \\(225^\\circ\\)",
+        "\\(4\\sqrt2\\) a \\(45^\\circ\\)",
+        "8 a \\(225^\\circ\\)",
+        "\\(4\\sqrt2\\) a \\(135^\\circ\\)",
+        "\\(4\\sqrt2\\) a \\(315^\\circ\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sqrt{32}=4\\sqrt2\\); ambos negativos: III cuadrante, \\(180^\\circ+45^\\circ\\)."
+     ],
+     "ans": "\\(4\\sqrt2\\), \\(225^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "resul"
+      ]
+     ]
+    },
+    {
+     "id": "v4",
+     "lvl": 2,
+     "title": "Resultante de fuerzas perpendiculares",
+     "q": "<p>Fuerzas de 30 N a \\(0^\\circ\\) y 40 N a \\(90^\\circ\\). Halla la resultante.</p>",
+     "checks": [
+      {
+       "p": "Magnitud",
+       "o": [
+        "50 N",
+        "70 N",
+        "10 N",
+        "35 N",
+        "1200 N"
+       ]
+      },
+      {
+       "p": "Dirección",
+       "o": [
+        "53{,}13^\\circ",
+        "36{,}87^\\circ",
+        "45^\\circ",
+        "90^\\circ",
+        "126{,}87^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec R=(30,40)\\).",
+      "\\(|\\vec R|=50\\), \\(\\alpha=\\arctan\\frac43=53{,}13^\\circ\\)."
+     ],
+     "ans": "50 N a \\(53{,}13^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "resul"
+      ]
+     ]
+    },
+    {
+     "id": "v5",
+     "lvl": 2,
+     "title": "Tipo EA: dos fuerzas",
+     "q": "<p>Una fuerza de 100 N a \\(20^\\circ\\) y otra de 80 N a \\(110^\\circ\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec R\\)",
+       "o": [
+        "\\((66{,}61;\\ 109{,}38)\\)",
+        "\\((169{,}14;\\ 6{,}84)\\)",
+        "\\((121{,}33;\\ 109{,}38)\\)",
+        "\\((180;\\ 130)\\)",
+        "\\((109{,}38;\\ 66{,}61)\\)"
+       ]
+      },
+      {
+       "p": "Magnitud y dirección",
+       "o": [
+        "\\(128{,}06\\) N a \\(58{,}66^\\circ\\)",
+        "180 N a \\(65^\\circ\\)",
+        "\\(128{,}06\\) N a \\(38{,}66^\\circ\\)",
+        "\\(128{,}06\\) N a \\(121{,}34^\\circ\\)",
+        "\\(20\\) N a \\(58{,}66^\\circ\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec F_1=100(\\cos20^\\circ,\\sin20^\\circ)=(93{,}97;\\ 34{,}2)\\); \\(\\vec F_2=80(\\cos110^\\circ,\\sin110^\\circ)=(-27{,}36;\\ 75{,}18)\\).",
+      "Suma: \\(\\vec R=(66{,}61;\\ 109{,}38)\\).",
+      "\\(|\\vec R|=128{,}06\\) N (son perpendiculares: \\(\\sqrt{100^2+80^2}\\)). \\(\\alpha=\\arctan\\frac{109{,}38}{66{,}61}=58{,}66^\\circ\\), I cuadrante."
+     ],
+     "ans": "128{,}06 N a 58{,}66^\\circ",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ],
+      [],
+      [
+       "resul"
+      ]
+     ]
+    },
+    {
+     "id": "v6",
+     "lvl": 3,
+     "title": "Se cancelan las x",
+     "q": "<p>Dos fuerzas de 50 N, a \\(45^\\circ\\) y \\(135^\\circ\\).</p>",
+     "checks": [
+      {
+       "p": "Resultante",
+       "o": [
+        "\\(50\\sqrt2\\approx70{,}71\\) N a \\(90^\\circ\\)",
+        "100 N a \\(90^\\circ\\)",
+        "\\(50\\sqrt2\\) N a \\(45^\\circ\\)",
+        "0 N",
+        "\\(70{,}71\\) N a \\(180^\\circ\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(R_x=50\\cos45^\\circ+50\\cos135^\\circ=0\\).",
+      "\\(R_y=2\\cdot50\\sin45^\\circ=50\\sqrt2\\): apunta hacia arriba, \\(90^\\circ\\)."
+     ],
+     "ans": "\\(50\\sqrt2\\) N a \\(90^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "v7",
+     "lvl": 3,
+     "title": "Fuerza equilibrante",
+     "q": "<p>Sobre un cuerpo actúan \\(\\vec F_1=(3,4)\\) N y \\(\\vec F_2=(-5,2)\\) N. ¿Qué fuerza lo deja en equilibrio?</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec F_3\\)",
+       "o": [
+        "\\((2,-6)\\)",
+        "\\((-2,6)\\)",
+        "\\((8,2)\\)",
+        "\\((-8,-2)\\)",
+        "\\((2,6)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec F_1+\\vec F_2=(-2,6)\\).",
+      "Equilibrio: \\(\\vec F_3=-(\\vec F_1+\\vec F_2)=(2,-6)\\)."
+     ],
+     "ans": "\\((2,-6)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "v8",
+     "lvl": 2,
+     "title": "Vector unitario por ángulo",
+     "q": "<p>Vector unitario con dirección \\(210^\\circ\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\hat u\\)",
+       "o": [
+        "\\(\\left(-\\tfrac{\\sqrt3}2,-\\tfrac12\\right)\\)",
+        "\\(\\left(\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
+        "\\(\\left(-\\tfrac12,-\\tfrac{\\sqrt3}2\\right)\\)",
+        "\\(\\left(-\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
+        "\\((-1,-1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\hat u=(\\cos210^\\circ,\\sin210^\\circ)\\); \\(210^\\circ\\) está en el III cuadrante, ambos negativos."
+     ],
+     "ans": "\\(\\left(-\\tfrac{\\sqrt3}2,-\\tfrac12\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {
+  "ea5L": "<svg class=\"plot\" viewBox=\"0 0 317 350\" style=\"max-width:317px\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"42.6\" y1=\"14.0\" x2=\"42.6\" y2=\"324.0\"/><text x=\"42.6\" y=\"339.0\" text-anchor=\"middle\">-4</text>\n<line class=\"gM\" x1=\"101.2\" y1=\"14.0\" x2=\"101.2\" y2=\"324.0\"/><text x=\"101.2\" y=\"339.0\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"159.7\" y1=\"14.0\" x2=\"159.7\" y2=\"324.0\"/><text x=\"159.7\" y=\"339.0\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"218.3\" y1=\"14.0\" x2=\"218.3\" y2=\"324.0\"/><text x=\"218.3\" y=\"339.0\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"276.8\" y1=\"14.0\" x2=\"276.8\" y2=\"324.0\"/><text x=\"276.8\" y=\"339.0\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"299.7\" x2=\"301.1\" y2=\"299.7\"/><text x=\"29.0\" y=\"303.7\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"241.1\" x2=\"301.1\" y2=\"241.1\"/><text x=\"29.0\" y=\"245.1\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"182.6\" x2=\"301.1\" y2=\"182.6\"/><text x=\"29.0\" y=\"186.6\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"124.0\" x2=\"301.1\" y2=\"124.0\"/><text x=\"29.0\" y=\"128.0\" text-anchor=\"end\">4</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"65.5\" x2=\"301.1\" y2=\"65.5\"/><text x=\"29.0\" y=\"69.5\" text-anchor=\"end\">6</text>\n<line class=\"ax\" x1=\"34.0\" y1=\"241.1\" x2=\"301.1\" y2=\"241.1\"/>\n<line class=\"ax\" x1=\"159.7\" y1=\"324.0\" x2=\"159.7\" y2=\"14.0\"/>\n<polyline class=\"curve\" points=\"276.8,241.1 276.8,238.7 276.6,236.2 276.3,233.8 276.0,231.4 275.5,229.0 275.0,226.6 274.3,224.2 273.6,221.9 272.7,219.6 271.7,217.3 270.7,215.1 269.6,212.9 268.3,210.8 267.0,208.7 265.6,206.7 264.1,204.8 262.6,202.9 260.9,201.1 259.2,199.3 257.4,197.6 255.6,196.0 253.7,194.5 251.7,193.1 249.6,191.7 247.5,190.4 245.4,189.2 243.2,188.2 241.0,187.2 238.7,186.3 236.4,185.4 234.0,184.7 231.6,184.1 229.2,183.6 226.8,183.2 224.4,182.9 221.9,182.7 219.5,182.6 217.0,182.6 214.6,182.7 212.2,182.9 209.7,183.2 207.3,183.6 204.9,184.1 202.5,184.7 200.2,185.4 197.9,186.3 195.6,187.2 193.3,188.2 191.1,189.2 189.0,190.4 186.9,191.7 184.9,193.1 182.9,194.5 181.0,196.0 179.1,197.6 177.3,199.3 175.6,201.1 174.0,202.9 172.4,204.8 170.9,206.7 169.5,208.7 168.2,210.8 167.0,212.9 165.8,215.1 164.8,217.3 163.8,219.6 163.0,221.9 162.2,224.2 161.6,226.6 161.0,229.0 160.5,231.4 160.2,233.8 159.9,236.2 159.8,238.7 159.7,241.1 159.8,243.6 159.9,246.0 160.2,248.5 160.5,250.9 161.0,253.3 161.6,255.7 162.2,258.0 163.0,260.4 163.8,262.7 164.8,264.9 165.8,267.2 167.0,269.3 168.2,271.5 169.5,273.5 170.9,275.5 172.4,277.5 174.0,279.4 175.6,281.2 177.3,283.0 179.1,284.6 181.0,286.2 182.9,287.8 184.9,289.2 186.9,290.6 189.0,291.8 191.1,293.0 193.3,294.1 195.6,295.1 197.9,296.0 200.2,296.8 202.5,297.5 204.9,298.1 207.3,298.6 209.7,299.0 212.2,299.3 214.6,299.5 217.0,299.7 219.5,299.7 221.9,299.5 224.4,299.3 226.8,299.0 229.2,298.6 231.6,298.1 234.0,297.5 236.4,296.8 238.7,296.0 241.0,295.1 243.2,294.1 245.4,293.0 247.5,291.8 249.6,290.6 251.7,289.2 253.7,287.8 255.6,286.2 257.4,284.6 259.2,283.0 260.9,281.2 262.6,279.4 264.1,277.5 265.6,275.5 267.0,273.5 268.3,271.5 269.6,269.3 270.7,267.2 271.7,264.9 272.7,262.7 273.6,260.4 274.3,258.0 275.0,255.7 275.5,253.3 276.0,250.9 276.3,248.5 276.6,246.0 276.8,243.6 276.8,241.1 276.8,238.7 276.6,236.2 276.3,233.8 276.0,231.4 275.5,229.0 275.0,226.6 274.3,224.2 273.6,221.9 272.7,219.6 271.7,217.3 270.7,215.1 269.6,212.9 268.3,210.8 267.0,208.7 265.6,206.7 264.1,204.8 262.6,202.9 260.9,201.1 259.2,199.3 257.4,197.6 255.6,196.0 253.7,194.5 251.7,193.1 249.6,191.7 247.5,190.4 245.4,189.2 243.2,188.2 241.0,187.2 238.7,186.3 236.4,185.4 234.0,184.7 231.6,184.1 229.2,183.6 226.8,183.2 224.4,182.9 221.9,182.7 219.5,182.6 217.0,182.6 214.6,182.7 212.2,182.9 209.7,183.2 207.3,183.6 204.9,184.1 202.5,184.7 200.2,185.4 197.9,186.3 195.6,187.2 193.3,188.2 191.1,189.2 189.0,190.4 186.9,191.7 184.9,193.1 182.9,194.5 181.0,196.0 179.1,197.6 177.3,199.3 175.6,201.1 174.0,202.9 172.4,204.8 170.9,206.7 169.5,208.7 168.2,210.8 167.0,212.9 165.8,215.1 164.8,217.3 163.8,219.6 163.0,221.9 162.2,224.2 161.6,226.6 161.0,229.0 160.5,231.4 160.2,233.8 159.9,236.2 159.8,238.7 159.7,241.1 159.8,243.6 159.9,246.0 160.2,248.5 160.5,250.9 161.0,253.3 161.6,255.7 162.2,258.0 163.0,260.4 163.8,262.7 164.8,264.9 165.8,267.2 167.0,269.3 168.2,271.5 169.5,273.5 170.9,275.5 172.4,277.5 174.0,279.4 175.6,281.2 177.3,283.0 179.1,284.6 181.0,286.2 182.9,287.8 184.9,289.2 186.9,290.6 189.0,291.8 191.1,293.0 193.3,294.1 195.6,295.1 197.9,296.0 200.2,296.8 202.5,297.5 204.9,298.1 207.3,298.6 209.7,299.0 212.2,299.3 214.6,299.5 217.0,299.7 219.5,299.7 221.9,299.5 224.4,299.3 226.8,299.0 229.2,298.6 231.6,298.1 234.0,297.5 236.4,296.8 238.7,296.0 241.0,295.1 243.2,294.1 245.4,293.0 247.5,291.8 249.6,290.6 251.7,289.2 253.7,287.8 255.6,286.2 257.4,284.6 259.2,283.0 260.9,281.2 262.6,279.4 264.1,277.5 265.6,275.5 267.0,273.5 268.3,271.5 269.6,269.3 270.7,267.2 271.7,264.9 272.7,262.7 273.6,260.4 274.3,258.0 275.0,255.7 275.5,253.3 276.0,250.9 276.3,248.5 276.6,246.0 276.8,243.6 276.8,241.1\"/>\n<polyline class=\"curve2\" points=\"159.7,241.1 164.0,241.0 168.2,240.8 172.4,240.3 176.6,239.7 180.8,238.9 184.9,237.9 189.0,236.8 193.1,235.5 197.1,234.0 201.0,232.4 204.8,230.6 208.6,228.6 212.3,226.5 215.8,224.2 219.3,221.8 222.7,219.2 226.0,216.5 229.1,213.6 232.2,210.7 235.1,207.6 237.9,204.4 240.5,201.0 243.0,197.6 245.3,194.1 247.5,190.4 249.6,186.7 251.5,182.9 253.2,179.0 254.8,175.1 256.2,171.1 257.4,167.0 258.4,162.9 259.3,158.7 260.0,154.5 260.6,150.3 260.9,146.1 261.1,141.9 261.1,137.6 260.9,133.4 260.6,129.1 260.0,124.9 259.3,120.7 258.4,116.6 257.4,112.5 256.2,108.4 254.8,104.4 253.2,100.4 251.5,96.6 249.6,92.8 247.5,89.0 245.3,85.4 243.0,81.9 240.5,78.4 237.9,75.1 235.1,71.9 232.2,68.8 229.1,65.8 226.0,63.0 222.7,60.3 219.3,57.7 215.8,55.3 212.3,53.0 208.6,50.9 204.8,48.9 201.0,47.1 197.1,45.5 193.1,44.0 189.0,42.7 184.9,41.5 180.8,40.6 176.6,39.8 172.4,39.1 168.2,38.7 164.0,38.4 159.7,38.3 155.5,38.4 151.2,38.7 147.0,39.1 142.8,39.8 138.6,40.6 134.5,41.5 130.4,42.7 126.4,44.0 122.4,45.5 118.5,47.1 114.6,48.9 110.9,50.9 107.2,53.0 103.6,55.3 100.1,57.7 96.7,60.3 93.5,63.0 90.3,65.8 87.3,68.8 84.4,71.9 81.6,75.1 79.0,78.4 76.5,81.9 74.1,85.4 71.9,89.0 69.9,92.8 68.0,96.6 66.3,100.4 64.7,104.4 63.3,108.4 62.1,112.5 61.0,116.6 60.1,120.7 59.4,124.9 58.9,129.1 58.5,133.4 58.4,137.6 58.4,141.9 58.5,146.1 58.9,150.3 59.4,154.5 60.1,158.7 61.0,162.9 62.1,167.0 63.3,171.1 64.7,175.1 66.3,179.0 68.0,182.9 69.9,186.7 71.9,190.4 74.1,194.1 76.5,197.6 79.0,201.0 81.6,204.4 84.4,207.6 87.3,210.7 90.3,213.6 93.5,216.5 96.7,219.2 100.1,221.8 103.6,224.2 107.2,226.5 110.9,228.6 114.6,230.6 118.5,232.4 122.4,234.0 126.4,235.5 130.4,236.8 134.5,237.9 138.6,238.9 142.8,239.7 147.0,240.3 151.2,240.8 155.5,241.0 159.7,241.1 164.0,241.0 168.2,240.8 172.4,240.3 176.6,239.7 180.8,238.9 184.9,237.9 189.0,236.8 193.1,235.5 197.1,234.0 201.0,232.4 204.8,230.6 208.6,228.6 212.3,226.5 215.8,224.2 219.3,221.8 222.7,219.2 226.0,216.5 229.1,213.6 232.2,210.7 235.1,207.6 237.9,204.4 240.5,201.0 243.0,197.6 245.3,194.1 247.5,190.4 249.6,186.7 251.5,182.9 253.2,179.0 254.8,175.1 256.2,171.1 257.4,167.0 258.4,162.9 259.3,158.7 260.0,154.5 260.6,150.3 260.9,146.1 261.1,141.9 261.1,137.6 260.9,133.4 260.6,129.1 260.0,124.9 259.3,120.7 258.4,116.6 257.4,112.5 256.2,108.4 254.8,104.4 253.2,100.4 251.5,96.6 249.6,92.8 247.5,89.0 245.3,85.4 243.0,81.9 240.5,78.4 237.9,75.1 235.1,71.9 232.2,68.8 229.1,65.8 226.0,63.0 222.7,60.3 219.3,57.7 215.8,55.3 212.3,53.0 208.6,50.9 204.8,48.9 201.0,47.1 197.1,45.5 193.1,44.0 189.0,42.7 184.9,41.5 180.8,40.6 176.6,39.8 172.4,39.1 168.2,38.7 164.0,38.4 159.7,38.3 155.5,38.4 151.2,38.7 147.0,39.1 142.8,39.8 138.6,40.6 134.5,41.5 130.4,42.7 126.4,44.0 122.4,45.5 118.5,47.1 114.6,48.9 110.9,50.9 107.2,53.0 103.6,55.3 100.1,57.7 96.7,60.3 93.5,63.0 90.3,65.8 87.3,68.8 84.4,71.9 81.6,75.1 79.0,78.4 76.5,81.9 74.1,85.4 71.9,89.0 69.9,92.8 68.0,96.6 66.3,100.4 64.7,104.4 63.3,108.4 62.1,112.5 61.0,116.6 60.1,120.7 59.4,124.9 58.9,129.1 58.5,133.4 58.4,137.6 58.4,141.9 58.5,146.1 58.9,150.3 59.4,154.5 60.1,158.7 61.0,162.9 62.1,167.0 63.3,171.1 64.7,175.1 66.3,179.0 68.0,182.9 69.9,186.7 71.9,190.4 74.1,194.1 76.5,197.6 79.0,201.0 81.6,204.4 84.4,207.6 87.3,210.7 90.3,213.6 93.5,216.5 96.7,219.2 100.1,221.8 103.6,224.2 107.2,226.5 110.9,228.6 114.6,230.6 118.5,232.4 122.4,234.0 126.4,235.5 130.4,236.8 134.5,237.9 138.6,238.9 142.8,239.7 147.0,240.3 151.2,240.8 155.5,241.0 159.7,241.1\"/>\n<circle class=\"ip\" cx=\"159.7\" cy=\"241.1\" r=\"4.5\"/>\n<text class=\"lab\" x=\"166.7\" y=\"234.1\">O</text>\n<circle class=\"ip\" cx=\"247.5\" cy=\"190.4\" r=\"4.5\"/>\n<text class=\"lab\" x=\"254.5\" y=\"183.4\">P</text>\n</svg>",
+  "ea5M": "<svg class=\"plot\" viewBox=\"0 0 360 307\" style=\"max-width:360px\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"49.3\" y1=\"13.9\" x2=\"49.3\" y2=\"281.0\"/><text x=\"49.3\" y=\"296.0\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"116.9\" y1=\"13.9\" x2=\"116.9\" y2=\"281.0\"/><text x=\"116.9\" y=\"296.0\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"184.5\" y1=\"13.9\" x2=\"184.5\" y2=\"281.0\"/><text x=\"184.5\" y=\"296.0\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"252.1\" y1=\"13.9\" x2=\"252.1\" y2=\"281.0\"/><text x=\"252.1\" y=\"296.0\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"319.7\" y1=\"13.9\" x2=\"319.7\" y2=\"281.0\"/><text x=\"319.7\" y=\"296.0\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"222.9\" x2=\"344.0\" y2=\"222.9\"/><text x=\"29.0\" y=\"226.9\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/><text x=\"29.0\" y=\"159.3\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"87.7\" x2=\"344.0\" y2=\"87.7\"/><text x=\"29.0\" y=\"91.7\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"20.1\" x2=\"344.0\" y2=\"20.1\"/><text x=\"29.0\" y=\"24.1\" text-anchor=\"end\">4</text>\n<line class=\"ax\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/>\n<line class=\"ax\" x1=\"116.9\" y1=\"281.0\" x2=\"116.9\" y2=\"13.9\"/>\n<polyline class=\"curve\" points=\"319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3\"/>\n<polyline class=\"curve2\" points=\"116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3\"/>\n<circle class=\"ip\" cx=\"116.9\" cy=\"155.3\" r=\"4.5\"/>\n<text class=\"lab\" x=\"123.9\" y=\"148.3\">O</text>\n<circle class=\"ip\" cx=\"167.6\" cy=\"67.5\" r=\"4.5\"/>\n<text class=\"lab\" x=\"174.6\" y=\"60.5\">P</text>\n</svg>",
+  "ea5J": "<svg class=\"plot\" viewBox=\"0 0 360 307\" style=\"max-width:360px\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"66.2\" y1=\"13.9\" x2=\"66.2\" y2=\"281.0\"/><text x=\"66.2\" y=\"296.0\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"116.9\" y1=\"13.9\" x2=\"116.9\" y2=\"281.0\"/><text x=\"116.9\" y=\"296.0\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"167.6\" y1=\"13.9\" x2=\"167.6\" y2=\"281.0\"/><text x=\"167.6\" y=\"296.0\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"218.3\" y1=\"13.9\" x2=\"218.3\" y2=\"281.0\"/><text x=\"218.3\" y=\"296.0\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"269.0\" y1=\"13.9\" x2=\"269.0\" y2=\"281.0\"/><text x=\"269.0\" y=\"296.0\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"319.7\" y1=\"13.9\" x2=\"319.7\" y2=\"281.0\"/><text x=\"319.7\" y=\"296.0\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"256.7\" x2=\"344.0\" y2=\"256.7\"/><text x=\"29.0\" y=\"260.7\" text-anchor=\"end\">-4</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"206.0\" x2=\"344.0\" y2=\"206.0\"/><text x=\"29.0\" y=\"210.0\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/><text x=\"29.0\" y=\"159.3\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"104.6\" x2=\"344.0\" y2=\"104.6\"/><text x=\"29.0\" y=\"108.6\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"53.9\" x2=\"344.0\" y2=\"53.9\"/><text x=\"29.0\" y=\"57.9\" text-anchor=\"end\">4</text>\n<line class=\"ax\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/>\n<line class=\"ax\" x1=\"116.9\" y1=\"281.0\" x2=\"116.9\" y2=\"13.9\"/>\n<polyline class=\"curve\" points=\"319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3\"/>\n<polyline class=\"curve2\" points=\"116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3\"/>\n<circle class=\"ip\" cx=\"116.9\" cy=\"155.3\" r=\"4.5\"/>\n<text class=\"lab\" x=\"123.9\" y=\"148.3\">O</text>\n<circle class=\"ip\" cx=\"167.6\" cy=\"67.5\" r=\"4.5\"/>\n<text class=\"lab\" x=\"174.6\" y=\"60.5\">P</text>\n</svg>",
+  "ea5V": "<svg class=\"plot\" viewBox=\"0 0 360 307\" style=\"max-width:360px\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"49.3\" y1=\"13.9\" x2=\"49.3\" y2=\"281.0\"/><text x=\"49.3\" y=\"296.0\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"116.9\" y1=\"13.9\" x2=\"116.9\" y2=\"281.0\"/><text x=\"116.9\" y=\"296.0\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"184.5\" y1=\"13.9\" x2=\"184.5\" y2=\"281.0\"/><text x=\"184.5\" y=\"296.0\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"252.1\" y1=\"13.9\" x2=\"252.1\" y2=\"281.0\"/><text x=\"252.1\" y=\"296.0\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"319.7\" y1=\"13.9\" x2=\"319.7\" y2=\"281.0\"/><text x=\"319.7\" y=\"296.0\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"222.9\" x2=\"344.0\" y2=\"222.9\"/><text x=\"29.0\" y=\"226.9\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/><text x=\"29.0\" y=\"159.3\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"87.7\" x2=\"344.0\" y2=\"87.7\"/><text x=\"29.0\" y=\"91.7\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"20.1\" x2=\"344.0\" y2=\"20.1\"/><text x=\"29.0\" y=\"24.1\" text-anchor=\"end\">4</text>\n<line class=\"ax\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/>\n<line class=\"ax\" x1=\"116.9\" y1=\"281.0\" x2=\"116.9\" y2=\"13.9\"/>\n<polyline class=\"curve\" points=\"319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3\"/>\n<polyline class=\"curve2\" points=\"116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3\"/>\n<circle class=\"ip\" cx=\"116.9\" cy=\"155.3\" r=\"4.5\"/>\n<text class=\"lab\" x=\"123.9\" y=\"148.3\">O</text>\n<circle class=\"ip\" cx=\"167.6\" cy=\"67.5\" r=\"4.5\"/>\n<text class=\"lab\" x=\"174.6\" y=\"60.5\">P</text>\n</svg>",
+  "ea5S": "<svg class=\"plot\" viewBox=\"0 0 360 307\" style=\"max-width:360px\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"58.3\" y1=\"13.9\" x2=\"58.3\" y2=\"281.0\"/><text x=\"58.3\" y=\"296.0\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"116.9\" y1=\"13.9\" x2=\"116.9\" y2=\"281.0\"/><text x=\"116.9\" y=\"296.0\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"175.4\" y1=\"13.9\" x2=\"175.4\" y2=\"281.0\"/><text x=\"175.4\" y=\"296.0\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"234.0\" y1=\"13.9\" x2=\"234.0\" y2=\"281.0\"/><text x=\"234.0\" y=\"296.0\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"292.5\" y1=\"13.9\" x2=\"292.5\" y2=\"281.0\"/><text x=\"292.5\" y=\"296.0\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"272.4\" x2=\"344.0\" y2=\"272.4\"/><text x=\"29.0\" y=\"276.4\" text-anchor=\"end\">-4</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"213.8\" x2=\"344.0\" y2=\"213.8\"/><text x=\"29.0\" y=\"217.8\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/><text x=\"29.0\" y=\"159.3\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"96.7\" x2=\"344.0\" y2=\"96.7\"/><text x=\"29.0\" y=\"100.7\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"34.0\" y1=\"38.2\" x2=\"344.0\" y2=\"38.2\"/><text x=\"29.0\" y=\"42.2\" text-anchor=\"end\">4</text>\n<line class=\"ax\" x1=\"34.0\" y1=\"155.3\" x2=\"344.0\" y2=\"155.3\"/>\n<line class=\"ax\" x1=\"116.9\" y1=\"281.0\" x2=\"116.9\" y2=\"13.9\"/>\n<polyline class=\"curve\" points=\"319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3 319.6,151.0 319.3,146.8 318.9,142.6 318.2,138.4 317.4,134.2 316.5,130.1 315.3,126.0 314.0,121.9 312.5,117.9 310.9,114.0 309.1,110.2 307.1,106.4 305.0,102.7 302.7,99.2 300.3,95.7 297.7,92.3 295.0,89.0 292.2,85.9 289.2,82.8 286.1,79.9 282.9,77.1 279.6,74.5 276.1,72.0 272.6,69.7 269.0,67.5 265.2,65.4 261.4,63.5 257.6,61.8 253.6,60.2 249.6,58.8 245.5,57.6 241.4,56.6 237.3,55.7 233.1,55.0 228.9,54.4 224.6,54.1 220.4,53.9 216.1,53.9 211.9,54.1 207.7,54.4 203.5,55.0 199.3,55.7 195.1,56.6 191.0,57.6 186.9,58.8 182.9,60.2 179.0,61.8 175.1,63.5 171.3,65.4 167.6,67.5 163.9,69.7 160.4,72.0 157.0,74.5 153.6,77.1 150.4,79.9 147.3,82.8 144.4,85.9 141.5,89.0 138.8,92.3 136.2,95.7 133.8,99.2 131.5,102.7 129.4,106.4 127.4,110.2 125.6,114.0 124.0,117.9 122.5,121.9 121.2,126.0 120.1,130.1 119.1,134.2 118.3,138.4 117.7,142.6 117.2,146.8 117.0,151.0 116.9,155.3 117.0,159.5 117.2,163.8 117.7,168.0 118.3,172.2 119.1,176.4 120.1,180.5 121.2,184.6 122.5,188.6 124.0,192.6 125.6,196.5 127.4,200.4 129.4,204.1 131.5,207.8 133.8,211.4 136.2,214.9 138.8,218.3 141.5,221.5 144.4,224.7 147.3,227.7 150.4,230.6 153.6,233.4 157.0,236.0 160.4,238.5 163.9,240.9 167.6,243.1 171.3,245.1 175.1,247.0 179.0,248.7 182.9,250.3 186.9,251.7 191.0,252.9 195.1,254.0 199.3,254.9 203.5,255.6 207.7,256.1 211.9,256.5 216.1,256.6 220.4,256.6 224.6,256.5 228.9,256.1 233.1,255.6 237.3,254.9 241.4,254.0 245.5,252.9 249.6,251.7 253.6,250.3 257.6,248.7 261.4,247.0 265.2,245.1 269.0,243.1 272.6,240.9 276.1,238.5 279.6,236.0 282.9,233.4 286.1,230.6 289.2,227.7 292.2,224.7 295.0,221.5 297.7,218.3 300.3,214.9 302.7,211.4 305.0,207.8 307.1,204.1 309.1,200.4 310.9,196.5 312.5,192.6 314.0,188.6 315.3,184.6 316.5,180.5 317.4,176.4 318.2,172.2 318.9,168.0 319.3,163.8 319.6,159.5 319.7,155.3\"/>\n<polyline class=\"curve2\" points=\"116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3 119.3,155.2 121.8,155.1 124.2,154.8 126.6,154.5 129.0,154.0 131.4,153.4 133.8,152.8 136.1,152.0 138.4,151.2 140.7,150.2 142.9,149.2 145.1,148.0 147.2,146.8 149.3,145.5 151.3,144.1 153.2,142.6 155.1,141.0 156.9,139.4 158.7,137.7 160.4,135.9 162.0,134.0 163.5,132.1 164.9,130.1 166.3,128.1 167.6,126.0 168.8,123.9 169.8,121.7 170.8,119.4 171.7,117.1 172.6,114.8 173.3,112.5 173.9,110.1 174.4,107.7 174.8,105.3 175.1,102.8 175.3,100.4 175.4,98.0 175.4,95.5 175.3,93.1 175.1,90.6 174.8,88.2 174.4,85.8 173.9,83.4 173.3,81.0 172.6,78.6 171.7,76.3 170.8,74.0 169.8,71.8 168.8,69.6 167.6,67.5 166.3,65.4 164.9,63.3 163.5,61.3 162.0,59.4 160.4,57.6 158.7,55.8 156.9,54.1 155.1,52.4 153.2,50.9 151.3,49.4 149.3,48.0 147.2,46.7 145.1,45.4 142.9,44.3 140.7,43.3 138.4,42.3 136.1,41.4 133.8,40.7 131.4,40.0 129.0,39.5 126.6,39.0 124.2,38.7 121.8,38.4 119.3,38.2 116.9,38.2 114.4,38.2 112.0,38.4 109.5,38.7 107.1,39.0 104.7,39.5 102.3,40.0 100.0,40.7 97.6,41.4 95.3,42.3 93.1,43.3 90.8,44.3 88.7,45.4 86.5,46.7 84.5,48.0 82.5,49.4 80.5,50.9 78.6,52.4 76.8,54.1 75.0,55.8 73.4,57.6 71.8,59.4 70.2,61.3 68.8,63.3 67.4,65.4 66.2,67.5 65.0,69.6 63.9,71.8 62.9,74.0 62.0,76.3 61.2,78.6 60.5,81.0 59.9,83.4 59.4,85.8 59.0,88.2 58.7,90.6 58.5,93.1 58.3,95.5 58.3,98.0 58.5,100.4 58.7,102.8 59.0,105.3 59.4,107.7 59.9,110.1 60.5,112.5 61.2,114.8 62.0,117.1 62.9,119.4 63.9,121.7 65.0,123.9 66.2,126.0 67.4,128.1 68.8,130.1 70.2,132.1 71.8,134.0 73.4,135.9 75.0,137.7 76.8,139.4 78.6,141.0 80.5,142.6 82.5,144.1 84.5,145.5 86.5,146.8 88.7,148.0 90.8,149.2 93.1,150.2 95.3,151.2 97.6,152.0 100.0,152.8 102.3,153.4 104.7,154.0 107.1,154.5 109.5,154.8 112.0,155.1 114.4,155.2 116.9,155.3\"/>\n<circle class=\"ip\" cx=\"116.9\" cy=\"155.3\" r=\"4.5\"/>\n<text class=\"lab\" x=\"123.9\" y=\"148.3\">O</text>\n<circle class=\"ip\" cx=\"167.6\" cy=\"67.5\" r=\"4.5\"/>\n<text class=\"lab\" x=\"174.6\" y=\"60.5\">P</text>\n</svg>"
+ },
+ "concepts": {
+  "circ": {
+   "n": "Circunferencia",
+   "f": "\\((x-h)^2+(y-k)^2=r^2\\)",
+   "x": "Completa cuadrados en x y en y para leer el centro (h, k) y el radio r.",
+   "home": "conic"
+  },
+  "parab": {
+   "n": "Parábola",
+   "f": "\\((x-h)^2=4p(y-k)\\)",
+   "x": "Vértice (h, k). |p| es la distancia del vértice al foco y a la directriz. p > 0 abre hacia arriba (o a la derecha si la variable al cuadrado es y).",
+   "home": "conic"
+  },
+  "polrect": {
+   "n": "Polar ↔ rectangular",
+   "f": "\\(x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ r^2=x^2+y^2\\)",
+   "x": "Para pasar r = a cos θ a cartesianas, multiplica por r: r² = a·r cos θ ⇒ x² + y² = ax.",
+   "home": "polar"
+  },
+  "polint": {
+   "n": "Intersección de curvas polares",
+   "f": "\\(r_1(\\theta)=r_2(\\theta)\\)",
+   "x": "Iguala y resuelve en [0, 2π). Revisa aparte el polo: cada curva puede pasar por él con distinto θ.",
+   "home": "polar"
+  },
+  "simpol": {
+   "n": "Simetrías polares",
+   "f": "Eje polar: \\(\\theta\\to-\\theta\\) · eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\) · polo: \\(r\\to-r\\) o \\(\\theta\\to\\theta+\\pi\\)",
+   "x": "Si al reemplazar obtienes la misma ecuación, hay simetría. Con coseno suele haber simetría respecto al eje polar; con seno, respecto al eje vertical.",
+   "home": "cardio"
+  },
+  "compv": {
+   "n": "Componentes de un vector",
+   "f": "\\(\\vec F=|F|(\\cos\\theta,\\ \\sin\\theta)\\)",
+   "x": "θ se mide desde el eje x positivo, en sentido antihorario. El signo de cada componente sale solo del cos y el sen.",
+   "home": "vect1"
+  },
+  "resul": {
+   "n": "Resultante: magnitud y dirección",
+   "f": "\\(|R|=\\sqrt{R_x^2+R_y^2},\\ \\tan\\alpha=\\tfrac{R_y}{R_x}\\)",
+   "x": "Suma componente a componente. Ojo con el cuadrante: si Rx < 0, suma 180° al ángulo que da la calculadora.",
+   "home": "vect1"
+  }
+ },
+ "simEx": [
+  {
+   "id": "e5L1",
+   "lvl": 3,
+   "title": "EA5 lunes · P1",
+   "q": "<p>Curvas polares \\(r_1=4\\cos\\theta\\) y \\(r_2=4\\sqrt3\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "checks": [
+    {
+     "p": "a) Cartesianas",
+     "o": [
+      "\\((x-2)^2+y^2=4\\) y \\(x^2+(y-2\\sqrt3)^2=12\\)",
+      "\\((x-4)^2+y^2=16\\) y \\(x^2+(y-4\\sqrt3)^2=48\\)",
+      "\\(x^2+(y-2)^2=4\\) y \\((x-2\\sqrt3)^2+y^2=12\\)",
+      "\\((x-2)^2+y^2=4\\) (circunferencia) y \\(y=4\\sqrt3\\) (recta)",
+      "\\((x+2)^2+y^2=4\\) y \\(x^2+(y+2\\sqrt3)^2=12\\)"
+     ]
+    },
+    {
+     "p": "b) Polares",
+     "o": [
+      "El polo y \\(\\left(2\\sqrt3,\\ \\tfrac\\pi6\\right)\\)",
+      "Solo \\(\\left(2\\sqrt3,\\ \\tfrac\\pi6\\right)\\)",
+      "El polo y \\(\\left(2\\sqrt3,\\ \\tfrac\\pi4\\right)\\)",
+      "El polo y \\(\\left(6{,}93,\\ \\tfrac\\pi6\\right)\\)",
+      "No se cortan"
+     ]
+    },
+    {
+     "p": "c) Rectangulares",
+     "o": [
+      "\\((0,0)\\) y \\(\\left(3,\\sqrt3\\right)\\)",
+      "\\((0,0)\\) y \\(\\left(\\sqrt3,3\\right)\\)",
+      "Solo \\(\\left(3,\\sqrt3\\right)\\)",
+      "\\((0,0)\\) y \\((2\\sqrt3,\\tfrac\\pi6)\\)",
+      "\\((0,0)\\) y \\(\\left(-3,\\sqrt3\\right)\\)"
+     ]
+    },
+    {
+     "p": "d) Distancia al polo",
+     "o": [
+      "\\(2\\sqrt3\\)",
+      "\\(6{,}93\\)",
+      "\\(12\\)",
+      "\\(1{,}732\\)",
+      "\\(4{,}46\\)"
+     ]
+    },
+    {
+     "p": "e) La gráfica muestra",
+     "o": [
+      "Dos circunferencias que pasan por el origen, una centrada en el eje \\(x\\) y otra en el eje \\(y\\), cortándose en O y P",
+      "Dos circunferencias concéntricas",
+      "Una circunferencia y una cardioide",
+      "Dos circunferencias que solo se tocan en O",
+      "Dos rectas que se cortan en P"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(r_1\\): \\(r^2=4\\,r\\cos\\theta\\Rightarrow x^2+y^2=4x\\Rightarrow\\left(x-2\\right)^2+y^2=4\\). \\(r_2\\): \\(x^2+y^2=4\\sqrt3y\\Rightarrow x^2+\\left(y-2\\sqrt3\\right)^2=12\\). Centros \\((2,0)\\) y \\((0,2\\sqrt3)\\).",
+    "b) \\(4\\cos\\theta=4\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\tfrac{\\sqrt3}3\\Rightarrow\\theta=\\tfrac\\pi6\\), \\(r=4\\cos\\tfrac\\pi6=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=2\\sqrt3\\cos\\tfrac\\pi6\\), \\(y=2\\sqrt3\\sin\\tfrac\\pi6\\): \\(P=\\left(3,\\sqrt3\\right)\\); y el origen \\((0,0)\\).",
+    "d) La distancia de P al polo es \\(|r|=2\\sqrt3\\approx3{,}46\\).",
+    "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
+   ],
+   "ans": "Polo y \\(\\left(3,\\sqrt3\\right)\\); distancia \\(2\\sqrt3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": "ea5L",
+   "tags": [
+    [
+     "polrect",
+     "circ"
+    ],
+    [
+     "polint"
+    ],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5L2",
+   "lvl": 2,
+   "title": "EA5 lunes · P2",
+   "q": "<p>(4 pts) Determina las simetrías de \\(r=2+2\\cos\\theta\\) respecto al eje polar, al eje \\(\\theta=\\frac\\pi2\\) y al polo.</p>",
+   "checks": [
+    {
+     "p": "Eje polar",
+     "o": [
+      "Sí",
+      "No",
+      "Solo para \\(\\theta\\in[0,\\pi]\\)",
+      "Solo si \\(r\\gt0\\)",
+      "No se puede determinar"
+     ]
+    },
+    {
+     "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(\\cos\\) es par",
+      "Sí, porque pasa por el polo",
+      "Solo en el polo"
+     ]
+    },
+    {
+     "p": "Polo",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(r=0\\) en algún ángulo",
+      "Solo si \\(\\theta=\\pi\\)",
+      "Sí, porque es una cardioide"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\theta\\to-\\theta\\): \\(\\cos(-\\theta)=\\cos\\theta\\), la ecuación no cambia: simétrica respecto al eje polar.",
+    "\\(\\theta\\to\\pi-\\theta\\): cambia el signo del coseno; la ecuación cambia. Contraejemplo: \\((4,0)\\) está en la curva, pero \\((4,\\pi)\\) no, porque \\(r(\\pi)=0\\).",
+    "\\(\\theta\\to\\theta+\\pi\\) y \\(r\\to-r\\) tampoco dan la misma ecuación: no es simétrica respecto al polo. Es una cardioide horizontal."
+   ],
+   "ans": "Solo respecto al eje polar",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "simpol"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5L3",
+   "lvl": 2,
+   "title": "EA5 lunes · P3",
+   "q": "<p>(6 pts) Un brazo robótico recibe dos fuerzas: \\(\\vec F_1\\) de 50 N a \\(30^\\circ\\) y \\(\\vec F_2\\) de 70 N a \\(135^\\circ\\) (desde el eje horizontal positivo).</p><p>a) (3 pts) Componentes de cada uno. b) (3 pts) Resultante, magnitud y dirección.</p>",
+   "checks": [
+    {
+     "p": "a) Componentes",
+     "o": [
+      "\\(\\vec F_1\\approx(43{,}3;\\ 25)\\), \\(\\vec F_2\\approx(-49{,}5;\\ 49{,}5)\\)",
+      "\\(\\vec F_1\\approx(25;\\ 43{,}3)\\), \\(\\vec F_2\\approx(49{,}5;\\ -49{,}5)\\)",
+      "\\(\\vec F_1\\approx(43{,}3;\\ 25)\\), \\(\\vec F_2\\approx(49{,}5;\\ 49{,}5)\\)",
+      "\\(\\vec F_1=(50;\\ 30)\\), \\(\\vec F_2=(70;\\ 135)\\)",
+      "\\(\\vec F_1\\approx(43{,}3;\\ 25)\\), \\(\\vec F_2\\approx(-49{,}5;\\ -49{,}5)\\)"
+     ]
+    },
+    {
+     "p": "b) Resultante",
+     "o": [
+      "\\(\\approx(-6{,}2;\\ 74{,}5)\\), \\(74{,}75\\) N a \\(94{,}75^\\circ\\)",
+      "\\(\\approx(-6{,}2;\\ 74{,}5)\\), \\(74{,}75\\) N a \\(-85{,}25^\\circ\\)",
+      "\\(\\approx(-6{,}2;\\ 74{,}5)\\), \\(120\\) N a \\(94{,}75^\\circ\\)",
+      "\\(\\approx(74{,}5;\\ -6{,}2)\\), \\(74{,}75\\) N a \\(355{,}25^\\circ\\)",
+      "\\(\\approx(-6{,}2;\\ 74{,}5)\\), \\(74{,}75\\) N a \\(82{,}5^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec F_1=50(\\cos30^\\circ,\\sin30^\\circ)\\approx(43{,}3;\\ 25)\\); \\(\\vec F_2=70(\\cos135^\\circ,\\sin135^\\circ)\\approx(-49{,}5;\\ 49{,}5)\\).",
+    "\\(\\vec R\\approx(-6{,}2;\\ 74{,}5)\\).",
+    "\\(|\\vec R|=\\sqrt{(-6{,}2)^2+(74{,}5)^2}\\approx74{,}75\\) N. \\(\\arctan\\frac{74{,}5}{-6{,}2}\\approx-85{,}25^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(94{,}75^\\circ\\)."
+   ],
+   "ans": "\\(74{,}75\\) N a \\(94{,}75^\\circ\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e5M1",
+   "lvl": 3,
+   "title": "EA5 miércoles · P1",
+   "q": "<p>Curvas polares \\(r_1=6\\cos\\theta\\) y \\(r_2=2\\sqrt3\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "checks": [
+    {
+     "p": "a) Cartesianas",
+     "o": [
+      "\\((x-3)^2+y^2=9\\) y \\(x^2+(y-\\sqrt3)^2=3\\)",
+      "\\((x-6)^2+y^2=36\\) y \\(x^2+(y-2\\sqrt3)^2=12\\)",
+      "\\(x^2+(y-3)^2=9\\) y \\((x-\\sqrt3)^2+y^2=3\\)",
+      "\\((x-3)^2+y^2=9\\) (circunferencia) y \\(y=2\\sqrt3\\) (recta)",
+      "\\((x+3)^2+y^2=9\\) y \\(x^2+(y+\\sqrt3)^2=3\\)"
+     ]
+    },
+    {
+     "p": "b) Polares",
+     "o": [
+      "El polo y \\(\\left(3,\\ \\tfrac\\pi3\\right)\\)",
+      "Solo \\(\\left(3,\\ \\tfrac\\pi3\\right)\\)",
+      "El polo y \\(\\left(3,\\ \\tfrac\\pi4\\right)\\)",
+      "El polo y \\(\\left(6,\\ \\tfrac\\pi3\\right)\\)",
+      "No se cortan"
+     ]
+    },
+    {
+     "p": "c) Rectangulares",
+     "o": [
+      "\\((0,0)\\) y \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
+      "\\((0,0)\\) y \\(\\left(\\tfrac{3\\sqrt3}2,\\tfrac32\\right)\\)",
+      "Solo \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
+      "\\((0,0)\\) y \\((3,\\tfrac\\pi3)\\)",
+      "\\((0,0)\\) y \\(\\left(-\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)"
+     ]
+    },
+    {
+     "p": "d) Distancia al polo",
+     "o": [
+      "\\(3\\)",
+      "\\(6\\)",
+      "\\(9\\)",
+      "\\(1{,}5\\)",
+      "\\(4\\)"
+     ]
+    },
+    {
+     "p": "e) La gráfica muestra",
+     "o": [
+      "Dos circunferencias que pasan por el origen, una centrada en el eje \\(x\\) y otra en el eje \\(y\\), cortándose en O y P",
+      "Dos circunferencias concéntricas",
+      "Una circunferencia y una cardioide",
+      "Dos circunferencias que solo se tocan en O",
+      "Dos rectas que se cortan en P"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\Rightarrow x^2+y^2=6x\\Rightarrow\\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\Rightarrow x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
+    "b) \\(6\\cos\\theta=2\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
+    "d) La distancia de P al polo es \\(|r|=3\\approx3\\).",
+    "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
+   ],
+   "ans": "Polo y \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); distancia \\(3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": "ea5M",
+   "tags": [
+    [
+     "polrect",
+     "circ"
+    ],
+    [
+     "polint"
+    ],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5M2",
+   "lvl": 2,
+   "title": "EA5 miércoles · P2",
+   "q": "<p>(4 pts) Determina las simetrías de \\(r=3-3\\cos\\theta\\) respecto al eje polar, al eje \\(\\theta=\\frac\\pi2\\) y al polo.</p>",
+   "checks": [
+    {
+     "p": "Eje polar",
+     "o": [
+      "Sí",
+      "No",
+      "Solo para \\(\\theta\\in[0,\\pi]\\)",
+      "Solo si \\(r\\gt0\\)",
+      "No se puede determinar"
+     ]
+    },
+    {
+     "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(\\cos\\) es par",
+      "Sí, porque pasa por el polo",
+      "Solo en el polo"
+     ]
+    },
+    {
+     "p": "Polo",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(r=0\\) en algún ángulo",
+      "Solo si \\(\\theta=\\pi\\)",
+      "Sí, porque es una cardioide"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\theta\\to-\\theta\\): \\(\\cos(-\\theta)=\\cos\\theta\\), la ecuación no cambia: simétrica respecto al eje polar.",
+    "\\(\\theta\\to\\pi-\\theta\\): cambia el signo del coseno; la ecuación cambia. Contraejemplo: \\((6,\\pi)\\) está en la curva, pero \\((6,0)\\) no, porque \\(r(0)=0\\).",
+    "\\(\\theta\\to\\theta+\\pi\\) y \\(r\\to-r\\) tampoco dan la misma ecuación: no es simétrica respecto al polo. Es una cardioide horizontal."
+   ],
+   "ans": "Solo respecto al eje polar",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "simpol"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5M3",
+   "lvl": 2,
+   "title": "EA5 miércoles · P3",
+   "q": "<p>(6 pts) Dos desplazamientos de un dron: \\(\\vec d_1\\) de 40 m a \\(45^\\circ\\) y \\(\\vec d_2\\) de 60 m a \\(150^\\circ\\) (desde el eje horizontal positivo).</p><p>a) (3 pts) Componentes de cada uno. b) (3 pts) Resultante, magnitud y dirección.</p>",
+   "checks": [
+    {
+     "p": "a) Componentes",
+     "o": [
+      "\\(\\vec d_1\\approx(28{,}28;\\ 28{,}28)\\), \\(\\vec d_2\\approx(-51{,}96;\\ 30)\\)",
+      "\\(\\vec d_1\\approx(28{,}28;\\ 28{,}28)\\), \\(\\vec d_2\\approx(30;\\ -51{,}96)\\)",
+      "\\(\\vec d_1\\approx(28{,}28;\\ 28{,}28)\\), \\(\\vec d_2\\approx(51{,}96;\\ 30)\\)",
+      "\\(\\vec d_1=(40;\\ 45)\\), \\(\\vec d_2=(60;\\ 150)\\)",
+      "\\(\\vec d_1\\approx(28{,}28;\\ 28{,}28)\\), \\(\\vec d_2\\approx(-51{,}96;\\ -30)\\)"
+     ]
+    },
+    {
+     "p": "b) Resultante",
+     "o": [
+      "\\(\\approx(-23{,}68;\\ 58{,}28)\\), \\(62{,}91\\) m a \\(112{,}11^\\circ\\)",
+      "\\(\\approx(-23{,}68;\\ 58{,}28)\\), \\(62{,}91\\) m a \\(-67{,}89^\\circ\\)",
+      "\\(\\approx(-23{,}68;\\ 58{,}28)\\), \\(100\\) m a \\(112{,}11^\\circ\\)",
+      "\\(\\approx(58{,}28;\\ -23{,}68)\\), \\(62{,}91\\) m a \\(337{,}89^\\circ\\)",
+      "\\(\\approx(-23{,}68;\\ 58{,}28)\\), \\(62{,}91\\) m a \\(97{,}5^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec d_1=40(\\cos45^\\circ,\\sin45^\\circ)\\approx(28{,}28;\\ 28{,}28)\\); \\(\\vec d_2=60(\\cos150^\\circ,\\sin150^\\circ)\\approx(-51{,}96;\\ 30)\\).",
+    "\\(\\vec R\\approx(-23{,}68;\\ 58{,}28)\\).",
+    "\\(|\\vec R|=\\sqrt{(-23{,}68)^2+(58{,}28)^2}\\approx62{,}91\\) m. \\(\\arctan\\frac{58{,}28}{-23{,}68}\\approx-67{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(112{,}11^\\circ\\)."
+   ],
+   "ans": "\\(62{,}91\\) m a \\(112{,}11^\\circ\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e5J1",
+   "lvl": 3,
+   "title": "EA5 jueves · P1",
+   "q": "<p>Curvas polares \\(r_1=8\\cos\\theta\\) y \\(r_2=\\tfrac8{\\sqrt3}\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "checks": [
+    {
+     "p": "a) Cartesianas",
+     "o": [
+      "\\((x-4)^2+y^2=16\\) y \\(x^2+(y-\\tfrac4{\\sqrt3})^2=\\tfrac{16}3\\)",
+      "\\((x-8)^2+y^2=64\\) y \\(x^2+\\left(y-\\tfrac8{\\sqrt3}\\right)^2=\\tfrac{64}3\\)",
+      "\\(x^2+(y-4)^2=16\\) y \\(\\left(x-\\tfrac4{\\sqrt3}\\right)^2+y^2=\\tfrac{16}3\\)",
+      "\\((x-4)^2+y^2=16\\) (circunferencia) y \\(y=\\tfrac8{\\sqrt3}\\) (recta)",
+      "\\((x+4)^2+y^2=16\\) y \\(x^2+\\left(y+\\tfrac4{\\sqrt3}\\right)^2=\\tfrac{16}3\\)"
+     ]
+    },
+    {
+     "p": "b) Polares",
+     "o": [
+      "El polo y \\(\\left(4,\\ \\tfrac\\pi3\\right)\\)",
+      "Solo \\(\\left(4,\\ \\tfrac\\pi3\\right)\\)",
+      "El polo y \\(\\left(4,\\ \\tfrac\\pi4\\right)\\)",
+      "El polo y \\(\\left(8,\\ \\tfrac\\pi3\\right)\\)",
+      "No se cortan"
+     ]
+    },
+    {
+     "p": "c) Rectangulares",
+     "o": [
+      "\\((0,0)\\) y \\(\\left(2,2\\sqrt3\\right)\\)",
+      "\\((0,0)\\) y \\(\\left(2\\sqrt3,2\\right)\\)",
+      "Solo \\(\\left(2,2\\sqrt3\\right)\\)",
+      "\\((0,0)\\) y \\((4,\\tfrac\\pi3)\\)",
+      "\\((0,0)\\) y \\(\\left(-2,2\\sqrt3\\right)\\)"
+     ]
+    },
+    {
+     "p": "d) Distancia al polo",
+     "o": [
+      "\\(4\\)",
+      "\\(8\\)",
+      "\\(16\\)",
+      "\\(2\\)",
+      "\\(5\\)"
+     ]
+    },
+    {
+     "p": "e) La gráfica muestra",
+     "o": [
+      "Dos circunferencias que pasan por el origen, una centrada en el eje \\(x\\) y otra en el eje \\(y\\), cortándose en O y P",
+      "Dos circunferencias concéntricas",
+      "Una circunferencia y una cardioide",
+      "Dos circunferencias que solo se tocan en O",
+      "Dos rectas que se cortan en P"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(r_1\\): \\(r^2=8\\,r\\cos\\theta\\Rightarrow x^2+y^2=8x\\Rightarrow\\left(x-4\\right)^2+y^2=16\\). \\(r_2\\): \\(x^2+y^2=\\tfrac8{\\sqrt3}y\\Rightarrow x^2+\\left(y-\\tfrac4{\\sqrt3}\\right)^2=\\tfrac{16}3\\). Centros \\((4,0)\\) y \\((0,\\tfrac4{\\sqrt3})\\).",
+    "b) \\(8\\cos\\theta=\\tfrac8{\\sqrt3}\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=8\\cos\\tfrac\\pi3=4\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=4\\cos\\tfrac\\pi3\\), \\(y=4\\sin\\tfrac\\pi3\\): \\(P=\\left(2,2\\sqrt3\\right)\\); y el origen \\((0,0)\\).",
+    "d) La distancia de P al polo es \\(|r|=4\\approx4\\).",
+    "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
+   ],
+   "ans": "Polo y \\(\\left(2,2\\sqrt3\\right)\\); distancia \\(4\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": "ea5J",
+   "tags": [
+    [
+     "polrect",
+     "circ"
+    ],
+    [
+     "polint"
+    ],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5J2",
+   "lvl": 2,
+   "title": "EA5 jueves · P2",
+   "q": "<p>(4 pts) Determina las simetrías de \\(r=4+4\\cos\\theta\\) respecto al eje polar, al eje \\(\\theta=\\frac\\pi2\\) y al polo.</p>",
+   "checks": [
+    {
+     "p": "Eje polar",
+     "o": [
+      "Sí",
+      "No",
+      "Solo para \\(\\theta\\in[0,\\pi]\\)",
+      "Solo si \\(r\\gt0\\)",
+      "No se puede determinar"
+     ]
+    },
+    {
+     "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(\\cos\\) es par",
+      "Sí, porque pasa por el polo",
+      "Solo en el polo"
+     ]
+    },
+    {
+     "p": "Polo",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(r=0\\) en algún ángulo",
+      "Solo si \\(\\theta=\\pi\\)",
+      "Sí, porque es una cardioide"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\theta\\to-\\theta\\): \\(\\cos(-\\theta)=\\cos\\theta\\), la ecuación no cambia: simétrica respecto al eje polar.",
+    "\\(\\theta\\to\\pi-\\theta\\): cambia el signo del coseno; la ecuación cambia. Contraejemplo: \\((8,0)\\) está en la curva, pero \\((8,\\pi)\\) no, porque \\(r(\\pi)=0\\).",
+    "\\(\\theta\\to\\theta+\\pi\\) y \\(r\\to-r\\) tampoco dan la misma ecuación: no es simétrica respecto al polo. Es una cardioide horizontal."
+   ],
+   "ans": "Solo respecto al eje polar",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "simpol"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5J3",
+   "lvl": 2,
+   "title": "EA5 jueves · P3",
+   "q": "<p>(6 pts) Dos fuerzas sobre un soporte: \\(\\vec F_1\\) de 60 N a \\(60^\\circ\\) y \\(\\vec F_2\\) de 80 N a \\(150^\\circ\\) (desde el eje horizontal positivo).</p><p>a) (3 pts) Componentes de cada uno. b) (3 pts) Resultante, magnitud y dirección.</p>",
+   "checks": [
+    {
+     "p": "a) Componentes",
+     "o": [
+      "\\(\\vec F_1\\approx(30;\\ 51{,}96)\\), \\(\\vec F_2\\approx(-69{,}28;\\ 40)\\)",
+      "\\(\\vec F_1\\approx(51{,}96;\\ 30)\\), \\(\\vec F_2\\approx(40;\\ -69{,}28)\\)",
+      "\\(\\vec F_1\\approx(30;\\ 51{,}96)\\), \\(\\vec F_2\\approx(69{,}28;\\ 40)\\)",
+      "\\(\\vec F_1=(60;\\ 60)\\), \\(\\vec F_2=(80;\\ 150)\\)",
+      "\\(\\vec F_1\\approx(30;\\ 51{,}96)\\), \\(\\vec F_2\\approx(-69{,}28;\\ -40)\\)"
+     ]
+    },
+    {
+     "p": "b) Resultante",
+     "o": [
+      "\\(\\approx(-39{,}28;\\ 91{,}96)\\), \\(100\\) N a \\(113{,}13^\\circ\\)",
+      "\\(\\approx(-39{,}28;\\ 91{,}96)\\), \\(100\\) N a \\(-66{,}87^\\circ\\)",
+      "\\(\\approx(-39{,}28;\\ 91{,}96)\\), \\(140\\) N a \\(113{,}13^\\circ\\)",
+      "\\(\\approx(91{,}96;\\ -39{,}28)\\), \\(100\\) N a \\(336{,}87^\\circ\\)",
+      "\\(\\approx(-39{,}28;\\ 91{,}96)\\), \\(100\\) N a \\(105^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec F_1=60(\\cos60^\\circ,\\sin60^\\circ)\\approx(30;\\ 51{,}96)\\); \\(\\vec F_2=80(\\cos150^\\circ,\\sin150^\\circ)\\approx(-69{,}28;\\ 40)\\).",
+    "\\(\\vec R\\approx(-39{,}28;\\ 91{,}96)\\).",
+    "\\(|\\vec R|=\\sqrt{(-39{,}28)^2+(91{,}96)^2}\\approx100\\) N. \\(\\arctan\\frac{91{,}96}{-39{,}28}\\approx-66{,}87^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(113{,}13^\\circ\\)."
+   ],
+   "ans": "\\(100\\) N a \\(113{,}13^\\circ\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e5V1",
+   "lvl": 3,
+   "title": "EA5 viernes · P1",
+   "q": "<p>Curvas polares \\(r_1=6\\cos\\theta\\) y \\(r_2=2\\sqrt3\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "checks": [
+    {
+     "p": "a) Cartesianas",
+     "o": [
+      "\\((x-3)^2+y^2=9\\) y \\(x^2+(y-\\sqrt3)^2=3\\)",
+      "\\((x-6)^2+y^2=36\\) y \\(x^2+(y-2\\sqrt3)^2=12\\)",
+      "\\(x^2+(y-3)^2=9\\) y \\((x-\\sqrt3)^2+y^2=3\\)",
+      "\\((x-3)^2+y^2=9\\) (circunferencia) y \\(y=2\\sqrt3\\) (recta)",
+      "\\((x+3)^2+y^2=9\\) y \\(x^2+(y+\\sqrt3)^2=3\\)"
+     ]
+    },
+    {
+     "p": "b) Polares",
+     "o": [
+      "El polo y \\(\\left(3,\\ \\tfrac\\pi3\\right)\\)",
+      "Solo \\(\\left(3,\\ \\tfrac\\pi3\\right)\\)",
+      "El polo y \\(\\left(3,\\ \\tfrac\\pi4\\right)\\)",
+      "El polo y \\(\\left(6,\\ \\tfrac\\pi3\\right)\\)",
+      "No se cortan"
+     ]
+    },
+    {
+     "p": "c) Rectangulares",
+     "o": [
+      "\\((0,0)\\) y \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
+      "\\((0,0)\\) y \\(\\left(\\tfrac{3\\sqrt3}2,\\tfrac32\\right)\\)",
+      "Solo \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
+      "\\((0,0)\\) y \\((3,\\tfrac\\pi3)\\)",
+      "\\((0,0)\\) y \\(\\left(-\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)"
+     ]
+    },
+    {
+     "p": "d) Distancia al polo",
+     "o": [
+      "\\(3\\)",
+      "\\(6\\)",
+      "\\(9\\)",
+      "\\(1{,}5\\)",
+      "\\(4\\)"
+     ]
+    },
+    {
+     "p": "e) La gráfica muestra",
+     "o": [
+      "Dos circunferencias que pasan por el origen, una centrada en el eje \\(x\\) y otra en el eje \\(y\\), cortándose en O y P",
+      "Dos circunferencias concéntricas",
+      "Una circunferencia y una cardioide",
+      "Dos circunferencias que solo se tocan en O",
+      "Dos rectas que se cortan en P"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\Rightarrow x^2+y^2=6x\\Rightarrow\\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\Rightarrow x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
+    "b) \\(6\\cos\\theta=2\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
+    "d) La distancia de P al polo es \\(|r|=3\\approx3\\).",
+    "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
+   ],
+   "ans": "Polo y \\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); distancia \\(3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": "ea5V",
+   "tags": [
+    [
+     "polrect",
+     "circ"
+    ],
+    [
+     "polint"
+    ],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5V2",
+   "lvl": 2,
+   "title": "EA5 viernes · P2",
+   "q": "<p>(4 pts) Determina las simetrías de \\(r=3+3\\cos\\theta\\) respecto al eje polar, al eje \\(\\theta=\\frac\\pi2\\) y al polo.</p>",
+   "checks": [
+    {
+     "p": "Eje polar",
+     "o": [
+      "Sí",
+      "No",
+      "Solo para \\(\\theta\\in[0,\\pi]\\)",
+      "Solo si \\(r\\gt0\\)",
+      "No se puede determinar"
+     ]
+    },
+    {
+     "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(\\cos\\) es par",
+      "Sí, porque pasa por el polo",
+      "Solo en el polo"
+     ]
+    },
+    {
+     "p": "Polo",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(r=0\\) en algún ángulo",
+      "Solo si \\(\\theta=\\pi\\)",
+      "Sí, porque es una cardioide"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\theta\\to-\\theta\\): \\(\\cos(-\\theta)=\\cos\\theta\\), la ecuación no cambia: simétrica respecto al eje polar.",
+    "\\(\\theta\\to\\pi-\\theta\\): cambia el signo del coseno; la ecuación cambia. Contraejemplo: \\((6,0)\\) está en la curva, pero \\((6,\\pi)\\) no, porque \\(r(\\pi)=0\\).",
+    "\\(\\theta\\to\\theta+\\pi\\) y \\(r\\to-r\\) tampoco dan la misma ecuación: no es simétrica respecto al polo. Es una cardioide horizontal."
+   ],
+   "ans": "Solo respecto al eje polar",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "simpol"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5V3",
+   "lvl": 2,
+   "title": "EA5 viernes · P3",
+   "q": "<p>(6 pts) Dos fuerzas sobre un cuerpo en el origen: \\(\\vec F_1\\) de 50 N a \\(45^\\circ\\) y \\(\\vec F_2\\) de 70 N a \\(120^\\circ\\) (desde el eje horizontal positivo).</p><p>a) (3 pts) Componentes de cada uno. b) (3 pts) Resultante, magnitud y dirección.</p>",
+   "checks": [
+    {
+     "p": "a) Componentes",
+     "o": [
+      "\\(\\vec F_1\\approx(35{,}36;\\ 35{,}36)\\), \\(\\vec F_2\\approx(-35;\\ 60{,}62)\\)",
+      "\\(\\vec F_1\\approx(35{,}36;\\ 35{,}36)\\), \\(\\vec F_2\\approx(60{,}62;\\ -35)\\)",
+      "\\(\\vec F_1\\approx(35{,}36;\\ 35{,}36)\\), \\(\\vec F_2\\approx(35;\\ 60{,}62)\\)",
+      "\\(\\vec F_1=(50;\\ 45)\\), \\(\\vec F_2=(70;\\ 120)\\)",
+      "\\(\\vec F_1\\approx(35{,}36;\\ 35{,}36)\\), \\(\\vec F_2\\approx(-35;\\ -60{,}62)\\)"
+     ]
+    },
+    {
+     "p": "b) Resultante",
+     "o": [
+      "\\(\\approx(0{,}36;\\ 95{,}98)\\), \\(95{,}98\\) N a \\(89{,}79^\\circ\\)",
+      "\\(\\approx(0{,}36;\\ 95{,}98)\\), \\(95{,}98\\) N a \\(-90{,}21^\\circ\\)",
+      "\\(\\approx(0{,}36;\\ 95{,}98)\\), \\(120\\) N a \\(89{,}79^\\circ\\)",
+      "\\(\\approx(95{,}98;\\ 0{,}36)\\), \\(95{,}98\\) N a \\(0{,}21^\\circ\\)",
+      "\\(\\approx(0{,}36;\\ 95{,}98)\\), \\(95{,}98\\) N a \\(82{,}5^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec F_1=50(\\cos45^\\circ,\\sin45^\\circ)\\approx(35{,}36;\\ 35{,}36)\\); \\(\\vec F_2=70(\\cos120^\\circ,\\sin120^\\circ)\\approx(-35;\\ 60{,}62)\\).",
+    "\\(\\vec R\\approx(0{,}36;\\ 95{,}98)\\).",
+    "\\(|\\vec R|=\\sqrt{(0{,}36)^2+(95{,}98)^2}\\approx95{,}98\\) N. \\(\\arctan\\frac{95{,}98}{0{,}36}\\approx89{,}79^\\circ\\) (I cuadrante), así que la dirección es \\(89{,}79^\\circ\\)."
+   ],
+   "ans": "\\(95{,}98\\) N a \\(89{,}79^\\circ\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e5S1",
+   "lvl": 3,
+   "title": "EA5 sábado · P1",
+   "q": "<p>Curvas polares \\(r_1=4\\sqrt3\\cos\\theta\\) y \\(r_2=4\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "checks": [
+    {
+     "p": "a) Cartesianas",
+     "o": [
+      "\\((x-2\\sqrt3)^2+y^2=12\\) y \\(x^2+(y-2)^2=4\\)",
+      "\\((x-4\\sqrt3)^2+y^2=48\\) y \\(x^2+(y-4)^2=16\\)",
+      "\\(x^2+(y-2\\sqrt3)^2=12\\) y \\((x-2)^2+y^2=4\\)",
+      "\\((x-2\\sqrt3)^2+y^2=12\\) (circunferencia) y \\(y=4\\) (recta)",
+      "\\((x+2\\sqrt3)^2+y^2=12\\) y \\(x^2+(y+2)^2=4\\)"
+     ]
+    },
+    {
+     "p": "b) Polares",
+     "o": [
+      "El polo y \\(\\left(2\\sqrt3,\\ \\tfrac\\pi3\\right)\\)",
+      "Solo \\(\\left(2\\sqrt3,\\ \\tfrac\\pi3\\right)\\)",
+      "El polo y \\(\\left(2\\sqrt3,\\ \\tfrac\\pi4\\right)\\)",
+      "El polo y \\(\\left(6{,}93,\\ \\tfrac\\pi3\\right)\\)",
+      "No se cortan"
+     ]
+    },
+    {
+     "p": "c) Rectangulares",
+     "o": [
+      "\\((0,0)\\) y \\(\\left(\\sqrt3,3\\right)\\)",
+      "\\((0,0)\\) y \\(\\left(3,\\sqrt3\\right)\\)",
+      "Solo \\(\\left(\\sqrt3,3\\right)\\)",
+      "\\((0,0)\\) y \\((2\\sqrt3,\\tfrac\\pi3)\\)",
+      "\\((0,0)\\) y \\(\\left(-\\sqrt3,3\\right)\\)"
+     ]
+    },
+    {
+     "p": "d) Distancia al polo",
+     "o": [
+      "\\(2\\sqrt3\\)",
+      "\\(6{,}93\\)",
+      "\\(12\\)",
+      "\\(1{,}732\\)",
+      "\\(4{,}46\\)"
+     ]
+    },
+    {
+     "p": "e) La gráfica muestra",
+     "o": [
+      "Dos circunferencias que pasan por el origen, una centrada en el eje \\(x\\) y otra en el eje \\(y\\), cortándose en O y P",
+      "Dos circunferencias concéntricas",
+      "Una circunferencia y una cardioide",
+      "Dos circunferencias que solo se tocan en O",
+      "Dos rectas que se cortan en P"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(r_1\\): \\(r^2=4\\sqrt3\\,r\\cos\\theta\\Rightarrow x^2+y^2=4\\sqrt3x\\Rightarrow\\left(x-2\\sqrt3\\right)^2+y^2=12\\). \\(r_2\\): \\(x^2+y^2=4y\\Rightarrow x^2+\\left(y-2\\right)^2=4\\). Centros \\((2\\sqrt3,0)\\) y \\((0,2)\\).",
+    "b) \\(4\\sqrt3\\cos\\theta=4\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=4\\sqrt3\\cos\\tfrac\\pi3=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=2\\sqrt3\\cos\\tfrac\\pi3\\), \\(y=2\\sqrt3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\sqrt3,3\\right)\\); y el origen \\((0,0)\\).",
+    "d) La distancia de P al polo es \\(|r|=2\\sqrt3\\approx3{,}46\\).",
+    "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
+   ],
+   "ans": "Polo y \\(\\left(\\sqrt3,3\\right)\\); distancia \\(2\\sqrt3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": "ea5S",
+   "tags": [
+    [
+     "polrect",
+     "circ"
+    ],
+    [
+     "polint"
+    ],
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5S2",
+   "lvl": 2,
+   "title": "EA5 sábado · P2",
+   "q": "<p>(4 pts) Determina las simetrías de \\(r=2-2\\cos\\theta\\) respecto al eje polar, al eje \\(\\theta=\\frac\\pi2\\) y al polo.</p>",
+   "checks": [
+    {
+     "p": "Eje polar",
+     "o": [
+      "Sí",
+      "No",
+      "Solo para \\(\\theta\\in[0,\\pi]\\)",
+      "Solo si \\(r\\gt0\\)",
+      "No se puede determinar"
+     ]
+    },
+    {
+     "p": "Eje \\(\\theta=\\frac\\pi2\\)",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(\\cos\\) es par",
+      "Sí, porque pasa por el polo",
+      "Solo en el polo"
+     ]
+    },
+    {
+     "p": "Polo",
+     "o": [
+      "No",
+      "Sí",
+      "Sí, porque \\(r=0\\) en algún ángulo",
+      "Solo si \\(\\theta=\\pi\\)",
+      "Sí, porque es una cardioide"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\theta\\to-\\theta\\): \\(\\cos(-\\theta)=\\cos\\theta\\), la ecuación no cambia: simétrica respecto al eje polar.",
+    "\\(\\theta\\to\\pi-\\theta\\): cambia el signo del coseno; la ecuación cambia. Contraejemplo: \\((4,\\pi)\\) está en la curva, pero \\((4,0)\\) no, porque \\(r(0)=0\\).",
+    "\\(\\theta\\to\\theta+\\pi\\) y \\(r\\to-r\\) tampoco dan la misma ecuación: no es simétrica respecto al polo. Es una cardioide horizontal."
+   ],
+   "ans": "Solo respecto al eje polar",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "simpol"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e5S3",
+   "lvl": 2,
+   "title": "EA5 sábado · P3",
+   "q": "<p>(6 pts) Dos fuerzas sobre un cuerpo: \\(\\vec F_1\\) de 40 N a \\(30^\\circ\\) y \\(\\vec F_2\\) de 60 N a \\(135^\\circ\\) (desde el eje horizontal positivo).</p><p>a) (3 pts) Componentes de cada uno. b) (3 pts) Resultante, magnitud y dirección.</p>",
+   "checks": [
+    {
+     "p": "a) Componentes",
+     "o": [
+      "\\(\\vec F_1\\approx(34{,}64;\\ 20)\\), \\(\\vec F_2\\approx(-42{,}43;\\ 42{,}43)\\)",
+      "\\(\\vec F_1\\approx(20;\\ 34{,}64)\\), \\(\\vec F_2\\approx(42{,}43;\\ -42{,}43)\\)",
+      "\\(\\vec F_1\\approx(34{,}64;\\ 20)\\), \\(\\vec F_2\\approx(42{,}43;\\ 42{,}43)\\)",
+      "\\(\\vec F_1=(40;\\ 30)\\), \\(\\vec F_2=(60;\\ 135)\\)",
+      "\\(\\vec F_1\\approx(34{,}64;\\ 20)\\), \\(\\vec F_2\\approx(-42{,}43;\\ -42{,}43)\\)"
+     ]
+    },
+    {
+     "p": "b) Resultante",
+     "o": [
+      "\\(\\approx(-7{,}79;\\ 62{,}43)\\), \\(62{,}91\\) N a \\(97{,}11^\\circ\\)",
+      "\\(\\approx(-7{,}79;\\ 62{,}43)\\), \\(62{,}91\\) N a \\(-82{,}89^\\circ\\)",
+      "\\(\\approx(-7{,}79;\\ 62{,}43)\\), \\(100\\) N a \\(97{,}11^\\circ\\)",
+      "\\(\\approx(62{,}43;\\ -7{,}79)\\), \\(62{,}91\\) N a \\(352{,}89^\\circ\\)",
+      "\\(\\approx(-7{,}79;\\ 62{,}43)\\), \\(62{,}91\\) N a \\(82{,}5^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec F_1=40(\\cos30^\\circ,\\sin30^\\circ)\\approx(34{,}64;\\ 20)\\); \\(\\vec F_2=60(\\cos135^\\circ,\\sin135^\\circ)\\approx(-42{,}43;\\ 42{,}43)\\).",
+    "\\(\\vec R\\approx(-7{,}79;\\ 62{,}43)\\).",
+    "\\(|\\vec R|=\\sqrt{(-7{,}79)^2+(62{,}43)^2}\\approx62{,}91\\) N. \\(\\arctan\\frac{62{,}43}{-7{,}79}\\approx-82{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(97{,}11^\\circ\\)."
+   ],
+   "ans": "\\(62{,}91\\) N a \\(97{,}11^\\circ\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 45,
+  "fixed": true,
+  "versions": [
+   {
+    "name": "Lunes",
+    "slots": [
+     {
+      "pts": 10,
+      "name": "P1 · Dos curvas polares (a–e)",
+      "pool": [
+       "e5L1"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P2 · Simetrías de una cardioide",
+      "pool": [
+       "e5L2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Suma de dos vectores",
+      "pool": [
+       "e5L3"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Miércoles",
+    "slots": [
+     {
+      "pts": 10,
+      "name": "P1 · Dos curvas polares (a–e)",
+      "pool": [
+       "e5M1"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P2 · Simetrías de una cardioide",
+      "pool": [
+       "e5M2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Suma de dos vectores",
+      "pool": [
+       "e5M3"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Jueves",
+    "slots": [
+     {
+      "pts": 10,
+      "name": "P1 · Dos curvas polares (a–e)",
+      "pool": [
+       "e5J1"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P2 · Simetrías de una cardioide",
+      "pool": [
+       "e5J2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Suma de dos vectores",
+      "pool": [
+       "e5J3"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Viernes",
+    "slots": [
+     {
+      "pts": 10,
+      "name": "P1 · Dos curvas polares (a–e)",
+      "pool": [
+       "e5V1"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P2 · Simetrías de una cardioide",
+      "pool": [
+       "e5V2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Suma de dos vectores",
+      "pool": [
+       "e5V3"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Sábado",
+    "slots": [
+     {
+      "pts": 10,
+      "name": "P1 · Dos curvas polares (a–e)",
+      "pool": [
+       "e5S1"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P2 · Simetrías de una cardioide",
+      "pool": [
+       "e5S2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Suma de dos vectores",
+      "pool": [
+       "e5S3"
+      ]
+     }
+    ]
+   }
+  ],
+  "slots": [
+   {
+    "pts": 10,
+    "name": "P1 · Dos curvas polares (a–e)",
+    "pool": [
+     "e5L1"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "P2 · Simetrías de una cardioide",
+    "pool": [
+     "e5L2"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "P3 · Suma de dos vectores",
+    "pool": [
+     "e5L3"
+    ]
+   }
+  ],
+  "intro": "Son las <b>5 versiones reales de la EA5 del ciclo 2026-1</b> (una por día), con sus puntajes y los 45 minutos del examen. Elige la versión antes de empezar. En el examen debes justificar todo: aquí marcas la respuesta de cada ítem y después revisas el procedimiento en «Ver solución»."
+ },
+ "short": "EA5",
+ "guide": true,
+ "sub": "Sem. 10 y 11",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA5 2026-1</b>: P1 dos circunferencias polares \\(r=a\\cos\\theta\\) y \\(r=b\\sin\\theta\\): cartesianas, intersecciones, rectangulares, distancia y gráfica (10 pts) · P2 simetrías de una cardioide (4) · P3 suma de dos vectores con magnitud y ángulo (6). El sílabo pide además circunferencia y parábola en cartesianas, que no salieron en 2026-1 pero están en el primer tema."
+}

@@ -1,0 +1,3223 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso de la EA4 (semanas 7 y 9: funciones sinusoidales, exponenciales y logaritmos).</p>\n<div class=\"fgrid\">\n<div><b>Sinusoidal</b><br>\\(f(x)=a\\sin(b(x-h))+k\\)</div>\n<div><b>Parámetros</b><br>\\(k=\\frac{M+m}2,\\ |a|=\\frac{M-m}2,\\ T=\\frac{2\\pi}{|b|}\\)</div>\n<div><b>Desfase</b><br>Seno: cruce subiendo en \\(h\\) · coseno: máximo en \\(h\\)</div>\n<div><b>Exponentes</b><br>\\(a^ma^n=a^{m+n},\\ a^{-n}=\\frac1{a^n},\\ a^{m/n}=\\sqrt[n]{a^m}\\)</div>\n<div><b>Ecuaciones exp.</b><br>\\(b^M=b^N\\Rightarrow M=N\\) · \\(t=b^x\\gt0\\)</div>\n<div><b>Logaritmo</b><br>\\(\\log_ba=c\\iff b^c=a\\)</div>\n<div><b>Propiedades</b><br>\\(\\log_b(MN)=\\log_bM+\\log_bN,\\ \\log_bM^p=p\\log_bM\\)</div>\n<div><b>Despejar exponente</b><br>\\(x=\\frac{\\ln c}{\\ln b}\\)</div>\n<div><b>Verifica</b><br>Argumentos de logaritmos \\(\\gt0\\)</div>\n<div><b>Modelo exponencial</b><br>\\(A+Be^{-kt}\\): asíntota \\(y=A\\), \\(B=f(0)-A\\)</div>\n<div><b>Modelo logarítmico</b><br>\\(A+B\\ln(t+1)\\): \\(A=f(0)\\)</div>\n<div><b>Seno ↔ coseno</b><br>Mueve \\(h\\) un cuarto de período: cruce subiendo ↔ máximo</div>\n<div><b>Ritmo</b><br>Ambos modelos cambian rápido al inicio y luego cada vez más lento</div>\n</div>",
+ "formSim": false,
+ "id": "fc-ea4",
+ "code": "CC6101",
+ "name": "Fundamentos del Cálculo",
+ "exam": "EA4 (semanas 7 a 9)",
+ "topics": [
+  {
+   "id": "sinus",
+   "name": "Funciones sinusoidales",
+   "teo": "<p>\\(f(x)=a\\sin(b(x-h))+k\\) o con coseno. <strong>Eje</strong> \\(k=\\frac{\\max+\\min}2\\); <strong>amplitud</strong> \\(|a|=\\frac{\\max-\\min}2\\); <strong>período</strong> \\(T=\\frac{2\\pi}{|b|}\\) (y al revés \\(b=\\frac{2\\pi}T\\)); <strong>desfase</strong> \\(h\\).</p><p>Para leer \\(h\\): con <strong>seno</strong>, \\(h\\) es donde la onda cruza el eje <em>subiendo</em>; con <strong>coseno</strong>, donde está en su <em>máximo</em>. Si \\(a\\lt0\\), la onda empieza al revés (bajando, o en el mínimo).</p><p>Entre un máximo y el mínimo siguiente pasa <strong>medio período</strong>. Si te dan la forma \\(A\\sin(Bx+C)+D\\), el desfase es \\(-\\frac CB\\). Trabaja en radianes.</p>",
+   "form": [
+    "\\(f(x)=a\\sin(b(x-h))+k\\)",
+    "\\(k=\\dfrac{\\max+\\min}2,\\ |a|=\\dfrac{\\max-\\min}2\\)",
+    "\\(T=\\dfrac{2\\pi}{|b|}\\iff b=\\dfrac{2\\pi}T\\)",
+    "Máx → mín: \\(\\tfrac T2\\)",
+    "Seno: cruza el eje subiendo en \\(h\\) · coseno: máximo en \\(h\\)"
+   ],
+   "ex": [
+    {
+     "id": "fs1",
+     "lvl": 1,
+     "title": "Leer parámetros",
+     "q": "<p>Para \\(f(x)=2\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+1\\):</p>",
+     "checks": [
+      {
+       "p": "Período",
+       "o": [
+        "\\(\\pi\\)",
+        "\\(2\\pi\\)",
+        "\\(4\\pi\\)",
+        "\\(\\tfrac\\pi2\\)",
+        "\\(\\tfrac\\pi4\\)"
+       ]
+      },
+      {
+       "p": "Rango",
+       "o": [
+        "\\([-1,3]\\)",
+        "\\([-2,2]\\)",
+        "\\([1,3]\\)",
+        "\\([-1,2]\\)",
+        "\\([0,4]\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(b=2\\Rightarrow T=\\frac{2\\pi}2=\\pi\\).",
+      "Eje \\(y=1\\), amplitud 2: oscila entre \\(1-2=-1\\) y \\(1+2=3\\)."
+     ],
+     "ans": "\\(T=\\pi\\), Ran \\([-1,3]\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fs2",
+     "lvl": 1,
+     "title": "Coseno desfasado",
+     "q": "<p>Para \\(g(x)=1{,}5\\cos\\left(\\tfrac\\pi2(x+0{,}5)\\right)-0{,}5\\):</p>",
+     "checks": [
+      {
+       "p": "Período",
+       "o": [
+        "\\(4\\)",
+        "\\(\\tfrac\\pi2\\)",
+        "\\(2\\)",
+        "\\(4\\pi\\)",
+        "\\(1\\)"
+       ]
+      },
+      {
+       "p": "Desfase",
+       "o": [
+        "\\(-0{,}5\\) (izquierda)",
+        "\\(0{,}5\\) (derecha)",
+        "\\(-0{,}5\\) (abajo)",
+        "\\(1{,}5\\)",
+        "\\(\\tfrac\\pi2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T=\\frac{2\\pi}{\\pi/2}=4\\).",
+      "\\(x+0{,}5=x-(-0{,}5)\\): \\(h=-0{,}5\\), se mueve a la izquierda."
+     ],
+     "ans": "\\(T=4\\), \\(h=-0{,}5\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fs3",
+     "lvl": 1,
+     "title": "Temperatura de la rata",
+     "q": "<p>Tras un fármaco, la temperatura de una rata oscila: parte de 26 °C, sube a un máximo de 28,5 °C en \\(t=1{,}2\\) min, vuelve a 26 °C en \\(t=2{,}4\\) y baja a un mínimo de 23,5 °C en \\(t=3{,}6\\).</p>",
+     "checks": [
+      {
+       "p": "Eje",
+       "o": [
+        "\\(26\\)",
+        "\\(26{,}5\\)",
+        "\\(27\\)",
+        "\\(25\\)",
+        "\\(28{,}5\\)"
+       ]
+      },
+      {
+       "p": "Amplitud",
+       "o": [
+        "\\(2{,}5\\)",
+        "\\(5\\)",
+        "\\(2\\)",
+        "\\(1{,}25\\)",
+        "No se puede determinar"
+       ]
+      },
+      {
+       "p": "Período",
+       "o": [
+        "\\(4{,}8\\)",
+        "\\(2{,}4\\)",
+        "\\(3{,}6\\)",
+        "\\(1{,}2\\)",
+        "No se puede determinar"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(k=\\frac{28{,}5+23{,}5}2=26\\); \\(|a|=\\frac{28{,}5-23{,}5}2=2{,}5\\).",
+      "Del máximo (1,2) al mínimo (3,6) pasan 2,4 min = medio período → \\(T=4{,}8\\)."
+     ],
+     "ans": "Eje 26, amplitud 2,5, período 4,8",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [
+       "param"
+      ]
+     ]
+    },
+    {
+     "id": "fs4",
+     "lvl": 2,
+     "title": "Regla desde la gráfica",
+     "q": "<p>Halla la regla \\(f(x)=a\\sin(b(x-h))+k\\) de la gráfica.</p>",
+     "checks": [
+      {
+       "p": "Regla",
+       "o": [
+        "\\(2\\sin\\left(\\tfrac\\pi2(x-1)\\right)-1\\)",
+        "\\(-3\\sin\\left(\\tfrac\\pi2(x-1)\\right)+1\\)",
+        "\\(-2\\sin\\left(\\tfrac\\pi4(x-1)\\right)+1\\)",
+        "\\(3\\sin\\left(\\tfrac\\pi4(x+1)\\right)-1\\)",
+        "\\(2\\sin\\left(\\tfrac\\pi2(x+1)\\right)-1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Máx 1, mín \\(-3\\): \\(k=-1\\), \\(a=2\\).",
+      "Máx en \\(x=2\\), mín en \\(x=4\\): medio período 2 → \\(T=4,\\ b=\\tfrac\\pi2\\).",
+      "Cruza el eje \\(y=-1\\) subiendo en \\(x=1\\): \\(h=1\\)."
+     ],
+     "ans": "\\(2\\sin\\left(\\tfrac\\pi2(x-1)\\right)-1\\)",
+     "hint": "Busca dónde cruza el eje subiendo.",
+     "fig": "sinu1",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      [
+       "modelo"
+      ]
+     ]
+    },
+    {
+     "id": "fs5",
+     "lvl": 2,
+     "title": "Voltaje",
+     "q": "<p>Un voltaje oscila entre \\(-170\\) V y 170 V con un ciclo cada 24 h: \\(V(t)=A\\sin(Bt+C)\\). A la medianoche (\\(t=0\\)) vale 0 y está aumentando.</p>",
+     "checks": [
+      {
+       "p": "B",
+       "o": [
+        "\\(\\tfrac\\pi{12}\\)",
+        "\\(\\tfrac\\pi{24}\\)",
+        "\\(24\\)",
+        "\\(12\\pi\\)",
+        "\\(\\tfrac{2\\pi}{12}\\)"
+       ]
+      },
+      {
+       "p": "Voltaje a las 6:00 p.m.",
+       "o": [
+        "\\(-170\\) V",
+        "\\(170\\) V",
+        "\\(0\\) V",
+        "\\(85\\) V",
+        "\\(-85\\) V"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=170,\\ B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\). Empieza en 0 subiendo → \\(C=0\\).",
+      "\\(V(18)=170\\sin\\left(\\tfrac{18\\pi}{12}\\right)=170\\sin\\tfrac{3\\pi}2=-170\\) V."
+     ],
+     "ans": "\\(B=\\tfrac\\pi{12}\\); \\(-170\\) V",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "modelo"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fs6",
+     "lvl": 2,
+     "title": "Mareas",
+     "q": "<p>Un estudio de mareas (desde las 9:00 a.m.) registra un máximo de 2,6 m a las 7 h y el mínimo siguiente de 0,52 m a las 25 h.</p>",
+     "checks": [
+      {
+       "p": "Período",
+       "o": [
+        "\\(36\\) h",
+        "\\(18\\) h",
+        "\\(24\\) h",
+        "\\(25\\) h",
+        "\\(12\\) h"
+       ]
+      },
+      {
+       "p": "Modelo",
+       "o": [
+        "\\(H=1{,}04\\cos\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
+        "\\(H=1{,}04\\sin\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
+        "\\(H=2{,}08\\cos\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
+        "\\(H=1{,}04\\cos\\left(\\tfrac\\pi{36}(t-7)\\right)+1{,}56\\)",
+        "\\(H=1{,}56\\cos\\left(\\tfrac\\pi{18}(t-25)\\right)+1{,}04\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Del máximo al mínimo: 18 h = \\(\\tfrac T2\\Rightarrow T=36\\) h, \\(b=\\tfrac{2\\pi}{36}=\\tfrac\\pi{18}\\).",
+      "\\(k=\\frac{2{,}6+0{,}52}2=1{,}56\\), \\(a=\\frac{2{,}6-0{,}52}2=1{,}04\\).",
+      "Con coseno, \\(h\\) es el máximo: \\(h=7\\). Verifica: \\(H(0)\\approx1{,}92\\) ✓."
+     ],
+     "ans": "\\(T=36\\) h",
+     "hint": "El coseno arranca en el máximo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      [
+       "modelo"
+      ]
+     ]
+    },
+    {
+     "id": "fs7",
+     "lvl": 3,
+     "title": "Regla desde puntos",
+     "q": "<p>Una onda tiene un máximo en \\((1{,}25;\\,-0{,}3)\\) y un mínimo en \\((2{,}75;\\,-2{,}7)\\); hay otro máximo en \\(x=2{,}25\\). Empieza en \\((0{,}98;\\,-1{,}65)\\).</p>",
+     "checks": [
+      {
+       "p": "Regla",
+       "o": [
+        "\\(1{,}2\\sin(2\\pi(x-1))-1{,}5\\)",
+        "\\(1{,}2\\sin(\\pi(x-1))-1{,}5\\)",
+        "\\(2{,}4\\sin(2\\pi(x-1))-1{,}5\\)",
+        "\\(1{,}2\\sin(2\\pi(x-1{,}25))-1{,}5\\)",
+        "\\(-1{,}2\\sin(2\\pi(x-1))-1{,}5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Eje \\(k=\\frac{-0{,}3-2{,}7}2=-1{,}5\\); amplitud \\(1{,}2\\).",
+      "Máximos en 1,25 y 2,25: \\(T=1\\Rightarrow b=2\\pi\\).",
+      "El seno sube por el eje un cuarto de período antes del máximo: \\(h=1{,}25-0{,}25=1\\). Verifica \\(f(0{,}98)\\approx-1{,}65\\) ✓."
+     ],
+     "ans": "\\(1{,}2\\sin(2\\pi(x-1))-1{,}5\\)",
+     "hint": "Del cruce subiendo al máximo pasa T/4.",
+     "fig": "sinu2",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "modelo"
+      ]
+     ]
+    },
+    {
+     "id": "fs8",
+     "lvl": 3,
+     "title": "Estrella Delta Cephei",
+     "q": "<p>Delta Cephei alcanza su brillo máximo el día 1,35 y el mínimo, 3,65, el día 4,05. El brillo varía ±0,35.</p>",
+     "checks": [
+      {
+       "p": "Modelo",
+       "o": [
+        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+4\\)",
+        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{2{,}7}(t-1{,}35)\\right)+4\\)",
+        "\\(B=0{,}35\\sin\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+4\\)",
+        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+3{,}65\\)",
+        "\\(B=0{,}7\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-4{,}05)\\right)+4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Amplitud 0,35 y mínimo 3,65 → eje \\(4\\) (máximo 4,35).",
+      "Máx → mín en \\(4{,}05-1{,}35=2{,}7\\) días = \\(\\tfrac T2\\Rightarrow T=5{,}4\\).",
+      "Coseno con máximo en \\(t=1{,}35\\)."
+     ],
+     "ans": "\\(0{,}35\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+4\\)",
+     "hint": "El eje está a una amplitud del mínimo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      [
+       "modelo"
+      ]
+     ]
+    },
+    {
+     "id": "fs9",
+     "lvl": 3,
+     "title": "Biorritmos",
+     "q": "<p>El potencial emocional es \\(P_2(t)=50\\sin(\\omega t)+50\\) (en %), con período de 28 días.</p>",
+     "checks": [
+      {
+       "p": "ω",
+       "o": [
+        "\\(\\tfrac\\pi{14}\\)",
+        "\\(\\tfrac\\pi{28}\\)",
+        "\\(28\\pi\\)",
+        "\\(\\tfrac{14}\\pi\\)",
+        "\\(\\tfrac{2\\pi}{14}\\)"
+       ]
+      },
+      {
+       "p": "P₂(7)",
+       "o": [
+        "\\(100\\) %",
+        "\\(50\\) %",
+        "\\(0\\) %",
+        "\\(75\\) %",
+        "\\(25\\) %"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\omega=\\frac{2\\pi}{28}=\\frac\\pi{14}\\).",
+      "\\(P_2(7)=50\\sin\\tfrac\\pi2+50=100\\) % (un cuarto de período: máximo)."
+     ],
+     "ans": "\\(\\omega=\\tfrac\\pi{14}\\); 100 %",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fs10",
+     "lvl": 2,
+     "title": "Tipo EA: de seno a coseno",
+     "q": "<p>Reescribe \\(f(x)=4\\sin\\left(\\tfrac\\pi2(x-1)\\right)+2\\) como función coseno cambiando solo el parámetro necesario.</p>",
+     "checks": [
+      {
+       "p": "¿Qué parámetro cambia?",
+       "o": [
+        "Solo el desfase \\(h\\)",
+        "La amplitud",
+        "El período",
+        "El eje \\(k\\)",
+        "La amplitud y el eje"
+       ]
+      },
+      {
+       "p": "Función coseno",
+       "o": [
+        "\\(4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\)",
+        "\\(4\\cos\\left(\\tfrac\\pi2(x-1)\\right)+2\\)",
+        "\\(4\\cos\\left(\\tfrac\\pi2x\\right)+2\\)",
+        "\\(-4\\cos\\left(\\tfrac\\pi2(x-1)\\right)+2\\)",
+        "\\(4\\cos\\left(\\tfrac\\pi2(x-3)\\right)+2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Con seno, \\(h=1\\) es donde la onda cruza el eje subiendo. Con coseno, \\(h\\) es donde está el máximo.",
+      "\\(T=\\frac{2\\pi}{\\pi/2}=4\\). Del cruce subiendo al máximo pasa \\(\\frac T4=1\\): máximo en \\(x=2\\).",
+      "Solo cambia \\(h\\): \\(f(x)=4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\). Verifica: \\(f(2)=4+2=6\\) = máximo ✓."
+     ],
+     "ans": "\\(4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\)",
+     "hint": "El máximo está un cuarto de período después del cruce subiendo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sincos"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fs11",
+     "lvl": 2,
+     "title": "Tipo EA: nuevo máximo y mínimo",
+     "q": "<p>\\(f(x)=2\\cos(3x)+1\\). ¿Qué parámetros hay que cambiar para que el mínimo sea \\(-4\\) y el máximo \\(6\\)?</p>",
+     "checks": [
+      {
+       "p": "Nueva amplitud",
+       "o": [
+        "5",
+        "2",
+        "10",
+        "6",
+        "1"
+       ]
+      },
+      {
+       "p": "Nuevo eje \\(k\\)",
+       "o": [
+        "1",
+        "2",
+        "5",
+        "−4",
+        "0"
+       ]
+      },
+      {
+       "p": "Nueva función",
+       "o": [
+        "\\(5\\cos(3x)+1\\)",
+        "\\(5\\cos(3x)+2\\)",
+        "\\(10\\cos(3x)+1\\)",
+        "\\(2\\cos(3x)+5\\)",
+        "\\(5\\cos(5x)+1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(k=\\frac{6+(-4)}2=1\\) (no cambia). \\(A=\\frac{6-(-4)}2=5\\).",
+      "Solo cambia la amplitud: \\(f(x)=5\\cos(3x)+1\\). El período depende de \\(B\\), que no se toca."
+     ],
+     "ans": "\\(5\\cos(3x)+1\\)",
+     "hint": "Eje = promedio de máx y mín; amplitud = mitad de la diferencia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fs12",
+     "lvl": 2,
+     "title": "Tipo EA: ¿sube o baja?",
+     "q": "<p>\\(h(t)=5\\sin\\left(\\tfrac\\pi6t\\right)+10\\) (m, h). Entre \\(t=3\\) y \\(t=9\\), ¿la altura aumenta o disminuye?</p>",
+     "checks": [
+      {
+       "p": "Comportamiento",
+       "o": [
+        "Disminuye todo el intervalo",
+        "Aumenta todo el intervalo",
+        "Aumenta y luego disminuye",
+        "Disminuye y luego aumenta",
+        "Se mantiene constante"
+       ]
+      },
+      {
+       "p": "Justificación",
+       "o": [
+        "Hay un máximo en \\(t=3\\) y un mínimo en \\(t=9\\)",
+        "Hay un mínimo en \\(t=3\\) y un máximo en \\(t=9\\)",
+        "El seno siempre crece",
+        "El período es 6",
+        "h(3) = h(9)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T=\\frac{2\\pi}{\\pi/6}=12\\). Empieza en el eje subiendo, así que el máximo está en \\(\\frac T4=3\\) y el mínimo en \\(\\frac{3T}4=9\\).",
+      "Entre un máximo y el mínimo siguiente la función decrece: \\(h(3)=15\\) y \\(h(9)=5\\)."
+     ],
+     "ans": "Disminuye",
+     "hint": "Ubica el máximo y el mínimo con cuartos de período.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "crece"
+      ]
+     ]
+    },
+    {
+     "id": "fs13",
+     "lvl": 3,
+     "title": "Tipo EA: modelo con horas",
+     "q": "<p>La temperatura de un invernadero varía sinusoidalmente en un ciclo de 24 h: máxima 30 °C a las 15:00 y mínima 18 °C a las 3:00. Toma \\(t=0\\) a las 00:00.</p>",
+     "checks": [
+      {
+       "p": "Regla",
+       "o": [
+        "\\(6\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
+        "\\(6\\cos\\left(\\tfrac\\pi{12}(t-3)\\right)+24\\)",
+        "\\(12\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+18\\)",
+        "\\(6\\sin\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
+        "\\(6\\cos\\left(\\tfrac\\pi{24}(t-15)\\right)+24\\)"
+       ]
+      },
+      {
+       "p": "Temperatura a las 9:00",
+       "o": [
+        "24 °C",
+        "30 °C",
+        "18 °C",
+        "27 °C",
+        "21 °C"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(k=\\frac{30+18}2=24\\), \\(A=\\frac{30-18}2=6\\), \\(B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\).",
+      "Coseno con el máximo en \\(t=15\\): \\(T(t)=6\\cos\\left(\\frac\\pi{12}(t-15)\\right)+24\\).",
+      "\\(T(9)=6\\cos\\left(-\\frac\\pi2\\right)+24=24\\) °C: a las 9:00 está justo en el eje, a mitad de camino entre el mínimo (3:00) y el máximo (15:00)."
+     ],
+     "ans": "\\(6\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
+     "hint": "Del mínimo al máximo pasan 12 h = medio período.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Todo fenómeno que se repite (mareas, voltaje, temperatura) se modela con seno o coseno ajustando cuatro parámetros.</p>\n<h3>Conceptos clave</h3><ul><li>Eje \\(k=\\frac{\\max+\\min}2\\); amplitud \\(|a|=\\frac{\\max-\\min}2\\).</li><li>\\(T=\\frac{2\\pi}{|b|}\\); máx → mín = \\(\\frac T2\\).</li><li>Seno: cruza el eje subiendo en \\(h\\). Coseno: máximo en \\(h\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lee máximo y mínimo → \\(k\\) y \\(a\\).</li><li><strong>2.</strong> Mide el período → \\(b\\).</li><li><strong>3.</strong> Elige seno o coseno y ubica \\(h\\).</li><li><strong>4.</strong> Verifica con un punto conocido.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> máx 2,6 en \\(t=7\\), mín 0,52 en \\(t=25\\): \\(H=1{,}04\\cos\\left(\\frac\\pi{18}(t-7)\\right)+1{,}56\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar la distancia máximo-mínimo como período completo.</div>"
+  },
+  {
+   "id": "expo",
+   "name": "Exponentes y ecuaciones exponenciales",
+   "teo": "<p><strong>Leyes</strong>: mismas bases, suma exponentes al multiplicar y resta al dividir; potencia de potencia multiplica. \\(a^{-n}=\\frac1{a^n}\\) (¡no cambia el signo!) y \\(a^{m/n}=\\sqrt[n]{a^m}\\).</p><p><strong>Ecuaciones</strong>: escribe todo en la misma base y usa \\(b^M=b^N\\Rightarrow M=N\\). Si aparecen \\(b^{2x}\\) y \\(b^x\\), haz \\(t=b^x\\) (con \\(t\\gt0\\)) y resuelve la cuadrática; descarta los \\(t\\le0\\).</p><p>Siempre verifica: puede salir una identidad (todos los reales) o una cuadrática sin raíces reales (\\(\\varnothing\\)). Si no puedes igualar bases (como \\(3^x=7\\)), necesitas logaritmos.</p>",
+   "form": [
+    "\\(a^ma^n=a^{m+n},\\ \\frac{a^m}{a^n}=a^{m-n},\\ (a^m)^n=a^{mn}\\)",
+    "\\(a^{-n}=\\frac1{a^n},\\ a^0=1\\)",
+    "\\(a^{m/n}=\\sqrt[n]{a^m}\\)",
+    "\\(b^M=b^N\\Rightarrow M=N\\)",
+    "\\(t=b^x\\gt0\\): descarta \\(t\\le0\\)"
+   ],
+   "ex": [
+    {
+     "id": "fe1",
+     "lvl": 1,
+     "title": "Simplificar potencias",
+     "q": "<p>Simplifica \\(\\dfrac{16^{3/4}\\cdot2^{-3}}{8^{2/3}}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\tfrac14\\)",
+        "\\(4\\)",
+        "\\(\\tfrac12\\)",
+        "\\(1\\)",
+        "\\(\\tfrac18\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(16^{3/4}=(\\sqrt[4]{16})^3=8\\), \\(2^{-3}=\\tfrac18\\), \\(8^{2/3}=4\\).",
+      "\\(\\frac{8\\cdot\\frac18}{4}=\\frac14\\)."
+     ],
+     "ans": "\\(\\tfrac14\\)",
+     "hint": "Primero la raíz, luego la potencia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyexp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe2",
+     "lvl": 1,
+     "title": "Igualar bases",
+     "q": "<p>Resuelve \\(3^{2x}=81^{x-1}\\).</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(2\\)",
+        "\\(1\\)",
+        "\\(-2\\)",
+        "\\(\\tfrac12\\)",
+        "\\(4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(81=3^4\\Rightarrow3^{2x}=3^{4x-4}\\).",
+      "\\(2x=4x-4\\Rightarrow x=2\\)."
+     ],
+     "ans": "\\(x=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "igbases"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe3",
+     "lvl": 1,
+     "title": "Exponentes negativos",
+     "q": "<p>Simplifica \\(\\dfrac{m^3n^{-2}}{m^{-1}n^4}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\dfrac{m^4}{n^6}\\)",
+        "\\(\\dfrac{m^2}{n^2}\\)",
+        "\\(m^4n^6\\)",
+        "\\(\\dfrac{m^3}{n^8}\\)",
+        "\\(-\\dfrac{m^4}{n^6}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m^{3-(-1)}=m^4\\); \\(n^{-2-4}=n^{-6}\\).",
+      "Exponente positivo: \\(\\frac{m^4}{n^6}\\)."
+     ],
+     "ans": "\\(\\frac{m^4}{n^6}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyexp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe4",
+     "lvl": 2,
+     "title": "Dos bases de 5",
+     "q": "<p>Resuelve \\(25^{x-2}=5\\cdot125^x\\).</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(-5\\)",
+        "\\(5\\)",
+        "\\(-3\\)",
+        "\\(-\\tfrac15\\)",
+        "\\(1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(5^{2x-4}=5^{1+3x}\\).",
+      "\\(2x-4=3x+1\\Rightarrow x=-5\\)."
+     ],
+     "ans": "\\(x=-5\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "igbases"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe5",
+     "lvl": 2,
+     "title": "Cambio de variable",
+     "q": "<p>Resuelve \\(4^x-5\\cdot2^x+4=0\\).</p>",
+     "checks": [
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=0,\\ x=2\\)",
+        "\\(x=1,\\ x=4\\)",
+        "\\(x=2\\)",
+        "\\(x=0\\)",
+        "\\(x=1,\\ x=2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(t=2^x\\gt0\\): \\(t^2-5t+4=0\\Rightarrow t=1,\\ 4\\).",
+      "\\(2^x=1\\Rightarrow x=0\\); \\(2^x=4\\Rightarrow x=2\\)."
+     ],
+     "ans": "\\(x=0\\) y \\(x=2\\)",
+     "hint": "4ˣ = (2ˣ)².",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cambvar"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe6",
+     "lvl": 2,
+     "title": "Descartar t negativo",
+     "q": "<p>Resuelve \\(2^{2x}-6\\cdot2^x-16=0\\).</p>",
+     "checks": [
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=3\\)",
+        "\\(x=3\\) y \\(x=1\\)",
+        "\\(x=8\\) y \\(x=-2\\)",
+        "\\(\\varnothing\\)",
+        "\\(x=4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=2^x\\): \\(u^2-6u-16=(u-8)(u+2)=0\\).",
+      "\\(u=-2\\) se descarta (\\(2^x\\gt0\\)). \\(2^x=8\\Rightarrow x=3\\)."
+     ],
+     "ans": "\\(x=3\\)",
+     "hint": "Una potencia de base positiva nunca es negativa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cambvar"
+      ]
+     ]
+    },
+    {
+     "id": "fe7",
+     "lvl": 2,
+     "title": "¿Trampa?",
+     "q": "<p>Resuelve \\(2^{x+2}\\cdot4^{x-1}=8^x\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\(\\mathbb R\\) (todos los reales)",
+        "\\(\\varnothing\\)",
+        "\\(x=0\\)",
+        "\\(x=1\\)",
+        "\\(x=2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Izquierda: \\(2^{x+2}\\cdot2^{2x-2}=2^{3x}\\). Derecha: \\(2^{3x}\\).",
+      "Queda \\(3x=3x\\): es una identidad, vale para todo \\(x\\)."
+     ],
+     "ans": "\\(\\mathbb R\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyexp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe8",
+     "lvl": 3,
+     "title": "Radicales y fracción",
+     "q": "<p>Resuelve \\(\\sqrt[3]{16^x}\\cdot2^{x+1}=\\tfrac14\\).</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(-\\tfrac97\\)",
+        "\\(-\\tfrac37\\)",
+        "\\(\\tfrac97\\)",
+        "\\(-\\tfrac79\\)",
+        "\\(-1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sqrt[3]{16^x}=2^{4x/3}\\); producto: \\(2^{4x/3+x+1}=2^{7x/3+1}\\). \\(\\tfrac14=2^{-2}\\).",
+      "\\(\\tfrac{7x}3+1=-2\\Rightarrow x=-\\tfrac97\\)."
+     ],
+     "ans": "\\(-\\tfrac97\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyexp",
+       "igbases"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fe9",
+     "lvl": 3,
+     "title": "Sin solución",
+     "q": "<p>Resuelve \\(2^{x^2-3x+2}=\\tfrac18\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\(\\varnothing\\)",
+        "\\(x=1,\\ x=2\\)",
+        "\\(\\mathbb R\\)",
+        "\\(x=\\tfrac{3\\pm\\sqrt{11}}2\\)",
+        "\\(x=-3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-3x+2=-3\\Rightarrow x^2-3x+5=0\\).",
+      "\\(\\Delta=9-20=-11\\lt0\\): no hay raíces reales."
+     ],
+     "ans": "\\(\\varnothing\\)",
+     "hint": "Revisa el discriminante.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fe10",
+     "lvl": 3,
+     "title": "Exponente cuadrático",
+     "q": "<p>Resuelve \\(3^{x+1}\\cdot9^{2x}=27^{x^2}\\).</p>",
+     "checks": [
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(\\tfrac{5\\pm\\sqrt{37}}6\\)",
+        "\\(\\tfrac{5\\pm\\sqrt{13}}6\\)",
+        "\\(\\tfrac{-5\\pm\\sqrt{37}}6\\)",
+        "\\(x=1\\)",
+        "\\(\\varnothing\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(3^{x+1+4x}=3^{3x^2}\\Rightarrow3x^2-5x-1=0\\).",
+      "\\(x=\\frac{5\\pm\\sqrt{25+12}}6=\\frac{5\\pm\\sqrt{37}}6\\)."
+     ],
+     "ans": "\\(\\tfrac{5\\pm\\sqrt{37}}6\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "igbases"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una ecuación exponencial tiene la incógnita en el exponente; se resuelve llevando todo a la misma base.</p>\n<h3>Conceptos clave</h3><ul><li>Leyes de exponentes; \\(a^{-n}=\\frac1{a^n}\\), \\(a^{m/n}=\\sqrt[n]{a^m}\\).</li><li>\\(b^M=b^N\\Rightarrow M=N\\).</li><li>\\(t=b^x\\gt0\\) convierte en cuadrática.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe cada número como potencia de la misma base.</li><li><strong>2.</strong> Aplica leyes hasta tener una sola potencia a cada lado.</li><li><strong>3.</strong> Iguala exponentes (o cambia de variable).</li><li><strong>4.</strong> Descarta \\(t\\le0\\) y verifica.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(4^x-5\\cdot2^x+4=0\\): \\(t^2-5t+4=0\\Rightarrow x=0,\\ 2\\).</div>\n<div class=\"err\"><b>Error común:</b> aceptar \\(2^x=-2\\) como solución.</div>"
+  },
+  {
+   "id": "logs",
+   "name": "Logaritmos y ecuaciones logarítmicas",
+   "teo": "<p>\\(\\log_ba=c\\iff b^c=a\\): el logaritmo es el exponente. Base \\(b\\gt0,\\ b\\ne1\\); argumento \\(a\\gt0\\). \\(\\log\\) sin base es base 10; \\(\\ln\\) es base \\(e\\approx2{,}718\\).</p><p><strong>Propiedades</strong>: producto → suma, cociente → resta, potencia → baja multiplicando. Pero \\(\\log(M+N)\\) <em>no</em> se separa y \\(\\frac{\\log M}{\\log N}\\ne\\log M-\\log N\\).</p><p><strong>Ecuaciones</strong>: agrupa en un solo logaritmo, pasa a forma exponencial (o iguala argumentos) y <strong>verifica</strong> que todos los argumentos originales sean positivos. Para despejar un exponente (\\(3^x=7\\)) aplica \\(\\ln\\): \\(x=\\frac{\\ln7}{\\ln3}\\).</p>",
+   "form": [
+    "\\(\\log_ba=c\\iff b^c=a\\)",
+    "\\(\\log_b(MN)=\\log_bM+\\log_bN\\)",
+    "\\(\\log_b\\frac MN=\\log_bM-\\log_bN\\)",
+    "\\(\\log_bM^p=p\\log_bM\\)",
+    "\\(\\log_ba=\\dfrac{\\ln a}{\\ln b},\\ \\ b^{\\log_bx}=x\\)",
+    "Verifica: todo argumento \\(\\gt0\\)"
+   ],
+   "ex": [
+    {
+     "id": "fg_1",
+     "lvl": 1,
+     "title": "Valor exacto",
+     "q": "<p>Calcula \\(\\log_2\\tfrac18+\\log_327-\\log_5\\tfrac1{25}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(2\\)",
+        "\\(-2\\)",
+        "\\(8\\)",
+        "\\(0\\)",
+        "\\(4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\log_22^{-3}=-3\\), \\(\\log_33^3=3\\), \\(\\log_55^{-2}=-2\\).",
+      "\\(-3+3-(-2)=2\\)."
+     ],
+     "ans": "\\(2\\)",
+     "hint": "Escribe cada argumento como potencia de la base.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deflog"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fg_2",
+     "lvl": 1,
+     "title": "Cociente",
+     "q": "<p>Calcula \\(\\log_248-\\log_23\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(4\\)",
+        "\\(16\\)",
+        "\\(\\log_245\\)",
+        "\\(3\\)",
+        "\\(\\tfrac{\\log_248}{\\log_23}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\log_2\\frac{48}3=\\log_216=4\\)."
+     ],
+     "ans": "\\(4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proplog"
+      ]
+     ]
+    },
+    {
+     "id": "fg_3",
+     "lvl": 1,
+     "title": "Forma exponencial",
+     "q": "<p>Resuelve \\(\\log_3(2x-1)=2\\).</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(5\\)",
+        "\\(\\tfrac72\\)",
+        "\\(4\\)",
+        "\\(3\\)",
+        "\\(10\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(3^2=2x-1\\Rightarrow2x=10\\Rightarrow x=5\\). Argumento: \\(9\\gt0\\) ✓."
+     ],
+     "ans": "\\(x=5\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deflog"
+      ]
+     ]
+    },
+    {
+     "id": "fg_4",
+     "lvl": 2,
+     "title": "Solución extraña",
+     "q": "<p>Resuelve \\(\\log x+\\log(x-3)=1\\).</p>",
+     "checks": [
+      {
+       "p": "Soluciones válidas",
+       "o": [
+        "Solo \\(x=5\\)",
+        "\\(x=5\\) y \\(x=-2\\)",
+        "Solo \\(x=-2\\)",
+        "\\(\\varnothing\\)",
+        "\\(x=2\\) y \\(x=-5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\log[x(x-3)]=1\\Rightarrow x^2-3x=10\\).",
+      "\\((x-5)(x+2)=0\\Rightarrow x=5,\\ -2\\).",
+      "\\(\\log(-2)\\) no existe: se descarta."
+     ],
+     "ans": "\\(x=5\\)",
+     "hint": "Verifica en la ecuación original.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proplog"
+      ],
+      [],
+      [
+       "verif"
+      ]
+     ]
+    },
+    {
+     "id": "fg_5",
+     "lvl": 2,
+     "title": "Suma de logaritmos",
+     "q": "<p>Resuelve \\(\\log_3(x-1)+\\log_3(x+1)=1\\).</p>",
+     "checks": [
+      {
+       "p": "Solución",
+       "o": [
+        "\\(x=2\\)",
+        "\\(x=\\pm2\\)",
+        "\\(x=-2\\)",
+        "\\(x=\\sqrt2\\)",
+        "\\(x=4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\log_3(x^2-1)=1\\Rightarrow x^2-1=3\\Rightarrow x=\\pm2\\).",
+      "\\(x=-2\\) hace \\(x-1=-3\\lt0\\): se descarta."
+     ],
+     "ans": "\\(x=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proplog"
+      ],
+      [
+       "verif"
+      ]
+     ]
+    },
+    {
+     "id": "fg_6",
+     "lvl": 2,
+     "title": "Inversas",
+     "q": "<p>Calcula \\(3^{\\log_310}-5^{\\log_52}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(\\log_38\\)",
+        "\\(2\\)",
+        "\\(5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(b^{\\log_bx}=x\\): \\(10-2=8\\)."
+     ],
+     "ans": "\\(8\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deflog"
+      ]
+     ]
+    },
+    {
+     "id": "fg_7",
+     "lvl": 2,
+     "title": "Despejar un exponente",
+     "q": "<p>Resuelve \\(3^x=7\\).</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(\\dfrac{\\ln7}{\\ln3}\\approx1{,}77\\)",
+        "\\(\\ln\\tfrac73\\approx0{,}85\\)",
+        "\\(\\tfrac73\\)",
+        "\\(\\ln7-\\ln3\\)",
+        "\\(\\log_73\\approx0{,}56\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "No se pueden igualar bases. Aplica \\(\\ln\\): \\(x\\ln3=\\ln7\\).",
+      "\\(x=\\frac{\\ln7}{\\ln3}\\approx1{,}77\\)."
+     ],
+     "ans": "\\(\\frac{\\ln7}{\\ln3}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lndesp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fg_8",
+     "lvl": 2,
+     "title": "Con datos",
+     "q": "<p>Si \\(\\log_b2=0{,}3\\) y \\(\\log_b3=0{,}5\\), calcula \\(\\log_b12\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(1{,}1\\)",
+        "\\(0{,}8\\)",
+        "\\(0{,}09\\)",
+        "\\(1{,}3\\)",
+        "\\(0{,}6\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(12=2^2\\cdot3\\).",
+      "\\(2\\log_b2+\\log_b3=0{,}6+0{,}5=1{,}1\\)."
+     ],
+     "ans": "\\(1{,}1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "proplog"
+      ]
+     ]
+    },
+    {
+     "id": "fg_9",
+     "lvl": 3,
+     "title": "Ninguna sobrevive",
+     "q": "<p>Resuelve \\(\\log(x+6)=\\log(3x-2)-\\log x\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\(\\varnothing\\)",
+        "\\(x=-1\\)",
+        "\\(x=-2\\)",
+        "\\(x=-1,\\ x=-2\\)",
+        "\\(x=1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\log(x+6)=\\log\\frac{3x-2}x\\Rightarrow x^2+6x=3x-2\\).",
+      "\\(x^2+3x+2=0\\Rightarrow x=-1,\\ -2\\).",
+      "Ambas hacen negativos \\(x\\) y \\(3x-2\\): ninguna es válida."
+     ],
+     "ans": "\\(\\varnothing\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "verif"
+      ]
+     ]
+    },
+    {
+     "id": "fg_10",
+     "lvl": 3,
+     "title": "Cuadrática en logaritmo",
+     "q": "<p>Resuelve \\((\\log_2x)^2-2\\log_2x-3=0\\).</p>",
+     "checks": [
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=8,\\ x=\\tfrac12\\)",
+        "\\(x=3,\\ x=-1\\)",
+        "\\(x=8\\)",
+        "\\(x=\\tfrac18,\\ x=2\\)",
+        "\\(x=9,\\ x=\\tfrac13\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(t=\\log_2x\\): \\((t-3)(t+1)=0\\).",
+      "\\(x=2^3=8\\) y \\(x=2^{-1}=\\tfrac12\\); ambos positivos ✓."
+     ],
+     "ans": "\\(8\\) y \\(\\tfrac12\\)",
+     "hint": "Aquí t sí puede ser negativo (es un logaritmo).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cambvar"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fg_11",
+     "lvl": 3,
+     "title": "Café caliente",
+     "q": "<p>La diferencia de temperatura del café con el ambiente es \\(D(t)=70e^{-0{,}1t}\\) (°C, min). ¿Cuándo será 30 °C?</p>",
+     "checks": [
+      {
+       "p": "t",
+       "o": [
+        "\\(\\approx8{,}47\\) min",
+        "\\(\\approx4{,}29\\) min",
+        "\\(\\approx0{,}85\\) min",
+        "\\(\\approx12{,}04\\) min",
+        "\\(\\approx3{,}68\\) min"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^{-0{,}1t}=\\frac37\\).",
+      "\\(-0{,}1t=\\ln\\frac37\\Rightarrow t=-10\\ln\\frac37\\approx8{,}47\\)."
+     ],
+     "ans": "≈ 8,47 min",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "lndesp"
+      ]
+     ]
+    },
+    {
+     "id": "fg_12",
+     "lvl": 3,
+     "title": "Proceso químico",
+     "q": "<p>En un proceso, \\(t=\\ln(3x+2)-\\ln(x-1)\\). Halla \\(x\\) cuando \\(t=1{,}5\\) min.</p>",
+     "checks": [
+      {
+       "p": "x",
+       "o": [
+        "\\(\\approx4{,}37\\)",
+        "\\(\\approx1{,}48\\)",
+        "\\(\\approx2{,}24\\)",
+        "\\(\\approx6{,}48\\)",
+        "No existe"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^t=\\frac{3x+2}{x-1}\\Rightarrow xe^t-e^t=3x+2\\).",
+      "\\(x=\\frac{e^t+2}{e^t-3}=\\frac{4{,}4817+2}{1{,}4817}\\approx4{,}37\\).",
+      "Verifica: \\(x\\gt1\\) ✓."
+     ],
+     "ans": "≈ 4,37",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proplog"
+      ],
+      [],
+      [
+       "verif"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>El logaritmo es el exponente: responde «¿a qué potencia elevo la base para obtener el número?».</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\log_ba=c\\iff b^c=a\\).</li><li>Producto → suma; cociente → resta; potencia → factor.</li><li>Argumento siempre \\(\\gt0\\).</li><li>\\(b^x=c\\Rightarrow x=\\frac{\\ln c}{\\ln b}\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa en un solo logaritmo.</li><li><strong>2.</strong> Pasa a forma exponencial o iguala argumentos.</li><li><strong>3.</strong> Resuelve la ecuación algebraica.</li><li><strong>4.</strong> Verifica todos los argumentos originales.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\log x+\\log(x-3)=1\\Rightarrow x=5\\) (se descarta \\(x=-2\\)).</div>\n<div class=\"err\"><b>Error común:</b> separar \\(\\log(M+N)\\) como \\(\\log M+\\log N\\).</div>"
+  },
+  {
+   "id": "expfun",
+   "name": "Funciones exponencial y logarítmica: gráficas y modelos (sem. 9)",
+   "teo": "<p><strong>Exponencial</strong> \\(y=ab^x\\): crece si \\(b\\gt1\\), decrece si \\(0\\lt b\\lt1\\); corta el eje \\(y\\) en \\(a\\) y tiene asíntota \\(y=0\\). Trasladada, \\(y=A+Be^{-kt}\\) tiene asíntota \\(y=A\\).</p><p><strong>Logaritmo</strong> \\(y=\\log_b(x-h)\\): dominio \\(x\\gt h\\), asíntota vertical \\(x=h\\). Con suma de logaritmos, <em>cada</em> argumento debe ser positivo.</p><p><strong>Modelos de la EA</strong>: en \\(A+Be^{-kt}\\), \\(A\\) es el valor al que tiende y \\(B=f(0)-A\\); \\(k\\) sale del tercer dato con \\(\\ln\\). En \\(A+B\\ln(t+1)\\), \\(A=f(0)\\). Ambos cambian rápido al inicio y luego <strong>cada vez más lento</strong>.</p>",
+   "form": [
+    "\\(y=A+Be^{-kt}:\\ \\text{asíntota }y=A\\)",
+    "\\(B=f(0)-A\\)",
+    "\\(e^{-kt_1}=c\\Rightarrow k=-\\tfrac{\\ln c}{t_1}\\)",
+    "\\(A+B\\ln(t+1):\\ A=f(0)\\)",
+    "Dominio: cada argumento \\(\\gt0\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la EA4 casi siempre hay una pregunta de modelo \\(A+Be^{-kt}\\) o \\(A+B\\ln(t+1)\\) con un ítem de «justifica» sobre si crece/decrece más rápido o más lento.</p>\n<h3>Conceptos clave</h3><ul><li>Asíntota de \\(A+Be^{-kt}\\): \\(y=A\\). Nunca se cruza.</li><li>Si \\(B\\gt0\\) baja hacia \\(A\\); si \\(B\\lt0\\) sube hacia \\(A\\).</li><li>Dominio de \\(\\log(\\ldots)+\\log(\\ldots)\\): intersección de las condiciones.</li><li>Despejar \\(x\\) de \\(t=\\ln x-\\ln(c-x)\\): junta en un solo ln y pasa a exponencial.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica qué dato da \\(A\\) (asíntota o \\(t=0\\)).</li><li><strong>2.</strong> Usa \\(t=0\\) para \\(B\\) (o resta ecuaciones en el modelo ln).</li><li><strong>3.</strong> Con el tercer dato despeja \\(e^{-kt}\\) y aplica \\(\\ln\\).</li><li><strong>4.</strong> Interpreta: compara cuánto cambia al inicio y después.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> inicio 120, a los 10 min 70, tiende a 20: \\(A=20\\), \\(B=100\\), \\(e^{-10k}=\\frac12\\Rightarrow k=\\frac{\\ln2}{10}\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar el valor inicial como \\(A\\) en el modelo exponencial. \\(A\\) es el valor final (la asíntota).</div>",
+   "ex": [
+    {
+     "id": "fx1",
+     "lvl": 1,
+     "title": "Asíntota y valor inicial",
+     "q": "<p>\\(f(t)=20+100e^{-0{,}05t}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(f(0)\\)",
+       "o": [
+        "120",
+        "100",
+        "20",
+        "80",
+        "0"
+       ]
+      },
+      {
+       "p": "Asíntota horizontal",
+       "o": [
+        "\\(y=20\\)",
+        "\\(y=100\\)",
+        "\\(y=120\\)",
+        "\\(y=0\\)",
+        "\\(t=20\\)"
+       ]
+      },
+      {
+       "p": "Comportamiento",
+       "o": [
+        "Decrece hacia 20",
+        "Crece hacia 120",
+        "Decrece hacia 0",
+        "Crece hacia 20",
+        "Es constante"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f(0)=20+100e^0=120\\).",
+      "Si \\(t\\to\\infty\\), \\(e^{-0{,}05t}\\to0\\): \\(f\\to20\\). La asíntota es \\(y=20\\).",
+      "Como \\(B=100\\gt0\\) y \\(e^{-0{,}05t}\\) decrece, \\(f\\) baja de 120 hacia 20 sin llegar nunca."
+     ],
+     "ans": "\\(f(0)=120\\), asíntota \\(y=20\\), decrece",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "expmod"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fx2",
+     "lvl": 1,
+     "title": "Dominio y asíntota vertical",
+     "q": "<p>\\(f(x)=\\ln(2x-6)\\).</p>",
+     "checks": [
+      {
+       "p": "Dominio",
+       "o": [
+        "\\((3,\\infty)\\)",
+        "\\([3,\\infty)\\)",
+        "\\((6,\\infty)\\)",
+        "\\((-\\infty,3)\\)",
+        "\\(\\mathbb R\\)"
+       ]
+      },
+      {
+       "p": "Asíntota vertical",
+       "o": [
+        "\\(x=3\\)",
+        "\\(x=6\\)",
+        "\\(x=0\\)",
+        "\\(y=3\\)",
+        "No tiene"
+       ]
+      },
+      {
+       "p": "Intercepto con el eje \\(x\\)",
+       "o": [
+        "\\(x=\\tfrac72\\)",
+        "\\(x=3\\)",
+        "\\(x=4\\)",
+        "\\(x=\\tfrac{e}2+3\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "Argumento \\(\\gt0\\): \\(2x-6\\gt0\\Rightarrow x\\gt3\\).",
+      "Cuando \\(x\\to3^+\\), el argumento \\(\\to0^+\\) y \\(\\ln\\to-\\infty\\): asíntota \\(x=3\\).",
+      "\\(\\ln(2x-6)=0\\iff2x-6=1\\iff x=\\frac72\\)."
+     ],
+     "ans": "Dom \\((3,\\infty)\\), AV \\(x=3\\), corte \\(x=\\frac72\\)",
+     "hint": "",
+     "fig": "fxlog",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "domlog"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fx3",
+     "lvl": 1,
+     "title": "Leer una exponencial",
+     "q": "<p>\\(g(x)=3\\,(0{,}8)^x\\).</p>",
+     "checks": [
+      {
+       "p": "Comportamiento",
+       "o": [
+        "Decreciente",
+        "Creciente",
+        "Constante",
+        "Primero crece y luego decrece",
+        "Periódica"
+       ]
+      },
+      {
+       "p": "Corte con el eje \\(y\\)",
+       "o": [
+        "\\((0,3)\\)",
+        "\\((0;0{,}8)\\)",
+        "\\((0;2{,}4)\\)",
+        "\\((0,1)\\)",
+        "\\((3,0)\\)"
+       ]
+      },
+      {
+       "p": "Asíntota",
+       "o": [
+        "\\(y=0\\)",
+        "\\(y=3\\)",
+        "\\(x=0\\)",
+        "\\(y=0{,}8\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "Base \\(0\\lt0{,}8\\lt1\\): decreciente.",
+      "\\(g(0)=3\\cdot1=3\\).",
+      "Para \\(x\\to\\infty\\), \\((0{,}8)^x\\to0\\): asíntota \\(y=0\\)."
+     ],
+     "ans": "Decreciente, corte \\((0,3)\\), asíntota \\(y=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fx4",
+     "lvl": 2,
+     "title": "Tipo EA: dominio de una suma de logaritmos",
+     "q": "<p>\\(L(x)=\\log_3(x+2)+\\log_3(4-x)\\). Halla el dominio y los cortes con el eje \\(x\\).</p>",
+     "checks": [
+      {
+       "p": "Dominio",
+       "o": [
+        "\\((-2,4)\\)",
+        "\\([-2,4]\\)",
+        "\\((-\\infty,-2)\\cup(4,\\infty)\\)",
+        "\\((-2,\\infty)\\)",
+        "\\((-\\infty,4)\\)"
+       ]
+      },
+      {
+       "p": "Cortes con el eje \\(x\\)",
+       "o": [
+        "\\(x=1\\pm2\\sqrt2\\)",
+        "\\(x=1+2\\sqrt2\\)",
+        "\\(x=-2,\\ x=4\\)",
+        "\\(x=1\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x+2\\gt0\\) y \\(4-x\\gt0\\): \\(-2\\lt x\\lt4\\).",
+      "\\(L=0\\iff\\log_3[(x+2)(4-x)]=0\\iff(x+2)(4-x)=1\\).",
+      "\\(-x^2+2x+8=1\\Rightarrow x^2-2x-7=0\\Rightarrow x=1\\pm2\\sqrt2\\approx3{,}83\\) y \\(-1{,}83\\).",
+      "Ambas están en \\((-2,4)\\): las dos valen."
+     ],
+     "ans": "\\((-2,4)\\); \\(x=1\\pm2\\sqrt2\\)",
+     "hint": "Primero el dominio; al final revisa que las soluciones estén dentro.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "domlog"
+      ],
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fx5",
+     "lvl": 2,
+     "title": "Tipo EA: enfriamiento",
+     "q": "<p>Un horno se apaga y su temperatura sigue \\(T(t)=A+Be^{-kt}\\) (°C, min). Al inicio marca 90 °C, a los 5 min 60 °C, y con el tiempo se acerca a 25 °C.</p>",
+     "checks": [
+      {
+       "p": "\\(A\\) y \\(B\\)",
+       "o": [
+        "\\(A=25,\\ B=65\\)",
+        "\\(A=90,\\ B=-65\\)",
+        "\\(A=25,\\ B=90\\)",
+        "\\(A=65,\\ B=25\\)",
+        "\\(A=60,\\ B=30\\)"
+       ]
+      },
+      {
+       "p": "\\(k\\)",
+       "o": [
+        "\\(k=\\tfrac15\\ln\\tfrac{13}7\\approx0{,}1238\\)",
+        "\\(k=\\tfrac15\\ln\\tfrac{7}{13}\\)",
+        "\\(k=\\ln\\tfrac{13}7\\approx0{,}619\\)",
+        "\\(k=\\tfrac15\\ln\\tfrac32\\approx0{,}081\\)",
+        "\\(k=\\tfrac{35}{65}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Asíntota \\(A=25\\). En \\(t=0\\): \\(25+B=90\\Rightarrow B=65\\).",
+      "\\(t=5\\): \\(25+65e^{-5k}=60\\Rightarrow e^{-5k}=\\frac{35}{65}=\\frac7{13}\\).",
+      "\\(-5k=\\ln\\frac7{13}\\Rightarrow k=\\frac15\\ln\\frac{13}7\\approx0{,}1238\\)."
+     ],
+     "ans": "\\(T(t)=25+65e^{-0{,}1238t}\\)",
+     "hint": "",
+     "fig": "fxcool",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expmod"
+      ],
+      [],
+      [
+       "lndesp"
+      ]
+     ]
+    },
+    {
+     "id": "fx6",
+     "lvl": 2,
+     "title": "Crecimiento con techo",
+     "q": "<p>Una app tiene \\(P(t)=A+Be^{-kt}\\) usuarios (miles, meses). Empieza con 200 mil, a los 2 meses tiene 600 mil y se acerca a 1000 mil.</p>",
+     "checks": [
+      {
+       "p": "Regla",
+       "o": [
+        "\\(1000-800e^{-0{,}347t}\\)",
+        "\\(200+800e^{-0{,}347t}\\)",
+        "\\(1000+800e^{-0{,}347t}\\)",
+        "\\(1000-800e^{0{,}347t}\\)",
+        "\\(1000-200e^{-0{,}347t}\\)"
+       ]
+      },
+      {
+       "p": "¿Cómo crece?",
+       "o": [
+        "Cada vez más lento",
+        "Cada vez más rápido",
+        "A ritmo constante",
+        "Crece y luego decrece",
+        "No crece"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=1000\\), \\(B=200-1000=-800\\).",
+      "\\(1000-800e^{-2k}=600\\Rightarrow e^{-2k}=\\frac12\\Rightarrow k=\\frac{\\ln2}2\\approx0{,}347\\).",
+      "La distancia al techo \\(800e^{-kt}\\) se achica cada vez menos: crece rápido al inicio y luego se frena."
+     ],
+     "ans": "Crece cada vez más lento hacia 1000",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expmod"
+      ],
+      [],
+      [
+       "ritmo"
+      ]
+     ]
+    },
+    {
+     "id": "fx7",
+     "lvl": 2,
+     "title": "Modelo logarítmico",
+     "q": "<p>El espesor de una capa es \\(V(t)=A+B\\ln(t+1)\\) (µm, h). En \\(t=0\\) mide 2 µm y en \\(t=4\\) mide 5 µm.</p>",
+     "checks": [
+      {
+       "p": "\\(B\\)",
+       "o": [
+        "\\(\\tfrac{3}{\\ln5}\\approx1{,}864\\)",
+        "\\(\\tfrac{3}{\\ln4}\\approx2{,}164\\)",
+        "\\(\\tfrac{5}{\\ln5}\\approx3{,}107\\)",
+        "\\(\\tfrac{\\ln5}{3}\\approx0{,}536\\)",
+        "\\(0{,}75\\)"
+       ]
+      },
+      {
+       "p": "\\(V(9)\\)",
+       "o": [
+        "\\(\\approx6{,}29\\ \\mu m\\)",
+        "\\(\\approx7{,}5\\ \\mu m\\)",
+        "\\(\\approx4{,}29\\ \\mu m\\)",
+        "\\(\\approx6{,}1\\ \\mu m\\)",
+        "\\(\\approx8\\ \\mu m\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(V(0)=A+B\\ln1=A\\Rightarrow A=2\\).",
+      "\\(2+B\\ln5=5\\Rightarrow B=\\frac3{\\ln5}\\approx1{,}864\\).",
+      "\\(V(9)=2+1{,}864\\ln10\\approx6{,}29\\) µm."
+     ],
+     "ans": "\\(V(t)=2+1{,}864\\ln(t+1)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "logmod"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fx8",
+     "lvl": 3,
+     "title": "Tipo EA: despejar x(t)",
+     "q": "<p>Dada \\(t=\\ln x-\\ln(6-x)\\), escribe \\(x(t)\\) y su corte con el eje vertical.</p>",
+     "checks": [
+      {
+       "p": "\\(x(t)\\)",
+       "o": [
+        "\\(\\dfrac{6e^t}{1+e^t}\\)",
+        "\\(\\dfrac{6}{e^t}\\)",
+        "\\(6e^t-1\\)",
+        "\\(\\dfrac{e^t}{6+e^t}\\)",
+        "\\(6-e^t\\)"
+       ]
+      },
+      {
+       "p": "Corte con el eje vertical (\\(t=0\\))",
+       "o": [
+        "\\(x=3\\)",
+        "\\(x=6\\)",
+        "\\(x=0\\)",
+        "\\(x=1\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(t=\\ln\\frac{x}{6-x}\\Rightarrow e^t=\\frac x{6-x}\\).",
+      "\\(6e^t-xe^t=x\\Rightarrow x(1+e^t)=6e^t\\Rightarrow x=\\frac{6e^t}{1+e^t}\\).",
+      "\\(t=0\\): \\(x=\\frac{6}{2}=3\\). No corta el eje horizontal porque \\(x(t)\\gt0\\) siempre."
+     ],
+     "ans": "\\(x(t)=\\frac{6e^t}{1+e^t}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proplog"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "fx9",
+     "lvl": 3,
+     "title": "Tipo EA: dos datos sin t = 0",
+     "q": "<p>\\(h(t)=A+B\\ln(t+1)\\). Se sabe que \\(h(1)=1\\) y \\(h(4)=2\\).</p>",
+     "checks": [
+      {
+       "p": "\\(B\\)",
+       "o": [
+        "\\(\\tfrac1{\\ln2{,}5}\\approx1{,}091\\)",
+        "\\(\\tfrac1{\\ln3}\\approx0{,}910\\)",
+        "\\(\\tfrac1{\\ln5}\\approx0{,}621\\)",
+        "\\(\\ln2{,}5\\approx0{,}916\\)",
+        "\\(\\tfrac13\\)"
+       ]
+      },
+      {
+       "p": "\\(A\\)",
+       "o": [
+        "\\(\\approx0{,}244\\)",
+        "\\(1\\)",
+        "\\(\\approx-0{,}091\\)",
+        "\\(0\\)",
+        "\\(\\approx1{,}756\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Resta: \\(B(\\ln5-\\ln2)=1\\Rightarrow B=\\frac1{\\ln2{,}5}\\approx1{,}091\\).",
+      "\\(A=1-B\\ln2\\approx0{,}244\\)."
+     ],
+     "ans": "\\(h(t)\\approx0{,}244+1{,}091\\ln(t+1)\\)",
+     "hint": "Escribe las dos ecuaciones y réstalas para eliminar A.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "logmod"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "fx10",
+     "lvl": 2,
+     "title": "Tipo EA: ¿puede bajar de la asíntota?",
+     "q": "<p>\\(T(t)=15+40e^{-0{,}1t}\\). ¿Puede la temperatura ser menor que 15 °C?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No: \\(40e^{-0{,}1t}\\gt0\\) siempre, así que \\(T\\gt15\\)",
+        "Sí, cuando \\(t\\gt150\\)",
+        "Sí, cuando \\(t\\to\\infty\\) llega a 15 y sigue bajando",
+        "No, porque \\(T\\) es creciente",
+        "Sí, si \\(t\\lt0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La exponencial es siempre positiva: \\(40e^{-0{,}1t}\\gt0\\Rightarrow T(t)\\gt15\\).",
+      "15 es la asíntota: se acerca, pero nunca la alcanza ni la cruza."
+     ],
+     "ans": "No",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expmod"
+      ],
+      []
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {
+  "sinu1": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/><text x=\"40.0\" y=\"286\" text-anchor=\"middle\">-3</text>\n<line class=\"gM\" x1=\"73.3\" y1=\"12\" x2=\"73.3\" y2=\"270\"/><text x=\"73.3\" y=\"286\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"106.6\" y1=\"12\" x2=\"106.6\" y2=\"270\"/><text x=\"106.6\" y=\"286\" text-anchor=\"middle\">-1</text>\n<line class=\"gM\" x1=\"139.9\" y1=\"12\" x2=\"139.9\" y2=\"270\"/><text x=\"139.9\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"173.1\" y1=\"12\" x2=\"173.1\" y2=\"270\"/><text x=\"173.1\" y=\"286\" text-anchor=\"middle\">1</text>\n<line class=\"gM\" x1=\"206.4\" y1=\"12\" x2=\"206.4\" y2=\"270\"/><text x=\"206.4\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"239.7\" y1=\"12\" x2=\"239.7\" y2=\"270\"/><text x=\"239.7\" y=\"286\" text-anchor=\"middle\">3</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"306.3\" y1=\"12\" x2=\"306.3\" y2=\"270\"/><text x=\"306.3\" y=\"286\" text-anchor=\"middle\">5</text>\n<line class=\"gM\" x1=\"339.6\" y1=\"12\" x2=\"339.6\" y2=\"270\"/><text x=\"339.6\" y=\"286\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"372.9\" y1=\"12\" x2=\"372.9\" y2=\"270\"/><text x=\"372.9\" y=\"286\" text-anchor=\"middle\">7</text>\n<line class=\"gM\" x1=\"406.1\" y1=\"12\" x2=\"406.1\" y2=\"270\"/><text x=\"406.1\" y=\"286\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"439.4\" y1=\"12\" x2=\"439.4\" y2=\"270\"/><text x=\"439.4\" y=\"286\" text-anchor=\"middle\">9</text>\n<line class=\"gM\" x1=\"472.7\" y1=\"12\" x2=\"472.7\" y2=\"270\"/><text x=\"472.7\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">11</text>\n<line class=\"gM\" x1=\"40\" y1=\"244.2\" x2=\"506\" y2=\"244.2\"/><text x=\"34\" y=\"248.2\" text-anchor=\"end\">-3</text>\n<line class=\"gM\" x1=\"40\" y1=\"192.6\" x2=\"506\" y2=\"192.6\"/><text x=\"34\" y=\"196.6\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"40\" y1=\"141.0\" x2=\"506\" y2=\"141.0\"/><text x=\"34\" y=\"145.0\" text-anchor=\"end\">-1</text>\n<line class=\"gM\" x1=\"40\" y1=\"89.4\" x2=\"506\" y2=\"89.4\"/><text x=\"34\" y=\"93.4\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"40\" y1=\"37.8\" x2=\"506\" y2=\"37.8\"/><text x=\"34\" y=\"41.8\" text-anchor=\"end\">1</text>\n<line class=\"ax\" x1=\"40\" y1=\"89.4\" x2=\"506\" y2=\"89.4\"/>\n<line class=\"ax\" x1=\"139.9\" y1=\"12\" x2=\"139.9\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"83.4\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"143.9\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,141.0 41.6,133.4 43.1,125.9 44.7,118.5 46.2,111.2 47.8,104.0 49.3,97.1 50.9,90.3 52.4,83.9 54.0,77.7 55.5,71.9 57.1,66.5 58.6,61.5 60.2,56.9 61.7,52.7 63.3,49.0 64.9,45.9 66.4,43.2 68.0,41.0 69.5,39.4 71.1,38.4 72.6,37.9 74.2,37.9 75.7,38.5 77.3,39.6 78.8,41.3 80.4,43.5 81.9,46.3 83.5,49.5 85.0,53.3 86.6,57.5 88.2,62.2 89.7,67.3 91.3,72.8 92.8,78.6 94.4,84.8 95.9,91.3 97.5,98.0 99.0,105.0 100.6,112.2 102.1,119.5 103.7,127.0 105.2,134.5 106.8,142.1 108.3,149.6 109.9,157.1 111.5,164.6 113.0,171.9 114.6,179.0 116.1,185.9 117.7,192.6 119.2,199.0 120.8,205.1 122.3,210.9 123.9,216.2 125.4,221.2 127.0,225.7 128.5,229.8 130.1,233.4 131.6,236.5 133.2,239.1 134.8,241.2 136.3,242.8 137.9,243.7 139.4,244.2 141.0,244.1 142.5,243.4 144.1,242.2 145.6,240.4 147.2,238.1 148.7,235.3 150.3,232.0 151.8,228.1 153.4,223.9 154.9,219.1 156.5,214.0 158.1,208.4 159.6,202.5 161.2,196.3 162.7,189.8 164.3,183.0 165.8,176.0 167.4,168.8 168.9,161.4 170.5,153.9 172.0,146.4 173.6,138.8 175.1,131.3 176.7,123.8 178.2,116.4 179.8,109.1 181.4,102.0 182.9,95.1 184.5,88.5 186.0,82.1 187.6,76.1 189.1,70.4 190.7,65.0 192.2,60.1 193.8,55.6 195.3,51.6 196.9,48.1 198.4,45.0 200.0,42.5 201.5,40.5 203.1,39.1 204.7,38.2 206.2,37.8 207.8,38.0 209.3,38.8 210.9,40.1 212.4,41.9 214.0,44.3 215.5,47.2 217.1,50.6 218.6,54.4 220.2,58.8 221.7,63.6 223.3,68.8 224.8,74.4 226.4,80.3 228.0,86.6 229.5,93.2 231.1,100.0 232.6,107.1 234.2,114.3 235.7,121.7 237.3,129.1 238.8,136.7 240.4,144.2 241.9,151.8 243.5,159.3 245.0,166.7 246.6,173.9 248.1,181.0 249.7,187.9 251.3,194.5 252.8,200.8 254.4,206.8 255.9,212.4 257.5,217.7 259.0,222.5 260.6,227.0 262.1,230.9 263.7,234.4 265.2,237.3 266.8,239.8 268.3,241.7 269.9,243.1 271.4,243.9 273.0,244.2 274.6,243.9 276.1,243.1 277.7,241.7 279.2,239.8 280.8,237.3 282.3,234.4 283.9,230.9 285.4,227.0 287.0,222.5 288.5,217.7 290.1,212.4 291.6,206.8 293.2,200.8 294.7,194.5 296.3,187.9 297.9,181.0 299.4,173.9 301.0,166.7 302.5,159.3 304.1,151.8 305.6,144.2 307.2,136.7 308.7,129.1 310.3,121.7 311.8,114.3 313.4,107.1 314.9,100.0 316.5,93.2 318.0,86.6 319.6,80.3 321.2,74.4 322.7,68.8 324.3,63.6 325.8,58.8 327.4,54.4 328.9,50.6 330.5,47.2 332.0,44.3 333.6,41.9 335.1,40.1 336.7,38.8 338.2,38.0 339.8,37.8 341.3,38.2 342.9,39.1 344.5,40.5 346.0,42.5 347.6,45.0 349.1,48.1 350.7,51.6 352.2,55.6 353.8,60.1 355.3,65.0 356.9,70.4 358.4,76.1 360.0,82.1 361.5,88.5 363.1,95.1 364.6,102.0 366.2,109.1 367.8,116.4 369.3,123.8 370.9,131.3 372.4,138.8 374.0,146.4 375.5,153.9 377.1,161.4 378.6,168.8 380.2,176.0 381.7,183.0 383.3,189.8 384.8,196.3 386.4,202.5 387.9,208.4 389.5,214.0 391.1,219.1 392.6,223.9 394.2,228.1 395.7,232.0 397.3,235.3 398.8,238.1 400.4,240.4 401.9,242.2 403.5,243.4 405.0,244.1 406.6,244.2 408.1,243.7 409.7,242.8 411.2,241.2 412.8,239.1 414.4,236.5 415.9,233.4 417.5,229.8 419.0,225.7 420.6,221.2 422.1,216.2 423.7,210.9 425.2,205.1 426.8,199.0 428.3,192.6 429.9,185.9 431.4,179.0 433.0,171.9 434.5,164.6 436.1,157.1 437.7,149.6 439.2,142.1 440.8,134.5 442.3,127.0 443.9,119.5 445.4,112.2 447.0,105.0 448.5,98.0 450.1,91.3 451.6,84.8 453.2,78.6 454.7,72.8 456.3,67.3 457.8,62.2 459.4,57.5 461.0,53.3 462.5,49.5 464.1,46.3 465.6,43.5 467.2,41.3 468.7,39.6 470.3,38.5 471.8,37.9 473.4,37.9 474.9,38.4 476.5,39.4 478.0,41.0 479.6,43.2 481.1,45.9 482.7,49.0 484.3,52.7 485.8,56.9 487.4,61.5 488.9,66.5 490.5,71.9 492.0,77.7 493.6,83.9 495.1,90.3 496.7,97.1 498.2,104.0 499.8,111.2 501.3,118.5 502.9,125.9 504.4,133.4 506.0,141.0\"/>\n\n</svg>",
+  "sinu2": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"43.7\" y1=\"12\" x2=\"43.7\" y2=\"270\"/><text x=\"43.7\" y=\"286\" text-anchor=\"middle\">1</text>\n<line class=\"gM\" x1=\"136.2\" y1=\"12\" x2=\"136.2\" y2=\"270\"/><text x=\"136.2\" y=\"286\" text-anchor=\"middle\">1,5</text>\n<line class=\"gM\" x1=\"228.6\" y1=\"12\" x2=\"228.6\" y2=\"270\"/><text x=\"228.6\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"321.1\" y1=\"12\" x2=\"321.1\" y2=\"270\"/><text x=\"321.1\" y=\"286\" text-anchor=\"middle\">2,5</text>\n<line class=\"gM\" x1=\"413.5\" y1=\"12\" x2=\"413.5\" y2=\"270\"/><text x=\"413.5\" y=\"286\" text-anchor=\"middle\">3</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">3,5</text>\n<line class=\"gM\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/><text x=\"34\" y=\"274.0\" text-anchor=\"end\">-3</text>\n<line class=\"gM\" x1=\"40\" y1=\"227.0\" x2=\"506\" y2=\"227.0\"/><text x=\"34\" y=\"231.0\" text-anchor=\"end\">-2,5</text>\n<line class=\"gM\" x1=\"40\" y1=\"184.0\" x2=\"506\" y2=\"184.0\"/><text x=\"34\" y=\"188.0\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"40\" y1=\"141.0\" x2=\"506\" y2=\"141.0\"/><text x=\"34\" y=\"145.0\" text-anchor=\"end\">-1,5</text>\n<line class=\"gM\" x1=\"40\" y1=\"98.0\" x2=\"506\" y2=\"98.0\"/><text x=\"34\" y=\"102.0\" text-anchor=\"end\">-1</text>\n<line class=\"gM\" x1=\"40\" y1=\"55.0\" x2=\"506\" y2=\"55.0\"/><text x=\"34\" y=\"59.0\" text-anchor=\"end\">-0,5</text>\n<line class=\"gM\" x1=\"40\" y1=\"12.0\" x2=\"506\" y2=\"12.0\"/><text x=\"34\" y=\"16.0\" text-anchor=\"end\">0</text>\n<line class=\"ax\" x1=\"40\" y1=\"12.0\" x2=\"506\" y2=\"12.0\"/>\n<text class=\"axl\" x=\"504\" y=\"6.0\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">y</text>\n<polyline class=\"curve\" points=\"40.0,153.9 41.6,148.5 43.1,143.1 44.7,137.6 46.2,132.2 47.8,126.8 49.3,121.4 50.9,116.1 52.4,110.8 54.0,105.7 55.5,100.6 57.1,95.7 58.6,90.8 60.2,86.1 61.7,81.6 63.3,77.2 64.9,73.0 66.4,69.0 68.0,65.2 69.5,61.6 71.1,58.3 72.6,55.1 74.2,52.2 75.7,49.6 77.3,47.2 78.8,45.0 80.4,43.2 81.9,41.6 83.5,40.3 85.0,39.2 86.6,38.5 88.2,38.0 89.7,37.8 91.3,37.9 92.8,38.3 94.4,39.0 95.9,39.9 97.5,41.2 99.0,42.7 100.6,44.5 102.1,46.5 103.7,48.9 105.2,51.5 106.8,54.3 108.3,57.4 109.9,60.7 111.5,64.2 113.0,67.9 114.6,71.9 116.1,76.0 117.7,80.3 119.2,84.8 120.8,89.5 122.3,94.3 123.9,99.2 125.4,104.2 127.0,109.4 128.5,114.6 130.1,119.9 131.6,125.2 133.2,130.6 134.8,136.1 136.3,141.5 137.9,147.0 139.4,152.4 141.0,157.8 142.5,163.1 144.1,168.4 145.6,173.6 147.2,178.7 148.7,183.8 150.3,188.7 151.8,193.4 153.4,198.0 154.9,202.5 156.5,206.8 158.1,210.9 159.6,214.8 161.2,218.5 162.7,222.0 164.3,225.2 165.8,228.3 167.4,231.1 168.9,233.6 170.5,235.9 172.0,237.9 173.6,239.6 175.1,241.1 176.7,242.3 178.2,243.2 179.8,243.8 181.4,244.1 182.9,244.2 184.5,243.9 186.0,243.4 187.6,242.6 189.1,241.5 190.7,240.1 192.2,238.5 193.8,236.6 195.3,234.4 196.9,231.9 198.4,229.2 200.0,226.3 201.5,223.1 203.1,219.7 204.7,216.1 206.2,212.2 207.8,208.2 209.3,203.9 210.9,199.5 212.4,195.0 214.0,190.3 215.5,185.4 217.1,180.4 218.6,175.3 220.2,170.2 221.7,164.9 223.3,159.6 224.8,154.2 226.4,148.8 228.0,143.3 229.5,137.9 231.1,132.5 232.6,127.0 234.2,121.7 235.7,116.3 237.3,111.1 238.8,105.9 240.4,100.8 241.9,95.9 243.5,91.1 245.0,86.4 246.6,81.8 248.1,77.4 249.7,73.2 251.3,69.2 252.8,65.4 254.4,61.8 255.9,58.4 257.5,55.3 259.0,52.4 260.6,49.7 262.1,47.3 263.7,45.1 265.2,43.3 266.8,41.6 268.3,40.3 269.9,39.3 271.4,38.5 273.0,38.0 274.6,37.8 276.1,37.9 277.7,38.3 279.2,38.9 280.8,39.9 282.3,41.1 283.9,42.6 285.4,44.4 287.0,46.4 288.5,48.8 290.1,51.3 291.6,54.1 293.2,57.2 294.7,60.5 296.3,64.0 297.9,67.8 299.4,71.7 301.0,75.8 302.5,80.1 304.1,84.6 305.6,89.3 307.2,94.0 308.7,98.9 310.3,104.0 311.8,109.1 313.4,114.3 314.9,119.6 316.5,125.0 318.0,130.4 319.6,135.8 321.2,141.3 322.7,146.7 324.3,152.1 325.8,157.5 327.4,162.9 328.9,168.2 330.5,173.4 332.0,178.5 333.6,183.5 335.1,188.4 336.7,193.2 338.2,197.8 339.8,202.3 341.3,206.6 342.9,210.7 344.5,214.6 346.0,218.3 347.6,221.8 349.1,225.1 350.7,228.1 352.2,230.9 353.8,233.5 355.3,235.8 356.9,237.8 358.4,239.5 360.0,241.0 361.5,242.2 363.1,243.1 364.6,243.8 366.2,244.1 367.8,244.2 369.3,244.0 370.9,243.4 372.4,242.7 374.0,241.6 375.5,240.2 377.1,238.6 378.6,236.7 380.2,234.5 381.7,232.1 383.3,229.4 384.8,226.4 386.4,223.3 387.9,219.9 389.5,216.2 391.1,212.4 392.6,208.4 394.2,204.1 395.7,199.8 397.3,195.2 398.8,190.5 400.4,185.6 401.9,180.7 403.5,175.6 405.0,170.4 406.6,165.2 408.1,159.8 409.7,154.4 411.2,149.0 412.8,143.6 414.4,138.1 415.9,132.7 417.5,127.3 419.0,121.9 420.6,116.6 422.1,111.3 423.7,106.2 425.2,101.1 426.8,96.1 428.3,91.3 429.9,86.6 431.4,82.0 433.0,77.6 434.5,73.4 436.1,69.4 437.7,65.6 439.2,62.0 440.8,58.6 442.3,55.4 443.9,52.5 445.4,49.8 447.0,47.4 448.5,45.2 450.1,43.3 451.6,41.7 453.2,40.4 454.7,39.3 456.3,38.5 457.8,38.0 459.4,37.8 461.0,37.9 462.5,38.2 464.1,38.9 465.6,39.8 467.2,41.0 468.7,42.5 470.3,44.3 471.8,46.3 473.4,48.6 474.9,51.2 476.5,54.0 478.0,57.1 479.6,60.3 481.1,63.8 482.7,67.6 484.3,71.5 485.8,75.6 487.4,79.9 488.9,84.4 490.5,89.0 492.0,93.8 493.6,98.7 495.1,103.7 496.7,108.9 498.2,114.1 499.8,119.4 501.3,124.7 502.9,130.1 504.4,135.6 506.0,141.0\"/>\n<circle cx=\"40.0\" cy=\"153.9\" r=\"4.5\" style=\"fill:var(--curve);stroke:var(--curve);stroke-width:2\"/><circle cx=\"89.9\" cy=\"37.8\" r=\"4.5\" style=\"fill:var(--curve);stroke:var(--curve);stroke-width:2\"/><circle cx=\"367.3\" cy=\"244.2\" r=\"4.5\" style=\"fill:var(--curve);stroke:var(--curve);stroke-width:2\"/><text class=\"lab\" x=\"97.9\" y=\"51.8\">(1,25; −0,3)</text><text class=\"lab\" x=\"357.3\" y=\"236.2\" text-anchor=\"end\">(2,75; −2,7)</text><text class=\"lab\" x=\"48.0\" y=\"157.9\">(0,98; −1,65)</text>\n</svg>",
+  "ea4L": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"98.2\" y1=\"12\" x2=\"98.2\" y2=\"270\"/><text x=\"98.2\" y=\"286\" text-anchor=\"middle\">π/4</text>\n<line class=\"gM\" x1=\"156.5\" y1=\"12\" x2=\"156.5\" y2=\"270\"/><text x=\"156.5\" y=\"286\" text-anchor=\"middle\">π/2</text>\n<line class=\"gM\" x1=\"214.8\" y1=\"12\" x2=\"214.8\" y2=\"270\"/><text x=\"214.8\" y=\"286\" text-anchor=\"middle\">3π/4</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">π</text>\n<line class=\"gM\" x1=\"331.2\" y1=\"12\" x2=\"331.2\" y2=\"270\"/><text x=\"331.2\" y=\"286\" text-anchor=\"middle\">5π/4</text>\n<line class=\"gM\" x1=\"389.5\" y1=\"12\" x2=\"389.5\" y2=\"270\"/><text x=\"389.5\" y=\"286\" text-anchor=\"middle\">3π/2</text>\n<line class=\"gM\" x1=\"447.8\" y1=\"12\" x2=\"447.8\" y2=\"270\"/><text x=\"447.8\" y=\"286\" text-anchor=\"middle\">7π/4</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">2π</text>\n<line class=\"gM\" x1=\"40\" y1=\"212.7\" x2=\"506\" y2=\"212.7\"/><text x=\"34\" y=\"216.7\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"40\" y1=\"126.7\" x2=\"506\" y2=\"126.7\"/><text x=\"34\" y=\"130.7\" text-anchor=\"end\">5</text>\n<line class=\"gM\" x1=\"40\" y1=\"40.7\" x2=\"506\" y2=\"40.7\"/><text x=\"34\" y=\"44.7\" text-anchor=\"end\">8</text>\n<line class=\"ax\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/>\n<line class=\"ax\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"264.0\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,212.7 41.2,212.6 42.3,212.5 43.5,212.3 44.7,212.0 45.8,211.6 47.0,211.1 48.2,210.6 49.3,210.0 50.5,209.3 51.6,208.5 52.8,207.6 54.0,206.6 55.1,205.6 56.3,204.5 57.5,203.3 58.6,202.0 59.8,200.7 61.0,199.3 62.1,197.8 63.3,196.2 64.5,194.6 65.6,192.9 66.8,191.2 68.0,189.4 69.1,187.5 70.3,185.5 71.5,183.5 72.6,181.5 73.8,179.4 74.9,177.2 76.1,175.0 77.3,172.7 78.4,170.4 79.6,168.1 80.8,165.7 81.9,163.3 83.1,160.8 84.3,158.3 85.4,155.8 86.6,153.2 87.8,150.7 88.9,148.1 90.1,145.4 91.3,142.8 92.4,140.1 93.6,137.4 94.8,134.8 95.9,132.1 97.1,129.4 98.2,126.7 99.4,124.0 100.6,121.3 101.7,118.6 102.9,115.9 104.1,113.2 105.2,110.6 106.4,107.9 107.6,105.3 108.7,102.7 109.9,100.1 111.1,97.5 112.2,95.0 113.4,92.5 114.6,90.0 115.7,87.6 116.9,85.2 118.1,82.9 119.2,80.6 120.4,78.3 121.5,76.1 122.7,74.0 123.9,71.8 125.0,69.8 126.2,67.8 127.4,65.9 128.5,64.0 129.7,62.2 130.9,60.4 132.0,58.7 133.2,57.1 134.4,55.5 135.5,54.1 136.7,52.6 137.9,51.3 139.0,50.0 140.2,48.9 141.4,47.7 142.5,46.7 143.7,45.8 144.9,44.9 146.0,44.1 147.2,43.4 148.3,42.7 149.5,42.2 150.7,41.7 151.8,41.3 153.0,41.0 154.2,40.8 155.3,40.7 156.5,40.7 157.7,40.7 158.8,40.8 160.0,41.0 161.2,41.3 162.3,41.7 163.5,42.2 164.7,42.7 165.8,43.4 167.0,44.1 168.2,44.9 169.3,45.8 170.5,46.7 171.6,47.7 172.8,48.9 174.0,50.0 175.1,51.3 176.3,52.6 177.5,54.1 178.6,55.5 179.8,57.1 181.0,58.7 182.1,60.4 183.3,62.2 184.5,64.0 185.6,65.9 186.8,67.8 188.0,69.8 189.1,71.8 190.3,74.0 191.5,76.1 192.6,78.3 193.8,80.6 194.9,82.9 196.1,85.2 197.3,87.6 198.4,90.0 199.6,92.5 200.8,95.0 201.9,97.5 203.1,100.1 204.3,102.7 205.4,105.3 206.6,107.9 207.8,110.6 208.9,113.2 210.1,115.9 211.3,118.6 212.4,121.3 213.6,124.0 214.8,126.7 215.9,129.4 217.1,132.1 218.2,134.8 219.4,137.4 220.6,140.1 221.7,142.8 222.9,145.4 224.1,148.1 225.2,150.7 226.4,153.2 227.6,155.8 228.7,158.3 229.9,160.8 231.1,163.3 232.2,165.7 233.4,168.1 234.6,170.4 235.7,172.7 236.9,175.0 238.0,177.2 239.2,179.4 240.4,181.5 241.5,183.5 242.7,185.5 243.9,187.5 245.0,189.4 246.2,191.2 247.4,192.9 248.5,194.6 249.7,196.2 250.9,197.8 252.0,199.3 253.2,200.7 254.4,202.0 255.5,203.3 256.7,204.5 257.9,205.6 259.0,206.6 260.2,207.6 261.4,208.5 262.5,209.3 263.7,210.0 264.8,210.6 266.0,211.1 267.2,211.6 268.3,212.0 269.5,212.3 270.7,212.5 271.8,212.6 273.0,212.7 274.2,212.6 275.3,212.5 276.5,212.3 277.7,212.0 278.8,211.6 280.0,211.1 281.2,210.6 282.3,210.0 283.5,209.3 284.6,208.5 285.8,207.6 287.0,206.6 288.1,205.6 289.3,204.5 290.5,203.3 291.6,202.0 292.8,200.7 294.0,199.3 295.1,197.8 296.3,196.2 297.5,194.6 298.6,192.9 299.8,191.2 301.0,189.4 302.1,187.5 303.3,185.5 304.5,183.5 305.6,181.5 306.8,179.4 308.0,177.2 309.1,175.0 310.3,172.7 311.4,170.4 312.6,168.1 313.8,165.7 314.9,163.3 316.1,160.8 317.3,158.3 318.4,155.8 319.6,153.2 320.8,150.7 321.9,148.1 323.1,145.4 324.3,142.8 325.4,140.1 326.6,137.4 327.8,134.8 328.9,132.1 330.1,129.4 331.2,126.7 332.4,124.0 333.6,121.3 334.7,118.6 335.9,115.9 337.1,113.2 338.2,110.6 339.4,107.9 340.6,105.3 341.7,102.7 342.9,100.1 344.1,97.5 345.2,95.0 346.4,92.5 347.6,90.0 348.7,87.6 349.9,85.2 351.1,82.9 352.2,80.6 353.4,78.3 354.6,76.1 355.7,74.0 356.9,71.8 358.0,69.8 359.2,67.8 360.4,65.9 361.5,64.0 362.7,62.2 363.9,60.4 365.0,58.7 366.2,57.1 367.4,55.5 368.5,54.1 369.7,52.6 370.9,51.3 372.0,50.0 373.2,48.9 374.4,47.7 375.5,46.7 376.7,45.8 377.8,44.9 379.0,44.1 380.2,43.4 381.3,42.7 382.5,42.2 383.7,41.7 384.8,41.3 386.0,41.0 387.2,40.8 388.3,40.7 389.5,40.7 390.7,40.7 391.8,40.8 393.0,41.0 394.2,41.3 395.3,41.7 396.5,42.2 397.7,42.7 398.8,43.4 400.0,44.1 401.2,44.9 402.3,45.8 403.5,46.7 404.6,47.7 405.8,48.9 407.0,50.0 408.1,51.3 409.3,52.6 410.5,54.1 411.6,55.5 412.8,57.1 414.0,58.7 415.1,60.4 416.3,62.2 417.5,64.0 418.6,65.9 419.8,67.8 421.0,69.8 422.1,71.8 423.3,74.0 424.4,76.1 425.6,78.3 426.8,80.6 427.9,82.9 429.1,85.2 430.3,87.6 431.4,90.0 432.6,92.5 433.8,95.0 434.9,97.5 436.1,100.1 437.3,102.7 438.4,105.3 439.6,107.9 440.8,110.6 441.9,113.2 443.1,115.9 444.3,118.6 445.4,121.3 446.6,124.0 447.7,126.7 448.9,129.4 450.1,132.1 451.2,134.8 452.4,137.4 453.6,140.1 454.7,142.8 455.9,145.4 457.1,148.1 458.2,150.7 459.4,153.2 460.6,155.8 461.7,158.3 462.9,160.8 464.1,163.3 465.2,165.7 466.4,168.1 467.6,170.4 468.7,172.7 469.9,175.0 471.1,177.2 472.2,179.4 473.4,181.5 474.5,183.5 475.7,185.5 476.9,187.5 478.0,189.4 479.2,191.2 480.4,192.9 481.5,194.6 482.7,196.2 483.9,197.8 485.0,199.3 486.2,200.7 487.4,202.0 488.5,203.3 489.7,204.5 490.9,205.6 492.0,206.6 493.2,207.6 494.3,208.5 495.5,209.3 496.7,210.0 497.8,210.6 499.0,211.1 500.2,211.6 501.3,212.0 502.5,212.3 503.7,212.5 504.8,212.6 506.0,212.7\"/>\n</svg>",
+  "ea4J": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"51.1\" y1=\"12\" x2=\"51.1\" y2=\"270\"/><text x=\"51.1\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"95.5\" y1=\"12\" x2=\"95.5\" y2=\"270\"/><text x=\"95.5\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"139.9\" y1=\"12\" x2=\"139.9\" y2=\"270\"/><text x=\"139.9\" y=\"286\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"184.2\" y1=\"12\" x2=\"184.2\" y2=\"270\"/><text x=\"184.2\" y=\"286\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"228.6\" y1=\"12\" x2=\"228.6\" y2=\"270\"/><text x=\"228.6\" y=\"286\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"317.4\" y1=\"12\" x2=\"317.4\" y2=\"270\"/><text x=\"317.4\" y=\"286\" text-anchor=\"middle\">12</text>\n<line class=\"gM\" x1=\"361.8\" y1=\"12\" x2=\"361.8\" y2=\"270\"/><text x=\"361.8\" y=\"286\" text-anchor=\"middle\">14</text>\n<line class=\"gM\" x1=\"406.1\" y1=\"12\" x2=\"406.1\" y2=\"270\"/><text x=\"406.1\" y=\"286\" text-anchor=\"middle\">16</text>\n<line class=\"gM\" x1=\"450.5\" y1=\"12\" x2=\"450.5\" y2=\"270\"/><text x=\"450.5\" y=\"286\" text-anchor=\"middle\">18</text>\n<line class=\"gM\" x1=\"494.9\" y1=\"12\" x2=\"494.9\" y2=\"270\"/><text x=\"494.9\" y=\"286\" text-anchor=\"middle\">20</text>\n<line class=\"gM\" x1=\"40\" y1=\"196.3\" x2=\"506\" y2=\"196.3\"/><text x=\"34\" y=\"200.3\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"40\" y1=\"122.6\" x2=\"506\" y2=\"122.6\"/><text x=\"34\" y=\"126.6\" text-anchor=\"end\">4</text>\n<line class=\"gM\" x1=\"40\" y1=\"48.9\" x2=\"506\" y2=\"48.9\"/><text x=\"34\" y=\"52.9\" text-anchor=\"end\">6</text>\n<line class=\"ax\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/>\n<line class=\"ax\" x1=\"51.1\" y1=\"12\" x2=\"51.1\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"264.0\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"55.1\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,193.8 41.2,194.3 42.3,194.7 43.5,195.1 44.7,195.4 45.8,195.7 47.0,195.9 48.2,196.1 49.3,196.2 50.5,196.3 51.6,196.3 52.8,196.2 54.0,196.1 55.1,195.9 56.3,195.7 57.5,195.5 58.6,195.1 59.8,194.7 61.0,194.3 62.1,193.8 63.3,193.3 64.5,192.6 65.6,192.0 66.8,191.3 68.0,190.5 69.1,189.7 70.3,188.9 71.5,187.9 72.6,187.0 73.8,186.0 74.9,184.9 76.1,183.8 77.3,182.7 78.4,181.5 79.6,180.2 80.8,178.9 81.9,177.6 83.1,176.2 84.3,174.8 85.4,173.4 86.6,171.9 87.8,170.4 88.9,168.8 90.1,167.2 91.3,165.6 92.4,163.9 93.6,162.2 94.8,160.5 95.9,158.8 97.1,157.0 98.2,155.2 99.4,153.3 100.6,151.5 101.7,149.6 102.9,147.7 104.1,145.8 105.2,143.9 106.4,141.9 107.6,140.0 108.7,138.0 109.9,136.0 111.1,134.0 112.2,132.0 113.4,130.0 114.6,128.0 115.7,125.9 116.9,123.9 118.1,121.9 119.2,119.9 120.4,117.8 121.5,115.8 122.7,113.8 123.9,111.8 125.0,109.8 126.2,107.8 127.4,105.8 128.5,103.9 129.7,101.9 130.9,100.0 132.0,98.1 133.2,96.2 134.4,94.3 135.5,92.4 136.7,90.6 137.9,88.8 139.0,87.0 140.2,85.2 141.4,83.5 142.5,81.8 143.7,80.1 144.8,78.5 146.0,76.9 147.2,75.3 148.3,73.8 149.5,72.3 150.7,70.8 151.8,69.4 153.0,68.0 154.2,66.6 155.3,65.3 156.5,64.1 157.7,62.9 158.8,61.7 160.0,60.6 161.2,59.5 162.3,58.5 163.5,57.5 164.7,56.6 165.8,55.7 167.0,54.9 168.2,54.1 169.3,53.4 170.5,52.7 171.6,52.1 172.8,51.5 174.0,51.0 175.1,50.5 176.3,50.1 177.5,49.8 178.6,49.5 179.8,49.3 181.0,49.1 182.1,48.9 183.3,48.9 184.5,48.9 185.6,48.9 186.8,49.0 188.0,49.1 189.1,49.3 190.3,49.6 191.5,49.9 192.6,50.3 193.8,50.7 194.9,51.2 196.1,51.7 197.3,52.3 198.4,53.0 199.6,53.7 200.8,54.4 201.9,55.2 203.1,56.0 204.3,56.9 205.4,57.9 206.6,58.9 207.8,59.9 208.9,61.0 210.1,62.2 211.3,63.3 212.4,64.6 213.6,65.8 214.8,67.2 215.9,68.5 217.1,69.9 218.2,71.3 219.4,72.8 220.6,74.3 221.7,75.9 222.9,77.5 224.1,79.1 225.2,80.7 226.4,82.4 227.6,84.1 228.7,85.9 229.9,87.7 231.1,89.5 232.2,91.3 233.4,93.1 234.6,95.0 235.7,96.9 236.9,98.8 238.1,100.7 239.2,102.7 240.4,104.6 241.5,106.6 242.7,108.6 243.9,110.6 245.0,112.6 246.2,114.6 247.4,116.6 248.5,118.6 249.7,120.6 250.9,122.7 252.0,124.7 253.2,126.7 254.4,128.7 255.5,130.8 256.7,132.8 257.9,134.8 259.0,136.8 260.2,138.7 261.4,140.7 262.5,142.7 263.7,144.6 264.8,146.5 266.0,148.4 267.2,150.3 268.3,152.2 269.5,154.0 270.7,155.9 271.8,157.7 273.0,159.4 274.2,161.2 275.3,162.9 276.5,164.6 277.7,166.2 278.8,167.8 280.0,169.4 281.2,171.0 282.3,172.5 283.5,173.9 284.6,175.4 285.8,176.8 287.0,178.1 288.1,179.4 289.3,180.7 290.5,181.9 291.6,183.1 292.8,184.2 294.0,185.3 295.1,186.4 296.3,187.4 297.5,188.3 298.6,189.2 299.8,190.0 301.0,190.8 302.1,191.6 303.3,192.2 304.5,192.9 305.6,193.5 306.8,194.0 307.9,194.5 309.1,194.9 310.3,195.3 311.4,195.6 312.6,195.8 313.8,196.0 314.9,196.2 316.1,196.3 317.3,196.3 318.4,196.3 319.6,196.2 320.8,196.1 321.9,195.9 323.1,195.6 324.3,195.3 325.4,195.0 326.6,194.6 327.8,194.1 328.9,193.6 330.1,193.0 331.2,192.4 332.4,191.7 333.6,191.0 334.7,190.2 335.9,189.4 337.1,188.5 338.2,187.5 339.4,186.6 340.6,185.5 341.7,184.4 342.9,183.3 344.1,182.2 345.2,180.9 346.4,179.7 347.6,178.4 348.7,177.0 349.9,175.6 351.1,174.2 352.2,172.8 353.4,171.2 354.6,169.7 355.7,168.1 356.9,166.5 358.0,164.9 359.2,163.2 360.4,161.5 361.5,159.8 362.7,158.0 363.9,156.2 365.0,154.4 366.2,152.6 367.4,150.7 368.5,148.8 369.7,146.9 370.9,145.0 372.0,143.0 373.2,141.1 374.4,139.1 375.5,137.1 376.7,135.1 377.8,133.1 379.0,131.1 380.2,129.1 381.3,127.1 382.5,125.1 383.7,123.1 384.8,121.0 386.0,119.0 387.2,117.0 388.3,115.0 389.5,112.9 390.7,110.9 391.8,108.9 393.0,107.0 394.2,105.0 395.3,103.0 396.5,101.1 397.7,99.2 398.8,97.2 400.0,95.3 401.1,93.5 402.3,91.6 403.5,89.8 404.6,88.0 405.8,86.2 407.0,84.5 408.1,82.7 409.3,81.1 410.5,79.4 411.6,77.8 412.8,76.2 414.0,74.6 415.1,73.1 416.3,71.6 417.5,70.2 418.6,68.8 419.8,67.4 421.0,66.1 422.1,64.8 423.3,63.6 424.4,62.4 425.6,61.2 426.8,60.1 427.9,59.1 429.1,58.1 430.3,57.1 431.4,56.2 432.6,55.3 433.8,54.5 434.9,53.8 436.1,53.1 437.3,52.4 438.4,51.8 439.6,51.3 440.8,50.8 441.9,50.4 443.1,50.0 444.3,49.7 445.4,49.4 446.6,49.2 447.8,49.0 448.9,48.9 450.1,48.9 451.2,48.9 452.4,48.9 453.6,49.0 454.7,49.2 455.9,49.5 457.1,49.7 458.2,50.1 459.4,50.5 460.6,50.9 461.7,51.4 462.9,52.0 464.1,52.6 465.2,53.2 466.4,54.0 467.6,54.7 468.7,55.5 469.9,56.4 471.1,57.3 472.2,58.3 473.4,59.3 474.5,60.4 475.7,61.5 476.9,62.7 478.0,63.9 479.2,65.1 480.4,66.4 481.5,67.7 482.7,69.1 483.9,70.5 485.0,72.0 486.2,73.5 487.4,75.0 488.5,76.6 489.7,78.2 490.9,79.8 492.0,81.5 493.2,83.2 494.4,84.9 495.5,86.6 496.7,88.4 497.8,90.2 499.0,92.1 500.2,93.9 501.3,95.8 502.5,97.7 503.7,99.6 504.8,101.5 506.0,103.5\"/>\n<circle class=\"ip\" cx=\"117.7\" cy=\"122.6\" r=\"4.5\"/>\n<text class=\"lab\" x=\"124.7\" y=\"115.6\">(3, 4)</text>\n<circle class=\"ip\" cx=\"184.2\" cy=\"48.9\" r=\"4.5\"/>\n<circle class=\"ip\" cx=\"317.4\" cy=\"196.3\" r=\"4.5\"/>\n<text class=\"lab\" x=\"324.4\" y=\"189.3\">(12, 2)</text>\n<circle class=\"ip\" cx=\"384.0\" cy=\"122.6\" r=\"4.5\"/>\n<text class=\"lab\" x=\"391.0\" y=\"115.6\">(15, 4)</text>\n<circle class=\"ip\" cx=\"450.5\" cy=\"48.9\" r=\"4.5\"/>\n</svg>",
+  "ea4M": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/><text x=\"40.0\" y=\"286\" text-anchor=\"middle\">-3</text>\n<line class=\"gM\" x1=\"73.3\" y1=\"12\" x2=\"73.3\" y2=\"270\"/><text x=\"73.3\" y=\"286\" text-anchor=\"middle\">-2</text>\n<line class=\"gM\" x1=\"106.6\" y1=\"12\" x2=\"106.6\" y2=\"270\"/><text x=\"106.6\" y=\"286\" text-anchor=\"middle\">-1</text>\n<line class=\"gM\" x1=\"139.9\" y1=\"12\" x2=\"139.9\" y2=\"270\"/><text x=\"139.9\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"173.1\" y1=\"12\" x2=\"173.1\" y2=\"270\"/><text x=\"173.1\" y=\"286\" text-anchor=\"middle\">1</text>\n<line class=\"gM\" x1=\"206.4\" y1=\"12\" x2=\"206.4\" y2=\"270\"/><text x=\"206.4\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"239.7\" y1=\"12\" x2=\"239.7\" y2=\"270\"/><text x=\"239.7\" y=\"286\" text-anchor=\"middle\">3</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"306.3\" y1=\"12\" x2=\"306.3\" y2=\"270\"/><text x=\"306.3\" y=\"286\" text-anchor=\"middle\">5</text>\n<line class=\"gM\" x1=\"339.6\" y1=\"12\" x2=\"339.6\" y2=\"270\"/><text x=\"339.6\" y=\"286\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"372.9\" y1=\"12\" x2=\"372.9\" y2=\"270\"/><text x=\"372.9\" y=\"286\" text-anchor=\"middle\">7</text>\n<line class=\"gM\" x1=\"406.1\" y1=\"12\" x2=\"406.1\" y2=\"270\"/><text x=\"406.1\" y=\"286\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"439.4\" y1=\"12\" x2=\"439.4\" y2=\"270\"/><text x=\"439.4\" y=\"286\" text-anchor=\"middle\">9</text>\n<line class=\"gM\" x1=\"472.7\" y1=\"12\" x2=\"472.7\" y2=\"270\"/><text x=\"472.7\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">11</text>\n<line class=\"gM\" x1=\"40\" y1=\"233.1\" x2=\"506\" y2=\"233.1\"/><text x=\"34\" y=\"237.1\" text-anchor=\"end\">-1</text>\n<line class=\"gM\" x1=\"40\" y1=\"196.3\" x2=\"506\" y2=\"196.3\"/><text x=\"34\" y=\"200.3\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"40\" y1=\"159.4\" x2=\"506\" y2=\"159.4\"/><text x=\"34\" y=\"163.4\" text-anchor=\"end\">1</text>\n<line class=\"gM\" x1=\"40\" y1=\"122.6\" x2=\"506\" y2=\"122.6\"/><text x=\"34\" y=\"126.6\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"40\" y1=\"85.7\" x2=\"506\" y2=\"85.7\"/><text x=\"34\" y=\"89.7\" text-anchor=\"end\">3</text>\n<line class=\"gM\" x1=\"40\" y1=\"48.9\" x2=\"506\" y2=\"48.9\"/><text x=\"34\" y=\"52.9\" text-anchor=\"end\">4</text>\n<line class=\"ax\" x1=\"40\" y1=\"196.3\" x2=\"506\" y2=\"196.3\"/>\n<line class=\"ax\" x1=\"139.9\" y1=\"12\" x2=\"139.9\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"190.3\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"143.9\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,233.1 41.2,233.1 42.3,233.0 43.5,232.8 44.7,232.6 45.8,232.3 47.0,231.9 48.2,231.4 49.3,230.9 50.5,230.3 51.7,229.7 52.8,229.0 54.0,228.2 55.1,227.3 56.3,226.4 57.5,225.4 58.6,224.4 59.8,223.3 61.0,222.1 62.1,220.9 63.3,219.6 64.5,218.2 65.6,216.8 66.8,215.3 68.0,213.8 69.1,212.2 70.3,210.6 71.5,208.9 72.6,207.2 73.8,205.4 74.9,203.5 76.1,201.7 77.3,199.7 78.4,197.8 79.6,195.7 80.8,193.7 81.9,191.6 83.1,189.5 84.3,187.3 85.4,185.1 86.6,182.8 87.8,180.6 88.9,178.3 90.1,175.9 91.3,173.6 92.4,171.2 93.6,168.8 94.8,166.4 95.9,163.9 97.1,161.5 98.2,159.0 99.4,156.5 100.6,154.0 101.7,151.5 102.9,149.0 104.1,146.4 105.2,143.9 106.4,141.4 107.6,138.8 108.7,136.3 109.9,133.8 111.1,131.2 112.2,128.7 113.4,126.2 114.6,123.7 115.7,121.3 116.9,118.8 118.1,116.3 119.2,113.9 120.4,111.5 121.6,109.1 122.7,106.7 123.9,104.4 125.0,102.1 126.2,99.8 127.4,97.6 128.5,95.3 129.7,93.2 130.9,91.0 132.0,88.9 133.2,86.8 134.4,84.8 135.5,82.8 136.7,80.9 137.9,79.0 139.0,77.1 140.2,75.3 141.4,73.6 142.5,71.9 143.7,70.2 144.9,68.6 146.0,67.1 147.2,65.6 148.3,64.2 149.5,62.8 150.7,61.5 151.8,60.3 153.0,59.1 154.2,57.9 155.3,56.9 156.5,55.9 157.7,54.9 158.8,54.1 160.0,53.3 161.2,52.5 162.3,51.8 163.5,51.2 164.7,50.7 165.8,50.2 167.0,49.8 168.2,49.5 169.3,49.2 170.5,49.0 171.6,48.9 172.8,48.9 174.0,48.9 175.1,49.0 176.3,49.1 177.5,49.3 178.6,49.6 179.8,50.0 181.0,50.4 182.1,50.9 183.3,51.5 184.5,52.1 185.6,52.8 186.8,53.6 188.0,54.4 189.1,55.3 190.3,56.3 191.5,57.3 192.6,58.4 193.8,59.6 194.9,60.8 196.1,62.1 197.3,63.4 198.4,64.8 199.6,66.2 200.8,67.8 201.9,69.3 203.1,70.9 204.3,72.6 205.4,74.3 206.6,76.1 207.8,77.9 208.9,79.8 210.1,81.7 211.3,83.7 212.4,85.7 213.6,87.7 214.8,89.8 215.9,91.9 217.1,94.1 218.2,96.3 219.4,98.5 220.6,100.8 221.7,103.1 222.9,105.4 224.1,107.8 225.2,110.1 226.4,112.5 227.6,114.9 228.7,117.4 229.9,119.8 231.1,122.3 232.2,124.8 233.4,127.3 234.6,129.8 235.7,132.3 236.9,134.9 238.0,137.4 239.2,139.9 240.4,142.4 241.5,145.0 242.7,147.5 243.9,150.0 245.0,152.5 246.2,155.1 247.4,157.6 248.5,160.0 249.7,162.5 250.9,165.0 252.0,167.4 253.2,169.8 254.4,172.2 255.5,174.6 256.7,176.9 257.9,179.2 259.0,181.5 260.2,183.8 261.4,186.0 262.5,188.2 263.7,190.4 264.8,192.5 266.0,194.6 267.2,196.6 268.3,198.6 269.5,200.6 270.7,202.5 271.8,204.3 273.0,206.2 274.2,207.9 275.3,209.6 276.5,211.3 277.7,212.9 278.8,214.5 280.0,216.0 281.2,217.4 282.3,218.8 283.5,220.1 284.6,221.4 285.8,222.6 287.0,223.7 288.1,224.8 289.3,225.8 290.5,226.8 291.6,227.7 292.8,228.5 294.0,229.3 295.1,230.0 296.3,230.6 297.5,231.2 298.6,231.6 299.8,232.1 301.0,232.4 302.1,232.7 303.3,232.9 304.5,233.1 305.6,233.1 306.8,233.1 308.0,233.1 309.1,232.9 310.3,232.7 311.4,232.5 312.6,232.1 313.8,231.7 314.9,231.2 316.1,230.7 317.3,230.1 318.4,229.4 319.6,228.6 320.8,227.8 321.9,226.9 323.1,226.0 324.3,225.0 325.4,223.9 326.6,222.8 327.8,221.6 328.9,220.3 330.1,219.0 331.2,217.6 332.4,216.2 333.6,214.7 334.7,213.1 335.9,211.5 337.1,209.9 338.2,208.2 339.4,206.4 340.6,204.6 341.7,202.7 342.9,200.8 344.1,198.9 345.2,196.9 346.4,194.9 347.6,192.8 348.7,190.7 349.9,188.5 351.1,186.3 352.2,184.1 353.4,181.9 354.5,179.6 355.7,177.3 356.9,174.9 358.0,172.6 359.2,170.2 360.4,167.7 361.5,165.3 362.7,162.9 363.9,160.4 365.0,157.9 366.2,155.4 367.4,152.9 368.5,150.4 369.7,147.9 370.9,145.3 372.0,142.8 373.2,140.3 374.4,137.7 375.5,135.2 376.7,132.7 377.8,130.2 379.0,127.7 380.2,125.2 381.3,122.7 382.5,120.2 383.7,117.7 384.8,115.3 386.0,112.9 387.2,110.5 388.3,108.1 389.5,105.7 390.7,103.4 391.8,101.1 393.0,98.8 394.2,96.6 395.3,94.4 396.5,92.2 397.7,90.1 398.8,88.0 400.0,86.0 401.2,84.0 402.3,82.0 403.5,80.1 404.6,78.2 405.8,76.4 407.0,74.6 408.1,72.8 409.3,71.2 410.5,69.5 411.6,68.0 412.8,66.5 414.0,65.0 415.1,63.6 416.3,62.2 417.5,61.0 418.6,59.7 419.8,58.6 421.0,57.5 422.1,56.4 423.3,55.5 424.5,54.6 425.6,53.7 426.8,52.9 427.9,52.2 429.1,51.6 430.3,51.0 431.4,50.5 432.6,50.0 433.8,49.7 434.9,49.4 436.1,49.1 437.3,49.0 438.4,48.9 439.6,48.9 440.8,48.9 441.9,49.0 443.1,49.2 444.3,49.5 445.4,49.8 446.6,50.2 447.8,50.6 448.9,51.2 450.1,51.8 451.2,52.4 452.4,53.1 453.6,53.9 454.7,54.8 455.9,55.7 457.1,56.7 458.2,57.8 459.4,58.9 460.6,60.1 461.7,61.3 462.9,62.6 464.1,64.0 465.2,65.4 466.4,66.9 467.6,68.4 468.7,70.0 469.9,71.6 471.0,73.3 472.2,75.1 473.4,76.9 474.5,78.7 475.7,80.6 476.9,82.5 478.0,84.5 479.2,86.5 480.4,88.6 481.5,90.7 482.7,92.9 483.9,95.0 485.0,97.2 486.2,99.5 487.4,101.8 488.5,104.1 489.7,106.4 490.9,108.8 492.0,111.2 493.2,113.6 494.3,116.0 495.5,118.4 496.7,120.9 497.8,123.4 499.0,125.9 500.2,128.4 501.3,130.9 502.5,133.4 503.7,135.9 504.8,138.5 506.0,141.0\"/>\n<circle class=\"ip\" cx=\"173.1\" cy=\"48.9\" r=\"4.5\"/>\n<text class=\"lab\" x=\"180.1\" y=\"41.9\">(1; 4)</text>\n<circle class=\"ip\" cx=\"306.3\" cy=\"233.1\" r=\"4.5\"/>\n<text class=\"lab\" x=\"313.3\" y=\"226.1\">(5; −1)</text>\n<circle class=\"ip\" cx=\"439.4\" cy=\"48.9\" r=\"4.5\"/>\n</svg>",
+  "ea4V": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/><text x=\"40.0\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"98.2\" y1=\"12\" x2=\"98.2\" y2=\"270\"/><text x=\"98.2\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"156.5\" y1=\"12\" x2=\"156.5\" y2=\"270\"/><text x=\"156.5\" y=\"286\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"214.8\" y1=\"12\" x2=\"214.8\" y2=\"270\"/><text x=\"214.8\" y=\"286\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"331.2\" y1=\"12\" x2=\"331.2\" y2=\"270\"/><text x=\"331.2\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"389.5\" y1=\"12\" x2=\"389.5\" y2=\"270\"/><text x=\"389.5\" y=\"286\" text-anchor=\"middle\">12</text>\n<line class=\"gM\" x1=\"447.8\" y1=\"12\" x2=\"447.8\" y2=\"270\"/><text x=\"447.8\" y=\"286\" text-anchor=\"middle\">14</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">16</text>\n<line class=\"gM\" x1=\"40\" y1=\"237.8\" x2=\"506\" y2=\"237.8\"/><text x=\"34\" y=\"241.8\" text-anchor=\"end\">1</text>\n<line class=\"gM\" x1=\"40\" y1=\"141.0\" x2=\"506\" y2=\"141.0\"/><text x=\"34\" y=\"145.0\" text-anchor=\"end\">4</text>\n<line class=\"gM\" x1=\"40\" y1=\"44.2\" x2=\"506\" y2=\"44.2\"/><text x=\"34\" y=\"48.2\" text-anchor=\"end\">7</text>\n<line class=\"ax\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/>\n<line class=\"ax\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"264.0\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,141.0 41.2,138.0 42.3,134.9 43.5,131.9 44.7,128.9 45.8,125.9 47.0,122.9 48.2,119.9 49.3,116.9 50.5,114.0 51.6,111.1 52.8,108.2 54.0,105.4 55.1,102.6 56.3,99.8 57.5,97.1 58.6,94.4 59.8,91.8 61.0,89.2 62.1,86.6 63.3,84.1 64.5,81.7 65.6,79.3 66.8,77.0 68.0,74.8 69.1,72.6 70.3,70.5 71.5,68.4 72.6,66.5 73.8,64.6 74.9,62.7 76.1,61.0 77.3,59.3 78.4,57.7 79.6,56.2 80.8,54.8 81.9,53.5 83.1,52.2 84.3,51.0 85.4,50.0 86.6,49.0 87.8,48.1 88.9,47.3 90.1,46.6 91.3,46.0 92.4,45.4 93.6,45.0 94.8,44.7 95.9,44.4 97.1,44.3 98.2,44.2 99.4,44.3 100.6,44.4 101.7,44.7 102.9,45.0 104.1,45.4 105.2,46.0 106.4,46.6 107.6,47.3 108.7,48.1 109.9,49.0 111.1,50.0 112.2,51.0 113.4,52.2 114.6,53.5 115.7,54.8 116.9,56.2 118.1,57.7 119.2,59.3 120.4,61.0 121.5,62.7 122.7,64.6 123.9,66.5 125.0,68.4 126.2,70.5 127.4,72.6 128.5,74.8 129.7,77.0 130.9,79.3 132.0,81.7 133.2,84.1 134.4,86.6 135.5,89.2 136.7,91.8 137.9,94.4 139.0,97.1 140.2,99.8 141.4,102.6 142.5,105.4 143.7,108.2 144.9,111.1 146.0,114.0 147.2,116.9 148.3,119.9 149.5,122.9 150.7,125.9 151.8,128.9 153.0,131.9 154.2,134.9 155.3,138.0 156.5,141.0 157.7,144.0 158.8,147.1 160.0,150.1 161.2,153.1 162.3,156.1 163.5,159.1 164.7,162.1 165.8,165.1 167.0,168.0 168.2,170.9 169.3,173.8 170.5,176.6 171.6,179.4 172.8,182.2 174.0,184.9 175.1,187.6 176.3,190.2 177.5,192.8 178.6,195.4 179.8,197.9 181.0,200.3 182.1,202.7 183.3,205.0 184.5,207.2 185.6,209.4 186.8,211.5 188.0,213.6 189.1,215.5 190.3,217.4 191.5,219.3 192.6,221.0 193.8,222.7 194.9,224.3 196.1,225.8 197.3,227.2 198.4,228.5 199.6,229.8 200.8,231.0 201.9,232.0 203.1,233.0 204.3,233.9 205.4,234.7 206.6,235.4 207.8,236.0 208.9,236.6 210.1,237.0 211.3,237.3 212.4,237.6 213.6,237.7 214.8,237.8 215.9,237.7 217.1,237.6 218.2,237.3 219.4,237.0 220.6,236.6 221.7,236.0 222.9,235.4 224.1,234.7 225.2,233.9 226.4,233.0 227.6,232.0 228.7,231.0 229.9,229.8 231.1,228.5 232.2,227.2 233.4,225.8 234.6,224.3 235.7,222.7 236.9,221.0 238.0,219.3 239.2,217.4 240.4,215.5 241.5,213.6 242.7,211.5 243.9,209.4 245.0,207.2 246.2,205.0 247.4,202.7 248.5,200.3 249.7,197.9 250.9,195.4 252.0,192.8 253.2,190.2 254.4,187.6 255.5,184.9 256.7,182.2 257.9,179.4 259.0,176.6 260.2,173.8 261.4,170.9 262.5,168.0 263.7,165.1 264.8,162.1 266.0,159.1 267.2,156.1 268.3,153.1 269.5,150.1 270.7,147.1 271.8,144.0 273.0,141.0 274.2,138.0 275.3,134.9 276.5,131.9 277.7,128.9 278.8,125.9 280.0,122.9 281.2,119.9 282.3,116.9 283.5,114.0 284.6,111.1 285.8,108.2 287.0,105.4 288.1,102.6 289.3,99.8 290.5,97.1 291.6,94.4 292.8,91.8 294.0,89.2 295.1,86.6 296.3,84.1 297.5,81.7 298.6,79.3 299.8,77.0 301.0,74.8 302.1,72.6 303.3,70.5 304.5,68.4 305.6,66.5 306.8,64.6 307.9,62.7 309.1,61.0 310.3,59.3 311.4,57.7 312.6,56.2 313.8,54.8 314.9,53.5 316.1,52.2 317.3,51.0 318.4,50.0 319.6,49.0 320.8,48.1 321.9,47.3 323.1,46.6 324.3,46.0 325.4,45.4 326.6,45.0 327.8,44.7 328.9,44.4 330.1,44.3 331.2,44.2 332.4,44.3 333.6,44.4 334.7,44.7 335.9,45.0 337.1,45.4 338.2,46.0 339.4,46.6 340.6,47.3 341.7,48.1 342.9,49.0 344.1,50.0 345.2,51.0 346.4,52.2 347.6,53.5 348.7,54.8 349.9,56.2 351.1,57.7 352.2,59.3 353.4,61.0 354.6,62.7 355.7,64.6 356.9,66.5 358.0,68.4 359.2,70.5 360.4,72.6 361.5,74.8 362.7,77.0 363.9,79.3 365.0,81.7 366.2,84.1 367.4,86.6 368.5,89.2 369.7,91.8 370.9,94.4 372.0,97.1 373.2,99.8 374.4,102.6 375.5,105.4 376.7,108.2 377.8,111.1 379.0,114.0 380.2,116.9 381.3,119.9 382.5,122.9 383.7,125.9 384.8,128.9 386.0,131.9 387.2,134.9 388.3,138.0 389.5,141.0 390.7,144.0 391.8,147.1 393.0,150.1 394.2,153.1 395.3,156.1 396.5,159.1 397.7,162.1 398.8,165.1 400.0,168.0 401.2,170.9 402.3,173.8 403.5,176.6 404.6,179.4 405.8,182.2 407.0,184.9 408.1,187.6 409.3,190.2 410.5,192.8 411.6,195.4 412.8,197.9 414.0,200.3 415.1,202.7 416.3,205.0 417.5,207.2 418.6,209.4 419.8,211.5 421.0,213.6 422.1,215.5 423.3,217.4 424.4,219.3 425.6,221.0 426.8,222.7 427.9,224.3 429.1,225.8 430.3,227.2 431.4,228.5 432.6,229.8 433.8,231.0 434.9,232.0 436.1,233.0 437.3,233.9 438.4,234.7 439.6,235.4 440.8,236.0 441.9,236.6 443.1,237.0 444.3,237.3 445.4,237.6 446.6,237.7 447.8,237.8 448.9,237.7 450.1,237.6 451.2,237.3 452.4,237.0 453.6,236.6 454.7,236.0 455.9,235.4 457.1,234.7 458.2,233.9 459.4,233.0 460.6,232.0 461.7,231.0 462.9,229.8 464.1,228.5 465.2,227.2 466.4,225.8 467.6,224.3 468.7,222.7 469.9,221.0 471.1,219.3 472.2,217.4 473.4,215.5 474.5,213.6 475.7,211.5 476.9,209.4 478.0,207.2 479.2,205.0 480.4,202.7 481.5,200.3 482.7,197.9 483.9,195.4 485.0,192.8 486.2,190.2 487.4,187.6 488.5,184.9 489.7,182.2 490.9,179.4 492.0,176.6 493.2,173.8 494.3,170.9 495.5,168.0 496.7,165.1 497.8,162.1 499.0,159.1 500.2,156.1 501.3,153.1 502.5,150.1 503.7,147.1 504.8,144.0 506.0,141.0\"/>\n</svg>",
+  "ea4S": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"98.2\" y1=\"12\" x2=\"98.2\" y2=\"270\"/><text x=\"98.2\" y=\"286\" text-anchor=\"middle\">π/4</text>\n<line class=\"gM\" x1=\"156.5\" y1=\"12\" x2=\"156.5\" y2=\"270\"/><text x=\"156.5\" y=\"286\" text-anchor=\"middle\">π/2</text>\n<line class=\"gM\" x1=\"214.8\" y1=\"12\" x2=\"214.8\" y2=\"270\"/><text x=\"214.8\" y=\"286\" text-anchor=\"middle\">3π/4</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">π</text>\n<line class=\"gM\" x1=\"331.2\" y1=\"12\" x2=\"331.2\" y2=\"270\"/><text x=\"331.2\" y=\"286\" text-anchor=\"middle\">5π/4</text>\n<line class=\"gM\" x1=\"389.5\" y1=\"12\" x2=\"389.5\" y2=\"270\"/><text x=\"389.5\" y=\"286\" text-anchor=\"middle\">3π/2</text>\n<line class=\"gM\" x1=\"447.8\" y1=\"12\" x2=\"447.8\" y2=\"270\"/><text x=\"447.8\" y=\"286\" text-anchor=\"middle\">7π/4</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">2π</text>\n<line class=\"gM\" x1=\"40\" y1=\"173.2\" x2=\"506\" y2=\"173.2\"/><text x=\"34\" y=\"177.2\" text-anchor=\"end\">3</text>\n<line class=\"gM\" x1=\"40\" y1=\"108.8\" x2=\"506\" y2=\"108.8\"/><text x=\"34\" y=\"112.8\" text-anchor=\"end\">5</text>\n<line class=\"gM\" x1=\"40\" y1=\"44.2\" x2=\"506\" y2=\"44.2\"/><text x=\"34\" y=\"48.2\" text-anchor=\"end\">7</text>\n<line class=\"ax\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/>\n<line class=\"ax\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"264.0\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"40.0,108.8 41.2,106.7 42.3,104.7 43.5,102.7 44.7,100.7 45.8,98.7 47.0,96.7 48.2,94.7 49.3,92.7 50.5,90.8 51.6,88.8 52.8,86.9 54.0,85.0 55.1,83.1 56.3,81.3 57.5,79.5 58.6,77.7 59.8,75.9 61.0,74.2 62.1,72.5 63.3,70.8 64.5,69.2 65.6,67.6 66.8,66.1 68.0,64.6 69.1,63.1 70.3,61.7 71.5,60.4 72.6,59.1 73.8,57.8 74.9,56.6 76.1,55.4 77.3,54.3 78.4,53.2 79.6,52.2 80.8,51.3 81.9,50.4 83.1,49.6 84.3,48.8 85.4,48.1 86.6,47.4 87.8,46.8 88.9,46.3 90.1,45.8 91.3,45.4 92.4,45.0 93.6,44.8 94.8,44.5 95.9,44.4 97.1,44.3 98.2,44.2 99.4,44.3 100.6,44.4 101.7,44.5 102.9,44.8 104.1,45.0 105.2,45.4 106.4,45.8 107.6,46.3 108.7,46.8 109.9,47.4 111.1,48.1 112.2,48.8 113.4,49.6 114.6,50.4 115.7,51.3 116.9,52.2 118.1,53.2 119.2,54.3 120.4,55.4 121.5,56.6 122.7,57.8 123.9,59.1 125.0,60.4 126.2,61.7 127.4,63.1 128.5,64.6 129.7,66.1 130.9,67.6 132.0,69.2 133.2,70.8 134.4,72.5 135.5,74.2 136.7,75.9 137.9,77.7 139.0,79.5 140.2,81.3 141.4,83.1 142.5,85.0 143.7,86.9 144.9,88.8 146.0,90.8 147.2,92.7 148.3,94.7 149.5,96.7 150.7,98.7 151.8,100.7 153.0,102.7 154.2,104.7 155.3,106.7 156.5,108.8 157.7,110.8 158.8,112.8 160.0,114.8 161.2,116.8 162.3,118.8 163.5,120.8 164.7,122.8 165.8,124.8 167.0,126.7 168.2,128.7 169.3,130.6 170.5,132.5 171.6,134.4 172.8,136.2 174.0,138.0 175.1,139.8 176.3,141.6 177.5,143.3 178.6,145.0 179.8,146.7 181.0,148.3 182.1,149.9 183.3,151.4 184.5,152.9 185.6,154.4 186.8,155.8 188.0,157.1 189.1,158.4 190.3,159.7 191.5,160.9 192.6,162.1 193.8,163.2 194.9,164.3 196.1,165.3 197.3,166.2 198.4,167.1 199.6,167.9 200.8,168.7 201.9,169.4 203.1,170.1 204.3,170.7 205.4,171.2 206.6,171.7 207.8,172.1 208.9,172.5 210.1,172.7 211.3,173.0 212.4,173.1 213.6,173.2 214.8,173.2 215.9,173.2 217.1,173.1 218.2,173.0 219.4,172.7 220.6,172.5 221.7,172.1 222.9,171.7 224.1,171.2 225.2,170.7 226.4,170.1 227.6,169.4 228.7,168.7 229.9,167.9 231.1,167.1 232.2,166.2 233.4,165.3 234.6,164.3 235.7,163.2 236.9,162.1 238.0,160.9 239.2,159.7 240.4,158.4 241.5,157.1 242.7,155.8 243.9,154.4 245.0,152.9 246.2,151.4 247.4,149.9 248.5,148.3 249.7,146.7 250.9,145.0 252.0,143.3 253.2,141.6 254.4,139.8 255.5,138.0 256.7,136.2 257.9,134.4 259.0,132.5 260.2,130.6 261.4,128.7 262.5,126.7 263.7,124.8 264.8,122.8 266.0,120.8 267.2,118.8 268.3,116.8 269.5,114.8 270.7,112.8 271.8,110.8 273.0,108.8 274.2,106.7 275.3,104.7 276.5,102.7 277.7,100.7 278.8,98.7 280.0,96.7 281.2,94.7 282.3,92.7 283.5,90.8 284.6,88.8 285.8,86.9 287.0,85.0 288.1,83.1 289.3,81.3 290.5,79.5 291.6,77.7 292.8,75.9 294.0,74.2 295.1,72.5 296.3,70.8 297.5,69.2 298.6,67.6 299.8,66.1 301.0,64.6 302.1,63.1 303.3,61.7 304.5,60.4 305.6,59.1 306.8,57.8 308.0,56.6 309.1,55.4 310.3,54.3 311.4,53.2 312.6,52.2 313.8,51.3 314.9,50.4 316.1,49.6 317.3,48.8 318.4,48.1 319.6,47.4 320.8,46.8 321.9,46.3 323.1,45.8 324.3,45.4 325.4,45.0 326.6,44.8 327.8,44.5 328.9,44.4 330.1,44.3 331.2,44.2 332.4,44.3 333.6,44.4 334.7,44.5 335.9,44.8 337.1,45.0 338.2,45.4 339.4,45.8 340.6,46.3 341.7,46.8 342.9,47.4 344.1,48.1 345.2,48.8 346.4,49.6 347.6,50.4 348.7,51.3 349.9,52.2 351.1,53.2 352.2,54.3 353.4,55.4 354.6,56.6 355.7,57.8 356.9,59.1 358.0,60.4 359.2,61.7 360.4,63.1 361.5,64.6 362.7,66.1 363.9,67.6 365.0,69.2 366.2,70.8 367.4,72.5 368.5,74.2 369.7,75.9 370.9,77.7 372.0,79.5 373.2,81.3 374.4,83.1 375.5,85.0 376.7,86.9 377.8,88.8 379.0,90.8 380.2,92.7 381.3,94.7 382.5,96.7 383.7,98.7 384.8,100.7 386.0,102.7 387.2,104.7 388.3,106.7 389.5,108.7 390.7,110.8 391.8,112.8 393.0,114.8 394.2,116.8 395.3,118.8 396.5,120.8 397.7,122.8 398.8,124.8 400.0,126.7 401.2,128.7 402.3,130.6 403.5,132.5 404.6,134.4 405.8,136.2 407.0,138.0 408.1,139.8 409.3,141.6 410.5,143.3 411.6,145.0 412.8,146.7 414.0,148.3 415.1,149.9 416.3,151.4 417.5,152.9 418.6,154.4 419.8,155.8 421.0,157.1 422.1,158.4 423.3,159.7 424.4,160.9 425.6,162.1 426.8,163.2 427.9,164.3 429.1,165.3 430.3,166.2 431.4,167.1 432.6,167.9 433.8,168.7 434.9,169.4 436.1,170.1 437.3,170.7 438.4,171.2 439.6,171.7 440.8,172.1 441.9,172.5 443.1,172.7 444.3,173.0 445.4,173.1 446.6,173.2 447.7,173.2 448.9,173.2 450.1,173.1 451.2,173.0 452.4,172.7 453.6,172.5 454.7,172.1 455.9,171.7 457.1,171.2 458.2,170.7 459.4,170.1 460.6,169.4 461.7,168.7 462.9,167.9 464.1,167.1 465.2,166.2 466.4,165.3 467.6,164.3 468.7,163.2 469.9,162.1 471.1,160.9 472.2,159.7 473.4,158.4 474.5,157.1 475.7,155.8 476.9,154.4 478.0,152.9 479.2,151.4 480.4,149.9 481.5,148.3 482.7,146.7 483.9,145.0 485.0,143.3 486.2,141.6 487.4,139.8 488.5,138.0 489.7,136.2 490.9,134.4 492.0,132.5 493.2,130.6 494.3,128.7 495.5,126.7 496.7,124.8 497.8,122.8 499.0,120.8 500.2,118.8 501.3,116.8 502.5,114.8 503.7,112.8 504.8,110.8 506.0,108.8\"/>\n</svg>",
+  "fxlog": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/><text x=\"40.0\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"117.7\" y1=\"12\" x2=\"117.7\" y2=\"270\"/><text x=\"117.7\" y=\"286\" text-anchor=\"middle\">2</text>\n<line class=\"gM\" x1=\"195.3\" y1=\"12\" x2=\"195.3\" y2=\"270\"/><text x=\"195.3\" y=\"286\" text-anchor=\"middle\">4</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">6</text>\n<line class=\"gM\" x1=\"350.7\" y1=\"12\" x2=\"350.7\" y2=\"270\"/><text x=\"350.7\" y=\"286\" text-anchor=\"middle\">8</text>\n<line class=\"gM\" x1=\"428.3\" y1=\"12\" x2=\"428.3\" y2=\"270\"/><text x=\"428.3\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">12</text>\n<line class=\"gM\" x1=\"40\" y1=\"230.3\" x2=\"506\" y2=\"230.3\"/><text x=\"34\" y=\"234.3\" text-anchor=\"end\">-2</text>\n<line class=\"gM\" x1=\"40\" y1=\"190.6\" x2=\"506\" y2=\"190.6\"/><text x=\"34\" y=\"194.6\" text-anchor=\"end\">-1</text>\n<line class=\"gM\" x1=\"40\" y1=\"150.9\" x2=\"506\" y2=\"150.9\"/><text x=\"34\" y=\"154.9\" text-anchor=\"end\">0</text>\n<line class=\"gM\" x1=\"40\" y1=\"111.2\" x2=\"506\" y2=\"111.2\"/><text x=\"34\" y=\"115.2\" text-anchor=\"end\">1</text>\n<line class=\"gM\" x1=\"40\" y1=\"71.5\" x2=\"506\" y2=\"71.5\"/><text x=\"34\" y=\"75.5\" text-anchor=\"end\">2</text>\n<line class=\"gM\" x1=\"40\" y1=\"31.8\" x2=\"506\" y2=\"31.8\"/><text x=\"34\" y=\"35.8\" text-anchor=\"end\">3</text>\n<line class=\"ax\" x1=\"40\" y1=\"150.9\" x2=\"506\" y2=\"150.9\"/>\n<line class=\"ax\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"144.9\" text-anchor=\"end\">x</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">f(x)</text>\n<polyline class=\"curve\" points=\"157.7,262.6 158.8,235.1 160.0,219.0 161.2,207.6 162.3,198.7 163.5,191.5 164.7,185.4 165.8,180.1 167.0,175.4 168.1,171.2 169.3,167.4 170.5,164.0 171.6,160.8 172.8,157.8 174.0,155.1 175.1,152.5 176.3,150.1 177.5,147.9 178.6,145.7 179.8,143.7 181.0,141.7 182.1,139.9 183.3,138.1 184.5,136.4 185.6,134.8 186.8,133.3 188.0,131.8 189.1,130.3 190.3,128.9 191.5,127.6 192.6,126.3 193.8,125.0 194.9,123.8 196.1,122.6 197.3,121.5 198.4,120.4 199.6,119.3 200.8,118.2 201.9,117.2 203.1,116.2 204.3,115.2 205.4,114.2 206.6,113.3 207.8,112.4 208.9,111.5 210.1,110.6 211.3,109.8 212.4,108.9 213.6,108.1 214.8,107.3 215.9,106.5 217.1,105.8 218.2,105.0 219.4,104.3 220.6,103.5 221.7,102.8 222.9,102.1 224.1,101.4 225.2,100.7 226.4,100.1 227.6,99.4 228.7,98.8 229.9,98.1 231.1,97.5 232.2,96.9 233.4,96.3 234.6,95.7 235.7,95.1 236.9,94.5 238.0,94.0 239.2,93.4 240.4,92.8 241.5,92.3 242.7,91.8 243.9,91.2 245.0,90.7 246.2,90.2 247.4,89.7 248.5,89.2 249.7,88.7 250.9,88.2 252.0,87.7 253.2,87.2 254.4,86.7 255.5,86.3 256.7,85.8 257.9,85.3 259.0,84.9 260.2,84.4 261.4,84.0 262.5,83.5 263.7,83.1 264.8,82.7 266.0,82.3 267.2,81.8 268.3,81.4 269.5,81.0 270.7,80.6 271.8,80.2 273.0,79.8 274.2,79.4 275.3,79.0 276.5,78.6 277.7,78.2 278.8,77.9 280.0,77.5 281.2,77.1 282.3,76.7 283.5,76.4 284.6,76.0 285.8,75.7 287.0,75.3 288.1,75.0 289.3,74.6 290.5,74.3 291.6,73.9 292.8,73.6 294.0,73.2 295.1,72.9 296.3,72.6 297.5,72.2 298.6,71.9 299.8,71.6 301.0,71.3 302.1,70.9 303.3,70.6 304.5,70.3 305.6,70.0 306.8,69.7 308.0,69.4 309.1,69.1 310.3,68.8 311.4,68.5 312.6,68.2 313.8,67.9 314.9,67.6 316.1,67.3 317.3,67.0 318.4,66.7 319.6,66.4 320.8,66.2 321.9,65.9 323.1,65.6 324.3,65.3 325.4,65.1 326.6,64.8 327.8,64.5 328.9,64.2 330.1,64.0 331.2,63.7 332.4,63.4 333.6,63.2 334.7,62.9 335.9,62.7 337.1,62.4 338.2,62.2 339.4,61.9 340.6,61.6 341.7,61.4 342.9,61.1 344.1,60.9 345.2,60.7 346.4,60.4 347.6,60.2 348.7,59.9 349.9,59.7 351.1,59.4 352.2,59.2 353.4,59.0 354.5,58.7 355.7,58.5 356.9,58.3 358.0,58.0 359.2,57.8 360.4,57.6 361.5,57.4 362.7,57.1 363.9,56.9 365.0,56.7 366.2,56.5 367.4,56.3 368.5,56.0 369.7,55.8 370.9,55.6 372.0,55.4 373.2,55.2 374.4,55.0 375.5,54.7 376.7,54.5 377.8,54.3 379.0,54.1 380.2,53.9 381.3,53.7 382.5,53.5 383.7,53.3 384.8,53.1 386.0,52.9 387.2,52.7 388.3,52.5 389.5,52.3 390.7,52.1 391.8,51.9 393.0,51.7 394.2,51.5 395.3,51.3 396.5,51.1 397.7,50.9 398.8,50.7 400.0,50.5 401.2,50.4 402.3,50.2 403.5,50.0 404.6,49.8 405.8,49.6 407.0,49.4 408.1,49.2 409.3,49.1 410.5,48.9 411.6,48.7 412.8,48.5 414.0,48.3 415.1,48.1 416.3,48.0 417.5,47.8 418.6,47.6 419.8,47.4 421.0,47.3 422.1,47.1 423.3,46.9 424.5,46.7 425.6,46.6 426.8,46.4 427.9,46.2 429.1,46.1 430.3,45.9 431.4,45.7 432.6,45.6 433.8,45.4 434.9,45.2 436.1,45.1 437.3,44.9 438.4,44.7 439.6,44.6 440.8,44.4 441.9,44.2 443.1,44.1 444.3,43.9 445.4,43.8 446.6,43.6 447.8,43.4 448.9,43.3 450.1,43.1 451.2,43.0 452.4,42.8 453.6,42.6 454.7,42.5 455.9,42.3 457.1,42.2 458.2,42.0 459.4,41.9 460.6,41.7 461.7,41.6 462.9,41.4 464.1,41.3 465.2,41.1 466.4,41.0 467.6,40.8 468.7,40.7 469.9,40.5 471.0,40.4 472.2,40.2 473.4,40.1 474.5,39.9 475.7,39.8 476.9,39.7 478.0,39.5 479.2,39.4 480.4,39.2 481.5,39.1 482.7,38.9 483.9,38.8 485.0,38.7 486.2,38.5 487.4,38.4 488.5,38.2 489.7,38.1 490.9,38.0 492.0,37.8 493.2,37.7 494.3,37.5 495.5,37.4 496.7,37.3 497.8,37.1 499.0,37.0 500.2,36.9 501.3,36.7 502.5,36.6 503.7,36.5 504.8,36.3 506.0,36.2\"/>\n</svg>",
+  "fxcool": "<svg class=\"plot\" viewBox=\"0 0 520 300\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<line class=\"gM\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/><text x=\"40.0\" y=\"286\" text-anchor=\"middle\">0</text>\n<line class=\"gM\" x1=\"98.2\" y1=\"12\" x2=\"98.2\" y2=\"270\"/><text x=\"98.2\" y=\"286\" text-anchor=\"middle\">5</text>\n<line class=\"gM\" x1=\"156.5\" y1=\"12\" x2=\"156.5\" y2=\"270\"/><text x=\"156.5\" y=\"286\" text-anchor=\"middle\">10</text>\n<line class=\"gM\" x1=\"214.8\" y1=\"12\" x2=\"214.8\" y2=\"270\"/><text x=\"214.8\" y=\"286\" text-anchor=\"middle\">15</text>\n<line class=\"gM\" x1=\"273.0\" y1=\"12\" x2=\"273.0\" y2=\"270\"/><text x=\"273.0\" y=\"286\" text-anchor=\"middle\">20</text>\n<line class=\"gM\" x1=\"331.2\" y1=\"12\" x2=\"331.2\" y2=\"270\"/><text x=\"331.2\" y=\"286\" text-anchor=\"middle\">25</text>\n<line class=\"gM\" x1=\"389.5\" y1=\"12\" x2=\"389.5\" y2=\"270\"/><text x=\"389.5\" y=\"286\" text-anchor=\"middle\">30</text>\n<line class=\"gM\" x1=\"447.8\" y1=\"12\" x2=\"447.8\" y2=\"270\"/><text x=\"447.8\" y=\"286\" text-anchor=\"middle\">35</text>\n<line class=\"gM\" x1=\"506.0\" y1=\"12\" x2=\"506.0\" y2=\"270\"/><text x=\"506.0\" y=\"286\" text-anchor=\"middle\">40</text>\n<line class=\"gM\" x1=\"40\" y1=\"205.5\" x2=\"506\" y2=\"205.5\"/><text x=\"34\" y=\"209.5\" text-anchor=\"end\">25</text>\n<line class=\"gM\" x1=\"40\" y1=\"141.0\" x2=\"506\" y2=\"141.0\"/><text x=\"34\" y=\"145.0\" text-anchor=\"end\">50</text>\n<line class=\"gM\" x1=\"40\" y1=\"76.5\" x2=\"506\" y2=\"76.5\"/><text x=\"34\" y=\"80.5\" text-anchor=\"end\">75</text>\n<line class=\"gM\" x1=\"40\" y1=\"37.8\" x2=\"506\" y2=\"37.8\"/><text x=\"34\" y=\"41.8\" text-anchor=\"end\">90</text>\n<line class=\"ax\" x1=\"40\" y1=\"270.0\" x2=\"506\" y2=\"270.0\"/>\n<line class=\"ax\" x1=\"40.0\" y1=\"12\" x2=\"40.0\" y2=\"270\"/>\n<text class=\"axl\" x=\"504\" y=\"264.0\" text-anchor=\"end\">t</text>\n<text class=\"axl\" x=\"44.0\" y=\"24\">T(t)</text>\n<polyline class=\"curve\" points=\"40.0,37.8 41.2,39.9 42.3,41.9 43.5,43.9 44.7,45.9 45.8,47.9 47.0,49.8 48.2,51.7 49.3,53.6 50.5,55.5 51.6,57.3 52.8,59.2 54.0,61.0 55.1,62.7 56.3,64.5 57.5,66.2 58.6,67.9 59.8,69.6 61.0,71.3 62.1,73.0 63.3,74.6 64.5,76.2 65.6,77.8 66.8,79.4 68.0,80.9 69.1,82.4 70.3,84.0 71.5,85.4 72.6,86.9 73.8,88.4 74.9,89.8 76.1,91.2 77.3,92.7 78.4,94.0 79.6,95.4 80.8,96.8 81.9,98.1 83.1,99.4 84.3,100.7 85.4,102.0 86.6,103.3 87.8,104.6 88.9,105.8 90.1,107.0 91.3,108.2 92.4,109.4 93.6,110.6 94.8,111.8 95.9,112.9 97.1,114.1 98.2,115.2 99.4,116.3 100.6,117.4 101.7,118.5 102.9,119.6 104.1,120.6 105.2,121.7 106.4,122.7 107.6,123.7 108.7,124.7 109.9,125.7 111.1,126.7 112.2,127.7 113.4,128.6 114.6,129.6 115.7,130.5 116.9,131.4 118.1,132.3 119.2,133.2 120.4,134.1 121.5,135.0 122.7,135.9 123.9,136.7 125.0,137.6 126.2,138.4 127.4,139.2 128.5,140.0 129.7,140.9 130.9,141.6 132.0,142.4 133.2,143.2 134.4,144.0 135.5,144.7 136.7,145.5 137.9,146.2 139.0,147.0 140.2,147.7 141.4,148.4 142.5,149.1 143.7,149.8 144.9,150.5 146.0,151.1 147.2,151.8 148.3,152.5 149.5,153.1 150.7,153.8 151.8,154.4 153.0,155.0 154.2,155.7 155.3,156.3 156.5,156.9 157.7,157.5 158.8,158.1 160.0,158.6 161.2,159.2 162.3,159.8 163.5,160.4 164.7,160.9 165.8,161.5 167.0,162.0 168.2,162.5 169.3,163.1 170.5,163.6 171.6,164.1 172.8,164.6 174.0,165.1 175.1,165.6 176.3,166.1 177.5,166.6 178.6,167.1 179.8,167.5 181.0,168.0 182.1,168.5 183.3,168.9 184.5,169.4 185.6,169.8 186.8,170.3 188.0,170.7 189.1,171.1 190.3,171.5 191.5,172.0 192.6,172.4 193.8,172.8 194.9,173.2 196.1,173.6 197.3,174.0 198.4,174.4 199.6,174.7 200.8,175.1 201.9,175.5 203.1,175.9 204.3,176.2 205.4,176.6 206.6,176.9 207.8,177.3 208.9,177.6 210.1,178.0 211.3,178.3 212.4,178.7 213.6,179.0 214.8,179.3 215.9,179.6 217.1,180.0 218.2,180.3 219.4,180.6 220.6,180.9 221.7,181.2 222.9,181.5 224.1,181.8 225.2,182.1 226.4,182.4 227.6,182.6 228.7,182.9 229.9,183.2 231.1,183.5 232.2,183.8 233.4,184.0 234.6,184.3 235.7,184.5 236.9,184.8 238.0,185.1 239.2,185.3 240.4,185.6 241.5,185.8 242.7,186.0 243.9,186.3 245.0,186.5 246.2,186.8 247.4,187.0 248.5,187.2 249.7,187.4 250.9,187.7 252.0,187.9 253.2,188.1 254.4,188.3 255.5,188.5 256.7,188.7 257.9,188.9 259.0,189.1 260.2,189.3 261.4,189.5 262.5,189.7 263.7,189.9 264.8,190.1 266.0,190.3 267.2,190.5 268.3,190.7 269.5,190.9 270.7,191.0 271.8,191.2 273.0,191.4 274.2,191.6 275.3,191.7 276.5,191.9 277.7,192.1 278.8,192.2 280.0,192.4 281.2,192.6 282.3,192.7 283.5,192.9 284.6,193.0 285.8,193.2 287.0,193.3 288.1,193.5 289.3,193.6 290.5,193.8 291.6,193.9 292.8,194.1 294.0,194.2 295.1,194.4 296.3,194.5 297.5,194.6 298.6,194.8 299.8,194.9 301.0,195.0 302.1,195.2 303.3,195.3 304.5,195.4 305.6,195.5 306.8,195.7 307.9,195.8 309.1,195.9 310.3,196.0 311.4,196.1 312.6,196.2 313.8,196.4 314.9,196.5 316.1,196.6 317.3,196.7 318.4,196.8 319.6,196.9 320.8,197.0 321.9,197.1 323.1,197.2 324.3,197.3 325.4,197.4 326.6,197.5 327.8,197.6 328.9,197.7 330.1,197.8 331.2,197.9 332.4,198.0 333.6,198.1 334.7,198.2 335.9,198.3 337.1,198.4 338.2,198.5 339.4,198.5 340.6,198.6 341.7,198.7 342.9,198.8 344.1,198.9 345.2,199.0 346.4,199.0 347.6,199.1 348.7,199.2 349.9,199.3 351.1,199.3 352.2,199.4 353.4,199.5 354.6,199.6 355.7,199.6 356.9,199.7 358.0,199.8 359.2,199.9 360.4,199.9 361.5,200.0 362.7,200.1 363.9,200.1 365.0,200.2 366.2,200.3 367.4,200.3 368.5,200.4 369.7,200.5 370.9,200.5 372.0,200.6 373.2,200.6 374.4,200.7 375.5,200.8 376.7,200.8 377.8,200.9 379.0,200.9 380.2,201.0 381.3,201.0 382.5,201.1 383.7,201.2 384.8,201.2 386.0,201.3 387.2,201.3 388.3,201.4 389.5,201.4 390.7,201.5 391.8,201.5 393.0,201.6 394.2,201.6 395.3,201.7 396.5,201.7 397.7,201.8 398.8,201.8 400.0,201.8 401.2,201.9 402.3,201.9 403.5,202.0 404.6,202.0 405.8,202.1 407.0,202.1 408.1,202.1 409.3,202.2 410.5,202.2 411.6,202.3 412.8,202.3 414.0,202.3 415.1,202.4 416.3,202.4 417.5,202.5 418.6,202.5 419.8,202.5 421.0,202.6 422.1,202.6 423.3,202.6 424.4,202.7 425.6,202.7 426.8,202.7 427.9,202.8 429.1,202.8 430.3,202.8 431.4,202.9 432.6,202.9 433.8,202.9 434.9,203.0 436.1,203.0 437.3,203.0 438.4,203.1 439.6,203.1 440.8,203.1 441.9,203.2 443.1,203.2 444.3,203.2 445.4,203.2 446.6,203.3 447.8,203.3 448.9,203.3 450.1,203.4 451.2,203.4 452.4,203.4 453.6,203.4 454.7,203.5 455.9,203.5 457.1,203.5 458.2,203.5 459.4,203.6 460.6,203.6 461.7,203.6 462.9,203.6 464.1,203.6 465.2,203.7 466.4,203.7 467.6,203.7 468.7,203.7 469.9,203.8 471.1,203.8 472.2,203.8 473.4,203.8 474.5,203.8 475.7,203.9 476.9,203.9 478.0,203.9 479.2,203.9 480.4,203.9 481.5,204.0 482.7,204.0 483.9,204.0 485.0,204.0 486.2,204.0 487.4,204.1 488.5,204.1 489.7,204.1 490.9,204.1 492.0,204.1 493.2,204.1 494.3,204.2 495.5,204.2 496.7,204.2 497.8,204.2 499.0,204.2 500.2,204.2 501.3,204.3 502.5,204.3 503.7,204.3 504.8,204.3 506.0,204.3\"/>\n<polyline class=\"curve2\" points=\"40.0,205.5 41.2,205.5 42.3,205.5 43.5,205.5 44.7,205.5 45.8,205.5 47.0,205.5 48.2,205.5 49.3,205.5 50.5,205.5 51.6,205.5 52.8,205.5 54.0,205.5 55.1,205.5 56.3,205.5 57.5,205.5 58.6,205.5 59.8,205.5 61.0,205.5 62.1,205.5 63.3,205.5 64.5,205.5 65.6,205.5 66.8,205.5 68.0,205.5 69.1,205.5 70.3,205.5 71.5,205.5 72.6,205.5 73.8,205.5 74.9,205.5 76.1,205.5 77.3,205.5 78.4,205.5 79.6,205.5 80.8,205.5 81.9,205.5 83.1,205.5 84.3,205.5 85.4,205.5 86.6,205.5 87.8,205.5 88.9,205.5 90.1,205.5 91.3,205.5 92.4,205.5 93.6,205.5 94.8,205.5 95.9,205.5 97.1,205.5 98.2,205.5 99.4,205.5 100.6,205.5 101.7,205.5 102.9,205.5 104.1,205.5 105.2,205.5 106.4,205.5 107.6,205.5 108.7,205.5 109.9,205.5 111.1,205.5 112.2,205.5 113.4,205.5 114.6,205.5 115.7,205.5 116.9,205.5 118.1,205.5 119.2,205.5 120.4,205.5 121.5,205.5 122.7,205.5 123.9,205.5 125.0,205.5 126.2,205.5 127.4,205.5 128.5,205.5 129.7,205.5 130.9,205.5 132.0,205.5 133.2,205.5 134.4,205.5 135.5,205.5 136.7,205.5 137.9,205.5 139.0,205.5 140.2,205.5 141.4,205.5 142.5,205.5 143.7,205.5 144.9,205.5 146.0,205.5 147.2,205.5 148.3,205.5 149.5,205.5 150.7,205.5 151.8,205.5 153.0,205.5 154.2,205.5 155.3,205.5 156.5,205.5 157.7,205.5 158.8,205.5 160.0,205.5 161.2,205.5 162.3,205.5 163.5,205.5 164.7,205.5 165.8,205.5 167.0,205.5 168.2,205.5 169.3,205.5 170.5,205.5 171.6,205.5 172.8,205.5 174.0,205.5 175.1,205.5 176.3,205.5 177.5,205.5 178.6,205.5 179.8,205.5 181.0,205.5 182.1,205.5 183.3,205.5 184.5,205.5 185.6,205.5 186.8,205.5 188.0,205.5 189.1,205.5 190.3,205.5 191.5,205.5 192.6,205.5 193.8,205.5 194.9,205.5 196.1,205.5 197.3,205.5 198.4,205.5 199.6,205.5 200.8,205.5 201.9,205.5 203.1,205.5 204.3,205.5 205.4,205.5 206.6,205.5 207.8,205.5 208.9,205.5 210.1,205.5 211.3,205.5 212.4,205.5 213.6,205.5 214.8,205.5 215.9,205.5 217.1,205.5 218.2,205.5 219.4,205.5 220.6,205.5 221.7,205.5 222.9,205.5 224.1,205.5 225.2,205.5 226.4,205.5 227.6,205.5 228.7,205.5 229.9,205.5 231.1,205.5 232.2,205.5 233.4,205.5 234.6,205.5 235.7,205.5 236.9,205.5 238.0,205.5 239.2,205.5 240.4,205.5 241.5,205.5 242.7,205.5 243.9,205.5 245.0,205.5 246.2,205.5 247.4,205.5 248.5,205.5 249.7,205.5 250.9,205.5 252.0,205.5 253.2,205.5 254.4,205.5 255.5,205.5 256.7,205.5 257.9,205.5 259.0,205.5 260.2,205.5 261.4,205.5 262.5,205.5 263.7,205.5 264.8,205.5 266.0,205.5 267.2,205.5 268.3,205.5 269.5,205.5 270.7,205.5 271.8,205.5 273.0,205.5 274.2,205.5 275.3,205.5 276.5,205.5 277.7,205.5 278.8,205.5 280.0,205.5 281.2,205.5 282.3,205.5 283.5,205.5 284.6,205.5 285.8,205.5 287.0,205.5 288.1,205.5 289.3,205.5 290.5,205.5 291.6,205.5 292.8,205.5 294.0,205.5 295.1,205.5 296.3,205.5 297.5,205.5 298.6,205.5 299.8,205.5 301.0,205.5 302.1,205.5 303.3,205.5 304.5,205.5 305.6,205.5 306.8,205.5 307.9,205.5 309.1,205.5 310.3,205.5 311.4,205.5 312.6,205.5 313.8,205.5 314.9,205.5 316.1,205.5 317.3,205.5 318.4,205.5 319.6,205.5 320.8,205.5 321.9,205.5 323.1,205.5 324.3,205.5 325.4,205.5 326.6,205.5 327.8,205.5 328.9,205.5 330.1,205.5 331.2,205.5 332.4,205.5 333.6,205.5 334.7,205.5 335.9,205.5 337.1,205.5 338.2,205.5 339.4,205.5 340.6,205.5 341.7,205.5 342.9,205.5 344.1,205.5 345.2,205.5 346.4,205.5 347.6,205.5 348.7,205.5 349.9,205.5 351.1,205.5 352.2,205.5 353.4,205.5 354.6,205.5 355.7,205.5 356.9,205.5 358.0,205.5 359.2,205.5 360.4,205.5 361.5,205.5 362.7,205.5 363.9,205.5 365.0,205.5 366.2,205.5 367.4,205.5 368.5,205.5 369.7,205.5 370.9,205.5 372.0,205.5 373.2,205.5 374.4,205.5 375.5,205.5 376.7,205.5 377.8,205.5 379.0,205.5 380.2,205.5 381.3,205.5 382.5,205.5 383.7,205.5 384.8,205.5 386.0,205.5 387.2,205.5 388.3,205.5 389.5,205.5 390.7,205.5 391.8,205.5 393.0,205.5 394.2,205.5 395.3,205.5 396.5,205.5 397.7,205.5 398.8,205.5 400.0,205.5 401.2,205.5 402.3,205.5 403.5,205.5 404.6,205.5 405.8,205.5 407.0,205.5 408.1,205.5 409.3,205.5 410.5,205.5 411.6,205.5 412.8,205.5 414.0,205.5 415.1,205.5 416.3,205.5 417.5,205.5 418.6,205.5 419.8,205.5 421.0,205.5 422.1,205.5 423.3,205.5 424.4,205.5 425.6,205.5 426.8,205.5 427.9,205.5 429.1,205.5 430.3,205.5 431.4,205.5 432.6,205.5 433.8,205.5 434.9,205.5 436.1,205.5 437.3,205.5 438.4,205.5 439.6,205.5 440.8,205.5 441.9,205.5 443.1,205.5 444.3,205.5 445.4,205.5 446.6,205.5 447.8,205.5 448.9,205.5 450.1,205.5 451.2,205.5 452.4,205.5 453.6,205.5 454.7,205.5 455.9,205.5 457.1,205.5 458.2,205.5 459.4,205.5 460.6,205.5 461.7,205.5 462.9,205.5 464.1,205.5 465.2,205.5 466.4,205.5 467.6,205.5 468.7,205.5 469.9,205.5 471.1,205.5 472.2,205.5 473.4,205.5 474.5,205.5 475.7,205.5 476.9,205.5 478.0,205.5 479.2,205.5 480.4,205.5 481.5,205.5 482.7,205.5 483.9,205.5 485.0,205.5 486.2,205.5 487.4,205.5 488.5,205.5 489.7,205.5 490.9,205.5 492.0,205.5 493.2,205.5 494.3,205.5 495.5,205.5 496.7,205.5 497.8,205.5 499.0,205.5 500.2,205.5 501.3,205.5 502.5,205.5 503.7,205.5 504.8,205.5 506.0,205.5\"/>\n</svg>"
+ },
+ "concepts": {
+  "param": {
+   "n": "Parámetros sinusoidales",
+   "f": "\\(k=\\frac{M+m}2,\\ |a|=\\frac{M-m}2,\\ T=\\frac{2\\pi}b\\)",
+   "x": "Máximo → mínimo = medio período.",
+   "home": "sinus"
+  },
+  "modelo": {
+   "n": "Modelar con seno o coseno",
+   "f": "Seno: cruce subiendo · coseno: máximo",
+   "x": "Elige el que haga h más fácil de leer.",
+   "home": "sinus"
+  },
+  "leyexp": {
+   "n": "Leyes de exponentes",
+   "f": "\\(a^ma^n=a^{m+n},\\ a^{-n}=\\frac1{a^n}\\)",
+   "x": "Solo se suman exponentes con la misma base.",
+   "home": "expo"
+  },
+  "igbases": {
+   "n": "Igualar bases",
+   "f": "\\(b^M=b^N\\Rightarrow M=N\\)",
+   "x": "Escribe todo como potencia de la misma base.",
+   "home": "expo"
+  },
+  "cambvar": {
+   "n": "Cambio de variable",
+   "f": "\\(t=b^x\\gt0\\)",
+   "x": "Descarta los t ≤ 0.",
+   "home": "expo"
+  },
+  "deflog": {
+   "n": "Definición de logaritmo",
+   "f": "\\(\\log_ba=c\\iff b^c=a\\)",
+   "x": "El logaritmo es un exponente.",
+   "home": "logs"
+  },
+  "proplog": {
+   "n": "Propiedades de logaritmos",
+   "f": "Producto → suma; cociente → resta; potencia → factor",
+   "x": "log(M + N) no se separa.",
+   "home": "logs"
+  },
+  "verif": {
+   "n": "Verificar argumentos",
+   "f": "Todo argumento debe ser > 0",
+   "x": "Es parte de la solución, no opcional.",
+   "home": "logs"
+  },
+  "lndesp": {
+   "n": "Despejar con ln",
+   "f": "\\(b^x=c\\Rightarrow x=\\frac{\\ln c}{\\ln b}\\)",
+   "x": "Úsalo cuando no puedas igualar bases.",
+   "home": "logs"
+  },
+  "sincos": {
+   "n": "Seno ↔ coseno",
+   "f": "\\(\\sin\\theta=\\cos\\left(\\theta-\\tfrac\\pi2\\right)\\)",
+   "x": "Para cambiar de seno a coseno solo se mueve el desfase h un cuarto de período (del cruce subiendo al máximo). A, B y k no cambian.",
+   "home": "sinus"
+  },
+  "crece": {
+   "n": "¿Sube o baja?",
+   "f": "Máximo → mínimo: baja · mínimo → máximo: sube",
+   "x": "Ubica los extremos más cercanos al intervalo: entre un máximo y el mínimo siguiente la función decrece.",
+   "home": "sinus"
+  },
+  "expmod": {
+   "n": "Modelo \\(A+Be^{-kt}\\)",
+   "f": "\\(A=\\lim_{t\\to\\infty}f,\\ \\ B=f(0)-A\\)",
+   "x": "A es la asíntota (el valor al que se acerca). B es la diferencia inicial con la asíntota. k sale del tercer dato con ln.",
+   "home": "expfun"
+  },
+  "logmod": {
+   "n": "Modelo \\(A+B\\ln(t+1)\\)",
+   "f": "\\(A=f(0),\\ \\ B=\\dfrac{f(t_1)-A}{\\ln(t_1+1)}\\)",
+   "x": "Como ln 1 = 0, el valor en t = 0 da A directo. Si no te dan t = 0, resta las dos ecuaciones para eliminar A.",
+   "home": "expfun"
+  },
+  "ritmo": {
+   "n": "Cada vez más rápido o más lento",
+   "f": "\\(e^{-kt}\\downarrow,\\ \\ \\ln(t+1)\\ \\text{se aplana}\\)",
+   "x": "En A + Be^{−kt} el cambio es grande al inicio y se frena al acercarse a A. En A + B ln(t+1) crece siempre, pero cada vez más lento.",
+   "home": "expfun"
+  },
+  "domlog": {
+   "n": "Dominio con logaritmos",
+   "f": "Cada argumento \\(\\gt0\\); intersecta las condiciones",
+   "x": "Con una suma de logaritmos, cada argumento por separado debe ser positivo. El dominio es la intersección.",
+   "home": "expfun"
+  }
+ },
+ "simEx": [
+  {
+   "id": "fcs3",
+   "lvl": 3,
+   "title": "Sinusoidal por cuatro puntos",
+   "q": "<p>Una sinusoidal pasa por \\(A(-2,1)\\), \\(B(0,3)\\), \\(C(2,1)\\) y \\(D(4,-1)\\), con B y D como extremos.</p>",
+   "checks": [
+    {
+     "p": "Regla",
+     "o": [
+      "\\(2\\cos\\left(\\tfrac\\pi4x\\right)+1\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi2x\\right)+1\\)",
+      "\\(2\\sin\\left(\\tfrac\\pi4x\\right)+1\\)",
+      "\\(3\\cos\\left(\\tfrac\\pi4x\\right)\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi8x\\right)+1\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Máx 3, mín \\(-1\\): \\(k=1,\\ a=2\\).",
+    "Del máximo (0) al mínimo (4): \\(\\tfrac T2=4\\Rightarrow T=8,\\ b=\\tfrac\\pi4\\).",
+    "Coseno con máximo en \\(x=0\\). Verifica A y C: \\(\\cos(\\pm\\tfrac\\pi2)=0\\Rightarrow y=1\\) ✓."
+   ],
+   "ans": "\\(2\\cos\\left(\\tfrac\\pi4x\\right)+1\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "fcs4",
+   "lvl": 3,
+   "title": "Logarítmica",
+   "q": "<p>Resuelve \\(\\ln(2x+1)-\\ln x=\\ln3\\).</p>",
+   "checks": [
+    {
+     "p": "Solución",
+     "o": [
+      "\\(x=1\\)",
+      "\\(x=3\\)",
+      "\\(x=\\tfrac12\\)",
+      "\\(\\varnothing\\)",
+      "\\(x=-1\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\ln\\frac{2x+1}x=\\ln3\\Rightarrow2x+1=3x\\Rightarrow x=1\\).",
+    "Argumentos: 3 y 1, positivos ✓."
+   ],
+   "ans": "\\(x=1\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "fcs5",
+   "lvl": 3,
+   "title": "Exponencial con cambio",
+   "q": "<p>Resuelve \\(9^x-4\\cdot3^x+3=0\\).</p>",
+   "checks": [
+    {
+     "p": "Soluciones",
+     "o": [
+      "\\(x=0,\\ x=1\\)",
+      "\\(x=1,\\ x=3\\)",
+      "\\(x=1\\)",
+      "\\(x=0\\)",
+      "\\(\\varnothing\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(t=3^x\\): \\(t^2-4t+3=0\\Rightarrow t=1,\\ 3\\).",
+    "\\(x=0\\) y \\(x=1\\)."
+   ],
+   "ans": "\\(x=0,\\ 1\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e4L1",
+   "lvl": 2,
+   "title": "EA4 lunes · P1",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=3\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+5\\), determina qué parámetros deben cambiar para que el valor mínimo sea 1 y el máximo 8. Escribe la nueva función.</p>",
+   "checks": [
+    {
+     "p": "Parámetros que cambian",
+     "o": [
+      "La amplitud y el eje \\(k\\)",
+      "Solo el eje \\(k\\)",
+      "Solo la amplitud",
+      "El período y el eje",
+      "El desfase y la amplitud"
+     ]
+    },
+    {
+     "p": "Nueva función",
+     "o": [
+      "\\(3{,}5\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+4{,}5\\)",
+      "\\(3\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+4{,}5\\)",
+      "\\(7\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+4{,}5\\)",
+      "\\(3{,}5\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+5\\)",
+      "\\(4{,}5\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+3{,}5\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "De la gráfica: hoy oscila entre 2 y 8 (eje 5, amplitud 3).",
+    "Nuevo eje: \\(k=\\frac{8+1}2=4{,}5\\). Nueva amplitud: \\(A=\\frac{8-1}2=3{,}5\\).",
+    "El período y el desfase no influyen en el máximo ni en el mínimo, así que no cambian: \\(f(x)=3{,}5\\sin\\left(2\\left(x-\\frac\\pi4\\right)\\right)+4{,}5\\)."
+   ],
+   "ans": "Cambian A y k",
+   "hint": "",
+   "fig": "ea4L",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "param"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4L2",
+   "lvl": 2,
+   "title": "EA4 lunes · P2",
+   "q": "<p>La temperatura de un reactor de cultivo celular varía sinusoidalmente en un ciclo de 24 h. Máxima 38 °C (14:00), mínima 34 °C (2:00). \\(t=0\\) a las 00:00.</p><p>2.1 (4 pts) Determina \\(T(t)\\). 2.2 (2 pts, <em>agregado al entrenador: el PDF solo trae 2.1</em>) Entre las 8:00 y las 12:00, ¿la temperatura aumenta o disminuye?</p>",
+   "checks": [
+    {
+     "p": "2.1 \\(T(t)\\)",
+     "o": [
+      "\\(2\\cos\\left(\\tfrac\\pi{12}(t-14)\\right)+36\\)",
+      "\\(4\\cos\\left(\\tfrac\\pi{12}(t-14)\\right)+34\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi{12}(t-2)\\right)+36\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi{24}(t-14)\\right)+36\\)",
+      "\\(2\\sin\\left(\\tfrac\\pi{12}(t-14)\\right)+36\\)"
+     ]
+    },
+    {
+     "p": "2.2",
+     "o": [
+      "Aumenta: va del mínimo (2:00) al máximo (14:00)",
+      "Disminuye: va del máximo al mínimo",
+      "Aumenta y luego disminuye",
+      "Se mantiene en 36 °C",
+      "Disminuye y luego aumenta"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(k=\\frac{38+34}2=36\\), \\(A=\\frac{38-34}2=2\\), \\(B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\).",
+    "Coseno con el máximo en \\(t=14\\): \\(T(t)=2\\cos\\left(\\frac\\pi{12}(t-14)\\right)+36\\). (También vale \\(-2\\cos\\left(\\frac\\pi{12}(t-2)\\right)+36\\).)",
+    "Entre el mínimo (t = 2) y el máximo (t = 14) la función crece; [8, 12] está dentro: aumenta."
+   ],
+   "ans": "\\(T(t)=2\\cos\\left(\\tfrac\\pi{12}(t-14)\\right)+36\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [
+     "modelo"
+    ],
+    [
+     "crece"
+    ]
+   ]
+  },
+  {
+   "id": "e4L3",
+   "lvl": 2,
+   "title": "EA4 lunes · P3",
+   "q": "<p>(4 pts) \\(g(x)=\\log_2(x+3)+\\log_2(1-2x)\\). Determina el dominio y evalúa \\(g(0)\\).</p>",
+   "checks": [
+    {
+     "p": "Dominio",
+     "o": [
+      "\\(\\left(-3,\\tfrac12\\right)\\)",
+      "\\(\\left[-3,\\tfrac12\\right]\\)",
+      "\\((-3,\\infty)\\)",
+      "\\(\\left(-\\infty,\\tfrac12\\right)\\)",
+      "\\(\\left(-\\tfrac12,3\\right)\\)"
+     ]
+    },
+    {
+     "p": "\\(g(0)\\)",
+     "o": [
+      "\\(\\log_23\\approx1{,}585\\)",
+      "\\(3\\)",
+      "\\(0\\)",
+      "\\(\\log_23+1\\)",
+      "\\(\\log_24=2\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(x+3\\gt0\\Rightarrow x\\gt-3\\); \\(1-2x\\gt0\\Rightarrow x\\lt\\frac12\\). Intersección: \\(\\left(-3,\\frac12\\right)\\).",
+    "\\(g(0)=\\log_23+\\log_21=\\log_23\\approx1{,}585\\)."
+   ],
+   "ans": "Dom \\((-3,\\frac12)\\), \\(g(0)=\\log_23\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "domlog"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4L4",
+   "lvl": 3,
+   "title": "EA4 lunes · P4",
+   "q": "<p>Farmacocinética: \\(C(t)=A+Be^{-kt}\\). En \\(t=0\\) la concentración es 100 mg/L, a las 4 h es 60 mg/L y cuando \\(t\\to\\infty\\) tiende a 10 mg/L.</p><p>4.1 (4 pts) Determina \\(C(t)\\). 4.2 (2 pts) ¿Disminuye cada vez más rápido o cada vez más lento?</p>",
+   "checks": [
+    {
+     "p": "4.1 \\(C(t)\\)",
+     "o": [
+      "\\(10+90e^{-0{,}1469t}\\)",
+      "\\(100-90e^{-0{,}1469t}\\)",
+      "\\(10+100e^{-0{,}1469t}\\)",
+      "\\(10+90e^{-0{,}1277t}\\)",
+      "\\(90+10e^{-0{,}1469t}\\)"
+     ]
+    },
+    {
+     "p": "4.2",
+     "o": [
+      "Cada vez más lento",
+      "Cada vez más rápido",
+      "A ritmo constante",
+      "Primero lento y luego rápido",
+      "No disminuye"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(A=10\\) (asíntota); \\(10+B=100\\Rightarrow B=90\\).",
+    "\\(10+90e^{-4k}=60\\Rightarrow e^{-4k}=\\frac59\\Rightarrow k=\\frac14\\ln\\frac95\\approx0{,}1469\\).",
+    "El exceso sobre la basal, \\(90e^{-kt}\\), cae mucho al inicio (de 100 a 60 en 4 h) y cada vez menos al acercarse a 10: disminuye cada vez más lento."
+   ],
+   "ans": "\\(C(t)=10+90e^{-0{,}1469t}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "expmod"
+    ],
+    [
+     "lndesp"
+    ],
+    [
+     "ritmo"
+    ]
+   ]
+  },
+  {
+   "id": "e4M1",
+   "lvl": 2,
+   "title": "EA4 miércoles · P1",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=2{,}5\\cos(B(x-1))+k\\), determina \\(B\\) y \\(k\\). Luego cambia el parámetro necesario para reescribirla como función seno.</p><p class=\"note\">La gráfica original no venía en el PDF; esta es una reconstrucción coherente con el enunciado.</p>",
+   "checks": [
+    {
+     "p": "\\(B\\) y \\(k\\)",
+     "o": [
+      "\\(B=\\tfrac\\pi4,\\ k=1{,}5\\)",
+      "\\(B=\\tfrac\\pi2,\\ k=1{,}5\\)",
+      "\\(B=\\tfrac\\pi4,\\ k=4\\)",
+      "\\(B=8,\\ k=1{,}5\\)",
+      "\\(B=\\tfrac\\pi8,\\ k=2{,}5\\)"
+     ]
+    },
+    {
+     "p": "Función seno",
+     "o": [
+      "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x+1)\\right)+1{,}5\\)",
+      "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x-1)\\right)+1{,}5\\)",
+      "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x-3)\\right)+1{,}5\\)",
+      "\\(-2{,}5\\sin\\left(\\tfrac\\pi4(x-1)\\right)+1{,}5\\)",
+      "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x+3)\\right)+1{,}5\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Máximo 4 en \\(x=1\\), mínimo \\(-1\\) en \\(x=5\\): \\(k=\\frac{4-1}2=1{,}5\\) y medio período es 4, así que \\(T=8\\) y \\(B=\\frac{2\\pi}8=\\frac\\pi4\\).",
+    "Para seno, \\(h\\) es el cruce subiendo: un cuarto de período (2) <em>antes</em> del máximo, \\(x=-1\\).",
+    "Solo cambia \\(h\\): \\(f(x)=2{,}5\\sin\\left(\\frac\\pi4(x+1)\\right)+1{,}5\\)."
+   ],
+   "ans": "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x+1)\\right)+1{,}5\\)",
+   "hint": "",
+   "fig": "ea4M",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [
+     "sincos"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4M2",
+   "lvl": 2,
+   "title": "EA4 miércoles · P2",
+   "q": "<p>Una cabina de una rueda de observación: punto más bajo 3 m, más alto 27 m, una vuelta en 40 s. En \\(t=0\\) está en su altura máxima.</p><p>a) (4 pts) Determina \\(h(t)\\). b) (2 pts) ¿En qué intervalo de la primera vuelta la cabina desciende?</p>",
+   "checks": [
+    {
+     "p": "a) \\(h(t)\\)",
+     "o": [
+      "\\(12\\cos\\left(\\tfrac{\\pi}{20}t\\right)+15\\)",
+      "\\(24\\cos\\left(\\tfrac{\\pi}{20}t\\right)+15\\)",
+      "\\(12\\sin\\left(\\tfrac{\\pi}{20}t\\right)+15\\)",
+      "\\(12\\cos\\left(\\tfrac{\\pi}{40}t\\right)+15\\)",
+      "\\(-12\\cos\\left(\\tfrac{\\pi}{20}t\\right)+15\\)"
+     ]
+    },
+    {
+     "p": "b) Desciende en",
+     "o": [
+      "\\((0,20)\\)",
+      "\\((20,40)\\)",
+      "\\((0,40)\\)",
+      "\\((10,30)\\)",
+      "\\((0,10)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(k=\\frac{27+3}2=15\\), \\(A=\\frac{27-3}2=12\\), \\(B=\\frac{2\\pi}{40}=\\frac\\pi{20}\\).",
+    "Empieza en el máximo: coseno sin desfase, \\(h(t)=12\\cos\\left(\\frac\\pi{20}t\\right)+15\\).",
+    "Del máximo (\\(t=0\\)) al mínimo (\\(t=20\\)) baja; de 20 a 40 sube."
+   ],
+   "ans": "\\(h(t)=12\\cos\\left(\\tfrac\\pi{20}t\\right)+15\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [],
+    [
+     "crece"
+    ]
+   ]
+  },
+  {
+   "id": "e4M3",
+   "lvl": 2,
+   "title": "EA4 miércoles · P3",
+   "q": "<p>(4 pts) \\(L(x)=\\log_2(x-3)+\\log_2(5-x)\\). Determina el dominio y dónde corta al eje \\(x\\).</p>",
+   "checks": [
+    {
+     "p": "Dominio",
+     "o": [
+      "\\((3,5)\\)",
+      "\\([3,5]\\)",
+      "\\((3,\\infty)\\)",
+      "\\((-\\infty,5)\\)",
+      "\\((-\\infty,3)\\cup(5,\\infty)\\)"
+     ]
+    },
+    {
+     "p": "Corte con el eje \\(x\\)",
+     "o": [
+      "\\(x=4\\)",
+      "\\(x=3\\ \\text{y}\\ x=5\\)",
+      "\\(x=4\\pm\\sqrt2\\)",
+      "\\(x=2\\ \\text{y}\\ x=6\\)",
+      "No corta"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(x\\gt3\\) y \\(x\\lt5\\): dominio \\((3,5)\\).",
+    "\\(\\log_2[(x-3)(5-x)]=0\\iff(x-3)(5-x)=1\\).",
+    "\\(-x^2+8x-15=1\\Rightarrow(x-4)^2=0\\Rightarrow x=4\\), que está en el dominio."
+   ],
+   "ans": "Dom \\((3,5)\\), corte \\((4,0)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "domlog"
+    ],
+    [
+     "proplog"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4M4",
+   "lvl": 3,
+   "title": "EA4 miércoles · P4",
+   "q": "<p>Concentración de un medicamento: \\(M(t)=A+Be^{-kt}\\) (mg/L, h). Inicia en 5 mg/L, a las 3 h es 20 mg/L y se aproxima a 35 mg/L.</p><p>a) (4 pts) Determina \\(M(t)\\). b) (2 pts) «La concentración aumenta más rápido al inicio»: ¿V o F?</p>",
+   "checks": [
+    {
+     "p": "a) \\(M(t)\\)",
+     "o": [
+      "\\(35-30e^{-0{,}231t}\\)",
+      "\\(5+30e^{-0{,}231t}\\)",
+      "\\(35+30e^{-0{,}231t}\\)",
+      "\\(35-30e^{-0{,}6931t}\\)",
+      "\\(35-5e^{-0{,}231t}\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "Verdadero",
+      "Falso: aumenta más rápido al final",
+      "Falso: aumenta a ritmo constante",
+      "Falso: disminuye",
+      "No se puede saber"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(A=35\\), \\(B=5-35=-30\\).",
+    "\\(35-30e^{-3k}=20\\Rightarrow e^{-3k}=\\frac12\\Rightarrow k=\\frac{\\ln2}3\\approx0{,}231\\).",
+    "Verdadero: en las primeras 3 h sube 15 mg/L, en las 3 siguientes solo 7,5. Lo que falta para 35 se reduce a la mitad cada 3 h."
+   ],
+   "ans": "\\(M(t)=35-30e^{-0{,}231t}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "expmod"
+    ],
+    [],
+    [
+     "ritmo"
+    ]
+   ]
+  },
+  {
+   "id": "e4J1",
+   "lvl": 2,
+   "title": "EA4 jueves · P1",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=A\\sin(B(x-3))+k\\), determina \\(A\\), \\(B\\) y \\(k\\). Reescribe la función como coseno cambiando el parámetro necesario.</p>",
+   "checks": [
+    {
+     "p": "\\(A\\), \\(B\\), \\(k\\)",
+     "o": [
+      "\\(A=2,\\ B=\\tfrac\\pi6,\\ k=4\\)",
+      "\\(A=4,\\ B=\\tfrac\\pi6,\\ k=2\\)",
+      "\\(A=2,\\ B=\\tfrac\\pi{12},\\ k=4\\)",
+      "\\(A=2,\\ B=12,\\ k=4\\)",
+      "\\(A=2,\\ B=\\tfrac\\pi3,\\ k=4\\)"
+     ]
+    },
+    {
+     "p": "Función coseno",
+     "o": [
+      "\\(2\\cos\\left(\\tfrac\\pi6(x-6)\\right)+4\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi6(x-3)\\right)+4\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi6x\\right)+4\\)",
+      "\\(2\\cos\\left(\\tfrac\\pi6(x-12)\\right)+4\\)",
+      "\\(-2\\cos\\left(\\tfrac\\pi6(x-6)\\right)+4\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Máx 6, mín 2: \\(k=4\\), \\(A=2\\).",
+    "Máximos en \\(x=6\\) y \\(x=18\\): \\(T=12\\), \\(B=\\frac{2\\pi}{12}=\\frac\\pi6\\). Verifica: en \\(x=3\\) vale 4 y sube ✓.",
+    "Coseno: \\(h\\) en el máximo, \\(x=6\\). Solo cambia \\(h\\): \\(2\\cos\\left(\\frac\\pi6(x-6)\\right)+4\\)."
+   ],
+   "ans": "\\(2\\cos\\left(\\tfrac\\pi6(x-6)\\right)+4\\)",
+   "hint": "",
+   "fig": "ea4J",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [],
+    [
+     "sincos"
+    ]
+   ]
+  },
+  {
+   "id": "e4J2",
+   "lvl": 2,
+   "title": "EA4 jueves · P2",
+   "q": "<p>Un pistón hidráulico: altura mínima 10 cm, máxima 34 cm, ciclo de 30 s. Inicialmente está en su altura mínima.</p><p>a) (4 pts) Determina \\(h(t)\\). b) (2 pts) ¿En qué intervalo del primer ciclo asciende?</p>",
+   "checks": [
+    {
+     "p": "a) \\(h(t)\\)",
+     "o": [
+      "\\(-12\\cos\\left(\\tfrac{\\pi}{15}t\\right)+22\\)",
+      "\\(12\\cos\\left(\\tfrac{\\pi}{15}t\\right)+22\\)",
+      "\\(-12\\cos\\left(\\tfrac{\\pi}{30}t\\right)+22\\)",
+      "\\(-24\\cos\\left(\\tfrac{\\pi}{15}t\\right)+22\\)",
+      "\\(-12\\sin\\left(\\tfrac{\\pi}{15}t\\right)+22\\)"
+     ]
+    },
+    {
+     "p": "b) Asciende en",
+     "o": [
+      "\\((0,15)\\)",
+      "\\((15,30)\\)",
+      "\\((0,30)\\)",
+      "\\((7{,}5;\\,22{,}5)\\)",
+      "\\((0;\\,7{,}5)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(k=22\\), \\(A=12\\), \\(B=\\frac{2\\pi}{30}=\\frac\\pi{15}\\).",
+    "Empieza en el mínimo: coseno invertido, \\(h(t)=-12\\cos\\left(\\frac\\pi{15}t\\right)+22\\).",
+    "Del mínimo (\\(t=0\\)) al máximo (\\(t=15\\)) sube."
+   ],
+   "ans": "\\(h(t)=-12\\cos\\left(\\tfrac\\pi{15}t\\right)+22\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [],
+    [
+     "crece"
+    ]
+   ]
+  },
+  {
+   "id": "e4J3",
+   "lvl": 3,
+   "title": "EA4 jueves · P3",
+   "q": "<p>(4 pts) Dada \\(t=\\ln(x)-\\ln(10-x)\\), escribe \\(x(t)\\) y determina los interceptos con los ejes.</p>",
+   "checks": [
+    {
+     "p": "\\(x(t)\\)",
+     "o": [
+      "\\(\\dfrac{10e^t}{1+e^t}\\)",
+      "\\(\\dfrac{10}{e^t}\\)",
+      "\\(10e^t-1\\)",
+      "\\(\\dfrac{e^t}{10+e^t}\\)",
+      "\\(10-e^t\\)"
+     ]
+    },
+    {
+     "p": "Interceptos",
+     "o": [
+      "Solo \\((0,5)\\) en el eje vertical; no corta el horizontal",
+      "\\((0,5)\\) y \\((0,0)\\)",
+      "Solo \\((0,10)\\)",
+      "\\((5,0)\\) y \\((0,5)\\)",
+      "No tiene interceptos"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(t=\\ln\\frac x{10-x}\\Rightarrow e^t=\\frac x{10-x}\\).",
+    "\\(10e^t=x(1+e^t)\\Rightarrow x=\\frac{10e^t}{1+e^t}\\).",
+    "\\(t=0\\Rightarrow x=5\\). \\(x=0\\) exigiría \\(10e^t=0\\), imposible: no corta el eje horizontal."
+   ],
+   "ans": "\\(x(t)=\\frac{10e^t}{1+e^t}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "proplog"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e4J4",
+   "lvl": 3,
+   "title": "EA4 jueves · P4",
+   "q": "<p>Un reactor apagado: \\(T(t)=A+Be^{-kt}\\) (°C, min). Al inicio 120 °C, a los 10 min 70 °C, y tiende a 20 °C.</p><p>a) (4 pts) Determina \\(T(t)\\). b) (2 pts) ¿Puede llegar a ser menor que 20 °C?</p>",
+   "checks": [
+    {
+     "p": "a) \\(T(t)\\)",
+     "o": [
+      "\\(20+100e^{-0{,}0693t}\\)",
+      "\\(120-100e^{-0{,}0693t}\\)",
+      "\\(20+120e^{-0{,}0693t}\\)",
+      "\\(20+100e^{-0{,}6931t}\\)",
+      "\\(100+20e^{-0{,}0693t}\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "No: \\(100e^{-kt}\\gt0\\), así que \\(T\\gt20\\) siempre",
+      "Sí, después de 100 min",
+      "Sí, porque sigue enfriándose",
+      "Solo si \\(k\\lt0\\)",
+      "Sí, cuando \\(t\\to\\infty\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(A=20\\), \\(B=120-20=100\\).",
+    "\\(20+100e^{-10k}=70\\Rightarrow e^{-10k}=\\frac12\\Rightarrow k=\\frac{\\ln2}{10}\\approx0{,}0693\\).",
+    "\\(100e^{-kt}\\) nunca es 0 ni negativo: 20 °C es una asíntota."
+   ],
+   "ans": "\\(T(t)=20+100e^{-0{,}0693t}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "expmod"
+    ],
+    [
+     "lndesp"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4V1",
+   "lvl": 1,
+   "title": "EA4 viernes · P1",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=3\\sin\\left(\\frac\\pi4x\\right)+4\\), identifica amplitud, período y eje. Justifica qué parámetro cambia y escribe la coseno equivalente.</p>",
+   "checks": [
+    {
+     "p": "Amplitud, período, eje",
+     "o": [
+      "3; 8; \\(y=4\\)",
+      "3; \\(\\frac\\pi4\\); \\(y=4\\)",
+      "4; 8; \\(y=3\\)",
+      "3; 4; \\(y=4\\)",
+      "6; 8; \\(y=4\\)"
+     ]
+    },
+    {
+     "p": "Coseno equivalente",
+     "o": [
+      "\\(3\\cos\\left(\\tfrac\\pi4(x-2)\\right)+4\\)",
+      "\\(3\\cos\\left(\\tfrac\\pi4x\\right)+4\\)",
+      "\\(3\\cos\\left(\\tfrac\\pi4(x+2)\\right)+4\\)",
+      "\\(3\\cos\\left(\\tfrac\\pi4(x-4)\\right)+4\\)",
+      "\\(4\\cos\\left(\\tfrac\\pi4(x-2)\\right)+3\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(|A|=3\\), \\(T=\\frac{2\\pi}{\\pi/4}=8\\), eje \\(y=4\\).",
+    "Cambia solo el desfase: el seno cruza subiendo en 0 y el máximo está \\(\\frac T4=2\\) después.",
+    "\\(f(x)=3\\cos\\left(\\frac\\pi4(x-2)\\right)+4\\)."
+   ],
+   "ans": "\\(3\\cos\\left(\\tfrac\\pi4(x-2)\\right)+4\\)",
+   "hint": "",
+   "fig": "ea4V",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [
+     "sincos"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4V2",
+   "lvl": 2,
+   "title": "EA4 viernes · P2",
+   "q": "<p>Una boya: máxima 4,5 m, mínima 1,5 m, ciclo de 8 s. En \\(t=0\\) está en su altura media y empieza a subir.</p><p>2.1 (4 pts) Determina \\(h(t)\\). 2.2 (2 pts) De \\(t=2\\) a \\(t=4\\), ¿la altura aumenta o disminuye?</p>",
+   "checks": [
+    {
+     "p": "2.1 \\(h(t)\\)",
+     "o": [
+      "\\(1{,}5\\sin\\left(\\tfrac\\pi4t\\right)+3\\)",
+      "\\(3\\sin\\left(\\tfrac\\pi4t\\right)+1{,}5\\)",
+      "\\(1{,}5\\cos\\left(\\tfrac\\pi4t\\right)+3\\)",
+      "\\(1{,}5\\sin\\left(\\tfrac\\pi8t\\right)+3\\)",
+      "\\(-1{,}5\\sin\\left(\\tfrac\\pi4t\\right)+3\\)"
+     ]
+    },
+    {
+     "p": "2.2",
+     "o": [
+      "Disminuye: en \\(t=2\\) hay un máximo",
+      "Aumenta: en \\(t=4\\) hay un máximo",
+      "Aumenta y luego disminuye",
+      "Disminuye y luego aumenta",
+      "Se mantiene"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(k=3\\), \\(A=1{,}5\\), \\(B=\\frac{2\\pi}8=\\frac\\pi4\\).",
+    "Altura media y subiendo: seno sin desfase, \\(h(t)=1{,}5\\sin\\left(\\frac\\pi4t\\right)+3\\).",
+    "Máximo en \\(\\frac T4=2\\) y vuelve al eje en \\(t=4\\): entre 2 y 4 baja."
+   ],
+   "ans": "\\(h(t)=1{,}5\\sin\\left(\\tfrac\\pi4t\\right)+3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [],
+    [
+     "crece"
+    ]
+   ]
+  },
+  {
+   "id": "e4V3",
+   "lvl": 2,
+   "title": "EA4 viernes · P3",
+   "q": "<p>(4 pts) Resuelve \\(2^{x+2}=3\\cdot2^x+8\\).</p>",
+   "checks": [
+    {
+     "p": "\\(x\\)",
+     "o": [
+      "\\(x=3\\)",
+      "\\(x=2\\)",
+      "\\(x=8\\)",
+      "\\(x=\\log_2\\tfrac83\\)",
+      "Sin solución"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(2^{x+2}=4\\cdot2^x\\): \\(4\\cdot2^x-3\\cdot2^x=8\\).",
+    "\\(2^x=8=2^3\\Rightarrow x=3\\)."
+   ],
+   "ans": "\\(x=3\\)",
+   "hint": "Separa \\(2^{x+2}=2^x\\cdot2^2\\).",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "leyexp"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e4V4",
+   "lvl": 3,
+   "title": "EA4 viernes · P4",
+   "q": "<p>Espesor de una película: \\(E(t)=A+B\\ln(t+1)\\) (µm, h). En \\(t=0\\) mide 0,5 µm y a las 3 h mide 1,6 µm.</p><p>4.1 (4 pts) Determina \\(E(t)\\). 4.2 (2 pts) ¿Aumenta cada vez más rápido, más lento o disminuye?</p>",
+   "checks": [
+    {
+     "p": "4.1 \\(E(t)\\)",
+     "o": [
+      "\\(0{,}5+0{,}793\\ln(t+1)\\)",
+      "\\(0{,}5+1{,}001\\ln(t+1)\\)",
+      "\\(1{,}6+0{,}5\\ln(t+1)\\)",
+      "\\(0{,}5+1{,}1\\ln(t+1)\\)",
+      "\\(0{,}793+0{,}5\\ln(t+1)\\)"
+     ]
+    },
+    {
+     "p": "4.2",
+     "o": [
+      "Aumenta cada vez más lento",
+      "Aumenta cada vez más rápido",
+      "Aumenta a ritmo constante",
+      "Disminuye",
+      "Primero aumenta y luego disminuye"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(E(0)=A=0{,}5\\).",
+    "\\(0{,}5+B\\ln4=1{,}6\\Rightarrow B=\\frac{1{,}1}{\\ln4}\\approx0{,}793\\).",
+    "\\(B\\gt0\\): siempre crece, pero el logaritmo se aplana: cada vez más lento."
+   ],
+   "ans": "\\(E(t)=0{,}5+0{,}793\\ln(t+1)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "logmod"
+    ],
+    [],
+    [
+     "ritmo"
+    ]
+   ]
+  },
+  {
+   "id": "e4S1",
+   "lvl": 2,
+   "title": "EA4 sábado · P1",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=2\\cos\\left(2x-\\frac\\pi2\\right)+5\\), ¿qué parámetro(s) debe cambiar para pasar de coseno a seno? Escribe la nueva función seno.</p>",
+   "checks": [
+    {
+     "p": "Parámetro que cambia",
+     "o": [
+      "Solo el desfase",
+      "La amplitud",
+      "El período",
+      "El eje",
+      "Amplitud y eje"
+     ]
+    },
+    {
+     "p": "Función seno",
+     "o": [
+      "\\(2\\sin(2x)+5\\)",
+      "\\(2\\sin\\left(2x-\\tfrac\\pi2\\right)+5\\)",
+      "\\(2\\sin\\left(2x+\\tfrac\\pi2\\right)+5\\)",
+      "\\(-2\\sin(2x)+5\\)",
+      "\\(5\\sin(2x)+2\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Factoriza: \\(2\\cos\\left(2\\left(x-\\frac\\pi4\\right)\\right)+5\\): máximo en \\(x=\\frac\\pi4\\).",
+    "Período \\(\\pi\\): el cruce subiendo está \\(\\frac T4=\\frac\\pi4\\) antes del máximo, en \\(x=0\\).",
+    "Seno con \\(h=0\\): \\(f(x)=2\\sin(2x)+5\\). Comprueba con \\(\\cos\\left(\\theta-\\frac\\pi2\\right)=\\sin\\theta\\)."
+   ],
+   "ans": "\\(2\\sin(2x)+5\\)",
+   "hint": "",
+   "fig": "ea4S",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sincos"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "e4S2",
+   "lvl": 2,
+   "title": "EA4 sábado · P2",
+   "q": "<p>Marea: ciclo de 12 h, máxima 5,2 m a las 4:00 y mínima 1,8 m a las 10:00; \\(t=0\\) a las 00:00.</p><p>2.1 (4 pts) Determina \\(H(t)\\). 2.2 (2 pts) Entre las 13:00 y las 15:00, ¿la altura aumenta o disminuye?</p>",
+   "checks": [
+    {
+     "p": "2.1 \\(H(t)\\)",
+     "o": [
+      "\\(1{,}7\\cos\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)",
+      "\\(3{,}4\\cos\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)",
+      "\\(1{,}7\\cos\\left(\\tfrac\\pi{12}(t-4)\\right)+3{,}5\\)",
+      "\\(1{,}7\\cos\\left(\\tfrac\\pi6(t-10)\\right)+3{,}5\\)",
+      "\\(1{,}7\\sin\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)"
+     ]
+    },
+    {
+     "p": "2.2",
+     "o": [
+      "Aumenta: va del mínimo (10:00) al máximo (16:00)",
+      "Disminuye: va del máximo al mínimo",
+      "Disminuye y luego aumenta",
+      "Aumenta y luego disminuye",
+      "Se mantiene"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(k=\\frac{5{,}2+1{,}8}2=3{,}5\\), \\(A=1{,}7\\), \\(B=\\frac{2\\pi}{12}=\\frac\\pi6\\).",
+    "Coseno con máximo en \\(t=4\\).",
+    "Mínimo a las 10:00 y el siguiente máximo a las 16:00: entre 13 y 15 sube."
+   ],
+   "ans": "\\(H(t)=1{,}7\\cos\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "param"
+    ],
+    [],
+    [
+     "crece"
+    ]
+   ]
+  },
+  {
+   "id": "e4S3",
+   "lvl": 3,
+   "title": "EA4 sábado · P3",
+   "q": "<p>(4 pts) Resuelve \\(e^{3x}=e^{x+2}+e^x\\).</p>",
+   "checks": [
+    {
+     "p": "\\(x\\)",
+     "o": [
+      "\\(x=\\tfrac12\\ln(e^2+1)\\approx1{,}063\\)",
+      "\\(x=1\\)",
+      "\\(x=\\ln(e^2+1)\\)",
+      "\\(x=\\tfrac12\\ln3\\)",
+      "\\(x=0\\ \\text{y}\\ x=1\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Divide entre \\(e^x\\gt0\\): \\(e^{2x}=e^2+1\\).",
+    "\\(2x=\\ln(e^2+1)\\Rightarrow x=\\frac12\\ln(e^2+1)\\approx1{,}063\\)."
+   ],
+   "ans": "\\(x=\\tfrac12\\ln(e^2+1)\\)",
+   "hint": "Saca factor común \\(e^x\\).",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "leyexp"
+    ],
+    [
+     "lndesp"
+    ]
+   ]
+  },
+  {
+   "id": "e4S4",
+   "lvl": 3,
+   "title": "EA4 sábado · P4",
+   "q": "<p>Óxido: \\(h(t)=A+B\\ln(t+1)\\) (µm, h). A las 2 h mide 0,8 µm y a las 6 h, 1,4 µm.</p><p>4.1 (4 pts) Determina \\(h(t)\\). 4.2 (2 pts) ¿Aumenta cada vez más o en algún momento disminuye?</p>",
+   "checks": [
+    {
+     "p": "4.1 \\(h(t)\\)",
+     "o": [
+      "\\(\\approx0{,}022+0{,}708\\ln(t+1)\\)",
+      "\\(0{,}8+0{,}708\\ln(t+1)\\)",
+      "\\(\\approx0{,}022+0{,}15\\ln(t+1)\\)",
+      "\\(0{,}5+0{,}3\\ln(t+1)\\)",
+      "\\(\\approx0{,}708+0{,}022\\ln(t+1)\\)"
+     ]
+    },
+    {
+     "p": "4.2",
+     "o": [
+      "Siempre aumenta, pero cada vez más lento; nunca disminuye",
+      "Aumenta cada vez más rápido",
+      "Disminuye después de 6 h",
+      "Aumenta a ritmo constante",
+      "Se estabiliza en 1,4 µm"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(A+B\\ln3=0{,}8\\) y \\(A+B\\ln7=1{,}4\\). Resta: \\(B\\ln\\frac73=0{,}6\\Rightarrow B\\approx0{,}708\\).",
+    "\\(A=0{,}8-B\\ln3\\approx0{,}022\\).",
+    "\\(B\\gt0\\) y \\(\\ln(t+1)\\) crece sin parar pero se aplana: crece cada vez más lento."
+   ],
+   "ans": "\\(h(t)\\approx0{,}022+0{,}708\\ln(t+1)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "logmod"
+    ],
+    [],
+    [
+     "ritmo"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 45,
+  "fixed": true,
+  "versions": [
+   {
+    "name": "Lunes",
+    "slots": [
+     {
+      "pts": 4,
+      "name": "P1 · Sinusoidal desde la gráfica",
+      "pool": [
+       "e4L1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Modelo sinusoidal",
+      "pool": [
+       "e4L2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Exponencial / logarítmica",
+      "pool": [
+       "e4L3"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P4 · Modelo exp. o log.",
+      "pool": [
+       "e4L4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Miércoles",
+    "slots": [
+     {
+      "pts": 4,
+      "name": "P1 · Sinusoidal desde la gráfica",
+      "pool": [
+       "e4M1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Modelo sinusoidal",
+      "pool": [
+       "e4M2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Exponencial / logarítmica",
+      "pool": [
+       "e4M3"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P4 · Modelo exp. o log.",
+      "pool": [
+       "e4M4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Jueves",
+    "slots": [
+     {
+      "pts": 4,
+      "name": "P1 · Sinusoidal desde la gráfica",
+      "pool": [
+       "e4J1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Modelo sinusoidal",
+      "pool": [
+       "e4J2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Exponencial / logarítmica",
+      "pool": [
+       "e4J3"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P4 · Modelo exp. o log.",
+      "pool": [
+       "e4J4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Viernes",
+    "slots": [
+     {
+      "pts": 4,
+      "name": "P1 · Sinusoidal desde la gráfica",
+      "pool": [
+       "e4V1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Modelo sinusoidal",
+      "pool": [
+       "e4V2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Exponencial / logarítmica",
+      "pool": [
+       "e4V3"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P4 · Modelo exp. o log.",
+      "pool": [
+       "e4V4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Sábado",
+    "slots": [
+     {
+      "pts": 4,
+      "name": "P1 · Sinusoidal desde la gráfica",
+      "pool": [
+       "e4S1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Modelo sinusoidal",
+      "pool": [
+       "e4S2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Exponencial / logarítmica",
+      "pool": [
+       "e4S3"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P4 · Modelo exp. o log.",
+      "pool": [
+       "e4S4"
+      ]
+     }
+    ]
+   }
+  ],
+  "slots": [
+   {
+    "pts": 4,
+    "name": "P1 · Sinusoidal desde la gráfica",
+    "pool": [
+     "e4L1"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "P2 · Modelo sinusoidal",
+    "pool": [
+     "e4L2"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "P3 · Exponencial / logarítmica",
+    "pool": [
+     "e4L3"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "P4 · Modelo exp. o log.",
+    "pool": [
+     "e4L4"
+    ]
+   }
+  ],
+  "intro": "Son las <b>5 versiones reales de la EA4 del ciclo 2026-1</b> (una por día), con sus puntajes y los 45 minutos del examen. Elige la versión antes de empezar. En el examen debes justificar todo: aquí marcas la respuesta de cada ítem y después revisas el procedimiento en «Ver solución»."
+ },
+ "short": "EA4",
+ "sub": "Sem. 7 a 9",
+ "guide": true,
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA4 2026-1</b> (las 5 versiones repiten la misma estructura): P1 sinusoidal desde una gráfica, casi siempre pasar de seno a coseno o cambiar parámetros (4 pts) · P2 modelo sinusoidal con un «¿sube o baja?» (6) · P3 ecuación exponencial/logarítmica o dominio de una suma de logaritmos (4) · P4 modelo \\(A+Be^{-kt}\\) o \\(A+B\\ln(t+1)\\) con una justificación (6). Los ejercicios «Tipo EA» de cada tema imitan esas preguntas."
+}

@@ -1,0 +1,2392 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso de la EA6: producto punto, proyecciones y vectores en 3D.</p>\n<div class=\"fgrid\">\n<div><b>Producto punto</b><br>\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2+a_3b_3=|a||b|\\cos\\theta\\)</div>\n<div><b>Clasificar ángulo</b><br>Signo de \\(\\vec a\\cdot\\vec b\\): + agudo · 0 recto · − obtuso</div>\n<div><b>Paralelos</b><br>\\(\\vec b=\\lambda\\vec a\\)</div>\n<div><b>Proyección escalar</b><br>\\(\\tfrac{\\vec a\\cdot\\vec b}{|\\vec a|}\\)</div>\n<div><b>Proyección vectorial</b><br>\\(\\tfrac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\vec a\\)</div>\n<div><b>Ortogonal</b><br>\\(\\vec b-\\text{proy}_{\\vec a}\\vec b\\)</div>\n<div><b>Unitario</b><br>\\(\\hat u=\\tfrac{\\vec v}{|\\vec v|}\\) · \\(\\overrightarrow{AB}=B-A\\)</div>\n<div><b>Fuerza · desplazamiento</b><br>\\(|F||d|\\cos\\theta\\): + favorece, − se opone</div>\n</div>",
+ "formSim": false,
+ "id": "fc-ea6",
+ "code": "CC6101",
+ "name": "Fundamentos del Cálculo",
+ "exam": "EA6 (semanas 11 a 13)",
+ "topics": [
+  {
+   "id": "punto",
+   "name": "Producto punto, ángulo, paralelos y perpendiculares",
+   "teo": "<p>\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2(+a_3b_3)=|\\vec a||\\vec b|\\cos\\theta\\). Es un <strong>número</strong>, no un vector.</p><p>Su <strong>signo</strong> clasifica el ángulo sin calcularlo: \\(\\gt0\\) agudo, \\(=0\\) recto (perpendiculares), \\(\\lt0\\) obtuso. Ángulo: \\(\\theta=\\arccos\\frac{\\vec a\\cdot\\vec b}{|\\vec a||\\vec b|}\\in[0^\\circ,180^\\circ]\\).</p><p><strong>Paralelos</strong>: uno es múltiplo del otro, \\(\\vec b=\\lambda\\vec a\\). Si \\(\\lambda\\lt0\\), sentidos opuestos y \\(\\theta=180^\\circ\\).</p>",
+   "form": [
+    "\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2\\)",
+    "\\(\\cos\\theta=\\tfrac{\\vec a\\cdot\\vec b}{|a||b|}\\)",
+    "Signo: + agudo · 0 recto · − obtuso",
+    "\\(\\vec a\\parallel\\vec b\\iff\\vec b=\\lambda\\vec a\\)",
+    "\\(\\vec a\\perp\\vec b\\iff\\vec a\\cdot\\vec b=0\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La primera pregunta de la EA6 siempre trae tres vectores: productos punto, clasificar ángulos, paralelos/perpendiculares y un ángulo con arccos.</p>\n<h3>Conceptos clave</h3><ul><li>El producto punto es un escalar.</li><li>Para «sin calcular el ángulo» basta el signo del producto punto.</li><li>Paralelos: revisa si las razones \\(\\frac{b_1}{a_1}\\) y \\(\\frac{b_2}{a_2}\\) coinciden.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula todos los productos punto que pidan.</li><li><strong>2.</strong> Clasifica por el signo.</li><li><strong>3.</strong> Revisa proporcionalidad para paralelos.</li><li><strong>4.</strong> Para el ángulo, divide entre las magnitudes y aplica arccos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\((3,4)\\cdot(-4,3)=0\\): perpendiculares. \\((3,4)\\cdot(6,-3)=6\\gt0\\): agudo.</div>\n<div class=\"err\"><b>Error común:</b> confundir «producto punto negativo» con «sentidos opuestos». Opuestos es solo el caso de 180°.</div>",
+   "ex": [
+    {
+     "id": "d1",
+     "lvl": 1,
+     "title": "Calcular el producto punto",
+     "q": "<p>\\(\\vec a=(2,-3)\\), \\(\\vec b=(4,1)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec a\\cdot\\vec b\\)",
+       "o": [
+        "5",
+        "11",
+        "−5",
+        "(8, −3)",
+        "−1"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2\\cdot4+(-3)\\cdot1=8-3=5\\)."
+     ],
+     "ans": "5",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dot"
+      ]
+     ]
+    },
+    {
+     "id": "d2",
+     "lvl": 1,
+     "title": "Clasificar sin calcular el ángulo",
+     "q": "<p>\\(\\vec u=(1,2)\\), \\(\\vec v=(-4,2)\\).</p>",
+     "checks": [
+      {
+       "p": "Ángulo",
+       "o": [
+        "Recto",
+        "Agudo",
+        "Obtuso",
+        "Llano (180°)",
+        "Nulo (0°)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec u\\cdot\\vec v=-4+4=0\\): perpendiculares."
+     ],
+     "ans": "Recto",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dot"
+      ]
+     ]
+    },
+    {
+     "id": "d3",
+     "lvl": 2,
+     "title": "Ángulo exacto",
+     "q": "<p>Ángulo entre \\((1,1)\\) y \\((1,0)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\theta\\)",
+       "o": [
+        "45^\\circ",
+        "90^\\circ",
+        "135^\\circ",
+        "30^\\circ",
+        "60^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos\\theta=\\frac{1}{\\sqrt2\\cdot1}\\Rightarrow\\theta=45^\\circ\\)."
+     ],
+     "ans": "45^\\circ",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "angv"
+      ]
+     ]
+    },
+    {
+     "id": "d4",
+     "lvl": 2,
+     "title": "Ángulo con calculadora",
+     "q": "<p>Ángulo entre \\((3,4)\\) y \\((-5,12)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\theta\\)",
+       "o": [
+        "59{,}49^\\circ",
+        "120{,}51^\\circ",
+        "14{,}25^\\circ",
+        "26{,}92^\\circ",
+        "90^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec a\\cdot\\vec b=-15+48=33\\); \\(|\\vec a|=5\\), \\(|\\vec b|=13\\).",
+      "\\(\\cos\\theta=\\frac{33}{65}\\Rightarrow\\theta\\approx59{,}49^\\circ\\)."
+     ],
+     "ans": "59{,}49^\\circ",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "angv"
+      ]
+     ]
+    },
+    {
+     "id": "d5",
+     "lvl": 2,
+     "title": "¿Paralelos?",
+     "q": "<p>\\(\\vec a=(6,-9)\\), \\(\\vec b=(-2,3)\\).</p>",
+     "checks": [
+      {
+       "p": "Relación",
+       "o": [
+        "Paralelos, sentidos opuestos",
+        "Paralelos, mismo sentido",
+        "Perpendiculares",
+        "Ni paralelos ni perpendiculares",
+        "Iguales"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec a=-3\\vec b\\): son múltiplos con \\(\\lambda=-3\\lt0\\)."
+     ],
+     "ans": "Paralelos opuestos",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paral"
+      ]
+     ]
+    },
+    {
+     "id": "d6",
+     "lvl": 2,
+     "title": "k perpendicular en 2D",
+     "q": "<p>¿Qué \\(k\\) hace \\((k,3)\\perp(2,-4)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(k\\)",
+       "o": [
+        "6",
+        "−6",
+        "\\(\\tfrac32\\)",
+        "−1,5",
+        "12"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2k-12=0\\Rightarrow k=6\\)."
+     ],
+     "ans": "6",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "perpk"
+      ]
+     ]
+    },
+    {
+     "id": "d7",
+     "lvl": 3,
+     "title": "k paralelo",
+     "q": "<p>¿Qué \\(k\\) hace \\((k,2)\\parallel(3,-6)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(k\\)",
+       "o": [
+        "−1",
+        "1",
+        "4",
+        "−4",
+        "9"
+       ]
+      }
+     ],
+     "steps": [
+      "Componentes proporcionales: \\(\\frac k3=\\frac2{-6}\\Rightarrow k=-1\\)."
+     ],
+     "ans": "−1",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paral"
+      ]
+     ]
+    },
+    {
+     "id": "d8",
+     "lvl": 2,
+     "title": "Tipo EA: afirmación",
+     "q": "<p>«Si el producto punto de dos vectores es negativo, apuntan exactamente en direcciones opuestas». ¿Es correcto?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falso: solo indica que el ángulo es obtuso (entre 90° y 180°)",
+        "Verdadero siempre",
+        "Verdadero si tienen la misma magnitud",
+        "Falso: indica que son perpendiculares",
+        "Falso: indica que son paralelos"
+       ]
+      }
+     ],
+     "steps": [
+      "Negativo ⇔ \\(\\cos\\theta\\lt0\\) ⇔ \\(90^\\circ\\lt\\theta\\le180^\\circ\\). Solo si \\(\\theta=180^\\circ\\) son opuestos.",
+      "Contraejemplo: \\((1,0)\\cdot(-1,1)=-1\\lt0\\) y forman \\(135^\\circ\\)."
+     ],
+     "ans": "Falso",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dot"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "proy",
+   "name": "Proyecciones y componente ortogonal",
+   "teo": "<p><strong>Escalar</strong> de \\(\\vec b\\) sobre \\(\\vec a\\): \\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|}\\). Es un número con signo (negativo si el ángulo es obtuso).</p><p><strong>Vectorial</strong>: \\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\vec a\\). Es un vector paralelo a \\(\\vec a\\). Es nula si son perpendiculares.</p><p><strong>Componente ortogonal</strong>: \\(\\vec b-\\text{proy}_{\\vec a}\\vec b\\), perpendicular a \\(\\vec a\\). Verifícalo con el producto punto.</p>",
+   "form": [
+    "\\(\\text{comp}_{\\vec a}\\vec b=\\tfrac{\\vec a\\cdot\\vec b}{|\\vec a|}\\)",
+    "\\(\\text{proy}_{\\vec a}\\vec b=\\tfrac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\vec a\\)",
+    "\\(\\vec b_\\perp=\\vec b-\\text{proy}_{\\vec a}\\vec b\\)",
+    "«de \\(\\vec b\\) sobre \\(\\vec a\\)»: \\(\\vec a\\) va abajo"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la EA6 la proyección vale entre 4 y 6 puntos, y casi siempre hay una afirmación V/F sobre ella (siempre positiva, nunca nula, etc.).</p>\n<h3>Conceptos clave</h3><ul><li>La escalar puede ser negativa o cero.</li><li>La vectorial tiene la dirección del vector <em>sobre el que</em> proyectas.</li><li>Es nula si y solo si los vectores son perpendiculares (con \\(\\vec a\\ne\\vec0\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula \\(\\vec a\\cdot\\vec b\\) y \\(|\\vec a|\\).</li><li><strong>2.</strong> Escalar: divide entre \\(|\\vec a|\\).</li><li><strong>3.</strong> Vectorial: multiplica \\(\\vec a\\) por \\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\).</li><li><strong>4.</strong> Si piden la ortogonal, resta y verifica con producto punto.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\vec c=(6,-3)\\) sobre \\(\\vec a=(3,4)\\): \\(\\vec a\\cdot\\vec c=6\\), escalar \\(\\frac65\\), vectorial \\(\\frac6{25}(3,4)\\).</div>\n<div class=\"err\"><b>Error común:</b> dividir entre \\(|\\vec b|\\) en vez de \\(|\\vec a|\\): se divide entre la magnitud del vector sobre el que proyectas.</div>",
+   "ex": [
+    {
+     "id": "p1",
+     "lvl": 1,
+     "title": "Proyección escalar",
+     "q": "<p>\\(\\text{comp}_{\\vec a}\\vec b\\) con \\(\\vec a=(3,4)\\), \\(\\vec b=(2,1)\\).</p>",
+     "checks": [
+      {
+       "p": "Valor",
+       "o": [
+        "2",
+        "10",
+        "\\(\\tfrac25\\)",
+        "\\(2\\sqrt5\\)",
+        "\\(\\tfrac{10}{\\sqrt5}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|}=\\frac{10}5=2\\)."
+     ],
+     "ans": "2",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pesc"
+      ]
+     ]
+    },
+    {
+     "id": "p2",
+     "lvl": 2,
+     "title": "Proyección vectorial",
+     "q": "<p>\\(\\text{proy}_{\\vec a}\\vec b\\) con \\(\\vec a=(3,4)\\), \\(\\vec b=(2,1)\\).</p>",
+     "checks": [
+      {
+       "p": "Vector",
+       "o": [
+        "\\(\\left(\\tfrac65,\\tfrac85\\right)\\)",
+        "\\((6,8)\\)",
+        "\\(\\left(\\tfrac45,\\tfrac25\\right)\\)",
+        "\\(\\left(\\tfrac{6}{\\sqrt5},\\tfrac{3}{\\sqrt5}\\right)\\)",
+        "\\(\\left(\\tfrac85,\\tfrac65\\right)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{10}{25}(3,4)=\\left(\\frac65,\\frac85\\right)\\)."
+     ],
+     "ans": "\\(\\left(\\tfrac65,\\tfrac85\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pvec"
+      ]
+     ]
+    },
+    {
+     "id": "p3",
+     "lvl": 2,
+     "title": "Componente ortogonal",
+     "q": "<p>Con los mismos vectores, halla \\(\\vec b-\\text{proy}_{\\vec a}\\vec b\\) y verifica que es perpendicular a \\(\\vec a\\).</p>",
+     "checks": [
+      {
+       "p": "Componente ortogonal",
+       "o": [
+        "\\(\\left(\\tfrac45,-\\tfrac35\\right)\\)",
+        "\\(\\left(-\\tfrac45,\\tfrac35\\right)\\)",
+        "\\(\\left(\\tfrac{16}5,\\tfrac{13}5\\right)\\)",
+        "\\((0,0)\\)",
+        "\\(\\left(\\tfrac35,-\\tfrac45\\right)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((2,1)-\\left(\\frac65,\\frac85\\right)=\\left(\\frac45,-\\frac35\\right)\\).",
+      "Verificación: \\(3\\cdot\\frac45+4\\cdot\\left(-\\frac35\\right)=0\\) ✓."
+     ],
+     "ans": "\\(\\left(\\tfrac45,-\\tfrac35\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "orto"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "p4",
+     "lvl": 2,
+     "title": "Proyección negativa",
+     "q": "<p>\\(\\vec u=(1,0)\\), \\(\\vec v=(-3,2)\\). Halla \\(\\text{comp}_{\\vec u}\\vec v\\) y \\(\\text{proy}_{\\vec u}\\vec v\\).</p>",
+     "checks": [
+      {
+       "p": "Escalar",
+       "o": [
+        "−3",
+        "3",
+        "2",
+        "\\(\\sqrt{13}\\)",
+        "0"
+       ]
+      },
+      {
+       "p": "Vectorial",
+       "o": [
+        "\\((-3,0)\\)",
+        "\\((3,0)\\)",
+        "\\((0,2)\\)",
+        "\\((-3,2)\\)",
+        "\\((0,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec u\\cdot\\vec v=-3\\), \\(|\\vec u|=1\\): escalar \\(-3\\).",
+      "Vectorial: \\(-3(1,0)=(-3,0)\\). El signo negativo indica que forman un ángulo obtuso."
+     ],
+     "ans": "−3 y \\((-3,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pesc"
+      ],
+      [
+       "pvec"
+      ]
+     ]
+    },
+    {
+     "id": "p5",
+     "lvl": 3,
+     "title": "Proyección en 3D",
+     "q": "<p>\\(\\vec v=(4,-2,1)\\) sobre \\(\\vec u=(1,2,2)\\).</p>",
+     "checks": [
+      {
+       "p": "Escalar",
+       "o": [
+        "\\(\\tfrac23\\)",
+        "\\(2\\)",
+        "\\(\\tfrac29\\)",
+        "\\(\\tfrac{2}{\\sqrt{21}}\\)",
+        "\\(-\\tfrac23\\)"
+       ]
+      },
+      {
+       "p": "Vectorial",
+       "o": [
+        "\\(\\tfrac29(1,2,2)\\)",
+        "\\(\\tfrac23(1,2,2)\\)",
+        "\\(2(1,2,2)\\)",
+        "\\(\\tfrac2{21}(4,-2,1)\\)",
+        "\\(\\tfrac29(4,-2,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec u\\cdot\\vec v=4-4+2=2\\); \\(|\\vec u|=3\\).",
+      "Escalar \\(\\frac23\\); vectorial \\(\\frac2{9}(1,2,2)\\)."
+     ],
+     "ans": "\\(\\tfrac29(1,2,2)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "pesc",
+       "pvec"
+      ]
+     ]
+    },
+    {
+     "id": "p6",
+     "lvl": 2,
+     "title": "Proyección nula",
+     "q": "<p>Halla \\(\\text{proy}_{\\vec a}\\vec c\\) con \\(\\vec a=(1,2)\\), \\(\\vec c=(4,-2)\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\vec 0=(0,0)\\)",
+        "\\((4,-2)\\)",
+        "\\((1,2)\\)",
+        "\\(\\left(\\tfrac45,\\tfrac85\\right)\\)",
+        "No existe"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec a\\cdot\\vec c=4-4=0\\): perpendiculares, la proyección es el vector nulo aunque ninguno sea nulo."
+     ],
+     "ans": "\\(\\vec0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pvec"
+      ]
+     ]
+    },
+    {
+     "id": "p7",
+     "lvl": 2,
+     "title": "Tipo EA: afirmación",
+     "q": "<p>«Si la proyección vectorial de \\(\\vec v\\) sobre \\(\\vec u\\) es el vector nulo, alguno de los dos debe ser nulo». ¿Es correcta?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falso: basta que sean perpendiculares (\\(\\vec u\\cdot\\vec v=0\\))",
+        "Verdadero",
+        "Falso: basta que sean paralelos",
+        "Verdadero si están en 3D",
+        "Falso: la proyección nunca es nula"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\text{proy}_{\\vec u}\\vec v=\\frac{\\vec u\\cdot\\vec v}{|\\vec u|^2}\\vec u=\\vec0\\) cuando \\(\\vec u\\cdot\\vec v=0\\).",
+      "Contraejemplo: \\(\\vec u=(1,0)\\), \\(\\vec v=(0,1)\\): ninguno es nulo y la proyección es \\(\\vec0\\)."
+     ],
+     "ans": "Falso",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pvec"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "v3d",
+   "name": "Vectores en el espacio: puntos, unitarios y perpendicularidad",
+   "teo": "<p>\\(\\overrightarrow{AB}=B-A\\) (final menos inicial). Magnitud \\(\\sqrt{x^2+y^2+z^2}\\). Unitario \\(\\hat u=\\frac{\\vec v}{|\\vec v|}\\).</p><p>Todo lo del plano funciona igual con una tercera componente: producto punto, ángulo, proyecciones.</p><p>Para hallar \\(k\\) que haga perpendiculares dos vectores, plantea \\(\\vec a\\cdot\\vec b=0\\) y despeja.</p>",
+   "form": [
+    "\\(\\overrightarrow{AB}=B-A\\)",
+    "\\(|\\vec v|=\\sqrt{x^2+y^2+z^2}\\)",
+    "\\(\\hat u=\\tfrac{\\vec v}{|\\vec v|}\\)",
+    "\\(\\vec a\\perp\\vec b\\iff a_1b_1+a_2b_2+a_3b_3=0\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La pregunta de 3D de la EA6 siempre es: vector entre dos puntos, su unitario y un \\(k\\) para que otro vector sea perpendicular.</p>\n<h3>Conceptos clave</h3><ul><li>Final menos inicial.</li><li>El unitario tiene magnitud 1: comprueba.</li><li>\\(k\\) sale de una ecuación lineal.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Resta coordenadas.</li><li><strong>2.</strong> Calcula la magnitud y divide.</li><li><strong>3.</strong> Haz el producto punto con \\(k\\), iguala a 0 y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(A(-1,4,2)\\), \\(B(5,-2,8)\\): \\(\\overrightarrow{AB}=(6,-6,6)\\), \\(\\hat u=\\frac1{\\sqrt3}(1,-1,1)\\); con \\(\\vec w=(k,2,-3)\\): \\(6k-12-18=0\\Rightarrow k=5\\).</div>\n<div class=\"err\"><b>Error común:</b> restar inicial menos final: da el vector opuesto.</div>",
+   "ex": [
+    {
+     "id": "t1",
+     "lvl": 1,
+     "title": "Vector entre dos puntos",
+     "q": "<p>\\(A(1,2,3)\\), \\(B(4,-2,3)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\overrightarrow{AB}\\)",
+       "o": [
+        "\\((3,-4,0)\\)",
+        "\\((-3,4,0)\\)",
+        "\\((5,0,6)\\)",
+        "\\((3,4,0)\\)",
+        "\\((4,-2,3)\\)"
+       ]
+      },
+      {
+       "p": "\\(|\\overrightarrow{AB}|\\)",
+       "o": [
+        "5",
+        "25",
+        "7",
+        "\\(\\sqrt{7}\\)",
+        "\\(\\sqrt{61}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(B-A=(4-1,-2-2,3-3)=(3,-4,0)\\).",
+      "\\(\\sqrt{9+16+0}=5\\)."
+     ],
+     "ans": "\\((3,-4,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "t2",
+     "lvl": 1,
+     "title": "Unitario en 3D",
+     "q": "<p>Vector unitario en la dirección de \\((2,-1,2)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\hat u\\)",
+       "o": [
+        "\\(\\left(\\tfrac23,-\\tfrac13,\\tfrac23\\right)\\)",
+        "\\(\\left(\\tfrac29,-\\tfrac19,\\tfrac29\\right)\\)",
+        "\\(\\left(\\tfrac25,-\\tfrac15,\\tfrac25\\right)\\)",
+        "\\((1,-1,1)\\)",
+        "\\(\\left(-\\tfrac23,\\tfrac13,-\\tfrac23\\right)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(|\\vec v|=\\sqrt{4+1+4}=3\\); divide cada componente entre 3."
+     ],
+     "ans": "\\(\\left(\\tfrac23,-\\tfrac13,\\tfrac23\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "unit"
+      ]
+     ]
+    },
+    {
+     "id": "t3",
+     "lvl": 2,
+     "title": "k perpendicular en 3D",
+     "q": "<p>¿Qué \\(k\\) hace \\((k,2,-3)\\perp(1,4,2)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(k\\)",
+       "o": [
+        "−2",
+        "2",
+        "14",
+        "−14",
+        "6"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(k+8-6=0\\Rightarrow k=-2\\)."
+     ],
+     "ans": "−2",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "perpk"
+      ]
+     ]
+    },
+    {
+     "id": "t4",
+     "lvl": 2,
+     "title": "Tipo EA: barra y unitario",
+     "q": "<p>\\(A(0,1,-2)\\), \\(B(2,3,-1)\\). Halla \\(\\overrightarrow{AB}\\) y su vector unitario.</p>",
+     "checks": [
+      {
+       "p": "Unitario",
+       "o": [
+        "\\(\\left(\\tfrac23,\\tfrac23,\\tfrac13\\right)\\)",
+        "\\(\\left(\\tfrac29,\\tfrac29,\\tfrac19\\right)\\)",
+        "\\((2,2,1)\\)",
+        "\\(\\left(\\tfrac25,\\tfrac45,-\\tfrac35\\right)\\)",
+        "\\(\\left(-\\tfrac23,-\\tfrac23,-\\tfrac13\\right)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\overrightarrow{AB}=(2,2,1)\\), \\(|\\overrightarrow{AB}|=3\\).",
+      "\\(\\hat u=\\frac13(2,2,1)\\)."
+     ],
+     "ans": "\\(\\left(\\tfrac23,\\tfrac23,\\tfrac13\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "unit"
+      ]
+     ]
+    },
+    {
+     "id": "t5",
+     "lvl": 3,
+     "title": "k con dos apariciones",
+     "q": "<p>¿Qué \\(k\\) hace \\((2k,1,k)\\perp(3,-4,1)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(k\\)",
+       "o": [
+        "\\(\\tfrac47\\)",
+        "\\(-\\tfrac47\\)",
+        "\\(\\tfrac43\\)",
+        "\\(4\\)",
+        "\\(\\tfrac74\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(6k-4+k=0\\Rightarrow k=\\frac47\\)."
+     ],
+     "ans": "\\(\\tfrac47\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "perpk"
+      ]
+     ]
+    },
+    {
+     "id": "t6",
+     "lvl": 2,
+     "title": "Ángulo en 3D",
+     "q": "<p>Ángulo entre \\((1,0,1)\\) y \\((0,1,1)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\theta\\)",
+       "o": [
+        "60^\\circ",
+        "45^\\circ",
+        "90^\\circ",
+        "30^\\circ",
+        "120^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos\\theta=\\frac{1}{\\sqrt2\\sqrt2}=\\frac12\\Rightarrow60^\\circ\\)."
+     ],
+     "ans": "60^\\circ",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "angv"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vapl",
+   "name": "Aplicaciones: fuerza y desplazamiento, resultantes y afirmaciones",
+   "teo": "<p>\\(\\vec F\\cdot\\vec d=|F||d|\\cos\\theta\\) (con \\(\\theta\\) = diferencia de las direcciones). Positivo: la fuerza <strong>favorece</strong>; negativo: <strong>se opone</strong> en parte; cero: perpendicular.</p><p><strong>Resultante de varios vectores con ángulo</strong>: unitario \\((\\cos\\theta,\\sin\\theta)\\) de cada uno, multiplica por la magnitud, suma y luego magnitud y dirección.</p><p><strong>Afirmaciones V/F</strong>: casi siempre son falsas por un caso borde (perpendiculares → cero; ángulo obtuso → negativo). Justifica con un contraejemplo concreto.</p>",
+   "form": [
+    "\\(\\vec F\\cdot\\vec d=|F||d|\\cos\\theta\\)",
+    "\\(\\hat u_\\theta=(\\cos\\theta,\\sin\\theta)\\)",
+    "\\(\\vec R=\\sum|v_i|\\hat u_i\\)",
+    "V/F: busca el caso perpendicular u obtuso"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Cierra la EA6: un problema contextual (vehículo, caja, cables) y una afirmación de 1 o 2 puntos para justificar.</p>\n<h3>Conceptos clave</h3><ul><li>Diferencia de ángulos = ángulo entre los vectores.</li><li>Un contraejemplo vale más que un párrafo.</li><li>Con 90° de diferencia el producto punto es 0.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Halla unitarios con cos y sen.</li><li><strong>2.</strong> Multiplica por las magnitudes.</li><li><strong>3.</strong> Haz el producto punto o la suma.</li><li><strong>4.</strong> Interpreta el signo o el cuadrante.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Caja: \\(\\vec d\\) 20 m a \\(40^\\circ\\), \\(\\vec F\\) 30 N a \\(140^\\circ\\): \\(600\\cos100^\\circ\\approx-104{,}19\\) J, dificulta.</div>\n<div class=\"err\"><b>Error común:</b> restar los ángulos al revés no importa (el coseno es par), pero sí importa usar el ángulo entre ellos y no el de uno solo.</div>",
+   "ex": [
+    {
+     "id": "a1",
+     "lvl": 1,
+     "title": "Fuerza y desplazamiento",
+     "q": "<p>Una fuerza de 40 N a \\(60^\\circ\\) actúa sobre un desplazamiento de 10 m a \\(0^\\circ\\). Calcula \\(\\vec F\\cdot\\vec d\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec F\\cdot\\vec d\\)",
+       "o": [
+        "200 J",
+        "400 J",
+        "346,4 J",
+        "−200 J",
+        "0 J"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(40\\cdot10\\cos60^\\circ=200\\)."
+     ],
+     "ans": "200 J",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trab"
+      ]
+     ]
+    },
+    {
+     "id": "a2",
+     "lvl": 2,
+     "title": "Tipo EA: ¿favorece o se opone?",
+     "q": "<p>Fuerza de 30 N a \\(150^\\circ\\); desplazamiento de 12 m a \\(30^\\circ\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec F\\cdot\\vec d\\)",
+       "o": [
+        "−180 J",
+        "180 J",
+        "−311,8 J",
+        "0 J",
+        "360 J"
+       ]
+      },
+      {
+       "p": "Interpretación",
+       "o": [
+        "Se opone parcialmente al movimiento",
+        "Favorece el movimiento",
+        "No influye (perpendicular)",
+        "Se opone totalmente",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Ángulo entre ellos \\(150^\\circ-30^\\circ=120^\\circ\\): \\(30\\cdot12\\cos120^\\circ=-180\\).",
+      "Negativo: la fuerza tiene una componente contraria al desplazamiento."
+     ],
+     "ans": "−180 J, se opone",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "a3",
+     "lvl": 2,
+     "title": "Resultante de tres vectores",
+     "q": "<p>\\(|\\vec a|=10\\) a \\(0^\\circ\\), \\(|\\vec b|=20\\) a \\(90^\\circ\\), \\(|\\vec c|=10\\) a \\(180^\\circ\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec R\\)",
+       "o": [
+        "\\((0,20)\\)",
+        "\\((20,20)\\)",
+        "\\((0,40)\\)",
+        "\\((10,20)\\)",
+        "\\((-20,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Las \\(x\\) se cancelan: \\(10-10=0\\); \\(R_y=20\\)."
+     ],
+     "ans": "\\((0,20)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ]
+     ]
+    },
+    {
+     "id": "a4",
+     "lvl": 3,
+     "title": "Tipo EA: tres vectores con ángulos",
+     "q": "<p>\\(|\\vec a|=50\\) a \\(53{,}13^\\circ\\), \\(|\\vec b|=20\\) a \\(270^\\circ\\), \\(|\\vec c|=25\\) a \\(143{,}13^\\circ\\). Halla \\(\\vec R\\), su magnitud y dirección.</p>",
+     "checks": [
+      {
+       "p": "\\(\\vec R\\)",
+       "o": [
+        "\\((10,35)\\)",
+        "\\((50,15)\\)",
+        "\\((10,75)\\)",
+        "\\((-10,35)\\)",
+        "\\((30,40)\\)"
+       ]
+      },
+      {
+       "p": "Magnitud y dirección",
+       "o": [
+        "\\(36{,}4\\) a \\(74{,}05^\\circ\\)",
+        "\\(95\\) a \\(74{,}05^\\circ\\)",
+        "\\(36{,}4\\) a \\(15{,}95^\\circ\\)",
+        "\\(36{,}4\\) a \\(105{,}95^\\circ\\)",
+        "\\(45\\) a \\(74{,}05^\\circ\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\vec a=50(0{,}6;0{,}8)=(30,40)\\); \\(\\vec b=(0,-20)\\); \\(\\vec c=25(-0{,}8;0{,}6)=(-20,15)\\).",
+      "\\(\\vec R=(10,35)\\).",
+      "\\(|\\vec R|=\\sqrt{1325}\\approx36{,}4\\); \\(\\arctan\\frac{35}{10}\\approx74{,}05^\\circ\\), I cuadrante."
+     ],
+     "ans": "\\((10,35)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ],
+      [],
+      [
+       "resul"
+      ]
+     ]
+    },
+    {
+     "id": "a5",
+     "lvl": 2,
+     "title": "Tipo EA: afirmación",
+     "q": "<p>«La proyección escalar de un vector sobre otro siempre es positiva». ¿Es correcto?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falso: es negativa si el ángulo es obtuso y cero si son perpendiculares",
+        "Verdadero: es una longitud",
+        "Verdadero en 2D, falso en 3D",
+        "Falso: siempre es cero",
+        "Verdadero si los vectores son unitarios"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|}\\) tiene el signo del producto punto.",
+      "Contraejemplo: la proyección escalar de \\((-2,1)\\) sobre \\((1,0)\\) es \\(-2\\)."
+     ],
+     "ans": "Falso",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pesc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "a6",
+     "lvl": 2,
+     "title": "Tipo EA: afirmación",
+     "q": "<p>«Si la proyección escalar de \\(\\vec u\\) sobre \\(\\vec v\\) es positiva, son paralelos con el mismo sentido». ¿Es correcto?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falso: solo indica que el ángulo es agudo",
+        "Verdadero",
+        "Falso: indica que son perpendiculares",
+        "Verdadero si \\(|\\vec u|=|\\vec v|\\)",
+        "Falso: indica que son opuestos"
+       ]
+      }
+     ],
+     "steps": [
+      "Positiva ⇔ \\(0^\\circ\\le\\theta\\lt90^\\circ\\). Paralelos con igual sentido es solo \\(\\theta=0^\\circ\\).",
+      "Contraejemplo: \\(\\vec u=(1,1)\\), \\(\\vec v=(1,0)\\): \\(\\text{comp}=1\\gt0\\) y forman \\(45^\\circ\\)."
+     ],
+     "ans": "Falso",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pesc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "a7",
+     "lvl": 1,
+     "title": "Cuadrante de la resultante",
+     "q": "<p>\\(\\vec R=(-3,-5)\\). Dirección respecto al eje \\(x\\) positivo.</p>",
+     "checks": [
+      {
+       "p": "Dirección",
+       "o": [
+        "239{,}04^\\circ",
+        "59{,}04^\\circ",
+        "120{,}96^\\circ",
+        "300{,}96^\\circ",
+        "270^\\circ"
+       ]
+      }
+     ],
+     "steps": [
+      "III cuadrante: \\(180^\\circ+\\arctan\\frac53\\approx239{,}04^\\circ\\)."
+     ],
+     "ans": "239{,}04^\\circ",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "resul"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "dot": {
+   "n": "Producto punto",
+   "f": "\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2=|a||b|\\cos\\theta\\)",
+   "x": "Su signo clasifica el ángulo: positivo → agudo, cero → recto (perpendiculares), negativo → obtuso.",
+   "home": "punto"
+  },
+  "angv": {
+   "n": "Ángulo entre vectores",
+   "f": "\\(\\cos\\theta=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a||\\vec b|}\\)",
+   "x": "θ está entre 0° y 180°. Usa arccos directo: no hay que corregir cuadrantes.",
+   "home": "punto"
+  },
+  "paral": {
+   "n": "Paralelos",
+   "f": "\\(\\vec b=\\lambda\\vec a\\)",
+   "x": "Son paralelos si uno es múltiplo del otro (componentes proporcionales). λ < 0: sentidos opuestos.",
+   "home": "punto"
+  },
+  "pesc": {
+   "n": "Proyección escalar",
+   "f": "\\(\\text{comp}_{\\vec a}\\vec b=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|}\\)",
+   "x": "Es un número con signo: negativo si el ángulo es obtuso, cero si son perpendiculares.",
+   "home": "proy"
+  },
+  "pvec": {
+   "n": "Proyección vectorial",
+   "f": "\\(\\text{proy}_{\\vec a}\\vec b=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\,\\vec a\\)",
+   "x": "Es un vector paralelo a a. El vector sobre el que proyectas va abajo y al final.",
+   "home": "proy"
+  },
+  "orto": {
+   "n": "Componente ortogonal",
+   "f": "\\(\\vec b_\\perp=\\vec b-\\text{proy}_{\\vec a}\\vec b\\)",
+   "x": "Lo que queda de b al quitarle su proyección. Comprueba: su producto punto con a debe dar 0.",
+   "home": "proy"
+  },
+  "unit": {
+   "n": "Vector unitario",
+   "f": "\\(\\hat u=\\dfrac{\\vec v}{|\\vec v|}\\)",
+   "x": "Misma dirección, magnitud 1. En 3D: |v| = √(x²+y²+z²).",
+   "home": "v3d"
+  },
+  "perpk": {
+   "n": "Hallar k para perpendicularidad",
+   "f": "\\(\\vec a\\cdot\\vec b=0\\)",
+   "x": "Escribe el producto punto con k y resuelve la ecuación lineal.",
+   "home": "v3d"
+  },
+  "trab": {
+   "n": "Fuerza · desplazamiento",
+   "f": "\\(W=\\vec F\\cdot\\vec d=|F||d|\\cos\\theta\\)",
+   "x": "Positivo: la fuerza favorece el movimiento. Negativo: se opone en parte. Cero: perpendicular, ni ayuda ni frena.",
+   "home": "vapl"
+  },
+  "compv": {
+   "n": "Componentes de un vector",
+   "f": "\\(\\vec F=|F|(\\cos\\theta,\\ \\sin\\theta)\\)",
+   "x": "θ se mide desde el eje x positivo, en sentido antihorario. El signo de cada componente sale solo del cos y el sen.",
+   "home": "vect1"
+  },
+  "resul": {
+   "n": "Resultante: magnitud y dirección",
+   "f": "\\(|R|=\\sqrt{R_x^2+R_y^2},\\ \\tan\\alpha=\\tfrac{R_y}{R_x}\\)",
+   "x": "Suma componente a componente. Ojo con el cuadrante: si Rx < 0, suma 180° al ángulo que da la calculadora.",
+   "home": "vect1"
+  }
+ },
+ "simEx": [
+  {
+   "id": "e6L1",
+   "lvl": 2,
+   "title": "EA6 lunes · P1",
+   "q": "<p>\\(\\vec p=\\langle3,-2\\rangle\\), \\(\\vec q=\\langle-6,4\\rangle\\), \\(\\vec r=\\langle1,5\\rangle\\).</p><p>a) (1) ¿Hay pares paralelos? b) (2) ¿\\(\\vec p\\) y \\(\\vec r\\) forman ángulo agudo, recto u obtuso (sin calcularlo)? c) (2) Ángulo entre \\(\\vec p\\) y \\(\\vec r\\). d) (2) Proyección escalar de \\(\\vec r\\) sobre \\(\\vec p\\). e) (2) Proyección vectorial de \\(\\vec r\\) sobre \\(\\vec p\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\vec p\\parallel\\vec q\\) (\\(\\vec q=-2\\vec p\\))",
+      "\\(\\vec p\\parallel\\vec r\\)",
+      "Ninguno",
+      "\\(\\vec q\\parallel\\vec r\\)",
+      "Los tres"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "Obtuso (\\(\\vec p\\cdot\\vec r=-7\\))",
+      "Agudo (\\(\\vec p\\cdot\\vec r=13\\))",
+      "Recto",
+      "Obtuso (\\(\\vec p\\cdot\\vec r=-13\\))",
+      "Agudo (\\(\\vec p\\cdot\\vec r=7\\))"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "112{,}38^\\circ",
+      "67{,}62^\\circ",
+      "90^\\circ",
+      "22{,}38^\\circ",
+      "122{,}58^\\circ"
+     ]
+    },
+    {
+     "p": "d)",
+     "o": [
+      "\\(-\\tfrac7{\\sqrt{13}}\\approx-1{,}94\\)",
+      "\\(-\\tfrac7{13}\\)",
+      "\\(-\\tfrac7{\\sqrt{26}}\\approx-1{,}37\\)",
+      "\\(\\tfrac7{\\sqrt{13}}\\)",
+      "\\(-7\\)"
+     ]
+    },
+    {
+     "p": "e)",
+     "o": [
+      "\\(-\\tfrac7{13}(3,-2)=\\left(-\\tfrac{21}{13},\\tfrac{14}{13}\\right)\\)",
+      "\\(-\\tfrac7{26}(1,5)\\)",
+      "\\(-\\tfrac7{\\sqrt{13}}(3,-2)\\)",
+      "\\(\\left(\\tfrac{21}{13},-\\tfrac{14}{13}\\right)\\)",
+      "\\(-7(3,-2)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(\\vec q=-2\\vec p\\): paralelos (sentidos opuestos). \\(\\vec r\\) no es múltiplo de ninguno.",
+    "b) \\(\\vec p\\cdot\\vec r=3-10=-7\\lt0\\): obtuso.",
+    "c) \\(\\cos\\theta=\\frac{-7}{\\sqrt{13}\\sqrt{26}}\\approx-0{,}381\\Rightarrow\\theta\\approx112{,}38^\\circ\\).",
+    "d) \\(\\frac{-7}{\\sqrt{13}}\\approx-1{,}94\\).",
+    "e) \\(\\frac{-7}{13}(3,-2)\\)."
+   ],
+   "ans": "112{,}38^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "paral"
+    ],
+    [
+     "dot"
+    ],
+    [
+     "angv"
+    ],
+    [
+     "pesc"
+    ],
+    [
+     "pvec"
+    ]
+   ]
+  },
+  {
+   "id": "e6L2",
+   "lvl": 2,
+   "title": "EA6 lunes · P2",
+   "q": "<p>\\(A=(-1,4,2)\\), \\(B=(5,-2,8)\\). a) (2) Vector \\(\\overrightarrow{AB}\\) y su unitario. b) (1) \\(k\\) para que \\(\\vec w=\\langle k,2,-3\\rangle\\) sea perpendicular a \\(\\overrightarrow{AB}\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\((6,-6,6)\\); \\(\\frac1{\\sqrt3}(1,-1,1)\\)",
+      "\\((-6,6,-6)\\); \\(\\frac1{\\sqrt3}(-1,1,-1)\\)",
+      "\\((6,-6,6)\\); \\(\\frac16(1,-1,1)\\)",
+      "\\((4,2,10)\\); \\(\\frac1{\\sqrt{120}}(4,2,10)\\)",
+      "\\((6,-6,6)\\); \\((1,-1,1)\\)"
+     ]
+    },
+    {
+     "p": "b) \\(k\\)",
+     "o": [
+      "5",
+      "−5",
+      "1",
+      "30",
+      "−1"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(B-A=(6,-6,6)\\), \\(|\\cdot|=6\\sqrt3\\).",
+    "\\(\\hat u=\\frac{(6,-6,6)}{6\\sqrt3}=\\frac1{\\sqrt3}(1,-1,1)\\).",
+    "b) \\(6k-12-18=0\\Rightarrow k=5\\)."
+   ],
+   "ans": "\\(k=5\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "unit"
+    ],
+    [
+     "perpk"
+    ]
+   ]
+  },
+  {
+   "id": "e6L3",
+   "lvl": 2,
+   "title": "EA6 lunes · P3",
+   "q": "<p>Un vehículo se desplaza 15 m a \\(30^\\circ\\) del eje \\(x\\); actúa una fuerza de 25 N a \\(120^\\circ\\).</p><p>a) (2) Unitarios de la trayectoria y de la fuerza. b) (3) Producto punto. c) (1) ¿La fuerza contribuye o se opone?</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\left(\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\ \\text{y}\\ \\left(-\\tfrac12,\\tfrac{\\sqrt3}2\\right)\\)",
+      "\\(\\left(\\tfrac12,\\tfrac{\\sqrt3}2\\right)\\ \\text{y}\\ \\left(-\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
+      "\\((15,30)\\ \\text{y}\\ (25,120)\\)",
+      "\\(\\left(\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\ \\text{y}\\ \\left(\\tfrac12,-\\tfrac{\\sqrt3}2\\right)\\)",
+      "\\((\\cos30,\\sin30)\\cdot15\\ \\text{y}\\ (\\cos120,\\sin120)\\cdot25\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "0 J",
+      "375 J",
+      "−187,5 J",
+      "187,5 J",
+      "324,8 J"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "Ni contribuye ni se opone: es perpendicular",
+      "Contribuye",
+      "Se opone parcialmente",
+      "Se opone totalmente",
+      "No se puede saber"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\((\\cos30^\\circ,\\sin30^\\circ)\\) y \\((\\cos120^\\circ,\\sin120^\\circ)\\).",
+    "b) \\(\\vec F=25\\left(-\\frac12,\\frac{\\sqrt3}2\\right)\\), \\(\\vec d=15\\left(\\frac{\\sqrt3}2,\\frac12\\right)\\): \\(375\\left(-\\frac{\\sqrt3}4+\\frac{\\sqrt3}4\\right)=0\\).",
+    "c) Forman \\(90^\\circ\\): no aporta ni frena el movimiento."
+   ],
+   "ans": "0 J",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [
+     "trab"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e6L4",
+   "lvl": 1,
+   "title": "EA6 lunes · P4",
+   "q": "<p>(2) «Si la proyección vectorial de \\(\\vec v\\) sobre \\(\\vec u\\) es el vector nulo, alguno de los dos debe ser nulo». ¿Es correcta?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Falsa: basta que sean perpendiculares",
+      "Verdadera",
+      "Falsa: basta que sean paralelos",
+      "Verdadera solo en 3D",
+      "Falsa: la proyección nunca es nula"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\text{proy}=\\frac{\\vec u\\cdot\\vec v}{|\\vec u|^2}\\vec u=\\vec0\\) si \\(\\vec u\\cdot\\vec v=0\\). Contraejemplo: \\((1,0)\\) y \\((0,1)\\)."
+   ],
+   "ans": "Falsa",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pvec"
+    ]
+   ]
+  },
+  {
+   "id": "e6M1",
+   "lvl": 2,
+   "title": "EA6 miércoles · P1",
+   "q": "<p>\\(\\vec a=\\langle3,4\\rangle\\), \\(\\vec b=\\langle-4,3\\rangle\\), \\(\\vec c=\\langle6,-3\\rangle\\).</p><p>a) (2) \\(\\vec a\\cdot\\vec b\\) y \\(\\vec a\\cdot\\vec c\\) e interpreta. b) (1) ¿Pares paralelos y/o perpendiculares? c) (2) Ángulo entre \\(\\vec a\\) y \\(\\vec c\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "0 (perpendiculares) y 6 (agudo)",
+      "0 (paralelos) y 6 (agudo)",
+      "24 y 6",
+      "0 y −6 (obtuso)",
+      "−24 y 30"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "Solo \\(\\vec a\\perp\\vec b\\); ningún par paralelo",
+      "\\(\\vec a\\parallel\\vec c\\)",
+      "\\(\\vec b\\perp\\vec c\\)",
+      "\\(\\vec a\\perp\\vec b\\) y \\(\\vec a\\parallel\\vec c\\)",
+      "Ninguno"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "79{,}7^\\circ",
+      "100{,}3^\\circ",
+      "90^\\circ",
+      "82{,}34^\\circ",
+      "26{,}57^\\circ"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(-12+12=0\\): perpendiculares. \\(18-12=6\\gt0\\): ángulo agudo.",
+    "b) Ningún par es proporcional. \\(\\vec b\\cdot\\vec c=-33\\ne0\\).",
+    "c) \\(\\cos\\theta=\\frac6{5\\cdot3\\sqrt5}\\approx0{,}179\\Rightarrow\\theta\\approx79{,}7^\\circ\\)."
+   ],
+   "ans": "79{,}7^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dot"
+    ],
+    [
+     "paral"
+    ],
+    [
+     "angv"
+    ]
+   ]
+  },
+  {
+   "id": "e6M2",
+   "lvl": 2,
+   "title": "EA6 miércoles · P2",
+   "q": "<p>\\(\\vec a=\\langle3,4\\rangle\\), \\(\\vec c=\\langle6,-3\\rangle\\). a) (2) Proyección escalar de \\(\\vec c\\) sobre \\(\\vec a\\). b) (2) Proyección vectorial. c) (2) Componente ortogonal de \\(\\vec c\\) respecto a \\(\\vec a\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\tfrac65\\)",
+      "\\(\\tfrac6{25}\\)",
+      "\\(\\tfrac6{\\sqrt{45}}\\)",
+      "\\(6\\)",
+      "\\(-\\tfrac65\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\left(\\tfrac{18}{25},\\tfrac{24}{25}\\right)\\)",
+      "\\(\\left(\\tfrac{18}5,\\tfrac{24}5\\right)\\)",
+      "\\(\\tfrac6{45}(6,-3)\\)",
+      "\\(\\left(\\tfrac{24}{25},\\tfrac{18}{25}\\right)\\)",
+      "\\(\\left(\\tfrac{36}{25},-\\tfrac{18}{25}\\right)\\)"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "\\(\\left(\\tfrac{132}{25},-\\tfrac{99}{25}\\right)\\)",
+      "\\(\\left(\\tfrac{168}{25},-\\tfrac{51}{25}\\right)\\)",
+      "\\(\\left(-\\tfrac{132}{25},\\tfrac{99}{25}\\right)\\)",
+      "\\(\\left(\\tfrac{18}{25},\\tfrac{24}{25}\\right)\\)",
+      "\\((6,-3)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(\\frac{\\vec a\\cdot\\vec c}{|\\vec a|}=\\frac65\\).",
+    "b) \\(\\frac6{25}(3,4)=\\left(\\frac{18}{25},\\frac{24}{25}\\right)\\).",
+    "c) \\((6,-3)-\\left(\\frac{18}{25},\\frac{24}{25}\\right)=\\left(\\frac{132}{25},-\\frac{99}{25}\\right)=(5{,}28;-3{,}96)\\). Comprueba: \\(3\\cdot5{,}28-4\\cdot3{,}96=0\\) ✓."
+   ],
+   "ans": "\\(\\left(\\tfrac{132}{25},-\\tfrac{99}{25}\\right)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pesc"
+    ],
+    [
+     "pvec"
+    ],
+    [
+     "orto"
+    ]
+   ]
+  },
+  {
+   "id": "e6M3",
+   "lvl": 1,
+   "title": "EA6 miércoles · P3",
+   "q": "<p>Vigas con direcciones \\(\\vec a=\\langle1,2,0\\rangle\\) y \\(\\vec b=\\langle-2,k,0\\rangle\\). a) (2) \\(k\\) para que sean perpendiculares. b) (2) Unitario en la dirección de \\(\\vec a\\).</p>",
+   "checks": [
+    {
+     "p": "a) \\(k\\)",
+     "o": [
+      "1",
+      "−1",
+      "4",
+      "−4",
+      "2"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\tfrac1{\\sqrt5}(1,2,0)\\)",
+      "\\(\\tfrac15(1,2,0)\\)",
+      "\\(\\tfrac13(1,2,0)\\)",
+      "\\((1,2,0)\\)",
+      "\\(\\tfrac1{\\sqrt5}(2,1,0)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(-2+2k=0\\Rightarrow k=1\\).",
+    "b) \\(|\\vec a|=\\sqrt5\\)."
+   ],
+   "ans": "\\(k=1\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "perpk"
+    ],
+    [
+     "unit"
+    ]
+   ]
+  },
+  {
+   "id": "e6M4",
+   "lvl": 2,
+   "title": "EA6 miércoles · P4",
+   "q": "<p>\\(|\\vec a|=48\\), \\(\\theta_a=36{,}87^\\circ\\); \\(|\\vec b|=24\\), \\(\\theta_b=90^\\circ\\); \\(|\\vec c|=36\\), \\(\\theta_c=216{,}87^\\circ\\). a) (2) Unitarios. b) (2) \\(\\vec R=\\vec a+\\vec b+\\vec c\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\((0{,}8;0{,}6)\\), \\((0,1)\\), \\((-0{,}8;-0{,}6)\\)",
+      "\\((0{,}6;0{,}8)\\), \\((0,1)\\), \\((-0{,}6;-0{,}8)\\)",
+      "\\((0{,}8;0{,}6)\\), \\((1,0)\\), \\((-0{,}8;-0{,}6)\\)",
+      "\\((0{,}8;0{,}6)\\), \\((0,1)\\), \\((0{,}8;0{,}6)\\)",
+      "\\((48;36{,}87)\\), \\((24;90)\\), \\((36;216{,}87)\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\((9{,}6;\\ 31{,}2)\\)",
+      "\\((67{,}2;\\ 74{,}4)\\)",
+      "\\((9{,}6;\\ 7{,}2)\\)",
+      "\\((31{,}2;\\ 9{,}6)\\)",
+      "\\((-9{,}6;\\ 31{,}2)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(\\cos36{,}87^\\circ=0{,}8\\), \\(\\sin36{,}87^\\circ=0{,}6\\); \\(216{,}87^\\circ=180^\\circ+36{,}87^\\circ\\): \\((-0{,}8;-0{,}6)\\).",
+    "b) \\(48(0{,}8;0{,}6)+24(0,1)+36(-0{,}8;-0{,}6)=(38{,}4-28{,}8;\\ 28{,}8+24-21{,}6)=(9{,}6;31{,}2)\\)."
+   ],
+   "ans": "\\((9{,}6;31{,}2)\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e6M5",
+   "lvl": 1,
+   "title": "EA6 miércoles · P5",
+   "q": "<p>(1) «La proyección escalar de un vector sobre otro siempre es positiva». ¿Es correcto?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Falso: es negativa con ángulo obtuso y cero si son perpendiculares",
+      "Verdadero",
+      "Verdadero si son unitarios",
+      "Falso: siempre es negativa",
+      "Verdadero en el primer cuadrante"
+     ]
+    }
+   ],
+   "steps": [
+    "Tiene el signo de \\(\\vec a\\cdot\\vec b\\). Ejemplo: \\(\\text{comp}_{(1,0)}(-2,1)=-2\\)."
+   ],
+   "ans": "Falso",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pesc"
+    ]
+   ]
+  },
+  {
+   "id": "e6J1",
+   "lvl": 2,
+   "title": "EA6 jueves · P1",
+   "q": "<p>\\(\\vec a=\\langle2,-5\\rangle\\), \\(\\vec b=\\langle-1,\\frac52\\rangle\\), \\(\\vec c=\\langle4,3\\rangle\\).</p><p>a) (1) ¿Pares paralelos? b) (2) \\(\\vec a\\cdot\\vec b\\) e interpreta. c) (2) Ángulo entre \\(\\vec a\\) y \\(\\vec c\\). d) (2) Proyección escalar de \\(\\vec c\\) sobre \\(\\vec a\\). e) (2) Proyección vectorial.</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\vec a\\parallel\\vec b\\) (\\(\\vec b=-\\frac12\\vec a\\))",
+      "\\(\\vec a\\parallel\\vec c\\)",
+      "Ninguno",
+      "\\(\\vec b\\parallel\\vec c\\)",
+      "\\(\\vec a\\perp\\vec b\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(-14{,}5\\): forman \\(180^\\circ\\), sentidos opuestos",
+      "\\(-14{,}5\\): ángulo obtuso pero no llano",
+      "\\(14{,}5\\): agudo",
+      "0: perpendiculares",
+      "\\(-10{,}5\\): obtuso"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "105{,}07^\\circ",
+      "74{,}93^\\circ",
+      "90^\\circ",
+      "103{,}97^\\circ",
+      "15{,}07^\\circ"
+     ]
+    },
+    {
+     "p": "d)",
+     "o": [
+      "\\(-\\tfrac7{\\sqrt{29}}\\approx-1{,}30\\)",
+      "\\(-\\tfrac75\\)",
+      "\\(-\\tfrac7{29}\\)",
+      "\\(\\tfrac7{\\sqrt{29}}\\)",
+      "\\(-7\\)"
+     ]
+    },
+    {
+     "p": "e)",
+     "o": [
+      "\\(-\\tfrac7{29}(2,-5)=\\left(-\\tfrac{14}{29},\\tfrac{35}{29}\\right)\\)",
+      "\\(-\\tfrac7{25}(4,3)\\)",
+      "\\(-\\tfrac7{\\sqrt{29}}(2,-5)\\)",
+      "\\(\\left(\\tfrac{14}{29},-\\tfrac{35}{29}\\right)\\)",
+      "\\(-7(2,-5)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(\\vec b=-\\frac12\\vec a\\).",
+    "b) \\(-2-12{,}5=-14{,}5\\); como son paralelos con \\(\\lambda\\lt0\\), el ángulo es exactamente \\(180^\\circ\\).",
+    "c) \\(\\vec a\\cdot\\vec c=8-15=-7\\); \\(\\cos\\theta=\\frac{-7}{\\sqrt{29}\\cdot5}\\approx-0{,}26\\Rightarrow\\theta\\approx105{,}07^\\circ\\).",
+    "d) \\(\\frac{-7}{\\sqrt{29}}\\).",
+    "e) \\(\\frac{-7}{29}(2,-5)\\)."
+   ],
+   "ans": "105{,}07^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "paral"
+    ],
+    [
+     "dot"
+    ],
+    [
+     "angv"
+    ],
+    [
+     "pesc"
+    ],
+    [
+     "pvec"
+    ]
+   ]
+  },
+  {
+   "id": "e6J2",
+   "lvl": 2,
+   "title": "EA6 jueves · P2",
+   "q": "<p>\\(A=(2,-1,4)\\), \\(B=(7,3,-2)\\). a) (2) \\(\\vec v=\\overrightarrow{AB}\\) y su unitario. b) (1) \\(k\\) para que \\(\\vec r=\\langle2k;\\ 0{,}8;\\ 0{,}5k\\rangle\\) sea ortogonal a \\(\\vec v\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\((5,4,-6)\\); \\(\\frac1{\\sqrt{77}}(5,4,-6)\\)",
+      "\\((-5,-4,6)\\); \\(\\frac1{\\sqrt{77}}(-5,-4,6)\\)",
+      "\\((5,4,-6)\\); \\(\\frac1{15}(5,4,-6)\\)",
+      "\\((9,2,2)\\); \\(\\frac1{\\sqrt{89}}(9,2,2)\\)",
+      "\\((5,4,-6)\\); \\(\\frac1{77}(5,4,-6)\\)"
+     ]
+    },
+    {
+     "p": "b) \\(k\\)",
+     "o": [
+      "\\(-\\tfrac{16}{35}\\approx-0{,}457\\)",
+      "\\(\\tfrac{16}{35}\\)",
+      "\\(-\\tfrac{3{,}2}{13}\\)",
+      "\\(-0{,}32\\)",
+      "\\(\\tfrac{35}{16}\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(B-A=(5,4,-6)\\); \\(|\\vec v|=\\sqrt{25+16+36}=\\sqrt{77}\\).",
+    "b) \\(10k+3{,}2-3k=0\\Rightarrow7k=-3{,}2\\Rightarrow k=-\\frac{16}{35}\\)."
+   ],
+   "ans": "\\(k=-\\tfrac{16}{35}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "perpk"
+    ]
+   ]
+  },
+  {
+   "id": "e6J3",
+   "lvl": 2,
+   "title": "EA6 jueves · P3",
+   "q": "<p>Una caja se desplaza 20 m a \\(40^\\circ\\); un trabajador aplica 30 N a \\(140^\\circ\\). a) (2) Unitarios. b) (3) Producto escalar. c) (1) ¿Favorece o dificulta?</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\((\\cos40^\\circ,\\sin40^\\circ)\\approx(0{,}766;0{,}643)\\) y \\((\\cos140^\\circ,\\sin140^\\circ)\\approx(-0{,}766;0{,}643)\\)",
+      "\\((0{,}643;0{,}766)\\) y \\((0{,}643;-0{,}766)\\)",
+      "\\((0{,}766;0{,}643)\\) y \\((0{,}766;-0{,}643)\\)",
+      "\\((20;40)\\) y \\((30;140)\\)",
+      "\\((0{,}766;0{,}643)\\) y \\((-0{,}643;0{,}766)\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\approx-104{,}19\\ \\text{J}\\)",
+      "\\(\\approx104{,}19\\ \\text{J}\\)",
+      "\\(\\approx590{,}88\\ \\text{J}\\)",
+      "\\(0\\ \\text{J}\\)",
+      "\\(600\\ \\text{J}\\)"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "Dificulta: el producto es negativo (ángulo de 100°)",
+      "Favorece: es positivo",
+      "No influye",
+      "Favorece porque la fuerza es mayor",
+      "No se puede saber"
+     ]
+    }
+   ],
+   "steps": [
+    "a) Unitarios con coseno y seno de cada ángulo.",
+    "b) Ángulo entre ellos \\(100^\\circ\\): \\(30\\cdot20\\cos100^\\circ\\approx-104{,}19\\) J.",
+    "c) Negativo: la fuerza tiene una componente opuesta al desplazamiento."
+   ],
+   "ans": "\\(-104{,}19\\ \\text{J}\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [
+     "trab"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "e6J4",
+   "lvl": 1,
+   "title": "EA6 jueves · P4",
+   "q": "<p>(2) «Si el producto punto entre dos vectores es negativo, apuntan exactamente en direcciones opuestas». ¿Es correcto?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Falso: solo indica ángulo obtuso",
+      "Verdadero",
+      "Falso: indica que son perpendiculares",
+      "Verdadero si tienen igual magnitud",
+      "Falso: indica que son paralelos"
+     ]
+    }
+   ],
+   "steps": [
+    "Negativo ⇔ \\(90^\\circ\\lt\\theta\\le180^\\circ\\). Ejemplo: \\((1,0)\\cdot(-1,1)=-1\\) con \\(135^\\circ\\)."
+   ],
+   "ans": "Falso",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dot"
+    ]
+   ]
+  },
+  {
+   "id": "e6V1",
+   "lvl": 2,
+   "title": "EA6 viernes · P1",
+   "q": "<p>\\(\\vec a=\\langle3,4\\rangle\\), \\(\\vec b=\\langle-4,3\\rangle\\), \\(\\vec c=\\langle5,-1\\rangle\\). a) (3) \\(\\vec a\\cdot\\vec b\\), \\(\\vec a\\cdot\\vec c\\) y clasifica los ángulos. b) (2) Ángulo entre \\(\\vec c\\) y \\(\\vec b\\) (2 decimales). c) (3) Proyección escalar y vectorial de \\(\\vec c\\) sobre \\(\\vec b\\); interpreta.</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "0 (recto) y 11 (agudo)",
+      "0 (recto) y −11 (obtuso)",
+      "24 (agudo) y 11 (agudo)",
+      "0 (paralelos) y 11 (agudo)",
+      "0 (recto) y 19 (agudo)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "154{,}44^\\circ",
+      "25{,}56^\\circ",
+      "156{,}93^\\circ",
+      "90^\\circ",
+      "64{,}44^\\circ"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "\\(-4{,}6\\) y \\((3{,}68;-2{,}76)\\): \\(\\vec c\\) apunta en parte en sentido contrario a \\(\\vec b\\)",
+      "\\(4{,}6\\) y \\((-3{,}68;2{,}76)\\): mismo sentido",
+      "\\(-4{,}6\\) y \\((-3{,}68;2{,}76)\\)",
+      "\\(-0{,}92\\) y \\((3{,}68;-2{,}76)\\)",
+      "0 y \\((0,0)\\): perpendiculares"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(\\vec a\\cdot\\vec b=0\\): recto. \\(\\vec a\\cdot\\vec c=11\\gt0\\): agudo.",
+    "b) \\(\\vec c\\cdot\\vec b=-23\\); \\(\\cos\\theta=\\frac{-23}{\\sqrt{26}\\cdot5}\\approx-0{,}902\\Rightarrow\\theta\\approx154{,}44^\\circ\\).",
+    "c) \\(\\frac{-23}5=-4{,}6\\); \\(\\frac{-23}{25}(-4,3)=(3{,}68;-2{,}76)\\). La proyección apunta en sentido contrario a \\(\\vec b\\) porque el ángulo es obtuso."
+   ],
+   "ans": "154{,}44^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dot"
+    ],
+    [
+     "angv"
+    ],
+    [
+     "pesc",
+     "pvec"
+    ]
+   ]
+  },
+  {
+   "id": "e6V2",
+   "lvl": 2,
+   "title": "EA6 viernes · P2",
+   "q": "<p>Barra de \\(A=(-3,2,1)\\) a \\(B=(1,5,7)\\); otra barra con dirección \\(\\vec w=\\langle k,4,-4\\rangle\\). a) (2) \\(\\overrightarrow{AB}\\) y su unitario. b) (1) \\(k\\) para que formen ángulo recto.</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\((4,3,6)\\); \\(\\frac1{\\sqrt{61}}(4,3,6)\\)",
+      "\\((-4,-3,-6)\\); \\(\\frac1{\\sqrt{61}}(-4,-3,-6)\\)",
+      "\\((4,3,6)\\); \\(\\frac1{13}(4,3,6)\\)",
+      "\\((-2,7,8)\\); \\(\\frac1{\\sqrt{117}}(-2,7,8)\\)",
+      "\\((4,3,6)\\); \\(\\frac1{61}(4,3,6)\\)"
+     ]
+    },
+    {
+     "p": "b) \\(k\\)",
+     "o": [
+      "3",
+      "−3",
+      "9",
+      "6",
+      "−9"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(B-A=(4,3,6)\\), \\(|\\cdot|=\\sqrt{61}\\).",
+    "b) \\(4k+12-24=0\\Rightarrow k=3\\)."
+   ],
+   "ans": "\\(k=3\\)",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [],
+    [
+     "perpk"
+    ]
+   ]
+  },
+  {
+   "id": "e6V3",
+   "lvl": 2,
+   "title": "EA6 viernes · P3",
+   "q": "<p>Dos cables: 40 N a \\(30^\\circ\\) y 25 N a \\(135^\\circ\\). a) (2) Unitarios y componentes. b) (3) Resultante. c) (2) Magnitud, dirección y cuadrante.</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\vec F_1\\approx(34{,}64;20)\\), \\(\\vec F_2\\approx(-17{,}68;17{,}68)\\)",
+      "\\(\\vec F_1\\approx(20;34{,}64)\\), \\(\\vec F_2\\approx(-17{,}68;17{,}68)\\)",
+      "\\(\\vec F_1\\approx(34{,}64;20)\\), \\(\\vec F_2\\approx(17{,}68;17{,}68)\\)",
+      "\\(\\vec F_1=(40;30)\\), \\(\\vec F_2=(25;135)\\)",
+      "\\(\\vec F_1\\approx(34{,}64;20)\\), \\(\\vec F_2\\approx(-17{,}68;-17{,}68)\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\approx(16{,}96;\\ 37{,}68)\\)",
+      "\\(\\approx(52{,}32;\\ 37{,}68)\\)",
+      "\\(\\approx(37{,}68;\\ 16{,}96)\\)",
+      "\\((65;\\ 165)\\)",
+      "\\(\\approx(16{,}96;\\ 2{,}32)\\)"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "\\(\\approx41{,}32\\) N a \\(65{,}76^\\circ\\), I cuadrante",
+      "65 N a \\(65{,}76^\\circ\\), I cuadrante",
+      "\\(\\approx41{,}32\\) N a \\(114{,}24^\\circ\\), II cuadrante",
+      "\\(\\approx41{,}32\\) N a \\(24{,}24^\\circ\\), I cuadrante",
+      "\\(\\approx41{,}32\\) N a \\(245{,}76^\\circ\\), III cuadrante"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(40(\\cos30^\\circ,\\sin30^\\circ)\\) y \\(25(\\cos135^\\circ,\\sin135^\\circ)\\).",
+    "b) \\(\\vec R\\approx(16{,}96;\\ 37{,}68)\\).",
+    "c) \\(|\\vec R|\\approx41{,}32\\) N; \\(\\arctan\\frac{37{,}68}{16{,}96}\\approx65{,}76^\\circ\\); ambas componentes positivas: I cuadrante."
+   ],
+   "ans": "41{,}32 N a 65{,}76^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e6V4",
+   "lvl": 1,
+   "title": "EA6 viernes · P4",
+   "q": "<p>(2) «Si la proyección escalar de \\(\\vec u\\) sobre \\(\\vec v\\) es positiva, entonces son paralelos y tienen el mismo sentido». ¿Es correcta?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Falsa: solo indica ángulo agudo",
+      "Verdadera",
+      "Falsa: indica perpendiculares",
+      "Verdadera si tienen igual magnitud",
+      "Falsa: indica sentidos opuestos"
+     ]
+    }
+   ],
+   "steps": [
+    "Positiva ⇔ ángulo agudo. Ejemplo: \\(\\vec u=(1,1)\\), \\(\\vec v=(1,0)\\): \\(\\text{comp}=1\\), y forman \\(45^\\circ\\)."
+   ],
+   "ans": "Falsa",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pesc"
+    ]
+   ]
+  },
+  {
+   "id": "e6S1",
+   "lvl": 2,
+   "title": "EA6 sábado · P1",
+   "q": "<p>\\(\\vec a=\\langle3,4\\rangle\\), \\(\\vec b=\\langle-4,3\\rangle\\), \\(\\vec c=\\langle5,-1\\rangle\\). a) (3) \\(\\vec a\\cdot\\vec b\\), \\(\\vec a\\cdot\\vec c\\), \\(\\vec c\\cdot\\vec b\\). b) (3) Clasifica cada ángulo sin calcularlo. c) (2) Proyección escalar y vectorial de \\(\\vec c\\) sobre \\(\\vec b\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "0, 11, −23",
+      "0, 11, 23",
+      "0, 19, −23",
+      "24, 11, −23",
+      "0, −11, −17"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\vec a,\\vec b\\): recto · \\(\\vec a,\\vec c\\): agudo · \\(\\vec c,\\vec b\\): obtuso",
+      "Recto · obtuso · agudo",
+      "Agudo · agudo · obtuso",
+      "Recto · agudo · agudo",
+      "Obtuso · agudo · recto"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "\\(-\\frac{23}5\\) y \\(-\\frac{23}{25}(-4,3)=\\left(\\frac{92}{25},-\\frac{69}{25}\\right)\\)",
+      "\\(-\\frac{23}{25}\\) y \\(-\\frac{23}5(-4,3)\\)",
+      "\\(-\\frac{23}{\\sqrt{26}}\\) y \\(-\\frac{23}{26}(5,-1)\\)",
+      "\\(\\frac{23}5\\) y \\(\\left(-\\frac{92}{25},\\frac{69}{25}\\right)\\)",
+      "\\(-\\frac{23}5\\) y \\(\\left(-\\frac{92}{25},\\frac{69}{25}\\right)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\(-12+12=0\\); \\(15-4=11\\); \\(-20-3=-23\\).",
+    "b) Por el signo: 0 recto, + agudo, − obtuso.",
+    "c) \\(|\\vec b|=5\\): escalar \\(-\\frac{23}5=-4{,}6\\); vectorial \\(-\\frac{23}{25}(-4,3)=(3{,}68;-2{,}76)\\)."
+   ],
+   "ans": "0, 11, −23",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dot"
+    ],
+    [],
+    [
+     "pesc",
+     "pvec"
+    ]
+   ]
+  },
+  {
+   "id": "e6S2",
+   "lvl": 1,
+   "title": "EA6 sábado · P2",
+   "q": "<p>(2) Cuerdas con direcciones \\(\\vec a=\\langle3,1,-2\\rangle\\), \\(\\vec b=\\langle-4,0,k\\rangle\\). Halla \\(k\\) para que \\(\\vec a\\perp\\vec b\\).</p>",
+   "checks": [
+    {
+     "p": "\\(k\\)",
+     "o": [
+      "−6",
+      "6",
+      "−12",
+      "2",
+      "−2"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(-12+0-2k=0\\Rightarrow k=-6\\)."
+   ],
+   "ans": "−6",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "perpk"
+    ]
+   ]
+  },
+  {
+   "id": "e6S3",
+   "lvl": 3,
+   "title": "EA6 sábado · P3",
+   "q": "<p>\\(|\\vec a|=50\\) a \\(300^\\circ\\); \\(|\\vec b|=45\\) a \\(270^\\circ\\); \\(|\\vec c|=40\\) a \\(120^\\circ\\). a) (3) Unitarios. b) (2) \\(\\vec R\\). c) (3) Magnitud y dirección de \\(\\vec R\\).</p>",
+   "checks": [
+    {
+     "p": "a)",
+     "o": [
+      "\\(\\left(\\tfrac12,-\\tfrac{\\sqrt3}2\\right),\\ (0,-1),\\ \\left(-\\tfrac12,\\tfrac{\\sqrt3}2\\right)\\)",
+      "\\(\\left(\\tfrac{\\sqrt3}2,-\\tfrac12\\right),\\ (0,-1),\\ \\left(-\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
+      "\\(\\left(\\tfrac12,\\tfrac{\\sqrt3}2\\right),\\ (0,1),\\ \\left(-\\tfrac12,\\tfrac{\\sqrt3}2\\right)\\)",
+      "\\(\\left(\\tfrac12,-\\tfrac{\\sqrt3}2\\right),\\ (-1,0),\\ \\left(-\\tfrac12,\\tfrac{\\sqrt3}2\\right)\\)",
+      "\\(\\left(\\tfrac12,-\\tfrac{\\sqrt3}2\\right),\\ (0,-1),\\ \\left(\\tfrac12,-\\tfrac{\\sqrt3}2\\right)\\)"
+     ]
+    },
+    {
+     "p": "b)",
+     "o": [
+      "\\(\\approx(5;\\ -53{,}66)\\)",
+      "\\(\\approx(5;\\ 53{,}66)\\)",
+      "\\(\\approx(45;\\ -53{,}66)\\)",
+      "\\(\\approx(-53{,}66;\\ 5)\\)",
+      "\\((135;\\ 690)\\)"
+     ]
+    },
+    {
+     "p": "c)",
+     "o": [
+      "\\(\\approx53{,}89\\) a \\(275{,}32^\\circ\\)",
+      "\\(\\approx53{,}89\\) a \\(95{,}32^\\circ\\)",
+      "135 a \\(275{,}32^\\circ\\)",
+      "\\(\\approx53{,}89\\) a \\(84{,}68^\\circ\\)",
+      "\\(\\approx63{,}89\\) a \\(275{,}32^\\circ\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "a) \\((\\cos300^\\circ,\\sin300^\\circ)=\\left(\\frac12,-\\frac{\\sqrt3}2\\right)\\), \\((0,-1)\\), \\(\\left(-\\frac12,\\frac{\\sqrt3}2\\right)\\).",
+    "b) \\((25;-43{,}30)+(0;-45)+(-20;34{,}64)\\approx(5;\\ -53{,}66)\\).",
+    "c) \\(|\\vec R|\\approx53{,}89\\). \\(\\arctan\\frac{-53{,}66}{5}\\approx-84{,}68^\\circ\\): IV cuadrante, equivale a \\(275{,}32^\\circ\\)."
+   ],
+   "ans": "53{,}89 a 275{,}32^\\circ",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "compv"
+    ],
+    [],
+    [
+     "resul"
+    ]
+   ]
+  },
+  {
+   "id": "e6S4",
+   "lvl": 1,
+   "title": "EA6 sábado · P4",
+   "q": "<p>(2) «La proyección vectorial de un vector sobre otro siempre será un vector no nulo». ¿Es verdadero?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Falso: es nula si los vectores son perpendiculares",
+      "Verdadero",
+      "Falso: es nula si son paralelos",
+      "Verdadero si ninguno es nulo",
+      "Falso: siempre es nula"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(\\vec a\\cdot\\vec b=0\\Rightarrow\\text{proy}=\\vec0\\). Ejemplo de esta misma EA: \\(\\vec a=(3,4)\\) y \\(\\vec b=(-4,3)\\)."
+   ],
+   "ans": "Falso",
+   "hint": "",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pvec"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 45,
+  "fixed": true,
+  "versions": [
+   {
+    "name": "Lunes",
+    "slots": [
+     {
+      "pts": 9,
+      "name": "P1 · Tres vectores en el plano",
+      "pool": [
+       "e6L1"
+      ]
+     },
+     {
+      "pts": 3,
+      "name": "P2 · Vectores en 3D",
+      "pool": [
+       "e6L2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Fuerza y desplazamiento",
+      "pool": [
+       "e6L3"
+      ]
+     },
+     {
+      "pts": 2,
+      "name": "P4 · Afirmación V/F",
+      "pool": [
+       "e6L4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Miércoles",
+    "slots": [
+     {
+      "pts": 5,
+      "name": "P1 · Producto punto y ángulo",
+      "pool": [
+       "e6M1"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P2 · Proyecciones y ortogonal",
+      "pool": [
+       "e6M2"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P3 · Vigas en 3D",
+      "pool": [
+       "e6M3"
+      ]
+     },
+     {
+      "pts": 4,
+      "name": "P4 · Resultante de tres vectores",
+      "pool": [
+       "e6M4"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "P5 · Afirmación V/F",
+      "pool": [
+       "e6M5"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Jueves",
+    "slots": [
+     {
+      "pts": 9,
+      "name": "P1 · Tres vectores en el plano",
+      "pool": [
+       "e6J1"
+      ]
+     },
+     {
+      "pts": 3,
+      "name": "P2 · Vectores en 3D",
+      "pool": [
+       "e6J2"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "P3 · Fuerza y desplazamiento",
+      "pool": [
+       "e6J3"
+      ]
+     },
+     {
+      "pts": 2,
+      "name": "P4 · Afirmación V/F",
+      "pool": [
+       "e6J4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Viernes",
+    "slots": [
+     {
+      "pts": 8,
+      "name": "P1 · Producto punto, ángulo y proyección",
+      "pool": [
+       "e6V1"
+      ]
+     },
+     {
+      "pts": 3,
+      "name": "P2 · Barras en 3D",
+      "pool": [
+       "e6V2"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "P3 · Resultante de dos fuerzas",
+      "pool": [
+       "e6V3"
+      ]
+     },
+     {
+      "pts": 2,
+      "name": "P4 · Afirmación V/F",
+      "pool": [
+       "e6V4"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Sábado",
+    "slots": [
+     {
+      "pts": 8,
+      "name": "P1 · Producto punto y proyección",
+      "pool": [
+       "e6S1"
+      ]
+     },
+     {
+      "pts": 2,
+      "name": "P2 · Cuerdas en 3D",
+      "pool": [
+       "e6S2"
+      ]
+     },
+     {
+      "pts": 8,
+      "name": "P3 · Resultante de tres vectores",
+      "pool": [
+       "e6S3"
+      ]
+     },
+     {
+      "pts": 2,
+      "name": "P4 · Afirmación V/F",
+      "pool": [
+       "e6S4"
+      ]
+     }
+    ]
+   }
+  ],
+  "slots": [
+   {
+    "pts": 9,
+    "name": "P1 · Tres vectores en el plano",
+    "pool": [
+     "e6L1"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "P2 · Vectores en 3D",
+    "pool": [
+     "e6L2"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "P3 · Fuerza y desplazamiento",
+    "pool": [
+     "e6L3"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "P4 · Afirmación V/F",
+    "pool": [
+     "e6L4"
+    ]
+   }
+  ],
+  "intro": "Son las <b>5 versiones reales de la EA6 del ciclo 2026-1</b> (una por día), con sus puntajes y los 45 minutos del examen. Elige la versión antes de empezar. En el examen debes justificar todo: aquí marcas la respuesta de cada ítem y después revisas el procedimiento en «Ver solución»."
+ },
+ "short": "EA6",
+ "guide": true,
+ "sub": "Sem. 11 a 13",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA6 2026-1</b>: P1 tres vectores del plano: productos punto, clasificar ángulos, paralelos, ángulo y proyecciones (5 a 9 pts) · P2 vectores en 3D: \\(\\overrightarrow{AB}\\), unitario y \\(k\\) perpendicular (2 a 6) · P3 problema de fuerzas: producto punto o resultante (6 a 8) · P4 afirmación V/F para justificar (1 a 2). Ojo: el sílabo no nombra el producto punto ni las proyecciones, pero fueron el centro de la EA6 2026-1."
+}
