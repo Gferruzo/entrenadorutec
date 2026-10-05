@@ -1,0 +1,2811 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso de la ED3 (semana 9; la semana 10 se agrega al llegar su guía).</p>\n<div class=\"fgrid\">\n<div><b>Extremos absolutos</b><br>Compara \\(f(a),f(b)\\) y \\(f(c)\\) en críticos interiores</div>\n<div><b>Segunda derivada</b><br>\\(f''(c)\\gt0\\): mínimo · \\(f''(c)\\lt0\\): máximo</div>\n<div><b>Protocolo</b><br>Interpretar → dibujar → restricción → \\(Q=f(x)\\) → dominio → \\(f'=0\\), \\(f''\\) → conclusión</div>\n<div><b>Restricciones típicas</b><br>\\(x+2y=P\\) · \\(V=\\pi r^2h\\) · \\(w^2+h^2=4R^2\\)</div>\n<div><b>Cilindro</b><br>\\(S=2\\pi r^2+2\\pi rh\\)</div>\n<div><b>Cono</b><br>\\(V=\\frac13\\pi r^2h\\), lateral \\(\\pi r\\sqrt{r^2+h^2}\\)</div>\n<div><b>Óptimo con parámetro</b><br>\\(x^*(t)\\); sensibilidad \\(\\frac{dx^*}{dt}\\)</div>\n<div><b>Razones relacionadas</b><br>\\(\\frac{dV}{dt}=\\frac{dV}{dr}\\frac{dr}{dt}\\) · \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)</div>\n<div><b>Antiderivadas</b><br>\\(t^n\\to\\frac{t^{n+1}}{n+1}\\), \\(\\frac1t\\to\\ln|t|\\), \\(e^{kt}\\to\\frac{e^{kt}}k\\)</div>\n<div><b>Trigonométricas</b><br>\\(\\cos kt\\to\\frac{\\sin kt}k\\), \\(\\sin kt\\to-\\frac{\\cos kt}k\\), \\(\\sec^2t\\to\\tan t\\)</div>\n<div><b>Valor inicial</b><br>\\(F+C\\) → sustituir \\(y(t_0)=y_0\\) → verificar derivando</div>\n<div><b>EDO separable</b><br>\\(\\frac{dy}{h(y)}=g(t)\\,dt\\) · \\(y'=ky\\Rightarrow y=y_0e^{kt}\\)</div>\n<div><b>Newton</b><br>\\(T=T_a+(T_0-T_a)e^{-kt}\\) · vida media \\(k=\\frac{\\ln2}{t_{1/2}}\\)</div>\n</div>",
+ "formSim": false,
+ "id": "calculo-ed3",
+ "code": "CC6103",
+ "name": "Cálculo de una Variable",
+ "exam": "ED3 (semanas 9 y 10)",
+ "short": "ED3",
+ "sub": "Sem. 9 y 10",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> y, según la guía 09, evalúa: gráficas a partir de \\(f'\\) y \\(f''\\), optimización (estática y tasas relacionadas) y antiderivadas (reglas básicas, valor inicial y EDO separables). Por ahora está la semana 9; la semana 10 (integral indefinida y sustitución) se suma cuando llegue su guía.",
+ "topics": [
+  {
+   "id": "w9graf",
+   "name": "Sem. 9 · Gráficas con f′ y f″ (repaso)",
+   "teo": "<p>Para dibujar o analizar una función se sigue siempre el mismo orden: <strong>dominio → asíntotas → \\(f'\\) → \\(f''\\) → gráfica</strong>. Los signos de \\(f'\\) dicen dónde sube o baja y los de \\(f''\\) hacia dónde se curva.</p>\n<p>Si piden <strong>extremos absolutos en \\([a,b]\\)</strong>, no basta con \\(f'=0\\): evalúa \\(f\\) en los puntos críticos <em>interiores</em> y también en los extremos \\(a\\) y \\(b\\). El mayor valor es el máximo absoluto y el menor, el mínimo.</p>\n<p>Un cero de \\(f'\\) sin cambio de signo no es extremo, y un cero de \\(f''\\) sin cambio de signo no es inflexión.</p>",
+   "form": [
+    "\\(f'\\gt0\\Rightarrow\\) crece; \\(f'\\lt0\\Rightarrow\\) decrece",
+    "\\(f''\\gt0\\Rightarrow\\) cóncava ↑; \\(f''\\lt0\\Rightarrow\\) cóncava ↓",
+    "Extremos absolutos en \\([a,b]\\): compara \\(f(a),f(b)\\) y \\(f(c)\\) en críticos interiores",
+    "Asíntota oblicua: \\(y=mx+b\\), \\(m=\\lim\\frac{f(x)}{x}\\), \\(b=\\lim(f(x)-mx)\\)",
+    "\\(f'(c)=0,\\ f''(c)\\lt0\\Rightarrow\\) máx. local; \\(f''(c)\\gt0\\Rightarrow\\) mín. local"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La Semana 7 te dio el lenguaje: \\(f'\\) cuenta si la función sube o baja y \\(f''\\) cuenta cómo se curva. En la ED3 esto vuelve en dos formas: bosquejar una función completa y hallar extremos absolutos en un intervalo cerrado.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Punto crítico:</strong> donde \\(f'=0\\) o \\(f'\\) no existe (dentro del dominio).</li><li><strong>Extremo local:</strong> \\(f'\\) cambia de signo (+ a − máximo, − a + mínimo). Con \\(f''\\): \\(f''(c)\\lt0\\) máximo, \\(f''(c)\\gt0\\) mínimo.</li><li><strong>Inflexión:</strong> \\(f''\\) cambia de signo y \\(f\\) existe en ese punto.</li><li><strong>Extremos absolutos en \\([a,b]\\):</strong> están en un crítico interior <em>o en un extremo del intervalo</em>.</li><li><strong>Asíntotas:</strong> verticales donde el denominador se anula y el numerador no; horizontales u oblicuas al infinito.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dominio y asíntotas.</li><li><strong>2.</strong> Factoriza \\(f'\\) y arma la tabla de signos.</li><li><strong>3.</strong> Factoriza \\(f''\\) y arma su tabla de signos.</li><li><strong>4.</strong> Si hay intervalo cerrado, evalúa \\(f\\) en extremos y críticos interiores.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Sesión 2):</b> \\(f(x)=x^3-6x^2+9x+1\\) en \\([2,4]\\): \\(f'=3(x-1)(x-3)\\), crítico interior \\(x=3\\). \\(f(2)=3,\\ f(3)=1,\\ f(4)=5\\): mínimo absoluto \\((3,1)\\), máximo absoluto \\((4,5)\\), que está en un extremo.</div>\n<div class=\"err\"><b>Error común:</b> decir \"no hay puntos críticos, así que no hay máximo ni mínimo\". En un intervalo cerrado una función continua <em>siempre</em> tiene extremos absolutos; si no hay críticos, están en los bordes.</div>",
+   "ex": [
+    {
+     "id": "w9g1",
+     "lvl": 1,
+     "title": "Extremos absolutos en [−1, 2]",
+     "q": "<p>Halla los extremos absolutos de \\(f(x)=x^3-6x^2+9x+1\\) en \\([-1,2]\\).</p>",
+     "checks": [
+      {
+       "p": "Máximo absoluto",
+       "o": [
+        "\\((1,\\ 5)\\)",
+        "\\((2,\\ 3)\\)",
+        "\\((3,\\ 1)\\)",
+        "\\((-1,\\ -15)\\)",
+        "No tiene"
+       ]
+      },
+      {
+       "p": "Mínimo absoluto",
+       "o": [
+        "\\((-1,\\ -15)\\)",
+        "\\((3,\\ 1)\\)",
+        "\\((2,\\ 3)\\)",
+        "\\((1,\\ 5)\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'(x)=3x^2-12x+9=3(x-1)(x-3)\\). Críticos: \\(x=1\\) y \\(x=3\\); solo \\(x=1\\) está dentro de \\([-1,2]\\).",
+      "Evalúa: \\(f(-1)=-1-6-9+1=-15\\), \\(f(1)=1-6+9+1=5\\), \\(f(2)=8-24+18+1=3\\).",
+      "Máximo absoluto \\((1,5)\\), mínimo absoluto \\((-1,-15)\\), en un extremo del intervalo."
+     ],
+     "ans": "Máx. (1, 5); mín. (−1, −15)",
+     "hint": "Descarta los críticos que caen fuera del intervalo y no olvides evaluar los bordes.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "absc"
+      ],
+      [
+       "absc"
+      ]
+     ]
+    },
+    {
+     "id": "w9g2",
+     "lvl": 2,
+     "title": "Concavidad de x²e^(−x)",
+     "q": "<p>Para \\(f(x)=x^2e^{-x}\\) en todos los reales, \\(f''(x)=e^{-x}(x^2-4x+2)\\). ¿Dónde es cóncava hacia abajo y cuáles son sus inflexiones?</p>",
+     "checks": [
+      {
+       "p": "Cóncava hacia abajo en",
+       "o": [
+        "\\((2-\\sqrt2,\\ 2+\\sqrt2)\\)",
+        "\\((-\\infty,2-\\sqrt2)\\cup(2+\\sqrt2,\\infty)\\)",
+        "\\((0,\\ 2)\\)",
+        "\\((2,\\ \\infty)\\)",
+        "\\((-\\infty,\\ 0)\\)"
+       ]
+      },
+      {
+       "p": "Puntos de inflexión en",
+       "o": [
+        "\\(x=2\\pm\\sqrt2\\)",
+        "\\(x=0\\ \\text{y}\\ x=2\\)",
+        "\\(x=2-\\sqrt2\\ \\text{solamente}\\)",
+        "\\(x=2\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^{-x}\\gt0\\) siempre, así que el signo de \\(f''\\) es el de \\(x^2-4x+2\\).",
+      "Raíces: \\(x=\\frac{4\\pm\\sqrt{16-8}}{2}=2\\pm\\sqrt2\\approx0.59\\) y \\(3.41\\).",
+      "La parábola \\(x^2-4x+2\\) es negativa entre sus raíces: cóncava hacia abajo en \\((2-\\sqrt2,\\,2+\\sqrt2)\\). Como cambia de signo en ambas, hay dos inflexiones."
+     ],
+     "ans": "Cóncava ↓ en (2−√2, 2+√2); inflexiones en x = 2 ± √2",
+     "hint": "El factor exponencial nunca cambia de signo: estudia solo la cuadrática.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "conc"
+      ],
+      [
+       "conc"
+      ]
+     ]
+    },
+    {
+     "id": "w9g3",
+     "lvl": 2,
+     "title": "Racional con dos asíntotas verticales",
+     "q": "<p>\\(f(x)=\\dfrac{x^2}{x^2-1}\\), con \\(f'(x)=\\dfrac{-2x}{(x^2-1)^2}\\) y \\(f''(x)=\\dfrac{6x^2+2}{(x^2-1)^3}\\).</p>",
+     "checks": [
+      {
+       "p": "Extremo local",
+       "o": [
+        "Máximo local en \\((0,0)\\)",
+        "Mínimo local en \\((0,0)\\)",
+        "Mínimos en \\(x=\\pm1\\)",
+        "Máximo en \\(x=1\\)",
+        "No tiene extremos"
+       ]
+      },
+      {
+       "p": "Concavidad",
+       "o": [
+        "↑ en \\(|x|\\gt1\\), ↓ en \\((-1,1)\\), sin inflexiones",
+        "↓ en \\(|x|\\gt1\\), ↑ en \\((-1,1)\\)",
+        "Inflexiones en \\(x=\\pm1\\)",
+        "Inflexión en \\(x=0\\)",
+        "Siempre cóncava hacia arriba"
+       ]
+      },
+      {
+       "p": "Asíntotas",
+       "o": [
+        "\\(x=\\pm1\\) y \\(y=1\\)",
+        "\\(x=\\pm1\\) y \\(y=0\\)",
+        "\\(x=1\\) y \\(y=1\\)",
+        "Solo \\(x=\\pm1\\)",
+        "\\(y=x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'\\) tiene el signo de \\(-2x\\): positiva si \\(x\\lt0\\), negativa si \\(x\\gt0\\). En \\(x=0\\) cambia de + a −: máximo local \\(f(0)=0\\).",
+      "\\(6x^2+2\\gt0\\) siempre, así que el signo de \\(f''\\) es el de \\((x^2-1)^3\\): positivo si \\(|x|\\gt1\\), negativo en \\((-1,1)\\).",
+      "La concavidad cambia en \\(x=\\pm1\\), pero ahí \\(f\\) no existe: <strong>no</strong> son inflexiones, son asíntotas verticales.",
+      "Grados iguales: \\(\\lim_{x\\to\\pm\\infty}f(x)=1\\), asíntota horizontal \\(y=1\\)."
+     ],
+     "ans": "Máx. (0,0); ↑ en |x|>1, ↓ en (−1,1), sin inflexión; asíntotas x=±1, y=1",
+     "hint": "Un cambio de concavidad donde la función no existe no cuenta como inflexión.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ],
+      [
+       "conc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9g4",
+     "lvl": 2,
+     "title": "Asíntota oblicua",
+     "q": "<p>Analiza \\(f(x)=\\dfrac{x^2+1}{x}\\).</p>",
+     "checks": [
+      {
+       "p": "Extremos locales",
+       "o": [
+        "Máx. \\((-1,-2)\\), mín. \\((1,2)\\)",
+        "Mín. \\((-1,-2)\\), máx. \\((1,2)\\)",
+        "Solo mín. \\((1,2)\\)",
+        "Mín. \\((0,1)\\)",
+        "No tiene"
+       ]
+      },
+      {
+       "p": "Asíntota oblicua",
+       "o": [
+        "\\(y=x\\)",
+        "\\(y=x+1\\)",
+        "\\(y=1\\)",
+        "\\(y=2x\\)",
+        "No tiene"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f(x)=x+\\frac1x\\), así que \\(f'(x)=1-\\frac1{x^2}=\\frac{x^2-1}{x^2}\\). Críticos: \\(x=\\pm1\\) (\\(x=0\\) no está en el dominio).",
+      "\\(f''(x)=\\frac2{x^3}\\): \\(f''(-1)=-2\\lt0\\) máximo \\(f(-1)=-2\\); \\(f''(1)=2\\gt0\\) mínimo \\(f(1)=2\\).",
+      "\\(f(x)-x=\\frac1x\\to0\\) cuando \\(x\\to\\pm\\infty\\): asíntota oblicua \\(y=x\\). Además \\(x=0\\) es asíntota vertical."
+     ],
+     "ans": "Máx. (−1,−2), mín. (1,2); asíntota y = x",
+     "hint": "Divide: (x²+1)/x = x + 1/x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "crec"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9g5",
+     "lvl": 2,
+     "title": "Cuártica con punto crítico doble",
+     "q": "<p>\\(f(x)=x^4-4x^3\\). Clasifica sus puntos críticos y halla sus inflexiones.</p>",
+     "checks": [
+      {
+       "p": "Puntos críticos",
+       "o": [
+        "\\(x=3\\) mínimo; \\(x=0\\) no es extremo",
+        "\\(x=0\\) máximo; \\(x=3\\) mínimo",
+        "\\(x=0\\) mínimo; \\(x=3\\) máximo",
+        "Ambos son mínimos",
+        "Solo \\(x=3\\) es crítico"
+       ]
+      },
+      {
+       "p": "Inflexiones",
+       "o": [
+        "\\(x=0\\) y \\(x=2\\)",
+        "Solo \\(x=2\\)",
+        "\\(x=0\\) y \\(x=3\\)",
+        "Solo \\(x=0\\)",
+        "No tiene"
+       ]
+      },
+      {
+       "p": "Valor mínimo",
+       "o": [
+        "\\(-27\\)",
+        "\\(0\\)",
+        "\\(-16\\)",
+        "\\(-81\\)",
+        "\\(27\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'(x)=4x^3-12x^2=4x^2(x-3)\\). Críticos: \\(x=0\\) y \\(x=3\\).",
+      "\\(4x^2\\ge0\\), así que el signo de \\(f'\\) es el de \\(x-3\\): negativo antes de 3 (también a ambos lados de 0) y positivo después. En 0 no cambia de signo: no hay extremo. En 3 pasa de − a +: mínimo.",
+      "\\(f''(x)=12x^2-24x=12x(x-2)\\): cambia de signo en 0 y en 2, así que ambos son inflexiones.",
+      "\\(f(3)=81-108=-27\\)."
+     ],
+     "ans": "Mín. en x = 3 (f = −27); x = 0 no es extremo; inflexiones en 0 y 2",
+     "hint": "En x = 0, ¿cambia de signo 4x²(x − 3)?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9g6",
+     "lvl": 3,
+     "title": "Determinar parámetros",
+     "q": "<p>Halla \\(b,c,d\\) para que \\(f(x)=x^3+bx^2+cx+d\\) tenga un punto de inflexión en \\(x=2\\), un extremo en \\(x=1\\) y \\(f(0)=-5\\). ¿Qué tipo de extremo es?</p>",
+     "checks": [
+      {
+       "p": "Parámetros",
+       "o": [
+        "\\(b=-6,\\ c=9,\\ d=-5\\)",
+        "\\(b=-3,\\ c=0,\\ d=-5\\)",
+        "\\(b=6,\\ c=9,\\ d=-5\\)",
+        "\\(b=-6,\\ c=-9,\\ d=5\\)",
+        "\\(b=-6,\\ c=12,\\ d=-5\\)"
+       ]
+      },
+      {
+       "p": "En x = 1 hay",
+       "o": [
+        "Un máximo local",
+        "Un mínimo local",
+        "Un punto de inflexión",
+        "Ni máximo ni mínimo",
+        "Un máximo absoluto"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f(0)=d=-5\\).",
+      "\\(f''(x)=6x+2b\\); inflexión en 2: \\(12+2b=0\\Rightarrow b=-6\\).",
+      "\\(f'(x)=3x^2+2bx+c\\); extremo en 1: \\(3-12+c=0\\Rightarrow c=9\\).",
+      "\\(f''(1)=6-12=-6\\lt0\\): máximo local. (No es absoluto: \\(f\\to+\\infty\\) cuando \\(x\\to+\\infty\\).)"
+     ],
+     "ans": "b = −6, c = 9, d = −5; máximo local en x = 1",
+     "hint": "Cada condición es una ecuación: inflexión usa f″, extremo usa f′.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "conc"
+      ],
+      [
+       "crec"
+      ],
+      [
+       "f2c"
+      ]
+     ]
+    },
+    {
+     "id": "w9g7",
+     "lvl": 3,
+     "title": "Trigonométrica en [−π, π]",
+     "q": "<p>Halla los extremos absolutos de \\(f(x)=x+2\\cos x\\) en \\([-\\pi,\\pi]\\).</p>",
+     "checks": [
+      {
+       "p": "Máximo absoluto",
+       "o": [
+        "\\(\\frac\\pi6+\\sqrt3\\approx2.26\\)",
+        "\\(\\pi-2\\approx1.14\\)",
+        "\\(\\frac{5\\pi}6-\\sqrt3\\approx0.89\\)",
+        "\\(\\pi+2\\approx5.14\\)",
+        "\\(2\\)"
+       ]
+      },
+      {
+       "p": "Mínimo absoluto",
+       "o": [
+        "\\(-\\pi-2\\approx-5.14\\)",
+        "\\(\\frac{5\\pi}6-\\sqrt3\\approx0.89\\)",
+        "\\(-\\frac\\pi6-\\sqrt3\\approx-2.26\\)",
+        "\\(-2\\)",
+        "\\(-\\pi\\approx-3.14\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'(x)=1-2\\sin x=0\\Rightarrow\\sin x=\\tfrac12\\Rightarrow x=\\tfrac\\pi6\\) o \\(x=\\tfrac{5\\pi}6\\), ambos en \\([-\\pi,\\pi]\\).",
+      "\\(f(\\tfrac\\pi6)=\\tfrac\\pi6+\\sqrt3\\approx2.256\\); \\(f(\\tfrac{5\\pi}6)=\\tfrac{5\\pi}6-\\sqrt3\\approx0.886\\).",
+      "Bordes: \\(f(-\\pi)=-\\pi-2\\approx-5.142\\); \\(f(\\pi)=\\pi-2\\approx1.142\\).",
+      "Máximo absoluto en \\(x=\\tfrac\\pi6\\); mínimo absoluto en el borde \\(x=-\\pi\\)."
+     ],
+     "ans": "Máx. π/6 + √3 ≈ 2.26; mín. −π − 2 ≈ −5.14",
+     "hint": "cos(±π) = −1. Compara los cuatro valores.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [],
+      [
+       "absc"
+      ],
+      [
+       "absc"
+      ]
+     ]
+    },
+    {
+     "id": "w9g8",
+     "lvl": 3,
+     "title": "Racional en [−2, 2]",
+     "q": "<p>Halla los extremos absolutos de \\(f(x)=\\dfrac{3x-4}{x^2+1}\\) en \\([-2,2]\\).</p>",
+     "checks": [
+      {
+       "p": "Máximo absoluto",
+       "o": [
+        "\\(0.4\\ \\text{en}\\ x=2\\)",
+        "\\(-2\\ \\text{en}\\ x=-2\\)",
+        "\\(0.5\\ \\text{en}\\ x=3\\)",
+        "\\(-4.5\\ \\text{en}\\ x=-\\tfrac13\\)",
+        "\\(0\\ \\text{en}\\ x=\\tfrac43\\)"
+       ]
+      },
+      {
+       "p": "Mínimo absoluto",
+       "o": [
+        "\\(-4.5\\ \\text{en}\\ x=-\\tfrac13\\)",
+        "\\(-2\\ \\text{en}\\ x=-2\\)",
+        "\\(-4\\ \\text{en}\\ x=0\\)",
+        "\\(0.4\\ \\text{en}\\ x=2\\)",
+        "\\(-5\\ \\text{en}\\ x=-\\tfrac13\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cociente: \\(f'(x)=\\dfrac{3(x^2+1)-(3x-4)(2x)}{(x^2+1)^2}=\\dfrac{-3x^2+8x+3}{(x^2+1)^2}=\\dfrac{-(3x+1)(x-3)}{(x^2+1)^2}\\).",
+      "Críticos: \\(x=-\\tfrac13\\) (dentro) y \\(x=3\\) (fuera de \\([-2,2]\\)).",
+      "\\(f(-\\tfrac13)=\\dfrac{-5}{10/9}=-4.5\\); \\(f(-2)=\\dfrac{-10}{5}=-2\\); \\(f(2)=\\dfrac25=0.4\\).",
+      "Máximo absoluto \\(0.4\\) en \\(x=2\\) (borde); mínimo absoluto \\(-4.5\\) en \\(x=-\\tfrac13\\)."
+     ],
+     "ans": "Máx. 0.4 en x = 2; mín. −4.5 en x = −1/3",
+     "hint": "Usa la regla del cociente y factoriza el numerador.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "coc"
+      ],
+      [
+       "crec"
+      ],
+      [
+       "absc"
+      ],
+      [
+       "absc"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w9opt",
+   "name": "Sem. 9 · Optimización en contexto (7 pasos e IRCA)",
+   "teo": "<p>En la Semana 7 la función venía dada; ahora <strong>la construyes tú</strong> desde el enunciado. Sigue los 7 pasos: interpretar, dibujar, plantear la <strong>restricción</strong>, escribir la <strong>función objetivo en una sola variable</strong>, fijar el <strong>dominio contextual</strong>, optimizar y argumentar.</p>\n<p>Clasifica el punto crítico con \\(f''\\): \\(f''(c)\\gt0\\) es mínimo (costo, tiempo, material), \\(f''(c)\\lt0\\) es máximo (área, volumen, ganancia). Si \\(f''\\) tiene un solo signo en todo el dominio, el extremo local es <strong>absoluto</strong>. Si el dominio es cerrado, compara también los extremos.</p>\n<p>Termina siempre con la conclusión en el lenguaje del problema y con unidades.</p>",
+   "form": [
+    "Caja sobre lámina: \\(V=(L-2x)^2x,\\ 0\\lt x\\lt\\frac L2\\)",
+    "Cilindro: \\(V=\\pi r^2h\\), \\(S=2\\pi r^2+2\\pi rh\\)",
+    "Corral junto a un río: \\(x+2y=P\\)",
+    "Cable: \\(D=\\sqrt{x^2+d^2}+(L-x)\\)",
+    "Viga en tronco: \\(w^2+h^2=4R^2\\)",
+    "Cono desde sector: \\(r=\\frac{R\\theta}{2\\pi}\\), \\(h=\\sqrt{R^2-r^2}\\), \\(V=\\frac13\\pi r^2h\\)",
+    "Costo: \\(C=c_1A_1+c_2A_2+\\cdots\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Optimizar en contexto es <strong>modelar</strong> antes de derivar. El cálculo (\\(f'=0\\), \\(f''\\)) es lo mismo de la Semana 7; lo nuevo es construir la función, su dominio y defender la respuesta.</p>\n<h3>Conceptos clave (esquema IRCA)</h3><ul><li><strong>I · Interpretación:</strong> variable de decisión, magnitud a optimizar \\(Q\\), datos fijos y dominio contextual.</li><li><strong>R · Representación:</strong> esquema con variables, restricción (la ecuación que las liga) y \\(Q=f(x)\\) en una sola variable.</li><li><strong>C · Cálculo:</strong> \\(f'(x)=0\\), clasificación con \\(f''\\) o comparando extremos.</li><li><strong>A · Análisis:</strong> unidades, restricción verificada, soluciones extrañas descartadas y conclusión escrita.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra (\\(x\\), \\(y\\), \\(r\\), \\(h\\)…).</li><li><strong>2.</strong> Escribe la restricción y despeja una variable.</li><li><strong>3.</strong> Sustituye en \\(Q\\) y simplifica <em>antes</em> de derivar.</li><li><strong>4.</strong> Dominio contextual: longitudes positivas, alturas \\(\\gt0\\), etc.</li><li><strong>5.</strong> Deriva, iguala a cero, clasifica y responde con unidades.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> santuario junto a un acantilado con 2 400 m de cerca. Restricción \\(x+2y=2400\\) (el lado del acantilado no se cerca). \\(A(x)=\\frac{2400x-x^2}{2}\\), \\(A'=1200-x=0\\Rightarrow x=1200\\) m, \\(y=600\\) m, \\(A''=-1\\lt0\\): máximo de \\(720\\,000\\) m².</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> tanque cilindro-cónico de \\(12\\pi\\) m³: \\(C(r)=\\pi\\big[(60+100\\sqrt2)r^2+\\frac{1440}r\\big]\\), \\(r^*\\approx1.53\\) m, \\(h^*\\approx4.62\\) m, \\(C\\approx\\$4\\,439\\).</div>\n<div class=\"err\"><b>Error común:</b> plantear \\(2x+2y=P\\) cuando un lado no lleva cerca, o derivar sin haber dejado la función en una sola variable.</div>",
+   "ex": [
+    {
+     "id": "w9o1",
+     "lvl": 1,
+     "title": "Corral dividido junto a un río",
+     "q": "<p>Con 600 m de cerca se arma un corral rectangular junto a un río (ese lado no se cerca) y se divide en dos corrales iguales con una cerca <strong>perpendicular</strong> al río. Sea \\(x\\) el lado paralelo al río e \\(y\\) cada lado perpendicular.</p>",
+     "checks": [
+      {
+       "p": "Restricción",
+       "o": [
+        "\\(x+3y=600\\)",
+        "\\(2x+3y=600\\)",
+        "\\(x+2y=600\\)",
+        "\\(2x+2y=600\\)",
+        "\\(3x+y=600\\)"
+       ]
+      },
+      {
+       "p": "Dimensiones de área máxima",
+       "o": [
+        "\\(x=300\\text{ m},\\ y=100\\text{ m}\\)",
+        "\\(x=200\\text{ m},\\ y=200/3\\text{ m}\\)",
+        "\\(x=150\\text{ m},\\ y=150\\text{ m}\\)",
+        "\\(x=300\\text{ m},\\ y=150\\text{ m}\\)",
+        "\\(x=100\\text{ m},\\ y=300\\text{ m}\\)"
+       ]
+      },
+      {
+       "p": "Área máxima",
+       "o": [
+        "\\(30\\,000\\text{ m}^2\\)",
+        "\\(45\\,000\\text{ m}^2\\)",
+        "\\(22\\,500\\text{ m}^2\\)",
+        "\\(13\\,333\\text{ m}^2\\)",
+        "\\(60\\,000\\text{ m}^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Se cercan: un lado paralelo (\\(x\\)) y <em>tres</em> segmentos perpendiculares (los dos bordes y la división): \\(x+3y=600\\).",
+      "\\(A=xy=(600-3y)y=600y-3y^2\\), con \\(0\\lt y\\lt200\\).",
+      "\\(A'(y)=600-6y=0\\Rightarrow y=100\\); \\(A''=-6\\lt0\\): máximo. \\(x=600-300=300\\).",
+      "\\(A=300\\cdot100=30\\,000\\) m². Verificación: \\(300+3(100)=600\\) ✓."
+     ],
+     "ans": "x + 3y = 600; x = 300 m, y = 100 m; A = 30 000 m²",
+     "hint": "Cuenta cuántos tramos perpendiculares hay: los dos bordes y la división.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "domc"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o2",
+     "lvl": 1,
+     "title": "Caja abierta de cartón",
+     "q": "<p>De una lámina cuadrada de 40 cm se cortan cuadrados de lado \\(x\\) en las esquinas y se doblan los lados para formar una caja sin tapa.</p>",
+     "checks": [
+      {
+       "p": "Función y dominio",
+       "o": [
+        "\\(V=(40-2x)^2x,\\ 0\\lt x\\lt20\\)",
+        "\\(V=(40-x)^2x,\\ 0\\lt x\\lt40\\)",
+        "\\(V=(40-2x)x^2,\\ 0\\lt x\\lt20\\)",
+        "\\(V=(40-2x)^2x,\\ 0\\lt x\\lt40\\)",
+        "\\(V=40^2x,\\ x\\gt0\\)"
+       ]
+      },
+      {
+       "p": "Corte óptimo",
+       "o": [
+        "\\(x=\\tfrac{20}3\\approx6.67\\text{ cm}\\)",
+        "\\(x=10\\text{ cm}\\)",
+        "\\(x=20\\text{ cm}\\)",
+        "\\(x=5\\text{ cm}\\)",
+        "\\(x=\\tfrac{40}3\\approx13.3\\text{ cm}\\)"
+       ]
+      },
+      {
+       "p": "Volumen máximo",
+       "o": [
+        "\\(\\approx4\\,741\\text{ cm}^3\\)",
+        "\\(4\\,000\\text{ cm}^3\\)",
+        "\\(\\approx3\\,556\\text{ cm}^3\\)",
+        "\\(\\approx9\\,481\\text{ cm}^3\\)",
+        "\\(4\\,500\\text{ cm}^3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La base queda de lado \\(40-2x\\) y la altura es \\(x\\): \\(V=(40-2x)^2x\\). Necesitamos \\(x\\gt0\\) y \\(40-2x\\gt0\\): \\(0\\lt x\\lt20\\).",
+      "\\(V'=(40-2x)^2-4x(40-2x)=(40-2x)(40-6x)=0\\Rightarrow x=20\\) (fuera del dominio) o \\(x=\\tfrac{20}3\\).",
+      "\\(V''(x)=24x-320\\); \\(V''(\\tfrac{20}3)=-160\\lt0\\): máximo.",
+      "\\(V=(\\tfrac{80}3)^2\\cdot\\tfrac{20}3=\\tfrac{128\\,000}{27}\\approx4\\,740.7\\) cm³."
+     ],
+     "ans": "x = 20/3 cm; V ≈ 4 741 cm³",
+     "hint": "Factoriza (40 − 2x) en la derivada.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "domc"
+      ],
+      [
+       "rest"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o3",
+     "lvl": 2,
+     "title": "Caja de base cuadrada sin tapa",
+     "q": "<p>Una caja <strong>sin tapa</strong> de base cuadrada debe tener 32 000 cm³. ¿Qué dimensiones usan la menor cantidad de material?</p>",
+     "checks": [
+      {
+       "p": "Función de área",
+       "o": [
+        "\\(S(x)=x^2+\\frac{128\\,000}{x}\\)",
+        "\\(S(x)=2x^2+\\frac{128\\,000}{x}\\)",
+        "\\(S(x)=x^2+\\frac{32\\,000}{x}\\)",
+        "\\(S(x)=x^2+4x\\)",
+        "\\(S(x)=2x^2+\\frac{64\\,000}{x}\\)"
+       ]
+      },
+      {
+       "p": "Dimensiones óptimas",
+       "o": [
+        "\\(x=40\\text{ cm},\\ h=20\\text{ cm}\\)",
+        "\\(x\\approx31.7\\text{ cm},\\ h\\approx31.7\\text{ cm}\\)",
+        "\\(x=20\\text{ cm},\\ h=80\\text{ cm}\\)",
+        "\\(x=40\\text{ cm},\\ h=40\\text{ cm}\\)",
+        "\\(x=32\\text{ cm},\\ h=31.25\\text{ cm}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Restricción: \\(x^2h=32\\,000\\Rightarrow h=\\frac{32\\,000}{x^2}\\).",
+      "Sin tapa: base \\(x^2\\) + 4 caras \\(4xh\\). \\(S=x^2+4x\\cdot\\frac{32\\,000}{x^2}=x^2+\\frac{128\\,000}x\\), \\(x\\gt0\\).",
+      "\\(S'=2x-\\frac{128\\,000}{x^2}=0\\Rightarrow x^3=64\\,000\\Rightarrow x=40\\) cm; \\(S''=2+\\frac{256\\,000}{x^3}\\gt0\\): mínimo (absoluto, \\(S\\) es convexa).",
+      "\\(h=\\frac{32\\,000}{1600}=20\\) cm. Sin tapa, la caja óptima tiene altura igual a la mitad del lado (con tapa sería un cubo)."
+     ],
+     "ans": "x = 40 cm, h = 20 cm",
+     "hint": "Sin tapa solo hay una cara de área x².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "rest"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o4",
+     "lvl": 2,
+     "title": "Lata con pared más cara",
+     "q": "<p>Una lata cilíndrica cerrada debe contener 500 cm³.</p>",
+     "checks": [
+      {
+       "p": "Radio que minimiza el material",
+       "o": [
+        "\\(r=\\sqrt[3]{250/\\pi}\\approx4.30\\text{ cm}\\)",
+        "\\(r=\\sqrt[3]{500/\\pi}\\approx5.42\\text{ cm}\\)",
+        "\\(r=\\sqrt{250/\\pi}\\approx8.92\\text{ cm}\\)",
+        "\\(r=\\sqrt[3]{125/\\pi}\\approx3.41\\text{ cm}\\)",
+        "\\(r=5\\text{ cm}\\)"
+       ]
+      },
+      {
+       "p": "Si la pared lateral cuesta el doble que tapa y base, la lata óptima cumple",
+       "o": [
+        "\\(h=r\\)",
+        "\\(h=2r\\)",
+        "\\(h=4r\\)",
+        "\\(h=\\tfrac r2\\)",
+        "\\(h=\\sqrt2\\,r\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(h=\\frac{500}{\\pi r^2}\\). Material: \\(S=2\\pi r^2+2\\pi rh=2\\pi r^2+\\frac{1000}r\\).",
+      "\\(S'=4\\pi r-\\frac{1000}{r^2}=0\\Rightarrow r^3=\\frac{250}\\pi\\Rightarrow r\\approx4.30\\) cm, y \\(h=\\frac{500}{\\pi r^2}=2r\\approx8.60\\) cm (altura igual al diámetro).",
+      "Con la pared al doble: \\(C\\propto2\\pi r^2+2\\cdot\\frac{1000}r\\). \\(C'=4\\pi r-\\frac{2000}{r^2}=0\\Rightarrow r^3=\\frac{500}\\pi\\), \\(r\\approx5.42\\) cm.",
+      "\\(h=\\frac{500}{\\pi r^2}=\\frac{500}{\\pi r^3}\\,r=r\\). Al encarecer la pared, conviene una lata más ancha y baja: \\(h=r\\) en vez de \\(h=2r\\)."
+     ],
+     "ans": "r ≈ 4.30 cm (h = 2r); con pared al doble, h = r",
+     "hint": "Escribe el costo con pesos: tapas × 1, pared × 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "f2c"
+      ],
+      [
+       "costo"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o5",
+     "lvl": 2,
+     "title": "Cable bajo un río",
+     "q": "<p>Una central está en una orilla de un río de 3 km de ancho; la fábrica está en la otra orilla, 8 km río abajo. El cable cuesta $6 000/km bajo el agua y $2 000/km por tierra. El cable cruza en diagonal hasta un punto a \\(x\\) km río abajo y sigue por tierra.</p>",
+     "checks": [
+      {
+       "p": "Función de costo",
+       "o": [
+        "\\(C=6000\\sqrt{x^2+9}+2000(8-x)\\)",
+        "\\(C=6000(x+3)+2000(8-x)\\)",
+        "\\(C=2000\\sqrt{x^2+9}+6000(8-x)\\)",
+        "\\(C=6000\\sqrt{x^2+64}+2000x\\)",
+        "\\(C=6000\\sqrt{x^2+3}+2000(8-x)\\)"
+       ]
+      },
+      {
+       "p": "Punto óptimo de llegada",
+       "o": [
+        "\\(x=\\tfrac{3}{\\sqrt8}\\approx1.06\\text{ km}\\)",
+        "\\(x=0\\text{ km}\\)",
+        "\\(x=3\\text{ km}\\)",
+        "\\(x=\\tfrac{9}{8}\\approx1.13\\text{ km}\\)",
+        "\\(x=8\\text{ km}\\)"
+       ]
+      },
+      {
+       "p": "Costo mínimo",
+       "o": [
+        "\\(\\approx\\$32\\,971\\)",
+        "\\(\\$34\\,000\\)",
+        "\\(\\approx\\$51\\,264\\)",
+        "\\(\\approx\\$30\\,000\\)",
+        "\\(\\approx\\$35\\,456\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Tramo bajo el agua: hipotenusa \\(\\sqrt{x^2+3^2}\\). Tramo por tierra: \\(8-x\\). Dominio \\([0,8]\\).",
+      "\\(C'=\\frac{6000x}{\\sqrt{x^2+9}}-2000=0\\Rightarrow3x=\\sqrt{x^2+9}\\Rightarrow8x^2=9\\Rightarrow x=\\frac3{\\sqrt8}\\approx1.061\\) km.",
+      "\\(C(1.061)\\approx\\$32\\,971\\). Compara con los extremos: \\(C(0)=\\$34\\,000\\), \\(C(8)\\approx\\$51\\,264\\). El mínimo absoluto es interior.",
+      "Conviene cruzar en diagonal hasta 1.06 km río abajo; cruzar perpendicular o ir todo bajo el agua cuesta más."
+     ],
+     "ans": "x ≈ 1.06 km; C ≈ $32 971",
+     "hint": "Iguala el costo marginal del agua con el de tierra y eleva al cuadrado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "pit"
+      ],
+      [
+       "absc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o6",
+     "lvl": 2,
+     "title": "Viga más resistente",
+     "q": "<p>De un tronco de radio 15 in se corta una viga rectangular de ancho \\(w\\) y altura \\(h\\). Su resistencia es \\(S=wh^2\\).</p>",
+     "checks": [
+      {
+       "p": "Dimensiones de máxima resistencia",
+       "o": [
+        "\\(w=\\tfrac{30}{\\sqrt3}\\approx17.3,\\ h\\approx24.5\\text{ in}\\)",
+        "\\(w=h=15\\sqrt2\\approx21.2\\text{ in}\\)",
+        "\\(w\\approx24.5,\\ h\\approx17.3\\text{ in}\\)",
+        "\\(w=15,\\ h=15\\sqrt3\\approx26.0\\text{ in}\\)",
+        "\\(w=10,\\ h\\approx28.3\\text{ in}\\)"
+       ]
+      },
+      {
+       "p": "Razón h/w óptima",
+       "o": [
+        "\\(\\sqrt2\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(\\sqrt3\\)",
+        "\\(\\tfrac1{\\sqrt2}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La diagonal es el diámetro: \\(w^2+h^2=30^2=900\\Rightarrow h^2=900-w^2\\).",
+      "\\(S(w)=w(900-w^2)=900w-w^3\\), \\(0\\lt w\\lt30\\). \\(S'=900-3w^2=0\\Rightarrow w=\\sqrt{300}\\approx17.32\\) in.",
+      "\\(S''=-6w\\lt0\\): máximo. \\(h=\\sqrt{900-300}=\\sqrt{600}\\approx24.49\\) in, y \\(h/w=\\sqrt2\\).",
+      "La viga más resistente no es la de mayor área (esa sería cuadrada, \\(w=h\\)): necesita más altura para resistir la flexión."
+     ],
+     "ans": "w ≈ 17.3 in, h ≈ 24.5 in; h/w = √2",
+     "hint": "Sustituye h², no h: así evitas la raíz.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pit"
+      ],
+      [
+       "rest"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o7",
+     "lvl": 3,
+     "title": "Tanque cilindro-cónico (variante)",
+     "q": "<p>Un tanque cerrado tiene cuerpo cilíndrico (radio \\(r\\), altura \\(h\\)), tapa plana y fondo cónico de altura \\(r\\). Volumen total \\(9\\pi\\) m³. Costos: tapa $80/m², pared $50/m², fondo cónico $120/m² (área lateral del cono \\(\\sqrt2\\,\\pi r^2\\)).</p>",
+     "checks": [
+      {
+       "p": "Altura del cilindro y dominio",
+       "o": [
+        "\\(h=\\frac9{r^2}-\\frac r3,\\ 0\\lt r\\lt3\\)",
+        "\\(h=\\frac9{r^2},\\ r\\gt0\\)",
+        "\\(h=\\frac9{r^2}-r,\\ 0\\lt r\\lt\\sqrt[3]9\\)",
+        "\\(h=\\frac{9\\pi}{r^2}-\\frac r3,\\ r\\gt0\\)",
+        "\\(h=\\frac{27}{r^2}-\\frac r3,\\ 0\\lt r\\lt3\\)"
+       ]
+      },
+      {
+       "p": "Radio óptimo",
+       "o": [
+        "\\(r^*\\approx1.28\\text{ m}\\)",
+        "\\(r^*\\approx1.53\\text{ m}\\)",
+        "\\(r^*\\approx1.07\\text{ m}\\)",
+        "\\(r^*\\approx2.00\\text{ m}\\)",
+        "\\(r^*=3\\text{ m}\\)"
+       ]
+      },
+      {
+       "p": "Altura cilíndrica óptima",
+       "o": [
+        "\\(h^*\\approx5.10\\text{ m}\\)",
+        "\\(h^*\\approx4.62\\text{ m}\\)",
+        "\\(h^*\\approx5.52\\text{ m}\\)",
+        "\\(h^*\\approx3.84\\text{ m}\\)",
+        "\\(h^*\\approx1.28\\text{ m}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Volumen: \\(\\pi r^2h+\\tfrac13\\pi r^3=9\\pi\\Rightarrow h=\\frac9{r^2}-\\frac r3\\). \\(h\\gt0\\iff r^3\\lt27\\iff r\\lt3\\).",
+      "\\(C=80\\pi r^2+50(2\\pi rh)+120\\sqrt2\\,\\pi r^2\\). Como \\(100\\pi rh=\\frac{900\\pi}r-\\frac{100\\pi r^2}3\\): \\(C(r)=\\pi\\big[k\\,r^2+\\frac{900}r\\big]\\) con \\(k=80-\\tfrac{100}3+120\\sqrt2\\approx216.37\\).",
+      "\\(C'=\\pi\\big[2kr-\\frac{900}{r^2}\\big]=0\\Rightarrow r^3=\\frac{450}k\\approx2.080\\Rightarrow r^*\\approx1.276\\) m. \\(C''=\\pi\\big[2k+\\frac{1800}{r^3}\\big]\\gt0\\): mínimo.",
+      "\\(h^*=\\frac9{1.276^2}-\\frac{1.276}3\\approx5.10\\) m; costo \\(\\approx\\$3323\\)."
+     ],
+     "ans": "r* ≈ 1.28 m, h* ≈ 5.10 m",
+     "hint": "Simplifica la función de costo antes de derivar: junta los términos en r².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest",
+       "domc"
+      ],
+      [
+       "costo"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o8",
+     "lvl": 3,
+     "title": "Cono desde un sector circular",
+     "q": "<p>De una lámina circular de radio \\(R=3\\) m se retira un sector y con el resto (ángulo \\(\\theta\\)) se forma un cono. Se sabe que el volumen es máximo cuando \\(r=R\\sqrt{2/3}\\).</p>",
+     "checks": [
+      {
+       "p": "Ángulo óptimo del sector usado",
+       "o": [
+        "\\(\\theta^*=2\\pi\\sqrt{2/3}\\approx5.13\\text{ rad}\\ (293.9^\\circ)\\)",
+        "\\(\\theta^*=\\pi\\text{ rad}\\ (180^\\circ)\\)",
+        "\\(\\theta^*\\approx1.15\\text{ rad}\\ (66.1^\\circ)\\)",
+        "\\(\\theta^*=\\tfrac{4\\pi}3\\ (240^\\circ)\\)",
+        "\\(\\theta^*=2\\pi\\sqrt{1/3}\\approx3.63\\text{ rad}\\)"
+       ]
+      },
+      {
+       "p": "Volumen máximo",
+       "o": [
+        "\\(\\approx10.88\\text{ m}^3\\)",
+        "\\(\\approx6.30\\text{ m}^3\\)",
+        "\\(\\approx32.65\\text{ m}^3\\)",
+        "\\(\\approx14.14\\text{ m}^3\\)",
+        "\\(\\approx3.63\\text{ m}^3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El arco del sector se vuelve la circunferencia de la base: \\(R\\theta=2\\pi r\\Rightarrow r=\\frac{R\\theta}{2\\pi}\\). La generatriz es \\(R\\): \\(h=\\sqrt{R^2-r^2}\\).",
+      "Con \\(r=R\\sqrt{2/3}\\): \\(\\theta=\\frac{2\\pi r}R=2\\pi\\sqrt{2/3}\\approx5.130\\) rad. Se descarta un sector de \\(\\approx66.1^\\circ\\).",
+      "\\(r=3\\sqrt{2/3}\\approx2.449\\) m, \\(h=\\sqrt{9-6}=\\sqrt3\\approx1.732\\) m.",
+      "\\(V=\\tfrac13\\pi r^2h=\\tfrac13\\pi(6)(\\sqrt3)=2\\sqrt3\\,\\pi\\approx10.88\\) m³. En general \\(V_{máx}=\\frac{2\\pi R^3}{9\\sqrt3}\\approx0.128\\,\\pi R^3\\)."
+     ],
+     "ans": "θ* ≈ 5.13 rad (293.9°); V ≈ 10.88 m³",
+     "hint": "La generatriz del cono es el radio de la lámina.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [],
+      [
+       "pit"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o9",
+     "lvl": 3,
+     "title": "Pista de carreras",
+     "q": "<p>Una pista tiene dos rectas paralelas de longitud \\(x\\) y dos semicírculos de diámetro \\(y\\). Su longitud total es 2 km. Se quiere maximizar el área del <strong>rectángulo</strong> interior \\(A=xy\\).</p>",
+     "checks": [
+      {
+       "p": "Restricción",
+       "o": [
+        "\\(2x+\\pi y=2\\)",
+        "\\(2x+2\\pi y=2\\)",
+        "\\(2x+2y=2\\)",
+        "\\(x+\\pi y=2\\)",
+        "\\(2x+\\tfrac\\pi2y=2\\)"
+       ]
+      },
+      {
+       "p": "Diseño óptimo",
+       "o": [
+        "\\(x=0.5\\text{ km},\\ y=\\tfrac1\\pi\\approx0.318\\text{ km}\\)",
+        "\\(x=1\\text{ km},\\ y=0\\)",
+        "\\(x=y=\\tfrac2{2+\\pi}\\approx0.389\\text{ km}\\)",
+        "\\(x=0.25\\text{ km},\\ y=\\tfrac{1.5}\\pi\\text{ km}\\)",
+        "\\(x=\\tfrac1\\pi,\\ y=0.5\\text{ km}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Dos semicírculos de diámetro \\(y\\) forman una circunferencia: longitud \\(\\pi y\\). Total: \\(2x+\\pi y=2\\).",
+      "\\(x=\\frac{2-\\pi y}2\\Rightarrow A(y)=\\frac{2y-\\pi y^2}2\\), con \\(0\\lt y\\lt\\frac2\\pi\\).",
+      "\\(A'=1-\\pi y=0\\Rightarrow y=\\frac1\\pi\\); \\(A''=-\\pi\\lt0\\): máximo. \\(x=\\frac{2-1}2=0.5\\) km.",
+      "Las rectas usan exactamente la mitad de la pista (1 km) y las curvas la otra mitad. \\(A=\\frac{0.5}\\pi\\approx0.159\\) km²."
+     ],
+     "ans": "x = 0.5 km, y = 1/π km",
+     "hint": "Los dos semicírculos juntos son una circunferencia completa.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "domc"
+      ],
+      [
+       "f2c"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9o10",
+     "lvl": 3,
+     "title": "Bifurcación vascular (Poiseuille)",
+     "q": "<p>La resistencia en una bifurcación es \\(R(\\theta)=C\\Big(\\frac{a-b\\cot\\theta}{r_1^4}+\\frac{b\\csc\\theta}{r_2^4}\\Big)\\), \\(0\\lt\\theta\\lt\\frac\\pi2\\). El óptimo cumple \\(\\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\). Si la rama mide el 80 % del radio principal (\\(r_2=0.8\\,r_1\\)), ¿cuál es el ángulo óptimo?</p>",
+     "checks": [
+      {
+       "p": "Ángulo óptimo",
+       "o": [
+        "\\(\\theta^*\\approx65.8^\\circ\\)",
+        "\\(\\theta^*\\approx36.9^\\circ\\)",
+        "\\(\\theta^*\\approx79.0^\\circ\\)",
+        "\\(\\theta^*\\approx24.2^\\circ\\)",
+        "\\(\\theta^*\\approx50.0^\\circ\\)"
+       ]
+      },
+      {
+       "p": "Si la rama es mucho más delgada (r₂ ≪ r₁), θ* tiende a",
+       "o": [
+        "\\(90^\\circ\\)",
+        "\\(0^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(180^\\circ\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(R'(\\theta)=Cb\\csc\\theta\\Big(\\frac{\\csc\\theta}{r_1^4}-\\frac{\\cot\\theta}{r_2^4}\\Big)=0\\Rightarrow\\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\).",
+      "\\(\\cos\\theta^*=0.8^4=0.4096\\Rightarrow\\theta^*=\\arccos(0.4096)\\approx65.8^\\circ\\).",
+      "Si \\(r_2\\ll r_1\\), \\((r_2/r_1)^4\\to0\\) y \\(\\theta^*\\to90^\\circ\\): los vasos muy finos salen casi perpendiculares para recorrer lo menos posible por el tramo de alta resistencia."
+     ],
+     "ans": "θ* ≈ 65.8°; tiende a 90°",
+     "hint": "Solo importa la razón r₂/r₁ elevada a la cuarta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w9din",
+   "name": "Sem. 9 · Optimización con parámetro y óptimo dinámico",
+   "teo": "<p>Si el problema tiene un parámetro que cambia (temperatura \\(T\\), tiempo \\(t\\), demanda), el óptimo deja de ser un número y pasa a ser una <strong>función</strong>: \\(x^*(T)\\) o \\(x^*(t)\\).</p>\n<p>Protocolo: (1) optimiza tratando el parámetro como <strong>constante</strong>; (2) deriva el óptimo respecto al parámetro para obtener la <strong>sensibilidad</strong> \\(\\frac{dx^*}{dt}\\); (3) interpreta su signo y tamaño; (4) decide hasta dónde vale el modelo.</p>\n<p>Si \\(x^*(t)\\) es explícita, derivas directo. Si no, derivas la condición \\(f'(x)=0\\) respecto al parámetro con la regla de la cadena.</p>",
+   "form": [
+    "Paso 1: \\(\\frac{\\partial Q}{\\partial x}=0\\) con \\(t\\) fijo \\(\\Rightarrow x^*(t)\\)",
+    "Sensibilidad: \\(\\frac{dx^*}{dt}\\); cambio aproximado \\(\\Delta x^*\\approx\\frac{dx^*}{dt}\\Delta t\\)",
+    "\\(\\frac{dx^*}{dt}\\gt0\\): el óptimo aumenta con el tiempo",
+    "\\(\\frac{d}{dt}\\sqrt{a+bt}=\\frac{b}{2\\sqrt{a+bt}}\\)",
+    "Tanque: \\(V_0(T)=\\frac{12\\pi}{1-\\beta(T-T_0)}\\), \\(r^*(T)=\\Big[\\frac{36}{(3+5\\sqrt2)(1-\\beta(T-T_0))}\\Big]^{1/3}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la optimización estática el óptimo es un número. Cuando un dato del problema depende del tiempo o de otra condición, cada instante tiene su propio óptimo y aparece una <strong>trayectoria óptima</strong> \\(x^*(t)\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Variable de decisión vs. parámetro:</strong> \\(x\\) la eliges; \\(t\\) o \\(T\\) te los impone el entorno.</li><li><strong>Sensibilidad:</strong> \\(\\frac{dx^*}{dT}\\) dice cuánto se mueve el óptimo por unidad de cambio del parámetro.</li><li><strong>Juicio de ingeniería:</strong> si la variación total es menor que la tolerancia de fabricación, basta un solo diseño.</li><li><strong>Rango de validez:</strong> el modelo deja de tener sentido cuando una magnitud se vuelve negativa o deja de crecer cuando debería.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Deriva respecto a \\(x\\) con \\(t\\) fijo e iguala a cero.</li><li><strong>2.</strong> Despeja \\(x^*(t)\\) y verifica que es máximo o mínimo con la segunda derivada.</li><li><strong>3.</strong> Deriva \\(x^*(t)\\) respecto a \\(t\\) e interpreta.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> tanque cilindro-cónico con agua entre 10 y 40 °C. Como la masa es fija, \\(V_0(T)\\) crece con \\(T\\) y \\(r^*\\approx1.529\\) m apenas cambia: \\(\\frac{dr^*}{dT}\\approx1.055\\times10^{-4}\\) m/°C, unos 3 mm en 30 °C, del orden de la tolerancia (±3 mm). Conclusión: un solo diseño sirve.</div>\n<div class=\"err\"><b>Error común:</b> tratar \\(V_0\\) como constante al derivar respecto a \\(T\\), o derivar respecto a \\(t\\) antes de haber optimizado respecto a \\(x\\).</div>",
+   "ex": [
+    {
+     "id": "w9d1",
+     "lvl": 1,
+     "title": "Política de inventario",
+     "q": "<p>El costo diario de almacenar \\(x\\) unidades es \\(C(x)=\\frac{2000}x+4x+300\\). La política de reposición es \\(x^*(t)=\\sqrt{500+40t}\\) (\\(t\\) en días).</p>",
+     "checks": [
+      {
+       "p": "Óptimo para t = 0",
+       "o": [
+        "\\(x^*=\\sqrt{500}\\approx22.4\\)",
+        "\\(x^*=500\\)",
+        "\\(x^*=\\sqrt{2000}\\approx44.7\\)",
+        "\\(x^*=\\sqrt{300}\\approx17.3\\)",
+        "\\(x^*=10\\)"
+       ]
+      },
+      {
+       "p": "Ritmo de cambio del óptimo en t = 10 días",
+       "o": [
+        "\\(\\tfrac23\\approx0.67\\text{ unid./día}\\)",
+        "\\(\\tfrac43\\approx1.33\\text{ unid./día}\\)",
+        "\\(30\\text{ unid./día}\\)",
+        "\\(20\\text{ unid./día}\\)",
+        "\\(\\tfrac1{30}\\text{ unid./día}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(C'(x)=-\\frac{2000}{x^2}+4=0\\Rightarrow x^2=500\\Rightarrow x=\\sqrt{500}\\approx22.4\\); \\(C''=\\frac{4000}{x^3}\\gt0\\): mínimo. Coincide con \\(x^*(0)\\).",
+      "\\(\\frac{dx^*}{dt}=\\frac{40}{2\\sqrt{500+40t}}=\\frac{20}{\\sqrt{500+40t}}\\).",
+      "En \\(t=10\\): \\(\\frac{20}{\\sqrt{900}}=\\frac23\\approx0.67\\) unidades por día. Es positivo pero decrece: el inventario óptimo sube cada vez más despacio."
+     ],
+     "ans": "x*(0) ≈ 22.4; dx*/dt(10) = 2/3 unid./día",
+     "hint": "Regla de la cadena para la raíz: (√u)′ = u′/(2√u).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "f2c"
+      ],
+      [
+       "param"
+      ],
+      [
+       "param"
+      ]
+     ]
+    },
+    {
+     "id": "w9d2",
+     "lvl": 2,
+     "title": "Dosificación en una planta de agua",
+     "q": "<p>El índice de costo por dosificación \\(x\\) (mg/L) en el día \\(t\\) es \\(I(x,t)=\\frac13x^2-(4+0.3t)x+60\\). La masa de contaminante removido cumple \\(y'(t)=12-1.5t\\) con \\(y(0)=4\\) toneladas.</p>",
+     "checks": [
+      {
+       "p": "Dosis óptima",
+       "o": [
+        "\\(x^*(t)=6+0.45t\\)",
+        "\\(x^*(t)=4+0.3t\\)",
+        "\\(x^*(t)=12+0.9t\\)",
+        "\\(x^*(t)=2+0.15t\\)",
+        "\\(x^*(t)=6-0.45t\\)"
+       ]
+      },
+      {
+       "p": "Masa removida",
+       "o": [
+        "\\(y(t)=12t-0.75t^2+4\\)",
+        "\\(y(t)=12t-1.5t^2+4\\)",
+        "\\(y(t)=12t-0.75t^2\\)",
+        "\\(y(t)=-1.5\\)",
+        "\\(y(t)=12-0.75t^2+4\\)"
+       ]
+      },
+      {
+       "p": "Rango de validez (mientras se siga removiendo)",
+       "o": [
+        "\\(0\\le t\\le8\\text{ días}\\)",
+        "\\(0\\le t\\le16\\text{ días}\\)",
+        "\\(0\\le t\\le4\\text{ días}\\)",
+        "\\(t\\ge0\\)",
+        "\\(0\\le t\\le12\\text{ días}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(t\\) fijo: \\(\\frac{\\partial I}{\\partial x}=\\frac23x-(4+0.3t)=0\\Rightarrow x^*=\\frac32(4+0.3t)=6+0.45t\\). Segunda derivada \\(\\frac23\\gt0\\): mínimo. \\(\\frac{dx^*}{dt}=0.45\\) mg/L por día.",
+      "Antiderivada de \\(12-1.5t\\): \\(y=12t-0.75t^2+C\\); \\(y(0)=4\\Rightarrow C=4\\).",
+      "\\(y''(t)=-1.5\\lt0\\): la remoción se desacelera.",
+      "\\(y'(t)\\ge0\\iff t\\le8\\). Después de 8 días el modelo diría que se 'des-remueve' contaminante, lo que no tiene sentido físico."
+     ],
+     "ans": "x* = 6 + 0.45t; y = 12t − 0.75t² + 4; válido para 0 ≤ t ≤ 8",
+     "hint": "Para la validez, pregunta hasta cuándo y′(t) ≥ 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [
+       "anti",
+       "pvi"
+      ],
+      [
+       "conc"
+      ],
+      [
+       "validez"
+      ]
+     ]
+    },
+    {
+     "id": "w9d3",
+     "lvl": 2,
+     "title": "Sensibilidad térmica del tanque",
+     "q": "<p>En el tanque cilindro-cónico de la guía, \\(r^*(T)=\\Big[\\frac{36}{(3+5\\sqrt2)\\,(1-\\beta(T-20))}\\Big]^{1/3}\\) con \\(\\beta=2.07\\times10^{-4}\\ ^\\circ\\)C\\(^{-1}\\), y en \\(T_0=20\\) °C se obtiene \\(\\frac{dr^*}{dT}\\approx1.055\\times10^{-4}\\) m/°C.</p>",
+     "checks": [
+      {
+       "p": "Cambio aproximado de r* al pasar de 20 °C a 35 °C",
+       "o": [
+        "\\(\\approx1.6\\text{ mm}\\)",
+        "\\(\\approx0.16\\text{ mm}\\)",
+        "\\(\\approx16\\text{ mm}\\)",
+        "\\(\\approx3.7\\text{ mm}\\)",
+        "\\(\\approx0.11\\text{ mm}\\)"
+       ]
+      },
+      {
+       "p": "Conclusión de ingeniería (tolerancia ±3 mm)",
+       "o": [
+        "Basta un solo diseño para todo el rango",
+        "Hay que fabricar un tanque distinto cada 5 °C",
+        "El radio óptimo disminuye al calentar",
+        "El modelo no sirve porque \\(\\beta\\) es muy grande",
+        "El óptimo deja de ser mínimo a 35 °C"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\Delta r^*\\approx\\frac{dr^*}{dT}\\Delta T=1.055\\times10^{-4}\\cdot15\\approx1.58\\times10^{-3}\\) m \\(\\approx1.6\\) mm.",
+      "Al calentarse el agua baja su densidad: la misma masa ocupa más volumen y el óptimo crece un poco (\\(\\frac{dr^*}{dT}\\gt0\\)).",
+      "1.6 mm es menor que la tolerancia de fabricación: un único diseño cubre el rango de operación."
+     ],
+     "ans": "≈ 1.6 mm; un solo diseño",
+     "hint": "Usa la sensibilidad como una diferencial: Δr ≈ r′ ΔT.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      [
+       "validez"
+      ]
+     ]
+    },
+    {
+     "id": "w9d4",
+     "lvl": 3,
+     "title": "Ganancia con demanda creciente",
+     "q": "<p>La ganancia mensual de una empresa es \\(G(x,t)=-2x^2+(80+6t)x-500\\) (soles), donde \\(x\\) son las unidades producidas y \\(t\\) los meses.</p>",
+     "checks": [
+      {
+       "p": "Producción óptima",
+       "o": [
+        "\\(x^*(t)=20+1.5t\\)",
+        "\\(x^*(t)=40+3t\\)",
+        "\\(x^*(t)=80+6t\\)",
+        "\\(x^*(t)=20+6t\\)",
+        "\\(x^*(t)=20\\)"
+       ]
+      },
+      {
+       "p": "Ritmo de cambio de la ganancia máxima en t = 0",
+       "o": [
+        "\\(120\\text{ soles/mes}\\)",
+        "\\(300\\text{ soles/mes}\\)",
+        "\\(6\\text{ soles/mes}\\)",
+        "\\(240\\text{ soles/mes}\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(t\\) fijo: \\(\\frac{\\partial G}{\\partial x}=-4x+80+6t=0\\Rightarrow x^*=\\frac{80+6t}4=20+1.5t\\). \\(\\frac{\\partial^2G}{\\partial x^2}=-4\\lt0\\): máximo.",
+      "Ganancia máxima: \\(G^*(t)=G(x^*,t)=\\frac{(80+6t)^2}8-500\\).",
+      "\\(\\frac{dG^*}{dt}=\\frac{2(80+6t)(6)}8\\); en \\(t=0\\): \\(\\frac{960}8=120\\) soles por mes. (\\(G^*(0)=300\\) soles.)"
+     ],
+     "ans": "x* = 20 + 1.5t; dG*/dt(0) = 120 soles/mes",
+     "hint": "Primero sustituye x* en G y recién deriva respecto a t.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [],
+      [
+       "param"
+      ]
+     ]
+    },
+    {
+     "id": "w9d5",
+     "lvl": 3,
+     "title": "Lata con demanda de volumen creciente",
+     "q": "<p>Una lata cilíndrica cerrada debe contener \\(V(t)=500+20t\\) cm³ (\\(t\\) en días), y siempre se diseña con el mínimo material. Para volumen \\(V\\) fijo, el óptimo cumple \\(r^3=\\frac{V}{2\\pi}\\).</p>",
+     "checks": [
+      {
+       "p": "Radio óptimo en t = 0",
+       "o": [
+        "\\(\\approx4.30\\text{ cm}\\)",
+        "\\(\\approx5.42\\text{ cm}\\)",
+        "\\(\\approx4.81\\text{ cm}\\)",
+        "\\(\\approx3.41\\text{ cm}\\)",
+        "\\(\\approx8.92\\text{ cm}\\)"
+       ]
+      },
+      {
+       "p": "Ritmo de cambio del radio óptimo en t = 0",
+       "o": [
+        "\\(\\approx0.057\\text{ cm/día}\\)",
+        "\\(\\approx0.17\\text{ cm/día}\\)",
+        "\\(\\approx3.18\\text{ cm/día}\\)",
+        "\\(\\approx0.019\\text{ cm/día}\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r^*(0)=\\sqrt[3]{\\frac{500}{2\\pi}}\\approx4.301\\) cm.",
+      "Derivamos la condición \\((r^*)^3=\\frac{V(t)}{2\\pi}\\) respecto a \\(t\\): \\(3(r^*)^2\\frac{dr^*}{dt}=\\frac{V'(t)}{2\\pi}=\\frac{20}{2\\pi}\\).",
+      "\\(\\frac{dr^*}{dt}=\\frac{20}{2\\pi\\cdot3(4.301)^2}\\approx0.0574\\) cm/día."
+     ],
+     "ans": "r*(0) ≈ 4.30 cm; dr*/dt ≈ 0.057 cm/día",
+     "hint": "Deriva implícitamente la condición de optimalidad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "param",
+       "cad"
+      ],
+      [
+       "param"
+      ]
+     ]
+    },
+    {
+     "id": "w9d6",
+     "lvl": 2,
+     "title": "Interpretar la trayectoria óptima",
+     "q": "<p>Una política de inventario es \\(x^*(t)=\\sqrt{400+20t}\\).</p>",
+     "checks": [
+      {
+       "p": "¿Qué ocurre con dx*/dt cuando t → ∞?",
+       "o": [
+        "Tiende a 0: el óptimo se estabiliza aunque siga creciendo",
+        "Tiende a \\(+\\infty\\): el inventario crece cada vez más rápido",
+        "Es constante e igual a 10",
+        "Se vuelve negativa",
+        "Tiende a 20"
+       ]
+      },
+      {
+       "p": "Si en otro modelo dx*/dt = 0 para todo t, entonces",
+       "o": [
+        "El óptimo no depende del tiempo",
+        "El óptimo es cero",
+        "No existe óptimo",
+        "El costo es constante",
+        "El modelo no es válido"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dx^*}{dt}=\\frac{20}{2\\sqrt{400+20t}}=\\frac{10}{\\sqrt{400+20t}}\\gt0\\): el óptimo siempre sube.",
+      "El denominador crece sin cota, así que \\(\\frac{dx^*}{dt}\\to0\\): los aumentos son cada vez menores.",
+      "Derivada idénticamente nula significa función constante: el mismo óptimo sirve para todo \\(t\\)."
+     ],
+     "ans": "dx*/dt → 0; con derivada nula, el óptimo es constante",
+     "hint": "Mira qué pasa con el denominador.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [
+       "param"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w9raz",
+   "name": "Sem. 9 · Razones de cambio relacionadas (repaso)",
+   "teo": "<p>Cuando varias magnitudes cambian en el tiempo y están ligadas por una ecuación (volumen, Pitágoras, semejanza), derivas esa ecuación <strong>respecto a \\(t\\)</strong> con la regla de la cadena: \\(\\frac{dV}{dt}=\\frac{dV}{dr}\\cdot\\frac{dr}{dt}\\).</p>\n<p>Sustituye los valores del instante pedido <strong>después</strong> de derivar. Si hay entrada y salida, la tasa neta es \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\).</p>",
+   "form": [
+    "Esfera: \\(V=\\frac43\\pi r^3\\Rightarrow\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\)",
+    "Cubo: \\(V=s^3,\\ S=6s^2\\)",
+    "Cono: \\(V=\\frac13\\pi r^2h\\); semejanza \\(\\frac rh=\\frac RH\\)",
+    "Pitágoras: \\(x^2+y^2=L^2\\Rightarrow x\\dot x+y\\dot y=0\\)",
+    "Balance: \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La regla de la cadena convierte una relación geométrica en una relación entre <strong>velocidades</strong>. Es la herramienta que conecta esta semana con las antiderivadas: si conoces \\(\\frac{dr}{dt}\\) en función de \\(r\\), puedes reconstruir \\(r(t)\\).</p>\n<h3>Conceptos clave</h3><ul><li>Las variables dependen de \\(t\\): al derivar \\(r^3\\) aparece \\(3r^2\\,\\frac{dr}{dt}\\).</li><li>Que \\(\\frac{dV}{dt}\\) sea constante <strong>no</strong> implica que \\(\\frac{dr}{dt}\\) lo sea.</li><li>Elimina variables con semejanza antes de derivar (cono: \\(r=\\frac RHh\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra lo que cambia.</li><li><strong>2.</strong> Escribe la ecuación que liga las magnitudes.</li><li><strong>3.</strong> Deriva respecto a \\(t\\).</li><li><strong>4.</strong> Sustituye el instante y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo inflado a 100 cm³/s: \\(100=4\\pi r^2\\frac{dr}{dt}\\Rightarrow\\frac{dr}{dt}=\\frac{25}{\\pi r^2}\\). Con \\(r=5\\) cm, \\(\\frac{dr}{dt}\\approx0.318\\) cm/s; luego va bajando.</div>\n<div class=\"err\"><b>Error común:</b> sustituir el valor del instante antes de derivar (por ejemplo, poner \\(r=5\\) en \\(V\\) y derivar una constante).</div>",
+   "ex": [
+    {
+     "id": "w9r1",
+     "lvl": 1,
+     "title": "Mancha circular",
+     "q": "<p>Un derrame forma una mancha circular cuyo radio crece a 0.5 m/min. ¿A qué ritmo crece el área cuando \\(r=20\\) m?</p>",
+     "checks": [
+      {
+       "p": "dA/dt",
+       "o": [
+        "\\(20\\pi\\approx62.8\\text{ m}^2/\\text{min}\\)",
+        "\\(40\\pi\\approx125.7\\text{ m}^2/\\text{min}\\)",
+        "\\(10\\pi\\approx31.4\\text{ m}^2/\\text{min}\\)",
+        "\\(200\\pi\\text{ m}^2/\\text{min}\\)",
+        "\\(\\pi\\text{ m}^2/\\text{min}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=\\pi r^2\\Rightarrow\\frac{dA}{dt}=2\\pi r\\frac{dr}{dt}\\).",
+      "\\(\\frac{dA}{dt}=2\\pi(20)(0.5)=20\\pi\\approx62.8\\) m²/min."
+     ],
+     "ans": "20π ≈ 62.8 m²/min",
+     "hint": "Deriva A = πr² respecto a t.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9r2",
+     "lvl": 1,
+     "title": "Globo a caudal constante",
+     "q": "<p>Un globo esférico se infla a razón constante de 100 cm³/s.</p>",
+     "checks": [
+      {
+       "p": "dr/dt cuando r = 5 cm",
+       "o": [
+        "\\(\\frac1\\pi\\approx0.318\\text{ cm/s}\\)",
+        "\\(\\frac4\\pi\\approx1.27\\text{ cm/s}\\)",
+        "\\(100\\text{ cm/s}\\)",
+        "\\(\\frac1{4\\pi}\\approx0.080\\text{ cm/s}\\)",
+        "\\(\\frac{25}{\\pi}\\approx7.96\\text{ cm/s}\\)"
+       ]
+      },
+      {
+       "p": "Cuando r = 10 cm, el radio crece",
+       "o": [
+        "4 veces más lento que en r = 5",
+        "2 veces más lento",
+        "Igual de rápido",
+        "2 veces más rápido",
+        "8 veces más lento"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\Rightarrow\\frac{dr}{dt}=\\frac{100}{4\\pi r^2}=\\frac{25}{\\pi r^2}\\).",
+      "En \\(r=5\\): \\(\\frac{25}{25\\pi}=\\frac1\\pi\\approx0.318\\) cm/s.",
+      "\\(\\frac{dr}{dt}\\) es inversamente proporcional a \\(r^2\\): al duplicar el radio, la rapidez se divide entre 4 (\\(\\approx0.080\\) cm/s)."
+     ],
+     "ans": "1/π ≈ 0.318 cm/s; 4 veces más lento",
+     "hint": "El aire nuevo se reparte sobre una superficie 4πr² cada vez mayor.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "w9r3",
+     "lvl": 2,
+     "title": "Ángulo de la escalera",
+     "q": "<p>Una escalera de 10 m está apoyada en una pared; su base se aleja a 1 m/s. Sea \\(\\theta\\) el ángulo entre la escalera y el piso. ¿Con qué rapidez cambia \\(\\theta\\) cuando la base está a 6 m de la pared?</p>",
+     "checks": [
+      {
+       "p": "dθ/dt",
+       "o": [
+        "\\(-\\tfrac18\\text{ rad/s}\\)",
+        "\\(-\\tfrac16\\text{ rad/s}\\)",
+        "\\(-\\tfrac34\\text{ rad/s}\\)",
+        "\\(\\tfrac18\\text{ rad/s}\\)",
+        "\\(-\\tfrac1{10}\\text{ rad/s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=10\\cos\\theta\\Rightarrow\\frac{dx}{dt}=-10\\sin\\theta\\,\\frac{d\\theta}{dt}\\).",
+      "Con \\(x=6\\), la altura es \\(8\\) (Pitágoras), así que \\(\\sin\\theta=\\frac8{10}\\).",
+      "\\(1=-10\\cdot0.8\\cdot\\frac{d\\theta}{dt}\\Rightarrow\\frac{d\\theta}{dt}=-\\frac18\\) rad/s: el ángulo disminuye (la escalera se acuesta)."
+     ],
+     "ans": "dθ/dt = −1/8 rad/s",
+     "hint": "Relaciona x con θ usando coseno.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      [
+       "pit"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9r4",
+     "lvl": 2,
+     "title": "Del volumen a la superficie del cubo",
+     "q": "<p>El volumen de un cubo crece a 24 cm³/s. ¿A qué ritmo crece su área superficial cuando el lado mide 4 cm?</p>",
+     "checks": [
+      {
+       "p": "dS/dt",
+       "o": [
+        "\\(24\\text{ cm}^2/\\text{s}\\)",
+        "\\(48\\text{ cm}^2/\\text{s}\\)",
+        "\\(12\\text{ cm}^2/\\text{s}\\)",
+        "\\(0.5\\text{ cm}^2/\\text{s}\\)",
+        "\\(96\\text{ cm}^2/\\text{s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(V=s^3\\Rightarrow24=3s^2\\frac{ds}{dt}=48\\frac{ds}{dt}\\Rightarrow\\frac{ds}{dt}=0.5\\) cm/s.",
+      "\\(S=6s^2\\Rightarrow\\frac{dS}{dt}=12s\\frac{ds}{dt}=12(4)(0.5)=24\\) cm²/s."
+     ],
+     "ans": "24 cm²/s",
+     "hint": "Primero halla ds/dt con el volumen.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      [
+       "rrel"
+      ]
+     ]
+    },
+    {
+     "id": "w9r5",
+     "lvl": 3,
+     "title": "Tanque cónico con fuga",
+     "q": "<p>Un tanque cónico invertido mide 8 m de alto y 6 m de diámetro arriba. Pierde agua a 20 000 cm³/min mientras se le bombea agua. Cuando la profundidad es 4 m, el nivel sube a 15 cm/min. ¿Cuál es el caudal de entrada?</p>",
+     "checks": [
+      {
+       "p": "Caudal de entrada",
+       "o": [
+        "\\(\\approx1.080\\text{ m}^3/\\text{min}\\)",
+        "\\(\\approx1.060\\text{ m}^3/\\text{min}\\)",
+        "\\(\\approx1.040\\text{ m}^3/\\text{min}\\)",
+        "\\(\\approx4.24\\text{ m}^3/\\text{min}\\)",
+        "\\(\\approx0.290\\text{ m}^3/\\text{min}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Semejanza: \\(\\frac rh=\\frac38\\Rightarrow r=\\frac{3h}8\\). \\(V=\\frac13\\pi\\big(\\frac{3h}8\\big)^2h=\\frac{3\\pi}{64}h^3\\).",
+      "\\(\\frac{dV}{dt}=\\frac{9\\pi}{64}h^2\\frac{dh}{dt}=\\frac{9\\pi}{64}(16)(0.15)\\approx1.0603\\) m³/min (en metros: 15 cm/min = 0.15 m/min).",
+      "Balance: \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\Rightarrow Q_{ent}=1.0603+0.02\\approx1.080\\) m³/min (20 000 cm³ = 0.02 m³)."
+     ],
+     "ans": "≈ 1.080 m³/min (≈ 1 080 000 cm³/min)",
+     "hint": "Pasa todo a metros y no olvides sumar lo que se pierde.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "semej"
+      ],
+      [
+       "rrel"
+      ],
+      [
+       "balance"
+      ]
+     ]
+    },
+    {
+     "id": "w9r6",
+     "lvl": 3,
+     "title": "Tanque de doble cámara",
+     "q": "<p>Un tanque tiene volumen efectivo \\(V(h)=-3h^4+40h^3-162h^2+216h\\) (m³), \\(0\\le h\\le6\\). Entra agua a 30 m³/min y sale por una fuga a \\(4h\\) m³/min.</p>",
+     "checks": [
+      {
+       "p": "dh/dt cuando h = 2 m",
+       "o": [
+        "\\(\\approx-0.458\\text{ m/min}\\)",
+        "\\(\\approx0.458\\text{ m/min}\\)",
+        "\\(\\approx0.625\\text{ m/min}\\)",
+        "\\(\\approx-0.625\\text{ m/min}\\)",
+        "\\(\\approx0.153\\text{ m/min}\\)"
+       ]
+      },
+      {
+       "p": "Interpretación",
+       "o": [
+        "El nivel baja aunque entra más agua de la que sale",
+        "El nivel sube porque entra más de lo que sale",
+        "El tanque está vacío",
+        "El nivel está quieto",
+        "El modelo indica rebose"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(V'(h)=-12h^3+120h^2-324h+216=-12(h-1)(h-3)(h-6)\\); \\(V'(2)=-48\\).",
+      "Balance: \\(V'(h)\\frac{dh}{dt}=30-4h\\Rightarrow\\frac{dh}{dt}=\\frac{30-8}{-48}\\approx-0.458\\) m/min.",
+      "Entra más de lo que sale (\\(22\\gt0\\)), pero en \\(1\\lt h\\lt3\\) el volumen efectivo <em>disminuye</em> con la altura (\\(V'\\lt0\\)), así que el nivel baja."
+     ],
+     "ans": "≈ −0.458 m/min; el nivel baja",
+     "hint": "dV/dt = V′(h)·dh/dt.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      [
+       "balance"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w9anti",
+   "name": "Sem. 9 · Antiderivadas y problemas de valor inicial",
+   "teo": "<p>Una <strong>antiderivada</strong> de \\(f\\) es una función \\(F\\) con \\(F'=f\\). Nunca hay una sola: si \\(F\\) sirve, \\(F+C\\) también, porque la derivada de una constante es cero. Por eso la respuesta general es la <strong>familia</strong> \\(F(x)+C\\).</p>\n<p>Un <strong>problema de valor inicial</strong> da la tasa \\(y'(t)\\) y un dato \\(y(t_0)=y_0\\): (1) halla \\(F+C\\), (2) sustituye el dato para fijar \\(C\\), (3) verifica <strong>derivando</strong>.</p>\n<p>Esta semana se resuelve reconociendo \"qué función, al derivarla, da la tasa\"; la notación \\(\\int f\\,dx\\) se formaliza en la Semana 10. Con aceleración: \\(v\\) es antiderivada de \\(a\\) y \\(s\\) es antiderivada de \\(v\\); cada paso usa su propia condición inicial.</p>",
+   "form": [
+    "\\(k\\to kt\\)",
+    "\\(t^n\\to\\frac{t^{n+1}}{n+1}\\ (n\\ne-1)\\)",
+    "\\(\\frac1t\\to\\ln|t|\\)",
+    "\\(e^{kt}\\to\\frac{e^{kt}}k\\)",
+    "\\(\\cos(kt)\\to\\frac{\\sin(kt)}k,\\ \\sin(kt)\\to-\\frac{\\cos(kt)}k\\)",
+    "\\(\\sec^2t\\to\\tan t\\)",
+    "\\(a(t)\\to v(t)\\to s(t)\\): dos antiderivadas, dos condiciones"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Derivar responde \"¿cómo cambia?\". Antiderivar responde la pregunta inversa: <strong>si sé cómo cambia, ¿cuál es la magnitud?</strong> La tasa sola no basta; hace falta un dato (condición inicial) para saber cuál miembro de la familia es.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(F(x)+C\\) son copias desplazadas verticalmente; \\(C\\) identifica a cada una.</li><li><strong>Validación:</strong> deriva tu respuesta; debe salir exactamente la tasa original.</li><li><strong>Unidades:</strong> si \\(y'\\) está en m/s, \\(y\\) está en m.</li><li><strong>Antiderivadas sucesivas:</strong> de \\(a(t)\\) a \\(v(t)\\) con \\(v(0)\\), luego a \\(s(t)\\) con \\(s(0)\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Término por término, busca la pareja en la tabla (ojo con el factor \\(\\frac1k\\)).</li><li><strong>2.</strong> Escribe \\(+C\\).</li><li><strong>3.</strong> Sustituye \\(t_0\\) y despeja \\(C\\).</li><li><strong>4.</strong> Verifica derivando y comprobando \\(y(t_0)=y_0\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=6t^2-4t+5\\), \\(y(1)=10\\). \\(y=2t^3-2t^2+5t+C\\); \\(10=5+C\\Rightarrow C=5\\). \\(y=2t^3-2t^2+5t+5\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=e^{-2t}+\\cos3t\\), \\(y(0)=1\\): \\(y=-\\frac12e^{-2t}+\\frac13\\sin3t+C\\), \\(C=\\frac32\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar \\(C\\), o al evaluar en \\(t_0=0\\) creer que \\(e^{0}\\) o \\(\\cos0\\) valen 0 (valen 1). También olvidar el \\(\\frac1k\\): la antiderivada de \\(e^{2t}\\) es \\(\\frac{e^{2t}}2\\), no \\(e^{2t}\\).</div>",
+   "ex": [
+    {
+     "id": "w9a1",
+     "lvl": 1,
+     "title": "Polinomio",
+     "q": "<p>Halla la familia de antiderivadas de \\(f(t)=t^3-2t+5\\).</p>",
+     "checks": [
+      {
+       "p": "Antiderivada general",
+       "o": [
+        "\\(\\frac{t^4}4-t^2+5t+C\\)",
+        "\\(3t^2-2+C\\)",
+        "\\(t^4-t^2+5t+C\\)",
+        "\\(\\frac{t^4}4-2t^2+5t+C\\)",
+        "\\(\\frac{t^4}4-t^2+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Término a término: \\(t^3\\to\\frac{t^4}4\\), \\(-2t\\to-t^2\\), \\(5\\to5t\\).",
+      "Se suma \\(C\\). Verificación: \\(\\frac{d}{dt}\\big(\\frac{t^4}4-t^2+5t\\big)=t^3-2t+5\\) ✓."
+     ],
+     "ans": "t⁴/4 − t² + 5t + C",
+     "hint": "Sube el exponente en 1 y divide entre el nuevo exponente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "anti",
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9a2",
+     "lvl": 1,
+     "title": "Exponencial: el factor 1/k",
+     "q": "<p>¿Cuál es una antiderivada de \\(f(t)=e^{2t}\\)?</p>",
+     "checks": [
+      {
+       "p": "Antiderivada",
+       "o": [
+        "\\(\\frac{e^{2t}}2+C\\)",
+        "\\(2e^{2t}+C\\)",
+        "\\(e^{2t}+C\\)",
+        "\\(\\frac{e^{2t+1}}{2t+1}+C\\)",
+        "\\(e^{t^2}+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Por la regla de la cadena, \\(\\frac{d}{dt}e^{2t}=2e^{2t}\\): sobra un 2.",
+      "Compensamos dividiendo: \\(\\frac{d}{dt}\\frac{e^{2t}}2=e^{2t}\\) ✓."
+     ],
+     "ans": "e^(2t)/2 + C",
+     "hint": "Deriva cada opción y mira cuál devuelve e^(2t).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9a3",
+     "lvl": 1,
+     "title": "Trigonométricas",
+     "q": "<p>Halla la antiderivada general de \\(f(t)=\\sin(2t)+3\\cos t\\).</p>",
+     "checks": [
+      {
+       "p": "Antiderivada general",
+       "o": [
+        "\\(-\\frac{\\cos2t}2+3\\sin t+C\\)",
+        "\\(\\frac{\\cos2t}2+3\\sin t+C\\)",
+        "\\(-2\\cos2t+3\\sin t+C\\)",
+        "\\(-\\frac{\\cos2t}2-3\\sin t+C\\)",
+        "\\(2\\cos2t-3\\sin t+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sin(kt)\\to-\\frac{\\cos(kt)}k\\): \\(\\sin2t\\to-\\frac{\\cos2t}2\\).",
+      "\\(\\cos t\\to\\sin t\\): \\(3\\cos t\\to3\\sin t\\).",
+      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac{\\cos2t}2\\big)=\\sin2t\\) ✓."
+     ],
+     "ans": "−cos(2t)/2 + 3 sin t + C",
+     "hint": "La derivada de cos es −sen: cuida el signo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "tabla"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9a4",
+     "lvl": 2,
+     "title": "Combinación con coeficientes",
+     "q": "<p>Halla la antiderivada general de \\(f(t)=5e^{-3t}-2\\sin(4t)\\).</p>",
+     "checks": [
+      {
+       "p": "Antiderivada general",
+       "o": [
+        "\\(-\\frac53e^{-3t}+\\frac12\\cos4t+C\\)",
+        "\\(\\frac53e^{-3t}+\\frac12\\cos4t+C\\)",
+        "\\(-15e^{-3t}+8\\cos4t+C\\)",
+        "\\(-\\frac53e^{-3t}-\\frac12\\cos4t+C\\)",
+        "\\(-\\frac53e^{-3t}+2\\cos4t+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^{-3t}\\to\\frac{e^{-3t}}{-3}\\), así que \\(5e^{-3t}\\to-\\frac53e^{-3t}\\).",
+      "\\(\\sin4t\\to-\\frac{\\cos4t}4\\), así que \\(-2\\sin4t\\to+\\frac24\\cos4t=\\frac12\\cos4t\\).",
+      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac53e^{-3t}\\big)=5e^{-3t}\\) y \\(\\frac{d}{dt}\\big(\\frac12\\cos4t\\big)=-2\\sin4t\\) ✓."
+     ],
+     "ans": "−(5/3)e^(−3t) + (1/2)cos(4t) + C",
+     "hint": "Dos signos menos se cancelan en el término del seno.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "tabla"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9a5",
+     "lvl": 2,
+     "title": "Valor inicial fuera de t = 0",
+     "q": "<p>Halla \\(y(t)\\) si \\(y'(t)=6t^2+2\\) y \\(y(1)=4\\).</p>",
+     "checks": [
+      {
+       "p": "Solución",
+       "o": [
+        "\\(y=2t^3+2t\\)",
+        "\\(y=2t^3+2t+4\\)",
+        "\\(y=2t^3+2t+C\\)",
+        "\\(y=12t\\)",
+        "\\(y=6t^3+2t-4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Antiderivada general: \\(y=2t^3+2t+C\\).",
+      "\\(y(1)=2+2+C=4\\Rightarrow C=0\\).",
+      "Verificación: \\(y'=6t^2+2\\) ✓ y \\(y(1)=4\\) ✓. Que \\(C\\) salga 0 no significa que se pueda omitir: hay que calcularla."
+     ],
+     "ans": "y = 2t³ + 2t",
+     "hint": "Sustituye t = 1, no t = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9a6",
+     "lvl": 2,
+     "title": "Raíz y logaritmo",
+     "q": "<p>\\(y'(t)=\\sqrt t+\\frac1t\\) para \\(t\\gt0\\), con \\(y(1)=2\\). Calcula \\(y(4)\\).</p>",
+     "checks": [
+      {
+       "p": "y(4)",
+       "o": [
+        "\\(\\frac{20}3+\\ln4\\approx8.05\\)",
+        "\\(\\frac{16}3+\\ln4\\approx6.72\\)",
+        "\\(\\frac{20}3\\approx6.67\\)",
+        "\\(4+\\ln4\\approx5.39\\)",
+        "\\(\\frac{22}3+\\ln4\\approx8.72\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sqrt t=t^{1/2}\\to\\frac{t^{3/2}}{3/2}=\\frac23t^{3/2}\\); \\(\\frac1t\\to\\ln t\\). \\(y=\\frac23t^{3/2}+\\ln t+C\\).",
+      "\\(y(1)=\\frac23+0+C=2\\Rightarrow C=\\frac43\\).",
+      "\\(y(4)=\\frac23\\cdot8+\\ln4+\\frac43=\\frac{20}3+\\ln4\\approx8.05\\)."
+     ],
+     "ans": "y(4) = 20/3 + ln 4 ≈ 8.05",
+     "hint": "4^(3/2) = 8 y ln 1 = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9a7",
+     "lvl": 2,
+     "title": "Valor inicial trigonométrico",
+     "q": "<p>\\(y'(t)=\\cos t+\\sin t\\), \\(y(0)=1\\). Calcula \\(y(\\pi)\\).</p>",
+     "checks": [
+      {
+       "p": "y(π)",
+       "o": [
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(-1\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=\\sin t-\\cos t+C\\).",
+      "\\(y(0)=0-1+C=1\\Rightarrow C=2\\) (recuerda \\(\\cos0=1\\)).",
+      "\\(y(\\pi)=0-(-1)+2=3\\)."
+     ],
+     "ans": "y(π) = 3",
+     "hint": "cos 0 = 1 y cos π = −1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9a8",
+     "lvl": 3,
+     "title": "De la aceleración a la posición",
+     "q": "<p>Una partícula tiene aceleración \\(a(t)=4-t\\) (m/s²), con \\(v(0)=0\\) y \\(s(0)=5\\) m.</p>",
+     "checks": [
+      {
+       "p": "Posición",
+       "o": [
+        "\\(s(t)=2t^2-\\frac{t^3}6+5\\)",
+        "\\(s(t)=4t-\\frac{t^2}2+5\\)",
+        "\\(s(t)=2t^2-\\frac{t^3}3+5\\)",
+        "\\(s(t)=2t^2-\\frac{t^3}6\\)",
+        "\\(s(t)=4t^2-\\frac{t^3}6+5\\)"
+       ]
+      },
+      {
+       "p": "Velocidad máxima y posición en t = 6 s",
+       "o": [
+        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=41\\text{ m}\\)",
+        "\\(v_{máx}=4\\text{ m/s};\\ s(6)=41\\text{ m}\\)",
+        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=36\\text{ m}\\)",
+        "\\(v_{máx}=16\\text{ m/s};\\ s(6)=5\\text{ m}\\)",
+        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=77\\text{ m}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(v=4t-\\frac{t^2}2+C_1\\); \\(v(0)=0\\Rightarrow C_1=0\\).",
+      "\\(s=2t^2-\\frac{t^3}6+C_2\\); \\(s(0)=5\\Rightarrow C_2=5\\).",
+      "\\(v\\) es máxima donde \\(v'=a=0\\): \\(t=4\\), \\(v(4)=16-8=8\\) m/s (y \\(a'=-1\\lt0\\)).",
+      "\\(s(6)=72-36+5=41\\) m."
+     ],
+     "ans": "s = 2t² − t³/6 + 5; v máx = 8 m/s; s(6) = 41 m",
+     "hint": "Dos antiderivadas, una condición inicial para cada una.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "crec"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9a9",
+     "lvl": 3,
+     "title": "Cohete con empuje variable",
+     "q": "<p>Un cohete parte del reposo desde una plataforma de 50 m con aceleración \\(a(t)=4t\\) (m/s²) durante 20 s; luego se apaga el motor y solo actúa la gravedad (\\(a=-9.8\\) m/s²).</p>",
+     "checks": [
+      {
+       "p": "Altura y velocidad al apagar el motor",
+       "o": [
+        "\\(s(20)\\approx5\\,383\\text{ m},\\ v(20)=800\\text{ m/s}\\)",
+        "\\(s(20)\\approx5\\,333\\text{ m},\\ v(20)=800\\text{ m/s}\\)",
+        "\\(s(20)=850\\text{ m},\\ v(20)=80\\text{ m/s}\\)",
+        "\\(s(20)\\approx10\\,717\\text{ m},\\ v(20)=1\\,600\\text{ m/s}\\)",
+        "\\(s(20)\\approx5\\,383\\text{ m},\\ v(20)=80\\text{ m/s}\\)"
+       ]
+      },
+      {
+       "p": "Altitud máxima",
+       "o": [
+        "\\(\\approx38\\,036\\text{ m}\\)",
+        "\\(\\approx5\\,383\\text{ m}\\)",
+        "\\(\\approx32\\,653\\text{ m}\\)",
+        "\\(\\approx70\\,689\\text{ m}\\)",
+        "\\(\\approx43\\,419\\text{ m}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Tramo 1: \\(v=2t^2\\) (\\(v(0)=0\\)), \\(s=\\frac23t^3+50\\) (\\(s(0)=50\\)).",
+      "En \\(t=20\\): \\(v=800\\) m/s, \\(s=\\frac23(8000)+50\\approx5\\,383.3\\) m.",
+      "Tramo 2: \\(v=800-9.8(t-20)\\), que se anula a los \\(\\frac{800}{9.8}\\approx81.6\\) s de apagado.",
+      "Subida extra: \\(\\frac{800^2}{2\\cdot9.8}\\approx32\\,653\\) m. Altitud máxima \\(\\approx5\\,383+32\\,653\\approx38\\,036\\) m."
+     ],
+     "ans": "s(20) ≈ 5 383 m, v(20) = 800 m/s; altura máx. ≈ 38 036 m",
+     "hint": "Empalma: las condiciones del tramo 2 son los valores finales del tramo 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9a10",
+     "lvl": 3,
+     "title": "Máxima distancia al origen",
+     "q": "<p>Una partícula se mueve con \\(v(t)=6t-2t^2\\) (m/s), \\(t\\in[0,3]\\), y \\(s(0)=0\\).</p>",
+     "checks": [
+      {
+       "p": "Instante y posición de máxima distancia",
+       "o": [
+        "\\(t=3\\text{ s},\\ s=9\\text{ m}\\)",
+        "\\(t=1.5\\text{ s},\\ s=4.5\\text{ m}\\)",
+        "\\(t=3\\text{ s},\\ s=0\\text{ m}\\)",
+        "\\(t=1.5\\text{ s},\\ s=9\\text{ m}\\)",
+        "\\(t=2\\text{ s},\\ s\\approx6.67\\text{ m}\\)"
+       ]
+      },
+      {
+       "p": "Aceleración en t = 1 y t = 2.5",
+       "o": [
+        "\\(a(1)=2,\\ a(2.5)=-4\\text{ m/s}^2\\)",
+        "\\(a(1)=4,\\ a(2.5)=2.5\\text{ m/s}^2\\)",
+        "\\(a(1)=-2,\\ a(2.5)=4\\text{ m/s}^2\\)",
+        "\\(a(1)=2,\\ a(2.5)=4\\text{ m/s}^2\\)",
+        "\\(a(1)=6,\\ a(2.5)=-4\\text{ m/s}^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(s(t)=3t^2-\\frac23t^3\\) (\\(C=0\\)).",
+      "\\(s'=v=2t(3-t)\\gt0\\) en \\((0,3)\\): \\(s\\) crece todo el intervalo, así que el máximo está en el borde \\(t=3\\): \\(s(3)=27-18=9\\) m.",
+      "\\(a=v'=6-4t\\): \\(a(1)=2\\) (acelera), \\(a(2.5)=-4\\) (frena; en \\(t=1.5\\) la velocidad fue máxima).",
+      "Para \\(t\\gt3\\) la velocidad sería negativa y regresaría; el modelo solo se plantea en \\([0,3]\\)."
+     ],
+     "ans": "t = 3 s, s = 9 m; a(1) = 2, a(2.5) = −4 m/s²",
+     "hint": "El máximo de la velocidad (t = 1.5) no es el máximo de la posición.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti",
+       "pvi"
+      ],
+      [
+       "absc"
+      ],
+      [],
+      [
+       "validez"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w9edo",
+   "name": "Sem. 9 · EDO por variables separables (introducción)",
+   "teo": "<p>Una EDO de primer orden relaciona \\(y\\), \\(t\\) y \\(y'\\). Es <strong>separable</strong> si se puede escribir \\(\\frac{dy}{dt}=g(t)\\,h(y)\\): un factor solo con \\(t\\) por otro solo con \\(y\\).</p>\n<p>Protocolo: (1) separa \\(\\frac{dy}{h(y)}=g(t)\\,dt\\); (2) antideriva cada lado; (3) aplica la condición inicial; (4) despeja \\(y(t)\\); (5) verifica derivando.</p>\n<p>El caso más importante es \\(y'=ky\\Rightarrow y=y_0e^{kt}\\) (crecimiento si \\(k\\gt0\\), decaimiento si \\(k\\lt0\\)), y su variante \\(T'=-k(T-T_a)\\Rightarrow T=T_a+(T_0-T_a)e^{-kt}\\) (enfriamiento de Newton).</p>",
+   "form": [
+    "Separable: \\(\\frac{dy}{dt}=g(t)h(y)\\Rightarrow\\frac{dy}{h(y)}=g(t)\\,dt\\)",
+    "\\(y'=ky\\Rightarrow y=y_0e^{kt}\\)",
+    "Newton: \\(T=T_a+(T_0-T_a)e^{-kt}\\)",
+    "Vida media: \\(k=\\frac{\\ln2}{t_{1/2}}\\)",
+    "\\(\\frac{dy}{y}\\to\\ln|y|\\), \\(y\\,dy\\to\\frac{y^2}2\\), \\(y^{-1/2}dy\\to2\\sqrt y\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>A veces la tasa de cambio depende del <strong>estado actual</strong> (\\(y\\)) y no solo del tiempo. Entonces no basta con antiderivar \\(y'(t)\\): hay que separar las variables y antiderivar a cada lado.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Separable:</strong> \\(y'=ty\\), \\(y'=\\frac ty\\), \\(y'=e^{t-y}=e^te^{-y}\\) lo son; \\(y'=t+y\\) no (es una suma, no un producto).</li><li><strong>Una sola constante:</strong> las constantes de ambos lados se juntan en una.</li><li><strong>Exponencial:</strong> de \\(\\ln|y|=kt+K\\) sale \\(y=Ae^{kt}\\), con \\(A=y(0)\\).</li><li><strong>Asíntota:</strong> en Newton, \\(T\\to T_a\\); en la logística, \\(y\\to\\) capacidad de carga.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe la EDO como producto \\(g(t)h(y)\\).</li><li><strong>2.</strong> Pasa \\(h(y)\\) a dividir al lado de \\(dy\\).</li><li><strong>3.</strong> Antideriva ambos lados y añade una constante.</li><li><strong>4.</strong> Usa la condición inicial y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo a 100 cm³/s con \\(r(0)=5\\): \\(r^2dr=\\frac{25}\\pi dt\\Rightarrow\\frac{r^3}3=\\frac{25}\\pi t+C\\), \\(C=\\frac{125}3\\), \\(r(t)=\\sqrt[3]{\\frac{75}\\pi t+125}\\). El radio crece como \\(t^{1/3}\\), cada vez más lento.</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> café a 90 °C en ambiente de 20 °C, \\(k=0.05\\): \\(T=20+70e^{-0.05t}\\); llega a 60 °C en \\(\\approx11.2\\) min.</div>\n<div class=\"err\"><b>Error común:</b> aplicar la condición inicial antes de despejar mal el exponente, o escribir \\(e^{kt+K}=e^{kt}+e^K\\) (en realidad es \\(e^K\\cdot e^{kt}\\)).</div>",
+   "ex": [
+    {
+     "id": "w9e1",
+     "lvl": 1,
+     "title": "Crecimiento exponencial",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=2y\\) con \\(y(0)=3\\) y calcula \\(y(1)\\).</p>",
+     "checks": [
+      {
+       "p": "y(1)",
+       "o": [
+        "\\(3e^2\\approx22.17\\)",
+        "\\(3e\\approx8.15\\)",
+        "\\(e^6\\approx403.4\\)",
+        "\\(9\\)",
+        "\\(3+e^2\\approx10.39\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Separando: \\(\\frac{dy}y=2\\,dt\\Rightarrow\\ln|y|=2t+K\\Rightarrow y=Ae^{2t}\\).",
+      "\\(y(0)=A=3\\): \\(y=3e^{2t}\\).",
+      "\\(y(1)=3e^2\\approx22.17\\)."
+     ],
+     "ans": "y = 3e^(2t); y(1) ≈ 22.17",
+     "hint": "La antiderivada de 1/y es ln|y|.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9e2",
+     "lvl": 1,
+     "title": "¿Cuál no es separable?",
+     "q": "<p>¿Cuál de estas EDO <strong>no</strong> es separable?</p>",
+     "checks": [
+      {
+       "p": "No es separable",
+       "o": [
+        "\\(\\frac{dy}{dt}=t+y\\)",
+        "\\(\\frac{dy}{dt}=ty\\)",
+        "\\(\\frac{dy}{dt}=e^{t-y}\\)",
+        "\\(\\frac{dy}{dt}=y\\sin t\\)",
+        "\\(\\frac{dy}{dt}=\\frac ty\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Separable significa \\(g(t)\\cdot h(y)\\). \\(ty\\), \\(y\\sin t\\) y \\(\\frac ty=t\\cdot\\frac1y\\) ya son productos.",
+      "\\(e^{t-y}=e^t\\cdot e^{-y}\\) también es producto.",
+      "\\(t+y\\) es una suma y no se puede factorizar así: no es separable (se resuelve con otra técnica más adelante)."
+     ],
+     "ans": "dy/dt = t + y",
+     "hint": "Busca la que es una suma y no un producto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ]
+     ]
+    },
+    {
+     "id": "w9e3",
+     "lvl": 2,
+     "title": "Coeficiente que depende de t",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=3t^2y\\), \\(y(0)=1\\).</p>",
+     "checks": [
+      {
+       "p": "Solución",
+       "o": [
+        "\\(y=e^{t^3}\\)",
+        "\\(y=e^{3t^2}\\)",
+        "\\(y=t^3+1\\)",
+        "\\(y=e^{t^3}+1\\)",
+        "\\(y=e^{6t}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dy}y=3t^2dt\\Rightarrow\\ln|y|=t^3+K\\).",
+      "\\(y=Ae^{t^3}\\); \\(y(0)=A=1\\).",
+      "Verificación: \\(y'=3t^2e^{t^3}=3t^2y\\) ✓."
+     ],
+     "ans": "y = e^(t³)",
+     "hint": "La antiderivada de 3t² es t³.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w9e4",
+     "lvl": 2,
+     "title": "Separable con y en el denominador",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac ty\\), \\(y(0)=2\\) (con \\(y\\gt0\\)) y calcula \\(y(2\\sqrt3)\\).</p>",
+     "checks": [
+      {
+       "p": "y(2√3)",
+       "o": [
+        "\\(4\\)",
+        "\\(2\\)",
+        "\\(2\\sqrt3\\)",
+        "\\(\\sqrt{10}\\)",
+        "\\(16\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y\\,dy=t\\,dt\\Rightarrow\\frac{y^2}2=\\frac{t^2}2+K\\Rightarrow y^2=t^2+C\\).",
+      "\\(y(0)=2\\Rightarrow C=4\\): \\(y=\\sqrt{t^2+4}\\) (rama positiva).",
+      "\\(y(2\\sqrt3)=\\sqrt{12+4}=4\\)."
+     ],
+     "ans": "y = √(t² + 4); y(2√3) = 4",
+     "hint": "Multiplica ambos lados por y antes de antiderivar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9e5",
+     "lvl": 2,
+     "title": "Exponencial de una diferencia",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=e^{t-y}\\) con \\(y(0)=\\ln2\\) y calcula \\(y(\\ln3)\\).</p>",
+     "checks": [
+      {
+       "p": "y(ln 3)",
+       "o": [
+        "\\(\\ln4\\)",
+        "\\(\\ln3\\)",
+        "\\(\\ln5\\)",
+        "\\(\\ln6\\)",
+        "\\(\\ln3+\\ln2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^{t-y}=e^te^{-y}\\Rightarrow e^y\\,dy=e^t\\,dt\\Rightarrow e^y=e^t+C\\).",
+      "\\(y(0)=\\ln2\\Rightarrow2=1+C\\Rightarrow C=1\\): \\(y=\\ln(e^t+1)\\).",
+      "\\(y(\\ln3)=\\ln(3+1)=\\ln4\\)."
+     ],
+     "ans": "y = ln(e^t + 1); y(ln 3) = ln 4",
+     "hint": "Separa e^(−y) pasándolo a multiplicar como e^y.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9e6",
+     "lvl": 2,
+     "title": "Enfriamiento con dato experimental",
+     "q": "<p>Un café a 90 °C se enfría en una habitación a 22 °C según \\(\\frac{dT}{dt}=-k(T-22)\\). A los 10 min está a 65 °C.</p>",
+     "checks": [
+      {
+       "p": "Constante k",
+       "o": [
+        "\\(k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\text{ min}^{-1}\\)",
+        "\\(k=\\frac1{10}\\ln\\frac{90}{65}\\approx0.0325\\text{ min}^{-1}\\)",
+        "\\(k=\\frac{25}{10}=2.5\\text{ min}^{-1}\\)",
+        "\\(k=\\frac1{10}\\ln\\frac{43}{68}\\approx-0.0458\\text{ min}^{-1}\\)",
+        "\\(k=0.05\\text{ min}^{-1}\\)"
+       ]
+      },
+      {
+       "p": "Tiempo hasta 40 °C",
+       "o": [
+        "\\(\\approx29.0\\text{ min}\\)",
+        "\\(\\approx20.8\\text{ min}\\)",
+        "\\(\\approx40.9\\text{ min}\\)",
+        "\\(\\approx16.0\\text{ min}\\)",
+        "\\(\\approx10.0\\text{ min}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Separando: \\(\\frac{dT}{T-22}=-k\\,dt\\Rightarrow T=22+Ae^{-kt}\\); \\(T(0)=90\\Rightarrow A=68\\).",
+      "\\(65=22+68e^{-10k}\\Rightarrow e^{-10k}=\\frac{43}{68}\\Rightarrow k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.04583\\).",
+      "\\(40=22+68e^{-kt}\\Rightarrow e^{-kt}=\\frac{18}{68}\\Rightarrow t=\\frac{\\ln(68/18)}k\\approx29.0\\) min.",
+      "Cuando \\(t\\to\\infty\\), \\(T\\to22\\) °C: el café se acerca a la temperatura ambiente sin cruzarla."
+     ],
+     "ans": "k ≈ 0.0458 min⁻¹; t ≈ 29.0 min",
+     "hint": "Trabaja con la diferencia T − 22, no con T.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep",
+       "newton"
+      ],
+      [
+       "newton"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "w9e7",
+     "lvl": 3,
+     "title": "Vaciado de un tanque (Torricelli)",
+     "q": "<p>La altura de agua en un tanque cumple \\(\\frac{dh}{dt}=-0.1\\sqrt h\\) (m, s), con \\(h(0)=5\\) m.</p>",
+     "checks": [
+      {
+       "p": "Altura a los 20 s",
+       "o": [
+        "\\(\\approx1.53\\text{ m}\\)",
+        "\\(\\approx3.00\\text{ m}\\)",
+        "\\(\\approx1.24\\text{ m}\\)",
+        "\\(\\approx3.21\\text{ m}\\)",
+        "\\(0\\text{ m}\\)"
+       ]
+      },
+      {
+       "p": "Tiempo total de vaciado",
+       "o": [
+        "\\(\\approx44.7\\text{ s}\\)",
+        "\\(50\\text{ s}\\)",
+        "\\(\\approx22.4\\text{ s}\\)",
+        "\\(\\approx89.4\\text{ s}\\)",
+        "\\(\\approx11.2\\text{ s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(h^{-1/2}dh=-0.1\\,dt\\Rightarrow2\\sqrt h=-0.1t+C\\); \\(h(0)=5\\Rightarrow C=2\\sqrt5\\).",
+      "\\(\\sqrt h=\\sqrt5-0.05t\\Rightarrow h(t)=(\\sqrt5-0.05t)^2\\).",
+      "\\(h(20)=(2.236-1)^2\\approx1.53\\) m.",
+      "Se vacía cuando \\(\\sqrt5-0.05t=0\\Rightarrow t=\\frac{\\sqrt5}{0.05}\\approx44.7\\) s. A diferencia de un vaciado lineal, baja rápido al inicio y despacio al final."
+     ],
+     "ans": "h(20) ≈ 1.53 m; se vacía en ≈ 44.7 s",
+     "hint": "La antiderivada de h^(−1/2) es 2√h.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      [],
+      [
+       "validez"
+      ]
+     ]
+    },
+    {
+     "id": "w9e8",
+     "lvl": 3,
+     "title": "Vida media",
+     "q": "<p>El yodo-131 tiene vida media de 8 días y decae según \\(\\frac{dm}{dt}=-km\\). Si hay 80 mg, ¿cuándo quedarán 5 mg?</p>",
+     "checks": [
+      {
+       "p": "Tiempo",
+       "o": [
+        "\\(32\\text{ días}\\)",
+        "\\(16\\text{ días}\\)",
+        "\\(128\\text{ días}\\)",
+        "\\(40\\text{ días}\\)",
+        "\\(\\approx22.2\\text{ días}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m=80e^{-kt}\\) y \\(m(8)=40\\Rightarrow k=\\frac{\\ln2}8\\approx0.0866\\) día\\(^{-1}\\).",
+      "\\(5=80e^{-kt}\\Rightarrow e^{-kt}=\\frac1{16}\\Rightarrow t=\\frac{\\ln16}k=\\frac{4\\ln2}{\\ln2/8}=32\\) días.",
+      "Atajo: \\(80\\to40\\to20\\to10\\to5\\) son 4 vidas medias \\(=32\\) días."
+     ],
+     "ans": "32 días",
+     "hint": "¿Cuántas veces hay que dividir 80 entre 2 para llegar a 5?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "semivida"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9e9",
+     "lvl": 3,
+     "title": "Globo: de la tasa al radio",
+     "q": "<p>Un globo esférico se infla a 50 cm³/s y su radio inicial es 3 cm. Usa \\(\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\).</p>",
+     "checks": [
+      {
+       "p": "Radio en función del tiempo",
+       "o": [
+        "\\(r(t)=\\sqrt[3]{\\frac{37.5}\\pi t+27}\\)",
+        "\\(r(t)=\\sqrt[3]{\\frac{75}\\pi t+125}\\)",
+        "\\(r(t)=3+\\frac{12.5}\\pi t\\)",
+        "\\(r(t)=\\sqrt[3]{\\frac{12.5}\\pi t+27}\\)",
+        "\\(r(t)=\\sqrt[3]{\\frac{37.5}\\pi t}+3\\)"
+       ]
+      },
+      {
+       "p": "r(10)",
+       "o": [
+        "\\(\\approx5.27\\text{ cm}\\)",
+        "\\(\\approx42.8\\text{ cm}\\)",
+        "\\(\\approx3.79\\text{ cm}\\)",
+        "\\(\\approx6.81\\text{ cm}\\)",
+        "\\(\\approx4.18\\text{ cm}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(50=4\\pi r^2\\frac{dr}{dt}\\Rightarrow r^2dr=\\frac{12.5}\\pi dt\\).",
+      "\\(\\frac{r^3}3=\\frac{12.5}\\pi t+C\\Rightarrow r^3=\\frac{37.5}\\pi t+3C\\); con \\(r(0)=3\\): \\(3C=27\\).",
+      "\\(r(10)=\\sqrt[3]{\\frac{375}\\pi+27}\\approx\\sqrt[3]{146.4}\\approx5.27\\) cm. El radio crece como \\(t^{1/3}\\): cóncavo, cada vez más lento."
+     ],
+     "ans": "r(t) = ∛(37.5t/π + 27); r(10) ≈ 5.27 cm",
+     "hint": "Separa r² dr y antideriva: r³/3.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rrel"
+      ],
+      [
+       "sep",
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w9e10",
+     "lvl": 2,
+     "title": "Verificar una solución logística",
+     "q": "<p>Los infectados en una población cumplen \\(I'=0.2\\,I\\big(1-\\frac I{1000}\\big)\\), \\(I(0)=50\\). Se propone \\(I(t)=\\dfrac{1000}{1+19e^{-0.2t}}\\).</p>",
+     "checks": [
+      {
+       "p": "Límite a largo plazo",
+       "o": [
+        "\\(1000\\)",
+        "\\(50\\)",
+        "\\(\\infty\\)",
+        "\\(950\\)",
+        "\\(0\\)"
+       ]
+      },
+      {
+       "p": "¿Cuándo llega a 500 infectados?",
+       "o": [
+        "\\(t=\\frac{\\ln19}{0.2}\\approx14.7\\)",
+        "\\(t=\\frac{\\ln2}{0.2}\\approx3.5\\)",
+        "\\(t=\\frac{19}{0.2}=95\\)",
+        "\\(t=\\frac{\\ln10}{0.2}\\approx11.5\\)",
+        "\\(t=\\frac{\\ln19}{2}\\approx1.47\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Condición inicial: \\(I(0)=\\frac{1000}{1+19}=50\\) ✓. Derivando: \\(I'=\\frac{1000\\cdot19\\cdot0.2e^{-0.2t}}{(1+19e^{-0.2t})^2}\\), que coincide con \\(0.2I(1-\\frac I{1000})\\) ✓.",
+      "Si \\(t\\to\\infty\\), \\(e^{-0.2t}\\to0\\) y \\(I\\to1000\\): la epidemia se satura en la capacidad de la población.",
+      "\\(500=\\frac{1000}{1+19e^{-0.2t}}\\Rightarrow19e^{-0.2t}=1\\Rightarrow t=\\frac{\\ln19}{0.2}\\approx14.7\\)."
+     ],
+     "ans": "→ 1000; I = 500 en t ≈ 14.7",
+     "hint": "Mitad de la capacidad: el denominador debe valer 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "verifd"
+      ],
+      [],
+      []
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "simEx": [
+  {
+   "id": "w9s1",
+   "lvl": 3,
+   "title": "Ventana normanda",
+   "q": "<p>Una ventana es un rectángulo coronado por un semicírculo (diámetro igual al ancho \\(x\\)). Su perímetro total es 6 m. ¿Qué ancho deja pasar la mayor cantidad de luz (área máxima)?</p>",
+   "checks": [
+    {
+     "p": "Ancho óptimo",
+     "o": [
+      "\\(x=\\frac{12}{4+\\pi}\\approx1.68\\text{ m}\\)",
+      "\\(x=\\frac{6}{2+\\pi}\\approx1.17\\text{ m}\\)",
+      "\\(x=2\\text{ m}\\)",
+      "\\(x=\\frac{12}{\\pi}\\approx3.82\\text{ m}\\)",
+      "\\(x=\\frac{6}{4+\\pi}\\approx0.84\\text{ m}\\)"
+     ]
+    },
+    {
+     "p": "Altura del rectángulo",
+     "o": [
+      "\\(y=\\frac x2\\approx0.84\\text{ m}\\)",
+      "\\(y=x\\approx1.68\\text{ m}\\)",
+      "\\(y=2x\\approx3.36\\text{ m}\\)",
+      "\\(y=1\\text{ m}\\)",
+      "\\(y=\\frac x4\\approx0.42\\text{ m}\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Perímetro: base \\(x\\), dos lados \\(y\\) y medio círculo \\(\\frac{\\pi x}2\\): \\(x+2y+\\frac{\\pi x}2=6\\Rightarrow y=\\frac{6-x-\\pi x/2}2\\).",
+    "Área: \\(A=xy+\\frac{\\pi x^2}8=3x-x^2\\big(\\tfrac12+\\tfrac\\pi8\\big)\\).",
+    "\\(A'=3-x\\big(1+\\tfrac\\pi4\\big)=0\\Rightarrow x=\\frac{12}{4+\\pi}\\approx1.68\\) m; \\(A''\\lt0\\): máximo.",
+    "\\(y=\\frac{6-1.68(1+\\pi/2)}2\\approx0.84\\) m \\(=\\frac x2\\)."
+   ],
+   "ans": "x = 12/(4+π) ≈ 1.68 m; y ≈ 0.84 m",
+   "hint": "El semicírculo aporta πx/2 al perímetro y πx²/8 al área.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "rest"
+    ],
+    [],
+    [
+     "f2c"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "w9s2",
+   "lvl": 3,
+   "title": "Reconstruir y analizar",
+   "q": "<p>Se sabe que \\(f'(x)=3x^2-12\\) y \\(f(0)=5\\). Halla \\(f\\) y sus extremos locales.</p>",
+   "checks": [
+    {
+     "p": "f(x)",
+     "o": [
+      "\\(x^3-12x+5\\)",
+      "\\(x^3-12x\\)",
+      "\\(6x+5\\)",
+      "\\(3x^3-12x+5\\)",
+      "\\(x^3-12+5\\)"
+     ]
+    },
+    {
+     "p": "Extremos locales",
+     "o": [
+      "\\(\\text{máx. }(-2,21),\\ \\text{mín. }(2,-11)\\)",
+      "\\(\\text{mín. }(-2,21),\\ \\text{máx. }(2,-11)\\)",
+      "\\(\\text{máx. }(-2,16),\\ \\text{mín. }(2,-16)\\)",
+      "\\(\\text{máx. }(0,5)\\)",
+      "\\(\\text{máx. }(-2,-11),\\ \\text{mín. }(2,21)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Antiderivada: \\(f=x^3-12x+C\\); \\(f(0)=5\\Rightarrow C=5\\).",
+    "\\(f'=3(x-2)(x+2)=0\\Rightarrow x=\\pm2\\); \\(f''=6x\\).",
+    "\\(f''(-2)\\lt0\\): máximo \\(f(-2)=-8+24+5=21\\). \\(f''(2)\\gt0\\): mínimo \\(f(2)=8-24+5=-11\\)."
+   ],
+   "ans": "f = x³ − 12x + 5; máx. (−2, 21), mín. (2, −11)",
+   "hint": "Primero la constante con f(0); después la tabla de signos.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "anti",
+     "pvi"
+    ],
+    [
+     "crec"
+    ],
+    [
+     "f2c"
+    ]
+   ]
+  },
+  {
+   "id": "w9s3",
+   "lvl": 2,
+   "title": "Pieza que se enfría",
+   "q": "<p>Una pieza sale del horno a 200 °C a un ambiente de 25 °C y cumple \\(\\frac{dT}{dt}=-0.1(T-25)\\) (min). ¿Cuándo llega a 60 °C?</p>",
+   "checks": [
+    {
+     "p": "Tiempo",
+     "o": [
+      "\\(10\\ln5\\approx16.1\\text{ min}\\)",
+      "\\(10\\ln\\frac{200}{60}\\approx12.0\\text{ min}\\)",
+      "\\(\\ln5\\approx1.61\\text{ min}\\)",
+      "\\(35\\text{ min}\\)",
+      "\\(10\\ln\\frac{175}{25}\\approx19.5\\text{ min}\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Separando: \\(T=25+175e^{-0.1t}\\).",
+    "\\(60=25+175e^{-0.1t}\\Rightarrow e^{-0.1t}=\\frac{35}{175}=\\frac15\\).",
+    "\\(t=10\\ln5\\approx16.1\\) min."
+   ],
+   "ans": "t = 10 ln 5 ≈ 16.1 min",
+   "hint": "Trabaja con T − 25.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sep",
+     "newton"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "w9s4",
+   "lvl": 3,
+   "title": "Caja con base más cara",
+   "q": "<p>Una caja cerrada de base cuadrada debe tener 2 000 cm³. El material de la base y la tapa cuesta el doble que el de las caras laterales. ¿Qué dimensiones minimizan el costo?</p>",
+   "checks": [
+    {
+     "p": "Dimensiones",
+     "o": [
+      "\\(x=10\\text{ cm},\\ h=20\\text{ cm}\\)",
+      "\\(x=h=\\sqrt[3]{2000}\\approx12.6\\text{ cm}\\)",
+      "\\(x=20\\text{ cm},\\ h=5\\text{ cm}\\)",
+      "\\(x\\approx15.9\\text{ cm},\\ h\\approx7.9\\text{ cm}\\)",
+      "\\(x=10\\text{ cm},\\ h=10\\text{ cm}\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(h=\\frac{2000}{x^2}\\). Costo (en unidades de \\(c\\)): base y tapa \\(2\\cdot2x^2\\), laterales \\(4xh\\): \\(C=4x^2+\\frac{8000}x\\).",
+    "\\(C'=8x-\\frac{8000}{x^2}=0\\Rightarrow x^3=1000\\Rightarrow x=10\\) cm; \\(C''=8+\\frac{16000}{x^3}\\gt0\\): mínimo.",
+    "\\(h=\\frac{2000}{100}=20\\) cm: como base y tapa son caras, conviene hacerlas pequeñas y la caja más alta."
+   ],
+   "ans": "x = 10 cm, h = 20 cm",
+   "hint": "Multiplica cada área por su costo antes de sumar.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "costo"
+    ],
+    [
+     "f2c"
+    ],
+    []
+   ]
+  }
+ ],
+ "concepts": {
+  "coc": {
+   "n": "Regla del cociente",
+   "f": "\\(\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}\\)",
+   "x": "Abajo por derivada de arriba, menos arriba por derivada de abajo, todo sobre abajo al cuadrado.",
+   "home": "w9graf"
+  },
+  "cad": {
+   "n": "Regla de la cadena",
+   "f": "\\((f(g(x)))'=f'(g(x))\\cdot g'(x)\\)",
+   "x": "Deriva de afuera hacia adentro y multiplica una derivada por cada capa.",
+   "home": "w9din"
+  },
+  "crec": {
+   "n": "Crecimiento y extremos",
+   "f": "\\(f'\\gt0\\Rightarrow\\) crece, \\(f'\\lt0\\Rightarrow\\) decrece",
+   "x": "Hay máximo si \\(f'\\) pasa de + a −, y mínimo si pasa de − a +. Si no cambia de signo, no hay extremo.",
+   "home": "w9graf"
+  },
+  "conc": {
+   "n": "Concavidad e inflexión",
+   "f": "\\(f''\\gt0\\Rightarrow\\) cóncava ↑, \\(f''\\lt0\\Rightarrow\\) cóncava ↓",
+   "x": "Inflexión donde cambia la concavidad y \\(f\\) es continua, exista o no \\(f''\\) ahí.",
+   "home": "w9graf"
+  },
+  "rrel": {
+   "n": "Razones relacionadas",
+   "f": "Ecuación \\(\\to\\) derivar respecto a \\(t\\) \\(\\to\\) sustituir",
+   "x": "Sustituye los valores del instante recién después de derivar.",
+   "home": "w9raz"
+  },
+  "pit": {
+   "n": "Pitágoras",
+   "f": "\\(x^2+y^2=d^2\\)",
+   "x": "Relaciona distancias en triángulos rectángulos.",
+   "home": "w9opt"
+  },
+  "semej": {
+   "n": "Semejanza de triángulos",
+   "f": "\\(\\dfrac rh=\\dfrac{R}{H}\\)",
+   "x": "En un cono, el radio del agua es proporcional a su altura.",
+   "home": "w9raz"
+  },
+  "absc": {
+   "n": "Extremos absolutos en [a, b]",
+   "f": "Compara f en los bordes y en los críticos interiores",
+   "x": "Una función continua en un intervalo cerrado siempre alcanza máximo y mínimo absolutos, y están en un punto crítico interior o en un extremo del intervalo. Por eso hay que evaluar los bordes aunque ahí no se anule f′.",
+   "home": "w9graf"
+  },
+  "f2c": {
+   "n": "Segunda derivada en contexto",
+   "f": "\\(f''(c)\\gt0\\): mínimo · \\(f''(c)\\lt0\\): máximo",
+   "x": "Con f′(c) = 0, una segunda derivada positiva indica un valle (costo o material mínimos) y una negativa un pico (área, volumen o ganancia máximos). Si f″ tiene el mismo signo en todo el dominio, el extremo es absoluto.",
+   "home": "w9opt"
+  },
+  "rest": {
+   "n": "Restricción",
+   "f": "Ecuación que liga las variables",
+   "x": "Es el dato fijo del problema (perímetro, volumen, radio del tronco…) escrito como ecuación. Sirve para despejar una variable y dejar la función objetivo en una sola variable.",
+   "home": "w9opt"
+  },
+  "domc": {
+   "n": "Dominio contextual",
+   "f": "Solo valores físicamente posibles",
+   "x": "Longitudes y alturas positivas, cortes menores que la mitad de la lámina, etc. Puede ser más estrecho que el dominio algebraico, y permite descartar puntos críticos que no tienen sentido.",
+   "home": "w9opt"
+  },
+  "costo": {
+   "n": "Función de costo",
+   "f": "\\(C=c_1A_1+c_2A_2+\\cdots\\)",
+   "x": "Cuando cada parte tiene un precio distinto, se multiplica el área de cada parte por su costo por unidad de área y se suman. Cambiar los precios mueve el óptimo.",
+   "home": "w9opt"
+  },
+  "param": {
+   "n": "Óptimo con parámetro",
+   "f": "Optimiza con t fijo; luego deriva x*(t)",
+   "x": "Si un dato depende del tiempo o de la temperatura, el óptimo es una función x*(t). Su derivada dx*/dt (sensibilidad) dice cuánto y hacia dónde se mueve el óptimo.",
+   "home": "w9din"
+  },
+  "validez": {
+   "n": "Rango de validez",
+   "f": "¿Hasta cuándo tiene sentido el modelo?",
+   "x": "Un modelo deja de valer cuando predice algo físicamente imposible: masas negativas, remoción que se revierte, un tanque con altura negativa. Hay que decir en qué intervalo se puede usar.",
+   "home": "w9din"
+  },
+  "balance": {
+   "n": "Balance de caudales",
+   "f": "\\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)",
+   "x": "El volumen cambia según lo que entra menos lo que sale. Si además V depende de la altura, \\(\\frac{dV}{dt}=V'(h)\\frac{dh}{dt}\\).",
+   "home": "w9raz"
+  },
+  "anti": {
+   "n": "Antiderivada",
+   "f": "\\(F'=f\\Rightarrow\\) familia \\(F+C\\)",
+   "x": "Una antiderivada de f es una función cuya derivada es f. Si F lo es, F + C también, porque la derivada de una constante es cero: por eso siempre hay que escribir + C.",
+   "home": "w9anti"
+  },
+  "tabla": {
+   "n": "Tabla de antiderivadas",
+   "f": "\\(t^n\\to\\frac{t^{n+1}}{n+1}\\), \\(e^{kt}\\to\\frac{e^{kt}}k\\), \\(\\sin kt\\to-\\frac{\\cos kt}k\\)",
+   "x": "Se reconoce cada término con su pareja conocida. Cuidado con el factor 1/k cuando el argumento es kt, y con el signo al pasar de seno a coseno.",
+   "home": "w9anti"
+  },
+  "pvi": {
+   "n": "Condición inicial",
+   "f": "\\(y(t_0)=y_0\\) fija la constante C",
+   "x": "Sustituye t₀ en la antiderivada general e iguala a y₀ para despejar C. Recuerda que e⁰ = 1 y cos 0 = 1.",
+   "home": "w9anti"
+  },
+  "verifd": {
+   "n": "Verificar derivando",
+   "f": "Deriva tu respuesta: debe dar la tasa",
+   "x": "La forma infalible de comprobar una antiderivada o la solución de una EDO es derivarla y ver que se recupera la tasa original (y que cumple la condición inicial).",
+   "home": "w9anti"
+  },
+  "sep": {
+   "n": "Separación de variables",
+   "f": "\\(\\frac{dy}{h(y)}=g(t)\\,dt\\)",
+   "x": "Si \\(\\frac{dy}{dt}=g(t)h(y)\\), se pasa todo lo que tiene y al lado de dy y todo lo que tiene t al lado de dt; luego se antideriva cada lado y se agrega una sola constante.",
+   "home": "w9edo"
+  },
+  "newton": {
+   "n": "Enfriamiento de Newton",
+   "f": "\\(T=T_a+(T_0-T_a)e^{-kt}\\)",
+   "x": "La rapidez de enfriamiento es proporcional a la diferencia con el ambiente. La temperatura se acerca a T_a de forma exponencial, sin cruzarla.",
+   "home": "w9edo"
+  },
+  "semivida": {
+   "n": "Vida media",
+   "f": "\\(k=\\frac{\\ln2}{t_{1/2}}\\)",
+   "x": "En el decaimiento \\(m=m_0e^{-kt}\\), la vida media es el tiempo en que la masa se reduce a la mitad. Cada vida media divide la masa entre 2.",
+   "home": "w9edo"
+  }
+ },
+ "sim": {
+  "minutes": 60,
+  "slots": [
+   {
+    "pts": 4,
+    "name": "Gráficas y extremos absolutos",
+    "pool": [
+     "w9g1",
+     "w9g5",
+     "w9g7",
+     "w9g8",
+     "w9s2"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Optimización en contexto",
+    "pool": [
+     "w9o3",
+     "w9o4",
+     "w9o5",
+     "w9o7",
+     "w9s1",
+     "w9s4"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Óptimo con parámetro o razones relacionadas",
+    "pool": [
+     "w9d2",
+     "w9d4",
+     "w9d5",
+     "w9r5",
+     "w9r6"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "Antiderivadas y valor inicial",
+    "pool": [
+     "w9a4",
+     "w9a6",
+     "w9a8",
+     "w9a9",
+     "w9a10"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "EDO separables",
+    "pool": [
+     "w9e6",
+     "w9e7",
+     "w9e9",
+     "w9s3"
+    ]
+   }
+  ]
+ }
+}

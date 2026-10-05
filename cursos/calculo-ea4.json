@@ -1,0 +1,19 @@
+{
+ "id": "calculo-ea4",
+ "code": "CC6103",
+ "name": "Cálculo de una Variable",
+ "exam": "EA4 (semanas 13 y 14)",
+ "short": "EA4",
+ "sub": "Sem. 13 y 14",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}

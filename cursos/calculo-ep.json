@@ -4,7 +4,7 @@
  "id": "calculo-ep",
  "code": "CC6103",
  "name": "Cálculo de una Variable",
- "exam": "Examen parcial 2026-2",
+ "exam": "Examen parcial 2026-2", "short": "Parcial", "sub": "Sem. 1 a 7",
  "topics": [
   {
    "id": "lim",

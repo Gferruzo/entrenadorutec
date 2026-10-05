@@ -1,0 +1,19 @@
+{
+ "id": "calculo-ed4",
+ "code": "CC6103",
+ "name": "Cálculo de una Variable",
+ "exam": "ED4 (semana 12)",
+ "short": "ED4",
+ "sub": "Sem. 12",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}

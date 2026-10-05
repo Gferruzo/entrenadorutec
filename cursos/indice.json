@@ -1,15 +1,20 @@
 {
-  "_nota": "Orden de los cursos en el menú. Para agregar un curso: crea cursos/<id>.json y agrega su id aquí.",
-  "cursos": [
-    "calculo-ep",
-    "mecanica-ep",
-    "dvn-ep",
-    "md-ep",
-    "micro-ep",
-    "fc-ea4",
-    "fc-ea5",
-    "fc-ea6",
-    "fc-ep",
-    "com2-ep"
-  ]
+ "_nota": "Orden de los cursos en el menú. Para agregar un curso: crea cursos/<id>.json y agrega su id aquí.",
+ "cursos": [
+  "calculo-ep",
+  "calculo-ed3",
+  "calculo-ea3",
+  "calculo-ed4",
+  "calculo-ea4",
+  "calculo-ef",
+  "mecanica-ep",
+  "dvn-ep",
+  "md-ep",
+  "micro-ep",
+  "fc-ea4",
+  "fc-ea5",
+  "fc-ea6",
+  "fc-ep",
+  "com2-ep"
+ ]
 }

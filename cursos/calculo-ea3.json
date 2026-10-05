@@ -1,0 +1,19 @@
+{
+ "id": "calculo-ea3",
+ "code": "CC6103",
+ "name": "Cálculo de una Variable",
+ "exam": "EA3 (semana 11)",
+ "short": "EA3",
+ "sub": "Sem. 11",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}
