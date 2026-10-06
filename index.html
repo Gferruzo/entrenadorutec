@@ -567,6 +567,27 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 :root:not([data-theme="light"]) #vMenu .hero p{color:#B7C3D6}
 :root:not([data-theme="light"]) .nbname{color:#DCE3EE}
 }
+
+/* ===== Audios semanales ===== */
+.aucard{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 12px}
+.auhead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ausem{font:700 .75rem Figtree,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--sol)}
+.auhead small{color:var(--muted);font-size:.8rem}
+.autit{display:block;margin:4px 0 2px;font-size:1.02rem}
+.aurow{display:flex;align-items:center;gap:10px;margin:12px 0 10px}
+.auplay{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);background:var(--sol);color:#fff;cursor:pointer;box-shadow:2px 2px 0 var(--ink);padding:0}
+.aurange{flex:1;min-width:0;accent-color:var(--sol);height:28px;margin:0}
+.autime{flex:none;font:600 .8rem Figtree,sans-serif;color:var(--muted);font-variant-numeric:tabular-nums}
+.ausave{width:100%}
+.ausave:disabled{opacity:.75;cursor:default}
+#aubar{position:fixed;left:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:44;display:flex;align-items:center;gap:6px;width:min(320px,calc(100vw - 112px));background:var(--card);color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;box-shadow:3px 3px 0 var(--ink);padding:5px}
+#aubar[hidden]{display:none}
+@media (max-width:640px){#aubar{left:12px;right:12px;width:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}body:has(#pill[hidden]) #aubar{bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}}
+#aubar .auplay{width:36px;height:36px;box-shadow:none}
+#aubar .auinfo{flex:1;min-width:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;font:600 .8rem Figtree,sans-serif;line-height:1.25;padding:0 2px}
+#aubar .auinfo b,#aubar .auinfo span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#aubar .auinfo span{color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+#aubar .aux{flex:none;border:0;background:none;color:var(--muted);font-size:1.05rem;cursor:pointer;padding:6px 10px}
 </style>
 </head>
 <body>
@@ -594,7 +615,7 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 <div class="steps" role="toolbar" aria-label="Nivel">
 <button class="step" data-l="1">Básico</button><button class="step" data-l="2">Intermedio</button><button class="step" data-l="3">Nivel examen</button><button class="step" data-l="0">Todos</button>
 </div>
-<span class="xbtns"><button class="tbtn" id="teobtn">📖 Teoría</button><button class="tbtn" id="formbtn">📋 Formulario</button><button class="tbtn" id="quickbtn">⚡ Práctica rápida</button><button class="tbtn" id="paperbtn">✏️ Papel</button><button class="tbtn" id="revbtn">🧠 Repaso</button><button class="tbtn" id="hlbtn">🖍 Subrayados</button><button class="simbtn" id="simbtn">🎯 Simulacro final</button></span>
+<span class="xbtns"><button class="tbtn" id="teobtn">📖 Teoría</button><button class="tbtn" id="audbtn" hidden>🎧 Resumen semanal</button><button class="tbtn" id="formbtn">📋 Formulario</button><button class="tbtn" id="quickbtn">⚡ Práctica rápida</button><button class="tbtn" id="paperbtn">✏️ Papel</button><button class="tbtn" id="revbtn">🧠 Repaso</button><button class="tbtn" id="hlbtn">🖍 Subrayados</button><button class="simbtn" id="simbtn">🎯 Simulacro final</button></span>
 </div>
 </div>
 <div id="msg"></div>
@@ -1126,7 +1147,7 @@ function openCourse(id){C=COURSES.find(c=>c.id===id);if(!C)return;T=C.topics;F=C
   st=Object.assign({topic:0,level:0},prefs[C.id]||{});if(!(st.topic>=0&&st.topic<T.length)||!unlocked(st.topic))st.topic=0;
   $('cTitle').innerHTML=C.name.replace(/(\S+)$/,'<i>$1</i>');view='course';lastAct=Date.now();
   $('vMenu').hidden=true;$('vSim').hidden=true;$('vCourse').hidden=false;msg.innerHTML='';
-  {const ci=document.querySelector('#vCourse .hero > p');if(ci){ci.dataset.d=ci.dataset.d||ci.innerHTML;ci.innerHTML=C.intro||ci.dataset.d}}$('clock').textContent='⏱ '+hms(totalTime(C.id));$('formbtn').hidden=!C.form;$('teobtn').hidden=!T.some(t=>t.lesson);$('formbtn').textContent=C.formLabel||'📋 Formulario';renderChips();renderTopic();courseStats();revBtn();modeUI();window.scrollTo({top:0})}
+  {const ci=document.querySelector('#vCourse .hero > p');if(ci){ci.dataset.d=ci.dataset.d||ci.innerHTML;ci.innerHTML=C.intro||ci.dataset.d}}$('clock').textContent='⏱ '+hms(totalTime(C.id));$('formbtn').hidden=!C.form;$('teobtn').hidden=!T.some(t=>t.lesson);$('audbtn').hidden=!(C.audios&&C.audios.length);$('formbtn').textContent=C.formLabel||'📋 Formulario';renderChips();renderTopic();courseStats();revBtn();modeUI();window.scrollTo({top:0})}
 function savePrefs(){prefs[C.id]={topic:st.topic,level:st.level};S.set('ent-prefs',prefs)}
 $('back').onclick=()=>{saveLocal();push(0);view='menu';C=null;$('vCourse').hidden=true;$('vMenu').hidden=false;renderMenu();pillRender(true);window.scrollTo({top:0})};
 function courseStats(){const x=stats(C);$('cstats').innerHTML='<span>Acierto a la primera: <b>'+(x.nd?pct(x.acc):'—')+'</b></span><span>Con pista: <b>'+x.hint+'</b></span>'+(x.simBest!=null?'<span>Mejor simulacro: <b>'+x.simBest+'/20</b></span>':'');
@@ -1270,6 +1291,77 @@ function showLesson(i){const t=T[i];const n=el('div','lesson');n.innerHTML='<p c
   if(unlocked(i)&&view==='course'){const go=el('button','pri','Practicar este tema');go.onclick=()=>{closeModal();goTopic(i)};bt.append(go)}
   const c=el('button',null,'Cerrar');c.onclick=closeModal;bt.append(c);n.append(bt);const m=openModal(n);m.scrollTop=0;hlWhen(m.querySelector('.hlz'));return m}
 $('teobtn').onclick=showLessons;$('simteo').onclick=showLessons;$('simform').onclick=showForm;
+
+/* ================= AUDIOS SEMANALES ================= */
+const AU={a:null,cur:null,list:[],course:'',drag:false};
+const AUIC={play:'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>',
+  pause:'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>'};
+const auT=s=>{s=Math.max(0,Math.floor(s||0));const m=Math.floor(s/60),x=s%60;return m+':'+String(x).padStart(2,'0')};
+const auURL=f=>new URL(f,location.href).href;
+const auPos=()=>S.get('ent-audpos',{});
+const auRateV=()=>S.get('ent-audrate',1);
+function auSavePos(){const a=AU.a;if(!a||!AU.cur)return;const o=auPos(),D=a.duration;
+  if(a.ended||(isFinite(D)&&a.currentTime>D-5))delete o[AU.cur.file];else if(a.currentTime>0)o[AU.cur.file]=Math.floor(a.currentTime);S.set('ent-audpos',o)}
+function auA(){if(AU.a)return AU.a;const a=AU.a=new Audio();a.preload='metadata';let last=0;
+  a.ontimeupdate=()=>{auUI();if(Math.abs(a.currentTime-last)>=5){last=a.currentTime;auSavePos()}};
+  a.onplay=a.onpause=a.onended=()=>{auSavePos();auUI()};a.onratechange=a.onloadedmetadata=auUI;
+  a.onerror=()=>{if(AU.cur){a.pause();flash('No se pudo cargar el audio. Revisa tu conexión o guárdalo para escucharlo sin internet.')}};
+  addEventListener('pagehide',auSavePos);
+  if('mediaSession' in navigator){const ms=navigator.mediaSession;
+    try{ms.setActionHandler('seekbackward',()=>{a.currentTime=Math.max(0,a.currentTime-15)});ms.setActionHandler('seekforward',()=>{a.currentTime=a.currentTime+15})}catch(e){}}
+  return a}
+function auToggle(x){const a=auA();
+  if(!AU.cur||AU.cur.file!==x.file){auSavePos();AU.cur=x;AU.list=AU.shown||[x];AU.course=C?C.name:AU.course;
+    const p=auPos()[x.file]||0;a.src=x.file;a.defaultPlaybackRate=a.playbackRate=auRateV();
+    a.addEventListener('loadedmetadata',()=>{if(p)a.currentTime=p;a.playbackRate=auRateV()},{once:true});
+    if('mediaSession' in navigator&&window.MediaMetadata)try{navigator.mediaSession.metadata=new MediaMetadata({title:x.title,artist:AU.course+' · Semana '+x.sem,album:'Entrenador UTEC',artwork:[{src:'icon-512.png',sizes:'512x512',type:'image/png'}]})}catch(e){}
+    a.play().catch(()=>{})}
+  else if(a.paused){if(a.ended)a.currentTime=0;a.play().catch(()=>{})}else a.pause();auUI()}
+function auRate(v){S.set('ent-audrate',v);if(AU.a){AU.a.defaultPlaybackRate=v;AU.a.playbackRate=v}auUI()}
+function auState(x){const a=AU.a,on=!!(a&&AU.cur&&AU.cur.file===x.file),D=on&&isFinite(a.duration)?a.duration:(x.secs||0);
+  return{on,D,t:on?a.currentTime:(auPos()[x.file]||0),playing:on&&!a.paused}}
+function auUI(){const rate=AU.a?AU.a.playbackRate:auRateV();
+  document.querySelectorAll('.aucard').forEach(c=>{const x=(AU.shown||[]).find(y=>y.file===c.dataset.f);if(!x)return;const z=auState(x);
+    const pb=c.querySelector('.auplay');pb.innerHTML=z.playing?AUIC.pause:AUIC.play;pb.setAttribute('aria-label',z.playing?'Pausar':(z.t>0?'Continuar':'Reproducir'));
+    const rg=c.querySelector('.aurange');if(!AU.drag||!z.on)rg.value=z.D?Math.round(1000*z.t/z.D):0;
+    c.querySelector('.autime').textContent=auT(z.t)+' / '+auT(z.D);
+    c.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-checked',String(+b.dataset.v===rate)))});
+  auBar()}
+function auCard(x){const c=el('div','aucard');c.dataset.f=x.file;
+  c.innerHTML='<div class="auhead"><span class="ausem">Semana '+x.sem+'</span><small>'+(x.secs?Math.round(x.secs/60)+' min':'')+'</small></div><b class="autit">'+x.title+'</b>'+(x.desc?'<p class="note">'+x.desc+'</p>':'');
+  const row=el('div','aurow'),pb=el('button','auplay'),rg=el('input','aurange'),tm=el('span','autime');
+  rg.type='range';rg.min=0;rg.max=1000;rg.step=1;rg.value=0;rg.setAttribute('aria-label','Avance del audio');row.append(pb,rg,tm);
+  pb.onclick=()=>auToggle(x);
+  rg.addEventListener('pointerdown',()=>{AU.drag=true});rg.addEventListener('change',()=>{AU.drag=false});
+  rg.oninput=()=>{const z=auState(x),t=rg.value/1000*z.D;
+    if(z.on&&isFinite(AU.a.duration))AU.a.currentTime=t;else if(z.D){const o=auPos();o[x.file]=Math.floor(t);S.set('ent-audpos',o)}
+    tm.textContent=auT(t)+' / '+auT(z.D)};
+  const sp=el('div','seg');sp.setAttribute('role','radiogroup');sp.setAttribute('aria-label','Velocidad');
+  [1,1.25,1.5,2].forEach(v=>{const b=el('button',null,String(v).replace('.',',')+'×');b.dataset.v=v;b.setAttribute('role','radio');b.onclick=()=>auRate(v);sp.append(b)});
+  const sv=el('button','tbtn ausave','⬇ Guardar para escuchar sin internet');sv.onclick=()=>auOffline(x,sv);auChkSaved(x,sv);
+  c.append(row,sp,sv);return c}
+function auModal(list){AU.shown=[...list].sort((p,q)=>q.sem-p.sem);
+  const n=el('div');n.append(el('h2',null,'🎧 Resumen semanal'),el('p','sub','Resumen tipo podcast de cada semana. Puedes cerrar esta ventana y seguir practicando mientras escuchas; si lo dejas a medias, continúa donde te quedaste.'));
+  AU.shown.forEach(x=>n.append(auCard(x)));
+  const bt=el('div','mbtns'),cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n);auUI()}
+async function auOffline(x,b){if(!('caches' in window)){b.textContent='Tu navegador no permite guardarlo';return}
+  b.disabled=true;b.textContent='Guardando… (puede tardar un poco)';
+  try{const r=await fetch(x.file,{cache:'no-store'});if(!r.ok)throw 0;await (await caches.open('entrenador-audios')).put(auURL(x.file),r);b.textContent='✓ Guardado: se puede escuchar sin internet'}
+  catch(e){b.disabled=false;b.textContent='No se pudo guardar · tocar para reintentar'}}
+async function auChkSaved(x,b){try{if('caches' in window&&await caches.match(auURL(x.file))){b.disabled=true;b.textContent='✓ Guardado: se puede escuchar sin internet'}}catch(e){}}
+function auBar(){const a=AU.a;let b=$('aubar');
+  const show=!!(a&&AU.cur&&!document.querySelector('#ovl .aucard')&&(!a.paused||(a.currentTime>0&&!a.ended)));
+  if(!show){if(b)b.hidden=true;return}
+  if(!b){b=el('div');b.id='aubar';b.innerHTML='<button class="auplay"></button><button class="auinfo" aria-label="Abrir resumen semanal"><b></b><span></span></button><button class="aux" aria-label="Cerrar reproductor">✕</button>';
+    document.body.append(b);
+    b.querySelector('.auplay').onclick=()=>AU.cur&&auToggle(AU.cur);
+    b.querySelector('.auinfo').onclick=()=>auModal(AU.list);
+    b.querySelector('.aux').onclick=()=>{if(AU.a){auSavePos();AU.a.pause()}AU.cur=null;b.hidden=true}}
+  b.hidden=false;const z=auState(AU.cur),pb=b.querySelector('.auplay');
+  pb.innerHTML=z.playing?AUIC.pause:AUIC.play;pb.setAttribute('aria-label',z.playing?'Pausar':'Reproducir');
+  b.querySelector('b').textContent='🎧 Semana '+AU.cur.sem+' · '+AU.cur.title;b.querySelector('span').textContent=auT(z.t)+' / '+auT(z.D)}
+$('audbtn').onclick=()=>C&&C.audios&&auModal(C.audios);
+{const f=closeModal;closeModal=function(){f();auBar()}}
 /* ---- práctica rápida ---- */
 function quickPool(){const gens=(GEN[C.id]||[]);const ok=new Set(T.filter((t,i)=>unlocked(i)).map(t=>t.id));return gens.filter(g=>ok.has(g.t))}
 $('quickbtn').onclick=()=>{const pool=quickPool();if(!pool.length)return flash('Aún no hay preguntas de práctica para los temas que desbloqueaste.');
