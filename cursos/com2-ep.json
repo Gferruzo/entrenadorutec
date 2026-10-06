@@ -10,6 +10,15 @@
  "quickTxt": "10 preguntas de Toulmin con <strong>argumentos nuevos</strong> armados al azar, 15 minutos.",
  "quickTxt2": "Cada vez cambian los argumentos.",
  "quickNew": "La próxima práctica tendrá argumentos nuevos.",
+ "audios": [
+  {
+   "sem": 9,
+   "title": "Cómo detectar falacias en textos científicos",
+   "file": "audios/comunicacion2-s09.mp3",
+   "secs": 1056,
+   "desc": "Resumen tipo podcast de la semana 9, hecho con NotebookLM a partir de la guía del curso."
+  }
+ ],
  "topics": [
   {
    "id": "tou1",
