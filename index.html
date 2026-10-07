@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Entrenador de exámenes</title>
 <link rel="manifest" href="manifest.json">
-<!-- version: 2026-10-05 tema claro/oscuro (2) -->
+<!-- version: 2026-10-07 modo de estudio rediseñado -->
 <meta name="theme-color" content="#F4F7FA">
 <script>
 (function(){var t=null;try{t=localStorage.getItem('ent-theme')}catch(e){}
@@ -19,7 +19,7 @@ document.querySelector('meta[name="theme-color"]').content=d?'#0F1726':'#F4F7FA'
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Entrenador">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;600;800&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@400;500&family=Playfair+Display:ital,wght@1,900&family=Pinyon+Script&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,100,1&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;600;800&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@1,900&family=Pinyon+Script&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,100,1&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
 <script>
 window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{enableMenu:false},
  startup:{typeset:false,ready(){MathJax.startup.defaultReady();MathJax.startup.promise.then(()=>{window.__mj=true;window.__tq&&window.__tq();});}}};
@@ -489,6 +489,104 @@ mark.hl.flash{outline:2.5px solid var(--ink);outline-offset:1px}
 .msum span{font-weight:400;color:var(--muted)}
 @media (max-width:460px){.presets{grid-template-columns:1fr}.rng{grid-template-columns:6.8em 1fr 4em}}
 
+/* ===== ventana del modo de estudio (rediseño) ===== */
+:root{--pk-bg:#FFDCE4;--pk-soft:#FFF1F4;--pk-bd:#F3B8C6;--pk-ink:#5A4A50;--pk-tile:#FFF5F7;--sm-ico:#505257;--sm-ink:#2F3033}
+:root[data-theme="dark"]{--pk-bg:#3A2330;--pk-soft:#1E1A27;--pk-bd:#6B4256;--pk-ink:#F2DCE3;--pk-tile:#4A2E3D;--sm-ico:#C9D2E0;--sm-ink:#EEF2F8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pk-bg:#3A2330;--pk-soft:#1E1A27;--pk-bd:#6B4256;--pk-ink:#F2DCE3;--pk-tile:#4A2E3D;--sm-ico:#C9D2E0;--sm-ink:#EEF2F8}}
+.ovl.smode .modal{width:min(760px,100%);border:0;border-radius:44px;box-shadow:0 30px 80px rgba(10,18,32,.35);padding:40px 48px 34px;color:var(--sm-ink)}
+.smw{font:400 1rem/1.5 Lora,Georgia,serif;text-align:center}
+.smw .smt{font:500 clamp(1.9rem,5.4vw,3rem)/1.08 'Cormorant Garamond',Georgia,serif;margin:0 0 .25em;color:var(--sm-ink);letter-spacing:0}
+.smw .smt.dash{display:flex;justify-content:center;align-items:baseline;gap:.45em}
+.smw .smt.dash>span:not([aria-hidden]){text-wrap:balance}
+.smw .smt.dash>span[aria-hidden]{font-weight:400;opacity:.8}
+.smw .sms{font:700 1.02rem/1.45 Lora,Georgia,serif;color:var(--muted);margin:0 0 26px}
+.smw .sms2{color:var(--muted);margin:0 auto 22px;max-width:56ch;font-size:1.04rem;line-height:1.45}
+.smw .sms2 b{color:var(--sm-ink)}
+.smnote{font-size:.9rem;color:var(--muted);background:var(--paper);border-radius:12px;padding:6px 12px;margin:-10px auto 18px;max-width:52ch}
+/* paso 1 */
+.smgrid{display:grid;grid-template-columns:repeat(2,minmax(0,250px));justify-content:center;gap:22px 38px}
+.smcell{display:flex;flex-direction:column;align-items:center}
+.smcard{width:100%;aspect-ratio:1.32;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px solid var(--sm-ink);border-radius:34px;background:var(--card);color:var(--sm-ink);cursor:pointer;padding:16px 12px 14px;font:inherit;transition:box-shadow .22s ease,transform .22s ease}
+.smcard:hover,.smcard:focus-visible,.smcard:active{box-shadow:0 10px 26px rgba(10,18,32,.22);transform:translateY(-2px)}
+.smcard:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.smico{display:grid;place-items:center;height:96px;width:100%;color:var(--sm-ico)}
+.smico svg{display:block;height:96px;width:auto;max-width:100%;overflow:visible}
+.smico .ln,.smico .co{transition:opacity .25s ease}
+.smico .co{opacity:0}
+.smi-custom .co circle{fill:var(--card)}
+.smcard:hover .co,.smcard:focus-visible .co,.smcard:active .co{opacity:1}
+.smcard:hover .ln,.smcard:focus-visible .ln,.smcard:active .ln{opacity:0}
+.smname{font:500 clamp(1.45rem,3.6vw,1.9rem)/1.1 'Cormorant Garamond',Georgia,serif;font-weight:600}
+.smdesc{color:var(--muted);margin:10px 0 0;font-size:1rem;line-height:1.35;max-width:22ch}
+.smnow{margin-top:4px;font:700 .78rem Lora,Georgia,serif;color:var(--for)}
+/* paso 2 */
+.smback{position:absolute;left:28px;top:24px;border:0;background:none;color:var(--muted);font:600 .92rem Lora,Georgia,serif;cursor:pointer;padding:6px 10px;border-radius:999px}
+.smback:hover,.smback:focus-visible{background:var(--paper);color:var(--sm-ink)}
+.ovl.smode .modal{position:relative}
+.s2{padding-top:14px}
+.smseg{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 0 22px}
+.smseg button{border:1.5px solid var(--sm-ink);background:transparent;color:var(--sm-ink);border-radius:999px;padding:4px 22px;font:700 .95rem Lora,Georgia,serif;cursor:pointer;min-width:7.5em}
+.smseg button[aria-checked="true"]{background:var(--sm-ink);color:var(--card)}
+.smseg button:hover{box-shadow:0 4px 12px rgba(10,18,32,.18)}
+.smtip{color:var(--muted);font-size:1.04rem;margin:0 auto 22px;max-width:52ch}
+.tbrow{display:flex;justify-content:center;align-items:flex-start;gap:28px;margin:0 0 26px}
+.tbgrp{display:flex;gap:26px;align-items:flex-start}
+.sm-custom .tbgrp{gap:46px}.sm-custom .tbrow{gap:40px}
+.tbgrp.lg{flex-direction:column;align-items:center;gap:10px}
+.tbsep{align-self:stretch;width:2px;background:var(--sm-ink);opacity:.85;margin:0 8px;border-radius:2px}
+.tbw{display:flex;flex-direction:column;align-items:center;gap:8px}
+.tbox{position:relative;width:128px;height:98px;border:2px solid var(--sm-ink);border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card);box-shadow:0 6px 14px rgba(10,18,32,.12)}
+.tnum{font:500 3rem/1 'Cormorant Garamond',Georgia,serif;font-weight:600;font-variant-numeric:lining-nums tabular-nums}
+.tmin{font:500 1.15rem/1.1 'Cormorant Garamond',Georgia,serif;font-weight:600}
+.tlab{color:var(--muted);font-size:1.02rem}
+.tbw.off .tbox{opacity:.4;box-shadow:none}
+.tstep{position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;border:1.5px solid var(--sm-ink);background:var(--card);color:var(--sm-ink);font:700 1.05rem/1 Figtree,sans-serif;cursor:pointer;display:grid;place-items:center;padding:0}
+.tstep.dn{left:-15px}.tstep.up{right:-15px}
+.tstep:hover:not(:disabled){background:var(--sm-ink);color:var(--card)}
+.tstep:disabled{opacity:.3;cursor:default}
+.tblong{display:flex;gap:8px;align-items:flex-start;max-width:15em;text-align:left;color:var(--muted);font-size:1rem;line-height:1.3;cursor:pointer}
+.tblong input,.smblur input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:#D9577A}
+.tblong input:disabled{cursor:default}
+.pcard{display:flex;align-items:center;gap:18px;width:100%;text-align:left;background:var(--pk-bg);color:var(--pk-ink);border:1.5px solid transparent;border-radius:999px;padding:14px 30px 14px 16px;font:inherit;margin:0 0 4px}
+.pcard .pico{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:14px;background:var(--pk-tile);color:var(--pk-ink);box-shadow:0 3px 8px rgba(90,40,60,.14)}
+.pcard .ptx{display:flex;flex-direction:column;line-height:1.3}
+.pcard b{font:700 1.08rem Lora,Georgia,serif}
+.pcard .ptx span{font-size:.98rem}
+.plist2{display:grid;gap:12px;margin-bottom:4px}
+.plist2 .pcard{cursor:pointer;background:var(--pk-soft);border-color:var(--pk-bd);padding-top:10px;padding-bottom:10px;transition:background .18s,box-shadow .18s}
+.plist2 .pcard .pico{width:50px;height:50px}
+.plist2 .pcard:hover{background:var(--pk-bg)}
+.plist2 .pcard.on{background:var(--pk-bg);border-color:#D9577A;box-shadow:0 6px 16px rgba(217,87,122,.25)}
+.plist2 .pcard.on b::after{content:' ✓';color:#D9577A}
+.pcard:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.smblur{display:flex;gap:10px;align-items:flex-start;text-align:left;margin:16px 6px 0;color:var(--muted);line-height:1.45;cursor:pointer}
+.smblur b{color:var(--sm-ink)}
+.smbtns{display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.smbtns button{border:1.5px solid var(--sm-ink);background:transparent;color:var(--sm-ink);border-radius:999px;padding:3px 30px;min-width:9.5em;font:700 1.02rem Lora,Georgia,serif;cursor:pointer;transition:background .15s,color .15s}
+.smbtns button:hover,.smbtns button:focus-visible{background:var(--sm-ink);color:var(--card)}
+.smbtns button.pri{border-width:2px}
+@media (max-width:640px){
+  .ovl.smode .modal{border-radius:30px;padding:28px 18px 24px}
+  .smgrid{gap:16px 14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .smcard{border-radius:24px;aspect-ratio:1.1;padding:12px 8px}
+  .smico{height:62px}.smico svg{height:62px}
+  .sm-custom .tbgrp{gap:40px}
+  .sm-custom .tbrow{gap:16px}
+  .smdesc{font-size:.88rem}
+  .smback{left:12px;top:12px}
+  .s2{padding-top:26px}
+  .tbrow{flex-direction:column;align-items:center;gap:16px}
+  .tbsep{width:70%;height:2px;align-self:center;margin:0}
+  .tbgrp{gap:22px}
+  .tbox{width:112px;height:88px;border-radius:22px}
+  .tnum{font-size:2.6rem}
+  .pcard{border-radius:26px;padding:10px 16px 10px 10px;gap:12px}
+  .pcard .pico,.plist2 .pcard .pico{width:44px;height:44px}
+  .smbtns{gap:14px}
+  .smbtns button{min-width:8em}
+}
+@media (prefers-reduced-motion:reduce){.smcard,.smico .ln,.smico .co{transition:none}.smcard:hover{transform:none}}
+
 /* pastilla flotante del temporizador */
 #pill{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:45;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;--pc:var(--exe)}
 #pill[hidden]{display:none}
@@ -875,6 +973,7 @@ function mergeC(a,b){if(!a)return b;if(!b)return a;const best=better(a.best,b.be
   o.tp=Object.assign({},a.tp||{});for(const k in(b.tp||{}))o.tp[k]=Math.max(o.tp[k]||0,b.tp[k]);
   o.hl=Object.assign({},a.hl||{});for(const k in(b.hl||{})){const x=o.hl[k],y=b.hl[k];if(!x||(y.ts||0)>(x.ts||0))o.hl[k]=y}
   o.bl=Object.assign({},a.bl||{});for(const k in(b.bl||{})){const x=o.bl[k],y=b.bl[k];if(!x||(y.ts||0)>(x.ts||0))o.bl[k]=y}
+  if(a.ses||b.ses){const x=a.ses||{},y=b.ses||{};o.ses={};['n','ms','pomo','flow','none'].forEach(k=>o.ses[k]=Math.max(x[k]||0,y[k]||0))}
   o.best=best;return o}
 /* ================= CLOUD: claude.ai o Firebase ================= */
 const FB_CFG={apiKey:"AIzaSyB9G4iWj8yCxrVP3MRlYLigiiLDAB91IGc",authDomain:"entrenadorutec.firebaseapp.com",projectId:"entrenadorutec",storageBucket:"entrenadorutec.firebasestorage.app",messagingSenderId:"841954228208",appId:"1:841954228208:web:e6c793c0bc81f07df60f35"};
@@ -1116,13 +1215,15 @@ function groupStats(g){const n=el('div');const bk=el('button','back','← Todos 
   n.append(bk,el('h2',null,g.name));
   g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),s=cs(c.id),md=medal(c);const sec=el('div','sexam');
     sec.append(el('h3',null,c.exam+(md?' <span class="badge '+md[0]+'">'+md[1]+'</span>':'')));
-    if(!x.time&&!x.nd){sec.append(el('p','note','Aún no empiezas. Tus estadísticas aparecerán aquí a medida que practiques.'))}
+    if(!x.time&&!x.nd&&!(s.ses&&s.ses.n)){sec.append(el('p','note','Aún no empiezas. Tus estadísticas aparecerán aquí a medida que practiques.'))}
     else{sec.append(el('div','kpis','<div class="kpi"><small>Tiempo total</small><b>'+dur(x.time)+'</b></div><div class="kpi"><small>Acierto a la primera</small><b>'+(x.nd?pct(x.acc):'—')+'</b></div>'+
         '<div class="kpi"><small>Resueltos</small><b>'+x.solved+'/'+x.total+'</b></div><div class="kpi"><small>Simulacro (mejor nota)</small><b>'+(x.simBest!=null?x.simBest+'/20':'—')+'</b></div>'));
       const mx=Math.max(1,...x.per.map(p=>p.sec));sec.append(el('p',null,'<b>Por tema</b>'));const tr=el('div','trows');
       x.per.forEach((p,i)=>{tr.append(el('div','trow','<span>'+(i+1)+'. '+p.name+'</span><span>'+p.d+'/'+p.n+' · '+dur(p.sec)+(p.acc!=null?' · '+pct(p.acc):'')+'</span><div class="tb"><i style="width:'+(100*p.sec/mx)+'%"></i></div>'))});
       if(x.simSec)tr.append(el('div','trow','<span>Simulacro final</span><span>'+dur(x.simSec)+'</span><div class="tb"><i style="width:'+Math.min(100,100*x.simSec/mx)+'%"></i></div>'));
       sec.append(tr);if(x.hint)sec.append(el('p','note','Usaste la pista en '+x.hint+' ejercicio(s) antes de resolverlos.'))}
+    if(s.ses&&s.ses.n){const z=s.ses,kk=[['pomo','Pomodoro'],['flow','Flowtime'],['none','Sin temporizador']].filter(([k])=>z[k]>=MIN).map(([k,l])=>l+' '+dur(z[k]/1000));
+        sec.append(el('p','note','<b>Sesiones de estudio:</b> '+z.n+' ('+dur(z.ms/1000)+')'+(kk.length?' · '+kk.join(' · '):'')))}
     if(s.best)sec.append(el('p','note','<b>Mejor intento anterior:</b> '+s.best.solved+'/'+s.best.total+' resueltos, '+pct(s.best.acc)+' a la primera'+(s.best.simBest!=null?', simulacro '+s.best.simBest+'/20':'')+', '+dur(s.best.time)+'.'));
     if(x.time||x.nd){const bt=el('div','mbtns');const rp=el('button','warn','Repetir '+c.exam);let arm=0;
       rp.onclick=()=>{if(!arm){arm=1;rp.textContent='¿Seguro? Se reinicia tu progreso';setTimeout(()=>{arm=0;rp.textContent='Repetir '+c.exam},3500);return}repeatCourse(c)};bt.append(rp);sec.append(bt)}
@@ -1753,54 +1854,132 @@ function gradeSim(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
   openModal(n,'celeb');if(top)confetti()}
 
 /* ================= MODO DE ESTUDIO: Pomodoro / Flowtime, blurting, arranque y repaso espaciado ================= */
-const DEF_MODE={v:1,preset:'custom',timer:'pomo',work:25,brk:5,long:true,longMin:20,practice:'tema',blur:false,ts:0};
-const PRESETS={apr:{ico:'📘',name:'Aprendizaje',desc:'Pomodoro 45/10 · Por tema',m:{timer:'pomo',work:45,brk:10,practice:'tema',blur:false}},
-  par:{ico:'🔥',name:'Semana de parciales',desc:'Flowtime · Repaso y luego mezcla',m:{timer:'flow',practice:'seq',blur:false}},
-  flo:{ico:'🛋️',name:'Día flojo',desc:'Sin timer · Arranque rápido',m:{timer:'none',practice:'start',blur:false}}};
+const DEF_MODE={v:2,preset:'custom',timer:'pomo',work:25,brk:5,long:true,longMin:20,practice:'tema',blur:false,ts:0};
+const PRESETS={
+  enf:{name:'Enfocado',title:'Tu sesión de Enfoque',desc:'Pomodoro 45/10 · Estudio por temas',
+    intro:'<b>(Técnica Pomodoro)</b> Esta técnica alterna ciclos de trabajo concentrado con breves descansos para mantener la agudeza mental.',
+    m:{timer:'pomo',work:45,brk:10,long:true,longMin:20,practice:'tema'}},
+  exa:{name:'Modo Examen',title:'Tu sesión de Examen',desc:'Flowtime · Repaso intensivo y mixto',
+    intro:'<b>(Método Flowtime)</b> Mide tu tiempo de estudio continuo y te avisa a los 45 min. El descanso se calcula proporcionalmente a tu estudio (entre 5 y 15 min).',
+    m:{timer:'flow',practice:'seq'}},
+  sp:{name:'Sin presión',title:'Tu sesión Sin Presión',desc:'Sin temporizador · Inicio rápido',
+    intro:'Avanza a tu ritmo y sin temporizador. Ideal para empezar despacio cuando cuesta romper la inercia.',
+    m:{timer:'none',practice:'start'}},
+  custom:{name:'A tu medida',title:'Tu sesión A Tu Medida',desc:'Configura tus propios tiempos y reglas',
+    intro:'Combina las herramientas como quieras. Elige tu modo de temporizador, ajusta los tiempos y define tu estrategia.'}};
+const OLDP={apr:'enf',par:'exa',flo:'sp'};
+const CUS_KEYS=['timer','work','brk','long','longMin','practice'];
 const PRAC={tema:['📚','Por tema','Avanzas tema por tema, como siempre.'],
   mix:['🔀','Mezcla','10 ejercicios de tus temas desbloqueados, sin decirte de cuál son.'],
   queue:['🔁','Repaso espaciado','Los ejercicios fallados que te toca repasar hoy.'],
   seq:['🔁','Repaso y luego mezcla','Primero lo que te toca repasar; cuando se acaba, pasa sola a Mezcla.'],
   start:['🚀','Arranque rápido','3 ejercicios y listo, para los días en que cuesta empezar.']};
+const PRAC_T={tema:'Práctica por tema'};
+const FLOW_TXT='Mide tu tiempo de estudio continuo y te avisa a los 45 min. El descanso se calcula proporcionalmente a tu estudio (entre 5 y 15 min).';
 const MIN=6e4;
-const curMode=()=>{const m=Object.assign({},DEF_MODE,MODE||{});if(!PRAC[m.practice])m.practice='tema';if(!['pomo','flow','none'].includes(m.timer))m.timer='pomo';
-  m.work=Math.min(45,Math.max(25,+m.work||25));m.brk=Math.min(15,Math.max(5,+m.brk||5));m.longMin=Math.min(30,Math.max(15,+m.longMin||20));return m};
-const timerTxt=m=>m.timer==='pomo'?'Pomodoro '+m.work+'/'+m.brk:m.timer==='flow'?'Flowtime':'Sin timer';
+const clampM=m=>{if(!PRAC[m.practice])m.practice='tema';if(!['pomo','flow','none'].includes(m.timer))m.timer='pomo';
+  m.work=Math.min(45,Math.max(25,Math.round((+m.work||25)/5)*5));m.brk=Math.min(15,Math.max(5,Math.round(+m.brk||5)));
+  m.longMin=Math.min(30,Math.max(15,Math.round((+m.longMin||20)/5)*5));m.long=m.long!==false;return m};
+const curMode=()=>{const m=Object.assign({},DEF_MODE,MODE||{});if(OLDP[m.preset])m.preset=OLDP[m.preset];if(!PRESETS[m.preset])m.preset='custom';
+  if(m.preset!=='custom')Object.assign(m,PRESETS[m.preset].m);return clampM(m)};
+const timerTxt=m=>m.timer==='pomo'?'Pomodoro '+m.work+'/'+m.brk:m.timer==='flow'?'Flowtime':'Sin temporizador';
 const modeTxt=m=>{m=m||curMode();return timerTxt(m)+' · '+PRAC[m.practice][1]+(m.blur?' · Blurting':'')};
-function presetOf(m){for(const k in PRESETS){const p=PRESETS[k].m;if(Object.keys(p).every(x=>m[x]===p[x]))return k}return 'custom'}
-function modeUI(){const t=modeTxt();['modebtn1','modebtn2'].forEach(id=>{const b=$(id);if(!b)return;b.innerHTML='⏱ <span class="mk">Modo de estudio:</span> <span class="ms">'+t+'</span>';b.setAttribute('aria-label','Modo de estudio: '+t)});pillRender(true)}
-function saveMode(m){m.ts=Date.now();m.v=1;MODE=m;S.set('ent-mode',MODE);push(0);modeUI()}
+const modeName=m=>PRESETS[(m||curMode()).preset].name;
+function modeUI(){const m=curMode(),nm=modeName(m),t=modeTxt(m);['modebtn1','modebtn2'].forEach(id=>{const b=$(id);if(!b)return;
+  b.innerHTML='⏱ <span class="ms">'+nm+'</span>';b.title=nm+': '+t;b.setAttribute('aria-label','Modo de estudio: '+nm+'. '+t)});pillRender(true)}
+function saveMode(m){m.ts=Date.now();m.v=2;MODE=m;S.set('ent-mode',MODE);push(0);modeUI()}
 
-function modeModal(first){let m=curMode();const n=el('div','mset');
-  n.innerHTML='<h2>'+(first?'¿Cómo quieres estudiar?':'Modo de estudio')+'</h2><p class="sub">'+(first?'Configúralo una vez y queda guardado. Lo cambias cuando quieras con el botón «⏱ Modo de estudio».':'Se guarda para la próxima vez.')+(TM?' Tienes una sesión en curso: el cambio se aplica desde la próxima sesión.':'')+'</p>';
-  const pg=el('div','presets'),pb={};
-  Object.entries(PRESETS).concat([['custom',{ico:'⚙️',name:'Personalizado',desc:'Ajusta cada parte abajo'}]]).forEach(([k,p])=>{
-    const b=el('button','preset','<span class="pi">'+p.ico+'</span><b>'+p.name+'</b><span class="pd2">'+p.desc+'</span>');b.type='button';
-    b.onclick=()=>{if(p.m)Object.assign(m,p.m);m.preset=k;sync()};pb[k]=b;pg.append(b)});
-  n.append(pg);
-  const ts=el('div','msec');ts.append(el('h3',null,'Tiempo'));const seg=el('div','seg'),sb={};seg.setAttribute('role','radiogroup');seg.setAttribute('aria-label','Temporizador');
-  [['pomo','Pomodoro'],['flow','Flowtime'],['none','Sin timer']].forEach(([k,l])=>{const b=el('button',null,l);b.type='button';b.setAttribute('role','radio');b.onclick=()=>{m.timer=k;m.preset=presetOf(m);sync()};sb[k]=b;seg.append(b)});
-  ts.append(seg);const pomo=el('div');
-  const rng=(lab,key,min,max,step)=>{const r=el('label','rng');const i=document.createElement('input');i.type='range';i.min=min;i.max=max;i.step=step;
-    const v=el('b','rv');r.append(el('span','rl',lab),i,v);i.oninput=()=>{m[key]=+i.value;m.preset=presetOf(m);sync(true)};r._i=i;r._v=v;r._k=key;return r};
-  const rW=rng('Estudio','work',25,45,5),rB=rng('Descanso','brk',5,15,1),rL=rng('Descanso largo','longMin',15,30,5);
-  const lk=el('label','tog');const lc=document.createElement('input');lc.type='checkbox';lc.onchange=()=>{m.long=lc.checked;sync()};lk.append(lc,el('span',null,'Descanso largo cada 4 bloques'));
-  pomo.append(rW,rB,lk,rL);ts.append(pomo);
-  const fN=el('p','note','Cuenta hacia adelante y no te corta en medio de un ejercicio. A los 45 min te avisa para descansar; el descanso es la quinta parte de lo que estudiaste, entre 5 y 15 min.');
-  const nN=el('p','note','Sin cronómetro: solo eliges cómo practicar.');ts.append(fN,nN);n.append(ts);
-  const ps=el('div','msec');ps.append(el('h3',null,'Práctica'));const pl=el('div','plist'),pr={};pl.setAttribute('role','radiogroup');pl.setAttribute('aria-label','Práctica');
-  Object.entries(PRAC).forEach(([k,[ic,l,d]])=>{const b=el('button','pr','<b>'+ic+' '+l+'</b><span>'+d+'</span>');b.type='button';b.setAttribute('role','radio');b.onclick=()=>{m.practice=k;m.preset=presetOf(m);sync()};pr[k]=b;pl.append(b)});
-  ps.append(pl);const bk=el('label','tog');const bc=document.createElement('input');bc.type='checkbox';bc.onchange=()=>{m.blur=bc.checked;m.preset=presetOf(m);sync()};
-  bk.append(bc,el('span',null,'<b>Calentar con blurting (3 min).</b> Antes de practicar escribes todo lo que recuerdas del tema y lo comparas con las ideas clave. Lo que olvidaste va a tu repaso.'));ps.append(bk);n.append(ps);
-  const sum=el('p','msum');n.append(sum);
-  function sync(fromRange){Object.entries(pb).forEach(([k,b])=>b.setAttribute('aria-pressed',String(m.preset===k)));Object.entries(sb).forEach(([k,b])=>b.setAttribute('aria-checked',String(m.timer===k)));
-    pomo.hidden=m.timer!=='pomo';fN.hidden=m.timer!=='flow';nN.hidden=m.timer!=='none';
-    [rW,rB,rL].forEach(r=>{if(!fromRange)r._i.value=m[r._k];r._v.textContent=m[r._k]+' min'});lc.checked=!!m.long;rL.hidden=!m.long;
-    Object.entries(pr).forEach(([k,b])=>b.setAttribute('aria-checked',String(m.practice===k)));bc.checked=!!m.blur;
-    sum.innerHTML='<span>Quedará así:</span> '+modeTxt(m)}
-  const bt=el('div','mbtns');const ok=el('button','pri',first?'Listo':'Guardar');ok.onclick=()=>{saveMode(m);closeModal()};bt.append(ok);
-  if(!first){const c=el('button',null,'Cancelar');c.onclick=closeModal;bt.append(c)}
-  n.append(bt);sync();openModal(n,'wide')}
+/* ---------- íconos ---------- */
+const gearD=(cx,cy,ro,ri,n)=>{let d='';for(let i=0;i<n;i++){const a=2*Math.PI*i/n,w=Math.PI/n*.42,s=Math.PI/n*.22;
+  const P=(r,t)=>(cx+r*Math.cos(t)).toFixed(1)+' '+(cy+r*Math.sin(t)).toFixed(1);
+  d+=(i?'L':'M')+P(ri,a-w-s)+'L'+P(ro,a-w)+'L'+P(ro,a+w)+'L'+P(ri,a+w+s)}return d+'Z'};
+const SM_ICO={
+  enf:'<svg viewBox="0 0 120 90" aria-hidden="true"><g class="ln" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">'+
+    '<path d="M8 16V80H52Q60 86 68 80H112V16"/><path d="M60 20C48 11 30 9 14 12V74C30 71 48 73 60 81Z"/><path d="M60 20C72 11 90 9 106 12V74C90 71 72 73 60 81Z"/><path d="M60 20V81"/></g>'+
+    '<g class="co" stroke-linejoin="round"><path d="M8 16V80H52Q60 87 68 80H112V16Z" fill="#5A3A22"/><path d="M60 20C48 11 30 9 14 12V74C30 71 48 73 60 81Z" fill="#F6EEDC" stroke="#8C6A45" stroke-width="2"/>'+
+    '<path d="M60 20C72 11 90 9 106 12V74C90 71 72 73 60 81Z" fill="#EFE3C8" stroke="#8C6A45" stroke-width="2"/><path d="M60 20V81" stroke="#8C6A45" stroke-width="2"/>'+
+    '<path d="M22 24C33 22 44 24 52 29M22 34C33 32 44 34 52 39M22 44C33 42 44 44 52 49M68 29C76 24 87 22 98 24M68 39C76 34 87 32 98 34M68 49C76 44 87 42 98 44" stroke="#D9C7A2" stroke-width="2" fill="none" stroke-linecap="round"/></g></svg>',
+  exa:'<svg viewBox="0 0 120 120" aria-hidden="true"><g class="ln" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round">'+
+    '<path d="M60 6C65 30 94 42 94 74C94 98 79 112 60 112C41 112 26 98 26 76C26 57 38 48 43 32C49 43 50 52 57 57C59 40 55 22 60 6Z"/>'+
+    '<path d="M60 112C49 112 43 104 43 93C43 80 54 74 56 62C63 73 78 79 78 94C78 105 71 112 60 112Z"/></g>'+
+    '<g class="co"><defs><linearGradient id="smfg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0442B"/><stop offset="1" stop-color="#F57A1D"/></linearGradient></defs>'+
+    '<path d="M60 6C65 30 94 42 94 74C94 98 79 112 60 112C41 112 26 98 26 76C26 57 38 48 43 32C49 43 50 52 57 57C59 40 55 22 60 6Z" fill="url(#smfg)"/>'+
+    '<path d="M60 112C46 112 37 103 37 90C37 74 51 66 54 50C64 64 84 72 84 92C84 104 74 112 60 112Z" fill="#FF9F1C"/>'+
+    '<path d="M60 112C51 112 46 106 46 98C46 88 55 83 57 74C63 81 74 86 74 98C74 106 68 112 60 112Z" fill="#FFE347"/></g></svg>',
+  sp:'<svg viewBox="0 0 120 104" aria-hidden="true"><g class="ln" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">'+
+    '<path d="M30 50V26Q30 10 46 10H74Q90 10 90 26V50"/><path d="M28 64V58Q28 46 18 46Q8 46 8 57Q8 65 16 67V84H104V67Q112 65 112 57Q112 46 102 46Q92 46 92 58V64Z"/>'+
+    '<rect x="28" y="52" width="64" height="12" rx="4"/><path d="M24 84V96M96 84V96"/></g>'+
+    '<g class="co" stroke-linejoin="round"><path d="M30 54V26Q30 10 46 10H74Q90 10 90 26V54Z" fill="#6F8FC4"/><circle cx="50" cy="26" r="1.8" fill="#4C6A9E"/><circle cx="70" cy="26" r="1.8" fill="#4C6A9E"/><circle cx="60" cy="36" r="1.8" fill="#4C6A9E"/>'+
+    '<path d="M22 84H98V66H22Z" fill="#4E6FA5"/><rect x="28" y="52" width="64" height="14" rx="5" fill="#7E9DD0"/>'+
+    '<path d="M28 84V58Q28 46 18 46Q8 46 8 57Q8 65 16 67V84Z" fill="#5C7DB4"/><path d="M92 84V58Q92 46 102 46Q112 46 112 57Q112 65 104 67V84Z" fill="#5C7DB4"/>'+
+    '<path d="M22 84L24 97H29L30 84ZM90 84L91 97H96L98 84Z" fill="#9A5530"/></g></svg>',
+  custom:'<svg viewBox="0 0 120 120" aria-hidden="true"><g class="ln" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round">'+
+    '<path d="'+gearD(60,60,52,40,8)+'"/><circle cx="60" cy="60" r="17"/></g>'+
+    '<g class="co"><path d="'+gearD(60,60,52,40,8)+'" fill="#8D8F94" stroke="#3E4045" stroke-width="3.4" stroke-linejoin="round"/><circle cx="60" cy="60" r="17" fill="var(--card)" stroke="#3E4045" stroke-width="3.4"/></g></svg>'};
+const P_ICO=(d)=>'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+d+'</svg>';
+const PR_ICO={tema:P_ICO('<path d="M2.5 6.5c3.2-1.6 6.3-1.6 9.5 0v13c-3.2-1.6-6.3-1.6-9.5 0z"/><path d="M12 6.5c3.2-1.6 6.3-1.6 9.5 0v13c-3.2-1.6-6.3-1.6-9.5 0z"/>'),
+  mix:P_ICO('<path d="M12.0 12.0 L12.1 12.0 L12.1 12.0 L12.2 12.1 L12.3 12.1 L12.3 12.2 L12.3 12.3 L12.3 12.4 L12.3 12.5 L12.3 12.6 L12.3 12.7 L12.2 12.8 L12.1 12.9 L12.0 13.0 L11.9 13.0 L11.7 13.1 L11.6 13.1 L11.4 13.1 L11.2 13.1 L11.1 13.1 L10.9 13.0 L10.7 12.9 L10.6 12.8 L10.4 12.6 L10.3 12.4 L10.1 12.2 L10.1 12.0 L10.0 11.8 L10.0 11.5 L10.0 11.3 L10.0 11.0 L10.1 10.7 L10.2 10.4 L10.3 10.2 L10.5 9.9 L10.8 9.7 L11.0 9.5 L11.3 9.3 L11.6 9.2 L12.0 9.1 L12.3 9.0 L12.7 9.0 L13.1 9.0 L13.4 9.1 L13.8 9.3 L14.2 9.4 L14.5 9.7 L14.8 10.0 L15.1 10.3 L15.4 10.6 L15.6 11.0 L15.8 11.5 L15.9 11.9 L15.9 12.4 L15.9 12.9 L15.9 13.4 L15.7 13.9 L15.6 14.3 L15.3 14.8 L15.0 15.2 L14.6 15.6 L14.2 16.0 L13.7 16.3 L13.2 16.5 L12.7 16.7 L12.1 16.9 L11.5 16.9 L10.9 16.9 L10.3 16.8 L9.7 16.6 L9.2 16.4 L8.6 16.1 L8.1 15.7 L7.6 15.2 L7.2 14.7 L6.8 14.1 L6.5 13.5 L6.3 12.9 L6.2 12.2 L6.1 11.5 L6.2 10.8 L6.3 10.0 L6.5 9.3 L6.8 8.7 L7.2 8.0 L7.6 7.4 L8.2 6.8 L8.8 6.4 L9.5 5.9 L10.2 5.6 L10.9 5.4 L11.8 5.2 L12.6 5.2 L13.4 5.2 L14.2 5.3 L15.1 5.6 L15.8 5.9 L16.6 6.4 L17.3 6.9 L17.9 7.6 L18.5 8.3 L18.9 9.0 L19.3 9.9 L19.6 10.8 L19.8 11.7 L19.8 12.6 L19.8 13.6 L19.6 14.5 L19.3 15.4 L18.9 16.3 L18.4 17.2 L17.8 18.0 L17.1 18.7 L16.3 19.3 L15.4 19.8 L14.4 20.2 L13.4 20.5 L12.4 20.7 L11.4 20.8 L10.3 20.7 L9.2 20.5"/>'),
+  queue:P_ICO('<path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"/><path d="M3.5 3.5v5h5"/>'),
+  seq:P_ICO('<path d="M3 7h3.5c4.5 0 6.5 10 11 10H21"/><path d="M3 17h3.5c1.8 0 3-1.5 4.2-3.4M13.3 10.4C14.5 8.5 15.7 7 17.5 7H21"/><path d="M18.5 4.5 21 7l-2.5 2.5M18.5 14.5 21 17l-2.5 2.5"/>'),
+  start:P_ICO('<path d="M14.5 4.5c2.3-1.4 4.6-1.8 6-1.5.3 1.4-.1 3.7-1.5 6l-6.5 7-4-4z"/><path d="M8.5 12 5 11.5 7.8 8.5h4M12 15.5l.5 3.5 3-2.8v-4"/><circle cx="16" cy="8" r="1.3"/><path d="M6.5 17.5c-1 .4-2 1.6-2.5 3.5 1.9-.5 3.1-1.5 3.5-2.5"/>')};
+
+/* ---------- ventana del modo de estudio: paso 1 elige el tipo, paso 2 lo ajusta ---------- */
+function modeModal(first){const cur=curMode();const n=el('div','smw');
+  const mo=openModal(n,'smode');if(first&&mo&&mo.parentNode)mo.parentNode.onclick=null;
+  const focusFirst=sel=>setTimeout(()=>{const f=n.querySelector(sel);f&&f.focus()},30);
+  function step1(){n.className='smw s1';n.innerHTML='';
+    n.append(el('h2','smt','Configura tu sesión de estudio'),el('p','sms','Cámbiala cuando quieras con el botón «⏱ Modo de estudio».'));
+    const g=el('div','smgrid');
+    ['enf','exa','sp','custom'].forEach(k=>{const p=PRESETS[k],c=el('div','smcell');
+      const b=el('button','smcard','<span class="smico smi-'+k+'">'+SM_ICO[k]+'</span><span class="smname">'+p.name+'</span>');b.type='button';
+      b.setAttribute('aria-describedby','smd-'+k);b.onclick=()=>step2(k);
+      const d=el('p','smdesc',p.desc);d.id='smd-'+k;c.append(b,d);
+      if(!first&&cur.preset===k)c.append(el('span','smnow','✓ Tu modo actual'));g.append(c)});
+    n.append(g);
+    if(!first){const bt=el('div','smbtns');const c=el('button',null,'Cancelar');c.type='button';c.onclick=closeModal;bt.append(c);n.append(bt)}
+    n.scrollIntoView&&mo&&(mo.scrollTop=0);focusFirst('.smcard')}
+  function step2(k){const p=PRESETS[k],edit=k==='custom';const m=Object.assign({},cur);
+    if(edit){if(cur.preset!=='custom'){const base=Object.assign({},DEF_MODE,cur.cus||{});CUS_KEYS.forEach(x=>m[x]=base[x])}}else Object.assign(m,p.m);
+    m.preset=k;clampM(m);
+    n.className='smw s2 sm-'+k;n.innerHTML='';
+    const bk=el('button','smback','← Volver');bk.type='button';bk.onclick=step1;
+    n.append(bk,el('h2','smt dash','<span aria-hidden="true">–</span><span>'+p.title+'</span><span aria-hidden="true">–</span>'),el('p','sms2',p.intro));
+    if(TM)n.append(el('p','smnote','Tienes una sesión en curso: el cambio se aplica desde la próxima sesión.'));
+    const body=el('div','smbody');n.append(body);
+    const bt=el('div','smbtns');const ok=el('button','pri','Guardar');ok.type='button';
+    ok.onclick=()=>{if(edit){m.cus={};CUS_KEYS.forEach(x=>m.cus[x]=m[x])}saveMode(m);closeModal()};bt.append(ok);
+    if(!first){const c=el('button',null,'Cancelar');c.type='button';c.onclick=closeModal;bt.append(c)}
+    n.append(bt);
+    function box(val,lab,key,step,min,max,off){const w=el('div','tbw'+(off?' off':''));const b=el('div','tbox');
+      b.append(el('b','tnum',String(val)),el('span','tmin','minutos'));
+      if(edit&&key){const mk=(sym,d)=>{const x=el('button','tstep '+(d<0?'dn':'up'),sym);x.type='button';x.dataset.f=key+d;
+          x.setAttribute('aria-label',(d<0?'Restar ':'Sumar ')+Math.abs(d)+' min '+lab);x.disabled=!!off||(d<0?m[key]<=min:m[key]>=max);
+          x.onclick=()=>{m[key]=Math.min(max,Math.max(min,m[key]+d));render(x.dataset.f)};return x};
+        b.append(mk('−',-step),mk('+',step));b.setAttribute('role','group');b.setAttribute('aria-label',lab+': '+val+' minutos')}
+      w.append(b,el('span','tlab',lab));return w}
+    function render(fk){body.innerHTML='';
+      if(edit){const seg=el('div','smseg');seg.setAttribute('role','radiogroup');seg.setAttribute('aria-label','Temporizador');
+        [['pomo','Pomodoro'],['flow','Flowtime'],['none','Sin temporizador']].forEach(([t,l])=>{const b=el('button',null,l);b.type='button';b.setAttribute('role','radio');
+          b.setAttribute('aria-checked',String(m.timer===t));b.dataset.f='t-'+t;b.onclick=()=>{m.timer=t;render('t-'+t)};seg.append(b)});body.append(seg)}
+      if(m.timer==='pomo'){const r=el('div','tbrow');const a=el('div','tbgrp');
+        a.append(box(m.work,'de estudio','work',5,25,45),box(m.brk,'de descanso','brk',1,5,15));
+        const lg=el('div','tbgrp lg');const bx=box(m.long?m.longMin:m.longMin,'','longMin',5,15,30,!m.long);bx.querySelector('.tlab').remove();
+        const lk=el('label','tblong');const lc=document.createElement('input');lc.type='checkbox';lc.checked=!!m.long;lc.disabled=!edit;lc.dataset.f='long';
+        lc.onchange=()=>{m.long=lc.checked;render('long')};lk.append(lc,el('span',null,'Descanso largo cada 4 bloques'));lg.append(bx,lk);
+        r.append(a,el('span','tbsep'),lg);body.append(r)}
+      else if(m.timer==='flow'){if(edit)body.append(el('p','smtip',FLOW_TXT));
+        else{const r=el('div','tbrow');const a=el('div','tbgrp');a.append(box(45,'de estudio'),box('?','de descanso'));r.append(a);body.append(r)}}
+      else if(edit)body.append(el('p','smtip','⏱ El tiempo correrá en segundo plano sin alarmas.'));
+      const card=(q,btn)=>{const on=m.practice===q;const c=el(btn?'button':'div','pcard'+(on?' on':''),
+          '<span class="pico">'+PR_ICO[q]+'</span><span class="ptx"><b>'+(PRAC_T[q]||PRAC[q][1])+'</b><span>'+PRAC[q][2]+'</span></span>');
+        if(btn){c.type='button';c.setAttribute('role','radio');c.setAttribute('aria-checked',String(on));c.dataset.f='p-'+q;c.onclick=()=>{m.practice=q;render('p-'+q)}}return c};
+      if(edit){const l=el('div','plist2');l.setAttribute('role','radiogroup');l.setAttribute('aria-label','Práctica');Object.keys(PRAC).forEach(q=>l.append(card(q,true)));body.append(l)}
+      else body.append(card(m.practice,false));
+      const bl=el('label','smblur');const bc=document.createElement('input');bc.type='checkbox';bc.checked=!!m.blur;bc.dataset.f='blur';bc.onchange=()=>{m.blur=bc.checked};
+      bl.append(bc,el('span',null,'<b>Calentar con blurting (3 min).</b> Antes de practicar escribes todo lo que recuerdas del tema y lo comparas con las ideas clave. Lo que olvidaste va a tu repaso.'));body.append(bl);
+      if(fk){const f=body.querySelector('[data-f="'+fk+'"]');if(f&&!f.disabled)f.focus();else{const s=body.querySelector('[data-f^="'+String(fk).replace(/-?\d+$/,'')+'"]:not(:disabled)');s&&s.focus()}}}
+    render();if(mo)mo.scrollTop=0;focusFirst('.smback')}
+  step1()}
 
 /* ---------- temporizador (siempre por marcas de tiempo, nunca restando segundos) ---------- */
 let TM=S.get('ent-timer',null),SESS=null,AC=null;
@@ -1821,7 +2000,7 @@ if(TM&&TM.upd&&Date.now()-TM.upd>12*3600e3&&(TM.phase==='wait'||!TM.t0)){TM=null
 if(TM&&TM.auto){TM.auto=false;if(TM.phase!=='wait')TM.t0=Date.now()}
 
 function tmStart(m){audioUnlock();const cfg={kind:m.timer,work:m.work,brk:m.brk,long:!!m.long,longMin:m.longMin};
-  TM={cfg,phase:'work',t0:Date.now(),acc:0,len:cfg.kind==='pomo'?cfg.work*MIN:null,blk:1,done:0,solved:0,tot:0,workMs:0,warned:false,ask:false,auto:false,open:false,msg:''};tmSave();pillRender(true)}
+  TM={cid:C?C.id:null,cfg,phase:'work',t0:Date.now(),acc:0,len:cfg.kind==='pomo'?cfg.work*MIN:null,blk:1,done:0,solved:0,tot:0,workMs:0,warned:false,ask:false,auto:false,open:false,msg:''};tmSave();pillRender(true)}
 function tmPause(){if(!TM||!TM.t0)return;TM.acc=tmEl();TM.t0=null;tmSave();pillRender(true)}
 function tmResume(){if(!TM||TM.t0||TM.phase==='wait')return;audioUnlock();TM.t0=Date.now();TM.auto=false;tmSave();pillRender(true)}
 function tmAdd5(){if(!TM||TM.phase!=='work'||TM.cfg.kind!=='pomo')return;TM.len+=5*MIN;TM.msg='Le sumaste 5 min a este bloque.';tmSave();pillRender(true)}
@@ -1829,8 +2008,10 @@ function tmFlowBreak(){if(!TM||TM.phase!=='work'||TM.cfg.kind!=='flow')return;co
   TM.msg='Estudiaste '+Math.round(w/MIN)+' min'+(TM.solved?' y resolviste '+plural(TM.solved,'ejercicio','ejercicios'):'')+'. Descansa '+b+' min.';
   Object.assign(TM,{phase:'break',len:b*MIN,acc:0,t0:Date.now(),ask:false,warned:false,long:false});tmSave();pillRender(true)}
 function tmNext(){if(!TM)return;audioUnlock();Object.assign(TM,{phase:'work',blk:TM.blk+1,t0:Date.now(),acc:0,len:TM.cfg.kind==='pomo'?TM.cfg.work*MIN:null,solved:0,warned:false,ask:false,long:false,msg:'',open:false});tmSave();pillRender(true)}
-function tmEnd(){if(!TM)return;const d=TM.done,w=TM.workMs,t=TM.tot;TM=null;SESS=null;tmSave();document.title=BASE_TITLE;pillRender(true);
-  toast(d?'Sesión terminada: '+plural(d,'bloque completo','bloques completos')+' ('+Math.round(w/MIN)+' min) y '+plural(t,'ejercicio resuelto','ejercicios resueltos')+'.':'Sesión terminada.'+(t?' Resolviste '+plural(t,'ejercicio','ejercicios')+'.':''))}
+function tmEnd(){if(!TM)return;const w=TM.workMs+(TM.phase==='work'?tmEl():0),t=TM.tot,d=TM.done,kind=TM.cfg.kind,cid=TM.cid||(C&&C.id);
+  TM=null;SESS=null;tmSave();document.title=BASE_TITLE;pillRender(true);const mins=Math.round(w/MIN);
+  if(cid&&w>=MIN){const s=cs(cid),z=s.ses||(s.ses={n:0,ms:0,pomo:0,flow:0,none:0});z.n=(z.n||0)+1;z.ms=(z.ms||0)+w;z[kind]=(z[kind]||0)+w;save()}
+  toast('Sesión terminada: '+(mins?mins+' min de estudio':'menos de 1 min')+(d?' · '+plural(d,'bloque completo','bloques completos'):'')+(t?' · '+plural(t,'ejercicio resuelto','ejercicios resueltos'):'')+'.')}
 function bump(k){if(!TM||TM.phase!=='work')return;k=k==null?1:k;if(!k)return;TM.solved+=k;TM.tot+=k;tmSave();pillRender(true)}
 const examNow=()=>view==='sim'&&!!SIMS&&!SIMS.done&&(SIMS.mode==='sim'||SIMS.mode==='rescue');
 
@@ -1855,10 +2036,11 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden)tmTick()})
 
 /* ---------- pastilla flotante ---------- */
 let pillSig='';
-const needsStart=m=>m.timer!=='none'||m.practice!=='tema'||m.blur;
-function phaseName(){const p=TM.phase;if(p==='work')return(TM.cfg.kind==='flow'?'Flowtime':'Estudio')+' · bloque '+TM.blk+(TM.t0?'':TM.auto?' (pausado por el simulacro)':' (en pausa)');
+const needsStart=m=>true;
+function phaseName(){const p=TM.phase;if(p==='work')return(TM.cfg.kind==='none'?'Sesión sin temporizador':(TM.cfg.kind==='flow'?'Flowtime':'Estudio')+' · bloque '+TM.blk)+(TM.t0?'':TM.auto?' (pausado por el simulacro)':' (en pausa)');
   if(p==='break')return TM.long?'Descanso largo':'Descanso';return 'Descanso terminado'}
-function statTxt(){if(TM.phase==='work')return(TM.solved?plural(TM.solved,'ejercicio resuelto','ejercicios resueltos')+' en este bloque':'Todavía sin ejercicios resueltos en este bloque')+(TM.done?'. Bloques completos: '+TM.done+'.':'.');
+function statTxt(){if(TM.cfg.kind==='none')return TM.tot?plural(TM.tot,'ejercicio resuelto','ejercicios resueltos')+' en esta sesión.':'Todavía sin ejercicios resueltos en esta sesión.';
+  if(TM.phase==='work')return(TM.solved?plural(TM.solved,'ejercicio resuelto','ejercicios resueltos')+' en este bloque':'Todavía sin ejercicios resueltos en este bloque')+(TM.done?'. Bloques completos: '+TM.done+'.':'.');
   return 'Bloques completos: '+TM.done+'. Ejercicios en la sesión: '+TM.tot+'.'}
 function pillRender(force){if(!PILL)return;const m=curMode();let state=null;
   if(examNow())state=null;else if(TM)state=TM.phase;else if(view==='course'&&C&&needsStart(m))state='idle';
@@ -1866,30 +2048,31 @@ function pillRender(force){if(!PILL)return;const m=curMode();let state=null;
   const sig=state+'|'+(TM?[!!TM.t0,TM.open,TM.msg,TM.ask,TM.blk,TM.solved,TM.done,TM.warned,TM.long].join(','):modeTxt(m));
   PILL.hidden=false;if(force||sig!==pillSig){pillSig=sig;buildPill(state,m)}updPill(state)}
 function buildPill(state,m){PILL.innerHTML='';
-  if(state==='idle'){const b=el('button','pbtn idle','<span>▶ Empezar sesión</span><small>'+modeTxt(m)+'</small>');b.onclick=startSession;PILL.append(b);return}
-  const ph=TM.phase,flow=TM.cfg.kind==='flow';
-  PILL.style.setProperty('--pc',ph==='break'?'var(--for)':ph==='wait'?'var(--teo)':flow&&TM.warned?'var(--l3)':'var(--exe)');
+  if(state==='idle'){const b=el('button','pbtn idle','<span>▶ Empezar sesión</span><small>'+modeName(m)+' · '+timerTxt(m)+'</small>');b.onclick=startSession;PILL.append(b);return}
+  const ph=TM.phase,flow=TM.cfg.kind==='flow',none=TM.cfg.kind==='none';
+  PILL.style.setProperty('--pc',none?'var(--teo)':ph==='break'?'var(--for)':ph==='wait'?'var(--teo)':flow&&TM.warned?'var(--l3)':'var(--exe)');
   if(TM.open){const p=el('div','ppanel pop');p.setAttribute('role','group');p.setAttribute('aria-label','Temporizador de estudio');
     const hd=el('div','ph','<span>'+phaseName()+'</span>');const mn=el('button',null,'—');mn.title='Minimizar';mn.setAttribute('aria-label','Minimizar');
     mn.onclick=()=>{TM.open=false;TM.ask=false;TM.msg='';tmSave();pillRender(true)};hd.append(mn);p.append(hd);
-    if(ph!=='wait')p.append(el('div','pbig'),el('div','pmeter','<i></i>'));
+    if(ph!=='wait')p.append(el('div','pbig'));if(ph!=='wait'&&!none)p.append(el('div','pmeter','<i></i>'));
     if(TM.msg){const ms=el('p','pmsg',TM.msg);ms.setAttribute('aria-live','polite');p.append(ms)}
     p.append(el('p','pst',statTxt()));
     const a=el('div','pacts');const B=(t,f,pri)=>{const b=el('button',pri?'pri':null,t);b.onclick=f;a.append(b)};
     if(ph==='work'){if(flow&&TM.ask){B('☕ Descansar ahora',tmFlowBreak,true);B('Seguir',()=>{TM.ask=false;TM.msg='';TM.open=false;tmSave();pillRender(true)})}
-      else{if(TM.t0)B('⏸ Pausar',tmPause);else if(!TM.auto)B('▶ Reanudar',tmResume,true);if(flow)B('☕ Descansar',tmFlowBreak);else B('+5 min',tmAdd5)}
-      B('Terminar bloque',tmEnd)}
+      else{if(TM.t0)B('⏸ Pausar',tmPause);else if(!TM.auto)B('▶ Reanudar',tmResume,true);if(flow)B('☕ Descansar',tmFlowBreak);else if(!none)B('+5 min',tmAdd5)}
+      B(none?'Terminar sesión':'Terminar bloque',tmEnd)}
     else if(ph==='break'){B('Saltar descanso',tmNext,true);B('Terminar sesión',tmEnd)}
     else{B('▶ Siguiente bloque',tmNext,true);B('Terminar sesión',tmEnd)}
     p.append(a);PILL.append(p)}
   if(ph==='wait'&&!TM.open){const w=el('div','pwait');const go=el('button','pbtn go','▶ Siguiente bloque');go.onclick=tmNext;
     const x=el('button','pbtn px','✕');x.title='Terminar sesión';x.setAttribute('aria-label','Terminar sesión');x.onclick=tmEnd;w.append(go,x);PILL.append(w);return}
-  const lab=ph==='work'?(flow?'Flow':'Estudio'):ph==='break'?'Descanso':'Listo';
+  const lab=ph==='work'?(flow?'Flow':none?'Sesión':'Estudio'):ph==='break'?'Descanso':'Listo';
   const b=el('button','pbtn main'+(TM.t0||ph==='wait'?'':' paused'),'<span class="pd"></span><span class="pt"></span><span class="pl">'+lab+'</span><i class="pb"></i>');
   b.setAttribute('aria-expanded',String(!!TM.open));b.onclick=()=>{TM.open=!TM.open;if(!TM.open){TM.ask=false;TM.msg=''}tmSave();pillRender(true)};PILL.append(b)}
 function updPill(state){if(state==='idle'||!TM){if(document.title!==BASE_TITLE)document.title=BASE_TITLE;return}
   const ph=TM.phase,flow=TM.cfg.kind==='flow';let txt='',fr=1;
-  if(ph==='work'&&flow){const e=tmEl();txt=mmss(e);fr=Math.min(1,e/(45*MIN))}else if(ph!=='wait'){const l=tmLeft();txt=mmssC(l);fr=1-l/TM.len}
+  if(ph==='work'&&TM.cfg.kind==='none'){txt=mmss(tmEl());fr=0}
+  else if(ph==='work'&&flow){const e=tmEl();txt=mmss(e);fr=Math.min(1,e/(45*MIN))}else if(ph!=='wait'){const l=tmLeft();txt=mmssC(l);fr=1-l/TM.len}
   PILL.querySelectorAll('.pt,.pbig').forEach(x=>{if(x.textContent!==txt)x.textContent=txt});
   PILL.querySelectorAll('.pb,.pmeter i').forEach(x=>x.style.width=(100*Math.max(0,Math.min(1,fr))).toFixed(2)+'%');
   const mb=PILL.querySelector('.pbtn.main');if(mb)mb.setAttribute('aria-label','Temporizador: '+(txt||'descanso terminado')+(ph==='break'?' de descanso':ph==='work'?' de estudio':'')+(TM.t0||ph==='wait'?'':', en pausa'));
@@ -1900,7 +2083,7 @@ function toast(t,ms){document.querySelectorAll('.toast').forEach(x=>x.remove());
 
 /* ---------- sesión: arranca el temporizador, el calentamiento y la práctica ---------- */
 const mixOK=()=>T.filter((t,i)=>unlocked(i)&&t.ex.some(okEx)).length>=2;
-function startSession(){if(!C)return;const m=curMode();SESS={seq:m.practice==='seq',practice:m.practice};if(m.timer!=='none'&&!TM)tmStart(m);
+function startSession(){if(!C)return;const m=curMode();SESS={seq:m.practice==='seq',practice:m.practice};if(!TM)tmStart(m);
   const go=ti=>{if(!C)return;if(m.practice==='tema'&&ti!=null&&ti!==st.topic&&unlocked(ti)&&view==='course')goTopic(ti);startPractice(m.practice)};
   if(m.blur)blurting(blurTopic(m.practice),go);else go();pillRender(true)}
 function startPractice(p){if(!C)return;
