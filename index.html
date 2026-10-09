@@ -25,6 +25,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg
  startup:{typeset:false,ready(){MathJax.startup.defaultReady();MathJax.startup.promise.then(()=>{window.__mj=true;window.__tq&&window.__tq();});}}};
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
 <style>
 :root{--paper:#F4F7FA;--grid:#E3EAF1;--ink:#15233B;--muted:#5B6882;--line:#CBD6E2;--card:#FFFFFF;--cyan:#0098C8;
 --teo:#2C5BD0;--teo-bg:#EEF3FF;--for:#17875A;--for-bg:#EAF7F0;--exe:#D06A12;--exe-bg:#FFF4E8;--sol:#7446C0;--sol-bg:#F4EEFD;
@@ -666,6 +667,49 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 :root:not([data-theme="light"]) .nbname{color:#DCE3EE}
 }
 
+/* ===== Mis cursos / Otros cursos ===== */
+.mishead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
+.mist{margin:0;font:600 1.5rem/1.1 Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1;color:#3B3B3B;letter-spacing:-.015em}
+.mist small{font:600 .9rem Lora,Georgia,serif;color:#7A7A7A;margin-left:6px}
+.misnote{margin:4px 0 6px;font:600 .92rem/1.5 Lora,Georgia,serif;color:#666}
+.misempty{grid-column:1/-1;border:2px dashed #B9B2A6;border-radius:12px;padding:22px 16px;text-align:center;font:600 .95rem/1.5 Lora,Georgia,serif;color:#777}
+#vMenu .menu.mine:has(.nbcell) .misempty{display:none}
+details.otros{margin-top:22px;border-top:1.5px solid #CFC8BC;padding-top:6px}
+details.otros>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:8px 0}
+details.otros>summary::-webkit-details-marker{display:none}
+details.otros>summary::before{content:'▸';font-size:1rem;color:#7A7A7A;transition:transform .2s}
+details.otros[open]>summary::before{transform:rotate(90deg)}
+details.otros>summary .mist{font-size:1.25rem}
+.nbcell{position:relative;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.nbghost{opacity:.35}
+.nbchosen .nb{transform:scale(1.05);transition:transform .15s}
+.nbdrag .nb.open .nbbook{transform:none}
+.misx{position:absolute;top:-8px;right:-8px;z-index:8;width:34px;height:34px;border-radius:999px;border:1.5px solid #2B2B2B;background:#fff;color:#2B2B2B;font:800 1.2rem/1 Figtree,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 #2B2B2B}
+.misx.add{background:#2B2B2B;color:#fff}
+.menu.editing .nb{animation:wig .5s ease-in-out infinite alternate}
+.menu.editing .nbcell:nth-child(2n) .nb{animation-delay:-.25s}
+@keyframes wig{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+@media (prefers-reduced-motion:reduce){.menu.editing .nb{animation:none}}
+.mbtns button:disabled{opacity:.45;cursor:default}
+.mpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:12px 0 4px}
+.mpick label{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-weight:600}
+.mpick label:has(input:checked){border-color:var(--ink);background:var(--grid)}
+.mpick input{width:18px;height:18px;accent-color:var(--ink);flex:none}
+:root[data-theme="dark"] .mist{color:#EEF2F8}
+:root[data-theme="dark"] .mist small,:root[data-theme="dark"] .misnote,:root[data-theme="dark"] .misempty,:root[data-theme="dark"] details.otros>summary::before{color:#B7C3D6}
+:root[data-theme="dark"] .misempty{border-color:#3A4C6B}
+:root[data-theme="dark"] details.otros{border-color:#2D3F5E}
+:root[data-theme="dark"] .misx{border-color:#DCE3EE;background:#131D30;color:#E6ECF5;box-shadow:2px 2px 0 #DCE3EE}
+:root[data-theme="dark"] .misx.add{background:#E6ECF5;color:#0F1726}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) .mist{color:#EEF2F8}
+:root:not([data-theme="light"]) .mist small,:root:not([data-theme="light"]) .misnote,:root:not([data-theme="light"]) .misempty,:root:not([data-theme="light"]) details.otros>summary::before{color:#B7C3D6}
+:root:not([data-theme="light"]) .misempty{border-color:#3A4C6B}
+:root:not([data-theme="light"]) details.otros{border-color:#2D3F5E}
+:root:not([data-theme="light"]) .misx{border-color:#DCE3EE;background:#131D30;color:#E6ECF5;box-shadow:2px 2px 0 #DCE3EE}
+:root:not([data-theme="light"]) .misx.add{background:#E6ECF5;color:#0F1726}
+}
+
 /* ===== Audios semanales ===== */
 .aucard{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 12px}
 .auhead{display:flex;justify-content:space-between;align-items:center;gap:8px}
@@ -733,7 +777,7 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 <h1>¿Qué vas a <i>estudiar</i> hoy?</h1>
 <p>Pasa el cursor (o toca) un cuaderno para ver qué exámenes y prácticas tiene. Cada uno trae sus temas en orden de dificultad y un simulacro final.</p>
 </div>
-<div class="menu" id="menu"><p style="padding:1.5em;text-align:center;opacity:.6">Cargando cursos…</p></div>
+<div id="menu"><p style="padding:1.5em;text-align:center;opacity:.6">Cargando cursos…</p></div>
 </section>
 
 <section id="vCourse" hidden>
@@ -990,9 +1034,10 @@ if(!ST){ST={};const old=S.get('ent-prog',null)||(S.get('cv2-solved',null)?{'calc
   if(old)for(const c in old){ST[c]=blank();for(const id in old[c])if(old[c][id])ST[c].ex[id]={s:1,f:1,a:1}}S.set('ent-st',ST)}
 let prefs=S.get('ent-prefs',{});
 let MODE=S.get('ent-mode',null);
+let MIS=S.get('ent-mis',null);
 const cs=cid=>ST[cid]||(ST[cid]=blank());
 let cloud=null,pushT=null,cloudDone=false,onCloud=[];
-const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,updated:Date.now()});
+const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,mis:MIS||null,updated:Date.now()});
 function saveLocal(){S.set('ent-st',ST)}
 function setSync(t,on){[$('sync1'),$('sync2')].forEach(s=>{s.textContent=t;s.classList.toggle('on',!!on)})}
 function push(delay){if(!cloud)return;clearTimeout(pushT);pushT=setTimeout(()=>{cloud.set(cloudDoc()).then(()=>setSync(okLabel(),true)).catch(()=>setSync('Sin conexión: guardado local'))},delay==null?1200:delay)}
@@ -1019,8 +1064,9 @@ let FBA=null,UNAME='';
 const okLabel=()=>'☁️ Sincronizado'+(UNAME?' · '+UNAME:'');
 function cloudFinish(){if(cloudDone)return;cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}
 function rerender(){try{if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();if(typeof modeUI==='function')modeUI()}catch(e){}}
-function mergeRemote(remote,rm){remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
-  if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}}
+function mergeRemote(remote,rm,rmis){remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
+  if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}
+  if(rmis&&rmis.ts&&Array.isArray(rmis.sel)&&(!MIS||(MIS.ts||0)<rmis.ts)){MIS=rmis;S.set('ent-mis',MIS)}}
 function syncClick(){if(!FBA)return;if(FBA.auth.currentUser)FBA.logout();else FBA.login()}
 [$('sync1'),$('sync2')].forEach(s=>{s.addEventListener('click',syncClick);s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();syncClick()}})});
 function markClickable(){[$('sync1'),$('sync2')].forEach(s=>{const c=!!FBA;s.classList.toggle('clk',c);if(c){s.setAttribute('role','button');s.tabIndex=0;s.title=FBA.auth.currentUser?'Tocar para cerrar sesión':'Tocar para iniciar sesión con Google'}})}
@@ -1031,7 +1077,7 @@ async function claudeSync(){try{
   const ref=db.doc('data/users/'+uid+'/progress');const snap=await ref.get();
   let remote={};
   if(snap.exists){const d=snap.data();if(d.st)remote=d.st;else if(d.prog){for(const c in d.prog){remote[c]=blank();for(const id in d.prog[c])if(d.prog[c][id])remote[c].ex[id]={s:1,f:1,a:1}}}}
-  mergeRemote(remote,snap.exists?(snap.data()||{}).mode:null);
+  mergeRemote(remote,snap.exists?(snap.data()||{}).mode:null,snap.exists?(snap.data()||{}).mis:null);
   cloud=ref;saveLocal();await ref.set(cloudDoc());setSync(okLabel(),true);rerender();
 }catch(e){setSync('Guardando solo en este navegador')}finally{cloudFinish()}}
 async function firebaseSync(){
@@ -1047,7 +1093,7 @@ async function firebaseSync(){
     logout:async()=>{if(!confirm('¿Cerrar sesión?\n\nTu progreso queda guardado en tu cuenta y se borrará de este navegador.'))return;
       clearTimeout(pushT);try{if(cloud)await cloud.set(cloudDoc())}catch(e){}
       cloud=null;try{await AU.signOut(auth)}catch(e){}
-      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode')}catch(e){}
+      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode');localStorage.removeItem('ent-mis')}catch(e){}
       location.reload()}};
   AU.getRedirectResult(auth).catch(()=>{});
   AU.onAuthStateChanged(auth,async u=>{
@@ -1056,8 +1102,8 @@ async function firebaseSync(){
     try{setSync('Sincronizando…');markClickable();
       const ref=FS.doc(db,'users',u.uid,'data','progress');
       const snap=await FS.getDoc(ref);
-      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode)}
-      cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode}),updated:d.updated})};
+      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode,p.mis)}
+      cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode,mis:d.mis}),updated:d.updated})};
       saveLocal();await cloud.set(cloudDoc());setSync(okLabel(),true);rerender();
     }catch(e){cloud=null;setSync('Sin conexión: guardado local')}finally{markClickable();cloudFinish()}
   });
@@ -1223,8 +1269,12 @@ function doOpenNb(nb){const r=nb.getBoundingClientRect(),w=r.width,W=document.do
   nb.style.setProperty('--ang','-'+Math.round(ang)+'deg');nb.style.setProperty('--dx',dx+'px');
   nb.classList.add('open')}
 function enterGroup(nb,g){if(g.list.length===1&&!g.list[0].soon)openCourse(g.list[0].id);else openNb(nb)}
-function renderMenu(){const m=$('menu');m.innerHTML='';
-  GROUPS.forEach((g,gi)=>{const cell=el('div','nbcell');const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',NBCOL[gi%NBCOL.length]);
+/* ================= MIS CURSOS ================= */
+const ciclo=()=>{const d=new Date(),y=d.getFullYear(),mo=d.getMonth()+1;return y+'-'+(mo>=8?2:mo>=3?1:0)};
+let editMenu=false,otrosOpen=false,SORTS=[],dragEnd=0,chosen=false;
+const gByKey=k=>GROUPS.find(g=>g.key===k);
+function setMis(sel){MIS={v:1,sel:sel.filter(k=>gByKey(k)),known:GROUPS.map(g=>g.key),ciclo:ciclo(),ts:Date.now()};S.set('ent-mis',MIS);push(0)}
+function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell');cell.dataset.k=g.key;const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',NBCOL[gi%NBCOL.length]);
     if(COVERS[g.code])nb.style.setProperty('--img','url('+COVERS[g.code]+')');nb.tabIndex=0;nb.setAttribute('role','button');nb.setAttribute('aria-label',g.name);
     const pg=el('div','nbpage nbpaper');pg.append(el('span','nbhead',g.list.length>1?'Elige qué preparar':'Cobertura disponible'));
     g.list.forEach(c=>{if(c.soon){const b=el('button','nbopt nbsoon','<b>🔒 '+(c.short||c.exam.replace(/\s*\(.*?\)/,''))+'</b><span>Próximamente</span>');b.disabled=true;b.onclick=e=>e.stopPropagation();pg.append(b);return}
@@ -1234,11 +1284,50 @@ function renderMenu(){const m=$('menu');m.innerHTML='';
     const book=el('div','nbbook');
     book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront"></div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
     nb.append(book);
-    nb.onmouseenter=()=>{if(HOVER.matches)openNb(nb)};nb.onmouseleave=()=>{if(HOVER.matches)closeNb(nb)};
+    nb.onmouseenter=()=>{if(HOVER.matches&&!editMenu&&!document.querySelector('.nbchosen'))openNb(nb)};nb.onmouseleave=()=>{if(HOVER.matches)closeNb(nb)};
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};
-    nb.onclick=()=>{if(HOVER.matches||nb.classList.contains('open'))enterGroup(nb,g);else openNb(nb)};
     nb.onkeydown=e=>{if(e.target===nb&&(e.key==='Enter'||e.key===' ')){e.preventDefault();enterGroup(nb,g)}};
-    cell.append(nb,el('div','nbname',g.name));m.append(cell)});}
+    nb.onclick=()=>{if(editMenu||performance.now()-dragEnd<450)return;if(HOVER.matches||nb.classList.contains('open'))enterGroup(nb,g);else openNb(nb)};
+    cell.append(nb,el('div','nbname',g.name));
+    if(editMenu&&where){const x=el('button','misx'+(where==='otros'?' add':''),where==='otros'?'+':'−');x.type='button';
+      x.setAttribute('aria-label',(where==='otros'?'Agregar ':'Quitar ')+g.name+(where==='otros'?' a':' de')+' Mis cursos');
+      x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
+    return cell}
+function mkSort(grid){if(!window.Sortable)return;
+  SORTS.push(Sortable.create(grid,{group:'mc',draggable:'.nbcell',filter:'.misx',preventOnFilter:false,delay:320,touchStartThreshold:6,forceFallback:true,fallbackTolerance:3,animation:180,
+    ghostClass:'nbghost',chosenClass:'nbchosen',dragClass:'nbdrag',scroll:true,bubbleScroll:true,
+    onChoose(){chosen=true;document.querySelectorAll('.nb').forEach(closeNb);try{navigator.vibrate&&navigator.vibrate(15)}catch(e){}},
+    onUnchoose(){if(chosen)dragEnd=performance.now();chosen=false},
+    onEnd(){dragEnd=performance.now();const mine=document.querySelector('#menu .menu.mine');if(!mine)return;
+      const sel=[...mine.querySelectorAll('.nbcell')].map(c=>c.dataset.k);
+      if(sel.join()!==MIS.sel.join()){setMis(sel);hintDone()}setTimeout(renderMenu,0)}}))}
+function hintDone(){S.set('ent-hint-drag',1)}
+function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(e){}});SORTS=[];m.innerHTML='';
+  if(!MIS){const h=el('div','mishead');h.append(el('h2','mist','Todos los cursos'));const b=el('button','statsbtn','✓ Elegir mis cursos');b.onclick=()=>pickerModal();h.append(b);
+    const gr=el('div','menu');GROUPS.forEach(g=>gr.append(mkCell(g)));m.append(h,gr);return}
+  const rest=GROUPS.filter(g=>!MIS.sel.includes(g.key));
+  const h=el('div','mishead');h.append(el('h2','mist','Mis cursos'));
+  const eb=el('button','statsbtn',editMenu?'✓ Listo':'✏️ Editar');eb.onclick=()=>{editMenu=!editMenu;if(editMenu)hintDone();renderMenu()};h.append(eb);m.append(h);
+  if(editMenu)m.append(el('p','misnote','Mantén presionado un cuaderno y arrástralo para ordenarlo o pasarlo de una sección a otra. También puedes usar <b>+</b> y <b>−</b>.'));
+  else if(!S.get('ent-hint-drag',0)&&MIS.sel.length>1)m.append(el('p','misnote','💡 Mantén presionado un cuaderno para moverlo y ordenar tus cursos como quieras.'));
+  const mine=el('div','menu mine'+(editMenu?' editing':''));
+  mine.append(el('div','misempty',editMenu?'Arrastra aquí los cursos que llevas.':'Aún no tienes cursos aquí. Toca «✏️ Editar» o abre «Otros cursos» para agregarlos.'));
+  MIS.sel.map(gByKey).filter(Boolean).forEach(g=>mine.append(mkCell(g,'mine')));m.append(mine);
+  if(rest.length){const d=el('details','otros');d.open=otrosOpen||editMenu;d.ontoggle=()=>{if(!editMenu)otrosOpen=d.open};
+    const sm=el('summary');sm.append(el('h2','mist','Otros cursos <small>'+rest.length+'</small>'));d.append(sm);
+    const og=el('div','menu otrosg'+(editMenu?' editing':''));rest.forEach(g=>og.append(mkCell(g,'otros')));d.append(og);m.append(d);mkSort(og)}
+  mkSort(mine)}
+function pickerModal(kind,after){const n=el('div');const nuevo=kind==='ciclo';
+  n.append(el('h2',null,nuevo?'Nuevo ciclo: ¿actualizas tus cursos?':'¿Qué cursos llevas este ciclo?'),
+    el('p','sub','Aparecerán primero en «Mis cursos». El resto queda en «Otros cursos», siempre a mano. Puedes cambiarlo cuando quieras con «✏️ Editar».'));
+  const pre=new Set(MIS?MIS.sel:[]);const box=el('div','mpick');
+  GROUPS.forEach(g=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';c.value=g.key;c.checked=pre.has(g.key);c.onchange=upd;l.append(c,document.createTextNode(g.name));box.append(l)});
+  n.append(box);const bt=el('div','mbtns');const ok=el('button','pri','Listo');const sk=el('button',null,MIS?'Dejar como está':'Ver todos los cursos');
+  function upd(){const k=box.querySelectorAll('input:checked').length;ok.disabled=!k;ok.textContent=k?'Listo ('+k+')':'Elige al menos uno'}
+  ok.onclick=()=>{const chk=[...box.querySelectorAll('input:checked')].map(i=>i.value);const keep=(MIS?MIS.sel:[]).filter(k=>chk.includes(k));
+    setMis(keep.concat(chk.filter(k=>!keep.includes(k))));closeModal();renderMenu();after&&after()};
+  sk.onclick=()=>{if(MIS&&nuevo)setMis(MIS.sel);closeModal();after&&after()};
+  bt.append(ok,sk);n.append(bt);upd();openModal(n,'wide')}
 $('statsbtn').onclick=statsModal;
 document.addEventListener('click',e=>{if(!e.target.closest('.nb'))document.querySelectorAll('.nb').forEach(closeNb)});
 
@@ -2316,7 +2405,11 @@ function blurting(ti,done){let fin=false,stage=1;const finish=v=>{if(fin)return;
 /* ---------- arranque ---------- */
 $('modebtn1').onclick=()=>modeModal(false);$('modebtn2').onclick=()=>modeModal(false);
 modeUI();
-function firstCheck(){if(MODE)return modeUI();MODE=Object.assign({},DEF_MODE,{ts:0});S.set('ent-mode',MODE);modeUI();if(view==='menu'&&!$('ovl').children.length)modeModal(true)}
+function firstMode(){if(MODE)return modeUI();MODE=Object.assign({},DEF_MODE,{ts:0});S.set('ent-mode',MODE);modeUI();if(view==='menu'&&!$('ovl').children.length)modeModal(true)}
+function firstCheck(){const free=view==='menu'&&!$('ovl').children.length;
+  if(free&&!MIS&&!S.get('ent-mis-asked',0)){S.set('ent-mis-asked',1);renderMenu();return pickerModal(null,firstMode)}
+  if(free&&MIS&&MIS.ciclo!==ciclo()&&S.get('ent-mis-ciclo',null)!==ciclo()){S.set('ent-mis-ciclo',ciclo());renderMenu();return pickerModal('ciclo',firstMode)}
+  firstMode()}
 onCloud.push(()=>{modeUI();if(view==='course')revBtn()});
 if(cloudDone)firstCheck();else{onCloud.push(firstCheck);setTimeout(()=>{if(!cloudDone)firstCheck()},4000)}
 tmTick();
