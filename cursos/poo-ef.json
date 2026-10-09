@@ -6,7 +6,7 @@
  "short": "Examen final",
  "sub": "Todo el curso",
  "free": true,
- "intro": "Repaso acumulado del curso, con los temas ordenados por semana y todos abiertos desde el inicio. <b>El examen final (teoría) vale 30 %</b> y es en la semana 16; el simulacro pone el énfasis en las semanas 9 en adelante y una parte menor de repaso de las semanas 1 a 8. Se actualiza cada vez que se agrega una semana nueva.",
+ "intro": "<b>El simulacro puede ser escrito o en computadora</b> y todas sus preguntas son de escribir código. Repaso acumulado del curso, con los temas ordenados por semana y todos abiertos desde el inicio. <b>El examen final (teoría) vale 30 %</b> y es en la semana 16; el simulacro pone el énfasis en las semanas 9 en adelante y una parte menor de repaso de las semanas 1 a 8. Se actualiza cada vez que se agrega una semana nueva.",
  "form": "<p class=\"note\">Hoja de repaso del examen final: lo de las semanas 1 a 8 y, al final, lo nuevo desde la semana 9.</p>\n<div class=\"fgrid\">\n<div><b>Clase</b><br><code>class Dado:</code> · <code>def __init__(self, ...)</code> · <code>self.valor = ...</code></div>\n<div><b>Ocultar</b><br><code>self.__x</code> → AttributeError desde fuera</div>\n<div><b>Impresión</b><br><code>__str__</code> (print, str) · <code>__repr__</code> (repr, listas). Deben <b>retornar</b> str</div>\n<div><b>Aritméticos</b><br><code>+ __add__ · - __sub__ · * __mul__ · / __truediv__ · // __floordiv__ · % __mod__ · ** __pow__</code></div>\n<div><b>Por la derecha</b><br><code>__radd__ · __rsub__ · __rmul__</code> (cuando el objeto está a la derecha)</div>\n<div><b>Asignación aumentada</b><br><code>+= __iadd__ · -= __isub__ · *= __imul__</code> → <b>return self</b></div>\n<div><b>Comparación</b><br><code>&lt; __lt__ · &gt; __gt__ · &lt;= __le__ · &gt;= __ge__ · == __eq__ · != __ne__</code></div>\n<div><b>Conversión</b><br><code>__int__ · __float__ · __bool__ · __str__</code></div>\n<div><b>Otros</b><br><code>__len__ · __call__ · __contains__ · __getitem__ · __iter__</code></div>\n<div><b>Unicode</b><br><code>chr(0x2680)</code> ⚀ … ⚅ · ♠ 2660 · ♣ 2663 · ♥ 2665 · ♦ 2666 · ⬛ 2B1B · ⬜ 2B1C</div>\n<div><b>Atributo de clase</b><br><code>Clase.cantidad += 1</code>; subrayado en UML</div>\n<div><b>Archivos</b><br><code>with open(r) as f: f.readline(); for l in f: l.strip().split(\",\")</code></div>\n<div><b>Módulos</b><br><code>from dado import Dado</code> · <code>if __name__ == \"__main__\":</code></div>\n<div><b>Relaciones (UML)</b><br>◆ composición (crea sus partes) · ◇ agregación (las recibe) · ▷ herencia</div>\n<div><b>random</b><br><code>randint(a, b)</code> incluye a y b · <code>choice(l)</code> · <code>shuffle(l)</code> · <code>uniform(a, b)</code></div>\n<div><b>Herencia</b><br><code>class Hija(Madre):</code> · <code>super().__init__(...)</code> · sobrescribir = mismo nombre</div>\n<div><b>Herencia múltiple</b><br><code>class C(A, B):</code> busca C → A → B · <code>C.__mro__</code></div>\n<div><b>super()</b><br>Siguiente clase del MRO · diamante: Hoja → RamaA → RamaB → Raíz</div>\n</div>",
  "formSim": false,
  "formLabel": "📋 Hoja de repaso",
@@ -1366,87 +1366,206 @@
    "home": "w9mul"
   }
  },
- "simEx": [],
+ "simEx": [
+  {
+   "id": "fx_fig",
+   "lvl": 2,
+   "title": "Figuras con polimorfismo",
+   "q": "<p>Crea la clase base <code>Figura(nombre)</code> con <code>area()</code> que devuelva 0 y <code>__str__</code> → <code>Circulo: 12.57</code> (área redondeada a 2 decimales). Crea las hijas <code>Rectangulo(base, altura)</code> y <code>Circulo(radio)</code> (usa <code>math.pi</code>), que llamen a <code>super().__init__</code> con su nombre y sobrescriban <code>area()</code>. Escribe además <code>area_total(figuras)</code>.</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "import math\n\nclass Figura:\n    def __init__(self, nombre):\n        self.nombre = nombre",
+     "tests": [
+      {
+       "n": "__str__ heredado y area sobrescrita",
+       "run": "print(Rectangulo(3, 4))\nprint(Circulo(2))",
+       "out": "Rectangulo: 12\nCirculo: 12.57"
+      },
+      {
+       "n": "Son Figuras",
+       "run": "print(isinstance(Circulo(1), Figura), issubclass(Rectangulo, Figura))",
+       "out": "True True"
+      },
+      {
+       "n": "area_total (polimorfismo)",
+       "run": "fs = [Rectangulo(2, 5), Circulo(1), Rectangulo(1, 1)]\nprint(round(area_total(fs), 2))",
+       "out": "14.14"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "El <code>__str__</code> de la madre llama a <code>self.area()</code>: cada hija usa su propia versión (polimorfismo).",
+    "Las hijas llaman a <code>super().__init__(\"Rectangulo\")</code> y agregan sus atributos.",
+    "Una solución posible:<pre class=\"py\"><code>import math\n\nclass Figura:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def area(self):\n        return 0\n\n    def __str__(self):\n        return f\"{self.nombre}: {round(self.area(), 2)}\"\n\nclass Rectangulo(Figura):\n    def __init__(self, base, altura):\n        super().__init__(\"Rectangulo\")\n        self.base = base\n        self.altura = altura\n\n    def area(self):\n        return self.base * self.altura\n\nclass Circulo(Figura):\n    def __init__(self, radio):\n        super().__init__(\"Circulo\")\n        self.radio = radio\n\n    def area(self):\n        return math.pi * self.radio ** 2\n\ndef area_total(figuras):\n    return sum(f.area() for f in figuras)</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "No repitas __str__ en las hijas.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "her",
+     "poli",
+     "super"
+    ]
+   ]
+  },
+  {
+   "id": "fx_emp",
+   "lvl": 3,
+   "title": "Empleados y gerentes",
+   "q": "<p>Crea <code>Empleado(nombre, sueldo)</code> con <code>pago()</code> (devuelve el sueldo) y <code>__str__</code> → <code>Ana gana 3000</code>. Crea <code>Gerente(nombre, sueldo, bono)</code>, hija de <code>Empleado</code>, que use <code>super().__init__</code> y cuyo <code>pago()</code> sea el de la madre más el bono. Agrega a <code>Empleado</code> un atributo de clase <code>planilla</code> (lista) donde se registre cada empleado creado, y la función <code>total_planilla()</code> con la suma de pagos.</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "class Empleado:\n    def __init__(self, nombre, sueldo):\n        self.nombre = nombre\n        self.sueldo = sueldo",
+     "tests": [
+      {
+       "n": "Empleado y gerente",
+       "run": "print(Empleado(\"Ana\", 3000))\nprint(Gerente(\"Luis\", 5000, 1500))",
+       "out": "Ana gana 3000\nLuis gana 6500"
+      },
+      {
+       "n": "Planilla",
+       "run": "Empleado(\"Ana\", 3000)\nEmpleado(\"Rosa\", 2500)\nGerente(\"Luis\", 5000, 1500)\nprint(len(Empleado.planilla), total_planilla())",
+       "out": "3 12000"
+      },
+      {
+       "n": "Gerente es Empleado",
+       "run": "g = Gerente(\"Eva\", 4000, 100)\nprint(isinstance(g, Empleado), g.sueldo, g.pago())",
+       "out": "True 4000 4100"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "<code>Gerente.pago</code> reutiliza el de la madre: <code>super().pago() + self.bono</code>.",
+    "Como <code>__str__</code> llama a <code>self.pago()</code>, el gerente muestra su pago con bono sin redefinir <code>__str__</code>.",
+    "El registro va en el constructor de la madre, así también se registran los gerentes.",
+    "Una solución posible:<pre class=\"py\"><code>class Empleado:\n    planilla = []\n\n    def __init__(self, nombre, sueldo):\n        self.nombre = nombre\n        self.sueldo = sueldo\n        Empleado.planilla.append(self)\n\n    def pago(self):\n        return self.sueldo\n\n    def __str__(self):\n        return f\"{self.nombre} gana {self.pago()}\"\n\nclass Gerente(Empleado):\n    def __init__(self, nombre, sueldo, bono):\n        super().__init__(nombre, sueldo)\n        self.bono = bono\n\n    def pago(self):\n        return super().pago() + self.bono\n\ndef total_planilla():\n    return sum(e.pago() for e in Empleado.planilla)</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "super() dos veces: en __init__ y en pago.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "super",
+     "poli"
+    ]
+   ]
+  }
+ ],
  "sim": {
   "minutes": 110,
-  "intro": "Simulacro del <b>examen final (teoría, semana 16)</b>, acumulativo: una parte de repaso de las semanas 1 a 8 y la mayoría de preguntas de las semanas 9 en adelante. Se actualiza cada vez que se agrega una semana nueva.",
   "slots": [
    {
-    "pts": 2,
-    "name": "Repaso sem. 1–8: clases y operadores",
+    "pts": 6,
+    "name": "Repaso sem. 1–8: sobrecarga y relaciones",
     "pool": [
-     "fcl5",
-     "fst6",
-     "fop5",
-     "fop7",
-     "fsx4"
+     "fop9",
+     "fre6",
+     "fre9"
     ]
    },
    {
-    "pts": 2,
-    "name": "Repaso sem. 1–8: += y sum",
-    "pool": [
-     "far1",
-     "far3"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Repaso sem. 1–8: relaciones",
-    "pool": [
-     "fre3",
-     "fre4",
-     "fre5",
-     "fsx7"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Sem. 9: herencia «es un»",
-    "pool": [
-     "h1",
-     "h5"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Sem. 9: super() y sobrescritura",
-    "pool": [
-     "h2",
-     "h3",
-     "h4",
-     "h6"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Sem. 9: herencia múltiple y MRO",
-    "pool": [
-     "m1",
-     "m2",
-     "m3",
-     "m4",
-     "m6"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Sem. 9: MRO y diamante",
-    "pool": [
-     "m5",
-     "m7",
-     "m2"
-    ]
-   },
-   {
-    "pts": 4,
-    "name": "Escribe código con herencia",
+    "pts": 7,
+    "name": "Sem. 9: herencia y super()",
     "pool": [
      "h7",
      "h8",
-     "m8"
+     "fx_emp"
+    ]
+   },
+   {
+    "pts": 7,
+    "name": "Sem. 9: polimorfismo y herencia múltiple",
+    "pool": [
+     "m8",
+     "fx_fig"
     ]
    }
-  ]
+  ],
+  "intro": "Todas las preguntas son de <b>escribir código</b>. Simulacro acumulativo del examen final: una pregunta de repaso de las semanas 1 a 8 y dos de las semanas 9 en adelante (herencia). Se actualiza cada semana.",
+  "versions": [
+   {
+    "name": "💻 En computadora",
+    "desc": "Tres problemas de código; puedes ejecutar mientras resuelves.",
+    "minutes": 110,
+    "slots": [
+     {
+      "pts": 6,
+      "name": "Repaso sem. 1–8: sobrecarga y relaciones",
+      "pool": [
+       "fop9",
+       "fre6",
+       "fre9"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sem. 9: herencia y super()",
+      "pool": [
+       "h7",
+       "h8",
+       "fx_emp"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sem. 9: polimorfismo y herencia múltiple",
+      "pool": [
+       "m8",
+       "fx_fig"
+      ]
+     }
+    ],
+    "intro": "Todas las preguntas son de <b>escribir código</b>. Simulacro acumulativo del examen final: una pregunta de repaso de las semanas 1 a 8 y dos de las semanas 9 en adelante (herencia). Se actualiza cada semana."
+   },
+   {
+    "name": "✍️ Escrito",
+    "desc": "Los mismos bloques a mano, sin ejecutar.",
+    "minutes": 110,
+    "slots": [
+     {
+      "pts": 6,
+      "name": "Repaso sem. 1–8: sobrecarga y relaciones",
+      "pool": [
+       "fop9",
+       "fre6",
+       "fre9"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sem. 9: herencia y super()",
+      "pool": [
+       "h7",
+       "h8",
+       "fx_emp"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sem. 9: polimorfismo y herencia múltiple",
+      "pool": [
+       "m8",
+       "fx_fig"
+      ]
+     }
+    ],
+    "intro": "Todas las preguntas son de <b>escribir código</b>. Simulacro acumulativo del examen final: una pregunta de repaso de las semanas 1 a 8 y dos de las semanas 9 en adelante (herencia). Se actualiza cada semana. <b>Modo escrito:</b> no puedes ejecutar; se prueba al entregar.",
+    "noRun": true
+   }
+  ],
+  "vtitle": "¿Cómo será tu examen final?"
  }
 }

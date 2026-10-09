@@ -1991,7 +1991,7 @@ function renderSim(){const m=$('simmain');m.innerHTML='';
   SIMS.qs.forEach((q,qi)=>{const e=q.ex;const box=el('div','q');box.id='sq'+qi;box.append(el('h3',null,'Pregunta '+(qi+1)+': '+q.slot.name+' <span>'+q.slot.pts+(q.slot.pts===1?' pt':' pts')+'</span>'));
     const en=el('div','enun',e.q);en.style.margin='0';if(e.fig)en.append(el('figure',null,F[e.fig]));box.append(en);
     e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));
-      if(ch.t==='code'){const xb=codeBox(ch,{noCheck:true,noRun:!!C.sim.noRun,onEdit:simProg});(q.cb||(q.cb={}))[ci]=xb;cb.append(xb.el);box.append(cb);return}
+      if(ch.t==='code'){const xb=codeBox(ch,{noCheck:true,noRun:!!(q.slot.noRun!=null?q.slot.noRun:C.sim.noRun),onEdit:simProg});(q.cb||(q.cb={}))[ci]=xb;cb.append(xb.el);box.append(cb);return}
       const g=el('div','opts');g.dataset.ci=ci;
       (ch.ord||perm(SIMS.seed+e.id+'#'+ci,ch.o.length)).forEach((oi,pos)=>{const b=el('button','opt','<span class="k">'+'ABCDE'[pos]+'</span><span>'+ch.o[oi]+'</span>');b.dataset.oi=oi;
         b.onclick=()=>{if(SIMS.done)return;q.sel[ci]=oi;g.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));simProg()};g.append(b)});cb.append(g);box.append(cb)});
@@ -2004,7 +2004,7 @@ let backArm=0;$('simback').onclick=()=>{if(SIMS&&!SIMS.done&&!backArm){backArm=1
   backArm=0;$('simback').textContent='← Salir';SIMS=null;openCourse(C.id)};
 async function gradeSim(timeout){if(!SIMS||SIMS.done||SIMS.grading)return;const cq=SIMS.qs.filter(q=>q.cb);
   if(cq.length){SIMS.grading=true;$('simsend').disabled=true;$('simprog').textContent='⏳ Corrigiendo tu código…';
-    for(const q of cq){q.cs={};q.cr={};for(const ci in q.cb){const r=await q.cb[ci].check(false);q.cs[ci]=r?r.pass/r.total:0;q.cr[ci]=r}}
+    for(const q of cq){q.cs={};q.cr={};for(const ci in q.cb){const xb=q.cb[ci];const r=await xb.check(false);q.cs[ci]=(r&&xb.dirty())?r.pass/r.total:0;q.cr[ci]=r}}
     $('simsend').disabled=false;SIMS.grading=false}
   gradeSimNow(timeout)}
 function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;

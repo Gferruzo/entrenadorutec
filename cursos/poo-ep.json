@@ -5,7 +5,7 @@
  "exam": "Examen parcial 2026-2 (sem. 1–8)",
  "short": "Examen parcial",
  "sub": "Sem. 1–8",
- "intro": "Practica leyendo y escribiendo código: en las preguntas «¿qué imprime?» marcas la salida y, después de intentarlo, puedes <b>ejecutar y modificar el código</b> en la solución. En los ejercicios de código escribes tu solución y el entrenador la <b>corre con pruebas automáticas</b> (Python funciona dentro de la app; la primera vez tarda unos segundos en cargar). <b>Mapa del parcial:</b> el examen parcial (teoría, 10 %) es en la semana 8 y cubre las semanas 1 a 8 (la 7 fue de exposiciones). El tema «Tipo PC1» reproduce la parte de computadora de la PC1.",
+ "intro": "<b>El simulacro tiene tres modalidades (escrito, computadora o ambas)</b>, según lo que avise el profesor, y todas sus preguntas son de escribir código. Practica leyendo y escribiendo código: en las preguntas «¿qué imprime?» marcas la salida y, después de intentarlo, puedes <b>ejecutar y modificar el código</b> en la solución. En los ejercicios de código escribes tu solución y el entrenador la <b>corre con pruebas automáticas</b> (Python funciona dentro de la app; la primera vez tarda unos segundos en cargar). <b>Mapa del parcial:</b> es en la semana 8 y cubre las semanas 1 a 8 (la 7 fue de exposiciones). El tema «Tipo PC1» reproduce la parte de computadora de la PC1.",
  "form": "<p class=\"note\">Hoja de repaso con lo esencial del parcial (semanas 1 a 8). El examen parcial es de teoría: lee código, predice salidas, interpreta diagramas y escribe clases.</p>\n<div class=\"fgrid\">\n<div><b>Clase</b><br><code>class Dado:</code> · <code>def __init__(self, ...)</code> · <code>self.valor = ...</code></div>\n<div><b>Ocultar</b><br><code>self.__x</code> → AttributeError desde fuera</div>\n<div><b>Impresión</b><br><code>__str__</code> (print, str) · <code>__repr__</code> (repr, listas). Deben <b>retornar</b> str</div>\n<div><b>Aritméticos</b><br><code>+ __add__ · - __sub__ · * __mul__ · / __truediv__ · // __floordiv__ · % __mod__ · ** __pow__</code></div>\n<div><b>Por la derecha</b><br><code>__radd__ · __rsub__ · __rmul__</code> (cuando el objeto está a la derecha)</div>\n<div><b>Asignación aumentada</b><br><code>+= __iadd__ · -= __isub__ · *= __imul__</code> → <b>return self</b></div>\n<div><b>Comparación</b><br><code>&lt; __lt__ · &gt; __gt__ · &lt;= __le__ · &gt;= __ge__ · == __eq__ · != __ne__</code></div>\n<div><b>Conversión</b><br><code>__int__ · __float__ · __bool__ · __str__</code></div>\n<div><b>Otros</b><br><code>__len__ · __call__ · __contains__ · __getitem__ · __iter__</code></div>\n<div><b>Unicode</b><br><code>chr(0x2680)</code> ⚀ … ⚅ · ♠ 2660 · ♣ 2663 · ♥ 2665 · ♦ 2666 · ⬛ 2B1B · ⬜ 2B1C</div>\n<div><b>Atributo de clase</b><br><code>Clase.cantidad += 1</code>; subrayado en UML</div>\n<div><b>Archivos</b><br><code>with open(r) as f: f.readline(); for l in f: l.strip().split(\",\")</code></div>\n<div><b>Módulos</b><br><code>from dado import Dado</code> · <code>if __name__ == \"__main__\":</code></div>\n<div><b>Relaciones (UML)</b><br>◆ composición (crea sus partes) · ◇ agregación (las recibe) · ▷ herencia</div>\n<div><b>random</b><br><code>randint(a, b)</code> incluye a y b · <code>choice(l)</code> · <code>shuffle(l)</code> · <code>uniform(a, b)</code></div>\n</div>",
  "formSim": false,
  "formLabel": "📋 Hoja de repaso",
@@ -3262,103 +3262,403 @@
     ]
    ],
    "play": "class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\nclass Turno:\n    def __init__(self, v1, v2):\n        self.dados = [Dado(v1), Dado(v2)]\n        self.puntos = sum(d.valor for d in self.dados)\n\nclass Juego:\n    def __init__(self):\n        self.conteo = {}\n\n    def __iadd__(self, turno):\n        self.conteo[turno.puntos] = self.conteo.get(turno.puntos, 0) + 1\n        return self\n\nj = Juego()\nfor a, b in [(3, 4), (6, 1), (2, 2), (5, 2)]:\n    j += Turno(a, b)\nprint(j.conteo)"
+  },
+  {
+   "id": "sx_frac",
+   "lvl": 3,
+   "title": "Fracción completa",
+   "q": "<p>Implementa la clase <code>Fraccion(num, den)</code> que siempre se guarde <b>simplificada</b> y con el signo en el numerador (si den es 0, lanza <code>ValueError</code>). Sobrecarga <code>+</code>, <code>-</code>, <code>*</code> (también con enteros a la derecha o a la izquierda), <code>==</code> y <code>&lt;</code>, y <code>__str__</code> → <code>3/4</code> (o solo <code>2</code> si el denominador es 1).</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "class Fraccion:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den",
+     "tests": [
+      {
+       "n": "Se simplifica y el signo va arriba",
+       "run": "print(Fraccion(6, 8), Fraccion(3, -9), Fraccion(4, 2))",
+       "out": "3/4 -1/3 2"
+      },
+      {
+       "n": "Operaciones entre fracciones",
+       "run": "a, b = Fraccion(1, 2), Fraccion(1, 3)\nprint(a + b, a - b, a * b)",
+       "out": "5/6 1/6 1/6"
+      },
+      {
+       "n": "Con enteros a ambos lados",
+       "run": "a = Fraccion(1, 2)\nprint(a + 1, 2 * a, 1 - a)",
+       "out": "3/2 1 1/2"
+      },
+      {
+       "n": "== y <",
+       "run": "print(Fraccion(2, 4) == Fraccion(1, 2), Fraccion(1, 3) < Fraccion(1, 2), sorted([Fraccion(3, 4), Fraccion(1, 4), Fraccion(1, 2)])[0])",
+       "out": "True True 1/4"
+      },
+      {
+       "n": "Denominador cero",
+       "run": "try:\n    Fraccion(1, 0)\n    print(\"no lanzó error\")\nexcept ValueError:\n    print(\"ValueError\")",
+       "out": "ValueError"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "Simplifica en el constructor con <code>math.gcd</code>; así todas las operaciones salen simplificadas solas.",
+    "Un método auxiliar que convierta un entero en <code>Fraccion(n, 1)</code> evita repetir <code>isinstance</code> en cada operador.",
+    "<code>__rsub__</code> no es conmutativo: <code>1 - a</code> es <code>Fraccion(1) - a</code>.",
+    "Una solución posible:<pre class=\"py\"><code>from math import gcd\n\nclass Fraccion:\n    def __init__(self, num, den=1):\n        if den == 0:\n            raise ValueError(\"denominador cero\")\n        if den &lt; 0:\n            num, den = -num, -den\n        g = gcd(num, den)\n        self.num = num // g\n        self.den = den // g\n\n    def _f(self, otro):\n        return otro if isinstance(otro, Fraccion) else Fraccion(otro, 1)\n\n    def __add__(self, otro):\n        o = self._f(otro)\n        return Fraccion(self.num * o.den + o.num * self.den, self.den * o.den)\n\n    def __radd__(self, otro):\n        return self + otro\n\n    def __sub__(self, otro):\n        o = self._f(otro)\n        return Fraccion(self.num * o.den - o.num * self.den, self.den * o.den)\n\n    def __rsub__(self, otro):\n        return self._f(otro) - self\n\n    def __mul__(self, otro):\n        o = self._f(otro)\n        return Fraccion(self.num * o.num, self.den * o.den)\n\n    def __rmul__(self, otro):\n        return self * otro\n\n    def __eq__(self, otro):\n        o = self._f(otro)\n        return self.num == o.num and self.den == o.den\n\n    def __lt__(self, otro):\n        o = self._f(otro)\n        return self.num * o.den &lt; o.num * self.den\n\n    def __str__(self):\n        return str(self.num) if self.den == 1 else f\"{self.num}/{self.den}\"</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "Simplifica una sola vez: en el constructor.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dunop",
+     "radd"
+    ]
+   ]
+  },
+  {
+   "id": "sx_lib",
+   "lvl": 3,
+   "title": "Biblioteca de libros",
+   "q": "<p>Implementa <code>Libro(titulo, autor)</code> con el atributo <code>disponible = True</code> y <code>__str__</code> → <code>Rayuela (Cortázar)</code>. Luego <code>Biblioteca</code> (composición: guarda una lista de libros): <code>bib += libro</code> agrega un libro; <code>bib.prestar(titulo)</code> marca el libro como no disponible y devuelve <code>True</code>, o <code>False</code> si no existe o ya estaba prestado; <code>len(bib)</code> es la cantidad de libros disponibles; y <code>__str__</code> lista los disponibles, uno por línea.</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "class Libro:\n    pass\n\nclass Biblioteca:\n    pass",
+     "tests": [
+      {
+       "n": "Agregar e imprimir",
+       "run": "b = Biblioteca()\nb += Libro(\"Rayuela\", \"Cortázar\")\nb += Libro(\"Ficciones\", \"Borges\")\nprint(len(b))\nprint(b)",
+       "out": "2\nRayuela (Cortázar)\nFicciones (Borges)"
+      },
+      {
+       "n": "Prestar",
+       "run": "b = Biblioteca()\nb += Libro(\"Rayuela\", \"Cortázar\")\nb += Libro(\"Ficciones\", \"Borges\")\nprint(b.prestar(\"Rayuela\"), b.prestar(\"Rayuela\"), b.prestar(\"Aleph\"))\nprint(len(b))\nprint(b)",
+       "out": "True False False\n1\nFicciones (Borges)"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "<code>__iadd__</code> agrega y retorna <code>self</code>.",
+    "<code>prestar</code> busca por título un libro que siga disponible.",
+    "<code>__len__</code> y <code>__str__</code> filtran los disponibles.",
+    "Una solución posible:<pre class=\"py\"><code>class Libro:\n    def __init__(self, titulo, autor):\n        self.titulo = titulo\n        self.autor = autor\n        self.disponible = True\n\n    def __str__(self):\n        return f\"{self.titulo} ({self.autor})\"\n\nclass Biblioteca:\n    def __init__(self):\n        self.libros = []\n\n    def __iadd__(self, libro):\n        self.libros.append(libro)\n        return self\n\n    def prestar(self, titulo):\n        for libro in self.libros:\n            if libro.titulo == titulo and libro.disponible:\n                libro.disponible = False\n                return True\n        return False\n\n    def __len__(self):\n        return sum(1 for l in self.libros if l.disponible)\n\n    def __str__(self):\n        return \"\\n\".join(str(l) for l in self.libros if l.disponible)</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "La biblioteca delega en sus libros.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "comp",
+     "iadd"
+    ]
+   ]
+  },
+  {
+   "id": "sx_carrito",
+   "lvl": 2,
+   "title": "Carrito de compras",
+   "q": "<p>Implementa <code>Producto(nombre, precio)</code> y <code>Carrito</code>, cuyo atributo <code>items</code> es un diccionario <code>nombre → [producto, cantidad]</code>. <code>carrito += (producto, cantidad)</code> agrega o <b>acumula</b> la cantidad; <code>total()</code> devuelve la suma de precio × cantidad con 10 % de descuento si pasa de 100, redondeado a 2 decimales; y <code>__str__</code> muestra una línea por producto: <code>leche x3 = 12.6</code>.</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "class Producto:\n    def __init__(self, nombre, precio):\n        self.nombre = nombre\n        self.precio = precio\n\nclass Carrito:\n    def __init__(self):\n        self.items = {}",
+     "tests": [
+      {
+       "n": "Acumula cantidades",
+       "run": "c = Carrito()\nleche = Producto(\"leche\", 4.2)\nc += (leche, 2)\nc += (Producto(\"pan\", 0.5), 6)\nc += (leche, 1)\nprint(c)\nprint(c.total())",
+       "out": "leche x3 = 12.6\npan x6 = 3.0\n15.6"
+      },
+      {
+       "n": "Descuento sobre 100",
+       "run": "c = Carrito()\nc += (Producto(\"polo\", 45), 3)\nprint(c.total())",
+       "out": "121.5"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "Desempaqueta la tupla en <code>__iadd__</code>; si el nombre ya existe, suma la cantidad.",
+    "<code>total</code>: suma, aplica el descuento si corresponde y redondea.",
+    "Una solución posible:<pre class=\"py\"><code>class Producto:\n    def __init__(self, nombre, precio):\n        self.nombre = nombre\n        self.precio = precio\n\nclass Carrito:\n    def __init__(self):\n        self.items = {}\n\n    def __iadd__(self, par):\n        producto, cantidad = par\n        if producto.nombre in self.items:\n            self.items[producto.nombre][1] += cantidad\n        else:\n            self.items[producto.nombre] = [producto, cantidad]\n        return self\n\n    def total(self):\n        t = sum(p.precio * c for p, c in self.items.values())\n        if t &gt; 100:\n            t *= 0.9\n        return round(t, 2)\n\n    def __str__(self):\n        return \"\\n\".join(f\"{p.nombre} x{c} = {round(p.precio * c, 2)}\" for p, c in self.items.values())</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "Igual que el Pedido de la PC1.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "iadd",
+     "dget"
+    ]
+   ]
+  },
+  {
+   "id": "sx_termo",
+   "lvl": 2,
+   "title": "Termómetro con registro",
+   "q": "<p>Implementa <code>Termometro(lugar)</code>: un atributo de clase <code>creados</code> cuenta cuántos se han creado; llamar al objeto con una temperatura (<code>t(21.5)</code>) la registra en una lista; <code>promedio()</code> devuelve el promedio redondeado a 1 decimal (0 si no hay lecturas); <code>maxima()</code> la mayor (o <code>None</code>); y <code>__str__</code> → <code>Lima: 3 lecturas</code>.</p>",
+   "checks": [
+    {
+     "t": "code",
+     "p": "Escribe tu código y compruébalo con las pruebas",
+     "start": "class Termometro:\n    def __init__(self, lugar):\n        self.lugar = lugar",
+     "tests": [
+      {
+       "n": "Registrar y calcular",
+       "run": "t = Termometro(\"Lima\")\nt(21.5)\nt(19)\nt(23.25)\nprint(t, t.promedio(), t.maxima())",
+       "out": "Lima: 3 lecturas 21.2 23.25"
+      },
+      {
+       "n": "Sin lecturas y contador",
+       "run": "antes = Termometro.creados\na = Termometro(\"Cusco\")\nb = Termometro(\"Puno\")\nprint(a.promedio(), a.maxima(), Termometro.creados - antes)",
+       "out": "0 None 2"
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "El contador es un atributo de clase y se aumenta con <code>Termometro.creados += 1</code>.",
+    "<code>__call__(self, temp)</code> permite <code>t(21.5)</code>.",
+    "Una solución posible:<pre class=\"py\"><code>class Termometro:\n    creados = 0\n\n    def __init__(self, lugar):\n        self.lugar = lugar\n        self.lecturas = []\n        Termometro.creados += 1\n\n    def __call__(self, temp):\n        self.lecturas.append(temp)\n\n    def promedio(self):\n        if not self.lecturas:\n            return 0\n        return round(sum(self.lecturas) / len(self.lecturas), 1)\n\n    def maxima(self):\n        return max(self.lecturas) if self.lecturas else None\n\n    def __str__(self):\n        return f\"{self.lugar}: {len(self.lecturas)} lecturas\"</code></pre>"
+   ],
+   "ans": "Tu código pasa todas las pruebas",
+   "hint": "Cada termómetro tiene su propia lista.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "clsattr",
+     "call"
+    ]
+   ]
   }
  ],
  "sim": {
   "minutes": 110,
-  "intro": "Simulacro del <b>examen parcial (teoría, semana 8)</b>: predecir salidas, leer diagramas de clases y escribir una clase. Las preguntas se eligen al azar de un banco con los ejercicios de los temas y algunos integradores nuevos. La pregunta de código se corrige con pruebas automáticas (puntaje parcial según cuántas pasa).",
   "slots": [
    {
-    "pts": 1.5,
-    "name": "Repaso de Python",
+    "pts": 6,
+    "name": "Clases y métodos especiales",
     "pool": [
-     "py3",
-     "py4",
-     "py6"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Clases y objetos",
-    "pool": [
-     "cl3",
-     "cl5",
-     "cl6",
-     "sx6"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "__str__ y atributos de clase",
-    "pool": [
-     "st1",
-     "st4",
-     "st6",
-     "sx1"
-    ]
-   },
-   {
-    "pts": 2.5,
-    "name": "Sobrecarga de operadores",
-    "pool": [
-     "op1",
-     "op4",
-     "op5",
-     "op7",
-     "sx4",
-     "sx5"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Estructuras de datos y módulos",
-    "pool": [
-     "da3",
-     "da6",
-     "da7",
-     "da5"
-    ]
-   },
-   {
-    "pts": 2.5,
-    "name": "Archivos, += y __call__",
-    "pool": [
-     "ar1",
-     "ar2",
-     "ar3",
-     "ar5"
-    ]
-   },
-   {
-    "pts": 2.5,
-    "name": "Relaciones entre clases",
-    "pool": [
-     "re3",
-     "re4",
-     "re5",
-     "sx2",
-     "sx7"
-    ]
-   },
-   {
-    "pts": 2,
-    "name": "Integrador tipo PC1",
-    "pool": [
-     "sx3",
-     "sx7",
-     "pc2"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Escribe una clase",
-    "pool": [
+     "cl7",
+     "cl8",
+     "cl9",
      "st7",
      "st8",
+     "st9",
      "op10",
-     "re6"
+     "sx_termo"
+    ]
+   },
+   {
+    "pts": 7,
+    "name": "Sobrecarga, estructuras de datos y archivos",
+    "pool": [
+     "op9",
+     "sx_frac",
+     "da8",
+     "da10",
+     "ar7",
+     "ar8",
+     "ar9",
+     "sx_carrito",
+     "pc4"
+    ]
+   },
+   {
+    "pts": 7,
+    "name": "Relaciones entre clases (tipo PC1)",
+    "pool": [
+     "re6",
+     "re7",
+     "re8",
+     "re9",
+     "pc5",
+     "sx_lib",
+     "pc2"
     ]
    }
-  ]
+  ],
+  "intro": "Todas las preguntas son de <b>escribir código</b>, como el parcial real. Cada intento elige al azar un problema de cada bloque; al entregar, tu código se corre con pruebas automáticas y cada pregunta vale según cuántas pasa. Después revisa la solución modelo. Puedes usar ▶ Ejecutar para probar.",
+  "versions": [
+   {
+    "name": "💻 En computadora",
+    "desc": "Tres problemas de código; puedes ejecutar tu código mientras resuelves.",
+    "minutes": 110,
+    "slots": [
+     {
+      "pts": 6,
+      "name": "Clases y métodos especiales",
+      "pool": [
+       "cl7",
+       "cl8",
+       "cl9",
+       "st7",
+       "st8",
+       "st9",
+       "op10",
+       "sx_termo"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sobrecarga, estructuras de datos y archivos",
+      "pool": [
+       "op9",
+       "sx_frac",
+       "da8",
+       "da10",
+       "ar7",
+       "ar8",
+       "ar9",
+       "sx_carrito",
+       "pc4"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Relaciones entre clases (tipo PC1)",
+      "pool": [
+       "re6",
+       "re7",
+       "re8",
+       "re9",
+       "pc5",
+       "sx_lib",
+       "pc2"
+      ]
+     }
+    ],
+    "intro": "Todas las preguntas son de <b>escribir código</b>, como el parcial real. Cada intento elige al azar un problema de cada bloque; al entregar, tu código se corre con pruebas automáticas y cada pregunta vale según cuántas pasa. Después revisa la solución modelo. Puedes usar ▶ Ejecutar para probar."
+   },
+   {
+    "name": "✍️ Escrito",
+    "desc": "Los mismos tres bloques, pero a mano: no puedes ejecutar.",
+    "minutes": 110,
+    "slots": [
+     {
+      "pts": 6,
+      "name": "Clases y métodos especiales",
+      "pool": [
+       "cl7",
+       "cl8",
+       "cl9",
+       "st7",
+       "st8",
+       "st9",
+       "op10",
+       "sx_termo"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Sobrecarga, estructuras de datos y archivos",
+      "pool": [
+       "op9",
+       "sx_frac",
+       "da8",
+       "da10",
+       "ar7",
+       "ar8",
+       "ar9",
+       "sx_carrito",
+       "pc4"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Relaciones entre clases (tipo PC1)",
+      "pool": [
+       "re6",
+       "re7",
+       "re8",
+       "re9",
+       "pc5",
+       "sx_lib",
+       "pc2"
+      ]
+     }
+    ],
+    "intro": "Todas las preguntas son de <b>escribir código</b>, como el parcial real. Cada intento elige al azar un problema de cada bloque; al entregar, tu código se corre con pruebas automáticas y cada pregunta vale según cuántas pasa. Después revisa la solución modelo. <b>Modo escrito:</b> no puedes ejecutar; tu código solo se prueba al entregar, como si el profe lo corrigiera a mano.",
+    "noRun": true
+   },
+   {
+    "name": "🔀 Ambas",
+    "desc": "Una parte escrita (sin ejecutar) y una parte en computadora, como la PC1 con parte 1 y parte 2.",
+    "minutes": 120,
+    "slots": [
+     {
+      "pts": 5,
+      "name": "✍️ Parte escrita · Clases y métodos especiales",
+      "pool": [
+       "cl7",
+       "cl8",
+       "cl9",
+       "st7",
+       "st8",
+       "st9",
+       "op10",
+       "sx_termo"
+      ],
+      "noRun": true
+     },
+     {
+      "pts": 5,
+      "name": "✍️ Parte escrita · Sobrecarga y estructuras",
+      "pool": [
+       "op9",
+       "sx_frac",
+       "da8",
+       "da10",
+       "ar7",
+       "ar8",
+       "ar9",
+       "sx_carrito",
+       "pc4"
+      ],
+      "noRun": true
+     },
+     {
+      "pts": 5,
+      "name": "💻 Parte computadora · Composición y agregación",
+      "pool": [
+       "re6",
+       "re7",
+       "re8"
+      ],
+      "noRun": false
+     },
+     {
+      "pts": 5,
+      "name": "💻 Parte computadora · Problema integrador (tipo PC1)",
+      "pool": [
+       "re9",
+       "pc5",
+       "sx_lib",
+       "pc2"
+      ],
+      "noRun": false
+     }
+    ],
+    "intro": "Todas las preguntas son de <b>escribir código</b>, como el parcial real. Cada intento elige al azar un problema de cada bloque; al entregar, tu código se corre con pruebas automáticas y cada pregunta vale según cuántas pasa. Después revisa la solución modelo. En las preguntas de la <b>parte escrita</b> no puedes ejecutar; en las de la <b>parte computadora</b> sí."
+   }
+  ],
+  "vtitle": "¿Cómo será tu examen?"
  }
 }
