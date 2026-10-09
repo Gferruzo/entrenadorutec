@@ -1294,9 +1294,10 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
       x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
     return cell}
 function mkSort(grid){if(!window.Sortable)return;
-  SORTS.push(Sortable.create(grid,{group:'mc',draggable:'.nbcell',filter:'.misx',preventOnFilter:false,delay:320,touchStartThreshold:6,forceFallback:true,fallbackTolerance:3,animation:180,
+  SORTS.push(Sortable.create(grid,{group:'mc',draggable:'.nbcell',filter:'.misx',preventOnFilter:false,delay:180,delayOnTouchOnly:true,touchStartThreshold:10,forceFallback:true,fallbackTolerance:4,animation:180,
     ghostClass:'nbghost',chosenClass:'nbchosen',dragClass:'nbdrag',scroll:true,bubbleScroll:true,
-    onChoose(){chosen=true;document.querySelectorAll('.nb').forEach(closeNb);try{navigator.vibrate&&navigator.vibrate(15)}catch(e){}},
+    onChoose(e){if(e.originalEvent&&e.originalEvent.type&&e.originalEvent.type.startsWith('touch'))try{navigator.vibrate&&navigator.vibrate(15)}catch(x){}},
+    onStart(){chosen=true;document.querySelectorAll('.nb').forEach(closeNb)},
     onUnchoose(){if(chosen)dragEnd=performance.now();chosen=false},
     onEnd(){dragEnd=performance.now();const mine=document.querySelector('#menu .menu.mine');if(!mine)return;
       const sel=[...mine.querySelectorAll('.nbcell')].map(c=>c.dataset.k);
@@ -1308,7 +1309,7 @@ function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(
   const rest=GROUPS.filter(g=>!MIS.sel.includes(g.key));
   const h=el('div','mishead');h.append(el('h2','mist','Mis cursos'));
   const eb=el('button','statsbtn',editMenu?'✓ Listo':'✏️ Editar');eb.onclick=()=>{editMenu=!editMenu;if(editMenu)hintDone();renderMenu()};h.append(eb);m.append(h);
-  if(editMenu)m.append(el('p','misnote','Mantén presionado un cuaderno y arrástralo para ordenarlo o pasarlo de una sección a otra. También puedes usar <b>+</b> y <b>−</b>.'));
+  if(editMenu)m.append(el('p','misnote','Arrastra un cuaderno (en celular, mantenlo presionado un instante) para ordenarlo o pasarlo de una sección a otra. También puedes usar <b>+</b> y <b>−</b>.'));
   else if(!S.get('ent-hint-drag',0)&&MIS.sel.length>1)m.append(el('p','misnote','💡 Mantén presionado un cuaderno para moverlo y ordenar tus cursos como quieras.'));
   const mine=el('div','menu mine'+(editMenu?' editing':''));
   mine.append(el('div','misempty',editMenu?'Arrastra aquí los cursos que llevas.':'Aún no tienes cursos aquí. Toca «✏️ Editar» o abre «Otros cursos» para agregarlos.'));
