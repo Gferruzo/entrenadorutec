@@ -1,0 +1,1653 @@
+{
+ "id": "p2-ef",
+ "code": "CS1112",
+ "name": "Programación II (C++)",
+ "gname": "Programación II (C++)",
+ "exam": "Examen final 2026-2 (todo el curso)",
+ "short": "Examen final",
+ "sub": "Todo el curso",
+ "free": true,
+ "intro": "Repaso acumulado con los temas ordenados por semana y todos abiertos desde el inicio. El examen final pone el énfasis en las semanas 9 en adelante (POO en C++); el simulacro tiene la mayoría de preguntas de esas semanas y una parte de repaso. Se actualiza cada vez que se agrega una semana nueva. Igual que en el parcial, elige si practicar en computadora o escrito.",
+ "form": "<p class=\"note\">Hoja de repaso del examen final: semanas 1 a 7 y, al final, lo nuevo desde la semana 9.</p>\n<div class=\"fgrid\">\n<div><b>Esqueleto</b><br><code>#include &lt;iostream&gt;</code> · <code>using namespace std;</code> · <code>int main() { … return 0; }</code></div>\n<div><b>Entrada/salida</b><br><code>cin &gt;&gt; x;</code> · <code>cout &lt;&lt; x &lt;&lt; endl;</code> · <code>getline(cin, s)</code></div>\n<div><b>Decimales</b><br><code>#include &lt;iomanip&gt;</code> · <code>cout &lt;&lt; fixed &lt;&lt; setprecision(2)</code></div>\n<div><b>Tipos</b><br>int · long long · float · double · char · bool · string</div>\n<div><b>Operadores</b><br><code>/</code> (entera entre int) · <code>%</code> · <code>++ --</code> · <code>&amp;&amp; || !</code> · <code>== !=</code></div>\n<div><b>Conversión</b><br><code>static_cast&lt;double&gt;(x)</code> · <code>(int)x</code> trunca</div>\n<div><b>Selectivas</b><br><code>if / else if / else</code> · <code>switch</code> con <code>break</code> y <code>default</code></div>\n<div><b>Repetitivas</b><br><code>for</code> · <code>while</code> · <code>do { } while ();</code> · <code>break</code> · <code>continue</code></div>\n<div><b>Funciones</b><br><code>tipo f(int valor, int &amp;ref)</code> · prototipo antes del main · sobrecarga</div>\n<div><b>Recursión</b><br><code>if (caso base) return …; return … f(n − 1) …;</code></div>\n<div><b>Punteros</b><br><code>int *p = &amp;a;</code> · <code>*p</code> · <code>nullptr</code> · <code>int **pp</code></div>\n<div><b>Memoria dinámica</b><br><code>new int(5)</code> / <code>delete p</code> · <code>new int[n]</code> / <code>delete[] v</code></div>\n<div><b>Arreglos</b><br><code>v[i] ≡ *(v + i)</code> · pasar <code>(int *v, int n)</code></div>\n<div><b>Matriz dinámica</b><br><code>int **m = new int*[f]; m[i] = new int[c];</code> · liberar filas y luego m</div>\n<div><b>vector</b><br><code>#include &lt;vector&gt;</code> · <code>push_back · insert(v.begin()+i, x) · erase(v.begin()+i) · pop_back · size</code></div>\n<div><b>Aleatorios</b><br><code>#include &lt;cstdlib&gt; &lt;ctime&gt;</code> · <code>srand(time(0));</code> · <code>rand() % 6 + 1</code></div>\n<div><b>Clase</b><br><code>class X { private: int a; public: X(int a) { this-&gt;a = a; } int getA() { return a; } };</code></div>\n<div><b>Destructor</b><br><code>~X() { }</code> · orden inverso a la creación · <code>delete p</code> lo llama</div>\n<div><b>Objetos dinámicos</b><br><code>X *p = new X(1); p-&gt;getA(); delete p;</code> · arreglo <code>new X[n]</code> / <code>delete[]</code></div>\n</div>",
+ "formSim": true,
+ "formLabel": "📋 Hoja de repaso",
+ "keyLabel": "Claves del tema",
+ "topics": [
+  {
+   "id": "f_rep1",
+   "name": "Sem. 1–4 · Repaso: control, funciones y punteros",
+   "teo": "\n<p>Una función se declara con su tipo de retorno: <code>int sumar(int a, int b) { return a + b; }</code>; si no devuelve nada es <code>void</code>. Debe estar declarada <strong>antes</strong> de usarse (o tener su prototipo arriba). Se pueden <b>sobrecargar</b>: varias funciones con el mismo nombre y distintos parámetros.</p>\n<p><strong>Ámbito (scope):</strong> una variable declarada dentro de una función o de un bloque <code>{ }</code> solo existe ahí. Una <b>global</b> se declara fuera de todas las funciones; si hay una local con el mismo nombre, la local la «tapa» (con <code>::x</code> se accede a la global). Una variable <code>static</code> local conserva su valor entre llamadas.</p>\n<p><strong>Paso por valor</strong> (<code>void f(int x)</code>): la función recibe una copia y no cambia la original. <strong>Por referencia</strong> (<code>void f(int &amp;x)</code>): trabaja sobre la variable original. <strong>Recursividad:</strong> la función se llama a sí misma; necesita un <b>caso base</b> que termine y un <b>caso recursivo</b> que se acerque a él, como <code>fact(n) = n * fact(n - 1)</code> con <code>fact(0) = 1</code>.</p>\n<p>Cada variable vive en una dirección de memoria; <code>&amp;a</code> es su dirección. Un <strong>puntero</strong> guarda una dirección: <code>int *p = &amp;a;</code>. Con <code>*p</code> (desreferenciar) lees o modificas el valor apuntado. Un puntero que no apunta a nada debe valer <code>nullptr</code>; desreferenciarlo hace que el programa falle.</p>\n<p>Un <strong>puntero a puntero</strong> (<code>int **pp = &amp;p;</code>) guarda la dirección de otro puntero. Una <strong>referencia</strong> (<code>int &amp;r = a;</code>) es otro nombre para la misma variable: no ocupa una dirección propia y no puede «re-apuntar».</p>\n<p><strong>Memoria dinámica (heap):</strong> <code>new</code> reserva memoria mientras el programa corre: <code>int *p = new int(5);</code> o un arreglo <code>int *v = new int[n];</code>. Esa memoria no se libera sola: se devuelve con <code>delete p;</code> o <code>delete[] v;</code>. Si te olvidas, hay una <strong>fuga de memoria</strong> (<i>memory leak</i>). Después de liberar, conviene poner el puntero en <code>nullptr</code>.</p>",
+   "form": [
+    "<code>tipo nombre(params) { … return …; }</code>",
+    "Valor: copia · Referencia <code>&amp;</code>: la original",
+    "<code>::x</code> → la global",
+    "<code>&amp;a</code> dirección · <code>*p</code> valor apuntado",
+    "<code>int *p = nullptr;</code>",
+    "<code>int **pp = &amp;p;</code>"
+   ],
+   "ex": [
+    {
+     "id": "fti3",
+     "lvl": 2,
+     "title": "El operador ternario (PC1 2026-1)",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nint main() {\n    int a = 5;\n    std::cout &lt;&lt; ((a++ &lt;= 5) ? 9.9 : 9);\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">9.9</code>",
+        "<code class=\"out\">9</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 Error de compilación</b></code>",
+        "<code class=\"out\">10</code>",
+        "<code class=\"out\">6</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>a++ &lt;= 5</code> compara el valor <b>antiguo</b> (5 ≤ 5 es verdadero) y después a pasa a 6.",
+      "El ternario elige 9.9. Como un lado es <code>double</code>, el resultado es <code>double</code> y se imprime 9.9."
+     ],
+     "ans": "<code class=\"out\">9.9</code>",
+     "hint": "Se compara antes de incrementar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "incr"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nint main() {\n    int a = 5;\n    std::cout << ((a++ <= 5) ? 9.9 : 9);\n}"
+    },
+    {
+     "id": "fct2",
+     "lvl": 2,
+     "title": "switch sin break (PC1 2026-1)",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    int opcion = 3;\n    int resultado = 0;\n    switch (opcion) {\n        case 1:\n            resultado = 10;\n            break;\n        case 2:\n            resultado = 20;\n            break;\n        case 3:\n            resultado = 30;\n        case 4:\n            resultado = resultado + 5;\n            break;\n        default:\n            resultado = -1;\n    }\n    cout &lt;&lt; resultado;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">35</code>",
+        "<code class=\"out\">30</code>",
+        "<code class=\"out\">45</code>",
+        "<code class=\"out\">-1</code>",
+        "<code class=\"out\">5</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Entra al <code>case 3</code>: resultado = 30.",
+      "No hay <code>break</code>, así que «cae» al <code>case 4</code>: 30 + 5 = 35, y ahí sí hay break."
+     ],
+     "ans": "<code class=\"out\">35</code>",
+     "hint": "¿Dónde está el primer break después del case 3?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sw"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int opcion = 3;\n    int resultado = 0;\n    switch (opcion) {\n        case 1:\n            resultado = 10;\n            break;\n        case 2:\n            resultado = 20;\n            break;\n        case 3:\n            resultado = 30;\n        case 4:\n            resultado = resultado + 5;\n            break;\n        default:\n            resultado = -1;\n    }\n    cout << resultado;\n}"
+    },
+    {
+     "id": "ffu1",
+     "lvl": 1,
+     "title": "Valor y referencia (PC1 2026-1)",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nvoid modificar(int x, int &amp;y) {\n    x = x * 2;\n    y = y * 2;\n    cout &lt;&lt; x &lt;&lt; \" \" &lt;&lt; y;\n}\nint main() {\n    int a = 4, b = 6;\n    modificar(a, b);\n    cout &lt;&lt; \" \" &lt;&lt; a &lt;&lt; \" \" &lt;&lt; b;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">8 12 4 12</code>",
+        "<code class=\"out\">8 12 8 12</code>",
+        "<code class=\"out\">8 12 4 6</code>",
+        "<code class=\"out\">4 6 4 6</code>",
+        "<code class=\"out\">8 12 4 12 4 12</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>x</code> es una copia de a: dentro vale 8, pero a sigue en 4.",
+      "<code>y</code> es una referencia a b: b pasa a 12.",
+      "Salida: 8 12 4 12."
+     ],
+     "ans": "<code class=\"out\">8 12 4 12</code>",
+     "hint": "Solo el parámetro con & cambia la original.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ref"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nvoid modificar(int x, int &y) {\n    x = x * 2;\n    y = y * 2;\n    cout << x << \" \" << y;\n}\nint main() {\n    int a = 4, b = 6;\n    modificar(a, b);\n    cout << \" \" << a << \" \" << b;\n}"
+    },
+    {
+     "id": "ffu5",
+     "lvl": 3,
+     "title": "Imprimir antes y después de la llamada",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nvoid g(int n) {\n    if (n == 0) return;\n    cout &lt;&lt; n;\n    g(n - 1);\n    cout &lt;&lt; n;\n}\nint main() {\n    g(3);\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">321123</code>",
+        "<code class=\"out\">321</code>",
+        "<code class=\"out\">123321</code>",
+        "<code class=\"out\">3210123</code>",
+        "<code class=\"out\">332211</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Antes de llamar se imprime al «bajar»: 3, 2, 1.",
+      "Lo que va después de la llamada se ejecuta al «volver», en orden inverso: 1, 2, 3."
+     ],
+     "ans": "<code class=\"out\">321123</code>",
+     "hint": "La segunda impresión ocurre al regresar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rec"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nvoid g(int n) {\n    if (n == 0) return;\n    cout << n;\n    g(n - 1);\n    cout << n;\n}\nint main() {\n    g(3);\n    return 0;\n}"
+    },
+    {
+     "id": "fpu2",
+     "lvl": 2,
+     "title": "Dos punteros",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    int a = 3, b = 7;\n    int *p = &amp;a;\n    int *q = &amp;b;\n    *p = *q;\n    q = p;\n    *q = 10;\n    cout &lt;&lt; a &lt;&lt; \" \" &lt;&lt; b;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">10 7</code>",
+        "<code class=\"out\">7 10</code>",
+        "<code class=\"out\">7 7</code>",
+        "<code class=\"out\">3 10</code>",
+        "<code class=\"out\">10 10</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>*p = *q</code> copia el valor de b en a: a = 7.",
+      "<code>q = p</code> hace que q apunte a a.",
+      "<code>*q = 10</code> cambia a; b sigue en 7."
+     ],
+     "ans": "<code class=\"out\">10 7</code>",
+     "hint": "q = p cambia a dónde apunta q.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ptr"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3, b = 7;\n    int *p = &a;\n    int *q = &b;\n    *p = *q;\n    q = p;\n    *q = 10;\n    cout << a << \" \" << b;\n    return 0;\n}"
+    },
+    {
+     "id": "fpu5",
+     "lvl": 2,
+     "title": "Aritmética de punteros",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    int v[] = {10, 20, 30, 40};\n    int *p = v;\n    p += 2;\n    cout &lt;&lt; *p &lt;&lt; \" \" &lt;&lt; *(p - 1) &lt;&lt; \" \" &lt;&lt; p[1] &lt;&lt; \" \" &lt;&lt; (p - v);\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">30 20 40 2</code>",
+        "<code class=\"out\">30 20 40 8</code>",
+        "<code class=\"out\">12 11 13 2</code>",
+        "<code class=\"out\">20 10 30 2</code>",
+        "<code class=\"out\">30 10 40 2</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El nombre del arreglo es la dirección de su primer elemento; <code>p += 2</code> avanza dos <b>enteros</b>.",
+      "<code>*p</code> = 30, <code>*(p - 1)</code> = 20, <code>p[1]</code> = 40.",
+      "<code>p - v</code> cuenta elementos, no bytes: 2."
+     ],
+     "ans": "<code class=\"out\">30 20 40 2</code>",
+     "hint": "Sumar 1 a un puntero avanza un elemento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arit"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int v[] = {10, 20, 30, 40};\n    int *p = v;\n    p += 2;\n    cout << *p << \" \" << *(p - 1) << \" \" << p[1] << \" \" << (p - v);\n    return 0;\n}"
+    },
+    {
+     "id": "fpu6",
+     "lvl": 3,
+     "title": "Puntero como parámetro",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nvoid duplicar(int *x) {\n    *x = *x * 2;\n}\nvoid cambiar(int *x) {\n    x = new int(100);\n    *x = 50;\n}\nint main() {\n    int a = 3;\n    duplicar(&amp;a);\n    cambiar(&amp;a);\n    cout &lt;&lt; a;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">6</code>",
+        "<code class=\"out\">3</code>",
+        "<code class=\"out\">50</code>",
+        "<code class=\"out\">100</code>",
+        "<code class=\"out\">12</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>duplicar</code> cambia el valor apuntado: a = 6.",
+      "<code>cambiar</code> cambia su copia del puntero para que apunte a otra memoria; a no se toca (y además deja una fuga de memoria)."
+     ],
+     "ans": "<code class=\"out\">6</code>",
+     "hint": "Cambiar x no es lo mismo que cambiar *x.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ptr",
+       "din"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nvoid duplicar(int *x) {\n    *x = *x * 2;\n}\nvoid cambiar(int *x) {\n    x = new int(100);\n    *x = 50;\n}\nint main() {\n    int a = 3;\n    duplicar(&a);\n    cambiar(&a);\n    cout << a;\n    return 0;\n}"
+    },
+    {
+     "id": "ffu10",
+     "lvl": 3,
+     "title": "Ganancia recursiva (PC1 2026-1)",
+     "q": "<p>Implementa <code>double gananciaRecursiva(double capital, double interes, int t)</code> que calcule, <b>de forma recursiva</b> y reduciendo t en cada llamada, la ganancia de invertir <code>capital</code> durante t años a <code>interes</code> % anual: \\(\\text{ganancia} = \\text{capital}\\,(1 + i/100)^t - \\text{capital}\\).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\ndouble gananciaRecursiva(double capital, double interes, int t) {\n    return 0;\n}\n",
+       "tests": [
+        {
+         "n": "capital = 1000, i = 10, t = 3",
+         "main": "cout << fixed << setprecision(2) << gananciaRecursiva(1000, 10, 3) << endl;",
+         "out": "331.00"
+        },
+        {
+         "n": "capital = 1500, i = 12, t = 2",
+         "main": "cout << fixed << setprecision(2) << gananciaRecursiva(1500, 12, 2) << endl;",
+         "out": "381.60"
+        },
+        {
+         "n": "t = 0",
+         "main": "cout << fixed << setprecision(2) << gananciaRecursiva(500, 8, 0) << endl;",
+         "out": "0.00"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Caso base: con t = 0 años no hay ganancia: <code>return 0</code>.",
+      "Caso recursivo: el interés de este año (<code>capital * interes / 100</code>) más la ganancia de los años restantes, partiendo del capital ya aumentado.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;iomanip&gt;\nusing namespace std;\n\ndouble gananciaRecursiva(double capital, double interes, int t) {\n    if (t == 0) return 0;\n    double interesDelAnio = capital * interes / 100;\n    return interesDelAnio + gananciaRecursiva(capital + interesDelAnio, interes, t - 1);\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La ganancia de t años = interés de un año + ganancia de t − 1 años.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rec"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "fpu9",
+     "lvl": 2,
+     "title": "Crear un arreglo dinámico",
+     "q": "<p>Escribe <code>int* crearArreglo(int n, int valor)</code> que reserve con <code>new</code> un arreglo de n enteros, lo llene con <code>valor, valor+1, valor+2, …</code> y lo retorne. (El que lo llama hará <code>delete[]</code>).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nint* crearArreglo(int n, int valor) {\n    int datos[100];\n    for (int i = 0; i < n; i++) datos[i] = valor + i;\n    return nullptr;\n}\n",
+       "tests": [
+        {
+         "n": "n = 5 desde 10",
+         "main": "int *v = crearArreglo(5, 10);\nfor (int i = 0; i < 5; i++) cout << v[i] << \" \";\ncout << endl;\ndelete[] v;",
+         "out": "10 11 12 13 14"
+        },
+        {
+         "n": "n = 1000",
+         "main": "int *v = crearArreglo(1000, 0);\ncout << v[0] + v[999] << endl;\ndelete[] v;",
+         "out": "999"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Un arreglo local (<code>int datos[100]</code>) desaparece al terminar la función: no se puede retornar.",
+      "Con <code>new int[n]</code> la memoria sigue existiendo hasta que alguien haga <code>delete[]</code>.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint* crearArreglo(int n, int valor) {\n    int *datos = new int[n];\n    for (int i = 0; i &lt; n; i++)\n        datos[i] = valor + i;\n    return datos;\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La memoria del heap sobrevive a la función.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "din"
+      ]
+     ],
+     "lang": "cpp"
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los punteros permiten trabajar con la memoria directamente y crear datos cuyo tamaño se conoce recién al ejecutar (los arreglos dinámicos de la P3 de cada PC1).</p>\n<h3>Conceptos clave</h3><ul><li>Dirección, puntero y valor apuntado.</li><li>Punteros como parámetros de funciones.</li><li>new / delete y fugas de memoria.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>void duplicar(int *x) { *x *= 2; }</code> se llama <code>duplicar(&amp;a);</code>.</div>\n<div class=\"err\"><b>Error común:</b> usar <code>delete</code> (sin corchetes) para un arreglo creado con <code>new int[n]</code>, o usar el puntero después de liberarlo.</div>"
+  },
+  {
+   "id": "f_rep2",
+   "name": "Sem. 5–7 · Repaso: arreglos, matrices y vectores",
+   "teo": "\n<p>Un <strong>arreglo estático</strong> tiene tamaño fijo, conocido al compilar: <code>int notas[10];</code>. Los índices van de 0 a n−1 y C++ <b>no</b> revisa si te sales del rango. Si lo inicializas con menos valores (<code>int a[5] = {1, 2};</code>) el resto queda en 0. <code>sizeof(a) / sizeof(a[0])</code> da la cantidad de elementos (solo en el mismo ámbito donde se declaró).</p>\n<p>Al pasar un arreglo a una función se pasa su <strong>dirección</strong> (no una copia): <code>void f(int v[], int n)</code> o <code>void f(int *v, int n)</code>, y los cambios afectan al original. Siempre hay que enviar también el tamaño. <code>v[i]</code> equivale a <code>*(v + i)</code>.</p>\n<p>Un <strong>arreglo dinámico</strong> se crea cuando el tamaño se conoce al ejecutar: <code>int *v = new int[n];</code>, se usa igual (<code>v[i]</code>) y se libera con <code>delete[] v;</code>. Una función puede crear uno nuevo y retornarlo (por ejemplo, el arreglo de variaciones de un consumo diario), y devolver su tamaño por referencia.</p>\n<p><code>std::vector</code> (de la STL, <code>#include &lt;vector&gt;</code>) es un arreglo dinámico que <strong>crece solo</strong> y libera su memoria automáticamente: no hace falta <code>new</code> ni <code>delete</code>. Se declara con el tipo entre <code>&lt; &gt;</code>: <code>vector&lt;int&gt; v;</code>, <code>vector&lt;int&gt; v(5, 0);</code> (cinco ceros) o <code>vector&lt;int&gt; v = {1, 2, 3};</code>.</p>\n<p>Operaciones básicas (CRUD): <b>crear/agregar</b> <code>push_back(x)</code> al final o <code>insert(v.begin() + i, x)</code> en una posición; <b>leer</b> <code>v[i]</code>, <code>v.front()</code>, <code>v.back()</code>, <code>v.size()</code> y recorridos <code>for (int x : v)</code>; <b>actualizar</b> <code>v[i] = x</code>; <b>borrar</b> <code>pop_back()</code>, <code>erase(v.begin() + i)</code> o <code>clear()</code>.</p>\n<p>Al pasar un vector a una función <strong>por valor</strong> se copia completo (los cambios no salen); para modificarlo usa <code>vector&lt;int&gt; &amp;v</code>, y para solo leerlo sin copiar, <code>const vector&lt;int&gt; &amp;v</code>. Una función puede retornar un vector nuevo.</p>",
+   "form": [
+    "Índices de 0 a n−1",
+    "<code>v[i]</code> ≡ <code>*(v + i)</code>",
+    "Pasar arreglo = pasar dirección (+ tamaño)",
+    "<code>int **m = new int*[f]; m[i] = new int[c];</code>",
+    "Liberar: <code>delete[] m[i]</code> y luego <code>delete[] m</code>",
+    "<code>push_back · insert · erase · pop_back · clear</code>",
+    "<code>v.size()</code>, <code>v.front()</code>, <code>v.back()</code>"
+   ],
+   "ex": [
+    {
+     "id": "far4",
+     "lvl": 2,
+     "title": "Recorrer con punteros",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    int v[5] = {3, 1, 4, 1, 5};\n    int *p = v + 4;\n    int s = 0;\n    while (p &gt;= v) {\n        s = s * 10 + *p;\n        p--;\n    }\n    cout &lt;&lt; s;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">51413</code>",
+        "<code class=\"out\">31415</code>",
+        "<code class=\"out\">14</code>",
+        "<code class=\"out\">5141</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 Error en ejecución</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "p empieza en el último elemento y retrocede hasta el primero.",
+      "Va armando el número con los dígitos al revés: 5, 51, 514, 5141, 51413."
+     ],
+     "ans": "<code class=\"out\">51413</code>",
+     "hint": "Se recorre de atrás hacia adelante.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arit",
+       "recorr"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int v[5] = {3, 1, 4, 1, 5};\n    int *p = v + 4;\n    int s = 0;\n    while (p >= v) {\n        s = s * 10 + *p;\n        p--;\n    }\n    cout << s;\n    return 0;\n}"
+    },
+    {
+     "id": "fma3",
+     "lvl": 2,
+     "title": "Matriz dinámica",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    int filas = 2, cols = 3;\n    int **m = new int*[filas];\n    for (int i = 0; i &lt; filas; i++)\n        m[i] = new int[cols];\n    for (int i = 0; i &lt; filas; i++)\n        for (int j = 0; j &lt; cols; j++)\n            m[i][j] = i * 10 + j;\n    cout &lt;&lt; m[1][2] &lt;&lt; \" \" &lt;&lt; m[0][1] + m[1][0];\n    for (int i = 0; i &lt; filas; i++)\n        delete[] m[i];\n    delete[] m;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">12 11</code>",
+        "<code class=\"out\">21 11</code>",
+        "<code class=\"out\">12 10</code>",
+        "<code class=\"out\">12 1</code>",
+        "<code class=\"out\">5 2</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>m[i][j] = i * 10 + j</code>: m[1][2] = 12.",
+      "m[0][1] = 1 y m[1][0] = 10: suma 11."
+     ],
+     "ans": "<code class=\"out\">12 11</code>",
+     "hint": "Calcula cada celda con la fórmula.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "matd"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int filas = 2, cols = 3;\n    int **m = new int*[filas];\n    for (int i = 0; i < filas; i++)\n        m[i] = new int[cols];\n    for (int i = 0; i < filas; i++)\n        for (int j = 0; j < cols; j++)\n            m[i][j] = i * 10 + j;\n    cout << m[1][2] << \" \" << m[0][1] + m[1][0];\n    for (int i = 0; i < filas; i++)\n        delete[] m[i];\n    delete[] m;\n    return 0;\n}"
+    },
+    {
+     "id": "fve3",
+     "lvl": 2,
+     "title": "Vector por valor y por referencia",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;vector&gt;\nusing namespace std;\n\nvoid agregarCopia(vector&lt;int&gt; v) { v.push_back(1); }\nvoid agregarReal(vector&lt;int&gt; &amp;v) { v.push_back(2); }\n\nint main() {\n    vector&lt;int&gt; v;\n    agregarCopia(v);\n    agregarReal(v);\n    agregarReal(v);\n    cout &lt;&lt; v.size() &lt;&lt; \" \" &lt;&lt; v[0];\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">2 2</code>",
+        "<code class=\"out\">3 1</code>",
+        "<code class=\"out\">1 2</code>",
+        "<code class=\"out\">2 1</code>",
+        "<code class=\"out\">3 2</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>agregarCopia</code> recibe una copia: el vector original no cambia.",
+      "Las dos llamadas por referencia agregan dos 2: tamaño 2."
+     ],
+     "ans": "<code class=\"out\">2 2</code>",
+     "hint": "Sin & se trabaja sobre una copia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "vecf"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid agregarCopia(vector<int> v) { v.push_back(1); }\nvoid agregarReal(vector<int> &v) { v.push_back(2); }\n\nint main() {\n    vector<int> v;\n    agregarCopia(v);\n    agregarReal(v);\n    agregarReal(v);\n    cout << v.size() << \" \" << v[0];\n    return 0;\n}"
+    },
+    {
+     "id": "fve4",
+     "lvl": 2,
+     "title": "Constructor y resize",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;vector&gt;\nusing namespace std;\n\nint main() {\n    vector&lt;int&gt; v(3, 7);\n    v.resize(5);\n    v[4] = 1;\n    int suma = 0;\n    for (int x : v) suma += x;\n    cout &lt;&lt; v.size() &lt;&lt; \" \" &lt;&lt; suma;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">5 22</code>",
+        "<code class=\"out\">3 21</code>",
+        "<code class=\"out\">5 35</code>",
+        "<code class=\"out\">5 21</code>",
+        "<code class=\"out\">4 22</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>vector&lt;int&gt; v(3, 7)</code> = {7, 7, 7}.",
+      "<code>resize(5)</code> agrega dos ceros: {7, 7, 7, 0, 0}; luego v[4] = 1.",
+      "Suma: 21 + 1 = 22, tamaño 5."
+     ],
+     "ans": "<code class=\"out\">5 22</code>",
+     "hint": "resize rellena con 0.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "vecb"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v(3, 7);\n    v.resize(5);\n    v[4] = 1;\n    int suma = 0;\n    for (int x : v) suma += x;\n    cout << v.size() << \" \" << suma;\n    return 0;\n}"
+    },
+    {
+     "id": "far8",
+     "lvl": 3,
+     "title": "Burbuja con punteros (PC1 2026-1)",
+     "q": "<p>Implementa <code>void ordenarBurbuja(int *datos, int n)</code> que ordene de menor a mayor con el método de la burbuja (dos bucles anidados). Usa <b>aritmética de punteros</b> (<code>*(datos + j)</code>) para comparar e intercambiar.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nvoid ordenarBurbuja(int *datos, int n) {\n    for (int i = 0; i < n - 1; i++) {\n        for (int j = 0; j < n - 1 - i; j++) {\n            // compara e intercambia datos[j] y datos[j + 1]\n        }\n    }\n}\n",
+       "tests": [
+        {
+         "n": "{18, 22, 15, 30, 27, 9}",
+         "main": "int t[] = {18, 22, 15, 30, 27, 9};\nordenarBurbuja(t, 6);\nfor (int i = 0; i < 6; i++) cout << t[i] << \" \";\ncout << endl;",
+         "out": "9 15 18 22 27 30"
+        },
+        {
+         "n": "Con negativos",
+         "main": "int t[] = {-3, 0, 5, -1};\nordenarBurbuja(t, 4);\nfor (int i = 0; i < 4; i++) cout << t[i] << \" \";\ncout << endl;",
+         "out": "-3 -1 0 5"
+        },
+        {
+         "n": "Dinámico de 50 al revés",
+         "main": "int *t = new int[50];\nfor (int i = 0; i < 50; i++) t[i] = 50 - i;\nordenarBurbuja(t, 50);\ncout << t[0] << \" \" << t[49] << endl;\ndelete[] t;",
+         "out": "1 50"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "En cada pasada se comparan vecinos y se intercambian si están desordenados; el mayor «sube» al final.",
+      "Con punteros: <code>*(datos + j)</code> y <code>*(datos + j + 1)</code>.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nvoid ordenarBurbuja(int *datos, int n) {\n    for (int i = 0; i &lt; n - 1; i++) {\n        for (int j = 0; j &lt; n - 1 - i; j++) {\n            if (*(datos + j) &gt; *(datos + j + 1)) {\n                int aux = *(datos + j);\n                *(datos + j) = *(datos + j + 1);\n                *(datos + j + 1) = aux;\n            }\n        }\n    }\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Intercambia si el de la izquierda es mayor.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arit"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "fma6",
+     "lvl": 3,
+     "title": "Crear, transponer y liberar",
+     "q": "<p>Implementa <code>int** crearMatriz(int f, int c)</code> (llena de ceros), <code>void liberarMatriz(int **m, int f)</code> e <code>int** transpuesta(int **m, int f, int c)</code>, que retorne una matriz nueva de c×f.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nint** crearMatriz(int f, int c) {\n    return nullptr;\n}\n\nvoid liberarMatriz(int **m, int f) {\n}\n\nint** transpuesta(int **m, int f, int c) {\n    return nullptr;\n}\n",
+       "tests": [
+        {
+         "n": "crearMatriz llena de ceros",
+         "main": "int **m = crearMatriz(2, 3);\nfor (int i = 0; i < 2; i++) { for (int j = 0; j < 3; j++) cout << m[i][j]; cout << endl; }\nliberarMatriz(m, 2);",
+         "out": "000\n000"
+        },
+        {
+         "n": "Transpuesta de 2×3",
+         "main": "int **m = crearMatriz(2, 3);\nint k = 1;\nfor (int i = 0; i < 2; i++) for (int j = 0; j < 3; j++) m[i][j] = k++;\nint **t = transpuesta(m, 2, 3);\nfor (int i = 0; i < 3; i++) { for (int j = 0; j < 2; j++) cout << t[i][j] << \" \"; cout << endl; }\nliberarMatriz(m, 2);\nliberarMatriz(t, 3);",
+         "out": "1 4\n2 5\n3 6"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "crear: arreglo de punteros y luego cada fila.",
+      "transpuesta: la fila i de m pasa a ser la columna i de t: <code>t[j][i] = m[i][j]</code>.",
+      "liberar: cada fila y luego el arreglo de punteros.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nint** crearMatriz(int f, int c) {\n    int **m = new int*[f];\n    for (int i = 0; i &lt; f; i++) {\n        m[i] = new int[c];\n        for (int j = 0; j &lt; c; j++)\n            m[i][j] = 0;\n    }\n    return m;\n}\n\nvoid liberarMatriz(int **m, int f) {\n    for (int i = 0; i &lt; f; i++)\n        delete[] m[i];\n    delete[] m;\n}\n\nint** transpuesta(int **m, int f, int c) {\n    int **t = crearMatriz(c, f);\n    for (int i = 0; i &lt; f; i++)\n        for (int j = 0; j &lt; c; j++)\n            t[j][i] = m[i][j];\n    return t;\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La transpuesta tiene c filas y f columnas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "matd"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "fve7",
+     "lvl": 2,
+     "title": "Eliminar todas las apariciones",
+     "q": "<p>Escribe <code>void eliminarValor(vector&lt;int&gt; &amp;v, int x)</code> que borre <b>todas</b> las apariciones de x usando <code>erase</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid eliminarValor(vector<int> &v, int x) {\n    for (int i = 0; i < (int)v.size(); i++)\n        if (v[i] == x)\n            v.erase(v.begin() + i);\n}\n",
+       "tests": [
+        {
+         "n": "Repetidos seguidos",
+         "main": "vector<int> v = {5, 5, 1, 5, 2, 5, 5};\neliminarValor(v, 5);\nfor (int y : v) cout << y << \" \";\ncout << \"| \" << v.size() << endl;",
+         "out": "1 2 | 2"
+        },
+        {
+         "n": "No está",
+         "main": "vector<int> v = {1, 2, 3};\neliminarValor(v, 9);\ncout << v.size() << endl;",
+         "out": "3"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La plantilla falla con repetidos seguidos: al borrar, el siguiente elemento ocupa la posición i y el <code>i++</code> lo salta.",
+      "Avanza i solo cuando <b>no</b> borras.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;vector&gt;\nusing namespace std;\n\nvoid eliminarValor(vector&lt;int&gt; &amp;v, int x) {\n    int i = 0;\n    while (i &lt; (int)v.size()) {\n        if (v[i] == x)\n            v.erase(v.begin() + i);\n        else\n            i++;\n    }\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "No avances el índice después de borrar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "vecb"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "fpc_temps",
+     "lvl": 3,
+     "title": "Temperaturas con punteros dinámicos",
+     "q": "<p>Lee n (valida que esté en [2, 50]), crea con <code>new int[n]</code> un arreglo y lee las temperaturas. Llama a <code>encontrarMaximo</code> y <code>segundoMayor</code> (una sola pasada, excluyendo una ocurrencia del máximo) <b>antes</b> de ordenar, luego a <code>calcularPromedio</code> y a <code>ordenarBurbuja</code>. En todas las funciones usa <code>*(datos + i)</code>, no <code>datos[i]</code>. Libera con <code>delete[]</code>.</p><pre class=\"cons\">Temperatura maxima : 30\nSegunda mayor : 27\nPromedio : 20.1667\nTemperaturas ordenadas : 9 15 18 22 27 30</pre><p class=\"note\">📄 PC1 2026-1 · Marvin Abisrror · P3 (7 pts). Las pruebas usan las entradas de los ejemplos y buscan en tu salida las líneas indicadas, en orden (no importan los espacios, las mayúsculas ni las tildes; los mensajes de <code>cout</code> que pidan datos son libres).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}\n",
+       "tests": [
+        {
+         "n": "Ejemplo 1",
+         "in": "6\n18 22 15 30 27 9",
+         "has": [
+          "Temperatura maxima : 30",
+          "Segunda mayor : 27",
+          "Promedio : 20.1667",
+          "Temperaturas ordenadas : 9 15 18 22 27 30"
+         ]
+        },
+        {
+         "n": "Con negativos",
+         "in": "4\n-3 0 5 -1",
+         "has": [
+          "Temperatura maxima : 5",
+          "Segunda mayor : 0",
+          "Promedio : 0.2500",
+          "Temperaturas ordenadas : -3 -1 0 5"
+         ]
+        },
+        {
+         "n": "Valida n (1 y 51)",
+         "in": "1\n51\n3\n10 20 30",
+         "has": [
+          "Temperatura maxima : 30",
+          "Segunda mayor : 20",
+          "Promedio : 20.0000",
+          "Temperaturas ordenadas : 10 20 30"
+         ]
+        },
+        {
+         "n": "Máximo repetido",
+         "in": "4\n30 12 30 7",
+         "has": [
+          "Temperatura maxima : 30",
+          "Segunda mayor : 30",
+          "Temperaturas ordenadas : 7 12 30 30"
+         ]
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "segundoMayor en una pasada: si el valor supera al máximo, el máximo pasa a ser el segundo; si solo supera al segundo, reemplaza al segundo.",
+      "Excluir «una ocurrencia» del máximo significa que con 30, 12, 30 el segundo mayor también es 30.",
+      "El promedio con <code>fixed &lt;&lt; setprecision(4)</code>.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;iomanip&gt;\nusing namespace std;\n\nint encontrarMaximo(int *datos, int n) {\n    int m = *datos;\n    for (int i = 1; i &lt; n; i++)\n        if (*(datos + i) &gt; m) m = *(datos + i);\n    return m;\n}\n\nint segundoMayor(int *datos, int n) {\n    int maximo = *datos, segundo = *(datos + 1);\n    if (segundo &gt; maximo) {\n        int aux = maximo;\n        maximo = segundo;\n        segundo = aux;\n    }\n    for (int i = 2; i &lt; n; i++) {\n        if (*(datos + i) &gt; maximo) {\n            segundo = maximo;\n            maximo = *(datos + i);\n        } else if (*(datos + i) &gt; segundo) {\n            segundo = *(datos + i);\n        }\n    }\n    return segundo;\n}\n\ndouble calcularPromedio(int *datos, int n) {\n    double suma = 0;\n    for (int i = 0; i &lt; n; i++) suma += *(datos + i);\n    return suma / n;\n}\n\nvoid ordenarBurbuja(int *datos, int n) {\n    for (int i = 0; i &lt; n - 1; i++)\n        for (int j = 0; j &lt; n - 1 - i; j++)\n            if (*(datos + j) &gt; *(datos + j + 1)) {\n                int aux = *(datos + j);\n                *(datos + j) = *(datos + j + 1);\n                *(datos + j + 1) = aux;\n            }\n}\n\nint main() {\n    int n;\n    do {\n        cout &lt;&lt; \"Ingrese el numero de mediciones (2 a 50) : \";\n        cin &gt;&gt; n;\n    } while (n &lt; 2 || n &gt; 50);\n    int *datos = new int[n];\n    cout &lt;&lt; \"Ingrese las \" &lt;&lt; n &lt;&lt; \" temperaturas :\" &lt;&lt; endl;\n    for (int i = 0; i &lt; n; i++) cin &gt;&gt; *(datos + i);\n    int maximo = encontrarMaximo(datos, n);\n    int segundo = segundoMayor(datos, n);\n    double promedio = calcularPromedio(datos, n);\n    ordenarBurbuja(datos, n);\n    cout &lt;&lt; \"Temperatura maxima : \" &lt;&lt; maximo &lt;&lt; endl;\n    cout &lt;&lt; \"Segunda mayor : \" &lt;&lt; segundo &lt;&lt; endl;\n    cout &lt;&lt; fixed &lt;&lt; setprecision(4) &lt;&lt; \"Promedio : \" &lt;&lt; promedio &lt;&lt; endl;\n    cout &lt;&lt; \"Temperaturas ordenadas :\";\n    for (int i = 0; i &lt; n; i++) cout &lt;&lt; \" \" &lt;&lt; *(datos + i);\n    cout &lt;&lt; endl;\n    delete[] datos;\n    return 0;\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Dos ramas para actualizar máximo y segundo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "din",
+       "arit"
+      ]
+     ],
+     "lang": "cpp",
+     "pc": "PC1 2026-1 · Marvin Abisrror · P3 (7 pts)"
+    },
+    {
+     "id": "fpc_consumo",
+     "lvl": 3,
+     "title": "Consumo eléctrico diario",
+     "q": "<p>Lee n y el consumo (kWh) de n días en un arreglo dinámico. En un segundo arreglo dinámico calcula la variación porcentual \\(V_i = \\frac{C_i - C_{i-1}}{C_{i-1}}\\times100\\) (el primer día es 0 %). Usa funciones con punteros que no impriman. Formato (con el <code>cout</code> por defecto, sin setprecision):</p><pre class=\"cons\">Dia 1 - Consumo : 100 Variacion : 0 %\nDia 2 - Consumo : 110 Variacion : 10 %\nDia 3 - Consumo : 105 Variacion : -4.54545 %</pre><p class=\"note\">📄 PC1 2026-1 · Henry Gallegos · Sec. 12 · P3 (7 pts). Las pruebas usan las entradas de los ejemplos y buscan en tu salida las líneas indicadas, en orden (no importan los espacios, las mayúsculas ni las tildes; los mensajes de <code>cout</code> que pidan datos son libres).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}\n",
+       "tests": [
+        {
+         "n": "Ejemplo de 5 días",
+         "in": "5\n100\n110\n105\n120\n118",
+         "has": [
+          "Dia 1 - Consumo : 100 Variacion : 0 %",
+          "Dia 2 - Consumo : 110 Variacion : 10 %",
+          "Dia 3 - Consumo : 105 Variacion : -4.54545 %",
+          "Dia 4 - Consumo : 120 Variacion : 14.2857 %",
+          "Dia 5 - Consumo : 118 Variacion : -1.66667 %"
+         ]
+        },
+        {
+         "n": "3 días",
+         "in": "3\n50\n100\n25",
+         "has": [
+          "Dia 1 - Consumo : 50 Variacion : 0 %",
+          "Dia 2 - Consumo : 100 Variacion : 100 %",
+          "Dia 3 - Consumo : 25 Variacion : -75 %"
+         ]
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Dos arreglos dinámicos <code>new double[n]</code>.",
+      "Una función recibe los dos punteros y llena la variación desde i = 1 (el primero es 0).",
+      "Los cálculos van en funciones; el <code>cout</code> en el main. Libera ambos arreglos.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nvoid leerConsumos(double *consumo, int n) {\n    for (int i = 0; i &lt; n; i++) {\n        cout &lt;&lt; \"Dia \" &lt;&lt; i + 1 &lt;&lt; \": \";\n        cin &gt;&gt; *(consumo + i);\n    }\n}\n\nvoid calcularVariacion(double *consumo, double *variacion, int n) {\n    *variacion = 0;\n    for (int i = 1; i &lt; n; i++)\n        *(variacion + i) = (*(consumo + i) - *(consumo + i - 1)) / *(consumo + i - 1) * 100;\n}\n\nint main() {\n    int n;\n    cout &lt;&lt; \"Ingrese la cantidad de dias : \";\n    cin &gt;&gt; n;\n    double *consumo = new double[n];\n    double *variacion = new double[n];\n    leerConsumos(consumo, n);\n    calcularVariacion(consumo, variacion, n);\n    cout &lt;&lt; \"Resultados :\" &lt;&lt; endl;\n    for (int i = 0; i &lt; n; i++)\n        cout &lt;&lt; \"Dia \" &lt;&lt; i + 1 &lt;&lt; \" - Consumo : \" &lt;&lt; consumo[i] &lt;&lt; \" Variacion : \" &lt;&lt; variacion[i] &lt;&lt; \" %\" &lt;&lt; endl;\n    delete[] consumo;\n    delete[] variacion;\n    return 0;\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La fórmula usa el día anterior: i − 1.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "din",
+       "arit"
+      ]
+     ],
+     "lang": "cpp",
+     "pc": "PC1 2026-1 · Henry Gallegos · Sec. 12 · P3 (7 pts)"
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>La P3 de casi todas las PC1 es un arreglo dinámico procesado con funciones que reciben punteros (consumo eléctrico, velocidades, notas, temperaturas).</p>\n<h3>Conceptos clave</h3><ul><li>Recorridos: suma, promedio, máximo, búsqueda, conteo.</li><li>Funciones que reciben <code>int *datos, int n</code> y no imprimen.</li><li>Crear el arreglo de resultados con <code>new</code>.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>double promedio(int *v, int n) { double s = 0; for (int i = 0; i &lt; n; i++) s += *(v + i); return s / n; }</code></div>\n<div class=\"err\"><b>Error común:</b> recorrer con <code>i &lt;= n</code> (te sales una posición) u olvidar el <code>delete[]</code>.</div>"
+  },
+  {
+   "id": "w9poo",
+   "name": "Sem. 9 · POO parte 1: clases, constructores y destructores",
+   "teo": "\n<p>Una <strong>clase</strong> agrupa atributos (datos) y métodos (funciones) y es el molde de los <strong>objetos</strong>: <code>class Perro { … };</code> (¡con punto y coma al final!) y <code>Perro canelita(\"Canelita\", 3);</code>. Los miembros <code>private</code> solo se usan dentro de la clase (<strong>encapsulamiento</strong>); los <code>public</code> desde cualquier parte. En UML: <code>-</code> privado, <code>+</code> público.</p>\n<p>Para leer y modificar atributos privados se usan <strong>getters</strong> (<code>int getEdad() { return edad; }</code>) y <strong>setters</strong> (<code>void setEdad(int e) { if (e &gt;= 0) edad = e; }</code>), que permiten validar. El <strong>constructor</strong> tiene el nombre de la clase, no tiene tipo de retorno y se ejecuta al crear el objeto; se puede <b>sobrecargar</b> (uno sin parámetros, otro con parámetros). Si un parámetro se llama igual que un atributo, se distingue con <code>this-&gt;edad = edad;</code>.</p>\n<p>El <strong>destructor</strong> <code>~Perro()</code> se ejecuta cuando el objeto deja de existir: al terminar su bloque (en orden inverso a la creación) o con <code>delete</code> si es dinámico. Un <strong>objeto dinámico</strong> se crea con <code>Perro *p = new Perro(\"Bobby\", 2);</code> y sus miembros se usan con <code>p-&gt;getEdad()</code>. Un <strong>arreglo de objetos</strong> (<code>Perro v[3];</code>) llama al constructor sin parámetros una vez por elemento.</p>",
+   "form": [
+    "<code>class X { private: … public: … };</code>",
+    "Getter retorna · setter valida y asigna",
+    "Constructor: mismo nombre, sin tipo de retorno",
+    "<code>this-&gt;atributo = parametro;</code>",
+    "<code>~X()</code> al salir del bloque o con <code>delete</code>",
+    "<code>X *p = new X(…); p-&gt;metodo(); delete p;</code>"
+   ],
+   "ex": [
+    {
+     "id": "oo1",
+     "lvl": 1,
+     "title": "Setter que valida",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Perro {\nprivate:\n    int edad;\npublic:\n    Perro() { edad = 1; }\n    void setEdad(int e) {\n        if (e &gt;= 0) edad = e;\n    }\n    int getEdad() { return edad; }\n};\n\nint main() {\n    Perro p;\n    p.setEdad(5);\n    p.setEdad(-3);\n    cout &lt;&lt; p.getEdad();\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">5</code>",
+        "<code class=\"out\">-3</code>",
+        "<code class=\"out\">1</code>",
+        "<code class=\"out\">0</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 Error de compilación</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El constructor deja la edad en 1 y <code>setEdad(5)</code> la cambia a 5.",
+      "<code>setEdad(-3)</code> no pasa la validación: la edad sigue en 5."
+     ],
+     "ans": "<code class=\"out\">5</code>",
+     "hint": "El setter rechaza los negativos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "encap"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Perro {\nprivate:\n    int edad;\npublic:\n    Perro() { edad = 1; }\n    void setEdad(int e) {\n        if (e >= 0) edad = e;\n    }\n    int getEdad() { return edad; }\n};\n\nint main() {\n    Perro p;\n    p.setEdad(5);\n    p.setEdad(-3);\n    cout << p.getEdad();\n    return 0;\n}"
+    },
+    {
+     "id": "oo2",
+     "lvl": 2,
+     "title": "Constructores sobrecargados",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass Producto {\npublic:\n    string nombre;\n    double precio;\n    Producto() {\n        nombre = \"sin nombre\";\n        precio = 0;\n        cout &lt;&lt; \"A \";\n    }\n    Producto(string n, double p) {\n        nombre = n;\n        precio = p;\n        cout &lt;&lt; \"B \";\n    }\n};\n\nint main() {\n    Producto x;\n    Producto y(\"pan\", 0.5);\n    Producto z = Producto(\"leche\", 4.2);\n    cout &lt;&lt; x.nombre &lt;&lt; \" \" &lt;&lt; z.precio;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">A B B sin nombre 4.2</code>",
+        "<code class=\"out\">A B sin nombre 4.2</code>",
+        "<code class=\"out\">A B B pan 4.2</code>",
+        "<code class=\"out\">B B B sin nombre 4.2</code>",
+        "<code class=\"out\">A A A sin nombre 0</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>Producto x;</code> usa el constructor sin parámetros (A).",
+      "Los otros dos usan el de dos parámetros (B y B).",
+      "x.nombre es \"sin nombre\" y z.precio es 4.2."
+     ],
+     "ans": "<code class=\"out\">A B B sin nombre 4.2</code>",
+     "hint": "Cuenta qué constructor usa cada objeto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ctor"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Producto {\npublic:\n    string nombre;\n    double precio;\n    Producto() {\n        nombre = \"sin nombre\";\n        precio = 0;\n        cout << \"A \";\n    }\n    Producto(string n, double p) {\n        nombre = n;\n        precio = p;\n        cout << \"B \";\n    }\n};\n\nint main() {\n    Producto x;\n    Producto y(\"pan\", 0.5);\n    Producto z = Producto(\"leche\", 4.2);\n    cout << x.nombre << \" \" << z.precio;\n    return 0;\n}"
+    },
+    {
+     "id": "oo3",
+     "lvl": 2,
+     "title": "Orden de constructores y destructores",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Caja {\n    int id;\npublic:\n    Caja(int i) {\n        id = i;\n        cout &lt;&lt; \"+\" &lt;&lt; id &lt;&lt; \" \";\n    }\n    ~Caja() {\n        cout &lt;&lt; \"-\" &lt;&lt; id &lt;&lt; \" \";\n    }\n};\n\nint main() {\n    Caja a(1);\n    {\n        Caja b(2);\n        Caja c(3);\n    }\n    Caja d(4);\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">+1 +2 +3 -3 -2 +4 -4 -1</code>",
+        "<code class=\"out\">+1 +2 +3 +4 -1 -2 -3 -4</code>",
+        "<code class=\"out\">+1 +2 +3 -2 -3 +4 -4 -1</code>",
+        "<code class=\"out\">+1 +2 +3 +4 -4 -3 -2 -1</code>",
+        "<code class=\"out\">+1 +2 -2 +3 -3 +4 -4 -1</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "b y c viven solo dentro del bloque: al cerrarlo se destruyen en orden <b>inverso</b> (primero c, luego b).",
+      "Al terminar main se destruyen d y luego a (también al revés)."
+     ],
+     "ans": "<code class=\"out\">+1 +2 +3 -3 -2 +4 -4 -1</code>",
+     "hint": "El último en crearse es el primero en destruirse.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dtor"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Caja {\n    int id;\npublic:\n    Caja(int i) {\n        id = i;\n        cout << \"+\" << id << \" \";\n    }\n    ~Caja() {\n        cout << \"-\" << id << \" \";\n    }\n};\n\nint main() {\n    Caja a(1);\n    {\n        Caja b(2);\n        Caja c(3);\n    }\n    Caja d(4);\n    return 0;\n}"
+    },
+    {
+     "id": "oo4",
+     "lvl": 2,
+     "title": "Objeto dinámico",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass Perro {\n    string nombre;\npublic:\n    Perro(string n) {\n        nombre = n;\n        cout &lt;&lt; \"Nace \" &lt;&lt; nombre &lt;&lt; endl;\n    }\n    ~Perro() {\n        cout &lt;&lt; \"Adios \" &lt;&lt; nombre &lt;&lt; endl;\n    }\n    string getNombre() { return nombre; }\n};\n\nint main() {\n    Perro *p = new Perro(\"Bobby\");\n    Perro q(\"Canelita\");\n    cout &lt;&lt; p-&gt;getNombre() &lt;&lt; \" y \" &lt;&lt; q.getNombre() &lt;&lt; endl;\n    delete p;\n    cout &lt;&lt; \"Fin\" &lt;&lt; endl;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Nace Bobby\nNace Canelita\nBobby y Canelita\nAdios Bobby\nFin\nAdios Canelita</code>",
+        "<code class=\"out\">Nace Bobby\nNace Canelita\nBobby y Canelita\nFin\nAdios Canelita\nAdios Bobby</code>",
+        "<code class=\"out\">Nace Bobby\nNace Canelita\nBobby y Canelita\nAdios Canelita\nAdios Bobby\nFin</code>",
+        "<code class=\"out\">Nace Bobby\nNace Canelita\nBobby y Canelita\nFin</code>",
+        "<code class=\"out\">Nace Canelita\nBobby y Canelita\nAdios Bobby\nFin\nAdios Canelita</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El objeto dinámico se destruye cuando se hace <code>delete p</code> (antes de «Fin»).",
+      "q es automático: se destruye al terminar main, después de «Fin».",
+      "Con un puntero los métodos se llaman con <code>-&gt;</code>."
+     ],
+     "ans": "<code class=\"out\">Nace Bobby\nNace Canelita\nBobby y Canelita\nAdios Bobby\nFin\nAdios Canelita</code>",
+     "hint": "delete llama al destructor en ese momento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objdin",
+       "dtor"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Perro {\n    string nombre;\npublic:\n    Perro(string n) {\n        nombre = n;\n        cout << \"Nace \" << nombre << endl;\n    }\n    ~Perro() {\n        cout << \"Adios \" << nombre << endl;\n    }\n    string getNombre() { return nombre; }\n};\n\nint main() {\n    Perro *p = new Perro(\"Bobby\");\n    Perro q(\"Canelita\");\n    cout << p->getNombre() << \" y \" << q.getNombre() << endl;\n    delete p;\n    cout << \"Fin\" << endl;\n    return 0;\n}"
+    },
+    {
+     "id": "oo5",
+     "lvl": 1,
+     "title": "Arreglo de objetos",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Contador {\npublic:\n    static int creados;\n    Contador() { creados++; }\n};\nint Contador::creados = 0;\n\nint main() {\n    Contador v[4];\n    Contador *w = new Contador[3];\n    cout &lt;&lt; Contador::creados;\n    delete[] w;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">7</code>",
+        "<code class=\"out\">4</code>",
+        "<code class=\"out\">3</code>",
+        "<code class=\"out\">0</code>",
+        "<code class=\"out\">1</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Un arreglo de objetos llama al constructor sin parámetros una vez por elemento: 4.",
+      "El arreglo dinámico de 3 también: total 7."
+     ],
+     "ans": "<code class=\"out\">7</code>",
+     "hint": "Cada elemento es un objeto que se construye.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arrobj"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Contador {\npublic:\n    static int creados;\n    Contador() { creados++; }\n};\nint Contador::creados = 0;\n\nint main() {\n    Contador v[4];\n    Contador *w = new Contador[3];\n    cout << Contador::creados;\n    delete[] w;\n    return 0;\n}"
+    },
+    {
+     "id": "oo6",
+     "lvl": 3,
+     "title": "El parámetro tapa al atributo",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Punto {\n    int x = 0;\npublic:\n    Punto(int x) {\n        x = x;\n    }\n    int getX() { return x; }\n};\n\nclass Punto2 {\n    int x = 0;\npublic:\n    Punto2(int x) {\n        this-&gt;x = x;\n    }\n    int getX() { return x; }\n};\n\nint main() {\n    Punto a(7);\n    Punto2 b(7);\n    cout &lt;&lt; a.getX() &lt;&lt; \" \" &lt;&lt; b.getX();\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">0 7</code>",
+        "<code class=\"out\">7 7</code>",
+        "<code class=\"out\">0 0</code>",
+        "<code class=\"out\">7 0</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 Error de compilación</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "En <code>Punto</code>, dentro del constructor <code>x</code> es el parámetro: <code>x = x</code> se asigna a sí mismo y el atributo sigue en 0.",
+      "En <code>Punto2</code>, <code>this-&gt;x</code> es el atributo del objeto: queda en 7."
+     ],
+     "ans": "<code class=\"out\">0 7</code>",
+     "hint": "¿Qué x es cuál?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "this"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Punto {\n    int x = 0;\npublic:\n    Punto(int x) {\n        x = x;\n    }\n    int getX() { return x; }\n};\n\nclass Punto2 {\n    int x = 0;\npublic:\n    Punto2(int x) {\n        this->x = x;\n    }\n    int getX() { return x; }\n};\n\nint main() {\n    Punto a(7);\n    Punto2 b(7);\n    cout << a.getX() << \" \" << b.getX();\n    return 0;\n}"
+    },
+    {
+     "id": "oo7",
+     "lvl": 1,
+     "title": "Acceder a un atributo privado",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Cuenta {\nprivate:\n    double saldo;\npublic:\n    Cuenta() { saldo = 100; }\n};\n\nint main() {\n    Cuenta c;\n    c.saldo = 500;\n    cout &lt;&lt; \"listo\";\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\"><b class=\"perr\">💥 Error de compilación</b></code>",
+        "<code class=\"out\">listo</code>",
+        "<code class=\"out\">500</code>",
+        "<code class=\"out\">100</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 Error en ejecución</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>saldo</code> es privado: el compilador no permite usarlo desde main.",
+      "Hace falta un método público (por ejemplo, <code>depositar</code> o un setter)."
+     ],
+     "ans": "<code class=\"out\"><b class=\"perr\">💥 Error de compilación</b></code>",
+     "hint": "private se revisa al compilar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "encap"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Cuenta {\nprivate:\n    double saldo;\npublic:\n    Cuenta() { saldo = 100; }\n};\n\nint main() {\n    Cuenta c;\n    c.saldo = 500;\n    cout << \"listo\";\n    return 0;\n}"
+    },
+    {
+     "id": "oo8",
+     "lvl": 2,
+     "title": "Leer código: el Detector (PC2 2026-0)",
+     "q": "<p>Según el código, ¿qué afirmación es <b>verdadera</b>?</p><pre class=\"cpp\"><code>class Detector {\nprivate:\n    float umbral;\n    bool activo;\npublic:\n    Detector(float _umbral) { umbral = _umbral; activo = false; }\n    void set_umbral(float _umbral) { umbral = _umbral; }\n    bool esta_activo() { return activo; }\n    void monitorear(float valor) { activo = (umbral &lt;= valor); }\n};\n\nint main() {\n    int n = 1000;\n    Detector detector = Detector(0.8);\n    float *valores = new float[n];\n    // ... se llena valores ...\n    while (--n &gt;= 0) {\n        detector.monitorear(valores[n]);\n        cout &lt;&lt; (detector.esta_activo() ? \"Activo\" : \".\");\n    }\n}</code></pre>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El while recorre el arreglo de atrás hacia adelante, desde valores[999] hasta valores[0]",
+        "valores es un arreglo estático de 1000 punteros a float",
+        "El detector se crea sin umbral definido",
+        "La clase tiene getter y setter para cada atributo",
+        "Repetir este main muchas veces en un for no genera fuga de memoria"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>--n</code> resta antes de comparar: la primera vuelta usa n = 999 y la última n = 0. Sí recorre todo, al revés.",
+      "valores es un arreglo <b>dinámico</b> de floats; el umbral se define en el constructor (0.8); no hay getter de umbral ni setter de activo; y como nunca se hace <code>delete[]</code>, repetirlo sí fuga memoria."
+     ],
+     "ans": "El while recorre el arreglo de atrás hacia adelante, desde valores[999] hasta valores[0]",
+     "hint": "Sigue el valor de n en el while.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "encap",
+       "din"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "oo9",
+     "lvl": 1,
+     "title": "Diagrama de clases",
+     "q": "<p>En el diagrama de clases de <code>Punto2D</code> aparece <code>- x: float</code> y <code>+ get_x(): float</code>. ¿Qué significan los signos?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>-</code> privado y <code>+</code> público",
+        "<code>-</code> atributo y <code>+</code> método",
+        "<code>-</code> estático y <code>+</code> dinámico",
+        "<code>-</code> constante y <code>+</code> variable",
+        "<code>-</code> se resta y <code>+</code> se suma"
+       ]
+      }
+     ],
+     "steps": [
+      "En UML el signo indica la visibilidad: − private, + public (y # protected).",
+      "Lo habitual es atributos privados y métodos públicos (encapsulamiento)."
+     ],
+     "ans": "<code>-</code> privado y <code>+</code> público",
+     "hint": "Es la visibilidad.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clase",
+       "encap"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "oo10",
+     "lvl": 2,
+     "title": "Clase CuentaBancaria",
+     "q": "<p>Completa la clase: atributos privados <code>titular</code> y <code>saldo</code>; constructor <code>CuentaBancaria(string t, double s)</code> (si s es negativo, el saldo empieza en 0); <code>void depositar(double m)</code> (solo si m &gt; 0); <code>bool retirar(double m)</code> (retira y devuelve true solo si 0 &lt; m ≤ saldo); y los getters <code>getTitular()</code> y <code>getSaldo()</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass CuentaBancaria {\nprivate:\n    string titular;\n    double saldo;\npublic:\n    CuentaBancaria(string t, double s) {\n    }\n};\n",
+       "tests": [
+        {
+         "n": "Constructor y getters",
+         "main": "CuentaBancaria a(\"Ana\", 100), b(\"Luis\", -50);\ncout << a.getTitular() << \" \" << a.getSaldo() << \" \" << b.getSaldo() << endl;",
+         "out": "Ana 100 0"
+        },
+        {
+         "n": "Depositar y retirar",
+         "main": "CuentaBancaria c(\"Rosa\", 100);\nc.depositar(50);\nc.depositar(-20);\nbool r1 = c.retirar(30);\nbool r2 = c.retirar(500);\nbool r3 = c.retirar(0);\ncout << r1 << r2 << r3 << \" \" << c.getSaldo() << endl;",
+         "out": "100 120"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El constructor asigna los atributos (validando el saldo inicial).",
+      "Los métodos que modifican validan antes de cambiar el saldo; <code>retirar</code> retorna si pudo hacerlo.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass CuentaBancaria {\nprivate:\n    string titular;\n    double saldo;\npublic:\n    CuentaBancaria(string t, double s) {\n        titular = t;\n        saldo = s &lt; 0 ? 0 : s;\n    }\n    void depositar(double m) {\n        if (m &gt; 0) saldo += m;\n    }\n    bool retirar(double m) {\n        if (m &lt;= 0 || m &gt; saldo) return false;\n        saldo -= m;\n        return true;\n    }\n    string getTitular() { return titular; }\n    double getSaldo() { return saldo; }\n};</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La validación va dentro de cada método.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "encap",
+       "ctor"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "oo11",
+     "lvl": 2,
+     "title": "Rectángulo con dos constructores",
+     "q": "<p>Implementa la clase <code>Rectangulo</code> con atributos privados <code>base</code> y <code>altura</code>: un constructor sin parámetros (1 × 1), otro con parámetros (usa <code>this-&gt;</code>), setters que solo acepten valores positivos y los métodos <code>area()</code> y <code>perimetro()</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nclass Rectangulo {\nprivate:\n    double base, altura;\npublic:\n};\n",
+       "tests": [
+        {
+         "n": "Constructor sin parámetros",
+         "main": "Rectangulo r;\ncout << r.area() << \" \" << r.perimetro() << endl;",
+         "out": "1 4"
+        },
+        {
+         "n": "Constructor con parámetros",
+         "main": "Rectangulo r(3, 4.5);\ncout << r.area() << \" \" << r.perimetro() << endl;",
+         "out": "13.5 15"
+        },
+        {
+         "n": "Setters con validación",
+         "main": "Rectangulo r(2, 2);\nr.setBase(5);\nr.setAltura(-1);\ncout << r.area() << endl;",
+         "out": "10"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Dos constructores con el mismo nombre y distintos parámetros (sobrecarga).",
+      "Si el parámetro se llama igual que el atributo, usa <code>this-&gt;base = base;</code>.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Rectangulo {\nprivate:\n    double base, altura;\npublic:\n    Rectangulo() {\n        base = 1;\n        altura = 1;\n    }\n    Rectangulo(double base, double altura) {\n        this-&gt;base = base;\n        this-&gt;altura = altura;\n    }\n    void setBase(double b) { if (b &gt; 0) base = b; }\n    void setAltura(double a) { if (a &gt; 0) altura = a; }\n    double area() { return base * altura; }\n    double perimetro() { return 2 * (base + altura); }\n};</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Los métodos van en la parte public.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ctor",
+       "this"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "oo12",
+     "lvl": 3,
+     "title": "Arreglo de objetos: alumnos",
+     "q": "<p>La clase <code>Alumno</code> tiene <code>nombre</code> y <code>nota</code> privados, un constructor sin parámetros, setters y getters. Escribe las funciones <code>double promedio(Alumno *v, int n)</code> y <code>string mejorAlumno(Alumno *v, int n)</code> (el de mayor nota; si empatan, el primero).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Alumno {\nprivate:\n    string nombre;\n    double nota;\npublic:\n    Alumno() { nombre = \"\"; nota = 0; }\n    void setNombre(string n) { nombre = n; }\n    void setNota(double x) { nota = x; }\n    string getNombre() { return nombre; }\n    double getNota() { return nota; }\n};\n\ndouble promedio(Alumno *v, int n) {\n    return 0;\n}\n\nstring mejorAlumno(Alumno *v, int n) {\n    return \"\";\n}\n",
+       "tests": [
+        {
+         "n": "Arreglo estático de 3",
+         "main": "Alumno v[3];\nstring nom[3] = {\"Ana\", \"Luis\", \"Rosa\"};\ndouble nt[3] = {14, 18, 11};\nfor (int i = 0; i < 3; i++) { v[i].setNombre(nom[i]); v[i].setNota(nt[i]); }\ncout << promedio(v, 3) << \" \" << mejorAlumno(v, 3) << endl;",
+         "out": "14.3333 Luis"
+        },
+        {
+         "n": "Arreglo dinámico con empate",
+         "main": "int n = 4;\nAlumno *v = new Alumno[n];\nstring nom[4] = {\"Eva\", \"Leo\", \"Max\", \"Sol\"};\ndouble nt[4] = {16, 19, 19, 10};\nfor (int i = 0; i < n; i++) { v[i].setNombre(nom[i]); v[i].setNota(nt[i]); }\ncout << promedio(v, n) << \" \" << mejorAlumno(v, n) << endl;\ndelete[] v;",
+         "out": "16 Leo"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Cada elemento del arreglo es un objeto: sus datos se leen con los getters, <code>v[i].getNota()</code>.",
+      "Para el mejor, guarda el índice; con <code>&gt;</code> estricto el primero gana los empates.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass Alumno {\nprivate:\n    string nombre;\n    double nota;\npublic:\n    Alumno() { nombre = \"\"; nota = 0; }\n    void setNombre(string n) { nombre = n; }\n    void setNota(double x) { nota = x; }\n    string getNombre() { return nombre; }\n    double getNota() { return nota; }\n};\n\ndouble promedio(Alumno *v, int n) {\n    double suma = 0;\n    for (int i = 0; i &lt; n; i++)\n        suma += v[i].getNota();\n    return suma / n;\n}\n\nstring mejorAlumno(Alumno *v, int n) {\n    int mejor = 0;\n    for (int i = 1; i &lt; n; i++)\n        if (v[i].getNota() &gt; v[mejor].getNota()) mejor = i;\n    return v[mejor].getNombre();\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Los atributos son privados: usa getters.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arrobj"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "oo13",
+     "lvl": 3,
+     "title": "Punto2D dinámico (PC2 2026-0)",
+     "q": "<p>Implementa <code>Punto2D</code> con <code>x</code>, <code>y</code> privados, constructor con parámetros, getters, setters y <code>void mostrar()</code> que imprima <code>P(x:1,y:2)</code>. Escribe también <code>double distancia(Punto2D *a, Punto2D *b)</code>, que recibe <b>punteros</b> a puntos (usa <code>-&gt;</code>). Incluye <code>&lt;cmath&gt;</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nclass Punto2D {\nprivate:\n    double x, y;\npublic:\n    Punto2D(double x, double y) {\n    }\n};\n",
+       "tests": [
+        {
+         "n": "mostrar",
+         "main": "Punto2D o(0, 0);\no.mostrar();\nPunto2D p(1.5, -2);\np.mostrar();",
+         "out": "P(x:0,y:0)\nP(x:1.5,y:-2)"
+        },
+        {
+         "n": "Objetos dinámicos y distancia",
+         "main": "Punto2D *a = new Punto2D(0, 0);\nPunto2D *b = new Punto2D(3, 4);\ncout << distancia(a, b) << endl;\nb->set_x(6);\nb->set_y(8);\ncout << distancia(a, b) << \" \" << b->get_x() << endl;\ndelete a;\ndelete b;",
+         "out": "5\n10 6"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Con punteros a objetos se usa <code>-&gt;</code>: <code>a-&gt;get_x()</code>.",
+      "Lo creado con <code>new</code> se libera con <code>delete</code> (sin corchetes, porque es un solo objeto).",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;cmath&gt;\nusing namespace std;\n\nclass Punto2D {\nprivate:\n    double x, y;\npublic:\n    Punto2D(double x, double y) {\n        this-&gt;x = x;\n        this-&gt;y = y;\n    }\n    double get_x() { return x; }\n    double get_y() { return y; }\n    void set_x(double v) { x = v; }\n    void set_y(double v) { y = v; }\n    void mostrar() { cout &lt;&lt; \"P(x:\" &lt;&lt; x &lt;&lt; \",y:\" &lt;&lt; y &lt;&lt; \")\" &lt;&lt; endl; }\n};\n\ndouble distancia(Punto2D *a, Punto2D *b) {\n    double dx = a-&gt;get_x() - b-&gt;get_x();\n    double dy = a-&gt;get_y() - b-&gt;get_y();\n    return sqrt(dx * dx + dy * dy);\n}</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "p->m() equivale a (*p).m().",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objdin",
+       "this"
+      ]
+     ],
+     "lang": "cpp"
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>La POO junta datos y comportamiento y protege los datos detrás de métodos. La PC2 de ciclos anteriores pidió leer clases (Detector, Punto2D) y razonar qué hace cada línea.</p>\n<h3>Conceptos clave</h3><ul><li>Clase vs. objeto, privado vs. público.</li><li>Constructores sobrecargados y <code>this</code>.</li><li>Destructores, objetos dinámicos y arreglos de objetos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>Punto2D origen(0, 0); origen.mostrar();</code> → <code>P(x:0,y:0)</code>.</div>\n<div class=\"err\"><b>Error común:</b> escribir <code>edad = edad;</code> en el constructor cuando el parámetro se llama igual: el atributo no cambia.</div>"
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "divint": {
+   "n": "División entera",
+   "f": "<code>7 / 2 = 3</code>, <code>7 / 2.0 = 3.5</code>",
+   "x": "Entre dos int el resultado se trunca.",
+   "home": "f_rep1"
+  },
+  "incr": {
+   "n": "Incrementos",
+   "f": "<code>a++</code> vs <code>++a</code>",
+   "x": "a++ entrega el valor antiguo y luego suma.",
+   "home": "f_rep1"
+  },
+  "cast": {
+   "n": "Conversiones",
+   "f": "<code>static_cast&lt;int&gt;(x)</code>",
+   "x": "De double a int se trunca.",
+   "home": "f_rep1"
+  },
+  "tchar": {
+   "n": "char y ASCII",
+   "f": "<code>'A' = 65</code>, <code>'a' = 97</code>",
+   "x": "Un char es un número; se puede sumar y comparar.",
+   "home": "f_rep1"
+  },
+  "prec": {
+   "n": "Precedencia",
+   "f": "<code>* / %</code> antes que <code>+ -</code>",
+   "x": "A igual precedencia, de izquierda a derecha.",
+   "home": "f_rep1"
+  },
+  "tipos": {
+   "n": "Tipos de datos",
+   "f": "int · long long · double · char · bool",
+   "x": "Elige el tipo según el rango y si hay decimales.",
+   "home": "f_rep1"
+  },
+  "sel": {
+   "n": "if / else if",
+   "f": "<code>if (a &amp;&amp; b) … else if …</code>",
+   "x": "Entra en la primera condición verdadera.",
+   "home": "f_rep1"
+  },
+  "sw": {
+   "n": "switch",
+   "f": "<code>case k: … break;</code>",
+   "x": "Sin break sigue al siguiente case.",
+   "home": "f_rep1"
+  },
+  "rep": {
+   "n": "Bucles",
+   "f": "for · while · do-while",
+   "x": "do-while se ejecuta al menos una vez: ideal para validar.",
+   "home": "f_rep1"
+  },
+  "ref": {
+   "n": "Valor y referencia",
+   "f": "<code>void f(int &amp;x)</code>",
+   "x": "Con & la función modifica la variable original.",
+   "home": "f_rep1"
+  },
+  "scope": {
+   "n": "Ámbito",
+   "f": "local · global · <code>::x</code> · static",
+   "x": "Una variable vive solo en su bloque.",
+   "home": "f_rep1"
+  },
+  "rec": {
+   "n": "Recursividad",
+   "f": "caso base + caso recursivo",
+   "x": "Cada llamada debe acercarse al caso base.",
+   "home": "f_rep1"
+  },
+  "sobre": {
+   "n": "Sobrecarga de funciones",
+   "f": "Mismo nombre, distintos parámetros",
+   "x": "El compilador elige según los argumentos.",
+   "home": "f_rep1"
+  },
+  "func": {
+   "n": "Funciones sin cout",
+   "f": "<code>string mensaje = validar(…);</code>",
+   "x": "La función calcula y retorna; el main imprime.",
+   "home": "f_rep1"
+  },
+  "ptr": {
+   "n": "Punteros",
+   "f": "<code>int *p = &amp;a; *p = 5;</code>",
+   "x": "*p es la variable apuntada.",
+   "home": "f_rep1"
+  },
+  "refp": {
+   "n": "Referencias",
+   "f": "<code>int &amp;r = a;</code>",
+   "x": "Otro nombre para la misma variable.",
+   "home": "f_rep1"
+  },
+  "arit": {
+   "n": "Aritmética de punteros",
+   "f": "<code>*(v + i)</code> ≡ <code>v[i]</code>",
+   "x": "Sumar 1 avanza un elemento.",
+   "home": "f_rep1"
+  },
+  "din": {
+   "n": "Memoria dinámica",
+   "f": "<code>new int[n]</code> ↔ <code>delete[]</code>",
+   "x": "Lo que no liberas es una fuga de memoria.",
+   "home": "f_rep1"
+  },
+  "arrb": {
+   "n": "Arreglos estáticos",
+   "f": "<code>int a[N];</code> índices 0…N−1",
+   "x": "Tamaño fijo; C++ no revisa el rango.",
+   "home": "f_rep2"
+  },
+  "arrf": {
+   "n": "Arreglos en funciones",
+   "f": "<code>void f(int *v, int n)</code>",
+   "x": "Se pasa la dirección: los cambios afectan al original.",
+   "home": "f_rep2"
+  },
+  "recorr": {
+   "n": "Recorridos",
+   "f": "suma · máximo · conteo · búsqueda",
+   "x": "Un for de 0 a n−1 con acumuladores.",
+   "home": "f_rep2"
+  },
+  "matb": {
+   "n": "Matrices",
+   "f": "<code>m[fila][col]</code>",
+   "x": "Dos for anidados; diagonal i == j.",
+   "home": "f_rep2"
+  },
+  "matd": {
+   "n": "Matriz dinámica",
+   "f": "<code>int **m = new int*[f];</code>",
+   "x": "Se crea fila por fila y se libera al revés.",
+   "home": "f_rep2"
+  },
+  "vecb": {
+   "n": "std::vector",
+   "f": "<code>push_back · insert · erase · size</code>",
+   "x": "Arreglo dinámico que crece y se libera solo.",
+   "home": "f_rep2"
+  },
+  "vecf": {
+   "n": "Vector en funciones",
+   "f": "<code>vector&lt;int&gt; &amp;v</code>",
+   "x": "Por valor se copia; por referencia se modifica.",
+   "home": "f_rep2"
+  },
+  "clase": {
+   "n": "Clase y objeto",
+   "f": "<code>class X { … };</code> · <code>X obj;</code>",
+   "x": "La clase es el molde; el objeto, cada instancia.",
+   "home": "w9poo"
+  },
+  "encap": {
+   "n": "Encapsulamiento",
+   "f": "private + getters/setters",
+   "x": "Los datos privados solo se tocan con métodos que validan.",
+   "home": "w9poo"
+  },
+  "ctor": {
+   "n": "Constructores",
+   "f": "<code>X() { … }</code> · <code>X(int a) { … }</code>",
+   "x": "Mismo nombre que la clase, sin tipo; se pueden sobrecargar.",
+   "home": "w9poo"
+  },
+  "dtor": {
+   "n": "Destructor",
+   "f": "<code>~X() { … }</code>",
+   "x": "Al salir del bloque (orden inverso) o con delete.",
+   "home": "w9poo"
+  },
+  "this": {
+   "n": "this",
+   "f": "<code>this-&gt;x = x;</code>",
+   "x": "Distingue el atributo del parámetro con el mismo nombre.",
+   "home": "w9poo"
+  },
+  "objdin": {
+   "n": "Objetos dinámicos",
+   "f": "<code>X *p = new X(…); p-&gt;m(); delete p;</code>",
+   "x": "Con punteros se usa la flecha.",
+   "home": "w9poo"
+  },
+  "arrobj": {
+   "n": "Arreglos de objetos",
+   "f": "<code>X v[n];</code> · <code>new X[n]</code>",
+   "x": "Se llama al constructor sin parámetros por elemento.",
+   "home": "w9poo"
+  }
+ },
+ "simEx": [],
+ "sim": {
+  "minutes": 100,
+  "slots": [
+   {
+    "pts": 7,
+    "name": "Clases: atributos, constructores y métodos (sem. 9)",
+    "pool": [
+     "oo10",
+     "oo11"
+    ]
+   },
+   {
+    "pts": 7,
+    "name": "Objetos dinámicos y arreglos de objetos (sem. 9)",
+    "pool": [
+     "oo12",
+     "oo13"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "Repaso: arreglos dinámicos y punteros",
+    "pool": [
+     "fpc_temps",
+     "fpc_consumo",
+     "far8"
+    ]
+   }
+  ],
+  "intro": "Simulacro acumulativo del examen final: la mayor parte es de la semana 9 en adelante y una pregunta de repaso. Se actualiza cada semana.",
+  "versions": [
+   {
+    "name": "💻 En computadora",
+    "desc": "Tres programas en 100 minutos, con compilador.",
+    "minutes": 100,
+    "slots": [
+     {
+      "pts": 7,
+      "name": "Clases: atributos, constructores y métodos (sem. 9)",
+      "pool": [
+       "oo10",
+       "oo11"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Objetos dinámicos y arreglos de objetos (sem. 9)",
+      "pool": [
+       "oo12",
+       "oo13"
+      ]
+     },
+     {
+      "pts": 6,
+      "name": "Repaso: arreglos dinámicos y punteros",
+      "pool": [
+       "fpc_temps",
+       "fpc_consumo",
+       "far8"
+      ]
+     }
+    ],
+    "intro": "Simulacro acumulativo del examen final: la mayor parte es de la semana 9 en adelante y una pregunta de repaso. Se actualiza cada semana."
+   },
+   {
+    "name": "✍️ Escrito",
+    "desc": "Opción múltiple (lectura de código) y dos programas sin compilar.",
+    "minutes": 100,
+    "slots": [
+     {
+      "pts": 1,
+      "name": "Constructores sobrecargados y orden de destrucción",
+      "pool": [
+       "oo2",
+       "oo3"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Objetos dinámicos y this",
+      "pool": [
+       "oo4",
+       "oo6"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Encapsulamiento",
+      "pool": [
+       "oo1",
+       "oo5",
+       "oo7"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Leer una clase (tipo PC2)",
+      "pool": [
+       "oo8",
+       "oo9"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Repaso: funciones y punteros",
+      "pool": [
+       "ffu1",
+       "fpu2",
+       "fpu5",
+       "fpu6"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Repaso: arreglos y vectores",
+      "pool": [
+       "far4",
+       "fma3",
+       "fve3",
+       "fve4"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Escribe una clase (a mano)",
+      "pool": [
+       "oo10",
+       "oo11"
+      ]
+     },
+     {
+      "pts": 7,
+      "name": "Objetos dinámicos o arreglo de objetos (a mano)",
+      "pool": [
+       "oo12",
+       "oo13"
+      ]
+     }
+    ],
+    "intro": "Modalidad en papel: no puedes compilar. Al entregar se compila y se prueba tu código.",
+    "noRun": true
+   }
+  ],
+  "vtitle": "¿Cómo será tu examen?"
+ }
+}

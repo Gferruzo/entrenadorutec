@@ -718,6 +718,11 @@ ul.tres li pre{margin:3px 0 6px}
 .cacts button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:7px 14px;font:600 .9rem Figtree,sans-serif;cursor:pointer}
 .cacts button.pri{background:var(--ink);color:var(--paper)}
 .cacts button:disabled{opacity:.5;cursor:default}
+pre.cpp{background:var(--grid);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:.6em 0;overflow-x:auto;white-space:pre;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);tab-size:4;-webkit-overflow-scrolling:touch}
+pre.cpp code{font:inherit;background:none;border:0;padding:0;white-space:pre;word-break:normal;color:inherit}
+details.cinw{margin:6px 0}
+details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:4px 0}
+.ced.cin{min-height:3.5em}
 </style>
 </head>
 <body>
@@ -1285,7 +1290,7 @@ function savePrefs(){prefs[C.id]={topic:st.topic,level:st.level};S.set('ent-pref
 $('back').onclick=()=>{saveLocal();push(0);view='menu';C=null;$('vCourse').hidden=true;$('vMenu').hidden=false;renderMenu();pillRender(true);window.scrollTo({top:0})};
 function courseStats(){const x=stats(C);$('cstats').innerHTML='<span>Acierto a la primera: <b>'+(x.nd?pct(x.acc):'—')+'</b></span><span>Con pista: <b>'+x.hint+'</b></span>'+(x.simBest!=null?'<span>Mejor simulacro: <b>'+x.simBest+'/20</b></span>':'');
   const sb=$('simbtn');sb.disabled=false;sb.textContent=C.guide?'🎯 Guía y simulacro':'🎯 Simulacro final';sb.title=x.complete?'':'Disponible siempre; te irá mejor si antes practicas los temas'}
-$('simbtn').onclick=()=>{if(!C.sim||!C.sim.slots.length)return flash('Este curso todavía no tiene simulacro.');if(C.guide)return simChoice();simIntro()};
+$('simbtn').onclick=()=>{if(!C.sim||!C.sim.slots.length)return flash('Este curso todavía no tiene simulacro.');if(C.guide)return simChoice();if(C.sim.versions)return verChoice();simIntro()};
 function renderChips(){chips.innerHTML='';
   T.forEach((t,i)=>{const b=el('button','chip');const lk=!unlocked(i),full=tDone(t)===t.ex.length;if(lk)b.classList.add('locked');if(full)b.classList.add('full');
     b.setAttribute('aria-pressed',i===st.topic);b.innerHTML='<span class="n"><b>'+(full?'✓':(i+1))+'</b></span>'+t.name+' <small>'+tDone(t)+'/'+t.ex.length+'</small>';
@@ -1336,63 +1341,109 @@ const PYRE=/(#[^\n]*)|("""[\s\S]*?"""|'''[\s\S]*?'''|[rRfFbBuU]{0,2}"(?:\\.|[^"\
 function hlPy(src){let o='',i=0;src.replace(PYRE,(m,c,s,d,k,b,n,off)=>{o+=escH(src.slice(i,off));
     const cl=c!=null?'c':s!=null?'s':d!=null?'d':k!=null?'k':b!=null?'b':'n';o+='<span class="tk-'+cl+'">'+escH(m)+'</span>';i=off+m.length;return m});
   return o+escH(src.slice(i))}
-function pyHlAll(n){if(!n||!n.querySelectorAll)return;n.querySelectorAll('pre.py:not([data-hl])').forEach(p=>{p.dataset.hl=1;const c=p.querySelector('code')||p;c.innerHTML=hlPy(c.textContent)})}
-function preCode(src){const p=el('pre','py');const c=el('code');c.innerHTML=hlPy(src);p.dataset.hl=1;p.append(c);return p}
+const CPPRE=/(\/\/[^\n]*|\/\*[\s\S]*?\*\/)|("(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*')|(#\s*\w+)|\b(int|double|float|char|bool|void|long|short|unsigned|signed|const|constexpr|auto|if|else|switch|case|default|for|while|do|break|continue|return|new|delete|nullptr|true|false|class|struct|public|private|protected|virtual|override|this|template|typename|using|namespace|static|static_cast|sizeof|typedef|friend|operator|enum)\b|\b(std|cout|cin|endl|string|vector|size_t|main|setprecision|fixed|rand|srand|time|getline|sqrt|pow|abs|swap|push_back|pop_back|size|begin|end|erase|insert)\b|\b(0x[0-9a-fA-F]+|\d+(?:\.\d+)?(?:[eE][+-]?\d+)?[fFuUlL]*)\b/g;
+function hlCpp(src){let o='',i=0;src.replace(CPPRE,(m,c,s,d,k,b,n,off)=>{o+=escH(src.slice(i,off));
+    const cl=c!=null?'c':s!=null?'s':d!=null?'d':k!=null?'k':b!=null?'b':'n';o+='<span class="tk-'+cl+'">'+escH(m)+'</span>';i=off+m.length;return m});
+  return o+escH(src.slice(i))}
+function pyHlAll(n){if(!n||!n.querySelectorAll)return;n.querySelectorAll('pre.py:not([data-hl]),pre.cpp:not([data-hl])').forEach(p=>{p.dataset.hl=1;const c=p.querySelector('code')||p;c.innerHTML=(p.classList.contains('cpp')?hlCpp:hlPy)(c.textContent)})}
+function preCode(src,lang){const p=el('pre',lang==='cpp'?'cpp':'py');const c=el('code');c.innerHTML=(lang==='cpp'?hlCpp:hlPy)(src);p.dataset.hl=1;p.append(c);return p}
 const isCodeEx=e=>!!(e&&e.checks&&e.checks.some(ch=>ch.t==='code'));
 let CODEST=S.get('ent-code',{});
-function edKeys(ta){ta.addEventListener('keydown',ev=>{
+function edKeys(ta,lang){ta.addEventListener('keydown',ev=>{
   if(ev.key==='Tab'){ev.preventDefault();const s=ta.selectionStart,v=ta.value;
     if(ev.shiftKey){const ls=v.lastIndexOf('\n',s-1)+1;if(v.slice(ls,ls+4)==='    '){ta.setRangeText('',ls,ls+4,'preserve')}}
     else ta.setRangeText('    ',s,ta.selectionEnd,'end');ta.dispatchEvent(new Event('input'))}
   else if(ev.key==='Enter'&&!ev.isComposing&&!ev.ctrlKey&&!ev.metaKey){const s=ta.selectionStart,v=ta.value;const ls=v.lastIndexOf('\n',s-1)+1;const line=v.slice(ls,s);
-    let ind=(line.match(/^ */)||[''])[0];if(/:\s*$/.test(line))ind+='    ';ev.preventDefault();ta.setRangeText('\n'+ind,s,ta.selectionEnd,'end');ta.dispatchEvent(new Event('input'))}
+    let ind=(line.match(/^ */)||[''])[0];if(lang==='cpp'?/\{\s*$/.test(line):/:\s*$/.test(line))ind+='    ';ev.preventDefault();ta.setRangeText('\n'+ind,s,ta.selectionEnd,'end');ta.dispatchEvent(new Event('input'))}
   else if((ev.ctrlKey||ev.metaKey)&&ev.key==='Enter'){ev.preventDefault();ta.dispatchEvent(new CustomEvent('runkey'))}})}
-function kvBox(label,text,code){const d=el('div');d.append(el('p','clab',label));if(code)d.append(preCode(text));else{const p=el('pre','cons');p.textContent=text===''?'(nada)':text;d.append(p)}return d}
-function renderRes(out,res,tests){const pass=res.filter(r=>r.ok).length;out.innerHTML='';out.hidden=false;
+/* ---- C++: se compila y ejecuta con el compilador g++ de Compiler Explorer (godbolt.org) ---- */
+const GBURL='https://godbolt.org/api/compiler/g132/compile';
+const CPPFAIL='No se pudo compilar: para C++ se necesita internet (se usa el compilador gratuito de godbolt.org). Revisa tu conexión e intenta de nuevo.';
+const stripAnsi=s=>String(s||'').replace(/\x1b\[[0-9;]*[A-Za-z]/g,'');
+async function gbExec(src,stdin){const body={source:src,options:{userArguments:'-std=c++17 -O1',executeParameters:{args:[],stdin:stdin||''},
+    compilerOptions:{executorRequest:true,skipAsm:true},filters:{execute:true},tools:[],libraries:[]},lang:'c++',allowStoreCodeDebug:true};
+  const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),40000);
+  try{const r=await fetch(GBURL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl.signal});clearTimeout(to);
+    if(!r.ok)return{fail:'HTTP '+r.status};const j=await r.json();const txt=a=>stripAnsi(Array.isArray(a)?a.map(x=>typeof x==='string'?x:(x&&x.text)||'').join('\n'):String(a||''));const br=j.buildResult||{};
+    if(!j.didExecute&&(br.code||j.code)){const e=txt(br.stderr)||txt(j.stderr)||'Error de compilación';return{ce:e.replace(/<source>/g,'tu código').split('\n').filter(l=>!/^\s*(Compiler returned|Build failed)/.test(l)).slice(0,14).join('\n')}}
+    const out=txt(j.stdout);let err=null;if(j.timedOut)err='Tiempo agotado: tu programa no terminó (¿bucle infinito o espera más datos de cin?)';
+    else if(j.code&&j.code!==0)err='El programa terminó con error (código '+j.code+(j.code===139||j.code===-11?': acceso inválido a memoria':j.code===134?': abort, revisa delete o índices':'')+')';
+    return{out,err}}catch(e){clearTimeout(to);return{fail:String(e&&e.message||e)}}}
+const normCmp=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,'');
+const normOut=s=>String(s).replace(/\r/g,'').split('\n').map(l=>l.replace(/\s+$/,'')).join('\n').replace(/\n+$/,'');
+function hasAll(out,has){const o=normCmp(out);let p=0;for(const h of has){const k=o.indexOf(normCmp(h),p);if(k<0)return false;p=k+normCmp(h).length}return true}
+const CPPMARK=i=>'@@PRUEBA_'+i+'@@';
+function cppHarness(code,tests){return code+'\n\n// ---- pruebas del entrenador ----\n#include <iostream>\nint main(){\n'+tests.map((t,i)=>'    std::cout<<"\\n'+CPPMARK(i)+'"<<std::endl;\n    { using namespace std;\n'+t.main.split('\n').map(l=>'        '+l).join('\n')+'\n    }\n    std::cout<<std::flush;\n').join('')+'    std::cout<<"\\n'+CPPMARK('FIN')+'"<<std::endl;\n    return 0;\n}\n'}
+function cppSplit(out,n){const r=[];for(let i=0;i<n;i++){const a=out.indexOf(CPPMARK(i));if(a<0){r.push(null);continue}const s=a+CPPMARK(i).length;const nx=[CPPMARK(i+1),CPPMARK('FIN')].map(m=>out.indexOf(m,s)).filter(x=>x>=0);
+    let seg=out.slice(s,nx.length?Math.min(...nx):out.length);seg=seg.replace(/^\n/,'').replace(/\n$/,'');r.push({seg,closed:nx.length>0})}return r}
+async function cppRun(code,tests){tests=tests&&tests.length?tests:[{}];
+  if(tests.some(t=>t.main)){const m=await gbExec(cppHarness(code,tests),'');if(m.fail)return{fail:m.fail};
+    if(m.ce)return{res:tests.map(()=>({out:'',err:'Error de compilación',ce:m.ce,ok:false}))};
+    const parts=cppSplit(m.out,tests.length);
+    return{res:tests.map((t,i)=>{const p=parts[i];if(!p)return{out:'',err:m.err||'El programa se detuvo antes de esta prueba',ok:false};
+      const err=!p.closed?(m.err||'El programa se detuvo en esta prueba'):null;const ok=!err&&(t.out==null||normOut(p.seg)===normOut(t.out));return{out:p.seg,err,ok}})}}
+  const res=[];for(const t of tests){const m=await gbExec(code,t.in||'');if(m.fail)return{fail:m.fail};
+    if(m.ce){res.push({out:'',err:'Error de compilación',ce:m.ce,ok:false});continue}
+    let ok=!m.err;if(ok&&t.has)ok=hasAll(m.out,t.has);if(ok&&t.out!=null)ok=normOut(m.out)===normOut(t.out);
+    if(ok&&t.tail){const ls=normOut(m.out).split('\n');const tl=t.tail.map(l=>l.replace(/\s+$/,''));ok=ls.slice(-tl.length).join('\n')===tl.join('\n')}res.push({out:m.out,err:m.err,ok})}
+  return{res}}
+function kvBox(label,text,code,lang){const d=el('div');if(label)d.append(el('p','clab',label));if(code)d.append(preCode(text,lang));else{const p=el('pre','cons');p.textContent=text===''?'(nada)':text;d.append(p)}return d}
+function renderRes(out,res,tests,lang){const pass=res.filter(r=>r.ok).length;out.innerHTML='';out.hidden=false;
+  const ce=res.find(r=>r.ce);
+  if(ce){out.append(el('p','fb bad','✗ Tu código no compila. Corrige el error y vuelve a intentar.'),kvBox('Mensaje del compilador',ce.ce));return}
   out.append(el('p','fb '+(pass===res.length?'good':'bad'),pass===res.length?'✓ Tu código pasa '+(res.length===1?'la prueba':'las '+res.length+' pruebas'):'Pasa '+pass+' de '+res.length+' pruebas. Revisa las que están en rojo.'));
   const ul=el('ul','tres');res.forEach((r,i)=>{const t=tests[i]||{};const li=el('li',r.ok?'ok':'no');li.append(el('b',null,(r.ok?'✓ ':'✗ ')+escH(t.n||('Prueba '+(i+1)))));
-    if(!r.ok){if(t.in)li.append(kvBox('Entrada (lo que recibe input)',t.in));if(t.run)li.append(kvBox('Código de la prueba',t.run,true));
+    if(!r.ok){if(t.in)li.append(kvBox(lang==='cpp'?'Entrada (lo que recibe cin)':'Entrada (lo que recibe input)',t.in));if(t.run)li.append(kvBox('Código de la prueba',t.run,true));if(t.main)li.append(kvBox('Código de la prueba (dentro de main)',t.main,true,'cpp'));
+      if(t.has)li.append(kvBox('Debe aparecer en tu salida, en este orden (no importan espacios ni mayúsculas)',t.has.join('\n')));if(t.tail)li.append(kvBox('Las últimas líneas deben ser exactamente (aquí sí importan los espacios)',t.tail.join('\n')));
       if(t.out!=null)li.append(kvBox('Salida esperada',t.out));li.append(kvBox('Tu salida',r.out||''));if(r.err)li.append(el('p','cerr','💥 '+escH(r.err)))}
     ul.append(li)});out.append(ul)}
-function codeBox(ch,o){o=o||{};const box=el('div','cbox');const key=o.key;const start=ch.start||'';
+function codeBox(ch,o){o=o||{};const lang=ch.lang||'py';const cpp=lang==='cpp';const box=el('div','cbox');const key=o.key;const start=ch.start||'';
   if(ch.files&&Object.keys(ch.files).length){const fl=el('div','cfiles','<span>📁 Archivos que ya existen:</span>');const view=el('div','cfview');view.hidden=true;
     Object.keys(ch.files).forEach(n=>{const b=el('button','cfbtn',escH(n));b.type='button';
       b.onclick=()=>{const same=!view.hidden&&view.dataset.n===n;view.innerHTML='';view.hidden=same;view.dataset.n=n;
         if(!same){view.append(el('p','note','<b>'+escH(n)+'</b>'+(/\.py$/.test(n)?' · impórtalo, no lo copies':' · archivo de datos')));view.append(/\.py$/.test(n)?preCode(ch.files[n].replace(/\n+$/,'')):kvBox('',ch.files[n]))}};fl.append(b)});
     box.append(fl,view)}
-  const ta=el('textarea','ced');ta.spellcheck=false;['autocapitalize','autocomplete','autocorrect'].forEach(a=>ta.setAttribute(a,'off'));ta.setAttribute('wrap','off');ta.setAttribute('aria-label','Editor de código Python');
-  ta.value=(key&&CODEST[key]!=null)?CODEST[key]:start;const fit=()=>{ta.rows=Math.min(26,Math.max(6,ta.value.split('\n').length+1))};fit();
-  let tt=null;ta.addEventListener('input',()=>{fit();if(key){clearTimeout(tt);tt=setTimeout(()=>{if(ta.value===start)delete CODEST[key];else CODEST[key]=ta.value;S.set('ent-code',CODEST)},400)}o.onEdit&&o.onEdit()});edKeys(ta);
-  const acts=el('div','cacts');const bc=o.noCheck?null:el('button','pri','✓ Comprobar');const br=el('button',null,'▶ Ejecutar');const bz=el('button',null,'↺ Reiniciar');
-  const stt=el('span','pyst');if(bc)acts.append(bc);acts.append(br,bz,stt);const out=el('div','cout');out.hidden=true;box.append(ta,acts,out);
+  const ta=el('textarea','ced');ta.spellcheck=false;['autocapitalize','autocomplete','autocorrect'].forEach(a=>ta.setAttribute(a,'off'));ta.setAttribute('wrap','off');ta.setAttribute('aria-label','Editor de código '+(cpp?'C++':'Python'));
+  ta.value=(key&&CODEST[key]!=null)?CODEST[key]:start;const fit=()=>{ta.rows=Math.min(28,Math.max(6,ta.value.split('\n').length+1))};fit();
+  let tt=null;ta.addEventListener('input',()=>{fit();if(key){clearTimeout(tt);tt=setTimeout(()=>{if(ta.value===start)delete CODEST[key];else CODEST[key]=ta.value;S.set('ent-code',CODEST)},400)}o.onEdit&&o.onEdit()});edKeys(ta,lang);
+  const fnTests=(ch.tests||[]).some(t=>t.main);
+  const inp=((ch.tests||[]).find(t=>t.in)||{}).in||'';
+  let sin=null;if(cpp&&!fnTests&&!o.noRun){sin=el('textarea','ced cin');sin.rows=Math.min(6,Math.max(2,inp.split('\n').length));sin.value=inp;sin.spellcheck=false;sin.setAttribute('aria-label','Entrada para cin');}
+  const acts=el('div','cacts');const bc=o.noCheck?null:el('button','pri','✓ Comprobar');const br=o.noRun?null:el('button',null,'▶ Ejecutar');const bz=el('button',null,'↺ Reiniciar');
+  const stt=el('span','pyst');if(bc)acts.append(bc);if(br)acts.append(br);acts.append(bz,stt);const out=el('div','cout');out.hidden=true;box.append(ta);
+  if(sin){const w=el('details','cinw');w.append(el('summary',null,'⌨️ Entrada para cin (lo que escribirías por teclado)'),sin);box.append(w)}
+  if(o.noRun)box.append(el('p','note','✍️ Modo escrito: no puedes compilar ni ejecutar. Tu código se corrige al entregar.'));
+  box.append(acts,out);
   const busy=b=>{[bc,br,bz].forEach(x=>{if(x)x.disabled=b})};
-  const upd=s=>{if(!box.isConnected&&box.dataset.live){PY.ui.delete(upd);return}stt.textContent=s==='loading'?'⏳ Cargando Python (solo la primera vez)…':s==='fail'?'⚠️ Python no disponible':''};
-  PY.ui.add(upd);upd(PY.st);requestAnimationFrame(()=>{box.dataset.live=1});
-  if(o.autoload!==false)setTimeout(()=>pyStart(),300);
+  if(!cpp){const upd=s=>{if(!box.isConnected&&box.dataset.live){PY.ui.delete(upd);return}stt.textContent=s==='loading'?'⏳ Cargando Python (solo la primera vez)…':s==='fail'?'⚠️ Python no disponible':''};
+    PY.ui.add(upd);upd(PY.st);requestAnimationFrame(()=>{box.dataset.live=1});if(o.autoload!==false)setTimeout(()=>pyStart(),300)}
   bz.onclick=()=>{if(!bz.dataset.arm){bz.dataset.arm=1;bz.textContent='¿Volver al código inicial?';setTimeout(()=>{delete bz.dataset.arm;bz.textContent='↺ Reiniciar'},3000);return}
     delete bz.dataset.arm;bz.textContent='↺ Reiniciar';ta.value=start;ta.dispatchEvent(new Event('input'));out.hidden=true};
-  const inp=((ch.tests||[]).find(t=>t.in)||{}).in||'';
-  const run=async()=>{busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note','⏳ Ejecutando…'));
-    const m=await pyRun(ta.value,[{in:inp}],ch.files);busy(false);out.innerHTML='';
-    if(m.fail||m.fatal){out.append(el('p','fb bad',PYFAIL));return}if(m.timeout){out.append(el('p','fb bad',PYTO));return}
-    const r=m.res[0];out.append(el('p','clab','Salida'+(inp?' (usando la entrada de la prueba 1)':'')));const pre=el('pre','cons');pre.textContent=r.out||'(no imprimió nada)';out.append(pre);
+  const FAIL=cpp?CPPFAIL:PYFAIL;
+  const exec=(code,tests,ms)=>cpp?cppRun(code,tests):pyRun(code,tests,ch.files,ms);
+  const run=async()=>{busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note',cpp?'⏳ Compilando y ejecutando en godbolt.org…':'⏳ Ejecutando…'));
+    const tests=cpp?(fnTests?[Object.assign({},ch.tests[0],{out:null})]:[{in:sin?sin.value:inp}]):[{in:inp}];
+    const m=await exec(ta.value,tests);busy(false);out.innerHTML='';
+    if(m.fail||m.fatal){out.append(el('p','fb bad',FAIL));return}if(m.timeout){out.append(el('p','fb bad',PYTO));return}
+    const r=m.res[0];if(r.ce){renderRes(out,m.res,tests,lang);return}
+    out.append(el('p','clab','Salida'+(cpp?(fnTests?' (con el main de la prueba 1)':''):(inp?' (usando la entrada de la prueba 1)':''))));const pre=el('pre','cons');pre.textContent=r.out||'(no imprimió nada)';out.append(pre);
     if(r.err)out.append(el('p','cerr','💥 '+escH(r.err)))};
-  br.onclick=run;ta.addEventListener('runkey',()=>{if(!br.disabled)run()});
-  async function check(show){busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note','⏳ Probando tu código…'));
-    const m=await pyRun(ta.value,ch.tests,ch.files,12000);busy(false);out.innerHTML='';
-    if(m.fail||m.fatal){out.append(el('p','fb bad',PYFAIL+(m.fatal?' ('+escH(m.fatal)+')':'')));return null}
+  if(br){br.onclick=run;ta.addEventListener('runkey',()=>{if(!br.disabled)run()})}
+  async function check(show){busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note',cpp?'⏳ Compilando y probando tu código…':'⏳ Probando tu código…'));
+    const m=await exec(ta.value,ch.tests,12000);busy(false);out.innerHTML='';
+    if(m.fail||m.fatal){out.append(el('p','fb bad',FAIL+(m.fatal?' ('+escH(m.fatal)+')':'')));return null}
     if(m.timeout){out.append(el('p','fb bad',PYTO));return{pass:0,total:ch.tests.length,res:null}}
-    if(show!==false)renderRes(out,m.res,ch.tests);else out.hidden=true;
+    if(show!==false)renderRes(out,m.res,ch.tests,lang);else out.hidden=true;
     return{pass:m.res.filter(r=>r.ok).length,total:ch.tests.length,res:m.res}}
   if(bc)bc.onclick=async()=>{const r=await check(true);if(r&&o.onCheck)o.onCheck(r)};
-  return{el:box,ta,check,out,show:res=>renderRes(out,res,ch.tests),dirty:()=>ta.value.trim()!==start.trim(),lock:()=>{ta.readOnly=true;busy(true);br.disabled=false}}}
+  return{el:box,ta,check,out,show:res=>renderRes(out,res,ch.tests,lang),dirty:()=>ta.value.trim()!==start.trim(),lock:()=>{ta.readOnly=true;busy(true);if(br)br.disabled=false}}}
 function buildCode(ch,box,fb,qi,pre,onTry,onBad,onGood,e){
   const cb=codeBox(ch,{key:C.id+'/'+e.id,onCheck:r=>{onTry();
     if(r.pass===r.total){fb.className='fb good';fb.textContent='¡Correcto! Tu código pasa todas las pruebas.';onGood(qi)}
-    else{fb.className='fb bad';fb.textContent=r.res?'Todavía no: pasa '+r.pass+' de '+r.total+'. Corrige y vuelve a comprobar.':'Tu código no terminó a tiempo.';onBad()}}});
+    else{fb.className='fb bad';fb.textContent=!r.res?'Tu código no terminó a tiempo.':r.res.some(x=>x.ce)?'Tu código no compila: revisa el mensaje del compilador.':'Todavía no: pasa '+r.pass+' de '+r.total+'. Corrige y vuelve a comprobar.';onBad()}}});
   box.append(cb.el);if(pre)box.append(el('p','note','Ya resolviste este ejercicio. Puedes seguir probando tu código.'))}
 function playBox(e){const pg=el('div','play');pg.append(el('h4',null,'▶ Pruébalo tú'),el('p','note','Ejecuta el código del enunciado. Cámbialo (por ejemplo, un valor o una línea) y vuelve a ejecutarlo para ver qué pasa.'));
-  pg.append(codeBox({start:e.play,tests:[{}],files:e.playFiles},{noCheck:true,autoload:false}).el);return pg}
+  pg.append(codeBox({start:e.play,tests:[{in:e.playIn||''}],files:e.playFiles,lang:e.lang||'py'},{noCheck:true,autoload:false}).el);return pg}
 function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e.checks.length).fill(false);const pre=!RV&&!!(cs(C.id).ex[e.id]||{}).s;
   const onTry=()=>{if(RV){RV.att[e.id]=1;setBs();return}if(!e.draw){const r=rec(e.id);if(!r.a){r.a=1;setBs()}}};
   const onBad=()=>{if(!e.draw){const r=rec(e.id);qBad(r,Date.now());if(RV)RV.bad[e.id]=1;save();stt.textContent=stateText(e)}};
@@ -1468,7 +1519,7 @@ function finalCeleb(){const x=stats(C);const n=el('div');
    '<div class="kpis"><div class="kpi"><small>Acierto a la primera</small><b>'+pct(x.acc)+'</b></div><div class="kpi"><small>Tiempo de estudio</small><b>'+dur(x.time)+'</b></div></div>'+
    '<div class="step1"><b>El último paso:</b> el simulacro final. '+C.sim.slots.length+' preguntas como las del '+lf(C.exam)+', '+C.sim.slots.reduce((a,s)=>a+s.pts,0)+' puntos y '+C.sim.minutes+' minutos. Si sacas 17 o más, estás listo para el examen.</div>'+
    (weak.length?'<p class="note">Antes, te conviene repasar: '+weak.map(w=>'<b>'+w.name+'</b> ('+pct(w.acc)+')').join(', ')+'.</p>':'');
-  const bt=el('div','mbtns');const go=el('button','red','🎯 Dar el simulacro final');go.onclick=()=>{closeModal();if(C.sim.versions)simChoice();else simIntro()};const l=el('button',null,'Más tarde');l.onclick=closeModal;bt.append(go,l);n.append(bt);
+  const bt=el('div','mbtns');const go=el('button','red','🎯 Dar el simulacro final');go.onclick=()=>{closeModal();if(C.guide)simChoice();else if(C.sim.versions)verChoice();else simIntro()};const l=el('button',null,'Más tarde');l.onclick=closeModal;bt.append(go,l);n.append(bt);
   openModal(n,'celeb');confetti()}
 function conceptCard(k){const cp=C.concepts[k];const card=el('div','ccard pop','<b>'+cp.n+'</b><div class="cf">'+cp.f+'</div><p>'+cp.x+'</p>');
   const hi=T.findIndex(t=>t.id===cp.home);
@@ -1892,7 +1943,10 @@ function writeCard(e){const r0=cs(C.id).ex[e.id]||{};const c=el('article','ex');
   upd();return c}
 /* ================= SIMULACRO ================= */
 let SIMV='rand';
-function pickV(){const vs=C.sim.versions;if(!vs)return;const v=SIMV==='rand'?vs[Math.floor(Math.random()*vs.length)]:vs.find(x=>x.name===SIMV)||vs[0];C.sim.slots=v.slots;C.sim.vname=v.name}
+function pickV(){const vs=C.sim.versions;if(!vs)return;const v=SIMV==='rand'?vs[Math.floor(Math.random()*vs.length)]:vs.find(x=>x.name===SIMV)||vs[0];C.sim.slots=v.slots;C.sim.vname=v.name;if(v.minutes)C.sim.minutes=v.minutes;C.sim.noRun=!!v.noRun;if(v.intro)C.sim.intro=v.intro}
+function verChoice(){const n=el('div');n.innerHTML='<span class="bigico">🎯</span><h2>'+(C.sim.vtitle||'¿Qué modalidad quieres practicar?')+'</h2><p class="sub">'+C.exam+'</p>';const g=el('div','modes');
+  C.sim.versions.forEach(v=>{const b=el('button','mode','<b>'+v.name+'</b><span>'+(v.desc||'')+'</span>');b.onclick=()=>{closeModal();SIMV=v.name;pickV();simIntro()};g.append(b)});n.append(g);
+  const bt=el('div','mbtns');const l=el('button',null,'Cancelar');l.onclick=closeModal;bt.append(l);n.append(bt);openModal(n,'celeb')}
 function simChoice(){const n=el('div');n.innerHTML='<span class="bigico">🎯</span><h2>¿Cómo quieres practicar?</h2><p class="sub">'+C.exam+'</p>';
   if(C.sim.versions){const w=el('div','vpick');w.append(el('p','vlab','Versión del examen 2026-1'));const row=el('div','vrow');
     [...C.sim.versions.map(v=>v.name),'rand'].forEach(nm=>{const b=el('button','vbtn'+(SIMV===nm?' on':''),nm==='rand'?'🎲 Al azar':nm);b.onclick=()=>{SIMV=nm;row.querySelectorAll('.vbtn').forEach(x=>x.classList.toggle('on',x===b))};row.append(b)});w.append(row);n.append(w)}
@@ -1937,7 +1991,7 @@ function renderSim(){const m=$('simmain');m.innerHTML='';
   SIMS.qs.forEach((q,qi)=>{const e=q.ex;const box=el('div','q');box.id='sq'+qi;box.append(el('h3',null,'Pregunta '+(qi+1)+': '+q.slot.name+' <span>'+q.slot.pts+(q.slot.pts===1?' pt':' pts')+'</span>'));
     const en=el('div','enun',e.q);en.style.margin='0';if(e.fig)en.append(el('figure',null,F[e.fig]));box.append(en);
     e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));
-      if(ch.t==='code'){const xb=codeBox(ch,{noCheck:true,onEdit:simProg});(q.cb||(q.cb={}))[ci]=xb;cb.append(xb.el);box.append(cb);return}
+      if(ch.t==='code'){const xb=codeBox(ch,{noCheck:true,noRun:!!C.sim.noRun,onEdit:simProg});(q.cb||(q.cb={}))[ci]=xb;cb.append(xb.el);box.append(cb);return}
       const g=el('div','opts');g.dataset.ci=ci;
       (ch.ord||perm(SIMS.seed+e.id+'#'+ci,ch.o.length)).forEach((oi,pos)=>{const b=el('button','opt','<span class="k">'+'ABCDE'[pos]+'</span><span>'+ch.o[oi]+'</span>');b.dataset.oi=oi;
         b.onclick=()=>{if(SIMS.done)return;q.sel[ci]=oi;g.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));simProg()};g.append(b)});cb.append(g);box.append(cb)});
@@ -1976,7 +2030,7 @@ function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
     (wasFree&&nota>=17?'<h2>¡17 o más sin límite de tiempo!</h2><p>Ahora dalo con cronómetro para que cuente.</p>':top?'<h2>¡Sobresaliente! Estás listo para el '+lf(C.exam)+' de '+C.name+'</h2><p>Llegaste al último paso. Confía en lo que practicaste.</p>'
         :'<h2>Todavía no es sobresaliente</h2><p>Necesitas 17 o más. Revisa abajo las preguntas en rojo con su solución y vuelve a intentarlo'+(C.sim.fixed?'. Antes, practica los ejercicios «Tipo parcial» de los temas donde fallaste.':': las preguntas cambian cada vez.')+'</p>')+
     (wasFree?'<p class="note">Sin límite de tiempo: tardaste '+dur(SIMS.used)+' (el límite real es '+C.sim.minutes+' min). Este intento no cuenta para tu mejor nota.</p>':'<p class="note">Mejor nota: '+s.sim.best+' / 20, intentos: '+s.sim.n+'.</p>')+timeLine();
-  const bt=el('div','mbtns');const r=el('button','pri','Revisar mis respuestas');r.onclick=closeModal;const again=el('button',null,C.sim.versions?'Elegir otra versión':'Otro simulacro');again.onclick=()=>{closeModal();if(C.sim.versions){SIMS=null;openCourse(C.id);simChoice()}else startSim(wasFree)};bt.append(r,again);n.append(bt);
+  const bt=el('div','mbtns');const r=el('button','pri','Revisar mis respuestas');r.onclick=closeModal;const again=el('button',null,C.sim.versions?'Elegir otra versión':'Otro simulacro');again.onclick=()=>{closeModal();if(C.sim.versions){SIMS=null;openCourse(C.id);if(C.guide)simChoice();else verChoice()}else startSim(wasFree)};bt.append(r,again);n.append(bt);
   openModal(n,'celeb');if(top)confetti()}
 
 /* ================= MODO DE ESTUDIO: Pomodoro / Flowtime, blurting, arranque y repaso espaciado ================= */
