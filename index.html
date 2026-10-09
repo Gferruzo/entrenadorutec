@@ -302,6 +302,9 @@ table.tt{border-collapse:collapse;background:var(--card);margin:.3em 0}table.tt 
 .slink{border:none;background:none;padding:0;color:var(--teo);font:600 1.2rem Newsreader,serif;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .sline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.86rem;color:var(--muted);margin-top:4px}
 .sline span:first-child{color:var(--ink);font-weight:600}
+.shead{margin:16px 0 2px;font:800 .8rem Figtree;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+details.sotros{margin-top:14px;border-top:1.5px solid var(--line);padding-top:8px}
+details.sotros>summary{cursor:pointer;font:800 .8rem Figtree;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 0}
 .sexam{border-top:1.5px solid var(--line);padding-top:8px;margin-top:10px}
 .sexam h3{font:600 1.15rem Newsreader,serif;margin:.2em 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 
@@ -1333,12 +1336,20 @@ $('statsbtn').onclick=statsModal;
 document.addEventListener('click',e=>{if(!e.target.closest('.nb'))document.querySelectorAll('.nb').forEach(closeNb)});
 
 /* ================= ESTADÍSTICAS ================= */
-function statsModal(){const n=el('div');n.append(el('h2',null,'Tus estadísticas'),el('p','sub','Toca el nombre de un curso para ver el detalle por tema.'));
-  GROUPS.forEach(g=>{const box=el('div','sgrp');const t=el('button','slink',g.name+' →');t.onclick=()=>groupStats(g);box.append(t);
-    g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c);box.append(el('div','sline','<span>'+c.exam+'</span><span>'+(x.time||x.nd?x.solved+'/'+x.total+' resueltos · '+(x.nd?pct(x.acc)+' a la primera · ':'')+dur(x.time)+(x.simBest!=null?' · simulacro '+x.simBest+'/20':''):'Sin empezar')+'</span>'))});
-    n.append(box)});
+function statsModal(){const n=el('div');n.append(el('h2',null,'Tus estadísticas'));
+  const act=g=>g.list.some(c=>{if(c.soon)return false;const x=stats(c),z=cs(c.id).ses;return x.time||x.nd||(z&&z.n)});
+  const mineK=MIS?MIS.sel:[],mine=mineK.map(gByKey).filter(Boolean),others=GROUPS.filter(g=>!mineK.includes(g.key)&&act(g));
+  let TS=0,SV=0,SN=0,SMS=0;GROUPS.forEach(g=>g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),z=cs(c.id).ses||{};TS+=x.time||0;SV+=x.solved;SN+=z.n||0;SMS+=z.ms||0}));
+  n.append(el('div','kpis','<div class="kpi"><small>Tiempo total</small><b>'+dur(TS)+'</b></div><div class="kpi"><small>Ejercicios resueltos</small><b>'+SV+'</b></div>'+
+    '<div class="kpi"><small>Sesiones de estudio</small><b>'+SN+'</b></div><div class="kpi"><small>Tiempo en sesiones</small><b>'+(SN?dur(SMS/1000):'—')+'</b></div>'));
+  n.append(el('p','sub','Toca el nombre de un curso para ver el detalle por tema.'));
+  const box=g=>{const b=el('div','sgrp');const t=el('button','slink',g.name+' →');t.onclick=()=>groupStats(g);b.append(t);
+    g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c);b.append(el('div','sline','<span>'+c.exam+'</span><span>'+(x.time||x.nd?x.solved+'/'+x.total+' resueltos · '+(x.nd?pct(x.acc)+' a la primera · ':'')+dur(x.time)+(x.simBest!=null?' · simulacro '+x.simBest+'/20':''):'Sin empezar')+'</span>'))});return b};
+  if(MIS){n.append(el('h3','shead','Mis cursos'));mine.length?mine.forEach(g=>n.append(box(g))):n.append(el('p','note','Aún no tienes cursos en «Mis cursos».'));
+    if(others.length){const d=el('details','sotros');d.append(el('summary',null,'Otros cursos con progreso ('+others.length+')'));others.forEach(g=>d.append(box(g)));n.append(d)}}
+  else{const list=GROUPS.filter(act);list.length?list.forEach(g=>n.append(box(g))):n.append(el('p','note','Aún no empiezas ningún curso. Tus estadísticas aparecerán aquí a medida que practiques.'))}
   const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n)}
-function groupStats(g){const n=el('div');const bk=el('button','back','← Todos los cursos');bk.onclick=statsModal;
+function groupStats(g){const n=el('div');const bk=el('button','back','← Todas las estadísticas');bk.onclick=statsModal;
   n.append(bk,el('h2',null,g.name));
   g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),s=cs(c.id),md=medal(c);const sec=el('div','sexam');
     sec.append(el('h3',null,c.exam+(md?' <span class="badge '+md[0]+'">'+md[1]+'</span>':'')));
