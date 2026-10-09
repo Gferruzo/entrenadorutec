@@ -164,6 +164,20 @@ mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .back{border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:6px;padding:5px 11px;font:600 .85rem Figtree;cursor:pointer}
 .sync{font-size:.8rem;color:var(--muted);margin-left:auto}
 .sync.on{color:var(--ok)}
+.acct{margin-left:auto;max-width:14em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.acct.on{font-weight:800}
+.achead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.achead img,.achead .ini{width:48px;height:48px;border-radius:999px;flex:none;object-fit:cover}
+.achead .ini{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);font:800 1.3rem Figtree}
+.achead h2{margin:0;word-break:break-word}
+.achead small{display:block;color:var(--muted)}
+.acnick{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 2px}
+.acnick input{flex:1;min-width:10em;border:1.5px solid var(--ink);border-radius:8px;padding:8px 10px;font:600 1rem Figtree;background:var(--card);color:var(--ink)}
+.acnick button,.aclink{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:8px;padding:8px 14px;font:800 .88rem Figtree;cursor:pointer}
+.aclink{padding:4px 10px;font-size:.8rem}
+.acst{font-size:.85rem;color:var(--muted);margin:4px 0 0}
+.acst.on{color:var(--ok)}
+.acguest{border:1.5px dashed var(--ink);border-radius:10px;padding:12px 14px;margin:8px 0 4px}
 .sync.clk{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
 .sync.clk:hover{color:var(--ink,#222)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:.35em 0 .1em}
@@ -776,7 +790,7 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 <div class="wrap">
 <section id="vMenu">
 <div class="hero">
-<div class="topline"><button class="statsbtn" id="statsbtn">📊 Ver estadísticas</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="themebtn" id="themebtn1" type="button">🌙</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><span class="sync" id="sync1">Guardando solo en este navegador</span></div>
+<div class="topline"><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="themebtn" id="themebtn1" type="button">🌙</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><button class="statsbtn acct" id="sync1" type="button">Iniciar sesión</button></div>
 <h1>¿Qué vas a <i>estudiar</i> hoy?</h1>
 <p>Pasa el cursor (o toca) un cuaderno para ver qué exámenes y prácticas tiene. Cada uno trae sus temas en orden de dificultad y un simulacro final.</p>
 </div>
@@ -785,7 +799,7 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 
 <section id="vCourse" hidden>
 <div class="hero">
-<div class="topline"><button class="back" id="back">← Cursos</button><span class="clock" id="clock">⏱ 00:00:00</span><button class="modebtn" id="modebtn2">⏱ Modo de estudio</button><button class="themebtn" id="themebtn2" type="button">🌙</button><span class="sync" id="sync2"></span></div>
+<div class="topline"><button class="back" id="back">← Cursos</button><span class="clock" id="clock">⏱ 00:00:00</span><button class="modebtn" id="modebtn2">⏱ Modo de estudio</button><button class="themebtn" id="themebtn2" type="button">🌙</button><button class="modebtn acct" id="sync2" type="button">Iniciar sesión</button></div>
 <h1 id="cTitle"></h1>
 <p>Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente.</p>
 <div class="total"><div class="meter"><i id="tbar"></i></div><span id="ttxt"></span></div>
@@ -1040,9 +1054,13 @@ let MODE=S.get('ent-mode',null);
 let MIS=S.get('ent-mis',null);
 const cs=cid=>ST[cid]||(ST[cid]=blank());
 let cloud=null,pushT=null,cloudDone=false,onCloud=[];
-const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,mis:MIS||null,updated:Date.now()});
+const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,mis:MIS||null,nick:NICK||null,updated:Date.now()});
 function saveLocal(){S.set('ent-st',ST)}
-function setSync(t,on){[$('sync1'),$('sync2')].forEach(s=>{s.textContent=t;s.classList.toggle('on',!!on)})}
+let SYNCTXT='',SYNCON=false,NICK=S.get('ent-nick',null);
+function acctName(){const u=FBA&&FBA.auth.currentUser;if(!u)return null;return (NICK&&NICK.n)||UNAME||'Mi cuenta'}
+function acctUI(){const nm=acctName();[$('sync1'),$('sync2')].forEach(b=>{if(!b)return;b.textContent=nm||(SYNCTXT==='Conectando…'?'Conectando…':'Iniciar sesión');b.classList.toggle('on',!!nm);b.title=nm?'Tu cuenta y estadísticas':'Inicia sesión para guardar tu progreso'});
+  const st=document.querySelector('.acst');if(st){st.textContent=SYNCTXT;st.classList.toggle('on',SYNCON)}}
+function setSync(t,on){SYNCTXT=t;SYNCON=!!on;acctUI()}
 function push(delay){if(!cloud)return;clearTimeout(pushT);pushT=setTimeout(()=>{cloud.set(cloudDoc()).then(()=>setSync(okLabel(),true)).catch(()=>setSync('Sin conexión: guardado local'))},delay==null?1200:delay)}
 function save(){saveLocal();push()}
 function better(a,b){if(!a)return b;if(!b)return a;const k=x=>[x.simBest||0,x.complete?1:0,x.acc||0,x.solved||0];const ka=k(a),kb=k(b);for(let i=0;i<4;i++){if(ka[i]!==kb[i])return ka[i]>kb[i]?a:b}return a}
@@ -1064,15 +1082,15 @@ function mergeC(a,b){if(!a)return b;if(!b)return a;const best=better(a.best,b.be
 const FB_CFG={apiKey:"AIzaSyB9G4iWj8yCxrVP3MRlYLigiiLDAB91IGc",authDomain:"entrenadorutec.firebaseapp.com",projectId:"entrenadorutec",storageBucket:"entrenadorutec.firebasestorage.app",messagingSenderId:"841954228208",appId:"1:841954228208:web:e6c793c0bc81f07df60f35"};
 const FBV='10.12.2';
 let FBA=null,UNAME='';
-const okLabel=()=>'☁️ Sincronizado'+(UNAME?' · '+UNAME:'');
+const okLabel=()=>'Progreso sincronizado con tu cuenta';
 function cloudFinish(){if(cloudDone)return;cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}
 function rerender(){try{if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();if(typeof modeUI==='function')modeUI()}catch(e){}}
 function mergeRemote(remote,rm,rmis){remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
   if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}
   if(rmis&&rmis.ts&&Array.isArray(rmis.sel)&&(!MIS||(MIS.ts||0)<rmis.ts)){MIS=rmis;S.set('ent-mis',MIS)}}
-function syncClick(){if(!FBA)return;if(FBA.auth.currentUser)FBA.logout();else FBA.login()}
+function syncClick(){accountModal()}
 [$('sync1'),$('sync2')].forEach(s=>{s.addEventListener('click',syncClick);s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();syncClick()}})});
-function markClickable(){[$('sync1'),$('sync2')].forEach(s=>{const c=!!FBA;s.classList.toggle('clk',c);if(c){s.setAttribute('role','button');s.tabIndex=0;s.title=FBA.auth.currentUser?'Tocar para cerrar sesión':'Tocar para iniciar sesión con Google'}})}
+function markClickable(){acctUI()}
 async function claudeSync(){try{
   const [db,user]=await Promise.all([claude.use('db'),claude.use('user')]);
   if(!db||!user)return setSync('Guardando solo en este navegador');
@@ -1096,17 +1114,17 @@ async function firebaseSync(){
     logout:async()=>{if(!confirm('¿Cerrar sesión?\n\nTu progreso queda guardado en tu cuenta y se borrará de este navegador.'))return;
       clearTimeout(pushT);try{if(cloud)await cloud.set(cloudDoc())}catch(e){}
       cloud=null;try{await AU.signOut(auth)}catch(e){}
-      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode');localStorage.removeItem('ent-mis')}catch(e){}
+      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode');localStorage.removeItem('ent-mis');localStorage.removeItem('ent-nick')}catch(e){}
       location.reload()}};
   AU.getRedirectResult(auth).catch(()=>{});
   AU.onAuthStateChanged(auth,async u=>{
-    if(!u){cloud=null;UNAME='';setSync('🔑 Inicia sesión para guardar tu progreso');markClickable();cloudFinish();return}
+    if(!u){cloud=null;UNAME='';setSync('Guardando solo en este navegador');markClickable();cloudFinish();return}
     UNAME=(u.displayName||u.email||'').split(' ')[0];
     try{setSync('Sincronizando…');markClickable();
       const ref=FS.doc(db,'users',u.uid,'data','progress');
       const snap=await FS.getDoc(ref);
-      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode,p.mis)}
-      cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode,mis:d.mis}),updated:d.updated})};
+      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode,p.mis);if(p.nick&&p.nick.ts&&(!NICK||(NICK.ts||0)<p.nick.ts)){NICK=p.nick;S.set('ent-nick',NICK)}}
+      cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode,mis:d.mis,nick:d.nick}),updated:d.updated})};
       saveLocal();await cloud.set(cloudDoc());setSync(okLabel(),true);rerender();
     }catch(e){cloud=null;setSync('Sin conexión: guardado local')}finally{markClickable();cloudFinish()}
   });
@@ -1332,14 +1350,13 @@ function pickerModal(kind,after){const n=el('div');const nuevo=kind==='ciclo';
     setMis(keep.concat(chk.filter(k=>!keep.includes(k))));closeModal();renderMenu();after&&after()};
   sk.onclick=()=>{if(MIS&&nuevo)setMis(MIS.sel);closeModal();after&&after()};
   bt.append(ok,sk);n.append(bt);upd();openModal(n,'wide')}
-$('statsbtn').onclick=statsModal;
 document.addEventListener('click',e=>{if(!e.target.closest('.nb'))document.querySelectorAll('.nb').forEach(closeNb)});
 
 /* ================= ESTADÍSTICAS ================= */
-function statsModal(){const n=el('div');n.append(el('h2',null,'Tus estadísticas'));
+function statsBody(n){n.append(el('h3','shead','Tus estadísticas'));
   const act=g=>g.list.some(c=>{if(c.soon)return false;const x=stats(c),z=cs(c.id).ses;return x.time||x.nd||(z&&z.n)});
   const mineK=MIS?MIS.sel:[],mine=mineK.map(gByKey).filter(Boolean),others=GROUPS.filter(g=>!mineK.includes(g.key)&&act(g));
-  let TS=0,SV=0,SN=0,SMS=0;GROUPS.forEach(g=>g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),z=cs(c.id).ses||{};TS+=x.time||0;SV+=x.solved;SN+=z.n||0;SMS+=z.ms||0}));
+  let TS=0,SV=0,SN=0,SMS=0;GROUPS.forEach(g=>g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),z=cs(c.id).ses||{};TS+=x.time||0;SV+=x.nd;SN+=z.n||0;SMS+=z.ms||0}));
   n.append(el('div','kpis','<div class="kpi"><small>Tiempo total</small><b>'+dur(TS)+'</b></div><div class="kpi"><small>Ejercicios resueltos</small><b>'+SV+'</b></div>'+
     '<div class="kpi"><small>Sesiones de estudio</small><b>'+SN+'</b></div><div class="kpi"><small>Tiempo en sesiones</small><b>'+(SN?dur(SMS/1000):'—')+'</b></div>'));
   n.append(el('p','sub','Toca el nombre de un curso para ver el detalle por tema.'));
@@ -1348,8 +1365,24 @@ function statsModal(){const n=el('div');n.append(el('h2',null,'Tus estadísticas
   if(MIS){n.append(el('h3','shead','Mis cursos'));mine.length?mine.forEach(g=>n.append(box(g))):n.append(el('p','note','Aún no tienes cursos en «Mis cursos».'));
     if(others.length){const d=el('details','sotros');d.append(el('summary',null,'Otros cursos con progreso ('+others.length+')'));others.forEach(g=>d.append(box(g)));n.append(d)}}
   else{const list=GROUPS.filter(act);list.length?list.forEach(g=>n.append(box(g))):n.append(el('p','note','Aún no empiezas ningún curso. Tus estadísticas aparecerán aquí a medida que practiques.'))}
-  const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n)}
-function groupStats(g){const n=el('div');const bk=el('button','back','← Todas las estadísticas');bk.onclick=statsModal;
+}
+function accountModal(){const n=el('div');const u=FBA&&FBA.auth.currentUser,nm=acctName();
+  if(u){const h=el('div','achead');const nameEsc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+    h.append(u.photoURL?Object.assign(document.createElement('img'),{src:u.photoURL,alt:'',referrerPolicy:'no-referrer'}):el('div','ini',nameEsc(nm.charAt(0).toUpperCase())));
+    const tx=el('div');tx.append(el('h2',null,nameEsc(nm)),el('small',null,nameEsc(u.email||'')));h.append(tx);n.append(h);
+    const ed=el('button','aclink','Cambiar nombre');ed.onclick=()=>{const f=el('div','acnick');const i=document.createElement('input');i.maxLength=24;i.value=(NICK&&NICK.n)||UNAME||'';i.placeholder='¿Cómo quieres que te llamemos?';
+      const ok=el('button',null,'Guardar');const go=()=>{NICK={n:i.value.trim().slice(0,24),ts:Date.now()};S.set('ent-nick',NICK);push(0);acctUI();accountModal()};ok.onclick=go;i.onkeydown=e=>{if(e.key==='Enter')go()};
+      f.append(i,ok);ed.replaceWith(f);i.focus();i.select()};
+    n.append(ed);const st=el('p','acst'+(SYNCON?' on':''));st.textContent=SYNCTXT;n.append(st)}
+  else{n.append(el('h2',null,'Tu cuenta'));const g=el('div','acguest','<b>Estás guardando solo en este navegador.</b><br>Inicia sesión con Google para no perder tu progreso y verlo en cualquier dispositivo.');
+    if(FBA){const lb=el('div','mbtns');const li=el('button','pri','Iniciar sesión con Google');li.onclick=()=>{closeModal();FBA.login()};lb.append(li);g.append(lb)}
+    else g.append(el('p','acst','No se pudo conectar con el servidor de cuentas. Revisa tu conexión y recarga la página.'));n.append(g)}
+  statsBody(n);
+  const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);
+  if(u){const lo=el('button','warn','Cerrar sesión');lo.onclick=()=>{closeModal();FBA.logout()};bt.append(lo)}
+  n.append(bt);openModal(n)}
+const statsModal=accountModal;
+function groupStats(g){const n=el('div');const bk=el('button','back','← Tu cuenta');bk.onclick=accountModal;
   n.append(bk,el('h2',null,g.name));
   g.list.filter(c=>!c.soon).forEach(c=>{const x=stats(c),s=cs(c.id),md=medal(c);const sec=el('div','sexam');
     sec.append(el('h3',null,c.exam+(md?' <span class="badge '+md[0]+'">'+md[1]+'</span>':'')));
