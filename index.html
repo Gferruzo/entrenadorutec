@@ -686,6 +686,38 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 #aubar .auinfo b,#aubar .auinfo span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #aubar .auinfo span{color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
 #aubar .aux{flex:none;border:0;background:none;color:var(--muted);font-size:1.05rem;cursor:pointer;padding:6px 10px}
+/* ===== Python: código, editor y pruebas ===== */
+:root{--kw:#7A3EC8;--st:#1F7A45;--nu:#B4530B;--cm:#7B8597;--bi:#1F5FBF;--du:#B0306A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--kw:#C9A2FF;--st:#7FD39B;--nu:#F2B36B;--cm:#8D98AD;--bi:#8EB8FF;--du:#FF8FC0}}
+:root[data-theme="dark"]{--kw:#C9A2FF;--st:#7FD39B;--nu:#F2B36B;--cm:#8D98AD;--bi:#8EB8FF;--du:#FF8FC0}
+pre.py{background:var(--grid);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:.6em 0;overflow-x:auto;white-space:pre;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);tab-size:4;-webkit-overflow-scrolling:touch}
+pre.py code{font:inherit;background:none;border:0;padding:0;white-space:pre;word-break:normal;color:inherit}
+.tk-k{color:var(--kw);font-weight:600}.tk-s{color:var(--st)}.tk-n{color:var(--nu)}.tk-c{color:var(--cm);font-style:italic}.tk-b{color:var(--bi)}.tk-d{color:var(--du)}
+.opt code.out{display:block;white-space:pre;overflow-x:auto;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:none;padding:0;max-width:100%}
+.opt>span:last-child{min-width:0;overflow-x:auto}
+code.out .perr,.cerr{color:var(--bad);font-weight:700}
+figure svg.uml{display:block;margin:6px auto;height:auto;color:var(--ink)}
+.cbox{margin:8px 0 2px}
+.ced{display:block;width:100%;box-sizing:border-box;min-height:9em;resize:vertical;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:10px 12px;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;tab-size:4;white-space:pre;overflow-x:auto;overflow-wrap:normal}
+.ced:focus{outline:2px solid var(--cyan);outline-offset:1px}
+.cacts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.cacts button{min-height:40px}
+.pyst{font-size:.85rem;color:var(--muted)}
+.cfiles{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.9rem;margin:0 0 6px;color:var(--muted)}
+.cfbtn{font:600 .85rem ui-monospace,Menlo,Consolas,monospace;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;min-height:32px}
+.cout{border-top:1px dashed var(--line);margin-top:4px;padding-top:6px}
+.cout pre.cons{background:var(--grid);border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin:4px 0;white-space:pre;overflow-x:auto;font:13px/1.45 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);max-height:22em}
+.clab{margin:6px 0 0;font-size:.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+ul.tres{list-style:none;margin:6px 0;padding:0;display:grid;gap:6px}
+ul.tres li{border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:6px;padding:6px 10px;background:var(--card);min-width:0}
+ul.tres li.no{border-left-color:var(--bad);background:var(--bad-bg)}
+ul.tres li>b{font-size:.92rem}
+ul.tres li pre{margin:3px 0 6px}
+.play{margin-top:12px;border-top:1px solid var(--line);padding-top:6px}
+.play h4{margin:.4em 0 .2em}
+.cacts button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:7px 14px;font:600 .9rem Figtree,sans-serif;cursor:pointer}
+.cacts button.pri{background:var(--ink);color:var(--paper)}
+.cacts button:disabled{opacity:.5;cursor:default}
 </style>
 </head>
 <body>
@@ -939,7 +971,7 @@ const $=id=>document.getElementById(id);
 const LN={1:'Básico',2:'Intermedio',3:'Nivel examen'},LC={1:'var(--l1)',2:'var(--l2)',3:'var(--l3)'};
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
-function typeset(n){const run=()=>MathJax.typesetPromise([n]).catch(()=>{});if(window.__mj)run();else{const p=window.__tq;window.__tq=()=>{p&&p();run();};}}
+function typeset(n){try{pyHlAll(n)}catch(e){}const run=()=>MathJax.typesetPromise([n]).catch(()=>{});if(window.__mj)run();else{const p=window.__tq;window.__tq=()=>{p&&p();run();};}}
 function rng(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
 function perm(id,n){n=n||5;const r=rng(id),a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const lf=s=>s.charAt(0).toLowerCase()+s.slice(1);const pad=n=>String(n).padStart(2,'0');
@@ -1268,7 +1300,7 @@ function exCard(e){if(e.write)return writeCard(e);
   const c=el('article','ex');c.id=e.id;if(isDone(e))c.classList.add('solved');
   const hd=el('header');hd.append(el('span','lvl l'+e.lvl,LN[e.lvl]),el('h3',null,e.title));const stt=el('span','state',stateText(e));hd.append(stt);c.append(hd);
   const en=el('div','enun',e.q);if(e.fig)en.append(el('figure',null,F[e.fig]));c.append(en);
-  const acts=el('div','acts');const hasChk=e.checks.length>0;const vLabel=e.draw?'Comprobar mi lectura (opcional)':'Verificar respuesta';
+  const acts=el('div','acts');const hasChk=e.checks.length>0;const vLabel=e.draw?'Comprobar mi lectura (opcional)':isCodeEx(e)?'Abrir el editor':'Verificar respuesta';
   const bv=hasChk?el('button','bv',vLabel):null;const bh=el('button','bh','Pista'),bs=el('button','bs');
   const lockSol=()=>!e.draw&&hasChk&&!(cs(C.id).ex[e.id]||{}).a;
   const setBs=()=>{bs.disabled=lockSol();bs.textContent=lockSol()?'🔒 Solución: intenta primero':(sol.hidden?'Ver solución paso a paso':'Ocultar solución')};
@@ -1278,7 +1310,89 @@ function exCard(e){if(e.write)return writeCard(e);
   bh.onclick=()=>{hint.hidden=!hint.hidden;bh.textContent=hint.hidden?'Pista':'Ocultar pista';if(!hint.hidden&&!e.draw){const r=rec(e.id);if(!r.s&&!r.h){r.h=1;save()}}};
   if(bv)bv.onclick=()=>{if(!ver.dataset.built){buildVer(e,ver,c,stt,setBs);typeset(ver)}ver.hidden=!ver.hidden;bv.textContent=ver.hidden?vLabel:'Ocultar opciones'};
   bs.onclick=()=>{if(lockSol())return;if(!sol.dataset.built){buildSol(e,sol,true);typeset(sol)}sol.hidden=!sol.hidden;setBs()};
+  if(bv&&isCodeEx(e)){buildVer(e,ver,c,stt,setBs);ver.hidden=false;bv.textContent='Ocultar el editor';bv.onclick=()=>{ver.hidden=!ver.hidden;bv.textContent=ver.hidden?vLabel:'Ocultar el editor'}}
   return c}
+/* ================= PYTHON EN EL NAVEGADOR (Pyodide en un Web Worker) ================= */
+const PY={w:null,st:'off',q:{},n:0,ready:null,ui:new Set()};
+const PYFAIL='No se pudo cargar Python. La primera vez necesita internet (descarga unos 10 MB); después funciona sin conexión.';
+const PYTO='⏱ Tu código tardó demasiado y se detuvo. ¿Hay un bucle que nunca termina o un input() de más?';
+function pyState(s){PY.st=s;PY.ui.forEach(f=>{try{f(s)}catch(e){}})}
+function pyStart(){if(PY.w)return PY.ready;pyState('loading');let w;
+  try{w=new Worker('py-worker.js')}catch(e){pyState('fail');return Promise.reject(e)}PY.w=w;
+  PY.ready=new Promise((res,rej)=>{
+    w.onmessage=ev=>{const m=ev.data||{};if(m.t==='ready'){pyState('ready');res();return}
+      if(m.t==='fail'){if(PY.w===w)PY.w=null;w.terminate();pyState('fail');rej(new Error(m.err));return}
+      const cb=PY.q[m.id];if(cb){delete PY.q[m.id];cb(m)}};
+    w.onerror=ev=>{if(PY.w===w)PY.w=null;pyState('fail');rej(new Error(ev.message||'worker'))}});
+  PY.ready.catch(()=>{});return PY.ready}
+function pyKill(){if(!PY.w)return;PY.w.terminate();PY.w=null;const q=PY.q;PY.q={};Object.values(q).forEach(cb=>cb({timeout:true}));pyState('off')}
+function pyRun(code,tests,files,ms){return pyStart().then(()=>new Promise(res=>{const id=++PY.n;
+    const to=setTimeout(()=>{if(PY.q[id]){delete PY.q[id];res({timeout:true});pyKill()}},ms||10000);
+    PY.q[id]=m=>{clearTimeout(to);res(m)};
+    PY.w.postMessage({id,code,tests:JSON.stringify(tests&&tests.length?tests:[{}]),files:JSON.stringify(files||{})})}),
+  err=>({fail:String(err&&err.message||err)}))}
+const escH=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const PYRE=/(#[^\n]*)|("""[\s\S]*?"""|'''[\s\S]*?'''|[rRfFbBuU]{0,2}"(?:\\.|[^"\\\n])*"|[rRfFbBuU]{0,2}'(?:\\.|[^'\\\n])*')|(__\w+__)|\b(False|None|True|and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b|\b(print|input|int|float|str|len|range|round|sum|max|min|sorted|list|dict|set|tuple|isinstance|issubclass|super|open|chr|ord|enumerate|zip|abs|bool|type|self|object)\b|\b(0x[0-9a-fA-F_]+|\d[\d_]*(?:\.\d+)?)\b/g;
+function hlPy(src){let o='',i=0;src.replace(PYRE,(m,c,s,d,k,b,n,off)=>{o+=escH(src.slice(i,off));
+    const cl=c!=null?'c':s!=null?'s':d!=null?'d':k!=null?'k':b!=null?'b':'n';o+='<span class="tk-'+cl+'">'+escH(m)+'</span>';i=off+m.length;return m});
+  return o+escH(src.slice(i))}
+function pyHlAll(n){if(!n||!n.querySelectorAll)return;n.querySelectorAll('pre.py:not([data-hl])').forEach(p=>{p.dataset.hl=1;const c=p.querySelector('code')||p;c.innerHTML=hlPy(c.textContent)})}
+function preCode(src){const p=el('pre','py');const c=el('code');c.innerHTML=hlPy(src);p.dataset.hl=1;p.append(c);return p}
+const isCodeEx=e=>!!(e&&e.checks&&e.checks.some(ch=>ch.t==='code'));
+let CODEST=S.get('ent-code',{});
+function edKeys(ta){ta.addEventListener('keydown',ev=>{
+  if(ev.key==='Tab'){ev.preventDefault();const s=ta.selectionStart,v=ta.value;
+    if(ev.shiftKey){const ls=v.lastIndexOf('\n',s-1)+1;if(v.slice(ls,ls+4)==='    '){ta.setRangeText('',ls,ls+4,'preserve')}}
+    else ta.setRangeText('    ',s,ta.selectionEnd,'end');ta.dispatchEvent(new Event('input'))}
+  else if(ev.key==='Enter'&&!ev.isComposing&&!ev.ctrlKey&&!ev.metaKey){const s=ta.selectionStart,v=ta.value;const ls=v.lastIndexOf('\n',s-1)+1;const line=v.slice(ls,s);
+    let ind=(line.match(/^ */)||[''])[0];if(/:\s*$/.test(line))ind+='    ';ev.preventDefault();ta.setRangeText('\n'+ind,s,ta.selectionEnd,'end');ta.dispatchEvent(new Event('input'))}
+  else if((ev.ctrlKey||ev.metaKey)&&ev.key==='Enter'){ev.preventDefault();ta.dispatchEvent(new CustomEvent('runkey'))}})}
+function kvBox(label,text,code){const d=el('div');d.append(el('p','clab',label));if(code)d.append(preCode(text));else{const p=el('pre','cons');p.textContent=text===''?'(nada)':text;d.append(p)}return d}
+function renderRes(out,res,tests){const pass=res.filter(r=>r.ok).length;out.innerHTML='';out.hidden=false;
+  out.append(el('p','fb '+(pass===res.length?'good':'bad'),pass===res.length?'✓ Tu código pasa '+(res.length===1?'la prueba':'las '+res.length+' pruebas'):'Pasa '+pass+' de '+res.length+' pruebas. Revisa las que están en rojo.'));
+  const ul=el('ul','tres');res.forEach((r,i)=>{const t=tests[i]||{};const li=el('li',r.ok?'ok':'no');li.append(el('b',null,(r.ok?'✓ ':'✗ ')+escH(t.n||('Prueba '+(i+1)))));
+    if(!r.ok){if(t.in)li.append(kvBox('Entrada (lo que recibe input)',t.in));if(t.run)li.append(kvBox('Código de la prueba',t.run,true));
+      if(t.out!=null)li.append(kvBox('Salida esperada',t.out));li.append(kvBox('Tu salida',r.out||''));if(r.err)li.append(el('p','cerr','💥 '+escH(r.err)))}
+    ul.append(li)});out.append(ul)}
+function codeBox(ch,o){o=o||{};const box=el('div','cbox');const key=o.key;const start=ch.start||'';
+  if(ch.files&&Object.keys(ch.files).length){const fl=el('div','cfiles','<span>📁 Archivos que ya existen:</span>');const view=el('div','cfview');view.hidden=true;
+    Object.keys(ch.files).forEach(n=>{const b=el('button','cfbtn',escH(n));b.type='button';
+      b.onclick=()=>{const same=!view.hidden&&view.dataset.n===n;view.innerHTML='';view.hidden=same;view.dataset.n=n;
+        if(!same){view.append(el('p','note','<b>'+escH(n)+'</b>'+(/\.py$/.test(n)?' · impórtalo, no lo copies':' · archivo de datos')));view.append(/\.py$/.test(n)?preCode(ch.files[n].replace(/\n+$/,'')):kvBox('',ch.files[n]))}};fl.append(b)});
+    box.append(fl,view)}
+  const ta=el('textarea','ced');ta.spellcheck=false;['autocapitalize','autocomplete','autocorrect'].forEach(a=>ta.setAttribute(a,'off'));ta.setAttribute('wrap','off');ta.setAttribute('aria-label','Editor de código Python');
+  ta.value=(key&&CODEST[key]!=null)?CODEST[key]:start;const fit=()=>{ta.rows=Math.min(26,Math.max(6,ta.value.split('\n').length+1))};fit();
+  let tt=null;ta.addEventListener('input',()=>{fit();if(key){clearTimeout(tt);tt=setTimeout(()=>{if(ta.value===start)delete CODEST[key];else CODEST[key]=ta.value;S.set('ent-code',CODEST)},400)}o.onEdit&&o.onEdit()});edKeys(ta);
+  const acts=el('div','cacts');const bc=o.noCheck?null:el('button','pri','✓ Comprobar');const br=el('button',null,'▶ Ejecutar');const bz=el('button',null,'↺ Reiniciar');
+  const stt=el('span','pyst');if(bc)acts.append(bc);acts.append(br,bz,stt);const out=el('div','cout');out.hidden=true;box.append(ta,acts,out);
+  const busy=b=>{[bc,br,bz].forEach(x=>{if(x)x.disabled=b})};
+  const upd=s=>{if(!box.isConnected&&box.dataset.live){PY.ui.delete(upd);return}stt.textContent=s==='loading'?'⏳ Cargando Python (solo la primera vez)…':s==='fail'?'⚠️ Python no disponible':''};
+  PY.ui.add(upd);upd(PY.st);requestAnimationFrame(()=>{box.dataset.live=1});
+  if(o.autoload!==false)setTimeout(()=>pyStart(),300);
+  bz.onclick=()=>{if(!bz.dataset.arm){bz.dataset.arm=1;bz.textContent='¿Volver al código inicial?';setTimeout(()=>{delete bz.dataset.arm;bz.textContent='↺ Reiniciar'},3000);return}
+    delete bz.dataset.arm;bz.textContent='↺ Reiniciar';ta.value=start;ta.dispatchEvent(new Event('input'));out.hidden=true};
+  const inp=((ch.tests||[]).find(t=>t.in)||{}).in||'';
+  const run=async()=>{busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note','⏳ Ejecutando…'));
+    const m=await pyRun(ta.value,[{in:inp}],ch.files);busy(false);out.innerHTML='';
+    if(m.fail||m.fatal){out.append(el('p','fb bad',PYFAIL));return}if(m.timeout){out.append(el('p','fb bad',PYTO));return}
+    const r=m.res[0];out.append(el('p','clab','Salida'+(inp?' (usando la entrada de la prueba 1)':'')));const pre=el('pre','cons');pre.textContent=r.out||'(no imprimió nada)';out.append(pre);
+    if(r.err)out.append(el('p','cerr','💥 '+escH(r.err)))};
+  br.onclick=run;ta.addEventListener('runkey',()=>{if(!br.disabled)run()});
+  async function check(show){busy(true);out.hidden=false;out.innerHTML='';out.append(el('p','note','⏳ Probando tu código…'));
+    const m=await pyRun(ta.value,ch.tests,ch.files,12000);busy(false);out.innerHTML='';
+    if(m.fail||m.fatal){out.append(el('p','fb bad',PYFAIL+(m.fatal?' ('+escH(m.fatal)+')':'')));return null}
+    if(m.timeout){out.append(el('p','fb bad',PYTO));return{pass:0,total:ch.tests.length,res:null}}
+    if(show!==false)renderRes(out,m.res,ch.tests);else out.hidden=true;
+    return{pass:m.res.filter(r=>r.ok).length,total:ch.tests.length,res:m.res}}
+  if(bc)bc.onclick=async()=>{const r=await check(true);if(r&&o.onCheck)o.onCheck(r)};
+  return{el:box,ta,check,out,show:res=>renderRes(out,res,ch.tests),dirty:()=>ta.value.trim()!==start.trim(),lock:()=>{ta.readOnly=true;busy(true);br.disabled=false}}}
+function buildCode(ch,box,fb,qi,pre,onTry,onBad,onGood,e){
+  const cb=codeBox(ch,{key:C.id+'/'+e.id,onCheck:r=>{onTry();
+    if(r.pass===r.total){fb.className='fb good';fb.textContent='¡Correcto! Tu código pasa todas las pruebas.';onGood(qi)}
+    else{fb.className='fb bad';fb.textContent=r.res?'Todavía no: pasa '+r.pass+' de '+r.total+'. Corrige y vuelve a comprobar.':'Tu código no terminó a tiempo.';onBad()}}});
+  box.append(cb.el);if(pre)box.append(el('p','note','Ya resolviste este ejercicio. Puedes seguir probando tu código.'))}
+function playBox(e){const pg=el('div','play');pg.append(el('h4',null,'▶ Pruébalo tú'),el('p','note','Ejecuta el código del enunciado. Cámbialo (por ejemplo, un valor o una línea) y vuelve a ejecutarlo para ver qué pasa.'));
+  pg.append(codeBox({start:e.play,tests:[{}],files:e.playFiles},{noCheck:true,autoload:false}).el);return pg}
 function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e.checks.length).fill(false);const pre=!RV&&!!(cs(C.id).ex[e.id]||{}).s;
   const onTry=()=>{if(RV){RV.att[e.id]=1;setBs();return}if(!e.draw){const r=rec(e.id);if(!r.a){r.a=1;setBs()}}};
   const onBad=()=>{if(!e.draw){const r=rec(e.id);qBad(r,Date.now());if(RV)RV.bad[e.id]=1;save();stt.textContent=stateText(e)}};
@@ -1287,6 +1401,7 @@ function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e
     if(ch.t==='order'){buildOrder(ch,box,fb,qi,pre,onTry,onBad,onGood,e);box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
     if(ch.t==='tt'){buildTT(ch,box,fb,qi,pre,onTry,onBad,onGood);box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
     if(ch.t==='fill'){buildFill(ch,box,fb,qi,pre,onTry,onBad,onGood);box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
+    if(ch.t==='code'){buildCode(ch,box,fb,qi,pre,onTry,onBad,onGood,e);box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
     const grid=el('div','opts');
     (ch.ord||perm(C.id+'/'+e.id+'#'+qi+(RV?RV.seed:''),ch.o.length)).forEach((oi,pos)=>{const b=el('button','opt','<span class="k">'+'ABCDE'[pos]+'</span><span>'+ch.o[oi]+'</span>');
       if(pre&&oi===0){b.classList.add('good');ok[qi]=true}if(pre)b.disabled=true;
@@ -1368,7 +1483,7 @@ function buildSol(e,sol,stepwise){sol.dataset.built=1;sol.append(el('h4',null,'S
   const ans=el('p','ans','<span>Respuesta:</span> '+e.ans);ans.hidden=true;
   const nav=el('div','nav');const nx=el('button','pri','Siguiente paso'),all=el('button',null,'Mostrar todo');nav.append(nx,all);
   let k=stepwise?1:lis.length;const show=()=>{lis.forEach((l,j)=>{l.hidden=j>=k});const end=k>=lis.length;ans.hidden=!end;nav.hidden=end};
-  show();nx.onclick=()=>{k++;show()};all.onclick=()=>{k=lis.length;show()};sol.append(ol,nav,ans);if(stepwise)sol.append(el('p','note','Ver la solución no marca el ejercicio como resuelto.'))}
+  show();nx.onclick=()=>{k++;show()};all.onclick=()=>{k=lis.length;show()};sol.append(ol,nav,ans);if(e.play)sol.append(playBox(e));if(stepwise)sol.append(el('p','note','Ver la solución no marca el ejercicio como resuelto.'))}
 function renderTopic(){const t=T[st.topic];main.innerHTML='';
   main.append(el('div','ttl','<h2>'+(st.topic+1)+'. '+t.name+'</h2><span></span>'),el('div','tmeter','<i></i>'));
   const teo=el('details','blk teo','<summary>Teoría</summary><div class="hlz" data-src="teo" data-tid="'+t.id+'">'+t.teo+'</div>');teo.open=true;
@@ -1794,7 +1909,9 @@ function startGuide(){const sp=C.sim;SIMS=null;view='guide';
   const prog=()=>{$('simprog').textContent=okc+' de '+need+' respuestas correctas'};
   qs.forEach((q,qi)=>{const e=q.ex;const box=el('div','q');box.append(el('h3',null,'Pregunta '+(qi+1)+': '+q.slot.name+' <span>'+q.slot.pts+(q.slot.pts===1?' pt':' pts')+'</span>'));
     const en=el('div','enun',e.q);en.style.margin='0';if(e.fig)en.append(el('figure',null,F[e.fig]));box.append(en);
-    e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));const g=el('div','opts');const fb=el('p','fb');
+    e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));
+      if(ch.t==='code'){const fb=el('p','fb');let got=0;const xb=codeBox(ch,{onCheck:r=>{if(r.pass===r.total){fb.className='fb good';fb.textContent='¡Correcto!';if(!got){got=1;okc++;prog()}}else{fb.className='fb bad';fb.textContent='Pasa '+r.pass+' de '+r.total+'. Corrige o mira la solución.'}}});cb.append(xb.el,fb);box.append(cb);return}
+      const g=el('div','opts');const fb=el('p','fb');
       (ch.ord||perm('guia/'+e.id+'#'+ci,ch.o.length)).forEach((oi,pos)=>{const b=el('button','opt','<span class="k">'+'ABCDE'[pos]+'</span><span>'+ch.o[oi]+'</span>');
         b.onclick=()=>{if(oi===0){b.classList.add('good');g.querySelectorAll('.opt').forEach(x=>x.disabled=true);fb.className='fb good';fb.textContent='¡Correcto!';okc++;prog()}
           else{b.classList.add('bad');b.disabled=true;fb.className='fb bad';fb.textContent='No es esa. Intenta otra opción o mira la solución.'}};g.append(b)});
@@ -1819,18 +1936,27 @@ function startSim(free){const sp=C.sim;const s=cs(C.id);const seed=(s.sim.n||0)+
 function renderSim(){const m=$('simmain');m.innerHTML='';
   SIMS.qs.forEach((q,qi)=>{const e=q.ex;const box=el('div','q');box.id='sq'+qi;box.append(el('h3',null,'Pregunta '+(qi+1)+': '+q.slot.name+' <span>'+q.slot.pts+(q.slot.pts===1?' pt':' pts')+'</span>'));
     const en=el('div','enun',e.q);en.style.margin='0';if(e.fig)en.append(el('figure',null,F[e.fig]));box.append(en);
-    e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));const g=el('div','opts');
+    e.checks.forEach((ch,ci)=>{const cb=el('div','chk');cb.style.marginTop='10px';cb.append(el('p',null,ch.p));
+      if(ch.t==='code'){const xb=codeBox(ch,{noCheck:true,onEdit:simProg});(q.cb||(q.cb={}))[ci]=xb;cb.append(xb.el);box.append(cb);return}
+      const g=el('div','opts');g.dataset.ci=ci;
       (ch.ord||perm(SIMS.seed+e.id+'#'+ci,ch.o.length)).forEach((oi,pos)=>{const b=el('button','opt','<span class="k">'+'ABCDE'[pos]+'</span><span>'+ch.o[oi]+'</span>');b.dataset.oi=oi;
         b.onclick=()=>{if(SIMS.done)return;q.sel[ci]=oi;g.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));simProg()};g.append(b)});cb.append(g);box.append(cb)});
     m.append(box)});simProg();typeset(m)}
-function simProg(){const need=SIMS.qs.reduce((a,q)=>a+q.ex.checks.length,0),have=SIMS.qs.reduce((a,q)=>a+q.sel.filter(v=>v!=null).length,0);$('simprog').textContent=have+' de '+need+' respuestas marcadas'}
-let sendArm=0;$('simsend').onclick=()=>{const need=SIMS.qs.reduce((a,q)=>a+q.ex.checks.length,0),have=SIMS.qs.reduce((a,q)=>a+q.sel.filter(v=>v!=null).length,0);
+const simHave=()=>SIMS.qs.reduce((a,q)=>a+q.ex.checks.filter((ch,ci)=>ch.t==='code'?!!(q.cb&&q.cb[ci]&&q.cb[ci].dirty()):q.sel[ci]!=null).length,0);
+function simProg(){if(!SIMS)return;const need=SIMS.qs.reduce((a,q)=>a+q.ex.checks.length,0),have=simHave();$('simprog').textContent=have+' de '+need+' respuestas marcadas'}
+let sendArm=0;$('simsend').onclick=()=>{if(SIMS&&SIMS.grading)return;const need=SIMS.qs.reduce((a,q)=>a+q.ex.checks.length,0),have=simHave();
   if(have<need&&!sendArm){sendArm=1;$('simsend').textContent='Faltan '+(need-have)+'. ¿Entregar igual?';setTimeout(()=>{sendArm=0;$('simsend').textContent='Entregar'},3500);return}sendArm=0;$('simsend').textContent='Entregar';gradeSim(false)};
 let backArm=0;$('simback').onclick=()=>{if(SIMS&&!SIMS.done&&!backArm){backArm=1;$('simback').textContent='¿Salir? Se pierde el intento';setTimeout(()=>{backArm=0;$('simback').textContent='← Salir'},3500);return}
   backArm=0;$('simback').textContent='← Salir';SIMS=null;openCourse(C.id)};
-function gradeSim(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
-  SIMS.qs.forEach((q,qi)=>{const n=q.ex.checks.length;let ok=0;q.ex.checks.forEach((ch,ci)=>{if(q.sel[ci]===0)ok++});q.pts=q.slot.pts*ok/n;nota+=q.pts;
-    const box=$('sq'+qi);box.classList.add(ok===n?'right':'wrong');box.querySelectorAll('.opts').forEach((g,ci)=>{g.querySelectorAll('.opt').forEach(b=>{b.disabled=true;const oi=+b.dataset.oi;if(oi===0)b.classList.add('good');else if(q.sel[ci]===oi)b.classList.add('bad')})});
+async function gradeSim(timeout){if(!SIMS||SIMS.done||SIMS.grading)return;const cq=SIMS.qs.filter(q=>q.cb);
+  if(cq.length){SIMS.grading=true;$('simsend').disabled=true;$('simprog').textContent='⏳ Corrigiendo tu código…';
+    for(const q of cq){q.cs={};q.cr={};for(const ci in q.cb){const r=await q.cb[ci].check(false);q.cs[ci]=r?r.pass/r.total:0;q.cr[ci]=r}}
+    $('simsend').disabled=false;SIMS.grading=false}
+  gradeSimNow(timeout)}
+function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
+  SIMS.qs.forEach((q,qi)=>{const n=q.ex.checks.length;let ok=0;q.ex.checks.forEach((ch,ci)=>{if(ch.t==='code')ok+=(q.cs&&q.cs[ci])||0;else if(q.sel[ci]===0)ok++});q.pts=q.slot.pts*ok/n;nota+=q.pts;
+    const box=$('sq'+qi);box.classList.add(ok===n?'right':'wrong');if(q.cb)Object.keys(q.cb).forEach(ci=>{const xb=q.cb[ci],r=q.cr&&q.cr[ci];xb.lock();if(r&&r.res)xb.show(r.res);else{xb.out.hidden=false;xb.out.innerHTML='';xb.out.append(el('p','fb bad',r?PYTO:PYFAIL))}});
+    box.querySelectorAll('.opts').forEach(g=>{const ci=+g.dataset.ci;g.querySelectorAll('.opt').forEach(b=>{b.disabled=true;const oi=+b.dataset.oi;if(oi===0)b.classList.add('good');else if(q.sel[ci]===oi)b.classList.add('bad')})});
     box.querySelector('h3 span').textContent=(Math.round(q.pts*10)/10)+' / '+q.slot.pts+' pts';
     const sb=el('div','acts');const bs=el('button','bs','Ver solución');const sol=el('div','sol');sol.hidden=true;sb.append(bs);box.append(sb,sol);
     bs.onclick=()=>{if(!sol.dataset.built){buildSol(q.ex,sol,false);typeset(sol)}sol.hidden=!sol.hidden;bs.textContent=sol.hidden?'Ver solución':'Ocultar solución'};q.ok=ok===n});

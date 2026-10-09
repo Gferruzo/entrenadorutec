@@ -1,0 +1,3364 @@
+{
+ "id": "poo-ep",
+ "code": "CS6004",
+ "name": "Programación Orientada a Objetos",
+ "exam": "Examen parcial 2026-2 (sem. 1–8)",
+ "short": "Examen parcial",
+ "sub": "Sem. 1–8",
+ "intro": "Practica leyendo y escribiendo código: en las preguntas «¿qué imprime?» marcas la salida y, después de intentarlo, puedes <b>ejecutar y modificar el código</b> en la solución. En los ejercicios de código escribes tu solución y el entrenador la <b>corre con pruebas automáticas</b> (Python funciona dentro de la app; la primera vez tarda unos segundos en cargar). <b>Mapa del parcial:</b> el examen parcial (teoría, 10 %) es en la semana 8 y cubre las semanas 1 a 8 (la 7 fue de exposiciones). El tema «Tipo PC1» reproduce la parte de computadora de la PC1.",
+ "form": "<p class=\"note\">Hoja de repaso con lo esencial del parcial (semanas 1 a 8). El examen parcial es de teoría: lee código, predice salidas, interpreta diagramas y escribe clases.</p>\n<div class=\"fgrid\">\n<div><b>Clase</b><br><code>class Dado:</code> · <code>def __init__(self, ...)</code> · <code>self.valor = ...</code></div>\n<div><b>Ocultar</b><br><code>self.__x</code> → AttributeError desde fuera</div>\n<div><b>Impresión</b><br><code>__str__</code> (print, str) · <code>__repr__</code> (repr, listas). Deben <b>retornar</b> str</div>\n<div><b>Aritméticos</b><br><code>+ __add__ · - __sub__ · * __mul__ · / __truediv__ · // __floordiv__ · % __mod__ · ** __pow__</code></div>\n<div><b>Por la derecha</b><br><code>__radd__ · __rsub__ · __rmul__</code> (cuando el objeto está a la derecha)</div>\n<div><b>Asignación aumentada</b><br><code>+= __iadd__ · -= __isub__ · *= __imul__</code> → <b>return self</b></div>\n<div><b>Comparación</b><br><code>&lt; __lt__ · &gt; __gt__ · &lt;= __le__ · &gt;= __ge__ · == __eq__ · != __ne__</code></div>\n<div><b>Conversión</b><br><code>__int__ · __float__ · __bool__ · __str__</code></div>\n<div><b>Otros</b><br><code>__len__ · __call__ · __contains__ · __getitem__ · __iter__</code></div>\n<div><b>Unicode</b><br><code>chr(0x2680)</code> ⚀ … ⚅ · ♠ 2660 · ♣ 2663 · ♥ 2665 · ♦ 2666 · ⬛ 2B1B · ⬜ 2B1C</div>\n<div><b>Atributo de clase</b><br><code>Clase.cantidad += 1</code>; subrayado en UML</div>\n<div><b>Archivos</b><br><code>with open(r) as f: f.readline(); for l in f: l.strip().split(\",\")</code></div>\n<div><b>Módulos</b><br><code>from dado import Dado</code> · <code>if __name__ == \"__main__\":</code></div>\n<div><b>Relaciones (UML)</b><br>◆ composición (crea sus partes) · ◇ agregación (las recibe) · ▷ herencia</div>\n<div><b>random</b><br><code>randint(a, b)</code> incluye a y b · <code>choice(l)</code> · <code>shuffle(l)</code> · <code>uniform(a, b)</code></div>\n</div>",
+ "formSim": false,
+ "formLabel": "📋 Hoja de repaso",
+ "keyLabel": "Claves del tema",
+ "py": true,
+ "topics": [
+  {
+   "id": "py",
+   "name": "Sem. 1 · Repaso de Python",
+   "teo": "\n<p><code>input()</code> <strong>siempre devuelve un texto</strong> (<code>str</code>): para operar hay que convertirlo con <code>int()</code> o <code>float()</code>. <code>round(x, n)</code> redondea a <code>n</code> decimales y un <i>f-string</i> mete variables dentro de un texto: <code>f\"El volumen es {v}\"</code>.</p>\n<p><code>for i in range(n)</code> repite <code>n</code> veces con <code>i = 0, 1, …, n-1</code>; <code>range(a, b)</code> va de <code>a</code> hasta <code>b-1</code>. Una función se define con <code>def</code> y entrega su resultado con <code>return</code> (si no hay <code>return</code>, devuelve <code>None</code>).</p>\n<p>Del módulo <code>random</code>: <code>randint(a, b)</code> da un entero entre <code>a</code> y <code>b</code> <strong>incluidos los dos</strong>; <code>choice(lista)</code> elige un elemento al azar. Operadores: <code>/</code> división con decimales, <code>//</code> división entera, <code>%</code> resto, <code>**</code> potencia.</p>",
+   "form": [
+    "<code>input()</code> → <code>str</code>; convierte con <code>int()</code> / <code>float()</code>",
+    "<code>range(a, b)</code>: de <code>a</code> a <code>b-1</code>",
+    "<code>randint(1, 6)</code>: del 1 al 6, ambos incluidos",
+    "<code>17 // 5 = 3</code>, <code>17 % 5 = 2</code>, <code>2 ** 3 = 8</code>",
+    "Sin <code>return</code> la función devuelve <code>None</code>"
+   ],
+   "ex": [
+    {
+     "id": "py1",
+     "lvl": 1,
+     "title": "Volumen redondeado",
+     "q": "<pre class=\"py\"><code>cadena = \"1.5\"\narista = float(cadena)\nvolumen = round(arista**3, 1)\nprint(f\"El volumen del cubo es {volumen}\")</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">El volumen del cubo es 3.4</code>",
+        "<code class=\"out\">El volumen del cubo es 3.375</code>",
+        "<code class=\"out\">El volumen del cubo es 4.5</code>",
+        "<code class=\"out\">El volumen del cubo es {volumen}</code>",
+        "<code class=\"out\">El volumen del cubo es 3.3</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>float(\"1.5\")</code> convierte el texto en el número 1.5.",
+      "<code>1.5**3 = 3.375</code> y <code>round(3.375, 1)</code> lo deja con un decimal: 3.4.",
+      "El f-string reemplaza <code>{volumen}</code> por su valor."
+     ],
+     "ans": "<code class=\"out\">El volumen del cubo es 3.4</code>",
+     "hint": "Calcula 1.5³ y redondea a un decimal.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ent",
+       "fstr"
+      ]
+     ],
+     "play": "cadena = \"1.5\"\narista = float(cadena)\nvolumen = round(arista**3, 1)\nprint(f\"El volumen del cubo es {volumen}\")"
+    },
+    {
+     "id": "py2",
+     "lvl": 1,
+     "title": "¿Qué devuelve input?",
+     "q": "<p>Se ejecuta <code>n = input(\"Ingrese un número: \")</code> y el usuario escribe <code>25</code>. ¿Qué es <code>n</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El texto <code>\"25\"</code> (tipo <code>str</code>)",
+        "El entero <code>25</code> (tipo <code>int</code>)",
+        "El flotante <code>25.0</code>",
+        "<code>None</code>, porque input no retorna nada",
+        "Depende de lo que escriba el usuario"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>input</code> siempre devuelve lo que escribió el usuario como texto, aunque sean dígitos.",
+      "Para usarlo como número: <code>n = int(n)</code> (o <code>float(n)</code> si tiene decimales)."
+     ],
+     "ans": "El texto <code>\"25\"</code> (tipo <code>str</code>)",
+     "hint": "Piensa en <code>int(input(...))</code>: ¿por qué hace falta el int?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ent"
+      ]
+     ]
+    },
+    {
+     "id": "py3",
+     "lvl": 1,
+     "title": "Acumulador en un for",
+     "q": "<pre class=\"py\"><code>total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">10</code>",
+        "<code class=\"out\">15</code>",
+        "<code class=\"out\">4</code>",
+        "<code class=\"out\">5</code>",
+        "<code class=\"out\">1</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>range(1, 5)</code> genera 1, 2, 3, 4 (el 5 no entra).",
+      "Se acumula 1 + 2 + 3 + 4 = 10."
+     ],
+     "ans": "<code class=\"out\">10</code>",
+     "hint": "¿El 5 se incluye en range(1, 5)?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rango"
+      ]
+     ],
+     "play": "total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)"
+    },
+    {
+     "id": "py4",
+     "lvl": 2,
+     "title": "Operadores aritméticos",
+     "q": "<pre class=\"py\"><code>print(17 // 5, 17 % 5, 2 ** 3, 7 / 2)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">3 2 8 3.5</code>",
+        "<code class=\"out\">3.4 2 8 3.5</code>",
+        "<code class=\"out\">3 2 6 3</code>",
+        "<code class=\"out\">3 2 8 3</code>",
+        "<code class=\"out\">2 3 8 3.5</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>//</code> es la división entera: 17 // 5 = 3.",
+      "<code>%</code> es el resto: 17 = 5·3 + 2, así que 17 % 5 = 2.",
+      "<code>**</code> es potencia (2³ = 8) y <code>/</code> siempre da flotante: 3.5."
+     ],
+     "ans": "<code class=\"out\">3 2 8 3.5</code>",
+     "hint": "Uno es división entera, otro el resto, otro la potencia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ops"
+      ]
+     ],
+     "play": "print(17 // 5, 17 % 5, 2 ** 3, 7 / 2)"
+    },
+    {
+     "id": "py5",
+     "lvl": 1,
+     "title": "randint",
+     "q": "<p>¿Qué valores puede devolver <code>randint(1, 6)</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Cualquier entero del 1 al 6, incluidos el 1 y el 6",
+        "Del 1 al 5 (el 6 no se incluye)",
+        "Del 0 al 6",
+        "Cualquier número real entre 1 y 6",
+        "Solo el 1 o el 6"
+       ]
+      }
+     ],
+     "steps": [
+      "A diferencia de <code>range</code>, <code>randint(a, b)</code> incluye los dos extremos.",
+      "Por eso sirve directo para simular un dado."
+     ],
+     "ans": "Cualquier entero del 1 al 6, incluidos el 1 y el 6",
+     "hint": "No es como range.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rand"
+      ]
+     ]
+    },
+    {
+     "id": "py6",
+     "lvl": 2,
+     "title": "Funciones con return",
+     "q": "<pre class=\"py\"><code>def calcular_volumen(arista):\n    volumen = arista ** 3\n    return round(volumen, 1)\n\ndef imprimir_volumen(volumen):\n    print(f\"El volumen del cubo es {volumen}\")\n\nv = calcular_volumen(2)\nr = imprimir_volumen(v)\nprint(r)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">El volumen del cubo es 8\nNone</code>",
+        "<code class=\"out\">El volumen del cubo es 8</code>",
+        "<code class=\"out\">El volumen del cubo es 8.0\n8.0</code>",
+        "<code class=\"out\">None</code>",
+        "<code class=\"out\">El volumen del cubo es 8\nEl volumen del cubo es 8</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>calcular_volumen(2)</code> devuelve <code>8</code> (round de un entero sigue siendo entero).",
+      "<code>imprimir_volumen</code> imprime el mensaje pero no tiene <code>return</code>, así que devuelve <code>None</code>.",
+      "Por eso <code>print(r)</code> muestra <code>None</code>."
+     ],
+     "ans": "<code class=\"out\">El volumen del cubo es 8\nNone</code>",
+     "hint": "¿Qué devuelve una función que no tiene return?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ret"
+      ]
+     ],
+     "play": "def calcular_volumen(arista):\n    volumen = arista ** 3\n    return round(volumen, 1)\n\ndef imprimir_volumen(volumen):\n    print(f\"El volumen del cubo es {volumen}\")\n\nv = calcular_volumen(2)\nr = imprimir_volumen(v)\nprint(r)"
+    },
+    {
+     "id": "py7",
+     "lvl": 2,
+     "title": "Clasificar manzanas",
+     "q": "<p>Escribe la función <code>grupo(peso)</code> que devuelva <code>\"Grupo A\"</code> si el peso está entre 100 y 150 gramos (inclusive), <code>\"Grupo B\"</code> si está entre 151 y 200, y <code>\"No válido\"</code> en otro caso. <b>Devuelve</b> el texto, no lo imprimas.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def grupo(peso):\n    pass",
+       "tests": [
+        {
+         "n": "grupo(120)",
+         "run": "print(grupo(120))",
+         "out": "Grupo A"
+        },
+        {
+         "n": "Bordes 100 y 150",
+         "run": "print(grupo(100), grupo(150))",
+         "out": "Grupo A Grupo A"
+        },
+        {
+         "n": "Bordes 151 y 200",
+         "run": "print(grupo(151), grupo(200))",
+         "out": "Grupo B Grupo B"
+        },
+        {
+         "n": "Fuera de rango",
+         "run": "print(grupo(99), grupo(201), grupo(51))",
+         "out": "No válido No válido No válido"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Python permite comparaciones encadenadas: <code>100 &lt;= peso &lt;= 150</code>.",
+      "Usa <code>if / elif / else</code> y <code>return</code> en cada rama.",
+      "Una solución posible:<pre class=\"py\"><code>def grupo(peso):\n    if 100 &lt;= peso &lt;= 150:\n        return \"Grupo A\"\n    elif 150 &lt; peso &lt;= 200:\n        return \"Grupo B\"\n    else:\n        return \"No válido\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Cuidado con los bordes: 150 es A y 151 es B.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cond"
+      ]
+     ]
+    },
+    {
+     "id": "py8",
+     "lvl": 3,
+     "title": "Contar frutas",
+     "q": "<p>Escribe la función <code>contar(frutas)</code> que reciba una lista de textos y devuelva un <b>diccionario</b> con cuántas veces aparece cada fruta. Por ejemplo, <code>contar([\"pera\", \"piña\", \"pera\"])</code> devuelve <code>{\"pera\": 2, \"piña\": 1}</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def contar(frutas):\n    conteo = {}\n    return conteo",
+       "tests": [
+        {
+         "n": "Ejemplo del enunciado",
+         "run": "print(contar([\"pera\", \"piña\", \"pera\"]))",
+         "out": "{'pera': 2, 'piña': 1}"
+        },
+        {
+         "n": "Lista vacía",
+         "run": "print(contar([]))",
+         "out": "{}"
+        },
+        {
+         "n": "Muchas frutas",
+         "run": "r = contar([\"manzana\"]*7 + [\"pera\"]*3 + [\"piña\"])\nprint(r[\"manzana\"], r[\"pera\"], r[\"piña\"])",
+         "out": "7 3 1"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Recorre la lista y suma 1 en la llave de cada fruta.",
+      "<code>conteo.get(fruta, 0)</code> devuelve 0 si la fruta todavía no está en el diccionario.",
+      "Una solución posible:<pre class=\"py\"><code>def contar(frutas):\n    conteo = {}\n    for fruta in frutas:\n        conteo[fruta] = conteo.get(fruta, 0) + 1\n    return conteo</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "dict.get(llave, valor_por_defecto) evita el KeyError.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dget"
+      ]
+     ]
+    },
+    {
+     "id": "py9",
+     "lvl": 2,
+     "title": "Parque de cubos (con input)",
+     "q": "<p>Escribe un programa que lea un entero <code>n</code> y luego <code>n</code> aristas (una por línea). Para cada una imprime <code>El volumen del cubo es X</code>, con <code>X</code> redondeado a 1 decimal. <i>Las pruebas le dan las entradas a tu <code>input()</code> automáticamente.</i></p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "n = int(input(\"Ingrese cantidad de repeticiones : \"))",
+       "tests": [
+        {
+         "n": "2 cubos",
+         "in": "2\n1.23\n2",
+         "out": "El volumen del cubo es 1.9\nEl volumen del cubo es 8.0"
+        },
+        {
+         "n": "1 cubo",
+         "in": "1\n0.5",
+         "out": "El volumen del cubo es 0.1"
+        },
+        {
+         "n": "0 cubos",
+         "in": "0",
+         "out": ""
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Lee <code>n</code> con <code>int(input())</code> y repite con <code>for i in range(n)</code>.",
+      "Dentro del bucle: leer con <code>float</code>, elevar al cubo, redondear e imprimir con un f-string.",
+      "Una solución posible:<pre class=\"py\"><code>n = int(input(\"Ingrese cantidad de repeticiones : \"))\nfor i in range(n):\n    arista = float(input(\"Ingrese el valor de la arista : \"))\n    volumen = round(arista ** 3, 1)\n    print(f\"El volumen del cubo es {volumen}\")</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "El mensaje del input no se compara: solo lo que imprimes con print.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ent",
+       "rango"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de la POO hay que manejar sin dudar la entrada y salida, los bucles, las funciones y las listas: todo el curso se apoya en eso.</p>\n<h3>Conceptos clave</h3><ul><li><code>input</code> lee texto; si necesitas un número, conviértelo.</li><li>Las funciones modularizan: una para leer, otra para calcular, otra para imprimir (como en el parque de cubos).</li><li>Para contar elementos se usa un acumulador o un diccionario.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>arista = float(input(\"Arista: \"))</code> y luego <code>print(f\"El volumen del cubo es {round(arista**3, 1)}\")</code>.</div>\n<div class=\"err\"><b>Error común:</b> hacer <code>input() + 1</code>: falla porque es texto + número.</div>"
+  },
+  {
+   "id": "clases",
+   "name": "Sem. 2 · Clases y objetos",
+   "teo": "\n<p>Una <strong>clase</strong> es el molde y un <strong>objeto</strong> (instancia) es cada cosa creada con ese molde: <code>cubo = Cubo(1.98)</code>. El <strong>constructor</strong> <code>__init__</code> se ejecuta al crear el objeto y ahí se definen sus <strong>atributos</strong> con <code>self.atributo = valor</code>.</p>\n<p><code>self</code> es el propio objeto: todo método lo recibe como primer parámetro, pero al llamarlo no se escribe (<code>cubo.obtener_volumen()</code> equivale a <code>Cubo.obtener_volumen(cubo)</code>). Cada objeto guarda sus propios atributos.</p>\n<p>Un atributo con doble guion bajo, como <code>self.__clave</code>, queda <strong>oculto</strong>: desde fuera de la clase <code>obj.__clave</code> da <code>AttributeError</code> (Python le cambia el nombre a <code>_Clase__clave</code>). Es la forma de <strong>encapsular</strong> datos que no deben tocarse.</p>",
+   "form": [
+    "<code>obj = Clase(args)</code> llama a <code>__init__(self, args)</code>",
+    "Atributo: <code>self.x = …</code> dentro de un método",
+    "Método: <code>def m(self, …)</code>; se llama <code>obj.m(…)</code>",
+    "<code>self.__x</code>: oculto fuera de la clase",
+    "Asignar <code>a = b</code> no copia el objeto: ambos nombres apuntan al mismo"
+   ],
+   "ex": [
+    {
+     "id": "cl1",
+     "lvl": 1,
+     "title": "Clase y objeto",
+     "q": "<p>En <code>cubo = Cubo(1.98)</code>, ¿qué es cada cosa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>Cubo</code> es la clase y <code>cubo</code> es un objeto (instancia) de ella",
+        "<code>Cubo</code> es un objeto y <code>cubo</code> es la clase",
+        "<code>Cubo</code> es una función y <code>cubo</code> un número",
+        "Ambos son la misma clase",
+        "<code>1.98</code> es el objeto"
+       ]
+      }
+     ],
+     "steps": [
+      "La clase es el molde (<code>class Cubo:</code>); al llamarla con paréntesis se crea un objeto nuevo.",
+      "El 1.98 llega al constructor <code>__init__</code> como el parámetro <code>arista</code>."
+     ],
+     "ans": "<code>Cubo</code> es la clase y <code>cubo</code> es un objeto (instancia) de ella",
+     "hint": "Por convención las clases empiezan con mayúscula.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "claseobj"
+      ]
+     ]
+    },
+    {
+     "id": "cl2",
+     "lvl": 1,
+     "title": "Un cubo y su volumen",
+     "q": "<pre class=\"py\"><code>class Cubo:\n    def __init__(self, arista):\n        self.arista = arista\n\n    def obtener_volumen(self):\n        return round(self.arista**3, 1)\n\ncubo = Cubo(2)\ncubo.arista = 3\nprint(cubo.obtener_volumen())</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">27</code>",
+        "<code class=\"out\">8</code>",
+        "<code class=\"out\">3</code>",
+        "<code class=\"out\">27.0</code>",
+        "<code class=\"out\">9</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El objeto se crea con arista 2, pero luego se cambia el atributo a 3.",
+      "El método usa el valor actual: 3³ = 27."
+     ],
+     "ans": "<code class=\"out\">27</code>",
+     "hint": "Los atributos se pueden cambiar después de crear el objeto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "self"
+      ]
+     ],
+     "play": "class Cubo:\n    def __init__(self, arista):\n        self.arista = arista\n\n    def obtener_volumen(self):\n        return round(self.arista**3, 1)\n\ncubo = Cubo(2)\ncubo.arista = 3\nprint(cubo.obtener_volumen())"
+    },
+    {
+     "id": "cl3",
+     "lvl": 2,
+     "title": "El candado",
+     "q": "<pre class=\"py\"><code>class Candado:\n    def __init__(self):\n        self.clave_secreta = 33\n        self.abierto = False\n\n    def abrir(self, llave):\n        print(f\"Se ingresa la llave {llave}\")\n        if llave == self.clave_secreta:\n            self.abierto = True\n\n    def imprimir_estado(self):\n        if self.abierto:\n            print(\"Candado abierto\")\n        else:\n            print(\"Candado cerrado\")\n\nc = Candado()\nc.abrir(30)\nc.abrir(33)\nc.imprimir_estado()</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Se ingresa la llave 30\nSe ingresa la llave 33\nCandado abierto</code>",
+        "<code class=\"out\">Se ingresa la llave 30\nCandado cerrado\nSe ingresa la llave 33\nCandado abierto</code>",
+        "<code class=\"out\">Candado abierto</code>",
+        "<code class=\"out\">Se ingresa la llave 30\nSe ingresa la llave 33\nCandado cerrado</code>",
+        "<code class=\"out\">Se ingresa la llave 33\nCandado abierto</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada llamada a <code>abrir</code> imprime la llave ingresada.",
+      "Con 30 no pasa nada; con 33 coincide y <code>self.abierto</code> pasa a <code>True</code>.",
+      "<code>imprimir_estado</code> se llama una sola vez, al final."
+     ],
+     "ans": "<code class=\"out\">Se ingresa la llave 30\nSe ingresa la llave 33\nCandado abierto</code>",
+     "hint": "Cuenta cuántas veces se llama a cada método.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "self"
+      ]
+     ],
+     "play": "class Candado:\n    def __init__(self):\n        self.clave_secreta = 33\n        self.abierto = False\n\n    def abrir(self, llave):\n        print(f\"Se ingresa la llave {llave}\")\n        if llave == self.clave_secreta:\n            self.abierto = True\n\n    def imprimir_estado(self):\n        if self.abierto:\n            print(\"Candado abierto\")\n        else:\n            print(\"Candado cerrado\")\n\nc = Candado()\nc.abrir(30)\nc.abrir(33)\nc.imprimir_estado()"
+    },
+    {
+     "id": "cl4",
+     "lvl": 2,
+     "title": "MejorCandado",
+     "q": "<pre class=\"py\"><code>class MejorCandado:\n    def __init__(self):\n        self.__clave_ultra_secreta = 4521\n        self.abierto = False\n\nc = MejorCandado()\nprint(c.abierto)\nprint(c.__clave_ultra_secreta)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">False\n<b class=\"perr\">💥 AttributeError</b></code>",
+        "<code class=\"out\">False\n4521</code>",
+        "<code class=\"out\">4521</code>",
+        "<code class=\"out\">False\nNone</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>c.abierto</code> es público: se imprime <code>False</code>.",
+      "El atributo <code>__clave_ultra_secreta</code> tiene doble guion bajo: fuera de la clase no existe con ese nombre y Python lanza <code>AttributeError</code>.",
+      "Así la clave no se puede leer ni cambiar desde el programa principal: eso es encapsular."
+     ],
+     "ans": "<code class=\"out\">False\n<b class=\"perr\">💥 AttributeError</b></code>",
+     "hint": "El primer print sí funciona.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "priv"
+      ]
+     ],
+     "play": "class MejorCandado:\n    def __init__(self):\n        self.__clave_ultra_secreta = 4521\n        self.abierto = False\n\nc = MejorCandado()\nprint(c.abierto)\nprint(c.__clave_ultra_secreta)"
+    },
+    {
+     "id": "cl5",
+     "lvl": 3,
+     "title": "Dos nombres, un objeto",
+     "q": "<pre class=\"py\"><code>class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\nd1 = Dado(3)\nd2 = Dado(5)\nd1 = d2\nd1.valor = 1\nprint(d1.valor, d2.valor)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">1 1</code>",
+        "<code class=\"out\">1 5</code>",
+        "<code class=\"out\">3 5</code>",
+        "<code class=\"out\">3 1</code>",
+        "<code class=\"out\">5 5</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>d1 = d2</code> no copia el dado: hace que <code>d1</code> apunte al <b>mismo</b> objeto que <code>d2</code>.",
+      "Al cambiar <code>d1.valor</code> se cambia ese único objeto, así que los dos nombres muestran 1."
+     ],
+     "ans": "<code class=\"out\">1 1</code>",
+     "hint": "Una asignación entre objetos no crea un objeto nuevo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "alias"
+      ]
+     ],
+     "play": "class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\nd1 = Dado(3)\nd2 = Dado(5)\nd1 = d2\nd1.valor = 1\nprint(d1.valor, d2.valor)"
+    },
+    {
+     "id": "cl6",
+     "lvl": 2,
+     "title": "Olvidar self",
+     "q": "<pre class=\"py\"><code>class Dado:\n    def __init__(self):\n        self.valor = 1\n\n    def lanzar():\n        print(\"lanzando\")\n\nd = Dado()\nd.lanzar()</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+        "<code class=\"out\">lanzando</code>",
+        "<code class=\"out\">1</code>",
+        "<code class=\"out\">(no imprime nada)</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>d.lanzar()</code> equivale a <code>Dado.lanzar(d)</code>: Python le pasa el objeto como primer argumento.",
+      "Como <code>lanzar</code> no tiene el parámetro <code>self</code>, recibe 1 argumento sin esperarlo: <code>TypeError</code>."
+     ],
+     "ans": "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+     "hint": "¿Qué recibe siempre un método como primer argumento?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "self"
+      ]
+     ],
+     "play": "class Dado:\n    def __init__(self):\n        self.valor = 1\n\n    def lanzar():\n        print(\"lanzando\")\n\nd = Dado()\nd.lanzar()"
+    },
+    {
+     "id": "cl7",
+     "lvl": 2,
+     "title": "Implementa el Dado",
+     "q": "<p>Completa la clase <code>Dado</code>: en el constructor crea el atributo <code>valor</code> y lanza el dado; <code>lanzar()</code> guarda en <code>valor</code> un entero al azar del 1 al 6; <code>imprimir()</code> imprime el valor.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from random import randint\n\nclass Dado:\n    def __init__(self):\n        ...\n\n    def lanzar(self):\n        ...\n\n    def imprimir(self):\n        ...",
+       "tests": [
+        {
+         "n": "Al crearlo ya tiene un valor del 1 al 6",
+         "run": "d = Dado()\nprint(d.valor in [1, 2, 3, 4, 5, 6])",
+         "out": "True"
+        },
+        {
+         "n": "En 600 lanzamientos salen las 6 caras",
+         "run": "d = Dado()\nvistos = set()\nfor _ in range(600):\n    d.lanzar()\n    vistos.add(d.valor)\nprint(sorted(vistos))",
+         "out": "[1, 2, 3, 4, 5, 6]"
+        },
+        {
+         "n": "imprimir() muestra el valor",
+         "run": "d = Dado()\nd.valor = 4\nd.imprimir()",
+         "out": "4"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El atributo se crea con <code>self.valor</code> en el constructor.",
+      "<code>lanzar</code> usa <code>randint(1, 6)</code> y lo guarda en <code>self.valor</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = None\n        self.lanzar()\n\n    def lanzar(self):\n        self.valor = randint(1, 6)\n\n    def imprimir(self):\n        print(self.valor)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Desde el constructor puedes llamar a self.lanzar().",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "self",
+       "rand"
+      ]
+     ]
+    },
+    {
+     "id": "cl8",
+     "lvl": 3,
+     "title": "De tupla a clase Carta",
+     "q": "<p>Crea la clase <code>Carta</code> con atributos <code>número</code> y <code>palo</code> y un método <code>imprimir()</code> que muestre, por ejemplo, <code>7 de cocos</code>. Luego modifica <code>obtener_carta_aleatoria()</code> para que devuelva un objeto <code>Carta</code> en vez de una tupla.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from random import choice, randint\n\ndef obtener_carta_aleatoria():\n    palo = choice([\"cocos\", \"espadas\", \"tréboles\", \"corazones\"])\n    número = randint(1, 13)\n    return (número, palo)",
+       "tests": [
+        {
+         "n": "Carta(7, \"cocos\").imprimir()",
+         "run": "Carta(7, \"cocos\").imprimir()",
+         "out": "7 de cocos"
+        },
+        {
+         "n": "Atributos número y palo",
+         "run": "c = Carta(12, \"espadas\")\nprint(c.número, c.palo)",
+         "out": "12 espadas"
+        },
+        {
+         "n": "La función devuelve una Carta válida",
+         "run": "c = obtener_carta_aleatoria()\nprint(isinstance(c, Carta), 1 <= c.número <= 13, c.palo in [\"cocos\", \"espadas\", \"tréboles\", \"corazones\"])",
+         "out": "True True True"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El constructor recibe <code>número</code> y <code>palo</code> y los guarda en <code>self</code>.",
+      "La única diferencia en la función es la última línea: <code>return Carta(número, palo)</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from random import choice, randint\n\nclass Carta:\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def imprimir(self):\n        print(f\"{self.número} de {self.palo}\")\n\ndef obtener_carta_aleatoria():\n    palo = choice([\"cocos\", \"espadas\", \"tréboles\", \"corazones\"])\n    número = randint(1, 13)\n    return Carta(número, palo)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Copia la idea del ejemplo de clase: solo cambia el return.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "claseobj"
+      ]
+     ]
+    },
+    {
+     "id": "cl9",
+     "lvl": 2,
+     "title": "mejor_input",
+     "q": "<p>Escribe la función <code>mejor_input(msj)</code>: pide un número con <code>input(msj)</code>, lo convierte a <code>float</code> y, mientras sea negativo, lo vuelve a pedir. Devuelve el primer valor no negativo.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def mejor_input(msj):\n    return float(input(msj))",
+       "tests": [
+        {
+         "n": "Positivo a la primera",
+         "in": "2.5",
+         "run": "print(mejor_input(\"Arista: \"))",
+         "out": "2.5"
+        },
+        {
+         "n": "Rechaza dos negativos",
+         "in": "-3\n-1\n1.98",
+         "run": "print(mejor_input(\"Arista: \"))",
+         "out": "1.98"
+        },
+        {
+         "n": "El 0 se acepta",
+         "in": "-0.5\n0",
+         "run": "print(mejor_input(\"Radio: \"))",
+         "out": "0.0"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Lee una vez y usa <code>while valor &lt; 0</code> para volver a pedir.",
+      "Termina con <code>return valor</code>.",
+      "Una solución posible:<pre class=\"py\"><code>def mejor_input(msj):\n    valor = float(input(msj))\n    while valor &lt; 0:\n        valor = float(input(msj))\n    return valor</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Un while que se repite mientras el dato sea inválido.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ent"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>La POO junta en un mismo lugar los datos (atributos) y lo que se puede hacer con ellos (métodos). Pasar de una función que devuelve una tupla a una clase <code>Carta</code> es el ejemplo típico.</p>\n<h3>Conceptos clave</h3><ul><li><code>__init__</code> inicializa; no se llama a mano.</li><li><code>self</code> distingue el atributo del objeto de una variable local.</li><li>Los atributos con <code>__</code> encapsulan (MejorCandado).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>class Dado:</code> con <code>self.valor</code>, un método <code>lanzar()</code> que hace <code>self.valor = randint(1, 6)</code> e <code>imprimir()</code>.</div>\n<div class=\"err\"><b>Error común:</b> escribir <code>valor = randint(1,6)</code> sin <code>self.</code>: eso es una variable local que desaparece al terminar el método.</div>"
+  },
+  {
+   "id": "str",
+   "name": "Sem. 3 · __str__, Unicode y atributos de clase",
+   "teo": "\n<p>Los <strong>métodos especiales</strong> (o <i>dunder</i>, por el doble guion bajo) le dicen a Python cómo tratar tus objetos. <code>__str__(self)</code> define qué se ve con <code>print(obj)</code> o <code>str(obj)</code> y <strong>debe retornar un texto</strong> (no imprimirlo). Sin <code>__str__</code>, <code>print</code> muestra algo como <code>&lt;__main__.Dado object at 0x7f…&gt;</code>.</p>\n<p><code>chr(n)</code> devuelve el carácter Unicode número <code>n</code>: <code>chr(0x2680)</code> es ⚀ y del ⚀ al ⚅ son consecutivos, por eso <code>chr(0x267f + valor)</code> dibuja la cara del dado. En un texto también vale <code>\"\\u2680\"</code>.</p>\n<p>Un <strong>atributo de clase</strong> se define dentro de la clase pero fuera de los métodos y lo comparten todos los objetos (se accede como <code>Carta.unicode</code>). En el diagrama de clases va <u>subrayado</u>; el <code>+</code> indica que es público. <code>dic.get(llave, defecto)</code> devuelve el valor o el defecto si la llave no existe.</p>",
+   "form": [
+    "<code>__str__</code> → usado por <code>print</code> y <code>str()</code>; debe <b>retornar</b> str",
+    "<code>chr(0x2680)</code> = ⚀ … <code>chr(0x2685)</code> = ⚅",
+    "Atributo de clase: <code>Clase.atributo</code>, subrayado en UML",
+    "<code>d.get(k, defecto)</code>: sin KeyError",
+    "UML: nombre / atributos / métodos; <code>+</code> público"
+   ],
+   "ex": [
+    {
+     "id": "st1",
+     "lvl": 1,
+     "title": "Imprimir un dado",
+     "q": "<pre class=\"py\"><code>class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\n    def __str__(self):\n        return f\"{chr(0x267f + self.valor)}:{self.valor}\"\n\nd = Dado(3)\nprint(d)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">⚂:3</code>",
+        "<code class=\"out\">⚃:3</code>",
+        "<code class=\"out\">3</code>",
+        "<code class=\"out\">⚂</code>",
+        "<code class=\"out\">&lt;__main__.Dado object&gt;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>print(d)</code> llama a <code>d.__str__()</code>.",
+      "0x267f + 3 = 0x2682, que es ⚂ (0x2680 es ⚀).",
+      "Luego se agrega <code>:3</code>."
+     ],
+     "ans": "<code class=\"out\">⚂:3</code>",
+     "hint": "0x2680 es la cara 1.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "strd",
+       "uni"
+      ]
+     ],
+     "play": "class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\n    def __str__(self):\n        return f\"{chr(0x267f + self.valor)}:{self.valor}\"\n\nd = Dado(3)\nprint(d)"
+    },
+    {
+     "id": "st2",
+     "lvl": 1,
+     "title": "Sin __str__",
+     "q": "<p>La clase <code>Jugador</code> <b>no</b> tiene <code>__str__</code>. ¿Qué muestra <code>print(Jugador(\"Mark\", 1000))</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Algo como <code>&lt;__main__.Jugador object at 0x7f3a…&gt;</code>",
+        "<code>Mark, 1000 pts.</code>",
+        "<code>Jugador(\"Mark\", 1000)</code>",
+        "Un error <code>TypeError</code>",
+        "Nada"
+       ]
+      }
+     ],
+     "steps": [
+      "Sin <code>__str__</code> (ni <code>__repr__</code>) Python usa la representación por defecto: el nombre de la clase y la dirección de memoria.",
+      "Para ver <code>Mark, 1000 pts.</code> hay que definir <code>__str__</code>."
+     ],
+     "ans": "Algo como <code>&lt;__main__.Jugador object at 0x7f3a…&gt;</code>",
+     "hint": "Python no adivina qué atributos mostrar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "strd"
+      ]
+     ],
+     "play": "class Jugador:\n    def __init__(self, nombre, puntaje):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\nprint(Jugador(\"Mark\", 1000))"
+    },
+    {
+     "id": "st3",
+     "lvl": 2,
+     "title": "__str__ con print",
+     "q": "<p>¿Qué pasa al ejecutar este código?</p><pre class=\"py\"><code>class Jugador:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def __str__(self):\n        print(f\"Jugador {self.nombre}\")\n\nprint(Jugador(\"Ana\"))</code></pre>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Imprime <code>Jugador Ana</code> y luego lanza <code>TypeError</code>, porque <code>__str__</code> devolvió <code>None</code>",
+        "Imprime <code>Jugador Ana</code> sin errores",
+        "Imprime <code>None</code>",
+        "Lanza <code>AttributeError</code>",
+        "No imprime nada"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>print(obj)</code> llama a <code>__str__</code>, que ejecuta su propio <code>print</code>: aparece <code>Jugador Ana</code>.",
+      "Pero <code>__str__</code> no tiene <code>return</code>, así que devuelve <code>None</code> y Python exige un texto: <code>TypeError: __str__ returned non-string</code>.",
+      "Corrección: <code>return f\"Jugador {self.nombre}\"</code>."
+     ],
+     "ans": "Imprime <code>Jugador Ana</code> y luego lanza <code>TypeError</code>, porque <code>__str__</code> devolvió <code>None</code>",
+     "hint": "¿Qué devuelve una función sin return?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "strd",
+       "ret"
+      ]
+     ],
+     "play": "class Jugador:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def __str__(self):\n        print(f\"Jugador {self.nombre}\")\n\nprint(Jugador(\"Ana\"))"
+    },
+    {
+     "id": "st4",
+     "lvl": 2,
+     "title": "Carta con atributos de clase",
+     "q": "<pre class=\"py\"><code>class Carta:\n    unicode = {\"espadas\": \"\\u2660\", \"tréboles\": \"\\u2663\",\n               \"corazones\": \"\\u2665\", \"cocos\": \"\\u2666\"}\n    números = {1: \"A\", 11: \"J\", 12: \"Q\", 13: \"K\"}\n\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def __str__(self):\n        palo = Carta.unicode.get(self.palo, self.palo)\n        num = Carta.números.get(self.número, self.número)\n        return f\"{num}{palo}\"\n\nprint(Carta(12, \"cocos\"), Carta(7, \"oros\"))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Q♦ 7oros</code>",
+        "<code class=\"out\">12♦ 7oros</code>",
+        "<code class=\"out\">Q♦ 7</code>",
+        "<code class=\"out\">Q♥ 7oros</code>",
+        "<code class=\"out\">Q♦ !KeyError</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Para <code>Carta(12, \"cocos\")</code>: <code>números.get(12, 12)</code> es <code>\"Q\"</code> y <code>unicode.get(\"cocos\")</code> es ♦.",
+      "Para <code>Carta(7, \"oros\")</code>: 7 no está en <code>números</code> y \"oros\" no está en <code>unicode</code>, así que <code>get</code> devuelve el valor por defecto (el mismo dato).",
+      "No hay KeyError porque se usa <code>get</code> y no <code>[ ]</code>."
+     ],
+     "ans": "<code class=\"out\">Q♦ 7oros</code>",
+     "hint": "get(llave, defecto) nunca lanza KeyError.",
+     "fig": "umlcarta",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clsattr",
+       "dget"
+      ]
+     ],
+     "play": "class Carta:\n    unicode = {\"espadas\": \"\\u2660\", \"tréboles\": \"\\u2663\",\n               \"corazones\": \"\\u2665\", \"cocos\": \"\\u2666\"}\n    números = {1: \"A\", 11: \"J\", 12: \"Q\", 13: \"K\"}\n\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def __str__(self):\n        palo = Carta.unicode.get(self.palo, self.palo)\n        num = Carta.números.get(self.número, self.número)\n        return f\"{num}{palo}\"\n\nprint(Carta(12, \"cocos\"), Carta(7, \"oros\"))"
+    },
+    {
+     "id": "st5",
+     "lvl": 1,
+     "title": "Leer un diagrama de clases",
+     "q": "<p>En el diagrama de la clase <code>Carta</code>, <code>unicode</code> y <code>números</code> aparecen subrayados. ¿Qué significa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Son atributos de clase: los comparten todos los objetos",
+        "Son atributos privados",
+        "Son métodos",
+        "Son parámetros del constructor",
+        "Son atributos que se pueden borrar"
+       ]
+      }
+     ],
+     "steps": [
+      "En UML, lo subrayado pertenece a la clase y no a cada instancia.",
+      "En Python se definen dentro de la clase pero fuera de los métodos y se usan como <code>Carta.unicode</code>. El <code>+</code> de adelante significa público."
+     ],
+     "ans": "Son atributos de clase: los comparten todos los objetos",
+     "hint": "Fíjate dónde se definen en el código.",
+     "fig": "umlcarta",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "uml",
+       "clsattr"
+      ]
+     ]
+    },
+    {
+     "id": "st6",
+     "lvl": 3,
+     "title": "Atributo de clase y self",
+     "q": "<pre class=\"py\"><code>class Contador:\n    total = 0\n\n    def __init__(self):\n        self.total += 1\n\na = Contador()\nb = Contador()\nprint(Contador.total, a.total, b.total)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">0 1 1</code>",
+        "<code class=\"out\">2 2 2</code>",
+        "<code class=\"out\">0 2 2</code>",
+        "<code class=\"out\">2 1 1</code>",
+        "<code class=\"out\">1 1 1</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>self.total += 1</code> es <code>self.total = self.total + 1</code>: lee el atributo de clase (0) pero <b>crea</b> un atributo nuevo en el objeto con valor 1.",
+      "Por eso cada objeto tiene <code>total = 1</code> y <code>Contador.total</code> sigue en 0.",
+      "Para contar instancias hay que escribir <code>Contador.total += 1</code> (como <code>Pera.cantidad</code>)."
+     ],
+     "ans": "<code class=\"out\">0 1 1</code>",
+     "hint": "Asignar con self crea un atributo del objeto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clsattr"
+      ]
+     ],
+     "play": "class Contador:\n    total = 0\n\n    def __init__(self):\n        self.total += 1\n\na = Contador()\nb = Contador()\nprint(Contador.total, a.total, b.total)"
+    },
+    {
+     "id": "st7",
+     "lvl": 2,
+     "title": "Clase Vector2D",
+     "q": "<p>Implementa <code>Vector2D</code> según su diagrama: atributos <code>x</code> e <code>y</code>, un método <code>sumar(otro)</code> que <b>devuelva un vector nuevo</b> con la suma coordenada a coordenada (sin modificar los originales) y <code>__str__</code> que devuelva <code>(x, y)</code>, por ejemplo <code>(4, 3)</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Vector2D:\n    def __init__(self, x, y):\n        ...",
+       "tests": [
+        {
+         "n": "print(Vector2D(1, 2))",
+         "run": "print(Vector2D(1, 2))",
+         "out": "(1, 2)"
+        },
+        {
+         "n": "(1, 2) + (3, 1)",
+         "run": "v1 = Vector2D(1, 2)\nv2 = Vector2D(3, 1)\nprint(v1.sumar(v2))",
+         "out": "(4, 3)"
+        },
+        {
+         "n": "No modifica los originales",
+         "run": "v1 = Vector2D(1, 2)\nv2 = Vector2D(3, 1)\nv3 = v1.sumar(v2)\nprint(v1, v2, isinstance(v3, Vector2D))",
+         "out": "(1, 2) (3, 1) True"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Constructor: guarda <code>x</code> e <code>y</code> en <code>self</code>.",
+      "<code>sumar</code> crea y retorna <code>Vector2D(self.x + otro.x, self.y + otro.y)</code>.",
+      "<code>__str__</code> retorna el texto con un f-string.",
+      "Una solución posible:<pre class=\"py\"><code>class Vector2D:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def sumar(self, otro):\n        return Vector2D(self.x + otro.x, self.y + otro.y)\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "sumar debe hacer return de un Vector2D.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "strd"
+      ]
+     ]
+    },
+    {
+     "id": "st8",
+     "lvl": 2,
+     "title": "Clase Jugador del diagrama",
+     "q": "<p>Implementa la clase <code>Jugador</code> del diagrama: constructor con <code>nombre</code> y <code>puntaje</code>, <code>agregar_puntaje(p)</code> que suma <code>p</code> al puntaje, y <code>__str__</code> que devuelva por ejemplo <code>Mark, 1000 pts.</code></p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Jugador:\n    ...",
+       "tests": [
+        {
+         "n": "Imprimir",
+         "run": "print(Jugador(\"Mark\", 1000))\nprint(Jugador(\"John Doe\", 1))",
+         "out": "Mark, 1000 pts.\nJohn Doe, 1 pts."
+        },
+        {
+         "n": "agregar_puntaje",
+         "run": "j = Jugador(\"Ana\", 10)\nj.agregar_puntaje(5)\nj.agregar_puntaje(20)\nprint(j)",
+         "out": "Ana, 35 pts."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Cada atributo del diagrama es un <code>self.…</code> en el constructor y cada método un <code>def</code>.",
+      "<code>__str__</code> retorna <code>f\"{self.nombre}, {self.puntaje} pts.\"</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Jugador:\n    def __init__(self, nombre, puntaje):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\n    def agregar_puntaje(self, p):\n        self.puntaje += p\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.puntaje} pts.\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Copia exactamente el formato: coma, espacio y \"pts.\".",
+     "fig": "umljug",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "uml",
+       "strd"
+      ]
+     ]
+    },
+    {
+     "id": "st9",
+     "lvl": 3,
+     "title": "Carta sin diccionarios",
+     "q": "<p>Reescribe <code>__str__</code> de <code>Carta</code> <b>sin usar diccionarios</b>, solo con <code>if / elif / else</code>: 1, 11, 12 y 13 se muestran como A, J, Q y K, y los palos como ♠ (espadas), ♣ (tréboles), ♥ (corazones) y ♦ (cocos). Ejemplo: <code>Carta(1, \"espadas\")</code> → <code>A♠</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Carta:\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def __str__(self):\n        return f\"{self.número}{self.palo}\"",
+       "tests": [
+        {
+         "n": "Figuras",
+         "run": "print(Carta(1, \"espadas\"), Carta(11, \"tréboles\"), Carta(12, \"corazones\"), Carta(13, \"cocos\"))",
+         "out": "A♠ J♣ Q♥ K♦"
+        },
+        {
+         "n": "Números normales",
+         "run": "print(Carta(2, \"cocos\"), Carta(10, \"espadas\"))",
+         "out": "2♦ 10♠"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Un bloque <code>if/elif/else</code> para el número y otro para el palo.",
+      "Los símbolos son <code>\"\\u2660\"</code>, <code>\"\\u2663\"</code>, <code>\"\\u2665\"</code> y <code>\"\\u2666\"</code> (o pégalos directamente).",
+      "Una solución posible:<pre class=\"py\"><code>class Carta:\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def __str__(self):\n        if self.número == 1:\n            num = \"A\"\n        elif self.número == 11:\n            num = \"J\"\n        elif self.número == 12:\n            num = \"Q\"\n        elif self.número == 13:\n            num = \"K\"\n        else:\n            num = self.número\n        if self.palo == \"espadas\":\n            palo = \"\\u2660\"\n        elif self.palo == \"tréboles\":\n            palo = \"\\u2663\"\n        elif self.palo == \"corazones\":\n            palo = \"\\u2665\"\n        else:\n            palo = \"\\u2666\"\n        return f\"{num}{palo}\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Dos cadenas de if: una para el número y otra para el palo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "uni",
+       "cond"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Con <code>__str__</code> tus objetos se imprimen bonito, y con los atributos de clase guardas datos comunes a todas las instancias (como las tablas de símbolos de la carta).</p>\n<h3>Conceptos clave</h3><ul><li><code>return</code> en <code>__str__</code>, nunca <code>print</code>.</li><li>Atributo de instancia (<code>self.x</code>) vs. de clase (<code>Clase.x</code>).</li><li>Del diagrama de clases sale el código: cada atributo es un <code>self.…</code> y cada método un <code>def</code>.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>Carta.números.get(12, 12)</code> da <code>\"Q\"</code>; <code>Carta.números.get(7, 7)</code> da <code>7</code>.</div>\n<div class=\"err\"><b>Error común:</b> modificar un atributo de clase con <code>self.total += 1</code>: crea un atributo nuevo en el objeto y el de la clase no cambia.</div>"
+  },
+  {
+   "id": "ops",
+   "name": "Sem. 4 · Sobrecarga de operadores",
+   "teo": "\n<p><strong>Sobrecargar</strong> un operador es definir qué hace con tus objetos. Cuando Python ve <code>a + b</code> ejecuta <code>a.__add__(b)</code>; <code>a * b</code> es <code>__mul__</code>, <code>a &lt; b</code> es <code>__lt__</code>, <code>a == b</code> es <code>__eq__</code>, etc. (tabla completa en la hoja de repaso). El método <strong>devuelve</strong> el resultado, normalmente un objeto nuevo.</p>\n<p>Si <code>a.__add__(b)</code> no sirve (por ejemplo, <code>2 + r</code> donde <code>2</code> es un <code>int</code>), Python intenta <code>b.__radd__(a)</code>, el operador «por la derecha». Con <code>isinstance(otro, int)</code> decides qué hacer según el tipo del otro operando.</p>\n<p><code>max</code>, <code>min</code> y <code>sorted</code> comparan con <code>&lt;</code>: si defines <code>__lt__</code>, funcionan con tus objetos. <code>__repr__</code> es la representación «técnica»: la usa <code>repr(obj)</code> y también se ve cuando imprimes una <strong>lista</strong> de objetos.</p>",
+   "form": [
+    "<code>+ __add__</code> · <code>- __sub__</code> · <code>* __mul__</code> · <code>/ __truediv__</code>",
+    "<code>&lt; __lt__</code> · <code>&gt; __gt__</code> · <code>== __eq__</code> · <code>&lt;= __le__</code>",
+    "<code>2 + r</code> → <code>r.__radd__(2)</code>",
+    "<code>isinstance(x, int)</code> → True/False",
+    "<code>print(lista)</code> usa <code>__repr__</code> de cada elemento"
+   ],
+   "ex": [
+    {
+     "id": "op1",
+     "lvl": 1,
+     "title": "Suma de racionales",
+     "q": "<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nb = Racional(1, 3)\nprint(a + b)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">5/6</code>",
+        "<code class=\"out\">2/5</code>",
+        "<code class=\"out\">1/6</code>",
+        "<code class=\"out\">5/6.0</code>",
+        "<code class=\"out\">&lt;__main__.Racional object&gt;</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>a + b</code> llama a <code>a.__add__(b)</code>.",
+      "num = 1·3 + 2·1 = 5 y den = 2·3 = 6.",
+      "Devuelve <code>Racional(5, 6)</code>, que se imprime con <code>__str__</code>: <code>5/6</code>."
+     ],
+     "ans": "<code class=\"out\">5/6</code>",
+     "hint": "Aplica la fórmula del __add__ a mano.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dunop"
+      ]
+     ],
+     "play": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nb = Racional(1, 3)\nprint(a + b)"
+    },
+    {
+     "id": "op2",
+     "lvl": 1,
+     "title": "Producto y denominador 0",
+     "q": "<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\nprint(Racional(2, 3) * Racional(3, 4), Racional(3, 0))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">6/12 3/1</code>",
+        "<code class=\"out\">1/2 3/0</code>",
+        "<code class=\"out\">6/12 !ZeroDivisionError</code>",
+        "<code class=\"out\">1/2 3/1</code>",
+        "<code class=\"out\">5/7 3/1</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>__mul__</code>: 2·3 = 6 y 3·4 = 12, así que <code>6/12</code> (la clase no simplifica).",
+      "En el constructor, si el denominador es 0 se reemplaza por 1: <code>3/1</code>."
+     ],
+     "ans": "<code class=\"out\">6/12 3/1</code>",
+     "hint": "La clase no simplifica la fracción.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dunop"
+      ]
+     ],
+     "play": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\nprint(Racional(2, 3) * Racional(3, 4), Racional(3, 0))"
+    },
+    {
+     "id": "op3",
+     "lvl": 1,
+     "title": "¿Qué dunder?",
+     "q": "<p>Quieres que <code>m1 &lt; m2</code> compare dos manzanas por su peso. ¿Qué método implementas?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>__lt__(self, otro)</code>",
+        "<code>__gt__(self, otro)</code>",
+        "<code>__le__(self, otro)</code>",
+        "<code>__cmp__(self, otro)</code>",
+        "<code>__less__(self, otro)</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>lt</code> = <i>less than</i> (menor que). <code>gt</code> es mayor que y <code>le</code> menor o igual.",
+      "Se implementa como <code>return self.peso &lt; otro.peso</code>."
+     ],
+     "ans": "<code>__lt__(self, otro)</code>",
+     "hint": "lt = less than.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dunop"
+      ]
+     ]
+    },
+    {
+     "id": "op4",
+     "lvl": 2,
+     "title": "Racional + entero",
+     "q": "<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nprint(a + 2)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>",
+        "<code class=\"out\">5/2</code>",
+        "<code class=\"out\">3/2</code>",
+        "<code class=\"out\">1/2</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>a + 2</code> llama a <code>a.__add__(2)</code>, así que <code>other</code> es el entero 2.",
+      "Dentro se hace <code>other.den</code>, pero un <code>int</code> no tiene atributo <code>den</code>: <code>AttributeError</code>.",
+      "Para arreglarlo hay que revisar el tipo con <code>isinstance(other, int)</code>."
+     ],
+     "ans": "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>",
+     "hint": "¿Qué es other aquí?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inst"
+      ]
+     ],
+     "play": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nprint(a + 2)"
+    },
+    {
+     "id": "op5",
+     "lvl": 2,
+     "title": "Entero + racional",
+     "q": "<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nprint(2 + a)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+        "<code class=\"out\">5/2</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>",
+        "<code class=\"out\">2/1</code>",
+        "<code class=\"out\">1/2</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero Python intenta <code>(2).__add__(a)</code>: el int no sabe sumar Racionales.",
+      "Luego busca <code>a.__radd__(2)</code>, pero la clase no lo tiene: <code>TypeError: unsupported operand type(s)</code>."
+     ],
+     "ans": "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+     "hint": "Cuando el objeto está a la derecha se usa otro dunder.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "radd"
+      ]
+     ],
+     "play": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\na = Racional(1, 2)\nprint(2 + a)"
+    },
+    {
+     "id": "op6",
+     "lvl": 2,
+     "title": "max con manzanas",
+     "q": "<pre class=\"py\"><code>class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __lt__(self, otro):\n        return self.peso &lt; otro.peso\n\n    def __str__(self):\n        return f\"Manzana({self.peso} gr.)\"\n\ncesto = [Manzana(140), Manzana(185), Manzana(120)]\nprint(max(cesto), min(cesto))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Manzana(185 gr.) Manzana(120 gr.)</code>",
+        "<code class=\"out\">Manzana(185 gr.) Manzana(185 gr.)</code>",
+        "<code class=\"out\">Manzana(120 gr.) Manzana(185 gr.)</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+        "<code class=\"out\">185 120</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>max</code> y <code>min</code> comparan los elementos con <code>&lt;</code>, que aquí compara pesos.",
+      "La más pesada es la de 185 g y la más liviana la de 120 g; se imprimen con <code>__str__</code>."
+     ],
+     "ans": "<code class=\"out\">Manzana(185 gr.) Manzana(120 gr.)</code>",
+     "hint": "Sin __lt__ max daría TypeError; aquí sí existe.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dunop"
+      ]
+     ],
+     "play": "class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __lt__(self, otro):\n        return self.peso < otro.peso\n\n    def __str__(self):\n        return f\"Manzana({self.peso} gr.)\"\n\ncesto = [Manzana(140), Manzana(185), Manzana(120)]\nprint(max(cesto), min(cesto))"
+    },
+    {
+     "id": "op7",
+     "lvl": 3,
+     "title": "__str__ vs __repr__",
+     "q": "<pre class=\"py\"><code>class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __str__(self):\n        return f\"🍎({self.peso} gr.)\"\n\n    def __repr__(self):\n        return f\"Manzana({self.peso})\"\n\nm = Manzana(150)\nprint(m)\nprint([m, Manzana(120)])</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">🍎(150 gr.)\n[Manzana(150), Manzana(120)]</code>",
+        "<code class=\"out\">🍎(150 gr.)\n[🍎(150 gr.), 🍎(120 gr.)]</code>",
+        "<code class=\"out\">Manzana(150)\n[Manzana(150), Manzana(120)]</code>",
+        "<code class=\"out\">🍎(150 gr.)\n[&lt;__main__.Manzana object&gt;, &lt;__main__.Manzana object&gt;]</code>",
+        "<code class=\"out\">Manzana(150)\n[🍎(150 gr.), 🍎(120 gr.)]</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>print(m)</code> usa <code>__str__</code>.",
+      "Al imprimir una lista, Python muestra cada elemento con <code>__repr__</code>."
+     ],
+     "ans": "<code class=\"out\">🍎(150 gr.)\n[Manzana(150), Manzana(120)]</code>",
+     "hint": "La lista usa repr para sus elementos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "repr"
+      ]
+     ],
+     "play": "class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __str__(self):\n        return f\"🍎({self.peso} gr.)\"\n\n    def __repr__(self):\n        return f\"Manzana({self.peso})\"\n\nm = Manzana(150)\nprint(m)\nprint([m, Manzana(120)])"
+    },
+    {
+     "id": "op8",
+     "lvl": 2,
+     "title": "isinstance",
+     "q": "<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\nfor x in [13, 13.0, Racional(13, 1)]:\n    if isinstance(x, Racional):\n        print(f\"{x} es un objeto de la clase Racional\")\n    elif isinstance(x, int):\n        print(f\"{x} es un entero\")\n    elif isinstance(x, float):\n        print(f\"{x} es un flotante\")</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">13 es un entero\n13.0 es un flotante\n13/1 es un objeto de la clase Racional</code>",
+        "<code class=\"out\">13 es un entero\n13 es un entero\n13/1 es un objeto de la clase Racional</code>",
+        "<code class=\"out\">13 es un entero\n13.0 es un entero\n13 es un entero</code>",
+        "<code class=\"out\">13 es un flotante\n13.0 es un flotante\n13/1 es un objeto de la clase Racional</code>",
+        "<code class=\"out\">13 es un entero\n13.0 es un flotante\n13 es un objeto de la clase Racional</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>isinstance(13.0, int)</code> es <code>False</code>: 13.0 es un <code>float</code>.",
+      "El racional se imprime con su <code>__str__</code>: <code>13/1</code>."
+     ],
+     "ans": "<code class=\"out\">13 es un entero\n13.0 es un flotante\n13/1 es un objeto de la clase Racional</code>",
+     "hint": "13.0 no es int.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inst"
+      ]
+     ],
+     "play": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)\n\nfor x in [13, 13.0, Racional(13, 1)]:\n    if isinstance(x, Racional):\n        print(f\"{x} es un objeto de la clase Racional\")\n    elif isinstance(x, int):\n        print(f\"{x} es un entero\")\n    elif isinstance(x, float):\n        print(f\"{x} es un flotante\")"
+    },
+    {
+     "id": "op9",
+     "lvl": 3,
+     "title": "Racional que opera con enteros",
+     "q": "<p>Modifica <code>__add__</code> y <code>__mul__</code> para que también acepten un <code>int</code> (trátalo como <code>n/1</code>) y agrega <code>__radd__</code> y <code>__rmul__</code> para que <code>2 + a</code> y <code>3 * a</code> funcionen.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __mul__(self, other):\n        return Racional(self.num*other.num, self.den*other.den)",
+       "tests": [
+        {
+         "n": "Racional + Racional sigue funcionando",
+         "run": "print(Racional(1, 2) + Racional(1, 3))",
+         "out": "5/6"
+        },
+        {
+         "n": "a + 2",
+         "run": "print(Racional(1, 2) + 2)",
+         "out": "5/2"
+        },
+        {
+         "n": "2 + a",
+         "run": "print(2 + Racional(1, 2))",
+         "out": "5/2"
+        },
+        {
+         "n": "a * 3 y 3 * a",
+         "run": "a = Racional(2, 5)\nprint(a * 3, 3 * a)",
+         "out": "6/5 6/5"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Si <code>other</code> es entero, conviértelo a <code>Racional(other, 1)</code> y sigue con la fórmula.",
+      "<code>__radd__</code> puede reutilizar <code>__add__</code>: <code>return self + other</code> (la suma es conmutativa).",
+      "Una solución posible:<pre class=\"py\"><code>class Racional:\n    def __init__(self, num, den):\n        self.num = num\n        self.den = den if den != 0 else 1\n\n    def __str__(self):\n        return f\"{self.num}/{self.den}\"\n\n    def __add__(self, other):\n        if isinstance(other, int):\n            other = Racional(other, 1)\n        num = self.num*other.den + self.den*other.num\n        den = self.den*other.den\n        return Racional(num, den)\n\n    def __radd__(self, other):\n        return self + other\n\n    def __mul__(self, other):\n        if isinstance(other, int):\n            other = Racional(other, 1)\n        return Racional(self.num*other.num, self.den*other.den)\n\n    def __rmul__(self, other):\n        return self * other</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "isinstance(other, int) al inicio de cada operador.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inst",
+       "radd"
+      ]
+     ]
+    },
+    {
+     "id": "op10",
+     "lvl": 2,
+     "title": "Comparar manzanas",
+     "q": "<p>Agrega a <code>Manzana</code> los métodos <code>__lt__</code> y <code>__eq__</code> para comparar por peso, de modo que funcionen <code>&lt;</code>, <code>==</code>, <code>max</code> y <code>sorted</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __str__(self):\n        return f\"🍎({self.peso} gr.)\"",
+       "tests": [
+        {
+         "n": "< y ==",
+         "run": "print(Manzana(120) < Manzana(150), Manzana(150) < Manzana(120), Manzana(130) == Manzana(130))",
+         "out": "True False True"
+        },
+        {
+         "n": "max",
+         "run": "print(max([Manzana(140), Manzana(199), Manzana(101)]))",
+         "out": "🍎(199 gr.)"
+        },
+        {
+         "n": "sorted",
+         "run": "for m in sorted([Manzana(160), Manzana(110), Manzana(135)]):\n    print(m)",
+         "out": "🍎(110 gr.)\n🍎(135 gr.)\n🍎(160 gr.)"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "<code>__lt__</code> retorna <code>self.peso &lt; otro.peso</code> (un booleano).",
+      "<code>__eq__</code> retorna <code>self.peso == otro.peso</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __str__(self):\n        return f\"🍎({self.peso} gr.)\"\n\n    def __lt__(self, otro):\n        return self.peso &lt; otro.peso\n\n    def __eq__(self, otro):\n        return self.peso == otro.peso</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Los dunders de comparación retornan True o False.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dunop"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los operadores son métodos con nombre especial. Implementarlos hace que tus clases se usen como tipos «de verdad»: <code>Racional(1,2) + Racional(1,3)</code>.</p>\n<h3>Conceptos clave</h3><ul><li>Cada operador tiene su dunder.</li><li>Para operar con enteros: <code>isinstance</code> + <code>__radd__</code>.</li><li><code>max(lista)</code> necesita <code>&lt;</code> (o <code>&gt;</code>) entre objetos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\frac12+\\frac13=\\frac{1\\cdot3+2\\cdot1}{2\\cdot3}=\\frac56\\) → <code>5/6</code>.</div>\n<div class=\"err\"><b>Error común:</b> que <code>__add__</code> modifique <code>self</code> en vez de devolver un objeto nuevo.</div>"
+  },
+  {
+   "id": "datos",
+   "name": "Sem. 5 · Estructuras de datos y módulos",
+   "teo": "\n<p><strong>Lista</strong> <code>[1, 2, 2]</code>: ordenada y modificable. <strong>Tupla</strong> <code>(7, \"cocos\")</code>: ordenada pero <strong>inmutable</strong>. <strong>Conjunto</strong> <code>{1, 2}</code>: sin orden y <strong>sin repetidos</strong>. <strong>Diccionario</strong> <code>{\"pera\": 2}</code>: pares llave → valor; <code>d[k]</code> da KeyError si falta la llave, <code>d.get(k, 0)</code> no.</p>\n<p>Un parámetro con valor por defecto (<code>def __init__(self, peso=None)</code>) permite crear el objeto con o sin ese dato: si llega <code>None</code>, el constructor genera uno (por ejemplo al azar). Un atributo de clase como <code>Pera.cantidad</code> sirve para contar cuántos objetos se han creado y darle a cada uno un código.</p>\n<p>Un <strong>módulo</strong> es un archivo <code>.py</code>: si la clase <code>Dado</code> está en <code>dado.py</code>, en otro archivo de la misma carpeta se escribe <code>from dado import Dado</code>. El bloque <code>if __name__ == \"__main__\":</code> solo se ejecuta cuando corres ese archivo directamente, no cuando lo importas.</p>",
+   "form": [
+    "Tupla: inmutable · Set: sin repetidos · Dict: llave → valor",
+    "<code>def __init__(self, x=None)</code>: parámetro opcional",
+    "Contador de instancias: <code>Clase.cantidad += 1</code>",
+    "<code>from archivo import Clase</code> (sin el .py)",
+    "<code>if __name__ == \"__main__\":</code> pruebas del módulo"
+   ],
+   "ex": [
+    {
+     "id": "da1",
+     "lvl": 1,
+     "title": "Elegir la estructura",
+     "q": "<p>Necesitas guardar las palabras usadas en un texto, <b>sin repetir</b> ninguna. ¿Qué estructura es la más adecuada?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Un conjunto (<code>set</code>)",
+        "Una tupla",
+        "Una lista",
+        "Un diccionario con valor <code>None</code>",
+        "Un string"
+       ]
+      }
+     ],
+     "steps": [
+      "El conjunto elimina repetidos automáticamente: <code>set(texto.split())</code>.",
+      "La tupla es inmutable y la lista acepta repetidos."
+     ],
+     "ans": "Un conjunto (<code>set</code>)",
+     "hint": "¿Cuál no admite elementos repetidos?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "estr"
+      ]
+     ]
+    },
+    {
+     "id": "da2",
+     "lvl": 1,
+     "title": "Parámetro por defecto",
+     "q": "<pre class=\"py\"><code>class Manzana:\n    def __init__(self, peso=None):\n        self.peso = 150 if peso is None else peso\n\na = Manzana()\nb = Manzana(120)\nprint(a.peso, b.peso)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">150 120</code>",
+        "<code class=\"out\">None 120</code>",
+        "<code class=\"out\">150 150</code>",
+        "<code class=\"out\">120 150</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>Manzana()</code> no envía peso: llega <code>None</code> y se usa 150.",
+      "<code>Manzana(120)</code> sí lo envía y se usa 120."
+     ],
+     "ans": "<code class=\"out\">150 120</code>",
+     "hint": "peso=None significa «opcional».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "defpar"
+      ]
+     ],
+     "play": "class Manzana:\n    def __init__(self, peso=None):\n        self.peso = 150 if peso is None else peso\n\na = Manzana()\nb = Manzana(120)\nprint(a.peso, b.peso)"
+    },
+    {
+     "id": "da3",
+     "lvl": 2,
+     "title": "Contar peras",
+     "q": "<pre class=\"py\"><code>class Pera:\n    cantidad = 0\n\n    def __init__(self, peso):\n        self.peso = peso\n        Pera.cantidad += 1\n        self.código = Pera.cantidad\n\np1 = Pera(80)\np2 = Pera(90)\np3 = Pera(70)\nprint(Pera.cantidad, p2.código, p3.código)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">3 2 3</code>",
+        "<code class=\"out\">3 3 3</code>",
+        "<code class=\"out\">1 2 3</code>",
+        "<code class=\"out\">3 1 2</code>",
+        "<code class=\"out\">0 2 3</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>Pera.cantidad</code> es un atributo de clase: aumenta en 1 con cada pera creada.",
+      "Cada pera guarda en <code>self.código</code> el valor del contador en su momento: p1 → 1, p2 → 2, p3 → 3."
+     ],
+     "ans": "<code class=\"out\">3 2 3</code>",
+     "hint": "El contador es de la clase, el código de cada objeto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clsattr"
+      ]
+     ],
+     "play": "class Pera:\n    cantidad = 0\n\n    def __init__(self, peso):\n        self.peso = peso\n        Pera.cantidad += 1\n        self.código = Pera.cantidad\n\np1 = Pera(80)\np2 = Pera(90)\np3 = Pera(70)\nprint(Pera.cantidad, p2.código, p3.código)"
+    },
+    {
+     "id": "da4",
+     "lvl": 1,
+     "title": "Importar una clase",
+     "q": "<p>La clase <code>Dado</code> está en el archivo <code>dado.py</code>. En <code>juego.py</code> (misma carpeta), ¿cómo se importa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>from dado import Dado</code>",
+        "<code>from dado.py import Dado</code>",
+        "<code>import Dado from dado</code>",
+        "<code>from Dado import dado</code>",
+        "<code>include \"dado.py\"</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Se escribe el nombre del módulo (archivo sin <code>.py</code>) y luego la clase: <code>from dado import Dado</code>.",
+      "También vale <code>import dado</code> y usar <code>dado.Dado()</code>."
+     ],
+     "ans": "<code>from dado import Dado</code>",
+     "hint": "El módulo va sin extensión.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mod"
+      ]
+     ]
+    },
+    {
+     "id": "da5",
+     "lvl": 2,
+     "title": "__name__ == \"__main__\"",
+     "q": "<p>En <code>dado.py</code> hay pruebas dentro de <code>if __name__ == \"__main__\":</code>. ¿Qué pasa con ellas cuando otro archivo hace <code>from dado import Dado</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No se ejecutan: solo corren si ejecutas <code>dado.py</code> directamente",
+        "Se ejecutan siempre al importar",
+        "Dan error de importación",
+        "Se ejecutan solo la primera vez",
+        "Borran la clase importada"
+       ]
+      }
+     ],
+     "steps": [
+      "Al importar, <code>__name__</code> vale <code>\"dado\"</code>, no <code>\"__main__\"</code>, así que ese bloque se salta.",
+      "Por eso es el lugar para las pruebas del módulo."
+     ],
+     "ans": "No se ejecutan: solo corren si ejecutas <code>dado.py</code> directamente",
+     "hint": "¿Qué vale __name__ en un módulo importado?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mod"
+      ]
+     ]
+    },
+    {
+     "id": "da6",
+     "lvl": 2,
+     "title": "Palabras y conjuntos",
+     "q": "<pre class=\"py\"><code>texto = \"el sol y el mar y el cielo\"\npalabras = texto.split()\nprint(len(palabras), len(set(palabras)))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">8 5</code>",
+        "<code class=\"out\">8 8</code>",
+        "<code class=\"out\">5 8</code>",
+        "<code class=\"out\">8 6</code>",
+        "<code class=\"out\">26 8</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>split()</code> separa por espacios: 8 palabras.",
+      "El conjunto quita repetidos (\"el\" ×3 y \"y\" ×2): quedan el, sol, y, mar, cielo = 5."
+     ],
+     "ans": "<code class=\"out\">8 5</code>",
+     "hint": "Cuenta las palabras distintas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "estr"
+      ]
+     ],
+     "play": "texto = \"el sol y el mar y el cielo\"\npalabras = texto.split()\nprint(len(palabras), len(set(palabras)))"
+    },
+    {
+     "id": "da7",
+     "lvl": 2,
+     "title": "Contar con diccionario",
+     "q": "<pre class=\"py\"><code>cesto = [\"pera\", \"manzana roja\", \"pera\", \"manzana verde\", \"pera\"]\nconteo = {}\nfor f in cesto:\n    conteo[f] = conteo.get(f, 0) + 1\nprint(conteo)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">{'pera': 3, 'manzana roja': 1, 'manzana verde': 1}</code>",
+        "<code class=\"out\">{'pera': 1, 'manzana roja': 1, 'manzana verde': 1}</code>",
+        "<code class=\"out\">{'pera': 3, 'manzana': 2}</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 KeyError</b></code>",
+        "<code class=\"out\">{'manzana roja': 1, 'manzana verde': 1, 'pera': 3}</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "La primera vez que aparece cada fruta, <code>get</code> devuelve 0 y se guarda 1; las siguientes se suma.",
+      "El diccionario conserva el orden en que se agregaron las llaves."
+     ],
+     "ans": "<code class=\"out\">{'pera': 3, 'manzana roja': 1, 'manzana verde': 1}</code>",
+     "hint": "get evita el KeyError.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dget"
+      ]
+     ],
+     "play": "cesto = [\"pera\", \"manzana roja\", \"pera\", \"manzana verde\", \"pera\"]\nconteo = {}\nfor f in cesto:\n    conteo[f] = conteo.get(f, 0) + 1\nprint(conteo)"
+    },
+    {
+     "id": "da8",
+     "lvl": 2,
+     "title": "Rectángulos",
+     "q": "<p>Implementa <code>Rectángulo</code> (constructor con <code>lado1</code> y <code>lado2</code>, método <code>área()</code> y <code>__str__</code> → <code>Rectángulo 3x4</code>). Luego escribe la función <code>mayor_lado(rects)</code> que devuelva el rectángulo que tenga el lado más grande (cualquiera de los dos lados).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Rectángulo:\n    def __init__(self, lado1, lado2):\n        self.lado1 = lado1\n        self.lado2 = lado2\n\ndef mayor_lado(rects):\n    pass",
+       "tests": [
+        {
+         "n": "área y __str__",
+         "run": "r = Rectángulo(3, 4)\nprint(r, r.área())",
+         "out": "Rectángulo 3x4 12"
+        },
+        {
+         "n": "mayor_lado",
+         "run": "rs = [Rectángulo(3, 4), Rectángulo(9, 2), Rectángulo(5, 8)]\nprint(mayor_lado(rs))",
+         "out": "Rectángulo 9x2"
+        },
+        {
+         "n": "El lado mayor puede ser lado2",
+         "run": "rs = [Rectángulo(6, 1), Rectángulo(2, 10), Rectángulo(7, 7)]\nprint(mayor_lado(rs))",
+         "out": "Rectángulo 2x10"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El lado más grande de un rectángulo es <code>max(r.lado1, r.lado2)</code>.",
+      "Recorre la lista guardando el mejor encontrado hasta el momento.",
+      "Una solución posible:<pre class=\"py\"><code>class Rectángulo:\n    def __init__(self, lado1, lado2):\n        self.lado1 = lado1\n        self.lado2 = lado2\n\n    def área(self):\n        return self.lado1 * self.lado2\n\n    def __str__(self):\n        return f\"Rectángulo {self.lado1}x{self.lado2}\"\n\ndef mayor_lado(rects):\n    mejor = rects[0]\n    for r in rects:\n        if max(r.lado1, r.lado2) &gt; max(mejor.lado1, mejor.lado2):\n            mejor = r\n    return mejor</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Compara max(lado1, lado2) de cada uno.",
+     "fig": "umlrect",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "uml"
+      ]
+     ]
+    },
+    {
+     "id": "da9",
+     "lvl": 2,
+     "title": "Sopa de letras",
+     "q": "<p>Escribe <code>contar_letras(texto)</code> que devuelva cuántas <b>letras</b> tiene el texto (sin contar espacios, números ni signos), y <code>palabras_usadas(texto)</code> que devuelva una <b>lista ordenada</b> con las palabras distintas en minúsculas.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def contar_letras(texto):\n    return len(texto)\n\ndef palabras_usadas(texto):\n    return texto.split()",
+       "tests": [
+        {
+         "n": "contar_letras",
+         "run": "print(contar_letras(\"Hola mundo\"), contar_letras(\"POO 2026-2!\"))",
+         "out": "9 3"
+        },
+        {
+         "n": "palabras_usadas",
+         "run": "print(palabras_usadas(\"el Sol y el mar y EL cielo\"))",
+         "out": "['cielo', 'el', 'mar', 'sol', 'y']"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "<code>c.isalpha()</code> es <code>True</code> solo para letras.",
+      "Para las palabras: <code>lower()</code>, <code>split()</code>, <code>set()</code> y <code>sorted()</code> (devuelve una lista).",
+      "Una solución posible:<pre class=\"py\"><code>def contar_letras(texto):\n    total = 0\n    for c in texto:\n        if c.isalpha():\n            total += 1\n    return total\n\ndef palabras_usadas(texto):\n    return sorted(set(texto.lower().split()))</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "isalpha para letras; set para quitar repetidas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "estr"
+      ]
+     ]
+    },
+    {
+     "id": "da10",
+     "lvl": 3,
+     "title": "El cesto de frutas (con módulo)",
+     "q": "<p>En el archivo <code>frutas.py</code> están las clases <code>Manzana(peso, color)</code> y <code>Pera(peso)</code>. Importa lo necesario y escribe la función <code>contar(cesto)</code> que reciba una lista mezclada de manzanas y peras y devuelva un diccionario con las llaves <code>\"rojas\"</code>, <code>\"verdes\"</code> y <code>\"peras\"</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def contar(cesto):\n    conteo = {\"rojas\": 0, \"verdes\": 0, \"peras\": 0}\n    return conteo",
+       "tests": [
+        {
+         "n": "Cesto mixto",
+         "run": "from frutas import Manzana, Pera\nc = [Manzana(120, \"roja\"), Pera(90), Manzana(150, \"verde\"), Pera(60), Manzana(110, \"roja\")]\nprint(contar(c))",
+         "out": "{'rojas': 2, 'verdes': 1, 'peras': 2}"
+        },
+        {
+         "n": "Solo peras",
+         "run": "from frutas import Pera\nprint(contar([Pera(70)] * 4))",
+         "out": "{'rojas': 0, 'verdes': 0, 'peras': 4}"
+        }
+       ],
+       "files": {
+        "frutas.py": "class Manzana:\n    def __init__(self, peso, color):\n        self.peso = peso\n        self.color = color          # \"roja\" o \"verde\"\n\n    def __str__(self):\n        return f\"{chr(0x1F34E) if self.color == 'roja' else chr(0x1F34F)}({self.peso} gr.)\"\n\nclass Pera:\n    def __init__(self, peso):\n        self.peso = peso\n\n    def __str__(self):\n        return f\"{chr(0x1F350)}({self.peso} gr.)\"\n"
+       }
+      }
+     ],
+     "steps": [
+      "<code>from frutas import Manzana, Pera</code>.",
+      "Con <code>isinstance(f, Pera)</code> sabes si es pera; si no, miras <code>f.color</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from frutas import Manzana, Pera\n\ndef contar(cesto):\n    conteo = {\"rojas\": 0, \"verdes\": 0, \"peras\": 0}\n    for f in cesto:\n        if isinstance(f, Pera):\n            conteo[\"peras\"] += 1\n        elif f.color == \"roja\":\n            conteo[\"rojas\"] += 1\n        else:\n            conteo[\"verdes\"] += 1\n    return conteo</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "isinstance distingue la clase de cada fruta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mod",
+       "inst"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Las clases se combinan con las estructuras de Python: listas de objetos, diccionarios para contar, conjuntos para eliminar repetidos, y módulos para separar cada clase en su archivo.</p>\n<h3>Conceptos clave</h3><ul><li>Elegir la estructura según lo que necesitas (orden, repetidos, búsqueda por llave).</li><li>Parámetros por defecto en el constructor.</li><li><code>import</code> y <code>__name__</code>.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>len(set(\"el sol y el mar\".split()))</code> da 4 palabras distintas.</div>\n<div class=\"err\"><b>Error común:</b> escribir <code>from dado.py import Dado</code>: el módulo se importa sin la extensión.</div>"
+  },
+  {
+   "id": "arch",
+   "name": "Sem. 6 · Archivos y más dunders",
+   "teo": "\n<p><strong>Archivos:</strong> <code>with open(\"datos.csv\") as f:</code> abre el archivo y lo cierra solo al salir del bloque. <code>f.readline()</code> lee una línea, <code>for linea in f</code> recorre todas y <code>f.write(texto)</code> escribe (abriendo con <code>\"w\"</code> para crear/reemplazar o <code>\"a\"</code> para agregar al final). Todo lo que se lee es <strong>texto</strong>: <code>linea.strip().split(\",\")</code> separa los campos y hay que convertir los números con <code>int()</code>.</p>\n<p><strong>Asignación aumentada:</strong> <code>j += 5</code> llama a <code>j.__iadd__(5)</code> y <strong>guarda en <code>j</code> lo que retorne</strong>: por eso <code>__iadd__</code> e <code>__isub__</code> deben terminar con <code>return self</code>. Si no, <code>j</code> queda en <code>None</code>.</p>\n<p><code>__call__</code> permite «llamar» al objeto como función: <code>cuenta()</code>. <code>__int__</code> define <code>int(obj)</code>. <code>sum(lista)</code> empieza en <code>0</code> y hace <code>0 + obj</code>, así que necesita <code>__radd__</code>.</p>",
+   "form": [
+    "<code>with open(ruta) as f:</code> · modos <code>\"r\"</code>, <code>\"w\"</code>, <code>\"a\"</code>",
+    "<code>nombre, p = linea.strip().split(\",\")</code> → <code>int(p)</code>",
+    "<code>a += b</code> → <code>a = a.__iadd__(b)</code>: ¡<code>return self</code>!",
+    "<code>obj()</code> → <code>__call__</code> · <code>int(obj)</code> → <code>__int__</code>",
+    "<code>sum(objs)</code> necesita <code>__radd__</code>"
+   ],
+   "ex": [
+    {
+     "id": "ar1",
+     "lvl": 2,
+     "title": "__iadd__ sin return",
+     "q": "<pre class=\"py\"><code>class Jugador2:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.__puntaje = puntaje\n\n    def __iadd__(self, puntaje):\n        self.__puntaje += puntaje\n        print(f\"Aumentando {puntaje} pts. a {self.nombre}\")\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.__puntaje} pts.\"\n\nj = Jugador2(\"Ana\", 10)\nj += 5\nprint(j)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Aumentando 5 pts. a Ana\nNone</code>",
+        "<code class=\"out\">Aumentando 5 pts. a Ana\nAna, 15 pts.</code>",
+        "<code class=\"out\">Ana, 15 pts.</code>",
+        "<code class=\"out\">Aumentando 5 pts. a Ana\nAna, 10 pts.</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>j += 5</code> ejecuta <code>j = j.__iadd__(5)</code>: el método suma e imprime el mensaje…",
+      "…pero no tiene <code>return</code>, así que devuelve <code>None</code> y <code>j</code> pasa a valer <code>None</code>.",
+      "La corrección es terminar <code>__iadd__</code> con <code>return self</code>."
+     ],
+     "ans": "<code class=\"out\">Aumentando 5 pts. a Ana\nNone</code>",
+     "hint": "Mira qué retorna __iadd__.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd"
+      ]
+     ],
+     "play": "class Jugador2:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.__puntaje = puntaje\n\n    def __iadd__(self, puntaje):\n        self.__puntaje += puntaje\n        print(f\"Aumentando {puntaje} pts. a {self.nombre}\")\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.__puntaje} pts.\"\n\nj = Jugador2(\"Ana\", 10)\nj += 5\nprint(j)"
+    },
+    {
+     "id": "ar2",
+     "lvl": 2,
+     "title": "__call__ en una cuenta",
+     "q": "<pre class=\"py\"><code>class CuentaDeAhorros:\n    def __init__(self, nombre, ahorros=0, intereses=10):\n        self.nombre = nombre\n        self.ahorros = ahorros\n        self.intereses = intereses\n\n    def __call__(self):\n        self.ahorros *= (1 + self.intereses/100)\n        self.ahorros = round(self.ahorros, 2)\n\nc = CuentaDeAhorros(\"Ana\", 200)\nc()\nc()\nprint(c.ahorros)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">242.0</code>",
+        "<code class=\"out\">220.0</code>",
+        "<code class=\"out\">240.0</code>",
+        "<code class=\"out\">200</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>c()</code> llama a <code>__call__</code>: aplica 10 % de interés.",
+      "200 → 220 → 242 (interés compuesto: el segundo 10 % se calcula sobre 220)."
+     ],
+     "ans": "<code class=\"out\">242.0</code>",
+     "hint": "Se llama dos veces.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "call"
+      ]
+     ],
+     "play": "class CuentaDeAhorros:\n    def __init__(self, nombre, ahorros=0, intereses=10):\n        self.nombre = nombre\n        self.ahorros = ahorros\n        self.intereses = intereses\n\n    def __call__(self):\n        self.ahorros *= (1 + self.intereses/100)\n        self.ahorros = round(self.ahorros, 2)\n\nc = CuentaDeAhorros(\"Ana\", 200)\nc()\nc()\nprint(c.ahorros)"
+    },
+    {
+     "id": "ar3",
+     "lvl": 3,
+     "title": "sum con __radd__",
+     "q": "<pre class=\"py\"><code>class Jugador:\n    def __init__(self, nombre, puntaje):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\n    def __add__(self, otro):\n        if isinstance(otro, Jugador):\n            return self.puntaje + otro.puntaje\n        return self.puntaje + otro\n\n    def __radd__(self, otro):\n        return self + otro\n\neq = [Jugador(\"A\", 10), Jugador(\"B\", 25), Jugador(\"C\", 5)]\nprint(sum(eq), eq[0] + eq[1])</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">40 35</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+        "<code class=\"out\">40 A</code>",
+        "<code class=\"out\">0 35</code>",
+        "<code class=\"out\">40 10</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>sum</code> empieza en 0: <code>0 + eq[0]</code> usa <code>__radd__</code> → 10; luego <code>10 + eq[1]</code> → 35; luego 40.",
+      "<code>eq[0] + eq[1]</code> usa <code>__add__</code> con otro Jugador: 10 + 25 = 35."
+     ],
+     "ans": "<code class=\"out\">40 35</code>",
+     "hint": "sum hace 0 + primer elemento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "radd"
+      ]
+     ],
+     "play": "class Jugador:\n    def __init__(self, nombre, puntaje):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\n    def __add__(self, otro):\n        if isinstance(otro, Jugador):\n            return self.puntaje + otro.puntaje\n        return self.puntaje + otro\n\n    def __radd__(self, otro):\n        return self + otro\n\neq = [Jugador(\"A\", 10), Jugador(\"B\", 25), Jugador(\"C\", 5)]\nprint(sum(eq), eq[0] + eq[1])"
+    },
+    {
+     "id": "ar4",
+     "lvl": 1,
+     "title": "Modos de apertura",
+     "q": "<p>Quieres <b>agregar</b> una línea al final de <code>registro.txt</code> sin borrar lo que ya tiene. ¿Cómo lo abres?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>open(\"registro.txt\", \"a\")</code>",
+        "<code>open(\"registro.txt\", \"w\")</code>",
+        "<code>open(\"registro.txt\", \"r\")</code>",
+        "<code>open(\"registro.txt\")</code>",
+        "<code>open(\"registro.txt\", \"x\")</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>\"a\"</code> (<i>append</i>) escribe al final.",
+      "<code>\"w\"</code> borra el contenido anterior y <code>\"r\"</code> (por defecto) solo lee."
+     ],
+     "ans": "<code>open(\"registro.txt\", \"a\")</code>",
+     "hint": "a = append.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "file"
+      ]
+     ]
+    },
+    {
+     "id": "ar5",
+     "lvl": 2,
+     "title": "Leer un CSV",
+     "q": "<pre class=\"py\"><code>lineas = [\"nombre,puntaje\\n\", \"Ana,30\\n\", \"Luis,45\\n\"]\ntotal = 0\nfor linea in lineas[1:]:\n    nombre, puntaje = linea.strip().split(\",\")\n    total += int(puntaje)\nprint(total / (len(lineas) - 1))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">37.5</code>",
+        "<code class=\"out\">75</code>",
+        "<code class=\"out\">37</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 ValueError</b></code>",
+        "<code class=\"out\">25.0</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>lineas[1:]</code> salta la cabecera.",
+      "<code>strip()</code> quita el salto de línea, <code>split(\",\")</code> separa e <code>int()</code> convierte: total = 75.",
+      "Promedio: 75 / 2 = 37.5."
+     ],
+     "ans": "<code class=\"out\">37.5</code>",
+     "hint": "La cabecera no se suma.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "file"
+      ]
+     ],
+     "play": "lineas = [\"nombre,puntaje\\n\", \"Ana,30\\n\", \"Luis,45\\n\"]\ntotal = 0\nfor linea in lineas[1:]:\n    nombre, puntaje = linea.strip().split(\",\")\n    total += int(puntaje)\nprint(total / (len(lineas) - 1))"
+    },
+    {
+     "id": "ar6",
+     "lvl": 3,
+     "title": "Sin convertir",
+     "q": "<pre class=\"py\"><code>total = 0\nfor p in [\"30\", \"45\"]:\n    total += p\nprint(total)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+        "<code class=\"out\">75</code>",
+        "<code class=\"out\">3045</code>",
+        "<code class=\"out\">0</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 ValueError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>total</code> empieza como entero 0 y <code>p</code> es el texto \"30\".",
+      "<code>0 + \"30\"</code> no se puede: <code>TypeError</code>. Hay que hacer <code>int(p)</code>."
+     ],
+     "ans": "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>",
+     "hint": "¿int + str?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "file"
+      ]
+     ],
+     "play": "total = 0\nfor p in [\"30\", \"45\"]:\n    total += p\nprint(total)"
+    },
+    {
+     "id": "ar7",
+     "lvl": 2,
+     "title": "Cargar jugadores desde CSV",
+     "q": "<p>El archivo <code>jugadores_y_puntajes.csv</code> tiene una cabecera <code>nombre,puntaje</code> y luego una línea por jugador. Completa <code>cargar(ruta)</code> para que devuelva una lista de objetos <code>Jugador</code> (con el puntaje como <b>entero</b>) y <code>promedio(jugadores)</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Jugador:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.puntaje} pts.\"\n\ndef cargar(ruta):\n    jugadores = []\n    return jugadores\n\ndef promedio(jugadores):\n    pass",
+       "tests": [
+        {
+         "n": "Carga 4 jugadores",
+         "run": "js = cargar(\"jugadores_y_puntajes.csv\")\nprint(len(js))\nfor j in js:\n    print(j)",
+         "out": "4\nMark, 1000 pts.\nJohn Doe, 1 pts.\nAna, 350 pts.\nLuis, 775 pts."
+        },
+        {
+         "n": "Puntajes enteros",
+         "run": "js = cargar(\"jugadores_y_puntajes.csv\")\nprint(all(isinstance(j.puntaje, int) for j in js))",
+         "out": "True"
+        },
+        {
+         "n": "promedio",
+         "run": "print(promedio(cargar(\"jugadores_y_puntajes.csv\")))",
+         "out": "531.5"
+        }
+       ],
+       "files": {
+        "jugadores_y_puntajes.csv": "nombre,puntaje\nMark,1000\nJohn Doe,1\nAna,350\nLuis,775\n"
+       }
+      }
+     ],
+     "steps": [
+      "Con <code>with open(ruta) as f:</code>, salta la cabecera con <code>f.readline()</code> y recorre el resto.",
+      "Cada línea: <code>strip</code>, <code>split(\",\")</code>, <code>int</code> y <code>append(Jugador(...))</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Jugador:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.puntaje = puntaje\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.puntaje} pts.\"\n\ndef cargar(ruta):\n    jugadores = []\n    with open(ruta) as f:\n        f.readline()\n        for linea in f:\n            nombre, puntaje = linea.strip().split(\",\")\n            jugadores.append(Jugador(nombre, int(puntaje)))\n    return jugadores\n\ndef promedio(jugadores):\n    return sum(j.puntaje for j in jugadores) / len(jugadores)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Hay que saltar la primera línea.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "file"
+      ]
+     ]
+    },
+    {
+     "id": "ar8",
+     "lvl": 3,
+     "title": "Jugador con += y -=",
+     "q": "<p>Completa <code>Jugador2</code>: <code>+=</code> suma puntos, <code>-=</code> resta puntos (ambos deben poder encadenarse, así que piensa qué retornan), <code>__int__</code> devuelve el puntaje y <code>__lt__</code> compara por puntaje para que funcione <code>max</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Jugador2:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.__puntaje = puntaje\n\n    def __iadd__(self, puntaje):\n        self.__puntaje += puntaje\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.__puntaje} pts.\"",
+       "tests": [
+        {
+         "n": "+= y -=",
+         "run": "j = Jugador2(\"Ana\", 10)\nj += 15\nj -= 5\nprint(j)",
+         "out": "Ana, 20 pts."
+        },
+        {
+         "n": "int()",
+         "run": "print(int(Jugador2(\"Luis\", 42)))",
+         "out": "42"
+        },
+        {
+         "n": "max encuentra al ganador",
+         "run": "js = [Jugador2(\"A\", 5), Jugador2(\"B\", 90), Jugador2(\"C\", 40)]\nprint(max(js))",
+         "out": "B, 90 pts."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "<code>__iadd__</code> y <code>__isub__</code> terminan con <code>return self</code>.",
+      "Como el puntaje es privado (<code>__puntaje</code>), para comparar con otro jugador usa <code>int(otro)</code>, que llama a su <code>__int__</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Jugador2:\n    def __init__(self, nombre, puntaje=0):\n        self.nombre = nombre\n        self.__puntaje = puntaje\n\n    def __iadd__(self, puntaje):\n        self.__puntaje += puntaje\n        return self\n\n    def __isub__(self, puntaje):\n        self.__puntaje -= puntaje\n        return self\n\n    def __int__(self):\n        return self.__puntaje\n\n    def __lt__(self, otro):\n        return self.__puntaje &lt; int(otro)\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.__puntaje} pts.\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Sin return self, j queda en None.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd",
+       "priv"
+      ]
+     ]
+    },
+    {
+     "id": "ar9",
+     "lvl": 2,
+     "title": "Cartas a los jugadores",
+     "q": "<p>Escribe <code>escribir_carta(nombre, puntaje)</code> que cree el archivo <code>&lt;nombre&gt;.txt</code> con <b>una</b> línea: <code>Felicitaciones Ana, obtuviste 350 pts.</code></p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "def escribir_carta(nombre, puntaje):\n    texto = f\"Felicitaciones {nombre}, obtuviste {puntaje} pts.\"",
+       "tests": [
+        {
+         "n": "Crea Ana.txt",
+         "run": "escribir_carta(\"Ana\", 350)\nwith open(\"Ana.txt\") as f:\n    print(f.read())",
+         "out": "Felicitaciones Ana, obtuviste 350 pts."
+        },
+        {
+         "n": "Crea Mark.txt",
+         "run": "escribir_carta(\"Mark\", 1000)\nwith open(\"Mark.txt\") as f:\n    print(f.read().strip())",
+         "out": "Felicitaciones Mark, obtuviste 1000 pts."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Abre en modo <code>\"w\"</code> con el nombre armado con un f-string.",
+      "<code>f.write(texto)</code> escribe la línea.",
+      "Una solución posible:<pre class=\"py\"><code>def escribir_carta(nombre, puntaje):\n    texto = f\"Felicitaciones {nombre}, obtuviste {puntaje} pts.\"\n    with open(f\"{nombre}.txt\", \"w\") as f:\n        f.write(texto + \"\\n\")</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "open(..., \"w\") crea el archivo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "file"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los datos del programa salen de archivos (CSV) y terminan en objetos; los operadores de asignación aumentada y <code>__call__</code> dan una sintaxis cómoda para modificarlos.</p>\n<h3>Conceptos clave</h3><ul><li>Saltar la cabecera del CSV y convertir números.</li><li><code>__iadd__</code> retorna <code>self</code>.</li><li><code>sum</code> y <code>max</code> con objetos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>\"Ana,350\\n\".strip().split(\",\")</code> → <code>[\"Ana\", \"350\"]</code>.</div>\n<div class=\"err\"><b>Error común:</b> sumar puntajes leídos del archivo sin <code>int()</code>: se concatenan textos o salta TypeError.</div>"
+  },
+  {
+   "id": "rel",
+   "name": "Sem. 8 · Relaciones entre clases",
+   "teo": "\n<p>Las clases se relacionan cuando un objeto <strong>tiene</strong> otros objetos como atributos. En el diagrama de clases se dibuja una línea con un rombo junto a la clase que contiene (el «todo»):</p>\n<p><strong>Composición</strong> (rombo <b>relleno</b> ◆): las partes pertenecen al todo y no tienen sentido sin él; normalmente el todo las <strong>crea</strong> en su constructor. Ej.: el <code>Vaso</code> crea sus <code>Dado</code>s, la <code>Pantalla</code> crea sus <code>Pixel</code>es, el <code>Banco</code> carga sus cuentas.</p>\n<p><strong>Agregación</strong> (rombo <b>vacío</b> ◇): el todo agrupa partes que pueden existir por separado; muchas veces las <strong>recibe</strong> desde fuera. Ej.: un <code>Mazo</code> agrupa <code>Carta</code>s. Cuidado: si guardas la lista que te pasaron, no es una copia, es la <strong>misma</strong> lista.</p>\n<p>En código, la relación es un atributo que guarda objetos (a menudo una lista: <code>self.dados = [Dado() for _ in range(n)]</code>) y los métodos del todo <strong>delegan</strong> en los de las partes (<code>for d in self.dados: d.lanzar()</code>).</p>",
+   "form": [
+    "◆ Composición: el todo crea y es dueño de sus partes",
+    "◇ Agregación: el todo agrupa partes independientes",
+    "<code>self.dados = [Dado() for _ in range(n)]</code>",
+    "Delegar: el método del todo llama a los métodos de cada parte",
+    "<code>shuffle(lista)</code> baraja · <code>lista.pop()</code> quita el último"
+   ],
+   "ex": [
+    {
+     "id": "re1",
+     "lvl": 1,
+     "title": "Rombo relleno",
+     "q": "<p>En el diagrama, la línea entre <code>Dado</code> y <code>Vaso</code> tiene un rombo <b>relleno</b> junto a <code>Vaso</code>. ¿Qué relación representa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Composición: el Vaso contiene sus Dados y es responsable de crearlos",
+        "Agregación: los Dados pueden existir sin el Vaso",
+        "Herencia: el Vaso es un tipo de Dado",
+        "Herencia: el Dado es un tipo de Vaso",
+        "Ninguna relación, es solo decorativo"
+       ]
+      }
+     ],
+     "steps": [
+      "El rombo va junto al «todo» (Vaso). Relleno = composición.",
+      "En código: <code>self.dados = [Dado() for _ in range(n)]</code> dentro del constructor del Vaso.",
+      "La herencia se dibuja con un triángulo hueco, no con un rombo."
+     ],
+     "ans": "Composición: el Vaso contiene sus Dados y es responsable de crearlos",
+     "hint": "Relleno ◆ = composición.",
+     "fig": "umlvaso",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ]
+     ]
+    },
+    {
+     "id": "re2",
+     "lvl": 2,
+     "title": "Composición o agregación en código",
+     "q": "<p>¿Cuál de estos constructores muestra una <b>agregación</b> (las partes vienen de fuera)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>def __init__(self, cartas): self.cartas = cartas</code>",
+        "<code>def __init__(self, n): self.dados = [Dado() for _ in range(n)]</code>",
+        "<code>def __init__(self, n, m): self.pixeles = [[Pixel() for _ in range(m)] for _ in range(n)]</code>",
+        "<code>def __init__(self): self.valor = randint(1, 6)</code>",
+        "<code>def __init__(self, ruta): self.cuentas = self.cargar(ruta)</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "En la agregación el todo recibe objetos que ya existen y los agrupa.",
+      "Cuando el constructor crea sus propias partes (dados, pixeles, cuentas leídas del archivo) es composición."
+     ],
+     "ans": "<code>def __init__(self, cartas): self.cartas = cartas</code>",
+     "hint": "¿Quién crea las partes?",
+     "fig": "umlmazo",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ]
+     ]
+    },
+    {
+     "id": "re3",
+     "lvl": 2,
+     "title": "El vaso de dados",
+     "q": "<pre class=\"py\"><code>from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = randint(1, 6)\n\n    def __str__(self):\n        return chr(0x267f + self.valor)\n\nclass Vaso:\n    def __init__(self, n):\n        self.dados = [Dado() for _ in range(n)]\n\n    def __str__(self):\n        caras = \" + \".join(str(d) for d in self.dados)\n        total = sum(d.valor for d in self.dados)\n        return f\"{caras} = {total}\"\n\nv = Vaso(3)\nv.dados[0].valor = 2\nv.dados[1].valor = 6\nv.dados[2].valor = 3\nprint(v)</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">⚁ + ⚅ + ⚂ = 11</code>",
+        "<code class=\"out\">⚁ + ⚅ + ⚂ = 3</code>",
+        "<code class=\"out\">2 + 6 + 3 = 11</code>",
+        "<code class=\"out\">⚀ + ⚄ + ⚁ = 11</code>",
+        "<code class=\"out\">⚁⚅⚂ = 11</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada dado se dibuja con <code>chr(0x267f + valor)</code>: 2 → ⚁, 6 → ⚅, 3 → ⚂.",
+      "<code>\" + \".join(...)</code> los une con « + » y el total es 2 + 6 + 3 = 11."
+     ],
+     "ans": "<code class=\"out\">⚁ + ⚅ + ⚂ = 11</code>",
+     "hint": "El Vaso delega en el __str__ de cada Dado.",
+     "fig": "umlvaso",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp",
+       "uni"
+      ]
+     ],
+     "play": "from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = randint(1, 6)\n\n    def __str__(self):\n        return chr(0x267f + self.valor)\n\nclass Vaso:\n    def __init__(self, n):\n        self.dados = [Dado() for _ in range(n)]\n\n    def __str__(self):\n        caras = \" + \".join(str(d) for d in self.dados)\n        total = sum(d.valor for d in self.dados)\n        return f\"{caras} = {total}\"\n\nv = Vaso(3)\nv.dados[0].valor = 2\nv.dados[1].valor = 6\nv.dados[2].valor = 3\nprint(v)"
+    },
+    {
+     "id": "re4",
+     "lvl": 3,
+     "title": "La misma lista",
+     "q": "<pre class=\"py\"><code>class Mazo:\n    def __init__(self, cartas):\n        self.cartas = cartas\n\n    def repartir(self):\n        return self.cartas.pop()\n\nmis_cartas = [\"A♠\", \"7♦\", \"Q♥\"]\nm = Mazo(mis_cartas)\nc = m.repartir()\nprint(c, len(mis_cartas))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">Q♥ 2</code>",
+        "<code class=\"out\">Q♥ 3</code>",
+        "<code class=\"out\">A♠ 2</code>",
+        "<code class=\"out\">A♠ 3</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 AttributeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>self.cartas = cartas</code> no copia la lista: <code>m.cartas</code> y <code>mis_cartas</code> son la misma.",
+      "<code>pop()</code> quita y devuelve el último (Q♥), así que <code>mis_cartas</code> queda con 2."
+     ],
+     "ans": "<code class=\"out\">Q♥ 2</code>",
+     "hint": "Una lista asignada no se copia.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "alias",
+       "comp"
+      ]
+     ],
+     "play": "class Mazo:\n    def __init__(self, cartas):\n        self.cartas = cartas\n\n    def repartir(self):\n        return self.cartas.pop()\n\nmis_cartas = [\"A♠\", \"7♦\", \"Q♥\"]\nm = Mazo(mis_cartas)\nc = m.repartir()\nprint(c, len(mis_cartas))"
+    },
+    {
+     "id": "re5",
+     "lvl": 3,
+     "title": "Matriz mal construida",
+     "q": "<pre class=\"py\"><code>fila = [\"⬛\"] * 3\npantalla = [fila] * 2\npantalla[0][1] = \"⬜\"\nfor f in pantalla:\n    print(\"\".join(f))</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">⬛⬜⬛\n⬛⬜⬛</code>",
+        "<code class=\"out\">⬛⬜⬛\n⬛⬛⬛</code>",
+        "<code class=\"out\">⬜⬛⬛\n⬛⬛⬛</code>",
+        "<code class=\"out\">⬛⬜⬛</code>",
+        "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>[fila] * 2</code> repite la <b>misma</b> lista dos veces: las dos filas son un solo objeto.",
+      "Por eso al pintar <code>pantalla[0][1]</code> aparece en las dos filas.",
+      "Lo correcto: <code>[[\"⬛\"] * 3 for _ in range(2)]</code> (una lista nueva por fila)."
+     ],
+     "ans": "<code class=\"out\">⬛⬜⬛\n⬛⬜⬛</code>",
+     "hint": "¿Cuántas listas distintas hay?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "alias"
+      ]
+     ],
+     "play": "fila = [\"⬛\"] * 3\npantalla = [fila] * 2\npantalla[0][1] = \"⬜\"\nfor f in pantalla:\n    print(\"\".join(f))"
+    },
+    {
+     "id": "re6",
+     "lvl": 2,
+     "title": "Implementa el Vaso",
+     "q": "<p>Con la clase <code>Dado</code> de <code>dado.py</code>, implementa <code>Vaso(n)</code> (composición): crea <code>n</code> dados en el atributo <code>dados</code>, <code>lanzar()</code> lanza todos, <code>total()</code> devuelve la suma y <code>__str__</code> devuelve, por ejemplo, <code>⚁ + ⚅ + ⚂ = 11</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from dado import Dado\n\nclass Vaso:\n    def __init__(self, n):\n        self.dados = []",
+       "tests": [
+        {
+         "n": "Vaso(3) tiene 3 dados",
+         "run": "v = Vaso(3)\nprint(len(v.dados), all(1 <= d.valor <= 6 for d in v.dados))",
+         "out": "3 True"
+        },
+        {
+         "n": "total y __str__",
+         "run": "v = Vaso(3)\nfor d, x in zip(v.dados, [2, 6, 3]):\n    d.valor = x\nprint(v.total())\nprint(v)",
+         "out": "11\n⚁ + ⚅ + ⚂ = 11"
+        },
+        {
+         "n": "lanzar cambia los dados",
+         "run": "v = Vaso(5)\nvistos = set()\nfor _ in range(200):\n    v.lanzar()\n    vistos.add(v.total())\nprint(len(vistos) > 10)",
+         "out": "True"
+        }
+       ],
+       "files": {
+        "dado.py": "from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = None\n        self.lanzar()\n\n    def lanzar(self):\n        self.valor = randint(1, 6)\n\n    def __str__(self):\n        return chr(0x267f + self.valor)\n"
+       }
+      }
+     ],
+     "steps": [
+      "Constructor: <code>[Dado() for _ in range(n)]</code>.",
+      "<code>lanzar</code> delega: recorre y llama <code>d.lanzar()</code>.",
+      "<code>__str__</code>: <code>\" + \".join(str(d) for d in self.dados)</code> y el total.",
+      "Una solución posible:<pre class=\"py\"><code>from dado import Dado\n\nclass Vaso:\n    def __init__(self, n):\n        self.dados = [Dado() for _ in range(n)]\n\n    def lanzar(self):\n        for d in self.dados:\n            d.lanzar()\n\n    def total(self):\n        return sum(d.valor for d in self.dados)\n\n    def __str__(self):\n        return \" + \".join(str(d) for d in self.dados) + f\" = {self.total()}\"</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "El vaso delega en cada dado.",
+     "fig": "umlvaso",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ]
+     ]
+    },
+    {
+     "id": "re7",
+     "lvl": 3,
+     "title": "Mazo de 52 cartas",
+     "q": "<p>Con <code>Carta</code> de <code>carta.py</code>, implementa <code>Mazo</code>: el constructor crea las 52 cartas (números 1 al 13 de los palos <code>\"espadas\"</code>, <code>\"tréboles\"</code>, <code>\"corazones\"</code> y <code>\"cocos\"</code>), <code>barajar()</code> las mezcla, <code>repartir(n)</code> quita y devuelve una lista con <code>n</code> cartas, y <code>__len__</code> devuelve cuántas quedan.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from random import shuffle\nfrom carta import Carta\n\nclass Mazo:\n    def __init__(self):\n        self.cartas = []",
+       "tests": [
+        {
+         "n": "52 cartas distintas",
+         "run": "m = Mazo()\nprint(len(m), len({str(c) for c in m.cartas}))",
+         "out": "52 52"
+        },
+        {
+         "n": "repartir(5)",
+         "run": "m = Mazo()\nmano = m.repartir(5)\nprint(len(mano), len(m), all(c.__class__.__name__ == \"Carta\" for c in mano))",
+         "out": "5 47 True"
+        },
+        {
+         "n": "barajar cambia el orden",
+         "run": "m = Mazo()\nantes = [str(c) for c in m.cartas]\nm.barajar()\ndespues = [str(c) for c in m.cartas]\nprint(antes != despues, sorted(antes) == sorted(despues))",
+         "out": "True True"
+        }
+       ],
+       "files": {
+        "carta.py": "class Carta:\n    unicode = dict(espadas=\"\\u2660\", tréboles=\"\\u2663\", corazones=\"\\u2665\", cocos=\"\\u2666\")\n    números = {1: \"A\", 11: \"J\", 12: \"Q\", 13: \"K\"}\n\n    def __init__(self, número, palo):\n        self.número = número\n        self.palo = palo\n\n    def __str__(self):\n        palo = Carta.unicode.get(self.palo, self.palo)\n        num = Carta.números.get(self.número, self.número)\n        return f\"{num}{palo}\"\n"
+       }
+      }
+     ],
+     "steps": [
+      "Dos <code>for</code> anidados: palos × números.",
+      "<code>repartir</code> hace <code>pop()</code> n veces y junta las cartas en una lista.",
+      "<code>__len__</code> permite usar <code>len(mazo)</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from random import shuffle\nfrom carta import Carta\n\nclass Mazo:\n    def __init__(self):\n        self.cartas = []\n        for palo in [\"espadas\", \"tréboles\", \"corazones\", \"cocos\"]:\n            for número in range(1, 14):\n                self.cartas.append(Carta(número, palo))\n\n    def barajar(self):\n        shuffle(self.cartas)\n\n    def repartir(self, n):\n        mano = []\n        for _ in range(n):\n            mano.append(self.cartas.pop())\n        return mano\n\n    def __len__(self):\n        return len(self.cartas)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "shuffle mezcla la lista en su lugar.",
+     "fig": "umlmazo",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ]
+     ]
+    },
+    {
+     "id": "re8",
+     "lvl": 3,
+     "title": "La pantalla",
+     "q": "<p>Implementa <code>Pantalla(n, m)</code> con <code>n</code> filas y <code>m</code> columnas, todas apagadas. <code>encender(x, y)</code> y <code>apagar(x, y)</code> cambian el pixel de la <b>columna x, fila y</b> (desde 0). <code>__str__</code> devuelve las filas separadas por saltos de línea, con <code>⬜</code> para encendido y <code>⬛</code> para apagado. (Puedes guardar booleanos o crear una clase <code>Pixel</code>).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Pantalla:\n    def __init__(self, n, m):\n        self.n = n\n        self.m = m",
+       "tests": [
+        {
+         "n": "Pantalla(2, 4) apagada",
+         "run": "print(Pantalla(2, 4))",
+         "out": "⬛⬛⬛⬛\n⬛⬛⬛⬛"
+        },
+        {
+         "n": "Encender (2, 2), (1, 2) y (3, 2)",
+         "run": "p = Pantalla(5, 5)\np.encender(2, 2)\np.encender(1, 2)\np.encender(3, 2)\nprint(p)",
+         "out": "⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛\n⬛⬜⬜⬜⬛\n⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛"
+        },
+        {
+         "n": "apagar y filas independientes",
+         "run": "p = Pantalla(3, 3)\np.encender(0, 0)\np.encender(2, 1)\np.apagar(0, 0)\nprint(p)",
+         "out": "⬛⬛⬛\n⬛⬛⬜\n⬛⬛⬛"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Matriz con listas por comprensión: <code>[[Pixel() for _ in range(m)] for _ in range(n)]</code>.",
+      "El pixel (x, y) es <code>self.pixeles[y][x]</code>: primero la fila.",
+      "<code>__str__</code>: une cada fila con <code>\"\"</code> y las filas con <code>\"\\n\"</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Pixel:\n    def __init__(self):\n        self.estado = False\n\n    def __str__(self):\n        return \"\\u2B1C\" if self.estado else \"\\u2B1B\"\n\nclass Pantalla:\n    def __init__(self, n, m):\n        self.n = n\n        self.m = m\n        self.pixeles = [[Pixel() for _ in range(m)] for _ in range(n)]\n\n    def encender(self, x, y):\n        self.pixeles[y][x].estado = True\n\n    def apagar(self, x, y):\n        self.pixeles[y][x].estado = False\n\n    def __str__(self):\n        return \"\\n\".join(\"\".join(str(p) for p in fila) for fila in self.pixeles)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Primero la fila (y), luego la columna (x).",
+     "fig": "umlpant",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp",
+       "alias"
+      ]
+     ]
+    },
+    {
+     "id": "re9",
+     "lvl": 3,
+     "title": "El banco",
+     "q": "<p>Con <code>CuentaDeAhorros</code> de <code>cuenta.py</code>, implementa <code>Banco(ruta)</code>: el constructor lee el CSV (cabecera <code>nombre,ahorros,intereses</code>) y guarda en <code>cuentas</code> una lista de cuentas (ahorros e intereses como <code>float</code>). <code>buscar_por_nombre(nombre)</code> devuelve la lista de cuentas de ese cliente y <code>actualizar_montos()</code> aplica el interés a todas (llamando a cada cuenta).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from cuenta import CuentaDeAhorros\n\nclass Banco:\n    def __init__(self, ruta):\n        self.cuentas = []",
+       "tests": [
+        {
+         "n": "Carga 4 cuentas",
+         "run": "b = Banco(\"cuentas_y_montos.csv\")\nfor c in b.cuentas:\n    print(c)",
+         "out": "Ana, 1000.0 U.M., intereses del 10.0%\nLuis, 500.0 U.M., intereses del 5.0%\nAna, 200.0 U.M., intereses del 20.0%\nRosa, 750.0 U.M., intereses del 8.0%"
+        },
+        {
+         "n": "buscar_por_nombre(\"Ana\")",
+         "run": "b = Banco(\"cuentas_y_montos.csv\")\nprint(len(b.buscar_por_nombre(\"Ana\")), len(b.buscar_por_nombre(\"Pepe\")))",
+         "out": "2 0"
+        },
+        {
+         "n": "actualizar_montos",
+         "run": "b = Banco(\"cuentas_y_montos.csv\")\nb.actualizar_montos()\nprint([c.ahorros for c in b.cuentas])",
+         "out": "[1100.0, 525.0, 240.0, 810.0]"
+        }
+       ],
+       "files": {
+        "cuenta.py": "class CuentaDeAhorros:\n    def __init__(self, nombre, ahorros=0, intereses=10):\n        self.nombre = nombre\n        self.ahorros = ahorros\n        self.intereses = intereses\n\n    def __call__(self):\n        self.ahorros *= (1 + self.intereses/100)\n        self.ahorros = round(self.ahorros, 2)\n\n    def __str__(self):\n        return f\"{self.nombre}, {self.ahorros} U.M., intereses del {self.intereses}%\"\n",
+        "cuentas_y_montos.csv": "nombre,ahorros,intereses\nAna,1000,10\nLuis,500,5\nAna,200,20\nRosa,750,8\n"
+       }
+      }
+     ],
+     "steps": [
+      "Igual que cargar jugadores: <code>readline()</code> para la cabecera, <code>split(\",\")</code> y convertir con <code>float</code>.",
+      "<code>actualizar_montos</code> delega en el <code>__call__</code> de cada cuenta: <code>c()</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from cuenta import CuentaDeAhorros\n\nclass Banco:\n    def __init__(self, ruta):\n        self.cuentas = []\n        with open(ruta) as f:\n            f.readline()\n            for linea in f:\n                nombre, ahorros, intereses = linea.strip().split(\",\")\n                self.cuentas.append(CuentaDeAhorros(nombre, float(ahorros), float(intereses)))\n\n    def buscar_por_nombre(self, nombre):\n        return [c for c in self.cuentas if c.nombre == nombre]\n\n    def actualizar_montos(self):\n        for c in self.cuentas:\n            c()</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Cada cuenta se «llama» para aplicar su interés.",
+     "fig": "umlbanco",
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp",
+       "file",
+       "call"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Programas grandes = varias clases que colaboran. El diagrama de clases muestra quién contiene a quién; el código lo refleja con atributos que son objetos o listas de objetos.</p>\n<h3>Conceptos clave</h3><ul><li>Composición (◆) vs. agregación (◇).</li><li>Matrices de objetos: <code>self.pixeles[y][x]</code>.</li><li>Delegación entre clases.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>Vaso(3)</code> crea 3 dados; <code>print(v)</code> → <code>⚁ + ⚅ + ⚂ = 11</code>.</div>\n<div class=\"err\"><b>Error común:</b> en una matriz, crearla con <code>[[Pixel()] * m] * n</code>: todas las filas son la misma lista (y el mismo pixel).</div>"
+  },
+  {
+   "id": "pc",
+   "name": "Tipo PC1 · Problemas de computadora",
+   "teo": "\n<p>La parte de computadora de la PC1 (19 de septiembre) tuvo dos problemas integradores: un <strong>juego de dados</strong> (<code>Dado</code>, <code>Turno</code>, <code>Juego</code>, 6 pts.) y la <strong>tienda de papas</strong> de Pascual (<code>VariedadPapa</code>, <code>Pedido</code>, <code>Tienda</code>, 7 pts.). Se trabajó con varios archivos que se importan entre sí y lo central fue completar <strong>constructores</strong> y la sobrecarga de <code>+=</code> y <code>-=</code>.</p>\n<p>Esquema que se repite: una clase «contenedora» guarda un diccionario o una lista; <code>__iadd__</code> agrega o acumula (si la llave ya existe, se suma en vez de reemplazar) y termina con <code>return self</code>; el programa principal valida la entrada con un <code>while</code>, crea los objetos e imprime con el <code>__str__</code> ya hecho.</p>\n<p>Para buscar un objeto por su nombre en una lista, recorre con <code>for i, v in enumerate(lista):</code> y compara <code>v.nombre</code>: así tienes el índice y el elemento.</p>",
+   "form": [
+    "<code>__iadd__</code>: acumular y <code>return self</code>",
+    "Diccionario contador: <code>{p: 0 for p in range(2, 13)}</code>",
+    "Si la llave existe, suma: <code>d[k] += x</code>; si no, créala",
+    "<code>for i, v in enumerate(lista)</code> para buscar por nombre",
+    "Validar: <code>while n &lt;= 10000: n = int(input(...))</code>"
+   ],
+   "ex": [
+    {
+     "id": "pc1",
+     "lvl": 2,
+     "title": "P4 (1) · Constructor de Turno",
+     "q": "<p>Completa el constructor de <code>Turno</code>: crea dos dados (atributos <code>dado1</code> y <code>dado2</code>) y guarda la suma de sus valores en el atributo <code>puntos</code>. La clase <code>Dado</code> está en <code>dado.py</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from dado import Dado\n\nclass Turno:\n    def __init__(self):\n        ...",
+       "tests": [
+        {
+         "n": "puntos = suma de los dos dados",
+         "run": "t = Turno()\nprint(t.puntos == t.dado1.valor + t.dado2.valor)",
+         "out": "True"
+        },
+        {
+         "n": "puntos entre 2 y 12",
+         "run": "ps = {Turno().puntos for _ in range(500)}\nprint(min(ps), max(ps))",
+         "out": "2 12"
+        }
+       ],
+       "files": {
+        "dado.py": "from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = None\n        self.lanzar()\n\n    def lanzar(self):\n        self.valor = randint(1, 6)\n\n    def __str__(self):\n        return chr(0x267f + self.valor)\n"
+       }
+      }
+     ],
+     "steps": [
+      "Crea los dos dados con <code>Dado()</code> (al crearse ya se lanzan).",
+      "<code>self.puntos = self.dado1.valor + self.dado2.valor</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from dado import Dado\n\nclass Turno:\n    def __init__(self):\n        self.dado1 = Dado()\n        self.dado2 = Dado()\n        self.puntos = self.dado1.valor + self.dado2.valor</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Composición: el turno crea sus dados.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ]
+     ]
+    },
+    {
+     "id": "pc2",
+     "lvl": 2,
+     "title": "P4 (2) · += en Juego",
+     "q": "<p><code>Juego</code> tiene el diccionario <code>conteo</code> con las llaves 2 a 12. Completa <code>__iadd__</code> para que <code>juego += turno</code> sume 1 al puntaje obtenido en ese turno.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Juego:\n    def __init__(self):\n        self.conteo = {p: 0 for p in range(2, 13)}\n\n    def __iadd__(self, turno):\n        ...\n\n    def __str__(self):\n        return \"\\n\".join(f\"{p}: {c}\" for p, c in self.conteo.items())",
+       "tests": [
+        {
+         "n": "Contabiliza turnos",
+         "run": "class T:\n    def __init__(self, p):\n        self.puntos = p\nj = Juego()\nfor p in [7, 7, 2, 12, 7]:\n    j += T(p)\nprint(j.conteo[7], j.conteo[2], j.conteo[12], j.conteo[5])",
+         "out": "3 1 1 0"
+        },
+        {
+         "n": "Sigue siendo un Juego después de +=",
+         "run": "class T:\n    def __init__(self, p):\n        self.puntos = p\nj = Juego()\nj += T(3)\nprint(isinstance(j, Juego))",
+         "out": "True"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Suma 1 en <code>self.conteo[turno.puntos]</code>.",
+      "Termina con <code>return self</code>, si no <code>juego</code> se vuelve <code>None</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Juego:\n    def __init__(self):\n        self.conteo = {p: 0 for p in range(2, 13)}\n\n    def __iadd__(self, turno):\n        self.conteo[turno.puntos] += 1\n        return self\n\n    def __str__(self):\n        return \"\\n\".join(f\"{p}: {c}\" for p, c in self.conteo.items())</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Cuidado con el return.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd"
+      ]
+     ]
+    },
+    {
+     "id": "pc3",
+     "lvl": 3,
+     "title": "P4 (3) · Programa principal",
+     "q": "<p>Escribe el programa principal: pide un número <code>n</code> con <code>input</code> y vuelve a pedirlo mientras no sea <b>mayor a 10000</b>. Luego crea un <code>Juego</code> en la variable <code>juego</code>, simula <code>n</code> turnos y muestra el resultado con <code>print(juego)</code>. Las clases <code>Turno</code> y <code>Juego</code> están en <code>turno.py</code> y <code>juego.py</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from turno import Turno\nfrom juego import Juego\n\nn = int(input(\"Número de turnos: \"))",
+       "tests": [
+        {
+         "n": "Rechaza 500 y 10000; acepta 10001",
+         "in": "500\n10000\n10001",
+         "run": "assert sum(juego.conteo.values()) == 10001, \"juego no tiene 10001 turnos\""
+        },
+        {
+         "n": "El 7 es el puntaje más frecuente",
+         "in": "20000",
+         "run": "assert max(juego.conteo, key=juego.conteo.get) == 7, \"con 20000 turnos el 7 debería ser el más frecuente\""
+        }
+       ],
+       "files": {
+        "dado.py": "from random import randint\n\nclass Dado:\n    def __init__(self):\n        self.valor = None\n        self.lanzar()\n\n    def lanzar(self):\n        self.valor = randint(1, 6)\n\n    def __str__(self):\n        return chr(0x267f + self.valor)\n",
+        "turno.py": "from dado import Dado\n\nclass Turno:\n    def __init__(self):\n        self.dado1 = Dado()\n        self.dado2 = Dado()\n        self.puntos = self.dado1.valor + self.dado2.valor\n",
+        "juego.py": "class Juego:\n    def __init__(self):\n        self.conteo = {p: 0 for p in range(2, 13)}\n\n    def __iadd__(self, turno):\n        self.conteo[turno.puntos] += 1\n        return self\n\n    def __str__(self):\n        return \"\\n\".join(f\"{p}: {c}\" for p, c in self.conteo.items())\n"
+       }
+      }
+     ],
+     "steps": [
+      "Valida con <code>while n &lt;= 10000</code>.",
+      "Repite <code>juego += Turno()</code> n veces e imprime.",
+      "Una solución posible:<pre class=\"py\"><code>from turno import Turno\nfrom juego import Juego\n\nn = int(input(\"Número de turnos: \"))\nwhile n &lt;= 10000:\n    n = int(input(\"Debe ser mayor a 10000: \"))\n\njuego = Juego()\nfor _ in range(n):\n    juego += Turno()\nprint(juego)</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Mayor a 10000 significa que 10000 no vale.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd"
+      ]
+     ]
+    },
+    {
+     "id": "pc4",
+     "lvl": 2,
+     "title": "P5 (1) · += en Pedido",
+     "q": "<p>Completa <code>__iadd__</code> de <code>Pedido</code>: recibe una tupla <code>(nombre_variedad, kg)</code> y la agrega al diccionario <code>carrito</code>. Si la variedad ya está, <b>acumula</b> la cantidad.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "class Pedido:\n    def __init__(self, cliente):\n        self.cliente = cliente\n        self.carrito = {}\n\n    def __iadd__(self, item):\n        nombre, kg = item\n        self.carrito[nombre] = kg\n        return self",
+       "tests": [
+        {
+         "n": "Agrega dos variedades",
+         "run": "p = Pedido(\"Ana\")\np += (\"amarilla\", 2)\np += (\"huayro\", 1.5)\nprint(p.carrito)",
+         "out": "{'amarilla': 2, 'huayro': 1.5}"
+        },
+        {
+         "n": "Acumula la misma variedad",
+         "run": "p = Pedido(\"Ana\")\np += (\"amarilla\", 2)\np += (\"amarilla\", 3)\np += (\"canchán\", 1)\nprint(p.carrito)",
+         "out": "{'amarilla': 5, 'canchán': 1}"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Desempaqueta: <code>nombre, kg = item</code>.",
+      "Si <code>nombre in self.carrito</code>, suma; si no, crea la llave. Al final <code>return self</code>.",
+      "Una solución posible:<pre class=\"py\"><code>class Pedido:\n    def __init__(self, cliente):\n        self.cliente = cliente\n        self.carrito = {}\n\n    def __iadd__(self, item):\n        nombre, kg = item\n        if nombre in self.carrito:\n            self.carrito[nombre] += kg\n        else:\n            self.carrito[nombre] = kg\n        return self</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "La plantilla reemplaza en vez de acumular.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd",
+       "dget"
+      ]
+     ]
+    },
+    {
+     "id": "pc5",
+     "lvl": 3,
+     "title": "P5 (2) y (3) · Tienda: += y -=",
+     "q": "<p>Completa <code>Tienda</code>, que guarda en <code>variedades</code> una lista de <code>VariedadPapa</code>. <code>tienda += variedad</code> abastece: si ya existe una variedad con ese nombre suma su <code>stock_kg</code>, si no la agrega a la lista. <code>tienda -= pedido</code> procesa una compra: resta del stock los kg de cada variedad del <code>pedido.carrito</code>. (Asume datos válidos).</p>",
+     "checks": [
+      {
+       "t": "code",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "from variedadpapa import VariedadPapa\nfrom pedido import Pedido\n\nclass Tienda:\n    def __init__(self):\n        self.variedades = []\n\n    def buscar(self, nombre):\n        for i, v in enumerate(self.variedades):\n            if v.nombre == nombre:\n                return i\n        return -1\n\n    def __iadd__(self, variedad):\n        return self\n\n    def __isub__(self, pedido):\n        return self",
+       "tests": [
+        {
+         "n": "Abastecer variedades nuevas",
+         "run": "t = Tienda()\nt += VariedadPapa(\"amarilla\", 4.5, 50)\nt += VariedadPapa(\"huayro\", 3.8, 30)\nfor v in t.variedades:\n    print(v)",
+         "out": "amarilla: 50 kg a S/ 4.5\nhuayro: 30 kg a S/ 3.8"
+        },
+        {
+         "n": "Abastecer una existente suma stock",
+         "run": "t = Tienda()\nt += VariedadPapa(\"amarilla\", 4.5, 50)\nt += VariedadPapa(\"amarilla\", 4.5, 20)\nprint(len(t.variedades), t.variedades[0].stock_kg)",
+         "out": "1 70"
+        },
+        {
+         "n": "Procesar un pedido",
+         "run": "t = Tienda()\nt += VariedadPapa(\"amarilla\", 4.5, 50)\nt += VariedadPapa(\"huayro\", 3.8, 30)\np = Pedido(\"Ana\")\np += (\"amarilla\", 2)\np += (\"huayro\", 5)\np += (\"amarilla\", 3)\nt -= p\nfor v in t.variedades:\n    print(v)",
+         "out": "amarilla: 45 kg a S/ 4.5\nhuayro: 25 kg a S/ 3.8"
+        }
+       ],
+       "files": {
+        "variedadpapa.py": "class VariedadPapa:\n    def __init__(self, nombre, precio_kg, stock_kg):\n        self.nombre = nombre\n        self.precio_kg = precio_kg\n        self.stock_kg = stock_kg\n\n    def __str__(self):\n        return f\"{self.nombre}: {self.stock_kg} kg a S/ {self.precio_kg}\"\n",
+        "pedido.py": "class Pedido:\n    def __init__(self, cliente):\n        self.cliente = cliente\n        self.carrito = {}\n\n    def __iadd__(self, item):\n        nombre, kg = item\n        if nombre in self.carrito:\n            self.carrito[nombre] += kg\n        else:\n            self.carrito[nombre] = kg\n        return self\n"
+       }
+      }
+     ],
+     "steps": [
+      "Usa <code>buscar</code> (con <code>enumerate</code>) para saber si la variedad ya existe.",
+      "En <code>__isub__</code> recorre <code>pedido.carrito.items()</code> y resta en la variedad encontrada.",
+      "Los dos terminan con <code>return self</code>.",
+      "Una solución posible:<pre class=\"py\"><code>from variedadpapa import VariedadPapa\nfrom pedido import Pedido\n\nclass Tienda:\n    def __init__(self):\n        self.variedades = []\n\n    def buscar(self, nombre):\n        for i, v in enumerate(self.variedades):\n            if v.nombre == nombre:\n                return i\n        return -1\n\n    def __iadd__(self, variedad):\n        i = self.buscar(variedad.nombre)\n        if i == -1:\n            self.variedades.append(variedad)\n        else:\n            self.variedades[i].stock_kg += variedad.stock_kg\n        return self\n\n    def __isub__(self, pedido):\n        for nombre, kg in pedido.carrito.items():\n            i = self.buscar(nombre)\n            self.variedades[i].stock_kg -= kg\n        return self</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "buscar devuelve el índice o -1.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iadd"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los problemas de computadora combinan todo: varias clases en módulos, composición, diccionarios y operadores sobrecargados. Lee primero lo que ya está implementado y completa solo lo que piden.</p>\n<h3>Conceptos clave</h3><ul><li>Un turno = 2 dados, sus puntos = suma.</li><li>El juego cuenta cuántas veces salió cada puntaje.</li><li>Tienda: <code>+=</code> abastece una variedad, <code>-=</code> procesa un pedido.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>juego += Turno()</code> suma 1 en <code>juego.conteo[turno.puntos]</code>.</div>\n<div class=\"err\"><b>Error común:</b> en <code>Pedido</code>, hacer <code>carrito[nombre] = kg</code> siempre: si la variedad ya estaba, se pierde lo anterior.</div>"
+  }
+ ],
+ "figs": {
+  "umljug": "<svg class=\"uml\" viewBox=\"0 0 260 130\" role=\"img\" aria-label=\"Diagrama de la clase Jugador\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:260px;width:100%\"><rect x=\"40\" y=\"10\" width=\"180\" height=\"108\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"130.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Jugador</text>\n<line x1=\"40\" y1=\"34\" x2=\"220\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"40\" y1=\"76\" x2=\"220\" y2=\"76\" stroke=\"currentColor\"/>\n<text x=\"47\" y=\"51\">+ nombre</text>\n<text x=\"47\" y=\"68\">+ puntaje</text>\n<text x=\"47\" y=\"93\">+ agregar_puntaje()</text>\n<text x=\"47\" y=\"110\">+ __str__()</text></svg>",
+  "umlcarta": "<svg class=\"uml\" viewBox=\"0 0 300 150\" role=\"img\" aria-label=\"Diagrama de la clase Carta con atributos de clase subrayados\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:300px;width:100%\"><rect x=\"30\" y=\"10\" width=\"240\" height=\"142\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"150.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Carta</text>\n<line x1=\"30\" y1=\"34\" x2=\"270\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"30\" y1=\"110\" x2=\"270\" y2=\"110\" stroke=\"currentColor\"/>\n<text x=\"37\" y=\"51\" text-decoration=\"underline\">+ unicode: dict</text>\n<text x=\"37\" y=\"68\" text-decoration=\"underline\">+ números: dict</text>\n<text x=\"37\" y=\"85\">+ número</text>\n<text x=\"37\" y=\"102\">+ palo</text>\n<text x=\"37\" y=\"127\">+ __init__(número, palo)</text>\n<text x=\"37\" y=\"144\">+ __str__(): str</text></svg>",
+  "umlrect": "<svg class=\"uml\" viewBox=\"0 0 260 120\" role=\"img\" aria-label=\"Diagrama de la clase Rectángulo\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:260px;width:100%\"><rect x=\"40\" y=\"10\" width=\"180\" height=\"108\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"130.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Rectángulo</text>\n<line x1=\"40\" y1=\"34\" x2=\"220\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"40\" y1=\"76\" x2=\"220\" y2=\"76\" stroke=\"currentColor\"/>\n<text x=\"47\" y=\"51\">+ lado1</text>\n<text x=\"47\" y=\"68\">+ lado2</text>\n<text x=\"47\" y=\"93\">+ área()</text>\n<text x=\"47\" y=\"110\">+ __str__()</text></svg>",
+  "umlvaso": "<svg class=\"uml\" viewBox=\"0 0 480 111\" role=\"img\" aria-label=\"Composición: el Vaso contiene Dados (rombo relleno junto al Vaso)\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:480px;width:100%\"><rect x=\"10\" y=\"10\" width=\"170\" height=\"74\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"95.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Dado</text>\n<line x1=\"10\" y1=\"34\" x2=\"180\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"10\" y1=\"59\" x2=\"180\" y2=\"59\" stroke=\"currentColor\"/>\n<text x=\"17\" y=\"51\">+ valor: int</text>\n<text x=\"17\" y=\"76\">+ lanzar()</text>\n<rect x=\"270\" y=\"10\" width=\"200\" height=\"91\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"370.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Vaso</text>\n<line x1=\"270\" y1=\"34\" x2=\"470\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"270\" y1=\"59\" x2=\"470\" y2=\"59\" stroke=\"currentColor\"/>\n<text x=\"277\" y=\"51\">+ dados: list[Dado]</text>\n<text x=\"277\" y=\"76\">+ lanzar()</text>\n<text x=\"277\" y=\"93\">+ __str__()</text>\n<line x1=\"180\" y1=\"46\" x2=\"252\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.4\"/>\n<polygon points=\"270,46 261,40 252,46 261,52\" style=\"fill:currentColor;stroke:currentColor\" stroke-width=\"1.4\"/></svg>",
+  "umlmazo": "<svg class=\"uml\" viewBox=\"0 0 480 128\" role=\"img\" aria-label=\"Agregación: el Mazo agrupa Cartas (rombo vacío junto al Mazo)\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:480px;width:100%\"><rect x=\"10\" y=\"10\" width=\"160\" height=\"91\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"90.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Carta</text>\n<line x1=\"10\" y1=\"34\" x2=\"170\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"10\" y1=\"76\" x2=\"170\" y2=\"76\" stroke=\"currentColor\"/>\n<text x=\"17\" y=\"51\">+ número</text>\n<text x=\"17\" y=\"68\">+ palo</text>\n<text x=\"17\" y=\"93\">+ __str__()</text>\n<rect x=\"260\" y=\"10\" width=\"210\" height=\"108\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"365.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Mazo</text>\n<line x1=\"260\" y1=\"34\" x2=\"470\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"260\" y1=\"59\" x2=\"470\" y2=\"59\" stroke=\"currentColor\"/>\n<text x=\"267\" y=\"51\">+ cartas: list[Carta]</text>\n<text x=\"267\" y=\"76\">+ barajar()</text>\n<text x=\"267\" y=\"93\">+ repartir(n)</text>\n<text x=\"267\" y=\"110\">+ __len__()</text>\n<line x1=\"170\" y1=\"46\" x2=\"242\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.4\"/>\n<polygon points=\"260,46 251,40 242,46 251,52\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/></svg>",
+  "umlbanco": "<svg class=\"uml\" viewBox=\"0 0 540 145\" role=\"img\" aria-label=\"Composición: el Banco contiene cuentas de ahorro\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:540px;width:100%\"><rect x=\"10\" y=\"10\" width=\"190\" height=\"125\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"105.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">CuentaDeAhorros</text>\n<line x1=\"10\" y1=\"34\" x2=\"200\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"10\" y1=\"93\" x2=\"200\" y2=\"93\" stroke=\"currentColor\"/>\n<text x=\"17\" y=\"51\">+ nombre</text>\n<text x=\"17\" y=\"68\">+ ahorros</text>\n<text x=\"17\" y=\"85\">+ intereses</text>\n<text x=\"17\" y=\"110\">+ __call__()</text>\n<text x=\"17\" y=\"127\">+ __str__()</text>\n<rect x=\"260\" y=\"10\" width=\"270\" height=\"108\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"395.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Banco</text>\n<line x1=\"260\" y1=\"34\" x2=\"530\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"260\" y1=\"59\" x2=\"530\" y2=\"59\" stroke=\"currentColor\"/>\n<text x=\"267\" y=\"51\">+ cuentas: list[CuentaDeAhorros]</text>\n<text x=\"267\" y=\"76\">+ __init__(ruta: str)</text>\n<text x=\"267\" y=\"93\">+ buscar_por_nombre(nombre)</text>\n<text x=\"267\" y=\"110\">+ actualizar_montos()</text>\n<line x1=\"200\" y1=\"46\" x2=\"242\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.4\"/>\n<polygon points=\"260,46 251,40 242,46 251,52\" style=\"fill:currentColor;stroke:currentColor\" stroke-width=\"1.4\"/></svg>",
+  "umlpant": "<svg class=\"uml\" viewBox=\"0 0 490 179\" role=\"img\" aria-label=\"Composición: la Pantalla contiene una matriz de Pixeles\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-monospace,Menlo,Consolas,monospace\" font-size=\"12.5\" fill=\"currentColor\" style=\"max-width:490px;width:100%\"><rect x=\"10\" y=\"10\" width=\"170\" height=\"108\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"95.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Pixel</text>\n<line x1=\"10\" y1=\"34\" x2=\"180\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"10\" y1=\"59\" x2=\"180\" y2=\"59\" stroke=\"currentColor\"/>\n<text x=\"17\" y=\"51\">+ estado: bool</text>\n<text x=\"17\" y=\"76\">+ encender()</text>\n<text x=\"17\" y=\"93\">+ apagar()</text>\n<text x=\"17\" y=\"110\">+ __str__(): str</text>\n<rect x=\"240\" y=\"10\" width=\"240\" height=\"159\" rx=\"3\" style=\"fill:var(--card);stroke:currentColor\" stroke-width=\"1.4\"/>\n<text x=\"360.0\" y=\"26\" text-anchor=\"middle\" font-weight=\"700\">Pantalla</text>\n<line x1=\"240\" y1=\"34\" x2=\"480\" y2=\"34\" stroke=\"currentColor\"/>\n<line x1=\"240\" y1=\"93\" x2=\"480\" y2=\"93\" stroke=\"currentColor\"/>\n<text x=\"247\" y=\"51\">+ pixeles: list[list[Pixel]]</text>\n<text x=\"247\" y=\"68\">+ n: int</text>\n<text x=\"247\" y=\"85\">+ m: int</text>\n<text x=\"247\" y=\"110\">+ __init__(n, m)</text>\n<text x=\"247\" y=\"127\">+ encender(x, y)</text>\n<text x=\"247\" y=\"144\">+ apagar(x, y)</text>\n<text x=\"247\" y=\"161\">+ __str__(): str</text>\n<line x1=\"180\" y1=\"46\" x2=\"222\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.4\"/>\n<polygon points=\"240,46 231,40 222,46 231,52\" style=\"fill:currentColor;stroke:currentColor\" stroke-width=\"1.4\"/></svg>"
+ },
+ "concepts": {
+  "ent": {
+   "n": "input devuelve texto",
+   "f": "<code>int(input())</code>, <code>float(input())</code>",
+   "x": "Convierte antes de operar.",
+   "home": "py"
+  },
+  "fstr": {
+   "n": "f-strings",
+   "f": "<code>f\"Vale {x}\"</code>",
+   "x": "Las llaves se reemplazan por el valor.",
+   "home": "py"
+  },
+  "rango": {
+   "n": "range",
+   "f": "<code>range(a, b)</code> = a … b−1",
+   "x": "El final nunca se incluye.",
+   "home": "py"
+  },
+  "ops": {
+   "n": "Operadores",
+   "f": "<code>/ // % **</code>",
+   "x": "División, división entera, resto y potencia.",
+   "home": "py"
+  },
+  "rand": {
+   "n": "random",
+   "f": "<code>randint(a, b)</code>, <code>choice(lista)</code>",
+   "x": "randint incluye ambos extremos.",
+   "home": "py"
+  },
+  "ret": {
+   "n": "return",
+   "f": "Sin return → <code>None</code>",
+   "x": "print muestra, return entrega el valor.",
+   "home": "py"
+  },
+  "cond": {
+   "n": "if / elif / else",
+   "f": "<code>100 &lt;= x &lt;= 150</code>",
+   "x": "Se evalúa de arriba abajo; entra en la primera verdadera.",
+   "home": "py"
+  },
+  "dget": {
+   "n": "dict.get",
+   "f": "<code>d.get(k, defecto)</code>",
+   "x": "No lanza KeyError; ideal para contar.",
+   "home": "py"
+  },
+  "claseobj": {
+   "n": "Clase y objeto",
+   "f": "<code>obj = Clase(args)</code>",
+   "x": "La clase es el molde; cada objeto tiene sus propios atributos.",
+   "home": "clases"
+  },
+  "self": {
+   "n": "self",
+   "f": "<code>obj.m()</code> = <code>Clase.m(obj)</code>",
+   "x": "Todo método recibe el objeto como primer parámetro.",
+   "home": "clases"
+  },
+  "priv": {
+   "n": "Atributos ocultos",
+   "f": "<code>self.__x</code>",
+   "x": "Fuera de la clase da AttributeError: encapsulamiento.",
+   "home": "clases"
+  },
+  "alias": {
+   "n": "Referencias",
+   "f": "<code>a = b</code> no copia",
+   "x": "Los dos nombres apuntan al mismo objeto o lista.",
+   "home": "clases"
+  },
+  "strd": {
+   "n": "__str__",
+   "f": "<code>return</code> un str",
+   "x": "Lo usa print; si no existe, se ve la dirección de memoria.",
+   "home": "str"
+  },
+  "uni": {
+   "n": "Unicode",
+   "f": "<code>chr(0x2680)</code> = ⚀",
+   "x": "chr(0x267f + valor) dibuja la cara del dado.",
+   "home": "str"
+  },
+  "clsattr": {
+   "n": "Atributo de clase",
+   "f": "<code>Clase.atributo</code>",
+   "x": "Compartido por todos; se modifica con el nombre de la clase. Subrayado en UML.",
+   "home": "str"
+  },
+  "uml": {
+   "n": "Diagrama de clases",
+   "f": "Nombre / atributos / métodos",
+   "x": "+ público; subrayado = de clase.",
+   "home": "str"
+  },
+  "dunop": {
+   "n": "Operadores sobrecargados",
+   "f": "<code>a + b</code> → <code>a.__add__(b)</code>",
+   "x": "Cada operador tiene su dunder; retorna el resultado.",
+   "home": "ops"
+  },
+  "inst": {
+   "n": "isinstance",
+   "f": "<code>isinstance(x, int)</code>",
+   "x": "Permite actuar distinto según el tipo del otro operando.",
+   "home": "ops"
+  },
+  "radd": {
+   "n": "Operadores por la derecha",
+   "f": "<code>2 + r</code> → <code>r.__radd__(2)</code>",
+   "x": "sum() empieza con 0 + objeto: necesita __radd__.",
+   "home": "ops"
+  },
+  "repr": {
+   "n": "__repr__",
+   "f": "<code>repr(obj)</code>",
+   "x": "Se usa al imprimir listas de objetos.",
+   "home": "ops"
+  },
+  "estr": {
+   "n": "Estructuras de datos",
+   "f": "list · tuple · set · dict",
+   "x": "Tupla inmutable, set sin repetidos, dict llave → valor.",
+   "home": "datos"
+  },
+  "defpar": {
+   "n": "Parámetros por defecto",
+   "f": "<code>def __init__(self, x=None)</code>",
+   "x": "Si no se envía, se usa el valor por defecto.",
+   "home": "datos"
+  },
+  "mod": {
+   "n": "Módulos",
+   "f": "<code>from dado import Dado</code>",
+   "x": "El archivo va sin .py; __main__ solo al ejecutarlo directo.",
+   "home": "datos"
+  },
+  "iadd": {
+   "n": "__iadd__ / __isub__",
+   "f": "<code>a += b</code> → <code>a = a.__iadd__(b)</code>",
+   "x": "Siempre return self.",
+   "home": "arch"
+  },
+  "call": {
+   "n": "__call__",
+   "f": "<code>obj()</code>",
+   "x": "Permite llamar al objeto como función.",
+   "home": "arch"
+  },
+  "file": {
+   "n": "Archivos",
+   "f": "<code>with open(ruta, modo) as f</code>",
+   "x": "Lo leído es texto: strip, split y convertir.",
+   "home": "arch"
+  },
+  "comp": {
+   "n": "Composición y agregación",
+   "f": "◆ crea sus partes · ◇ las agrupa",
+   "x": "El todo guarda objetos como atributos y delega en ellos.",
+   "home": "rel"
+  }
+ },
+ "simEx": [
+  {
+   "id": "sx1",
+   "lvl": 3,
+   "title": "Integrador: contador y suma",
+   "q": "<pre class=\"py\"><code>class Ficha:\n    creadas = 0\n\n    def __init__(self, valor):\n        Ficha.creadas += 1\n        self.valor = valor\n\n    def __add__(self, otro):\n        return Ficha(self.valor + otro.valor)\n\n    def __str__(self):\n        return f\"[{self.valor}]\"\n\na = Ficha(2)\nb = Ficha(5)\nc = a + b + a\nprint(c, Ficha.creadas)</code></pre><p>¿Qué imprime este programa?</p>",
+   "checks": [
+    {
+     "p": "Salida",
+     "o": [
+      "<code class=\"out\">[9] 4</code>",
+      "<code class=\"out\">[9] 3</code>",
+      "<code class=\"out\">[7] 2</code>",
+      "<code class=\"out\">[9] 2</code>",
+      "<code class=\"out\">[9] 5</code>"
+     ]
+    }
+   ],
+   "steps": [
+    "<code>a + b</code> crea una ficha nueva [7] (3.ª creada) y luego <code>[7] + a</code> crea [9] (4.ª).",
+    "Cada <code>__add__</code> llama al constructor, que aumenta el contador: 2 iniciales + 2 sumas = 4."
+   ],
+   "ans": "<code class=\"out\">[9] 4</code>",
+   "hint": "Cada suma crea una ficha nueva.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "clsattr",
+     "dunop"
+    ]
+   ],
+   "play": "class Ficha:\n    creadas = 0\n\n    def __init__(self, valor):\n        Ficha.creadas += 1\n        self.valor = valor\n\n    def __add__(self, otro):\n        return Ficha(self.valor + otro.valor)\n\n    def __str__(self):\n        return f\"[{self.valor}]\"\n\na = Ficha(2)\nb = Ficha(5)\nc = a + b + a\nprint(c, Ficha.creadas)"
+  },
+  {
+   "id": "sx2",
+   "lvl": 2,
+   "title": "Leer el diagrama de la pantalla",
+   "q": "<p>Según el diagrama, ¿qué afirmación es correcta?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "La Pantalla crea y contiene una matriz de Pixeles (composición) y delega en ellos encender/apagar",
+      "Pixel hereda de Pantalla",
+      "Pantalla hereda de Pixel",
+      "Los Pixeles se reciben desde fuera (agregación)",
+      "Pantalla y Pixel no se relacionan"
+     ]
+    }
+   ],
+   "steps": [
+    "El rombo relleno junto a Pantalla indica composición.",
+    "El atributo <code>pixeles: list[list[Pixel]]</code> es la matriz y <code>encender(x, y)</code> llama a <code>encender()</code> del pixel correspondiente."
+   ],
+   "ans": "La Pantalla crea y contiene una matriz de Pixeles (composición) y delega en ellos encender/apagar",
+   "hint": "Rombo relleno.",
+   "fig": "umlpant",
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "comp",
+     "uml"
+    ]
+   ]
+  },
+  {
+   "id": "sx3",
+   "lvl": 2,
+   "title": "Pedido con +=",
+   "q": "<pre class=\"py\"><code>class Pedido:\n    def __init__(self, cliente):\n        self.cliente = cliente\n        self.carrito = {}\n\n    def __iadd__(self, item):\n        nombre, kg = item\n        if nombre in self.carrito:\n            self.carrito[nombre] += kg\n        else:\n            self.carrito[nombre] = kg\n        return self\n\np = Pedido(\"Pascual\")\np += (\"amarilla\", 2)\np += (\"huayro\", 1)\np += (\"amarilla\", 0.5)\nprint(p.cliente, p.carrito)</code></pre><p>¿Qué imprime este programa?</p>",
+   "checks": [
+    {
+     "p": "Salida",
+     "o": [
+      "<code class=\"out\">Pascual {'amarilla': 2.5, 'huayro': 1}</code>",
+      "<code class=\"out\">Pascual {'amarilla': 0.5, 'huayro': 1}</code>",
+      "<code class=\"out\">Pascual {'amarilla': 2, 'huayro': 1, 'amarilla': 0.5}</code>",
+      "<code class=\"out\">None</code>",
+      "<code class=\"out\">Pascual {'amarilla': 2.5}</code>"
+     ]
+    }
+   ],
+   "steps": [
+    "La segunda vez que llega \"amarilla\" ya está en el carrito: se acumula 2 + 0.5 = 2.5.",
+    "Como <code>__iadd__</code> retorna <code>self</code>, <code>p</code> sigue siendo el pedido."
+   ],
+   "ans": "<code class=\"out\">Pascual {'amarilla': 2.5, 'huayro': 1}</code>",
+   "hint": "Se acumula, no se reemplaza.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "iadd"
+    ]
+   ],
+   "play": "class Pedido:\n    def __init__(self, cliente):\n        self.cliente = cliente\n        self.carrito = {}\n\n    def __iadd__(self, item):\n        nombre, kg = item\n        if nombre in self.carrito:\n            self.carrito[nombre] += kg\n        else:\n            self.carrito[nombre] = kg\n        return self\n\np = Pedido(\"Pascual\")\np += (\"amarilla\", 2)\np += (\"huayro\", 1)\np += (\"amarilla\", 0.5)\nprint(p.cliente, p.carrito)"
+  },
+  {
+   "id": "sx4",
+   "lvl": 3,
+   "title": "== sin __eq__",
+   "q": "<pre class=\"py\"><code>class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\na = Manzana(150)\nb = Manzana(150)\nc = a\nprint(a == b, a == c, a.peso == b.peso)</code></pre><p>¿Qué imprime este programa?</p>",
+   "checks": [
+    {
+     "p": "Salida",
+     "o": [
+      "<code class=\"out\">False True True</code>",
+      "<code class=\"out\">True True True</code>",
+      "<code class=\"out\">False False True</code>",
+      "<code class=\"out\">True False True</code>",
+      "<code class=\"out\"><b class=\"perr\">💥 TypeError</b></code>"
+     ]
+    }
+   ],
+   "steps": [
+    "Sin <code>__eq__</code>, <code>==</code> compara si son el <b>mismo objeto</b>: a y b son dos manzanas distintas → False.",
+    "<code>c = a</code> es el mismo objeto → True. Comparar los pesos (números) → True."
+   ],
+   "ans": "<code class=\"out\">False True True</code>",
+   "hint": "Sin __eq__ se compara identidad.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dunop",
+     "alias"
+    ]
+   ],
+   "play": "class Manzana:\n    def __init__(self, peso):\n        self.peso = peso\n\na = Manzana(150)\nb = Manzana(150)\nc = a\nprint(a == b, a == c, a.peso == b.peso)"
+  },
+  {
+   "id": "sx5",
+   "lvl": 3,
+   "title": "Solo __lt__",
+   "q": "<pre class=\"py\"><code>class Carta:\n    def __init__(self, n):\n        self.n = n\n\n    def __lt__(self, otra):\n        return self.n &lt; otra.n\n\na, b = Carta(3), Carta(9)\nprint(a &lt; b, b &gt; a, a &gt; b)</code></pre><p>¿Qué imprime este programa?</p>",
+   "checks": [
+    {
+     "p": "Salida",
+     "o": [
+      "<code class=\"out\">True True False</code>",
+      "<code class=\"out\">True !TypeError</code>",
+      "<code class=\"out\">True False False</code>",
+      "<code class=\"out\">True True True</code>",
+      "<code class=\"out\">False True False</code>"
+     ]
+    }
+   ],
+   "steps": [
+    "<code>a &lt; b</code> usa <code>__lt__</code>: True.",
+    "No hay <code>__gt__</code>, pero Python prueba el reflejo: <code>b &gt; a</code> equivale a <code>a &lt; b</code> → True; <code>a &gt; b</code> equivale a <code>b &lt; a</code> → False."
+   ],
+   "ans": "<code class=\"out\">True True False</code>",
+   "hint": "Python puede usar el operador reflejado.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "dunop"
+    ]
+   ],
+   "play": "class Carta:\n    def __init__(self, n):\n        self.n = n\n\n    def __lt__(self, otra):\n        return self.n < otra.n\n\na, b = Carta(3), Carta(9)\nprint(a < b, b > a, a > b)"
+  },
+  {
+   "id": "sx6",
+   "lvl": 2,
+   "title": "Encapsulamiento",
+   "q": "<p>Con esta clase, ¿qué línea del programa principal lanza un error?</p><pre class=\"py\"><code>class Cuenta:\n    def __init__(self, saldo):\n        self.__saldo = saldo\n        self.titular = \"Ana\"\n\n    def ver_saldo(self):\n        return self.__saldo\n\nc = Cuenta(100)\nprint(c.titular)        # línea A\nprint(c.ver_saldo())    # línea B\nc.titular = \"Luis\"      # línea C\nprint(c.__saldo)        # línea D</code></pre>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Solo la línea D",
+      "Las líneas B y D",
+      "Solo la línea C",
+      "Las líneas C y D",
+      "Ninguna"
+     ]
+    }
+   ],
+   "steps": [
+    "<code>__saldo</code> es oculto: desde fuera, <code>c.__saldo</code> da AttributeError (línea D).",
+    "Dentro de la clase sí se puede usar, por eso <code>ver_saldo()</code> funciona; <code>titular</code> es público y se puede leer y cambiar."
+   ],
+   "ans": "Solo la línea D",
+   "hint": "Dentro de la clase sí se puede usar __saldo.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "priv"
+    ]
+   ],
+   "play": "class Cuenta:\n    def __init__(self, saldo):\n        self.__saldo = saldo\n        self.titular = \"Ana\"\n\n    def ver_saldo(self):\n        return self.__saldo\n\nc = Cuenta(100)\nprint(c.titular)\nprint(c.ver_saldo())\nc.titular = \"Luis\"\nprint(c.__saldo)"
+  },
+  {
+   "id": "sx7",
+   "lvl": 2,
+   "title": "Turnos con valores fijos",
+   "q": "<pre class=\"py\"><code>class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\nclass Turno:\n    def __init__(self, v1, v2):\n        self.dados = [Dado(v1), Dado(v2)]\n        self.puntos = sum(d.valor for d in self.dados)\n\nclass Juego:\n    def __init__(self):\n        self.conteo = {}\n\n    def __iadd__(self, turno):\n        self.conteo[turno.puntos] = self.conteo.get(turno.puntos, 0) + 1\n        return self\n\nj = Juego()\nfor a, b in [(3, 4), (6, 1), (2, 2), (5, 2)]:\n    j += Turno(a, b)\nprint(j.conteo)</code></pre><p>¿Qué imprime este programa?</p>",
+   "checks": [
+    {
+     "p": "Salida",
+     "o": [
+      "<code class=\"out\">{7: 3, 4: 1}</code>",
+      "<code class=\"out\">{7: 1, 4: 1}</code>",
+      "<code class=\"out\">{3: 1, 6: 1, 2: 1, 5: 1}</code>",
+      "<code class=\"out\">{7: 3, 4: 1, 'total': 4}</code>",
+      "<code class=\"out\">{7: 4}</code>"
+     ]
+    }
+   ],
+   "steps": [
+    "Puntos de cada turno: 7, 7, 4 y 7.",
+    "El diccionario cuenta: 7 aparece 3 veces y 4 una vez, en el orden en que aparecieron."
+   ],
+   "ans": "<code class=\"out\">{7: 3, 4: 1}</code>",
+   "hint": "Suma cada par.",
+   "fig": null,
+   "draw": false,
+   "open": false,
+   "solfig": null,
+   "tags": [
+    [
+     "iadd",
+     "comp"
+    ]
+   ],
+   "play": "class Dado:\n    def __init__(self, valor):\n        self.valor = valor\n\nclass Turno:\n    def __init__(self, v1, v2):\n        self.dados = [Dado(v1), Dado(v2)]\n        self.puntos = sum(d.valor for d in self.dados)\n\nclass Juego:\n    def __init__(self):\n        self.conteo = {}\n\n    def __iadd__(self, turno):\n        self.conteo[turno.puntos] = self.conteo.get(turno.puntos, 0) + 1\n        return self\n\nj = Juego()\nfor a, b in [(3, 4), (6, 1), (2, 2), (5, 2)]:\n    j += Turno(a, b)\nprint(j.conteo)"
+  }
+ ],
+ "sim": {
+  "minutes": 110,
+  "intro": "Simulacro del <b>examen parcial (teoría, semana 8)</b>: predecir salidas, leer diagramas de clases y escribir una clase. Las preguntas se eligen al azar de un banco con los ejercicios de los temas y algunos integradores nuevos. La pregunta de código se corrige con pruebas automáticas (puntaje parcial según cuántas pasa).",
+  "slots": [
+   {
+    "pts": 1.5,
+    "name": "Repaso de Python",
+    "pool": [
+     "py3",
+     "py4",
+     "py6"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Clases y objetos",
+    "pool": [
+     "cl3",
+     "cl5",
+     "cl6",
+     "sx6"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "__str__ y atributos de clase",
+    "pool": [
+     "st1",
+     "st4",
+     "st6",
+     "sx1"
+    ]
+   },
+   {
+    "pts": 2.5,
+    "name": "Sobrecarga de operadores",
+    "pool": [
+     "op1",
+     "op4",
+     "op5",
+     "op7",
+     "sx4",
+     "sx5"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Estructuras de datos y módulos",
+    "pool": [
+     "da3",
+     "da6",
+     "da7",
+     "da5"
+    ]
+   },
+   {
+    "pts": 2.5,
+    "name": "Archivos, += y __call__",
+    "pool": [
+     "ar1",
+     "ar2",
+     "ar3",
+     "ar5"
+    ]
+   },
+   {
+    "pts": 2.5,
+    "name": "Relaciones entre clases",
+    "pool": [
+     "re3",
+     "re4",
+     "re5",
+     "sx2",
+     "sx7"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Integrador tipo PC1",
+    "pool": [
+     "sx3",
+     "sx7",
+     "pc2"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Escribe una clase",
+    "pool": [
+     "st7",
+     "st8",
+     "op10",
+     "re6"
+    ]
+   }
+  ]
+ }
+}
