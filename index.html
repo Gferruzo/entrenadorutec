@@ -374,6 +374,7 @@ body:has(#vMenu:not([hidden])){background-color:#FFFFFF;background-image:linear-
 #vMenu .statsbtn:hover{background:#2B2B2B;color:#fff}
 #vMenu .sync{color:#7A7A7A}
 #vMenu .hero h1{font:500 clamp(2rem,5.4vw,3.3rem)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:0;color:#3A3A3A;margin:.35em 0 .1em}
+#vMenu .hero h1 .hi1{font-size:1.2em}
 #vMenu .hero h1 i{font:italic 900 1.12em 'Playfair Display',Georgia,serif;letter-spacing:-.01em}
 #vMenu .hero p{font:600 1.02rem/2.2 Lora,Georgia,serif;color:#555;max-width:none}
 #vMenu .menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:30px 44px;padding:8px 0 10px}
@@ -884,7 +885,7 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 <section id="vMenu">
 <div class="hero">
 <div class="topline"><button class="statsbtn acct" id="sync1" type="button">Iniciar sesión</button><button class="statsbtn modebtn" id="modebtn1">⏱ Modo de estudio</button><button class="themebtn" id="themebtn1" type="button">🌙</button><button class="statsbtn" id="installbtn" hidden>📲 Instalar app</button><button class="bell" id="bellbtn" type="button" aria-label="Novedades"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .9-.3 1.8-.9 2.5L5 15.2V17h14v-1.8l-1.1-1.5c-.6-.7-.9-1.6-.9-2.5V8a5 5 0 0 0-5-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.8 19.5a2.4 2.4 0 0 0 4.4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="bellct" id="bellct" hidden></span></button></div>
-<h1>¡Hola <i id="hiName">estudiante</i>!, <br>¿Qué curso deseas estudiar hoy?</h1>
+<h1><span class="hi1">¡Hola <i id="hiName">estudiante</i>!,</span><br>¿Qué curso deseas estudiar hoy?</h1>
 </div>
 <div id="menu"><p style="padding:1.5em;text-align:center;opacity:.6">Cargando cursos…</p></div>
 </section>
