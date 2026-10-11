@@ -452,6 +452,31 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Inversa con [A | I]",
+     "p": "Lleva el bloque izquierdo a I: el derecho se convierte en A⁻¹. Prueba también con una matriz no invertible, como [[1, 2], [2, 4]].",
+     "o": {
+      "m": [
+       [
+        2,
+        1,
+        1,
+        0
+       ],
+       [
+        1,
+        3,
+        0,
+        1
+       ]
+      ],
+      "mode": "inv",
+      "na": 2
+     }
+    }
    ]
   },
   {
@@ -526,7 +551,7 @@
      ],
      "ans": "Falla el cierre por escalar",
      "hint": "Prueba multiplicando por un número negativo.",
-     "fig": null,
+     "fig": "semi",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -918,6 +943,34 @@
        "li"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "¿LI o LD? Vectores como columnas",
+     "p": "Las columnas son v₁ = (1, 2, 1), v₂ = (0, 1, 1), v₃ = (2, 3, 1). Escalona y compara el rango con el número de vectores.",
+     "o": {
+      "m": [
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        1,
+        3
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "mode": "mat",
+      "cols": false
+     }
     }
    ]
   },
@@ -1396,10 +1449,42 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Columnas pivote y bases",
+     "p": "Al escalonar verás qué columnas son pivote, la base de Col(A) tomada de la matriz original y la nulidad.",
+     "o": {
+      "m": [
+       [
+        1,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        4,
+        0,
+        6
+       ],
+       [
+        1,
+        2,
+        2,
+        3
+       ]
+      ],
+      "mode": "mat"
+     }
+    }
    ]
   }
  ],
- "figs": {},
+ "figs": {
+  "semi": "<svg class=\"dg\" viewBox=\"0 0 300 170\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Semiplano x mayor o igual que cero\"><rect x=\"150\" y=\"10\" width=\"140\" height=\"150\" fill=\"var(--teo-bg)\"/><line class=\"gl\" x1=\"10.0\" y1=\"85.0\" x2=\"286.0\" y2=\"85.0\"/><polygon class=\"gl2h\" points=\"292.0,85.0,283.0,89.5,283.0,80.5\"/><line class=\"gl\" x1=\"150.0\" y1=\"160.0\" x2=\"150.0\" y2=\"12.0\"/><polygon class=\"gl2h\" points=\"150.0,6.0,154.5,15.0,145.5,15.0\"/><text class=\"dl\" x=\"220\" y=\"30\" text-anchor=\"middle\">W: x ≥ 0</text><line class=\"fa\" x1=\"150.0\" y1=\"85.0\" x2=\"204.0\" y2=\"85.0\"/><polygon class=\"fah\" points=\"210.0,85.0,201.0,89.5,201.0,80.5\"/><text class=\"dl\" x=\"205\" y=\"105\" text-anchor=\"middle\">(1, 0) ∈ W</text><line class=\"fb\" x1=\"150.0\" y1=\"85.0\" x2=\"96.0\" y2=\"85.0\"/><polygon class=\"fbh\" points=\"90.0,85.0,99.0,80.5,99.0,89.5\"/><text class=\"dl\" x=\"90\" y=\"105\" text-anchor=\"middle\">−(1, 0) ∉ W</text></svg>"
+ },
  "concepts": {
   "orden": {
    "n": "Orden y entradas",

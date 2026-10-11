@@ -680,6 +680,29 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "tl",
+     "t": "Visualizador de transformaciones lineales",
+     "p": "Las flechas son T(e₁) y T(e₂), las columnas de A. Muévelas y mira cómo se deforma todo el plano. Prueba los botones: reflexión, rotación, proyección…",
+     "o": {
+      "a": [
+       [
+        2,
+        -1
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "v": [
+       2,
+       1
+      ]
+     }
+    }
    ]
   }
  ],

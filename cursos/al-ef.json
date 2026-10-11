@@ -1015,7 +1015,7 @@
      ],
      "ans": "18 km²",
      "hint": "Área = |det|.",
-     "fig": null,
+     "fig": "area",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -1153,6 +1153,51 @@
        "cof"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Escalonador paso a paso",
+     "p": "Aplica tú las operaciones por fila. Si te trabas, «💡 Siguiente paso» te sugiere una. Mira cómo cada operación afecta al determinante.",
+     "o": {
+      "m": [
+       [
+        1,
+        2,
+        3
+       ],
+       [
+        2,
+        4,
+        7
+       ],
+       [
+        1,
+        1,
+        2
+       ]
+      ],
+      "mode": "mat",
+      "cols": false
+     }
+    },
+    {
+     "w": "det",
+     "t": "El determinante como área",
+     "p": "Mueve u y v: el área del paralelogramo es |det|. Junta las dos flechas en una misma recta y mira qué pasa.",
+     "o": {
+      "a": [
+       [
+        4,
+        2
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     }
     }
    ]
   },
@@ -1674,6 +1719,37 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Resuelve un sistema con [A | b]",
+     "p": "Escalona la matriz aumentada para clasificar con Rouché–Frobenius; llega a la reducida para leer la solución. Puedes escribir tu propio sistema.",
+     "o": {
+      "m": [
+       [
+        1,
+        1,
+        1,
+        6
+       ],
+       [
+        2,
+        -1,
+        1,
+        3
+       ],
+       [
+        1,
+        2,
+        -1,
+        2
+       ]
+      ],
+      "mode": "sel",
+      "na": 3
+     }
+    }
    ]
   },
   {
@@ -2119,6 +2195,31 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Inversa con [A | I]",
+     "p": "Lleva el bloque izquierdo a I: el derecho se convierte en A⁻¹. Prueba también con una matriz no invertible, como [[1, 2], [2, 4]].",
+     "o": {
+      "m": [
+       [
+        2,
+        1,
+        1,
+        0
+       ],
+       [
+        1,
+        3,
+        0,
+        1
+       ]
+      ],
+      "mode": "inv",
+      "na": 2
+     }
+    }
    ]
   },
   {
@@ -2193,7 +2294,7 @@
      ],
      "ans": "Falla el cierre por escalar",
      "hint": "Prueba multiplicando por un número negativo.",
-     "fig": null,
+     "fig": "semi",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -2585,6 +2686,34 @@
        "li"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "¿LI o LD? Vectores como columnas",
+     "p": "Las columnas son v₁ = (1, 2, 1), v₂ = (0, 1, 1), v₃ = (2, 3, 1). Escalona y compara el rango con el número de vectores.",
+     "o": {
+      "m": [
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        1,
+        3
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "mode": "mat",
+      "cols": false
+     }
     }
    ]
   },
@@ -3063,6 +3192,36 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Columnas pivote y bases",
+     "p": "Al escalonar verás qué columnas son pivote, la base de Col(A) tomada de la matriz original y la nulidad.",
+     "o": {
+      "m": [
+       [
+        1,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        4,
+        0,
+        6
+       ],
+       [
+        1,
+        2,
+        2,
+        3
+       ]
+      ],
+      "mode": "mat"
+     }
+    }
    ]
   },
   {
@@ -3320,7 +3479,7 @@
      ],
      "ans": "(30, 50, 0, 0) + t(1, −1, 1, 0)",
      "hint": "Al reducir, x₄ queda fijo.",
-     "fig": null,
+     "fig": "traf",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -3468,7 +3627,7 @@
      ],
      "ans": "Libres x₃, x₅; x = (500,0,0,500,0) + r(1,−1,1,0,0) + s(−1,1,0,−1,1)",
      "hint": "Todo lo que entra a la red sale: una ecuación sobra.",
-     "fig": null,
+     "fig": "tub",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -3557,6 +3716,37 @@
        "xpxh"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Solución general x = xₚ + xₕ",
+     "p": "Llega a la forma reducida: aparecerá la solución con su parte particular y la base de Nul(A).",
+     "o": {
+      "m": [
+       [
+        1,
+        1,
+        1,
+        6
+       ],
+       [
+        1,
+        2,
+        3,
+        11
+       ],
+       [
+        2,
+        3,
+        4,
+        17
+       ]
+      ],
+      "mode": "sel",
+      "na": 3
+     }
     }
    ]
   },
@@ -4231,10 +4421,39 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "tl",
+     "t": "Visualizador de transformaciones lineales",
+     "p": "Las flechas son T(e₁) y T(e₂), las columnas de A. Muévelas y mira cómo se deforma todo el plano. Prueba los botones: reflexión, rotación, proyección…",
+     "o": {
+      "a": [
+       [
+        2,
+        -1
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "v": [
+       2,
+       1
+      ]
+     }
+    }
    ]
   }
  ],
- "figs": {},
+ "figs": {
+  "area": "<svg class=\"dg\" viewBox=\"0 0 260 210\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Paralelogramo formado por u y v\"><line class=\"dsh\" x1=\"40\" y1=\"10\" x2=\"40\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"68\" y1=\"10\" x2=\"68\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"96\" y1=\"10\" x2=\"96\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"124\" y1=\"10\" x2=\"124\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"152\" y1=\"10\" x2=\"152\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"180\" y1=\"10\" x2=\"180\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"208\" y1=\"10\" x2=\"208\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"236\" y1=\"10\" x2=\"236\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"190\" x2=\"250\" y2=\"190\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"162\" x2=\"250\" y2=\"162\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"134\" x2=\"250\" y2=\"134\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"106\" x2=\"250\" y2=\"106\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"78\" x2=\"250\" y2=\"78\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"50\" x2=\"250\" y2=\"50\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"22\" x2=\"250\" y2=\"22\" opacity=\".35\"/><line class=\"gl\" x1=\"30.0\" y1=\"190.0\" x2=\"246.0\" y2=\"190.0\"/><polygon class=\"gl2h\" points=\"252.0,190.0,243.0,194.5,243.0,185.5\"/><line class=\"gl\" x1=\"40.0\" y1=\"200.0\" x2=\"40.0\" y2=\"14.0\"/><polygon class=\"gl2h\" points=\"40.0,8.0,44.5,17.0,35.5,17.0\"/><polygon class=\"bx\" points=\"40,190 152,162 208,22 96,50\" opacity=\".85\"/><line class=\"fa\" x1=\"40.0\" y1=\"190.0\" x2=\"146.2\" y2=\"163.5\"/><polygon class=\"fah\" points=\"152.0,162.0,144.4,168.5,142.2,159.8\"/><line class=\"fb\" x1=\"40.0\" y1=\"190.0\" x2=\"93.8\" y2=\"55.6\"/><polygon class=\"fbh\" points=\"96.0,50.0,96.8,60.0,88.5,56.7\"/><text class=\"dl\" x=\"158\" y=\"176\" text-anchor=\"start\">u = (4, 1)</text><text class=\"dl\" x=\"90\" y=\"44\" text-anchor=\"end\">v = (2, 5)</text><text class=\"dm\" x=\"150\" y=\"110\" text-anchor=\"middle\">Área = |det|</text></svg>",
+  "reci": "<svg class=\"dg\" viewBox=\"0 0 460 185\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Red de reciclaje entre los centros C1, C2 y C3\"><rect class=\"bx\" x=\"58\" y=\"70\" width=\"64\" height=\"44\" rx=\"6\"/><text class=\"dl\" x=\"90\" y=\"97\" text-anchor=\"middle\">C₁</text><rect class=\"bx\" x=\"198\" y=\"70\" width=\"64\" height=\"44\" rx=\"6\"/><text class=\"dl\" x=\"230\" y=\"97\" text-anchor=\"middle\">C₂</text><rect class=\"bx\" x=\"338\" y=\"70\" width=\"64\" height=\"44\" rx=\"6\"/><text class=\"dl\" x=\"370\" y=\"97\" text-anchor=\"middle\">C₃</text><line class=\"gl\" x1=\"122.0\" y1=\"92.0\" x2=\"192.0\" y2=\"92.0\"/><polygon class=\"gl2h\" points=\"198.0,92.0,189.0,96.5,189.0,87.5\"/><text class=\"dl\" x=\"160\" y=\"86\" text-anchor=\"middle\">x₂</text><line class=\"gl\" x1=\"262.0\" y1=\"92.0\" x2=\"332.0\" y2=\"92.0\"/><polygon class=\"gl2h\" points=\"338.0,92.0,329.0,96.5,329.0,87.5\"/><text class=\"dl\" x=\"300\" y=\"86\" text-anchor=\"middle\">x₃</text><line class=\"gl\" x1=\"75.0\" y1=\"17.0\" x2=\"75.0\" y2=\"64.0\"/><polygon class=\"gl2h\" points=\"75.0,70.0,70.5,61.0,79.5,61.0\"/><text class=\"dm\" x=\"75\" y=\"12\" text-anchor=\"middle\">9 (comuna)</text><line class=\"gl\" x1=\"105.0\" y1=\"32.0\" x2=\"105.0\" y2=\"64.0\"/><polygon class=\"gl2h\" points=\"105.0,70.0,100.5,61.0,109.5,61.0\"/><text class=\"dm\" x=\"108\" y=\"27\" text-anchor=\"middle\">3 (ferias)</text><line class=\"gl\" x1=\"210.0\" y1=\"17.0\" x2=\"210.0\" y2=\"64.0\"/><polygon class=\"gl2h\" points=\"210.0,70.0,205.5,61.0,214.5,61.0\"/><text class=\"dm\" x=\"200\" y=\"12\" text-anchor=\"middle\">4 (puntos limpios)</text><line class=\"gl\" x1=\"250.0\" y1=\"32.0\" x2=\"250.0\" y2=\"64.0\"/><polygon class=\"gl2h\" points=\"250.0,70.0,245.5,61.0,254.5,61.0\"/><text class=\"dm\" x=\"262\" y=\"27\" text-anchor=\"middle\">a (estacional)</text><line class=\"gl\" x1=\"370.0\" y1=\"17.0\" x2=\"370.0\" y2=\"64.0\"/><polygon class=\"gl2h\" points=\"370.0,70.0,365.5,61.0,374.5,61.0\"/><text class=\"dm\" x=\"370\" y=\"12\" text-anchor=\"middle\">6 (empresas)</text><line class=\"gl\" x1=\"90.0\" y1=\"114.0\" x2=\"90.0\" y2=\"154.0\"/><polygon class=\"gl2h\" points=\"90.0,160.0,85.5,151.0,94.5,151.0\"/><text class=\"dl\" x=\"90\" y=\"174\" text-anchor=\"middle\">x₁</text><line class=\"gl\" x1=\"230.0\" y1=\"114.0\" x2=\"230.0\" y2=\"154.0\"/><polygon class=\"gl2h\" points=\"230.0,160.0,225.5,151.0,234.5,151.0\"/><text class=\"dl\" x=\"230\" y=\"174\" text-anchor=\"middle\">2x₁</text><line class=\"gl\" x1=\"358.0\" y1=\"114.0\" x2=\"358.0\" y2=\"154.0\"/><polygon class=\"gl2h\" points=\"358.0,160.0,353.5,151.0,362.5,151.0\"/><text class=\"dl\" x=\"358\" y=\"174\" text-anchor=\"middle\">x₁</text><line class=\"gl\" x1=\"385.0\" y1=\"114.0\" x2=\"385.0\" y2=\"154.0\"/><polygon class=\"gl2h\" points=\"385.0,160.0,380.5,151.0,389.5,151.0\"/><text class=\"dm\" x=\"390\" y=\"174\" text-anchor=\"start\">1 (rechazo)</text></svg>",
+  "semi": "<svg class=\"dg\" viewBox=\"0 0 300 170\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Semiplano x mayor o igual que cero\"><rect x=\"150\" y=\"10\" width=\"140\" height=\"150\" fill=\"var(--teo-bg)\"/><line class=\"gl\" x1=\"10.0\" y1=\"85.0\" x2=\"286.0\" y2=\"85.0\"/><polygon class=\"gl2h\" points=\"292.0,85.0,283.0,89.5,283.0,80.5\"/><line class=\"gl\" x1=\"150.0\" y1=\"160.0\" x2=\"150.0\" y2=\"12.0\"/><polygon class=\"gl2h\" points=\"150.0,6.0,154.5,15.0,145.5,15.0\"/><text class=\"dl\" x=\"220\" y=\"30\" text-anchor=\"middle\">W: x ≥ 0</text><line class=\"fa\" x1=\"150.0\" y1=\"85.0\" x2=\"204.0\" y2=\"85.0\"/><polygon class=\"fah\" points=\"210.0,85.0,201.0,89.5,201.0,80.5\"/><text class=\"dl\" x=\"205\" y=\"105\" text-anchor=\"middle\">(1, 0) ∈ W</text><line class=\"fb\" x1=\"150.0\" y1=\"85.0\" x2=\"96.0\" y2=\"85.0\"/><polygon class=\"fbh\" points=\"90.0,85.0,99.0,80.5,99.0,89.5\"/><text class=\"dl\" x=\"90\" y=\"105\" text-anchor=\"middle\">−(1, 0) ∉ W</text></svg>",
+  "traf": "<svg class=\"dg\" viewBox=\"0 0 360 210\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Red de tráfico con intersecciones A, B y C\"><line class=\"gl\" x1=\"10.0\" y1=\"50.0\" x2=\"67.0\" y2=\"50.0\"/><polygon class=\"gl2h\" points=\"73.0,50.0,64.0,54.5,64.0,45.5\"/><text class=\"dl\" x=\"30\" y=\"42\" text-anchor=\"middle\">80</text><line class=\"gl\" x1=\"107.0\" y1=\"50.0\" x2=\"247.0\" y2=\"50.0\"/><polygon class=\"gl2h\" points=\"253.0,50.0,244.0,54.5,244.0,45.5\"/><text class=\"dl\" x=\"180\" y=\"42\" text-anchor=\"middle\">x₂</text><line class=\"gl\" x1=\"101.4\" y1=\"62.6\" x2=\"164.6\" y2=\"132.9\"/><polygon class=\"gl2h\" points=\"168.6,137.4,159.3,133.7,166.0,127.7\"/><text class=\"dl\" x=\"122\" y=\"112\" text-anchor=\"end\">x₁</text><line class=\"gl\" x1=\"191.4\" y1=\"137.4\" x2=\"254.6\" y2=\"67.1\"/><polygon class=\"gl2h\" points=\"258.6,62.6,256.0,72.3,249.3,66.3\"/><text class=\"dl\" x=\"238\" y=\"112\" text-anchor=\"start\">x₃</text><line class=\"gl\" x1=\"180.0\" y1=\"205.0\" x2=\"180.0\" y2=\"173.0\"/><polygon class=\"gl2h\" points=\"180.0,167.0,184.5,176.0,175.5,176.0\"/><text class=\"dl\" x=\"190\" y=\"200\" text-anchor=\"start\">x₄</text><line class=\"gl\" x1=\"287.0\" y1=\"50.0\" x2=\"339.0\" y2=\"50.0\"/><polygon class=\"gl2h\" points=\"345.0,50.0,336.0,54.5,336.0,45.5\"/><text class=\"dl\" x=\"325\" y=\"42\" text-anchor=\"middle\">50</text><line class=\"gl\" x1=\"197.0\" y1=\"150.0\" x2=\"254.0\" y2=\"150.0\"/><polygon class=\"gl2h\" points=\"260.0,150.0,251.0,154.5,251.0,145.5\"/><text class=\"dl\" x=\"250\" y=\"142\" text-anchor=\"middle\">30</text><circle class=\"bx\" cx=\"90\" cy=\"50\" r=\"17\"/><text class=\"dl\" x=\"90\" y=\"55\" text-anchor=\"middle\">A</text><circle class=\"bx\" cx=\"270\" cy=\"50\" r=\"17\"/><text class=\"dl\" x=\"270\" y=\"55\" text-anchor=\"middle\">B</text><circle class=\"bx\" cx=\"180\" cy=\"150\" r=\"17\"/><text class=\"dl\" x=\"180\" y=\"155\" text-anchor=\"middle\">C</text></svg>",
+  "tub": "<svg class=\"dg\" viewBox=\"0 0 380 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Red de tuberías con nodos A, B, C y D\"><line class=\"gl\" x1=\"5.0\" y1=\"100.0\" x2=\"47.0\" y2=\"100.0\"/><polygon class=\"gl2h\" points=\"53.0,100.0,44.0,104.5,44.0,95.5\"/><text class=\"dl\" x=\"25\" y=\"92\" text-anchor=\"middle\">500</text><line class=\"gl\" x1=\"85.2\" y1=\"92.4\" x2=\"169.4\" y2=\"50.3\"/><polygon class=\"gl2h\" points=\"174.8,47.6,168.8,55.7,164.7,47.6\"/><text class=\"dl\" x=\"118\" y=\"60\" text-anchor=\"end\">x₁</text><line class=\"gl\" x1=\"85.2\" y1=\"107.6\" x2=\"169.4\" y2=\"149.7\"/><polygon class=\"gl2h\" points=\"174.8,152.4,164.7,152.4,168.8,144.3\"/><text class=\"dl\" x=\"118\" y=\"148\" text-anchor=\"end\">x₂</text><line class=\"gl\" x1=\"190.0\" y1=\"57.0\" x2=\"190.0\" y2=\"137.0\"/><polygon class=\"gl2h\" points=\"190.0,143.0,185.5,134.0,194.5,134.0\"/><text class=\"dl\" x=\"198\" y=\"104\" text-anchor=\"start\">x₃</text><line class=\"gl\" x1=\"205.2\" y1=\"47.6\" x2=\"289.4\" y2=\"89.7\"/><polygon class=\"gl2h\" points=\"294.8,92.4,284.7,92.4,288.8,84.3\"/><text class=\"dl\" x=\"262\" y=\"60\" text-anchor=\"start\">x₄</text><line class=\"gl\" x1=\"205.2\" y1=\"152.4\" x2=\"289.4\" y2=\"110.3\"/><polygon class=\"gl2h\" points=\"294.8,107.6,288.8,115.7,284.7,107.6\"/><text class=\"dl\" x=\"262\" y=\"148\" text-anchor=\"start\">x₅</text><line class=\"gl\" x1=\"327.0\" y1=\"100.0\" x2=\"369.0\" y2=\"100.0\"/><polygon class=\"gl2h\" points=\"375.0,100.0,366.0,104.5,366.0,95.5\"/><text class=\"dl\" x=\"355\" y=\"92\" text-anchor=\"middle\">500</text><circle class=\"bx\" cx=\"70\" cy=\"100\" r=\"17\"/><text class=\"dl\" x=\"70\" y=\"105\" text-anchor=\"middle\">A</text><circle class=\"bx\" cx=\"190\" cy=\"40\" r=\"17\"/><text class=\"dl\" x=\"190\" y=\"45\" text-anchor=\"middle\">B</text><circle class=\"bx\" cx=\"190\" cy=\"160\" r=\"17\"/><text class=\"dl\" x=\"190\" y=\"165\" text-anchor=\"middle\">C</text><circle class=\"bx\" cx=\"310\" cy=\"100\" r=\"17\"/><text class=\"dl\" x=\"310\" y=\"105\" text-anchor=\"middle\">D</text></svg>"
+ },
  "concepts": {
   "orden": {
    "n": "Orden y entradas",
@@ -4756,7 +4975,7 @@
    ],
    "ans": "x₂: envío C₁→C₂; C₃: x₁ − x₃ = 5; única para todo a; con a = 3: (6, 6, 1)",
    "hint": "a solo aparece en b: no puede cambiar los pivotes.",
-   "fig": null,
+   "fig": "reci",
    "draw": false,
    "solfig": null,
    "tags": [

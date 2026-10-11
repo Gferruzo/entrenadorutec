@@ -1015,7 +1015,7 @@
      ],
      "ans": "18 km²",
      "hint": "Área = |det|.",
-     "fig": null,
+     "fig": "area",
      "draw": false,
      "solfig": null,
      "tags": [
@@ -1153,6 +1153,51 @@
        "cof"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Escalonador paso a paso",
+     "p": "Aplica tú las operaciones por fila. Si te trabas, «💡 Siguiente paso» te sugiere una. Mira cómo cada operación afecta al determinante.",
+     "o": {
+      "m": [
+       [
+        1,
+        2,
+        3
+       ],
+       [
+        2,
+        4,
+        7
+       ],
+       [
+        1,
+        1,
+        2
+       ]
+      ],
+      "mode": "mat",
+      "cols": false
+     }
+    },
+    {
+     "w": "det",
+     "t": "El determinante como área",
+     "p": "Mueve u y v: el área del paralelogramo es |det|. Junta las dos flechas en una misma recta y mira qué pasa.",
+     "o": {
+      "a": [
+       [
+        4,
+        2
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     }
     }
    ]
   },
@@ -1674,10 +1719,43 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "rref",
+     "t": "Resuelve un sistema con [A | b]",
+     "p": "Escalona la matriz aumentada para clasificar con Rouché–Frobenius; llega a la reducida para leer la solución. Puedes escribir tu propio sistema.",
+     "o": {
+      "m": [
+       [
+        1,
+        1,
+        1,
+        6
+       ],
+       [
+        2,
+        -1,
+        1,
+        3
+       ],
+       [
+        1,
+        2,
+        -1,
+        2
+       ]
+      ],
+      "mode": "sel",
+      "na": 3
+     }
+    }
    ]
   }
  ],
- "figs": {},
+ "figs": {
+  "area": "<svg class=\"dg\" viewBox=\"0 0 260 210\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Paralelogramo formado por u y v\"><line class=\"dsh\" x1=\"40\" y1=\"10\" x2=\"40\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"68\" y1=\"10\" x2=\"68\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"96\" y1=\"10\" x2=\"96\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"124\" y1=\"10\" x2=\"124\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"152\" y1=\"10\" x2=\"152\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"180\" y1=\"10\" x2=\"180\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"208\" y1=\"10\" x2=\"208\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"236\" y1=\"10\" x2=\"236\" y2=\"200\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"190\" x2=\"250\" y2=\"190\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"162\" x2=\"250\" y2=\"162\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"134\" x2=\"250\" y2=\"134\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"106\" x2=\"250\" y2=\"106\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"78\" x2=\"250\" y2=\"78\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"50\" x2=\"250\" y2=\"50\" opacity=\".35\"/><line class=\"dsh\" x1=\"30\" y1=\"22\" x2=\"250\" y2=\"22\" opacity=\".35\"/><line class=\"gl\" x1=\"30.0\" y1=\"190.0\" x2=\"246.0\" y2=\"190.0\"/><polygon class=\"gl2h\" points=\"252.0,190.0,243.0,194.5,243.0,185.5\"/><line class=\"gl\" x1=\"40.0\" y1=\"200.0\" x2=\"40.0\" y2=\"14.0\"/><polygon class=\"gl2h\" points=\"40.0,8.0,44.5,17.0,35.5,17.0\"/><polygon class=\"bx\" points=\"40,190 152,162 208,22 96,50\" opacity=\".85\"/><line class=\"fa\" x1=\"40.0\" y1=\"190.0\" x2=\"146.2\" y2=\"163.5\"/><polygon class=\"fah\" points=\"152.0,162.0,144.4,168.5,142.2,159.8\"/><line class=\"fb\" x1=\"40.0\" y1=\"190.0\" x2=\"93.8\" y2=\"55.6\"/><polygon class=\"fbh\" points=\"96.0,50.0,96.8,60.0,88.5,56.7\"/><text class=\"dl\" x=\"158\" y=\"176\" text-anchor=\"start\">u = (4, 1)</text><text class=\"dl\" x=\"90\" y=\"44\" text-anchor=\"end\">v = (2, 5)</text><text class=\"dm\" x=\"150\" y=\"110\" text-anchor=\"middle\">Área = |det|</text></svg>"
+ },
  "concepts": {
   "orden": {
    "n": "Orden y entradas",

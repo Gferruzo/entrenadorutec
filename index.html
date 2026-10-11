@@ -812,6 +812,47 @@ pre.cpp code{font:inherit;background:none;border:0;padding:0;white-space:pre;wor
 details.cinw{margin:6px 0}
 details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:4px 0}
 .ced.cin{min-height:3.5em}
+.blk.lab{border-color:var(--cyan);background:var(--card)}
+.blk.lab summary{color:var(--cyan)}
+.lwrap{margin:4px 0 16px}.lwrap h4{font:800 .95rem Figtree,sans-serif;margin:.4em 0 .2em;color:var(--ink)}
+.lw{margin:8px 0}
+.lwtl{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.lwsvg{width:min(320px,100%);height:auto;background:var(--paper);border:1px solid var(--line);border-radius:8px;touch-action:pan-y;user-select:none}
+.lwside{flex:1 1 200px;min-width:0}
+.lwg{stroke:var(--grid);stroke-width:1}.lwax{stroke:var(--line);stroke-width:1.6}
+.lwtg{stroke:var(--teo);stroke-width:1;opacity:.35}
+.lwsq{fill:var(--teo);fill-opacity:.18;stroke:var(--teo);stroke-width:1.5}.lwsq.neg{fill:var(--bad);stroke:var(--bad)}
+.lwa1{stroke:var(--exe);stroke-width:3}.lwa1h{fill:var(--exe)}.lwa2{stroke:var(--sol);stroke-width:3}.lwa2h{fill:var(--sol)}
+.lwtv{stroke:var(--ok);stroke-width:3}.lwtvh{fill:var(--ok)}.lwvv{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 3}.lwvvh{fill:var(--muted)}
+.lwdash{fill:none;stroke:var(--ok);stroke-width:1.3;stroke-dasharray:5 4;opacity:.8}
+.lwh{fill:transparent;stroke-width:2.5;cursor:grab;touch-action:none}.lwh1{stroke:var(--exe)}.lwh2{stroke:var(--sol)}.lwh:focus{outline:none;fill:var(--teo-bg)}
+.lwlab{font:700 12px Figtree,sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:3px}
+.lwmat{display:flex;align-items:center;gap:8px;margin-bottom:6px}.lwml{font-weight:700}
+.lwm,.lwm2{border-collapse:collapse;font:600 1rem Figtree,sans-serif}
+.lwm{border-collapse:separate;border-spacing:0;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-radius:6px}
+.lwm td{padding:3px 10px;text-align:center;border:0;background:none}
+.lwm td.k1{color:var(--exe)}.lwm td.k2{color:var(--sol)}
+.lwmsg p,.lwinfo p,.lwsug p{margin:.3em 0}
+.lwv{margin:8px 0}.lwv input{width:3.6em;font:inherit;padding:2px 4px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.lwtvt{margin-top:4px;color:var(--ok);font-size:.95rem}
+.lwpre,.lwbtns,.lwopk,.lwtop{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.lwb{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 11px;font:600 .82rem Figtree,sans-serif;cursor:pointer}
+.lwb.on{border-color:var(--cyan);background:var(--teo-bg);color:var(--teo)}.lwb.pri{background:var(--cyan);border-color:var(--cyan);color:#fff}.lwb:disabled{opacity:.45;cursor:default}
+.lwmat2{overflow-x:auto;margin:6px 0}
+.lwm2 th{font:700 .8rem Figtree,sans-serif;color:var(--muted);padding:2px 8px 2px 0}
+.lwm2 td{padding:5px 10px;text-align:center;min-width:2.6em;border:0;background:none}
+.lwm2 td.bar{border-left:2px dashed var(--muted)}
+.lwm2 tr{border:0;background:none}
+.lwm2 td.piv,.lwm2 td.piv.bar{background:var(--exe-bg);color:var(--exe);border-radius:6px;font-weight:800}
+.lwm2 input{width:3.4em;text-align:center;font:inherit;padding:3px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}.lwm2 input.bad{border-color:var(--bad)}
+.lwopf{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.lwopf select,.lwopf input,.lwsz select{font:inherit;padding:3px 4px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.lwopf input{width:4em;text-align:center}
+.lwerr{color:var(--bad);font-size:.85rem;flex-basis:100%}
+.lwsug{background:var(--teo-bg);border-radius:8px;padding:0 10px}.lwsug:empty{display:none}.lwsug{padding:6px 10px}
+.lwinfo{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
+.lwhist{margin:6px 0 0;padding-left:1.4em;font-size:.92rem}
+.lwsz{display:inline-flex;align-items:center;gap:6px;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -1067,7 +1108,137 @@ const $=id=>document.getElementById(id);
 const LN={1:'Básico',2:'Intermedio',3:'Nivel examen'},LC={1:'var(--l1)',2:'var(--l2)',3:'var(--l3)'};
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
-function typeset(n){try{pyHlAll(n)}catch(e){}const run=()=>MathJax.typesetPromise([n]).catch(()=>{});if(window.__mj)run();else{const p=window.__tq;window.__tq=()=>{p&&p();run();};}}
+/* ===== Herramientas interactivas (Álgebra Lineal): visualizador de transformaciones, área con determinante y escalonador ===== */
+const LWQ={g:(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1},
+  mk(n,d){d=d||1;if(d<0){n=-n;d=-d}const g=LWQ.g(n,d);return[n/g,d/g]},
+  add:(x,y)=>LWQ.mk(x[0]*y[1]+y[0]*x[1],x[1]*y[1]),mul:(x,y)=>LWQ.mk(x[0]*y[0],x[1]*y[1]),
+  div:(x,y)=>LWQ.mk(x[0]*y[1],x[1]*y[0]),neg:x=>[-x[0],x[1]],z:x=>x[0]===0,one:x=>x[0]===x[1],
+  s(x){return x[1]===1?String(x[0]).replace('-','−'):(x[0]<0?'−':'')+Math.abs(x[0])+'/'+x[1]},
+  p(t){t=String(t).trim().replace('−','-').replace(',','.');if(!t)return null;let m=t.match(/^([+-]?\d+)\s*\/\s*(\d+)$/);if(m)return+m[2]?LWQ.mk(+m[1],+m[2]):null;
+    m=t.match(/^[+-]?\d+(?:\.(\d+))?$/);if(!m)return null;if(!m[1])return[+t,1];const d=10**m[1].length;return LWQ.mk(Math.round(+t*d),d)}};
+const lwSub=['','₁','₂','₃','₄','₅'];
+function lwNum(v){return(Math.round(v*100)/100).toString().replace('-','−')}
+/* ---------- Visualizador de transformaciones / área ---------- */
+function mountTL(box,o){
+  const det=o.mode==='det',R=5.5,S=300,sc=S/(2*R);let A=(o.a||[[2,-1],[1,3]]).map(r=>r.slice());let v=o.v||[2,1];
+  const P=(x,y)=>[S/2+x*sc,S/2-y*sc];
+  const presets=det?[['Ejemplo',[[4,2],[1,5]]],['Paralelos',[[2,4],[1,2]]],['Invertir orden',[[2,4],[5,1]]],['Cuadrado unitario',[[1,0],[0,1]]]]
+    :[['Identidad',[[1,0],[0,1]]],['Escalamiento ×2',[[2,0],[0,1]]],['Reflexión eje x',[[1,0],[0,-1]]],['Reflexión eje y',[[-1,0],[0,1]]],['Rotación 90°',[[0,-1],[1,0]]],['Proyección eje x',[[1,0],[0,0]]],['Cizalla',[[1,1],[0,1]]],['Ejemplo',(o.a||[[2,-1],[1,3]])]];
+  box.innerHTML='<div class="lwtl"><svg viewBox="0 0 '+S+' '+S+'" class="lwsvg" role="img" aria-label="'+(det?'Paralelogramo formado por dos vectores':'Transformación lineal del plano')+'"></svg><div class="lwside"><div class="lwmat"></div><div class="lwmsg"></div>'+
+   (det?'':'<div class="lwv">Vector  v = (<input type="number" step="0.5" class="vx" value="'+v[0]+'">, <input type="number" step="0.5" class="vy" value="'+v[1]+'">)<div class="lwtvt"></div></div>')+
+   '<p class="note">Arrastra los puntos de las flechas'+(det?'':' (son T(e₁) y T(e₂))')+'.</p></div></div><div class="lwpre"></div>';
+  const svg=box.querySelector('svg'),mat=box.querySelector('.lwmat'),msg=box.querySelector('.lwmsg'),pre=box.querySelector('.lwpre');
+  presets.forEach(([n,m])=>{const b=el('button','lwb',n);b.type='button';b.onclick=()=>{A=m.map(r=>r.slice());draw()};pre.append(b)});
+  if(!det){const ix=box.querySelector('.vx'),iy=box.querySelector('.vy');const up=()=>{const a=parseFloat(ix.value),b=parseFloat(iy.value);if(isFinite(a)&&isFinite(b)){v=[Math.max(-9,Math.min(9,a)),Math.max(-9,Math.min(9,b))];draw()}};ix.oninput=up;iy.oninput=up}
+  const NS='http://www.w3.org/2000/svg';
+  function E(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||svg).append(e);return e}
+  function arrow(x,y,cls,x0,y0){x0=x0||0;y0=y0||0;const[a,b]=P(x0,y0),[c,d]=P(x,y);const L=Math.hypot(c-a,d-b);E('line',{x1:a,y1:b,x2:c,y2:d,class:cls});
+    if(L>4){const ux=(c-a)/L,uy=(d-b)/L,h=10;E('polygon',{points:[c,d,c-h*ux-5*uy,d-h*uy+5*ux,c-h*ux+5*uy,d-h*uy-5*ux].join(','),class:cls+'h'})}}
+  let drag=-1;const cid='lwc'+Math.random().toString(36).slice(2,8);
+  function draw(){svg.innerHTML='';const c1=[A[0][0],A[1][0]],c2=[A[0][1],A[1][1]],D=A[0][0]*A[1][1]-A[0][1]*A[1][0];
+    const cp=E('clipPath',{id:cid});E('rect',{width:S,height:S},cp);
+    const g=E('g',{'clip-path':'url(#'+cid+')'});
+    for(let k=-5;k<=5;k++){const[a1,b1]=P(k,-R),[a2,b2]=P(k,R);E('line',{x1:a1,y1:b1,x2:a2,y2:b2,class:k?'lwg':'lwax'},g);const[c3,d3]=P(-R,k),[c4,d4]=P(R,k);E('line',{x1:c3,y1:d3,x2:c4,y2:d4,class:k?'lwg':'lwax'},g)}
+    if(!det){for(let k=-8;k<=8;k++){[[c1,c2],[c2,c1]].forEach(([p,q])=>{const[a1,b1]=P(k*p[0]-30*q[0],k*p[1]-30*q[1]),[a2,b2]=P(k*p[0]+30*q[0],k*p[1]+30*q[1]);E('line',{x1:a1,y1:b1,x2:a2,y2:b2,class:'lwtg'},g)})}}
+    const sq=[[0,0],c1,[c1[0]+c2[0],c1[1]+c2[1]],c2].map(p=>P(p[0],p[1]).join(',')).join(' ');E('polygon',{points:sq,class:D<0?'lwsq neg':'lwsq'},g);
+    if(!det){const tv=[v[0]*c1[0]+v[1]*c2[0],v[0]*c1[1]+v[1]*c2[1]];arrow(v[0],v[1],'lwvv');
+      const m1=[v[0]*c1[0],v[0]*c1[1]];const[a,b]=P(0,0),[c,d]=P(m1[0],m1[1]),[e,f]=P(tv[0],tv[1]);E('polyline',{points:[a,b,c,d,e,f].join(','),class:'lwdash'},g);arrow(tv[0],tv[1],'lwtv');
+      box.querySelector('.lwtvt').innerHTML='T(v) = '+lwNum(v[0])+'·T(e₁) + '+lwNum(v[1])+'·T(e₂) = <b>('+lwNum(tv[0])+', '+lwNum(tv[1])+')</b>'}
+    arrow(c1[0],c1[1],'lwa1');arrow(c2[0],c2[1],'lwa2');
+    [c1,c2].forEach((p,i)=>{const[x,y]=P(p[0],p[1]);const t=E('text',{x:x+(p[0]>=0?8:-8),y:y-10,class:'lwlab','text-anchor':p[0]>=0?'start':'end'});t.textContent=det?(i?'v':'u'):(i?'T(e₂)':'T(e₁)');
+      const h=E('circle',{cx:x,cy:y,r:13,class:'lwh lwh'+(i+1),tabindex:0});h.addEventListener('pointerdown',ev=>{drag=i;svg.setPointerCapture(ev.pointerId);ev.preventDefault()});
+      h.addEventListener('touchstart',ev=>ev.preventDefault(),{passive:false});
+      h.addEventListener('keydown',ev=>{const d={ArrowLeft:[-.5,0],ArrowRight:[.5,0],ArrowUp:[0,.5],ArrowDown:[0,-.5]}[ev.key];if(!d)return;ev.preventDefault();setCol(i,p[0]+d[0],p[1]+d[1]);svg.querySelectorAll('.lwh')[i].focus()})});
+    const n=x=>lwNum(x);
+    mat.innerHTML='<div class="lwml">'+(det?'[u v] =':'A =')+'</div><table class="lwm"><tr><td class="k1">'+n(A[0][0])+'</td><td class="k2">'+n(A[0][1])+'</td></tr><tr><td class="k1">'+n(A[1][0])+'</td><td class="k2">'+n(A[1][1])+'</td></tr></table>';
+    const dtxt='det = '+n(A[0][0])+'·'+n(A[1][1])+' − ('+n(A[0][1])+')·('+n(A[1][0])+') = <b>'+n(D)+'</b>';
+    let m;if(Math.abs(D)<1e-9)m=det?'Los vectores son <b>paralelos</b>: el área es 0, la matriz no es invertible y las columnas son LD.':'El plano se <b>aplasta</b> en una recta (o un punto): T no es invertible y sus columnas son LD.';
+    else if(D<0)m=det?'Área = |det| = <b>'+n(-D)+'</b>. El signo negativo indica que v queda en sentido horario respecto de u.':'El cuadrado unitario pasa a tener área |det| = '+n(-D)+' y queda <b>volteado</b> (como en un espejo).';
+    else m=det?'Área = |det| = <b>'+n(D)+'</b>.':'El cuadrado unitario (sombreado) pasa a tener área <b>'+n(D)+'</b> y conserva la orientación.';
+    msg.innerHTML='<p>'+dtxt+'</p><p>'+m+'</p>'}
+  function setCol(i,x,y){x=Math.max(-5,Math.min(5,Math.round(x*2)/2));y=Math.max(-5,Math.min(5,Math.round(y*2)/2));A[0][i]=x;A[1][i]=y;draw()}
+  svg.addEventListener('pointermove',ev=>{if(drag<0)return;const pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;const q=pt.matrixTransform(svg.getScreenCTM().inverse());setCol(drag,(q.x-S/2)/sc,(S/2-q.y)/sc)});
+  const end=()=>{drag=-1};svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  draw()}
+/* ---------- Escalonador paso a paso ---------- */
+function mountRREF(box,o){
+  const mode=o.mode||'mat';let M0=(o.m||[[1,2],[3,4]]).map(r=>r.map(x=>LWQ.p(x)));let nA=o.na||M0[0].length;let M,hist,factor,editing=false,sug=null;
+  function reset(){M=M0.map(r=>r.slice());hist=[];factor=[1,1];sug=null}
+  reset();
+  box.innerHTML='<div class="lwrr"><div class="lwtop"></div><div class="lwmat2"></div><div class="lwops"><div class="lwopk"></div><div class="lwopf"></div></div><div class="lwbtns"></div><div class="lwsug"></div><div class="lwinfo"></div><ol class="lwhist"></ol></div>';
+  const top=box.querySelector('.lwtop'),mt=box.querySelector('.lwmat2'),opk=box.querySelector('.lwopk'),opf=box.querySelector('.lwopf'),bt=box.querySelector('.lwbtns'),sg=box.querySelector('.lwsug'),inf=box.querySelector('.lwinfo'),hs=box.querySelector('.lwhist');
+  let op='comb';
+  const F=i=>'F'+lwSub[i+1];
+  function rows(){return M.length}
+  function piv(Mx){const out=[];let c0=0;for(let i=0;i<Mx.length;i++){let j=0;while(j<nA&&LWQ.z(Mx[i][j]))j++;out.push(j<nA?j:-1)}return out}
+  function isEsc(Mx){const p=piv(Mx);let last=-1,zero=false;for(let i=0;i<p.length;i++){if(p[i]<0){/* fila nula en A */zero=true;continue}if(zero||p[i]<=last)return false;last=p[i]}return true}
+  function isRed(Mx){if(!isEsc(Mx))return false;const p=piv(Mx);for(let i=0;i<p.length;i++){if(p[i]<0)continue;if(!LWQ.one(Mx[i][p[i]]))return false;for(let k=0;k<Mx.length;k++)if(k!==i&&!LWQ.z(Mx[k][p[i]]))return false}return true}
+  function rankOf(Mx,cols){/* rango exacto por eliminación */const A=Mx.map(r=>r.slice(0,cols));let r=0;for(let c=0;c<cols&&r<A.length;c++){let p=r;while(p<A.length&&LWQ.z(A[p][c]))p++;if(p===A.length)continue;[A[r],A[p]]=[A[p],A[r]];for(let k=r+1;k<A.length;k++){if(LWQ.z(A[k][c]))continue;const f=LWQ.div(A[k][c],A[r][c]);for(let j=c;j<cols;j++)A[k][j]=LWQ.add(A[k][j],LWQ.neg(LWQ.mul(f,A[r][j])))}r++}return r}
+  function apply(o2,silent){const m=M.map(r=>r.slice());let note='',txt='';
+    if(o2.t==='swap'){[m[o2.i],m[o2.j]]=[m[o2.j],m[o2.i]];txt=F(o2.i)+' ↔ '+F(o2.j);note='el determinante cambia de signo';factor=LWQ.neg(factor)}
+    else if(o2.t==='scale'){m[o2.i]=m[o2.i].map(x=>LWQ.mul(x,o2.k));txt=F(o2.i)+' → '+(LWQ.one(o2.k)?'':LWQ.s(o2.k)+'·')+F(o2.i);note='el determinante se multiplica por '+LWQ.s(o2.k);factor=LWQ.mul(factor,o2.k)}
+    else{m[o2.i]=m[o2.i].map((x,j)=>LWQ.add(x,LWQ.mul(o2.k,m[o2.j][j])));const neg=o2.k[0]<0,ak=[Math.abs(o2.k[0]),o2.k[1]];txt=F(o2.i)+' → '+F(o2.i)+(neg?' − ':' + ')+(LWQ.one(ak)?'':LWQ.s(ak))+F(o2.j);note='el determinante no cambia'}
+    M=m;hist.push({txt,note,o:o2});sug=null;render()}
+  function suggest(){const n=rows();const p=piv(M);
+    /* fase 1: escalonar */let r=0;for(let c=0;c<nA&&r<n;c++){let q=r;while(q<n&&LWQ.z(M[q][c]))q++;if(q===n)continue;
+      if(q!==r)return{o:{t:'swap',i:r,j:q},why:'En la columna '+(c+1)+' la fila '+(r+1)+' tiene un 0: intercambia para subir un pivote.'};
+      for(let k=r+1;k<n;k++)if(!LWQ.z(M[k][c])){const kk=LWQ.neg(LWQ.div(M[k][c],M[r][c]));return{o:{t:'comb',i:k,j:r,k:kk},why:'Haz cero debajo del pivote '+LWQ.s(M[r][c])+' (fila '+(r+1)+', columna '+(c+1)+').'}}
+      r++}
+    if(mode==='mat'&&o.stop==='esc')return null;
+    /* fase 2: reducida */for(let i=n-1;i>=0;i--){if(p[i]<0)continue;const c=p[i];
+      if(!LWQ.one(M[i][c]))return{o:{t:'scale',i,k:LWQ.div([1,1],M[i][c])},why:'Ya está escalonada. Para la reducida, convierte el pivote de la fila '+(i+1)+' en 1.'};
+      for(let k=0;k<i;k++)if(!LWQ.z(M[k][c]))return{o:{t:'comb',i:k,j:i,k:LWQ.neg(M[k][c])},why:'Haz cero encima del pivote de la fila '+(i+1)+'.'}}
+    return null}
+  function render(){const n=rows(),ncol=M[0].length,p=piv(M),esc=isEsc(M),red=isRed(M);
+    top.innerHTML='';const eb=el('button','lwb',editing?'✓ Usar esta matriz':'✏️ Escribir mi matriz');eb.type='button';eb.onclick=()=>{if(editing){if(readEdit()){editing=false;reset();render()}}else{editing=true;render()}};top.append(eb);
+    if(editing){const f=el('span','lwsz','Filas <select class="sr">'+[2,3,4].map(k=>'<option'+(k===n?' selected':'')+'>'+k+'</option>').join('')+'</select> Columnas'+(mode==='mat'?'':' de A')+' <select class="sc">'+[2,3,4,5].map(k=>'<option'+(k===nA?' selected':'')+'>'+k+'</option>').join('')+'</select>');top.append(f);
+      f.querySelector('.sr').onchange=f.querySelector('.sc').onchange=()=>{const R2=+f.querySelector('.sr').value,C2=+f.querySelector('.sc').value;const extra=mode==='sel'?1:mode==='inv'?R2:0;const nc=C2+extra;const old=M;
+        M=Array.from({length:R2},(_,i)=>Array.from({length:nc},(_,j)=>{if(mode==='inv'&&j>=C2)return[(j-C2)===i?1:0,1];const oj=j<C2?j:j-C2+nA;return(old[i]&&old[i][oj])||[0,1]}));nA=C2;render()}}
+    let h='<table class="lwm2">';for(let i=0;i<n;i++){h+='<tr><th>'+F(i)+'</th>';for(let j=0;j<ncol;j++){const cls=(j===nA?'bar ':'')+(!editing&&p[i]===j&&esc?'piv':'');
+        h+='<td class="'+cls+'">'+(editing&&!(mode==='inv'&&j>=nA)?'<input value="'+LWQ.s(M[i][j]).replace('−','-')+'" data-i="'+i+'" data-j="'+j+'" inputmode="text">':LWQ.s(M[i][j]))+'</td>'}h+='</tr>'}
+    mt.innerHTML=h+'</table>';
+    if(editing){opk.innerHTML='';opf.innerHTML='<p class="note">Escribe enteros o fracciones (por ejemplo −2 o 1/3) y toca «Usar esta matriz».</p>';bt.innerHTML='';sg.innerHTML='';inf.innerHTML='';hs.innerHTML='';return}
+    /* constructor de operación */
+    opk.innerHTML='';[['swap','Fᵢ ↔ Fⱼ'],['scale','Fᵢ → k·Fᵢ'],['comb','Fᵢ → Fᵢ + k·Fⱼ']].forEach(([k,t])=>{const b=el('button','lwb'+(op===k?' on':''),t);b.type='button';b.onclick=()=>{op=k;render()};opk.append(b)});
+    const sel=(c,v)=>'<select class="'+c+'">'+M.map((_,i)=>'<option value="'+i+'"'+(i===v?' selected':'')+'>'+F(i)+'</option>').join('')+'</select>';
+    opf.innerHTML=op==='swap'?sel('oi',0)+' ↔ '+sel('oj',1):op==='scale'?sel('oi',0)+' → <input class="ok" value="2" size="4"> · <span class="fi"></span>':sel('oi',1)+' → <span class="fi"></span> + <input class="ok" value="-1" size="4"> · '+sel('oj',0);
+    {const oiE=opf.querySelector('.oi'),upd=()=>opf.querySelectorAll('.fi').forEach(x=>x.textContent=F(+oiE.value));oiE.onchange=upd;upd()}
+    const ap=el('button','lwb pri','Aplicar');ap.type='button';opf.append(' ',ap);
+    const err=el('span','lwerr');opf.append(err);
+    ap.onclick=()=>{const i=+opf.querySelector('.oi').value,jE=opf.querySelector('.oj'),j=jE?+jE.value:-1;const kE=opf.querySelector('.ok'),k=kE?LWQ.p(kE.value):null;
+      if(op!=='scale'&&i===j){err.textContent='Elige dos filas distintas.';return}
+      if(op!=='swap'&&!k){err.textContent='Escribe k como entero o fracción.';return}
+      if(op==='scale'&&LWQ.z(k)){err.textContent='k no puede ser 0: multiplicar una fila por 0 no es una operación elemental.';return}
+      if(op==='comb'&&LWQ.z(k)){err.textContent='Con k = 0 la matriz no cambia.';return}
+      apply({t:op,i,j,k})};
+    bt.innerHTML='';const b1=el('button','lwb','💡 Siguiente paso');b1.type='button';b1.onclick=()=>{sug=suggest()||{none:true};render()};
+    const b2=el('button','lwb','↶ Deshacer');b2.type='button';b2.disabled=!hist.length;b2.onclick=()=>{const hh=hist.slice(0,-1);reset();hh.forEach(x=>apply(x.o))};
+    const b3=el('button','lwb','Reiniciar');b3.type='button';b3.onclick=()=>{reset();render()};bt.append(b1,b2,b3);
+    sg.innerHTML='';if(sug){if(sug.none)sg.innerHTML='<p>'+(red?'Ya está en forma escalonada reducida: no quedan pasos.':'Ya está escalonada.')+'</p>';else{const t=sug.o.t==='swap'?F(sug.o.i)+' ↔ '+F(sug.o.j):sug.o.t==='scale'?F(sug.o.i)+' → '+LWQ.s(sug.o.k)+'·'+F(sug.o.i):F(sug.o.i)+' → '+F(sug.o.i)+(sug.o.k[0]<0?' − ':' + ')+(LWQ.one([Math.abs(sug.o.k[0]),sug.o.k[1]])?'':LWQ.s([Math.abs(sug.o.k[0]),sug.o.k[1]]))+F(sug.o.j);
+      sg.innerHTML='<p>'+sug.why+' Prueba: <b>'+t+'</b></p>';const ab=el('button','lwb pri','Aplicar sugerencia');ab.type='button';const so=sug.o;ab.onclick=()=>apply(so);sg.append(ab)}}
+    /* información */
+    let s='<p><b>Forma:</b> '+(red?'escalonada reducida ✓':esc?'escalonada ✓ (falta la reducida)':'todavía no está escalonada')+'</p>';
+    const rA=rankOf(M,nA);
+    if(!esc)s+='<p class="note">Escalona para leer los pivotes y el rango.</p>';
+    else{const pc=p.filter(x=>x>=0);s+='<p><b>Pivotes:</b> '+pc.length+' (columna'+(pc.length>1?'s ':' ')+pc.map(x=>x+1).join(', ')+') ⇒ rango(A) = '+rA+'</p>';
+      if(mode==='mat'){s+='<p>'+nA+' columnas, rango '+rA+' ⇒ columnas '+(rA===nA?'<b>LI</b>':'<b>LD</b>')+' · nulidad = '+nA+' − '+rA+' = '+(nA-rA)+'</p>';
+        if(o.cols!==false&&rA<nA&&rA>0)s+='<p>Base de Col(A): columna'+(pc.length>1?'s ':' ')+pc.map(x=>x+1).join(' y ')+' de la matriz <b>original</b>: '+pc.map(j=>'('+M0.map(r=>LWQ.s(r[j])).join(', ')+')').join(', ')+'</p>';
+        if(n===nA){let d=[1,1];for(let i=0;i<n;i++)d=LWQ.mul(d,M[i][i]);const dO=LWQ.div(d,factor);s+='<p><b>Determinante:</b> la escalonada es triangular, su det = producto de la diagonal = '+LWQ.s(d)+'. Las operaciones multiplicaron el det por '+LWQ.s(factor)+' ⇒ det(A) = '+LWQ.s(d)+' ÷ '+LWQ.s(factor)+' = <b>'+LWQ.s(dO)+'</b>'+(LWQ.z(dO)?' (no invertible)':'')+'</p>'}}
+      if(mode==='sel'){const rAb=rankOf(M,ncol);const nv=nA;let cl=rA<rAb?'<b>incompatible</b> (aparece una fila [0 … 0 | c ≠ 0])':rA===nv?'<b>compatible determinado</b> (solución única)':'<b>compatible indeterminado</b>: '+(nv-rA)+' variable(s) libre(s)';
+        s+='<p>rango(A) = '+rA+', rango([A | b]) = '+rAb+', n = '+nv+' ⇒ '+cl+'</p>';
+        if(red&&rA===rAb){const free=[...Array(nv).keys()].filter(j=>!p.includes(j));const xp=Array(nv).fill([0,1]);p.forEach((c,i)=>{if(c>=0)xp[c]=M[i][ncol-1]});
+          let t='x = ('+xp.map(LWQ.s).join(', ')+')';const par=['t','s','r','q'];free.forEach((f,fi)=>{const v=Array(nv).fill([0,1]);v[f]=[1,1];p.forEach((c,i)=>{if(c>=0)v[c]=LWQ.neg(M[i][f])});t+=' + '+par[fi]+'('+v.map(LWQ.s).join(', ')+')'});
+          s+='<p><b>Solución:</b> '+t+(free.length?' — x<sub>p</sub> + combinación de la base de Nul(A)':'')+'</p>'}
+        else if(rA===rAb)s+='<p class="note">Llega a la reducida para leer la solución directamente (Gauss–Jordan).</p>'}
+      if(mode==='inv'){const zero=p.slice(0,n).some(x=>x<0);if(zero)s+='<p>Una fila del bloque izquierdo quedó en ceros: <b>A no es invertible</b>.</p>';else if(red)s+='<p>El bloque izquierdo ya es I: <b>el bloque derecho es A⁻¹</b>. Verifica que A·A⁻¹ = I.</p>';else s+='<p class="note">Sigue hasta que el bloque izquierdo sea I.</p>'}}
+    inf.innerHTML=s;
+    hs.innerHTML=hist.map(x=>'<li>'+x.txt+(mode==='sel'?'':' <span class="note">('+x.note+')</span>')+'</li>').join('')}
+  function readEdit(){const ins=mt.querySelectorAll('input');let ok=true;ins.forEach(e=>{const v=LWQ.p(e.value);if(!v){e.classList.add('bad');ok=false}else{e.classList.remove('bad');M[+e.dataset.i][+e.dataset.j]=v}});if(ok)M0=M.map(r=>r.slice());return ok}
+  render()}
+const LW={tl:mountTL,det:(b,o)=>mountTL(b,Object.assign({mode:'det'},o)),rref:mountRREF};
+function mountW(root){if(!root||!root.querySelectorAll)return;root.querySelectorAll('.lw[data-w]:not([data-on])').forEach(b=>{b.dataset.on=1;const f=LW[b.dataset.w];if(!f)return;let o={};try{o=JSON.parse(b.dataset.o||'{}')}catch(e){}try{f(b,o)}catch(e){console.error(e);b.textContent='No se pudo cargar esta herramienta.'}})}
+
+function typeset(n){try{mountW(n)}catch(e){console.error(e)}try{pyHlAll(n)}catch(e){}const run=()=>MathJax.typesetPromise([n]).catch(()=>{});if(window.__mj)run();else{const p=window.__tq;window.__tq=()=>{p&&p();run();};}}
 function rng(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
 function perm(id,n){n=n||5;const r=rng(id),a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const lf=s=>s.charAt(0).toLowerCase()+s.slice(1);const pad=n=>String(n).padStart(2,'0');
@@ -1739,7 +1910,9 @@ function buildSol(e,sol,stepwise){sol.dataset.built=1;sol.append(el('h4',null,'S
 function renderTopic(){const t=T[st.topic];main.innerHTML='';
   main.append(el('div','ttl','<h2>'+(st.topic+1)+'. '+t.name+'</h2><span></span>'),el('div','tmeter','<i></i>'));
   const teo=el('details','blk teo','<summary>Teoría</summary><div class="hlz" data-src="teo" data-tid="'+t.id+'">'+t.teo+'</div>');teo.open=true;
-  const fo=el('details','blk for','<summary>'+(C.keyLabel||'Fórmulas clave')+'</summary><div class="fgrid">'+t.form.map(f=>'<div>'+f+'</div>').join('')+'</div>');fo.open=true;main.append(teo,fo);let vis=0;
+  const fo=el('details','blk for','<summary>'+(C.keyLabel||'Fórmulas clave')+'</summary><div class="fgrid">'+t.form.map(f=>'<div>'+f+'</div>').join('')+'</div>');fo.open=true;main.append(teo,fo);
+  if(t.tools&&t.tools.length){const lb=el('details','blk lab','<summary>🧪 Interactivo</summary>');lb.open=true;t.tools.forEach(w=>{const d=el('div','lwrap',(w.t?'<h4>'+w.t+'</h4>':'')+(w.p?'<p class="note">'+w.p+'</p>':''));const x=el('div','lw');x.dataset.w=w.w;x.dataset.o=JSON.stringify(w.o||{});d.append(x);lb.append(d)});main.append(lb)}
+  let vis=0;
   [1,2,3].forEach(l=>{const exs=t.ex.filter(e=>e.lvl===l);if(!exs.length||(st.level&&st.level!==l))return;
     if(!st.level){const h=el('div','lvlhead',LN[l]);h.style.setProperty('--c',LC[l]);main.append(h)}exs.forEach(e=>{main.append(exCard(e));vis++})});
   if(!vis)main.append(el('p','empty','Este tema no tiene ejercicios de este nivel. Elige otro nivel arriba.'));
