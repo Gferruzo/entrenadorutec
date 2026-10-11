@@ -12,7 +12,7 @@
  "topics": [
   {
    "id": "reales",
-   "name": "Repaso parcial · Números reales e inecuaciones",
+   "name": "Sem. 1 · Números reales e inecuaciones",
    "teo": "<p>\\(\\mathbb{N}\\subset\\mathbb{Z}\\subset\\mathbb{Q}\\subset\\mathbb{R}\\). Un número es <strong>racional</strong> si se escribe como \\(\\frac ab\\) con \\(a,b\\in\\mathbb{Z}\\), \\(b\\neq0\\). La suma, resta y producto de racionales es racional; \\(\\sqrt2\\) y \\(\\pi\\) son irracionales. Racional no nulo por irracional da irracional, pero dos irracionales pueden sumar un racional (\\(\\sqrt2+(-\\sqrt2)=0\\)).</p>\n<p><strong>Orden:</strong> multiplicar o dividir una desigualdad por un número negativo invierte el sentido. \\(x^2\\ge0\\) para todo real.</p>\n<p><strong>Inecuaciones:</strong> factoriza, ubica los puntos críticos (raíces del numerador y del denominador), haz la tabla de signos y elige los intervalos. Las raíces del numerador se incluyen si la desigualdad es \\(\\le\\) o \\(\\ge\\); las del denominador <strong>nunca</strong>.</p>",
    "form": [
     "\\(\\frac ab\\in\\mathbb{Q}\\iff a,b\\in\\mathbb{Z},\\ b\\ne0\\)",
@@ -341,7 +341,7 @@
   },
   {
    "id": "div",
-   "name": "Repaso parcial · Divisibilidad y paridad",
+   "name": "Sem. 2 · Divisibilidad y paridad",
    "teo": "<p>\\(a\\mid b\\) (\"\\(a\\) divide a \\(b\\)\") si existe \\(c\\in\\mathbb{Z}\\) con \\(b=ac\\). Equivale a \"\\(a\\) es divisor de \\(b\\)\" o \"\\(b\\) es múltiplo de \\(a\\)\". Todo entero divide a 0; 0 solo divide a 0.</p>\n<p>\\(n\\) es <strong>par</strong> si \\(n=2k\\); <strong>impar</strong> si \\(n=2k+1\\) (\\(k\\in\\mathbb{Z}\\)). Propiedades: si \\(a\\mid b\\) y \\(a\\mid c\\), entonces \\(a\\mid(bx+cy)\\); si \\(a\\mid b\\) y \\(b\\mid c\\), entonces \\(a\\mid c\\).</p>\n<p><strong>Algoritmo de la división:</strong> para \\(b\\gt0\\), existen únicos \\(q,r\\) con \\(a=bq+r\\) y \\(0\\le r\\lt b\\). El resto nunca es negativo.</p>\n<p>Para demostrar con divisibilidad: escribe cada hipótesis con la definición <strong>usando letras distintas</strong>, opera y factoriza hasta mostrar el divisor.</p>",
    "form": [
     "\\(a\\mid b\\iff\\exists c\\in\\mathbb{Z}:\\ b=ac\\)",
@@ -626,7 +626,7 @@
   },
   {
    "id": "mcd",
-   "name": "Repaso parcial · MCD, Euclides y primos",
+   "name": "Sem. 3 · MCD, Euclides y primos",
    "teo": "<p>\\(\\text{mcd}(a,b)\\) es el mayor entero positivo que divide a ambos. Propiedades: \\(\\text{mcd}(a,b)=\\text{mcd}(b,a)\\); todo divisor común divide al mcd; \\(\\text{mcd}(a,0)=|a|\\); los signos no importan. \\(a\\) y \\(b\\) son <strong>coprimos</strong> si \\(\\text{mcd}(a,b)=1\\) (por ejemplo, \\(n\\) y \\(n+1\\)).</p>\n<p><strong>Algoritmo de Euclides:</strong> divide el mayor entre el menor, luego el divisor entre el resto, y así hasta que el resto sea 0: el último resto no nulo es el mcd. <strong>Bézout:</strong> existen enteros \\(x,y\\) con \\(\\text{mcd}(a,b)=ax+by\\); se hallan recorriendo Euclides hacia atrás.</p>\n<p>\\(\\text{mcm}(a,b)\\cdot\\text{mcd}(a,b)=|ab|\\). Un <strong>primo</strong> es un entero \\(p\\gt1\\) cuyos únicos divisores positivos son 1 y \\(p\\).</p>",
    "form": [
     "\\(a=bq+r\\Rightarrow\\text{mcd}(a,b)=\\text{mcd}(b,r)\\)",
@@ -939,7 +939,7 @@
   },
   {
    "id": "base",
-   "name": "Repaso parcial · Representación en base n",
+   "name": "Sem. 3 · Representación en base n",
    "teo": "<p>En base \\(b\\), \\((d_kd_{k-1}\\dots d_0)_b=d_kb^k+\\dots+d_1b+d_0\\), con dígitos de 0 a \\(b-1\\). En hexadecimal, A = 10, …, F = 15.</p>\n<p><strong>De base b a base 10:</strong> multiplica cada dígito por su potencia y suma. <strong>De base 10 a base b:</strong> divisiones sucesivas entre \\(b\\) y lee los restos <strong>de abajo hacia arriba</strong>. Entre base 2 y base 16, cada dígito hexadecimal equivale a 4 bits.</p>",
    "form": [
     "\\((d_k\\dots d_0)_b=\\sum d_ib^i\\)",
@@ -1218,7 +1218,7 @@
   },
   {
    "id": "prop",
-   "name": "Repaso parcial · Proposiciones y tablas de verdad",
+   "name": "Sem. 4 · Proposiciones y tablas de verdad",
    "teo": "<p>Una <strong>proposición</strong> es un enunciado al que se le asigna V o F, pero no ambos. No lo son las exclamaciones, órdenes, preguntas ni los enunciados con variables libres (\"x es entero\").</p>\n<p>Conectores: \\(\\neg\\) (no), \\(\\wedge\\) (y), \\(\\vee\\) (o), \\(\\veebar\\) (o exclusivo), \\(\\to\\) (si… entonces) y \\(\\leftrightarrow\\) (si y solo si). La condicional \\(p\\to q\\) <strong>solo es falsa cuando \\(p\\) es V y \\(q\\) es F</strong>.</p>\n<p>En \\(p\\to q\\): \\(p\\) es <strong>condición suficiente</strong> para \\(q\\), y \\(q\\) es <strong>condición necesaria</strong> para \\(p\\). \"\\(q\\) si \\(p\\)\" y \"\\(p\\) solo si \\(q\\)\" también se escriben \\(p\\to q\\).</p>\n<p><strong>Deducir valores:</strong> si una condicional es falsa, el antecedente es V y el consecuente F; si una disyunción es falsa, ambas partes son F; si una conjunción es verdadera, ambas son V.</p>",
    "form": [
     "\\(p\\to q\\) es F solo con \\(V\\to F\\)",
@@ -1697,7 +1697,7 @@
   },
   {
    "id": "equiv",
-   "name": "Repaso parcial · Equivalencias y formas normales",
+   "name": "Sem. 5 · Equivalencias y formas normales",
    "teo": "<p><strong>Tautología:</strong> siempre V. <strong>Contradicción:</strong> siempre F. <strong>Contingencia:</strong> ni una ni otra. Dos proposiciones son <strong>equivalentes</strong> (\\(\\equiv\\)) si tienen la misma tabla, es decir, si \\(p_1\\leftrightarrow p_2\\) es tautología.</p>\n<p><strong>Leyes clave:</strong> De Morgan \\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\), \\(\\neg(p\\vee q)\\equiv\\neg p\\wedge\\neg q\\); condicional \\(p\\to q\\equiv\\neg p\\vee q\\); contrarrecíproca \\(p\\to q\\equiv\\neg q\\to\\neg p\\); doble negación; distributiva; absorción \\(p\\vee(p\\wedge q)\\equiv p\\); tercio excluido \\(p\\vee\\neg p\\equiv V\\); contradicción \\(p\\wedge\\neg p\\equiv F\\).</p>\n<p><strong>Forma normal disyuntiva (FND):</strong> disyunción de conjunciones de literales. <strong>Forma normal conjuntiva (FNC):</strong> conjunción de disyunciones. Una <strong>fórmula bien formada</strong> se construye con variables, \\(\\neg A\\) y \\((A\\circ B)\\), con paréntesis balanceados y cada conector binario entre dos fórmulas.</p>",
    "form": [
     "\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\)",
@@ -2145,7 +2145,7 @@
   },
   {
    "id": "infer",
-   "name": "Repaso parcial · Reglas de inferencia",
+   "name": "Sem. 6 · Reglas de inferencia",
    "teo": "<p>Un argumento es <strong>válido</strong> si, siempre que las premisas son verdaderas, la conclusión también lo es; es decir, si \\((P_1\\wedge\\dots\\wedge P_n)\\to C\\) es tautología.</p>\n<p><strong>Reglas válidas:</strong> modus ponens (\\(p\\to q,\\ p\\ \\therefore q\\)); modus tollens (\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\)); generalización (\\(p\\ \\therefore p\\vee q\\)); especialización (\\(p\\wedge q\\ \\therefore p\\)); conjunción; silogismo disyuntivo o eliminación (\\(p\\vee q,\\ \\neg p\\ \\therefore q\\)); silogismo hipotético o transitividad (\\(p\\to q,\\ q\\to r\\ \\therefore p\\to r\\)).</p>\n<p><strong>Falacias:</strong> afirmación del consecuente (\\(p\\to q,\\ q\\ \\therefore p\\)) y negación del antecedente (\\(p\\to q,\\ \\neg p\\ \\therefore\\neg q\\)).</p>",
    "form": [
     "MP: \\(p\\to q,\\ p\\ \\therefore q\\)",
@@ -2552,7 +2552,7 @@
   },
   {
    "id": "pred",
-   "name": "Repaso parcial · Predicados y cuantificadores",
+   "name": "Sem. 7 · Predicados y cuantificadores",
    "teo": "<p>Un <strong>predicado</strong> (proposición abierta) tiene variables; se vuelve proposición al sustituir valores del <strong>dominio</strong> o al cuantificarlo. \\(\\forall x\\,P(x)\\): todos cumplen. \\(\\exists x\\,P(x)\\): al menos uno cumple.</p>\n<p><strong>Negación:</strong> \\(\\neg\\forall x\\,P(x)\\equiv\\exists x\\,\\neg P(x)\\) y \\(\\neg\\exists x\\,P(x)\\equiv\\forall x\\,\\neg P(x)\\). Con varios cuantificadores, se cambian todos y se niega el predicado del final. <strong>El orden importa:</strong> \\(\\forall x\\,\\exists y\\) no es lo mismo que \\(\\exists y\\,\\forall x\\).</p>\n<p>Un \\(\\forall\\) se <strong>refuta con un contraejemplo</strong>; un \\(\\exists\\) se <strong>prueba con un ejemplo</strong>. Limitación: la lógica proposicional no puede expresar «todos» o «algunos»; para eso están los predicados.</p>",
    "form": [
     "\\(\\neg\\forall x\\,P(x)\\equiv\\exists x\\,\\neg P(x)\\)",
@@ -3073,333 +3073,8 @@
    "lesson": "<h3>Idea central</h3><p>Los cuantificadores convierten predicados en proposiciones.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\forall\\): todos; \\(\\exists\\): al menos uno.</li><li>\\(\\neg\\forall x\\,P\\equiv\\exists x\\,\\neg P\\).</li><li>El orden de cuantificadores importa.</li><li>Un contraejemplo refuta un \\(\\forall\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\neg\\forall x\\,(x^2\\gt0)\\equiv\\exists x\\,(x^2\\le0)\\) (verdadero con \\(x=0\\)).</div>\n<div class=\"err\"><b>Error común:</b> negar solo el cuantificador y no el predicado.</div>"
   },
   {
-   "id": "conj",
-   "name": "Repaso parcial · Conjuntos",
-   "teo": "<p>Un conjunto es una colección no ordenada y bien definida de objetos distintos: por extensión \\(\\{1,2,3\\}\\) o por comprensión \\(\\{x\\in A:\\ P(x)\\}\\). \\(\\{a,b\\}=\\{b,a\\}\\); el vacío \\(\\varnothing\\) es subconjunto de todo conjunto. No confundas \\(\\in\\) (pertenece un elemento) con \\(\\subseteq\\) (está contenido un conjunto).</p>\n<p><strong>Operaciones:</strong> \\(A\\cup B\\), \\(A\\cap B\\), \\(A-B\\) (en A y no en B), complemento \\(A'\\) (respecto al universo U). <strong>Producto cartesiano:</strong> \\(A\\times B=\\{(a,b)\\}\\), pares <em>ordenados</em>, \\(|A\\times B|=|A||B|\\). <strong>Conjunto potencia:</strong> \\(\\mathcal P(A)\\) es el conjunto de todos los subconjuntos, \\(|\\mathcal P(A)|=2^{|A|}\\). <strong>Cardinalidad:</strong> \\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</p>",
-   "form": [
-    "\\(A-B=A\\cap B'\\)",
-    "\\((A\\cup B)'=A'\\cap B'\\)",
-    "\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\)",
-    "\\(|A\\times B|=|A|\\cdot|B|\\)",
-    "\\(|\\mathcal P(A)|=2^{|A|}\\)"
-   ],
-   "ex": [
-    {
-     "id": "c1",
-     "lvl": 1,
-     "title": "Operaciones básicas",
-     "q": "<p>\\(A=\\{1,2,3,4\\}\\) y \\(B=\\{3,4,5\\}\\).</p>",
-     "checks": [
-      {
-       "p": "\\(A\\cap B\\)",
-       "o": [
-        "\\(\\{3,4\\}\\)",
-        "\\(\\{1,2,3,4,5\\}\\)",
-        "\\(\\{1,2\\}\\)",
-        "\\(\\{5\\}\\)",
-        "\\(\\varnothing\\)"
-       ]
-      },
-      {
-       "p": "\\(A-B\\)",
-       "o": [
-        "\\(\\{1,2\\}\\)",
-        "\\(\\{5\\}\\)",
-        "\\(\\{3,4\\}\\)",
-        "\\(\\{1,2,5\\}\\)",
-        "\\(\\{1,2,3,4\\}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(A\\cap B\\) (intersección): los que están en los dos: 3 y 4.",
-      "\\(A-B\\) (diferencia): los que están en A pero no en B: 1 y 2."
-     ],
-     "ans": "\\(\\{3,4\\}\\); \\(\\{1,2\\}\\)",
-     "hint": "Intersección = comunes.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "setops"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "c2",
-     "lvl": 1,
-     "title": "Conjuntos: V o F",
-     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
-     "checks": [
-      {
-       "p": "a) \\(\\{a,b\\}=\\{b,a\\}\\)",
-       "o": [
-        "Verdadero",
-        "Falso"
-       ],
-       "ord": [
-        0,
-        1
-       ]
-      },
-      {
-       "p": "b) \\(\\varnothing\\subseteq A\\) para todo conjunto A.",
-       "o": [
-        "Verdadero",
-        "Falso"
-       ],
-       "ord": [
-        0,
-        1
-       ]
-      },
-      {
-       "p": "c) \\(\\{1\\}\\in\\{1,2\\}\\)",
-       "o": [
-        "Falso",
-        "Verdadero"
-       ],
-       "ord": [
-        1,
-        0
-       ]
-      }
-     ],
-     "steps": [
-      "a) En un conjunto el orden no importa. <b>Verdadero</b>.",
-      "b) El vacío no tiene elementos, así que no tiene ninguno fuera de A: siempre es subconjunto. <b>Verdadero</b>.",
-      "c) Los elementos de \\(\\{1,2\\}\\) son 1 y 2, no \\(\\{1\\}\\). Lo correcto es \\(1\\in\\{1,2\\}\\) o \\(\\{1\\}\\subseteq\\{1,2\\}\\). <b>Falso</b>."
-     ],
-     "ans": "V, V, F",
-     "hint": "∈ para elementos, ⊆ para conjuntos.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [],
-      []
-     ]
-    },
-    {
-     "id": "c3",
-     "lvl": 2,
-     "title": "Diagrama de Venn (2 conjuntos)",
-     "q": "<p>¿Qué diagrama representa \\(A-B\\)?</p>",
-     "checks": [
-      {
-       "p": "Región sombreada",
-       "o": [
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c1A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c1B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m1_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c1A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m1_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c2A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c2B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m2_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c2B)\"><g clip-path=\"url(#c2A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m2_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c3A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c3B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m3_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m3_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_0)\"/></g><g clip-path=\"url(#c3B)\"><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_1)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c4A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c4B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m4_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c4B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m4_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c5A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c5B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m5_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m5_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c5A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_0)\"/></g><g clip-path=\"url(#c5B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_1)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(A-B\\) son los elementos de A que no están en B: en el dibujo, el círculo A sin la parte que comparte con B (una «luna»)."
-     ],
-     "ans": "Solo la parte exclusiva de A",
-     "hint": "La intersección no va.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "paridad",
-       "setops"
-      ]
-     ]
-    },
-    {
-     "id": "c4",
-     "lvl": 2,
-     "title": "Contar elementos",
-     "q": "<p>\\(A=\\{a,b,c\\}\\) y \\(B=\\{1,2\\}\\).</p>",
-     "checks": [
-      {
-       "p": "\\(|\\mathcal P(A)|\\)",
-       "o": [
-        "8",
-        "6",
-        "3",
-        "9",
-        "7"
-       ]
-      },
-      {
-       "p": "\\(|A\\times B|\\)",
-       "o": [
-        "6",
-        "5",
-        "8",
-        "9",
-        "3"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\mathcal P(A)\\) son todos los subconjuntos. Si A tiene n elementos, hay \\(2^n\\): \\(2^3=8\\).",
-      "\\(A\\times B\\) son todos los pares (de A, de B): \\(3\\cdot2=6\\)."
-     ],
-     "ans": "8 y 6",
-     "hint": "Potencia: 2 elevado a n.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "card"
-      ],
-      [
-       "paridad"
-      ]
-     ]
-    },
-    {
-     "id": "c5",
-     "lvl": 2,
-     "title": "Inclusión–exclusión",
-     "q": "<p>En un salón de 40 estudiantes, 25 llevan Discretas, 20 llevan Cálculo y 10 llevan ambos. ¿Cuántos no llevan ninguno?</p>",
-     "checks": [
-      {
-       "p": "Ninguno",
-       "o": [
-        "5",
-        "15",
-        "0",
-        "10",
-        "35"
-       ]
-      }
-     ],
-     "steps": [
-      "Si sumas 25 + 20, los 10 que llevan ambos se cuentan dos veces. Réstalos una vez: \\(25+20-10=35\\) llevan al menos uno.",
-      "Ninguno: \\(40-35=5\\)."
-     ],
-     "ans": "5",
-     "hint": "No cuentes dos veces a los de ambos.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "card"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "c6",
-     "lvl": 3,
-     "title": "Diagrama de Venn (3 conjuntos)",
-     "q": "<p>¿Qué diagrama representa \\((A\\cup B)-C\\)?</p>",
-     "checks": [
-      {
-       "p": "Región sombreada",
-       "o": [
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c6A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m6_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_0)\"/></g><g clip-path=\"url(#c6B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_1)\"/></g><g clip-path=\"url(#c6B)\"><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_2)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c7A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m7_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_3\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_4\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_5\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_0)\"/></g><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_1)\"/></g><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_2)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_3)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_4)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_5)\"/></g></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c8A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m8_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c8B)\"><g clip-path=\"url(#c8A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m8_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c9A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m9_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c9C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m9_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c10A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m10_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c10A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_0)\"/></g><g clip-path=\"url(#c10B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_1)\"/></g><g clip-path=\"url(#c10C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_2)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>"
-       ]
-      }
-     ],
-     "steps": [
-      "Primero pinta todo lo que está en A o en B; luego borra cualquier parte que toque C (también las zonas compartidas con C)."
-     ],
-     "ans": "A ∪ B sin nada de C",
-     "hint": "Quita todo lo que toque C.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      []
-     ]
-    },
-    {
-     "id": "c7",
-     "lvl": 3,
-     "title": "Producto cartesiano",
-     "q": "<p>\\(A=\\{1,2\\}\\), \\(B=\\{x,y\\}\\). ¿Cuál es \\(A\\times B\\)?</p>",
-     "checks": [
-      {
-       "p": "\\(A\\times B\\)",
-       "o": [
-        "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
-        "\\(\\{(x,1),(y,1),(x,2),(y,2)\\}\\)",
-        "\\(\\{1,2,x,y\\}\\)",
-        "\\(\\{(1,x),(2,y)\\}\\)",
-        "\\(\\{(1,2),(x,y)\\}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(A\\times B\\): pares con el primero de A y el segundo de B: \\((1,x),(1,y),(2,x),(2,y)\\).",
-      "Ojo: \\((x,1)\\) va al revés; eso sería \\(B\\times A\\)."
-     ],
-     "ans": "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
-     "hint": "Primero A, luego B.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "paridad"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "c8",
-     "lvl": 3,
-     "title": "Conjunto potencia",
-     "q": "<p>¿Cuál es \\(\\mathcal P(\\{1,2\\})\\)?</p>",
-     "checks": [
-      {
-       "p": "\\(\\mathcal P(\\{1,2\\})\\)",
-       "o": [
-        "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
-        "\\(\\{\\{1\\},\\{2\\}\\}\\)",
-        "\\(\\{1,2,\\{1,2\\}\\}\\)",
-        "\\(\\{\\varnothing,1,2\\}\\)",
-        "\\(\\{\\{1\\},\\{2\\},\\{1,2\\}\\}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Lista todos los subconjuntos de \\(\\{1,2\\}\\): el vacío, \\(\\{1\\}\\), \\(\\{2\\}\\) y el propio \\(\\{1,2\\}\\). Son \\(2^2=4\\); no olvides el vacío ni el completo."
-     ],
-     "ans": "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
-     "hint": "No olvides el vacío.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [
-       "card"
-      ]
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Un conjunto es una colección sin orden ni repetidos; se opera con unión, intersección y diferencia.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\in\\) (elemento) vs \\(\\subseteq\\) (subconjunto).</li><li>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</li><li>\\(|\\mathcal P(A)|=2^n\\), \\(|A\\times B|=|A||B|\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\varnothing\\subseteq A\\) siempre, pero \\(\\varnothing\\in A\\) solo si está listado.</div>\n<div class=\"err\"><b>Error común:</b> sumar \\(|A|+|B|\\) sin restar la intersección.</div>"
-  },
-  {
    "id": "demo",
-   "name": "Repaso parcial · Técnicas de demostración",
+   "name": "Sem. 1–7 · Técnicas de demostración",
    "teo": "<p>Dada \\(p\\to q\\): su <strong>recíproca</strong> es \\(q\\to p\\), su <strong>inversa</strong> es \\(\\neg p\\to\\neg q\\) y su <strong>contrarrecíproca</strong> es \\(\\neg q\\to\\neg p\\). Solo la contrarrecíproca es equivalente a la original.</p>\n<p><strong>Directa:</strong> suponer \\(p\\) y deducir \\(q\\). <strong>Contraposición:</strong> probar \\(\\neg q\\to\\neg p\\) (útil cuando la conclusión da poca información, como «n es par»). <strong>Contradicción:</strong> suponer la negación de lo que se quiere probar y llegar a un absurdo (útil para «es irracional», «no existe», «hay infinitos»). <strong>Contraejemplo:</strong> un solo caso que cumple la hipótesis y no la conclusión refuta un «para todo».</p>\n<p><strong>Verificar demostraciones (incluidas las de IA):</strong> revisa que no se asuma la conclusión, que las variables sean generales (letras distintas), que no se divida entre algo que puede ser cero, que no se demuestre la recíproca en lugar de la afirmación y que la afirmación sea realmente verdadera.</p>",
    "form": [
     "Recíproca \\(q\\to p\\) (no equivalente)",
@@ -3776,6 +3451,331 @@
     }
    ],
    "lesson": "<h3>Idea central</h3><p>Demostrar es encadenar pasos válidos desde las hipótesis hasta la conclusión.</p>\n<h3>Conceptos clave</h3><ul><li>Directa: supón \\(p\\), llega a \\(q\\).</li><li>Contraposición: prueba \\(\\neg q\\to\\neg p\\).</li><li>Contradicción: supón lo contrario y llega a un absurdo.</li><li>Contraejemplo para refutar.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> «Si \\(n^2\\) es par, \\(n\\) es par»: por contraposición, si \\(n=2k+1\\), \\(n^2=2(2k^2+2k)+1\\) es impar.</div>\n<div class=\"err\"><b>Error común:</b> probar la recíproca en lugar de la proposición pedida.</div>"
+  },
+  {
+   "id": "conj",
+   "name": "Sem. 9 · Conjuntos",
+   "teo": "<p>Un conjunto es una colección no ordenada y bien definida de objetos distintos: por extensión \\(\\{1,2,3\\}\\) o por comprensión \\(\\{x\\in A:\\ P(x)\\}\\). \\(\\{a,b\\}=\\{b,a\\}\\); el vacío \\(\\varnothing\\) es subconjunto de todo conjunto. No confundas \\(\\in\\) (pertenece un elemento) con \\(\\subseteq\\) (está contenido un conjunto).</p>\n<p><strong>Operaciones:</strong> \\(A\\cup B\\), \\(A\\cap B\\), \\(A-B\\) (en A y no en B), complemento \\(A'\\) (respecto al universo U). <strong>Producto cartesiano:</strong> \\(A\\times B=\\{(a,b)\\}\\), pares <em>ordenados</em>, \\(|A\\times B|=|A||B|\\). <strong>Conjunto potencia:</strong> \\(\\mathcal P(A)\\) es el conjunto de todos los subconjuntos, \\(|\\mathcal P(A)|=2^{|A|}\\). <strong>Cardinalidad:</strong> \\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</p>",
+   "form": [
+    "\\(A-B=A\\cap B'\\)",
+    "\\((A\\cup B)'=A'\\cap B'\\)",
+    "\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\)",
+    "\\(|A\\times B|=|A|\\cdot|B|\\)",
+    "\\(|\\mathcal P(A)|=2^{|A|}\\)"
+   ],
+   "ex": [
+    {
+     "id": "c1",
+     "lvl": 1,
+     "title": "Operaciones básicas",
+     "q": "<p>\\(A=\\{1,2,3,4\\}\\) y \\(B=\\{3,4,5\\}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(A\\cap B\\)",
+       "o": [
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,3,4,5\\}\\)",
+        "\\(\\{1,2\\}\\)",
+        "\\(\\{5\\}\\)",
+        "\\(\\varnothing\\)"
+       ]
+      },
+      {
+       "p": "\\(A-B\\)",
+       "o": [
+        "\\(\\{1,2\\}\\)",
+        "\\(\\{5\\}\\)",
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,5\\}\\)",
+        "\\(\\{1,2,3,4\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\cap B\\) (intersección): los que están en los dos: 3 y 4.",
+      "\\(A-B\\) (diferencia): los que están en A pero no en B: 1 y 2."
+     ],
+     "ans": "\\(\\{3,4\\}\\); \\(\\{1,2\\}\\)",
+     "hint": "Intersección = comunes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "setops"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c2",
+     "lvl": 1,
+     "title": "Conjuntos: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) \\(\\{a,b\\}=\\{b,a\\}\\)",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "b) \\(\\varnothing\\subseteq A\\) para todo conjunto A.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      },
+      {
+       "p": "c) \\(\\{1\\}\\in\\{1,2\\}\\)",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      }
+     ],
+     "steps": [
+      "a) En un conjunto el orden no importa. <b>Verdadero</b>.",
+      "b) El vacío no tiene elementos, así que no tiene ninguno fuera de A: siempre es subconjunto. <b>Verdadero</b>.",
+      "c) Los elementos de \\(\\{1,2\\}\\) son 1 y 2, no \\(\\{1\\}\\). Lo correcto es \\(1\\in\\{1,2\\}\\) o \\(\\{1\\}\\subseteq\\{1,2\\}\\). <b>Falso</b>."
+     ],
+     "ans": "V, V, F",
+     "hint": "∈ para elementos, ⊆ para conjuntos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "c3",
+     "lvl": 2,
+     "title": "Diagrama de Venn (2 conjuntos)",
+     "q": "<p>¿Qué diagrama representa \\(A-B\\)?</p>",
+     "checks": [
+      {
+       "p": "Región sombreada",
+       "o": [
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c1A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c1B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m1_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c1A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m1_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c2A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c2B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m2_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c2B)\"><g clip-path=\"url(#c2A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m2_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c3A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c3B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m3_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m3_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_0)\"/></g><g clip-path=\"url(#c3B)\"><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_1)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c4A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c4B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m4_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c4B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m4_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c5A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c5B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m5_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m5_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c5A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_0)\"/></g><g clip-path=\"url(#c5B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_1)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A-B\\) son los elementos de A que no están en B: en el dibujo, el círculo A sin la parte que comparte con B (una «luna»)."
+     ],
+     "ans": "Solo la parte exclusiva de A",
+     "hint": "La intersección no va.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad",
+       "setops"
+      ]
+     ]
+    },
+    {
+     "id": "c4",
+     "lvl": 2,
+     "title": "Contar elementos",
+     "q": "<p>\\(A=\\{a,b,c\\}\\) y \\(B=\\{1,2\\}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(|\\mathcal P(A)|\\)",
+       "o": [
+        "8",
+        "6",
+        "3",
+        "9",
+        "7"
+       ]
+      },
+      {
+       "p": "\\(|A\\times B|\\)",
+       "o": [
+        "6",
+        "5",
+        "8",
+        "9",
+        "3"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\mathcal P(A)\\) son todos los subconjuntos. Si A tiene n elementos, hay \\(2^n\\): \\(2^3=8\\).",
+      "\\(A\\times B\\) son todos los pares (de A, de B): \\(3\\cdot2=6\\)."
+     ],
+     "ans": "8 y 6",
+     "hint": "Potencia: 2 elevado a n.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
+     "id": "c5",
+     "lvl": 2,
+     "title": "Inclusión–exclusión",
+     "q": "<p>En un salón de 40 estudiantes, 25 llevan Discretas, 20 llevan Cálculo y 10 llevan ambos. ¿Cuántos no llevan ninguno?</p>",
+     "checks": [
+      {
+       "p": "Ninguno",
+       "o": [
+        "5",
+        "15",
+        "0",
+        "10",
+        "35"
+       ]
+      }
+     ],
+     "steps": [
+      "Si sumas 25 + 20, los 10 que llevan ambos se cuentan dos veces. Réstalos una vez: \\(25+20-10=35\\) llevan al menos uno.",
+      "Ninguno: \\(40-35=5\\)."
+     ],
+     "ans": "5",
+     "hint": "No cuentes dos veces a los de ambos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c6",
+     "lvl": 3,
+     "title": "Diagrama de Venn (3 conjuntos)",
+     "q": "<p>¿Qué diagrama representa \\((A\\cup B)-C\\)?</p>",
+     "checks": [
+      {
+       "p": "Región sombreada",
+       "o": [
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c6A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m6_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_0)\"/></g><g clip-path=\"url(#c6B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_1)\"/></g><g clip-path=\"url(#c6B)\"><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_2)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c7A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m7_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_3\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_4\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_5\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_0)\"/></g><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_1)\"/></g><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_2)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_3)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_4)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_5)\"/></g></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c8A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m8_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c8B)\"><g clip-path=\"url(#c8A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m8_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c9A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m9_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c9C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m9_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
+        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c10A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m10_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c10A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_0)\"/></g><g clip-path=\"url(#c10B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_1)\"/></g><g clip-path=\"url(#c10C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_2)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero pinta todo lo que está en A o en B; luego borra cualquier parte que toque C (también las zonas compartidas con C)."
+     ],
+     "ans": "A ∪ B sin nada de C",
+     "hint": "Quita todo lo que toque C.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "c7",
+     "lvl": 3,
+     "title": "Producto cartesiano",
+     "q": "<p>\\(A=\\{1,2\\}\\), \\(B=\\{x,y\\}\\). ¿Cuál es \\(A\\times B\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(A\\times B\\)",
+       "o": [
+        "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
+        "\\(\\{(x,1),(y,1),(x,2),(y,2)\\}\\)",
+        "\\(\\{1,2,x,y\\}\\)",
+        "\\(\\{(1,x),(2,y)\\}\\)",
+        "\\(\\{(1,2),(x,y)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\times B\\): pares con el primero de A y el segundo de B: \\((1,x),(1,y),(2,x),(2,y)\\).",
+      "Ojo: \\((x,1)\\) va al revés; eso sería \\(B\\times A\\)."
+     ],
+     "ans": "\\(\\{(1,x),(1,y),(2,x),(2,y)\\}\\)",
+     "hint": "Primero A, luego B.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c8",
+     "lvl": 3,
+     "title": "Conjunto potencia",
+     "q": "<p>¿Cuál es \\(\\mathcal P(\\{1,2\\})\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(\\mathcal P(\\{1,2\\})\\)",
+       "o": [
+        "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
+        "\\(\\{\\{1\\},\\{2\\}\\}\\)",
+        "\\(\\{1,2,\\{1,2\\}\\}\\)",
+        "\\(\\{\\varnothing,1,2\\}\\)",
+        "\\(\\{\\{1\\},\\{2\\},\\{1,2\\}\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Lista todos los subconjuntos de \\(\\{1,2\\}\\): el vacío, \\(\\{1\\}\\), \\(\\{2\\}\\) y el propio \\(\\{1,2\\}\\). Son \\(2^2=4\\); no olvides el vacío ni el completo."
+     ],
+     "ans": "\\(\\{\\varnothing,\\{1\\},\\{2\\},\\{1,2\\}\\}\\)",
+     "hint": "No olvides el vacío.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "card"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un conjunto es una colección sin orden ni repetidos; se opera con unión, intersección y diferencia.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\in\\) (elemento) vs \\(\\subseteq\\) (subconjunto).</li><li>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</li><li>\\(|\\mathcal P(A)|=2^n\\), \\(|A\\times B|=|A||B|\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\varnothing\\subseteq A\\) siempre, pero \\(\\varnothing\\in A\\) solo si está listado.</div>\n<div class=\"err\"><b>Error común:</b> sumar \\(|A|+|B|\\) sin restar la intersección.</div>"
   },
   {
    "id": "c9def",

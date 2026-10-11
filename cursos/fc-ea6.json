@@ -8,7 +8,7 @@
  "topics": [
   {
    "id": "punto",
-   "name": "Producto punto, ángulo, paralelos y perpendiculares",
+   "name": "Sem. 12 · Producto punto, ángulo, paralelos y perpendiculares",
    "teo": "<p>\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2(+a_3b_3)=|\\vec a||\\vec b|\\cos\\theta\\). Es un <strong>número</strong>, no un vector.</p><p>Su <strong>signo</strong> clasifica el ángulo sin calcularlo: \\(\\gt0\\) agudo, \\(=0\\) recto (perpendiculares), \\(\\lt0\\) obtuso. Ángulo: \\(\\theta=\\arccos\\frac{\\vec a\\cdot\\vec b}{|\\vec a||\\vec b|}\\in[0^\\circ,180^\\circ]\\).</p><p><strong>Paralelos</strong>: uno es múltiplo del otro, \\(\\vec b=\\lambda\\vec a\\). Si \\(\\lambda\\lt0\\), sentidos opuestos y \\(\\theta=180^\\circ\\).</p>",
    "form": [
     "\\(\\vec a\\cdot\\vec b=a_1b_1+a_2b_2\\)",
@@ -283,7 +283,7 @@
   },
   {
    "id": "proy",
-   "name": "Proyecciones y componente ortogonal",
+   "name": "Sem. 12 · Proyecciones y componente ortogonal",
    "teo": "<p><strong>Escalar</strong> de \\(\\vec b\\) sobre \\(\\vec a\\): \\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|}\\). Es un número con signo (negativo si el ángulo es obtuso).</p><p><strong>Vectorial</strong>: \\(\\frac{\\vec a\\cdot\\vec b}{|\\vec a|^2}\\vec a\\). Es un vector paralelo a \\(\\vec a\\). Es nula si son perpendiculares.</p><p><strong>Componente ortogonal</strong>: \\(\\vec b-\\text{proy}_{\\vec a}\\vec b\\), perpendicular a \\(\\vec a\\). Verifícalo con el producto punto.</p>",
    "form": [
     "\\(\\text{comp}_{\\vec a}\\vec b=\\tfrac{\\vec a\\cdot\\vec b}{|\\vec a|}\\)",
@@ -552,7 +552,7 @@
   },
   {
    "id": "v3d",
-   "name": "Vectores en el espacio: puntos, unitarios y perpendicularidad",
+   "name": "Sem. 13 · Vectores en el espacio: puntos, unitarios y perpendicularidad",
    "teo": "<p>\\(\\overrightarrow{AB}=B-A\\) (final menos inicial). Magnitud \\(\\sqrt{x^2+y^2+z^2}\\). Unitario \\(\\hat u=\\frac{\\vec v}{|\\vec v|}\\).</p><p>Todo lo del plano funciona igual con una tercera componente: producto punto, ángulo, proyecciones.</p><p>Para hallar \\(k\\) que haga perpendiculares dos vectores, plantea \\(\\vec a\\cdot\\vec b=0\\) y despeja.</p>",
    "form": [
     "\\(\\overrightarrow{AB}=B-A\\)",
@@ -770,7 +770,7 @@
   },
   {
    "id": "vapl",
-   "name": "Aplicaciones: fuerza y desplazamiento, resultantes y afirmaciones",
+   "name": "Sem. 13 · Aplicaciones: fuerza y desplazamiento, resultantes y afirmaciones",
    "teo": "<p>\\(\\vec F\\cdot\\vec d=|F||d|\\cos\\theta\\) (con \\(\\theta\\) = diferencia de las direcciones). Positivo: la fuerza <strong>favorece</strong>; negativo: <strong>se opone</strong> en parte; cero: perpendicular.</p><p><strong>Resultante de varios vectores con ángulo</strong>: unitario \\((\\cos\\theta,\\sin\\theta)\\) de cada uno, multiplica por la magnitud, suma y luego magnitud y dirección.</p><p><strong>Afirmaciones V/F</strong>: casi siempre son falsas por un caso borde (perpendiculares → cero; ángulo obtuso → negativo). Justifica con un contraejemplo concreto.</p>",
    "form": [
     "\\(\\vec F\\cdot\\vec d=|F||d|\\cos\\theta\\)",

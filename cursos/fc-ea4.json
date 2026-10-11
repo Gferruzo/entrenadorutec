@@ -8,7 +8,7 @@
  "topics": [
   {
    "id": "sinus",
-   "name": "Funciones sinusoidales",
+   "name": "Sem. 7 · Funciones sinusoidales",
    "teo": "<p>\\(f(x)=a\\sin(b(x-h))+k\\) o con coseno. <strong>Eje</strong> \\(k=\\frac{\\max+\\min}2\\); <strong>amplitud</strong> \\(|a|=\\frac{\\max-\\min}2\\); <strong>período</strong> \\(T=\\frac{2\\pi}{|b|}\\) (y al revés \\(b=\\frac{2\\pi}T\\)); <strong>desfase</strong> \\(h\\).</p><p>Para leer \\(h\\): con <strong>seno</strong>, \\(h\\) es donde la onda cruza el eje <em>subiendo</em>; con <strong>coseno</strong>, donde está en su <em>máximo</em>. Si \\(a\\lt0\\), la onda empieza al revés (bajando, o en el mínimo).</p><p>Entre un máximo y el mínimo siguiente pasa <strong>medio período</strong>. Si te dan la forma \\(A\\sin(Bx+C)+D\\), el desfase es \\(-\\frac CB\\). Trabaja en radianes.</p>",
    "form": [
     "\\(f(x)=a\\sin(b(x-h))+k\\)",
@@ -605,7 +605,7 @@
   },
   {
    "id": "expo",
-   "name": "Exponentes y ecuaciones exponenciales",
+   "name": "Sem. 8 · Exponentes y ecuaciones exponenciales",
    "teo": "<p><strong>Leyes</strong>: mismas bases, suma exponentes al multiplicar y resta al dividir; potencia de potencia multiplica. \\(a^{-n}=\\frac1{a^n}\\) (¡no cambia el signo!) y \\(a^{m/n}=\\sqrt[n]{a^m}\\).</p><p><strong>Ecuaciones</strong>: escribe todo en la misma base y usa \\(b^M=b^N\\Rightarrow M=N\\). Si aparecen \\(b^{2x}\\) y \\(b^x\\), haz \\(t=b^x\\) (con \\(t\\gt0\\)) y resuelve la cuadrática; descarta los \\(t\\le0\\).</p><p>Siempre verifica: puede salir una identidad (todos los reales) o una cuadrática sin raíces reales (\\(\\varnothing\\)). Si no puedes igualar bases (como \\(3^x=7\\)), necesitas logaritmos.</p>",
    "form": [
     "\\(a^ma^n=a^{m+n},\\ \\frac{a^m}{a^n}=a^{m-n},\\ (a^m)^n=a^{mn}\\)",
@@ -959,7 +959,7 @@
   },
   {
    "id": "logs",
-   "name": "Logaritmos y ecuaciones logarítmicas",
+   "name": "Sem. 8 · Logaritmos y ecuaciones logarítmicas",
    "teo": "<p>\\(\\log_ba=c\\iff b^c=a\\): el logaritmo es el exponente. Base \\(b\\gt0,\\ b\\ne1\\); argumento \\(a\\gt0\\). \\(\\log\\) sin base es base 10; \\(\\ln\\) es base \\(e\\approx2{,}718\\).</p><p><strong>Propiedades</strong>: producto → suma, cociente → resta, potencia → baja multiplicando. Pero \\(\\log(M+N)\\) <em>no</em> se separa y \\(\\frac{\\log M}{\\log N}\\ne\\log M-\\log N\\).</p><p><strong>Ecuaciones</strong>: agrupa en un solo logaritmo, pasa a forma exponencial (o iguala argumentos) y <strong>verifica</strong> que todos los argumentos originales sean positivos. Para despejar un exponente (\\(3^x=7\\)) aplica \\(\\ln\\): \\(x=\\frac{\\ln7}{\\ln3}\\).</p>",
    "form": [
     "\\(\\log_ba=c\\iff b^c=a\\)",
@@ -1389,7 +1389,7 @@
   },
   {
    "id": "expfun",
-   "name": "Funciones exponencial y logarítmica: gráficas y modelos (sem. 9)",
+   "name": "Sem. 9 · Funciones exponencial y logarítmica: gráficas y modelos",
    "teo": "<p><strong>Exponencial</strong> \\(y=ab^x\\): crece si \\(b\\gt1\\), decrece si \\(0\\lt b\\lt1\\); corta el eje \\(y\\) en \\(a\\) y tiene asíntota \\(y=0\\). Trasladada, \\(y=A+Be^{-kt}\\) tiene asíntota \\(y=A\\).</p><p><strong>Logaritmo</strong> \\(y=\\log_b(x-h)\\): dominio \\(x\\gt h\\), asíntota vertical \\(x=h\\). Con suma de logaritmos, <em>cada</em> argumento debe ser positivo.</p><p><strong>Modelos de la EA</strong>: en \\(A+Be^{-kt}\\), \\(A\\) es el valor al que tiende y \\(B=f(0)-A\\); \\(k\\) sale del tercer dato con \\(\\ln\\). En \\(A+B\\ln(t+1)\\), \\(A=f(0)\\). Ambos cambian rápido al inicio y luego <strong>cada vez más lento</strong>.</p>",
    "form": [
     "\\(y=A+Be^{-kt}:\\ \\text{asíntota }y=A\\)",

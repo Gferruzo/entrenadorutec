@@ -8,7 +8,7 @@
  "topics": [
   {
    "id": "cuadsq",
-   "name": "Completar cuadrados (sem. 10)",
+   "name": "Sem. 10 · Completar cuadrados",
    "teo": "<p>Para pasar \\(x^2+bx+c\\) a la forma \\((x-h)^2+k\\) se suma y resta \\(\\left(\\frac b2\\right)^2\\): \\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\).</p>\n<p>Si el coeficiente principal es \\(a\\ne1\\), primero se factoriza \\(a\\) <em>solo</em> de los términos con variable: \\(ax^2+bx+c=a\\left(x^2+\\frac bax\\right)+c\\); al sacar lo restado del paréntesis, se multiplica por \\(a\\).</p>\n<p>Con dos variables se completa por separado en \\(x\\) y en \\(y\\). Es la herramienta para leer centro, radio, vértice o semiejes de una cónica.</p>",
    "form": [
     "\\(x^2+bx=\\left(x+\\tfrac b2\\right)^2-\\tfrac{b^2}4\\)",
@@ -438,7 +438,7 @@
   },
   {
    "id": "conic",
-   "name": "Cónicas: circunferencia y parábola",
+   "name": "Sem. 10 · Cónicas: circunferencia y parábola",
    "teo": "<p><strong>Circunferencia</strong>: \\((x-h)^2+(y-k)^2=r^2\\), centro \\((h,k)\\). Si viene desarrollada, <em>completa cuadrados</em>: a \\(x^2+bx\\) súmale \\(\\left(\\frac b2\\right)^2\\) en ambos lados.</p><p><strong>Parábola</strong>: \\((x-h)^2=4p(y-k)\\) abre arriba (\\(p\\gt0\\)) o abajo; \\((y-k)^2=4p(x-h)\\) abre a la derecha o izquierda. Foco a distancia \\(|p|\\) del vértice hacia donde abre; directriz a \\(|p|\\) del otro lado.</p><p>En la EA5 del ciclo pasado las cónicas salieron en <strong>polares</strong>: \\(r=a\\cos\\theta\\) y \\(r=a\\sin\\theta\\) son circunferencias que pasan por el origen.</p>",
    "form": [
     "\\((x-h)^2+(y-k)^2=r^2\\)",
@@ -791,7 +791,7 @@
   },
   {
    "id": "conelh",
-   "name": "Elipse, hipérbola y cómo reconocer cada cónica (sem. 10)",
+   "name": "Sem. 10 · Elipse, hipérbola y cómo reconocer cada cónica",
    "teo": "<p>Las cuatro cónicas salen de cortar un cono doble con un plano y todas son casos de \\(Ax^2+Cy^2+Dx+Ey+F=0\\).</p>\n<p><strong>Elipse:</strong> \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\) con \\(a\\gt b\\) (eje mayor horizontal); focos a distancia \\(c\\) del centro, \\(c^2=a^2-b^2\\).</p>\n<p><strong>Hipérbola:</strong> \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\) (abre horizontal) o \\(\\frac{(y-k)^2}{a^2}-\\frac{(x-h)^2}{b^2}=1\\) (abre vertical); \\(c^2=a^2+b^2\\). Aquí no importa si \\(a\\gt b\\): \\(a\\) va con el término positivo.</p>",
    "form": [
     "Elipse: \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2-b^2\\)",
@@ -1239,7 +1239,7 @@
   },
   {
    "id": "conint",
-   "name": "Intersecciones con cónicas (sem. 10)",
+   "name": "Sem. 10 · Intersecciones con cónicas",
    "teo": "<p>Para cortar una recta con una cónica (o dos cónicas) se <strong>sustituye</strong> una ecuación en la otra y se resuelve la ecuación que queda.</p>\n<p>Si queda una cuadrática, su <strong>discriminante</strong> da la posición: \\(\\Delta\\gt0\\) dos puntos (secante), \\(\\Delta=0\\) un punto (tangente), \\(\\Delta\\lt0\\) ninguno (exterior).</p>\n<p>Con dos cónicas puede salir una ecuación de cuarto grado bicuadrada: se usa \\(t=x^2\\) y solo sirven los \\(t\\ge0\\).</p>",
    "form": [
     "Sustituir y resolver: \\(ax^2+bx+c=0\\)",
@@ -1703,7 +1703,7 @@
   },
   {
    "id": "conapl",
-   "name": "Problemas de aplicación con cónicas (sem. 10)",
+   "name": "Sem. 10 · Problemas de aplicación con cónicas",
    "teo": "<p>En los problemas de contexto, lo primero es <strong>elegir el sistema de coordenadas</strong> (dónde va el origen y hacia dónde apunta cada eje); de eso depende la ecuación.</p>\n<p><strong>Parábola:</strong> si se conocen el vértice y otro punto, usa \\((x-h)^2=4p(y-k)\\) o \\(y=a(x-h)^2+k\\). La propiedad reflectora dice que los rayos paralelos al eje van al <strong>foco</strong>.</p>\n<p><strong>Circunferencia:</strong> centro y radio; un punto está dentro si su distancia al centro es menor que el radio.</p>",
    "form": [
     "\\(x^2=4py\\): foco \\((0,p)\\)",
@@ -2139,7 +2139,7 @@
   },
   {
    "id": "polar",
-   "name": "Coordenadas polares e intersecciones",
+   "name": "Sem. 11 · Coordenadas polares e intersecciones",
    "teo": "<p>Un punto \\((r,\\theta)\\) está a distancia \\(r\\) del polo y forma ángulo \\(\\theta\\) con el eje polar. \\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\), \\(r^2=x^2+y^2\\), \\(\\tan\\theta=\\frac yx\\) (cuidado con el cuadrante).</p><p>\\(r=a\\cos\\theta\\): circunferencia de centro \\(\\left(\\frac a2,0\\right)\\) y radio \\(\\frac{|a|}2\\). \\(r=a\\sin\\theta\\): centro \\(\\left(0,\\frac a2\\right)\\). Para probarlo multiplica por \\(r\\).</p><p><strong>Intersecciones</strong>: iguala \\(r_1=r_2\\) en \\([0,2\\pi)\\) y <em>luego revisa el polo</em>. La distancia al polo de un punto es \\(|r|\\).</p>",
    "form": [
     "\\(x=r\\cos\\theta,\\ y=r\\sin\\theta\\)",
@@ -2466,7 +2466,7 @@
   },
   {
    "id": "cardio",
-   "name": "Curvas polares y simetrías",
+   "name": "Sem. 11 · Curvas polares y simetrías",
    "teo": "<p><strong>Pruebas de simetría</strong> (si la ecuación no cambia, hay simetría): eje polar con \\(\\theta\\to-\\theta\\); eje \\(\\theta=\\frac\\pi2\\) con \\(\\theta\\to\\pi-\\theta\\); polo con \\(r\\to-r\\) o \\(\\theta\\to\\theta+\\pi\\).</p><p>Si la prueba falla, da un <strong>contraejemplo</strong>: un punto de la curva cuyo reflejo no está en ella. Así justificas el «no» en la EA.</p><p>\\(r=a\\pm a\\cos\\theta\\): cardioide horizontal (simétrica respecto al eje polar). \\(r=a\\pm a\\sin\\theta\\): cardioide vertical (simétrica respecto al eje \\(\\frac\\pi2\\)).</p>",
    "form": [
     "Eje polar: \\(\\theta\\to-\\theta\\)",
@@ -2708,7 +2708,7 @@
   },
   {
    "id": "vect1",
-   "name": "Vectores: componentes y resultante",
+   "name": "Sem. 11 · Vectores: componentes y resultante",
    "teo": "<p>Un vector con magnitud \\(|F|\\) y dirección \\(\\theta\\) (desde el eje \\(x\\) positivo, antihorario) tiene componentes \\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)=F_x\\hat i+F_y\\hat j\\).</p><p><strong>Resultante</strong>: suma las \\(x\\) y las \\(y\\) por separado. \\(|R|=\\sqrt{R_x^2+R_y^2}\\). Dirección: \\(\\arctan\\frac{R_y}{R_x}\\) y <em>corrige el cuadrante</em> (si \\(R_x\\lt0\\), suma \\(180^\\circ\\)).</p>",
    "form": [
     "\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)",

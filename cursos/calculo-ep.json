@@ -4,11 +4,13 @@
  "id": "calculo-ep",
  "code": "CC6103",
  "name": "Cálculo de una Variable",
- "exam": "Examen parcial 2026-2", "short": "Parcial", "sub": "Sem. 1 a 7",
+ "exam": "Examen parcial 2026-2",
+ "short": "Parcial",
+ "sub": "Sem. 1 a 7",
  "topics": [
   {
    "id": "lim",
-   "name": "Límites",
+   "name": "Sem. 1–2 · Límites",
    "teo": "<p>Un límite dice a qué valor <em>se acerca</em> \\(f(x)\\) cuando \\(x\\to a\\), no cuánto vale \\(f(a)\\). Mientras calculas el límite, \\(x\\neq a\\), y por eso puedes cancelar factores como \\((x-a)\\).</p>\n<p>Primero sustituye. Si sale un número, terminaste. Si sale \\(\\tfrac00\\), eso <strong>no</strong> es 0 ni \"no existe\": es una indeterminación. Factoriza o racionaliza hasta eliminar el factor que se anula.</p>\n<p>El límite existe solo si ambos laterales existen <strong>y son iguales</strong>. En el infinito, con polinomios del mismo grado, el límite es el cociente de coeficientes principales.</p>",
    "form": [
     "\\(a^2-b^2=(a-b)(a+b)\\)",
@@ -364,7 +366,7 @@
   },
   {
    "id": "cont",
-   "name": "Continuidad y derivabilidad",
+   "name": "Sem. 3 · Continuidad y derivabilidad",
    "teo": "<p><strong>Continua en \\(a\\)</strong>: \\(f(a)\\) existe, el límite existe (laterales iguales) y ambos coinciden.</p>\n<p><strong>Derivable en \\(a\\)</strong>: las derivadas laterales existen y son iguales:</p>\n<p>\\[f'_\\pm(a)=\\lim_{h\\to0^\\pm}\\frac{f(a+h)-f(a)}{h}\\]</p>\n<p>Orden de trabajo: primero continuidad; si no es continua, no es derivable. Si es continua, compara pendientes. Una esquina es continua pero no derivable.</p>",
    "form": [
     "Derivable \\(\\Rightarrow\\) continua",
@@ -670,7 +672,7 @@
   },
   {
    "id": "def",
-   "name": "Derivada por definición",
+   "name": "Sem. 4 · Derivada por definición",
    "teo": "<p>\\[f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\]</p>\n<p>Receta: escribe \\(f(x+h)\\), resta \\(f(x)\\), simplifica hasta que \\(h\\) sea factor de todo el numerador, cancela \\(h\\) y recién haz \\(h\\to0\\). Si la función es suma, separa en varios límites. Raíces: conjugado. Fracciones: común denominador.</p>",
    "form": [
     "\\((x+h)^2=x^2+2xh+h^2\\)",
@@ -984,7 +986,7 @@
   },
   {
    "id": "reg",
-   "name": "Reglas: producto y cociente",
+   "name": "Sem. 4 · Reglas: producto y cociente",
    "teo": "<p>Desde aquí ya puedes usar reglas. Producto: \"derivada del primero por el segundo, más el primero por la derivada del segundo\". Cociente: \"abajo por derivada de arriba, menos arriba por derivada de abajo, todo sobre abajo al cuadrado\". El orden en el cociente importa por el signo menos.</p>\n<p>Antes de derivar, mira si puedes simplificar la función: te ahorra trabajo.</p>",
    "form": [
     "\\((uv)'=u'v+uv'\\)",
@@ -1246,7 +1248,7 @@
   },
   {
    "id": "cad",
-   "name": "Regla de la cadena",
+   "name": "Sem. 4 · Regla de la cadena",
    "teo": "<p>Si una función está \"dentro\" de otra, deriva de afuera hacia adentro: derivada de la de afuera (evaluada en la de adentro) por la derivada de la de adentro. Con varias capas, multiplicas una derivada por cada capa.</p>\n<p>Truco: antes de derivar un logaritmo, usa sus propiedades para separarlo; el trabajo baja mucho.</p>",
    "form": [
     "\\((f(g(x)))'=f'(g(x))\\,g'(x)\\)",
@@ -1580,8 +1582,1078 @@
    "lesson": "<h3>Idea central</h3><p>Cuando una función está dentro de otra, la derivada se multiplica capa por capa: primero la de afuera (sin tocar lo de adentro) y luego por la derivada de lo de adentro.</p>\n<h3>Conceptos clave</h3><ul><li>\\((f(g(x)))'=f'(g(x))\\cdot g'(x)\\).</li><li>\\((u^n)'=nu^{n-1}u'\\), \\((e^u)'=e^uu'\\), \\((\\ln u)'=\\frac{u'}u\\).</li><li>\\((\\sin u)'=\\cos u\\,u'\\), \\((\\cos u)'=-\\sin u\\,u'\\), \\((\\tan u)'=\\sec^2u\\,u'\\).</li><li>Con tres capas hay tres factores.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica la capa exterior.</li><li><strong>2.</strong> Deríva la exterior dejando igual su argumento.</li><li><strong>3.</strong> Multiplica por la derivada del argumento; repite si hay más capas.</li><li><strong>4.</strong> Si hay \\(\\ln\\) de productos o potencias, sepáralo con propiedades antes.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\frac{d}{dx}\\sin^3(2x)=3\\sin^2(2x)\\cdot\\cos(2x)\\cdot2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar multiplicar por la derivada interna, sobre todo en \\(e^{kx}\\) o \\(\\sin(kx)\\).</div>"
   },
   {
+   "id": "est",
+   "name": "Sem. 4 · Derivada desde la gráfica",
+   "teo": "<p>\\(f'(a)\\) es la pendiente de la tangente en \\(x=a\\). Traza con regla una recta que toque la curva en ese punto y siga su dirección. Elige <strong>dos puntos de la recta</strong> (no de la curva), bien separados, idealmente en cruces de la cuadrícula, y calcula \\(\\Delta y/\\Delta x\\).</p>\n<p>Usa los <strong>valores de los ejes</strong>, no cuadraditos: las escalas horizontal y vertical casi nunca son iguales. Si la curva baja, la pendiente es negativa.</p>\n<p>Los ejercicios que piden trazar vienen marcados como completados; la verificación es opcional para comprobar tu lectura.</p>",
+   "form": [
+    "\\(m=\\dfrac{y_2-y_1}{x_2-x_1}\\)",
+    "\\(f'(a)\\approx\\dfrac{f(a+h)-f(a-h)}{2h}\\)"
+   ],
+   "ex": [
+    {
+     "id": "est1",
+     "lvl": 1,
+     "title": "Tangente ya trazada",
+     "q": "<p>Se muestra \\(f(x)=x^2\\) y su tangente en \\(x=1\\). Con los puntos marcados en la recta, estima \\(f'(1)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(f'(1)\\)",
+       "o": [
+        "\\(2\\)",
+        "\\(1\\)",
+        "\\(4\\)",
+        "\\(\\frac12\\)",
+        "\\(3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Puntos de la recta: \\((0.5,0)\\) y \\((1.5,2)\\).",
+      "\\(m=\\frac{2-0}{1}=2\\).",
+      "Comprueba: \\(f'(x)=2x\\Rightarrow f'(1)=2\\) ✓."
+     ],
+     "ans": "\\(2\\)",
+     "hint": "Lee los puntos naranjas sobre la recta.",
+     "fig": "e1",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pend"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "est2",
+     "lvl": 1,
+     "title": "Recta por dos puntos",
+     "q": "<p>La tangente a \\(f\\) en \\(x=3\\) pasa por \\((1,5)\\) y \\((5,-3)\\). ¿Cuánto vale \\(f'(3)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(f'(3)\\)",
+       "o": [
+        "\\(-2\\)",
+        "\\(2\\)",
+        "\\(-\\frac12\\)",
+        "\\(-8\\)",
+        "\\(\\frac12\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m=\\dfrac{-3-5}{5-1}=\\dfrac{-8}{4}\\)."
+     ],
+     "ans": "\\(-2\\)",
+     "hint": "Δy sobre Δx.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      []
+     ]
+    },
+    {
+     "id": "est3",
+     "lvl": 2,
+     "title": "Simulacro 2, pregunta 5",
+     "q": "<p>(2 pts) Traza con regla la tangente en \\(x=1\\), elige dos puntos de ella y estima \\(f'(1)\\). Cada línea fina vale 0,05 en \\(x\\) y 0,1 en \\(y\\).</p>",
+     "checks": [
+      {
+       "p": "\\(f'(1)\\) aproximado",
+       "o": [
+        "\\(\\approx-1.2\\)",
+        "\\(\\approx-0.5\\)",
+        "\\(\\approx1.2\\)",
+        "\\(\\approx-2.5\\)",
+        "\\(\\approx-0.25\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Punto de tangencia \\(\\approx(1,\\,2.47)\\).",
+      "Sobre la recta: \\(\\approx(0.5,\\,3.09)\\) y \\((1.5,\\,1.85)\\).",
+      "\\(m\\approx\\dfrac{1.85-3.09}{1}\\approx-1.2\\). Aceptable entre −1.0 y −1.4."
+     ],
+     "ans": "\\(f'(1)\\approx-1.2\\)",
+     "hint": "La curva baja: la pendiente es negativa.",
+     "fig": "e2",
+     "draw": true,
+     "solfig": "e2s",
+     "tags": [
+      [
+       "pend"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "est4",
+     "lvl": 3,
+     "title": "Simulacro 1, pregunta 5",
+     "q": "<p>(3 pts) Determina de forma aproximada la derivada en \\(x=1\\). Cada línea fina vale 0,1 en \\(x\\) y 0,5 en \\(y\\).</p>",
+     "checks": [
+      {
+       "p": "\\(f'(1)\\) aproximado",
+       "o": [
+        "\\(\\approx-4.8\\)",
+        "\\(\\approx-2.3\\)",
+        "\\(\\approx-1\\)",
+        "\\(\\approx4.8\\)",
+        "\\(\\approx-10\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Punto \\(\\approx(1,\\,2.33)\\).",
+      "Sobre la recta: \\(\\approx(0.6,\\,4.24)\\) y \\((1.4,\\,0.42)\\).",
+      "\\(m\\approx\\dfrac{-3.82}{0.8}\\approx-4.8\\). Aceptable entre −4.5 y −5.5."
+     ],
+     "ans": "\\(f'(1)\\approx-4.8\\)",
+     "hint": "Ojo: escalas distintas en cada eje.",
+     "fig": "e3",
+     "draw": true,
+     "solfig": "e3s",
+     "tags": [
+      [],
+      [
+       "pend"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>La derivada en un punto es la pendiente de la tangente. Desde una gráfica la estimas dibujando esa tangente y midiendo su inclinación.</p>\n<h3>Conceptos clave</h3><ul><li>Traza una recta que toque la curva en el punto y siga su dirección.</li><li>Toma dos puntos <em>de la recta</em>, lejanos entre sí.</li><li>\\(m=\\frac{\\Delta y}{\\Delta x}\\) usando los valores de los ejes, no cuadraditos.</li><li>Curva bajando → pendiente negativa; máximo o mínimo → pendiente 0.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> si la tangente pasa por \\((1,2)\\) y \\((4,8)\\), \\(f'\\approx\\frac{6}{3}=2\\).</div>\n<div class=\"err\"><b>Error común:</b> contar cuadraditos cuando las escalas de los ejes son distintas.</div>"
+  },
+  {
+   "id": "lho",
+   "name": "Sem. 5 · Regla de L'Hôpital",
+   "teo": "<p>Si al sustituir obtienes \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes derivar numerador y denominador <strong>por separado</strong> (no es la regla del cociente) y volver a evaluar. Si sigue indeterminado, repite.</p>\n<p>Otras formas se transforman primero: \\(0\\cdot\\infty\\) se escribe como cociente (\\(x\\ln x=\\frac{\\ln x}{1/x}\\)); \\(\\infty-\\infty\\) con conjugado o común denominador.</p>",
+   "form": [
+    "\\(\\displaystyle\\lim\\frac fg=\\lim\\frac{f'}{g'}\\) si da \\(\\tfrac00\\) o \\(\\tfrac\\infty\\infty\\)",
+    "\\(0\\cdot\\infty\\to\\dfrac{0}{1/\\infty}\\)",
+    "\\(\\sin x\\approx x-\\frac{x^3}6\\) cerca de 0"
+   ],
+   "ex": [
+    {
+     "id": "lho1",
+     "lvl": 1,
+     "title": "Logaritmo",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(x+1)}{x}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(1\\)",
+        "\\(0\\)",
+        "\\(\\infty\\)",
+        "\\(e\\)",
+        "No existe"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma \\(\\frac00\\).",
+      "Deriva: \\(\\dfrac{1/(x+1)}{1}\\to1\\)."
+     ],
+     "ans": "\\(1\\)",
+     "hint": "Deriva arriba y abajo por separado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "indet",
+       "lhop"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "lho2",
+     "lvl": 1,
+     "title": "Tangente sobre suma",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan(4x)}{x+\\sin(2x)}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac43\\)",
+        "\\(4\\)",
+        "\\(2\\)",
+        "\\(\\frac23\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma \\(\\frac00\\).",
+      "\\(\\dfrac{4\\sec^2(4x)}{1+2\\cos(2x)}\\to\\dfrac{4}{3}\\)."
+     ],
+     "ans": "\\(\\frac43\\)",
+     "hint": "\\((\\tan 4x)'=4\\sec^2 4x\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "indet",
+       "lhop"
+      ],
+      [
+       "basic"
+      ]
+     ]
+    },
+    {
+     "id": "lho3",
+     "lvl": 2,
+     "title": "Cero por infinito",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0^+}x\\ln x\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(0\\)",
+        "\\(-\\infty\\)",
+        "\\(1\\)",
+        "\\(-1\\)",
+        "No existe"
+       ]
+      }
+     ],
+     "steps": [
+      "Reescribe: \\(\\dfrac{\\ln x}{1/x}\\), forma \\(\\frac{-\\infty}{\\infty}\\).",
+      "Deriva: \\(\\dfrac{1/x}{-1/x^2}=-x\\to0\\)."
+     ],
+     "ans": "\\(0\\)",
+     "hint": "Pásalo a cociente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lhop",
+       "formas"
+      ],
+      [
+       "inf"
+      ]
+     ]
+    },
+    {
+     "id": "lho4",
+     "lvl": 2,
+     "title": "Exponencial en el infinito",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\infty}xe^{-x}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(0\\)",
+        "\\(\\infty\\)",
+        "\\(1\\)",
+        "\\(e\\)",
+        "\\(-\\infty\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\dfrac{x}{e^x}\\): forma \\(\\frac\\infty\\infty\\).",
+      "\\(\\dfrac{1}{e^x}\\to0\\)."
+     ],
+     "ans": "\\(0\\)",
+     "hint": "Escribe \\(e^{-x}\\) abajo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lhop",
+       "formas"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "lho5",
+     "lvl": 2,
+     "title": "Doble L'Hôpital",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac12\\)",
+        "\\(1\\)",
+        "\\(0\\)",
+        "\\(\\infty\\)",
+        "\\(2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac00\\): deriva \\(\\to\\dfrac{e^x-1}{2x}\\), otra vez \\(\\frac00\\).",
+      "Deriva otra vez: \\(\\dfrac{e^x}{2}\\to\\frac12\\)."
+     ],
+     "ans": "\\(\\frac12\\)",
+     "hint": "Aplica la regla dos veces.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "indet",
+       "lhop"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "lho6",
+     "lvl": 3,
+     "title": "Infinito menos infinito",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2-5x+6}-x\\right)\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(-\\frac52\\)",
+        "\\(0\\)",
+        "\\(-5\\)",
+        "\\(\\frac52\\)",
+        "\\(\\infty\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Multiplica por el conjugado: \\(\\dfrac{-5x+6}{\\sqrt{x^2-5x+6}+x}\\).",
+      "Divide entre \\(x\\): \\(\\dfrac{-5+6/x}{\\sqrt{1-5/x+6/x^2}+1}\\to\\dfrac{-5}{2}\\)."
+     ],
+     "ans": "\\(-\\frac52\\)",
+     "hint": "Conjugado, no L'Hôpital directo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conj"
+      ],
+      [
+       "inf"
+      ]
+     ]
+    },
+    {
+     "id": "lho7",
+     "lvl": 3,
+     "title": "Senos al cuadrado",
+     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{x^2-\\sin^2x}{x^2\\sin^2x}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac13\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(\\frac16\\)",
+        "\\(\\infty\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cerca de 0, \\(\\sin x\\approx x-\\frac{x^3}6\\Rightarrow\\sin^2x\\approx x^2-\\frac{x^4}3\\).",
+      "Numerador \\(\\approx\\frac{x^4}3\\); denominador \\(\\approx x^4\\).",
+      "Límite \\(\\frac13\\). (Por L'Hôpital sale igual, pero requiere derivar 4 veces.)"
+     ],
+     "ans": "\\(\\frac13\\)",
+     "hint": "Usa la aproximación del seno cerca de 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "notsin"
+      ],
+      [],
+      [
+       "lhop"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Si un límite da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes reemplazar el cociente por el cociente de las derivadas.</p>\n<h3>Conceptos clave</h3><ul><li>Se deriva numerador y denominador <strong>por separado</strong> (no es la regla del cociente).</li><li>Si sigue indeterminado, repite.</li><li>\\(0\\cdot\\infty\\): reescríbelo como cociente. \\(\\infty-\\infty\\): común denominador o conjugado.</li><li>Formas \\(1^\\infty,0^0,\\infty^0\\): toma \\(\\ln\\) primero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\overset{H}{=}\\lim\\frac{e^x-1}{2x}\\overset{H}{=}\\lim\\frac{e^x}2=\\frac12\\).</div>\n<div class=\"err\"><b>Error común:</b> aplicar L'Hôpital sin verificar la indeterminación, lo que da respuestas falsas.</div>"
+  },
+  {
+   "id": "dif",
+   "name": "Sem. 5 · Diferenciales y linealización",
+   "teo": "<p>La <strong>linealización</strong> \\(L(x)=f(a)+f'(a)(x-a)\\) es la recta tangente usada para aproximar \\(f\\) cerca de \\(a\\). El <strong>diferencial</strong> \\(dy=f'(x)dx\\) aproxima el cambio real \\(\\Delta y\\).</p>\n<p>Si \\(dx\\) es una incertidumbre de medición: error absoluto \\(|dy|\\), relativo \\(|dy/y|\\), porcentual ×100. Atajo: si \\(y=Ae^{g(x)}\\), entonces \\(\\frac{dy}y=g'(x)dx\\).</p>",
+   "form": [
+    "\\(L(x)=f(a)+f'(a)(x-a)\\)",
+    "\\(dy=f'(x)\\,dx\\)",
+    "\\(E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)",
+    "\\(y=Ae^{g}\\Rightarrow\\frac{dy}{y}=g'\\,dx\\)",
+    "\\((\\text{arcsec}\\,u)'=\\frac{1}{u\\sqrt{u^2-1}}\\)"
+   ],
+   "ex": [
+    {
+     "id": "dif1",
+     "lvl": 1,
+     "title": "dy de una potencia",
+     "q": "<p>\\(f(x)=x^{3/2}\\), \\(x=4\\), \\(dx=0.05\\). Calcula \\(dy\\).</p>",
+     "checks": [
+      {
+       "p": "\\(dy\\)",
+       "o": [
+        "\\(0.15\\)",
+        "\\(0.075\\)",
+        "\\(0.3\\)",
+        "\\(0.1505\\)",
+        "\\(0.05\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'(x)=\\frac32\\sqrt x\\Rightarrow f'(4)=3\\).",
+      "\\(dy=3\\cdot0.05=0.15\\). (El cambio real es \\(\\approx0.15047\\).)"
+     ],
+     "ans": "\\(0.15\\)",
+     "hint": "Evalúa f′(4).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dif"
+      ],
+      [
+       "dif"
+      ]
+     ]
+    },
+    {
+     "id": "dif2",
+     "lvl": 1,
+     "title": "Error relativo",
+     "q": "<p>\\(y=\\ln(1+x^2)\\), \\(x=1\\), \\(dx=-0.02\\). ¿Error relativo porcentual aproximado respecto a \\(y(1)\\)?</p>",
+     "checks": [
+      {
+       "p": "Error %",
+       "o": [
+        "\\(\\approx2.89\\%\\)",
+        "\\(2\\%\\)",
+        "\\(\\approx1.44\\%\\)",
+        "\\(0.02\\%\\)",
+        "\\(\\approx4\\%\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y'=\\frac{2x}{1+x^2}\\Rightarrow y'(1)=1\\); \\(dy=-0.02\\).",
+      "\\(y(1)=\\ln2\\approx0.6931\\).",
+      "\\(\\frac{0.02}{0.6931}\\approx2.89\\%\\)."
+     ],
+     "ans": "\\(\\approx2.89\\%\\)",
+     "hint": "No olvides dividir entre \\(\\ln 2\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dif"
+      ],
+      [],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "dif3",
+     "lvl": 2,
+     "title": "Linealizar un caudal",
+     "q": "<p>\\(Q(p)=12\\sqrt p\\). Linealiza en \\(p=9\\) y estima \\(Q(9.3)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(Q(9.3)\\) estimado",
+       "o": [
+        "\\(36.6\\)",
+        "\\(36.3\\)",
+        "\\(37.8\\)",
+        "\\(36.06\\)",
+        "\\(38.4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(Q(9)=36\\); \\(Q'(p)=\\frac{6}{\\sqrt p}\\Rightarrow Q'(9)=2\\).",
+      "\\(L(p)=36+2(p-9)\\Rightarrow L(9.3)=36.6\\).",
+      "Real: \\(12\\sqrt{9.3}\\approx36.595\\); error \\(\\approx0.005\\) (0.014 %)."
+     ],
+     "ans": "\\(36.6\\)",
+     "hint": "Q′(9) = 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lin"
+      ],
+      [
+       "lin"
+      ],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "dif4",
+     "lvl": 2,
+     "title": "Sensor exponencial",
+     "q": "<p>\\(C(V)=80e^{0.04V}\\) mg/L, \\(V=5\\), \\(dV=\\pm0.03\\). Error porcentual aproximado de \\(C\\).</p>",
+     "checks": [
+      {
+       "p": "Error %",
+       "o": [
+        "\\(0.12\\%\\)",
+        "\\(1.2\\%\\)",
+        "\\(3\\%\\)",
+        "\\(0.04\\%\\)",
+        "\\(0.117\\%\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dC}C=0.04\\,dV=0.04\\cdot0.03=0.0012\\).",
+      "\\(0.12\\%\\). (Error absoluto: \\(3.2e^{0.2}\\cdot0.03\\approx0.117\\) mg/L.)"
+     ],
+     "ans": "\\(0.12\\%\\)",
+     "hint": "Usa el atajo exponencial.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dif",
+       "atajo"
+      ],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "dif5",
+     "lvl": 3,
+     "title": "Linealizar arcosecante",
+     "q": "<p>Estima \\(\\text{arcsec}(1.269)\\) linealizando en \\(a=1.25\\).</p>",
+     "checks": [
+      {
+       "p": "Estimación",
+       "o": [
+        "\\(\\approx0.6638\\)",
+        "\\(\\approx0.6435\\)",
+        "\\(\\approx0.6232\\)",
+        "\\(\\approx0.6590\\)",
+        "\\(\\approx0.7458\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\text{arcsec}(1.25)=\\arccos(0.8)\\approx0.6435\\).",
+      "\\(f'(1.25)=\\dfrac{1}{1.25\\sqrt{0.5625}}=\\dfrac{1}{0.9375}\\approx1.0667\\).",
+      "\\(L=0.6435+1.0667\\cdot0.019\\approx0.6638\\). Real \\(\\approx0.6632\\); error \\(\\approx0.0006\\)."
+     ],
+     "ans": "\\(\\approx0.6638\\)",
+     "hint": "\\(\\text{arcsec}\\,u=\\arccos(1/u)\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trinv"
+      ],
+      [],
+      [
+       "lin",
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "dif6",
+     "lvl": 3,
+     "title": "Error en un cono",
+     "q": "<p>Vaso cónico de altura 10 cm y radio 3 cm. Con agua a \\(h=5\\) cm medida con \\(\\pm0.02\\) cm, estima el error del volumen.</p>",
+     "checks": [
+      {
+       "p": "\\(|dV|\\)",
+       "o": [
+        "\\(\\approx0.141\\ \\text{cm}^3\\)",
+        "\\(\\approx0.047\\ \\text{cm}^3\\)",
+        "\\(\\approx1.41\\ \\text{cm}^3\\)",
+        "\\(\\approx0.283\\ \\text{cm}^3\\)",
+        "\\(\\approx0.0707\\ \\text{cm}^3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Semejanza: \\(r=0.3h\\Rightarrow V=\\frac13\\pi(0.3h)^2h=0.03\\pi h^3\\).",
+      "\\(dV=0.09\\pi h^2dh=0.09\\pi\\cdot25\\cdot0.02\\).",
+      "\\(=0.045\\pi\\approx0.141\\ \\text{cm}^3\\)."
+     ],
+     "ans": "\\(\\approx0.141\\) cm³",
+     "hint": "Escribe r en función de h.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "semej"
+      ],
+      [
+       "dif"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Cerca de un punto, una curva se parece a su recta tangente. Con esa recta aproximas valores y estimas errores.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Linealización:</strong> \\(L(x)=f(a)+f'(a)(x-a)\\).</li><li><strong>Diferencial:</strong> \\(dy=f'(x)\\,dx\\approx\\Delta y\\).</li><li>Error absoluto \\(|dy|\\), relativo \\(\\left|\\frac{dy}y\\right|\\), porcentual \\(\\times100\\).</li><li>Si \\(y=Ae^{g(x)}\\): \\(\\frac{dy}{y}=g'(x)\\,dx\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\sqrt{4{,}1}\\approx2+\\frac1{4}(0{,}1)=2{,}025\\) (con \\(f=\\sqrt x\\), \\(a=4\\)).</div>\n<div class=\"err\"><b>Error común:</b> usar como \\(a\\) un punto donde no conoces \\(f(a)\\) exactamente; elige el valor «bonito» más cercano.</div>"
+  },
+  {
+   "id": "tay",
+   "name": "Sem. 5 · Polinomios de Taylor",
+   "teo": "<p>El polinomio de Taylor de grado \\(n\\) alrededor de \\(a\\) copia el valor y las primeras \\(n\\) derivadas de \\(f\\) en \\(a\\). Grado 1 es la linealización; grado 2 agrega la curvatura.</p>\n<p>Para usarlo: calcula \\(f(a),f'(a),f''(a),\\dots\\), arma el polinomio y evalúa en el punto cercano. Error absoluto \\(|real-aprox|\\); porcentual dividido entre el real.</p>",
+   "form": [
+    "\\(P_2(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2}(x-a)^2\\)",
+    "\\(P_3\\) suma \\(\\frac{f'''(a)}{6}(x-a)^3\\)",
+    "\\(\\cos x\\approx1-\\frac{x^2}2\\)",
+    "\\(\\tan x\\approx x+\\frac{x^3}3\\)"
+   ],
+   "ex": [
+    {
+     "id": "tay1",
+     "lvl": 1,
+     "title": "Coseno en 0",
+     "q": "<p>\\(S(x)=100\\cos x\\). Con \\(P_2\\) alrededor de 0, estima \\(S(0.30)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(P_2(0.3)\\)",
+       "o": [
+        "\\(95.5\\)",
+        "\\(100\\)",
+        "\\(97\\)",
+        "\\(91\\)",
+        "\\(95.53\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(S(0)=100,\\ S'(0)=0,\\ S''(0)=-100\\).",
+      "\\(P_2=100-50x^2\\Rightarrow P_2(0.3)=95.5\\).",
+      "Real \\(95.534\\); \\(P_1=100\\) tiene error 4.7 %, \\(P_2\\) solo 0.035 %."
+     ],
+     "ans": "\\(95.5\\)",
+     "hint": "\\(P_1\\) es constante porque \\(S'(0)=0\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "taylor"
+      ],
+      [],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "tay2",
+     "lvl": 2,
+     "title": "Coseno en π/3",
+     "q": "<p>Con \\(P_2\\) de \\(\\cos x\\) alrededor de \\(\\frac\\pi3\\), estima \\(\\cos\\left(\\frac\\pi3+0.05\\right)\\).</p>",
+     "checks": [
+      {
+       "p": "Estimación",
+       "o": [
+        "\\(\\approx0.45607\\)",
+        "\\(\\approx0.54330\\)",
+        "\\(\\approx0.45670\\)",
+        "\\(\\approx0.45000\\)",
+        "\\(\\approx0.47500\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f=\\frac12,\\ f'=-\\frac{\\sqrt3}2,\\ f''=-\\frac12\\) en \\(\\frac\\pi3\\).",
+      "\\(P_2=\\frac12-\\frac{\\sqrt3}{2}(0.05)-\\frac14(0.05)^2=0.5-0.043301-0.000625\\).",
+      "\\(\\approx0.456074\\). Real \\(0.456092\\); error \\(\\approx1.8\\times10^{-5}\\)."
+     ],
+     "ans": "\\(\\approx0.45607\\)",
+     "hint": "\\(f''/2=-1/4\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "taylor"
+      ],
+      [],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "tay3",
+     "lvl": 2,
+     "title": "Tangente en 0",
+     "q": "<p>Para \\(\\tan x\\) alrededor de 0, \\(P_1=P_2=x\\) y \\(P_3=x+\\frac{x^3}{3}\\). ¿Cuál es \\(P_3(0.12)\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(P_3(0.12)\\)",
+       "o": [
+        "\\(0.120576\\)",
+        "\\(0.12\\)",
+        "\\(0.121728\\)",
+        "\\(0.120288\\)",
+        "\\(0.1205793\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(0.12^3=0.001728\\); \\(/3=0.000576\\).",
+      "\\(P_3=0.120576\\). Real \\(0.1205793\\).",
+      "Errores: \\(P_1\\) 0.48 %; \\(P_3\\) 0.003 %. \\(P_3\\) es más preciso."
+     ],
+     "ans": "\\(0.120576\\)",
+     "hint": "\\(f''(0)=0\\), por eso \\(P_2=P_1\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "taylor"
+      ],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "tay4",
+     "lvl": 3,
+     "title": "Rapidez de caída",
+     "q": "<p>\\(v(h)=\\sqrt{2gh}\\), \\(g=9.8\\). Con \\(P_2\\) alrededor de \\(h=5\\), estima \\(v(5.2)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(P_2(5.2)\\)",
+       "o": [
+        "\\(\\approx10.0955\\)",
+        "\\(\\approx10.0975\\)",
+        "\\(\\approx9.8995\\)",
+        "\\(\\approx10.1985\\)",
+        "\\(\\approx10.0935\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(v(5)=\\sqrt{98}\\approx9.8995\\); \\(v'=\\frac{g}{\\sqrt{2gh}}\\approx0.98995\\); \\(v''=-\\frac{g^2}{(2gh)^{3/2}}\\approx-0.098995\\).",
+      "\\(P_2=9.8995+0.98995(0.2)-\\frac{0.098995}{2}(0.04)\\approx10.09550\\).",
+      "Real \\(\\sqrt{101.92}\\approx10.09554\\); error \\(\\approx0.0004\\%\\)."
+     ],
+     "ans": "\\(\\approx10.0955\\)",
+     "hint": "El término cuadrático resta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "taylor"
+      ],
+      [],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "tay5",
+     "lvl": 3,
+     "title": "Panel solar",
+     "q": "<p>\\(P(\\theta)=500\\cos\\theta\\). Con \\(P_2\\) alrededor de \\(\\frac\\pi6\\), estima \\(P\\left(\\frac\\pi6+0.04\\right)\\).</p>",
+     "checks": [
+      {
+       "p": "Estimación",
+       "o": [
+        "\\(\\approx422.67\\ \\text{W}\\)",
+        "\\(\\approx423.01\\ \\text{W}\\)",
+        "\\(\\approx433.01\\ \\text{W}\\)",
+        "\\(\\approx412.67\\ \\text{W}\\)",
+        "\\(\\approx422.32\\ \\text{W}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(P=250\\sqrt3,\\ P'=-250,\\ P''=-250\\sqrt3\\) en \\(\\frac\\pi6\\).",
+      "\\(P_2=433.013-250(0.04)-125\\sqrt3(0.0016)=433.013-10-0.346\\).",
+      "\\(\\approx422.67\\) W. Real \\(422.669\\); error \\(\\approx0.0006\\%\\)."
+     ],
+     "ans": "\\(\\approx422.67\\) W",
+     "hint": "\\(\\cos\\frac\\pi6=\\frac{\\sqrt3}2\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "taylor"
+      ],
+      [],
+      [
+       "err"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un polinomio de Taylor imita a \\(f\\) cerca de \\(a\\) copiando su valor y sus derivadas. Más grado, mejor aproximación cerca de \\(a\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(P_1(x)=f(a)+f'(a)(x-a)\\) (linealización).</li><li>\\(P_2(x)=P_1(x)+\\frac{f''(a)}2(x-a)^2\\).</li><li>Error: \\(|f(x)-P_n(x)|\\); porcentual dividido entre el valor real.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula \\(f(a),f'(a),f''(a)\\).</li><li><strong>2.</strong> Arma el polinomio con potencias de \\((x-a)\\).</li><li><strong>3.</strong> Evalúa en el punto pedido y compara con el valor real si lo piden.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(e^x\\) en \\(a=0\\): \\(P_2=1+x+\\frac{x^2}2\\); \\(e^{0{,}1}\\approx1{,}105\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac12\\) (factorial) en el término cuadrático.</div>"
+  },
+  {
+   "id": "apl",
+   "name": "Sem. 4–5 · Aplicaciones tipo examen",
+   "teo": "<p>Las preguntas 6 de los simulacros combinan regla de la cadena con diferenciales. Estructura: \\(\\frac{dI}{dt}=\\frac{dI}{dx}\\frac{dx}{dt}\\) (las unidades se multiplican) y luego error porcentual con \\(\\frac{dy}{y}\\).</p>\n<p>Con modelos tipo campana \\(y=Ae^{-k(x-c)^2}\\): \\(\\frac{dy}{y}=-2k(x-c)\\,dx\\). Siempre interpreta signo y unidades en contexto.</p>",
+   "form": [
+    "\\(\\dfrac{dy}{dt}=\\dfrac{dy}{dx}\\dfrac{dx}{dt}\\)",
+    "\\(\\frac{d}{dx}e^{-k(x-c)^2}=-2k(x-c)e^{-k(x-c)^2}\\)",
+    "\\(E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)"
+   ],
+   "ex": [
+    {
+     "id": "apl1",
+     "lvl": 1,
+     "title": "Resistencia de un sensor",
+     "q": "<p>\\(R(T)=100e^{0.004(T-20)}\\) Ω y \\(T(t)=20+3t+0.2t^2\\) (t en min). Halla \\(\\frac{dR}{dt}\\) en \\(t=5\\).</p>",
+     "checks": [
+      {
+       "p": "\\(dR/dt\\)",
+       "o": [
+        "\\(\\approx2.17\\ \\Omega/\\text{min}\\)",
+        "\\(\\approx0.43\\ \\Omega/\\text{min}\\)",
+        "\\(\\approx2.00\\ \\Omega/\\text{min}\\)",
+        "\\(\\approx10.8\\ \\Omega/\\text{min}\\)",
+        "\\(\\approx1.30\\ \\Omega/\\text{min}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(5)=40\\); \\(T'(t)=3+0.4t\\Rightarrow T'(5)=5\\).",
+      "\\(R'(T)=0.4e^{0.004(T-20)}\\Rightarrow R'(40)=0.4e^{0.08}\\approx0.4333\\).",
+      "\\(\\frac{dR}{dt}=0.4333\\cdot5\\approx2.17\\) Ω/min: la resistencia aumenta."
+     ],
+     "ans": "≈ 2.17 Ω/min",
+     "hint": "Cadena: R′(T)·T′(t).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cadt"
+      ],
+      [
+       "cad",
+       "basic"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "apl2",
+     "lvl": 2,
+     "title": "Energía de un robot",
+     "q": "<p>\\(m=6\\) kg, \\(v(t)=3+0.2t^2\\), \\(K=\\frac12mv^2\\). Halla \\(\\frac{dK}{dt}\\) en \\(t=4\\) s y el error porcentual en \\(K\\) si \\(dt=0.05\\) s.</p>",
+     "checks": [
+      {
+       "p": "\\(dK/dt\\)",
+       "o": [
+        "\\(59.52\\ \\text{J/s}\\)",
+        "\\(37.2\\ \\text{J/s}\\)",
+        "\\(29.76\\ \\text{J/s}\\)",
+        "\\(115.32\\ \\text{J/s}\\)",
+        "\\(9.6\\ \\text{J/s}\\)"
+       ]
+      },
+      {
+       "p": "Error %",
+       "o": [
+        "\\(\\approx2.58\\%\\)",
+        "\\(\\approx5.16\\%\\)",
+        "\\(\\approx0.05\\%\\)",
+        "\\(\\approx2.98\\%\\)",
+        "\\(\\approx1.29\\%\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(v(4)=6.2\\), \\(v'=0.4t=1.6\\).",
+      "\\(\\frac{dK}{dt}=mv\\,v'=6\\cdot6.2\\cdot1.6=59.52\\) J/s.",
+      "\\(K(4)=3\\cdot6.2^2=115.32\\) J; \\(dK=59.52\\cdot0.05=2.976\\) J.",
+      "\\(\\frac{2.976}{115.32}\\approx2.58\\%\\)."
+     ],
+     "ans": "59.52 J/s; ≈ 2.58 %",
+     "hint": "\\(\\frac{dK}{dv}=mv\\).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cadt"
+      ],
+      [
+       "dif"
+      ],
+      [
+       "err"
+      ]
+     ]
+    },
+    {
+     "id": "apl3",
+     "lvl": 3,
+     "title": "Simulacro 1, pregunta 6 (biorreactor)",
+     "q": "<p>\\(C(T)=12e^{-0.02(T-30)^2}\\) g/L. a) \\(T\\) sube a 0.4 °C/min: halla \\(\\frac{dC}{dt}\\) en \\(T=32\\). b) Con \\(\\Delta T=\\pm0.5\\) °C, ¿error porcentual? Se admite máximo 1.5 %.</p>",
+     "checks": [
+      {
+       "p": "a) \\(dC/dt\\)",
+       "o": [
+        "\\(\\approx-0.354\\ \\text{g/(L·min)}\\)",
+        "\\(\\approx-0.886\\ \\text{g/(L·min)}\\)",
+        "\\(\\approx0.354\\ \\text{g/(L·min)}\\)",
+        "\\(\\approx-0.160\\ \\text{g/(L·min)}\\)",
+        "\\(\\approx-4.43\\ \\text{g/(L·min)}\\)"
+       ]
+      },
+      {
+       "p": "b) Error y conclusión",
+       "o": [
+        "4 %: no cumple",
+        "4 %: cumple",
+        "0.4 %: cumple",
+        "8 %: no cumple",
+        "1.5 %: cumple justo"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(C(32)=12e^{-0.08}\\approx11.077\\).",
+      "\\(C'(T)=C\\cdot(-0.04)(T-30)\\Rightarrow C'(32)\\approx-0.886\\) g/(L·°C).",
+      "a) \\(\\frac{dC}{dt}=-0.886\\cdot0.4\\approx-0.354\\): pasado el óptimo, calentar reduce la biomasa.",
+      "b) \\(\\left|\\frac{dC}C\\right|=0.04\\cdot2\\cdot0.5=0.04=4\\%\\gt1.5\\%\\): no cumple."
+     ],
+     "ans": "a) ≈ −0.354 g/(L·min); b) 4 %, no cumple",
+     "hint": "Atajo: dC/C = −2k(T−30)dT.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cad",
+       "atajo"
+      ],
+      [
+       "cadt"
+      ],
+      [
+       "err",
+       "atajo"
+      ]
+     ]
+    },
+    {
+     "id": "apl4",
+     "lvl": 3,
+     "title": "Simulacro 2, pregunta 6.a (trazar tangente)",
+     "q": "<p>\\(I(x)=100e^{-0.04(x-5)^2}\\) lux. El robot está en \\(x=10\\) m y avanza a 0.5 m/s. Traza la tangente en \\(x=10\\), estima su pendiente y halla \\(\\frac{dI}{dt}\\). Interpreta.</p>",
+     "checks": [
+      {
+       "p": "\\(dI/dt\\) aproximado",
+       "o": [
+        "\\(\\approx-7.4\\ \\text{lux/s}\\)",
+        "\\(\\approx-14.7\\ \\text{lux/s}\\)",
+        "\\(\\approx7.4\\ \\text{lux/s}\\)",
+        "\\(\\approx-29.4\\ \\text{lux/s}\\)",
+        "\\(\\approx-3.7\\ \\text{lux/s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Tangente: puntos \\(\\approx(8,66)\\) y \\((10,37)\\Rightarrow m\\approx-14.5\\) lux/m.",
+      "Analítico: \\(I'(10)=36.8\\cdot(-0.4)\\approx-14.7\\) lux/m.",
+      "\\(\\frac{dI}{dt}\\approx-14.7\\cdot0.5\\approx-7.4\\) lux/s: al alejarse de la luminaria, recibe menos luz."
+     ],
+     "ans": "≈ −7.4 lux/s",
+     "hint": "\\(I(10)=100/e\\approx36.8\\).",
+     "fig": "luz",
+     "draw": true,
+     "solfig": "luzs",
+     "tags": [
+      [
+       "pend"
+      ],
+      [
+       "cad"
+      ],
+      [
+       "cadt"
+      ]
+     ]
+    },
+    {
+     "id": "apl5",
+     "lvl": 3,
+     "title": "Simulacro 2, pregunta 6.b",
+     "q": "<p>En \\(x=10\\) m la posición tiene incertidumbre \\(\\Delta x=\\pm0.1\\) m. Estima el error porcentual de \\(I\\). Se admite máximo 3 %.</p>",
+     "checks": [
+      {
+       "p": "Error y conclusión",
+       "o": [
+        "4 %: no cumple",
+        "4 %: cumple",
+        "1.47 %: cumple",
+        "0.4 %: cumple",
+        "8 %: no cumple"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dI}{I}=-0.08(x-5)\\,dx=-0.4\\cdot0.1\\).",
+      "\\(4\\%\\gt3\\%\\): no cumple."
+     ],
+     "ans": "4 %, no cumple",
+     "hint": "Atajo de la campana.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "atajo"
+      ],
+      [
+       "err"
+      ]
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Las preguntas largas del examen combinan cadena, diferenciales y contexto. La clave es ordenar qué depende de qué.</p>\n<h3>Conceptos clave</h3><ul><li>Cadena con unidades: \\(\\frac{dI}{dt}=\\frac{dI}{dx}\\cdot\\frac{dx}{dt}\\).</li><li>Error porcentual con \\(\\frac{dy}{y}\\cdot100\\).</li><li>Modelos campana \\(y=Ae^{-k(x-c)^2}\\): \\(\\frac{dy}y=-2k(x-c)dx\\).</li><li>Siempre interpreta signo (aumenta/disminuye) y unidades.</li></ul>\n<div class=\"err\"><b>Error común:</b> responder solo el número: en contexto se pide interpretación con unidades.</div>"
+  },
+  {
    "id": "imp",
-   "name": "Derivación implícita",
+   "name": "Sem. 6 · Derivación implícita",
    "teo": "<p>Deriva ambos lados respecto a \\(x\\), tratando \\(y\\) como función de \\(x\\): cada vez que derives algo con \\(y\\), multiplica por \\(y'\\). Si \\(x\\) y \\(y\\) se multiplican, usa regla del producto. Junta los \\(y'\\), factoriza y despeja.</p>\n<p>Para una pendiente en un punto, verifica primero que el punto pertenece a la curva. Truco de examen: sustituye el punto antes de despejar y trabaja con números. Tangente: \\(y-y_0=m(x-x_0)\\).</p>",
    "form": [
     "\\(\\frac{d}{dx}[y^n]=ny^{n-1}y'\\)",
@@ -1913,7 +2985,7 @@
   },
   {
    "id": "log",
-   "name": "Logarítmica y trig. inversas",
+   "name": "Sem. 6 · Logarítmica y trig. inversas",
    "teo": "<p><strong>Derivación logarítmica:</strong> úsala con productos y cocientes largos, o cuando la variable está en la base <em>y</em> en el exponente. Toma \\(\\ln\\) a ambos lados, separa con propiedades, deriva (el lado izquierdo da \\(y'/y\\)) y multiplica por \\(y\\).</p>\n<p><strong>Trigonométricas inversas:</strong> son reglas de memoria combinadas con la cadena.</p>",
    "form": [
     "\\(\\ln y=g\\Rightarrow \\dfrac{y'}y=g'\\)",
@@ -2173,154 +3245,311 @@
    "lesson": "<h3>Idea central</h3><p>La derivación logarítmica transforma productos, cocientes y potencias en sumas, lo que simplifica mucho. Es obligatoria cuando la variable está en la base y en el exponente.</p>\n<h3>Conceptos clave</h3><ul><li>Toma \\(\\ln\\) en ambos lados y usa \\(\\ln(ab)=\\ln a+\\ln b\\), \\(\\ln a^n=n\\ln a\\).</li><li>Al derivar, el lado izquierdo da \\(\\frac{y'}{y}\\).</li><li>\\((\\arcsin u)'=\\frac{u'}{\\sqrt{1-u^2}}\\), \\((\\arctan u)'=\\frac{u'}{1+u^2}\\), \\((\\text{arcsec}\\,u)'=\\frac{u'}{|u|\\sqrt{u^2-1}}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(y=x^x\\): \\(\\ln y=x\\ln x\\Rightarrow\\frac{y'}y=\\ln x+1\\Rightarrow y'=x^x(\\ln x+1)\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\((x^n)'=nx^{n-1}\\) con exponente variable, o olvidar multiplicar por \\(y\\) al final.</div>"
   },
   {
-   "id": "est",
-   "name": "Derivada desde la gráfica",
-   "teo": "<p>\\(f'(a)\\) es la pendiente de la tangente en \\(x=a\\). Traza con regla una recta que toque la curva en ese punto y siga su dirección. Elige <strong>dos puntos de la recta</strong> (no de la curva), bien separados, idealmente en cruces de la cuadrícula, y calcula \\(\\Delta y/\\Delta x\\).</p>\n<p>Usa los <strong>valores de los ejes</strong>, no cuadraditos: las escalas horizontal y vertical casi nunca son iguales. Si la curva baja, la pendiente es negativa.</p>\n<p>Los ejercicios que piden trazar vienen marcados como completados; la verificación es opcional para comprobar tu lectura.</p>",
+   "id": "raz",
+   "name": "Sem. 6 · Razones de cambio relacionadas",
+   "teo": "<p>Pasos: 1) dibuja y nombra variables; 2) escribe la ecuación que las relaciona (geometría, Pitágoras, trigonometría); 3) deriva respecto a \\(t\\) (implícita); 4) <strong>recién ahora</strong> sustituye los valores del instante; 5) despeja e interpreta con unidades.</p>\n<p>Error típico: sustituir valores antes de derivar, lo que convierte variables en constantes.</p>",
    "form": [
-    "\\(m=\\dfrac{y_2-y_1}{x_2-x_1}\\)",
-    "\\(f'(a)\\approx\\dfrac{f(a+h)-f(a-h)}{2h}\\)"
+    "Cubo: \\(V=L^3,\\ A=6L^2\\)",
+    "Esfera: \\(V=\\frac43\\pi r^3\\)",
+    "Cono: \\(V=\\frac13\\pi r^2h\\)",
+    "Pitágoras: \\(x^2+y^2=d^2\\)",
+    "\\(\\tan\\theta=\\frac{\\text{op}}{\\text{ady}}\\)"
    ],
    "ex": [
     {
-     "id": "est1",
+     "id": "raz1",
      "lvl": 1,
-     "title": "Tangente ya trazada",
-     "q": "<p>Se muestra \\(f(x)=x^2\\) y su tangente en \\(x=1\\). Con los puntos marcados en la recta, estima \\(f'(1)\\).</p>",
+     "title": "Cubo",
+     "q": "<p>El volumen de un cubo crece a 10 cm³/min. ¿Qué tan rápido crece el área superficial cuando la arista mide 30 cm?</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\)",
+       "p": "\\(dA/dt\\)",
        "o": [
-        "\\(2\\)",
-        "\\(1\\)",
-        "\\(4\\)",
-        "\\(\\frac12\\)",
-        "\\(3\\)"
+        "\\(\\frac43\\ \\text{cm}^2/\\text{min}\\)",
+        "\\(\\frac1{270}\\ \\text{cm}^2/\\text{min}\\)",
+        "\\(4\\ \\text{cm}^2/\\text{min}\\)",
+        "\\(360\\ \\text{cm}^2/\\text{min}\\)",
+        "\\(\\frac23\\ \\text{cm}^2/\\text{min}\\)"
        ]
       }
      ],
      "steps": [
-      "Puntos de la recta: \\((0.5,0)\\) y \\((1.5,2)\\).",
-      "\\(m=\\frac{2-0}{1}=2\\).",
-      "Comprueba: \\(f'(x)=2x\\Rightarrow f'(1)=2\\) ✓."
+      "\\(\\frac{dV}{dt}=3L^2\\frac{dL}{dt}\\Rightarrow\\frac{dL}{dt}=\\frac{10}{2700}=\\frac1{270}\\).",
+      "\\(\\frac{dA}{dt}=12L\\frac{dL}{dt}=360\\cdot\\frac1{270}=\\frac43\\)."
      ],
-     "ans": "\\(2\\)",
-     "hint": "Lee los puntos naranjas sobre la recta.",
-     "fig": "e1",
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "pend"
-      ],
-      [],
-      []
-     ]
-    },
-    {
-     "id": "est2",
-     "lvl": 1,
-     "title": "Recta por dos puntos",
-     "q": "<p>La tangente a \\(f\\) en \\(x=3\\) pasa por \\((1,5)\\) y \\((5,-3)\\). ¿Cuánto vale \\(f'(3)\\)?</p>",
-     "checks": [
-      {
-       "p": "\\(f'(3)\\)",
-       "o": [
-        "\\(-2\\)",
-        "\\(2\\)",
-        "\\(-\\frac12\\)",
-        "\\(-8\\)",
-        "\\(\\frac12\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(m=\\dfrac{-3-5}{5-1}=\\dfrac{-8}{4}\\)."
-     ],
-     "ans": "\\(-2\\)",
-     "hint": "Δy sobre Δx.",
+     "ans": "\\(\\frac43\\) cm²/min",
+     "hint": "Primero halla dL/dt.",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
-      []
+      [
+       "rrel"
+      ],
+      [
+       "dif"
+      ]
      ]
     },
     {
-     "id": "est3",
+     "id": "raz2",
+     "lvl": 1,
+     "title": "Globo inflándose",
+     "q": "<p>\\(r(t)=6+0.25t\\) cm. ¿\\(\\frac{dV}{dt}\\) en \\(t=8\\) s?</p>",
+     "checks": [
+      {
+       "p": "\\(dV/dt\\)",
+       "o": [
+        "\\(64\\pi\\ \\text{cm}^3/\\text{s}\\)",
+        "\\(256\\pi\\ \\text{cm}^3/\\text{s}\\)",
+        "\\(16\\pi\\ \\text{cm}^3/\\text{s}\\)",
+        "\\(\\frac{2048}{3}\\pi\\ \\text{cm}^3/\\text{s}\\)",
+        "\\(8\\pi\\ \\text{cm}^3/\\text{s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r(8)=8\\).",
+      "\\(\\frac{dV}{dt}=4\\pi r^2\\cdot0.25=\\pi r^2=64\\pi\\approx201\\)."
+     ],
+     "ans": "\\(64\\pi\\) cm³/s",
+     "hint": "dr/dt = 0.25.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "rrel",
+       "cadt"
+      ]
+     ]
+    },
+    {
+     "id": "raz3",
      "lvl": 2,
-     "title": "Simulacro 2, pregunta 5",
-     "q": "<p>(2 pts) Traza con regla la tangente en \\(x=1\\), elige dos puntos de ella y estima \\(f'(1)\\). Cada línea fina vale 0,05 en \\(x\\) y 0,1 en \\(y\\).</p>",
+     "title": "Escalera",
+     "q": "<p>Escalera de 10 m; la base se aleja a 3 m/s. ¿A qué rapidez baja el extremo superior cuando la base está a 6 m?</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\) aproximado",
+       "p": "Rapidez de descenso",
        "o": [
-        "\\(\\approx-1.2\\)",
-        "\\(\\approx-0.5\\)",
-        "\\(\\approx1.2\\)",
-        "\\(\\approx-2.5\\)",
-        "\\(\\approx-0.25\\)"
+        "\\(2.25\\ \\text{m/s}\\)",
+        "\\(4\\ \\text{m/s}\\)",
+        "\\(3\\ \\text{m/s}\\)",
+        "\\(1.8\\ \\text{m/s}\\)",
+        "\\(0.75\\ \\text{m/s}\\)"
        ]
       }
      ],
      "steps": [
-      "Punto de tangencia \\(\\approx(1,\\,2.47)\\).",
-      "Sobre la recta: \\(\\approx(0.5,\\,3.09)\\) y \\((1.5,\\,1.85)\\).",
-      "\\(m\\approx\\dfrac{1.85-3.09}{1}\\approx-1.2\\). Aceptable entre −1.0 y −1.4."
+      "\\(x^2+y^2=100\\); con \\(x=6\\), \\(y=8\\).",
+      "\\(2xx'+2yy'=0\\Rightarrow y'=-\\frac{6\\cdot3}{8}=-2.25\\).",
+      "Baja a 2.25 m/s."
      ],
-     "ans": "\\(f'(1)\\approx-1.2\\)",
-     "hint": "La curva baja: la pendiente es negativa.",
-     "fig": "e2",
-     "draw": true,
-     "solfig": "e2s",
+     "ans": "2.25 m/s",
+     "hint": "Pitágoras.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
      "tags": [
       [
-       "pend"
+       "pit"
       ],
-      [],
+      [
+       "impl",
+       "rrel"
+      ],
       []
      ]
     },
     {
-     "id": "est4",
-     "lvl": 3,
-     "title": "Simulacro 1, pregunta 5",
-     "q": "<p>(3 pts) Determina de forma aproximada la derivada en \\(x=1\\). Cada línea fina vale 0,1 en \\(x\\) y 0,5 en \\(y\\).</p>",
+     "id": "raz4",
+     "lvl": 2,
+     "title": "Vaso cónico",
+     "q": "<p>Cono invertido de altura 10 cm y radio 3 cm; entra agua a 2 cm³/s. ¿Qué tan rápido sube el nivel cuando \\(h=5\\) cm?</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\) aproximado",
+       "p": "\\(dh/dt\\)",
        "o": [
-        "\\(\\approx-4.8\\)",
-        "\\(\\approx-2.3\\)",
-        "\\(\\approx-1\\)",
-        "\\(\\approx4.8\\)",
-        "\\(\\approx-10\\)"
+        "\\(\\frac{8}{9\\pi}\\approx0.283\\ \\text{cm/s}\\)",
+        "\\(\\frac{2}{9\\pi}\\ \\text{cm/s}\\)",
+        "\\(\\frac{8}{25\\pi}\\ \\text{cm/s}\\)",
+        "\\(\\frac{4}{9\\pi}\\ \\text{cm/s}\\)",
+        "\\(0.8\\ \\text{cm/s}\\)"
        ]
       }
      ],
      "steps": [
-      "Punto \\(\\approx(1,\\,2.33)\\).",
-      "Sobre la recta: \\(\\approx(0.6,\\,4.24)\\) y \\((1.4,\\,0.42)\\).",
-      "\\(m\\approx\\dfrac{-3.82}{0.8}\\approx-4.8\\). Aceptable entre −4.5 y −5.5."
+      "\\(r=0.3h\\Rightarrow V=0.03\\pi h^3\\).",
+      "\\(\\frac{dV}{dt}=0.09\\pi h^2\\frac{dh}{dt}\\).",
+      "\\(2=0.09\\pi(25)h'\\Rightarrow h'=\\frac{2}{2.25\\pi}=\\frac8{9\\pi}\\)."
      ],
-     "ans": "\\(f'(1)\\approx-4.8\\)",
-     "hint": "Ojo: escalas distintas en cada eje.",
-     "fig": "e3",
-     "draw": true,
-     "solfig": "e3s",
+     "ans": "\\(\\frac{8}{9\\pi}\\approx0.283\\) cm/s",
+     "hint": "Elimina r con semejanza.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "semej"
+      ],
+      [
+       "rrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "raz5",
+     "lvl": 2,
+     "title": "Sombra del edificio",
+     "q": "<p>Edificio de 400 pies; el ángulo de elevación del Sol decrece 0.25 rad/h. ¿Qué tan rápido crece la sombra cuando \\(\\theta=\\frac\\pi6\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(dx/dt\\)",
+       "o": [
+        "\\(400\\ \\text{pies/h}\\)",
+        "\\(100\\ \\text{pies/h}\\)",
+        "\\(-400\\ \\text{pies/h}\\)",
+        "\\(133.3\\ \\text{pies/h}\\)",
+        "\\(1600\\ \\text{pies/h}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\tan\\theta=\\frac{400}{x}\\Rightarrow x=400\\cot\\theta\\).",
+      "\\(x'=-400\\csc^2\\theta\\,\\theta'\\).",
+      "\\(\\csc^2\\frac\\pi6=4\\): \\(x'=-400\\cdot4\\cdot(-0.25)=400\\)."
+     ],
+     "ans": "400 pies/h",
+     "hint": "θ′ es negativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "basic"
+      ],
+      [
+       "rrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "raz6",
+     "lvl": 3,
+     "title": "Globo y bicicleta",
+     "q": "<p>Un globo sube a 2 m/s; un niño en bicicleta va a 5 m/s por el suelo. Cuando pasa debajo, el globo está a 15 m. ¿Qué tan rápido crece la distancia 3 s después?</p>",
+     "checks": [
+      {
+       "p": "\\(dd/dt\\)",
+       "o": [
+        "\\(\\approx4.53\\ \\text{m/s}\\)",
+        "\\(7\\ \\text{m/s}\\)",
+        "\\(\\approx5.39\\ \\text{m/s}\\)",
+        "\\(\\approx2.91\\ \\text{m/s}\\)",
+        "\\(\\approx3.14\\ \\text{m/s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "A los 3 s: \\(x=15\\), \\(h=21\\), \\(d=\\sqrt{666}\\approx25.81\\).",
+      "\\(d^2=x^2+h^2\\Rightarrow dd'=xx'+hh'\\).",
+      "\\(d'=\\frac{15\\cdot5+21\\cdot2}{25.81}=\\frac{117}{25.81}\\approx4.53\\)."
+     ],
+     "ans": "≈ 4.53 m/s",
+     "hint": "Calcula x, h y d en t = 3 antes de sustituir.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pit"
+      ],
+      [
+       "rrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "raz7",
+     "lvl": 3,
+     "title": "Lente convergente",
+     "q": "<p>\\(\\frac1f=\\frac1p+\\frac1q\\) con \\(f=15\\) cm fijo. El objeto se aleja a 5 cm/s. ¿Cómo cambia \\(q\\) cuando \\(p=30\\) cm?</p>",
+     "checks": [
+      {
+       "p": "\\(dq/dt\\)",
+       "o": [
+        "\\(-5\\ \\text{cm/s}\\)",
+        "\\(5\\ \\text{cm/s}\\)",
+        "\\(-2.5\\ \\text{cm/s}\\)",
+        "\\(-10\\ \\text{cm/s}\\)",
+        "\\(-1.25\\ \\text{cm/s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac1q=\\frac1{15}-\\frac1{30}\\Rightarrow q=30\\).",
+      "\\(0=-\\frac{p'}{p^2}-\\frac{q'}{q^2}\\Rightarrow q'=-\\frac{q^2}{p^2}p'\\).",
+      "\\(q'=-1\\cdot5=-5\\): la imagen se acerca a 5 cm/s."
+     ],
+     "ans": "−5 cm/s",
+     "hint": "f es constante: su derivada es 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
      "tags": [
       [],
       [
-       "pend"
+       "rrel"
       ],
+      []
+     ]
+    },
+    {
+     "id": "raz8",
+     "lvl": 3,
+     "title": "CPU y memoria",
+     "q": "<p>\\(C(t)=\\frac{1}{t^2+1}\\ln(1+M^2)\\). En \\(t=3\\) s, \\(M=4\\) GB y \\(M'=0.5\\) GB/s. Halla \\(\\frac{dC}{dt}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(dC/dt\\)",
+       "o": [
+        "\\(\\approx-0.146\\ \\%/\\text{s}\\)",
+        "\\(\\approx0.024\\ \\%/\\text{s}\\)",
+        "\\(\\approx-0.170\\ \\%/\\text{s}\\)",
+        "\\(\\approx0.194\\ \\%/\\text{s}\\)",
+        "\\(\\approx-0.012\\ \\%/\\text{s}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Producto: \\(C'=\\dfrac{-2t}{(t^2+1)^2}\\ln(1+M^2)+\\dfrac{1}{t^2+1}\\cdot\\dfrac{2MM'}{1+M^2}\\).",
+      "\\(=\\frac{-6}{100}\\ln17+\\frac{1}{10}\\cdot\\frac{4}{17}\\approx-0.1700+0.0235\\).",
+      "\\(\\approx-0.146\\) %/s: el uso de CPU baja."
+     ],
+     "ans": "≈ −0.146 %/s",
+     "hint": "C depende de t directamente y a través de M.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [],
       []
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La derivada en un punto es la pendiente de la tangente. Desde una gráfica la estimas dibujando esa tangente y midiendo su inclinación.</p>\n<h3>Conceptos clave</h3><ul><li>Traza una recta que toque la curva en el punto y siga su dirección.</li><li>Toma dos puntos <em>de la recta</em>, lejanos entre sí.</li><li>\\(m=\\frac{\\Delta y}{\\Delta x}\\) usando los valores de los ejes, no cuadraditos.</li><li>Curva bajando → pendiente negativa; máximo o mínimo → pendiente 0.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> si la tangente pasa por \\((1,2)\\) y \\((4,8)\\), \\(f'\\approx\\frac{6}{3}=2\\).</div>\n<div class=\"err\"><b>Error común:</b> contar cuadraditos cuando las escalas de los ejes son distintas.</div>"
+   "lesson": "<h3>Idea central</h3><p>Si varias cantidades cambian con el tiempo y están relacionadas por una ecuación, sus rapideces también lo están. Derivas la ecuación respecto a \\(t\\).</p>\n<h3>Conceptos clave</h3><ul><li>Todo lo que cambia es función de \\(t\\); solo los datos fijos son constantes.</li><li>Ecuaciones típicas: Pitágoras, semejanza, volúmenes, trigonometría.</li><li>Las unidades de la respuesta son «unidad por tiempo».</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra variables.</li><li><strong>2.</strong> Escribe la ecuación que las relaciona.</li><li><strong>3.</strong> Deriva respecto a \\(t\\).</li><li><strong>4.</strong> Sustituye los valores del instante y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> escalera de 5 m: \\(x^2+y^2=25\\Rightarrow2xx'+2yy'=0\\).</div>\n<div class=\"err\"><b>Error común:</b> sustituir valores antes de derivar: convierte variables en constantes y la derivada sale 0.</div>"
   },
   {
    "id": "graf",
-   "name": "Análisis con f′ y f″",
+   "name": "Sem. 7 · Análisis con f′ y f″",
    "teo": "<p><strong>Signo de \\(f'\\)</strong>: \\(f'\\gt0\\) crece, \\(f'\\lt0\\) decrece. Donde \\(f'\\) cruza el eje hay extremo (+ a − máximo; − a + mínimo). Si solo lo toca, no hay extremo.</p>\n<p><strong>Signo de \\(f''\\)</strong> (o si \\(f'\\) sube o baja): \\(f''\\gt0\\) cóncava arriba, \\(f''\\lt0\\) cóncava abajo. Donde cambia la concavidad y \\(f\\) es continua hay inflexión. En la gráfica de \\(f'\\), sus picos y valles son inflexiones de \\(f\\), y sus esquinas son puntos donde \\(f''\\) no existe.</p>\n<p>Con fórmula: resuelve \\(f'=0\\) y donde \\(f'\\) no existe (puntos críticos), luego haz tabla de signos. Igual con \\(f''\\).</p>",
    "form": [
     "\\(f'\\gt0\\Rightarrow\\) crece; \\(f'\\lt0\\Rightarrow\\) decrece",
@@ -2713,1233 +3942,6 @@
     }
    ],
    "lesson": "<h3>Idea central</h3><p>Las derivadas cuentan la forma de \\(f\\): \\(f'\\) dice si sube o baja y \\(f''\\) dice hacia dónde se curva.</p>\n<h3>Conceptos clave</h3><ul><li>\\(f'\\gt0\\): crece; \\(f'\\lt0\\): decrece.</li><li>\\(f'\\) cambia de + a −: máximo; de − a +: mínimo. Si solo toca 0 sin cambiar signo, no hay extremo.</li><li>\\(f''\\gt0\\): cóncava hacia arriba; \\(f''\\lt0\\): hacia abajo.</li><li>Inflexión: donde cambia la concavidad (picos y valles de la gráfica de \\(f'\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Halla puntos críticos (\\(f'=0\\) o no existe).</li><li><strong>2.</strong> Arma la tabla de signos de \\(f'\\).</li><li><strong>3.</strong> Haz lo mismo con \\(f''\\) para concavidad.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(f(x)=x^3-3x\\): \\(f'=3(x-1)(x+1)\\); máximo en \\(-1\\), mínimo en \\(1\\); \\(f''=6x\\): inflexión en 0.</div>\n<div class=\"err\"><b>Error común:</b> leer la gráfica de \\(f'\\) como si fuera la de \\(f\\): donde \\(f'\\) está arriba del eje, \\(f\\) crece, aunque \\(f'\\) esté bajando.</div>"
-  },
-  {
-   "id": "lho",
-   "name": "Regla de L'Hôpital",
-   "teo": "<p>Si al sustituir obtienes \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes derivar numerador y denominador <strong>por separado</strong> (no es la regla del cociente) y volver a evaluar. Si sigue indeterminado, repite.</p>\n<p>Otras formas se transforman primero: \\(0\\cdot\\infty\\) se escribe como cociente (\\(x\\ln x=\\frac{\\ln x}{1/x}\\)); \\(\\infty-\\infty\\) con conjugado o común denominador.</p>",
-   "form": [
-    "\\(\\displaystyle\\lim\\frac fg=\\lim\\frac{f'}{g'}\\) si da \\(\\tfrac00\\) o \\(\\tfrac\\infty\\infty\\)",
-    "\\(0\\cdot\\infty\\to\\dfrac{0}{1/\\infty}\\)",
-    "\\(\\sin x\\approx x-\\frac{x^3}6\\) cerca de 0"
-   ],
-   "ex": [
-    {
-     "id": "lho1",
-     "lvl": 1,
-     "title": "Logaritmo",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(x+1)}{x}\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(e\\)",
-        "No existe"
-       ]
-      }
-     ],
-     "steps": [
-      "Forma \\(\\frac00\\).",
-      "Deriva: \\(\\dfrac{1/(x+1)}{1}\\to1\\)."
-     ],
-     "ans": "\\(1\\)",
-     "hint": "Deriva arriba y abajo por separado.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "indet",
-       "lhop"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "lho2",
-     "lvl": 1,
-     "title": "Tangente sobre suma",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan(4x)}{x+\\sin(2x)}\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac43\\)",
-        "\\(4\\)",
-        "\\(2\\)",
-        "\\(\\frac23\\)",
-        "\\(0\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Forma \\(\\frac00\\).",
-      "\\(\\dfrac{4\\sec^2(4x)}{1+2\\cos(2x)}\\to\\dfrac{4}{3}\\)."
-     ],
-     "ans": "\\(\\frac43\\)",
-     "hint": "\\((\\tan 4x)'=4\\sec^2 4x\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "indet",
-       "lhop"
-      ],
-      [
-       "basic"
-      ]
-     ]
-    },
-    {
-     "id": "lho3",
-     "lvl": 2,
-     "title": "Cero por infinito",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0^+}x\\ln x\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(0\\)",
-        "\\(-\\infty\\)",
-        "\\(1\\)",
-        "\\(-1\\)",
-        "No existe"
-       ]
-      }
-     ],
-     "steps": [
-      "Reescribe: \\(\\dfrac{\\ln x}{1/x}\\), forma \\(\\frac{-\\infty}{\\infty}\\).",
-      "Deriva: \\(\\dfrac{1/x}{-1/x^2}=-x\\to0\\)."
-     ],
-     "ans": "\\(0\\)",
-     "hint": "Pásalo a cociente.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "lhop",
-       "formas"
-      ],
-      [
-       "inf"
-      ]
-     ]
-    },
-    {
-     "id": "lho4",
-     "lvl": 2,
-     "title": "Exponencial en el infinito",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\infty}xe^{-x}\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(1\\)",
-        "\\(e\\)",
-        "\\(-\\infty\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\dfrac{x}{e^x}\\): forma \\(\\frac\\infty\\infty\\).",
-      "\\(\\dfrac{1}{e^x}\\to0\\)."
-     ],
-     "ans": "\\(0\\)",
-     "hint": "Escribe \\(e^{-x}\\) abajo.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "lhop",
-       "formas"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "lho5",
-     "lvl": 2,
-     "title": "Doble L'Hôpital",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12\\)",
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(2\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac00\\): deriva \\(\\to\\dfrac{e^x-1}{2x}\\), otra vez \\(\\frac00\\).",
-      "Deriva otra vez: \\(\\dfrac{e^x}{2}\\to\\frac12\\)."
-     ],
-     "ans": "\\(\\frac12\\)",
-     "hint": "Aplica la regla dos veces.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "indet",
-       "lhop"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "lho6",
-     "lvl": 3,
-     "title": "Infinito menos infinito",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2-5x+6}-x\\right)\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(-\\frac52\\)",
-        "\\(0\\)",
-        "\\(-5\\)",
-        "\\(\\frac52\\)",
-        "\\(\\infty\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Multiplica por el conjugado: \\(\\dfrac{-5x+6}{\\sqrt{x^2-5x+6}+x}\\).",
-      "Divide entre \\(x\\): \\(\\dfrac{-5+6/x}{\\sqrt{1-5/x+6/x^2}+1}\\to\\dfrac{-5}{2}\\)."
-     ],
-     "ans": "\\(-\\frac52\\)",
-     "hint": "Conjugado, no L'Hôpital directo.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "conj"
-      ],
-      [
-       "inf"
-      ]
-     ]
-    },
-    {
-     "id": "lho7",
-     "lvl": 3,
-     "title": "Senos al cuadrado",
-     "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{x^2-\\sin^2x}{x^2\\sin^2x}\\).</p>",
-     "checks": [
-      {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac13\\)",
-        "\\(0\\)",
-        "\\(1\\)",
-        "\\(\\frac16\\)",
-        "\\(\\infty\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Cerca de 0, \\(\\sin x\\approx x-\\frac{x^3}6\\Rightarrow\\sin^2x\\approx x^2-\\frac{x^4}3\\).",
-      "Numerador \\(\\approx\\frac{x^4}3\\); denominador \\(\\approx x^4\\).",
-      "Límite \\(\\frac13\\). (Por L'Hôpital sale igual, pero requiere derivar 4 veces.)"
-     ],
-     "ans": "\\(\\frac13\\)",
-     "hint": "Usa la aproximación del seno cerca de 0.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "notsin"
-      ],
-      [],
-      [
-       "lhop"
-      ]
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Si un límite da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes reemplazar el cociente por el cociente de las derivadas.</p>\n<h3>Conceptos clave</h3><ul><li>Se deriva numerador y denominador <strong>por separado</strong> (no es la regla del cociente).</li><li>Si sigue indeterminado, repite.</li><li>\\(0\\cdot\\infty\\): reescríbelo como cociente. \\(\\infty-\\infty\\): común denominador o conjugado.</li><li>Formas \\(1^\\infty,0^0,\\infty^0\\): toma \\(\\ln\\) primero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\overset{H}{=}\\lim\\frac{e^x-1}{2x}\\overset{H}{=}\\lim\\frac{e^x}2=\\frac12\\).</div>\n<div class=\"err\"><b>Error común:</b> aplicar L'Hôpital sin verificar la indeterminación, lo que da respuestas falsas.</div>"
-  },
-  {
-   "id": "dif",
-   "name": "Diferenciales y linealización",
-   "teo": "<p>La <strong>linealización</strong> \\(L(x)=f(a)+f'(a)(x-a)\\) es la recta tangente usada para aproximar \\(f\\) cerca de \\(a\\). El <strong>diferencial</strong> \\(dy=f'(x)dx\\) aproxima el cambio real \\(\\Delta y\\).</p>\n<p>Si \\(dx\\) es una incertidumbre de medición: error absoluto \\(|dy|\\), relativo \\(|dy/y|\\), porcentual ×100. Atajo: si \\(y=Ae^{g(x)}\\), entonces \\(\\frac{dy}y=g'(x)dx\\).</p>",
-   "form": [
-    "\\(L(x)=f(a)+f'(a)(x-a)\\)",
-    "\\(dy=f'(x)\\,dx\\)",
-    "\\(E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)",
-    "\\(y=Ae^{g}\\Rightarrow\\frac{dy}{y}=g'\\,dx\\)",
-    "\\((\\text{arcsec}\\,u)'=\\frac{1}{u\\sqrt{u^2-1}}\\)"
-   ],
-   "ex": [
-    {
-     "id": "dif1",
-     "lvl": 1,
-     "title": "dy de una potencia",
-     "q": "<p>\\(f(x)=x^{3/2}\\), \\(x=4\\), \\(dx=0.05\\). Calcula \\(dy\\).</p>",
-     "checks": [
-      {
-       "p": "\\(dy\\)",
-       "o": [
-        "\\(0.15\\)",
-        "\\(0.075\\)",
-        "\\(0.3\\)",
-        "\\(0.1505\\)",
-        "\\(0.05\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(f'(x)=\\frac32\\sqrt x\\Rightarrow f'(4)=3\\).",
-      "\\(dy=3\\cdot0.05=0.15\\). (El cambio real es \\(\\approx0.15047\\).)"
-     ],
-     "ans": "\\(0.15\\)",
-     "hint": "Evalúa f′(4).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "dif"
-      ],
-      [
-       "dif"
-      ]
-     ]
-    },
-    {
-     "id": "dif2",
-     "lvl": 1,
-     "title": "Error relativo",
-     "q": "<p>\\(y=\\ln(1+x^2)\\), \\(x=1\\), \\(dx=-0.02\\). ¿Error relativo porcentual aproximado respecto a \\(y(1)\\)?</p>",
-     "checks": [
-      {
-       "p": "Error %",
-       "o": [
-        "\\(\\approx2.89\\%\\)",
-        "\\(2\\%\\)",
-        "\\(\\approx1.44\\%\\)",
-        "\\(0.02\\%\\)",
-        "\\(\\approx4\\%\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(y'=\\frac{2x}{1+x^2}\\Rightarrow y'(1)=1\\); \\(dy=-0.02\\).",
-      "\\(y(1)=\\ln2\\approx0.6931\\).",
-      "\\(\\frac{0.02}{0.6931}\\approx2.89\\%\\)."
-     ],
-     "ans": "\\(\\approx2.89\\%\\)",
-     "hint": "No olvides dividir entre \\(\\ln 2\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "dif"
-      ],
-      [],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "dif3",
-     "lvl": 2,
-     "title": "Linealizar un caudal",
-     "q": "<p>\\(Q(p)=12\\sqrt p\\). Linealiza en \\(p=9\\) y estima \\(Q(9.3)\\).</p>",
-     "checks": [
-      {
-       "p": "\\(Q(9.3)\\) estimado",
-       "o": [
-        "\\(36.6\\)",
-        "\\(36.3\\)",
-        "\\(37.8\\)",
-        "\\(36.06\\)",
-        "\\(38.4\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(Q(9)=36\\); \\(Q'(p)=\\frac{6}{\\sqrt p}\\Rightarrow Q'(9)=2\\).",
-      "\\(L(p)=36+2(p-9)\\Rightarrow L(9.3)=36.6\\).",
-      "Real: \\(12\\sqrt{9.3}\\approx36.595\\); error \\(\\approx0.005\\) (0.014 %)."
-     ],
-     "ans": "\\(36.6\\)",
-     "hint": "Q′(9) = 2.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "lin"
-      ],
-      [
-       "lin"
-      ],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "dif4",
-     "lvl": 2,
-     "title": "Sensor exponencial",
-     "q": "<p>\\(C(V)=80e^{0.04V}\\) mg/L, \\(V=5\\), \\(dV=\\pm0.03\\). Error porcentual aproximado de \\(C\\).</p>",
-     "checks": [
-      {
-       "p": "Error %",
-       "o": [
-        "\\(0.12\\%\\)",
-        "\\(1.2\\%\\)",
-        "\\(3\\%\\)",
-        "\\(0.04\\%\\)",
-        "\\(0.117\\%\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac{dC}C=0.04\\,dV=0.04\\cdot0.03=0.0012\\).",
-      "\\(0.12\\%\\). (Error absoluto: \\(3.2e^{0.2}\\cdot0.03\\approx0.117\\) mg/L.)"
-     ],
-     "ans": "\\(0.12\\%\\)",
-     "hint": "Usa el atajo exponencial.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "dif",
-       "atajo"
-      ],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "dif5",
-     "lvl": 3,
-     "title": "Linealizar arcosecante",
-     "q": "<p>Estima \\(\\text{arcsec}(1.269)\\) linealizando en \\(a=1.25\\).</p>",
-     "checks": [
-      {
-       "p": "Estimación",
-       "o": [
-        "\\(\\approx0.6638\\)",
-        "\\(\\approx0.6435\\)",
-        "\\(\\approx0.6232\\)",
-        "\\(\\approx0.6590\\)",
-        "\\(\\approx0.7458\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\text{arcsec}(1.25)=\\arccos(0.8)\\approx0.6435\\).",
-      "\\(f'(1.25)=\\dfrac{1}{1.25\\sqrt{0.5625}}=\\dfrac{1}{0.9375}\\approx1.0667\\).",
-      "\\(L=0.6435+1.0667\\cdot0.019\\approx0.6638\\). Real \\(\\approx0.6632\\); error \\(\\approx0.0006\\)."
-     ],
-     "ans": "\\(\\approx0.6638\\)",
-     "hint": "\\(\\text{arcsec}\\,u=\\arccos(1/u)\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "trinv"
-      ],
-      [],
-      [
-       "lin",
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "dif6",
-     "lvl": 3,
-     "title": "Error en un cono",
-     "q": "<p>Vaso cónico de altura 10 cm y radio 3 cm. Con agua a \\(h=5\\) cm medida con \\(\\pm0.02\\) cm, estima el error del volumen.</p>",
-     "checks": [
-      {
-       "p": "\\(|dV|\\)",
-       "o": [
-        "\\(\\approx0.141\\ \\text{cm}^3\\)",
-        "\\(\\approx0.047\\ \\text{cm}^3\\)",
-        "\\(\\approx1.41\\ \\text{cm}^3\\)",
-        "\\(\\approx0.283\\ \\text{cm}^3\\)",
-        "\\(\\approx0.0707\\ \\text{cm}^3\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Semejanza: \\(r=0.3h\\Rightarrow V=\\frac13\\pi(0.3h)^2h=0.03\\pi h^3\\).",
-      "\\(dV=0.09\\pi h^2dh=0.09\\pi\\cdot25\\cdot0.02\\).",
-      "\\(=0.045\\pi\\approx0.141\\ \\text{cm}^3\\)."
-     ],
-     "ans": "\\(\\approx0.141\\) cm³",
-     "hint": "Escribe r en función de h.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "semej"
-      ],
-      [
-       "dif"
-      ],
-      []
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Cerca de un punto, una curva se parece a su recta tangente. Con esa recta aproximas valores y estimas errores.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Linealización:</strong> \\(L(x)=f(a)+f'(a)(x-a)\\).</li><li><strong>Diferencial:</strong> \\(dy=f'(x)\\,dx\\approx\\Delta y\\).</li><li>Error absoluto \\(|dy|\\), relativo \\(\\left|\\frac{dy}y\\right|\\), porcentual \\(\\times100\\).</li><li>Si \\(y=Ae^{g(x)}\\): \\(\\frac{dy}{y}=g'(x)\\,dx\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\sqrt{4{,}1}\\approx2+\\frac1{4}(0{,}1)=2{,}025\\) (con \\(f=\\sqrt x\\), \\(a=4\\)).</div>\n<div class=\"err\"><b>Error común:</b> usar como \\(a\\) un punto donde no conoces \\(f(a)\\) exactamente; elige el valor «bonito» más cercano.</div>"
-  },
-  {
-   "id": "tay",
-   "name": "Polinomios de Taylor",
-   "teo": "<p>El polinomio de Taylor de grado \\(n\\) alrededor de \\(a\\) copia el valor y las primeras \\(n\\) derivadas de \\(f\\) en \\(a\\). Grado 1 es la linealización; grado 2 agrega la curvatura.</p>\n<p>Para usarlo: calcula \\(f(a),f'(a),f''(a),\\dots\\), arma el polinomio y evalúa en el punto cercano. Error absoluto \\(|real-aprox|\\); porcentual dividido entre el real.</p>",
-   "form": [
-    "\\(P_2(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2}(x-a)^2\\)",
-    "\\(P_3\\) suma \\(\\frac{f'''(a)}{6}(x-a)^3\\)",
-    "\\(\\cos x\\approx1-\\frac{x^2}2\\)",
-    "\\(\\tan x\\approx x+\\frac{x^3}3\\)"
-   ],
-   "ex": [
-    {
-     "id": "tay1",
-     "lvl": 1,
-     "title": "Coseno en 0",
-     "q": "<p>\\(S(x)=100\\cos x\\). Con \\(P_2\\) alrededor de 0, estima \\(S(0.30)\\).</p>",
-     "checks": [
-      {
-       "p": "\\(P_2(0.3)\\)",
-       "o": [
-        "\\(95.5\\)",
-        "\\(100\\)",
-        "\\(97\\)",
-        "\\(91\\)",
-        "\\(95.53\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(S(0)=100,\\ S'(0)=0,\\ S''(0)=-100\\).",
-      "\\(P_2=100-50x^2\\Rightarrow P_2(0.3)=95.5\\).",
-      "Real \\(95.534\\); \\(P_1=100\\) tiene error 4.7 %, \\(P_2\\) solo 0.035 %."
-     ],
-     "ans": "\\(95.5\\)",
-     "hint": "\\(P_1\\) es constante porque \\(S'(0)=0\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "taylor"
-      ],
-      [],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "tay2",
-     "lvl": 2,
-     "title": "Coseno en π/3",
-     "q": "<p>Con \\(P_2\\) de \\(\\cos x\\) alrededor de \\(\\frac\\pi3\\), estima \\(\\cos\\left(\\frac\\pi3+0.05\\right)\\).</p>",
-     "checks": [
-      {
-       "p": "Estimación",
-       "o": [
-        "\\(\\approx0.45607\\)",
-        "\\(\\approx0.54330\\)",
-        "\\(\\approx0.45670\\)",
-        "\\(\\approx0.45000\\)",
-        "\\(\\approx0.47500\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(f=\\frac12,\\ f'=-\\frac{\\sqrt3}2,\\ f''=-\\frac12\\) en \\(\\frac\\pi3\\).",
-      "\\(P_2=\\frac12-\\frac{\\sqrt3}{2}(0.05)-\\frac14(0.05)^2=0.5-0.043301-0.000625\\).",
-      "\\(\\approx0.456074\\). Real \\(0.456092\\); error \\(\\approx1.8\\times10^{-5}\\)."
-     ],
-     "ans": "\\(\\approx0.45607\\)",
-     "hint": "\\(f''/2=-1/4\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "taylor"
-      ],
-      [],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "tay3",
-     "lvl": 2,
-     "title": "Tangente en 0",
-     "q": "<p>Para \\(\\tan x\\) alrededor de 0, \\(P_1=P_2=x\\) y \\(P_3=x+\\frac{x^3}{3}\\). ¿Cuál es \\(P_3(0.12)\\)?</p>",
-     "checks": [
-      {
-       "p": "\\(P_3(0.12)\\)",
-       "o": [
-        "\\(0.120576\\)",
-        "\\(0.12\\)",
-        "\\(0.121728\\)",
-        "\\(0.120288\\)",
-        "\\(0.1205793\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(0.12^3=0.001728\\); \\(/3=0.000576\\).",
-      "\\(P_3=0.120576\\). Real \\(0.1205793\\).",
-      "Errores: \\(P_1\\) 0.48 %; \\(P_3\\) 0.003 %. \\(P_3\\) es más preciso."
-     ],
-     "ans": "\\(0.120576\\)",
-     "hint": "\\(f''(0)=0\\), por eso \\(P_2=P_1\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "taylor"
-      ],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "tay4",
-     "lvl": 3,
-     "title": "Rapidez de caída",
-     "q": "<p>\\(v(h)=\\sqrt{2gh}\\), \\(g=9.8\\). Con \\(P_2\\) alrededor de \\(h=5\\), estima \\(v(5.2)\\).</p>",
-     "checks": [
-      {
-       "p": "\\(P_2(5.2)\\)",
-       "o": [
-        "\\(\\approx10.0955\\)",
-        "\\(\\approx10.0975\\)",
-        "\\(\\approx9.8995\\)",
-        "\\(\\approx10.1985\\)",
-        "\\(\\approx10.0935\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(v(5)=\\sqrt{98}\\approx9.8995\\); \\(v'=\\frac{g}{\\sqrt{2gh}}\\approx0.98995\\); \\(v''=-\\frac{g^2}{(2gh)^{3/2}}\\approx-0.098995\\).",
-      "\\(P_2=9.8995+0.98995(0.2)-\\frac{0.098995}{2}(0.04)\\approx10.09550\\).",
-      "Real \\(\\sqrt{101.92}\\approx10.09554\\); error \\(\\approx0.0004\\%\\)."
-     ],
-     "ans": "\\(\\approx10.0955\\)",
-     "hint": "El término cuadrático resta.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "taylor"
-      ],
-      [],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "tay5",
-     "lvl": 3,
-     "title": "Panel solar",
-     "q": "<p>\\(P(\\theta)=500\\cos\\theta\\). Con \\(P_2\\) alrededor de \\(\\frac\\pi6\\), estima \\(P\\left(\\frac\\pi6+0.04\\right)\\).</p>",
-     "checks": [
-      {
-       "p": "Estimación",
-       "o": [
-        "\\(\\approx422.67\\ \\text{W}\\)",
-        "\\(\\approx423.01\\ \\text{W}\\)",
-        "\\(\\approx433.01\\ \\text{W}\\)",
-        "\\(\\approx412.67\\ \\text{W}\\)",
-        "\\(\\approx422.32\\ \\text{W}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(P=250\\sqrt3,\\ P'=-250,\\ P''=-250\\sqrt3\\) en \\(\\frac\\pi6\\).",
-      "\\(P_2=433.013-250(0.04)-125\\sqrt3(0.0016)=433.013-10-0.346\\).",
-      "\\(\\approx422.67\\) W. Real \\(422.669\\); error \\(\\approx0.0006\\%\\)."
-     ],
-     "ans": "\\(\\approx422.67\\) W",
-     "hint": "\\(\\cos\\frac\\pi6=\\frac{\\sqrt3}2\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "taylor"
-      ],
-      [],
-      [
-       "err"
-      ]
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Un polinomio de Taylor imita a \\(f\\) cerca de \\(a\\) copiando su valor y sus derivadas. Más grado, mejor aproximación cerca de \\(a\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(P_1(x)=f(a)+f'(a)(x-a)\\) (linealización).</li><li>\\(P_2(x)=P_1(x)+\\frac{f''(a)}2(x-a)^2\\).</li><li>Error: \\(|f(x)-P_n(x)|\\); porcentual dividido entre el valor real.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula \\(f(a),f'(a),f''(a)\\).</li><li><strong>2.</strong> Arma el polinomio con potencias de \\((x-a)\\).</li><li><strong>3.</strong> Evalúa en el punto pedido y compara con el valor real si lo piden.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(e^x\\) en \\(a=0\\): \\(P_2=1+x+\\frac{x^2}2\\); \\(e^{0{,}1}\\approx1{,}105\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac12\\) (factorial) en el término cuadrático.</div>"
-  },
-  {
-   "id": "raz",
-   "name": "Razones de cambio relacionadas",
-   "teo": "<p>Pasos: 1) dibuja y nombra variables; 2) escribe la ecuación que las relaciona (geometría, Pitágoras, trigonometría); 3) deriva respecto a \\(t\\) (implícita); 4) <strong>recién ahora</strong> sustituye los valores del instante; 5) despeja e interpreta con unidades.</p>\n<p>Error típico: sustituir valores antes de derivar, lo que convierte variables en constantes.</p>",
-   "form": [
-    "Cubo: \\(V=L^3,\\ A=6L^2\\)",
-    "Esfera: \\(V=\\frac43\\pi r^3\\)",
-    "Cono: \\(V=\\frac13\\pi r^2h\\)",
-    "Pitágoras: \\(x^2+y^2=d^2\\)",
-    "\\(\\tan\\theta=\\frac{\\text{op}}{\\text{ady}}\\)"
-   ],
-   "ex": [
-    {
-     "id": "raz1",
-     "lvl": 1,
-     "title": "Cubo",
-     "q": "<p>El volumen de un cubo crece a 10 cm³/min. ¿Qué tan rápido crece el área superficial cuando la arista mide 30 cm?</p>",
-     "checks": [
-      {
-       "p": "\\(dA/dt\\)",
-       "o": [
-        "\\(\\frac43\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(\\frac1{270}\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(4\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(360\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(\\frac23\\ \\text{cm}^2/\\text{min}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac{dV}{dt}=3L^2\\frac{dL}{dt}\\Rightarrow\\frac{dL}{dt}=\\frac{10}{2700}=\\frac1{270}\\).",
-      "\\(\\frac{dA}{dt}=12L\\frac{dL}{dt}=360\\cdot\\frac1{270}=\\frac43\\)."
-     ],
-     "ans": "\\(\\frac43\\) cm²/min",
-     "hint": "Primero halla dL/dt.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "rrel"
-      ],
-      [
-       "dif"
-      ]
-     ]
-    },
-    {
-     "id": "raz2",
-     "lvl": 1,
-     "title": "Globo inflándose",
-     "q": "<p>\\(r(t)=6+0.25t\\) cm. ¿\\(\\frac{dV}{dt}\\) en \\(t=8\\) s?</p>",
-     "checks": [
-      {
-       "p": "\\(dV/dt\\)",
-       "o": [
-        "\\(64\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(256\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(16\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(\\frac{2048}{3}\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(8\\pi\\ \\text{cm}^3/\\text{s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(r(8)=8\\).",
-      "\\(\\frac{dV}{dt}=4\\pi r^2\\cdot0.25=\\pi r^2=64\\pi\\approx201\\)."
-     ],
-     "ans": "\\(64\\pi\\) cm³/s",
-     "hint": "dr/dt = 0.25.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "rrel",
-       "cadt"
-      ]
-     ]
-    },
-    {
-     "id": "raz3",
-     "lvl": 2,
-     "title": "Escalera",
-     "q": "<p>Escalera de 10 m; la base se aleja a 3 m/s. ¿A qué rapidez baja el extremo superior cuando la base está a 6 m?</p>",
-     "checks": [
-      {
-       "p": "Rapidez de descenso",
-       "o": [
-        "\\(2.25\\ \\text{m/s}\\)",
-        "\\(4\\ \\text{m/s}\\)",
-        "\\(3\\ \\text{m/s}\\)",
-        "\\(1.8\\ \\text{m/s}\\)",
-        "\\(0.75\\ \\text{m/s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(x^2+y^2=100\\); con \\(x=6\\), \\(y=8\\).",
-      "\\(2xx'+2yy'=0\\Rightarrow y'=-\\frac{6\\cdot3}{8}=-2.25\\).",
-      "Baja a 2.25 m/s."
-     ],
-     "ans": "2.25 m/s",
-     "hint": "Pitágoras.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "pit"
-      ],
-      [
-       "impl",
-       "rrel"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "raz4",
-     "lvl": 2,
-     "title": "Vaso cónico",
-     "q": "<p>Cono invertido de altura 10 cm y radio 3 cm; entra agua a 2 cm³/s. ¿Qué tan rápido sube el nivel cuando \\(h=5\\) cm?</p>",
-     "checks": [
-      {
-       "p": "\\(dh/dt\\)",
-       "o": [
-        "\\(\\frac{8}{9\\pi}\\approx0.283\\ \\text{cm/s}\\)",
-        "\\(\\frac{2}{9\\pi}\\ \\text{cm/s}\\)",
-        "\\(\\frac{8}{25\\pi}\\ \\text{cm/s}\\)",
-        "\\(\\frac{4}{9\\pi}\\ \\text{cm/s}\\)",
-        "\\(0.8\\ \\text{cm/s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(r=0.3h\\Rightarrow V=0.03\\pi h^3\\).",
-      "\\(\\frac{dV}{dt}=0.09\\pi h^2\\frac{dh}{dt}\\).",
-      "\\(2=0.09\\pi(25)h'\\Rightarrow h'=\\frac{2}{2.25\\pi}=\\frac8{9\\pi}\\)."
-     ],
-     "ans": "\\(\\frac{8}{9\\pi}\\approx0.283\\) cm/s",
-     "hint": "Elimina r con semejanza.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "semej"
-      ],
-      [
-       "rrel"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "raz5",
-     "lvl": 2,
-     "title": "Sombra del edificio",
-     "q": "<p>Edificio de 400 pies; el ángulo de elevación del Sol decrece 0.25 rad/h. ¿Qué tan rápido crece la sombra cuando \\(\\theta=\\frac\\pi6\\)?</p>",
-     "checks": [
-      {
-       "p": "\\(dx/dt\\)",
-       "o": [
-        "\\(400\\ \\text{pies/h}\\)",
-        "\\(100\\ \\text{pies/h}\\)",
-        "\\(-400\\ \\text{pies/h}\\)",
-        "\\(133.3\\ \\text{pies/h}\\)",
-        "\\(1600\\ \\text{pies/h}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\tan\\theta=\\frac{400}{x}\\Rightarrow x=400\\cot\\theta\\).",
-      "\\(x'=-400\\csc^2\\theta\\,\\theta'\\).",
-      "\\(\\csc^2\\frac\\pi6=4\\): \\(x'=-400\\cdot4\\cdot(-0.25)=400\\)."
-     ],
-     "ans": "400 pies/h",
-     "hint": "θ′ es negativo.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "basic"
-      ],
-      [
-       "rrel"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "raz6",
-     "lvl": 3,
-     "title": "Globo y bicicleta",
-     "q": "<p>Un globo sube a 2 m/s; un niño en bicicleta va a 5 m/s por el suelo. Cuando pasa debajo, el globo está a 15 m. ¿Qué tan rápido crece la distancia 3 s después?</p>",
-     "checks": [
-      {
-       "p": "\\(dd/dt\\)",
-       "o": [
-        "\\(\\approx4.53\\ \\text{m/s}\\)",
-        "\\(7\\ \\text{m/s}\\)",
-        "\\(\\approx5.39\\ \\text{m/s}\\)",
-        "\\(\\approx2.91\\ \\text{m/s}\\)",
-        "\\(\\approx3.14\\ \\text{m/s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "A los 3 s: \\(x=15\\), \\(h=21\\), \\(d=\\sqrt{666}\\approx25.81\\).",
-      "\\(d^2=x^2+h^2\\Rightarrow dd'=xx'+hh'\\).",
-      "\\(d'=\\frac{15\\cdot5+21\\cdot2}{25.81}=\\frac{117}{25.81}\\approx4.53\\)."
-     ],
-     "ans": "≈ 4.53 m/s",
-     "hint": "Calcula x, h y d en t = 3 antes de sustituir.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "pit"
-      ],
-      [
-       "rrel"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "raz7",
-     "lvl": 3,
-     "title": "Lente convergente",
-     "q": "<p>\\(\\frac1f=\\frac1p+\\frac1q\\) con \\(f=15\\) cm fijo. El objeto se aleja a 5 cm/s. ¿Cómo cambia \\(q\\) cuando \\(p=30\\) cm?</p>",
-     "checks": [
-      {
-       "p": "\\(dq/dt\\)",
-       "o": [
-        "\\(-5\\ \\text{cm/s}\\)",
-        "\\(5\\ \\text{cm/s}\\)",
-        "\\(-2.5\\ \\text{cm/s}\\)",
-        "\\(-10\\ \\text{cm/s}\\)",
-        "\\(-1.25\\ \\text{cm/s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac1q=\\frac1{15}-\\frac1{30}\\Rightarrow q=30\\).",
-      "\\(0=-\\frac{p'}{p^2}-\\frac{q'}{q^2}\\Rightarrow q'=-\\frac{q^2}{p^2}p'\\).",
-      "\\(q'=-1\\cdot5=-5\\): la imagen se acerca a 5 cm/s."
-     ],
-     "ans": "−5 cm/s",
-     "hint": "f es constante: su derivada es 0.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "rrel"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "raz8",
-     "lvl": 3,
-     "title": "CPU y memoria",
-     "q": "<p>\\(C(t)=\\frac{1}{t^2+1}\\ln(1+M^2)\\). En \\(t=3\\) s, \\(M=4\\) GB y \\(M'=0.5\\) GB/s. Halla \\(\\frac{dC}{dt}\\).</p>",
-     "checks": [
-      {
-       "p": "\\(dC/dt\\)",
-       "o": [
-        "\\(\\approx-0.146\\ \\%/\\text{s}\\)",
-        "\\(\\approx0.024\\ \\%/\\text{s}\\)",
-        "\\(\\approx-0.170\\ \\%/\\text{s}\\)",
-        "\\(\\approx0.194\\ \\%/\\text{s}\\)",
-        "\\(\\approx-0.012\\ \\%/\\text{s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Producto: \\(C'=\\dfrac{-2t}{(t^2+1)^2}\\ln(1+M^2)+\\dfrac{1}{t^2+1}\\cdot\\dfrac{2MM'}{1+M^2}\\).",
-      "\\(=\\frac{-6}{100}\\ln17+\\frac{1}{10}\\cdot\\frac{4}{17}\\approx-0.1700+0.0235\\).",
-      "\\(\\approx-0.146\\) %/s: el uso de CPU baja."
-     ],
-     "ans": "≈ −0.146 %/s",
-     "hint": "C depende de t directamente y a través de M.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "prod"
-      ],
-      [],
-      []
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Si varias cantidades cambian con el tiempo y están relacionadas por una ecuación, sus rapideces también lo están. Derivas la ecuación respecto a \\(t\\).</p>\n<h3>Conceptos clave</h3><ul><li>Todo lo que cambia es función de \\(t\\); solo los datos fijos son constantes.</li><li>Ecuaciones típicas: Pitágoras, semejanza, volúmenes, trigonometría.</li><li>Las unidades de la respuesta son «unidad por tiempo».</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra variables.</li><li><strong>2.</strong> Escribe la ecuación que las relaciona.</li><li><strong>3.</strong> Deriva respecto a \\(t\\).</li><li><strong>4.</strong> Sustituye los valores del instante y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> escalera de 5 m: \\(x^2+y^2=25\\Rightarrow2xx'+2yy'=0\\).</div>\n<div class=\"err\"><b>Error común:</b> sustituir valores antes de derivar: convierte variables en constantes y la derivada sale 0.</div>"
-  },
-  {
-   "id": "apl",
-   "name": "Aplicaciones tipo examen",
-   "teo": "<p>Las preguntas 6 de los simulacros combinan regla de la cadena con diferenciales. Estructura: \\(\\frac{dI}{dt}=\\frac{dI}{dx}\\frac{dx}{dt}\\) (las unidades se multiplican) y luego error porcentual con \\(\\frac{dy}{y}\\).</p>\n<p>Con modelos tipo campana \\(y=Ae^{-k(x-c)^2}\\): \\(\\frac{dy}{y}=-2k(x-c)\\,dx\\). Siempre interpreta signo y unidades en contexto.</p>",
-   "form": [
-    "\\(\\dfrac{dy}{dt}=\\dfrac{dy}{dx}\\dfrac{dx}{dt}\\)",
-    "\\(\\frac{d}{dx}e^{-k(x-c)^2}=-2k(x-c)e^{-k(x-c)^2}\\)",
-    "\\(E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)"
-   ],
-   "ex": [
-    {
-     "id": "apl1",
-     "lvl": 1,
-     "title": "Resistencia de un sensor",
-     "q": "<p>\\(R(T)=100e^{0.004(T-20)}\\) Ω y \\(T(t)=20+3t+0.2t^2\\) (t en min). Halla \\(\\frac{dR}{dt}\\) en \\(t=5\\).</p>",
-     "checks": [
-      {
-       "p": "\\(dR/dt\\)",
-       "o": [
-        "\\(\\approx2.17\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx0.43\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx2.00\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx10.8\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx1.30\\ \\Omega/\\text{min}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(T(5)=40\\); \\(T'(t)=3+0.4t\\Rightarrow T'(5)=5\\).",
-      "\\(R'(T)=0.4e^{0.004(T-20)}\\Rightarrow R'(40)=0.4e^{0.08}\\approx0.4333\\).",
-      "\\(\\frac{dR}{dt}=0.4333\\cdot5\\approx2.17\\) Ω/min: la resistencia aumenta."
-     ],
-     "ans": "≈ 2.17 Ω/min",
-     "hint": "Cadena: R′(T)·T′(t).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "cadt"
-      ],
-      [
-       "cad",
-       "basic"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "apl2",
-     "lvl": 2,
-     "title": "Energía de un robot",
-     "q": "<p>\\(m=6\\) kg, \\(v(t)=3+0.2t^2\\), \\(K=\\frac12mv^2\\). Halla \\(\\frac{dK}{dt}\\) en \\(t=4\\) s y el error porcentual en \\(K\\) si \\(dt=0.05\\) s.</p>",
-     "checks": [
-      {
-       "p": "\\(dK/dt\\)",
-       "o": [
-        "\\(59.52\\ \\text{J/s}\\)",
-        "\\(37.2\\ \\text{J/s}\\)",
-        "\\(29.76\\ \\text{J/s}\\)",
-        "\\(115.32\\ \\text{J/s}\\)",
-        "\\(9.6\\ \\text{J/s}\\)"
-       ]
-      },
-      {
-       "p": "Error %",
-       "o": [
-        "\\(\\approx2.58\\%\\)",
-        "\\(\\approx5.16\\%\\)",
-        "\\(\\approx0.05\\%\\)",
-        "\\(\\approx2.98\\%\\)",
-        "\\(\\approx1.29\\%\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(v(4)=6.2\\), \\(v'=0.4t=1.6\\).",
-      "\\(\\frac{dK}{dt}=mv\\,v'=6\\cdot6.2\\cdot1.6=59.52\\) J/s.",
-      "\\(K(4)=3\\cdot6.2^2=115.32\\) J; \\(dK=59.52\\cdot0.05=2.976\\) J.",
-      "\\(\\frac{2.976}{115.32}\\approx2.58\\%\\)."
-     ],
-     "ans": "59.52 J/s; ≈ 2.58 %",
-     "hint": "\\(\\frac{dK}{dv}=mv\\).",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "cadt"
-      ],
-      [
-       "dif"
-      ],
-      [
-       "err"
-      ]
-     ]
-    },
-    {
-     "id": "apl3",
-     "lvl": 3,
-     "title": "Simulacro 1, pregunta 6 (biorreactor)",
-     "q": "<p>\\(C(T)=12e^{-0.02(T-30)^2}\\) g/L. a) \\(T\\) sube a 0.4 °C/min: halla \\(\\frac{dC}{dt}\\) en \\(T=32\\). b) Con \\(\\Delta T=\\pm0.5\\) °C, ¿error porcentual? Se admite máximo 1.5 %.</p>",
-     "checks": [
-      {
-       "p": "a) \\(dC/dt\\)",
-       "o": [
-        "\\(\\approx-0.354\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-0.886\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx0.354\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-0.160\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-4.43\\ \\text{g/(L·min)}\\)"
-       ]
-      },
-      {
-       "p": "b) Error y conclusión",
-       "o": [
-        "4 %: no cumple",
-        "4 %: cumple",
-        "0.4 %: cumple",
-        "8 %: no cumple",
-        "1.5 %: cumple justo"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(C(32)=12e^{-0.08}\\approx11.077\\).",
-      "\\(C'(T)=C\\cdot(-0.04)(T-30)\\Rightarrow C'(32)\\approx-0.886\\) g/(L·°C).",
-      "a) \\(\\frac{dC}{dt}=-0.886\\cdot0.4\\approx-0.354\\): pasado el óptimo, calentar reduce la biomasa.",
-      "b) \\(\\left|\\frac{dC}C\\right|=0.04\\cdot2\\cdot0.5=0.04=4\\%\\gt1.5\\%\\): no cumple."
-     ],
-     "ans": "a) ≈ −0.354 g/(L·min); b) 4 %, no cumple",
-     "hint": "Atajo: dC/C = −2k(T−30)dT.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "cad",
-       "atajo"
-      ],
-      [
-       "cadt"
-      ],
-      [
-       "err",
-       "atajo"
-      ]
-     ]
-    },
-    {
-     "id": "apl4",
-     "lvl": 3,
-     "title": "Simulacro 2, pregunta 6.a (trazar tangente)",
-     "q": "<p>\\(I(x)=100e^{-0.04(x-5)^2}\\) lux. El robot está en \\(x=10\\) m y avanza a 0.5 m/s. Traza la tangente en \\(x=10\\), estima su pendiente y halla \\(\\frac{dI}{dt}\\). Interpreta.</p>",
-     "checks": [
-      {
-       "p": "\\(dI/dt\\) aproximado",
-       "o": [
-        "\\(\\approx-7.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-14.7\\ \\text{lux/s}\\)",
-        "\\(\\approx7.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-29.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-3.7\\ \\text{lux/s}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Tangente: puntos \\(\\approx(8,66)\\) y \\((10,37)\\Rightarrow m\\approx-14.5\\) lux/m.",
-      "Analítico: \\(I'(10)=36.8\\cdot(-0.4)\\approx-14.7\\) lux/m.",
-      "\\(\\frac{dI}{dt}\\approx-14.7\\cdot0.5\\approx-7.4\\) lux/s: al alejarse de la luminaria, recibe menos luz."
-     ],
-     "ans": "≈ −7.4 lux/s",
-     "hint": "\\(I(10)=100/e\\approx36.8\\).",
-     "fig": "luz",
-     "draw": true,
-     "solfig": "luzs",
-     "tags": [
-      [
-       "pend"
-      ],
-      [
-       "cad"
-      ],
-      [
-       "cadt"
-      ]
-     ]
-    },
-    {
-     "id": "apl5",
-     "lvl": 3,
-     "title": "Simulacro 2, pregunta 6.b",
-     "q": "<p>En \\(x=10\\) m la posición tiene incertidumbre \\(\\Delta x=\\pm0.1\\) m. Estima el error porcentual de \\(I\\). Se admite máximo 3 %.</p>",
-     "checks": [
-      {
-       "p": "Error y conclusión",
-       "o": [
-        "4 %: no cumple",
-        "4 %: cumple",
-        "1.47 %: cumple",
-        "0.4 %: cumple",
-        "8 %: no cumple"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac{dI}{I}=-0.08(x-5)\\,dx=-0.4\\cdot0.1\\).",
-      "\\(4\\%\\gt3\\%\\): no cumple."
-     ],
-     "ans": "4 %, no cumple",
-     "hint": "Atajo de la campana.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "atajo"
-      ],
-      [
-       "err"
-      ]
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>Las preguntas largas del examen combinan cadena, diferenciales y contexto. La clave es ordenar qué depende de qué.</p>\n<h3>Conceptos clave</h3><ul><li>Cadena con unidades: \\(\\frac{dI}{dt}=\\frac{dI}{dx}\\cdot\\frac{dx}{dt}\\).</li><li>Error porcentual con \\(\\frac{dy}{y}\\cdot100\\).</li><li>Modelos campana \\(y=Ae^{-k(x-c)^2}\\): \\(\\frac{dy}y=-2k(x-c)dx\\).</li><li>Siempre interpreta signo (aumenta/disminuye) y unidades.</li></ul>\n<div class=\"err\"><b>Error común:</b> responder solo el número: en contexto se pide interpretación con unidades.</div>"
   }
  ],
  "figs": {
@@ -4568,5 +4570,6 @@
     ]
    }
   ]
- }
+ },
+ "free": true
 }
