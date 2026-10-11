@@ -5,8 +5,8 @@
  "exam": "Examen final 2026-2 (todo el curso)",
  "short": "Examen final",
  "sub": "Todo el curso",
- "intro": "Repaso acumulado del curso, con los temas ordenados por semana. Aquí todos los temas están abiertos desde el inicio. <b>El examen final vale 30 %</b> (100 min, semana 16). Por ahora están las semanas 1 a 7; las semanas 9 a 15 se agregan a medida que lleguen sus guías y tendrán más peso en el simulacro.",
- "form": "<p class=\"note\">Hoja de repaso del final (por ahora, semanas 1 a 7).</p>\n<div class=\"fgrid\">\n<div><b>Producto</b><br>\\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\)</div>\n<div><b>Suma</b><br>Mismo orden, entrada por entrada</div>\n<div><b>No conmutativo</b><br>\\(AB\\neq BA\\)</div>\n<div><b>MATLAB</b><br>A*B producto · A.*B entrada a entrada · A' transpuesta</div>\n<div><b>Det 2×2</b><br>\\(ad-bc\\)</div>\n<div><b>Cofactor</b><br>\\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\)</div>\n<div><b>OEF y det</b><br>\\(\\leftrightarrow\\): −det · \\(kF_i\\): k·det · \\(F_i+kF_j\\): igual</div>\n<div><b>Propiedades</b><br>\\(\\det(AB)=\\det A\\det B\\), \\(\\det(kA)=k^n\\det A\\)</div>\n<div><b>Rango</b><br>n.º de pivotes; \\(\\det A=0\\iff r(A)\\lt n\\)</div>\n<div><b>Adjunta</b><br>\\(\\operatorname{adj}A\\) \\(=[C_{ij}]^T\\)</div>\n<div><b>Rouché–Frobenius</b><br>\\(r(A)=r(A|b)=n\\) única · \\(\\lt n\\) infinitas · \\(r(A)\\lt r(A|b)\\) ninguna</div>\n<div><b>Fila imposible</b><br>\\([0\\cdots0\\mid c\\neq0]\\)</div>\n<div><b>Libres</b><br>n − rango(A)</div>\n<div><b>Inversa</b><br>\\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\)</div>\n<div><b>Inversa 2×2</b><br>\\(\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)</div>\n<div><b>Invertible</b><br>\\(\\det A\\neq0\\iff r(A)=n\\)</div>\n<div><b>Sistema</b><br>\\(x=A^{-1}b\\)</div>\n<div><b>Subespacio</b><br>\\(0\\in W\\), cerrado en suma y escalar</div>\n<div><b>LI</b><br>\\(r[v_1\\cdots v_n]=n\\); cuadrada: \\(\\det\\neq0\\)</div>\n<div><b>Gen</b><br>\\(w\\in\\operatorname{Gen}\\) \\(\\iff\\) sistema consistente</div>\n<div><b>Col(A)</b><br>Columnas pivote de A original</div>\n<div><b>Row(A)</b><br>Filas no nulas de rref(A)</div>\n<div><b>Nul(A)</b><br>Resolver \\(Ax=0\\)</div>\n<div><b>Rango-nulidad</b><br>\\(r(A)\\) \\(+\\operatorname{nul}(A)\\) \\(=n\\)</div>\n<div><b>Existencia</b><br>\\(b\\in\\operatorname{Col}(A)\\)</div>\n<div><b>Unicidad</b><br>\\(\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\)</div>\n<div><b>Solución general</b><br>\\(x=x_p+x_h\\)</div>\n</div>",
+ "intro": "Repaso acumulado del curso, con los temas ordenados por semana. Aquí todos los temas están abiertos desde el inicio. <b>El examen final vale 30 %</b> (100 min, semana 16). Por ahora están las semanas 1 a 7 y la 9; las semanas 10 a 15 se agregan a medida que lleguen sus guías y tendrán más peso en el simulacro.",
+ "form": "<p class=\"note\">Hoja de repaso del final (por ahora, semanas 1 a 7 y 9).</p>\n<div class=\"fgrid\">\n<div><b>Producto</b><br>\\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\)</div>\n<div><b>Suma</b><br>Mismo orden, entrada por entrada</div>\n<div><b>No conmutativo</b><br>\\(AB\\neq BA\\)</div>\n<div><b>MATLAB</b><br>A*B producto · A.*B entrada a entrada · A' transpuesta</div>\n<div><b>Det 2×2</b><br>\\(ad-bc\\)</div>\n<div><b>Cofactor</b><br>\\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\)</div>\n<div><b>OEF y det</b><br>\\(\\leftrightarrow\\): −det · \\(kF_i\\): k·det · \\(F_i+kF_j\\): igual</div>\n<div><b>Propiedades</b><br>\\(\\det(AB)=\\det A\\det B\\), \\(\\det(kA)=k^n\\det A\\)</div>\n<div><b>Rango</b><br>n.º de pivotes; \\(\\det A=0\\iff r(A)\\lt n\\)</div>\n<div><b>Adjunta</b><br>\\(\\operatorname{adj}A\\) \\(=[C_{ij}]^T\\)</div>\n<div><b>Rouché–Frobenius</b><br>\\(r(A)=r(A|b)=n\\) única · \\(\\lt n\\) infinitas · \\(r(A)\\lt r(A|b)\\) ninguna</div>\n<div><b>Fila imposible</b><br>\\([0\\cdots0\\mid c\\neq0]\\)</div>\n<div><b>Libres</b><br>n − rango(A)</div>\n<div><b>Inversa</b><br>\\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\)</div>\n<div><b>Inversa 2×2</b><br>\\(\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)</div>\n<div><b>Invertible</b><br>\\(\\det A\\neq0\\iff r(A)=n\\)</div>\n<div><b>Sistema</b><br>\\(x=A^{-1}b\\)</div>\n<div><b>Subespacio</b><br>\\(0\\in W\\), cerrado en suma y escalar</div>\n<div><b>LI</b><br>\\(r[v_1\\cdots v_n]=n\\); cuadrada: \\(\\det\\neq0\\)</div>\n<div><b>Gen</b><br>\\(w\\in\\operatorname{Gen}\\) \\(\\iff\\) sistema consistente</div>\n<div><b>Col(A)</b><br>Columnas pivote de A original</div>\n<div><b>Row(A)</b><br>Filas no nulas de rref(A)</div>\n<div><b>Nul(A)</b><br>Resolver \\(Ax=0\\)</div>\n<div><b>Rango-nulidad</b><br>\\(r(A)\\) \\(+\\operatorname{nul}(A)\\) \\(=n\\)</div>\n<div><b>Existencia</b><br>\\(b\\in\\operatorname{Col}(A)\\)</div>\n<div><b>Unicidad</b><br>\\(\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\)</div>\n<div><b>Solución general</b><br>\\(x=x_p+x_h\\)</div>\n<div><b>Lineal</b><br>\\(T(au+bv)=aT(u)+bT(v)\\)</div>\n<div><b>Descarte</b><br>\\(T(0)\\neq0\\Rightarrow\\) no lineal</div>\n<div><b>Matriz estándar</b><br>\\(A\\) \\(=[T(e_1)\\cdots T(e_n)]\\in\\mathbb R^{m\\times n}\\)</div>\n</div>",
  "formSim": false,
  "topics": [
   {
@@ -3559,6 +3559,679 @@
      ]
     }
    ]
+  },
+  {
+   "id": "s9",
+   "name": "Sem. 9 · Transformaciones lineales I: linealidad y matriz estándar",
+   "teo": "<p>\\(T:\\mathbb R^n\\) \\(\\to\\mathbb R^m\\) es <strong>lineal</strong> si cumple <strong>aditividad</strong> \\(T(u+v)=T(u)+T(v)\\) y <strong>homogeneidad</strong> \\(T(cu)=cT(u)\\) para todos los vectores y escalares. En una sola: \\(T(au+bv)=aT(u)+bT(v)\\).</p>\n<p><strong>Prueba del cero:</strong> toda lineal cumple \\(T(0)=0\\). Si \\(T(0)\\neq0\\) (un término constante, como \\(x+1\\)), se descarta de inmediato; si \\(T(0)=0\\), aún hay que verificar las dos propiedades (\\(x^2\\), \\(xy\\) fallan).</p>\n<p><strong>Matriz estándar:</strong> \\(A\\) \\(=[\\,T(e_1)\\ \\cdots\\ T(e_n)\\,]\\), de tamaño \\(m\\times n\\), y \\(T(x)=Ax\\). Las imágenes de la base canónica van como columnas.</p>",
+   "form": [
+    "\\(T(au+bv)=aT(u)+bT(v)\\)",
+    "\\(T(0)\\neq0\\Rightarrow\\) no lineal",
+    "\\(A\\) \\(=[T(e_1)\\ \\cdots\\ T(e_n)]\\)",
+    "\\(T:\\mathbb R^n\\) \\(\\to\\mathbb R^m\\) \\(\\Rightarrow A\\in\\mathbb R^{m\\times n}\\)",
+    "\\(T(x)=Ax\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una transformación lineal puede cambiar direcciones y escalas, pero conserva la forma de combinar vectores. Por eso basta saber qué hace con la base canónica para saber qué hace con cualquier vector.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Lineal a simple vista:</strong> cada componente es combinación de x, y, z sin constantes, potencias ni productos.</li><li><strong>Descartar:</strong> \\(T(0)\\neq0\\), o un contraejemplo concreto. <strong>Confirmar:</strong> verificar con vectores arbitrarios \\(u=(u_1,u_2)\\), \\(v=(v_1,v_2)\\).</li><li><strong>Tamaño:</strong> columnas = dimensión del dominio; filas = del codominio.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica dominio y codominio: tamaño \\(m\\times n\\).</li><li><strong>2.</strong> Calcula \\(T(e_1),\\dots,T(e_n)\\) y colócalos como columnas.</li><li><strong>3.</strong> Si te dan T en otros vectores, despeja \\(T(e_j)\\) con homogeneidad y aditividad.</li><li><strong>4.</strong> Verifica con un vector: regla vs \\(Ax\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo (clase S9):</b> \\(L(x,y,z)=(x+z,\\ 2y-z)\\): \\(L(e_1)=(1,0)\\), \\(L(e_2)=(0,2)\\), \\(L(e_3)=(1,-1)\\), así que \\(A\\) \\(=\\begin{pmatrix}1&0&1\\\\0&2&-1\\end{pmatrix}\\in\\mathbb R^{2\\times3}\\) y \\(L(2,-1,3)=(5,-5)\\).</div>\n<div class=\"err\"><b>Error común:</b> poner \\(T(e_1),T(e_2)\\) como filas (la matriz queda con el tamaño al revés) o decir «\\(T(0)=0\\), entonces es lineal».</div>",
+   "ex": [
+    {
+     "id": "s9e1",
+     "lvl": 1,
+     "title": "Imagen de un vector",
+     "q": "<p>Sea \\(T(x,y)=(3x,\\ x-y)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(T(1,2)\\)",
+       "o": [
+        "\\((3,-1)\\)",
+        "\\((3,1)\\)",
+        "\\((1,-1)\\)",
+        "\\((3,3)\\)",
+        "\\((6,-1)\\)"
+       ]
+      },
+      {
+       "p": "\\(T(-2,0)\\)",
+       "o": [
+        "\\((-6,-2)\\)",
+        "\\((-6,2)\\)",
+        "\\((6,-2)\\)",
+        "\\((-2,-2)\\)",
+        "\\((0,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(1,2)\\) \\(=(3\\cdot1,\\ 1-2)\\) \\(=(3,-1)\\).",
+      "\\(T(-2,0)\\) \\(=(-6,\\ -2-0)\\) \\(=(-6,-2)\\). Y \\(T(0,0)=(0,0)\\)."
+     ],
+     "ans": "T(1,2) = (3, −1); T(−2,0) = (−6, −2)",
+     "hint": "Evalúa la regla componente por componente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tl"
+      ],
+      [
+       "t0"
+      ]
+     ]
+    },
+    {
+     "id": "s9e2",
+     "lvl": 1,
+     "title": "Dominio, codominio y tamaño",
+     "q": "<p>Sea \\(T(x,y)=(x+y,\\ 2x,\\ -y)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(T(4,-1)\\)",
+       "o": [
+        "\\((3,8,1)\\)",
+        "\\((5,8,1)\\)",
+        "\\((3,8,-1)\\)",
+        "\\((3,4,1)\\)",
+        "\\((3,8)\\)"
+       ]
+      },
+      {
+       "p": "Tamaño de la matriz estándar",
+       "o": [
+        "\\(3\\times2\\)",
+        "\\(2\\times3\\)",
+        "\\(3\\times3\\)",
+        "\\(2\\times2\\)",
+        "\\(1\\times3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T:\\mathbb R^2\\) \\(\\to\\mathbb R^3\\): entran 2 componentes y salen 3.",
+      "\\(T(4,-1)\\) \\(=(4-1,\\ 8,\\ 1)\\) \\(=(3,8,1)\\).",
+      "Filas = codominio (3), columnas = dominio (2): \\(3\\times2\\)."
+     ],
+     "ans": "(3, 8, 1); matriz 3 × 2",
+     "hint": "Columnas = dimensión de lo que entra.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tl"
+      ],
+      [
+       "tl"
+      ],
+      [
+       "mest"
+      ]
+     ]
+    },
+    {
+     "id": "s9e3",
+     "lvl": 1,
+     "title": "Descarte con el cero",
+     "q": "<p>¿Cuál de estas aplicaciones se descarta como lineal <strong>solo</strong> calculando \\(T(0,0)\\)?</p>",
+     "checks": [
+      {
+       "p": "Aplicación",
+       "o": [
+        "\\(g(x,y)=(x+1,\\ y)\\)",
+        "\\(h(x,y)=(x^2,\\ y)\\)",
+        "\\(f(x,y)=(x-y,\\ 3y)\\)",
+        "\\(p(x,y)=(x,\\ xy)\\)",
+        "\\(r(x,y)=(-y,\\ x)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(g(0,0)=(1,0)\\neq(0,0)\\): no es lineal, sin más cálculos.",
+      "\\(h\\) y \\(p\\) cumplen \\(T(0)=0\\) pero no son lineales (hace falta un contraejemplo); \\(f\\) y \\(r\\) sí son lineales."
+     ],
+     "ans": "g(x, y) = (x + 1, y)",
+     "hint": "Busca el término constante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "t0"
+      ],
+      [
+       "contra"
+      ]
+     ]
+    },
+    {
+     "id": "s9e4",
+     "lvl": 1,
+     "title": "¿Cuál es lineal?",
+     "q": "<p>¿Cuál de estas reglas es una transformación lineal?</p>",
+     "checks": [
+      {
+       "p": "Regla lineal",
+       "o": [
+        "\\(T(x,y)=(x+2y,\\ 3x-y)\\)",
+        "\\(T(x,y)=(x+2,\\ y)\\)",
+        "\\(T(x,y)=(x^2,\\ y)\\)",
+        "\\(T(x,y)=(x,\\ xy)\\)",
+        "\\(T(x,y)=(x+y,\\ y^2)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada componente de \\((x+2y,\\ 3x-y)\\) es combinación lineal de x e y, sin constantes: es \\(Ax\\) con \\(A\\) \\(=\\begin{pmatrix}1&2\\\\3&-1\\end{pmatrix}\\).",
+      "Las demás fallan: constante (+2), potencias (\\(x^2,y^2\\)) o productos (\\(xy\\))."
+     ],
+     "ans": "(x + 2y, 3x − y)",
+     "hint": "Constantes, potencias y productos rompen la linealidad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tl",
+       "mest"
+      ],
+      [
+       "t0",
+       "contra"
+      ]
+     ]
+    },
+    {
+     "id": "s9e5",
+     "lvl": 2,
+     "title": "Matriz desde la base canónica",
+     "q": "<p>T es lineal con \\(T(1,0)=(4,-1)\\) y \\(T(0,1)=(2,3)\\).</p>",
+     "checks": [
+      {
+       "p": "Matriz estándar",
+       "o": [
+        "\\(\\begin{pmatrix}4&2\\\\-1&3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}4&-1\\\\2&3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&4\\\\3&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}4&0\\\\0&3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}-1&3\\\\4&2\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "\\(T(3,-2)\\)",
+       "o": [
+        "\\((8,-9)\\)",
+        "\\((14,-9)\\)",
+        "\\((8,3)\\)",
+        "\\((16,-9)\\)",
+        "\\((10,-7)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Las imágenes van como columnas: \\(A\\) \\(=\\begin{pmatrix}4&2\\\\-1&3\\end{pmatrix}\\).",
+      "\\(A(3,-2)^T\\) \\(=(12-4,\\ -3-6)\\) \\(=(8,-9)\\).",
+      "Igual por linealidad: \\(3T(e_1)-2T(e_2)\\) \\(=(12,-3)-(4,6)\\) \\(=(8,-9)\\)."
+     ],
+     "ans": "A = [[4, 2], [−1, 3]]; T(3, −2) = (8, −9)",
+     "hint": "T(e₁) es la columna 1, no la fila 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "linb"
+      ]
+     ]
+    },
+    {
+     "id": "s9e6",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (filas vs columnas)",
+     "q": "<p>Para \\(T(x,y)\\) \\(=(x-y,\\ 2x,\\ x+3y)\\) un estudiante propone \\(A\\) \\(=\\begin{pmatrix}1&2&1\\\\-1&0&3\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "El error es…",
+       "o": [
+        "Puso \\(T(e_1)\\) y \\(T(e_2)\\) como filas: A debe ser \\(3\\times2\\)",
+        "Calculó mal \\(T(e_1)\\)",
+        "A debe ser \\(3\\times3\\)",
+        "T no es lineal",
+        "No hay error"
+       ]
+      },
+      {
+       "p": "\\(T(1,2)\\) con la matriz correcta",
+       "o": [
+        "\\((-1,2,7)\\)",
+        "\\((5,2)\\)",
+        "\\((1,2,7)\\)",
+        "\\((-1,4,7)\\)",
+        "\\((3,2,5)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T:\\mathbb R^2\\) \\(\\to\\mathbb R^3\\) \\(\\Rightarrow A\\in\\mathbb R^{3\\times2}\\). La propuesta es \\(2\\times3\\): ni siquiera multiplica a un vector de \\(\\mathbb R^2\\).",
+      "Correcta: \\(A\\) \\(=\\begin{pmatrix}1&-1\\\\2&0\\\\1&3\\end{pmatrix}\\) (columnas \\(T(e_1)=(1,2,1)\\), \\(T(e_2)=(-1,0,3)\\)).",
+      "\\(A(1,2)^T\\) \\(=(1-2,\\ 2,\\ 1+6)\\) \\(=(-1,2,7)\\) ✓ igual que la regla."
+     ],
+     "ans": "A = [[1, −1], [2, 0], [1, 3]]; T(1, 2) = (−1, 2, 7)",
+     "hint": "Revisa primero el tamaño.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "tl"
+      ]
+     ]
+    },
+    {
+     "id": "s9e7",
+     "lvl": 2,
+     "title": "De R³ a R²",
+     "q": "<p>T es lineal con \\(T(e_1)=(1,2)\\), \\(T(e_2)=(-1,0)\\) y \\(T(e_3)=(3,1)\\). Calcula \\(T(2,-1,1)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(T(2,-1,1)\\)",
+       "o": [
+        "\\((6,5)\\)",
+        "\\((4,5)\\)",
+        "\\((6,3)\\)",
+        "\\((0,5)\\)",
+        "\\((2,-1,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\) \\(=\\begin{pmatrix}1&-1&3\\\\2&0&1\\end{pmatrix}\\in\\mathbb R^{2\\times3}\\).",
+      "\\(A(2,-1,1)^T\\) \\(=(2+1+3,\\ 4+0+1)\\) \\(=(6,5)\\).",
+      "Todo vector es \\(x_1e_1+x_2e_2+x_3e_3\\), así que conocer T en la base basta."
+     ],
+     "ans": "(6, 5)",
+     "hint": "2T(e₁) − T(e₂) + T(e₃).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "linb"
+      ]
+     ]
+    },
+    {
+     "id": "s9e8",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (T(0) = 0)",
+     "q": "<p>Un estudiante dice: «\\(T(x,y)=(x+y,\\ xy)\\) cumple \\(T(0,0)=(0,0)\\), así que es lineal».</p>",
+     "checks": [
+      {
+       "p": "Con \\(u=(1,0)\\), \\(v=(0,1)\\)…",
+       "o": [
+        "\\(T(u+v)\\) \\(=(2,1)\\neq T(u)\\) \\(+T(v)\\) \\(=(2,0)\\): no es lineal",
+        "\\(T(u+v)=T(u)+T(v)\\): es lineal",
+        "\\(T(u+v)=(1,1)\\), así que es lineal",
+        "\\(T(0)\\neq0\\): no es lineal",
+        "Falla solo la homogeneidad"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(0,0)=(0,0)\\) es cierto, pero es solo una condición necesaria.",
+      "\\(T(1,1)=(2,1)\\), mientras \\(T(1,0)\\) \\(+T(0,1)\\) \\(=(1,0)\\) \\(+(1,0)\\) \\(=(2,0)\\): falla la aditividad.",
+      "Error: confundir una condición necesaria con una suficiente."
+     ],
+     "ans": "No es lineal (falla la aditividad)",
+     "hint": "Calcula T(1, 1) y compáralo con T(1, 0) + T(0, 1).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "t0"
+      ],
+      [
+       "contra"
+      ],
+      [
+       "t0"
+      ]
+     ]
+    },
+    {
+     "id": "s9e9",
+     "lvl": 2,
+     "title": "Contraejemplo de homogeneidad",
+     "q": "<p>Sea \\(P(x,y)=(x+y,\\ y^2)\\). Compara \\(P(2u)\\) con \\(2P(u)\\) para \\(u=(0,1)\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(P(0,2)\\) \\(=(2,4)\\neq2P(0,1)\\) \\(=(2,2)\\): no es lineal",
+        "Ambos dan \\((2,2)\\): es lineal",
+        "Ambos dan \\((2,4)\\): es lineal",
+        "\\(P(0,0)\\neq0\\): no es lineal",
+        "No se puede concluir con un solo caso"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(P(0,2)=(2,\\ 4)\\) y \\(2P(0,1)=2(1,1)=(2,2)\\).",
+      "Una sola diferencia basta para descartar la linealidad (una coincidencia no habría bastado para confirmarla)."
+     ],
+     "ans": "No es lineal",
+     "hint": "Usa un vector con segunda componente distinta de cero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "contra"
+      ],
+      [
+       "contra"
+      ]
+     ]
+    },
+    {
+     "id": "s9e10",
+     "lvl": 2,
+     "title": "Predice MATLAB",
+     "q": "<p><code>A = [2 -1; 1 3]; v = [3; -2]; Tv = A*v, Te2 = A*[0;1]</code></p>",
+     "checks": [
+      {
+       "p": "<code>Tv</code> y <code>Te2</code>",
+       "o": [
+        "\\((8,-3)\\) y \\((-1,3)\\)",
+        "\\((8,-3)\\) y \\((1,3)\\)",
+        "\\((4,9)\\) y \\((-1,3)\\)",
+        "\\((8,9)\\) y \\((2,1)\\)",
+        "\\((6,-6)\\) y \\((-1,3)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(Av=(6+2,\\ 3-6)=(8,-3)\\).",
+      "\\(Ae_2\\) es la segunda columna de A: \\((-1,3)\\). Si cambias la columna 2, cambia \\(T(e_2)\\).",
+      "Comprobar aditividad con un par u, v en MATLAB no demuestra linealidad: solo verifica un caso."
+     ],
+     "ans": "Tv = (8, −3); Te2 = (−1, 3)",
+     "hint": "A·eⱼ devuelve la columna j.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest",
+       "mat"
+      ],
+      [
+       "contra"
+      ]
+     ]
+    },
+    {
+     "id": "s9e11",
+     "lvl": 2,
+     "title": "IRVA: dron de fachadas",
+     "q": "<p>El control corrige la trayectoria con T lineal: \\(T(1,0)=(1.2,\\ 0.4)\\), \\(T(0,1)=(-0.3,\\ 1.1)\\). Punto planeado \\(p=(4,2)\\).</p>",
+     "checks": [
+      {
+       "p": "Posición corregida \\(Ap\\)",
+       "o": [
+        "\\((4.2,\\ 3.8)\\)",
+        "\\((5.4,\\ 1.0)\\)",
+        "\\((4.8,\\ 2.2)\\)",
+        "\\((4.2,\\ 1.8)\\)",
+        "\\((3.6,\\ 3.8)\\)"
+       ]
+      },
+      {
+       "p": "¿Hacia dónde corrigió principalmente?",
+       "o": [
+        "Vertical: \\(Ap-p=(0.2,\\ 1.8)\\)",
+        "Horizontal: \\(Ap-p=(1.8,\\ 0.2)\\)",
+        "Igual en ambas",
+        "No hubo corrección",
+        "Hacia el origen"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\) \\(=\\begin{pmatrix}1.2&-0.3\\\\0.4&1.1\\end{pmatrix}\\).",
+      "\\(Ap\\) \\(=(4.8-0.6,\\ 1.6+2.2)\\) \\(=(4.2,\\ 3.8)\\).",
+      "\\(Ap-p=(0.2,1.8)\\): sobre todo vertical. Para 10 puntos a la vez: ponerlos como columnas de P y calcular \\(AP\\)."
+     ],
+     "ans": "(4.2, 3.8); corrección principalmente vertical",
+     "hint": "Columnas de A = T(1,0) y T(0,1).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s9e12",
+     "lvl": 3,
+     "title": "IRVA: cortadora láser (lab S9)",
+     "q": "<p>Tres motores (comando \\(u\\in\\mathbb R^3\\)) mueven la mesa en 2 direcciones (mm). El sistema es lineal. Pruebas: \\(u=(2,0,0)\\to(2,4)\\), \\(u=(1,1,0)\\to(3,2)\\), \\(u=(0,0,-1)\\to(1,-1)\\).</p>",
+     "checks": [
+      {
+       "p": "Matriz A",
+       "o": [
+        "\\(\\begin{pmatrix}1&2&-1\\\\2&0&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&3&1\\\\4&2&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&3&-1\\\\2&2&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&2\\\\2&0\\\\-1&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&2&1\\\\2&0&-1\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "Desplazamiento con \\(u=(4,-2,6)\\)",
+       "o": [
+        "\\((-6,\\ 14)\\)",
+        "\\((-3,\\ 7)\\)",
+        "\\((6,\\ -14)\\)",
+        "\\((-6,\\ 7)\\)",
+        "\\((2,\\ 14)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Homogeneidad: \\(T(e_1)\\) \\(=\\tfrac12(2,4)\\) \\(=(1,2)\\). Aditividad: \\(T(e_2)\\) \\(=(3,2)-(1,2)\\) \\(=(2,0)\\). Homogeneidad: \\(T(e_3)=-(1,-1)=(-1,1)\\).",
+      "\\(A\\) \\(=\\begin{pmatrix}1&2&-1\\\\2&0&1\\end{pmatrix}\\in\\mathbb R^{2\\times3}\\) (3 motores = 3 columnas, 2 direcciones = 2 filas).",
+      "Verifica: \\(A(2,-1,3)^T\\) \\(=(2-2-3,\\ 4+3)\\) \\(=(-3,7)\\), igual a la 4.ª prueba medida.",
+      "\\((4,-2,6)\\) \\(=2(2,-1,3)\\) \\(\\Rightarrow T\\) \\(=2(-3,7)\\) \\(=(-6,14)\\) por homogeneidad."
+     ],
+     "ans": "A = [[1, 2, −1], [2, 0, 1]]; (−6, 14) mm",
+     "hint": "Ninguna prueba usa la base canónica: despéjala con las propiedades.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "linb"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "tl"
+      ]
+     ]
+    },
+    {
+     "id": "s9e13",
+     "lvl": 3,
+     "title": "Motor gráfico (EP 2026-1 adaptado)",
+     "q": "<p>\\(T:\\mathbb R^3\\) \\(\\to\\mathbb R^3\\) con \\(T(e_1)=(1,2,0)\\), \\(T(e_2)=(0,1,-1)\\), \\(T(e_3)=(1,3,-1)\\). Se sabe que \\(T(2,4,5)=(7,23,-9)\\) y que \\(u=(1,-1,1)\\) cumple \\((4,2,7)=(2,4,5)+2u\\).</p>",
+     "checks": [
+      {
+       "p": "\\(T(4,2,7)\\) sin multiplicar por A",
+       "o": [
+        "\\((11,\\ 31,\\ -9)\\)",
+        "\\((9,\\ 27,\\ -9)\\)",
+        "\\((11,\\ 31,\\ -1)\\)",
+        "\\((14,\\ 46,\\ -18)\\)",
+        "\\((7,\\ 23,\\ -9)\\)"
+       ]
+      },
+      {
+       "p": "¿Es lineal \\(S(x)=Ax+(1,0,0)\\)?",
+       "o": [
+        "No: \\(S(0)=(1,0,0)\\neq0\\)",
+        "Sí, porque A es lineal",
+        "Sí, porque solo traslada",
+        "No, porque A no es invertible",
+        "Solo si \\(x\\neq0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(u)\\) \\(=T(e_1)-T(e_2)\\) \\(+T(e_3)\\) \\(=(1-0+1,\\ 2-1+3,\\ 0+1-1)\\) \\(=(2,4,0)\\).",
+      "Aditividad y homogeneidad: \\(T(4,2,7)\\) \\(=T(2,4,5)\\) \\(+2T(u)\\) \\(=(7,23,-9)\\) \\(+(4,8,0)\\) \\(=(11,31,-9)\\).",
+      "Desplazar después de aplicar A añade una constante: \\(S(0)\\neq0\\), así que S no es lineal."
+     ],
+     "ans": "(11, 31, −9); S no es lineal",
+     "hint": "Calcula T(u) y combina.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "linb"
+      ],
+      [
+       "tl"
+      ],
+      [
+       "t0"
+      ]
+     ]
+    },
+    {
+     "id": "s9e14",
+     "lvl": 1,
+     "title": "Transformaciones geométricas",
+     "q": "<p>Un filtro de imágenes usa \\(T(x,y)=(2x,\\ -y)\\).</p>",
+     "checks": [
+      {
+       "p": "Matriz estándar",
+       "o": [
+        "\\(\\begin{pmatrix}2&0\\\\0&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}0&2\\\\-1&0\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&0\\\\0&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}-1&0\\\\0&2\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&-1\\\\0&0\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "Efecto geométrico",
+       "o": [
+        "Estira ×2 en horizontal y refleja respecto al eje x",
+        "Rota 90°",
+        "Proyecta sobre el eje x",
+        "Refleja respecto al eje y",
+        "Estira ×2 en vertical"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(e_1)=(2,0)\\), \\(T(e_2)=(0,-1)\\): \\(A\\) \\(=\\begin{pmatrix}2&0\\\\0&-1\\end{pmatrix}\\). Por ejemplo, \\(T(3,-2)=(6,2)\\).",
+      "x se duplica (escalamiento horizontal) y y cambia de signo (reflexión en el eje x). Rotación 90° sería \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)."
+     ],
+     "ans": "[[2, 0], [0, −1]]: escalamiento horizontal + reflexión en el eje x",
+     "hint": "Mira qué le pasa a cada coordenada por separado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "geo"
+      ]
+     ]
+    },
+    {
+     "id": "s9e15",
+     "lvl": 1,
+     "title": "Ticket de salida",
+     "q": "<p>T es lineal con \\(T(e_1)=(2,1)\\) y \\(T(e_2)=(-1,3)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(T(3,2)\\) sin escribir la matriz",
+       "o": [
+        "\\((4,\\ 9)\\)",
+        "\\((8,\\ 3)\\)",
+        "\\((5,\\ 9)\\)",
+        "\\((4,\\ 3)\\)",
+        "\\((6,\\ 6)\\)"
+       ]
+      },
+      {
+       "p": "Si la matriz estándar de otra T es \\(2\\times4\\), T va de…",
+       "o": [
+        "\\(\\mathbb R^4\\) a \\(\\mathbb R^2\\)",
+        "\\(\\mathbb R^2\\) a \\(\\mathbb R^4\\)",
+        "\\(\\mathbb R^4\\) a \\(\\mathbb R^4\\)",
+        "\\(\\mathbb R^8\\) a \\(\\mathbb R^2\\)",
+        "\\(\\mathbb R^2\\) a \\(\\mathbb R^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(3,2)\\) \\(=3T(e_1)\\) \\(+2T(e_2)\\) \\(=(6,3)\\) \\(+(-2,6)\\) \\(=(4,9)\\).",
+      "4 columnas = dominio \\(\\mathbb R^4\\); 2 filas = codominio \\(\\mathbb R^2\\). Su tercera columna es \\(T(e_3)\\)."
+     ],
+     "ans": "(4, 9); de R⁴ a R²",
+     "hint": "Columnas ↔ dominio, filas ↔ codominio.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "linb"
+      ],
+      [
+       "mest"
+      ]
+     ]
+    }
+   ]
   }
  ],
  "figs": {},
@@ -3808,6 +4481,42 @@
    "f": "\\(x=x_p+x_h\\), \\(x_h\\in\\operatorname{Nul}(A)\\)",
    "x": "Una solución particular más todas las del sistema homogéneo. Reportar solo x_p es incompleto.",
    "home": "s7"
+  },
+  "tl": {
+   "n": "Transformación lineal",
+   "f": "\\(T(au+bv)=aT(u)+bT(v)\\)",
+   "x": "Aditividad T(u+v)=T(u)+T(v) y homogeneidad T(cu)=cT(u), para TODOS los vectores y escalares.",
+   "home": "s9"
+  },
+  "t0": {
+   "n": "Prueba del cero",
+   "f": "\\(T(0)\\neq0\\Rightarrow\\) no lineal",
+   "x": "Sirve para descartar, nunca para confirmar: (x², y) cumple T(0)=0 y no es lineal.",
+   "home": "s9"
+  },
+  "contra": {
+   "n": "Un contraejemplo basta",
+   "f": "Un caso con \\(T(u+v)\\neq T(u)+T(v)\\) descarta",
+   "x": "Un caso que sí cumple no demuestra nada; uno que falla descarta la linealidad.",
+   "home": "s9"
+  },
+  "mest": {
+   "n": "Matriz estándar",
+   "f": "\\(A\\) \\(=[\\,T(e_1)\\ \\cdots\\ T(e_n)\\,]\\in\\mathbb R^{m\\times n}\\)",
+   "x": "Las imágenes de la base canónica van como COLUMNAS. n columnas = dimensión del dominio; m filas = del codominio.",
+   "home": "s9"
+  },
+  "linb": {
+   "n": "Basta conocer T en una base",
+   "f": "\\(T(x)\\) \\(=x_1T(e_1)\\) \\(+\\cdots\\) \\(+x_nT(e_n)\\) \\(=Ax\\)",
+   "x": "Si conoces T en una base (o en vectores que la generan), por linealidad conoces T en todo el dominio.",
+   "home": "s9"
+  },
+  "geo": {
+   "n": "Transformaciones comunes en R²",
+   "f": "Reflexión eje x \\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\) · Rotación 90° \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
+   "x": "Escalamiento horizontal: diag(k, 1). Proyección en el eje x: diag(1, 0).",
+   "home": "s9"
   }
  },
  "simEx": [
@@ -4123,54 +4832,56 @@
   "minutes": 100,
   "slots": [
    {
-    "pts": 3,
-    "name": "Sem. 1–2: matrices y determinantes",
+    "pts": 2,
+    "name": "Sem. 1–4: matrices, determinantes, sistemas e inversa",
     "pool": [
-     "s1e9",
      "s1e10",
-     "s2e12",
      "s2e13",
      "ep4",
-     "ep4b"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Sem. 3–4: sistemas e inversa",
-    "pool": [
+     "ep4b",
      "s3e5",
-     "s3e9",
-     "s4e5",
      "s4e7"
     ]
    },
    {
-    "pts": 3,
-    "name": "Sem. 5: subespacios e independencia",
+    "pts": 2,
+    "name": "Sem. 5–6: subespacios, independencia y bases",
     "pool": [
      "ep1",
-     "s5e9",
      "s5e10",
-     "s5e12"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Sem. 6: base y espacios fundamentales",
-    "pool": [
+     "s5e12",
      "ep3",
      "s6e6",
      "s6e10"
     ]
    },
    {
-    "pts": 8,
+    "pts": 4,
     "name": "Sem. 7: solución general y aplicación IRVA",
     "pool": [
      "ep5",
      "ep5b",
      "s7e8",
      "s7e9"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "Sem. 9: ¿es lineal? y matriz estándar",
+    "pool": [
+     "s9e6",
+     "s9e7",
+     "s9e8",
+     "s9e9"
+    ]
+   },
+   {
+    "pts": 8,
+    "name": "Sem. 9: transformaciones en contexto (IRVA)",
+    "pool": [
+     "s9e11",
+     "s9e12",
+     "s9e13"
     ]
    }
   ]

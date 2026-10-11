@@ -1924,6 +1924,42 @@
    "f": "\\(x=x_p+x_h\\), \\(x_h\\in\\operatorname{Nul}(A)\\)",
    "x": "Una solución particular más todas las del sistema homogéneo. Reportar solo x_p es incompleto.",
    "home": "s7"
+  },
+  "tl": {
+   "n": "Transformación lineal",
+   "f": "\\(T(au+bv)=aT(u)+bT(v)\\)",
+   "x": "Aditividad T(u+v)=T(u)+T(v) y homogeneidad T(cu)=cT(u), para TODOS los vectores y escalares.",
+   "home": "s9"
+  },
+  "t0": {
+   "n": "Prueba del cero",
+   "f": "\\(T(0)\\neq0\\Rightarrow\\) no lineal",
+   "x": "Sirve para descartar, nunca para confirmar: (x², y) cumple T(0)=0 y no es lineal.",
+   "home": "s9"
+  },
+  "contra": {
+   "n": "Un contraejemplo basta",
+   "f": "Un caso con \\(T(u+v)\\neq T(u)+T(v)\\) descarta",
+   "x": "Un caso que sí cumple no demuestra nada; uno que falla descarta la linealidad.",
+   "home": "s9"
+  },
+  "mest": {
+   "n": "Matriz estándar",
+   "f": "\\(A\\) \\(=[\\,T(e_1)\\ \\cdots\\ T(e_n)\\,]\\in\\mathbb R^{m\\times n}\\)",
+   "x": "Las imágenes de la base canónica van como COLUMNAS. n columnas = dimensión del dominio; m filas = del codominio.",
+   "home": "s9"
+  },
+  "linb": {
+   "n": "Basta conocer T en una base",
+   "f": "\\(T(x)\\) \\(=x_1T(e_1)\\) \\(+\\cdots\\) \\(+x_nT(e_n)\\) \\(=Ax\\)",
+   "x": "Si conoces T en una base (o en vectores que la generan), por linealidad conoces T en todo el dominio.",
+   "home": "s9"
+  },
+  "geo": {
+   "n": "Transformaciones comunes en R²",
+   "f": "Reflexión eje x \\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\) · Rotación 90° \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
+   "x": "Escalamiento horizontal: diag(k, 1). Proyección en el eje x: diag(1, 0).",
+   "home": "s9"
   }
  },
  "simEx": [],
