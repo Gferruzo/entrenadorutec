@@ -1,0 +1,4713 @@
+{
+ "id": "qg-ep",
+ "code": "CC6301",
+ "name": "Química General",
+ "exam": "Examen parcial 2026-2 (sem. 1–7)",
+ "short": "Examen parcial",
+ "sub": "Sem. 1 a 7",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>El parcial fue el jueves 1 de octubre (110 min, vale 20 %).</b> Ya pasó: queda para repasar antes del final. El simulacro sigue los hitos de los parciales 2025-2 y 2026-1. Tip del profesor: sustenta con Coulomb, configuración, Lewis y núclidos; <em>no se acepta sustentar solo por tendencia periódica</em>.",
+ "form": "<p class=\"note\">Hoja de repaso del parcial (semanas 1 a 7).</p>\n<div class=\"fgrid\">\n<div><b>Núclido</b><br>A = p⁺ + n⁰ · Z = p⁺</div>\n<div><b>Ion</b><br>e⁻ = Z − carga</div>\n<div><b>Isótopos</b><br>Mismo Z, distinto A</div>\n<div><b>Máximos</b><br>s 2 · p 6 · d 10 · f 14</div>\n<div><b>Ubicación</b><br>Periodo = n más alto · Grupo A = e⁻ de valencia</div>\n<div><b>Iones estables</b><br>1A +1 · 2A +2 · 3A +3 · 5A −3 · 6A −2 · 7A −1</div>\n<div><b>Metaloides</b><br>B, Si, Ge, As, Sb, Te</div>\n<div><b>Coulomb</b><br>F = kQq/r²: ↑Z ↑atracción · ↑niveles ↓atracción</div>\n<div><b>Tendencias →</b><br>RA ↓ · EI ↑ · AE ↑ · EN ↑</div>\n<div><b>Tendencias ↓</b><br>RA ↑ · EI ↓ · AE ↓ · EN ↓</div>\n<div><b>Tipo de enlace</b><br>Metal+no metal: iónico · no metales: covalente · metal: metálico</div>\n<div><b>ΔEN</b><br>= 0 apolar · > 0 polar · C–H apolar</div>\n<div><b>EN</b><br>H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5</div>\n<div><b>Lewis</b><br>Enlazantes = N − V · Libres = V − enlazantes</div>\n<div><b>Carga formal</b><br>CF = V − [NE + ½E]</div>\n<div><b>Geometrías</b><br>AX₂ lineal · AX₃ trig. plana · AX₂E angular</div>\n<div><b></b><br>AX₄ tetraédrica · AX₃E piramidal · AX₂E₂ angular</div>\n<div><b>Polaridad</b><br>Enlaces polares + asimetría → polar</div>\n<div><b>FIM</b><br>Apolar: London · Polar: + dd · O–H/N–H/F–H: + puente H</div>\n<div><b>Ion + polar</b><br>Ion–dipolo</div>\n<div><b>Orden</b><br>London < dd < puente H (tamaño similar)</div>\n<div><b>Propiedades</b><br>FIM ↑ → Teb ↑, Tfus ↑, volatilidad ↓</div>\n</div>",
+ "formSim": false,
+ "topics": [
+  {
+   "id": "s1",
+   "name": "Sem. 1 · Materia, cambios, propiedades y estructura atómica",
+   "teo": "<p>La <strong>materia</strong> se clasifica por su <strong>composición</strong>: sustancia pura (<em>elemento</em> o <em>compuesto</em>) o mezcla (<em>homogénea</em> u <em>heterogénea</em>), y por su <strong>estado</strong>: sólido, líquido o gas.</p><p>Un <strong>cambio físico</strong> conserva la identidad (todos los cambios de estado); un <strong>cambio químico</strong> forma nuevas sustancias (combustión, oxidación). Una <strong>propiedad física</strong> se mide sin cambiar la sustancia (densidad, Teb, conductividad, volatilidad); una <strong>propiedad química</strong> solo se observa cuando la sustancia reacciona (inflamabilidad, corrosividad, reactividad).</p><p><strong>Núclido</strong> ᴬ_Z X: Z = protones, A = protones + neutrones. Átomo neutro: e⁻ = Z. Catión: pierde e⁻; anión: gana e⁻. <strong>Isótopos</strong>: mismo Z, distinto A.</p>",
+   "form": [
+    "A = p⁺ + n⁰",
+    "Z = p⁺",
+    "Neutro: e⁻ = p⁺",
+    "Ion: e⁻ = Z − (carga)",
+    "Isótopos: mismo Z, distinto A"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Las evaluaciones de este curso son <em>casos</em>: te describen materiales o sustancias y tienes que reconocer qué son. Esta semana da el vocabulario base: qué tipo de materia es, qué cambio ocurre y cuántas partículas tiene cada átomo o ion.</p><h3>Clasificar la materia</h3><ul><li><strong>Elemento:</strong> un solo tipo de átomo, aunque forme moléculas (O₂, O₃, N₂, Au).</li><li><strong>Compuesto:</strong> dos o más elementos combinados en proporción fija (H₂O, NaCl, SiO₂, (C₂F₄)ₙ).</li><li><strong>Mezcla homogénea:</strong> una sola fase visible (aleaciones como bronce o acero, aire, agua con sal disuelta).</li><li><strong>Mezcla heterogénea:</strong> fases distinguibles (agua y aceite, arena de mar, granito).</li></ul><h3>Partículas del átomo</h3><ul><li><strong>1.</strong> Z = protones (identifica al elemento).</li><li><strong>2.</strong> n⁰ = A − Z.</li><li><strong>3.</strong> e⁻ = Z − carga. Para S²⁻: 16 − (−2) = 18.</li></ul><div class=\"ej\"><b>Ejemplo (EA 2026-0):</b> «Gg tiene número de masa 32 y la cantidad de protones es igual a la de neutrones» → 2p = 32 → p = 16 → azufre. «Ff contiene seis neutrones y su número de masa es doce» → p = 6 → carbono.</div><div class=\"err\"><b>Error común:</b> llamar «compuesto» al ozono (O₃) o al N₂. Tienen un solo tipo de átomo: son elementos. Y una aleación (bronce, acero) no tiene fórmula química: es mezcla homogénea.</div>",
+   "ex": [
+    {
+     "id": "s1e1",
+     "lvl": 1,
+     "title": "Ozono y nitrógeno",
+     "q": "<p>El ozono (O₃) y el nitrógeno gaseoso (N₂) son…</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Elementos (sustancias puras)",
+        "Compuestos",
+        "Mezclas homogéneas",
+        "Mezclas heterogéneas",
+        "Uno es elemento y el otro compuesto"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada una está formada por un solo tipo de átomo (solo O, solo N).",
+      "Que formen moléculas de varios átomos no las convierte en compuestos: un compuesto necesita dos o más elementos distintos."
+     ],
+     "ans": "Elementos",
+     "hint": "¿Cuántos tipos de átomos distintos aparecen en la fórmula?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ]
+     ]
+    },
+    {
+     "id": "s1e2",
+     "lvl": 1,
+     "title": "Bronce",
+     "q": "<p>El bronce es una aleación de cobre y estaño que se ve uniforme a simple vista.</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Mezcla homogénea",
+        "Compuesto",
+        "Elemento",
+        "Mezcla heterogénea",
+        "Sustancia pura"
+       ]
+      }
+     ],
+     "steps": [
+      "Su composición puede variar (más o menos estaño) y no tiene fórmula química fija.",
+      "Se ve una sola fase → mezcla homogénea. Lo mismo vale para el acero y el latón."
+     ],
+     "ans": "Mezcla homogénea",
+     "hint": "¿Las aleaciones tienen fórmula química?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ]
+     ]
+    },
+    {
+     "id": "s1e3",
+     "lvl": 1,
+     "title": "Clasifica cuatro materiales",
+     "q": "<p>Clasifica: agua destilada, arena de mar, bicarbonato de sodio (NaHCO₃) y agua con aceite.</p>",
+     "checks": [
+      {
+       "p": "Agua destilada",
+       "o": [
+        "Compuesto",
+        "Elemento",
+        "Mezcla homogénea",
+        "Mezcla heterogénea"
+       ]
+      },
+      {
+       "p": "Arena de mar",
+       "o": [
+        "Mezcla heterogénea",
+        "Compuesto",
+        "Mezcla homogénea",
+        "Elemento"
+       ]
+      },
+      {
+       "p": "Bicarbonato de sodio",
+       "o": [
+        "Compuesto",
+        "Mezcla homogénea",
+        "Elemento",
+        "Mezcla heterogénea"
+       ]
+      },
+      {
+       "p": "Agua con aceite",
+       "o": [
+        "Mezcla heterogénea",
+        "Mezcla homogénea",
+        "Compuesto",
+        "Elemento"
+       ]
+      }
+     ],
+     "steps": [
+      "Agua destilada: solo H₂O, dos elementos en proporción fija → compuesto.",
+      "Arena de mar: granos de distintos materiales que se distinguen → mezcla heterogénea.",
+      "NaHCO₃: Na, H, C y O en proporción fija → compuesto.",
+      "Agua y aceite forman dos fases → mezcla heterogénea."
+     ],
+     "ans": "Compuesto · heterogénea · compuesto · heterogénea",
+     "hint": "Pregunta primero: ¿es una sola sustancia o varias?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ]
+     ]
+    },
+    {
+     "id": "s1e4",
+     "lvl": 1,
+     "title": "¿Físico o químico?",
+     "q": "<p>¿Cuál de estos procesos es un <strong>cambio químico</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La oxidación de un clavo de hierro",
+        "La sublimación del hielo seco",
+        "Disolver sal en agua",
+        "Romper un vidrio",
+        "Hervir agua"
+       ]
+      }
+     ],
+     "steps": [
+      "En la oxidación el Fe se convierte en óxido de hierro: aparece una sustancia nueva.",
+      "La sublimación y la ebullición son cambios de estado (físicos); disolver sal y romper vidrio no cambian la identidad de las sustancias."
+     ],
+     "ans": "Oxidación del clavo",
+     "hint": "¿En cuál aparece una sustancia nueva?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cambio"
+      ],
+      [
+       "cambio"
+      ]
+     ]
+    },
+    {
+     "id": "s1e5",
+     "lvl": 1,
+     "title": "Propiedades",
+     "q": "<p>Clasifica cada propiedad.</p>",
+     "checks": [
+      {
+       "p": "Inflamabilidad",
+       "o": [
+        "Química",
+        "Física"
+       ]
+      },
+      {
+       "p": "Volatilidad",
+       "o": [
+        "Física",
+        "Química"
+       ]
+      },
+      {
+       "p": "Corrosividad",
+       "o": [
+        "Química",
+        "Física"
+       ]
+      },
+      {
+       "p": "Conductividad eléctrica",
+       "o": [
+        "Física",
+        "Química"
+       ]
+      }
+     ],
+     "steps": [
+      "Inflamabilidad: para observarla la sustancia tiene que arder (cambio químico) → química.",
+      "Volatilidad: facilidad para pasar a vapor; la sustancia sigue siendo la misma → física.",
+      "Corrosividad: capacidad de reaccionar y deteriorar otro material → química.",
+      "Conductividad: se mide sin cambiar la sustancia → física."
+     ],
+     "ans": "Q · F · Q · F",
+     "hint": "¿Hace falta que la sustancia reaccione para observarla?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prop"
+      ],
+      [
+       "prop"
+      ],
+      [
+       "prop"
+      ],
+      [
+       "prop"
+      ]
+     ]
+    },
+    {
+     "id": "s1e6",
+     "lvl": 1,
+     "title": "Ion sulfuro",
+     "q": "<p>Para el ion ³²₁₆S²⁻, indica protones, neutrones y electrones.</p>",
+     "checks": [
+      {
+       "p": "Protones",
+       "o": [
+        "16",
+        "18",
+        "32",
+        "14",
+        "2"
+       ]
+      },
+      {
+       "p": "Neutrones",
+       "o": [
+        "16",
+        "18",
+        "32",
+        "14",
+        "17"
+       ]
+      },
+      {
+       "p": "Electrones",
+       "o": [
+        "18",
+        "16",
+        "14",
+        "32",
+        "20"
+       ]
+      }
+     ],
+     "steps": [
+      "Z = 16 → 16 protones.",
+      "n⁰ = A − Z = 32 − 16 = 16.",
+      "Carga −2: ganó 2 e⁻ → e⁻ = 16 + 2 = 18."
+     ],
+     "ans": "16 p⁺, 16 n⁰, 18 e⁻",
+     "hint": "En un anión hay más electrones que protones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ]
+     ]
+    },
+    {
+     "id": "s1e7",
+     "lvl": 1,
+     "title": "Ion aluminio",
+     "q": "<p>Para ²⁷₁₃Al³⁺, ¿cuántos electrones y neutrones hay?</p>",
+     "checks": [
+      {
+       "p": "Electrones",
+       "o": [
+        "10",
+        "13",
+        "16",
+        "3",
+        "14"
+       ]
+      },
+      {
+       "p": "Neutrones",
+       "o": [
+        "14",
+        "13",
+        "27",
+        "10",
+        "16"
+       ]
+      }
+     ],
+     "steps": [
+      "e⁻ = Z − carga = 13 − 3 = 10 (perdió 3 e⁻).",
+      "n⁰ = 27 − 13 = 14. Los neutrones no cambian al formar iones."
+     ],
+     "ans": "10 e⁻ y 14 n⁰",
+     "hint": "Un catión perdió electrones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ]
+     ]
+    },
+    {
+     "id": "s1e8",
+     "lvl": 2,
+     "title": "Identifica por partículas",
+     "q": "<p>Un elemento X tiene número de masa 32 y la misma cantidad de protones que de neutrones. Otro, Y, tiene 6 neutrones y número de masa 12.</p>",
+     "checks": [
+      {
+       "p": "X es",
+       "o": [
+        "Azufre (Z = 16)",
+        "Oxígeno (Z = 8)",
+        "Germanio (Z = 32)",
+        "Fósforo (Z = 15)",
+        "Calcio (Z = 20)"
+       ]
+      },
+      {
+       "p": "Y es",
+       "o": [
+        "Carbono (Z = 6)",
+        "Magnesio (Z = 12)",
+        "Boro (Z = 5)",
+        "Nitrógeno (Z = 7)",
+        "Litio (Z = 3)"
+       ]
+      }
+     ],
+     "steps": [
+      "X: p + n = 32 y p = n → 2p = 32 → p = 16 → S.",
+      "Y: p = A − n = 12 − 6 = 6 → C."
+     ],
+     "ans": "X = S, Y = C",
+     "hint": "Con p = n, el número de masa es 2p.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ]
+     ]
+    },
+    {
+     "id": "s1e9",
+     "lvl": 2,
+     "title": "Tres isótopos (EA 2026-1)",
+     "q": "<p>Tres isótopos de Bb tienen números de masa A, A+1 y A+3. La suma de los tres números de masa es 409 y el número de protones del más liviano es 59.</p>",
+     "checks": [
+      {
+       "p": "Valor de A",
+       "o": [
+        "135",
+        "136",
+        "133",
+        "138",
+        "102"
+       ]
+      },
+      {
+       "p": "Neutrones del isótopo más pesado",
+       "o": [
+        "79",
+        "76",
+        "77",
+        "59",
+        "138"
+       ]
+      },
+      {
+       "p": "Elemento",
+       "o": [
+        "Praseodimio (Pr)",
+        "Bario (Ba)",
+        "Cesio (Cs)",
+        "Neodimio (Nd)",
+        "Lantano (La)"
+       ]
+      }
+     ],
+     "steps": [
+      "A + (A+1) + (A+3) = 409 → 3A + 4 = 409 → A = 135.",
+      "El más pesado tiene A + 3 = 138 → n⁰ = 138 − 59 = 79.",
+      "Todos los isótopos tienen Z = 59 → praseodimio, un lantánido (metal de transición interna)."
+     ],
+     "ans": "A = 135; 79 n⁰; Pr",
+     "hint": "Los isótopos comparten Z: el dato «59 protones» vale para los tres.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "isotopo"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "isotopo"
+      ]
+     ]
+    },
+    {
+     "id": "s1e10",
+     "lvl": 2,
+     "title": "Isótopos con 30 neutrones (EA 2026-1)",
+     "q": "<p>Bb tiene isótopos de números de masa A, A+2 y A+3, cuya suma es 167. El isótopo intermedio (A+2) posee 30 neutrones.</p>",
+     "checks": [
+      {
+       "p": "Valor de A",
+       "o": [
+        "54",
+        "56",
+        "55",
+        "52",
+        "58"
+       ]
+      },
+      {
+       "p": "Z de Bb",
+       "o": [
+        "26",
+        "24",
+        "30",
+        "28",
+        "56"
+       ]
+      },
+      {
+       "p": "Bb es",
+       "o": [
+        "Hierro, un metal de transición",
+        "Cromo, un metal de transición",
+        "Cinc, un metal",
+        "Níquel, un metaloide",
+        "Calcio, un alcalinotérreo"
+       ]
+      }
+     ],
+     "steps": [
+      "3A + 5 = 167 → A = 54. Los isótopos son 54, 56 y 57.",
+      "Z = 56 − 30 = 26.",
+      "Z = 26: [Ar]4s²3d⁶ → termina en d → metal de transición: hierro."
+     ],
+     "ans": "A = 54; Z = 26; Fe",
+     "hint": "Plantea la suma y despeja A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "isotopo"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "config"
+      ]
+     ]
+    },
+    {
+     "id": "s1e11",
+     "lvl": 2,
+     "title": "Ion isoelectrónico",
+     "q": "<p>Un catión divalente X²⁺ tiene 18 electrones y 20 neutrones.</p>",
+     "checks": [
+      {
+       "p": "Número atómico de X",
+       "o": [
+        "20",
+        "18",
+        "16",
+        "22",
+        "38"
+       ]
+      },
+      {
+       "p": "Número de masa",
+       "o": [
+        "40",
+        "38",
+        "42",
+        "36",
+        "20"
+       ]
+      }
+     ],
+     "steps": [
+      "X²⁺ perdió 2 e⁻: Z = 18 + 2 = 20 (calcio).",
+      "A = 20 + 20 = 40 → ⁴⁰Ca²⁺, isoelectrónico con el Ar."
+     ],
+     "ans": "Z = 20, A = 40",
+     "hint": "Si perdió 2 e⁻, el átomo neutro tenía 2 más.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "octeto"
+      ]
+     ]
+    },
+    {
+     "id": "s1e12",
+     "lvl": 3,
+     "title": "Hito de clasificación (EP 2026-1)",
+     "q": "<p>«El compartimento tiene paredes internas de <b>aluminio</b> recubiertas por <b>acero inoxidable</b> para evitar la corrosión. Entre ellas hay poliestireno expandido (C₈H₈)ₙ, que reduce el intercambio de calor. Se incluye sílica gel (SiO₂) para controlar el vapor de agua.»</p>",
+     "checks": [
+      {
+       "p": "Un elemento",
+       "o": [
+        "Aluminio",
+        "Acero inoxidable",
+        "Sílica gel",
+        "Poliestireno",
+        "Vapor de agua"
+       ]
+      },
+      {
+       "p": "Una mezcla",
+       "o": [
+        "Acero inoxidable (aleación)",
+        "Aluminio",
+        "SiO₂",
+        "(C₈H₈)ₙ",
+        "Teflón (C₂F₄)ₙ"
+       ]
+      },
+      {
+       "p": "Una propiedad química",
+       "o": [
+        "La resistencia del acero inoxidable a la corrosión",
+        "La baja conductividad térmica del poliestireno",
+        "La buena distribución de temperatura del aluminio",
+        "La capacidad de la sílica de retener vapor de agua por adsorción",
+        "El estado sólido de las paredes"
+       ]
+      }
+     ],
+     "steps": [
+      "Al: un solo tipo de átomo → elemento.",
+      "Acero inoxidable: aleación (Fe, C, Cr…) sin fórmula fija → mezcla homogénea. SiO₂ y (C₈H₈)ₙ son compuestos.",
+      "Resistir la corrosión describe cómo reacciona (o no) el material → propiedad química. Conducir o aislar el calor son propiedades físicas."
+     ],
+     "ans": "Al · acero · resistencia a la corrosión",
+     "hint": "Busca en el texto palabras como «corrosión», «reacciona» u «oxida» para la propiedad química.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "materia"
+      ],
+      [
+       "materia"
+      ],
+      [
+       "prop"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "name": "Sem. 2 · Configuración electrónica, Lewis y tabla periódica",
+   "teo": "<p>La <strong>configuración electrónica</strong> reparte los e⁻ en niveles y subniveles (s 2, p 6, d 10, f 14) siguiendo 1s 2s 2p 3s 3p 4s 3d 4p 5s… El <strong>nivel de valencia</strong> es el n más alto ocupado; sus electrones son los <strong>de valencia</strong>.</p><p>Con la configuración se ubica el elemento: <strong>periodo</strong> = nivel más alto; <strong>grupo A</strong> = e⁻ de valencia (representativos, terminan en s o p); terminan en d → transición; en f → transición interna.</p><p>Los átomos tienden al <strong>octeto</strong>: los metales pierden e⁻ (cationes) y los no metales ganan (aniones). <strong>Metales</strong>: brillo, conductores, dúctiles y maleables, alto punto de fusión. <strong>No metales</strong>: opacos, aislantes. <strong>Metaloides</strong> (B, Si, Ge, As, Sb, Te): semiconductores.</p>",
+   "form": [
+    "s² p⁶ d¹⁰ f¹⁴",
+    "Periodo = n más alto",
+    "Grupo A = e⁻ de valencia",
+    "Termina en d: transición",
+    "1A +1 · 2A +2 · 3A +3 · 5A −3 · 6A −2 · 7A −1"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En las EA casi todo se resuelve igual: una pista → configuración → ubicación → identidad → propiedades. Practica la cadena completa.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Traduce la pista a configuración (o al revés).</li><li><strong>2.</strong> Periodo = último nivel; grupo = e⁻ de valencia.</li><li><strong>3.</strong> Identifica el elemento y clasifícalo (metal, no metal o metaloide).</li><li><strong>4.</strong> Predice propiedades: estado a 25 °C, conductividad, ion estable.</li></ul><div class=\"ej\"><b>Ejemplo (sesión 2):</b> «22 neutrones, su catión estable es divalente, nivel de valencia 4» → grupo 2A y periodo 4 → Ca (Z = 20), A = 20 + 22 = 42 → ⁴²Ca, símbolo de Lewis con 2 puntos.</div><div class=\"err\"><b>Error común:</b> contar los e⁻ de valencia del Br como 17 (sumando el 3d¹⁰). En un representativo solo cuentan los del último nivel: 4s²4p⁵ → 7.</div>",
+   "ex": [
+    {
+     "id": "s2e1",
+     "lvl": 1,
+     "title": "Configuración del bromo",
+     "q": "<p>Br (Z = 35).</p>",
+     "checks": [
+      {
+       "p": "Configuración",
+       "o": [
+        "[Ar] 4s² 3d¹⁰ 4p⁵",
+        "[Ar] 4s² 4p⁵",
+        "[Ar] 3d¹⁰ 4p⁷",
+        "[Kr] 4s² 4p⁵",
+        "[Ar] 4s² 3d⁹ 4p⁶"
+       ]
+      },
+      {
+       "p": "Electrones de valencia",
+       "o": [
+        "7",
+        "17",
+        "5",
+        "35",
+        "1"
+       ]
+      },
+      {
+       "p": "Ubicación",
+       "o": [
+        "Periodo 4, grupo 7A",
+        "Periodo 3, grupo 7A",
+        "Periodo 4, grupo 17B",
+        "Periodo 5, grupo 7A",
+        "Periodo 4, grupo 5A"
+       ]
+      }
+     ],
+     "steps": [
+      "Ar tiene 18 e⁻; faltan 17: 4s² (2) + 3d¹⁰ (10) + 4p⁵ (5) = 17 ✓.",
+      "Último nivel n = 4: 4s²4p⁵ → 7 e⁻ de valencia.",
+      "Periodo 4 y grupo 7A (halógeno)."
+     ],
+     "ans": "[Ar]4s²3d¹⁰4p⁵ · 7 e⁻ · P4, 7A",
+     "hint": "Control: la suma de superíndices debe dar 35.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "config"
+      ],
+      [
+       "valencia"
+      ],
+      [
+       "ubicacion"
+      ]
+     ]
+    },
+    {
+     "id": "s2e2",
+     "lvl": 1,
+     "title": "Configuraciones en el periodo 3",
+     "q": "<p>A: 1s²2s²2p⁶3s¹ · B: 1s²2s²2p⁶3s²3p⁵ · C: 1s²2s²2p⁶3s²3p⁶ · D: 1s²2s²2p⁶3s²</p>",
+     "checks": [
+      {
+       "p": "¿Cuál tiene 7 e⁻ de valencia?",
+       "o": [
+        "B",
+        "A",
+        "C",
+        "D"
+       ]
+      },
+      {
+       "p": "¿Cuál tiene mayor tendencia a ganar electrones?",
+       "o": [
+        "B",
+        "C",
+        "A",
+        "D"
+       ]
+      },
+      {
+       "p": "¿Cuál es un gas noble?",
+       "o": [
+        "C",
+        "B",
+        "A",
+        "D"
+       ]
+      }
+     ],
+     "steps": [
+      "B: 3s²3p⁵ → 7 e⁻ de valencia (Cl).",
+      "A B le falta 1 e⁻ para el octeto → gana e⁻ con facilidad. C (Ar) ya tiene octeto; A (Na) y D (Mg) tienden a perder.",
+      "C: 3s²3p⁶ → octeto completo → argón."
+     ],
+     "ans": "B · B · C",
+     "hint": "Cuenta los electrones del nivel 3.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "valencia"
+      ],
+      [
+       "octeto"
+      ],
+      [
+       "octeto"
+      ]
+     ]
+    },
+    {
+     "id": "s2e3",
+     "lvl": 1,
+     "title": "Termina en 4p⁴",
+     "q": "<p>La configuración de un elemento termina en 4p⁴.</p>",
+     "checks": [
+      {
+       "p": "Ubicación",
+       "o": [
+        "Periodo 4, grupo 6A",
+        "Periodo 4, grupo 4A",
+        "Periodo 6, grupo 4A",
+        "Periodo 4, grupo 4B",
+        "Periodo 3, grupo 6A"
+       ]
+      },
+      {
+       "p": "Elemento",
+       "o": [
+        "Selenio",
+        "Germanio",
+        "Azufre",
+        "Teluro",
+        "Cromo"
+       ]
+      }
+     ],
+     "steps": [
+      "[Ar]4s²3d¹⁰4p⁴: n más alto = 4 → periodo 4; e⁻ de valencia 4s²4p⁴ = 6 → grupo 6A.",
+      "Grupo 6A, periodo 4 → Se (Z = 34)."
+     ],
+     "ans": "P4, 6A: Se",
+     "hint": "Valencia = e⁻ de s + p del último nivel.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ubicacion"
+      ],
+      [
+       "ubicacion"
+      ]
+     ]
+    },
+    {
+     "id": "s2e4",
+     "lvl": 1,
+     "title": "Adivina el elemento (sesión 2)",
+     "q": "<p>E1: 5 e⁻ de valencia y tres niveles de energía. E2: su anión estable es monovalente y tiene dos niveles. E3: metal alcalino cuyo ion estable es isoelectrónico con el Ar.</p>",
+     "checks": [
+      {
+       "p": "E1",
+       "o": [
+        "Fósforo",
+        "Nitrógeno",
+        "Arsénico",
+        "Aluminio",
+        "Cloro"
+       ]
+      },
+      {
+       "p": "E2",
+       "o": [
+        "Flúor",
+        "Cloro",
+        "Oxígeno",
+        "Litio",
+        "Neón"
+       ]
+      },
+      {
+       "p": "E3",
+       "o": [
+        "Potasio",
+        "Sodio",
+        "Calcio",
+        "Rubidio",
+        "Cloro"
+       ]
+      }
+     ],
+     "steps": [
+      "3 niveles → periodo 3; 5 e⁻ → grupo 5A → P.",
+      "Anión −1 → grupo 7A; 2 niveles → periodo 2 → F.",
+      "Ar tiene 18 e⁻; un alcalino (+1) con 18 e⁻ tiene Z = 19 → K."
+     ],
+     "ans": "P · F · K",
+     "hint": "Niveles = periodo; carga del ion → grupo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ubicacion"
+      ],
+      [
+       "octeto"
+      ],
+      [
+       "octeto"
+      ]
+     ]
+    },
+    {
+     "id": "s2e5",
+     "lvl": 2,
+     "title": "Reconstruye el elemento (sesión 2)",
+     "q": "<p>Un átomo tiene 22 neutrones, su catión estable es divalente y su nivel de valencia es 4.</p>",
+     "checks": [
+      {
+       "p": "Elemento",
+       "o": [
+        "Calcio",
+        "Magnesio",
+        "Titanio",
+        "Selenio",
+        "Argón"
+       ]
+      },
+      {
+       "p": "Notación de núclido",
+       "o": [
+        "⁴²₂₀Ca",
+        "⁴⁰₂₀Ca",
+        "²²₂₀Ca",
+        "⁴²₂₂Ca",
+        "²⁴₁₂Mg"
+       ]
+      },
+      {
+       "p": "Símbolo de Lewis",
+       "o": [
+        "Ca con 2 puntos",
+        "Ca con 4 puntos",
+        "Ca con 8 puntos",
+        "Ca con 1 punto",
+        "Ca sin puntos"
+       ]
+      }
+     ],
+     "steps": [
+      "Catión +2 → grupo 2A; nivel 4 → periodo 4 → Ca, Z = 20 ([Ar]4s²).",
+      "A = 20 + 22 = 42.",
+      "2 e⁻ de valencia → 2 puntos."
+     ],
+     "ans": "⁴²Ca",
+     "hint": "Un catión divalente pierde 2 e⁻: grupo 2A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "octeto"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "lewisat"
+      ]
+     ]
+    },
+    {
+     "id": "s2e6",
+     "lvl": 1,
+     "title": "Clasifica con evidencia",
+     "q": "<p>Clasifica Si, Al, Sb y F.</p>",
+     "checks": [
+      {
+       "p": "Si",
+       "o": [
+        "Metaloide",
+        "Metal",
+        "No metal"
+       ]
+      },
+      {
+       "p": "Al",
+       "o": [
+        "Metal",
+        "Metaloide",
+        "No metal"
+       ]
+      },
+      {
+       "p": "Sb",
+       "o": [
+        "Metaloide",
+        "Metal",
+        "No metal"
+       ]
+      },
+      {
+       "p": "F",
+       "o": [
+        "No metal",
+        "Metaloide",
+        "Metal"
+       ]
+      }
+     ],
+     "steps": [
+      "Si: grupo 4A, en la «escalera» → metaloide (semiconductor).",
+      "Al: grupo 3A, periodo 3, a la izquierda de la escalera → metal.",
+      "Sb: grupo 5A, periodo 5 → metaloide.",
+      "F: halógeno → no metal (gas)."
+     ],
+     "ans": "Metaloide · metal · metaloide · no metal",
+     "hint": "Metaloides: B, Si, Ge, As, Sb, Te.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mnm"
+      ],
+      [
+       "mnm"
+      ],
+      [
+       "mnm"
+      ],
+      [
+       "mnm"
+      ]
+     ]
+    },
+    {
+     "id": "s2e7",
+     "lvl": 2,
+     "title": "Caso: selecciona el elemento (sesión 2)",
+     "q": "<p>Una empresa necesita un elemento para un componente que debe ser sólido a temperatura ambiente, conducir la electricidad y poder deformarse sin romperse. Candidatos: Si, Al, Cl.</p>",
+     "checks": [
+      {
+       "p": "Seleccionado",
+       "o": [
+        "Al",
+        "Si",
+        "Cl"
+       ]
+      },
+      {
+       "p": "Descartarías primero",
+       "o": [
+        "Cl, porque es un gas no metálico",
+        "Al, porque es metaloide",
+        "Si, porque es gas",
+        "Al, porque no conduce"
+       ]
+      }
+     ],
+     "steps": [
+      "Al: [Ne]3s²3p¹, 3 e⁻ de valencia que cede con facilidad → metal: conductor, dúctil y maleable.",
+      "Cl: [Ne]3s²3p⁵ → no metal, gas (Cl₂) y aislante. Si conduce algo (semiconductor) pero es frágil."
+     ],
+     "ans": "Al",
+     "hint": "Deformarse sin romperse = maleable/dúctil → metal.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mnm"
+      ],
+      [
+       "mnm"
+      ]
+     ]
+    },
+    {
+     "id": "s2e8",
+     "lvl": 2,
+     "title": "Lewis e ion estable",
+     "q": "<p>Para Li, Al, S y F: ¿qué ion estable forma cada uno?</p>",
+     "checks": [
+      {
+       "p": "Li",
+       "o": [
+        "Li⁺",
+        "Li⁻",
+        "Li²⁺",
+        "Li³⁻"
+       ]
+      },
+      {
+       "p": "Al",
+       "o": [
+        "Al³⁺",
+        "Al³⁻",
+        "Al⁺",
+        "Al⁵⁻"
+       ]
+      },
+      {
+       "p": "S",
+       "o": [
+        "S²⁻",
+        "S²⁺",
+        "S⁶⁺",
+        "S⁻"
+       ]
+      },
+      {
+       "p": "F",
+       "o": [
+        "F⁻",
+        "F⁺",
+        "F⁷⁺",
+        "F²⁻"
+       ]
+      }
+     ],
+     "steps": [
+      "Li (2s¹) pierde 1 e⁻ → configuración de He.",
+      "Al (3s²3p¹) pierde 3 e⁻ → [Ne].",
+      "S (3s²3p⁴) gana 2 e⁻ → [Ar].",
+      "F (2s²2p⁵) gana 1 e⁻ → [Ne]."
+     ],
+     "ans": "Li⁺ · Al³⁺ · S²⁻ · F⁻",
+     "hint": "Pierde o gana el menor número de e⁻ para el octeto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "octeto"
+      ],
+      [
+       "octeto"
+      ],
+      [
+       "octeto"
+      ],
+      [
+       "octeto"
+      ]
+     ]
+    },
+    {
+     "id": "s2e9",
+     "lvl": 2,
+     "title": "Un protón menos (EA 2026-1)",
+     "q": "<p>Ff es el elemento con un protón menos que el elemento de configuración [Ar]4s²3d¹⁰4p¹.</p>",
+     "checks": [
+      {
+       "p": "Elemento de [Ar]4s²3d¹⁰4p¹",
+       "o": [
+        "Galio (Z = 31)",
+        "Cinc (Z = 30)",
+        "Aluminio (Z = 13)",
+        "Germanio (Z = 32)",
+        "Escandio (Z = 21)"
+       ]
+      },
+      {
+       "p": "Ff",
+       "o": [
+        "Cinc (Z = 30), metal de transición",
+        "Cobre (Z = 29)",
+        "Galio (Z = 31)",
+        "Calcio (Z = 20)",
+        "Germanio, metaloide"
+       ]
+      }
+     ],
+     "steps": [
+      "18 + 2 + 10 + 1 = 31 → Ga.",
+      "Un protón menos: Z = 30 → Zn ([Ar]4s²3d¹⁰, termina en d → transición)."
+     ],
+     "ans": "Zn",
+     "hint": "Suma los electrones de la configuración.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "config"
+      ],
+      [
+       "ubicacion"
+      ]
+     ]
+    },
+    {
+     "id": "s2e10",
+     "lvl": 3,
+     "title": "Nueve electrones en orbitales s (EA 2026-1)",
+     "q": "<p>Ff es el elemento cuya configuración (según el principio de Aufbau) presenta solo 9 electrones en orbitales «s».</p>",
+     "checks": [
+      {
+       "p": "Último subnivel",
+       "o": [
+        "5s¹",
+        "4s¹",
+        "3s¹",
+        "6s¹",
+        "5s²"
+       ]
+      },
+      {
+       "p": "Elemento",
+       "o": [
+        "Rubidio",
+        "Potasio",
+        "Sodio",
+        "Estroncio",
+        "Cesio"
+       ]
+      },
+      {
+       "p": "Ion estable",
+       "o": [
+        "Rb⁺",
+        "Rb⁻",
+        "Rb²⁺",
+        "K⁺",
+        "Sr²⁺"
+       ]
+      }
+     ],
+     "steps": [
+      "1s² 2s² 3s² 4s² suman 8; el noveno debe ser 5s¹.",
+      "[Kr]5s¹ → periodo 5, grupo 1A → Rb (Z = 37).",
+      "Pierde su único e⁻ de valencia → Rb⁺. Con O forma Rb₂O (iónico)."
+     ],
+     "ans": "Rb",
+     "hint": "Suma 2 por cada subnivel s lleno.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "config"
+      ],
+      [
+       "ubicacion"
+      ],
+      [
+       "octeto"
+      ]
+     ]
+    },
+    {
+     "id": "s2e11",
+     "lvl": 2,
+     "title": "Lewis con seis puntos",
+     "q": "<p>Un elemento Ee está en el periodo 2 y su símbolo de Lewis tiene 6 puntos.</p>",
+     "checks": [
+      {
+       "p": "Ee es",
+       "o": [
+        "Oxígeno",
+        "Carbono",
+        "Azufre",
+        "Neón",
+        "Flúor"
+       ]
+      },
+      {
+       "p": "Configuración",
+       "o": [
+        "1s²2s²2p⁴",
+        "1s²2s²2p⁶",
+        "1s²2s²2p²",
+        "[Ne]3s²3p⁴",
+        "1s²2s⁶"
+       ]
+      }
+     ],
+     "steps": [
+      "6 puntos = 6 e⁻ de valencia → grupo 6A; periodo 2 → O.",
+      "O (Z = 8): 1s²2s²2p⁴ (2 + 4 = 6 e⁻ de valencia ✓)."
+     ],
+     "ans": "Oxígeno",
+     "hint": "Puntos = e⁻ de valencia = grupo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewisat"
+      ],
+      [
+       "config"
+      ]
+     ]
+    },
+    {
+     "id": "s2e12",
+     "lvl": 1,
+     "title": "Estado a 25 °C",
+     "q": "<p>¿Cuál par contiene un elemento líquido a 25 °C de cada tipo (metal y no metal)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hg (metal) y Br₂ (no metal)",
+        "Na (metal) y Cl₂ (no metal)",
+        "Ga (metal) y I₂ (no metal)",
+        "Fe (metal) y S (no metal)",
+        "Hg (metal) y Cl₂ (no metal)"
+       ]
+      }
+     ],
+     "steps": [
+      "Los únicos elementos líquidos a 25 °C son el mercurio (metal) y el bromo (no metal).",
+      "Cl₂ es gas, I₂ y S son sólidos; Ga funde a ~30 °C, por eso no cuenta."
+     ],
+     "ans": "Hg y Br₂",
+     "hint": "Solo hay dos elementos líquidos a temperatura ambiente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mnm"
+      ],
+      [
+       "mnm"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "name": "Sem. 3 · Propiedades periódicas con la ley de Coulomb",
+   "teo": "<p>Las propiedades periódicas se explican con la <strong>ley de Coulomb</strong>, F = kQq/r², usando tres «perillas»: <strong>carga nuclear</strong> (Z), <strong>apantallamiento</strong> de los e⁻ internos y <strong>distancia</strong> (número de niveles).</p><p><strong>Mismo periodo</strong>: igual número de niveles, Z aumenta con el mismo apantallamiento interno → más atracción → <strong>radio ↓, EI ↑, AE ↑, EN ↑</strong> hacia la derecha. <strong>Mismo grupo</strong>: al bajar se agregan niveles → más distancia y apantallamiento → menos atracción → <strong>radio ↑, EI ↓, AE ↓, EN ↓</strong>.</p><p>EI: energía para quitar un e⁻ al átomo gaseoso. AE: energía al aceptar un e⁻ (átomo aislado). EN: atracción de los e⁻ <em>de un enlace</em>. En el examen no basta decir «por tendencia»: hay que justificar con Coulomb.</p>",
+   "form": [
+    "F = k·Q·q / r²",
+    "→ periodo: RA ↓, EI ↑, AE ↑, EN ↑",
+    "↓ grupo: RA ↑, EI ↓, AE ↓, EN ↓",
+    "Mayor EI de cada periodo: gas noble",
+    "Mayor EN: F (4,0)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de mirar la flecha, pregúntate: ¿están en el mismo periodo o en el mismo grupo? Eso decide qué perilla domina.</p><h3>Cómo justificar (formato de examen)</h3><ul><li><strong>1.</strong> Ubica ambos elementos (periodo y grupo) con su configuración.</li><li><strong>2.</strong> Mismo periodo: «igual nivel de valencia, mayor Z con apantallamiento similar → mayor atracción núcleo–e⁻».</li><li><strong>3.</strong> Mismo grupo: «más niveles → mayor distancia y apantallamiento → menor atracción».</li><li><strong>4.</strong> Concluye la propiedad (radio, EI, AE o EN).</li></ul><div class=\"ej\"><b>Ejemplo (EA 2026-1):</b> «Dd es el segundo elemento al que le es más difícil perder un electrón del tercer periodo» → mayor EI del periodo 3: Ar; segunda: Cl. Dd = Cl.</div><div class=\"err\"><b>Error común:</b> confundir AE con EN. La AE es de un átomo aislado que recibe un e⁻; la EN es de un átomo dentro de un enlace. Y la tip del profesor: <em>no se considera correcto sustentar solo por tendencia periódica</em>.</div>",
+   "ex": [
+    {
+     "id": "s3e1",
+     "lvl": 1,
+     "title": "Mayor radio",
+     "q": "<p>¿Cuál tiene mayor radio en cada par?</p>",
+     "checks": [
+      {
+       "p": "Mg vs. Cl",
+       "o": [
+        "Mg",
+        "Cl"
+       ]
+      },
+      {
+       "p": "Li vs. Na",
+       "o": [
+        "Na",
+        "Li"
+       ]
+      },
+      {
+       "p": "Cs vs. F",
+       "o": [
+        "Cs",
+        "F"
+       ]
+      }
+     ],
+     "steps": [
+      "Mg y Cl: periodo 3. Cl tiene más Z con el mismo nivel → atrae más su nube → Mg es más grande.",
+      "Li (2 niveles) y Na (3 niveles): mismo grupo; Na tiene un nivel más → mayor distancia → mayor radio.",
+      "Cs (periodo 6, izquierda) vs. F (periodo 2, derecha): Cs tiene muchos más niveles."
+     ],
+     "ans": "Mg · Na · Cs",
+     "hint": "Mismo periodo → mira Z. Mismo grupo → mira niveles.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ra",
+       "coulomb"
+      ],
+      [
+       "ra",
+       "coulomb"
+      ],
+      [
+       "ra"
+      ]
+     ]
+    },
+    {
+     "id": "s3e2",
+     "lvl": 1,
+     "title": "Mayor energía de ionización",
+     "q": "<p>¿Cuál presenta la mayor EI: Ba, Ca o Br?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Br",
+        "Ca",
+        "Ba"
+       ]
+      }
+     ],
+     "steps": [
+      "Ca y Br están en el periodo 4; Br tiene mucho más Z con el mismo nivel de valencia → retiene más fuerte su e⁻.",
+      "Ba está debajo del Ca (más niveles, más apantallamiento) → EI aún menor. Orden: Ba < Ca < Br."
+     ],
+     "ans": "Br",
+     "hint": "Compara primero los dos del mismo periodo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ei",
+       "coulomb"
+      ],
+      [
+       "ei"
+      ]
+     ]
+    },
+    {
+     "id": "s3e3",
+     "lvl": 1,
+     "title": "Cuatro preguntas, una tabla (sesión 3)",
+     "q": "<p>Responde cada comparación.</p>",
+     "checks": [
+      {
+       "p": "Mayor EI: Na o Cl",
+       "o": [
+        "Cl",
+        "Na"
+       ]
+      },
+      {
+       "p": "Mayor EN: O o Se",
+       "o": [
+        "O",
+        "Se"
+       ]
+      },
+      {
+       "p": "Mayor AE: Mg o S",
+       "o": [
+        "S",
+        "Mg"
+       ]
+      }
+     ],
+     "steps": [
+      "Na y Cl en el periodo 3: Cl tiene 17 protones frente a 11 con el mismo nivel → mayor atracción → mayor EI.",
+      "O (periodo 2) y Se (periodo 4) en el grupo 6A: O tiene menos niveles → atrae más los e⁻ del enlace.",
+      "S (3s²3p⁴) está a 2 e⁻ del octeto y tiene más Z que Mg → libera más energía al aceptar un e⁻."
+     ],
+     "ans": "Cl · O · S",
+     "hint": "Justifica con Z, apantallamiento y distancia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ei"
+      ],
+      [
+       "en"
+      ],
+      [
+       "ae"
+      ]
+     ]
+    },
+    {
+     "id": "s3e4",
+     "lvl": 2,
+     "title": "El salto del sodio",
+     "q": "<p>Para el Na: EI₁ = 496 kJ/mol y EI₂ = 4562 kJ/mol. ¿Por qué EI₂ es tan grande?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Tras perder 3s¹ queda [Ne]; el siguiente e⁻ está en n = 2, más cerca del núcleo y menos apantallado",
+        "Porque el Na⁺ tiene menos protones que el Na",
+        "Porque el segundo e⁻ está en un nivel más externo",
+        "Porque el sodio es un no metal",
+        "Porque la carga nuclear disminuye al ionizarse"
+       ]
+      }
+     ],
+     "steps": [
+      "Na: [Ne]3s¹. El primer e⁻ sale del nivel 3, lejano y apantallado.",
+      "El segundo saldría del 2p: menor distancia y menos apantallamiento → atracción mucho mayor. Además rompería una configuración de gas noble."
+     ],
+     "ans": "Se arranca de un nivel interno",
+     "hint": "¿Qué configuración queda después del primer e⁻?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "salto"
+      ],
+      [
+       "salto",
+       "coulomb"
+      ]
+     ]
+    },
+    {
+     "id": "s3e5",
+     "lvl": 1,
+     "title": "Mayor EI del periodo",
+     "q": "<p>¿Qué grupo tiene la mayor energía de ionización de cada periodo?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "8A (gases nobles)",
+        "1A (alcalinos)",
+        "7A (halógenos)",
+        "2A (alcalinotérreos)",
+        "Los metales de transición"
+       ]
+      }
+     ],
+     "steps": [
+      "Los gases nobles tienen la máxima Z de su periodo con el mismo nivel y el octeto completo → retienen fuertemente sus e⁻."
+     ],
+     "ans": "Gases nobles",
+     "hint": "Mayor Z del periodo y octeto completo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ei"
+      ]
+     ]
+    },
+    {
+     "id": "s3e6",
+     "lvl": 2,
+     "title": "Segundo con mayor EI (EA 2026-1)",
+     "q": "<p>Dd es el <em>segundo</em> elemento al que le es más difícil perder un electrón en el tercer periodo.</p>",
+     "checks": [
+      {
+       "p": "Dd",
+       "o": [
+        "Cl",
+        "Ar",
+        "S",
+        "Na",
+        "F"
+       ]
+      },
+      {
+       "p": "Justificación",
+       "o": [
+        "Después del Ar, el Cl es el de mayor Z del periodo 3 con el mismo nivel de valencia → mayor atracción sobre sus e⁻",
+        "El Cl tiene más niveles que el resto del periodo",
+        "El Cl tiene menor carga nuclear",
+        "El Cl es un metal",
+        "El Cl tiene el mayor radio del periodo"
+       ]
+      }
+     ],
+     "steps": [
+      "«Más difícil perder un e⁻» = mayor EI. En el periodo 3 la mayor es la del Ar (gas noble) y luego la del Cl.",
+      "Mismo nivel n = 3, Z = 17 → atracción alta."
+     ],
+     "ans": "Cloro",
+     "hint": "Traduce: más difícil perder un e⁻ = mayor EI.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ei"
+      ],
+      [
+       "coulomb"
+      ]
+     ]
+    },
+    {
+     "id": "s3e7",
+     "lvl": 2,
+     "title": "Semiconductor del 5A (EA 2026-1)",
+     "q": "<p>Aa es el elemento con características de semiconductor del grupo 5A con la mayor tendencia a atraer electrones al formar un enlace.</p>",
+     "checks": [
+      {
+       "p": "Metaloides del grupo 5A",
+       "o": [
+        "As y Sb",
+        "N y P",
+        "P y As",
+        "Sb y Bi",
+        "Solo As"
+       ]
+      },
+      {
+       "p": "Aa",
+       "o": [
+        "Arsénico",
+        "Antimonio",
+        "Fósforo",
+        "Nitrógeno",
+        "Bismuto"
+       ]
+      }
+     ],
+     "steps": [
+      "Semiconductor = metaloide. En el grupo 5A: As (periodo 4) y Sb (periodo 5).",
+      "«Atraer electrones al formar un enlace» = electronegatividad. As tiene un nivel menos → menor distancia → mayor EN."
+     ],
+     "ans": "Arsénico",
+     "hint": "«Al formar un enlace» indica electronegatividad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mnm"
+      ],
+      [
+       "en"
+      ]
+     ]
+    },
+    {
+     "id": "s3e8",
+     "lvl": 2,
+     "title": "El menor semiconductor del 4A (EA 2026-1)",
+     "q": "<p>Aa es el elemento con el menor tamaño de los semiconductores de su grupo y posee 4 electrones de valencia.</p>",
+     "checks": [
+      {
+       "p": "Aa",
+       "o": [
+        "Silicio",
+        "Germanio",
+        "Carbono",
+        "Estaño",
+        "Boro"
+       ]
+      },
+      {
+       "p": "Su clasificación",
+       "o": [
+        "Metaloide: sólido con brillo metálico y semiconductor",
+        "Metal: buen conductor y maleable",
+        "No metal gaseoso",
+        "Gas noble",
+        "Metal alcalino"
+       ]
+      }
+     ],
+     "steps": [
+      "4 e⁻ de valencia → grupo 4A. Metaloides del 4A: Si y Ge. El de menor radio es el de menos niveles: Si (periodo 3).",
+      "Si es metaloide: semiconductor, sólido, frágil."
+     ],
+     "ans": "Silicio",
+     "hint": "Metaloides del 4A: Si y Ge.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ra"
+      ],
+      [
+       "mnm"
+      ]
+     ]
+    },
+    {
+     "id": "s3e9",
+     "lvl": 2,
+     "title": "Caso final (sesión 3)",
+     "q": "<p>Una empresa necesita un elemento que atraiga con fuerza los electrones dentro de un enlace y que tenga un radio relativamente pequeño. Candidatos: Na, Mg, Cl, K.</p>",
+     "checks": [
+      {
+       "p": "Elemento elegido",
+       "o": [
+        "Cl",
+        "Na",
+        "Mg",
+        "K"
+       ]
+      },
+      {
+       "p": "Propiedad involucrada",
+       "o": [
+        "Electronegatividad y radio atómico",
+        "Energía de ionización y estado físico",
+        "Conductividad eléctrica",
+        "Afinidad electrónica y brillo",
+        "Maleabilidad"
+       ]
+      }
+     ],
+     "steps": [
+      "Cl: periodo 3, grupo 7A. Mayor Z del grupo de candidatos en el periodo 3 → mayor atracción → mayor EN y menor radio.",
+      "K tiene un nivel más (periodo 4) → radio mayor y EN menor."
+     ],
+     "ans": "Cl",
+     "hint": "«Atraer e⁻ dentro de un enlace» = EN.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "en"
+      ],
+      [
+       "ra"
+      ]
+     ]
+    },
+    {
+     "id": "s3e10",
+     "lvl": 2,
+     "title": "¿Quién «quiere» más el electrón? (sesión 3)",
+     "q": "<p>Entre Na, S y Cl (todos del periodo 3), ¿cuál libera más energía al aceptar un electrón?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Cl",
+        "S",
+        "Na"
+       ]
+      },
+      {
+       "p": "Argumento",
+       "o": [
+        "Mismo nivel de valencia, Cl tiene la mayor Z y le falta solo 1 e⁻ para el octeto → mayor atracción por el e⁻ entrante",
+        "Cl tiene más niveles que S y Na",
+        "Na pierde fácilmente su e⁻, así que también lo acepta con facilidad",
+        "S tiene el menor radio del periodo",
+        "Cl es el de mayor radio del periodo"
+       ]
+      }
+     ],
+     "steps": [
+      "La AE (en valor absoluto) crece hacia la derecha del periodo.",
+      "Mismo n = 3, Z: Na 11 < S 16 < Cl 17. El Cl (3s²3p⁵) completa el octeto con un e⁻ → lo atrae con más fuerza."
+     ],
+     "ans": "Cl",
+     "hint": "Ubica primero: ¿mismo periodo o mismo grupo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ae"
+      ],
+      [
+       "ae",
+       "coulomb"
+      ]
+     ]
+    },
+    {
+     "id": "s3e11",
+     "lvl": 2,
+     "title": "Hacia dónde va la densidad electrónica",
+     "q": "<p>En el enlace C–O, ¿hacia qué átomo se desplaza la densidad electrónica?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hacia el O (EN 3,5 > 2,5)",
+        "Hacia el C (EN 2,5 > 3,5)",
+        "Se reparte por igual",
+        "Hacia el O, porque tiene mayor radio",
+        "Hacia el C, porque tiene menos e⁻"
+       ]
+      }
+     ],
+     "steps": [
+      "Ambos en el periodo 2: O tiene más Z con el mismo nivel → mayor EN (3,5 frente a 2,5).",
+      "El O atrae los e⁻ compartidos → queda con δ⁻ y el C con δ⁺."
+     ],
+     "ans": "Hacia el O",
+     "hint": "El más electronegativo jala los electrones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "en"
+      ],
+      [
+       "en"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "name": "Sem. 4 · Enlace iónico, metálico y covalente; polaridad de enlace",
+   "teo": "<p>El tipo de enlace depende de qué hacen los <strong>electrones de valencia</strong>: se <strong>transfieren</strong> (iónico: metal + no metal), se <strong>deslocalizan</strong> (metálico: metal + metal) o se <strong>comparten</strong> (covalente: no metal + no metal).</p><p><strong>Iónicos</strong>: sólidos cristalinos, Pf alto (&gt; 400 °C), solubles en solventes polares, conducen fundidos o en solución, no como sólidos. <strong>Metálicos</strong>: conducen como sólidos, brillo, dúctiles y maleables. <strong>Covalentes moleculares</strong>: no conducen; sus propiedades dependen de la polaridad y de las fuerzas intermoleculares.</p><p><strong>Polaridad de enlace</strong>: ΔEN = |EN₁ − EN₂|. ΔEN = 0 → apolar; ΔEN &gt; 0 → polar (δ⁻ en el más electronegativo). <strong>Excepción del curso: C–H se considera apolar.</strong></p>",
+   "form": [
+    "ΔEN = |EN₁ − EN₂|",
+    "ΔEN = 0: apolar · ΔEN > 0: polar",
+    "C–H (0,4): apolar por convención",
+    "Electroneutralidad: Σ cargas = 0",
+    "EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la Etapa 1 de las EA te piden elegir un «catalizador» (material sólido, brillante, que se lamina, alto Pf → <em>metálico</em>) y un «agente» cuyos átomos «comparten electrones» (→ <em>covalente</em>). Identifica los elementos y luego decide el tipo de enlace.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Clasifica cada elemento: metal o no metal.</li><li><strong>2.</strong> Metal solo → metálico; metal + no metal → iónico; solo no metales → covalente.</li><li><strong>3.</strong> En covalentes, calcula ΔEN de cada tipo de enlace.</li><li><strong>4.</strong> Relaciona con la propiedad pedida.</li></ul><div class=\"ej\"><b>Ejemplo (EA 2026-1):</b> ZnCl₂ (metal + no metal) → iónico. C₈H₉ClO (solo no metales) → covalente → agente esterilizante. Pr (lantánido) → metálico → catalizador.</div><div class=\"err\"><b>Error común:</b> decir que un compuesto iónico conduce como sólido. Sus iones están fijos en la red; conduce fundido o disuelto.</div>",
+   "ex": [
+    {
+     "id": "s4e1",
+     "lvl": 1,
+     "title": "Tipo de enlace",
+     "q": "<p>Indica el tipo de enlace.</p>",
+     "checks": [
+      {
+       "p": "NaCl",
+       "o": [
+        "Iónico",
+        "Covalente",
+        "Metálico"
+       ]
+      },
+      {
+       "p": "Cu",
+       "o": [
+        "Metálico",
+        "Iónico",
+        "Covalente"
+       ]
+      },
+      {
+       "p": "CO₂",
+       "o": [
+        "Covalente",
+        "Iónico",
+        "Metálico"
+       ]
+      },
+      {
+       "p": "MgO",
+       "o": [
+        "Iónico",
+        "Covalente",
+        "Metálico"
+       ]
+      }
+     ],
+     "steps": [
+      "Na (metal) + Cl (no metal) → transferencia → iónico.",
+      "Cu solo, metal → metálico.",
+      "C y O son no metales → comparten e⁻ → covalente.",
+      "Mg (metal) + O (no metal) → iónico."
+     ],
+     "ans": "I · M · C · I",
+     "hint": "Metal + no metal = iónico.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ionico"
+      ],
+      [
+       "metalico"
+      ],
+      [
+       "covalente"
+      ],
+      [
+       "ionico"
+      ]
+     ]
+    },
+    {
+     "id": "s4e2",
+     "lvl": 1,
+     "title": "Construye tu compuesto (sesión 4)",
+     "q": "<p>Escribe la fórmula del compuesto iónico.</p>",
+     "checks": [
+      {
+       "p": "Ca + O",
+       "o": [
+        "CaO",
+        "Ca₂O",
+        "CaO₂",
+        "Ca₂O₃"
+       ]
+      },
+      {
+       "p": "Al + O",
+       "o": [
+        "Al₂O₃",
+        "AlO",
+        "Al₃O₂",
+        "AlO₃"
+       ]
+      },
+      {
+       "p": "Mg + P",
+       "o": [
+        "Mg₃P₂",
+        "MgP",
+        "Mg₂P₃",
+        "MgP₃"
+       ]
+      },
+      {
+       "p": "K + S",
+       "o": [
+        "K₂S",
+        "KS",
+        "KS₂",
+        "K₃S"
+       ]
+      }
+     ],
+     "steps": [
+      "Ca²⁺ y O²⁻ → 1:1 → CaO.",
+      "Al³⁺ y O²⁻: 2(+3) + 3(−2) = 0 → Al₂O₃.",
+      "Mg²⁺ y P³⁻: 3(+2) + 2(−3) = 0 → Mg₃P₂.",
+      "K⁺ y S²⁻ → K₂S."
+     ],
+     "ans": "CaO · Al₂O₃ · Mg₃P₂ · K₂S",
+     "hint": "Cruza las cargas para que sumen cero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ionico"
+      ],
+      [
+       "ionico"
+      ],
+      [
+       "ionico"
+      ],
+      [
+       "ionico"
+      ]
+     ]
+    },
+    {
+     "id": "s4e3",
+     "lvl": 1,
+     "title": "¿Cuándo conduce la sal?",
+     "q": "<p>¿En qué situación conduce la electricidad el NaCl?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Fundido o disuelto en agua",
+        "Como sólido cristalino",
+        "Nunca conduce",
+        "Solo como sólido",
+        "Solo cuando está en estado gaseoso"
+       ]
+      }
+     ],
+     "steps": [
+      "En el sólido los iones están fijos en la red → no conduce.",
+      "Fundido o disuelto, los iones tienen movilidad → conduce."
+     ],
+     "ans": "Fundido o disuelto",
+     "hint": "Pregunta qué partículas pueden moverse.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "propenl"
+      ],
+      [
+       "propenl"
+      ]
+     ]
+    },
+    {
+     "id": "s4e4",
+     "lvl": 1,
+     "title": "Mar de electrones",
+     "q": "<p>¿Por qué un cable de cobre se puede doblar y además conduce la electricidad?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Sus cationes están inmersos en un mar de e⁻ deslocalizados que se mueven y mantienen la unión aunque las capas se deslicen",
+        "Porque el Cu forma moléculas pequeñas",
+        "Porque el Cu transfiere e⁻ a otro átomo",
+        "Porque comparte pares de e⁻ fijos entre dos átomos",
+        "Porque sus iones se mueven libremente como en una solución"
+       ]
+      }
+     ],
+     "steps": [
+      "Los e⁻ de valencia deslocalizados conducen la corriente.",
+      "Al deformarse, los cationes se reacomodan y el mar de e⁻ sigue uniéndolos: ductilidad y maleabilidad."
+     ],
+     "ans": "Mar de electrones",
+     "hint": "¿Qué se mueve dentro del metal?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "metalico"
+      ],
+      [
+       "metalico"
+      ]
+     ]
+    },
+    {
+     "id": "s4e5",
+     "lvl": 1,
+     "title": "Calcula ΔEN",
+     "q": "<p>EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
+     "checks": [
+      {
+       "p": "O–H",
+       "o": [
+        "Polar, ΔEN = 1,4",
+        "Apolar, ΔEN = 0",
+        "Polar, ΔEN = 0,4",
+        "Polar, ΔEN = 5,6"
+       ]
+      },
+      {
+       "p": "Cl–Cl",
+       "o": [
+        "Apolar, ΔEN = 0",
+        "Polar, ΔEN = 3,0",
+        "Polar, ΔEN = 6,0",
+        "Iónico"
+       ]
+      },
+      {
+       "p": "C–H",
+       "o": [
+        "Apolar (excepción del curso)",
+        "Polar, ΔEN = 0,4",
+        "Polar, ΔEN = 4,6",
+        "Iónico"
+       ]
+      },
+      {
+       "p": "C–Cl",
+       "o": [
+        "Polar, ΔEN = 0,5",
+        "Apolar, ΔEN = 0",
+        "Polar, ΔEN = 5,5",
+        "Apolar por ser covalente"
+       ]
+      }
+     ],
+     "steps": [
+      "O–H: 3,5 − 2,1 = 1,4 → polar (δ⁻ en O).",
+      "Cl–Cl: mismos átomos → 0 → apolar.",
+      "C–H: 2,5 − 2,1 = 0,4, pero en el curso se considera apolar.",
+      "C–Cl: 3,0 − 2,5 = 0,5 → polar (δ⁻ en Cl)."
+     ],
+     "ans": "Polar · apolar · apolar · polar",
+     "hint": "Resta y toma el valor absoluto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polenl"
+      ],
+      [
+       "polenl"
+      ],
+      [
+       "ch"
+      ],
+      [
+       "polenl"
+      ]
+     ]
+    },
+    {
+     "id": "s4e6",
+     "lvl": 1,
+     "title": "Mayor diferencia (sesión 4)",
+     "q": "<p>¿Qué enlace tiene la mayor diferencia de electronegatividad? EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "H–Cl",
+        "C–H",
+        "H–H",
+        "Cl–Cl"
+       ]
+      }
+     ],
+     "steps": [
+      "H–Cl: 3,0 − 2,1 = 0,9. C–H: 0,4. H–H y Cl–Cl: 0."
+     ],
+     "ans": "H–Cl",
+     "hint": "Calcula los cuatro ΔEN.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polenl"
+      ]
+     ]
+    },
+    {
+     "id": "s4e7",
+     "lvl": 2,
+     "title": "Caso integrador (sesión 4)",
+     "q": "<p>Tres aplicaciones: (1) cable que conduzca como sólido; (2) sustancia que se disuelva en agua y conduzca en solución; (3) líquido que no conduzca.</p>",
+     "checks": [
+      {
+       "p": "(1)",
+       "o": [
+        "Metálico",
+        "Iónico",
+        "Covalente"
+       ]
+      },
+      {
+       "p": "(2)",
+       "o": [
+        "Iónico",
+        "Metálico",
+        "Covalente apolar"
+       ]
+      },
+      {
+       "p": "(3)",
+       "o": [
+        "Covalente (molecular)",
+        "Iónico",
+        "Metálico"
+       ]
+      }
+     ],
+     "steps": [
+      "Conduce como sólido → e⁻ deslocalizados → metálico.",
+      "Se disuelve en agua y conduce en solución → iones libres → iónico.",
+      "Líquido que no conduce → moléculas neutras → covalente."
+     ],
+     "ans": "Metálico · iónico · covalente",
+     "hint": "Piensa qué partículas transportan la carga.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "metalico"
+      ],
+      [
+       "propenl"
+      ],
+      [
+       "covalente"
+      ]
+     ]
+    },
+    {
+     "id": "s4e8",
+     "lvl": 2,
+     "title": "Selección de componentes (EA 2026-1)",
+     "q": "<p>Catalizador: material fácil de moldear en láminas, con brillo y que resiste altas temperaturas. Agente esterilizante: sustancia cuyos átomos forman enlaces al compartir electrones. Se analizaron: Pr, C₈H₉ClO y ZnCl₂.</p>",
+     "checks": [
+      {
+       "p": "Catalizador",
+       "o": [
+        "Pr (enlace metálico)",
+        "ZnCl₂ (iónico)",
+        "C₈H₉ClO (covalente)"
+       ]
+      },
+      {
+       "p": "Agente esterilizante",
+       "o": [
+        "C₈H₉ClO (covalente)",
+        "ZnCl₂ (iónico)",
+        "Pr (metálico)"
+       ]
+      }
+     ],
+     "steps": [
+      "Láminas (maleable), brillo y alto Pf → propiedades de un metal → Pr.",
+      "«Compartir electrones» → enlace covalente: C₈H₉ClO solo tiene no metales. ZnCl₂ es iónico (Zn metal + Cl no metal)."
+     ],
+     "ans": "Pr y C₈H₉ClO",
+     "hint": "Asocia cada propiedad con un tipo de enlace.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "metalico"
+      ],
+      [
+       "covalente"
+      ]
+     ]
+    },
+    {
+     "id": "s4e9",
+     "lvl": 2,
+     "title": "Enlaces de una molécula",
+     "q": "<p>Analiza los enlaces del isopropanol (C₃H₇OH). EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
+     "checks": [
+      {
+       "p": "Enlaces polares",
+       "o": [
+        "C–O y O–H",
+        "Solo C–H",
+        "C–C y C–H",
+        "Ninguno",
+        "Todos"
+       ]
+      },
+      {
+       "p": "Enlaces apolares",
+       "o": [
+        "C–C y C–H",
+        "C–O y O–H",
+        "Solo O–H",
+        "Ninguno",
+        "Todos"
+       ]
+      }
+     ],
+     "steps": [
+      "C–O: 1,0 y O–H: 1,4 → polares.",
+      "C–C: 0 y C–H: 0,4 (excepción) → apolares."
+     ],
+     "ans": "Polares: C–O y O–H",
+     "hint": "Lista los tipos de enlace distintos.",
+     "fig": "isopropanol",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polenl"
+      ],
+      [
+       "ch"
+      ]
+     ]
+    },
+    {
+     "id": "s4e10",
+     "lvl": 2,
+     "title": "Propiedades del compuesto iónico",
+     "q": "<p>¿Cuál de estas afirmaciones sobre los compuestos iónicos es <strong>incorrecta</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Son solubles en solventes apolares como los aceites",
+        "Son sólidos cristalinos de alto punto de fusión",
+        "Conducen la electricidad fundidos",
+        "Son aislantes térmicos",
+        "Generalmente se disuelven en solventes polares"
+       ]
+      }
+     ],
+     "steps": [
+      "Los iónicos son insolubles en solventes apolares (aceites, hidrocarburos): el solvente no puede estabilizar los iones.",
+      "Las demás son propiedades de los iónicos vistas en clase."
+     ],
+     "ans": "Solubles en apolares (falso)",
+     "hint": "Recuerda: semejante disuelve a semejante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "propenl"
+      ],
+      [
+       "propenl"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "name": "Sem. 5 · Estructuras de Lewis, carga formal y geometría",
+   "teo": "<p><strong>Método del curso</strong>: N = e⁻ individuales (8 por átomo, 2 por H); V = e⁻ de valencia (en iones: anión suma la carga, catión la resta). <strong>Enlazantes = N − V</strong> (÷2 = enlaces). <strong>Libres = V − enlazantes</strong> (÷2 = pares). Se dibuja el esqueleto (H solo forma un enlace) y se reparten los pares libres para completar octetos.</p><p><strong>Carga formal</strong>: CF = valencia − [no enlazantes + ½ enlazantes]. Se prefiere la estructura con CF cercanas a cero y, si hay negativa, en el más electronegativo. Σ CF = carga de la especie.</p><p><strong>RPECV</strong>: dominios del átomo central = átomos enlazados + pares libres (un enlace múltiple es UN dominio). AX₂ lineal, AX₃ trigonal plana, AX₂E angular, AX₄ tetraédrica, AX₃E piramidal trigonal, AX₂E₂ angular.</p>",
+   "form": [
+    "N: 8 por átomo · 2 por H",
+    "Enlazantes = N − V",
+    "Libres = V − enlazantes",
+    "CF = V − [NE + ½·E]",
+    "AX₂ lineal · AX₃ trig. plana · AX₂E angular",
+    "AX₄ tetraédrica · AX₃E piramidal · AX₂E₂ angular"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En el examen esta parte vale mucho (9 de 20 en la EA y 7 en el parcial) y piden <em>mostrar los cálculos</em>: individuales, valencia, enlazantes y no enlazantes; después Lewis, CF y geometría.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> N y V (atento a la carga del ion).</li><li><strong>2.</strong> Enlazantes = N − V → número de enlaces.</li><li><strong>3.</strong> Esqueleto: átomo central = el que forma más enlaces (nunca H).</li><li><strong>4.</strong> Libres = V − enlazantes → reparte pares para completar octetos.</li><li><strong>5.</strong> Si hay varias opciones (dónde va el doble o triple enlace), calcula CF y elige.</li><li><strong>6.</strong> Cuenta dominios del central → geometría.</li></ul><div class=\"ej\"><b>Ejemplo (sesión 5) HCN:</b> N = 2 + 8 + 8 = 18; V = 1 + 4 + 5 = 10 → enlazantes 8 (4 enlaces: H–C≡N). Libres = 10 − 8 = 2 → 1 par en el N. C: 2 dominios, 0 pares → lineal.</div><div class=\"err\"><b>Error común:</b> olvidar la carga del ion en V. En [CO₃]²⁻: V = 4 + 18 + 2 = 24, no 22.</div>",
+   "ex": [
+    {
+     "id": "s5e1",
+     "lvl": 1,
+     "title": "Electrones del PCl₃ (sesión 5)",
+     "q": "<p>Aplica el método a PCl₃.</p>",
+     "checks": [
+      {
+       "p": "N (individuales)",
+       "o": [
+        "32",
+        "26",
+        "8",
+        "24",
+        "40"
+       ]
+      },
+      {
+       "p": "V (valencia)",
+       "o": [
+        "26",
+        "32",
+        "24",
+        "20",
+        "29"
+       ]
+      },
+      {
+       "p": "Enlaces",
+       "o": [
+        "3",
+        "4",
+        "6",
+        "2",
+        "13"
+       ]
+      },
+      {
+       "p": "Pares libres totales",
+       "o": [
+        "10",
+        "13",
+        "3",
+        "9",
+        "7"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 4 × 8 = 32.",
+      "V = 5 + 3 × 7 = 26.",
+      "Enlazantes = 32 − 26 = 6 → 3 enlaces P–Cl.",
+      "Libres = 26 − 6 = 20 → 10 pares: 3 en cada Cl (9) + 1 en el P."
+     ],
+     "ans": "32 · 26 · 3 enlaces · 10 pares",
+     "hint": "Libres = V − enlazantes.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "lewis"
+      ],
+      [
+       "lewis"
+      ],
+      [
+       "lewis"
+      ]
+     ]
+    },
+    {
+     "id": "s5e2",
+     "lvl": 1,
+     "title": "Geometría del agua",
+     "q": "<p>H₂O.</p>",
+     "checks": [
+      {
+       "p": "Pares libres en el O",
+       "o": [
+        "2",
+        "0",
+        "1",
+        "3",
+        "4"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Angular (AX₂E₂)",
+        "Lineal (AX₂)",
+        "Tetraédrica (AX₄)",
+        "Piramidal trigonal (AX₃E)",
+        "Trigonal plana (AX₃)"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 2 + 2 + 8 = 12; V = 1 + 1 + 6 = 8 → enlazantes 4 (2 enlaces O–H). Libres = 4 → 2 pares en el O.",
+      "O: 2 átomos + 2 pares = 4 dominios con 2 libres → AX₂E₂ angular."
+     ],
+     "ans": "Angular",
+     "hint": "Cuenta dominios del átomo central.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e3",
+     "lvl": 1,
+     "title": "Geometrías básicas",
+     "q": "<p>Indica la geometría molecular.</p>",
+     "checks": [
+      {
+       "p": "CO₂",
+       "o": [
+        "Lineal",
+        "Angular",
+        "Trigonal plana",
+        "Tetraédrica"
+       ]
+      },
+      {
+       "p": "NH₃",
+       "o": [
+        "Piramidal trigonal",
+        "Trigonal plana",
+        "Tetraédrica",
+        "Angular"
+       ]
+      },
+      {
+       "p": "CCl₄",
+       "o": [
+        "Tetraédrica",
+        "Piramidal trigonal",
+        "Trigonal plana",
+        "Angular"
+       ]
+      },
+      {
+       "p": "CH₂O",
+       "o": [
+        "Trigonal plana",
+        "Tetraédrica",
+        "Angular",
+        "Piramidal trigonal"
+       ]
+      }
+     ],
+     "steps": [
+      "CO₂: O=C=O, C sin pares → AX₂ lineal.",
+      "NH₃: N con 3 enlaces y 1 par → AX₃E piramidal.",
+      "CCl₄: 4 enlaces, 0 pares → AX₄ tetraédrica.",
+      "CH₂O: C=O y 2 C–H, C sin pares → AX₃ trigonal plana."
+     ],
+     "ans": "Lineal · piramidal · tetraédrica · trigonal plana",
+     "hint": "Un doble enlace cuenta como un dominio.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "geom"
+      ],
+      [
+       "geom"
+      ],
+      [
+       "geom"
+      ],
+      [
+       "geom",
+       "rpecv"
+      ]
+     ]
+    },
+    {
+     "id": "s5e4",
+     "lvl": 2,
+     "title": "Ion carbonato",
+     "q": "<p>[CO₃]²⁻.</p>",
+     "checks": [
+      {
+       "p": "V",
+       "o": [
+        "24",
+        "22",
+        "26",
+        "32",
+        "20"
+       ]
+      },
+      {
+       "p": "Enlaces",
+       "o": [
+        "4 (un C=O y dos C–O)",
+        "3 simples",
+        "6 (tres dobles)",
+        "2",
+        "5"
+       ]
+      },
+      {
+       "p": "CF de cada O con enlace simple",
+       "o": [
+        "−1",
+        "0",
+        "+1",
+        "−2"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Trigonal plana",
+        "Piramidal trigonal",
+        "Tetraédrica",
+        "Angular"
+       ]
+      }
+     ],
+     "steps": [
+      "V = 4 + 3 × 6 + 2 = 24.",
+      "N = 32 → enlazantes 8 → 4 enlaces: un doble y dos simples. Libres = 16 → 8 pares (2 en el O del doble, 3 en cada O simple).",
+      "O simple: 6 − [6 + ½·2] = −1. O doble: 6 − [4 + 2] = 0. C: 4 − [0 + 4] = 0. Σ = −2 ✓.",
+      "C: 3 átomos, 0 pares → AX₃ trigonal plana."
+     ],
+     "ans": "Trigonal plana",
+     "hint": "Anión: suma la carga a V.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e5",
+     "lvl": 2,
+     "title": "Ion nitrato (EP 2026-1)",
+     "q": "<p>K⁺[NO₃]⁻: analiza el anión.</p>",
+     "checks": [
+      {
+       "p": "Enlazantes / libres",
+       "o": [
+        "8 / 16",
+        "6 / 18",
+        "8 / 15",
+        "10 / 14",
+        "6 / 16"
+       ]
+      },
+      {
+       "p": "CF del N",
+       "o": [
+        "+1",
+        "0",
+        "−1",
+        "+5"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Trigonal plana",
+        "Piramidal trigonal",
+        "Angular",
+        "Tetraédrica"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 32; V = 5 + 18 + 1 = 24 → enlazantes 8 (un N=O y dos N–O); libres 16.",
+      "N: 5 − [0 + ½·8] = +1. O doble: 0; cada O simple: −1. Σ = +1 − 2 = −1 ✓.",
+      "N: 3 átomos, 0 pares → AX₃ trigonal plana. Sí cumple el requisito de «ion trigonal plano»."
+     ],
+     "ans": "Trigonal plana",
+     "hint": "Mismo patrón que el carbonato.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e6",
+     "lvl": 3,
+     "title": "Ion cianato: elige con CF (EP 2026-1)",
+     "q": "<p>[OCN]⁻ (C central). Tres estructuras posibles: (a) O=C=N, (b) O≡C–N, (c) O–C≡N.</p>",
+     "checks": [
+      {
+       "p": "CF en (a) [O, C, N]",
+       "o": [
+        "0, 0, −1",
+        "−1, 0, 0",
+        "+1, 0, −2",
+        "0, 0, 0"
+       ]
+      },
+      {
+       "p": "CF en (c) [O, C, N]",
+       "o": [
+        "−1, 0, 0",
+        "0, 0, −1",
+        "+1, 0, −2",
+        "−2, 0, +1"
+       ]
+      },
+      {
+       "p": "Estructura más probable",
+       "o": [
+        "(c) O–C≡N: la carga negativa queda en el O, el más electronegativo",
+        "(a) O=C=N: todas las CF son cero",
+        "(b) O≡C–N",
+        "Las tres son igual de probables"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Lineal",
+        "Angular",
+        "Trigonal plana",
+        "Piramidal trigonal"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 24; V = 6 + 4 + 5 + 1 = 16 → enlazantes 8 (4 enlaces); libres 8 (4 pares).",
+      "(a) O 2 pares: 6 − [4 + 2] = 0; C: 0; N 2 pares: 5 − [4 + 2] = −1.",
+      "(c) O 3 pares: 6 − [6 + 1] = −1; C: 0; N 1 par: 5 − [2 + 3] = 0. (b) da O +1 y N −2: se descarta.",
+      "(a) y (c) tienen una sola carga −1; se prefiere en el más electronegativo (O 3,5 > N 3,0) → (c).",
+      "C con 2 dominios y sin pares → lineal (en cualquiera de las tres)."
+     ],
+     "ans": "(c) [O–C≡N]⁻, lineal",
+     "hint": "Calcula la CF de cada átomo en cada opción.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e7",
+     "lvl": 3,
+     "title": "Óxido nitroso (EA 2026-1)",
+     "q": "<p>N₂O (N central): (a) N=N=O, (b) N≡N–O.</p>",
+     "checks": [
+      {
+       "p": "CF en (a) [N, N, O]",
+       "o": [
+        "−1, +1, 0",
+        "0, +1, −1",
+        "0, 0, 0",
+        "−2, +1, +1"
+       ]
+      },
+      {
+       "p": "CF en (b) [N, N, O]",
+       "o": [
+        "0, +1, −1",
+        "−1, +1, 0",
+        "0, 0, 0",
+        "+1, +1, −2"
+       ]
+      },
+      {
+       "p": "Más probable",
+       "o": [
+        "(b): la carga negativa en el O, más electronegativo",
+        "(a): la negativa en el N terminal",
+        "Ninguna, el N₂O no cumple octeto",
+        "Ambas idénticas"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Lineal",
+        "Angular",
+        "Trigonal plana",
+        "Tetraédrica"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 24; V = 5 + 5 + 6 = 16 → 4 enlaces y 4 pares libres.",
+      "(a) N terminal 2 pares: 5 − [4 + 2] = −1; N central: 5 − [0 + 4] = +1; O 2 pares: 0.",
+      "(b) N terminal 1 par: 5 − [2 + 3] = 0; N central +1; O 3 pares: 6 − [6 + 1] = −1.",
+      "Misma magnitud de cargas; se prefiere la negativa en O (3,5 > 3,0) → (b).",
+      "Central sin pares y 2 dominios → lineal."
+     ],
+     "ans": "(b) N≡N–O, lineal",
+     "hint": "Igual que el cianato.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e8",
+     "lvl": 2,
+     "title": "Fosgeno (EA 2026-1)",
+     "q": "<p>COCl₂ (C central).</p>",
+     "checks": [
+      {
+       "p": "Enlaces",
+       "o": [
+        "4 (C=O y dos C–Cl)",
+        "3 simples",
+        "4 (C=Cl, C–Cl, C–O)",
+        "5",
+        "2"
+       ]
+      },
+      {
+       "p": "Justificación de la ubicación del doble enlace",
+       "o": [
+        "Con C=O todas las CF son 0; con C=Cl el Cl queda +1 y el O −1",
+        "El Cl tiene más e⁻ de valencia",
+        "El O no puede formar dobles enlaces",
+        "Es indiferente"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Trigonal plana",
+        "Tetraédrica",
+        "Piramidal trigonal",
+        "Angular"
+       ]
+      }
+     ],
+     "steps": [
+      "N = 32; V = 4 + 6 + 14 = 24 → enlazantes 8 (4 enlaces), libres 16 (8 pares).",
+      "Con C=O: O 2 pares → 0; Cl 3 pares → 0; C → 0. Con C=Cl: Cl 2 pares → 7 − [4 + 2] = +1 y el O con 3 pares → −1.",
+      "C: 3 átomos y 0 pares → trigonal plana."
+     ],
+     "ans": "Trigonal plana",
+     "hint": "Prueba las dos ubicaciones del doble enlace.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e9",
+     "lvl": 2,
+     "title": "Selecciona por geometría (EA 2026-1)",
+     "q": "<p>Se necesitan dos precursores con la misma geometría: N₂O, H₂Se y SCl₂.</p>",
+     "checks": [
+      {
+       "p": "N₂O",
+       "o": [
+        "Lineal",
+        "Angular",
+        "Trigonal plana"
+       ]
+      },
+      {
+       "p": "H₂Se",
+       "o": [
+        "Angular",
+        "Lineal",
+        "Piramidal trigonal"
+       ]
+      },
+      {
+       "p": "SCl₂",
+       "o": [
+        "Angular",
+        "Lineal",
+        "Tetraédrica"
+       ]
+      },
+      {
+       "p": "Seleccionados",
+       "o": [
+        "H₂Se y SCl₂",
+        "N₂O y H₂Se",
+        "N₂O y SCl₂",
+        "Los tres"
+       ]
+      }
+     ],
+     "steps": [
+      "N₂O: central sin pares, 2 dominios → lineal.",
+      "H₂Se: N = 12, V = 8 → 2 enlaces, 2 pares en Se → AX₂E₂ angular.",
+      "SCl₂: N = 24, V = 20 → 2 enlaces; libres 16 → 3 pares en cada Cl y 2 en S → angular.",
+      "Coinciden H₂Se y SCl₂ (angulares)."
+     ],
+     "ans": "H₂Se y SCl₂",
+     "hint": "Calcula los pares libres del átomo central.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "geom"
+      ],
+      [
+       "geom"
+      ],
+      [
+       "lewis",
+       "geom"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e10",
+     "lvl": 2,
+     "title": "Anión fosfito (EP 2025-2)",
+     "q": "<p>Se requiere un anión trigonal plano. ¿Cumple el [PO₃]³⁻?</p>",
+     "checks": [
+      {
+       "p": "V",
+       "o": [
+        "26",
+        "23",
+        "24",
+        "29",
+        "32"
+       ]
+      },
+      {
+       "p": "Pares libres en el P",
+       "o": [
+        "1",
+        "0",
+        "2",
+        "3"
+       ]
+      },
+      {
+       "p": "¿Cumple?",
+       "o": [
+        "No: es piramidal trigonal (AX₃E)",
+        "Sí: es trigonal plano",
+        "No: es tetraédrico",
+        "No: es angular"
+       ]
+      }
+     ],
+     "steps": [
+      "V = 5 + 18 + 3 = 26; N = 32 → enlazantes 6 → 3 enlaces P–O.",
+      "Libres = 26 − 6 = 20 → 10 pares: 3 en cada O (9) y 1 en el P.",
+      "P: 3 átomos + 1 par → AX₃E piramidal trigonal → no cumple. (CF: P 0; cada O −1; Σ = −3 ✓)."
+     ],
+     "ans": "No cumple: piramidal trigonal",
+     "hint": "El par libre del P cambia la geometría.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "lewis"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e11",
+     "lvl": 2,
+     "title": "Reto 3D (sesión 5)",
+     "q": "<p>Geometría de cada especie.</p>",
+     "checks": [
+      {
+       "p": "CF₄",
+       "o": [
+        "Tetraédrica",
+        "Piramidal trigonal",
+        "Trigonal plana",
+        "Angular"
+       ]
+      },
+      {
+       "p": "PH₃",
+       "o": [
+        "Piramidal trigonal",
+        "Trigonal plana",
+        "Tetraédrica",
+        "Angular"
+       ]
+      },
+      {
+       "p": "[NO₂]⁻",
+       "o": [
+        "Angular",
+        "Lineal",
+        "Trigonal plana",
+        "Piramidal trigonal"
+       ]
+      }
+     ],
+     "steps": [
+      "CF₄: 4 enlaces, sin pares → AX₄.",
+      "PH₃: N = 14, V = 8 → 3 enlaces; libres 2 → 1 par en P → AX₃E.",
+      "[NO₂]⁻: N = 24, V = 18 → 3 enlaces (N=O y N–O); libres 12 → 6 pares: 2 + 3 en los O y 1 en el N → AX₂E angular."
+     ],
+     "ans": "Tetraédrica · piramidal · angular",
+     "hint": "Primero N y V.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "geom"
+      ],
+      [
+       "geom"
+      ],
+      [
+       "lewis",
+       "geom"
+      ]
+     ]
+    },
+    {
+     "id": "s5e12",
+     "lvl": 1,
+     "title": "Ion amonio",
+     "q": "<p>[NH₄]⁺.</p>",
+     "checks": [
+      {
+       "p": "V",
+       "o": [
+        "8",
+        "9",
+        "10",
+        "16"
+       ]
+      },
+      {
+       "p": "CF del N",
+       "o": [
+        "+1",
+        "0",
+        "−1",
+        "+4"
+       ]
+      },
+      {
+       "p": "Geometría",
+       "o": [
+        "Tetraédrica",
+        "Piramidal trigonal",
+        "Trigonal plana",
+        "Angular"
+       ]
+      }
+     ],
+     "steps": [
+      "V = 5 + 4 − 1 = 8 (catión: se resta la carga). N = 8 + 8 = 16 → 4 enlaces; libres 0.",
+      "N: 5 − [0 + 4] = +1.",
+      "4 dominios sin pares → tetraédrica."
+     ],
+     "ans": "Tetraédrica, CF(N) = +1",
+     "hint": "En un catión, resta la carga a V.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lewis"
+      ],
+      [
+       "cf"
+      ],
+      [
+       "geom"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "name": "Sem. 6 · Polaridad de molécula; intra vs. intermolecular",
+   "teo": "<p>La polaridad de la molécula se decide en dos pasos: (1) <strong>polaridad de cada enlace</strong> (ΔEN; C–H apolar); (2) <strong>geometría</strong>: cada enlace polar es una flecha (dipolo). Si las flechas se <strong>cancelan</strong> por simetría, μ = 0 → <strong>apolar</strong>; si no, μ ≠ 0 → <strong>polar</strong>.</p><p>CO₂ (lineal) y CCl₄ (tetraédrica) tienen enlaces polares pero son apolares. H₂O (angular), NH₃ (piramidal) y CHCl₃ son polares. Si todos los enlaces son apolares (hidrocarburos, Cl₂, CS₂), la molécula es apolar.</p><p><strong>Intramolecular</strong> = dentro de la especie (enlaces covalente, iónico, metálico); romperlos cambia la identidad. <strong>Intermolecular</strong> = entre partículas; vencerlas es un cambio físico (hervir, evaporar, disolver).</p>",
+   "form": [
+    "Enlaces apolares → molécula apolar",
+    "Enlaces polares + simetría → apolar",
+    "Enlaces polares + asimetría → polar",
+    "Hervir: separa moléculas (inter)",
+    "H₂O → H₂ + O₂: rompe enlaces (intra)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La pregunta de la Etapa 2 de las EA y de los parciales siempre pide dos cosas: <em>análisis de enlace</em> y <em>análisis de molécula</em>. Con fórmulas topológicas, primero reconoce qué enlaces hay.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lista los tipos de enlace (C–C, C–H, C–O, O–H, C=O, C–N…) y clasifícalos con ΔEN.</li><li><strong>2.</strong> Si solo hay C–C y C–H → apolar.</li><li><strong>3.</strong> Si hay enlaces polares: ¿se cancelan por simetría? (CO₂, CCl₄, benzoquinona) → apolar; si no (un grupo OH, C=O o Cl en un lado) → polar.</li></ul><div class=\"ej\"><b>Ejemplo (EA 2026-1):</b> isopropanol (solvente) es polar. Acetato de nerilo tiene C=O y C–O sin simetría → polar. Mirceno solo tiene C–C, C=C y C–H → apolar. Se elige el acetato de nerilo (misma polaridad que el solvente).</div><div class=\"err\"><b>Error común:</b> «el CO₂ es polar porque C=O es polar». El enlace es polar, pero los dos dipolos apuntan en sentidos opuestos y se cancelan.</div>",
+   "ex": [
+    {
+     "id": "s6e1",
+     "lvl": 1,
+     "title": "Polar o apolar",
+     "q": "<p>Clasifica cada molécula.</p>",
+     "checks": [
+      {
+       "p": "CO₂",
+       "o": [
+        "Apolar",
+        "Polar"
+       ]
+      },
+      {
+       "p": "H₂O",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      },
+      {
+       "p": "CCl₄",
+       "o": [
+        "Apolar",
+        "Polar"
+       ]
+      },
+      {
+       "p": "NH₃",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      }
+     ],
+     "steps": [
+      "CO₂: C=O polar, pero lineal → dipolos opuestos se cancelan → apolar.",
+      "H₂O: O–H polar y angular → no se cancelan → polar.",
+      "CCl₄: C–Cl polar, tetraédrica simétrica → se cancelan → apolar.",
+      "NH₃: N–H polar y piramidal → polar."
+     ],
+     "ans": "A · P · A · P",
+     "hint": "Enlaces polares + geometría.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e2",
+     "lvl": 1,
+     "title": "La trampa del cloroformo",
+     "q": "<p>CHCl₃ es tetraédrico, igual que el CCl₄. ¿Es polar?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Sí: C–H es apolar y C–Cl polar, los dipolos no se compensan",
+        "No: toda molécula tetraédrica es apolar",
+        "No: C–Cl es apolar",
+        "Sí: porque tiene un par libre en el C",
+        "No: el H cancela al Cl"
+       ]
+      }
+     ],
+     "steps": [
+      "Tres flechas C→Cl y ninguna equivalente en el lado del H → no se cancelan.",
+      "μ ≠ 0 → polar. La geometría sola no basta: importan qué átomos rodean al central."
+     ],
+     "ans": "Polar",
+     "hint": "¿Son iguales los cuatro enlaces?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e3",
+     "lvl": 1,
+     "title": "Moléculas sin enlaces polares",
+     "q": "<p>¿Cuál es apolar porque <strong>todos sus enlaces</strong> son apolares? EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "CH₄",
+        "CO₂",
+        "CCl₄",
+        "HCl",
+        "H₂O"
+       ]
+      }
+     ],
+     "steps": [
+      "CH₄: solo C–H (apolar en el curso).",
+      "CO₂ y CCl₄ también son apolares, pero tienen enlaces polares que se cancelan por geometría."
+     ],
+     "ans": "CH₄",
+     "hint": "Distingue «enlaces apolares» de «dipolos que se cancelan».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ch"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e4",
+     "lvl": 2,
+     "title": "Fragancias (EA 2026-1)",
+     "q": "<p>El solvente es isopropanol. Se debe elegir la fragancia con la misma polaridad: acetato de nerilo (C₁₂H₂₀O₂) o mirceno (C₁₀H₁₆).</p>",
+     "checks": [
+      {
+       "p": "Isopropanol",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      },
+      {
+       "p": "Acetato de nerilo",
+       "o": [
+        "Polar: tiene C=O y C–O sin simetría",
+        "Apolar: casi todos sus enlaces son C–H",
+        "Apolar: los C=O se cancelan",
+        "Iónico"
+       ]
+      },
+      {
+       "p": "Mirceno",
+       "o": [
+        "Apolar: solo C–C, C=C y C–H",
+        "Polar: tiene dobles enlaces",
+        "Polar: es una molécula grande",
+        "Iónico"
+       ]
+      },
+      {
+       "p": "Seleccionada",
+       "o": [
+        "Acetato de nerilo",
+        "Mirceno"
+       ]
+      }
+     ],
+     "steps": [
+      "Isopropanol: C–O y O–H polares en un extremo → polar.",
+      "Acetato de nerilo: grupo éster (C=O, C–O) en un extremo → dipolos sin compensar → polar.",
+      "Mirceno: hidrocarburo → todos sus enlaces apolares → apolar.",
+      "Mismo tipo de polaridad que el solvente → acetato de nerilo."
+     ],
+     "ans": "Acetato de nerilo",
+     "hint": "Busca heteroátomos (O, N, Cl) en la fórmula topológica.",
+     "fig": "acnerilo",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polenl",
+       "polmol"
+      ],
+      [
+       "polmol"
+      ],
+      [
+       "ch",
+       "topo"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e5",
+     "lvl": 2,
+     "title": "Solvente modelo (EA 2026-1)",
+     "q": "<p>El solvente es dimetilformamida (polar). Candidatos: etilenglicol (HO–CH₂–CH₂–OH) y benzoquinona (C₆H₄O₂, anillo con dos C=O opuestos).</p>",
+     "checks": [
+      {
+       "p": "Etilenglicol",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      },
+      {
+       "p": "Benzoquinona",
+       "o": [
+        "Apolar: los dos C=O están opuestos y se cancelan",
+        "Polar: tiene enlaces C=O polares",
+        "Polar: tiene O",
+        "Iónica"
+       ]
+      },
+      {
+       "p": "Seleccionada",
+       "o": [
+        "Etilenglicol",
+        "Benzoquinona"
+       ]
+      }
+     ],
+     "steps": [
+      "Etilenglicol: C–O y O–H polares; los OH no se compensan → polar.",
+      "Benzoquinona: los C=O polares son simétricos (uno arriba, otro abajo) → μ = 0 → apolar. Como el CO₂.",
+      "Misma polaridad que la DMF → etilenglicol."
+     ],
+     "ans": "Etilenglicol",
+     "hint": "Revisa la simetría de la benzoquinona.",
+     "fig": "benzoquinona",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e6",
+     "lvl": 1,
+     "title": "¿Dentro o entre? (sesión 6)",
+     "q": "<p>Clasifica cada interacción.</p>",
+     "checks": [
+      {
+       "p": "Enlace O–H en H₂O",
+       "o": [
+        "Intramolecular",
+        "Intermolecular"
+       ]
+      },
+      {
+       "p": "H₂O···H₂O",
+       "o": [
+        "Intermolecular",
+        "Intramolecular"
+       ]
+      },
+      {
+       "p": "Enlace metálico en Cu",
+       "o": [
+        "Intramolecular",
+        "Intermolecular"
+       ]
+      },
+      {
+       "p": "Na⁺···H₂O",
+       "o": [
+        "Intermolecular",
+        "Intramolecular"
+       ]
+      }
+     ],
+     "steps": [
+      "O–H une átomos dentro de la molécula.",
+      "Entre dos moléculas de agua → inter.",
+      "El enlace metálico mantiene unida la sustancia → intra (enlace químico).",
+      "Ion con molécula de agua (solvatación) → inter."
+     ],
+     "ans": "Intra · inter · intra · inter",
+     "hint": "¿Une átomos de la misma especie o especies distintas?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "intra"
+      ],
+      [
+       "intra"
+      ],
+      [
+       "intra"
+      ],
+      [
+       "intra"
+      ]
+     ]
+    },
+    {
+     "id": "s6e7",
+     "lvl": 1,
+     "title": "¿Qué significa hervir? (sesión 6)",
+     "q": "<p>Al hervir agua, ¿qué se cambia principalmente?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La separación entre moléculas de H₂O",
+        "Los enlaces O–H dentro de cada H₂O",
+        "La identidad de los átomos de H y O",
+        "El número de protones del O",
+        "Se forma H₂ y O₂"
+       ]
+      }
+     ],
+     "steps": [
+      "El vapor sigue siendo H₂O: no se rompen enlaces O–H.",
+      "Se vencen las interacciones intermoleculares → cambio físico."
+     ],
+     "ans": "Separación entre moléculas",
+     "hint": "¿El vapor de agua sigue siendo agua?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "intra"
+      ],
+      [
+       "intra"
+      ]
+     ]
+    },
+    {
+     "id": "s6e8",
+     "lvl": 2,
+     "title": "Hidrocarburo o alcohol",
+     "q": "<p>Compara hexano (C₆H₁₄) y etanol (C₂H₅OH).</p>",
+     "checks": [
+      {
+       "p": "Hexano",
+       "o": [
+        "Apolar",
+        "Polar"
+       ]
+      },
+      {
+       "p": "Etanol",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      }
+     ],
+     "steps": [
+      "Hexano: solo C–C y C–H → apolar.",
+      "Etanol: C–O y O–H polares en un extremo → polar."
+     ],
+     "ans": "Apolar · polar",
+     "hint": "Busca el grupo OH.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ch"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e9",
+     "lvl": 2,
+     "title": "Fosgeno y formaldehído",
+     "q": "<p>COCl₂ y CH₂O son trigonales planas. EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
+     "checks": [
+      {
+       "p": "CH₂O",
+       "o": [
+        "Polar",
+        "Apolar"
+       ]
+      },
+      {
+       "p": "COCl₂",
+       "o": [
+        "Polar: C=O (ΔEN 1,0) y C–Cl (0,5) no se compensan",
+        "Apolar: es trigonal plana",
+        "Apolar: los Cl cancelan al O",
+        "Iónica"
+       ]
+      }
+     ],
+     "steps": [
+      "CH₂O: C=O polar y C–H apolares → el dipolo del C=O queda sin compensar → polar.",
+      "COCl₂: tres enlaces polares pero distintos (1,0 frente a 0,5) → no se cancelan → polar."
+     ],
+     "ans": "Ambas polares",
+     "hint": "Trigonal plana solo es apolar si los tres enlaces son iguales.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polmol"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    },
+    {
+     "id": "s6e10",
+     "lvl": 2,
+     "title": "¿Qué cambia? (sesión 6)",
+     "q": "<p>¿Cuál proceso rompe enlaces <strong>intramoleculares</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "H₂O → H₂ + O₂",
+        "Hielo → agua",
+        "Agua → vapor",
+        "Disolver azúcar en agua",
+        "Sublimar CO₂ sólido"
+       ]
+      }
+     ],
+     "steps": [
+      "En la descomposición del agua cambia la identidad: se rompen los enlaces O–H (cambio químico).",
+      "Los cambios de estado y la disolución de una sustancia molecular solo separan moléculas."
+     ],
+     "ans": "H₂O → H₂ + O₂",
+     "hint": "¿Cuál forma sustancias nuevas?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "intra"
+      ],
+      [
+       "cambio"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "name": "Sem. 7 · Fuerzas intermoleculares y propiedades (Teb, Tfus, volatilidad)",
+   "teo": "<p><strong>London</strong>: en todas las moléculas; dipolo instantáneo → inducido. Más e⁻ (molécula más grande) → más polarizable → más intensa; cadenas lineales (más contacto) &gt; ramificadas. <strong>Dipolo–dipolo</strong>: solo en moléculas polares. <strong>Enlace de hidrógeno</strong>: H unido a F, O o N con un par libre de F, O o N de otra molécula; más sitios → más intenso. <strong>Ion–dipolo</strong>: ion + molécula polar (disolución de sales en agua).</p><p>Para tamaños parecidos: <strong>London &lt; dipolo–dipolo &lt; puente de H</strong>. La predominante es la más intensa presente.</p><p><strong>FIM ↑ → Teb ↑, Tfus ↑, volatilidad ↓</strong>: separar partículas cuesta más energía.</p>",
+   "form": [
+    "Apolar: London",
+    "Polar: London + dipolo–dipolo",
+    "O–H, N–H, F–H: + puente de H",
+    "Ion + polar: ion–dipolo",
+    "London < dd < puente H (tamaño similar)",
+    "FIM ↑ → Teb ↑ · volatilidad ↓"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Es la plantilla que más se repite en los exámenes: <em>polaridad de enlace → polaridad de molécula → FIM presentes y predominante</em>, y luego ordenar puntos de ebullición o fusión.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Polar o apolar? (semana 6).</li><li><strong>2.</strong> Siempre hay London. Si es polar, agrega dipolo–dipolo.</li><li><strong>3.</strong> ¿Hay H unido directamente a O, N o F? → puente de H (predominante).</li><li><strong>4.</strong> Para ordenar Teb: compara la FIM predominante; si empatan, cuenta los sitios de puente de H o compara el tamaño (London).</li></ul><div class=\"ej\"><b>Ejemplo (EP 2025-2):</b> aminometanol (OH y NH₂: dos sitios de puente de H) &gt; 3-cloro-1-propanol (un OH + dipolo C–Cl) &gt; 2-metil-1-pentanol (un OH y cadena apolar). Mayor FIM → mayor Teb → curva más a la derecha.</div><div class=\"err\"><b>Error común:</b> ver H en la fórmula y decir «puente de hidrógeno». En la acetona y en el dimetil éter los H están unidos a C: no hay puente de H entre sus moléculas.</div>",
+   "ex": [
+    {
+     "id": "s7e1",
+     "lvl": 1,
+     "title": "FIM del agua",
+     "q": "<p>H₂O: FIM presentes y predominante.</p>",
+     "checks": [
+      {
+       "p": "Presentes",
+       "o": [
+        "London, dipolo–dipolo y puente de H",
+        "Solo London",
+        "London y dipolo–dipolo",
+        "Solo puente de H",
+        "Ion–dipolo"
+       ]
+      },
+      {
+       "p": "Predominante",
+       "o": [
+        "Puente de hidrógeno",
+        "London",
+        "Dipolo–dipolo",
+        "Ion–dipolo"
+       ]
+      }
+     ],
+     "steps": [
+      "London siempre; el agua es polar → dipolo–dipolo; H unido a O → puente de H.",
+      "El puente de H es la más intensa de las tres."
+     ],
+     "ans": "Puente de H",
+     "hint": "¿Hay H unido a O, N o F?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london",
+       "dd",
+       "ph"
+      ],
+      [
+       "predom"
+      ]
+     ]
+    },
+    {
+     "id": "s7e2",
+     "lvl": 1,
+     "title": "Identifica la FIM predominante",
+     "q": "<p>Indica la FIM predominante.</p>",
+     "checks": [
+      {
+       "p": "CH₄",
+       "o": [
+        "London",
+        "Dipolo–dipolo",
+        "Puente de H"
+       ]
+      },
+      {
+       "p": "HCl",
+       "o": [
+        "Dipolo–dipolo",
+        "London",
+        "Puente de H"
+       ]
+      },
+      {
+       "p": "Acetona (CH₃COCH₃)",
+       "o": [
+        "Dipolo–dipolo",
+        "Puente de H",
+        "London"
+       ]
+      },
+      {
+       "p": "Etanol",
+       "o": [
+        "Puente de H",
+        "Dipolo–dipolo",
+        "London"
+       ]
+      }
+     ],
+     "steps": [
+      "CH₄: apolar → solo London.",
+      "HCl: polar; el H está unido a Cl (no F, O ni N) → dipolo–dipolo.",
+      "Acetona: polar por el C=O; sus H están unidos a C → dipolo–dipolo.",
+      "Etanol: O–H → puente de H."
+     ],
+     "ans": "London · dd · dd · puente H",
+     "hint": "El H debe estar unido a F, O o N.",
+     "fig": "acetona",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london"
+      ],
+      [
+       "dd"
+      ],
+      [
+       "dd",
+       "ph"
+      ],
+      [
+       "ph"
+      ]
+     ]
+    },
+    {
+     "id": "s7e3",
+     "lvl": 1,
+     "title": "London en O₂ y HCl (sesión 7)",
+     "q": "<p>¿Cuál presenta fuerzas de London?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Ambas",
+        "Solo O₂",
+        "Solo HCl",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "London aparece en TODAS las moléculas, polares y apolares."
+     ],
+     "ans": "Ambas",
+     "hint": "London no requiere polaridad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london"
+      ]
+     ]
+    },
+    {
+     "id": "s7e4",
+     "lvl": 1,
+     "title": "Halógenos (sesión 7)",
+     "q": "<p>Cl₂ (Teb −34 °C), Br₂ (59 °C), I₂ (184 °C). ¿Qué explica la diferencia?</p>",
+     "checks": [
+      {
+       "p": "Cadena causal",
+       "o": [
+        "Más electrones → mayor polarizabilidad → London más intensa → Teb mayor",
+        "Más polaridad → dipolo–dipolo más intenso",
+        "El I₂ forma puentes de hidrógeno",
+        "Más electronegatividad → Teb mayor",
+        "El Cl₂ es iónico"
+       ]
+      }
+     ],
+     "steps": [
+      "Las tres son apolares: solo London.",
+      "I₂ tiene muchos más e⁻ → su nube se deforma más → dipolos instantáneos más intensos → Teb mayor."
+     ],
+     "ans": "Polarizabilidad",
+     "hint": "Las tres moléculas son apolares.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london"
+      ],
+      [
+       "london"
+      ]
+     ]
+    },
+    {
+     "id": "s7e5",
+     "lvl": 2,
+     "title": "Isómeros del pentano (sesión 7)",
+     "q": "<p>n-pentano (36 °C), isopentano (28 °C) y neopentano (10 °C) tienen la misma fórmula C₅H₁₂.</p>",
+     "checks": [
+      {
+       "p": "Explicación",
+       "o": [
+        "La forma: la cadena lineal tiene más superficie de contacto → London más intensa",
+        "El n-pentano es polar",
+        "El neopentano tiene más electrones",
+        "El n-pentano forma puentes de H",
+        "El neopentano es iónico"
+       ]
+      }
+     ],
+     "steps": [
+      "Mismo número de e⁻, solo London.",
+      "El n-pentano es alargado (más contacto entre moléculas); el neopentano es casi esférico (menos contacto) → London más débil → Teb menor."
+     ],
+     "ans": "Superficie de contacto",
+     "hint": "Misma fórmula, distinta forma.",
+     "fig": "neopentano",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london"
+      ],
+      [
+       "london",
+       "teb"
+      ]
+     ]
+    },
+    {
+     "id": "s7e6",
+     "lvl": 2,
+     "title": "Ordena por Teb (sesión 7)",
+     "q": "<p>Ordena de <strong>mayor a menor</strong> punto de ebullición: agua, propano, etanol.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Arrastra de mayor a menor Teb",
+       "items": [
+        "Agua",
+        "Etanol",
+        "Propano"
+       ]
+      }
+     ],
+     "steps": [
+      "Propano: apolar → solo London → el menor.",
+      "Etanol: un O–H → puente de H.",
+      "Agua: dos H sobre el O y dos pares libres → más puentes de H por molécula → el mayor."
+     ],
+     "ans": "Agua > etanol > propano",
+     "hint": "Cuenta sitios de puente de H.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "predom"
+      ],
+      [
+       "ph"
+      ],
+      [
+       "ph",
+       "teb"
+      ]
+     ]
+    },
+    {
+     "id": "s7e7",
+     "lvl": 2,
+     "title": "Volatilidad",
+     "q": "<p>¿Cuál es más volátil: acetona o agua?</p>",
+     "checks": [
+      {
+       "p": "Más volátil",
+       "o": [
+        "Acetona",
+        "Agua"
+       ]
+      },
+      {
+       "p": "Razón",
+       "o": [
+        "Sus FIM (dipolo–dipolo) son más débiles que los puentes de H del agua → sus moléculas escapan más fácil",
+        "La acetona forma más puentes de H",
+        "El agua es apolar",
+        "La acetona es iónica",
+        "El agua tiene menos electrones, por eso es más volátil"
+       ]
+      }
+     ],
+     "steps": [
+      "Volatilidad ↑ cuando las FIM ↓.",
+      "Agua: puente de H. Acetona: dipolo–dipolo (sin O–H). Las moléculas de acetona escapan más fácilmente de la superficie."
+     ],
+     "ans": "Acetona",
+     "hint": "FIM débiles → más volátil.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "teb"
+      ],
+      [
+       "ph",
+       "dd"
+      ]
+     ]
+    },
+    {
+     "id": "s7e8",
+     "lvl": 2,
+     "title": "Agua vs. eicosano (sesión 7)",
+     "q": "<p>A 25 °C el agua es líquida y el eicosano (C₂₀H₄₂) es sólido. ¿Por qué?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El eicosano tiene muchísimos e⁻ y una cadena larga: sus fuerzas de London totales superan a los puentes de H del agua",
+        "El eicosano forma puentes de hidrógeno",
+        "El eicosano es polar",
+        "El agua es apolar",
+        "El eicosano es un compuesto iónico"
+       ]
+      }
+     ],
+     "steps": [
+      "El eicosano es apolar: solo London.",
+      "Pero con 20 C y una gran superficie de contacto, la suma de London es enorme. La regla London &lt; dd &lt; puente de H vale solo para moléculas de tamaño parecido."
+     ],
+     "ans": "London muy intensa",
+     "hint": "La comparación por tipo de FIM vale para tamaños similares.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "london"
+      ],
+      [
+       "predom"
+      ]
+     ]
+    },
+    {
+     "id": "s7e9",
+     "lvl": 2,
+     "title": "Ion–dipolo",
+     "q": "<p>Al disolver NaCl en agua, ¿qué interacción permite la disolución?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Ion–dipolo: Na⁺ rodeado por los O (δ⁻) y Cl⁻ por los H (δ⁺) del agua",
+        "Puente de H entre Na y O",
+        "London entre Na⁺ y Cl⁻",
+        "Enlace covalente Na–O",
+        "Dipolo–dipolo entre NaCl y H₂O"
+       ]
+      }
+     ],
+     "steps": [
+      "NaCl(s) → Na⁺(ac) + Cl⁻(ac): los iones se rodean de moléculas de agua orientadas (solvatación)."
+     ],
+     "ans": "Ion–dipolo",
+     "hint": "El agua es polar y la sal está formada por iones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "iondip"
+      ]
+     ]
+    },
+    {
+     "id": "s7e10",
+     "lvl": 3,
+     "title": "Alcoholes y diagrama (EP 2025-2)",
+     "q": "<p>Alcohol 1: 3-cloro-1-propanol (HO–CH₂CH₂CH₂–Cl). Alcohol 2: aminometanol (HO–CH₂–NH₂). Alcohol 3: 2-metil-1-pentanol (un OH y cadena ramificada apolar). Las curvas de presión de vapor cortan 1 atm en A ≈ 148 °C, B ≈ 178 °C y C ≈ 192 °C.</p>",
+     "checks": [
+      {
+       "p": "FIM predominante en los tres",
+       "o": [
+        "Puente de hidrógeno",
+        "Dipolo–dipolo",
+        "London",
+        "Ion–dipolo"
+       ]
+      },
+      {
+       "p": "Alcohol con más sitios de puente de H",
+       "o": [
+        "Alcohol 2 (OH y NH₂)",
+        "Alcohol 1 (OH y Cl)",
+        "Alcohol 3 (OH)",
+        "Los tres tienen los mismos"
+       ]
+      },
+      {
+       "p": "Curva C (mayor Teb)",
+       "o": [
+        "Alcohol 2",
+        "Alcohol 1",
+        "Alcohol 3"
+       ]
+      },
+      {
+       "p": "Curva A (menor Teb)",
+       "o": [
+        "Alcohol 3",
+        "Alcohol 1",
+        "Alcohol 2"
+       ]
+      }
+     ],
+     "steps": [
+      "Todos tienen O–H → puente de H predominante (y London, dipolo–dipolo).",
+      "Alcohol 2 tiene O–H y N–H: dos grupos que forman puentes de H. Alcohol 1: un O–H y el dipolo C–Cl. Alcohol 3: un O–H y una cadena apolar.",
+      "Más FIM → más Teb → curva más a la derecha: C = alcohol 2.",
+      "A = alcohol 3 y B = alcohol 1."
+     ],
+     "ans": "C: alc. 2 · B: alc. 1 · A: alc. 3",
+     "hint": "Teb = temperatura donde la curva corta 1 atm.",
+     "fig": "curvasEP",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ph"
+      ],
+      [
+       "ph"
+      ],
+      [
+       "teb"
+      ],
+      [
+       "teb"
+      ]
+     ]
+    },
+    {
+     "id": "s7e11",
+     "lvl": 2,
+     "title": "¿Puente de H o no?",
+     "q": "<p>¿Cuál <strong>no</strong> forma puentes de hidrógeno entre sus propias moléculas?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Dimetil éter (CH₃–O–CH₃)",
+        "Metilamina (CH₃–NH₂)",
+        "Ácido acético (CH₃COOH)",
+        "Etilenglicol",
+        "Agua"
+       ]
+      }
+     ],
+     "steps": [
+      "El dimetil éter tiene O con pares libres, pero ningún H unido a O: todos sus H están en C.",
+      "Los demás tienen O–H o N–H."
+     ],
+     "ans": "Dimetil éter",
+     "hint": "Busca H unido directamente a O o N.",
+     "fig": "dme",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ph"
+      ],
+      [
+       "ph"
+      ]
+     ]
+    },
+    {
+     "id": "s7e12",
+     "lvl": 3,
+     "title": "Propilenglicoles (EP 2026-1)",
+     "q": "<p>1,2-propanodiol y 1,3-propanodiol (C₃H₈O₂) tienen dos grupos OH cada uno.</p>",
+     "checks": [
+      {
+       "p": "FIM predominante",
+       "o": [
+        "Puente de hidrógeno",
+        "Dipolo–dipolo",
+        "London",
+        "Ion–dipolo"
+       ]
+      },
+      {
+       "p": "Polaridad de molécula",
+       "o": [
+        "Ambos polares",
+        "Ambos apolares",
+        "Solo el 1,3 es polar",
+        "Solo el 1,2 es polar"
+       ]
+      }
+     ],
+     "steps": [
+      "Dos O–H por molécula → puentes de H (además de London y dipolo–dipolo).",
+      "Los C–O y O–H polares no se compensan en ninguno → ambos polares."
+     ],
+     "ans": "Puente de H; ambos polares",
+     "hint": "Mira los OH.",
+     "fig": "propilenglicol13",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ph"
+      ],
+      [
+       "polmol"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {
+  "isopropanol": "<svg class=\"dg mol\" viewBox=\"0 0 125 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Isopropanol\" style=\"max-width:156px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"73.1\" y2=\"26.5\"/><line class=\"gl\" x1=\"88.9\" y1=\"26.2\" x2=\"95.6\" y2=\"29.7\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"51.4\" y2=\"73.0\"/><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"103.6\" y=\"38.4\" text-anchor=\"middle\" font-size=\"13\">H</text></svg>",
+  "etilenglicol": "<svg class=\"dg mol\" viewBox=\"0 0 132 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Etilenglicol\" style=\"max-width:165px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"100.8\" y2=\"33.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"110.3\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "etanol": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Etanol\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"71.4\" y2=\"27.5\"/><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "hexano": "<svg class=\"dg mol\" viewBox=\"0 0 191 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Hexano\" style=\"max-width:239px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"139.8\" y2=\"22.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"22.0\" x2=\"169.2\" y2=\"39.0\"/></svg>",
+  "acetona": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Acetona\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"80.9\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"52.0\" x2=\"46.4\" y2=\"31.0\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "dme": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Dimetil éter\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"43.6\" y2=\"34.5\"/><line class=\"gl\" x1=\"59.2\" y1=\"34.5\" x2=\"80.9\" y2=\"22.0\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "clpropanol": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"3-cloro-1-propanol\" style=\"max-width:201px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"130.2\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"139.8\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">Cl</text></svg>",
+  "aminometanol": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Aminometanol\" style=\"max-width:128px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"71.4\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">NH<tspan dy=\"3\" font-size=\"9\">2</tspan><tspan dy=\"-3\"></tspan></text></svg>",
+  "metilpentanol": "<svg class=\"dg mol\" viewBox=\"0 0 191 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"2-metil-1-pentanol\" style=\"max-width:239px\"><line class=\"gl\" x1=\"31.5\" y1=\"61.5\" x2=\"51.4\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"73.0\" x2=\"80.9\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"110.3\" y2=\"73.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"73.0\" x2=\"139.8\" y2=\"56.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"56.0\" x2=\"169.2\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"80.9\" y2=\"22.0\"/><text class=\"dl\" x=\"22.0\" y=\"60.5\" text-anchor=\"middle\" font-size=\"13\">HO</text></svg>",
+  "benzoquinona": "<svg class=\"dg mol\" viewBox=\"0 0 102 180\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Benzoquinona\" style=\"max-width:128px\"><line class=\"gl\" x1=\"51.4\" y1=\"31.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"31.0\" x2=\"46.4\" y2=\"52.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"80.9\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"73.0\" x2=\"80.9\" y2=\"107.0\"/><line class=\"gl\" x1=\"85.9\" y1=\"77.0\" x2=\"85.9\" y2=\"103.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"107.0\" x2=\"51.4\" y2=\"124.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"124.0\" x2=\"22.0\" y2=\"107.0\"/><line class=\"gl\" x1=\"22.0\" y1=\"107.0\" x2=\"22.0\" y2=\"73.0\"/><line class=\"gl\" x1=\"17.0\" y1=\"103.0\" x2=\"17.0\" y2=\"77.0\"/><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"124.0\" x2=\"51.4\" y2=\"149.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"128.0\" x2=\"46.4\" y2=\"149.0\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"51.4\" y=\"162.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "dmf": "<svg class=\"dg mol\" viewBox=\"0 0 132 129\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Dimetilformamida\" style=\"max-width:165px\"><line class=\"gl\" x1=\"29.8\" y1=\"68.5\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"32.3\" y1=\"72.8\" x2=\"50.5\" y2=\"62.3\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"73.1\" y2=\"68.5\"/><line class=\"gl\" x1=\"88.7\" y1=\"68.5\" x2=\"110.3\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"82.0\" x2=\"80.9\" y2=\"107.0\"/><text class=\"dl\" x=\"22.0\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">H</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">N</text></svg>",
+  "acnerilo": "<svg class=\"dg mol\" viewBox=\"0 0 367 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Acetato de nerilo\" style=\"max-width:340px\"><line class=\"gl\" x1=\"22.0\" y1=\"39.0\" x2=\"51.4\" y2=\"22.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"22.0\" x2=\"80.9\" y2=\"39.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"39.0\" x2=\"80.9\" y2=\"64.0\"/><line class=\"gl\" x1=\"75.9\" y1=\"43.0\" x2=\"75.9\" y2=\"64.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"39.0\" x2=\"102.5\" y2=\"26.5\"/><line class=\"gl\" x1=\"118.1\" y1=\"26.5\" x2=\"139.8\" y2=\"39.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"39.0\" x2=\"169.2\" y2=\"22.0\"/><line class=\"gl\" x1=\"169.2\" y1=\"22.0\" x2=\"198.7\" y2=\"39.0\"/><line class=\"gl\" x1=\"170.2\" y1=\"28.3\" x2=\"192.7\" y2=\"41.3\"/><line class=\"gl\" x1=\"198.7\" y1=\"39.0\" x2=\"198.7\" y2=\"73.0\"/><line class=\"gl\" x1=\"198.7\" y1=\"39.0\" x2=\"228.1\" y2=\"22.0\"/><line class=\"gl\" x1=\"228.1\" y1=\"22.0\" x2=\"257.6\" y2=\"39.0\"/><line class=\"gl\" x1=\"257.6\" y1=\"39.0\" x2=\"287.0\" y2=\"22.0\"/><line class=\"gl\" x1=\"287.0\" y1=\"22.0\" x2=\"316.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"288.0\" y1=\"28.3\" x2=\"310.5\" y2=\"41.3\"/><line class=\"gl\" x1=\"316.4\" y1=\"39.0\" x2=\"345.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"316.4\" y1=\"39.0\" x2=\"316.4\" y2=\"73.0\"/><text class=\"dl\" x=\"110.3\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "propilenglicol12": "<svg class=\"dg mol\" viewBox=\"0 0 132 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"1,2-propanodiol\" style=\"max-width:165px\"><line class=\"gl\" x1=\"31.5\" y1=\"61.5\" x2=\"51.4\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"73.0\" x2=\"80.9\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"110.3\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"80.9\" y2=\"33.0\"/><text class=\"dl\" x=\"22.0\" y=\"60.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "propilenglicol13": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"1,3-propanodiol\" style=\"max-width:201px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"130.2\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"139.8\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "pentano": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"n-pentano\" style=\"max-width:201px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"139.8\" y2=\"22.0\"/></svg>",
+  "neopentano": "<svg class=\"dg mol\" viewBox=\"0 0 112 112\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Neopentano\" style=\"max-width:140px\"><line class=\"gl\" x1=\"22.0\" y1=\"56.0\" x2=\"56.0\" y2=\"56.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"90.0\" y2=\"56.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"56.0\" y2=\"22.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"56.0\" y2=\"90.0\"/></svg>",
+  "acetico": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Ácido acético\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"52.0\" x2=\"46.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"71.4\" y2=\"67.5\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "metilamina": "<svg class=\"dg mol\" viewBox=\"0 0 73 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Metilamina\" style=\"max-width:91px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"41.9\" y2=\"33.5\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">NH<tspan dy=\"3\" font-size=\"9\">2</tspan><tspan dy=\"-3\"></tspan></text></svg>",
+  "trimetilamina": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Trimetilamina\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"43.6\" y2=\"34.5\"/><line class=\"gl\" x1=\"59.2\" y1=\"34.5\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"48.0\" x2=\"51.4\" y2=\"73.0\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">N</text></svg>",
+  "ph2o": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><circle class=\"dot\" cx=\"115.0\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"102.0\" y=\"112\">A</text><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"201.2\" y=\"114\">B</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><text class=\"dl\" x=\"126\" y=\"180\">T</text><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><text class=\"dl\" x=\"256\" y=\"39\">C</text></svg>",
+  "pco2": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 192 Q115 175 150 120\" fill=\"none\" class=\"gl\"/><path d=\"M150 120 L175 15\" fill=\"none\" class=\"gl\"/><path d=\"M150 120 Q205 90 240 40\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"170\" x2=\"290\" y2=\"170\"/><text class=\"dm\" x=\"210\" y=\"165\">1 atm</text><circle class=\"dot\" cx=\"100.9\" cy=\"170\" r=\"3.5\"/><text class=\"dl\" x=\"88.9\" y=\"163\">S</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"190\" y=\"60\">Líquido</text><text class=\"dm\" x=\"200\" y=\"140\">Gas</text><circle class=\"dot\" cx=\"150\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"156\" y=\"135\">T</text><circle class=\"dot\" cx=\"240\" cy=\"40\" r=\"3.5\"/><text class=\"dl\" x=\"246\" y=\"34\">C</text></svg>",
+  "curvas3": "<svg class=\"dg\" viewBox=\"0 0 320 230\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Curvas X, Y y Z\"><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"305\" y2=\"200\"/><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"44\" y2=\"15\"/><text class=\"dm\" x=\"44\" y=\"214\" text-anchor=\"middle\">0</text><text class=\"dm\" x=\"96\" y=\"214\" text-anchor=\"middle\">50</text><text class=\"dm\" x=\"148\" y=\"214\" text-anchor=\"middle\">100</text><text class=\"dm\" x=\"201\" y=\"214\" text-anchor=\"middle\">150</text><text class=\"dm\" x=\"253\" y=\"214\" text-anchor=\"middle\">200</text><text class=\"dm\" x=\"305\" y=\"214\" text-anchor=\"middle\">250</text><text class=\"dm\" x=\"38\" y=\"204\" text-anchor=\"end\">0</text><text class=\"dm\" x=\"38\" y=\"167\" text-anchor=\"end\">1</text><text class=\"dm\" x=\"38\" y=\"130\" text-anchor=\"end\">2</text><text class=\"dm\" x=\"38\" y=\"93\" text-anchor=\"end\">3</text><text class=\"dm\" x=\"38\" y=\"56\" text-anchor=\"end\">4</text><text class=\"dm\" x=\"38\" y=\"19\" text-anchor=\"end\">5</text><text class=\"dm\" x=\"305\" y=\"228\" text-anchor=\"end\">T (°C)</text><text class=\"dm\" x=\"4\" y=\"13\">P (atm)</text><line class=\"dsh\" x1=\"44\" y1=\"163.0\" x2=\"305\" y2=\"163.0\"/><polyline points=\"45.0,197.0 47.1,196.7 49.2,196.4 51.3,196.1 53.4,195.7 55.5,195.4 57.6,194.9 59.7,194.5 61.7,194.0 63.8,193.5 65.9,192.9 68.0,192.3 70.1,191.6 72.2,190.9 74.3,190.0 76.4,189.2 78.5,188.2 80.5,187.2 82.6,186.0 84.7,184.8 86.8,183.5 88.9,182.0 91.0,180.4 93.1,178.7 95.2,176.8 97.2,174.7 99.3,172.5 101.4,170.1 103.5,167.4 105.6,164.5 107.7,161.4 109.8,158.0 111.9,154.3 113.9,150.2 116.0,145.8 118.1,141.0 120.2,135.8 122.3,130.2 124.4,124.0 126.5,117.3 128.6,110.0 130.7,102.0 132.7,93.3 134.8,83.9 136.9,73.6 139.0,62.5 141.1,50.3 143.2,37.1 145.3,22.7\" fill=\"none\" class=\"fa\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"138\" y=\"45\">X</text><polyline points=\"101.4,197.6 103.5,197.4 105.6,197.2 107.7,197.0 109.8,196.7 111.9,196.4 113.9,196.1 116.0,195.7 118.1,195.4 120.2,194.9 122.3,194.5 124.4,194.0 126.5,193.5 128.6,192.9 130.7,192.3 132.7,191.6 134.8,190.9 136.9,190.0 139.0,189.2 141.1,188.2 143.2,187.2 145.3,186.0 147.4,184.8 149.4,183.5 151.5,182.0 153.6,180.4 155.7,178.7 157.8,176.8 159.9,174.7 162.0,172.5 164.1,170.1 166.1,167.4 168.2,164.5 170.3,161.4 172.4,158.0 174.5,154.3 176.6,150.2 178.7,145.8 180.8,141.0 182.9,135.8 184.9,130.2 187.0,124.0 189.1,117.3 191.2,110.0 193.3,102.0 195.4,93.3 197.5,83.9 199.6,73.6 201.6,62.5 203.7,50.3 205.8,37.1 207.9,22.7\" fill=\"none\" class=\"fb\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"201\" y=\"45\">Y</text><polyline points=\"184.9,197.6 187.0,197.4 189.1,197.2 191.2,197.0 193.3,196.7 195.4,196.4 197.5,196.1 199.6,195.7 201.6,195.4 203.7,194.9 205.8,194.5 207.9,194.0 210.0,193.5 212.1,192.9 214.2,192.3 216.3,191.6 218.3,190.9 220.4,190.0 222.5,189.2 224.6,188.2 226.7,187.2 228.8,186.0 230.9,184.8 233.0,183.5 235.1,182.0 237.1,180.4 239.2,178.7 241.3,176.8 243.4,174.7 245.5,172.5 247.6,170.1 249.7,167.4 251.8,164.5 253.8,161.4 255.9,158.0 258.0,154.3 260.1,150.2 262.2,145.8 264.3,141.0 266.4,135.8 268.5,130.2 270.5,124.0 272.6,117.3 274.7,110.0 276.8,102.0 278.9,93.3 281.0,83.9 283.1,73.6 285.2,62.5 287.3,50.3 289.3,37.1 291.4,22.7\" fill=\"none\" class=\"gl\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"284\" y=\"45\">Z</text></svg>",
+  "curvasEP": "<svg class=\"dg\" viewBox=\"0 0 320 230\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases de los alcoholes\"><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"305\" y2=\"200\"/><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"44\" y2=\"15\"/><text class=\"dm\" x=\"44\" y=\"214\" text-anchor=\"middle\">50</text><text class=\"dm\" x=\"109\" y=\"214\" text-anchor=\"middle\">100</text><text class=\"dm\" x=\"174\" y=\"214\" text-anchor=\"middle\">150</text><text class=\"dm\" x=\"240\" y=\"214\" text-anchor=\"middle\">200</text><text class=\"dm\" x=\"305\" y=\"214\" text-anchor=\"middle\">250</text><text class=\"dm\" x=\"38\" y=\"204\" text-anchor=\"end\">0</text><text class=\"dm\" x=\"38\" y=\"167\" text-anchor=\"end\">1</text><text class=\"dm\" x=\"38\" y=\"130\" text-anchor=\"end\">2</text><text class=\"dm\" x=\"38\" y=\"93\" text-anchor=\"end\">3</text><text class=\"dm\" x=\"38\" y=\"56\" text-anchor=\"end\">4</text><text class=\"dm\" x=\"38\" y=\"19\" text-anchor=\"end\">5</text><text class=\"dm\" x=\"305\" y=\"228\" text-anchor=\"end\">T (°C)</text><text class=\"dm\" x=\"4\" y=\"13\">P (atm)</text><line class=\"dsh\" x1=\"44\" y1=\"163.0\" x2=\"305\" y2=\"163.0\"/><polyline points=\"87.1,197.6 89.7,197.4 92.3,197.2 94.9,197.0 97.5,196.7 100.1,196.4 102.7,196.1 105.3,195.7 107.9,195.4 110.6,194.9 113.2,194.5 115.8,194.0 118.4,193.5 121.0,192.9 123.6,192.3 126.2,191.6 128.8,190.9 131.4,190.0 134.0,189.2 136.7,188.2 139.3,187.2 141.9,186.0 144.5,184.8 147.1,183.5 149.7,182.0 152.3,180.4 154.9,178.7 157.5,176.8 160.1,174.7 162.8,172.5 165.4,170.1 168.0,167.4 170.6,164.5 173.2,161.4 175.8,158.0 178.4,154.3 181.0,150.2 183.6,145.8 186.2,141.0 188.9,135.8 191.5,130.2 194.1,124.0 196.7,117.3 199.3,110.0 201.9,102.0 204.5,93.3 207.1,83.9 209.7,73.6 212.3,62.5 215.0,50.3 217.6,37.1 220.2,22.7\" fill=\"none\" class=\"fa\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"211\" y=\"45\">A</text><polyline points=\"126.2,197.6 128.8,197.4 131.4,197.2 134.0,197.0 136.7,196.7 139.3,196.4 141.9,196.1 144.5,195.7 147.1,195.4 149.7,194.9 152.3,194.5 154.9,194.0 157.5,193.5 160.1,192.9 162.8,192.3 165.4,191.6 168.0,190.9 170.6,190.0 173.2,189.2 175.8,188.2 178.4,187.2 181.0,186.0 183.6,184.8 186.2,183.5 188.9,182.0 191.5,180.4 194.1,178.7 196.7,176.8 199.3,174.7 201.9,172.5 204.5,170.1 207.1,167.4 209.7,164.5 212.3,161.4 215.0,158.0 217.6,154.3 220.2,150.2 222.8,145.8 225.4,141.0 228.0,135.8 230.6,130.2 233.2,124.0 235.8,117.3 238.4,110.0 241.1,102.0 243.7,93.3 246.3,83.9 248.9,73.6 251.5,62.5 254.1,50.3 256.7,37.1 259.3,22.7\" fill=\"none\" class=\"fb\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"250\" y=\"45\">B</text><polyline points=\"144.5,197.6 147.1,197.4 149.7,197.2 152.3,197.0 154.9,196.7 157.5,196.4 160.1,196.1 162.8,195.7 165.4,195.4 168.0,194.9 170.6,194.5 173.2,194.0 175.8,193.5 178.4,192.9 181.0,192.3 183.6,191.6 186.2,190.9 188.9,190.0 191.5,189.2 194.1,188.2 196.7,187.2 199.3,186.0 201.9,184.8 204.5,183.5 207.1,182.0 209.7,180.4 212.3,178.7 215.0,176.8 217.6,174.7 220.2,172.5 222.8,170.1 225.4,167.4 228.0,164.5 230.6,161.4 233.2,158.0 235.8,154.3 238.4,150.2 241.1,145.8 243.7,141.0 246.3,135.8 248.9,130.2 251.5,124.0 254.1,117.3 256.7,110.0 259.3,102.0 261.9,93.3 264.5,83.9 267.2,73.6 269.8,62.5 272.4,50.3 275.0,37.1 277.6,22.7\" fill=\"none\" class=\"gl\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"268\" y=\"45\">C</text></svg>"
+ },
+ "concepts": {
+  "materia": {
+   "n": "Clasificación de la materia",
+   "f": "Sustancia pura (elemento · compuesto) · Mezcla (homogénea · heterogénea)",
+   "x": "Elemento: un solo tipo de átomo (O₃, Au, N₂). Compuesto: dos o más elementos en proporción fija (H₂O, NaHCO₃). Mezcla: composición variable; homogénea si se ve una sola fase (bronce, aire), heterogénea si se distinguen fases (agua y aceite, arena).",
+   "home": "s1"
+  },
+  "estados": {
+   "n": "Estados de la materia",
+   "f": "Sólido Fa ≫ Fr · Líquido Fa ≈ Fr · Gas Fa ≪ Fr",
+   "x": "Sólido: forma y volumen definidos. Líquido: volumen definido, forma del recipiente. Gas: forma y volumen indefinidos, compresible. Fa = fuerzas de atracción, Fr = fuerzas de repulsión.",
+   "home": "s1"
+  },
+  "cambio": {
+   "n": "Cambio físico vs. químico",
+   "f": "Físico: misma sustancia · Químico: nueva sustancia",
+   "x": "Todos los cambios de estado (fusión, vaporización, sublimación, deposición…) son físicos. Combustión, oxidación, cocción son químicos.",
+   "home": "s1"
+  },
+  "prop": {
+   "n": "Propiedad física vs. química",
+   "f": "Física: se mide sin cambiar la identidad · Química: requiere un cambio químico",
+   "x": "Físicas: densidad, volumen, punto de ebullición, conductividad, volatilidad, porosidad, brillo. Químicas: inflamabilidad, corrosividad, reactividad, capacidad de oxidarse.",
+   "home": "s1"
+  },
+  "nuclido": {
+   "n": "Notación de núclido",
+   "f": "ᴬ_Z X^carga · A = p⁺ + n⁰ · Z = p⁺",
+   "x": "En el átomo neutro e⁻ = p⁺. En un ion: e⁻ = Z − carga (catión pierde e⁻, anión gana e⁻). Los neutrones no cambian al formar iones.",
+   "home": "s1"
+  },
+  "isotopo": {
+   "n": "Isótopos",
+   "f": "Mismo Z, distinto A (distinto n⁰)",
+   "x": "Son el mismo elemento. Si te dan A, A+1, A+3… plantea la suma de los números de masa para hallar A y luego n⁰ = A − Z.",
+   "home": "s1"
+  },
+  "config": {
+   "n": "Configuración electrónica",
+   "f": "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s…",
+   "x": "Máximos: s 2, p 6, d 10, f 14. Control: la suma de superíndices = n.º de electrones. Se puede abreviar con el gas noble anterior: [Ar]4s²3d¹⁰4p⁵.",
+   "home": "s2"
+  },
+  "valencia": {
+   "n": "Nivel y electrones de valencia",
+   "f": "Nivel de valencia = n más alto ocupado",
+   "x": "En representativos, e⁻ de valencia = electrones del último nivel (s + p). K: 4s¹ → 1 e⁻. Br: 4s²4p⁵ → 7 e⁻.",
+   "home": "s2"
+  },
+  "ubicacion": {
+   "n": "Ubicación en la tabla",
+   "f": "Periodo = nivel más alto · Grupo A = e⁻ de valencia · Bloque = último subnivel",
+   "x": "Termina en s o p: representativo (grupo A). En d: transición. En f: transición interna. Ej.: [Ar]4s²3d¹⁰4p⁴ → periodo 4, grupo 6A, bloque p (Se).",
+   "home": "s2"
+  },
+  "lewisat": {
+   "n": "Símbolo de Lewis del átomo",
+   "f": "Símbolo + un punto por e⁻ de valencia",
+   "x": "Si te dan un símbolo con 6 puntos, el elemento es del grupo 6A; con el periodo lo identificas.",
+   "home": "s2"
+  },
+  "octeto": {
+   "n": "Regla del octeto e ion estable",
+   "f": "Grupo 1A→+1 · 2A→+2 · 3A→+3 · 5A→−3 · 6A→−2 · 7A→−1",
+   "x": "Los átomos ganan o pierden e⁻ para quedar con 8 e⁻ de valencia (configuración de gas noble). Isoelectrónicos: igual número de electrones (K⁺, Cl⁻ y Ar tienen 18).",
+   "home": "s2"
+  },
+  "mnm": {
+   "n": "Metales, no metales y metaloides",
+   "f": "Metal: brillo, conductor, dúctil y maleable · No metal: opaco, aislante · Metaloide: semiconductor",
+   "x": "Metaloides: B, Si, Ge, As, Sb, Te. Gases no metálicos: H₂, N₂, O₂, F₂, Cl₂ (y gases nobles). Líquidos: Br₂ (no metal) y Hg (metal). Ferromagnéticos: Fe, Co, Ni.",
+   "home": "s2"
+  },
+  "coulomb": {
+   "n": "Ley de Coulomb (para razonar)",
+   "f": "F = k·Q·q / r²",
+   "x": "Tres perillas: más Z → más atracción; más apantallamiento (e⁻ internos) → menos atracción efectiva; más niveles (r mayor) → menos atracción. En el examen NO basta citar la tendencia: hay que justificar con Z, apantallamiento y distancia.",
+   "home": "s3"
+  },
+  "ra": {
+   "n": "Radio atómico",
+   "f": "↓ en el grupo: ↑ radio · → en el periodo: ↓ radio",
+   "x": "Mitad de la distancia entre núcleos de dos átomos idénticos enlazados. Bajar = más niveles. Ir a la derecha = más Z con el mismo nivel → el núcleo contrae la nube.",
+   "home": "s3"
+  },
+  "ei": {
+   "n": "Energía de ionización (EI)",
+   "f": "X(g) + EI → X⁺(g) + e⁻ · → ↑ · ↓ ↓",
+   "x": "Energía mínima para quitar un e⁻ a un átomo gaseoso neutro. Mayor EI = más difícil arrancar el e⁻. Los gases nobles tienen la mayor EI de su periodo.",
+   "home": "s3"
+  },
+  "salto": {
+   "n": "Saltos de ionización",
+   "f": "Gran salto cuando se empieza a quitar e⁻ de un nivel interno",
+   "x": "Na: EI₁ = 496, EI₂ = 4562 kJ/mol. Tras perder 3s¹ queda [Ne]; el siguiente e⁻ está en n = 2, más cerca y menos apantallado.",
+   "home": "s3"
+  },
+  "ae": {
+   "n": "Afinidad electrónica (AE)",
+   "f": "X(g) + e⁻ → X⁻(g) · en valor absoluto: → ↑ · ↓ ↓",
+   "x": "Energía involucrada al aceptar un e⁻. Los halógenos (7A) tienen la mayor AE de su periodo: les falta 1 e⁻ para el octeto. Ojo: AE (átomo aislado) ≠ electronegatividad (átomo en un enlace).",
+   "home": "s3"
+  },
+  "en": {
+   "n": "Electronegatividad (EN)",
+   "f": "→ ↑ · ↓ ↓ · F = 4,0 (máxima)",
+   "x": "Capacidad de un átomo, dentro de un enlace, para atraer los e⁻ compartidos. Valores usados: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1 · Br 2,8.",
+   "home": "s3"
+  },
+  "ionico": {
+   "n": "Enlace iónico",
+   "f": "Metal + no metal → transferencia de e⁻ → atracción electrostática",
+   "x": "Se forman cationes y aniones; el enlace es la atracción entre ellos en una red cristalina. Fórmula por electroneutralidad: Ca²⁺ + O²⁻ → CaO; Al³⁺ + O²⁻ → Al₂O₃.",
+   "home": "s4"
+  },
+  "metalico": {
+   "n": "Enlace metálico",
+   "f": "Cationes inmersos en un mar de e⁻ deslocalizados",
+   "x": "Los e⁻ de valencia se mueven libremente → conducción como sólido, brillo, ductilidad y maleabilidad. Las aleaciones no tienen fórmula química.",
+   "home": "s4"
+  },
+  "covalente": {
+   "n": "Enlace covalente",
+   "f": "No metal + no metal → compartición de e⁻",
+   "x": "Forma moléculas (I₂, H₂O, CO₂) o redes (SiO₂). Las sustancias moleculares no conducen la electricidad y sus propiedades dependen de la polaridad y las FIM.",
+   "home": "s4"
+  },
+  "propenl": {
+   "n": "Propiedades según el enlace",
+   "f": "Iónico: Pf > 400 °C, conduce fundido o disuelto · Metálico: conduce sólido · Covalente molecular: no conduce",
+   "x": "Iónicos: sólidos cristalinos, solubles en solventes polares, insolubles en apolares, conducen fundidos o en solución. Metales: conducen sólidos, dúctiles, maleables, alto Pf. Moleculares: bajo Pf, no conducen.",
+   "home": "s4"
+  },
+  "polenl": {
+   "n": "Polaridad de enlace",
+   "f": "ΔEN = |EN₁ − EN₂| · ΔEN = 0 apolar · ΔEN > 0 polar",
+   "x": "En un enlace polar el átomo más electronegativo queda δ⁻ y el otro δ⁺. Excepción trabajada en clase: C–H (ΔEN = 0,4) se considera apolar.",
+   "home": "s4"
+  },
+  "ch": {
+   "n": "Excepción C–H",
+   "f": "C–H: ΔEN = 2,5 − 2,1 = 0,4 → apolar (por convención del curso)",
+   "x": "Por eso los hidrocarburos (solo C–C y C–H) tienen todos sus enlaces apolares.",
+   "home": "s4"
+  },
+  "lewis": {
+   "n": "Estructura de Lewis (método del curso)",
+   "f": "Enlazantes = N − V · Libres = V − enlazantes",
+   "x": "N (individuales) = 8 por átomo, 2 por cada H. V (valencia) = suma de e⁻ de valencia; en iones resta la carga (anión suma, catión resta). Enlaces = enlazantes / 2; pares libres = libres / 2. Los pares libres completan octetos.",
+   "home": "s5"
+  },
+  "cf": {
+   "n": "Carga formal",
+   "f": "CF = e⁻ valencia − [e⁻ no enlazantes + ½·e⁻ enlazantes]",
+   "x": "Elige la estructura con CF más cercanas a cero; si hay carga negativa, que esté en el átomo más electronegativo. La suma de CF = carga total de la especie.",
+   "home": "s5"
+  },
+  "rpecv": {
+   "n": "RPECV",
+   "f": "Dominios = átomos enlazados + pares libres del átomo central",
+   "x": "Un enlace doble o triple cuenta como UN dominio. Los pares libres repelen más que los enlazantes.",
+   "home": "s5"
+  },
+  "geom": {
+   "n": "Geometrías del curso",
+   "f": "AX₂ lineal · AX₃ trigonal plana · AX₂E angular · AX₄ tetraédrica · AX₃E piramidal trigonal · AX₂E₂ angular",
+   "x": "A = átomo central, X = átomos enlazados, E = pares libres del central. 2 dominios: lineal; 3: trigonal plana o angular; 4: tetraédrica, piramidal o angular.",
+   "home": "s5"
+  },
+  "polmol": {
+   "n": "Polaridad de molécula",
+   "f": "Enlaces polares + geometría asimétrica → μ ≠ 0 (polar)",
+   "x": "Si todos los enlaces son apolares, la molécula es apolar. Si hay enlaces polares, mira la geometría: si los dipolos se cancelan (CO₂ lineal, CCl₄ tetraédrica, simetría) es apolar; si no, polar (H₂O, NH₃, CHCl₃).",
+   "home": "s6"
+  },
+  "intra": {
+   "n": "Intra vs. intermolecular",
+   "f": "Intra: DENTRO de la especie (enlaces) · Inter: ENTRE partículas",
+   "x": "Romper enlaces intramoleculares cambia la identidad (cambio químico: H₂O → H₂ + O₂). Separar moléculas venciendo fuerzas intermoleculares es un cambio físico (hervir agua).",
+   "home": "s6"
+  },
+  "topo": {
+   "n": "Fórmula topológica",
+   "f": "Cada vértice o extremo = un C · los H del C no se dibujan",
+   "x": "Cada C completa 4 enlaces con H implícitos. Los heteroátomos (O, N, Cl…) y los H unidos a ellos sí se escriben (OH, NH₂).",
+   "home": "s6"
+  },
+  "london": {
+   "n": "Fuerzas de London",
+   "f": "Dipolo instantáneo → dipolo inducido · en TODAS las moléculas",
+   "x": "Más electrones (moléculas más grandes) → mayor polarizabilidad → London más intensa. Más superficie de contacto (cadenas lineales) → más intensa que en isómeros ramificados.",
+   "home": "s7"
+  },
+  "dd": {
+   "n": "Dipolo–dipolo",
+   "f": "Entre moléculas POLARES",
+   "x": "Los extremos δ⁺ de una molécula atraen a los δ⁻ de otra. Requiere que la molécula sea polar (μ ≠ 0).",
+   "home": "s7"
+  },
+  "ph": {
+   "n": "Enlace (puente) de hidrógeno",
+   "f": "H unido a F, O o N ··· par libre de F, O o N de otra molécula",
+   "x": "Es una interacción intermolecular, no un enlace covalente. Más sitios O–H o N–H → más puentes de hidrógeno → FIM mayores. El H de un C–H NO forma puente de hidrógeno.",
+   "home": "s7"
+  },
+  "iondip": {
+   "n": "Ion–dipolo",
+   "f": "Ion ··· molécula polar",
+   "x": "Explica la disolución de compuestos iónicos en agua (solvatación): Na⁺ rodeado por los O (δ⁻) del agua y Cl⁻ por los H (δ⁺).",
+   "home": "s7"
+  },
+  "predom": {
+   "n": "FIM presentes y predominante",
+   "f": "Tamaño similar: London < dipolo–dipolo < puente de H",
+   "x": "Apolar: solo London. Polar: London + dipolo–dipolo. Polar con O–H, N–H o F–H: London + dipolo–dipolo + puente de H (predominante). Ojo: en moléculas muy grandes (eicosano) London puede superar a un puente de H de una molécula pequeña.",
+   "home": "s7"
+  },
+  "teb": {
+   "n": "FIM y propiedades",
+   "f": "FIM ↑ → Teb ↑, Tfus ↑, volatilidad ↓",
+   "x": "Hervir o fundir es separar partículas: cuanto más se atraen, más energía (temperatura) se necesita. Más volátil = escapa más fácil = FIM más débiles.",
+   "home": "s7"
+  },
+  "solub": {
+   "n": "Solubilidad: semejante disuelve a semejante",
+   "f": "Polar disuelve polar/iónico · Apolar disuelve apolar",
+   "x": "La disolución compite entre tres interacciones: solvente–solvente, soluto–soluto y soluto–solvente. Se disuelve si la nueva interacción soluto–solvente es comparable a las que se rompen.",
+   "home": "s9"
+  },
+  "afin": {
+   "n": "Interacción afín soluto–solvente",
+   "f": "Iónico + polar: ion–dipolo · Polar + polar: dipolo–dipolo o puente de H · Apolar + apolar: London",
+   "x": "En los exámenes piden «el tipo de interacción afín que lo sustenta»: la interacción que se forma entre el soluto y el solvente.",
+   "home": "s9"
+  },
+  "fases": {
+   "n": "Diagrama de fases",
+   "f": "Curvas: S–L (fusión), L–G (vaporización), S–G (sublimación)",
+   "x": "T: punto triple (coexisten las tres fases). C: punto crítico (más allá, fluido supercrítico). A 1 atm: punto de fusión normal y punto de ebullición normal. Menor presión (Huancayo) → menor Teb.",
+   "home": "s9"
+  },
+  "aguaco2": {
+   "n": "Agua vs. CO₂",
+   "f": "H₂O: línea S–L inclinada a la izquierda · CO₂: a 1 atm solo sublima",
+   "x": "El agua líquida es más densa que el hielo. El punto triple del CO₂ está por encima de 1 atm (≈ 5,1 atm), por eso el hielo seco sublima en Lima: no tiene Pfus ni Peb a 1 atm.",
+   "home": "s9"
+  },
+  "sep": {
+   "n": "Métodos de separación",
+   "f": "Heterogéneas: tamizado, imantación, filtración, decantación, disolución selectiva · Homogéneas: destilación, evaporación",
+   "x": "Tamizado: tamaño. Imantación: ferromagnéticos (Fe, Co, Ni). Filtración: sólido insoluble de un líquido. Decantación: líquidos inmiscibles por densidad. Disolución selectiva: solubilidad. Destilación: distinto Teb. Evaporación: elimina el líquido y deja el sólido disuelto.",
+   "home": "s9"
+  },
+  "factor": {
+   "n": "Factor de conversión",
+   "f": "cantidad × (unidad deseada / unidad dada)",
+   "x": "Un factor vale 1 (1 km / 1000 m). Se encadenan hasta que las unidades se cancelan. 1 L = 1000 mL = 1 dm³; 1 mL = 1 cm³; 1 kg = 1000 g; 1 g = 1000 mg.",
+   "home": "s10"
+  },
+  "mol": {
+   "n": "Mol y masa molar",
+   "f": "n = m / M · N = n · Nₐ · Nₐ = 6,022 × 10²³",
+   "x": "La masa molar M (g/mol) es la suma de masas atómicas. 1 mol de cualquier sustancia contiene Nₐ partículas.",
+   "home": "s10"
+  },
+  "dens": {
+   "n": "Densidad",
+   "f": "ρ = m / V",
+   "x": "Sirve de factor para pasar de volumen a masa (y viceversa). Agua ≈ 1 g/mL.",
+   "home": "s10"
+  },
+  "pmm": {
+   "n": "Porcentajes de concentración",
+   "f": "%m/m = m_sto/m_sol × 100 · %m/v = m_sto(g)/V_sol(mL) × 100 · %v/v = V_sto/V_sol × 100",
+   "x": "m_solución = m_soluto + m_solvente. El %m/v son gramos de soluto por cada 100 mL de solución.",
+   "home": "s11"
+  },
+  "ppm": {
+   "n": "Partes por millón",
+   "f": "ppm = mg de soluto / L de solución (acuosa diluida)",
+   "x": "También: ppm = m_sto/m_sol × 10⁶. Para soluciones acuosas diluidas, 1 ppm ≈ 1 mg/L.",
+   "home": "s11"
+  },
+  "molar": {
+   "n": "Molaridad",
+   "f": "M = n_soluto / V_solución (L)",
+   "x": "mol de soluto por litro de SOLUCIÓN. n = M·V.",
+   "home": "s11"
+  },
+  "molal": {
+   "n": "Molalidad",
+   "f": "m = n_soluto / kg de solvente",
+   "x": "mol de soluto por kilogramo de SOLVENTE (no de solución).",
+   "home": "s11"
+  }
+ },
+ "simEx": [
+  {
+   "id": "ep1b",
+   "lvl": 2,
+   "title": "Hito 1 · Clasificación (variante)",
+   "q": "<p>«Un sensor usa un filamento de <b>tungsteno</b> (W) dentro de una ampolla de <b>vidrio</b>, llena de <b>argón</b>. Los contactos son de <b>latón</b> (cobre y cinc). Para limpiar se usa <b>alcohol isopropílico</b> (C₃H₇OH), que se evapora rápido. El tungsteno no se oxida porque está en atmósfera inerte.»</p>",
+   "checks": [
+    {
+     "p": "Un compuesto",
+     "o": [
+      "Alcohol isopropílico",
+      "Argón",
+      "Latón",
+      "Tungsteno",
+      "Vidrio"
+     ]
+    },
+    {
+     "p": "Una mezcla homogénea",
+     "o": [
+      "Latón",
+      "Argón",
+      "Tungsteno",
+      "C₃H₇OH"
+     ]
+    },
+    {
+     "p": "Una propiedad física",
+     "o": [
+      "La rápida evaporación del alcohol (volatilidad)",
+      "Que el tungsteno no se oxide",
+      "La inercia química del argón",
+      "La inflamabilidad del alcohol"
+     ]
+    },
+    {
+     "p": "Una propiedad química",
+     "o": [
+      "La capacidad del tungsteno de oxidarse",
+      "La volatilidad del alcohol",
+      "El brillo del filamento",
+      "La conductividad del latón"
+     ]
+    }
+   ],
+   "steps": [
+    "C₃H₇OH: C, H y O en proporción fija → compuesto. Ar y W son elementos.",
+    "Latón: aleación Cu–Zn → mezcla homogénea.",
+    "Evaporarse no cambia la identidad → física.",
+    "Oxidarse implica formar una nueva sustancia → química."
+   ],
+   "ans": "Alcohol · latón · volatilidad · oxidación",
+   "hint": "Oxidación, corrosión e inflamabilidad son químicas.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "materia"
+    ],
+    [
+     "materia"
+    ],
+    [
+     "prop"
+    ],
+    [
+     "prop"
+    ]
+   ]
+  },
+  {
+   "id": "ep2a",
+   "lvl": 3,
+   "title": "Hito 2 · Componente iónico (EP 2026-1)",
+   "q": "<p>Se dispone de Na⁺[OCN]⁻ y K⁺[NO₃]⁻. Se integra mejor el que contenga un ion con geometría trigonal plana. Incluye cálculo de electrones, Lewis y CF.</p>",
+   "checks": [
+    {
+     "p": "[OCN]⁻: N / V / enlazantes / libres",
+     "o": [
+      "24 / 16 / 8 / 8",
+      "24 / 15 / 9 / 6",
+      "24 / 17 / 7 / 10",
+      "16 / 24 / 8 / 8"
+     ]
+    },
+    {
+     "p": "[OCN]⁻: estructura más probable",
+     "o": [
+      "[O–C≡N]⁻: CF O −1, C 0, N 0",
+      "[O=C=N]⁻: CF O 0, C 0, N −1",
+      "[O≡C–N]⁻: CF O +1, C 0, N −2",
+      "O–N≡C"
+     ]
+    },
+    {
+     "p": "[OCN]⁻: geometría",
+     "o": [
+      "Lineal",
+      "Trigonal plana",
+      "Angular",
+      "Piramidal trigonal"
+     ]
+    },
+    {
+     "p": "[NO₃]⁻: geometría",
+     "o": [
+      "Trigonal plana",
+      "Piramidal trigonal",
+      "Angular",
+      "Tetraédrica"
+     ]
+    },
+    {
+     "p": "Componente seleccionado",
+     "o": [
+      "KNO₃",
+      "NaOCN",
+      "Ambos",
+      "Ninguno"
+     ]
+    }
+   ],
+   "steps": [
+    "N = 3 × 8 = 24; V = 6 + 4 + 5 + 1 = 16; enlazantes 8 (4 enlaces); libres 8 (4 pares).",
+    "Entre O=C=N (−1 en N) y O–C≡N (−1 en O), se prefiere la negativa en el más electronegativo: O.",
+    "C central con 2 dominios y sin pares → lineal.",
+    "N = 32, V = 24 → 4 enlaces (N=O y dos N–O), N sin pares → AX₃ trigonal plana.",
+    "El ion trigonal plano es el nitrato → KNO₃."
+   ],
+   "ans": "KNO₃",
+   "hint": "En el ion, suma la carga a V.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "lewis"
+    ],
+    [
+     "cf"
+    ],
+    [
+     "geom"
+    ],
+    [
+     "geom"
+    ],
+    [
+     "geom"
+    ]
+   ]
+  },
+  {
+   "id": "ep3a",
+   "lvl": 3,
+   "title": "Hito 3 · Componente molecular (variante del EP 2026-1)",
+   "q": "<p>El componente molecular debe formar una mezcla homogénea con el componente iónico (KNO₃). Opciones: <b>etilenglicol</b> (HO–CH₂–CH₂–OH) y <b>hexano</b> (C₆H₁₄). EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5.</p>",
+   "checks": [
+    {
+     "p": "Etilenglicol: polaridad de molécula",
+     "o": [
+      "Polar",
+      "Apolar"
+     ]
+    },
+    {
+     "p": "Etilenglicol: FIM y predominante",
+     "o": [
+      "London, dipolo–dipolo y puente de H; predomina puente de H",
+      "Solo London",
+      "London y dipolo–dipolo; predomina dipolo–dipolo",
+      "Ion–dipolo"
+     ]
+    },
+    {
+     "p": "Hexano: FIM",
+     "o": [
+      "Solo London",
+      "London y puente de H",
+      "Dipolo–dipolo",
+      "Ion–dipolo"
+     ]
+    },
+    {
+     "p": "Seleccionado e interacción afín con el iónico",
+     "o": [
+      "Etilenglicol: ion–dipolo con K⁺ y NO₃⁻",
+      "Hexano: London con el KNO₃",
+      "Etilenglicol: London",
+      "Hexano: ion–dipolo"
+     ]
+    }
+   ],
+   "steps": [
+    "C–O y O–H polares, sin simetría que los cancele → polar.",
+    "Tiene O–H → puente de H, además de London y dipolo–dipolo.",
+    "Solo C–C y C–H → apolar → London.",
+    "Un compuesto iónico se disuelve en un solvente polar mediante interacciones ion–dipolo → etilenglicol."
+   ],
+   "ans": "Etilenglicol (ion–dipolo)",
+   "hint": "Iónico + polar → ion–dipolo.",
+   "fig": "etilenglicol",
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "polmol"
+    ],
+    [
+     "ph",
+     "predom"
+    ],
+    [
+     "london"
+    ],
+    [
+     "iondip"
+    ]
+   ]
+  },
+  {
+   "id": "ep3b",
+   "lvl": 2,
+   "title": "Análisis completo de dos moléculas",
+   "q": "<p>Analiza la acetona (CH₃–CO–CH₃) y la metilamina (CH₃–NH₂). EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5.</p>",
+   "checks": [
+    {
+     "p": "Acetona: enlaces polares",
+     "o": [
+      "C=O",
+      "C–H",
+      "C–C",
+      "Ninguno"
+     ]
+    },
+    {
+     "p": "Acetona: FIM predominante",
+     "o": [
+      "Dipolo–dipolo",
+      "Puente de H",
+      "London",
+      "Ion–dipolo"
+     ]
+    },
+    {
+     "p": "Metilamina: FIM predominante",
+     "o": [
+      "Puente de H",
+      "Dipolo–dipolo",
+      "London",
+      "Ion–dipolo"
+     ]
+    }
+   ],
+   "steps": [
+    "C=O: 3,5 − 2,5 = 1,0 → polar; C–C y C–H apolares. La molécula es polar (el C=O queda sin compensar).",
+    "Polar sin H unido a O → dipolo–dipolo (además de London).",
+    "N–H (ΔEN 0,9) → puente de H."
+   ],
+   "ans": "dd · puente de H",
+   "hint": "¿Dónde están los H?",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "polenl"
+    ],
+    [
+     "dd"
+    ],
+    [
+     "ph"
+    ]
+   ]
+  },
+  {
+   "id": "ep4b",
+   "lvl": 3,
+   "title": "Hito 4 · Orden de punto de ebullición",
+   "q": "<p>Ordena de MENOR a MAYOR Teb: butano (C₄H₁₀), acetona (C₃H₆O) y 1-propanol (C₃H₇OH). Masas molares parecidas (58, 58 y 60 g/mol).</p>",
+   "checks": [
+    {
+     "p": "Orden de MENOR a MAYOR Teb",
+     "o": [
+      "Butano < acetona < 1-propanol",
+      "Acetona < butano < 1-propanol",
+      "1-propanol < acetona < butano",
+      "Butano < 1-propanol < acetona",
+      "Acetona < 1-propanol < butano"
+     ]
+    },
+    {
+     "p": "Sustentación",
+     "o": [
+      "Con tamaños parecidos: London (butano) < dipolo–dipolo (acetona) < puente de H (1-propanol)",
+      "El butano tiene más electrones",
+      "La acetona forma puentes de H",
+      "El 1-propanol es apolar",
+      "Todos tienen solo London"
+     ]
+    }
+   ],
+   "steps": [
+    "Butano: apolar → London (Teb ≈ 0 °C).",
+    "Acetona: polar → dipolo–dipolo (56 °C).",
+    "1-propanol: O–H → puente de H (97 °C)."
+   ],
+   "ans": "Butano < acetona < 1-propanol",
+   "hint": "Tamaños similares: compara la FIM predominante.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "london"
+    ],
+    [
+     "predom",
+     "teb"
+    ],
+    [
+     "ph"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 110,
+  "slots": [
+   {
+    "pts": 2.5,
+    "name": "Hito 1 · Clasificación de la materia",
+    "pool": [
+     "s1e12",
+     "ep1b"
+    ]
+   },
+   {
+    "pts": 7,
+    "name": "Hito 2 · Iones: Lewis, CF y geometría",
+    "pool": [
+     "ep2a",
+     "s5e10",
+     "s5e4"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Hito 3 · Polaridad y FIM",
+    "pool": [
+     "ep3a",
+     "ep3b"
+    ]
+   },
+   {
+    "pts": 5.5,
+    "name": "Hito 4 · FIM y punto de ebullición",
+    "pool": [
+     "s7e10",
+     "ep4b",
+     "s7e5"
+    ]
+   }
+  ]
+ }
+}

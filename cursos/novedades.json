@@ -1,6 +1,7 @@
 {
  "_nota": "Novedades que muestra la campanita. Agrega una entrada por cada curso nuevo o actualización (la más reciente primero). Campos: id único, fecha AAAA-MM-DD, tipo 'nuevo' o 'actualizado', curso = código del curso (code del JSON), bloque = id del archivo (opcional, abre ese bloque) y texto. La app solo muestra los últimos 15 días; borra las entradas más antiguas al agregar nuevas.",
  "items": [
+  {"id": "2026-10-11-qg", "fecha": "2026-10-11", "tipo": "nuevo", "curso": "CC6301", "bloque": "qg-ea3", "texto": "Nuevo curso: Química General. EA1, EA2 y parcial para repasar, EA3 (semanas 9 a 11) y examen final, con simulacros en el formato de las EA y parciales anteriores."},
   {"id": "2026-10-11-al-int", "fecha": "2026-10-11", "tipo": "actualizado", "curso": "CC6105", "bloque": "al-ea3", "texto": "Álgebra Lineal ahora es interactivo: visualizador de transformaciones, determinante como área, escalonador paso a paso y figuras en los problemas."},
   {"id": "2026-10-11-al", "fecha": "2026-10-11", "tipo": "nuevo", "curso": "CC6105", "bloque": "al-ep", "texto": "Nuevo curso: Álgebra Lineal. EA1, EA2, parcial con simulacro del EP 2026-2, EA3 con la semana 9 (transformaciones lineales) y examen final."},
   {"id": "2026-10-09-p2", "fecha": "2026-10-09", "tipo": "nuevo", "curso": "CS1112", "bloque": "p2-ep", "texto": "Nuevo curso: Programación II (C++). Parcial (sem. 1–7) y examen final, con simulacro escrito o en computadora."},

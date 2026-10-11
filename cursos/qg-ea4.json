@@ -1,0 +1,19 @@
+{
+ "id": "qg-ea4",
+ "code": "CC6301",
+ "name": "Química General",
+ "exam": "EA4 (semana 14)",
+ "short": "EA4",
+ "sub": "Sem. 12 a 14",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}

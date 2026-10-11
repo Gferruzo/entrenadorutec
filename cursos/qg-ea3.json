@@ -1,0 +1,1971 @@
+{
+ "id": "qg-ea3",
+ "code": "CC6301",
+ "name": "Química General",
+ "exam": "EA3 (semana 11)",
+ "short": "EA3",
+ "sub": "Sem. 9 a 11",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La EA3 es en la semana 11.</b> Cubre solubilidad, diagramas de fases y separación de mezclas (S9), factor de conversión (S10) y soluciones y concentración (S11). Las semanas 10 y 11 están armadas con el sílabo y se ajustarán cuando subas sus sesiones. Sin calculadora: los números están pensados para simplificarse.",
+ "form": "<p class=\"note\">Hoja de repaso de la EA3 (semanas 9 a 11).</p>\n<div class=\"fgrid\">\n<div><b>Solubilidad</b><br>Semejante disuelve a semejante</div>\n<div><b>Diagrama</b><br>T triple · C crítico · 1 atm: Tfus y Teb normales</div>\n<div><b>Separación</b><br>Imán (Fe, Co, Ni) · tamiz · filtrar · decantar · destilar · evaporar</div>\n<div><b>Mol</b><br>n = m/M · N = n·Nₐ · Nₐ = 6,022 × 10²³</div>\n<div><b>Densidad</b><br>ρ = m/V</div>\n<div><b>%</b><br>m/m · m/v (g/100 mL) · v/v</div>\n<div><b>ppm</b><br>mg/L</div>\n<div><b>Molaridad</b><br>M = n / V(L)</div>\n<div><b>Molalidad</b><br>m = n / kg solvente</div>\n</div>",
+ "formSim": false,
+ "topics": [
+  {
+   "id": "s9",
+   "name": "Sem. 9 · Solubilidad, diagramas de fases y separación de mezclas",
+   "teo": "<p><strong>Solubilidad</strong>: «semejante disuelve a semejante». Compiten tres interacciones: solvente–solvente, soluto–soluto y soluto–solvente. Iónicos y polares se disuelven en solventes polares (ion–dipolo, dipolo–dipolo, puente de H); apolares en apolares (London).</p><p><strong>Diagrama de fases</strong>: T (punto triple) y C (punto crítico). A 1 atm se leen el punto de fusión y de ebullición normales. A menor presión, menor Teb (agua: 100 °C en Lima, ~90 °C en Huancayo). En el agua la curva S–L se inclina a la izquierda (el líquido es más denso que el hielo). El CO₂ a 1 atm solo sublima.</p><p><strong>Separación</strong> (métodos físicos): tamizado (tamaño), imantación (Fe, Co, Ni), filtración (sólido insoluble–líquido), decantación (líquidos inmiscibles), disolución selectiva (solubilidad), destilación (Teb) y evaporación (recuperar el sólido disuelto).</p>",
+   "form": [
+    "Semejante disuelve a semejante",
+    "Ion + polar: ion–dipolo",
+    "Curva L–G a 1 atm → Teb normal",
+    "Curva más a la derecha → mayor Teb → más FIM",
+    "Ferromagnéticos: Fe, Co, Ni",
+    "Destilación: Teb · Evaporación: deja el sólido"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Esta semana junta todo lo anterior: la polaridad y las FIM de cada sustancia deciden en qué se disuelve, cómo se ve su diagrama de fases y con qué método se separa.</p><h3>Cómo diseñar una separación</h3><ul><li><strong>1.</strong> Clasifica cada componente: metal (¿ferromagnético?), iónico, polar o apolar; sólido o líquido; tamaño de partícula.</li><li><strong>2.</strong> Separa primero lo heterogéneo: imantación (Fe, Co, Ni), tamizado (granallas vs. polvo), filtración (sólidos insolubles).</li><li><strong>3.</strong> Luego lo homogéneo: destilación entre líquidos de distinto Teb; evaporación para recuperar una sal disuelta.</li><li><strong>4.</strong> Usa disolución selectiva cuando un sólido se disuelve en un solvente y otro no.</li></ul><div class=\"ej\"><b>Ejemplo (sesión 9):</b> agua, metanol, NaCl, Pt (granallas), Zn (polvo) y Co (granallas). Filtración → sólidos Pt, Zn, Co / líquido. Imantación → Co. Tamizado → Pt (granallas) / Zn (polvo). Destilación (~65–80 °C) → metanol. Destilación del resto o evaporación → agua / NaCl.</div><div class=\"err\"><b>Error común:</b> usar filtración para separar una sal disuelta. Una disolución es homogénea: la sal pasa por el filtro. Hay que evaporar o destilar.</div>",
+   "ex": [
+    {
+     "id": "s9e1",
+     "lvl": 1,
+     "title": "Tolueno (sesión 9)",
+     "q": "<p>El tolueno (C₇H₈, hidrocarburo aromático) es apolar. ¿Dónde se disuelve mejor?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "En dodecano (C₁₂H₂₆)",
+        "En agua",
+        "En ambos",
+        "En ninguno"
+       ]
+      },
+      {
+       "p": "Interacción afín",
+       "o": [
+        "London",
+        "Puente de H",
+        "Ion–dipolo",
+        "Dipolo–dipolo"
+       ]
+      }
+     ],
+     "steps": [
+      "Tolueno y dodecano son apolares: entre ellos solo hay London, igual que dentro de cada uno → se mezclan.",
+      "El agua tiene puentes de H muy fuertes que el tolueno no puede reemplazar → no se disuelve."
+     ],
+     "ans": "En dodecano, por London",
+     "hint": "Semejante disuelve a semejante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "solub"
+      ],
+      [
+       "afin"
+      ]
+     ]
+    },
+    {
+     "id": "s9e2",
+     "lvl": 1,
+     "title": "Etanol en agua (sesión 9)",
+     "q": "<p>¿Qué interacción predomina entre el etanol (soluto) y el agua (solvente)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Puente de hidrógeno",
+        "London",
+        "Ion–dipolo",
+        "Enlace covalente"
+       ]
+      }
+     ],
+     "steps": [
+      "Solvente–solvente: puente de H. Soluto–soluto: puente de H. Soluto–solvente: puente de H (O–H del etanol con el O del agua y viceversa).",
+      "Las tres interacciones son del mismo tipo → disolución favorable."
+     ],
+     "ans": "Puente de H",
+     "hint": "Ambos tienen O–H.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "afin",
+       "ph"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s9e3",
+     "lvl": 1,
+     "title": "Urea en etilenglicol (sesión 9)",
+     "q": "<p>La urea (H₂N–CO–NH₂) se disuelve en etilenglicol (HO–CH₂–CH₂–OH). ¿Qué interacción lo hace posible?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Puente de hidrógeno (N–H y O–H con pares libres de O y N)",
+        "London",
+        "Ion–dipolo",
+        "Enlace metálico",
+        "Ninguna, no se disuelve"
+       ]
+      }
+     ],
+     "steps": [
+      "La urea tiene N–H y el etilenglicol O–H; ambos tienen O o N con pares libres.",
+      "Se forman puentes de H soluto–solvente."
+     ],
+     "ans": "Puente de H",
+     "hint": "Busca H unidos a N u O en ambos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "afin"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s9e4",
+     "lvl": 2,
+     "title": "Miscibilidad (guía de laboratorio 6)",
+     "q": "<p>Predice si cada par es miscible.</p>",
+     "checks": [
+      {
+       "p": "Agua – etanol",
+       "o": [
+        "Miscibles",
+        "Inmiscibles"
+       ]
+      },
+      {
+       "p": "Agua – aceite",
+       "o": [
+        "Inmiscibles",
+        "Miscibles"
+       ]
+      },
+      {
+       "p": "Glicerina – aceite",
+       "o": [
+        "Inmiscibles",
+        "Miscibles"
+       ]
+      },
+      {
+       "p": "Agua – acetona",
+       "o": [
+        "Miscibles",
+        "Inmiscibles"
+       ]
+      }
+     ],
+     "steps": [
+      "Agua y etanol: polares con puente de H → miscibles.",
+      "Aceite (apolar, cadenas largas) y agua (polar) → dos fases.",
+      "Glicerina: tres OH, muy polar → no se mezcla con el aceite.",
+      "Acetona: polar; su O forma puentes de H con el H del agua → miscibles."
+     ],
+     "ans": "M · I · I · M",
+     "hint": "Polar con polar, apolar con apolar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "solub"
+      ],
+      [
+       "solub"
+      ],
+      [
+       "solub"
+      ],
+      [
+       "afin"
+      ]
+     ]
+    },
+    {
+     "id": "s9e5",
+     "lvl": 1,
+     "title": "Lee el diagrama de fases",
+     "q": "<p>En el diagrama de fases del agua:</p>",
+     "checks": [
+      {
+       "p": "Punto T",
+       "o": [
+        "Punto triple: coexisten sólido, líquido y gas",
+        "Punto crítico",
+        "Punto de ebullición normal",
+        "Punto de fusión normal"
+       ]
+      },
+      {
+       "p": "Punto C",
+       "o": [
+        "Punto crítico: más allá, fluido supercrítico",
+        "Punto triple",
+        "Punto de sublimación",
+        "Punto de fusión normal"
+       ]
+      },
+      {
+       "p": "Punto B (sobre la curva L–G a 1 atm)",
+       "o": [
+        "Punto de ebullición normal",
+        "Punto de fusión normal",
+        "Punto triple",
+        "Punto crítico"
+       ]
+      }
+     ],
+     "steps": [
+      "T: intersección de las tres curvas.",
+      "C: final de la curva líquido–gas.",
+      "B: la curva L–G cortando 1 atm → Teb normal (100 °C para el agua). A es el de fusión normal."
+     ],
+     "ans": "T triple · C crítico · B ebullición normal",
+     "hint": "La línea discontinua marca 1 atm.",
+     "fig": "ph2o",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fases"
+      ],
+      [
+       "fases"
+      ],
+      [
+       "fases"
+      ]
+     ]
+    },
+    {
+     "id": "s9e6",
+     "lvl": 1,
+     "title": "Lima y Huancayo (sesión 9)",
+     "q": "<p>¿Por qué el agua hierve a ~90 °C en Huancayo y a 100 °C en Lima?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "En Huancayo la presión atmosférica es menor; la curva L–G corta esa presión a una temperatura menor",
+        "En Huancayo el agua tiene menos puentes de H",
+        "En Huancayo el agua tiene otra fórmula",
+        "Porque hace más frío",
+        "Porque en Lima hay más humedad"
+       ]
+      }
+     ],
+     "steps": [
+      "La temperatura de ebullición es aquella en que la presión de vapor iguala a la externa.",
+      "A mayor altura, menor presión → se alcanza a menor temperatura."
+     ],
+     "ans": "Menor presión → menor Teb",
+     "hint": "Mira la curva L–G del diagrama.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fases"
+      ],
+      [
+       "fases"
+      ]
+     ]
+    },
+    {
+     "id": "s9e7",
+     "lvl": 2,
+     "title": "Hielo seco (sesión 9)",
+     "q": "<p>¿Por qué en Lima (1 atm) nunca vemos CO₂ líquido cuando el hielo seco «se evapora»?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Su punto triple está por encima de 1 atm: a esa presión solo existe la frontera sólido–gas (sublima)",
+        "Porque el CO₂ es polar",
+        "Porque el CO₂ forma puentes de H",
+        "Porque el líquido es invisible",
+        "Porque el CO₂ se descompone"
+       ]
+      }
+     ],
+     "steps": [
+      "En el diagrama del CO₂ la línea de 1 atm queda por debajo del punto triple (≈ 5,1 atm).",
+      "Solo cruza la curva S–G → sublimación directa. No tiene Pfus ni Peb a 1 atm."
+     ],
+     "ans": "Sublima a 1 atm",
+     "hint": "Ubica 1 atm respecto al punto triple.",
+     "fig": "pco2",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aguaco2"
+      ],
+      [
+       "aguaco2"
+      ]
+     ]
+    },
+    {
+     "id": "s9e8",
+     "lvl": 2,
+     "title": "Hielo menos denso",
+     "q": "<p>En el diagrama del agua la curva sólido–líquido se inclina hacia la izquierda. ¿Qué significa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Al aumentar la presión, el hielo funde a menor temperatura, porque el agua líquida es más densa que el hielo",
+        "El hielo es más denso que el agua líquida",
+        "El agua no tiene punto triple",
+        "El agua sublima a 1 atm",
+        "El agua tiene punto crítico a 1 atm"
+       ]
+      }
+     ],
+     "steps": [
+      "Pendiente negativa: más presión favorece la fase más densa, que es el líquido.",
+      "Por eso el hielo flota."
+     ],
+     "ans": "El líquido es más denso",
+     "hint": "Más presión favorece la fase de menor volumen.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aguaco2"
+      ],
+      [
+       "aguaco2"
+      ]
+     ]
+    },
+    {
+     "id": "s9e9",
+     "lvl": 2,
+     "title": "Curvas de presión de vapor",
+     "q": "<p>Tres líquidos tienen curvas L–G que cortan 1 atm a 60 °C (X), 120 °C (Y) y 200 °C (Z).</p>",
+     "checks": [
+      {
+       "p": "Mayores FIM",
+       "o": [
+        "Z",
+        "X",
+        "Y"
+       ]
+      },
+      {
+       "p": "Más volátil",
+       "o": [
+        "X",
+        "Z",
+        "Y"
+       ]
+      }
+     ],
+     "steps": [
+      "Mayor Teb → hay que vencer FIM más intensas → Z.",
+      "Menor Teb → FIM más débiles → más volátil → X."
+     ],
+     "ans": "FIM: Z · volátil: X",
+     "hint": "Curva más a la derecha = Teb mayor.",
+     "fig": "curvas3",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "teb"
+      ],
+      [
+       "teb"
+      ]
+     ]
+    },
+    {
+     "id": "s9e10",
+     "lvl": 1,
+     "title": "Elige el método",
+     "q": "<p>Indica el método adecuado.</p>",
+     "checks": [
+      {
+       "p": "Limaduras de hierro y arena",
+       "o": [
+        "Imantación",
+        "Destilación",
+        "Decantación",
+        "Evaporación"
+       ]
+      },
+      {
+       "p": "Agua y aceite",
+       "o": [
+        "Decantación",
+        "Filtración",
+        "Imantación",
+        "Tamizado"
+       ]
+      },
+      {
+       "p": "Sal disuelta en agua (recuperar la sal)",
+       "o": [
+        "Evaporación",
+        "Filtración",
+        "Decantación",
+        "Imantación"
+       ]
+      },
+      {
+       "p": "Agua y etanol",
+       "o": [
+        "Destilación",
+        "Filtración",
+        "Decantación",
+        "Tamizado"
+       ]
+      }
+     ],
+     "steps": [
+      "Fe es ferromagnético → imán.",
+      "Líquidos inmiscibles de distinta densidad → decantación (embudo de separación).",
+      "Mezcla homogénea: se elimina el agua y queda la sal.",
+      "Líquidos miscibles con distinto Teb → destilación."
+     ],
+     "ans": "Imantación · decantación · evaporación · destilación",
+     "hint": "¿Es homogénea o heterogénea?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ]
+     ]
+    },
+    {
+     "id": "s9e11",
+     "lvl": 2,
+     "title": "Diagrama de flujo (sesión 9)",
+     "q": "<p>Un recipiente contiene metanol, solución acuosa de NaCl, Pt en granallas, Zn en polvo y Co en granallas. Ordena los pasos para recuperar todo.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Filtración: sólidos (Pt, Zn, Co) / líquido (agua, metanol, NaCl)",
+        "Imantación de los sólidos: se retira el Co",
+        "Tamizado: Pt (granallas) / Zn (polvo)",
+        "Destilación del líquido: sale primero el metanol (menor Teb)",
+        "Evaporación (o destilación) de la solución: agua / NaCl"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero se separa lo heterogéneo: sólidos del líquido.",
+      "El Co es ferromagnético.",
+      "Pt y Zn se separan por tamaño de partícula.",
+      "El metanol tiene menor Teb que el agua.",
+      "La sal queda al eliminar el agua."
+     ],
+     "ans": "Filtrar → imán → tamiz → destilar → evaporar",
+     "hint": "Primero lo heterogéneo, luego lo homogéneo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ],
+      [
+       "sep"
+      ]
+     ]
+    },
+    {
+     "id": "s9e12",
+     "lvl": 3,
+     "title": "Esquema A, B, C (sesión 9)",
+     "q": "<p>Una mezcla de 3 sólidos A, B y C se trata así: (1) se agrega agua y se filtra → el filtrado contiene A disuelto; (2) el sólido (B, C) se trata con hexano y se filtra → queda C sólido; B pasa disuelto en hexano; (3) se evapora cada solvente.</p>",
+     "checks": [
+      {
+       "p": "A es",
+       "o": [
+        "Soluble en agua (iónico o polar)",
+        "Apolar",
+        "Insoluble en ambos",
+        "Un metal"
+       ]
+      },
+      {
+       "p": "B es",
+       "o": [
+        "Apolar (soluble en hexano)",
+        "Iónico",
+        "Soluble en agua",
+        "Insoluble en ambos"
+       ]
+      },
+      {
+       "p": "C es",
+       "o": [
+        "Insoluble en agua y en hexano (p. ej., un metal o un sólido de red)",
+        "Polar",
+        "Apolar",
+        "Iónico soluble en agua"
+       ]
+      }
+     ],
+     "steps": [
+      "A pasa al filtrado acuoso → interactúa con el agua (ion–dipolo o polar).",
+      "B no se disolvió en agua pero sí en hexano → apolar (London).",
+      "C no se disuelve en ninguno → por ejemplo un metal, arena (SiO₂)…"
+     ],
+     "ans": "A polar/iónico · B apolar · C insoluble",
+     "hint": "Disolución selectiva: cada solvente se lleva lo que se le parece.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep",
+       "solub"
+      ],
+      [
+       "solub"
+      ],
+      [
+       "sep"
+      ]
+     ]
+    },
+    {
+     "id": "s9e13",
+     "lvl": 2,
+     "title": "¿Qué fracción? (sesión 9)",
+     "q": "<p>Una mezcla de cafeína (polar), ácido clorogénico (polar, varios OH) y un aceite (triglicérido, apolar) se trata con agua y con hexano.</p>",
+     "checks": [
+      {
+       "p": "El aceite queda en",
+       "o": [
+        "La fracción de hexano",
+        "La fracción acuosa",
+        "Ambas por igual",
+        "Ninguna"
+       ]
+      },
+      {
+       "p": "El ácido clorogénico queda en",
+       "o": [
+        "La fracción acuosa",
+        "La fracción de hexano",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "Triglicérido: cadenas largas de C–H → apolar → se disuelve en hexano (London).",
+      "Varios OH → puentes de H con el agua → fracción acuosa."
+     ],
+     "ans": "Aceite: hexano · ácido: agua",
+     "hint": "Semejante disuelve a semejante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "solub"
+      ],
+      [
+       "afin"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "name": "Sem. 10 · Factor de conversión (unidades físicas y químicas)",
+   "teo": "<p class=\"note\">⚠️ Tema armado con el sílabo (aún no subes la sesión). Se ajustará al enfoque del profesor cuando llegue el PPT.</p><p>Un <strong>factor de conversión</strong> es una fracción igual a 1 (1 kg / 1000 g) que cambia unidades sin cambiar la cantidad. Se encadenan factores hasta que solo quede la unidad buscada.</p><p><strong>Unidades químicas</strong>: mol. n = m / M (M: masa molar en g/mol, suma de masas atómicas). Número de partículas = n · Nₐ, con Nₐ = 6,022 × 10²³. <strong>Densidad</strong> ρ = m/V, útil para pasar de volumen a masa.</p><p>Equivalencias: 1 L = 1000 mL = 1 dm³ · 1 mL = 1 cm³ · 1 kg = 1000 g · 1 g = 1000 mg · 1 m³ = 1000 L.</p>",
+   "form": [
+    "n = m / M",
+    "N = n · Nₐ",
+    "Nₐ = 6,022 × 10²³",
+    "ρ = m / V",
+    "1 L = 1000 mL = 1 dm³",
+    "1 mL = 1 cm³"
+   ],
+   "lesson": "<p class=\"note\">⚠️ Tema armado con el sílabo (aún no subes la sesión). Se ajustará al enfoque del profesor cuando llegue el PPT.</p><h3>Idea central</h3><p>El examen es sin calculadora: los números están pensados para simplificar. Escribe la cadena de factores y cancela unidades antes de operar.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe el dato con su unidad.</li><li><strong>2.</strong> Multiplica por factores con la unidad que quieres eliminar abajo.</li><li><strong>3.</strong> Simplifica y opera al final.</li></ul><div class=\"ej\"><b>Ejemplo:</b> ¿Cuántas moléculas hay en 9 g de agua (M = 18 g/mol)? 9 g × (1 mol / 18 g) × (6,022 × 10²³ / 1 mol) = 0,5 × 6,022 × 10²³ = 3,011 × 10²³.</div><div class=\"err\"><b>Error común:</b> poner el factor al revés (g/mol en vez de mol/g). Si las unidades no se cancelan, el factor está invertido.</div>",
+   "ex": [
+    {
+     "id": "s10e1",
+     "lvl": 1,
+     "title": "Masa molar",
+     "q": "<p>Masas atómicas: H 1, C 12, N 14, O 16, Na 23, S 32, Cl 35,5, Ca 40.</p>",
+     "checks": [
+      {
+       "p": "M de H₂O",
+       "o": [
+        "18 g/mol",
+        "17 g/mol",
+        "34 g/mol",
+        "16 g/mol"
+       ]
+      },
+      {
+       "p": "M de CaCO₃",
+       "o": [
+        "100 g/mol",
+        "68 g/mol",
+        "84 g/mol",
+        "116 g/mol"
+       ]
+      },
+      {
+       "p": "M de H₂SO₄",
+       "o": [
+        "98 g/mol",
+        "50 g/mol",
+        "96 g/mol",
+        "82 g/mol"
+       ]
+      }
+     ],
+     "steps": [
+      "2(1) + 16 = 18.",
+      "40 + 12 + 3(16) = 100.",
+      "2(1) + 32 + 4(16) = 98."
+     ],
+     "ans": "18 · 100 · 98 g/mol",
+     "hint": "Multiplica cada masa por su subíndice.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mol"
+      ],
+      [
+       "mol"
+      ],
+      [
+       "mol"
+      ]
+     ]
+    },
+    {
+     "id": "s10e2",
+     "lvl": 1,
+     "title": "Gramos a moles",
+     "q": "<p>¿Cuántos moles hay en 20 g de NaOH (M = 40 g/mol)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "0,5 mol",
+        "2 mol",
+        "800 mol",
+        "0,2 mol"
+       ]
+      }
+     ],
+     "steps": [
+      "n = 20 g × (1 mol / 40 g) = 0,5 mol."
+     ],
+     "ans": "0,5 mol",
+     "hint": "n = m / M.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mol",
+       "factor"
+      ]
+     ]
+    },
+    {
+     "id": "s10e3",
+     "lvl": 1,
+     "title": "Moléculas en agua",
+     "q": "<p>¿Cuántas moléculas hay en 9 g de H₂O (M = 18 g/mol)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "3,011 × 10²³",
+        "6,022 × 10²³",
+        "1,2044 × 10²⁴",
+        "5,4198 × 10²⁴"
+       ]
+      }
+     ],
+     "steps": [
+      "9 g × (1 mol/18 g) = 0,5 mol.",
+      "0,5 mol × 6,022 × 10²³ = 3,011 × 10²³ moléculas."
+     ],
+     "ans": "3,011 × 10²³",
+     "hint": "Primero pasa a moles.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mol"
+      ],
+      [
+       "mol"
+      ]
+     ]
+    },
+    {
+     "id": "s10e4",
+     "lvl": 2,
+     "title": "Átomos en una muestra",
+     "q": "<p>¿Cuántos átomos de H hay en 0,5 mol de CH₄?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "2 × 6,022 × 10²³ = 1,2044 × 10²⁴",
+        "0,5 × 6,022 × 10²³",
+        "4 × 6,022 × 10²³",
+        "6,022 × 10²³"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada molécula de CH₄ tiene 4 H → 0,5 mol CH₄ × 4 mol H / 1 mol CH₄ = 2 mol H.",
+      "2 × 6,022 × 10²³ = 1,2044 × 10²⁴ átomos."
+     ],
+     "ans": "1,2044 × 10²⁴ átomos de H",
+     "hint": "Usa el subíndice como factor.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mol",
+       "factor"
+      ],
+      [
+       "mol"
+      ]
+     ]
+    },
+    {
+     "id": "s10e5",
+     "lvl": 1,
+     "title": "Cambio de unidades",
+     "q": "<p>Convierte.</p>",
+     "checks": [
+      {
+       "p": "2,5 L a mL",
+       "o": [
+        "2500 mL",
+        "250 mL",
+        "0,0025 mL",
+        "25 000 mL"
+       ]
+      },
+      {
+       "p": "750 mg a g",
+       "o": [
+        "0,75 g",
+        "7,5 g",
+        "75 g",
+        "750 000 g"
+       ]
+      },
+      {
+       "p": "72 km/h a m/s",
+       "o": [
+        "20 m/s",
+        "72 000 m/s",
+        "7,2 m/s",
+        "259,2 m/s"
+       ]
+      }
+     ],
+     "steps": [
+      "2,5 L × 1000 mL/L = 2500 mL.",
+      "750 mg × 1 g/1000 mg = 0,75 g.",
+      "72 km/h × 1000 m/km × 1 h/3600 s = 72 000/3600 = 20 m/s."
+     ],
+     "ans": "2500 mL · 0,75 g · 20 m/s",
+     "hint": "Cancela unidades.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "factor"
+      ],
+      [
+       "factor"
+      ],
+      [
+       "factor"
+      ]
+     ]
+    },
+    {
+     "id": "s10e6",
+     "lvl": 2,
+     "title": "Densidad como factor",
+     "q": "<p>El etanol tiene densidad 0,8 g/mL. ¿Qué masa tienen 250 mL?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "200 g",
+        "312,5 g",
+        "250 g",
+        "0,0032 g"
+       ]
+      }
+     ],
+     "steps": [
+      "m = ρ · V = 0,8 g/mL × 250 mL = 200 g."
+     ],
+     "ans": "200 g",
+     "hint": "mL se cancela con mL.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dens"
+      ]
+     ]
+    },
+    {
+     "id": "s10e7",
+     "lvl": 2,
+     "title": "Volumen a moles",
+     "q": "<p>¿Cuántos moles hay en 46 mL de etanol (C₂H₅OH, M = 46 g/mol, ρ = 0,8 g/mL)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "0,8 mol",
+        "1 mol",
+        "1,25 mol",
+        "36,8 mol"
+       ]
+      }
+     ],
+     "steps": [
+      "m = 46 mL × 0,8 g/mL = 36,8 g.",
+      "n = 36,8 g × (1 mol/46 g) = 0,8 mol."
+     ],
+     "ans": "0,8 mol",
+     "hint": "Volumen → masa → moles.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dens"
+      ],
+      [
+       "mol"
+      ]
+     ]
+    },
+    {
+     "id": "s10e8",
+     "lvl": 2,
+     "title": "Unidades cúbicas",
+     "q": "<p>¿Cuántos litros hay en 2 m³?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "2000 L",
+        "200 L",
+        "2 L",
+        "20 000 L"
+       ]
+      }
+     ],
+     "steps": [
+      "1 m³ = (10 dm)³ = 1000 dm³ = 1000 L.",
+      "2 m³ × 1000 L/m³ = 2000 L."
+     ],
+     "ans": "2000 L",
+     "hint": "1 dm³ = 1 L.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "factor"
+      ],
+      [
+       "factor"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "name": "Sem. 11 · Soluciones: unidades físicas y químicas de concentración",
+   "teo": "<p class=\"note\">⚠️ Tema armado con el sílabo (aún no subes la sesión). Se ajustará al enfoque del profesor cuando llegue el PPT.</p><p>Una <strong>solución</strong> es una mezcla homogénea de soluto y solvente. m_solución = m_soluto + m_solvente.</p><p><strong>Unidades físicas</strong>: %m/m = m_sto/m_sol × 100; %m/v = g de soluto / mL de solución × 100; %v/v = V_sto/V_sol × 100; ppm = mg de soluto / L de solución (acuosa diluida).</p><p><strong>Unidades químicas</strong>: molaridad M = mol de soluto / L de solución; molalidad m = mol de soluto / kg de solvente.</p>",
+   "form": [
+    "%m/m = m_sto / m_sol × 100",
+    "%m/v = m_sto(g) / V_sol(mL) × 100",
+    "%v/v = V_sto / V_sol × 100",
+    "ppm = mg / L",
+    "M = n / V_sol(L)",
+    "m = n / kg_ste"
+   ],
+   "lesson": "<p class=\"note\">⚠️ Tema armado con el sílabo (aún no subes la sesión). Se ajustará al enfoque del profesor cuando llegue el PPT.</p><h3>Idea central</h3><p>Antes de reemplazar, identifica qué es soluto, qué es solvente y qué es solución. La mayoría de errores viene de usar la masa del solvente donde va la de la solución.</p><h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe los datos con unidades (g, mL, L, mol).</li><li><strong>2.</strong> Si piden M, pasa el soluto a moles (n = m/M) y el volumen a litros.</li><li><strong>3.</strong> Si piden %m/m, suma soluto + solvente.</li></ul><div class=\"ej\"><b>Ejemplo:</b> 4 g de NaOH (M = 40 g/mol) en 250 mL de solución → n = 0,1 mol; V = 0,25 L → M = 0,1/0,25 = 0,4 mol/L.</div><div class=\"err\"><b>Error común:</b> en %m/m dividir entre la masa del solvente. 10 g de sal en 90 g de agua es 10 % (10/100), no 11,1 %.</div>",
+   "ex": [
+    {
+     "id": "s11e1",
+     "lvl": 1,
+     "title": "Porcentaje en masa",
+     "q": "<p>Se disuelven 10 g de NaCl en 90 g de agua.</p>",
+     "checks": [
+      {
+       "p": "Masa de solución",
+       "o": [
+        "100 g",
+        "90 g",
+        "80 g",
+        "10 g"
+       ]
+      },
+      {
+       "p": "%m/m",
+       "o": [
+        "10 %",
+        "11,1 %",
+        "9 %",
+        "90 %"
+       ]
+      }
+     ],
+     "steps": [
+      "m_sol = 10 + 90 = 100 g.",
+      "%m/m = 10/100 × 100 = 10 %."
+     ],
+     "ans": "10 %",
+     "hint": "Divide entre la solución, no entre el solvente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pmm"
+      ],
+      [
+       "pmm"
+      ]
+     ]
+    },
+    {
+     "id": "s11e2",
+     "lvl": 1,
+     "title": "Porcentaje masa/volumen",
+     "q": "<p>Un suero tiene 9 g de NaCl en 1000 mL de solución.</p>",
+     "checks": [
+      {
+       "p": "%m/v",
+       "o": [
+        "0,9 %",
+        "9 %",
+        "0,09 %",
+        "90 %"
+       ]
+      }
+     ],
+     "steps": [
+      "%m/v = 9 g / 1000 mL × 100 = 0,9 % (suero fisiológico)."
+     ],
+     "ans": "0,9 %",
+     "hint": "Gramos por cada 100 mL.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pmm"
+      ]
+     ]
+    },
+    {
+     "id": "s11e3",
+     "lvl": 1,
+     "title": "Porcentaje en volumen",
+     "q": "<p>Un vino contiene 12 mL de etanol por cada 100 mL. ¿Cuánto etanol hay en una botella de 750 mL?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "90 mL",
+        "62,5 mL",
+        "12 mL",
+        "9 mL"
+       ]
+      }
+     ],
+     "steps": [
+      "750 mL sol × (12 mL etanol / 100 mL sol) = 90 mL."
+     ],
+     "ans": "90 mL",
+     "hint": "Usa el porcentaje como factor.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pmm",
+       "factor"
+      ]
+     ]
+    },
+    {
+     "id": "s11e4",
+     "lvl": 1,
+     "title": "Molaridad",
+     "q": "<p>4 g de NaOH (M = 40 g/mol) en 250 mL de solución.</p>",
+     "checks": [
+      {
+       "p": "Moles de NaOH",
+       "o": [
+        "0,1 mol",
+        "10 mol",
+        "0,4 mol",
+        "1 mol"
+       ]
+      },
+      {
+       "p": "Molaridad",
+       "o": [
+        "0,4 M",
+        "0,016 M",
+        "16 M",
+        "0,1 M"
+       ]
+      }
+     ],
+     "steps": [
+      "n = 4/40 = 0,1 mol.",
+      "V = 0,250 L → M = 0,1/0,25 = 0,4 mol/L."
+     ],
+     "ans": "0,4 M",
+     "hint": "El volumen va en litros.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mol"
+      ],
+      [
+       "molar"
+      ]
+     ]
+    },
+    {
+     "id": "s11e5",
+     "lvl": 2,
+     "title": "Masa para preparar",
+     "q": "<p>¿Cuántos gramos de glucosa (C₆H₁₂O₆, M = 180 g/mol) se necesitan para preparar 500 mL de solución 0,2 M?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "18 g",
+        "36 g",
+        "180 g",
+        "0,1 g"
+       ]
+      }
+     ],
+     "steps": [
+      "n = M·V = 0,2 mol/L × 0,5 L = 0,1 mol.",
+      "m = 0,1 mol × 180 g/mol = 18 g."
+     ],
+     "ans": "18 g",
+     "hint": "n = M · V.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "molar"
+      ],
+      [
+       "mol"
+      ]
+     ]
+    },
+    {
+     "id": "s11e6",
+     "lvl": 2,
+     "title": "Partes por millón",
+     "q": "<p>Una muestra de 2 L de agua contiene 0,8 mg de plomo.</p>",
+     "checks": [
+      {
+       "p": "Concentración",
+       "o": [
+        "0,4 ppm",
+        "1,6 ppm",
+        "400 ppm",
+        "0,8 ppm"
+       ]
+      }
+     ],
+     "steps": [
+      "ppm = mg / L = 0,8 mg / 2 L = 0,4 ppm."
+     ],
+     "ans": "0,4 ppm",
+     "hint": "ppm ≈ mg/L en agua.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ppm"
+      ]
+     ]
+    },
+    {
+     "id": "s11e7",
+     "lvl": 2,
+     "title": "Molalidad",
+     "q": "<p>Se disuelven 0,5 mol de urea en 250 g de agua.</p>",
+     "checks": [
+      {
+       "p": "Molalidad",
+       "o": [
+        "2 mol/kg",
+        "0,125 mol/kg",
+        "0,002 mol/kg",
+        "125 mol/kg"
+       ]
+      }
+     ],
+     "steps": [
+      "kg de solvente = 0,250 kg.",
+      "m = 0,5 / 0,25 = 2 mol/kg."
+     ],
+     "ans": "2 m",
+     "hint": "Por kg de solvente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "molal"
+      ],
+      [
+       "molal"
+      ]
+     ]
+    },
+    {
+     "id": "s11e8",
+     "lvl": 3,
+     "title": "De %m/m a molaridad",
+     "q": "<p>Una solución de NaOH al 20 %m/m tiene densidad 1,2 g/mL (M NaOH = 40 g/mol). Toma 1 L de solución.</p>",
+     "checks": [
+      {
+       "p": "Masa de 1 L de solución",
+       "o": [
+        "1200 g",
+        "1000 g",
+        "1,2 g",
+        "833 g"
+       ]
+      },
+      {
+       "p": "Masa de NaOH",
+       "o": [
+        "240 g",
+        "200 g",
+        "20 g",
+        "960 g"
+       ]
+      },
+      {
+       "p": "Molaridad",
+       "o": [
+        "6 M",
+        "5 M",
+        "0,6 M",
+        "24 M"
+       ]
+      }
+     ],
+     "steps": [
+      "1000 mL × 1,2 g/mL = 1200 g de solución.",
+      "20 % de 1200 g = 240 g de NaOH.",
+      "240/40 = 6 mol en 1 L → 6 M."
+     ],
+     "ans": "6 M",
+     "hint": "Toma una base de cálculo de 1 L.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dens"
+      ],
+      [
+       "pmm"
+      ],
+      [
+       "molar"
+      ]
+     ]
+    },
+    {
+     "id": "s11e9",
+     "lvl": 1,
+     "title": "Identifica componentes",
+     "q": "<p>En el suero fisiológico (NaCl en agua):</p>",
+     "checks": [
+      {
+       "p": "Soluto",
+       "o": [
+        "NaCl",
+        "Agua",
+        "El suero"
+       ]
+      },
+      {
+       "p": "Solvente",
+       "o": [
+        "Agua",
+        "NaCl",
+        "El suero"
+       ]
+      },
+      {
+       "p": "Tipo de mezcla",
+       "o": [
+        "Homogénea",
+        "Heterogénea",
+        "Compuesto"
+       ]
+      }
+     ],
+     "steps": [
+      "Soluto: el que está en menor cantidad y se disuelve.",
+      "Solvente: el que disuelve (en mayor cantidad).",
+      "Una solución es una mezcla homogénea."
+     ],
+     "ans": "NaCl en agua, homogénea",
+     "hint": "Solución = soluto + solvente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pmm"
+      ],
+      [
+       "pmm"
+      ],
+      [
+       "materia"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {
+  "isopropanol": "<svg class=\"dg mol\" viewBox=\"0 0 125 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Isopropanol\" style=\"max-width:156px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"73.1\" y2=\"26.5\"/><line class=\"gl\" x1=\"88.9\" y1=\"26.2\" x2=\"95.6\" y2=\"29.7\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"51.4\" y2=\"73.0\"/><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"103.6\" y=\"38.4\" text-anchor=\"middle\" font-size=\"13\">H</text></svg>",
+  "etilenglicol": "<svg class=\"dg mol\" viewBox=\"0 0 132 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Etilenglicol\" style=\"max-width:165px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"100.8\" y2=\"33.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"110.3\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "etanol": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Etanol\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"71.4\" y2=\"27.5\"/><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "hexano": "<svg class=\"dg mol\" viewBox=\"0 0 191 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Hexano\" style=\"max-width:239px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"139.8\" y2=\"22.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"22.0\" x2=\"169.2\" y2=\"39.0\"/></svg>",
+  "acetona": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Acetona\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"80.9\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"52.0\" x2=\"46.4\" y2=\"31.0\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "dme": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Dimetil éter\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"43.6\" y2=\"34.5\"/><line class=\"gl\" x1=\"59.2\" y1=\"34.5\" x2=\"80.9\" y2=\"22.0\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "clpropanol": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"3-cloro-1-propanol\" style=\"max-width:201px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"130.2\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"139.8\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">Cl</text></svg>",
+  "aminometanol": "<svg class=\"dg mol\" viewBox=\"0 0 102 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Aminometanol\" style=\"max-width:128px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"71.4\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">NH<tspan dy=\"3\" font-size=\"9\">2</tspan><tspan dy=\"-3\"></tspan></text></svg>",
+  "metilpentanol": "<svg class=\"dg mol\" viewBox=\"0 0 191 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"2-metil-1-pentanol\" style=\"max-width:239px\"><line class=\"gl\" x1=\"31.5\" y1=\"61.5\" x2=\"51.4\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"73.0\" x2=\"80.9\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"110.3\" y2=\"73.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"73.0\" x2=\"139.8\" y2=\"56.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"56.0\" x2=\"169.2\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"80.9\" y2=\"22.0\"/><text class=\"dl\" x=\"22.0\" y=\"60.5\" text-anchor=\"middle\" font-size=\"13\">HO</text></svg>",
+  "benzoquinona": "<svg class=\"dg mol\" viewBox=\"0 0 102 180\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Benzoquinona\" style=\"max-width:128px\"><line class=\"gl\" x1=\"51.4\" y1=\"31.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"31.0\" x2=\"46.4\" y2=\"52.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"80.9\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"73.0\" x2=\"80.9\" y2=\"107.0\"/><line class=\"gl\" x1=\"85.9\" y1=\"77.0\" x2=\"85.9\" y2=\"103.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"107.0\" x2=\"51.4\" y2=\"124.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"124.0\" x2=\"22.0\" y2=\"107.0\"/><line class=\"gl\" x1=\"22.0\" y1=\"107.0\" x2=\"22.0\" y2=\"73.0\"/><line class=\"gl\" x1=\"17.0\" y1=\"103.0\" x2=\"17.0\" y2=\"77.0\"/><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"124.0\" x2=\"51.4\" y2=\"149.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"128.0\" x2=\"46.4\" y2=\"149.0\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"51.4\" y=\"162.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "dmf": "<svg class=\"dg mol\" viewBox=\"0 0 132 129\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Dimetilformamida\" style=\"max-width:165px\"><line class=\"gl\" x1=\"29.8\" y1=\"68.5\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"32.3\" y1=\"72.8\" x2=\"50.5\" y2=\"62.3\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"73.1\" y2=\"68.5\"/><line class=\"gl\" x1=\"88.7\" y1=\"68.5\" x2=\"110.3\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"82.0\" x2=\"80.9\" y2=\"107.0\"/><text class=\"dl\" x=\"22.0\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">H</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">N</text></svg>",
+  "acnerilo": "<svg class=\"dg mol\" viewBox=\"0 0 367 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Acetato de nerilo\" style=\"max-width:340px\"><line class=\"gl\" x1=\"22.0\" y1=\"39.0\" x2=\"51.4\" y2=\"22.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"22.0\" x2=\"80.9\" y2=\"39.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"39.0\" x2=\"80.9\" y2=\"64.0\"/><line class=\"gl\" x1=\"75.9\" y1=\"43.0\" x2=\"75.9\" y2=\"64.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"39.0\" x2=\"102.5\" y2=\"26.5\"/><line class=\"gl\" x1=\"118.1\" y1=\"26.5\" x2=\"139.8\" y2=\"39.0\"/><line class=\"gl\" x1=\"139.8\" y1=\"39.0\" x2=\"169.2\" y2=\"22.0\"/><line class=\"gl\" x1=\"169.2\" y1=\"22.0\" x2=\"198.7\" y2=\"39.0\"/><line class=\"gl\" x1=\"170.2\" y1=\"28.3\" x2=\"192.7\" y2=\"41.3\"/><line class=\"gl\" x1=\"198.7\" y1=\"39.0\" x2=\"198.7\" y2=\"73.0\"/><line class=\"gl\" x1=\"198.7\" y1=\"39.0\" x2=\"228.1\" y2=\"22.0\"/><line class=\"gl\" x1=\"228.1\" y1=\"22.0\" x2=\"257.6\" y2=\"39.0\"/><line class=\"gl\" x1=\"257.6\" y1=\"39.0\" x2=\"287.0\" y2=\"22.0\"/><line class=\"gl\" x1=\"287.0\" y1=\"22.0\" x2=\"316.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"288.0\" y1=\"28.3\" x2=\"310.5\" y2=\"41.3\"/><line class=\"gl\" x1=\"316.4\" y1=\"39.0\" x2=\"345.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"316.4\" y1=\"39.0\" x2=\"316.4\" y2=\"73.0\"/><text class=\"dl\" x=\"110.3\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">O</text></svg>",
+  "propilenglicol12": "<svg class=\"dg mol\" viewBox=\"0 0 132 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"1,2-propanodiol\" style=\"max-width:165px\"><line class=\"gl\" x1=\"31.5\" y1=\"61.5\" x2=\"51.4\" y2=\"73.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"73.0\" x2=\"80.9\" y2=\"56.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"110.3\" y2=\"73.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"56.0\" x2=\"80.9\" y2=\"33.0\"/><text class=\"dl\" x=\"22.0\" y=\"60.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"80.9\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "propilenglicol13": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"1,3-propanodiol\" style=\"max-width:201px\"><line class=\"gl\" x1=\"31.5\" y1=\"27.5\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"130.2\" y2=\"27.5\"/><text class=\"dl\" x=\"22.0\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">HO</text><text class=\"dl\" x=\"139.8\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "pentano": "<svg class=\"dg mol\" viewBox=\"0 0 161 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"n-pentano\" style=\"max-width:201px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"51.4\" y2=\"39.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"39.0\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"80.9\" y1=\"22.0\" x2=\"110.3\" y2=\"39.0\"/><line class=\"gl\" x1=\"110.3\" y1=\"39.0\" x2=\"139.8\" y2=\"22.0\"/></svg>",
+  "neopentano": "<svg class=\"dg mol\" viewBox=\"0 0 112 112\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Neopentano\" style=\"max-width:140px\"><line class=\"gl\" x1=\"22.0\" y1=\"56.0\" x2=\"56.0\" y2=\"56.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"90.0\" y2=\"56.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"56.0\" y2=\"22.0\"/><line class=\"gl\" x1=\"56.0\" y1=\"56.0\" x2=\"56.0\" y2=\"90.0\"/></svg>",
+  "acetico": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Ácido acético\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"73.0\" x2=\"51.4\" y2=\"56.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"51.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"46.4\" y1=\"52.0\" x2=\"46.4\" y2=\"31.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"56.0\" x2=\"71.4\" y2=\"67.5\"/><text class=\"dl\" x=\"51.4\" y=\"26.5\" text-anchor=\"middle\" font-size=\"13\">O</text><text class=\"dl\" x=\"80.9\" y=\"77.5\" text-anchor=\"middle\" font-size=\"13\">OH</text></svg>",
+  "metilamina": "<svg class=\"dg mol\" viewBox=\"0 0 73 61\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Metilamina\" style=\"max-width:91px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"41.9\" y2=\"33.5\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">NH<tspan dy=\"3\" font-size=\"9\">2</tspan><tspan dy=\"-3\"></tspan></text></svg>",
+  "trimetilamina": "<svg class=\"dg mol\" viewBox=\"0 0 102 95\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Trimetilamina\" style=\"max-width:128px\"><line class=\"gl\" x1=\"22.0\" y1=\"22.0\" x2=\"43.6\" y2=\"34.5\"/><line class=\"gl\" x1=\"59.2\" y1=\"34.5\" x2=\"80.9\" y2=\"22.0\"/><line class=\"gl\" x1=\"51.4\" y1=\"48.0\" x2=\"51.4\" y2=\"73.0\"/><text class=\"dl\" x=\"51.4\" y=\"43.5\" text-anchor=\"middle\" font-size=\"13\">N</text></svg>",
+  "ph2o": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><circle class=\"dot\" cx=\"115.0\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"102.0\" y=\"112\">A</text><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"201.2\" y=\"114\">B</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><text class=\"dl\" x=\"126\" y=\"180\">T</text><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><text class=\"dl\" x=\"256\" y=\"39\">C</text></svg>",
+  "pco2": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 192 Q115 175 150 120\" fill=\"none\" class=\"gl\"/><path d=\"M150 120 L175 15\" fill=\"none\" class=\"gl\"/><path d=\"M150 120 Q205 90 240 40\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"170\" x2=\"290\" y2=\"170\"/><text class=\"dm\" x=\"210\" y=\"165\">1 atm</text><circle class=\"dot\" cx=\"100.9\" cy=\"170\" r=\"3.5\"/><text class=\"dl\" x=\"88.9\" y=\"163\">S</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"190\" y=\"60\">Líquido</text><text class=\"dm\" x=\"200\" y=\"140\">Gas</text><circle class=\"dot\" cx=\"150\" cy=\"120\" r=\"3.5\"/><text class=\"dl\" x=\"156\" y=\"135\">T</text><circle class=\"dot\" cx=\"240\" cy=\"40\" r=\"3.5\"/><text class=\"dl\" x=\"246\" y=\"34\">C</text></svg>",
+  "curvas3": "<svg class=\"dg\" viewBox=\"0 0 320 230\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Curvas X, Y y Z\"><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"305\" y2=\"200\"/><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"44\" y2=\"15\"/><text class=\"dm\" x=\"44\" y=\"214\" text-anchor=\"middle\">0</text><text class=\"dm\" x=\"96\" y=\"214\" text-anchor=\"middle\">50</text><text class=\"dm\" x=\"148\" y=\"214\" text-anchor=\"middle\">100</text><text class=\"dm\" x=\"201\" y=\"214\" text-anchor=\"middle\">150</text><text class=\"dm\" x=\"253\" y=\"214\" text-anchor=\"middle\">200</text><text class=\"dm\" x=\"305\" y=\"214\" text-anchor=\"middle\">250</text><text class=\"dm\" x=\"38\" y=\"204\" text-anchor=\"end\">0</text><text class=\"dm\" x=\"38\" y=\"167\" text-anchor=\"end\">1</text><text class=\"dm\" x=\"38\" y=\"130\" text-anchor=\"end\">2</text><text class=\"dm\" x=\"38\" y=\"93\" text-anchor=\"end\">3</text><text class=\"dm\" x=\"38\" y=\"56\" text-anchor=\"end\">4</text><text class=\"dm\" x=\"38\" y=\"19\" text-anchor=\"end\">5</text><text class=\"dm\" x=\"305\" y=\"228\" text-anchor=\"end\">T (°C)</text><text class=\"dm\" x=\"4\" y=\"13\">P (atm)</text><line class=\"dsh\" x1=\"44\" y1=\"163.0\" x2=\"305\" y2=\"163.0\"/><polyline points=\"45.0,197.0 47.1,196.7 49.2,196.4 51.3,196.1 53.4,195.7 55.5,195.4 57.6,194.9 59.7,194.5 61.7,194.0 63.8,193.5 65.9,192.9 68.0,192.3 70.1,191.6 72.2,190.9 74.3,190.0 76.4,189.2 78.5,188.2 80.5,187.2 82.6,186.0 84.7,184.8 86.8,183.5 88.9,182.0 91.0,180.4 93.1,178.7 95.2,176.8 97.2,174.7 99.3,172.5 101.4,170.1 103.5,167.4 105.6,164.5 107.7,161.4 109.8,158.0 111.9,154.3 113.9,150.2 116.0,145.8 118.1,141.0 120.2,135.8 122.3,130.2 124.4,124.0 126.5,117.3 128.6,110.0 130.7,102.0 132.7,93.3 134.8,83.9 136.9,73.6 139.0,62.5 141.1,50.3 143.2,37.1 145.3,22.7\" fill=\"none\" class=\"fa\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"138\" y=\"45\">X</text><polyline points=\"101.4,197.6 103.5,197.4 105.6,197.2 107.7,197.0 109.8,196.7 111.9,196.4 113.9,196.1 116.0,195.7 118.1,195.4 120.2,194.9 122.3,194.5 124.4,194.0 126.5,193.5 128.6,192.9 130.7,192.3 132.7,191.6 134.8,190.9 136.9,190.0 139.0,189.2 141.1,188.2 143.2,187.2 145.3,186.0 147.4,184.8 149.4,183.5 151.5,182.0 153.6,180.4 155.7,178.7 157.8,176.8 159.9,174.7 162.0,172.5 164.1,170.1 166.1,167.4 168.2,164.5 170.3,161.4 172.4,158.0 174.5,154.3 176.6,150.2 178.7,145.8 180.8,141.0 182.9,135.8 184.9,130.2 187.0,124.0 189.1,117.3 191.2,110.0 193.3,102.0 195.4,93.3 197.5,83.9 199.6,73.6 201.6,62.5 203.7,50.3 205.8,37.1 207.9,22.7\" fill=\"none\" class=\"fb\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"201\" y=\"45\">Y</text><polyline points=\"184.9,197.6 187.0,197.4 189.1,197.2 191.2,197.0 193.3,196.7 195.4,196.4 197.5,196.1 199.6,195.7 201.6,195.4 203.7,194.9 205.8,194.5 207.9,194.0 210.0,193.5 212.1,192.9 214.2,192.3 216.3,191.6 218.3,190.9 220.4,190.0 222.5,189.2 224.6,188.2 226.7,187.2 228.8,186.0 230.9,184.8 233.0,183.5 235.1,182.0 237.1,180.4 239.2,178.7 241.3,176.8 243.4,174.7 245.5,172.5 247.6,170.1 249.7,167.4 251.8,164.5 253.8,161.4 255.9,158.0 258.0,154.3 260.1,150.2 262.2,145.8 264.3,141.0 266.4,135.8 268.5,130.2 270.5,124.0 272.6,117.3 274.7,110.0 276.8,102.0 278.9,93.3 281.0,83.9 283.1,73.6 285.2,62.5 287.3,50.3 289.3,37.1 291.4,22.7\" fill=\"none\" class=\"gl\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"284\" y=\"45\">Z</text></svg>",
+  "curvasEP": "<svg class=\"dg\" viewBox=\"0 0 320 230\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases de los alcoholes\"><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"305\" y2=\"200\"/><line class=\"gl\" x1=\"44\" y1=\"200\" x2=\"44\" y2=\"15\"/><text class=\"dm\" x=\"44\" y=\"214\" text-anchor=\"middle\">50</text><text class=\"dm\" x=\"109\" y=\"214\" text-anchor=\"middle\">100</text><text class=\"dm\" x=\"174\" y=\"214\" text-anchor=\"middle\">150</text><text class=\"dm\" x=\"240\" y=\"214\" text-anchor=\"middle\">200</text><text class=\"dm\" x=\"305\" y=\"214\" text-anchor=\"middle\">250</text><text class=\"dm\" x=\"38\" y=\"204\" text-anchor=\"end\">0</text><text class=\"dm\" x=\"38\" y=\"167\" text-anchor=\"end\">1</text><text class=\"dm\" x=\"38\" y=\"130\" text-anchor=\"end\">2</text><text class=\"dm\" x=\"38\" y=\"93\" text-anchor=\"end\">3</text><text class=\"dm\" x=\"38\" y=\"56\" text-anchor=\"end\">4</text><text class=\"dm\" x=\"38\" y=\"19\" text-anchor=\"end\">5</text><text class=\"dm\" x=\"305\" y=\"228\" text-anchor=\"end\">T (°C)</text><text class=\"dm\" x=\"4\" y=\"13\">P (atm)</text><line class=\"dsh\" x1=\"44\" y1=\"163.0\" x2=\"305\" y2=\"163.0\"/><polyline points=\"87.1,197.6 89.7,197.4 92.3,197.2 94.9,197.0 97.5,196.7 100.1,196.4 102.7,196.1 105.3,195.7 107.9,195.4 110.6,194.9 113.2,194.5 115.8,194.0 118.4,193.5 121.0,192.9 123.6,192.3 126.2,191.6 128.8,190.9 131.4,190.0 134.0,189.2 136.7,188.2 139.3,187.2 141.9,186.0 144.5,184.8 147.1,183.5 149.7,182.0 152.3,180.4 154.9,178.7 157.5,176.8 160.1,174.7 162.8,172.5 165.4,170.1 168.0,167.4 170.6,164.5 173.2,161.4 175.8,158.0 178.4,154.3 181.0,150.2 183.6,145.8 186.2,141.0 188.9,135.8 191.5,130.2 194.1,124.0 196.7,117.3 199.3,110.0 201.9,102.0 204.5,93.3 207.1,83.9 209.7,73.6 212.3,62.5 215.0,50.3 217.6,37.1 220.2,22.7\" fill=\"none\" class=\"fa\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"211\" y=\"45\">A</text><polyline points=\"126.2,197.6 128.8,197.4 131.4,197.2 134.0,197.0 136.7,196.7 139.3,196.4 141.9,196.1 144.5,195.7 147.1,195.4 149.7,194.9 152.3,194.5 154.9,194.0 157.5,193.5 160.1,192.9 162.8,192.3 165.4,191.6 168.0,190.9 170.6,190.0 173.2,189.2 175.8,188.2 178.4,187.2 181.0,186.0 183.6,184.8 186.2,183.5 188.9,182.0 191.5,180.4 194.1,178.7 196.7,176.8 199.3,174.7 201.9,172.5 204.5,170.1 207.1,167.4 209.7,164.5 212.3,161.4 215.0,158.0 217.6,154.3 220.2,150.2 222.8,145.8 225.4,141.0 228.0,135.8 230.6,130.2 233.2,124.0 235.8,117.3 238.4,110.0 241.1,102.0 243.7,93.3 246.3,83.9 248.9,73.6 251.5,62.5 254.1,50.3 256.7,37.1 259.3,22.7\" fill=\"none\" class=\"fb\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"250\" y=\"45\">B</text><polyline points=\"144.5,197.6 147.1,197.4 149.7,197.2 152.3,197.0 154.9,196.7 157.5,196.4 160.1,196.1 162.8,195.7 165.4,195.4 168.0,194.9 170.6,194.5 173.2,194.0 175.8,193.5 178.4,192.9 181.0,192.3 183.6,191.6 186.2,190.9 188.9,190.0 191.5,189.2 194.1,188.2 196.7,187.2 199.3,186.0 201.9,184.8 204.5,183.5 207.1,182.0 209.7,180.4 212.3,178.7 215.0,176.8 217.6,174.7 220.2,172.5 222.8,170.1 225.4,167.4 228.0,164.5 230.6,161.4 233.2,158.0 235.8,154.3 238.4,150.2 241.1,145.8 243.7,141.0 246.3,135.8 248.9,130.2 251.5,124.0 254.1,117.3 256.7,110.0 259.3,102.0 261.9,93.3 264.5,83.9 267.2,73.6 269.8,62.5 272.4,50.3 275.0,37.1 277.6,22.7\" fill=\"none\" class=\"gl\" stroke-width=\"2.4\" stroke=\"currentColor\"/><text class=\"dl\" x=\"268\" y=\"45\">C</text></svg>"
+ },
+ "concepts": {
+  "materia": {
+   "n": "Clasificación de la materia",
+   "f": "Sustancia pura (elemento · compuesto) · Mezcla (homogénea · heterogénea)",
+   "x": "Elemento: un solo tipo de átomo (O₃, Au, N₂). Compuesto: dos o más elementos en proporción fija (H₂O, NaHCO₃). Mezcla: composición variable; homogénea si se ve una sola fase (bronce, aire), heterogénea si se distinguen fases (agua y aceite, arena).",
+   "home": "s1"
+  },
+  "estados": {
+   "n": "Estados de la materia",
+   "f": "Sólido Fa ≫ Fr · Líquido Fa ≈ Fr · Gas Fa ≪ Fr",
+   "x": "Sólido: forma y volumen definidos. Líquido: volumen definido, forma del recipiente. Gas: forma y volumen indefinidos, compresible. Fa = fuerzas de atracción, Fr = fuerzas de repulsión.",
+   "home": "s1"
+  },
+  "cambio": {
+   "n": "Cambio físico vs. químico",
+   "f": "Físico: misma sustancia · Químico: nueva sustancia",
+   "x": "Todos los cambios de estado (fusión, vaporización, sublimación, deposición…) son físicos. Combustión, oxidación, cocción son químicos.",
+   "home": "s1"
+  },
+  "prop": {
+   "n": "Propiedad física vs. química",
+   "f": "Física: se mide sin cambiar la identidad · Química: requiere un cambio químico",
+   "x": "Físicas: densidad, volumen, punto de ebullición, conductividad, volatilidad, porosidad, brillo. Químicas: inflamabilidad, corrosividad, reactividad, capacidad de oxidarse.",
+   "home": "s1"
+  },
+  "nuclido": {
+   "n": "Notación de núclido",
+   "f": "ᴬ_Z X^carga · A = p⁺ + n⁰ · Z = p⁺",
+   "x": "En el átomo neutro e⁻ = p⁺. En un ion: e⁻ = Z − carga (catión pierde e⁻, anión gana e⁻). Los neutrones no cambian al formar iones.",
+   "home": "s1"
+  },
+  "isotopo": {
+   "n": "Isótopos",
+   "f": "Mismo Z, distinto A (distinto n⁰)",
+   "x": "Son el mismo elemento. Si te dan A, A+1, A+3… plantea la suma de los números de masa para hallar A y luego n⁰ = A − Z.",
+   "home": "s1"
+  },
+  "config": {
+   "n": "Configuración electrónica",
+   "f": "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s…",
+   "x": "Máximos: s 2, p 6, d 10, f 14. Control: la suma de superíndices = n.º de electrones. Se puede abreviar con el gas noble anterior: [Ar]4s²3d¹⁰4p⁵.",
+   "home": "s2"
+  },
+  "valencia": {
+   "n": "Nivel y electrones de valencia",
+   "f": "Nivel de valencia = n más alto ocupado",
+   "x": "En representativos, e⁻ de valencia = electrones del último nivel (s + p). K: 4s¹ → 1 e⁻. Br: 4s²4p⁵ → 7 e⁻.",
+   "home": "s2"
+  },
+  "ubicacion": {
+   "n": "Ubicación en la tabla",
+   "f": "Periodo = nivel más alto · Grupo A = e⁻ de valencia · Bloque = último subnivel",
+   "x": "Termina en s o p: representativo (grupo A). En d: transición. En f: transición interna. Ej.: [Ar]4s²3d¹⁰4p⁴ → periodo 4, grupo 6A, bloque p (Se).",
+   "home": "s2"
+  },
+  "lewisat": {
+   "n": "Símbolo de Lewis del átomo",
+   "f": "Símbolo + un punto por e⁻ de valencia",
+   "x": "Si te dan un símbolo con 6 puntos, el elemento es del grupo 6A; con el periodo lo identificas.",
+   "home": "s2"
+  },
+  "octeto": {
+   "n": "Regla del octeto e ion estable",
+   "f": "Grupo 1A→+1 · 2A→+2 · 3A→+3 · 5A→−3 · 6A→−2 · 7A→−1",
+   "x": "Los átomos ganan o pierden e⁻ para quedar con 8 e⁻ de valencia (configuración de gas noble). Isoelectrónicos: igual número de electrones (K⁺, Cl⁻ y Ar tienen 18).",
+   "home": "s2"
+  },
+  "mnm": {
+   "n": "Metales, no metales y metaloides",
+   "f": "Metal: brillo, conductor, dúctil y maleable · No metal: opaco, aislante · Metaloide: semiconductor",
+   "x": "Metaloides: B, Si, Ge, As, Sb, Te. Gases no metálicos: H₂, N₂, O₂, F₂, Cl₂ (y gases nobles). Líquidos: Br₂ (no metal) y Hg (metal). Ferromagnéticos: Fe, Co, Ni.",
+   "home": "s2"
+  },
+  "coulomb": {
+   "n": "Ley de Coulomb (para razonar)",
+   "f": "F = k·Q·q / r²",
+   "x": "Tres perillas: más Z → más atracción; más apantallamiento (e⁻ internos) → menos atracción efectiva; más niveles (r mayor) → menos atracción. En el examen NO basta citar la tendencia: hay que justificar con Z, apantallamiento y distancia.",
+   "home": "s3"
+  },
+  "ra": {
+   "n": "Radio atómico",
+   "f": "↓ en el grupo: ↑ radio · → en el periodo: ↓ radio",
+   "x": "Mitad de la distancia entre núcleos de dos átomos idénticos enlazados. Bajar = más niveles. Ir a la derecha = más Z con el mismo nivel → el núcleo contrae la nube.",
+   "home": "s3"
+  },
+  "ei": {
+   "n": "Energía de ionización (EI)",
+   "f": "X(g) + EI → X⁺(g) + e⁻ · → ↑ · ↓ ↓",
+   "x": "Energía mínima para quitar un e⁻ a un átomo gaseoso neutro. Mayor EI = más difícil arrancar el e⁻. Los gases nobles tienen la mayor EI de su periodo.",
+   "home": "s3"
+  },
+  "salto": {
+   "n": "Saltos de ionización",
+   "f": "Gran salto cuando se empieza a quitar e⁻ de un nivel interno",
+   "x": "Na: EI₁ = 496, EI₂ = 4562 kJ/mol. Tras perder 3s¹ queda [Ne]; el siguiente e⁻ está en n = 2, más cerca y menos apantallado.",
+   "home": "s3"
+  },
+  "ae": {
+   "n": "Afinidad electrónica (AE)",
+   "f": "X(g) + e⁻ → X⁻(g) · en valor absoluto: → ↑ · ↓ ↓",
+   "x": "Energía involucrada al aceptar un e⁻. Los halógenos (7A) tienen la mayor AE de su periodo: les falta 1 e⁻ para el octeto. Ojo: AE (átomo aislado) ≠ electronegatividad (átomo en un enlace).",
+   "home": "s3"
+  },
+  "en": {
+   "n": "Electronegatividad (EN)",
+   "f": "→ ↑ · ↓ ↓ · F = 4,0 (máxima)",
+   "x": "Capacidad de un átomo, dentro de un enlace, para atraer los e⁻ compartidos. Valores usados: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1 · Br 2,8.",
+   "home": "s3"
+  },
+  "ionico": {
+   "n": "Enlace iónico",
+   "f": "Metal + no metal → transferencia de e⁻ → atracción electrostática",
+   "x": "Se forman cationes y aniones; el enlace es la atracción entre ellos en una red cristalina. Fórmula por electroneutralidad: Ca²⁺ + O²⁻ → CaO; Al³⁺ + O²⁻ → Al₂O₃.",
+   "home": "s4"
+  },
+  "metalico": {
+   "n": "Enlace metálico",
+   "f": "Cationes inmersos en un mar de e⁻ deslocalizados",
+   "x": "Los e⁻ de valencia se mueven libremente → conducción como sólido, brillo, ductilidad y maleabilidad. Las aleaciones no tienen fórmula química.",
+   "home": "s4"
+  },
+  "covalente": {
+   "n": "Enlace covalente",
+   "f": "No metal + no metal → compartición de e⁻",
+   "x": "Forma moléculas (I₂, H₂O, CO₂) o redes (SiO₂). Las sustancias moleculares no conducen la electricidad y sus propiedades dependen de la polaridad y las FIM.",
+   "home": "s4"
+  },
+  "propenl": {
+   "n": "Propiedades según el enlace",
+   "f": "Iónico: Pf > 400 °C, conduce fundido o disuelto · Metálico: conduce sólido · Covalente molecular: no conduce",
+   "x": "Iónicos: sólidos cristalinos, solubles en solventes polares, insolubles en apolares, conducen fundidos o en solución. Metales: conducen sólidos, dúctiles, maleables, alto Pf. Moleculares: bajo Pf, no conducen.",
+   "home": "s4"
+  },
+  "polenl": {
+   "n": "Polaridad de enlace",
+   "f": "ΔEN = |EN₁ − EN₂| · ΔEN = 0 apolar · ΔEN > 0 polar",
+   "x": "En un enlace polar el átomo más electronegativo queda δ⁻ y el otro δ⁺. Excepción trabajada en clase: C–H (ΔEN = 0,4) se considera apolar.",
+   "home": "s4"
+  },
+  "ch": {
+   "n": "Excepción C–H",
+   "f": "C–H: ΔEN = 2,5 − 2,1 = 0,4 → apolar (por convención del curso)",
+   "x": "Por eso los hidrocarburos (solo C–C y C–H) tienen todos sus enlaces apolares.",
+   "home": "s4"
+  },
+  "lewis": {
+   "n": "Estructura de Lewis (método del curso)",
+   "f": "Enlazantes = N − V · Libres = V − enlazantes",
+   "x": "N (individuales) = 8 por átomo, 2 por cada H. V (valencia) = suma de e⁻ de valencia; en iones resta la carga (anión suma, catión resta). Enlaces = enlazantes / 2; pares libres = libres / 2. Los pares libres completan octetos.",
+   "home": "s5"
+  },
+  "cf": {
+   "n": "Carga formal",
+   "f": "CF = e⁻ valencia − [e⁻ no enlazantes + ½·e⁻ enlazantes]",
+   "x": "Elige la estructura con CF más cercanas a cero; si hay carga negativa, que esté en el átomo más electronegativo. La suma de CF = carga total de la especie.",
+   "home": "s5"
+  },
+  "rpecv": {
+   "n": "RPECV",
+   "f": "Dominios = átomos enlazados + pares libres del átomo central",
+   "x": "Un enlace doble o triple cuenta como UN dominio. Los pares libres repelen más que los enlazantes.",
+   "home": "s5"
+  },
+  "geom": {
+   "n": "Geometrías del curso",
+   "f": "AX₂ lineal · AX₃ trigonal plana · AX₂E angular · AX₄ tetraédrica · AX₃E piramidal trigonal · AX₂E₂ angular",
+   "x": "A = átomo central, X = átomos enlazados, E = pares libres del central. 2 dominios: lineal; 3: trigonal plana o angular; 4: tetraédrica, piramidal o angular.",
+   "home": "s5"
+  },
+  "polmol": {
+   "n": "Polaridad de molécula",
+   "f": "Enlaces polares + geometría asimétrica → μ ≠ 0 (polar)",
+   "x": "Si todos los enlaces son apolares, la molécula es apolar. Si hay enlaces polares, mira la geometría: si los dipolos se cancelan (CO₂ lineal, CCl₄ tetraédrica, simetría) es apolar; si no, polar (H₂O, NH₃, CHCl₃).",
+   "home": "s6"
+  },
+  "intra": {
+   "n": "Intra vs. intermolecular",
+   "f": "Intra: DENTRO de la especie (enlaces) · Inter: ENTRE partículas",
+   "x": "Romper enlaces intramoleculares cambia la identidad (cambio químico: H₂O → H₂ + O₂). Separar moléculas venciendo fuerzas intermoleculares es un cambio físico (hervir agua).",
+   "home": "s6"
+  },
+  "topo": {
+   "n": "Fórmula topológica",
+   "f": "Cada vértice o extremo = un C · los H del C no se dibujan",
+   "x": "Cada C completa 4 enlaces con H implícitos. Los heteroátomos (O, N, Cl…) y los H unidos a ellos sí se escriben (OH, NH₂).",
+   "home": "s6"
+  },
+  "london": {
+   "n": "Fuerzas de London",
+   "f": "Dipolo instantáneo → dipolo inducido · en TODAS las moléculas",
+   "x": "Más electrones (moléculas más grandes) → mayor polarizabilidad → London más intensa. Más superficie de contacto (cadenas lineales) → más intensa que en isómeros ramificados.",
+   "home": "s7"
+  },
+  "dd": {
+   "n": "Dipolo–dipolo",
+   "f": "Entre moléculas POLARES",
+   "x": "Los extremos δ⁺ de una molécula atraen a los δ⁻ de otra. Requiere que la molécula sea polar (μ ≠ 0).",
+   "home": "s7"
+  },
+  "ph": {
+   "n": "Enlace (puente) de hidrógeno",
+   "f": "H unido a F, O o N ··· par libre de F, O o N de otra molécula",
+   "x": "Es una interacción intermolecular, no un enlace covalente. Más sitios O–H o N–H → más puentes de hidrógeno → FIM mayores. El H de un C–H NO forma puente de hidrógeno.",
+   "home": "s7"
+  },
+  "iondip": {
+   "n": "Ion–dipolo",
+   "f": "Ion ··· molécula polar",
+   "x": "Explica la disolución de compuestos iónicos en agua (solvatación): Na⁺ rodeado por los O (δ⁻) del agua y Cl⁻ por los H (δ⁺).",
+   "home": "s7"
+  },
+  "predom": {
+   "n": "FIM presentes y predominante",
+   "f": "Tamaño similar: London < dipolo–dipolo < puente de H",
+   "x": "Apolar: solo London. Polar: London + dipolo–dipolo. Polar con O–H, N–H o F–H: London + dipolo–dipolo + puente de H (predominante). Ojo: en moléculas muy grandes (eicosano) London puede superar a un puente de H de una molécula pequeña.",
+   "home": "s7"
+  },
+  "teb": {
+   "n": "FIM y propiedades",
+   "f": "FIM ↑ → Teb ↑, Tfus ↑, volatilidad ↓",
+   "x": "Hervir o fundir es separar partículas: cuanto más se atraen, más energía (temperatura) se necesita. Más volátil = escapa más fácil = FIM más débiles.",
+   "home": "s7"
+  },
+  "solub": {
+   "n": "Solubilidad: semejante disuelve a semejante",
+   "f": "Polar disuelve polar/iónico · Apolar disuelve apolar",
+   "x": "La disolución compite entre tres interacciones: solvente–solvente, soluto–soluto y soluto–solvente. Se disuelve si la nueva interacción soluto–solvente es comparable a las que se rompen.",
+   "home": "s9"
+  },
+  "afin": {
+   "n": "Interacción afín soluto–solvente",
+   "f": "Iónico + polar: ion–dipolo · Polar + polar: dipolo–dipolo o puente de H · Apolar + apolar: London",
+   "x": "En los exámenes piden «el tipo de interacción afín que lo sustenta»: la interacción que se forma entre el soluto y el solvente.",
+   "home": "s9"
+  },
+  "fases": {
+   "n": "Diagrama de fases",
+   "f": "Curvas: S–L (fusión), L–G (vaporización), S–G (sublimación)",
+   "x": "T: punto triple (coexisten las tres fases). C: punto crítico (más allá, fluido supercrítico). A 1 atm: punto de fusión normal y punto de ebullición normal. Menor presión (Huancayo) → menor Teb.",
+   "home": "s9"
+  },
+  "aguaco2": {
+   "n": "Agua vs. CO₂",
+   "f": "H₂O: línea S–L inclinada a la izquierda · CO₂: a 1 atm solo sublima",
+   "x": "El agua líquida es más densa que el hielo. El punto triple del CO₂ está por encima de 1 atm (≈ 5,1 atm), por eso el hielo seco sublima en Lima: no tiene Pfus ni Peb a 1 atm.",
+   "home": "s9"
+  },
+  "sep": {
+   "n": "Métodos de separación",
+   "f": "Heterogéneas: tamizado, imantación, filtración, decantación, disolución selectiva · Homogéneas: destilación, evaporación",
+   "x": "Tamizado: tamaño. Imantación: ferromagnéticos (Fe, Co, Ni). Filtración: sólido insoluble de un líquido. Decantación: líquidos inmiscibles por densidad. Disolución selectiva: solubilidad. Destilación: distinto Teb. Evaporación: elimina el líquido y deja el sólido disuelto.",
+   "home": "s9"
+  },
+  "factor": {
+   "n": "Factor de conversión",
+   "f": "cantidad × (unidad deseada / unidad dada)",
+   "x": "Un factor vale 1 (1 km / 1000 m). Se encadenan hasta que las unidades se cancelan. 1 L = 1000 mL = 1 dm³; 1 mL = 1 cm³; 1 kg = 1000 g; 1 g = 1000 mg.",
+   "home": "s10"
+  },
+  "mol": {
+   "n": "Mol y masa molar",
+   "f": "n = m / M · N = n · Nₐ · Nₐ = 6,022 × 10²³",
+   "x": "La masa molar M (g/mol) es la suma de masas atómicas. 1 mol de cualquier sustancia contiene Nₐ partículas.",
+   "home": "s10"
+  },
+  "dens": {
+   "n": "Densidad",
+   "f": "ρ = m / V",
+   "x": "Sirve de factor para pasar de volumen a masa (y viceversa). Agua ≈ 1 g/mL.",
+   "home": "s10"
+  },
+  "pmm": {
+   "n": "Porcentajes de concentración",
+   "f": "%m/m = m_sto/m_sol × 100 · %m/v = m_sto(g)/V_sol(mL) × 100 · %v/v = V_sto/V_sol × 100",
+   "x": "m_solución = m_soluto + m_solvente. El %m/v son gramos de soluto por cada 100 mL de solución.",
+   "home": "s11"
+  },
+  "ppm": {
+   "n": "Partes por millón",
+   "f": "ppm = mg de soluto / L de solución (acuosa diluida)",
+   "x": "También: ppm = m_sto/m_sol × 10⁶. Para soluciones acuosas diluidas, 1 ppm ≈ 1 mg/L.",
+   "home": "s11"
+  },
+  "molar": {
+   "n": "Molaridad",
+   "f": "M = n_soluto / V_solución (L)",
+   "x": "mol de soluto por litro de SOLUCIÓN. n = M·V.",
+   "home": "s11"
+  },
+  "molal": {
+   "n": "Molalidad",
+   "f": "m = n_soluto / kg de solvente",
+   "x": "mol de soluto por kilogramo de SOLVENTE (no de solución).",
+   "home": "s11"
+  }
+ },
+ "simEx": [
+  {
+   "id": "ea3s1",
+   "lvl": 2,
+   "title": "Interacción afín (variante)",
+   "q": "<p>Un laboratorio debe disolver tres solutos: KBr (iónico), yodo I₂ (apolar) y metanol (CH₃OH). Dispone de agua y de hexano.</p>",
+   "checks": [
+    {
+     "p": "KBr se disuelve en",
+     "o": [
+      "Agua, por ion–dipolo",
+      "Hexano, por London",
+      "Agua, por London",
+      "Ninguno"
+     ]
+    },
+    {
+     "p": "I₂ se disuelve en",
+     "o": [
+      "Hexano, por London",
+      "Agua, por puente de H",
+      "Agua, por ion–dipolo",
+      "Ninguno"
+     ]
+    },
+    {
+     "p": "Metanol se disuelve en",
+     "o": [
+      "Agua, por puente de H",
+      "Hexano, por London",
+      "Agua, por ion–dipolo",
+      "Ninguno"
+     ]
+    }
+   ],
+   "steps": [
+    "K⁺ y Br⁻ se solvatan con el agua polar.",
+    "I₂ y hexano son apolares → London.",
+    "Metanol (O–H) y agua forman puentes de H."
+   ],
+   "ans": "Agua · hexano · agua",
+   "hint": "Identifica la naturaleza de soluto y solvente.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "afin"
+    ],
+    [
+     "solub"
+    ],
+    [
+     "afin"
+    ]
+   ]
+  },
+  {
+   "id": "ea3f1",
+   "lvl": 2,
+   "title": "Diagrama de fases (variante)",
+   "q": "<p>Una sustancia tiene punto triple a 0,5 atm y −20 °C, y su curva líquido–gas corta 1 atm a 80 °C.</p>",
+   "checks": [
+    {
+     "p": "A 1 atm y 25 °C la sustancia está",
+     "o": [
+      "Líquida",
+      "Sólida",
+      "Gaseosa",
+      "Es un fluido supercrítico"
+     ]
+    },
+    {
+     "p": "A 0,2 atm, al calentarla desde −50 °C",
+     "o": [
+      "Sublima (pasa directo de sólido a gas)",
+      "Funde y luego hierve",
+      "Solo funde",
+      "No cambia de fase"
+     ]
+    },
+    {
+     "p": "Su Teb en una ciudad de altura (0,7 atm) será",
+     "o": [
+      "Menor que 80 °C",
+      "Mayor que 80 °C",
+      "Igual a 80 °C",
+      "No tiene Teb"
+     ]
+    }
+   ],
+   "steps": [
+    "A 1 atm (sobre el punto triple), entre el punto de fusión y 80 °C es líquida; 25 °C cae en ese rango (el punto de fusión está cerca de −20 °C).",
+    "0,2 atm está por debajo del punto triple → solo hay frontera sólido–gas.",
+    "Menor presión → la curva L–G se cruza a menor temperatura."
+   ],
+   "ans": "Líquida · sublima · menor",
+   "hint": "Compara la presión con la del punto triple.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "fases"
+    ],
+    [
+     "fases"
+    ],
+    [
+     "fases"
+    ]
+   ]
+  },
+  {
+   "id": "ea3sep",
+   "lvl": 3,
+   "title": "Residuos electrónicos (sesión 9)",
+   "q": "<p>Tras triturar y pirolizar tarjetas electrónicas se obtiene una mezcla sólida de: limaduras de <b>níquel</b>, polvo de <b>cobre</b>, granallas de <b>oro</b>, <b>NaCl</b> y <b>parafina</b> (sólido apolar, C₂₅H₅₂). Se dispone de imán, tamices, agua, hexano, filtros y evaporador.</p>",
+   "checks": [
+    {
+     "p": "Primer paso para retirar el Ni",
+     "o": [
+      "Imantación",
+      "Destilación",
+      "Decantación",
+      "Evaporación"
+     ]
+    },
+    {
+     "p": "Para separar NaCl del resto",
+     "o": [
+      "Disolución selectiva en agua, filtración y evaporación del filtrado",
+      "Imantación",
+      "Tamizado",
+      "Disolución en hexano"
+     ]
+    },
+    {
+     "p": "La parafina se separa con",
+     "o": [
+      "Disolución en hexano, filtración y evaporación del hexano",
+      "Agua",
+      "Imán",
+      "Decantación con agua"
+     ]
+    },
+    {
+     "p": "Cu (polvo) y Au (granallas)",
+     "o": [
+      "Tamizado",
+      "Imantación",
+      "Destilación",
+      "Disolución en agua"
+     ]
+    }
+   ],
+   "steps": [
+    "Ni es ferromagnético.",
+    "NaCl es iónico: se disuelve en agua (ion–dipolo); los demás no. Filtrar y evaporar el agua recupera la sal.",
+    "Parafina apolar → soluble en hexano (London).",
+    "Distinto tamaño de partícula."
+   ],
+   "ans": "Imán → agua → hexano → tamiz",
+   "hint": "Asocia cada componente con la propiedad que lo distingue.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sep"
+    ],
+    [
+     "sep",
+     "solub"
+    ],
+    [
+     "solub"
+    ],
+    [
+     "sep"
+    ]
+   ]
+  },
+  {
+   "id": "ea3c1",
+   "lvl": 2,
+   "title": "Concentraciones combinadas",
+   "q": "<p>Se disuelven 5,85 g de NaCl (M = 58,5 g/mol) en agua hasta 500 mL de solución (ρ ≈ 1 g/mL).</p>",
+   "checks": [
+    {
+     "p": "Molaridad",
+     "o": [
+      "0,2 M",
+      "0,1 M",
+      "2 M",
+      "11,7 M"
+     ]
+    },
+    {
+     "p": "%m/v",
+     "o": [
+      "1,17 %",
+      "5,85 %",
+      "0,585 %",
+      "11,7 %"
+     ]
+    },
+    {
+     "p": "Concentración en ppm (mg/L)",
+     "o": [
+      "11 700 ppm",
+      "5850 ppm",
+      "1170 ppm",
+      "117 ppm"
+     ]
+    }
+   ],
+   "steps": [
+    "n = 5,85/58,5 = 0,1 mol; V = 0,5 L → 0,2 M.",
+    "%m/v = 5,85 g / 500 mL × 100 = 1,17 %.",
+    "5850 mg / 0,5 L = 11 700 mg/L."
+   ],
+   "ans": "0,2 M · 1,17 % · 11 700 ppm",
+   "hint": "Pasa el volumen a la unidad que pida cada fórmula.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "molar"
+    ],
+    [
+     "pmm"
+    ],
+    [
+     "ppm"
+    ]
+   ]
+  },
+  {
+   "id": "ea3c2",
+   "lvl": 2,
+   "title": "Del dato al mol",
+   "q": "<p>Una botella contiene 200 mL de alcohol etílico al 46 %v/v. Densidad del etanol: 0,8 g/mL; M = 46 g/mol.</p>",
+   "checks": [
+    {
+     "p": "Volumen de etanol",
+     "o": [
+      "92 mL",
+      "46 mL",
+      "108 mL",
+      "200 mL"
+     ]
+    },
+    {
+     "p": "Masa de etanol",
+     "o": [
+      "73,6 g",
+      "92 g",
+      "115 g",
+      "36,8 g"
+     ]
+    },
+    {
+     "p": "Moles de etanol",
+     "o": [
+      "1,6 mol",
+      "2 mol",
+      "0,8 mol",
+      "3,4 mol"
+     ]
+    }
+   ],
+   "steps": [
+    "200 mL × 46/100 = 92 mL de etanol.",
+    "92 mL × 0,8 g/mL = 73,6 g.",
+    "73,6 / 46 = 1,6 mol."
+   ],
+   "ans": "1,6 mol",
+   "hint": "%v/v → volumen → masa → moles.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "pmm"
+    ],
+    [
+     "dens"
+    ],
+    [
+     "mol"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 100,
+  "slots": [
+   {
+    "pts": 5,
+    "name": "Solubilidad e interacción afín",
+    "pool": [
+     "ea3s1",
+     "s9e13",
+     "s9e4"
+    ]
+   },
+   {
+    "pts": 4,
+    "name": "Diagrama de fases",
+    "pool": [
+     "ea3f1",
+     "s9e9",
+     "s9e7"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Separación de mezclas",
+    "pool": [
+     "ea3sep",
+     "s9e12",
+     "s9e10"
+    ]
+   },
+   {
+    "pts": 6,
+    "name": "Conversión y concentración",
+    "pool": [
+     "ea3c1",
+     "ea3c2",
+     "s11e8"
+    ]
+   }
+  ]
+ }
+}
