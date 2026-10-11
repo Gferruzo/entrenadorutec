@@ -1,0 +1,4179 @@
+{
+ "id": "al-ef",
+ "code": "CC6105",
+ "name": "Álgebra Lineal",
+ "exam": "Examen final 2026-2 (todo el curso)",
+ "short": "Examen final",
+ "sub": "Todo el curso",
+ "intro": "Repaso acumulado del curso, con los temas ordenados por semana. Aquí todos los temas están abiertos desde el inicio. <b>El examen final vale 30 %</b> (100 min, semana 16). Por ahora están las semanas 1 a 7; las semanas 9 a 15 se agregan a medida que lleguen sus guías y tendrán más peso en el simulacro.",
+ "form": "<p class=\"note\">Hoja de repaso del final (por ahora, semanas 1 a 7).</p>\n<div class=\"fgrid\">\n<div><b>Producto</b><br>\\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\)</div>\n<div><b>Suma</b><br>Mismo orden, entrada por entrada</div>\n<div><b>No conmutativo</b><br>\\(AB\\neq BA\\)</div>\n<div><b>MATLAB</b><br>A*B producto · A.*B entrada a entrada · A' transpuesta</div>\n<div><b>Det 2×2</b><br>\\(ad-bc\\)</div>\n<div><b>Cofactor</b><br>\\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\)</div>\n<div><b>OEF y det</b><br>\\(\\leftrightarrow\\): −det · \\(kF_i\\): k·det · \\(F_i+kF_j\\): igual</div>\n<div><b>Propiedades</b><br>\\(\\det(AB)=\\det A\\det B\\), \\(\\det(kA)=k^n\\det A\\)</div>\n<div><b>Rango</b><br>n.º de pivotes; \\(\\det A=0\\iff r(A)\\lt n\\)</div>\n<div><b>Adjunta</b><br>\\(\\operatorname{adj}A\\) \\(=[C_{ij}]^T\\)</div>\n<div><b>Rouché–Frobenius</b><br>\\(r(A)=r(A|b)=n\\) única · \\(\\lt n\\) infinitas · \\(r(A)\\lt r(A|b)\\) ninguna</div>\n<div><b>Fila imposible</b><br>\\([0\\cdots0\\mid c\\neq0]\\)</div>\n<div><b>Libres</b><br>n − rango(A)</div>\n<div><b>Inversa</b><br>\\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\)</div>\n<div><b>Inversa 2×2</b><br>\\(\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)</div>\n<div><b>Invertible</b><br>\\(\\det A\\neq0\\iff r(A)=n\\)</div>\n<div><b>Sistema</b><br>\\(x=A^{-1}b\\)</div>\n<div><b>Subespacio</b><br>\\(0\\in W\\), cerrado en suma y escalar</div>\n<div><b>LI</b><br>\\(r[v_1\\cdots v_n]=n\\); cuadrada: \\(\\det\\neq0\\)</div>\n<div><b>Gen</b><br>\\(w\\in\\operatorname{Gen}\\) \\(\\iff\\) sistema consistente</div>\n<div><b>Col(A)</b><br>Columnas pivote de A original</div>\n<div><b>Row(A)</b><br>Filas no nulas de rref(A)</div>\n<div><b>Nul(A)</b><br>Resolver \\(Ax=0\\)</div>\n<div><b>Rango-nulidad</b><br>\\(r(A)\\) \\(+\\operatorname{nul}(A)\\) \\(=n\\)</div>\n<div><b>Existencia</b><br>\\(b\\in\\operatorname{Col}(A)\\)</div>\n<div><b>Unicidad</b><br>\\(\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\)</div>\n<div><b>Solución general</b><br>\\(x=x_p+x_h\\)</div>\n</div>",
+ "formSim": false,
+ "topics": [
+  {
+   "id": "s1",
+   "name": "Sem. 1 · Matrices: operaciones y compatibilidad",
+   "teo": "<p>Una matriz \\(A\\in\\mathbb R^{m\\times n}\\) tiene <strong>m filas y n columnas</strong>; su entrada \\(a_{ij}\\) está en la fila i y la columna j. Para <strong>sumar</strong>, las dos matrices deben tener el mismo orden; el <strong>escalar</strong> multiplica cada entrada.</p>\n<p>Antes de <strong>multiplicar</strong>, revisa dimensiones: \\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\). Las interiores deciden si existe; las exteriores dan el orden. Cada entrada de \\(AB\\) es <em>fila de A · columna de B</em>.</p>\n<p>El producto <strong>no es conmutativo</strong>: en general \\(AB\\neq BA\\), e incluso uno puede existir y el otro no. En MATLAB, <code>A*B</code> es producto matricial y <code>A.*B</code> multiplica entrada por entrada.</p>",
+   "form": [
+    "\\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\)",
+    "\\((AB)_{ij}\\) \\(=\\sum_k a_{ik}b_{kj}\\)",
+    "\\(A+B\\): mismo orden",
+    "\\(AB\\neq BA\\) en general",
+    "\\((A^T)_{ij}=a_{ji}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Todo el curso se apoya en saber leer una matriz: qué representan sus filas y columnas, su orden y cuándo una operación tiene sentido. La pregunta antes de calcular siempre es <em>¿está definida?</em></p>\n<h3>Conceptos clave</h3><ul><li><strong>Orden:</strong> m × n (filas × columnas). \\(a_{23}\\) está en la fila 2, columna 3.</li><li><strong>Igualdad:</strong> mismo orden y entradas iguales una a una.</li><li><strong>Suma:</strong> solo con el mismo orden. <strong>Escalar:</strong> multiplica todo.</li><li><strong>Producto:</strong> columnas de la primera = filas de la segunda.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe las dimensiones.</li><li><strong>2.</strong> Compara las interiores: ¿existe?</li><li><strong>3.</strong> Predice el orden con las exteriores.</li><li><strong>4.</strong> Calcula fila · columna y verifica que el tamaño coincida con lo predicho.</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S1):</b> ventas \\(V\\in\\mathbb R^{2\\times3}\\) (días × productos) y precios \\(p\\in\\mathbb R^{3\\times1}\\). \\(Vp\\) es 2 × 1: el ingreso de cada día. \\(pV\\) no existe porque \\((3\\times1)(2\\times3)\\) tiene 1 ≠ 2.</div>\n<div class=\"err\"><b>Error común:</b> multiplicar entradas sueltas (\\(a_{11}b_{11}\\), \\(a_{12}b_{21}\\)…) en vez de fila por columna. Eso es <code>A.*B</code>, no \\(AB\\).</div>",
+   "ex": [
+    {
+     "id": "s1e1",
+     "lvl": 1,
+     "title": "Orden y entradas",
+     "q": "<p>Considera \\(A\\) \\(=\\begin{pmatrix}4&-1&3\\\\2&5&0\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "Orden de \\(A\\)",
+       "o": [
+        "\\(2\\times3\\)",
+        "\\(3\\times2\\)",
+        "\\(6\\)",
+        "\\(2\\times2\\)",
+        "\\(3\\times3\\)"
+       ]
+      },
+      {
+       "p": "Valor de \\(a_{21}\\)",
+       "o": [
+        "\\(2\\)",
+        "\\(-1\\)",
+        "\\(5\\)",
+        "\\(3\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\) tiene 2 filas y 3 columnas: \\(A\\in\\mathbb R^{2\\times3}\\).",
+      "\\(a_{21}\\): fila 2, columna 1 \\(\\Rightarrow a_{21}=2\\). (Ojo: \\(a_{12}=-1\\) es otra entrada).",
+      "También \\(a_{23}=0\\)."
+     ],
+     "ans": "2 × 3; a₂₁ = 2",
+     "hint": "El primer índice es la fila y el segundo la columna.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "orden"
+      ],
+      [
+       "orden"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "s1e2",
+     "lvl": 1,
+     "title": "Combinación de matrices",
+     "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}-1&4\\\\2&5\\end{pmatrix}\\). Calcula \\(3A-B\\).</p>",
+     "checks": [
+      {
+       "p": "\\(3A-B\\)",
+       "o": [
+        "\\(\\begin{pmatrix}7&-1\\\\-2&4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}5&-1\\\\-2&4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}5&7\\\\2&14\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}7&-1\\\\2&4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}7&1\\\\-2&14\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(3A\\) \\(=\\begin{pmatrix}6&3\\\\0&9\\end{pmatrix}\\).",
+      "\\(3A-B\\) \\(=\\begin{pmatrix}6-(-1)&3-4\\\\0-2&9-5\\end{pmatrix}\\) \\(=\\begin{pmatrix}7&-1\\\\-2&4\\end{pmatrix}\\)."
+     ],
+     "ans": "[[7, −1], [−2, 4]]",
+     "hint": "Primero multiplica todas las entradas de A por 3; luego resta entrada por entrada.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "suma"
+      ],
+      [
+       "suma"
+      ]
+     ]
+    },
+    {
+     "id": "s1e3",
+     "lvl": 1,
+     "title": "¿Qué producto está definido?",
+     "q": "<p>Sean \\(A\\in\\mathbb R^{4\\times3}\\), \\(B\\in\\mathbb R^{3\\times5}\\) y \\(C\\in\\mathbb R^{5\\times2}\\). Sin calcular entradas, decide.</p>",
+     "checks": [
+      {
+       "p": "¿Cuál de estos productos está definido (con su orden correcto)?",
+       "o": [
+        "\\(ABC\\), de orden \\(4\\times2\\)",
+        "\\(BA\\), de orden \\(3\\times3\\)",
+        "\\(AC\\), de orden \\(4\\times2\\)",
+        "\\(CB\\), de orden \\(5\\times5\\)",
+        "\\(ABC\\), de orden \\(3\\times5\\)"
+       ]
+      },
+      {
+       "p": "Orden de \\(BC\\)",
+       "o": [
+        "\\(3\\times2\\)",
+        "\\(5\\times5\\)",
+        "\\(3\\times5\\)",
+        "\\(2\\times3\\)",
+        "No está definido"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(AB\\): \\((4\\times3)(3\\times5)\\) \\(\\to4\\times5\\). Luego \\((AB)C\\): \\((4\\times5)(5\\times2)\\) \\(\\to4\\times2\\).",
+      "\\(BA\\): \\((3\\times5)(4\\times3)\\), 5 ≠ 4: no existe. \\(AC\\): 3 ≠ 5. \\(CB\\): 2 ≠ 3.",
+      "\\(BC\\): \\((3\\times5)(5\\times2)\\) \\(\\to3\\times2\\)."
+     ],
+     "ans": "ABC es 4 × 2; BC es 3 × 2",
+     "hint": "Compara las dimensiones interiores; el orden sale de las exteriores.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod",
+       "nocon"
+      ],
+      [
+       "prod"
+      ]
+     ]
+    },
+    {
+     "id": "s1e4",
+     "lvl": 2,
+     "title": "Producto fila–columna",
+     "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}1&2&-1\\\\0&3&2\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}2&1\\\\1&0\\\\3&-2\\end{pmatrix}\\). Calcula \\(AB\\).</p>",
+     "checks": [
+      {
+       "p": "\\(AB\\)",
+       "o": [
+        "\\(\\begin{pmatrix}1&3\\\\9&-4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&3\\\\9&4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}7&-1\\\\9&-4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&2&-3\\\\0&0&-4\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&9\\\\3&-4\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((2\\times3)(3\\times2)\\) \\(\\to2\\times2\\).",
+      "Fila 1: \\(1\\cdot2\\) \\(+2\\cdot1\\) \\(+(-1)\\cdot3\\) \\(=1\\); \\(1\\cdot1\\) \\(+2\\cdot0\\) \\(+(-1)(-2)\\) \\(=3\\).",
+      "Fila 2: \\(0+3+6=9\\); \\(0+0-4=-4\\). \\(AB\\) \\(=\\begin{pmatrix}1&3\\\\9&-4\\end{pmatrix}\\)."
+     ],
+     "ans": "[[1, 3], [9, −4]]",
+     "hint": "Cuida el signo del producto (−1)(−2).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ]
+     ]
+    },
+    {
+     "id": "s1e5",
+     "lvl": 2,
+     "title": "¿AB = BA?",
+     "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}0&1\\\\2&3\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(AB\\)",
+       "o": [
+        "\\(\\begin{pmatrix}4&7\\\\8&15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&4\\\\11&16\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}0&2\\\\6&12\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}4&8\\\\7&15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&5\\\\6&13\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "¿Qué muestra comparar \\(AB\\) con \\(BA\\)?",
+       "o": [
+        "Son distintos: el producto matricial no es conmutativo",
+        "Son iguales porque ambas matrices son cuadradas",
+        "Solo se diferencian en el signo",
+        "Son iguales porque \\(\\det A=\\det B\\)",
+        "\\(BA\\) no está definido"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(AB\\) \\(=\\begin{pmatrix}0+4&1+6\\\\0+8&3+12\\end{pmatrix}\\) \\(=\\begin{pmatrix}4&7\\\\8&15\\end{pmatrix}\\).",
+      "\\(BA\\) \\(=\\begin{pmatrix}0+3&0+4\\\\2+9&4+12\\end{pmatrix}\\) \\(=\\begin{pmatrix}3&4\\\\11&16\\end{pmatrix}\\).",
+      "Aunque ambas son 2 × 2, \\(AB\\neq BA\\): el orden de los factores importa."
+     ],
+     "ans": "AB = [[4, 7], [8, 15]] ≠ BA = [[3, 4], [11, 16]]",
+     "hint": "Calcula los dos productos completos antes de concluir.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "nocon"
+      ]
+     ]
+    },
+    {
+     "id": "s1e6",
+     "lvl": 2,
+     "title": "¿Dónde está el error?",
+     "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\4&5&6\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}2&1\\\\0&3\\\\1&-1\\end{pmatrix}\\), un estudiante escribe \\(AB\\) \\(=\\begin{pmatrix}1(2)&2(1)\\\\4(0)&5(3)\\end{pmatrix}\\) \\(=\\begin{pmatrix}2&2\\\\0&15\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "El error es…",
+       "o": [
+        "Multiplicó entradas aisladas en lugar de fila por columna",
+        "El producto no está definido",
+        "El resultado debía ser 3 × 3",
+        "Debió sumar en vez de multiplicar",
+        "No hay error"
+       ]
+      },
+      {
+       "p": "\\(AB\\) correcto",
+       "o": [
+        "\\(\\begin{pmatrix}5&4\\\\14&13\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&2\\\\0&15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}5&4\\\\8&13\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&7\\\\14&13\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}6&4\\\\14&9\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((2\\times3)(3\\times2)\\) \\(\\to2\\times2\\): sí existe.",
+      "Fila 1: \\(2+0+3=5\\), \\(1+6-3=4\\). Fila 2: \\(8+0+6=14\\), \\(4+15-6=13\\).",
+      "Secuencia segura: dimensiones → compatibilidad → orden → cálculo fila–columna."
+     ],
+     "ans": "AB = [[5, 4], [14, 13]]",
+     "hint": "Cada entrada usa una fila completa de A y una columna completa de B.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ]
+     ]
+    },
+    {
+     "id": "s1e7",
+     "lvl": 2,
+     "title": "Predice MATLAB",
+     "q": "<p>En MATLAB: <code>A = [1 2; 3 4]; B = [2 0; 1 5];</code></p><p>Predice lo que devuelven <code>A.*B</code> y <code>A*B</code>.</p>",
+     "checks": [
+      {
+       "p": "<code>A.*B</code>",
+       "o": [
+        "\\(\\begin{pmatrix}2&0\\\\3&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}4&10\\\\10&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&10\\\\6&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&2\\\\4&9\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&0\\\\1&20\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "<code>A*B</code>",
+       "o": [
+        "\\(\\begin{pmatrix}4&10\\\\10&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&0\\\\3&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&10\\\\10&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}4&10\\\\7&20\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&10\\\\11&20\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>.*</code> multiplica entrada por entrada: \\(\\begin{pmatrix}1\\cdot2&2\\cdot0\\\\3\\cdot1&4\\cdot5\\end{pmatrix}\\).",
+      "<code>*</code> es fila · columna: \\((1)(2)+(2)(1)=4\\), \\(0+10=10\\), \\(6+4=10\\), \\(0+20=20\\).",
+      "<code>A'</code> sería la transpuesta \\(\\begin{pmatrix}1&3\\\\2&4\\end{pmatrix}\\)."
+     ],
+     "ans": "A.*B = [[2, 0], [3, 20]]; A*B = [[4, 10], [10, 20]]",
+     "hint": "El punto antes del operador significa «entrada por entrada».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mat"
+      ],
+      [
+       "mat",
+       "prod"
+      ],
+      [
+       "tras"
+      ]
+     ]
+    },
+    {
+     "id": "s1e8",
+     "lvl": 2,
+     "title": "IRVA: ventas de una tienda",
+     "q": "<p>\\(V\\) \\(=\\begin{pmatrix}12&8&15\\\\10&11&9\\end{pmatrix}\\) registra unidades vendidas (filas: días; columnas: productos P1, P2, P3) y \\(p\\) \\(=\\begin{pmatrix}20\\\\15\\\\10\\end{pmatrix}\\) son los precios en soles.</p>",
+     "checks": [
+      {
+       "p": "Ingresos de cada día, \\(Vp\\)",
+       "o": [
+        "\\(\\begin{pmatrix}510\\\\455\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}455\\\\510\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}440\\\\470\\end{pmatrix}\\)",
+        "\\((22,\\ 19,\\ 24)\\)",
+        "\\(\\begin{pmatrix}530\\\\455\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "¿Está definido \\(pV\\)?",
+       "o": [
+        "No: \\((3\\times1)(2\\times3)\\), 1 ≠ 2",
+        "Sí, da una matriz 3 × 3",
+        "Sí, da lo mismo que \\(Vp\\)",
+        "No, porque \\(p\\) tiene entradas mayores",
+        "Sí, da un número"
+       ]
+      }
+     ],
+     "steps": [
+      "I: \\(v_{23}=9\\) son las unidades de P3 vendidas el día 2. R: \\((2\\times3)(3\\times1)\\) \\(\\to2\\times1\\).",
+      "\\(12(20)\\) \\(+8(15)\\) \\(+15(10)\\) \\(=510\\); \\(10(20)\\) \\(+11(15)\\) \\(+9(10)\\) \\(=455\\).",
+      "A: el día 1 se ganaron S/ 510 y el día 2, S/ 455. \\(pV\\) no existe por dimensiones."
+     ],
+     "ans": "Vp = (510, 455) soles; pV no está definido",
+     "hint": "Cada fila de V por el vector de precios da el ingreso de ese día.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "irva",
+       "orden"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s1e9",
+     "lvl": 3,
+     "title": "Ecuación matricial (EA1 2024-1)",
+     "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}2&y\\\\-x&1\\end{pmatrix}\\) y \\(C\\) \\(=\\begin{pmatrix}-9&2\\\\-6&-7\\end{pmatrix}\\). Si \\(A^2-5A=C\\), halla \\(x+y\\).</p>",
+     "checks": [
+      {
+       "p": "\\(x+y\\)",
+       "o": [
+        "\\(-4\\)",
+        "\\(4\\)",
+        "\\(-2\\)",
+        "\\(2\\)",
+        "\\(-5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A^2\\) \\(=\\begin{pmatrix}4-xy&3y\\\\-3x&1-xy\\end{pmatrix}\\).",
+      "\\(A^2-5A\\) \\(=\\begin{pmatrix}-6-xy&-2y\\\\2x&-4-xy\\end{pmatrix}\\).",
+      "Igualando: \\(-2y=2\\Rightarrow y=-1\\); \\(2x=-6\\Rightarrow x=-3\\).",
+      "Verifica: \\(-6-xy=-6-3=-9\\) ✓ y \\(-4-3=-7\\) ✓. \\(x+y=-4\\)."
+     ],
+     "ans": "x + y = −4",
+     "hint": "Calcula A² fila por columna y luego iguala entrada por entrada.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "suma"
+      ],
+      [
+       "orden"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "s1e10",
+     "lvl": 3,
+     "title": "Parámetros con AB = I (EA1 2025-1)",
+     "q": "<p>Halla \\(a+b\\) si \\(AB=I_3\\), con \\(A\\) \\(=\\begin{pmatrix}1&1&0\\\\1&0&1\\\\a&1&2\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}1&2&-1\\\\0&-2&b\\\\-1&-1&1\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(a+b\\)",
+       "o": [
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(4\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Fila 1 de \\(A\\) por la columna 3 de \\(B\\): \\(-1\\) \\(+b\\) \\(+0\\) \\(=0\\) \\(\\Rightarrow b\\) \\(=1\\).",
+      "Fila 3 por la columna 1: \\(a+0-2=0\\Rightarrow a=2\\).",
+      "Verifica el resto: fila 3 por columna 3: \\(-2+1+2=1\\) ✓. \\(a+b=3\\)."
+     ],
+     "ans": "a = 2, b = 1 ⇒ a + b = 3",
+     "hint": "Usa solo las entradas de AB que contienen a o b y compáralas con I.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "s1e11",
+     "lvl": 3,
+     "title": "16 y 14 entradas (EA1 2024-1)",
+     "q": "<p>Una matriz \\(A\\) tiene 16 entradas y \\(B\\) tiene 14. ¿Pueden estar definidos a la vez \\(AB\\) y \\(BA\\)?</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "No: si \\(A\\) es \\(m\\times n\\), ambos productos obligan a que \\(B\\) sea \\(n\\times m\\), con el mismo número de entradas",
+        "Sí, si \\(A\\) es 4 × 4 y \\(B\\) es 2 × 7",
+        "Sí, si \\(A\\) es 2 × 8 y \\(B\\) es 7 × 2",
+        "Solo si ambas son cuadradas",
+        "Sí, siempre que \\(AB=BA\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Si \\(A\\in\\mathbb R^{m\\times n}\\), \\(AB\\) exige que \\(B\\) tenga n filas: \\(B\\in\\mathbb R^{n\\times p}\\).",
+      "\\(BA\\) exige p = m, así que \\(B\\in\\mathbb R^{n\\times m}\\).",
+      "Entonces \\(B\\) tendría \\(nm=16\\) entradas, pero tiene 14: imposible. Solo uno de los dos productos puede existir."
+     ],
+     "ans": "No es posible",
+     "hint": "Escribe B como n × p y aplica la condición de cada producto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "orden"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "name": "Sem. 2 · Escalonada, rango y determinantes",
+   "teo": "<p>Con <strong>operaciones elementales por fila</strong> (intercambio, \\(kF_i\\) con \\(k\\neq0\\), \\(F_i+kF_j\\)) se llega a una <strong>forma escalonada</strong>. El <strong>rango</strong> es el número de pivotes y cumple \\(\\operatorname{rango}(A)\\le\\min(m,n)\\).</p>\n<p>El <strong>determinante</strong> solo existe en matrices cuadradas. Intercambiar filas cambia su signo, multiplicar una fila por k lo multiplica por k y sumar un múltiplo de otra fila no lo cambia. Si la matriz es triangular, es el producto de la diagonal.</p>\n<p><strong>Cofactores:</strong> \\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\); expande por la fila o columna con más ceros. La adjunta es la transpuesta de la matriz de cofactores. Clave: \\(\\det A\\) \\(=0\\) \\(\\iff\\operatorname{rango}(A)\\lt n\\).</p>",
+   "form": [
+    "\\(\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) \\(=ad-bc\\)",
+    "\\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\)",
+    "\\(\\det(kA)=k^n\\det A\\)",
+    "\\(\\det(AB)\\) \\(=\\det A\\cdot\\det B\\)",
+    "\\(\\det A=0\\iff r(A)\\lt n\\)",
+    "\\(\\operatorname{adj}(A)\\) \\(=[C_{ij}]^T\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>El rango y el determinante responden lo mismo desde dos ángulos: ¿cuánta información nueva tiene la matriz? El rango la cuenta; el determinante (solo en cuadradas) dice si está completa (≠ 0) o si hay redundancia (= 0).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Pivote:</strong> primera entrada no nula de una fila en la escalonada.</li><li><strong>Rango:</strong> número de pivotes. El tamaño solo da la cota \\(\\min(m,n)\\).</li><li><strong>Propiedades:</strong> \\(\\det(A^T)=\\det A\\), \\(\\det(AB)=\\det A\\det B\\), \\(\\det(kA)=k^n\\det A\\).</li><li><strong>det = 0</strong> si hay una fila nula o dos filas (o columnas) proporcionales.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>Rango con parámetro:</strong> escalona dejando k y mira qué valor anula un pivote.</li><li><strong>Determinante:</strong> elige fila/columna con ceros → signo \\((-1)^{i+j}\\) → menor → suma. O triangula llevando la cuenta de las OEF.</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S2):</b> \\(A(k)\\) \\(=\\begin{pmatrix}1&2&-1\\\\2&4&k\\\\1&3&0\\end{pmatrix}\\) se escalona a pivotes \\(1,\\ 1,\\ k+2\\). Si \\(k=-2\\), rango 2 y \\(\\det A=-k-2=0\\): las dos ideas coinciden.</div>\n<div class=\"err\"><b>Error común:</b> olvidar el signo alternado del cofactor: en la fila 1 los signos son \\(+,-,+\\). Y decir «es 4 × 5, así que su rango es 4».</div>",
+   "ex": [
+    {
+     "id": "s2e1",
+     "lvl": 1,
+     "title": "Pivotes y rango",
+     "q": "<p>Considera la forma escalonada \\(R\\) \\(=\\begin{pmatrix}2&-1&3&0\\\\0&5&-2&1\\\\0&0&0&4\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\operatorname{rango}(R)\\)",
+       "o": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(2\\)",
+        "\\(1\\)",
+        "\\(12\\)"
+       ]
+      },
+      {
+       "p": "¿Qué columna no tiene pivote?",
+       "o": [
+        "La 3",
+        "La 4",
+        "La 2",
+        "Todas tienen pivote",
+        "La 1"
+       ]
+      }
+     ],
+     "steps": [
+      "Pivotes (primera entrada no nula de cada fila): \\(2\\) en (1,1), \\(5\\) en (2,2) y \\(4\\) en (3,4).",
+      "Tres pivotes \\(\\Rightarrow\\operatorname{rango}\\) \\(=3\\).",
+      "La columna 3 no tiene pivote: el −2 de la fila 2 no es pivote porque no es la primera entrada no nula."
+     ],
+     "ans": "Rango 3; la columna 3 no tiene pivote",
+     "hint": "El pivote es la primera entrada no nula de cada fila, no cualquier número distinto de cero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "esc"
+      ],
+      [
+       "rango"
+      ],
+      [
+       "esc"
+      ]
+     ]
+    },
+    {
+     "id": "s2e2",
+     "lvl": 1,
+     "title": "Determinantes 2 × 2",
+     "q": "<p>Calcula \\(\\det\\begin{pmatrix}4&-3\\\\2&5\\end{pmatrix}\\) y \\(\\det\\begin{pmatrix}0&7\\\\7&0\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "Primer determinante",
+       "o": [
+        "\\(26\\)",
+        "\\(14\\)",
+        "\\(-26\\)",
+        "\\(23\\)",
+        "\\(17\\)"
+       ]
+      },
+      {
+       "p": "Segundo determinante",
+       "o": [
+        "\\(-49\\)",
+        "\\(49\\)",
+        "\\(0\\)",
+        "\\(14\\)",
+        "\\(-14\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4(5)-(-3)(2)=20+6=26\\).",
+      "\\(0(0)-7(7)=-49\\).",
+      "El signo negativo del segundo se debe a que equivale a intercambiar filas de una diagonal."
+     ],
+     "ans": "26 y −49",
+     "hint": "ad − bc: diagonal principal menos diagonal secundaria.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "det2"
+      ],
+      [
+       "det2"
+      ],
+      [
+       "detprop"
+      ]
+     ]
+    },
+    {
+     "id": "s2e3",
+     "lvl": 1,
+     "title": "Propiedades sin recalcular",
+     "q": "<p>Se sabe que \\(\\det A=6\\) con \\(A\\in\\mathbb R^{3\\times3}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\det(2A)\\)",
+       "o": [
+        "\\(48\\)",
+        "\\(12\\)",
+        "\\(24\\)",
+        "\\(36\\)",
+        "\\(8\\)"
+       ]
+      },
+      {
+       "p": "Determinante tras sumar a una fila tres veces otra",
+       "o": [
+        "\\(6\\)",
+        "\\(18\\)",
+        "\\(-6\\)",
+        "\\(24\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2A\\) multiplica las 3 filas por 2: \\(\\det(2A)=2^3\\det A=48\\).",
+      "\\(F_i\\to F_i+3F_j\\) no cambia el determinante: sigue en 6.",
+      "Además \\(\\det(A^T)=6\\) y un intercambio de filas daría \\(-6\\)."
+     ],
+     "ans": "det(2A) = 48; tras F_i + 3F_j: 6",
+     "hint": "El 2 sale una vez por cada fila.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "detmas"
+      ],
+      [
+       "detprop"
+      ],
+      [
+       "detprop",
+       "detmas"
+      ]
+     ]
+    },
+    {
+     "id": "s2e4",
+     "lvl": 1,
+     "title": "Determinante de una triangular",
+     "q": "<p>Sin cofactores, calcula \\(\\det T\\) para \\(T\\) \\(=\\begin{pmatrix}3&0&0\\\\5&-2&0\\\\1&4&7\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\det T\\)",
+       "o": [
+        "\\(-42\\)",
+        "\\(42\\)",
+        "\\(8\\)",
+        "\\(-6\\)",
+        "\\(0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T\\) es triangular inferior.",
+      "\\(\\det T\\) \\(=3\\cdot(-2)\\cdot7\\) \\(=-42\\)."
+     ],
+     "ans": "−42",
+     "hint": "En una triangular solo importa la diagonal.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "detmas"
+      ],
+      [
+       "detmas"
+      ]
+     ]
+    },
+    {
+     "id": "s2e5",
+     "lvl": 2,
+     "title": "Expansión por cofactores",
+     "q": "<p>Calcula \\(\\det D\\) con \\(D\\) \\(=\\begin{pmatrix}2&0&1\\\\3&-1&2\\\\1&4&0\\end{pmatrix}\\) expandiendo por la primera fila.</p>",
+     "checks": [
+      {
+       "p": "\\(\\det D\\)",
+       "o": [
+        "\\(-3\\)",
+        "\\(3\\)",
+        "\\(-29\\)",
+        "\\(13\\)",
+        "\\(-16\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(C_{11}\\) \\(=\\) \\(+\\det\\begin{pmatrix}-1&2\\\\4&0\\end{pmatrix}\\) \\(=0-8\\) \\(=-8\\); el término con \\(a_{12}=0\\) desaparece.",
+      "\\(C_{13}\\) \\(=\\) \\(+\\det\\begin{pmatrix}3&-1\\\\1&4\\end{pmatrix}\\) \\(=12\\) \\(+1\\) \\(=13\\).",
+      "\\(\\det D\\) \\(=2(-8)\\) \\(+0\\) \\(+1(13)\\) \\(=-3\\). Por la columna 2 sale lo mismo."
+     ],
+     "ans": "−3",
+     "hint": "El cero de la fila 1 te ahorra un menor.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cof"
+      ],
+      [
+       "cof"
+      ],
+      [
+       "cof"
+      ]
+     ]
+    },
+    {
+     "id": "s2e6",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (cofactores)",
+     "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\0&4&5\\\\1&0&6\\end{pmatrix}\\) un estudiante escribe \\(\\det A\\) \\(=1(24)\\) \\(+2(-5)\\) \\(+3(-4)\\) \\(=2\\).</p>",
+     "checks": [
+      {
+       "p": "¿Dónde se equivocó?",
+       "o": [
+        "En el segundo término: \\(C_{12}\\) lleva signo \\(-\\)",
+        "En el primer término: \\(C_{11}\\) lleva signo \\(-\\)",
+        "En el tercer término: \\(C_{13}\\) lleva signo \\(-\\)",
+        "Debía expandir por columnas",
+        "No hay error"
+       ]
+      },
+      {
+       "p": "\\(\\det A\\) correcto",
+       "o": [
+        "\\(22\\)",
+        "\\(2\\)",
+        "\\(-22\\)",
+        "\\(14\\)",
+        "\\(30\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Los signos de la fila 1 son \\((-1)^{1+1},(-1)^{1+2},(-1)^{1+3}\\) \\(=\\) \\(+,-,\\) \\(+\\).",
+      "\\(\\det A\\) \\(=1(24)-2(-5)\\) \\(+3(-4)\\) \\(=24\\) \\(+10-12\\) \\(=22\\).",
+      "Secuencia: elegir fila → signo \\((-1)^{i+j}\\) → menor → sumar."
+     ],
+     "ans": "22",
+     "hint": "Revisa el signo de cada posición antes de sumar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cof"
+      ],
+      [
+       "cof"
+      ],
+      [
+       "cof"
+      ]
+     ]
+    },
+    {
+     "id": "s2e7",
+     "lvl": 2,
+     "title": "Rango y determinante con parámetro",
+     "q": "<p>Sea \\(A(k)\\) \\(=\\begin{pmatrix}1&2&-1\\\\2&4&k\\\\1&3&0\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "Valor de \\(k\\) para el que \\(\\operatorname{rango}A(k)\\) \\(=2\\)",
+       "o": [
+        "\\(k=-2\\)",
+        "\\(k=2\\)",
+        "\\(k=0\\)",
+        "\\(k=-1\\)",
+        "Ninguno: siempre tiene rango 3"
+       ]
+      },
+      {
+       "p": "\\(\\det A(k)\\)",
+       "o": [
+        "\\(-k-2\\)",
+        "\\(k+2\\)",
+        "\\(k-2\\)",
+        "\\(2k+4\\)",
+        "\\(-k\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2\\to F_2-2F_1\\): \\((0,0,k+2)\\); \\(F_3\\to F_3-F_1\\): \\((0,1,1)\\). Intercambia \\(F_2\\leftrightarrow F_3\\): pivotes \\(1,\\ 1,\\ k+2\\).",
+      "Si \\(k=-2\\) el tercer pivote se anula: rango 2; si no, rango 3.",
+      "Escalonar con un intercambio da \\(\\det A\\) \\(=-(1\\cdot1\\cdot(k+2))\\) \\(=-k-2\\), que vale 0 justo en \\(k=-2\\)."
+     ],
+     "ans": "Rango 2 si k = −2; det = −k − 2",
+     "hint": "Escalona dejando k y mira qué valor mata un pivote.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef",
+       "esc"
+      ],
+      [
+       "rango"
+      ],
+      [
+       "detprop",
+       "detrango"
+      ]
+     ]
+    },
+    {
+     "id": "s2e8",
+     "lvl": 2,
+     "title": "Rango con parámetro (EA 2024-2)",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&-1\\\\3&5&-3\\\\7&7&m\\end{pmatrix}\\). ¿Para qué valores de m el rango es 3?</p>",
+     "checks": [
+      {
+       "p": "Rango 3 cuando…",
+       "o": [
+        "\\(m\\neq-7\\)",
+        "\\(m\\neq7\\)",
+        "\\(m=-7\\)",
+        "\\(m\\neq0\\)",
+        "Para todo m"
+       ]
+      },
+      {
+       "p": "Si \\(m=-7\\), las columnas de \\(A\\) son…",
+       "o": [
+        "LD (rango 2 < 3 columnas)",
+        "LI (rango 3)",
+        "LI porque no hay columnas iguales",
+        "LD porque la matriz es cuadrada",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-3F_1=(0,2,0)\\); \\(F_3-7F_1=(0,0,m+7)\\).",
+      "Pivotes \\(1,\\ 2,\\ m+7\\): rango 3 si \\(m\\neq-7\\); rango 2 si \\(m=-7\\).",
+      "Con rango menor que el número de columnas, las columnas son linealmente dependientes."
+     ],
+     "ans": "Rango 3 si m ≠ −7; con m = −7 las columnas son LD",
+     "hint": "El último pivote depende de m.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "rango"
+      ],
+      [
+       "rango"
+      ]
+     ]
+    },
+    {
+     "id": "s2e9",
+     "lvl": 2,
+     "title": "Predice MATLAB: rank y det",
+     "q": "<p><code>A = [1 2 -1; 2 4 0; 1 3 0];</code> (es \\(A(k)\\) con \\(k=0\\)). Predice <code>rank(A)</code> y <code>det(A)</code>.</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code>rank(A)</code> = 3 y <code>det(A)</code> = −2",
+        "<code>rank(A)</code> = 2 y <code>det(A)</code> = 0",
+        "<code>rank(A)</code> = 3 y <code>det(A)</code> = 2",
+        "<code>rank(A)</code> = 2 y <code>det(A)</code> = −2",
+        "<code>rank(A)</code> = 3 y <code>det(A)</code> = 0"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(k=0\\): \\(\\det A=-0-2=-2\\neq0\\).",
+      "Determinante no nulo \\(\\Rightarrow\\) rango completo: 3.",
+      "<code>rref(A)</code> daría \\(I_3\\), aunque tu escalonada a mano puede verse distinta (la reducida es única, la escalonada no)."
+     ],
+     "ans": "rank 3, det −2",
+     "hint": "Usa la fórmula det = −k − 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "detrango"
+      ],
+      [
+       "mat",
+       "rango"
+      ],
+      [
+       "esc"
+      ]
+     ]
+    },
+    {
+     "id": "s2e10",
+     "lvl": 2,
+     "title": "IRVA: sensores de un dron",
+     "q": "<p>Tres sensores (filas) combinan tres señales x, y, z (columnas): \\(S\\) \\(=\\begin{pmatrix}1&0&2\\\\0&1&1\\\\1&1&3\\end{pmatrix}\\). ¿Aporta el tercer sensor información nueva?</p>",
+     "checks": [
+      {
+       "p": "Rango y determinante",
+       "o": [
+        "\\(\\operatorname{rango}=2\\), \\(\\det S=0\\)",
+        "\\(\\operatorname{rango}=3\\), \\(\\det S=1\\)",
+        "\\(\\operatorname{rango}=3\\), \\(\\det S=0\\)",
+        "\\(\\operatorname{rango}=2\\), \\(\\det S=2\\)",
+        "\\(\\operatorname{rango}=1\\), \\(\\det S=0\\)"
+       ]
+      },
+      {
+       "p": "Conclusión",
+       "o": [
+        "No: el sensor 3 es la suma de los otros dos; la red no ubica al dron sin ambigüedad",
+        "Sí: los tres sensores son independientes",
+        "Sí, porque su fila tiene la entrada más grande",
+        "No, porque tiene un cero",
+        "No se puede saber sin MATLAB"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_3\\to F_3-F_1-F_2\\) da la fila \\((0,0,0)\\).",
+      "Dos pivotes: rango 2; hay una fila nula, así que \\(\\det S=0\\).",
+      "\\(s_3=s_1+s_2\\): el tercer sensor es redundante, coherente con \\(\\det\\) \\(=0\\) \\(\\iff\\operatorname{rango}\\lt n\\)."
+     ],
+     "ans": "Rango 2, det 0: el sensor 3 es redundante",
+     "hint": "Prueba restar al sensor 3 los otros dos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "rango",
+       "detmas"
+      ],
+      [
+       "detrango",
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s2e11",
+     "lvl": 1,
+     "title": "Área de cobertura",
+     "q": "<p>Dos drones salen del mismo punto con desplazamientos \\(u=(4,1)\\) y \\(v=(2,5)\\) km. ¿Qué área tiene el paralelogramo que forman?</p>",
+     "checks": [
+      {
+       "p": "Área",
+       "o": [
+        "\\(18\\ \\text{km}^2\\)",
+        "\\(22\\ \\text{km}^2\\)",
+        "\\(9\\ \\text{km}^2\\)",
+        "\\(-18\\ \\text{km}^2\\)",
+        "\\(20\\ \\text{km}^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det\\begin{pmatrix}4&1\\\\2&5\\end{pmatrix}\\) \\(=20-2\\) \\(=18\\).",
+      "Área \\(=|18|=18\\) km². Si u y v fueran paralelos, det = 0 y no habría cobertura conjunta."
+     ],
+     "ans": "18 km²",
+     "hint": "Área = |det|.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "det2"
+      ],
+      [
+       "area"
+      ]
+     ]
+    },
+    {
+     "id": "s2e12",
+     "lvl": 3,
+     "title": "det(AB) sin expandir (EA 2024-2)",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}200&0&-3&100\\\\200&-3&7&100\\\\200&1&3&100\\\\200&2&-1&100\\end{pmatrix}\\) y \\(B\\) cualquier matriz 4 × 4. Calcula \\(\\det(AB)\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\det(AB)\\)",
+       "o": [
+        "\\(0\\)",
+        "\\(200\\cdot100\\cdot\\det B\\)",
+        "\\(\\det B\\)",
+        "\\(2\\det B\\)",
+        "No se puede sin conocer \\(B\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La columna 1 de \\(A\\) es el doble de la columna 4: son proporcionales.",
+      "Columnas proporcionales \\(\\Rightarrow\\det A=0\\).",
+      "\\(\\det(AB)\\) \\(=\\det A\\cdot\\det B\\) \\(=0\\cdot\\det B\\) \\(=0\\)."
+     ],
+     "ans": "0",
+     "hint": "Mira la primera y la última columna.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "detmas"
+      ],
+      [
+       "detmas"
+      ],
+      [
+       "detmas"
+      ]
+     ]
+    },
+    {
+     "id": "s2e13",
+     "lvl": 3,
+     "title": "Triangular con OEF (EA 2026-1)",
+     "q": "<p>Usando solo operaciones por filas, calcula \\(\\det A\\) para \\(A\\) \\(=\\begin{pmatrix}1&-4&2\\\\-2&8&-9\\\\-1&7&0\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\det A\\)",
+       "o": [
+        "\\(15\\)",
+        "\\(-15\\)",
+        "\\(5\\)",
+        "\\(0\\)",
+        "\\(30\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2+2F_1=(0,0,-5)\\) y \\(F_3+F_1=(0,3,2)\\): el determinante no cambia.",
+      "\\(F_2\\leftrightarrow F_3\\) para escalonar: el determinante cambia de signo.",
+      "Triangular \\(\\begin{pmatrix}1&-4&2\\\\0&3&2\\\\0&0&-5\\end{pmatrix}\\) con det \\(=-15\\). Por el intercambio, \\(\\det A=15\\)."
+     ],
+     "ans": "15",
+     "hint": "Lleva la cuenta de cada intercambio.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "detprop"
+      ],
+      [
+       "detprop"
+      ],
+      [
+       "detmas"
+      ]
+     ]
+    },
+    {
+     "id": "s2e14",
+     "lvl": 2,
+     "title": "Cofactores y adjunta",
+     "q": "<p>Sea \\(H\\) \\(=\\begin{pmatrix}2&-1&0\\\\1&3&-2\\\\0&1&1\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(\\det H\\)",
+       "o": [
+        "\\(11\\)",
+        "\\(9\\)",
+        "\\(-11\\)",
+        "\\(10\\)",
+        "\\(5\\)"
+       ]
+      },
+      {
+       "p": "Entrada (1, 2) de \\(\\operatorname{adj}(H)\\)",
+       "o": [
+        "\\(1\\)",
+        "\\(-1\\)",
+        "\\(2\\)",
+        "\\(-2\\)",
+        "\\(4\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Por la fila 1: \\(2\\det\\begin{pmatrix}3&-2\\\\1&1\\end{pmatrix}-(-1)\\det\\begin{pmatrix}1&-2\\\\0&1\\end{pmatrix}\\) \\(=2(5)\\) \\(+1(1)\\) \\(=11\\).",
+      "\\(\\operatorname{adj}(H)_{12}\\) \\(=C_{21}\\) (la adjunta es la transpuesta).",
+      "\\(C_{21}\\) \\(=(-1)^{3}\\det\\begin{pmatrix}-1&0\\\\1&1\\end{pmatrix}\\) \\(=-(-1)\\) \\(=1\\). Ojo: \\(C_{12}=-1\\) es otra entrada."
+     ],
+     "ans": "det H = 11; adj(H)₁₂ = C₂₁ = 1",
+     "hint": "La entrada (i, j) de la adjunta es el cofactor C_ji.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cof"
+      ],
+      [
+       "adj"
+      ],
+      [
+       "cof"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "name": "Sem. 3 · Sistemas lineales: Gauss, Gauss–Jordan y clasificación",
+   "teo": "<p>Un SEL se escribe como \\(Ax=b\\) y se trabaja con la <strong>matriz aumentada</strong> \\([A\\mid b]\\). Las operaciones elementales por fila dan sistemas equivalentes (mismo conjunto solución).</p>\n<p><strong>Gauss</strong> llega a la forma escalonada y resuelve por sustitución regresiva; <strong>Gauss–Jordan</strong> sigue hasta la reducida y lee la solución directamente.</p>\n<p><strong>Rouché–Frobenius</strong> (n = incógnitas): si \\(r(A)=r(A|b)=n\\), compatible determinado; si \\(r(A)=r(A|b)\\lt n\\), compatible indeterminado con \\(n-r\\) variables libres; si \\(r(A)\\lt r(A|b)\\), incompatible. Una fila \\([0\\cdots0\\mid c]\\) con \\(c\\neq0\\) indica incompatibilidad; una fila \\([0\\cdots0\\mid0]\\) solo sobra.</p>",
+   "form": [
+    "\\(Ax\\) \\(=b\\ \\leftrightarrow\\ [A\\mid b]\\)",
+    "\\(r(A)=r(A|b)=n\\): única",
+    "\\(r(A)=r(A|b)\\lt n\\): infinitas",
+    "\\(r(A)\\lt r(A|b)\\): ninguna",
+    "Libres = n − rango(A)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de resolver, pregúntate qué tipo de solución esperas. La forma escalonada de \\([A\\mid b]\\) responde las dos cosas: clasifica (comparando rangos) y resuelve (sustitución regresiva).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Filas de A:</strong> ecuaciones. <strong>Columnas de A:</strong> incógnitas.</li><li><strong>Compatible determinado:</strong> una solución. <strong>Indeterminado:</strong> infinitas, en forma paramétrica. <strong>Incompatible:</strong> ninguna.</li><li>Más ecuaciones que incógnitas <em>no</em> garantiza solución única: importa el rango.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Arma \\([A\\mid b]\\) y escalona.</li><li><strong>2.</strong> Compara \\(r(A)\\), \\(r(A|b)\\) y n.</li><li><strong>3.</strong> Si hay libres, ponles parámetro y despeja las básicas.</li><li><strong>4.</strong> Verifica sustituyendo en las ecuaciones originales.</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S3):</b> \\(x+y+z=6\\), \\(2x-y+z=3\\), \\(x+2y-z=2\\). Escalonando queda \\(-\\tfrac73z\\) \\(=-7\\) \\(\\Rightarrow z\\) \\(=3\\), luego \\(y=2\\), \\(x=1\\). En MATLAB: <code>A\\b</code>.</div>\n<div class=\"err\"><b>Error común:</b> concluir «incompatible» al ver una fila de ceros completa \\([0\\ 0\\ 0\\mid0]\\). Eso es una ecuación redundante, no una contradicción.</div>",
+   "ex": [
+    {
+     "id": "s3e1",
+     "lvl": 1,
+     "title": "Clasificar con rangos",
+     "q": "<p>Un sistema de 3 incógnitas tiene \\(\\operatorname{rango}(A)\\) \\(=\\operatorname{rango}([A\\mid b])\\) \\(=2\\).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Compatible indeterminado con 1 variable libre",
+        "Compatible determinado",
+        "Incompatible",
+        "Compatible indeterminado con 2 variables libres",
+        "No se puede clasificar sin resolver"
+       ]
+      },
+      {
+       "p": "¿Y si \\(\\operatorname{rango}([A\\mid b])\\) \\(=3\\)?",
+       "o": [
+        "Sería incompatible",
+        "Sería compatible determinado",
+        "Seguiría indeterminado",
+        "Tendría 3 variables libres",
+        "Sería homogéneo"
+       ]
+      }
+     ],
+     "steps": [
+      "Rangos iguales: compatible. Como \\(2\\lt n=3\\), es indeterminado.",
+      "Variables libres: \\(n-r=3-2=1\\).",
+      "Si \\(r(A)=2\\lt r(A|b)=3\\), aparece una fila \\([0\\ 0\\ 0\\mid c\\neq0]\\): incompatible."
+     ],
+     "ans": "Compatible indeterminado, 1 libre; con r(A|b) = 3 sería incompatible",
+     "hint": "Primero compara los rangos entre sí y luego con n.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rouche"
+      ],
+      [
+       "libres"
+      ],
+      [
+       "rouche",
+       "filas0"
+      ]
+     ]
+    },
+    {
+     "id": "s3e2",
+     "lvl": 1,
+     "title": "Leer la escalonada",
+     "q": "<p>Un sistema 3 × 3 se escalona a \\(\\left[\\begin{array}{ccc|c}1&2&-1&4\\\\0&1&3&-2\\\\0&0&0&5\\end{array}\\right]\\).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Incompatible",
+        "Compatible determinado",
+        "Compatible indeterminado con 1 libre",
+        "Compatible indeterminado con 2 libres",
+        "Homogéneo"
+       ]
+      }
+     ],
+     "steps": [
+      "La fila 3 dice \\(0x+0y+0z=5\\), es decir \\(0=5\\): imposible.",
+      "\\(r(A)=2\\lt r(A|b)=3\\): incompatible, no hay nada que despejar."
+     ],
+     "ans": "Incompatible",
+     "hint": "¿Qué ecuación representa la última fila?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "filas0"
+      ],
+      [
+       "rouche"
+      ]
+     ]
+    },
+    {
+     "id": "s3e3",
+     "lvl": 1,
+     "title": "Forma matricial",
+     "q": "<p>Escribe en la forma \\(Ax=b\\): \\(3x-y+2z=8\\), \\(x+2y-z=1\\), \\(2x-3y+z=5\\).</p>",
+     "checks": [
+      {
+       "p": "Matriz de coeficientes \\(A\\)",
+       "o": [
+        "\\(\\begin{pmatrix}3&-1&2\\\\1&2&-1\\\\2&-3&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&1&2\\\\-1&2&-3\\\\2&-1&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&-1&2&8\\\\1&2&-1&1\\\\2&-3&1&5\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&1&2\\\\1&2&1\\\\2&3&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}8&1&5\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada fila de \\(A\\) son los coeficientes de una ecuación, en el orden x, y, z.",
+      "\\(x=(x,y,z)^T\\) y \\(b=(8,1,5)^T\\). La aumentada \\([A\\mid b]\\) sería la de 3 × 4."
+     ],
+     "ans": "A = [[3, −1, 2], [1, 2, −1], [2, −3, 1]], b = (8, 1, 5)",
+     "hint": "Filas = ecuaciones; columnas = incógnitas. b no va dentro de A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel"
+      ],
+      [
+       "sel"
+      ]
+     ]
+    },
+    {
+     "id": "s3e4",
+     "lvl": 2,
+     "title": "Eliminación gaussiana",
+     "q": "<p>Resuelve y clasifica: \\(x+y-z=0\\), \\(2x-y+z=9\\), \\(x+2y+z=3\\).</p>",
+     "checks": [
+      {
+       "p": "Solución \\((x,y,z)\\)",
+       "o": [
+        "\\((3,-1,2)\\)",
+        "\\((3,-\\tfrac{17}{5},-\\tfrac25)\\)",
+        "\\((3,1,-2)\\)",
+        "\\((1,2,3)\\)",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-2F_1=(0,-3,3\\mid9)\\), \\(F_3-F_1=(0,1,2\\mid3)\\). Luego \\(3F_3+F_2=(0,0,9\\mid18)\\).",
+      "\\(9z=18\\Rightarrow z=2\\); \\(-3y\\) \\(+3(2)\\) \\(=9\\) \\(\\Rightarrow y\\) \\(=-1\\); \\(x=-y+z=3\\).",
+      "Tres pivotes: compatible determinado. Verifica: \\(3-1-2=0\\), \\(6+1+2=9\\), \\(3-2+2=3\\) ✓.",
+      "(La clave de la guía trae otro resultado; sustituyendo se comprueba que el correcto es \\((3,-1,2)\\))."
+     ],
+     "ans": "(3, −1, 2), compatible determinado",
+     "hint": "Sumar las dos primeras ecuaciones elimina y y z de golpe.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "gauss"
+      ],
+      [
+       "rouche"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s3e5",
+     "lvl": 3,
+     "title": "Sistema con parámetro (trampa)",
+     "q": "<p>Considera \\(x+y-z=2\\), \\(2x+2y+kz=4\\), \\(x-y+2z=1\\). ¿Para qué valor de k el sistema es incompatible?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Para ninguno: con \\(k=-2\\) queda compatible indeterminado",
+        "\\(k=-2\\)",
+        "\\(k=2\\)",
+        "\\(k=0\\)",
+        "Para todo \\(k\\neq-2\\)"
+       ]
+      },
+      {
+       "p": "Solución si \\(k\\neq-2\\)",
+       "o": [
+        "\\((\\tfrac32,\\tfrac12,0)\\)",
+        "\\((2,0,0)\\)",
+        "\\((1,1,0)\\)",
+        "\\((\\tfrac12,\\tfrac32,0)\\)",
+        "Infinitas soluciones"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-2F_1\\) \\(=(0,0,k+2\\mid0)\\): el lado derecho da \\(4-4=0\\).",
+      "Si \\(k=-2\\), esa fila es \\([0\\ 0\\ 0\\mid0]\\): redundante, rango 2 < 3 \\(\\Rightarrow\\) infinitas soluciones. Nunca aparece \\([0\\ 0\\ 0\\mid c\\neq0]\\).",
+      "Si \\(k\\neq-2\\): \\(z=0\\); con \\(F_3-F_1=(0,-2,3\\mid-1)\\), \\(y=\\tfrac12\\) y \\(x=\\tfrac32\\)."
+     ],
+     "ans": "Nunca es incompatible; k = −2 da infinitas soluciones",
+     "hint": "Mira el lado derecho de la fila que contiene a k.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "filas0",
+       "rouche"
+      ],
+      [
+       "gauss"
+      ]
+     ]
+    },
+    {
+     "id": "s3e6",
+     "lvl": 2,
+     "title": "IRVA: mezcla de fertilizantes",
+     "q": "<p>Un agricultor mezcla x, y, z kg de tres fertilizantes: \\(x+2y+z=10\\) (N), \\(2x+4y+2z=20\\) (P), \\(x-y+z=4\\) (K).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Compatible indeterminado",
+        "Compatible determinado",
+        "Incompatible",
+        "Homogéneo",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Conjunto solución (con \\(z=t\\))",
+       "o": [
+        "\\((6-t,\\ 2,\\ t)\\)",
+        "\\((\\tfrac{14-2t}{3},\\ \\tfrac{8-t}{3},\\ t)\\)",
+        "\\((8-t,\\ 2,\\ t)\\)",
+        "\\((6,\\ 2,\\ 0)\\) únicamente",
+        "\\((6-t,\\ 2-t,\\ t)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La ecuación 2 es el doble de la 1 (también el lado derecho): \\(r(A)=r(A|b)=2\\lt3\\).",
+      "Restando la 3 a la 1: \\(3y=6\\Rightarrow y=2\\). Entonces \\(x+z=6\\Rightarrow x=6-t\\).",
+      "Hay infinitas mezclas posibles; en el contexto se exige \\(0\\le t\\le6\\) para que no haya cantidades negativas."
+     ],
+     "ans": "Infinitas: (6 − t, 2, t) con 0 ≤ t ≤ 6",
+     "hint": "Antes de escalonar, compara la ecuación 2 con la 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rouche"
+      ],
+      [
+       "libres"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s3e7",
+     "lvl": 2,
+     "title": "IRVA: entradas por zonas",
+     "q": "<p>Se vendieron 500 entradas de zonas A (S/ 100), B (S/ 80) y C (S/ 50); se recaudó S/ 38 000 y se vendieron 100 más de B que de A.</p>",
+     "checks": [
+      {
+       "p": "Entradas (A, B, C)",
+       "o": [
+        "\\((125,\\ 225,\\ 150)\\)",
+        "\\((150,\\ 250,\\ 100)\\)",
+        "\\((100,\\ 200,\\ 200)\\)",
+        "\\((125,\\ 225,\\ 160)\\)",
+        "\\((200,\\ 100,\\ 200)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x+y+z=500\\), \\(100x+80y+50z=38000\\), \\(-x+y=100\\).",
+      "Con \\(y=x+100\\): \\(z=400-2x\\) y \\(100x\\) \\(+80x\\) \\(+8000\\) \\(+20000-100x\\) \\(=38000\\) \\(\\Rightarrow x\\) \\(=125\\).",
+      "\\(y=225\\), \\(z=150\\). Verifica: \\(12500+18000+7500=38000\\) ✓."
+     ],
+     "ans": "125, 225 y 150",
+     "hint": "Usa la tercera condición para dejar todo en función de x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel"
+      ],
+      [
+       "gauss"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s3e8",
+     "lvl": 2,
+     "title": "Predice MATLAB: rref y A\\b",
+     "q": "<p><code>A = [1 1 1; 2 -1 1; 1 2 -1]; b = [6; 3; 2];</code> ¿Qué devuelven <code>rank(A)</code>, <code>rank([A b])</code> y <code>A\\b</code>?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "3, 3 y \\((1,2,3)^T\\)",
+        "2, 3 y un aviso de matriz singular",
+        "3, 3 y \\((3,2,1)^T\\)",
+        "2, 2 y \\((1,2,3)^T\\)",
+        "3, 4 y \\((1,2,3)^T\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Es el sistema del ejemplo: compatible determinado.",
+      "Rangos iguales a 3 = n; <code>rref([A b])</code> termina en \\([I_3\\mid(1,2,3)^T]\\).",
+      "Un aviso «Matrix is close to singular» habría indicado rango incompleto."
+     ],
+     "ans": "3, 3 y x = (1, 2, 3)",
+     "hint": "Es el mismo sistema que el ejemplo resuelto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mat"
+      ],
+      [
+       "gj"
+      ],
+      [
+       "rouche"
+      ]
+     ]
+    },
+    {
+     "id": "s3e9",
+     "lvl": 3,
+     "title": "4 incógnitas (EA 2025-2)",
+     "q": "<p>Clasifica y resuelve: \\(\\left[\\begin{array}{cccc|c}1&0&-3&3&4\\\\0&1&2&-1&-1\\\\1&2&1&1&2\\end{array}\\right]\\), incógnitas \\((x,y,z,w)\\).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Compatible indeterminado con 2 variables libres",
+        "Compatible indeterminado con 1 variable libre",
+        "Compatible determinado",
+        "Incompatible",
+        "Compatible indeterminado con 3 variables libres"
+       ]
+      },
+      {
+       "p": "Solución general",
+       "o": [
+        "\\(x=4+3z-3w,\\ y=-1-2z+w\\)",
+        "\\(x=4-3z+3w,\\ y=-1+2z-w\\)",
+        "\\(x=4,\\ y=-1,\\ z=w=0\\)",
+        "\\(x=4+3z,\\ y=-1-2z,\\ w=0\\)",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_3-F_1\\) \\(=(0,2,4,-2\\mid-2)\\); luego \\(F_3-2F_2\\) \\(=(0,0,0,0\\mid0)\\).",
+      "\\(r(A)=r(A|b)=2\\lt4\\): indeterminado con \\(4-2=2\\) libres (z y w).",
+      "Despejando: \\(x=4+3z-3w\\), \\(y=-1-2z+w\\)."
+     ],
+     "ans": "Infinitas, 2 libres: x = 4 + 3z − 3w, y = −1 − 2z + w",
+     "hint": "Al restar, la tercera fila se anula por completo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "rouche",
+       "libres"
+      ],
+      [
+       "libres"
+      ]
+     ]
+    },
+    {
+     "id": "s3e10",
+     "lvl": 3,
+     "title": "Variables pivote (EA 2025-2)",
+     "q": "<p>Resuelve: \\(x_1+2x_2-x_3=1\\), \\(2x_1+5x_2-3x_3=2\\), \\(3x_1+6x_2-2x_3=0\\).</p>",
+     "checks": [
+      {
+       "p": "Solución",
+       "o": [
+        "\\((4,-3,-3)\\)",
+        "\\((1,0,0)\\)",
+        "\\((4,3,-3)\\)",
+        "Infinitas soluciones",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-2F_1=(0,1,-1\\mid0)\\), \\(F_3-3F_1=(0,0,1\\mid-3)\\).",
+      "Tres pivotes, sin libres: compatible determinado.",
+      "\\(x_3=-3\\), \\(x_2=x_3=-3\\), \\(x_1=1-2(-3)+(-3)=4\\)."
+     ],
+     "ans": "(4, −3, −3)",
+     "hint": "Ya queda triangular con dos operaciones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "rouche"
+      ],
+      [
+       "gauss"
+      ]
+     ]
+    },
+    {
+     "id": "s3e11",
+     "lvl": 3,
+     "title": "Camiones (EA 2026-1)",
+     "q": "<p>Hay 60 camiones grandes (x), medianos (y) y pequeños (z). Cargan 15, 10 y 5 t (total 475 t) y recorren 400, 300 y 100 km (total 12 500 km).</p>",
+     "checks": [
+      {
+       "p": "\\((x,y,z)\\)",
+       "o": [
+        "\\((5,\\ 25,\\ 30)\\)",
+        "\\((10,\\ 20,\\ 30)\\)",
+        "\\((5,\\ 30,\\ 25)\\)",
+        "Infinitas soluciones",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "Simplificando: \\(x+y+z=60\\), \\(3x+2y+z=95\\), \\(4x+3y+z=125\\).",
+      "Restando la primera: \\(2x+y=35\\) y \\(3x\\) \\(+2y\\) \\(=65\\) \\(\\Rightarrow x\\) \\(=5\\), \\(y=25\\).",
+      "\\(z=30\\). Rango 3 = n: compatible determinado."
+     ],
+     "ans": "5 grandes, 25 medianos y 30 pequeños",
+     "hint": "Divide la ecuación de carga entre 5 y la de recorrido entre 100.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel"
+      ],
+      [
+       "gauss"
+      ],
+      [
+       "rouche"
+      ]
+     ]
+    },
+    {
+     "id": "s3e12",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (fila nula)",
+     "q": "<p>Un estudiante obtiene \\(\\left[\\begin{array}{ccc|c}1&2&-1&5\\\\0&1&3&-2\\\\0&0&0&0\\end{array}\\right]\\) y dice: «la última fila es toda cero, así que el sistema es incompatible».</p>",
+     "checks": [
+      {
+       "p": "Conclusión correcta",
+       "o": [
+        "Compatible indeterminado con 1 variable libre",
+        "Incompatible",
+        "Compatible determinado",
+        "Compatible indeterminado con 2 libres",
+        "Homogéneo sin solución"
+       ]
+      }
+     ],
+     "steps": [
+      "\\([0\\ 0\\ 0\\mid0]\\) es \\(0=0\\): siempre se cumple, solo sobra una ecuación.",
+      "\\(r(A)=r(A|b)=2\\lt3\\): infinitas soluciones con 1 libre.",
+      "Incompatible sería algo como \\([0\\ 0\\ 0\\mid7]\\)."
+     ],
+     "ans": "Compatible indeterminado, 1 libre",
+     "hint": "Distingue 0 = 0 de 0 = c.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "filas0"
+      ],
+      [
+       "rouche"
+      ],
+      [
+       "filas0"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "name": "Sem. 4 · Inversa por Gauss–Jordan y x = A⁻¹b",
+   "teo": "<p>Una matriz <strong>cuadrada</strong> A es invertible si existe \\(A^{-1}\\) con \\(AA^{-1}=A^{-1}A=I\\). Se calcula con <strong>Gauss–Jordan</strong>: \\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\). Si una columna de la izquierda se queda sin pivote, no hay inversa.</p>\n<p>Son equivalentes: \\(A^{-1}\\) existe \\(\\iff r(A)\\) \\(=n\\) \\(\\iff\\text{rref}(A)\\) \\(=I\\) \\(\\iff\\det A\\neq0\\). En 2 × 2: \\(A^{-1}\\) \\(=\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\) (caso de \\(A^{-1}\\) \\(=\\frac{1}{\\det A}\\operatorname{adj}A\\)).</p>\n<p>Si A es cuadrada e invertible, \\(Ax=b\\) tiene solución única \\(x=A^{-1}b\\) para <em>cualquier</em> b. Si no es cuadrada o no es invertible, se usa eliminación sobre \\([A\\mid b]\\).</p>",
+   "form": [
+    "\\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\)",
+    "\\(\\exists A^{-1}\\) \\(\\iff\\det A\\neq0\\)",
+    "\\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}^{-1}\\) \\(=\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)",
+    "\\(x=A^{-1}b\\)",
+    "\\(A^{-1}\\) \\(=\\frac{1}{\\det A}\\operatorname{adj}(A)\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Hallar \\(A^{-1}\\) es resolver a la vez \\(Ax=e_1,\\dots,Ax=e_n\\). Por eso la misma secuencia de OEF que lleva A a I lleva I a \\(A^{-1}\\).</p>\n<h3>Conceptos clave</h3><ul><li>Solo hay inversa de matrices cuadradas.</li><li>La invertibilidad depende de A, no de b.</li><li>Fila o columna múltiplo/combinación de otras ⇒ no invertible.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Es cuadrada? ¿\\(\\det A\\neq0\\)?</li><li><strong>2.</strong> Escalona \\([A\\mid I]\\) hasta la reducida.</li><li><strong>3.</strong> Verifica \\(AA^{-1}=I\\).</li><li><strong>4.</strong> Si piden el sistema, multiplica \\(A^{-1}b\\) (en ese orden).</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S4):</b> \\(A\\) \\(=\\begin{pmatrix}1&1\\\\3&2\\end{pmatrix}\\): \\([A|I]\\to[I|A^{-1}]\\) con \\(A^{-1}\\) \\(=\\begin{pmatrix}-2&1\\\\3&-1\\end{pmatrix}\\). Para \\(b=(5,13)\\): \\(x=(3,2)\\).</div>\n<div class=\"err\"><b>Error común:</b> intentar \\(x=A^{-1}b\\) con A singular. Que no haya inversa <em>no</em> significa que el sistema no tenga solución: puede tener infinitas.</div>",
+   "ex": [
+    {
+     "id": "s4e1",
+     "lvl": 1,
+     "title": "¿Cuándo no hay inversa?",
+     "q": "<p>A es una matriz \\(n\\times n\\). ¿Cuál de estas condiciones asegura que A <strong>no</strong> es invertible?</p>",
+     "checks": [
+      {
+       "p": "Condición",
+       "o": [
+        "Una fila de A es múltiplo de otra",
+        "\\(\\det A=5\\)",
+        "\\(\\operatorname{rango}(A)\\) \\(=n\\)",
+        "\\(\\text{rref}(A)=I\\)",
+        "A tiene todas sus entradas distintas de cero"
+       ]
+      }
+     ],
+     "steps": [
+      "Fila múltiplo de otra ⇒ al escalonar aparece una fila nula ⇒ \\(r(A)\\lt n\\) ⇒ \\(\\det A=0\\).",
+      "Las otras tres primeras opciones equivalen a que A sí es invertible; que no haya ceros no dice nada."
+     ],
+     "ans": "Una fila múltiplo de otra",
+     "hint": "Todas las condiciones de invertibilidad equivalen a rango completo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invcond"
+      ],
+      [
+       "invcond"
+      ]
+     ]
+    },
+    {
+     "id": "s4e2",
+     "lvl": 1,
+     "title": "Gauss–Jordan a medio camino",
+     "q": "<p>Calculando una inversa 3 × 3 se llega a \\(\\left[\\begin{array}{ccc|ccc}1&0&2&1&0&0\\\\0&1&-1&0&1&0\\\\0&0&0&2&-1&1\\end{array}\\right]\\).</p>",
+     "checks": [
+      {
+       "p": "¿Qué concluyes?",
+       "o": [
+        "La matriz no es invertible: su rango es menor que 3",
+        "Hay que seguir operando hasta obtener I",
+        "La inversa es el bloque derecho",
+        "La matriz es invertible con det = 2",
+        "Hay que intercambiar las columnas"
+       ]
+      }
+     ],
+     "steps": [
+      "La tercera fila del bloque izquierdo es \\([0\\ 0\\ 0]\\): esa columna nunca tendrá pivote.",
+      "El bloque izquierdo no puede llegar a I: \\(r(A)\\lt3\\), no hay inversa. Conviene detenerse."
+     ],
+     "ans": "No es invertible",
+     "hint": "Mira solo el bloque izquierdo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invgj"
+      ],
+      [
+       "invcond"
+      ]
+     ]
+    },
+    {
+     "id": "s4e3",
+     "lvl": 2,
+     "title": "Inversa 2 × 2 por Gauss–Jordan",
+     "q": "<p>Halla la inversa de \\(A\\) \\(=\\begin{pmatrix}2&1\\\\1&3\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(A^{-1}\\)",
+       "o": [
+        "\\(\\tfrac15\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)",
+        "\\(\\tfrac15\\begin{pmatrix}3&1\\\\1&2\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)",
+        "\\(\\tfrac15\\begin{pmatrix}2&-1\\\\-1&3\\end{pmatrix}\\)",
+        "\\(\\tfrac17\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det A=6-1=5\\neq0\\): es invertible.",
+      "\\(F_1\\leftrightarrow F_2\\), \\(F_2-2F_1\\), \\(F_2/(-5)\\), \\(F_1-3F_2\\) lleva \\([A|I]\\) a \\([I|A^{-1}]\\).",
+      "\\(A^{-1}\\) \\(=\\tfrac15\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\). Verifica: \\(AA^{-1}=I\\)."
+     ],
+     "ans": "A⁻¹ = (1/5)[[3, −1], [−1, 2]]",
+     "hint": "Atajo 2 × 2: intercambia la diagonal, cambia el signo de las otras dos y divide entre el det.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inv"
+      ],
+      [
+       "invgj"
+      ],
+      [
+       "inv2"
+      ]
+     ]
+    },
+    {
+     "id": "s4e4",
+     "lvl": 2,
+     "title": "IRVA: producción de jugos",
+     "q": "<p>Cada litro de Mix usa 2 kg de manzana y 1 de piña; cada litro de Tropical, 1 kg de manzana y 3 de piña. Se gastan exactamente 9 kg de manzana y 7 de piña. Usa \\(x=A^{-1}b\\).</p>",
+     "checks": [
+      {
+       "p": "Litros (Mix, Tropical)",
+       "o": [
+        "\\((4,\\ 1)\\)",
+        "\\((1,\\ 4)\\)",
+        "\\((3,\\ 2)\\)",
+        "\\((\\tfrac{20}{5},\\ \\tfrac{14}{5})\\)",
+        "\\((5,\\ 1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2x+y=9\\), \\(x+3y=7\\): \\(A\\) \\(=\\begin{pmatrix}2&1\\\\1&3\\end{pmatrix}\\), \\(b=(9,7)^T\\).",
+      "\\(x\\) \\(=\\tfrac15\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\begin{pmatrix}9\\\\7\\end{pmatrix}\\) \\(=\\tfrac15\\begin{pmatrix}20\\\\5\\end{pmatrix}\\) \\(=\\begin{pmatrix}4\\\\1\\end{pmatrix}\\).",
+      "4 L de Mix y 1 L de Tropical, ambos no negativos. Si cambia b (otras cantidades de fruta), A sigue invertible y la solución sigue siendo única."
+     ],
+     "ans": "4 L de Mix y 1 L de Tropical",
+     "hint": "Filas = recursos (manzana, piña); columnas = productos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sel"
+      ],
+      [
+       "xinvb"
+      ],
+      [
+       "invcond",
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s4e5",
+     "lvl": 2,
+     "title": "Inversa con parámetro",
+     "q": "<p>Sea \\(A(k)\\) \\(=\\begin{pmatrix}1&2\\\\3&k\\end{pmatrix}\\) y \\(b=(5,16)^T\\).</p>",
+     "checks": [
+      {
+       "p": "¿Para qué k no es invertible?",
+       "o": [
+        "\\(k=6\\)",
+        "\\(k=-6\\)",
+        "\\(k=7\\)",
+        "\\(k=0\\)",
+        "Siempre es invertible"
+       ]
+      },
+      {
+       "p": "Con \\(k=7\\), solución de \\(Ax=b\\)",
+       "o": [
+        "\\((3,\\ 1)\\)",
+        "\\((1,\\ 3)\\)",
+        "\\((35,\\ -15)\\)",
+        "\\((3,\\ -1)\\)",
+        "\\((5,\\ 0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det A(k)\\) \\(=k-6\\) \\(=0\\) \\(\\iff k\\) \\(=6\\).",
+      "Con \\(k=7\\): \\(\\det=1\\), \\(A^{-1}\\) \\(=\\begin{pmatrix}7&-2\\\\-3&1\\end{pmatrix}\\).",
+      "\\(x\\) \\(=A^{-1}b\\) \\(=(35-32,\\ -15+16)\\) \\(=(3,1)\\)."
+     ],
+     "ans": "k = 6; con k = 7, x = (3, 1)",
+     "hint": "Calcula el det en función de k.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invcond"
+      ],
+      [
+       "inv2"
+      ],
+      [
+       "xinvb"
+      ]
+     ]
+    },
+    {
+     "id": "s4e6",
+     "lvl": 2,
+     "title": "IRVA: maíz y frijol",
+     "q": "<p>Una hectárea de maíz necesita 1 jornal de siembra y 3 de cosecha; una de frijol, 1 y 2. Se usan 5 jornales de siembra y 13 de cosecha.</p>",
+     "checks": [
+      {
+       "p": "\\(A^{-1}\\) con \\(A\\) \\(=\\begin{pmatrix}1&1\\\\3&2\\end{pmatrix}\\)",
+       "o": [
+        "\\(\\begin{pmatrix}-2&1\\\\3&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&-1\\\\-3&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}-2&3\\\\1&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&-1\\\\-3&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&-1\\\\-3&2\\end{pmatrix}\\)"
+       ]
+      },
+      {
+       "p": "Hectáreas (maíz, frijol)",
+       "o": [
+        "\\((3,\\ 2)\\)",
+        "\\((2,\\ 3)\\)",
+        "\\((-3,\\ 8)\\)",
+        "\\((5,\\ 0)\\)",
+        "\\((1,\\ 4)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det A=2-3=-1\\neq0\\).",
+      "\\(A^{-1}\\) \\(=\\tfrac1{-1}\\begin{pmatrix}2&-1\\\\-3&1\\end{pmatrix}\\) \\(=\\begin{pmatrix}-2&1\\\\3&-1\\end{pmatrix}\\).",
+      "\\(x\\) \\(=A^{-1}(5,13)^T\\) \\(=(-10+13,\\ 15-13)\\) \\(=(3,2)\\)."
+     ],
+     "ans": "3 ha de maíz y 2 de frijol",
+     "hint": "Ojo con el det negativo: cambia todos los signos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invcond"
+      ],
+      [
+       "inv2"
+      ],
+      [
+       "xinvb"
+      ]
+     ]
+    },
+    {
+     "id": "s4e7",
+     "lvl": 3,
+     "title": "Inversa 3 × 3 (EA 2025-2)",
+     "q": "<p>Halla la inversa de \\(A\\) \\(=\\begin{pmatrix}1&0&4\\\\0&2&0\\\\0&2&5\\end{pmatrix}\\) con Gauss–Jordan.</p>",
+     "checks": [
+      {
+       "p": "\\(A^{-1}\\)",
+       "o": [
+        "\\(\\begin{pmatrix}1&\\tfrac45&-\\tfrac45\\\\0&\\tfrac12&0\\\\0&-\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&-\\tfrac45&\\tfrac45\\\\0&\\tfrac12&0\\\\0&\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&0&-\\tfrac45\\\\0&\\tfrac12&0\\\\0&-\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&0&\\tfrac14\\\\0&\\tfrac12&0\\\\0&\\tfrac12&\\tfrac15\\end{pmatrix}\\)",
+        "No es invertible"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_3-F_2\\): \\((0,0,5\\mid0,-1,1)\\). \\(F_2/2\\), \\(F_3/5\\).",
+      "Fila 3 queda \\((0,0,1\\mid0,-\\tfrac15,\\tfrac15)\\). \\(F_1-4F_3\\): \\((1,0,0\\mid1,\\tfrac45,-\\tfrac45)\\).",
+      "Verifica con la columna 3: \\(1(-\\tfrac45)\\) \\(+4(\\tfrac15)\\) \\(=0\\) ✓."
+     ],
+     "ans": "[[1, 4/5, −4/5], [0, 1/2, 0], [0, −1/5, 1/5]]",
+     "hint": "Empieza haciendo cero el 2 de la fila 3 con la fila 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invgj"
+      ],
+      [
+       "invgj"
+      ],
+      [
+       "inv"
+      ]
+     ]
+    },
+    {
+     "id": "s4e8",
+     "lvl": 3,
+     "title": "¿Tiene inversa? (EA 2026-1)",
+     "q": "<p>Decide con Gauss–Jordan si \\(B\\) \\(=\\begin{pmatrix}1&2&1\\\\2&4&3\\\\1&2&2\\end{pmatrix}\\) es invertible.</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "No: la columna 2 se queda sin pivote (es el doble de la 1)",
+        "Sí, con \\(\\det B=1\\)",
+        "Sí, porque no tiene filas iguales",
+        "No, porque tiene una fila nula",
+        "Sí, porque es cuadrada"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-2F_1=(0,0,1)\\), \\(F_3-F_1=(0,0,1)\\): la columna 2 no tiene pivote.",
+      "\\(r(B)=2\\lt3\\), \\(\\det B=0\\): no hay inversa. Desde el inicio se ve que \\(c_2=2c_1\\)."
+     ],
+     "ans": "No es invertible",
+     "hint": "Compara las dos primeras columnas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invgj"
+      ],
+      [
+       "invcond"
+      ]
+     ]
+    },
+    {
+     "id": "s4e9",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (A singular)",
+     "q": "<p>Para \\(x+2y=3,\\ 2x+4y=6\\), un estudiante intenta \\(x=A^{-1}b\\), se atasca y concluye que el sistema no tiene solución.</p>",
+     "checks": [
+      {
+       "p": "¿Qué pasa realmente?",
+       "o": [
+        "A no es invertible, pero el sistema es compatible indeterminado (infinitas soluciones)",
+        "El sistema es incompatible",
+        "Tiene solución única \\((3,0)\\)",
+        "A sí es invertible; se equivocó en las cuentas",
+        "Tiene solución única \\((1,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det A=4-4=0\\): no hay inversa, por eso se atasca.",
+      "Pero la ecuación 2 es el doble de la 1: \\(r(A)=r(A|b)=1\\lt2\\).",
+      "Infinitas soluciones: \\(x=3-2t,\\ y=t\\). Primero verifica si A es invertible; si no, usa Gauss sobre \\([A\\mid b]\\)."
+     ],
+     "ans": "Infinitas soluciones: (3 − 2t, t)",
+     "hint": "Sin inversa no significa sin solución.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invcond"
+      ],
+      [
+       "rouche"
+      ],
+      [
+       "libres"
+      ]
+     ]
+    },
+    {
+     "id": "s4e10",
+     "lvl": 2,
+     "title": "Predice MATLAB: inv",
+     "q": "<p>¿Qué ocurre al ejecutar <code>inv([1 2; 2 4])</code>?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "Un aviso de matriz singular y entradas Inf",
+        "\\(\\begin{pmatrix}-2&1\\\\1&-0.5\\end{pmatrix}\\)",
+        "La matriz identidad",
+        "\\(\\begin{pmatrix}4&-2\\\\-2&1\\end{pmatrix}\\)",
+        "Un error de dimensiones"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det=1\\cdot4-2\\cdot2=0\\): la matriz es singular.",
+      "MATLAB avisa «Matrix is singular to working precision» y devuelve Inf. Por eso se prefiere <code>A\\b</code> y pensar antes si A es invertible."
+     ],
+     "ans": "Aviso de matriz singular (Inf)",
+     "hint": "Calcula el determinante antes de ejecutar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invcond"
+      ],
+      [
+       "mat"
+      ]
+     ]
+    },
+    {
+     "id": "s4e11",
+     "lvl": 1,
+     "title": "Inversa con la adjunta",
+     "q": "<p>Calcula la inversa de \\(A\\) \\(=\\begin{pmatrix}3&1\\\\5&2\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "\\(A^{-1}\\)",
+       "o": [
+        "\\(\\begin{pmatrix}2&-1\\\\-5&3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&1\\\\5&3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}-2&1\\\\5&-3\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}2&-5\\\\-1&3\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det A=6-5=1\\).",
+      "\\(A^{-1}\\) \\(=\\tfrac11\\begin{pmatrix}2&-1\\\\-5&3\\end{pmatrix}\\). Verifica: \\(AA^{-1}\\) \\(=\\begin{pmatrix}6-5&-3+3\\\\10-10&-5+6\\end{pmatrix}\\) \\(=I\\)."
+     ],
+     "ans": "[[2, −1], [−5, 3]]",
+     "hint": "Intercambia a y d; cambia de signo b y c.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inv2"
+      ],
+      [
+       "inv"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "name": "Sem. 5 · Subespacios, combinación e independencia lineal",
+   "teo": "<p>\\(W\\subseteq\\mathbb R^m\\) es <strong>subespacio</strong> si: (1) \\(0\\in W\\), (2) es cerrado bajo la suma y (3) es cerrado bajo el producto por escalar. Si falla una, no lo es; si \\(0\\notin W\\), se descarta de inmediato. Las ecuaciones lineales <em>homogéneas</em> (igualadas a 0) dan subespacios: rectas y planos por el origen.</p>\n<p>\\(w\\in\\operatorname{Gen}\\{v_1,\\dots,v_n\\}\\) si el sistema \\(c_1v_1+\\cdots+c_nv_n=w\\) es consistente.</p>\n<p>\\(\\{v_1,\\dots,v_n\\}\\) es <strong>LI</strong> si \\(c_1v_1+\\cdots+c_nv_n=0\\) solo tiene la solución trivial. Pon los vectores como columnas: rango = n ⇒ LI; rango < n ⇒ LD. Si la matriz es cuadrada, \\(\\det\\neq0\\iff\\) LI.</p>",
+   "form": [
+    "\\(0\\in W\\), \\(u+v\\in W\\), \\(\\alpha u\\in W\\)",
+    "\\(0\\notin W\\Rightarrow\\) no es subespacio",
+    "\\(r[v_1\\cdots v_n]=n\\iff\\) LI",
+    "Cuadrada: \\(\\det\\neq0\\iff\\) LI",
+    "\\(w\\in\\operatorname{Gen}\\) \\(\\iff\\) sistema consistente"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un subespacio es un conjunto estable: al combinar sus elementos nunca sales de él. La independencia lineal mide si cada vector aporta una dirección nueva.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Subespacio:</strong> cero, suma y escalar. Lineal y homogéneo ⇒ sí; con término constante ≠ 0 ⇒ no.</li><li><strong>Contraejemplos típicos:</strong> semiplanos (falla el escalar −1), \\(xy\\ge0\\) o \\(z=xy\\) (falla la suma).</li><li><strong>LD:</strong> algún vector es combinación de los otros. Si \\(u\\) \\(=\\alpha_1v_1\\) \\(+\\alpha_2v_2\\), \\(\\{u,v_1,v_2\\}\\) siempre es LD.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>Subespacio:</strong> ¿cero? → ¿suma? → ¿escalar? (con u, v genéricos o un contraejemplo concreto).</li><li><strong>LI / Gen:</strong> vectores como columnas → escalonar → contar pivotes (o resolver con w a la derecha).</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S5):</b> \\(v_1=(1,2,1)\\), \\(v_2=(0,1,1)\\), \\(v_3=(2,3,1)\\). La matriz \\([v_1\\ v_2\\ v_3]\\) tiene rango 2: LD, con \\(v_3=2v_1-v_2\\).</div>\n<div class=\"err\"><b>Error común:</b> decir «contiene al cero, así que es subespacio». El cero es necesario, no suficiente: \\(z=xy\\) contiene al cero y no es cerrado bajo la suma.</div>",
+   "ex": [
+    {
+     "id": "s5e1",
+     "lvl": 1,
+     "title": "¿Cuál es subespacio?",
+     "q": "<p>¿Cuál de estos conjuntos es un subespacio de \\(\\mathbb R^3\\)?</p>",
+     "checks": [
+      {
+       "p": "Subespacio",
+       "o": [
+        "\\(\\{(x,y,z): 2x-y+z=0\\}\\)",
+        "\\(\\{(x,y,z): x+y+z=2\\}\\)",
+        "\\(\\{(x,y,z): z=xy\\}\\)",
+        "\\(\\{(x,y,z): x\\ge0\\}\\)",
+        "\\(\\{(x,y,z): x^2+y^2=z\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2x-y+z=0\\) es lineal y homogénea: contiene a \\(0\\), y si \\(u,v\\) la cumplen, \\(u+v\\) y \\(\\alpha u\\) también (la suma de ceros es cero).",
+      "\\(x+y+z=2\\) no contiene al cero; \\(z=xy\\) y \\(z=x^2+y^2\\) fallan la suma; \\(x\\ge0\\) falla con el escalar \\(-1\\)."
+     ],
+     "ans": "{2x − y + z = 0}",
+     "hint": "Busca la ecuación lineal igualada a cero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sub"
+      ],
+      [
+       "cero",
+       "sub"
+      ]
+     ]
+    },
+    {
+     "id": "s5e2",
+     "lvl": 1,
+     "title": "Semiplano",
+     "q": "<p>\\(W=\\{(x,y): x\\ge0\\}\\). ¿Por qué no es subespacio?</p>",
+     "checks": [
+      {
+       "p": "Motivo",
+       "o": [
+        "No es cerrado bajo el producto por escalar: \\(-1\\cdot(1,0)\\notin W\\)",
+        "No contiene al vector cero",
+        "No es cerrado bajo la suma",
+        "Es una recta que no pasa por el origen",
+        "Sí es subespacio"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((0,0)\\in W\\) y la suma de dos vectores con \\(x\\ge0\\) sigue teniendo \\(x\\ge0\\).",
+      "Pero \\((1,0)\\in W\\) y \\(-1\\cdot(1,0)\\) \\(=(-1,0)\\notin W\\): falla el escalar."
+     ],
+     "ans": "Falla el cierre por escalar",
+     "hint": "Prueba multiplicando por un número negativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sub"
+      ],
+      [
+       "sub"
+      ]
+     ]
+    },
+    {
+     "id": "s5e3",
+     "lvl": 1,
+     "title": "xy ≥ 0",
+     "q": "<p>\\(W=\\{(x,y): xy\\ge0\\}\\) (primer y tercer cuadrante, con los ejes). ¿Es subespacio?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No: \\((1,0)\\) \\(+(0,-1)\\) \\(=(1,-1)\\notin W\\)",
+        "Sí: contiene al cero y es cerrado bajo escalares",
+        "No: no contiene al cero",
+        "No: falla el escalar",
+        "Sí: es la unión de dos rectas"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(0\\in W\\) y si \\(xy\\ge0\\), también \\((\\alpha x)(\\alpha y)\\) \\(=\\alpha^2xy\\ge0\\): el escalar funciona.",
+      "Pero \\((1,0)\\) y \\((0,-1)\\) están en W y su suma \\((1,-1)\\) da \\(-1\\lt0\\): no es cerrado bajo la suma."
+     ],
+     "ans": "No, falla la suma",
+     "hint": "Usa un punto del eje x y otro del eje y negativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sub"
+      ],
+      [
+       "sub"
+      ]
+     ]
+    },
+    {
+     "id": "s5e4",
+     "lvl": 2,
+     "title": "LI por reducción",
+     "q": "<p>¿Es LI el conjunto \\(v_1=(1,2,1)\\), \\(v_2=(0,1,1)\\), \\(v_3=(2,3,1)\\)?</p>",
+     "checks": [
+      {
+       "p": "Conclusión",
+       "o": [
+        "LD, con \\(v_3=2v_1-v_2\\)",
+        "LD, con \\(v_3=2v_1+v_2\\)",
+        "LI, porque ningún vector es múltiplo de otro",
+        "LI, porque el rango es 3",
+        "LD, con \\(v_3=v_1+v_2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(M\\) \\(=[v_1\\ v_2\\ v_3]\\) \\(=\\begin{pmatrix}1&0&2\\\\2&1&3\\\\1&1&1\\end{pmatrix}\\) \\(\\to\\begin{pmatrix}1&0&2\\\\0&1&-1\\\\0&0&0\\end{pmatrix}\\).",
+      "Rango 2 < 3 vectores: LD.",
+      "La columna 3 de la reducida dice \\(v_3=2v_1-1\\cdot v_2\\). Verifica: \\((2,4,2)-(0,1,1)\\) \\(=(2,3,1)\\) ✓."
+     ],
+     "ans": "LD: v₃ = 2v₁ − v₂",
+     "hint": "Que ninguno sea múltiplo de otro no basta con tres vectores.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "li"
+      ],
+      [
+       "li"
+      ],
+      [
+       "comb"
+      ]
+     ]
+    },
+    {
+     "id": "s5e5",
+     "lvl": 2,
+     "title": "¿Pertenece al generado?",
+     "q": "<p>Con \\(v_1=(1,2,1)\\) y \\(v_2=(0,1,1)\\), ¿cuál de estos vectores está en \\(\\operatorname{Gen}\\{v_1,v_2\\}\\)?</p>",
+     "checks": [
+      {
+       "p": "Vector",
+       "o": [
+        "\\((3,5,2)\\)",
+        "\\((1,0,0)\\)",
+        "\\((0,0,1)\\)",
+        "\\((1,1,1)\\)",
+        "\\((2,4,3)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Plantea \\(av_1\\) \\(+bv_2\\) \\(=(a,\\ 2a+b,\\ a+b)\\).",
+      "Para \\((3,5,2)\\): \\(a=3\\), \\(b=5-6=-1\\) y \\(a+b=2\\) ✓: consistente.",
+      "Para \\((1,0,0)\\): \\(a=1,\\ b=-2\\), pero \\(a+b=-1\\neq0\\): inconsistente. Igual con los demás."
+     ],
+     "ans": "(3, 5, 2) = 3v₁ − v₂",
+     "hint": "Despeja a de la primera componente y b de la segunda; comprueba con la tercera.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comb"
+      ],
+      [
+       "comb"
+      ],
+      [
+       "comb"
+      ]
+     ]
+    },
+    {
+     "id": "s5e6",
+     "lvl": 2,
+     "title": "Soportes con parámetro",
+     "q": "<p>Tres soportes tienen direcciones \\(f_1=(1,0,0)\\), \\(f_2=(1,1,0)\\), \\(f_3=(1,1,k)\\). La estructura es estable si son LI. ¿Para qué k no lo es?</p>",
+     "checks": [
+      {
+       "p": "Valor crítico",
+       "o": [
+        "\\(k=0\\)",
+        "\\(k=1\\)",
+        "\\(k=-1\\)",
+        "Ninguno",
+        "Para todo \\(k\\neq0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det[f_1\\ f_2\\ f_3]\\) \\(=\\det\\begin{pmatrix}1&1&1\\\\0&1&1\\\\0&0&k\\end{pmatrix}\\) \\(=k\\) (triangular).",
+      "LD \\(\\iff\\det=0\\iff k=0\\); ahí \\(f_3=f_2\\) y un soporte es redundante."
+     ],
+     "ans": "k = 0",
+     "hint": "La matriz ya es triangular.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "li"
+      ],
+      [
+       "detrango"
+      ]
+     ]
+    },
+    {
+     "id": "s5e7",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (z = xy)",
+     "q": "<p>Un estudiante dice: «\\(W=\\{(x,y,z): z=xy\\}\\) contiene a \\((0,0,0)\\), así que es subespacio».</p>",
+     "checks": [
+      {
+       "p": "Análisis",
+       "o": [
+        "Falso: \\((2,1,2)\\) \\(+(1,1,1)\\) \\(=(3,2,3)\\) y \\(3\\neq3\\cdot2\\)",
+        "Correcto: el cero basta",
+        "Falso: \\((0,0,0)\\notin W\\)",
+        "Correcto: es un plano por el origen",
+        "Falso: falla solo el escalar"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((2,1,2)\\) y \\((1,1,1)\\) cumplen \\(z=xy\\).",
+      "Su suma \\((3,2,3)\\) exigiría \\(3=3\\cdot2=6\\): falso. No es cerrado bajo la suma.",
+      "El cero es necesario, no suficiente: hay que revisar las tres propiedades."
+     ],
+     "ans": "No es subespacio",
+     "hint": "Prueba con los puntos sugeridos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sub"
+      ],
+      [
+       "sub"
+      ],
+      [
+       "cero"
+      ]
+     ]
+    },
+    {
+     "id": "s5e8",
+     "lvl": 2,
+     "title": "Predice MATLAB: rref para LI",
+     "q": "<p><code>M = [1 0 2; 2 1 3; 1 1 1];</code> ¿Qué devuelven <code>rank(M)</code> y <code>rref(M)</code>?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "2 y \\(\\begin{pmatrix}1&0&2\\\\0&1&-1\\\\0&0&0\\end{pmatrix}\\)",
+        "3 y \\(I_3\\)",
+        "2 y \\(\\begin{pmatrix}1&0&2\\\\0&1&1\\\\0&0&0\\end{pmatrix}\\)",
+        "3 y \\(\\begin{pmatrix}1&0&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}\\)",
+        "1 y \\(\\begin{pmatrix}1&0&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Es la matriz del ejercicio de LI: rango 2.",
+      "La columna 3 no tiene pivote y sus entradas \\((2,-1)\\) son los coeficientes de \\(v_3=2v_1-v_2\\). <code>det(M)</code> daría 0."
+     ],
+     "ans": "rank 2; rref = [[1, 0, 2], [0, 1, −1], [0, 0, 0]]",
+     "hint": "Ya sabes que v₃ = 2v₁ − v₂.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mat",
+       "li"
+      ],
+      [
+       "comb"
+      ]
+     ]
+    },
+    {
+     "id": "s5e9",
+     "lvl": 3,
+     "title": "Combinación con coeficientes (EA 2026-1)",
+     "q": "<p>Sean \\(v_1=(1,3,-1)\\), \\(v_2=(2,1,1)\\), \\(v_3=(0,5,-3)\\). Halla x e y tales que \\(v_2=xv_1+yv_3\\).</p>",
+     "checks": [
+      {
+       "p": "\\((x,y)\\)",
+       "o": [
+        "\\((2,-1)\\)",
+        "\\((-2,1)\\)",
+        "\\((2,1)\\)",
+        "\\((1,-2)\\)",
+        "No existen"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(xv_1\\) \\(+yv_3\\) \\(=(x,\\ 3x+5y,\\ -x-3y)\\) \\(=(2,1,1)\\).",
+      "\\(x=2\\); \\(6+5y=1\\Rightarrow y=-1\\); comprueba: \\(-2+3=1\\) ✓.",
+      "Entonces \\(-2v_1+v_2+v_3=0\\): el conjunto es LD."
+     ],
+     "ans": "x = 2, y = −1",
+     "hint": "La primera componente da x directo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comb"
+      ],
+      [
+       "comb"
+      ],
+      [
+       "li"
+      ]
+     ]
+    },
+    {
+     "id": "s5e10",
+     "lvl": 3,
+     "title": "Base con parámetro (EA 2026-1)",
+     "q": "<p>Sean \\(v_1=(1,0,0)\\), \\(v_2=(2,1,1)\\), \\(v_3=(3,2,a)\\). ¿Para qué valores de a el conjunto es base de \\(\\mathbb R^3\\)?</p>",
+     "checks": [
+      {
+       "p": "Valores de a",
+       "o": [
+        "\\(a\\neq2\\)",
+        "\\(a=2\\)",
+        "\\(a\\neq3\\)",
+        "\\(a\\neq0\\)",
+        "Para todo a"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\det[v_1\\ v_2\\ v_3]\\) \\(=\\det\\begin{pmatrix}1&2&3\\\\0&1&2\\\\0&1&a\\end{pmatrix}\\) \\(=1\\cdot(a-2)\\).",
+      "3 vectores LI en \\(\\mathbb R^3\\) son base: LI \\(\\iff a\\neq2\\). (Con \\(a=3\\), det = 1: es base)."
+     ],
+     "ans": "a ≠ 2",
+     "hint": "Expande por la primera columna.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "li"
+      ],
+      [
+       "li"
+      ]
+     ]
+    },
+    {
+     "id": "s5e11",
+     "lvl": 1,
+     "title": "IRVA: movimientos de un dron",
+     "q": "<p>Un movimiento \\((x,y,z)\\) del dron es válido si \\(x-2y+z=0\\). El control puede combinar, repetir o invertir movimientos válidos.</p>",
+     "checks": [
+      {
+       "p": "¿Es W un subespacio?",
+       "o": [
+        "Sí: ecuación lineal homogénea; combinar movimientos válidos da otro válido",
+        "No: no contiene al cero",
+        "No: no es cerrado bajo la suma",
+        "Sí, pero solo para escalares positivos",
+        "Solo si \\(x=y=z\\)"
+       ]
+      },
+      {
+       "p": "Con la restricción \\(x-2y+z=5\\)…",
+       "o": [
+        "Dejaría de ser subespacio: \\(0\\notin W\\)",
+        "Seguiría siendo subespacio",
+        "Sería todo \\(\\mathbb R^3\\)",
+        "Sería una recta por el origen",
+        "Solo cambiaría su dimensión"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((0,0,0)\\) cumple la ecuación; si u y v la cumplen, \\((u+v)\\) da \\(0+0=0\\) y \\(\\alpha u\\) da \\(\\alpha\\cdot0=0\\).",
+      "Interpretación: combinar, repetir o invertir movimientos válidos siempre produce un movimiento válido.",
+      "Con \\(=5\\): \\(0-0+0\\neq5\\), el movimiento nulo no es válido y W ya no es subespacio."
+     ],
+     "ans": "Sí es subespacio; con = 5 no",
+     "hint": "Revisa primero si el vector nulo cumple la ecuación.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sub"
+      ],
+      [
+       "irva"
+      ],
+      [
+       "cero"
+      ]
+     ]
+    },
+    {
+     "id": "s5e12",
+     "lvl": 3,
+     "title": "Verdadero o falso (EA 2026-1)",
+     "q": "<p>Si \\(u\\) \\(=\\alpha_1v_1\\) \\(+\\alpha_2v_2\\), el conjunto \\(\\{u,v_1,v_2\\}\\) es linealmente dependiente.</p>",
+     "checks": [
+      {
+       "p": "Valor de verdad",
+       "o": [
+        "Verdadero: \\(1\\cdot u-\\alpha_1v_1-\\alpha_2v_2\\) \\(=0\\) es no trivial",
+        "Falso: depende de los valores de \\(\\alpha_1,\\alpha_2\\)",
+        "Falso si \\(\\alpha_1=\\alpha_2=0\\)",
+        "Verdadero solo si \\(v_1,v_2\\) son LD",
+        "Falso: tres vectores siempre son LI"
+       ]
+      }
+     ],
+     "steps": [
+      "Pasa todo a un lado: \\(1\\cdot u\\) \\(+(-\\alpha_1)v_1\\) \\(+(-\\alpha_2)v_2\\) \\(=0\\).",
+      "El coeficiente de u es 1 ≠ 0: la combinación nula es no trivial ⇒ LD, sean cuales sean los α (incluso si u = 0)."
+     ],
+     "ans": "Verdadero",
+     "hint": "Busca una combinación nula cuyos coeficientes no sean todos cero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "li"
+      ],
+      [
+       "li"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "name": "Sem. 6 · Base, dimensión y espacios Col, Row y Nul",
+   "teo": "<p>Una <strong>base</strong> de W genera W y es LI; la <strong>dimensión</strong> es cuántos vectores tiene (recta por el origen: 1; plano: 2).</p>\n<p>Para \\(A\\in\\mathbb R^{m\\times n}\\): base de <strong>Col(A)</strong> = columnas pivote de la <em>A original</em> (rref solo dice cuáles); base de <strong>Row(A)</strong> = filas no nulas de la escalonada; base de <strong>Nul(A)</strong> = resolver \\(Ax=0\\) y sacar un vector por cada variable libre.</p>\n<p><strong>Rango-nulidad:</strong> \\(\\operatorname{rango}(A)\\) \\(+\\operatorname{nulidad}(A)\\) \\(=n\\) (columnas). \\(\\dim\\operatorname{Col}\\) \\(=\\dim\\operatorname{Row}\\) \\(=\\) rango, aunque \\(\\operatorname{Col}(A)\\subseteq\\mathbb R^m\\) y \\(\\operatorname{Row}(A)\\subseteq\\mathbb R^n\\).</p>",
+   "form": [
+    "Base = genera + LI",
+    "Col(A): columnas pivote de \\(A\\)",
+    "Row(A): filas no nulas de rref(A)",
+    "Nul(A): resolver \\(Ax=0\\)",
+    "\\(r(A)\\) \\(+\\operatorname{nul}(A)\\) \\(=n\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una base es el conjunto suficiente y mínimo de direcciones esenciales. Cada matriz trae tres espacios: lo que alcanza (Col), la información de sus filas (Row) y lo que se anula (Nul).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Por qué Col sale de A:</strong> las OEF cambian las columnas, pero conservan las relaciones entre ellas; rref indica qué columnas son independientes.</li><li><strong>Por qué Row sale de rref:</strong> las OEF no cambian el espacio fila.</li><li>Cada columna es pivote (rango) o libre (nulidad).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula rref(A) y ubica los pivotes.</li><li><strong>2.</strong> Col: esas columnas de A. Row: filas no nulas de rref.</li><li><strong>3.</strong> Nul: básicas en función de las libres; un vector por libre.</li><li><strong>4.</strong> Controla con rango + nulidad = n.</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S6):</b> \\(A\\) \\(=\\begin{pmatrix}1&2&1&3\\\\2&4&0&6\\\\1&2&2&3\\end{pmatrix}\\), rref con pivotes en columnas 1 y 3. Col: \\(\\{(1,2,1),(1,0,2)\\}\\); Row: \\(\\{(1,2,0,3),(0,0,1,0)\\}\\); Nul: \\(\\{(-2,1,0,0),(-3,0,0,1)\\}\\). 2 + 2 = 4 ✓.</div>\n<div class=\"err\"><b>Error común:</b> dar como base de Col(A) las columnas de rref(A), como \\((1,0,0)\\) y \\((0,1,0)\\). Esos vectores ni siquiera tienen por qué estar en Col(A).</div>",
+   "ex": [
+    {
+     "id": "s6e1",
+     "lvl": 1,
+     "title": "Dimensión de un generado",
+     "q": "<p>\\(W\\) \\(=\\operatorname{Gen}\\{(1,0,1),(0,1,1),(1,1,2)\\}\\). ¿Cuánto vale \\(\\dim W\\)?</p>",
+     "checks": [
+      {
+       "p": "\\(\\dim W\\)",
+       "o": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(0\\)",
+        "\\(6\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(v_3=v_1+v_2\\): no aporta una dirección nueva, así que \\(\\operatorname{Gen}\\{v_1,v_2,v_3\\}\\) \\(=\\operatorname{Gen}\\{v_1,v_2\\}\\).",
+      "\\(v_1,v_2\\) no son múltiplos: LI. Base \\(\\{v_1,v_2\\}\\), \\(\\dim W=2\\) (un plano)."
+     ],
+     "ans": "2",
+     "hint": "¿Alguno es suma de los otros?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "base"
+      ],
+      [
+       "dim"
+      ]
+     ]
+    },
+    {
+     "id": "s6e2",
+     "lvl": 1,
+     "title": "¿De dónde sale la base de Col?",
+     "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\2&4&7\\\\1&2&4\\end{pmatrix}\\), \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&2&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\). Un compañero da como base de Col(A) a \\(\\{(1,0,0),(0,1,0)\\}\\).</p>",
+     "checks": [
+      {
+       "p": "Base correcta de Col(A)",
+       "o": [
+        "\\(\\{(1,2,1),\\ (3,7,4)\\}\\)",
+        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
+        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
+        "\\(\\{(1,2,0),\\ (0,0,1)\\}\\)",
+        "\\(\\{(1,2,3),\\ (2,4,7)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Pivotes en las columnas 1 y 3.",
+      "Se toman las columnas 1 y 3 de la <em>A original</em>: \\((1,2,1)\\) y \\((3,7,4)\\).",
+      "En cambio, para Row(A) sí sirven las filas de rref: \\((1,2,0),(0,0,1)\\)."
+     ],
+     "ans": "{(1, 2, 1), (3, 7, 4)}",
+     "hint": "rref solo te dice la posición de los pivotes.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "col"
+      ],
+      [
+       "col"
+      ],
+      [
+       "row"
+      ]
+     ]
+    },
+    {
+     "id": "s6e3",
+     "lvl": 1,
+     "title": "Rango y nulidad",
+     "q": "<p>A es una matriz 4 × 6 de rango 3.</p>",
+     "checks": [
+      {
+       "p": "Nulidad de A",
+       "o": [
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(6\\)",
+        "\\(4\\)"
+       ]
+      },
+      {
+       "p": "\\(\\dim\\operatorname{Row}(A)\\)",
+       "o": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(1\\)",
+        "\\(2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{nulidad}\\) \\(=n-r\\) \\(=6-3\\) \\(=3\\) (n = columnas): 3 variables libres en \\(Ax=0\\).",
+      "\\(\\dim\\operatorname{Col}\\) \\(=\\dim\\operatorname{Row}\\) \\(=\\) rango = 3."
+     ],
+     "ans": "Nulidad 3; dim Row = 3",
+     "hint": "n es el número de columnas, no de filas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rn"
+      ],
+      [
+       "row"
+      ]
+     ]
+    },
+    {
+     "id": "s6e4",
+     "lvl": 2,
+     "title": "Bases de Col y Row",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&2&1&3\\\\2&4&0&6\\\\1&2&2&3\\end{pmatrix}\\), con \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&2&0&3\\\\0&0&1&0\\\\0&0&0&0\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "Base de Col(A)",
+       "o": [
+        "\\(\\{(1,2,1),\\ (1,0,2)\\}\\)",
+        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
+        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
+        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
+        "\\(\\{(1,2,1),\\ (1,0,2),\\ (3,6,3)\\}\\)"
+       ]
+      },
+      {
+       "p": "Base de Row(A)",
+       "o": [
+        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
+        "\\(\\{(1,2,1),\\ (1,0,2)\\}\\)",
+        "\\(\\{(1,2,1,3),\\ (2,4,0,6),\\ (1,2,2,3)\\}\\)",
+        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
+        "\\(\\{(1,2,0,3)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Pivotes en las columnas 1 y 3.",
+      "Col(A): columnas 1 y 3 de A: \\((1,2,1),(1,0,2)\\). Row(A): filas no nulas de rref.",
+      "Ambas de dimensión 2 = rango."
+     ],
+     "ans": "Col: {(1,2,1), (1,0,2)}; Row: {(1,2,0,3), (0,0,1,0)}",
+     "hint": "Col en R³, Row en R⁴.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "col"
+      ],
+      [
+       "col",
+       "row"
+      ],
+      [
+       "rango"
+      ]
+     ]
+    },
+    {
+     "id": "s6e5",
+     "lvl": 2,
+     "title": "Base de Nul(A)",
+     "q": "<p>Con la misma \\(A\\) \\(=\\begin{pmatrix}1&2&1&3\\\\2&4&0&6\\\\1&2&2&3\\end{pmatrix}\\) (rref con pivotes en columnas 1 y 3), halla una base de Nul(A).</p>",
+     "checks": [
+      {
+       "p": "Base de Nul(A)",
+       "o": [
+        "\\(\\{(-2,1,0,0),\\ (-3,0,0,1)\\}\\)",
+        "\\(\\{(2,-1,0,0),\\ (3,0,0,1)\\}\\)",
+        "\\(\\{(-2,1,0,0)\\}\\)",
+        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
+        "\\(\\{(-2,0,1,0),\\ (-3,0,0,1)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "De rref: \\(x_1=-2x_2-3x_4\\), \\(x_3=0\\); libres \\(x_2=s,\\ x_4=t\\).",
+      "\\(x\\) \\(=s(-2,1,0,0)\\) \\(+t(-3,0,0,1)\\).",
+      "Rango 2 + nulidad 2 = 4 columnas ✓."
+     ],
+     "ans": "{(−2, 1, 0, 0), (−3, 0, 0, 1)}",
+     "hint": "Un vector por cada variable libre (x₂ y x₄).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      [
+       "nul"
+      ],
+      [
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s6e6",
+     "lvl": 2,
+     "title": "Rango con parámetro (guía corregida)",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&2\\\\0&1&1\\\\1&0&k\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "¿Para qué k el rango es menor que 3?",
+       "o": [
+        "\\(k=1\\)",
+        "\\(k=3\\)",
+        "\\(k=0\\)",
+        "\\(k=2\\)",
+        "Ninguno"
+       ]
+      },
+      {
+       "p": "Base de Nul(A) para ese k",
+       "o": [
+        "\\(\\{(-1,-1,1)\\}\\)",
+        "\\(\\{(1,1,1)\\}\\)",
+        "\\(\\{(-2,-1,1)\\}\\)",
+        "\\(\\{(0,0,0)\\}\\)",
+        "\\(\\{(-1,1,1)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_3-F_1=(0,-1,k-2)\\); \\(F_3+F_2=(0,0,k-1)\\). (Equivale a \\(\\det A=k-1\\)).",
+      "El rango baja a 2 solo si \\(k=1\\). (La clave de la guía dice k = 3, pero con k = 3 el det vale 2).",
+      "Con \\(k=1\\): \\(y=-z\\), \\(x=-y-2z=-z\\). Con \\(z=1\\): \\((-1,-1,1)\\). Rango 2 + nulidad 1 = 3 ✓."
+     ],
+     "ans": "k = 1; Nul = Gen{(−1, −1, 1)}",
+     "hint": "Escalona y mira el último pivote.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "rango"
+      ],
+      [
+       "nul",
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s6e7",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (Col)",
+     "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&0&2\\\\2&1&5\\\\1&1&3\\end{pmatrix}\\), \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&0&2\\\\0&1&1\\\\0&0&0\\end{pmatrix}\\). Un estudiante da como base de Col(A) a \\(\\{(1,0,0),(0,1,0)\\}\\).</p>",
+     "checks": [
+      {
+       "p": "Base correcta",
+       "o": [
+        "\\(\\{(1,2,1),\\ (0,1,1)\\}\\)",
+        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
+        "\\(\\{(1,0,2),\\ (0,1,1)\\}\\)",
+        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
+        "\\(\\{(2,5,3)\\}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Identificó bien los pivotes (columnas 1 y 2).",
+      "Pero los vectores se toman de A: \\((1,2,1)\\) y \\((0,1,1)\\).",
+      "\\((1,0,0)\\) ni siquiera está en Col(A): no hay \\(a,b\\) con \\(a(1,2,1)\\) \\(+b(0,1,1)\\) \\(=(1,0,0)\\)."
+     ],
+     "ans": "{(1, 2, 1), (0, 1, 1)}",
+     "hint": "rref → ubicar pivotes → extraer de A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "col"
+      ],
+      [
+       "col"
+      ],
+      [
+       "comb"
+      ]
+     ]
+    },
+    {
+     "id": "s6e8",
+     "lvl": 2,
+     "title": "Predice MATLAB: [R, p] = rref(A)",
+     "q": "<p><code>A = [1 2 1 3; 2 4 0 6; 1 2 2 3]; [R,p] = rref(A); null(A,'r')</code></p>",
+     "checks": [
+      {
+       "p": "¿Qué valen p y cuántas columnas tiene <code>null(A,'r')</code>?",
+       "o": [
+        "<code>p = [1 3]</code> y 2 columnas",
+        "<code>p = [1 2]</code> y 2 columnas",
+        "<code>p = [1 3]</code> y 1 columna",
+        "<code>p = [1 2 3]</code> y 1 columna",
+        "<code>p = [2 4]</code> y 2 columnas"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>p</code> guarda las posiciones de las columnas pivote: 1 y 3. Por eso <code>A(:,p)</code> (no <code>R(:,p)</code>) es la base de Col(A).",
+      "<code>null(A,'r')</code> da una columna por variable libre: 4 − 2 = 2."
+     ],
+     "ans": "p = [1 3]; null(A,'r') tiene 2 columnas",
+     "hint": "Es la misma matriz de los ejercicios anteriores.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mat",
+       "col"
+      ],
+      [
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s6e9",
+     "lvl": 2,
+     "title": "IRVA: sensores redundantes (EA 2026-1)",
+     "q": "<p>Tres ecuaciones de calibración (filas) sobre 4 sensores (columnas): \\(A\\) \\(=\\begin{pmatrix}1&2&0&2\\\\1&2&1&1\\\\1&2&0&2\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuaciones esencialmente distintas, \\(\\dim\\operatorname{Row}(A)\\)",
+       "o": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(4\\)",
+        "\\(0\\)"
+       ]
+      },
+      {
+       "p": "¿Cuál de estos vectores está en Nul(A)?",
+       "o": [
+        "\\((-2,0,1,1)\\)",
+        "\\((2,0,1,1)\\)",
+        "\\((-2,1,1,0)\\)",
+        "\\((1,2,0,2)\\)",
+        "\\((0,0,1,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La fila 3 es igual a la 1: se anula al escalonar. \\(\\text{rref}\\) \\(=\\begin{pmatrix}1&2&0&2\\\\0&0&1&-1\\\\0&0&0&0\\end{pmatrix}\\): rango 2.",
+      "Nul: \\(x_1=-2x_2-2x_4\\), \\(x_3=x_4\\). Con \\(x_2=0,\\ x_4=1\\): \\((-2,0,1,1)\\). Verifica fila 1: \\(-2+0+0+2=0\\) ✓.",
+      "Solo 2 ecuaciones aportan información; la tercera puede quedar como control."
+     ],
+     "ans": "dim Row = 2; (−2, 0, 1, 1) ∈ Nul(A)",
+     "hint": "Sustituye cada vector en las filas de A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "row"
+      ],
+      [
+       "nul"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s6e10",
+     "lvl": 3,
+     "title": "Vector del espacio nulo (EA 2026-1)",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&2&-1&1\\\\1&2&0&3\\\\1&2&-1&1\\\\1&2&0&3\\end{pmatrix}\\) y \\(v=(-12,\\ 3,\\ x,\\ x+6)\\). ¿Para qué x está v en Nul(A)?</p>",
+     "checks": [
+      {
+       "p": "Valor de x",
+       "o": [
+        "\\(x=-4\\)",
+        "\\(x=4\\)",
+        "\\(x=-6\\)",
+        "\\(x=0\\)",
+        "Para todo x"
+       ]
+      },
+      {
+       "p": "«Si Nul(A) tiene un vector no nulo, entonces rango(A) = 4»",
+       "o": [
+        "Falso: el rango sería menor que 4",
+        "Verdadero",
+        "Verdadero solo si x = −4",
+        "Falso: el rango sería 0",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Fila 1: \\(-12+6-x+(x+6)=0\\) se cumple siempre.",
+      "Fila 2: \\(-12\\) \\(+6\\) \\(+3(x+6)\\) \\(=3x\\) \\(+12\\) \\(=0\\) \\(\\Rightarrow x\\) \\(=-4\\).",
+      "Si \\(Ax=0\\) tiene solución no nula, nulidad ≥ 1 y rango ≤ 3 (aquí rango 2)."
+     ],
+     "ans": "x = −4; la afirmación es falsa",
+     "hint": "Las filas 3 y 4 repiten las 1 y 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      [
+       "nul"
+      ],
+      [
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s6e11",
+     "lvl": 1,
+     "title": "Variables libres",
+     "q": "<p>A es 5 × 7 con rango 4. ¿Cuántas variables libres tiene \\(Ax=0\\)?</p>",
+     "checks": [
+      {
+       "p": "Variables libres",
+       "o": [
+        "\\(3\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(4\\)",
+        "\\(7\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Nulidad \\(=7-4=3\\): 3 variables libres y una base de Nul(A) con 3 vectores."
+     ],
+     "ans": "3",
+     "hint": "n = 7 columnas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rn"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "name": "Sem. 7 · Sistemas y espacios fundamentales: x = xₚ + xₕ",
+   "teo": "<p><strong>Existencia:</strong> \\(Ax=b\\) tiene solución \\(\\iff b\\in\\operatorname{Col}(A)\\) \\(\\iff r(A)\\) \\(=r(A|b)\\). <strong>Unicidad:</strong> si hay solución, es única \\(\\iff\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\).</p>\n<p>Si el sistema es consistente, <strong>toda</strong> solución es \\(x=x_p+x_h\\), con \\(x_p\\) una solución particular y \\(x_h\\in\\operatorname{Nul}(A)\\). Funciona porque \\(A(x_p+x_h)=b+0=b\\).</p>\n<p>Grados de libertad = nulidad = \\(n-\\operatorname{rango}(A)\\). En MATLAB: <code>rank(A)</code> vs <code>rank([A b])</code>, <code>null(A,'r')</code> y <code>A\\b</code> (una solución particular).</p>",
+   "form": [
+    "Existe \\(\\iff b\\in\\operatorname{Col}(A)\\)",
+    "Única \\(\\iff\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\)",
+    "\\(x=x_p+x_h\\)",
+    "Libertad \\(=n-r(A)\\)",
+    "Si \\(r(A)=m\\): consistente para todo b"
+   ],
+   "lesson": "<h3>Idea central</h3><p>El espacio columna decide si hay solución; el espacio nulo decide si es única o si hay infinitas. Encontrar una solución nunca basta para decir que es «la» solución.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\operatorname{Col}(A)\\subseteq\\mathbb R^m\\) (vive con b); \\(\\operatorname{Nul}(A)\\subseteq\\mathbb R^n\\) (vive con x).</li><li>Si \\(r(A)=m\\) (filas), Col(A) es todo \\(\\mathbb R^m\\): siempre hay solución.</li><li>Si \\(n\\gt r(A)\\), nunca hay solución única.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Consistente? (rangos o fila \\([0\\cdots0\\mid c]\\)).</li><li><strong>2.</strong> ¿Nulidad 0? Única. Si no, sigue.</li><li><strong>3.</strong> Escribe \\(x_p\\) (libres = 0) más una combinación de la base de Nul(A).</li></ul>\n<div class=\"ej\"><b>Ejemplo (guía S7):</b> \\([1\\ 2\\ 3\\mid1]\\): \\(x\\) \\(=(1,0,0)\\) \\(+r(-2,1,0)\\) \\(+s(-3,0,1)\\). Reportar solo \\((1,0,0)\\) es incompleto.</div>\n<div class=\"err\"><b>Error común:</b> clasificar sin revisar las relaciones entre filas: si la fila 3 es la suma de las otras dos, el rango es 2 aunque la matriz sea 3 × 3.</div>",
+   "ex": [
+    {
+     "id": "s7e1",
+     "lvl": 1,
+     "title": "¿Para qué b hay solución?",
+     "q": "<p>\\(A\\) \\(=\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}\\), \\(b_1=(3,6)\\), \\(b_2=(3,5)\\).</p>",
+     "checks": [
+      {
+       "p": "¿Con cuál es consistente \\(Ax=b\\)?",
+       "o": [
+        "Solo con \\(b_1\\)",
+        "Solo con \\(b_2\\)",
+        "Con ambos",
+        "Con ninguno",
+        "Con ambos, con solución única"
+       ]
+      }
+     ],
+     "steps": [
+      "La columna 2 es el doble de la 1: Col(A) es la recta generada por \\((1,2)\\).",
+      "\\(b_1=3(1,2)\\) está en esa recta; \\(b_2=(3,5)\\) no (\\(5\\neq6\\))."
+     ],
+     "ans": "Solo con b₁",
+     "hint": "¿Qué vectores se pueden escribir como múltiplo de (1, 2)?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exist"
+      ],
+      [
+       "exist"
+      ]
+     ]
+    },
+    {
+     "id": "s7e2",
+     "lvl": 1,
+     "title": "Predice la clasificación",
+     "q": "<p>A es 3 × 5 con \\(\\operatorname{rango}(A)\\) \\(=3\\).</p>",
+     "checks": [
+      {
+       "p": "¿Qué puedes asegurar de \\(Ax=b\\)?",
+       "o": [
+        "Siempre es consistente y tiene 2 grados de libertad",
+        "Puede ser incompatible para algún b",
+        "Si es consistente, la solución es única",
+        "Siempre es consistente con solución única",
+        "Tiene 3 grados de libertad"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r(A)=3=m\\): las columnas generan todo \\(\\mathbb R^3\\), así que hay solución para todo b.",
+      "Nulidad \\(=5-3=2\\gt0\\): infinitas soluciones con 2 grados de libertad, nunca única."
+     ],
+     "ans": "Siempre consistente, 2 grados de libertad",
+     "hint": "Compara el rango con m (existencia) y con n (unicidad).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exist"
+      ],
+      [
+       "unic",
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s7e3",
+     "lvl": 2,
+     "title": "Consistencia y solución general",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&1\\\\1&2&3\\\\2&3&4\\end{pmatrix}\\) y \\(b=(6,11,17)\\).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Compatible indeterminado (rango 2)",
+        "Compatible determinado (rango 3)",
+        "Incompatible",
+        "Compatible indeterminado con 2 libres",
+        "Homogéneo"
+       ]
+      },
+      {
+       "p": "Solución general",
+       "o": [
+        "\\((1,5,0)+t(1,-2,1)\\)",
+        "\\((1,2,3)\\) únicamente",
+        "\\((1,5,0)+t(1,2,1)\\)",
+        "\\((6,0,0)+t(1,-2,1)\\)",
+        "\\((1,5,0)+t(-1,2,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La fila 3 es fila 1 + fila 2, y también \\(6+11=17\\): \\(r(A)=r(A|b)=2\\lt3\\).",
+      "Escalonada: \\(x+y+z=6\\), \\(y+2z=5\\). Con \\(z=t\\): \\(y=5-2t\\), \\(x=1+t\\).",
+      "\\(x=(1,5,0)+t(1,-2,1)\\); \\((1,-2,1)\\) genera Nul(A). Rango 2 + nulidad 1 = 3 ✓. (La clave de la guía da solución única; \\((1,2,3)\\) es solo una de las infinitas, con t = 2)."
+     ],
+     "ans": "Infinitas: (1, 5, 0) + t(1, −2, 1)",
+     "hint": "Compara la fila 3 con la suma de las otras dos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rouche"
+      ],
+      [
+       "xpxh"
+      ],
+      [
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s7e4",
+     "lvl": 2,
+     "title": "Parámetro en b",
+     "q": "<p>\\(x+y+z=2\\), \\(x+2y+z=3\\), \\(2x+3y+2z=k\\).</p>",
+     "checks": [
+      {
+       "p": "¿Para qué k es consistente?",
+       "o": [
+        "\\(k=5\\)",
+        "\\(k=7\\)",
+        "\\(k\\neq5\\)",
+        "Para todo k",
+        "\\(k=0\\)"
+       ]
+      },
+      {
+       "p": "Con ese k, grados de libertad",
+       "o": [
+        "\\(1\\)",
+        "\\(0\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "No hay solución"
+       ]
+      }
+     ],
+     "steps": [
+      "La ecuación 3 en coeficientes es la suma de las dos primeras, así que el lado derecho debe ser \\(2+3=5\\).",
+      "Escalonando: \\((0,0,0\\mid k-5)\\). Consistente solo si \\(k=5\\). (La guía dice 7; con k = 7 queda 0 = 2).",
+      "Rango 2 con 3 incógnitas: 1 grado de libertad."
+     ],
+     "ans": "k = 5, con 1 grado de libertad",
+     "hint": "Suma las dos primeras ecuaciones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exist"
+      ],
+      [
+       "filas0"
+      ],
+      [
+       "rn"
+      ]
+     ]
+    },
+    {
+     "id": "s7e5",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (solo xₚ)",
+     "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\2&4&6\\end{pmatrix}\\), \\(b=(1,2)\\), un estudiante reduce a \\([1\\ 2\\ 3\\mid1]\\) y responde «la solución es \\(x=(1,0,0)\\)».</p>",
+     "checks": [
+      {
+       "p": "Solución general correcta",
+       "o": [
+        "\\((1,0,0)\\) \\(+r(-2,1,0)\\) \\(+s(-3,0,1)\\)",
+        "\\((1,0,0)\\) únicamente",
+        "\\((1,0,0)\\) \\(+r(2,1,0)\\) \\(+s(3,0,1)\\)",
+        "\\((1,0,0)+r(-2,1,0)\\)",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "Consistente (no hay fila \\([0\\ 0\\ 0\\mid c\\neq0]\\)), pero hay 2 libres: \\(x_2,x_3\\).",
+      "\\(x_1=1-2r-3s\\): \\(x\\) \\(=(1,0,0)\\) \\(+r(-2,1,0)\\) \\(+s(-3,0,1)\\).",
+      "\\((1,0,0)\\) es solo \\(x_p\\); falta sumar todo Nul(A)."
+     ],
+     "ans": "(1, 0, 0) + r(−2, 1, 0) + s(−3, 0, 1)",
+     "hint": "¿Cuántas variables libres quedan?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exist"
+      ],
+      [
+       "xpxh"
+      ],
+      [
+       "unic"
+      ]
+     ]
+    },
+    {
+     "id": "s7e6",
+     "lvl": 2,
+     "title": "IRVA: red de tráfico",
+     "q": "<p>Flujos (autos/min) en 3 intersecciones: \\(x_1+x_2=80\\), \\(x_2+x_3=50\\), \\(x_1-x_3+x_4=30\\).</p>",
+     "checks": [
+      {
+       "p": "Solución general",
+       "o": [
+        "\\((30,50,0,0)\\) \\(+t(1,-1,1,0)\\)",
+        "\\((80,0,50,0)\\) \\(+t(1,-1,1,0)\\)",
+        "\\((30,50,0,0)\\) únicamente",
+        "\\((30,50,0,0)\\) \\(+t(1,1,-1,0)\\)",
+        "No tiene solución"
+       ]
+      },
+      {
+       "p": "¿Qué representa la variable libre?",
+       "o": [
+        "Un margen de decisión: fijar un flujo (p. ej. \\(x_3\\)) determina los demás",
+        "Un error de medición",
+        "Que la red no conserva el flujo",
+        "Que \\(x_4\\) puede tomar cualquier valor",
+        "Nada: la solución es única"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_3-F_1\\) \\(=(0,-1,-1,1\\mid-50)\\); sumando \\(F_2\\): \\((0,0,0,1\\mid0)\\) \\(\\Rightarrow x_4\\) \\(=0\\).",
+      "Rango 3, 4 incógnitas: 1 libre (\\(x_3=t\\)). \\(x_2=50-t\\), \\(x_1=30+t\\).",
+      "Infinitas configuraciones; con \\(0\\le t\\le50\\) todos los flujos son no negativos. Una medición extra de \\(x_3\\) fijaría una única."
+     ],
+     "ans": "(30, 50, 0, 0) + t(1, −1, 1, 0)",
+     "hint": "Al reducir, x₄ queda fijo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "xpxh"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s7e7",
+     "lvl": 2,
+     "title": "IRVA: circuito eléctrico",
+     "q": "<p>Kirchhoff da \\(A\\) \\(=\\begin{pmatrix}1&-1&0\\\\0&1&-1\\\\2&0&-2\\end{pmatrix}\\), \\(b=(2,1,6)\\) (corrientes en A).</p>",
+     "checks": [
+      {
+       "p": "Clasificación",
+       "o": [
+        "Compatible indeterminado",
+        "Incompatible",
+        "Compatible determinado",
+        "Homogéneo",
+        "No se puede saber"
+       ]
+      },
+      {
+       "p": "Solución general",
+       "o": [
+        "\\((3,1,0)+t(1,1,1)\\)",
+        "\\((2,1,0)+t(1,1,1)\\)",
+        "\\((3,1,0)\\) únicamente",
+        "\\((3,1,0)+t(1,-1,1)\\)",
+        "\\((1,1,1)+t(3,1,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Fila 3 = 2(fila 1 + fila 2), y \\(2(2+1)=6=b_3\\): consistente con rango 2.",
+      "Escalonada: \\(x_1-x_2=2\\), \\(x_2-x_3=1\\). Con \\(x_3=t\\): \\(x_2=1+t\\), \\(x_1=3+t\\).",
+      "Si \\(b_3\\neq6\\), sería incompatible: indicaría un error de medición o de signo."
+     ],
+     "ans": "Infinitas: (3, 1, 0) + t(1, 1, 1)",
+     "hint": "Revisa si b cumple la misma relación que las filas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exist"
+      ],
+      [
+       "xpxh"
+      ],
+      [
+       "irva"
+      ]
+     ]
+    },
+    {
+     "id": "s7e8",
+     "lvl": 3,
+     "title": "Dos parámetros (guía corregida)",
+     "q": "<p>\\(A\\) \\(=\\begin{pmatrix}1&2&1\\\\2&4&2\\\\1&2&k\\end{pmatrix}\\), \\(b=(3,6,p)\\). Clasifica según k y p.</p>",
+     "checks": [
+      {
+       "p": "¿Cuándo es incompatible?",
+       "o": [
+        "Solo si \\(k=1\\) y \\(p\\neq3\\)",
+        "Si \\(p\\neq6\\)",
+        "Si \\(k\\neq1\\)",
+        "Nunca",
+        "Si \\(k=1\\) y \\(p=3\\)"
+       ]
+      },
+      {
+       "p": "¿Puede tener solución única?",
+       "o": [
+        "Nunca: el rango de A es a lo más 2",
+        "Sí, si \\(k\\neq1\\)",
+        "Sí, si \\(p=3\\)",
+        "Sí, si \\(k\\neq1\\) y \\(p\\neq3\\)",
+        "Sí, si \\(k=1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F_2-2F_1=(0,0,0\\mid0)\\) siempre; \\(F_3-F_1\\) \\(=(0,0,k-1\\mid p-3)\\).",
+      "Si \\(k\\neq1\\): rango 2 = rango aumentado, indeterminado para todo p. Si \\(k=1\\): con \\(p=3\\) indeterminado (rango 1); con \\(p\\neq3\\), \\(0=p-3\\): incompatible.",
+      "La columna 2 es el doble de la 1, así que nunca hay 3 pivotes: nunca única."
+     ],
+     "ans": "Incompatible solo si k = 1 y p ≠ 3; nunca única",
+     "hint": "Fíjate en que la columna 2 = 2·columna 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "oef"
+      ],
+      [
+       "rouche",
+       "filas0"
+      ],
+      [
+       "unic"
+      ]
+     ]
+    },
+    {
+     "id": "s7e9",
+     "lvl": 3,
+     "title": "Red de tuberías (EP 2025-2)",
+     "q": "<p>Nodos: \\(x_1+x_2=500\\), \\(x_1=x_3+x_4\\), \\(x_2+x_3=x_5\\), \\(x_4+x_5=500\\).</p>",
+     "checks": [
+      {
+       "p": "Variables libres",
+       "o": [
+        "\\(x_3\\) y \\(x_5\\)",
+        "\\(x_1\\) y \\(x_2\\)",
+        "Solo \\(x_5\\)",
+        "\\(x_3,\\ x_4\\) y \\(x_5\\)",
+        "Ninguna"
+       ]
+      },
+      {
+       "p": "Solución general",
+       "o": [
+        "\\((500,0,0,500,0)\\) \\(+r(1,-1,1,0,0)\\) \\(+s(-1,1,0,-1,1)\\)",
+        "\\((500,0,0,500,0)\\) únicamente",
+        "\\((250,250,0,250,250)\\) \\(+r(1,-1,1,0,0)\\)",
+        "\\((500,0,0,500,0)\\) \\(+r(1,1,1,0,0)\\) \\(+s(1,1,0,1,1)\\)",
+        "No tiene solución"
+       ]
+      }
+     ],
+     "steps": [
+      "Escalonando: \\(x_1+x_2=500\\), \\(x_2+x_3+x_4=500\\), \\(x_4+x_5=500\\) y una fila nula: rango 3.",
+      "Pivotes en \\(x_1,x_2,x_4\\); libres \\(x_3=r,\\ x_5=s\\). 3 + 2 = 5 ✓.",
+      "\\(x_4=500-s\\), \\(x_2=s-r\\), \\(x_1=500+r-s\\)."
+     ],
+     "ans": "Libres x₃, x₅; x = (500,0,0,500,0) + r(1,−1,1,0,0) + s(−1,1,0,−1,1)",
+     "hint": "Todo lo que entra a la red sale: una ecuación sobra.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "libres",
+       "rn"
+      ],
+      [
+       "xpxh"
+      ]
+     ]
+    },
+    {
+     "id": "s7e10",
+     "lvl": 2,
+     "title": "Predice MATLAB: null y A\\b",
+     "q": "<p><code>A = [1 1 1; 1 2 3; 2 3 4]; null(A,'r')</code></p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "\\((1,-2,1)^T\\)",
+        "Una matriz vacía",
+        "\\((1,2,3)^T\\)",
+        "\\((-1,2,1)^T\\)",
+        "\\(I_3\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Rango 2: nulidad 1, una columna.",
+      "\\(x+y+z=0\\), \\(y+2z=0\\): con \\(z=1\\), \\(y=-2\\), \\(x=1\\).",
+      "<code>A\\b</code> daría solo una solución particular (con aviso de matriz singular), no todas."
+     ],
+     "ans": "(1, −2, 1)",
+     "hint": "Resuelve Ax = 0 con z = 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mat"
+      ],
+      [
+       "nul"
+      ],
+      [
+       "xpxh"
+      ]
+     ]
+    },
+    {
+     "id": "s7e11",
+     "lvl": 1,
+     "title": "Solo una solución no basta",
+     "q": "<p>Un estudiante halla que \\(x_p=(1,2,0)\\) cumple \\(Ax=b\\) y luego descubre que \\(\\operatorname{Nul}(A)\\) \\(=\\operatorname{Gen}\\{(1,-1,1)\\}\\).</p>",
+     "checks": [
+      {
+       "p": "Conjunto solución",
+       "o": [
+        "\\((1,2,0)+t(1,-1,1)\\), \\(t\\in\\mathbb R\\)",
+        "Solo \\((1,2,0)\\)",
+        "\\(t(1,-1,1)\\)",
+        "\\((1,2,0)\\) y \\((1,-1,1)\\)",
+        "\\((2,1,1)\\) únicamente"
+       ]
+      }
+     ],
+     "steps": [
+      "Como \\(\\operatorname{Nul}(A)\\neq\\{0\\}\\), hay infinitas soluciones.",
+      "Todas son \\(x_p+x_h\\): \\((1,2,0)+t(1,-1,1)\\)."
+     ],
+     "ans": "(1, 2, 0) + t(1, −1, 1)",
+     "hint": "x = xₚ + xₕ.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "unic"
+      ],
+      [
+       "xpxh"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "orden": {
+   "n": "Orden y entradas",
+   "f": "\\(A\\in\\mathbb R^{m\\times n}\\), entrada \\(a_{ij}\\)",
+   "x": "m filas y n columnas. En a_ij el primer índice es la fila y el segundo la columna.",
+   "home": "s1"
+  },
+  "suma": {
+   "n": "Suma y producto por escalar",
+   "f": "\\((A+B)_{ij}\\) \\(=a_{ij}\\) \\(+b_{ij}\\), \\((kA)_{ij}=k\\,a_{ij}\\)",
+   "x": "Solo se suman matrices del mismo orden. El escalar multiplica todas las entradas.",
+   "home": "s1"
+  },
+  "prod": {
+   "n": "Producto matricial",
+   "f": "\\((m\\times n)(n\\times p)\\) \\(\\to(m\\times p)\\)",
+   "x": "Existe si las dimensiones interiores coinciden; el resultado conserva las exteriores. Cada entrada es fila · columna.",
+   "home": "s1"
+  },
+  "nocon": {
+   "n": "No conmutatividad",
+   "f": "En general \\(AB\\neq BA\\)",
+   "x": "Aunque ambos productos existan y tengan el mismo orden, casi nunca son iguales.",
+   "home": "s1"
+  },
+  "tras": {
+   "n": "Transpuesta",
+   "f": "\\((A^T)_{ij}=a_{ji}\\)",
+   "x": "Las filas pasan a ser columnas. En MATLAB se escribe A'.",
+   "home": "s1"
+  },
+  "mat": {
+   "n": "MATLAB básico",
+   "f": "A*B, A.*B, A', rref, rank, det, inv, A\\b, null(A,'r')",
+   "x": "* es producto matricial; .* multiplica entrada por entrada. Predice antes de ejecutar.",
+   "home": "s1"
+  },
+  "irva": {
+   "n": "Ruta IRVA",
+   "f": "Interpreta → Representa → Verifica → Argumenta",
+   "x": "Qué representan los datos, cómo se escriben en matrices, cómo compruebo el resultado y qué significa en el contexto.",
+   "home": "s1"
+  },
+  "oef": {
+   "n": "Operaciones elementales por fila",
+   "f": "\\(F_i\\leftrightarrow F_j\\), \\(F_i\\) \\(\\to kF_i\\ (k\\neq0)\\), \\(F_i\\to F_i+kF_j\\)",
+   "x": "No cambian el rango, el espacio fila ni el conjunto solución de un sistema.",
+   "home": "s2"
+  },
+  "esc": {
+   "n": "Forma escalonada y reducida",
+   "f": "REF: ceros bajo cada pivote · RREF: pivotes 1 y solos en su columna",
+   "x": "Las filas nulas van abajo y cada pivote está a la derecha del de arriba.",
+   "home": "s2"
+  },
+  "rango": {
+   "n": "Rango",
+   "f": "rango(A) = n.º de pivotes \\(\\le\\min(m,n)\\)",
+   "x": "Cuenta la información realmente nueva (filas o columnas LI). El tamaño solo da una cota.",
+   "home": "s2"
+  },
+  "det2": {
+   "n": "Determinante 2×2 y 3×3",
+   "f": "\\(\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) \\(=ad-bc\\)",
+   "x": "Solo existe para matrices cuadradas. Para 3×3: Sarrus o cofactores.",
+   "home": "s2"
+  },
+  "detprop": {
+   "n": "Determinante y OEF",
+   "f": "\\(F_i\\leftrightarrow F_j\\): cambia signo · \\(kF_i\\): ×k · \\(F_i+kF_j\\): igual",
+   "x": "Permite calcular el determinante escalonando, sin expandir.",
+   "home": "s2"
+  },
+  "detmas": {
+   "n": "Más propiedades del determinante",
+   "f": "\\(\\det(AB)=\\det A\\det B\\), \\(\\det(A^T)=\\det A\\), \\(\\det(kA)=k^n\\det A\\)",
+   "x": "Triangular: producto de la diagonal. Fila nula o filas/columnas proporcionales: det = 0.",
+   "home": "s2"
+  },
+  "cof": {
+   "n": "Cofactor",
+   "f": "\\(C_{ij}\\) \\(=(-1)^{i+j}M_{ij}\\)",
+   "x": "M_ij es el determinante al borrar la fila i y la columna j. Expande por la fila o columna con más ceros.",
+   "home": "s2"
+  },
+  "adj": {
+   "n": "Matriz adjunta",
+   "f": "\\(\\operatorname{adj}(A)\\) \\(=[C_{ij}]^T\\)",
+   "x": "Es la transpuesta de la matriz de cofactores: la entrada (i, j) de adj(A) es C_ji.",
+   "home": "s2"
+  },
+  "detrango": {
+   "n": "Determinante y rango",
+   "f": "\\(\\det A\\) \\(=0\\) \\(\\iff\\operatorname{rango}(A)\\lt n\\)",
+   "x": "Un determinante nulo indica que alguna fila o columna es redundante.",
+   "home": "s2"
+  },
+  "area": {
+   "n": "Área con determinante",
+   "f": "Área \\(=|\\det[u\\ v]|\\)",
+   "x": "El paralelogramo formado por u y v tiene área igual al valor absoluto del determinante.",
+   "home": "s2"
+  },
+  "sel": {
+   "n": "Forma matricial de un SEL",
+   "f": "\\(Ax=b\\), aumentada \\([A\\mid b]\\)",
+   "x": "A: coeficientes (filas = ecuaciones, columnas = incógnitas); x: incógnitas; b: términos independientes.",
+   "home": "s3"
+  },
+  "gauss": {
+   "n": "Eliminación gaussiana",
+   "f": "Escalonar [A | b] → sustitución regresiva",
+   "x": "Basta la forma escalonada para clasificar y resolver de abajo hacia arriba.",
+   "home": "s3"
+  },
+  "gj": {
+   "n": "Gauss–Jordan",
+   "f": "Llevar [A | b] a RREF y leer la solución",
+   "x": "Además de ceros abajo, hace ceros arriba de cada pivote y pivotes iguales a 1.",
+   "home": "s3"
+  },
+  "rouche": {
+   "n": "Rouché–Frobenius",
+   "f": "\\(r(A)=r(A|b)=n\\): única · \\(=r\\lt n\\): infinitas · \\(r(A)\\lt r(A|b)\\): ninguna",
+   "x": "Compara los rangos con el número de incógnitas n antes de resolver.",
+   "home": "s3"
+  },
+  "filas0": {
+   "n": "Fila nula vs. fila imposible",
+   "f": "\\([0\\cdots0\\mid0]\\) redundante · \\([0\\cdots0\\mid c\\neq0]\\) incompatible",
+   "x": "Una fila de ceros completa no hace incompatible al sistema; solo indica una ecuación que sobra.",
+   "home": "s3"
+  },
+  "libres": {
+   "n": "Variables libres y forma paramétrica",
+   "f": "n.º de libres = n − rango(A)",
+   "x": "Las variables sin pivote se vuelven parámetros (t, s) y las básicas se despejan en función de ellas.",
+   "home": "s3"
+  },
+  "inv": {
+   "n": "Matriz inversa",
+   "f": "\\(AA^{-1}=A^{-1}A=I_n\\)",
+   "x": "Solo tiene sentido para matrices cuadradas; si existe, es única.",
+   "home": "s4"
+  },
+  "invgj": {
+   "n": "Inversa por Gauss–Jordan",
+   "f": "\\([A\\mid I]\\) \\(\\to[I\\mid A^{-1}]\\)",
+   "x": "Si una columna del lado izquierdo se queda sin pivote, A no es invertible.",
+   "home": "s4"
+  },
+  "invcond": {
+   "n": "Condiciones de invertibilidad",
+   "f": "\\(\\exists A^{-1}\\) \\(\\iff r(A)\\) \\(=n\\) \\(\\iff \\text{rref}(A)\\) \\(=I\\) \\(\\iff\\det A\\neq0\\)",
+   "x": "Una fila o columna combinación de las demás descarta la inversa.",
+   "home": "s4"
+  },
+  "inv2": {
+   "n": "Inversa con la adjunta",
+   "f": "\\(A^{-1}\\) \\(=\\dfrac{1}{\\det A}\\operatorname{adj}(A)\\); en 2×2: \\(\\dfrac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)",
+   "x": "En 2×2 se intercambian los de la diagonal y se cambia el signo de los otros dos.",
+   "home": "s4"
+  },
+  "xinvb": {
+   "n": "Solución con la inversa",
+   "f": "\\(x=A^{-1}b\\)",
+   "x": "Solo si A es cuadrada e invertible. El orden importa: A⁻¹b, no bA⁻¹.",
+   "home": "s4"
+  },
+  "sub": {
+   "n": "Subespacio vectorial",
+   "f": "\\(0\\in W\\); \\(u+v\\in W\\); \\(\\alpha u\\in W\\)",
+   "x": "Deben cumplirse las tres. Ecuaciones lineales homogéneas (igualadas a 0) dan subespacios.",
+   "home": "s5"
+  },
+  "cero": {
+   "n": "Criterio del vector cero",
+   "f": "\\(0\\notin W\\Rightarrow W\\) no es subespacio",
+   "x": "Es lo primero que se revisa. Pero contener al cero no basta para ser subespacio.",
+   "home": "s5"
+  },
+  "comb": {
+   "n": "Combinación lineal y Gen",
+   "f": "\\(w\\in\\operatorname{Gen}\\{v_i\\}\\) \\(\\iff c_1v_1\\) \\(+\\cdots\\) \\(+c_nv_n\\) \\(=w\\) es consistente",
+   "x": "Se pone a los v_i como columnas y se resuelve el sistema con w como lado derecho.",
+   "home": "s5"
+  },
+  "li": {
+   "n": "Independencia lineal",
+   "f": "\\(r[v_1\\cdots v_n]\\) \\(=n\\) \\(\\Rightarrow\\) LI; \\(\\lt n\\Rightarrow\\) LD",
+   "x": "LI: solo la solución trivial de c₁v₁+…+cₙvₙ = 0. Con matriz cuadrada: det ≠ 0 ⇔ LI.",
+   "home": "s5"
+  },
+  "base": {
+   "n": "Base",
+   "f": "Genera W + es LI",
+   "x": "Un conjunto suficiente (genera todo) y mínimo (sin vectores redundantes).",
+   "home": "s6"
+  },
+  "dim": {
+   "n": "Dimensión",
+   "f": "\\(\\dim W=\\) n.º de vectores de una base",
+   "x": "Recta por el origen: 1. Plano por el origen: 2. Rⁿ: n.",
+   "home": "s6"
+  },
+  "col": {
+   "n": "Espacio columna",
+   "f": "Base de Col(A): columnas pivote de la \\(A\\) original",
+   "x": "rref solo sirve para ubicar los pivotes; los vectores se sacan de A. Col(A) ⊆ Rᵐ.",
+   "home": "s6"
+  },
+  "row": {
+   "n": "Espacio fila",
+   "f": "Base de Row(A): filas no nulas de la escalonada",
+   "x": "Las OEF no cambian el espacio fila, así que aquí sí se usan las filas reducidas. Row(A) ⊆ Rⁿ.",
+   "home": "s6"
+  },
+  "nul": {
+   "n": "Espacio nulo",
+   "f": "\\(\\operatorname{Nul}(A)\\) \\(=\\{x: Ax=0\\}\\)",
+   "x": "Se resuelve Ax = 0: un vector de la base por cada variable libre.",
+   "home": "s6"
+  },
+  "rn": {
+   "n": "Teorema rango-nulidad",
+   "f": "\\(\\operatorname{rango}(A)\\) \\(+\\operatorname{nulidad}(A)\\) \\(=n\\)",
+   "x": "Cada columna es pivote (rango) o libre (nulidad). n es el número de columnas.",
+   "home": "s6"
+  },
+  "exist": {
+   "n": "Existencia y Col(A)",
+   "f": "\\(Ax=b\\) tiene solución \\(\\iff b\\in\\operatorname{Col}(A)\\)",
+   "x": "Equivale a rango(A) = rango([A | b]).",
+   "home": "s7"
+  },
+  "unic": {
+   "n": "Unicidad y Nul(A)",
+   "f": "Única \\(\\iff\\operatorname{Nul}(A)\\) \\(=\\{0\\}\\)",
+   "x": "Si hay solución y la nulidad es k > 0, hay infinitas soluciones con k grados de libertad.",
+   "home": "s7"
+  },
+  "xpxh": {
+   "n": "Solución general",
+   "f": "\\(x=x_p+x_h\\), \\(x_h\\in\\operatorname{Nul}(A)\\)",
+   "x": "Una solución particular más todas las del sistema homogéneo. Reportar solo x_p es incompleto.",
+   "home": "s7"
+  }
+ },
+ "simEx": [
+  {
+   "id": "ep1",
+   "lvl": 2,
+   "title": "EP 2026-2 · P1 Conceptual",
+   "q": "<p>Sea \\(W\\) \\(=\\{(x,y,z)\\in\\mathbb R^3: z=2x+3y+5\\}\\). ¿Es W un subespacio vectorial de \\(\\mathbb R^3\\)? Justifica.</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "No: \\((0,0,0)\\notin W\\), pues \\(0\\neq5\\); es un plano que no pasa por el origen",
+      "Sí: es un plano de \\(\\mathbb R^3\\)",
+      "Sí: es cerrado bajo la suma",
+      "No: no es cerrado bajo la suma, aunque contiene al cero",
+      "Sí: la ecuación es lineal"
+     ]
+    }
+   ],
+   "steps": [
+    "Todo subespacio contiene al cero. Con \\((0,0,0)\\): \\(0=2(0)+3(0)+5=5\\), falso.",
+    "Tampoco es cerrado bajo escalar: \\((0,0,5)\\in W\\) pero \\(2(0,0,5)=(0,0,10)\\) y \\(10\\neq5\\).",
+    "No es subespacio: es un plano trasladado (no pasa por el origen)."
+   ],
+   "ans": "No es subespacio (0 ∉ W)",
+   "hint": "Revisa primero el vector cero.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "cero"
+    ],
+    [
+     "sub"
+    ],
+    [
+     "sub"
+    ]
+   ]
+  },
+  {
+   "id": "ep3",
+   "lvl": 3,
+   "title": "EP 2026-2 · P3 Procedimental",
+   "q": "<p>Dada \\(A\\) \\(=\\begin{pmatrix}2&4&3\\\\2&5&5\\\\0&1&2\\\\-2&-4&-3\\end{pmatrix}\\): (a) obtén una forma escalonada; (b) escribe una base de Row(A) y su dimensión.</p>",
+   "checks": [
+    {
+     "p": "Forma escalonada",
+     "o": [
+      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)",
+      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\)",
+      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&1&2\\\\0&0&0\\end{pmatrix}\\)",
+      "\\(\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\)",
+      "\\(\\begin{pmatrix}2&4&3\\\\0&9&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)"
+     ]
+    },
+    {
+     "p": "Base y dimensión de Row(A)",
+     "o": [
+      "\\(\\{(2,4,3),(0,1,2)\\}\\), dimensión 2",
+      "\\(\\{(2,4,3),(2,5,5),(0,1,2)\\}\\), dimensión 3",
+      "\\(\\{(2,2,0),(4,5,1)\\}\\), dimensión 2",
+      "\\(\\{(2,4,3)\\}\\), dimensión 1",
+      "\\(\\{(2,0),(4,1),(3,2)\\}\\), dimensión 3"
+     ]
+    }
+   ],
+   "steps": [
+    "\\(F_2\\to F_2-F_1\\) y \\(F_4\\to F_4+F_1\\): filas \\((0,1,2)\\) y \\((0,0,0)\\).",
+    "\\(F_3\\to F_3-F_2\\): otra fila nula. Pivotes en las columnas 1 y 2.",
+    "Las OEF no cambian el espacio fila: \\(\\operatorname{Row}(A)\\) \\(=\\operatorname{Gen}\\{(2,4,3),(0,1,2)\\}\\).",
+    "Son LI (pivotes en columnas distintas): base de Row(A), \\(\\dim\\) \\(=\\operatorname{rango}\\) \\(=2\\)."
+   ],
+   "ans": "R = [[2,4,3],[0,1,2],[0,0,0],[0,0,0]]; Row(A) = Gen{(2,4,3), (0,1,2)}, dim 2",
+   "hint": "La fila 4 es −(fila 1) y la fila 3 es fila 2 − fila 1.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "oef"
+    ],
+    [
+     "esc"
+    ],
+    [
+     "row"
+    ],
+    [
+     "dim"
+    ]
+   ]
+  },
+  {
+   "id": "ep4",
+   "lvl": 3,
+   "title": "EP 2026-2 · P4 Procedimental",
+   "q": "<p>Dada \\(A\\) \\(=\\begin{pmatrix}2&-3&5&-1\\\\0&4&a&2a\\\\0&0&a&2\\\\0&0&3&a+1\\end{pmatrix}\\), calcula \\(\\det A\\) en términos de a y halla los valores de a para los que \\(\\det A=0\\).</p>",
+   "checks": [
+    {
+     "p": "\\(\\det A\\)",
+     "o": [
+      "\\(8(a+3)(a-2)\\)",
+      "\\(8(a-3)(a+2)\\)",
+      "\\(8a(a+1)\\)",
+      "\\(2(a+3)(a-2)\\)",
+      "\\(8(a^2+a+6)\\)"
+     ]
+    },
+    {
+     "p": "\\(\\det A=0\\) cuando…",
+     "o": [
+      "\\(a=-3\\) o \\(a=2\\)",
+      "\\(a=3\\) o \\(a=-2\\)",
+      "\\(a=0\\) o \\(a=-1\\)",
+      "Ningún valor real",
+      "\\(a=2\\) solamente"
+     ]
+    }
+   ],
+   "steps": [
+    "Expande por la columna 1 (solo el 2 es no nulo): \\(\\det A\\) \\(=2\\det\\begin{pmatrix}4&a&2a\\\\0&a&2\\\\0&3&a+1\\end{pmatrix}\\).",
+    "Otra vez por la columna 1: \\(2\\cdot4\\det\\begin{pmatrix}a&2\\\\3&a+1\\end{pmatrix}\\) \\(=8[a(a+1)-6]\\).",
+    "\\(8(a^2+a-6)\\) \\(=8(a+3)(a-2)\\) \\(=0\\) \\(\\iff a\\) \\(=-3\\) o \\(a=2\\)."
+   ],
+   "ans": "det A = 8(a + 3)(a − 2); a = −3 o a = 2",
+   "hint": "Expande siempre por la columna con más ceros.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "cof"
+    ],
+    [
+     "cof"
+    ],
+    [
+     "detrango"
+    ]
+   ]
+  },
+  {
+   "id": "ep4b",
+   "lvl": 3,
+   "title": "Variante · determinante con parámetro",
+   "q": "<p>Dada \\(B\\) \\(=\\begin{pmatrix}3&1&0&2\\\\0&a&1&4\\\\0&2&a&-1\\\\0&0&0&2\\end{pmatrix}\\), halla los valores de a con \\(\\det B=0\\).</p>",
+   "checks": [
+    {
+     "p": "\\(\\det B=0\\) cuando…",
+     "o": [
+      "\\(a=\\pm\\sqrt2\\)",
+      "\\(a=\\pm2\\)",
+      "\\(a=0\\)",
+      "\\(a=2\\) o \\(a=1\\)",
+      "Ningún valor real"
+     ]
+    }
+   ],
+   "steps": [
+    "Columna 1: \\(\\det B\\) \\(=3\\det\\begin{pmatrix}a&1&4\\\\2&a&-1\\\\0&0&2\\end{pmatrix}\\).",
+    "Fila 3 del menor: \\(2\\det\\begin{pmatrix}a&1\\\\2&a\\end{pmatrix}\\) \\(=2(a^2-2)\\). Entonces \\(\\det B=6(a^2-2)\\).",
+    "\\(a^2=2\\iff a=\\pm\\sqrt2\\)."
+   ],
+   "ans": "a = ±√2",
+   "hint": "Busca la fila o columna con tres ceros.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "cof"
+    ],
+    [
+     "cof"
+    ],
+    [
+     "detrango"
+    ]
+   ]
+  },
+  {
+   "id": "ep5",
+   "lvl": 3,
+   "title": "EP 2026-2 · P5 IRVA: red de reciclaje",
+   "q": "<p>Tres centros de acopio C₁, C₂, C₃ (t/día). C₁ recibe 9 t de la comuna y 3 de ferias; C₂ recibe 4 de puntos limpios y una cantidad estacional <em>a</em>; C₃ recibe 6 de empresas y rechaza 1. Entra = sale en cada centro:</p>\n\\[\\begin{aligned}C_1&:\\ 9+3=x_1+x_2\\\\C_2&:\\ x_2+4+a=2x_1+x_3\\\\C_3&:\\ x_3+6=x_1+1\\end{aligned}\\]",
+   "checks": [
+    {
+     "p": "(I) ¿Qué representan \\(x_2\\) y \\(a\\)?",
+     "o": [
+      "\\(x_2\\): t/día que C₁ envía a C₂; \\(a\\): parámetro (aporte estacional a C₂), no incógnita",
+      "\\(x_2\\): residuos procesados en C₂; \\(a\\): incógnita del sistema",
+      "\\(x_2\\): rechazo de C₃; \\(a\\): residuos de la comuna",
+      "\\(x_2\\): lo que C₂ envía a C₁; \\(a\\): incógnita",
+      "\\(x_2\\) y \\(a\\) son incógnitas del mismo tipo"
+     ]
+    },
+    {
+     "p": "(R) Ecuación de C₃ y vector b",
+     "o": [
+      "\\(x_1-x_3=5\\), \\(b=(12,\\ 4+a,\\ 5)\\)",
+      "\\(x_1-x_3=7\\), \\(b=(12,\\ 4+a,\\ 7)\\)",
+      "\\(x_3-x_1=5\\), \\(b=(12,\\ 4-a,\\ 5)\\)",
+      "\\(x_1+x_3=5\\), \\(b=(12,\\ 4+a,\\ 5)\\)",
+      "\\(x_1-x_3=5\\), \\(b=(12,\\ a,\\ 5)\\)"
+     ]
+    },
+    {
+     "p": "(V) ¿Hay algún a sin distribución única?",
+     "o": [
+      "No: hay 3 pivotes para todo a (\\(\\det A=4\\neq0\\))",
+      "Sí, \\(a=-1\\)",
+      "Sí, \\(a=20\\)",
+      "Sí, \\(a=27\\)",
+      "Sí, \\(a=0\\)"
+     ]
+    },
+    {
+     "p": "(V) Con \\(a=3\\), \\((x_1,x_2,x_3)\\)",
+     "o": [
+      "\\((6,\\ 6,\\ 1)\\)",
+      "\\((6,\\ 1,\\ 6)\\)",
+      "\\((5,\\ 7,\\ 0)\\)",
+      "\\((7,\\ 5,\\ 2)\\)",
+      "\\((6,\\ 6,\\ -1)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "I: \\(x_2\\) sale de C₁ y entra a C₂. \\(a\\) cambia con la época: es un parámetro que solo afecta al lado derecho.",
+    "R: \\(x_1+x_2=12\\), \\(2x_1-x_2+x_3=4+a\\), \\(x_1-x_3=5\\). \\(A\\) \\(=\\begin{pmatrix}1&1&0\\\\2&-1&1\\\\1&0&-1\\end{pmatrix}\\), \\(b=(12,4+a,5)^T\\).",
+    "V: \\([A|b]\\) \\(\\to\\left[\\begin{array}{ccc|c}1&1&0&12\\\\0&-3&1&a-20\\\\0&0&-4&-1-a\\end{array}\\right]\\) (con \\(F_2-2F_1\\), \\(F_3-F_1\\), \\(3F_3-F_2\\)). Los pivotes no dependen de a: compatible determinado siempre.",
+    "Con \\(a=3\\): \\(-4x_3\\) \\(=-4\\) \\(\\Rightarrow x_3\\) \\(=1\\); \\(-3x_2\\) \\(+1\\) \\(=-17\\) \\(\\Rightarrow x_2\\) \\(=6\\); \\(x_1=6\\). Verifica: \\(12-6=6\\) ✓.",
+    "A (argumenta): A no cambia mes a mes, solo b. Se puede calcular \\(A^{-1}\\) \\(=\\tfrac14\\begin{pmatrix}1&1&1\\\\3&-1&-1\\\\1&1&-3\\end{pmatrix}\\) una vez, o dejar la sustitución con a: \\(x\\) \\(=(\\tfrac{21+a}4,\\tfrac{27-a}4,\\tfrac{1+a}4)\\). Cantidades no negativas si \\(-1\\le a\\le27\\)."
+   ],
+   "ans": "x₂: envío C₁→C₂; C₃: x₁ − x₃ = 5; única para todo a; con a = 3: (6, 6, 1)",
+   "hint": "a solo aparece en b: no puede cambiar los pivotes.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "irva"
+    ],
+    [
+     "sel"
+    ],
+    [
+     "rouche",
+     "detrango"
+    ],
+    [
+     "gauss"
+    ],
+    [
+     "xinvb"
+    ]
+   ]
+  },
+  {
+   "id": "ep5b",
+   "lvl": 3,
+   "title": "Variante · IRVA: red de acopio",
+   "q": "<p>Otra red: \\(C_1: 8+4=x_1+x_2\\), \\(C_2: x_2+3+a=2x_1+x_3\\), \\(C_3: x_3+5=x_1+2\\).</p>",
+   "checks": [
+    {
+     "p": "(R) Vector b",
+     "o": [
+      "\\((12,\\ 3+a,\\ 3)\\)",
+      "\\((12,\\ 3+a,\\ 7)\\)",
+      "\\((12,\\ 3-a,\\ 3)\\)",
+      "\\((8,\\ 3+a,\\ 3)\\)",
+      "\\((12,\\ a,\\ -3)\\)"
+     ]
+    },
+    {
+     "p": "(V) Con \\(a=2\\), \\((x_1,x_2,x_3)\\)",
+     "o": [
+      "\\((5,\\ 7,\\ 2)\\)",
+      "\\((7,\\ 5,\\ 4)\\)",
+      "\\((6,\\ 6,\\ 3)\\)",
+      "\\((5,\\ 7,\\ -2)\\)",
+      "\\((4,\\ 8,\\ 1)\\)"
+     ]
+    }
+   ],
+   "steps": [
+    "Reordenando: \\(x_1+x_2=12\\), \\(2x_1-x_2+x_3=3+a\\), \\(x_1-x_3=3\\). La matriz A es la misma del parcial (\\(\\det A=4\\)).",
+    "Con \\(A^{-1}\\) \\(=\\tfrac14\\begin{pmatrix}1&1&1\\\\3&-1&-1\\\\1&1&-3\\end{pmatrix}\\) y \\(b=(12,5,3)\\): \\(x\\) \\(=\\tfrac14(20,28,8)\\) \\(=(5,7,2)\\).",
+    "Verifica: \\(5+7=12\\), \\(10-7+2=5\\), \\(5-2=3\\) ✓."
+   ],
+   "ans": "b = (12, 3 + a, 3); con a = 2: (5, 7, 2)",
+   "hint": "Pasa las incógnitas a la izquierda y los números a la derecha.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sel"
+    ],
+    [
+     "xinvb"
+    ],
+    [
+     "irva"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 100,
+  "slots": [
+   {
+    "pts": 3,
+    "name": "Sem. 1–2: matrices y determinantes",
+    "pool": [
+     "s1e9",
+     "s1e10",
+     "s2e12",
+     "s2e13",
+     "ep4",
+     "ep4b"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 3–4: sistemas e inversa",
+    "pool": [
+     "s3e5",
+     "s3e9",
+     "s4e5",
+     "s4e7"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 5: subespacios e independencia",
+    "pool": [
+     "ep1",
+     "s5e9",
+     "s5e10",
+     "s5e12"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 6: base y espacios fundamentales",
+    "pool": [
+     "ep3",
+     "s6e6",
+     "s6e10"
+    ]
+   },
+   {
+    "pts": 8,
+    "name": "Sem. 7: solución general y aplicación IRVA",
+    "pool": [
+     "ep5",
+     "ep5b",
+     "s7e8",
+     "s7e9"
+    ]
+   }
+  ]
+ },
+ "free": true
+}

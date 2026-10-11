@@ -1,0 +1,19 @@
+{
+ "id": "al-ea4",
+ "code": "CC6105",
+ "name": "Álgebra Lineal",
+ "exam": "EA4 (semana 13)",
+ "short": "EA4",
+ "sub": "Sem. 12 y 13",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}

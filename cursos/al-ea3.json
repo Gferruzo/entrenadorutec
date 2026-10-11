@@ -1,0 +1,19 @@
+{
+ "id": "al-ea3",
+ "code": "CC6105",
+ "name": "Álgebra Lineal",
+ "exam": "EA3 (semana 11)",
+ "short": "EA3",
+ "sub": "Sem. 9 a 11",
+ "soon": true,
+ "form": "",
+ "formSim": false,
+ "topics": [],
+ "figs": {},
+ "concepts": {},
+ "simEx": [],
+ "sim": {
+  "minutes": 0,
+  "slots": []
+ }
+}
