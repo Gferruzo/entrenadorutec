@@ -1,0 +1,2776 @@
+{
+ "form": "<p class=\"note\">Hoja de repaso del examen final: lo nuevo desde la semana 9 y el esquema de Toulmin como base. Se irá ampliando cada semana.</p><div class=\"fgrid\"><div><b>Dos planos</b><br>Información: ¿datos fiables? · Inferencia: ¿justifican la tesis?</div><div><b>Toulmin reducido</b><br>Datos → garantía → tesis</div><div><b>Deducción</b><br>Válida/inválida · sólida = válida + premisas verdaderas</div><div><b>Inducción</b><br>Más fuerte/más débil · muestra suficiente y representativa</div><div><b>Abducción</b><br>Más o menos plausible · comparar alternativas</div><div><b>Ciencia</b><br>Hipótesis → predicción → contrastación · favorable ≠ demostrado</div><div><b>Afirmación del consecuente</b><br>Si H entonces P; P; ∴ H → inválido</div><div><b>Información</b><br>Falsa · inexacta · incompleta · descuidada</div><div><b>Falacias (EC2)</b><br>Ad hóminem · generalización apresurada · falsa causa · falso dilema · hombre de paja</div><div><b>Diagnóstico</b><br>Reconstruir → localizar → evaluar · cita + defecto + efecto</div><div><b>Casos</b><br>Wakefield y Mehra: falsa causa · LaCour: generalización · Pojman–Mosley: hombre de paja</div><div><b>Retractación</b><br>Explica el retiro; no prueba sola una falacia</div></div>",
+ "formLabel": "📋 Guía rápida",
+ "keyLabel": "Ideas clave",
+ "formSim": false,
+ "id": "com2-ef",
+ "code": "CI2",
+ "name": "Comunicación Integral II",
+ "exam": "Examen final 2026-2",
+ "short": "Examen final",
+ "sub": "Desde la semana 9",
+ "free": true,
+ "intro": "Bloque del examen final, organizado por semanas y con más peso en lo último. <b>Semana 9:</b> calidad de la información y falacias en el argumento científico (inferencias, ciencia, cuatro defectos de información, las cinco falacias de la EC2 y los casos Wakefield, LaCour, Mehra y Pojman). Al final hay un repaso de Toulmin, que sigue siendo la base del análisis. Todos los temas están abiertos y el simulacro (20 preguntas de 4 alternativas) está siempre disponible; se amplía cada semana.",
+ "audios": [
+  {
+   "sem": 9,
+   "title": "Cómo detectar falacias en textos científicos",
+   "file": "audios/comunicacion2-s09.mp3",
+   "secs": 1056,
+   "desc": "Resumen tipo podcast de la semana 9, hecho con NotebookLM a partir de la guía del curso."
+  }
+ ],
+ "topics": [
+  {
+   "id": "s9inf",
+   "name": "Sem. 9 · Deducción, inducción y abducción",
+   "teo": "<p class=\"note\"><b>Semana 9:</b> calidad de la información y falacias en el argumento científico.</p><h4>En una frase</h4><p>La <strong>garantía</strong> de Toulmin dice qué tipo de paso se da de los datos a la tesis: necesario (deducción), probable (inducción) o explicativo (abducción).</p><h4>Explicado fácil</h4><p>Hay <strong>dos planos</strong>: el <em>informativo</em> (¿los datos son verdaderos y fiables?) y el <em>inferencial</em> (¿esos datos justifican la conclusión?). Un argumento puede tener datos buenos y aun así concluir de más.</p><ul><li><strong>Deducción:</strong> se evalúa como <em>válida o inválida</em>. Válida no significa verdadera: también hace falta que las premisas sean verdaderas (solidez).</li><li><strong>Inducción:</strong> se evalúa como <em>más fuerte o más débil</em>. Más casos no compensan una muestra sesgada.</li><li><strong>Abducción:</strong> se evalúa como <em>más o menos plausible</em>, comparándola con otras explicaciones.</li></ul>",
+   "form": [
+    "Dos planos: información e inferencia",
+    "Deducción: válida / inválida (sólida = válida + premisas verdaderas)",
+    "Inducción: más fuerte / más débil (muestra suficiente y representativa)",
+    "Abducción: más o menos plausible (comparar alternativas)",
+    "Modalizadores: necesariamente · probablemente · posiblemente"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La misma forma «si…, entonces…» puede esconder pasos muy distintos. Lo que importa es <strong>cuánto apoyo</strong> da la garantía a la tesis.</p><h3>Los tres pasos</h3><ul><li><strong>Deducción:</strong> «M pertenece al lote L; si una muestra es de L, está contaminada; por tanto M está contaminada». Si las premisas son verdaderas, la conclusión no puede ser falsa.</li><li><strong>Inducción:</strong> «las muestras examinadas de L están contaminadas; si la muestra es suficiente y representativa, el patrón se extiende; por tanto <em>probablemente</em> el resto también».</li><li><strong>Abducción:</strong> «dos lotes comparten una impureza; un equipo común podría explicarlo; <em>quizá</em> el equipo sea la causa» (alternativa: un insumo común).</li></ul><h3>Criterios distintos, no una escala</h3><p>Validez (deducción), fuerza (inducción) y plausibilidad (abducción) son criterios diferentes. No se mide la deducción en porcentajes ni se dice que una inducción es «válida al 80 %».</p><div class=\"err\"><b>Error común:</b> creer que «deducción = de lo general a lo particular» o que una deducción válida siempre tiene conclusión verdadera.</div>",
+   "ex": [
+    {
+     "id": "i1",
+     "lvl": 1,
+     "title": "Validez y verdad",
+     "q": "<p>Un argumento deductivo es <strong>válido</strong> cuando…</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Es imposible que sus premisas sean verdaderas y su conclusión falsa",
+        "Sus premisas y su conclusión son verdaderas",
+        "La mayoría de los casos observados confirma la conclusión",
+        "Ofrece la mejor explicación disponible de un hecho"
+       ]
+      }
+     ],
+     "steps": [
+      "La validez es una propiedad de la <strong>relación lógica</strong>: si las premisas fueran verdaderas, la conclusión tendría que serlo.",
+      "Que además las premisas sean verdaderas es otra cosa: eso hace al argumento <strong>sólido</strong>."
+     ],
+     "ans": "Imposible premisas verdaderas y conclusión falsa",
+     "hint": "Validez ≠ verdad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deduc"
+      ],
+      [
+       "deduc"
+      ]
+     ]
+    },
+    {
+     "id": "i2",
+     "lvl": 2,
+     "title": "Válido con premisas falsas",
+     "q": "<p class=\"lect\">«Si una muestra pertenece al lote L, entonces está contaminada. M pertenece a L. Por tanto, M está contaminada».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Es válido; para que sea sólido sus premisas también deben ser verdaderas",
+        "Es inválido porque no sabemos si las premisas son verdaderas",
+        "Es una inducción fuerte",
+        "Es sólido por tener forma «si…, entonces…»"
+       ]
+      }
+     ],
+     "steps": [
+      "La forma es válida: si ambas premisas son verdaderas, la conclusión no puede ser falsa.",
+      "Pero la verdad de las premisas requiere verificación: la validez no la garantiza. Sólido = válido + premisas verdaderas."
+     ],
+     "ans": "Válido; la solidez depende de la verdad de las premisas",
+     "hint": "Separa la forma del contenido.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deduc"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "i3",
+     "lvl": 1,
+     "title": "¿Qué tipo de inferencia? (I)",
+     "q": "<p class=\"lect\">«En una muestra aleatoria del lote predominan las piezas defectuosas. Por tanto, probablemente predominan los defectos en todo el lote».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Inducción",
+        "Deducción",
+        "Abducción",
+        "Afirmación del consecuente"
+       ]
+      }
+     ],
+     "steps": [
+      "Se pasa de casos observados (la muestra) a una conclusión más amplia (el lote), con apoyo <strong>probable</strong>.",
+      "Su fuerza depende de que la muestra sea suficiente y representativa."
+     ],
+     "ans": "Inducción",
+     "hint": "¿De la muestra al todo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "induc"
+      ],
+      [
+       "induc"
+      ]
+     ]
+    },
+    {
+     "id": "i4",
+     "lvl": 1,
+     "title": "¿Qué tipo de inferencia? (II)",
+     "q": "<p class=\"lect\">«Dos lotes presentan la misma impureza. Un equipo que ambos comparten podría explicarlo. Quizá el equipo sea la causa».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Abducción",
+        "Deducción",
+        "Inducción",
+        "Generalización apresurada"
+       ]
+      }
+     ],
+     "steps": [
+      "Se propone una <strong>explicación posible</strong> de un hecho sorprendente.",
+      "Se evalúa por su plausibilidad frente a alternativas (por ejemplo, un insumo común)."
+     ],
+     "ans": "Abducción",
+     "hint": "«Quizá…» propone una explicación.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "abduc"
+      ],
+      [
+       "abduc"
+      ]
+     ]
+    },
+    {
+     "id": "i5",
+     "lvl": 2,
+     "title": "Criterio de evaluación",
+     "q": "<p>¿Qué criterio corresponde a cada tipo de inferencia?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Deducción: válida o inválida · Inducción: más fuerte o más débil · Abducción: más o menos plausible",
+        "Las tres se miden en porcentajes de certeza",
+        "Deducción: fuerte o débil · Inducción: válida o inválida · Abducción: verdadera o falsa",
+        "Las tres se evalúan solo por la verdad de sus datos"
+       ]
+      }
+     ],
+     "steps": [
+      "Son criterios <strong>distintos</strong>, no niveles de una misma escala.",
+      "La validez deductiva es binaria; la fuerza inductiva es gradual; la plausibilidad abductiva es comparativa."
+     ],
+     "ans": "Validez / fuerza / plausibilidad",
+     "hint": "No hay una escala única.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "deduc",
+       "induc",
+       "abduc"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "i6",
+     "lvl": 2,
+     "title": "Más casos, ¿más fuerza?",
+     "q": "<p class=\"lect\">«Encuestamos a 2000 personas a la salida de un gimnasio: el 90 % hace ejercicio cuatro veces por semana. Por tanto, el 90 % de los peruanos hace ejercicio cuatro veces por semana».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La muestra es grande pero sesgada: la inducción es débil",
+        "Es una deducción válida porque la muestra es grande",
+        "Es fuerte: 2000 casos garantizan la conclusión",
+        "Es una abducción plausible"
+       ]
+      }
+     ],
+     "steps": [
+      "Más casos no compensan una selección sesgada: quienes salen de un gimnasio no representan a la población.",
+      "La conclusión excede lo que la muestra permite: es una inducción débil (generalización apresurada)."
+     ],
+     "ans": "Inducción débil por muestra sesgada",
+     "hint": "¿Quiénes fueron encuestados?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "induc"
+      ],
+      [
+       "genap"
+      ]
+     ]
+    },
+    {
+     "id": "i7",
+     "lvl": 2,
+     "title": "El modalizador adecuado",
+     "q": "<p class=\"lect\">«Las muestras examinadas del río tienen plomo. Por tanto, ___ todo el río tiene plomo».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "probablemente",
+        "necesariamente",
+        "con certeza absoluta",
+        "por definición"
+       ]
+      }
+     ],
+     "steps": [
+      "Es una inferencia inductiva: va de muestras al todo y solo da apoyo probable.",
+      "Un modalizador como «necesariamente» exageraría la fuerza del argumento."
+     ],
+     "ans": "probablemente",
+     "hint": "¿Qué tan fuerte es el paso de muestras al todo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "induc"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "i8",
+     "lvl": 3,
+     "title": "Dos planos",
+     "q": "<p class=\"lect\">«Según un informe con cifras auditadas, las ventas subieron 20 % el mes en que cambiamos el logo. Por tanto, el logo nuevo hizo subir las ventas».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La información parece fiable, pero la inferencia es débil",
+        "La información es falsa y la inferencia es válida",
+        "Ambos planos están bien: es un argumento sólido",
+        "No hay problema inferencial porque los datos están auditados"
+       ]
+      }
+     ],
+     "steps": [
+      "Plano informativo: cifras auditadas, sin señales de falsedad.",
+      "Plano inferencial: que dos hechos coincidan en el tiempo no prueba que uno cause el otro (podría ser la temporada, una promoción, etc.)."
+     ],
+     "ans": "Datos fiables, inferencia débil",
+     "hint": "Revisa por separado datos e inferencia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "planos"
+      ],
+      [
+       "fcausa"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9cien",
+   "name": "Sem. 9 · Hipótesis, predicción y afirmación del consecuente",
+   "teo": "<h4>En una frase</h4><p>En ciencia, <strong>proponer</strong> una hipótesis y <strong>ponerla a prueba</strong> son operaciones distintas.</p><h4>Explicado fácil</h4><p>Modelo hipotético-deductivo: (1) una <strong>hipótesis</strong> responde al problema; (2) con supuestos auxiliares se deduce una <strong>predicción</strong>; (3) la <strong>contrastación</strong> apoya la hipótesis o obliga a revisar el conjunto.</p><p>Un resultado favorable <em>no demuestra</em> la hipótesis: concluir «si H entonces P; ocurre P; por tanto H» es la <strong>afirmación del consecuente</strong>, una deducción inválida, porque P puede tener otras causas.</p>",
+   "form": [
+    "Hipótesis → predicción → contrastación",
+    "Si H entonces P; P; ∴ H → inválido (afirmación del consecuente)",
+    "Si H entonces P; no P → se cuestionan H y los supuestos juntos",
+    "Resultado favorable = apoyo, no demostración"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La ciencia combina pasos: <strong>abductivo</strong> al proponer, <strong>deductivo</strong> al derivar predicciones e <strong>inductivo</strong> al generalizar resultados.</p><h3>Ejemplo de la clase</h3><ul><li><strong>Datos:</strong> varias plantas de un aula crecen poco.</li><li><strong>Hipótesis:</strong> quizá reciben poca luz (explicación posible).</li><li><strong>Predicción:</strong> si esa causa opera y lo demás se mantiene, aumentar la luz debería mejorar el crecimiento.</li><li><strong>Prueba:</strong> comparar grupos en condiciones controladas.</li></ul><p>Si mejoran, la hipótesis gana apoyo, pero caben otras causas. Decir «está demostrado» exageraría.</p><div class=\"err\"><b>Error común:</b> creer que si la predicción se cumple la hipótesis queda probada, o que si falla se sabe exactamente qué supuesto falló.</div>",
+   "ex": [
+    {
+     "id": "h1",
+     "lvl": 1,
+     "title": "Orden del método",
+     "q": "<p>¿Cuál es el orden del modelo hipotético-deductivo?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hipótesis → predicción → contrastación",
+        "Contrastación → hipótesis → predicción",
+        "Predicción → contrastación → hipótesis",
+        "Generalización → deducción → hipótesis"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero se propone una explicación tentativa, luego se deduce qué esperar y al final se contrasta con resultados."
+     ],
+     "ans": "Hipótesis → predicción → contrastación",
+     "hint": "Primero se propone.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hipded"
+      ]
+     ]
+    },
+    {
+     "id": "h2",
+     "lvl": 2,
+     "title": "Afirmación del consecuente",
+     "q": "<p class=\"lect\">«Si el equipo libera una impureza, los lotes la presentarán. Dos lotes presentan esa impureza. Por tanto, el equipo fue la causa».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Es inválido: la impureza podría venir de otra fuente, como un insumo común",
+        "Es una deducción válida y sólida",
+        "Es una inducción fuerte",
+        "Es un hombre de paja"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma: si H entonces P; ocurre P; ∴ H. Es la <strong>afirmación del consecuente</strong>.",
+      "P puede tener otra causa (un insumo común), así que la conclusión no se sigue necesariamente."
+     ],
+     "ans": "Afirmación del consecuente (inválido)",
+     "hint": "¿Puede ocurrir P sin H?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "afcons"
+      ],
+      [
+       "abduc"
+      ]
+     ]
+    },
+    {
+     "id": "h3",
+     "lvl": 2,
+     "title": "Proponer vs. demostrar",
+     "q": "<p>Ante la impureza en dos lotes, ¿cuál es una formulación <strong>abductiva</strong> correcta?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "«El equipo podría explicarlo; comparemos esa hipótesis con la del insumo»",
+        "«Ocurrió la impureza; por tanto, el equipo fue la causa»",
+        "«Todos los lotes del mundo tendrán esa impureza»",
+        "«Quien diseñó el equipo es poco confiable, así que el equipo es la causa»"
+       ]
+      }
+     ],
+     "steps": [
+      "La abducción propone una explicación posible y la compara con alternativas.",
+      "Darla por demostrada es afirmación del consecuente; atacar al diseñador es ad hóminem."
+     ],
+     "ans": "«Podría explicarlo; comparemos con alternativas»",
+     "hint": "Proponer no es demostrar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "abduc"
+      ],
+      [
+       "afcons"
+      ]
+     ]
+    },
+    {
+     "id": "h4",
+     "lvl": 2,
+     "title": "Predicción fallida",
+     "q": "<p>Si la hipótesis H junto con supuestos auxiliares A predice P, y P <strong>no</strong> ocurre, ¿qué se puede concluir?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Que algo falla en el conjunto de H y A, sin saber todavía cuál",
+        "Que H es falsa con certeza y A es verdadera",
+        "Que H queda demostrada",
+        "Nada: una predicción fallida no aporta información"
+       ]
+      }
+     ],
+     "steps": [
+      "La deducción cuestiona H y A <strong>conjuntamente</strong>.",
+      "Por sí sola no identifica cuál de las dos falla: hay que revisar el conjunto."
+     ],
+     "ans": "Se cuestiona el conjunto H + A",
+     "hint": "La predicción depende de H y de los supuestos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hipded"
+      ],
+      [
+       "hipded"
+      ]
+     ]
+    },
+    {
+     "id": "h5",
+     "lvl": 2,
+     "title": "Las plantas y la luz",
+     "q": "<p class=\"lect\">«Aumentamos la luz y las plantas crecieron más. Está demostrado que la falta de luz era la causa».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Exagera: el resultado apoya la hipótesis, pero aún caben otras causas",
+        "Es correcto: un resultado favorable demuestra la hipótesis",
+        "Es un falso dilema",
+        "Es correcto si el experimento duró más de una semana"
+       ]
+      }
+     ],
+     "steps": [
+      "Un resultado favorable da <strong>apoyo</strong>, no demostración.",
+      "Lo adecuado: «los resultados apoyan que la luz influye», controlando otras variables (riego, temperatura…)."
+     ],
+     "ans": "Exagera la fuerza del argumento",
+     "hint": "¿Hay otras causas posibles?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hipded"
+      ],
+      [
+       "afcons"
+      ]
+     ]
+    },
+    {
+     "id": "h6",
+     "lvl": 3,
+     "title": "¿Qué paso es cada uno?",
+     "q": "<p>En el ejemplo de las plantas: (a) «quizá reciben poca luz»; (b) «si falta luz, al aumentarla deberían crecer más»; (c) «en este experimento crecieron más, así que probablemente pase en otras aulas».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "(a) abductivo · (b) deductivo · (c) inductivo",
+        "(a) deductivo · (b) inductivo · (c) abductivo",
+        "Los tres son deductivos",
+        "(a) inductivo · (b) abductivo · (c) deductivo"
+       ]
+      }
+     ],
+     "steps": [
+      "(a) propone una explicación posible: abducción.",
+      "(b) deriva una consecuencia condicional de la hipótesis: deducción.",
+      "(c) generaliza resultados a otros casos: inducción."
+     ],
+     "ans": "(a) abducción, (b) deducción, (c) inducción",
+     "hint": "Proponer, derivar, generalizar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "abduc"
+      ],
+      [
+       "deduc"
+      ],
+      [
+       "induc"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9info",
+   "name": "Sem. 9 · Calidad de la información",
+   "teo": "<h4>En una frase</h4><p>La información puede fallar de cuatro maneras: <strong>falsa, inexacta, incompleta o descuidada</strong>.</p><h4>Explicado fácil</h4><ul><li><strong>Falsa:</strong> no corresponde a los hechos (inventar mediciones de plantas nunca observadas).</li><li><strong>Inexacta:</strong> describe mal un dato real (registrar 15 cm cuando mide 10 cm).</li><li><strong>Incompleta:</strong> omite información relevante (mostrar solo las plantas que crecieron).</li><li><strong>Descuidada:</strong> presenta datos sin precisión («crecieron mucho», sin decir cuánto).</li></ul><p>El defecto puede estar en los datos, la garantía o la tesis, y las categorías pueden <strong>solaparse</strong>: siempre se justifica con el pasaje, el defecto y su efecto.</p>",
+   "form": [
+    "Falsa: no corresponde a los hechos",
+    "Inexacta: describe mal un dato real",
+    "Incompleta: omite algo relevante",
+    "Descuidada: sin precisión",
+    "Justificar: pasaje + defecto + efecto"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de acusar una falacia, revisa el <strong>plano informativo</strong>: ¿los datos son ciertos, exactos, completos y precisos?</p><h3>Solapamientos</h3><p>Una omisión (incompleta) puede además cambiar el sentido de lo ocurrido (inexacta). Se acepta más de una categoría si la justificación es pertinente. «Descuidada» describe la presentación, no prueba intención de engañar.</p><div class=\"ej\"><b>Práctica de la clase:</b> dato «diez semillas germinaron con riego diario» → resumen «diez semillas germinaron» → conclusión «no necesitan agua». El resumen es <em>incompleto</em> (omite el riego) y la conclusión no se sigue: no mencionar el riego no significa que no lo hubo.</div><div class=\"err\"><b>Error común:</b> poner una sola etiqueta sin explicar qué parte del texto falla ni qué apoyo a la tesis se pierde.</div>",
+   "ex": [
+    {
+     "id": "q1",
+     "lvl": 1,
+     "title": "Clasifica el defecto (I)",
+     "q": "<p class=\"lect\">«El informe registra que la planta mide 15 cm, aunque la medición real fue 10 cm».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Inexacta",
+        "Falsa",
+        "Incompleta",
+        "Descuidada"
+       ]
+      }
+     ],
+     "steps": [
+      "Hay un dato real (la planta existe y fue medida), pero se describe mal: información <strong>inexacta</strong>."
+     ],
+     "ans": "Inexacta",
+     "hint": "¿El dato existe pero está mal descrito?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "q2",
+     "lvl": 1,
+     "title": "Clasifica el defecto (II)",
+     "q": "<p class=\"lect\">«El informe presenta mediciones de plantas que nunca fueron observadas».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falsa",
+        "Inexacta",
+        "Incompleta",
+        "Descuidada"
+       ]
+      }
+     ],
+     "steps": [
+      "Las mediciones no corresponden a ningún hecho: información <strong>falsa</strong>."
+     ],
+     "ans": "Falsa",
+     "hint": "¿Existió lo que se informa?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "q3",
+     "lvl": 1,
+     "title": "Clasifica el defecto (III)",
+     "q": "<p class=\"lect\">«El informe muestra solo las plantas que crecieron y no menciona las que murieron».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Incompleta",
+        "Falsa",
+        "Descuidada",
+        "Inexacta"
+       ]
+      }
+     ],
+     "steps": [
+      "Se omite información relevante que cambiaría la evaluación: información <strong>incompleta</strong>."
+     ],
+     "ans": "Incompleta",
+     "hint": "¿Falta algo importante?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "q4",
+     "lvl": 1,
+     "title": "Clasifica el defecto (IV)",
+     "q": "<p class=\"lect\">«Las plantas crecieron mucho con el fertilizante».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Descuidada",
+        "Falsa",
+        "Incompleta",
+        "Inexacta"
+       ]
+      }
+     ],
+     "steps": [
+      "«Mucho» no dice cuánto ni comparado con qué: información <strong>descuidada</strong> (imprecisa)."
+     ],
+     "ans": "Descuidada",
+     "hint": "¿Hay una cifra o solo una impresión?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "q5",
+     "lvl": 2,
+     "title": "Las semillas y el riego",
+     "q": "<p class=\"lect\">Dato: «Diez semillas germinaron con riego diario». Resumen: «Diez semillas germinaron». Conclusión: «Estas semillas no necesitan agua».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El resumen es incompleto y la conclusión no se sigue: no mencionar el riego no prueba que no hubo riego",
+        "El resumen es falso porque inventa las semillas",
+        "No hay problema: el resumen conserva el número de semillas",
+        "Es un ad hóminem"
+       ]
+      }
+     ],
+     "steps": [
+      "Plano informativo: el resumen omite la condición clave (riego): <strong>incompleto</strong>; puede llamarse también inexacto si se explica que la omisión altera lo ocurrido.",
+      "Plano inferencial: para concluir que germinan sin agua haría falta observar semillas sin riego."
+     ],
+     "ans": "Incompleto + conclusión sin apoyo",
+     "hint": "¿Qué condición desapareció en el resumen?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "q6",
+     "lvl": 2,
+     "title": "Categorías que se solapan",
+     "q": "<p>Un estudiante clasifica un resumen que omite una condición clave como «incompleto e inexacto». ¿Es aceptable?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Sí, si justifica que la omisión además altera la representación de lo ocurrido",
+        "No, cada defecto admite una sola etiqueta",
+        "No, una omisión siempre es información falsa",
+        "Sí, aunque no dé ninguna justificación"
+       ]
+      }
+     ],
+     "steps": [
+      "Las categorías pueden solaparse: incompleta identifica lo que falta; inexacta, cómo esa falta cambia el sentido.",
+      "Lo que se exige siempre es el pasaje, el defecto y su efecto."
+     ],
+     "ans": "Sí, con justificación",
+     "hint": "La etiqueta vale menos que la justificación.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ],
+      [
+       "diag"
+      ]
+     ]
+    },
+    {
+     "id": "q7",
+     "lvl": 3,
+     "title": "Defecto informativo vs. falacia",
+     "q": "<p class=\"lect\">«Un artículo usa datos de un registro que luego no pudo ser auditado. La revista lo retira».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hay un problema informativo (datos no verificables); eso por sí solo no demuestra una falacia",
+        "La retractación demuestra que el autor cometió falsa causa",
+        "No hay ningún problema porque el artículo fue publicado",
+        "Es un hombre de paja"
+       ]
+      }
+     ],
+     "steps": [
+      "Que los datos no puedan verificarse afecta el plano <strong>informativo</strong>.",
+      "Para hablar de falacia hay que mostrar un paso inferencial defectuoso en el texto: la retractación no lo prueba por sí sola."
+     ],
+     "ans": "Problema informativo, falacia no demostrada",
+     "hint": "No pases automáticamente del problema a la etiqueta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "infcal"
+      ],
+      [
+       "retrac"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9fal",
+   "name": "Sem. 9 · Cinco falacias (catálogo de la EC2)",
+   "teo": "<h4>En una frase</h4><p>Una <strong>falacia</strong> es un error al apoyar una conclusión: el paso de los datos a la tesis no se sostiene.</p><h4>El catálogo</h4><ul><li><strong>Ad hóminem:</strong> un rasgo irrelevante de la persona sustituye la evaluación de su argumento. «No le creas: usa seudónimo».</li><li><strong>Generalización apresurada:</strong> el alcance de la conclusión excede los casos examinados. «Dos alumnos copiaron. Todo el alumnado copia».</li><li><strong>Falsa causa:</strong> una asociación o sucesión temporal se toma como prueba suficiente de causa. «Estrené lápiz y aprobé: aprobé gracias al lápiz».</li><li><strong>Falso dilema:</strong> solo dos opciones, omitiendo otras. «O mérito o inclusión».</li><li><strong>Hombre de paja:</strong> se deforma la posición rival y se refuta esa versión. A: «Menos tareas». B: «Quieres quitarlas todas».</li></ul>",
+   "form": [
+    "Ad hóminem: atacar a la persona",
+    "Generalización apresurada: pocos casos → todos",
+    "Falsa causa: asociación o «después de» → causa",
+    "Falso dilema: solo dos opciones",
+    "Hombre de paja: deformar la posición rival"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una etiqueta no basta: hay que <strong>reconstruir el paso defectuoso</strong> y mostrar el pasaje que lo contiene.</p><h3>Pistas para reconocerlas</h3><ul><li><strong>¿Se habla de quién argumenta en vez de sus razones?</strong> → ad hóminem.</li><li><strong>¿«Todos», «siempre», «cualquiera» a partir de pocos casos o de una muestra sesgada?</strong> → generalización apresurada.</li><li><strong>¿«Después de», «coincidió con», «se asocia con» usados como «causó»?</strong> → falsa causa.</li><li><strong>¿«O… o…» cuando hay más opciones?</strong> → falso dilema.</li><li><strong>¿Se refuta algo que el otro no dijo?</strong> → hombre de paja.</li></ul><div class=\"err\"><b>Error común:</b> creer que todo argumento con un problema contiene una falacia. Puede haber solo un defecto informativo, ningún defecto detectado o evidencia insuficiente para decidir.</div>",
+   "ex": [
+    {
+     "id": "f1",
+     "lvl": 1,
+     "title": "Identifica la falacia (I)",
+     "q": "<p class=\"lect\">«No hay que tomar en serio su crítica al proyecto: él ni siquiera terminó la universidad».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Ad hóminem",
+        "Falso dilema",
+        "Hombre de paja",
+        "Falsa causa"
+       ]
+      }
+     ],
+     "steps": [
+      "Se descarta la crítica por un rasgo de la persona, sin evaluar sus razones: <strong>ad hóminem</strong>."
+     ],
+     "ans": "Ad hóminem",
+     "hint": "¿Se discuten las razones o a la persona?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "adhom"
+      ]
+     ]
+    },
+    {
+     "id": "f2",
+     "lvl": 1,
+     "title": "Identifica la falacia (II)",
+     "q": "<p class=\"lect\">«Probé dos restaurantes de ese distrito y fueron malos. Toda la comida del distrito es mala».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Generalización apresurada",
+        "Falsa causa",
+        "Ad hóminem",
+        "Falso dilema"
+       ]
+      }
+     ],
+     "steps": [
+      "Dos casos no bastan para concluir sobre todos: el alcance excede el apoyo."
+     ],
+     "ans": "Generalización apresurada",
+     "hint": "¿Cuántos casos y cuánto se concluye?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "genap"
+      ]
+     ]
+    },
+    {
+     "id": "f3",
+     "lvl": 1,
+     "title": "Identifica la falacia (III)",
+     "q": "<p class=\"lect\">«Desde que instalaron la antena en el barrio, hay más resfríos. La antena causa resfríos».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falsa causa",
+        "Generalización apresurada",
+        "Hombre de paja",
+        "Ad hóminem"
+       ]
+      }
+     ],
+     "steps": [
+      "Una sucesión temporal («desde que…») se toma como prueba de causa (post hoc).",
+      "Podría ser la estación del año u otra explicación."
+     ],
+     "ans": "Falsa causa",
+     "hint": "«Después de» no es «a causa de».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fcausa"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "f4",
+     "lvl": 1,
+     "title": "Identifica la falacia (IV)",
+     "q": "<p class=\"lect\">«O aprobamos este presupuesto tal cual, o la universidad cierra el próximo año».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falso dilema",
+        "Falsa causa",
+        "Ad hóminem",
+        "Generalización apresurada"
+       ]
+      }
+     ],
+     "steps": [
+      "Se presentan solo dos opciones, omitiendo otras (modificar el presupuesto, buscar otros fondos…)."
+     ],
+     "ans": "Falso dilema",
+     "hint": "¿Hay más de dos caminos?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fdilema"
+      ]
+     ]
+    },
+    {
+     "id": "f5",
+     "lvl": 1,
+     "title": "Identifica la falacia (V)",
+     "q": "<p class=\"lect\">A: «Deberíamos reducir el uso de plástico en la cafetería». B: «Entonces quieres prohibir todo el plástico del país y que nadie pueda comprar nada».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hombre de paja",
+        "Falso dilema",
+        "Ad hóminem",
+        "Falsa causa"
+       ]
+      }
+     ],
+     "steps": [
+      "B exagera la posición de A («reducir en la cafetería» → «prohibir todo en el país») y refuta esa versión."
+     ],
+     "ans": "Hombre de paja",
+     "hint": "¿B responde a lo que A dijo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hpaja"
+      ]
+     ]
+    },
+    {
+     "id": "f6",
+     "lvl": 2,
+     "title": "Correlación no es causa",
+     "q": "<p class=\"lect\">«Los estudiantes que toman café sacan mejores notas. Por tanto, el café mejora el rendimiento».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falsa causa: una asociación se toma como prueba suficiente de causa",
+        "Ad hóminem",
+        "Hombre de paja",
+        "Es un argumento sólido"
+       ]
+      }
+     ],
+     "steps": [
+      "Hay una asociación, pero puede haber otras explicaciones (quienes toman café estudian más horas, por ejemplo).",
+      "Concluir causa solo con la asociación es falsa causa."
+     ],
+     "ans": "Falsa causa",
+     "hint": "¿Puede haber una tercera variable?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fcausa"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "f7",
+     "lvl": 2,
+     "title": "Justificar la etiqueta",
+     "q": "<p>¿Cuál es la mejor forma de señalar un hombre de paja en un examen?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Citar lo que dijo el autor, mostrar la versión deformada y explicar cómo se refuta esa versión en lugar de la original",
+        "Escribir solo «hay hombre de paja»",
+        "Decir que el autor es poco confiable",
+        "Mencionar que el artículo fue retractado"
+       ]
+      }
+     ],
+     "steps": [
+      "Una etiqueta sola no es un diagnóstico.",
+      "Se necesita el pasaje, la deformación y el efecto sobre la refutación."
+     ],
+     "ans": "Pasaje + deformación + efecto",
+     "hint": "Etiqueta sin evidencia no vale.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hpaja"
+      ],
+      [
+       "diag"
+      ]
+     ]
+    },
+    {
+     "id": "f8",
+     "lvl": 3,
+     "title": "Afirmación del consecuente no está en el catálogo",
+     "q": "<p class=\"lect\">«Si la vacuna funciona, bajarán los contagios. Bajaron los contagios. Por tanto, la vacuna funciona (está demostrado)».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Es afirmación del consecuente: los contagios pudieron bajar por otras causas",
+        "Es un ad hóminem",
+        "Es un falso dilema",
+        "Es un argumento deductivo válido"
+       ]
+      }
+     ],
+     "steps": [
+      "Forma: si H entonces P; P; ∴ H. Es una deducción inválida.",
+      "El resultado apoya la hipótesis, pero no la demuestra: otras medidas o la estación también podrían explicarlo."
+     ],
+     "ans": "Afirmación del consecuente",
+     "hint": "Revisa la forma lógica.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "afcons"
+      ],
+      [
+       "hipded"
+      ]
+     ]
+    },
+    {
+     "id": "f9",
+     "lvl": 3,
+     "title": "Cuando no hay falacia",
+     "q": "<p class=\"lect\">«En un ensayo aleatorizado con 3000 participantes, el grupo que recibió el tratamiento tuvo menos síntomas que el grupo control. Por tanto, probablemente el tratamiento reduce los síntomas».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No se detecta falacia: la conclusión está acotada con «probablemente» y el diseño compara grupos",
+        "Falsa causa",
+        "Generalización apresurada",
+        "Hombre de paja"
+       ]
+      }
+     ],
+     "steps": [
+      "Hay grupo de comparación y asignación aleatoria, y la tesis está modalizada.",
+      "No todo argumento contiene una falacia: también es un resultado posible «sin defecto detectado»."
+     ],
+     "ans": "Sin falacia detectada",
+     "hint": "¿El alcance excede el apoyo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "induc"
+      ],
+      [
+       "diag"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9cas",
+   "name": "Sem. 9 · Casos: Wakefield, LaCour, Mehra y Pojman",
+   "teo": "<h4>En una frase</h4><p>Una <strong>retractación</strong> comunica por qué se retira un artículo; el análisis del argumento distingue qué falla en la información y qué falla en el apoyo a la tesis.</p><h4>Los cuatro casos de clase</h4><ul><li><strong>Wakefield et al. (The Lancet, 1998; retirado en 2010):</strong> serie clínica de 12 niños que proponía una posible relación con la vacuna triple vírica. La nota declaró falsas la derivación consecutiva de los niños y la aprobación ética. Posible falacia a examinar: <em>falsa causa</em> (post hoc).</li><li><strong>LaCour y Green (Science, 2014; retirado en 2015):</strong> conversar con un activista gay cambiaría de forma duradera la opinión sobre el matrimonio igualitario. Hubo información falsa sobre incentivos y financiación, irregularidades estadísticas y no se entregaron los datos originales. Posible falacia: <em>generalización apresurada</em> si se extiende a cualquier persona.</li><li><strong>Mehra et al. (The Lancet, 2020; retirado en 2020):</strong> asociaba hidroxicloroquina/cloroquina con mayor mortalidad usando un registro de 671 hospitales; la auditoría no pudo completarse. Posible falacia: <em>falsa causa</em> si se trata la asociación como prueba de causa.</li><li><strong>Pojman (IJAP, 1998) y la crítica de Mosley (1998):</strong> no es una retractación sino un debate filosófico. Pojman rechaza la acción afirmativa «fuerte» (no la «débil»); Mosley lo acusa de <em>hombre de paja</em>.</li></ul>",
+   "form": [
+    "Wakefield 1998/2010 → posible falsa causa (post hoc)",
+    "LaCour y Green 2014/2015 → datos no verificables; posible generalización apresurada",
+    "Mehra 2020 → auditoría fallida; posible falsa causa (asociación ≠ causa)",
+    "Pojman vs. Mosley 1998 → debate, no retractación; hombre de paja",
+    "Retractación ≠ prueba de falacia"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Los motivos de una retractación suelen ser <strong>informativos o éticos</strong> (datos falsos, no verificables, aprobación ética falsa). La falacia es otro diagnóstico: exige mostrar el <strong>salto inferencial</strong> en el texto.</p><h3>Lo que hay que recordar de cada caso</h3><ul><li><strong>Wakefield:</strong> que los padres asociaran los síntomas con la vacunación es una <em>asociación temporal referida</em>, no una comparación que establezca causa. La OMS reafirma que las vacunas no causan autismo.</li><li><strong>LaCour:</strong> la tesis era sobre el <em>tipo</em> de interlocutor y la <em>duración</em> del efecto. Sin datos verificables, el respaldo empírico se cae.</li><li><strong>Mehra:</strong> era un diseño <em>observacional</em>, no aleatorizado; el tamaño del registro no sustituye la evaluación de otras diferencias entre grupos.</li><li><strong>Pojman:</strong> atribuirle un rechazo de <em>toda</em> acción afirmativa amplía su tesis.</li></ul><div class=\"err\"><b>Error común:</b> decir «el artículo fue retractado, entonces comete falacia X». Primero el pasaje, luego el diagnóstico.</div>",
+   "ex": [
+    {
+     "id": "c1",
+     "lvl": 1,
+     "title": "Motivo del retiro de Wakefield",
+     "q": "<p>Según la nota de The Lancet (2010), ¿qué se declaró falso en el artículo de Wakefield?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La derivación consecutiva de los niños y la aprobación ética",
+        "El número de hospitales del registro",
+        "Los pagos a los participantes",
+        "La crítica de Mosley"
+       ]
+      }
+     ],
+     "steps": [
+      "La nota declaró falsas la derivación <strong>consecutiva</strong> (incorporación sucesiva, sin escoger casos favorables) y la aprobación ética.",
+      "Los pagos son del caso LaCour; los hospitales, de Mehra; Mosley, del caso Pojman."
+     ],
+     "ans": "Derivación consecutiva y aprobación ética",
+     "hint": "Afecta fidelidad del reporte y ética.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "retrac"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "c2",
+     "lvl": 2,
+     "title": "Wakefield: ¿qué falacia examinar?",
+     "q": "<p class=\"lect\">«Los síntomas conductuales aparecieron después de la vacunación; por tanto, la vacuna los causó».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Falsa causa (post hoc)",
+        "Ad hóminem",
+        "Falso dilema",
+        "Hombre de paja"
+       ]
+      }
+     ],
+     "steps": [
+      "La secuencia temporal se usa como prueba suficiente de causa.",
+      "Para atribuirle la falacia al artículo hay que mostrar ese salto causal en su texto; la retractación no equivale a ese diagnóstico."
+     ],
+     "ans": "Falsa causa (post hoc)",
+     "hint": "«Después de» como «a causa de».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fcausa"
+      ],
+      [
+       "retrac"
+      ]
+     ]
+    },
+    {
+     "id": "c3",
+     "lvl": 2,
+     "title": "LaCour y Green: motivo del retiro",
+     "q": "<p>¿Qué motivos documentó la retractación de Science (2015)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Información falsa sobre incentivos y financiación, irregularidades estadísticas y datos originales no entregados",
+        "Que la muestra solo tenía doce personas",
+        "Que no tenía aprobación ética y la derivación no era consecutiva",
+        "Que Surgisphere no entregó sus contratos"
+       ]
+      }
+     ],
+     "steps": [
+      "Los pagos descritos no se habían realizado y hubo una declaración falsa de financiación; además, irregularidades estadísticas.",
+      "LaCour no entregó los datos originales para verificar los resultados."
+     ],
+     "ans": "Incentivos y financiación falsos, irregularidades, sin datos",
+     "hint": "Science, 2015.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "retrac"
+      ],
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "c4",
+     "lvl": 2,
+     "title": "LaCour: generalización",
+     "q": "<p class=\"lect\">«El cambio persistió en estos hogares. Por tanto, conversar con un activista gay cambiará de forma duradera la opinión de cualquier persona».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Generalización apresurada: el salto va de estos hogares a cualquier persona",
+        "Falsa causa",
+        "Falso dilema",
+        "Ad hóminem"
+       ]
+      }
+     ],
+     "steps": [
+      "El alcance «cualquier persona» excede lo que muestran los hogares estudiados.",
+      "Además, sin datos verificables, ni siquiera el resultado de esos hogares tiene respaldo."
+     ],
+     "ans": "Generalización apresurada",
+     "hint": "¿De quiénes a quiénes se extiende?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "genap"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "c5",
+     "lvl": 2,
+     "title": "Mehra: diseño del estudio",
+     "q": "<p>¿Por qué el gran tamaño del registro de Mehra (671 hospitales) no basta para concluir que el fármaco causó las muertes?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Porque era un diseño observacional: había que evaluar otras diferencias entre grupos, y además los datos no pudieron auditarse",
+        "Porque 671 hospitales es una muestra muy pequeña",
+        "Porque los autores eran poco confiables",
+        "Porque solo había dos opciones de tratamiento"
+       ]
+      }
+     ],
+     "steps": [
+      "Sin asignación aleatoria, los grupos pueden diferir en otros factores (gravedad, edad…).",
+      "El tamaño no sustituye esa evaluación ni la auditoría, que no pudo completarse."
+     ],
+     "ans": "Observacional + datos no auditables",
+     "hint": "Asociación ≠ causa.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fcausa"
+      ],
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "c6",
+     "lvl": 2,
+     "title": "Mehra: ¿por qué se retiró?",
+     "q": "<p>¿Qué ocurrió con la auditoría independiente del estudio de Mehra?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Surgisphere no transfirió los datos completos, contratos e informe alegando confidencialidad, y la revisión no pudo completarse",
+        "La auditoría confirmó los datos",
+        "La auditoría demostró que había falsa causa",
+        "Mosley la publicó en IJAP"
+       ]
+      }
+     ],
+     "steps": [
+      "Tres autores pidieron la retractación porque no podían garantizar la veracidad de los datos.",
+      "La nota documenta la imposibilidad de verificar los datos; no demuestra por sí misma un error inferencial."
+     ],
+     "ans": "No pudo completarse por falta de datos",
+     "hint": "Datos no verificables = problema informativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "retrac"
+      ],
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "c7",
+     "lvl": 2,
+     "title": "Pojman: la tesis exacta",
+     "q": "<p>¿Cuál es la posición de Pojman (1998) sobre la acción afirmativa?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Considera obligatoria la «débil» (oportunidades justas) e incorrecta la «fuerte» (trato preferencial)",
+        "Rechaza toda forma de acción afirmativa",
+        "Defiende la «fuerte» y rechaza la «débil»",
+        "Su artículo fue retractado por datos falsos"
+       ]
+      }
+     ],
+     "steps": [
+      "Pojman distingue dos modalidades y solo rechaza la fuerte.",
+      "Atribuirle un rechazo de toda acción afirmativa amplía su tesis; y su caso es un debate, no una retractación."
+     ],
+     "ans": "Débil: sí · Fuerte: no",
+     "hint": "Ojo con ampliar la tesis.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hpaja"
+      ],
+      [
+       "retrac"
+      ]
+     ]
+    },
+    {
+     "id": "c8",
+     "lvl": 3,
+     "title": "Mosley contra Pojman",
+     "q": "<p>Mosley acusa a Pojman de <strong>hombre de paja</strong>. ¿Qué haría falta para evaluar esa acusación?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Mostrar qué razón de la acción afirmativa omite Pojman y cómo esa omisión afecta su refutación",
+        "Comprobar si el artículo de Pojman fue retractado",
+        "Contar cuántos autores apoyan a cada uno",
+        "Verificar la formación académica de Pojman"
+       ]
+      }
+     ],
+     "steps": [
+      "Mosley sostiene que las objeciones de Pojman solo alcanzan versiones reducidas de la justificación (omitiría la corrección de exclusiones institucionales persistentes).",
+      "Para que sea hombre de paja hay que mostrar la versión deformada y que se refuta esa versión como si fuera la original. El desacuerdo por sí solo no lo prueba."
+     ],
+     "ans": "Mostrar la razón omitida y su efecto en la refutación",
+     "hint": "Etiqueta + evidencia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hpaja"
+      ],
+      [
+       "diag"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9diag",
+   "name": "Sem. 9 · Diagnóstico completo de un argumento",
+   "teo": "<h4>En una frase</h4><p>Analizar un argumento cuestionado es <strong>reconstruir, localizar y evaluar</strong>.</p><h4>Las cuatro preguntas</h4><ol><li>¿Cuáles son los datos, la garantía y la tesis?</li><li>¿Hay un defecto informativo? ¿Qué categoría(s) lo describen?</li><li>¿Qué componente afecta y qué apoyo a la tesis se pierde?</li><li>¿Hay evidencia de una falacia específica o falta información para decidir?</li></ol><p>Resultados posibles: <strong>falacia justificada, defecto informativo, sin defecto detectado o evidencia insuficiente</strong>.</p>",
+   "form": [
+    "1. Reconstruir: datos, garantía, tesis",
+    "2. Localizar: defecto y componente afectado",
+    "3. Evaluar: apoyo perdido y posible falacia",
+    "Revisión: fidelidad · reconstrucción · justificación · alcance"
+   ],
+   "lesson": "<h3>Idea central</h3><p>El análisis termina en una <strong>conclusión justificada y acotada</strong>. Si falta evidencia, reconocer el límite también es un resultado.</p><h3>Checklist de revisión</h3><ul><li><strong>Fidelidad:</strong> ¿represento lo que dice la fuente y separo mi interpretación?</li><li><strong>Reconstrucción:</strong> ¿explico cómo datos y garantía apoyan la tesis?</li><li><strong>Justificación:</strong> ¿cito el fragmento y explico mi diagnóstico?</li><li><strong>Alcance:</strong> ¿evito afirmar más de lo que permiten los datos?</li></ul><div class=\"ej\"><b>Caso de clase:</b> se invita a 120 usuarios de la biblioteca nocturna; responden 36 y 27 dicen mejorar sus notas. No hay registros de notas ni grupo de comparación. Conclusión: «Estudiar de noche mejora las notas de todos». Diagnóstico: muestra autoseleccionada y sin notas verificadas (información incompleta y autoinformada), salto a «todos» (generalización apresurada) y causa sin comparación (falsa causa).</div>",
+   "ex": [
+    {
+     "id": "d1",
+     "lvl": 1,
+     "title": "¿Dato, garantía o tesis? (A)",
+     "q": "<p class=\"lect\">«Algunas políticas de acción afirmativa conceden ventajas considerando la pertenencia a grupos históricamente discriminados».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Dato",
+        "Garantía",
+        "Tesis",
+        "Refutación"
+       ]
+      }
+     ],
+     "steps": [
+      "Describe un hecho sobre ciertas políticas: es el <strong>dato</strong> del argumento reconstruido."
+     ],
+     "ans": "Dato",
+     "hint": "¿Es un hecho, una regla o la conclusión?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "datos"
+      ]
+     ]
+    },
+    {
+     "id": "d2",
+     "lvl": 1,
+     "title": "¿Dato, garantía o tesis? (B)",
+     "q": "<p class=\"lect\">«Si una política considera la identidad grupal en lugar de aplicar exclusivamente el mérito individual, entonces establece un trato desigual e injusto».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Garantía",
+        "Dato",
+        "Tesis",
+        "Cualificador"
+       ]
+      }
+     ],
+     "steps": [
+      "Tiene forma «si…, entonces…» y conecta el tipo de dato con el tipo de tesis: es la <strong>garantía</strong>.",
+      "Ojo: el dato dice «considera», la garantía añade «en lugar de… exclusivamente el mérito». Ese supuesto requiere justificación."
+     ],
+     "ans": "Garantía",
+     "hint": "Busca el «si…, entonces…».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "garantia"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "d3",
+     "lvl": 1,
+     "title": "¿Dato, garantía o tesis? (C)",
+     "q": "<p class=\"lect\">«Por tanto, la acción afirmativa vulnera la igualdad y debe rechazarse».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Tesis",
+        "Dato",
+        "Garantía",
+        "Respaldo"
+       ]
+      }
+     ],
+     "steps": [
+      "«Por tanto» introduce la conclusión: es la <strong>tesis</strong>.",
+      "Además, rechaza «la acción afirmativa» en general, lo que excede la tesis de Pojman (solo la fuerte)."
+     ],
+     "ans": "Tesis",
+     "hint": "«Por tanto…».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "hpaja"
+      ]
+     ]
+    },
+    {
+     "id": "d4",
+     "lvl": 2,
+     "title": "Biblioteca nocturna: la muestra",
+     "q": "<p class=\"lect\">«Se invitó a 120 usuarios de la biblioteca nocturna. Respondieron 36; 27 dicen que mejoraron sus notas. No hay registros de notas ni grupo de comparación».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La muestra es autoseleccionada y las mejoras son autoinformadas: no permiten generalizar ni hablar de causa",
+        "La muestra es suficiente porque 27 de 36 es el 75 %",
+        "Los datos son falsos porque son pocos",
+        "No hay problema: es una deducción válida"
+       ]
+      }
+     ],
+     "steps": [
+      "Solo respondió el 30 % de los invitados y todos son usuarios nocturnos: posible sesgo de selección.",
+      "Sin notas verificadas ni comparación, no se sabe si mejoraron ni si fue por estudiar de noche."
+     ],
+     "ans": "Muestra sesgada y datos autoinformados",
+     "hint": "¿Quiénes respondieron y qué se midió?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "induc"
+      ],
+      [
+       "infcal"
+      ]
+     ]
+    },
+    {
+     "id": "d5",
+     "lvl": 2,
+     "title": "Biblioteca nocturna: la conclusión",
+     "q": "<p class=\"lect\">Conclusión del informe: «Estudiar de noche mejora las notas de todos. La universidad debe recomendarlo».</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Hay generalización apresurada («todos») y falsa causa (sin comparación)",
+        "Es un ad hóminem",
+        "Es un falso dilema",
+        "Es una conclusión bien acotada"
+       ]
+      }
+     ],
+     "steps": [
+      "«Todos» excede a 27 encuestados autoseleccionados: generalización apresurada.",
+      "«Mejora» afirma causa sin grupo de comparación: falsa causa. Otra explicación: quienes van de noche ya eran más disciplinados."
+     ],
+     "ans": "Generalización apresurada + falsa causa",
+     "hint": "Revisa alcance y causalidad.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "genap"
+      ],
+      [
+       "fcausa"
+      ]
+     ]
+    },
+    {
+     "id": "d6",
+     "lvl": 3,
+     "title": "Reformular con alcance",
+     "q": "<p>¿Cuál es la mejor reformulación de la conclusión del informe de la biblioteca nocturna?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "«Entre quienes respondieron, la mayoría percibe mejoras; hace falta comparar notas registradas con un grupo control antes de recomendarlo»",
+        "«Estudiar de noche mejora las notas de la mayoría de estudiantes»",
+        "«Estudiar de noche no sirve para nada»",
+        "«Está demostrado que estudiar de noche mejora las notas de los usuarios de la biblioteca»"
+       ]
+      }
+     ],
+     "steps": [
+      "Una conclusión acotada describe lo que los datos permiten (percepción de quienes respondieron).",
+      "Y dice qué evidencia faltaría para evaluar la recomendación."
+     ],
+     "ans": "Acotar y pedir evidencia",
+     "hint": "Evita afirmar más de lo que permiten los datos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "diag"
+      ],
+      [
+       "planos"
+      ]
+     ]
+    },
+    {
+     "id": "dw1",
+     "lvl": 3,
+     "title": "Escribe tu diagnóstico",
+     "q": "<p class=\"lect\">«Encuestamos a 50 seguidores de nuestra página de Instagram y 45 dijeron que nuestra bebida energética les ayuda a concentrarse. Por tanto, la bebida mejora la concentración de cualquier estudiante y todos deberían tomarla antes de un examen».</p><p>Escribe un diagnóstico breve: reconstruye datos, garantía y tesis; identifica el defecto informativo y la(s) falacia(s) con una cita; y reformula la conclusión.</p>",
+     "write": true,
+     "minw": 40,
+     "model": "<p><b>Datos:</b> 45 de 50 seguidores encuestados dicen que la bebida les ayuda. <b>Garantía:</b> si la mayoría de encuestados percibe un efecto, entonces el producto lo produce en cualquier estudiante. <b>Tesis:</b> la bebida mejora la concentración de cualquier estudiante. <b>Información:</b> muestra autoseleccionada (seguidores de la marca) y efecto autoinformado, sin medición ni grupo de comparación: información incompleta. <b>Falacias:</b> «cualquier estudiante» es una generalización apresurada desde 50 seguidores; «mejora» afirma causa sin comparación (falsa causa). <b>Reformulación:</b> «La mayoría de los seguidores encuestados percibe que la bebida les ayuda; para afirmar que mejora la concentración haría falta un estudio con medición objetiva y grupo control».</p>",
+     "crit": [
+      "Reconstruye datos, garantía y tesis",
+      "Señala el sesgo de la muestra (seguidores) y que el efecto es autoinformado",
+      "Nombra generalización apresurada y/o falsa causa citando «cualquier estudiante» o «mejora»",
+      "Reformula la conclusión con alcance acotado y dice qué evidencia faltaría"
+     ],
+     "checks": [],
+     "steps": [],
+     "ans": "",
+     "hint": "Sigue las cuatro preguntas: reconstruir, defecto, apoyo perdido, falacia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": []
+    }
+   ]
+  },
+  {
+   "id": "tou1",
+   "name": "Repaso · Toulmin: tesis y datos",
+   "teo": "<p class=\"note\"><b>Repaso del parcial:</b> el esquema de Toulmin es la base del análisis de la semana 9.</p><h4>En una frase</h4><p>Un argumento es un camino que va de unas <strong>razones</strong> (datos) a una <strong>conclusión</strong> (tesis).</p><h4>Explicado fácil</h4><p>Piensa en un abogado en un juicio. La <strong>tesis</strong> es lo que quiere que el juez acepte («mi cliente es inocente»). Los <strong>datos</strong> son las pruebas que pone sobre la mesa («estaba en Arequipa ese día, aquí está su pasaje»). La tesis se discute; los datos son hechos concretos que se ofrecen como prueba.</p><div class=\"tbl\"><table><tr><th>Pieza</th><th>Pregunta para encontrarla</th><th>Pistas</th></tr><tr><td>Tesis</td><td>¿Qué quiere que yo crea o haga el autor?</td><td>Opinión, propuesta, valoración o predicción · «por eso», «por lo tanto», «en consecuencia»</td></tr><tr><td>Datos</td><td>¿Con qué lo prueba?</td><td>Cifras, encuestas, ejemplos, casos, testimonios · «porque», «ya que», «dado que»</td></tr></table></div><div class=\"ej\"><b>Ejemplo:</b> «Deberías llevar paraguas, <u>porque</u> el pronóstico anuncia 90 % de lluvia». Tesis: <em>deberías llevar paraguas</em>. Dato: <em>el pronóstico anuncia 90 % de lluvia</em>.</div><div class=\"err\"><b>Trampa:</b> elegir como tesis la cifra más llamativa. Una cifra casi nunca es la tesis: es la prueba de algo. Y la tesis no siempre va al inicio; muchas veces está al final.</div>",
+   "form": [
+    "Tesis: lo que se quiere probar (¿qué sostiene?)",
+    "Datos: la prueba concreta (¿en qué se basa?)",
+    "«Por eso / por lo tanto» → tesis",
+    "«Porque / ya que / dado que» → datos",
+    "La tesis puede ir al inicio, al medio o al final"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Argumentar es dar razones para que otro acepte una afirmación discutible. El modelo de Stephen Toulmin descompone el argumento en seis funciones. En este tema empiezas por las dos que siempre están a la vista: la <strong>tesis</strong> y los <strong>datos</strong>.</p><h3>Tesis</h3><p>Es la afirmación que el argumento defiende. Suele ser una propuesta («la universidad debería…»), una valoración («la medida es acertada») o una predicción («subirán los precios»). Si la quitas, el texto se queda sin propósito.</p><h3>Datos (evidencia)</h3><p>Son los hechos particulares que se ofrecen como prueba: cifras, resultados de encuestas, ejemplos, casos, testimonios. Son más concretos que la tesis y, por lo general, no son discutibles en sí mismos.</p><div class=\"ej\"><b>Ejemplo.</b> «Deberías llevar paraguas, porque el pronóstico anuncia 90 % de probabilidad de lluvia». Tesis: <em>deberías llevar paraguas</em>. Dato: <em>el pronóstico anuncia 90 % de lluvia</em>.</div><h3>Cómo encontrarlos</h3><ul><li>Pregunta «¿qué quiere que yo crea o haga el autor?» → tesis.</li><li>Pregunta «¿con qué lo prueba?» → datos.</li><li>Fíjate en los conectores, pero no dependas solo de ellos: la tesis puede estar al inicio, en medio o al final.</li></ul><div class=\"err\"><b>Error frecuente:</b> elegir como tesis el dato más llamativo del texto. Una cifra casi nunca es la tesis: es la prueba de algo.</div>",
+   "ex": [
+    {
+     "id": "t1a",
+     "lvl": 1,
+     "title": "¿Qué es la tesis?",
+     "q": "<p>En el modelo de Toulmin, la <strong>tesis</strong> es…</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La afirmación o conclusión que el argumento busca que el lector acepte",
+        "El hecho concreto que se ofrece como prueba",
+        "El principio general que conecta la prueba con la conclusión",
+        "La palabra que indica el grado de certeza de la afirmación"
+       ]
+      }
+     ],
+     "steps": [
+      "La tesis es el punto de llegada: lo que el autor defiende y quiere que aceptemos.",
+      "Las otras opciones describen otras funciones: el hecho concreto es el <strong>dato</strong>, el principio general es la <strong>garantía</strong> y la palabra de certeza es el <strong>cualificador</strong>."
+     ],
+     "ans": "La afirmación que se defiende",
+     "hint": "Piensa en «¿qué sostiene el autor?».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "datos",
+       "garantia",
+       "cualificador"
+      ]
+     ]
+    },
+    {
+     "id": "t1b",
+     "lvl": 1,
+     "title": "Encuentra el dato",
+     "q": "<p>«Deberías llevar paraguas, porque el pronóstico anuncia 90 % de probabilidad de lluvia para la tarde».</p><p>¿Qué enunciado funciona como <strong>dato</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "«El pronóstico anuncia 90 % de probabilidad de lluvia para la tarde»",
+        "«Deberías llevar paraguas»",
+        "«Si hay alta probabilidad de lluvia, conviene protegerse»",
+        "«Los pronósticos del tiempo suelen ser confiables»"
+       ]
+      }
+     ],
+     "steps": [
+      "El conector <strong>porque</strong> introduce la razón: el pronóstico de 90 % es un hecho concreto que sirve de prueba.",
+      "«Deberías llevar paraguas» es la tesis. La regla «si hay alta probabilidad…» sería la garantía (no aparece escrita) y la confiabilidad de los pronósticos sería un respaldo."
+     ],
+     "ans": "El pronóstico de 90 %",
+     "hint": "Busca qué viene después de «porque».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "datos"
+      ],
+      [
+       "tesis",
+       "garantia",
+       "respaldo"
+      ]
+     ]
+    },
+    {
+     "id": "t1c",
+     "lvl": 1,
+     "title": "Conectores de tesis",
+     "q": "<p>¿Cuál de estos conectores suele introducir la <strong>tesis</strong> de un argumento?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Por lo tanto",
+        "Porque",
+        "Ya que",
+        "Dado que"
+       ]
+      }
+     ],
+     "steps": [
+      "«Por lo tanto» anuncia una conclusión: lo que viene después se desprende de lo anterior.",
+      "«Porque», «ya que» y «dado que» introducen causas o razones, es decir, datos."
+     ],
+     "ans": "Por lo tanto",
+     "hint": "¿Cuál anuncia una conclusión?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "datos"
+      ]
+     ]
+    },
+    {
+     "id": "t1d",
+     "lvl": 2,
+     "title": "Tesis al inicio",
+     "q": "<p class=\"lect\">«La biblioteca de la universidad debería abrir los domingos. En semana de exámenes, las salas de estudio se llenan desde las 8 a. m., y muchos estudiantes viven lejos o no tienen un espacio tranquilo en casa».</p><p>¿Cuál es la <strong>tesis</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La biblioteca de la universidad debería abrir los domingos",
+        "Las salas de estudio se llenan desde las 8 a. m. en semana de exámenes",
+        "Muchos estudiantes no tienen un espacio tranquilo en casa",
+        "La semana de exámenes es la más exigente del ciclo"
+       ]
+      }
+     ],
+     "steps": [
+      "La primera oración es una propuesta («debería»): es lo que el texto defiende.",
+      "Las dos siguientes son hechos que la sostienen (datos). La última opción ni siquiera aparece en el texto: es una idea añadida."
+     ],
+     "ans": "Abrir los domingos",
+     "hint": "Busca la propuesta, no los hechos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "datos"
+      ]
+     ]
+    },
+    {
+     "id": "t1e",
+     "lvl": 2,
+     "title": "Tesis al final",
+     "q": "<p class=\"lect\">«El año pasado, tres de cada cuatro reclamos de los clientes se debieron a demoras en la entrega. Además, la competencia ya ofrece envíos en 24 horas. La empresa necesita, por ello, renovar su sistema de despacho».</p><p>¿Cuál es la <strong>tesis</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "La empresa necesita renovar su sistema de despacho",
+        "Tres de cada cuatro reclamos se debieron a demoras en la entrega",
+        "La competencia ya ofrece envíos en 24 horas",
+        "Los clientes prefieren comprarle a la competencia"
+       ]
+      }
+     ],
+     "steps": [
+      "«Por ello» marca la conclusión: la empresa necesita renovar su despacho.",
+      "Las cifras de reclamos y el dato sobre la competencia son las pruebas. «Los clientes prefieren a la competencia» es una inferencia que el texto no afirma."
+     ],
+     "ans": "Renovar el despacho",
+     "hint": "Aquí la tesis está al final: busca el conector de conclusión.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "datos"
+      ]
+     ]
+    },
+    {
+     "id": "t1f",
+     "lvl": 3,
+     "title": "Del dato a la tesis",
+     "q": "<p>Un argumento usa como dato: «El 60 % de los estudiantes encuestados usa el celular durante la clase».</p><p>¿Cuál de estos enunciados podría ser su <strong>tesis</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El colegio debería regular el uso del celular durante las clases",
+        "El 40 % de los encuestados no usa el celular durante la clase",
+        "La encuesta se aplicó a 500 estudiantes del colegio",
+        "Si muchos alumnos usan el celular en clase, entonces su uso afecta el aprendizaje"
+       ]
+      }
+     ],
+     "steps": [
+      "La tesis es una afirmación discutible que el dato podría apoyar: una propuesta como «el colegio debería regular…».",
+      "El 40 % y el tamaño de la muestra son más datos; la oración con «si… entonces» es una regla general que conectaría dato y tesis, o sea, una <strong>garantía</strong>."
+     ],
+     "ans": "Regular el celular",
+     "hint": "La tesis es discutible; los datos no.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tesis"
+      ],
+      [
+       "datos",
+       "garantia"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tou2",
+   "name": "Repaso · Toulmin: garantía y respaldo",
+   "teo": "<p class=\"note\"><b>Repaso del parcial:</b> el esquema de Toulmin es la base del análisis de la semana 9.</p><h4>En una frase</h4><p>La <strong>garantía</strong> es el <strong>puente</strong> que une los datos con la tesis; el <strong>respaldo</strong> es lo que sostiene ese puente.</p><h4>Explicado fácil</h4><p>Si te digo «Pedro durmió 4 horas, así que le irá mal en el examen», hay una idea que no dije pero que estoy usando: <em>«quien duerme poco rinde peor»</em>. Esa regla general, casi siempre <strong>implícita</strong>, es la garantía. Si alguien pregunta «¿y por qué crees esa regla?», respondes con el respaldo: <em>«hay estudios de sueño que lo muestran»</em>.</p><div class=\"tbl\"><table><tr><th></th><th>Garantía</th><th>Respaldo</th></tr><tr><td>Qué es</td><td>Regla general que autoriza pasar de los datos a la tesis</td><td>Base que hace creíble esa regla</td></tr><tr><td>Forma típica</td><td>«Si [tipo de dato], entonces [tipo de tesis]»</td><td>Estudios, leyes, normas, expertos, estadísticas generales</td></tr><tr><td>¿Se dice?</td><td>Casi siempre queda implícita</td><td>Puede aparecer o no</td></tr></table></div><h4>Cómo armar la garantía en 2 pasos</h4><ol><li>Generaliza el dato: «Pedro durmió 4 horas» → «quien duerme poco».</li><li>Generaliza la tesis y únelas con «si… entonces»: «Si alguien duerme poco, entonces rinde peor».</li></ol><div class=\"err\"><b>Trampa:</b> confundir respaldo con dato. El dato habla del caso concreto (Pedro); el respaldo habla de la regla general (los estudios sobre el sueño).</div>",
+   "form": [
+    "Garantía: puente dato → tesis (suele ser implícita)",
+    "Forma: «Si A (dato general), entonces B (tesis general)»",
+    "Respaldo: sostiene la garantía (estudios, leyes, autoridad)",
+    "Dato = caso concreto · Respaldo = apoyo de la regla",
+    "Garantía bien hecha: no invierte el orden ni cambia de tema"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Entre los datos y la tesis siempre hay un salto. La <strong>garantía</strong> es la regla que justifica ese salto. En los textos reales casi nunca se escribe, así que en el examen tendrás que <strong>reconstruirla</strong>.</p><h3>Cómo reconstruir una garantía implícita</h3><ul><li>Identifica el dato (caso particular) y la tesis.</li><li>Convierte ambos en categorías generales: «Mateo faltó a cinco clases» → «un estudiante que falta mucho»; «le irá mal» → «suele tener dificultades».</li><li>Únelos con «Si…, entonces…»: <em>Si un estudiante falta a la mayoría de clases, suele tener dificultades en la evaluación</em>.</li></ul><div class=\"err\"><b>Trampas típicas en las alternativas:</b> la condicional invertida («si le va mal, es porque faltó»), la que repite el dato o la tesis, la que exagera («jamás», «todos») y la que cambia de tema.</div><h3>Respaldo</h3><p>Si alguien duda de la garantía, el respaldo la sostiene: una ley, un reglamento, estudios, estadísticas generales, la experiencia acumulada o la palabra de un experto. Por eso suele sonar general («diversos estudios muestran…», «la ley establece…»).</p><div class=\"ej\"><b>Ejemplo completo.</b> Dato: Carlos siempre pagó a tiempo. Tesis: obtendrá el crédito. Garantía: si alguien tiene buen historial de pagos, los bancos suelen darle crédito. Respaldo: las políticas de riesgo de los bancos premian el historial puntual.</div>",
+   "ex": [
+    {
+     "id": "t2a",
+     "lvl": 1,
+     "title": "Del vistazo: el puente",
+     "q": "<p><em>Pregunta del vistazo oficial.</em></p><p>En el modelo de Toulmin, ¿qué elemento permite justificar el paso de los datos a la tesis?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Garantía",
+        "Respaldo",
+        "Evidencia",
+        "Cualificador"
+       ]
+      }
+     ],
+     "steps": [
+      "La <strong>garantía</strong> es el puente lógico entre datos y tesis.",
+      "El respaldo sostiene a la garantía (no conecta directamente datos y tesis), la evidencia es otro nombre de los datos y el cualificador solo marca el grado de certeza."
+     ],
+     "ans": "Garantía (D en el vistazo)",
+     "hint": "Piensa en el «puente».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "garantia"
+      ],
+      [
+       "respaldo",
+       "cualificador"
+      ]
+     ]
+    },
+    {
+     "id": "t2b",
+     "lvl": 1,
+     "title": "¿Qué es el respaldo?",
+     "q": "<p>En el modelo de Toulmin, el <strong>respaldo</strong> es…</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El apoyo (estudios, normas, estadísticas o autoridad) que hace aceptable la garantía",
+        "El caso particular que se presenta como prueba de la tesis",
+        "La excepción en la que la tesis no se cumpliría",
+        "La conclusión que se deriva de los datos"
+       ]
+      }
+     ],
+     "steps": [
+      "El respaldo responde a «¿por qué aceptar la regla?»: sostiene a la garantía.",
+      "El caso particular es el dato, la excepción es la refutación y la conclusión es la tesis."
+     ],
+     "ans": "Sostiene la garantía",
+     "hint": "¿A qué elemento apoya el respaldo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "respaldo"
+      ],
+      [
+       "datos",
+       "refutacion",
+       "tesis"
+      ]
+     ]
+    },
+    {
+     "id": "t2c",
+     "lvl": 2,
+     "title": "Garantía implícita",
+     "q": "<p class=\"lect\">«Ana tiene fiebre alta y dolor de garganta; por eso, debería quedarse en casa hoy».</p><p>¿Cuál es la <strong>garantía implícita</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Si una persona presenta síntomas de una enfermedad, conviene que se quede en casa",
+        "Ana tiene fiebre alta y dolor de garganta",
+        "Ana debería quedarse en casa hoy",
+        "Si Ana se queda en casa, tendrá fiebre"
+       ]
+      }
+     ],
+     "steps": [
+      "La garantía generaliza: «Ana tiene fiebre» → «una persona con síntomas»; «debería quedarse en casa» → «conviene quedarse en casa».",
+      "La segunda opción es el dato y la tercera la tesis. La cuarta invierte la relación y además es absurda."
+     ],
+     "ans": "Si alguien está enfermo, conviene que se quede en casa",
+     "hint": "Generaliza el dato y la tesis y únelos con «si… entonces».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "garantia"
+      ],
+      [
+       "datos",
+       "tesis"
+      ]
+     ]
+    },
+    {
+     "id": "t2d",
+     "lvl": 2,
+     "title": "¿Qué función cumple?",
+     "q": "<p class=\"lect\">«Los conductores deberían evitar el celular al manejar, porque desvía la atención de la pista. Diversos estudios de seguridad vial muestran que las distracciones al volante multiplican el riesgo de choque».</p><p>¿Qué función cumple la oración «Diversos estudios de seguridad vial muestran…»?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Respaldo",
+        "Dato",
+        "Tesis",
+        "Cualificador"
+       ]
+      }
+     ],
+     "steps": [
+      "La garantía implícita es: <em>si algo distrae al conductor, aumenta el riesgo de accidente</em>.",
+      "Los estudios de seguridad vial hacen creíble esa regla general: son el <strong>respaldo</strong>. El dato es que el celular desvía la atención; la tesis, que deberían evitarlo."
+     ],
+     "ans": "Respaldo",
+     "hint": "¿Apoya un caso concreto o una regla general?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "garantia"
+      ],
+      [
+       "respaldo"
+      ]
+     ]
+    },
+    {
+     "id": "t2e",
+     "lvl": 3,
+     "title": "Garantía vs. respaldo",
+     "q": "<p class=\"lect\">«Carlos obtendrá el crédito, pues nunca se ha atrasado en sus pagos. En general, los bancos otorgan crédito a quienes tienen un buen historial de pagos, tal como lo indican sus propias políticas de evaluación de riesgo».</p><p>¿Qué alternativa identifica bien la <strong>garantía</strong> y el <strong>respaldo</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Garantía: los bancos suelen dar crédito a quienes tienen buen historial · Respaldo: las políticas de evaluación de riesgo",
+        "Garantía: las políticas de evaluación de riesgo · Respaldo: los bancos suelen dar crédito a quienes tienen buen historial",
+        "Garantía: Carlos nunca se ha atrasado · Respaldo: obtendrá el crédito",
+        "Garantía: obtendrá el crédito · Respaldo: Carlos nunca se ha atrasado"
+       ]
+      }
+     ],
+     "steps": [
+      "Dato: Carlos nunca se atrasó. Tesis: obtendrá el crédito.",
+      "La regla general que conecta ambos es la garantía: <em>los bancos dan crédito a quien tiene buen historial</em>. Lo que hace creíble esa regla (las políticas de riesgo) es el respaldo.",
+      "La segunda alternativa invierte las funciones; las otras dos confunden dato y tesis con garantía y respaldo."
+     ],
+     "ans": "Regla general = garantía; políticas = respaldo",
+     "hint": "El respaldo apoya a la regla, no al revés.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "datos",
+       "tesis"
+      ],
+      [
+       "garantia",
+       "respaldo"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "t2f",
+     "lvl": 3,
+     "title": "La condicional correcta",
+     "q": "<p>Dato: «La cocina del restaurante está sucia y hay alimentos vencidos». Tesis: «Deberían clausurarlo temporalmente».</p><p>¿Qué formulación expresa mejor la <strong>garantía</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Si un restaurante incumple las condiciones de higiene, debe ser clausurado temporalmente",
+        "Si un restaurante es clausurado, es porque su cocina estaba sucia",
+        "Si la cocina está limpia, el restaurante tiene buena comida",
+        "Si un restaurante tiene muchos clientes, debe mantenerse abierto"
+       ]
+      }
+     ],
+     "steps": [
+      "La garantía va del tipo de dato (incumplir la higiene) al tipo de tesis (clausura). Ese es el orden correcto.",
+      "La segunda la invierte (de la clausura a la causa), la tercera habla de otro tema (calidad de la comida) y la cuarta no conecta con el dato."
+     ],
+     "ans": "Si incumple la higiene, se clausura",
+     "hint": "Primero el dato, después la tesis.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "garantia"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tou3",
+   "name": "Repaso · Toulmin: cualificador y refutación",
+   "teo": "<p class=\"note\"><b>Repaso del parcial:</b> el esquema de Toulmin es la base del análisis de la semana 9.</p><h4>En una frase</h4><p>El <strong>cualificador</strong> dice <em>qué tan seguro</em> está el autor; la <strong>refutación</strong> dice <em>en qué casos no se cumpliría</em> la tesis.</p><h4>Explicado fácil</h4><p>Piensa en el pronóstico del clima: «<u>Probablemente</u> llueva mañana, <u>a menos que</u> el frente frío se desvíe». «Probablemente» es el cualificador: regula la fuerza de la tesis. «A menos que el frente se desvíe» es la refutación: la excepción que la haría fallar.</p><div class=\"tbl\"><table><tr><th>Pieza</th><th>Pregunta</th><th>Palabras pista</th></tr><tr><td>Cualificador (modalizador)</td><td>¿Con cuánta certeza lo afirma?</td><td>probablemente, seguramente, posiblemente, casi siempre, en la mayoría de casos</td></tr><tr><td>Refutación (reserva)</td><td>¿Cuándo no se cumpliría? ¿Qué lo debilitaría?</td><td>a menos que, salvo que, excepto si · u objeciones</td></tr></table></div><p>Una refutación también puede ser una <strong>objeción</strong>: algo que debilita el paso de los datos a la tesis. En el vistazo, a «merezco un ascenso porque trabajo más horas», la objeción es: <em>trabajar más tiempo no asegura un trabajo eficiente</em>.</p><div class=\"err\"><b>Trampa:</b> elegir como objeción una frase que en realidad <em>apoya</em> la tesis. La refutación siempre empuja en contra.</div>",
+   "form": [
+    "Cualificador: grado de certeza (probablemente, casi siempre…)",
+    "Refutación: excepción u objeción a la tesis",
+    "«A menos que / salvo que» → refutación",
+    "Objeción pertinente: ataca el vínculo dato → tesis",
+    "No es refutación: repetir el dato o cambiar de tema"
+   ],
+   "lesson": "<h3>Cualificador (modalizador)</h3><p>Pocas tesis son absolutas. El cualificador ajusta la fuerza de la conclusión: «Pedro <strong>probablemente</strong> tendrá dificultades» es más defendible que «Pedro tendrá dificultades». Búscalo como un adverbio o una frase que expresa probabilidad, frecuencia o duda.</p><div class=\"ej\"><b>Ejemplo del vistazo.</b> «…Por ello, <u>probablemente</u> tendrá dificultades para concentrarse». «Por ello» es un conector de conclusión, no un cualificador.</div><h3>Refutación</h3><p>Tiene dos caras que el examen trata juntas:</p><ul><li><strong>Excepción o reserva:</strong> la condición en que la tesis fallaría («el equipo ganará, <em>a menos que</em> su goleador no se recupere»).</li><li><strong>Objeción:</strong> un contraargumento que alguien podría oponer («trabajar más horas no asegura trabajar mejor»).</li></ul><h3>Cómo elegir una refutación pertinente</h3><ul><li>Debe ir <em>contra</em> la tesis o contra el paso dato → tesis.</li><li>Debe tratar el mismo asunto.</li><li>Descarta las alternativas que apoyan la tesis o que repiten el dato o la garantía con otras palabras.</li></ul><div class=\"err\"><b>Ojo:</b> una alternativa como «si una persona trabaja más de ocho horas, merece un ascenso» no es una objeción: es la garantía del argumento.</div>",
+   "ex": [
+    {
+     "id": "t3a",
+     "lvl": 1,
+     "title": "Del vistazo: cualificador",
+     "q": "<p><em>Pregunta del vistazo oficial.</em></p><p class=\"lect\">«Los estudiantes que duermen menos de seis horas suelen presentar menor capacidad de concentración. Pedro ha dormido cuatro horas. Por ello, probablemente tendrá dificultades para concentrarse durante el examen».</p><p>¿Qué expresión funciona como <strong>cualificador</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "«probablemente»",
+        "«seis horas»",
+        "«Por ello»",
+        "«dificultades»"
+       ]
+      }
+     ],
+     "steps": [
+      "El cualificador expresa el grado de certeza de la tesis: «probablemente».",
+      "«Seis horas» es parte de la garantía (que aquí sí está escrita), «Por ello» es un conector de conclusión y «dificultades» es parte de la tesis."
+     ],
+     "ans": "«probablemente» (C en el vistazo)",
+     "hint": "¿Qué palabra expresa probabilidad?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cualificador"
+      ],
+      [
+       "garantia"
+      ]
+     ]
+    },
+    {
+     "id": "t3b",
+     "lvl": 1,
+     "title": "¿Qué expresa el cualificador?",
+     "q": "<p>El <strong>cualificador</strong> (o modalizador) de un argumento expresa…</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "El grado de certeza o fuerza con que se afirma la tesis",
+        "La prueba concreta en que se basa la tesis",
+        "La regla general que une datos y tesis",
+        "La objeción que podría debilitar la tesis"
+       ]
+      }
+     ],
+     "steps": [
+      "El cualificador gradúa la tesis: «probablemente», «casi siempre», «es posible que».",
+      "La prueba es el dato, la regla es la garantía y la objeción es la refutación."
+     ],
+     "ans": "El grado de certeza",
+     "hint": "Piensa en «probablemente».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cualificador"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "t3c",
+     "lvl": 2,
+     "title": "Identifica la función",
+     "q": "<p class=\"lect\">«El nuevo puente reducirá el tráfico en la avenida Grau, salvo que la municipalidad cierre los carriles laterales durante las obras».</p><p>¿Qué función cumple «salvo que la municipalidad cierre los carriles laterales durante las obras»?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Refutación",
+        "Garantía",
+        "Dato",
+        "Respaldo"
+       ]
+      }
+     ],
+     "steps": [
+      "«Salvo que» introduce una condición en la que la tesis (el puente reducirá el tráfico) no se cumpliría.",
+      "Eso es una <strong>refutación</strong> en forma de excepción o reserva."
+     ],
+     "ans": "Refutación (excepción)",
+     "hint": "Fíjate en «salvo que».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refutacion"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "t3d",
+     "lvl": 2,
+     "title": "Del vistazo: objeción",
+     "q": "<p><em>Pregunta del vistazo oficial.</em></p><p class=\"lect\">«Merezco un ascenso porque trabajo más de las ocho horas que indica la ley y realizo actividades que no están en la descripción de mis responsabilidades».</p><p>¿Cuál podría ser una <strong>objeción</strong> a la argumentación anterior?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Trabajar más tiempo y de modo más diverso no asegura un trabajo eficiente",
+        "Si una persona trabaja más de ocho horas, merece un ascenso",
+        "Si una persona realiza actividades fuera de sus responsabilidades, podría valer por dos trabajadores",
+        "Trabajar más tiempo y de modo más diverso es lo esperable en los lugares de trabajo"
+       ]
+      }
+     ],
+     "steps": [
+      "El argumento supone que <em>más horas y más tareas = merecer un ascenso</em>. Una objeción pertinente ataca ese paso: más cantidad no garantiza eficiencia.",
+      "La segunda y la tercera apoyan el argumento (la segunda es casi su garantía). La cuarta resta mérito, pero no cuestiona directamente la relación entre esfuerzo y ascenso; la clave oficial es la que habla de eficiencia."
+     ],
+     "ans": "No asegura eficiencia (D en el vistazo)",
+     "hint": "Busca la que ataca el vínculo entre las razones y el ascenso.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refutacion",
+       "garantia"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "t3e",
+     "lvl": 3,
+     "title": "Tesis bien modalizada",
+     "q": "<p>Datos: «En tres ciclos seguidos, los alumnos que asistieron a las asesorías aprobaron en mayor proporción que quienes no asistieron».</p><p>¿Qué tesis está mejor <strong>modalizada</strong>, es decir, no afirma más de lo que los datos permiten?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Asistir a las asesorías probablemente ayuda a aprobar el curso",
+        "Asistir a las asesorías garantiza aprobar el curso",
+        "Nadie que falte a las asesorías puede aprobar el curso",
+        "Las asesorías siempre elevan la nota de todos los alumnos"
+       ]
+      }
+     ],
+     "steps": [
+      "Los datos muestran una tendencia («en mayor proporción»), no una certeza absoluta.",
+      "«Probablemente» ajusta la tesis a lo que los datos prueban. «Garantiza», «nadie» y «siempre… todos» exageran."
+     ],
+     "ans": "«Probablemente ayuda»",
+     "hint": "Desconfía de «siempre», «nadie», «garantiza».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cualificador"
+      ]
+     ]
+    },
+    {
+     "id": "t3f",
+     "lvl": 3,
+     "title": "Refutación pertinente",
+     "q": "<p class=\"lect\">«Deberíamos estudiar de noche, porque en casa hay menos ruido y nos concentramos mejor».</p><p>¿Qué enunciado funcionaría como una <strong>refutación pertinente</strong>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Si estudiar de noche reduce las horas de sueño, el rendimiento del día siguiente podría empeorar",
+        "De noche hay menos ruido en casa",
+        "Concentrarse mejor ayuda a aprender",
+        "Muchos estudiantes prefieren estudiar con música"
+       ]
+      }
+     ],
+     "steps": [
+      "Una refutación pertinente plantea un costo o excepción que debilita la tesis en su mismo tema: perder sueño puede anular la ventaja.",
+      "La segunda repite el dato, la tercera apoya la tesis (es casi la garantía) y la cuarta habla de otro asunto."
+     ],
+     "ans": "La de las horas de sueño",
+     "hint": "Debe ir contra la tesis y en el mismo tema.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refutacion"
+      ],
+      [
+       "datos",
+       "garantia"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "garantia": {
+   "n": "Garantía",
+   "f": "Si [tipo de dato], entonces [tipo de tesis]",
+   "x": "Puente, casi siempre implícito, entre datos y tesis.",
+   "home": "tou2"
+  },
+  "planos": {
+   "n": "Dos planos de análisis",
+   "f": "Información (¿datos fiables?) · Inferencia (¿justifican la tesis?)",
+   "x": "Un argumento puede fallar en los datos, en el paso a la conclusión o en ambos. Se revisan por separado antes de hablar de falacia.",
+   "home": "s9inf"
+  },
+  "cualificador": {
+   "n": "Cualificador",
+   "f": "Grado de certeza de la tesis",
+   "x": "Probablemente, seguramente, casi siempre.",
+   "home": "tou3"
+  },
+  "genap": {
+   "n": "Generalización apresurada",
+   "f": "Pocos casos → conclusión para todos",
+   "x": "El alcance de la conclusión excede el apoyo de los casos examinados.",
+   "home": "s9fal"
+  },
+  "infcal": {
+   "n": "Calidad de la información",
+   "f": "Falsa · inexacta · incompleta · descuidada",
+   "x": "Falsa: no corresponde a los hechos. Inexacta: describe mal un dato real. Incompleta: omite algo relevante. Descuidada: sin precisión. Las categorías pueden solaparse.",
+   "home": "s9info"
+  },
+  "induc": {
+   "n": "Inducción",
+   "f": "Más fuerte o más débil · apoyo probable",
+   "x": "Su fuerza depende del tamaño, el diseño y la representatividad de la muestra. Puede fallar aunque las premisas sean verdaderas.",
+   "home": "s9inf"
+  },
+  "adhom": {
+   "n": "Ad hóminem",
+   "f": "Atacar a la persona, no al argumento",
+   "x": "Un rasgo irrelevante de quien argumenta reemplaza la evaluación de sus razones.",
+   "home": "s9fal"
+  },
+  "tesis": {
+   "n": "Tesis",
+   "f": "Lo que el argumento defiende",
+   "x": "Conectores: por eso, por lo tanto, en consecuencia.",
+   "home": "tou1"
+  },
+  "refutacion": {
+   "n": "Refutación",
+   "f": "Excepción u objeción a la tesis",
+   "x": "A menos que, salvo que; o un contraargumento pertinente.",
+   "home": "tou3"
+  },
+  "deduc": {
+   "n": "Deducción",
+   "f": "Válida o inválida · necesidad lógica",
+   "x": "Es válida si es imposible que las premisas sean verdaderas y la conclusión falsa. Sólida = válida + premisas verdaderas.",
+   "home": "s9inf"
+  },
+  "abduc": {
+   "n": "Abducción",
+   "f": "Más o menos plausible · explicación posible",
+   "x": "Propone la mejor explicación de un hecho, comparándola con alternativas. Una hipótesis plausible aún puede ser falsa.",
+   "home": "s9inf"
+  },
+  "retrac": {
+   "n": "Retractación",
+   "f": "Retiro de un artículo publicado",
+   "x": "Comunica los motivos del retiro (datos falsos, ética, datos no verificables). No demuestra por sí sola que haya una falacia.",
+   "home": "s9cas"
+  },
+  "diag": {
+   "n": "Diagnóstico justificado",
+   "f": "Reconstruir → localizar → evaluar",
+   "x": "Toda etiqueta exige citar el pasaje y mostrar el paso defectuoso. Si falta evidencia, se suspende el diagnóstico y se dice qué faltaría.",
+   "home": "s9diag"
+  },
+  "fcausa": {
+   "n": "Falsa causa",
+   "f": "Asociación o sucesión ⇒ causa",
+   "x": "Tomar una correlación o un «después de» como prueba suficiente de causa (post hoc).",
+   "home": "s9fal"
+  },
+  "hipded": {
+   "n": "Método hipotético-deductivo",
+   "f": "Hipótesis → predicción → contrastación",
+   "x": "Un resultado favorable apoya la hipótesis, pero no la demuestra. Si la predicción falla, se cuestiona la hipótesis junto con los supuestos auxiliares.",
+   "home": "s9cien"
+  },
+  "fdilema": {
+   "n": "Falso dilema",
+   "f": "«O A o B» omitiendo alternativas",
+   "x": "Se presentan solo dos opciones cuando hay otras pertinentes.",
+   "home": "s9fal"
+  },
+  "respaldo": {
+   "n": "Respaldo",
+   "f": "Lo que sostiene a la garantía",
+   "x": "Estudios, leyes, normas, autoridades.",
+   "home": "tou2"
+  },
+  "datos": {
+   "n": "Datos",
+   "f": "Hechos concretos que prueban la tesis",
+   "x": "Conectores: porque, ya que, dado que.",
+   "home": "tou1"
+  },
+  "afcons": {
+   "n": "Afirmación del consecuente",
+   "f": "Si H, entonces P · ocurre P · ∴ H (inválido)",
+   "x": "P puede tener otras causas. Tratar P como prueba concluyente de H es un error deductivo.",
+   "home": "s9cien"
+  },
+  "hpaja": {
+   "n": "Hombre de paja",
+   "f": "Deformar la posición rival y refutar esa versión",
+   "x": "Se ataca una versión exagerada o reducida como si fuera la original.",
+   "home": "s9fal"
+  }
+ },
+ "simEx": [
+  {
+   "id": "s9s1",
+   "lvl": 2,
+   "title": "Caso nuevo: estudio de memoria",
+   "q": "<p class=\"lect\">«Un investigador observa que los estudiantes que duermen la siesta recuerdan más vocabulario. Propone que la siesta consolida la memoria y lo publica como un hecho demostrado».</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Proponer la hipótesis es abductivo; publicarla como demostrada salta de una asociación a una causa",
+      "Es una deducción válida y sólida",
+      "Es un ad hóminem contra los estudiantes",
+      "Es un falso dilema"
+     ]
+    }
+   ],
+   "steps": [
+    "Proponer una explicación posible es un paso abductivo legítimo.",
+    "Darla por demostrada solo con una asociación es falsa causa; faltaría un estudio con comparación controlada."
+   ],
+   "ans": "Hipótesis legítima, conclusión exagerada",
+   "hint": "Proponer ≠ demostrar.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "abduc"
+    ],
+    [
+     "fcausa"
+    ]
+   ]
+  },
+  {
+   "id": "s9s2",
+   "lvl": 2,
+   "title": "Caso nuevo: reseña de un libro",
+   "q": "<p class=\"lect\">«No vale la pena leer el ensayo de Ramírez sobre el cambio climático: es economista, no científico».</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Ad hóminem",
+      "Falsa causa",
+      "Generalización apresurada",
+      "Hombre de paja"
+     ]
+    }
+   ],
+   "steps": [
+    "Se descarta el ensayo por la profesión del autor, sin evaluar sus argumentos."
+   ],
+   "ans": "Ad hóminem",
+   "hint": "¿Se evalúan las razones?",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "adhom"
+    ]
+   ]
+  },
+  {
+   "id": "s9s3",
+   "lvl": 2,
+   "title": "Caso nuevo: el informe de ventas",
+   "q": "<p class=\"lect\">Dato original: «En marzo las ventas subieron 5 %, en abril bajaron 12 %». Resumen del gerente: «En marzo las ventas subieron 5 %; el trimestre va bien».</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "El resumen es incompleto y la conclusión no se sostiene con la información completa",
+      "El resumen es falso porque inventa el 5 %",
+      "Es descuidado porque usa porcentajes",
+      "No hay problema: el dato de marzo es verdadero"
+     ]
+    }
+   ],
+   "steps": [
+    "Omitir la caída de abril cambia la representación de lo ocurrido: información incompleta (y puede decirse inexacta).",
+    "Con la información completa, «el trimestre va bien» no tiene apoyo."
+   ],
+   "ans": "Incompleto; conclusión sin apoyo",
+   "hint": "¿Qué dato desapareció?",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "infcal"
+    ],
+    [
+     "planos"
+    ]
+   ]
+  },
+  {
+   "id": "s9s4",
+   "lvl": 3,
+   "title": "Caso nuevo: dos posiciones",
+   "q": "<p class=\"lect\">A: «La universidad debería ofrecer más cursos en línea». B: «A quiere eliminar las clases presenciales, y sin clases presenciales no hay vida universitaria; o mantenemos todo como está o la universidad desaparece».</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Hombre de paja y falso dilema",
+      "Ad hóminem y falsa causa",
+      "Solo generalización apresurada",
+      "No hay falacia"
+     ]
+    }
+   ],
+   "steps": [
+    "B deforma «más cursos en línea» como «eliminar las clases presenciales»: hombre de paja.",
+    "«O mantenemos todo o la universidad desaparece» omite alternativas: falso dilema."
+   ],
+   "ans": "Hombre de paja + falso dilema",
+   "hint": "Revisa qué dijo A y cuántas opciones da B.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "hpaja"
+    ],
+    [
+     "fdilema"
+    ]
+   ]
+  },
+  {
+   "id": "s9s5",
+   "lvl": 3,
+   "title": "Retractación y diagnóstico",
+   "q": "<p>Un compañero escribe: «El artículo de Mehra fue retractado; por lo tanto, sus autores cometieron la falacia de falsa causa». ¿Qué le corregirías?</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "La retractación documenta que los datos no pudieron verificarse; para atribuir falsa causa hay que mostrar en el texto el salto de asociación a causa",
+      "Nada: toda retractación demuestra una falacia",
+      "Que la falacia correcta es ad hóminem",
+      "Que el artículo de Mehra nunca fue retractado"
+     ]
+    }
+   ],
+   "steps": [
+    "La nota de retractación es una fuente distinta del artículo y documenta un problema informativo.",
+    "El diagnóstico de falacia exige citar el pasaje y reconstruir el paso inferencial."
+   ],
+   "ans": "Retractación ≠ prueba de falacia",
+   "hint": "Separa el plano informativo del inferencial.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "retrac"
+    ],
+    [
+     "diag"
+    ]
+   ]
+  },
+  {
+   "id": "s9s6",
+   "lvl": 2,
+   "title": "Caso nuevo: la muestra pequeña",
+   "q": "<p class=\"lect\">«Tres amigos míos dejaron el azúcar y bajaron de peso. Dejar el azúcar hace bajar de peso a todo el mundo».</p>",
+   "checks": [
+    {
+     "p": "Respuesta",
+     "o": [
+      "Generalización apresurada",
+      "Hombre de paja",
+      "Falso dilema",
+      "Ad hóminem"
+     ]
+    }
+   ],
+   "steps": [
+    "Tres casos conocidos no permiten concluir sobre «todo el mundo».",
+    "Además podría haber otros cambios (ejercicio, dieta), lo que debilita también la causa."
+   ],
+   "ans": "Generalización apresurada",
+   "hint": "¿Cuántos casos y qué alcance?",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "genap"
+    ],
+    [
+     "fcausa"
+    ]
+   ]
+  }
+ ],
+ "sim": {
+  "minutes": 60,
+  "nq": 20,
+  "slots": [
+   {
+    "pts": 1,
+    "name": "Repaso Toulmin",
+    "pool": [
+     "t1a",
+     "t1b",
+     "t1c",
+     "t1d",
+     "t1e",
+     "t1f"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Repaso Toulmin",
+    "pool": [
+     "t2a",
+     "t2b",
+     "t2c",
+     "t2d",
+     "t2e",
+     "t2f"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Repaso Toulmin",
+    "pool": [
+     "t3a",
+     "t3b",
+     "t3c",
+     "t3d",
+     "t3e",
+     "t3f"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Tipos de inferencia",
+    "pool": [
+     "i1",
+     "i2",
+     "i5"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Tipos de inferencia",
+    "pool": [
+     "i3",
+     "i4",
+     "i7"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Tipos de inferencia",
+    "pool": [
+     "i6",
+     "i8"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Ciencia e hipótesis",
+    "pool": [
+     "h1",
+     "h4",
+     "h6"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Ciencia e hipótesis",
+    "pool": [
+     "h2",
+     "h3",
+     "h5",
+     "s9s1"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Calidad de la información",
+    "pool": [
+     "q1",
+     "q2",
+     "q3",
+     "q4"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Calidad de la información",
+    "pool": [
+     "q5",
+     "q6",
+     "q7",
+     "s9s3"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Falacias",
+    "pool": [
+     "f1",
+     "f2",
+     "f3",
+     "s9s2"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Falacias",
+    "pool": [
+     "f4",
+     "f5",
+     "s9s6"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Falacias",
+    "pool": [
+     "f6",
+     "f8",
+     "f9"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Falacias",
+    "pool": [
+     "f7",
+     "s9s4"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Casos de clase",
+    "pool": [
+     "c1",
+     "c3",
+     "c6"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Casos de clase",
+    "pool": [
+     "c2",
+     "c4",
+     "c5"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Casos de clase",
+    "pool": [
+     "c7",
+     "c8",
+     "s9s5"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Diagnóstico",
+    "pool": [
+     "d1",
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Diagnóstico",
+    "pool": [
+     "d4",
+     "d5"
+    ]
+   },
+   {
+    "pts": 1,
+    "name": "Diagnóstico",
+    "pool": [
+     "d6",
+     "s9s5"
+    ]
+   }
+  ]
+ }
+}

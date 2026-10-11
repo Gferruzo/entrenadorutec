@@ -1,11 +1,441 @@
 {
- "form": "<p class=\"note\">Hoja de repaso de la EA5: cónicas, coordenadas polares y vectores.</p>\n<div class=\"fgrid\">\n<div><b>Circunferencia</b><br>\\((x-h)^2+(y-k)^2=r^2\\)</div>\n<div><b>Parábola</b><br>\\((x-h)^2=4p(y-k)\\) · foco a \\(|p|\\)</div>\n<div><b>Polar ↔ rect.</b><br>\\(x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ r^2=x^2+y^2\\)</div>\n<div><b>Circunferencias polares</b><br>\\(r=a\\cos\\theta\\): centro \\((\\frac a2,0)\\) · \\(r=a\\sin\\theta\\): centro \\((0,\\frac a2)\\)</div>\n<div><b>Intersecciones</b><br>Iguala \\(r_1=r_2\\) y revisa el polo aparte</div>\n<div><b>Simetrías</b><br>Eje polar \\(\\theta\\to-\\theta\\) · eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\) · polo \\(\\theta\\to\\theta+\\pi\\)</div>\n<div><b>Componentes</b><br>\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)</div>\n<div><b>Resultante</b><br>\\(|R|=\\sqrt{R_x^2+R_y^2}\\) · ángulo: corrige el cuadrante</div>\n</div>",
+ "form": "<p class=\"note\">Hoja de repaso de la EA5: cónicas, coordenadas polares y vectores.</p>\n<div class=\"fgrid\">\n<div><b>Circunferencia</b><br>\\((x-h)^2+(y-k)^2=r^2\\)</div>\n<div><b>Parábola</b><br>\\((x-h)^2=4p(y-k)\\) · foco a \\(|p|\\)</div>\n<div><b>Polar ↔ rect.</b><br>\\(x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ r^2=x^2+y^2\\)</div>\n<div><b>Circunferencias polares</b><br>\\(r=a\\cos\\theta\\): centro \\((\\frac a2,0)\\) · \\(r=a\\sin\\theta\\): centro \\((0,\\frac a2)\\)</div>\n<div><b>Intersecciones</b><br>Iguala \\(r_1=r_2\\) y revisa el polo aparte</div>\n<div><b>Simetrías</b><br>Eje polar \\(\\theta\\to-\\theta\\) · eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\) · polo \\(\\theta\\to\\theta+\\pi\\)</div>\n<div><b>Componentes</b><br>\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)</div>\n<div><b>Resultante</b><br>\\(|R|=\\sqrt{R_x^2+R_y^2}\\) · ángulo: corrige el cuadrante</div>\n<div><b>Completar cuadrados</b><br>\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\)</div>\n<div><b>Elipse</b><br>\\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\) · \\(c^2=a^2-b^2\\)</div>\n<div><b>Hipérbola</b><br>\\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\) · \\(c^2=a^2+b^2\\)</div>\n<div><b>Intersecciones</b><br>Sustituir · \\(\\Delta\\gt0\\): 2 puntos · \\(\\Delta=0\\): tangente · \\(\\Delta\\lt0\\): ninguno</div>\n<div><b>Parábola y abertura</b><br>\\(y=ax^2\\iff x^2=\\frac1ay\\) · \\(p=\\frac1{4a}\\) · foco en \\((0,p)\\)</div>\n</div>",
  "formSim": false,
  "id": "fc-ea5",
  "code": "CC6101",
  "name": "Fundamentos del Cálculo",
  "exam": "EA5 (semanas 10 y 11)",
  "topics": [
+  {
+   "id": "cuadsq",
+   "name": "Completar cuadrados (sem. 10)",
+   "teo": "<p>Para pasar \\(x^2+bx+c\\) a la forma \\((x-h)^2+k\\) se suma y resta \\(\\left(\\frac b2\\right)^2\\): \\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\).</p>\n<p>Si el coeficiente principal es \\(a\\ne1\\), primero se factoriza \\(a\\) <em>solo</em> de los términos con variable: \\(ax^2+bx+c=a\\left(x^2+\\frac bax\\right)+c\\); al sacar lo restado del paréntesis, se multiplica por \\(a\\).</p>\n<p>Con dos variables se completa por separado en \\(x\\) y en \\(y\\). Es la herramienta para leer centro, radio, vértice o semiejes de una cónica.</p>",
+   "form": [
+    "\\(x^2+bx=\\left(x+\\tfrac b2\\right)^2-\\tfrac{b^2}4\\)",
+    "\\(ax^2+bx=\\) \\(a\\left[\\left(x+\\tfrac b{2a}\\right)^2-\\tfrac{b^2}{4a^2}\\right]\\)",
+    "\\((x-h)^2=k\\Rightarrow x=h\\pm\\sqrt k\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Completar cuadrados convierte una expresión \"desarmada\" en una que se lee de inmediato: en \\((x-3)^2+(y+2)^2=25\\) ves el centro \\((3,-2)\\) y el radio 5 sin hacer cuentas.</p>\n<h3>Conceptos clave</h3><ul><li><strong>La mitad al cuadrado:</strong> en \\(x^2-6x\\), la mitad de \\(-6\\) es \\(-3\\) y su cuadrado 9: \\(x^2-6x=(x-3)^2-9\\).</li><li><strong>Coeficiente adelante:</strong> \\(2x^2-12x=2(x^2-6x)=\\) \\(2(x-3)^2-18\\) (el 9 sale multiplicado por 2).</li><li><strong>Equilibrio:</strong> lo que sumas a un lado de la ecuación, lo sumas también al otro.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa por variable y pasa la constante al otro lado.</li><li><strong>2.</strong> Factoriza el coeficiente de \\(x^2\\) (y de \\(y^2\\)) si no es 1.</li><li><strong>3.</strong> Suma \\(\\left(\\frac b2\\right)^2\\) dentro y lo equivalente afuera.</li><li><strong>4.</strong> Escribe los binomios al cuadrado y simplifica.</li></ul>\n<div class=\"ej\"><b>Ejemplo (PreGuía 10):</b> \\(x^2+6x-7=0\\Rightarrow\\) \\((x+3)^2-9-7=0\\Rightarrow\\) \\((x+3)^2=16\\Rightarrow x=-3\\pm4\\): \\(x=1\\) o \\(x=-7\\).</div>\n<div class=\"err\"><b>Error común:</b> en \\(2(x^2-6x+9)\\) olvidar que en realidad sumaste \\(2\\cdot9=18\\), no 9.</div>",
+   "ex": [
+    {
+     "id": "cq1",
+     "lvl": 1,
+     "title": "Mitad del coeficiente",
+     "q": "<p>Resuelve \\(x^2+6x-7=0\\) completando cuadrados.</p>",
+     "checks": [
+      {
+       "p": "Forma completada",
+       "o": [
+        "\\((x+3)^2=16\\)",
+        "\\((x+3)^2=7\\)",
+        "\\((x-3)^2=16\\)",
+        "\\((x+6)^2=43\\)",
+        "\\((x+3)^2=-2\\)"
+       ]
+      },
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=1\\) y \\(x=-7\\)",
+        "\\(x=-1\\) y \\(x=7\\)",
+        "\\(x=1\\) y \\(x=7\\)",
+        "\\(x=-3\\pm\\sqrt7\\)",
+        "no tiene solución real"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(b=6\\Rightarrow\\frac b2=3\\), \\(\\left(\\frac b2\\right)^2=9\\).",
+      "\\(x^2+6x+9-9-7=0\\Rightarrow\\) \\((x+3)^2=16\\).",
+      "\\(x+3=\\pm4\\Rightarrow x=1\\) o \\(x=-7\\)."
+     ],
+     "ans": "(x+3)² = 16 → x = 1 o x = −7",
+     "hint": "La mitad de 6 es 3.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cq2",
+     "lvl": 1,
+     "title": "Con coeficiente negativo",
+     "q": "<p>Escribe \\(x^2-8x+7=0\\) en la forma \\((x-h)^2=k\\) y resuélvela.</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\((x-4)^2=9\\)",
+        "\\((x-4)^2=7\\)",
+        "\\((x+4)^2=9\\)",
+        "\\((x-8)^2=57\\)",
+        "\\((x-4)^2=23\\)"
+       ]
+      },
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=1\\) y \\(x=7\\)",
+        "\\(x=-1\\) y \\(x=-7\\)",
+        "\\(x=4\\pm\\sqrt7\\)",
+        "\\(x=1\\) y \\(x=-7\\)",
+        "\\(x=13\\) y \\(x=-5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-8x=(x-4)^2-16\\).",
+      "\\((x-4)^2-16+7=0\\Rightarrow\\) \\((x-4)^2=9\\).",
+      "\\(x-4=\\pm3\\Rightarrow x=7\\) o \\(x=1\\)."
+     ],
+     "ans": "(x−4)² = 9 → x = 1 o 7",
+     "hint": "Mitad de −8 es −4.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "cq3",
+     "lvl": 2,
+     "title": "Factorizar primero",
+     "q": "<p>Lleva \\(2x^2-12x+10=0\\) a la forma \\(2(x-h)^2+k=0\\) y halla \\(x\\).</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\(2(x-3)^2-8=0\\)",
+        "\\(2(x-3)^2+1=0\\)",
+        "\\(2(x-6)^2-62=0\\)",
+        "\\(2(x-3)^2-9=0\\)",
+        "\\(2(x+3)^2-8=0\\)"
+       ]
+      },
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=1\\) y \\(x=5\\)",
+        "\\(x=-1\\) y \\(x=-5\\)",
+        "\\(x=3\\pm\\sqrt8\\)",
+        "\\(x=2\\) y \\(x=4\\)",
+        "\\(x=1\\) y \\(x=-5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2(x^2-6x)+10=0\\).",
+      "\\(x^2-6x=(x-3)^2-9\\Rightarrow\\) \\(2[(x-3)^2-9]+10=\\) \\(2(x-3)^2-18+10\\).",
+      "\\(2(x-3)^2-8=0\\Rightarrow\\) \\((x-3)^2=4\\Rightarrow x=3\\pm2\\)."
+     ],
+     "ans": "2(x−3)² − 8 = 0 → x = 1 o 5",
+     "hint": "El −9 sale del corchete multiplicado por 2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cq4",
+     "lvl": 2,
+     "title": "Coeficiente 3",
+     "q": "<p>Completa cuadrados en \\(3x^2+12x-15=0\\) y halla las raíces.</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\(3(x+2)^2-27=0\\)",
+        "\\(3(x+2)^2-19=0\\)",
+        "\\(3(x+2)^2-15=0\\)",
+        "\\(3(x+6)^2-123=0\\)",
+        "\\(3(x-2)^2-27=0\\)"
+       ]
+      },
+      {
+       "p": "Raíces",
+       "o": [
+        "\\(x=1\\) y \\(x=-5\\)",
+        "\\(x=-1\\) y \\(x=5\\)",
+        "\\(x=-2\\pm3\\sqrt3\\)",
+        "\\(x=1\\) y \\(x=5\\)",
+        "\\(x=-2\\pm\\sqrt{19/3}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(3(x^2+4x)-15=0\\); \\(x^2+4x=(x+2)^2-4\\).",
+      "\\(3(x+2)^2-12-15=\\) \\(3(x+2)^2-27=0\\).",
+      "\\((x+2)^2=9\\Rightarrow x=-2\\pm3\\): \\(x=1\\) o \\(x=-5\\)."
+     ],
+     "ans": "3(x+2)² − 27 = 0 → x = 1 o −5",
+     "hint": "3 · 4 = 12 sale del paréntesis.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cq5",
+     "lvl": 2,
+     "title": "Con fracciones",
+     "q": "<p>Completa cuadrados en \\(2x^2+5x-3=0\\).</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\(2\\left(x+\\frac54\\right)^2=\\frac{49}8\\)",
+        "\\(2\\left(x+\\frac52\\right)^2=\\frac{31}2\\)",
+        "\\(2\\left(x+\\frac54\\right)^2=\\frac{49}{16}\\)",
+        "\\(\\left(x+\\frac54\\right)^2=\\frac{49}8\\)",
+        "\\(2\\left(x-\\frac54\\right)^2=\\frac{49}8\\)"
+       ]
+      },
+      {
+       "p": "Soluciones",
+       "o": [
+        "\\(x=\\frac12\\) y \\(x=-3\\)",
+        "\\(x=-\\frac12\\) y \\(x=3\\)",
+        "\\(x=\\frac32\\) y \\(x=-1\\)",
+        "\\(x=-\\frac54\\pm\\frac74\\sqrt2\\)",
+        "\\(x=3\\) y \\(x=\\frac12\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2\\left(x^2+\\frac52x\\right)=3\\); mitad de \\(\\frac52\\) es \\(\\frac54\\), su cuadrado \\(\\frac{25}{16}\\).",
+      "\\(2\\left(x+\\frac54\\right)^2=3+2\\cdot\\frac{25}{16}=\\) \\(\\frac{49}8\\).",
+      "\\(\\left(x+\\frac54\\right)^2=\\frac{49}{16}\\Rightarrow\\) \\(x=-\\frac54\\pm\\frac74\\): \\(x=\\frac12\\) o \\(x=-3\\)."
+     ],
+     "ans": "2(x+5/4)² = 49/8 → x = ½ o −3",
+     "hint": "Mitad de 5/2 es 5/4.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "cq6",
+     "lvl": 2,
+     "title": "Dos variables: circunferencia",
+     "q": "<p>Escribe \\(x^2+y^2-6x+4y-12=0\\) en la forma \\((x-h)^2+(y-k)^2=R^2\\).</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\((x-3)^2+(y+2)^2=25\\)",
+        "\\((x-3)^2+(y+2)^2=12\\)",
+        "\\((x+3)^2+(y-2)^2=25\\)",
+        "\\((x-3)^2+(y+2)^2=-1\\)",
+        "\\((x-6)^2+(y+4)^2=64\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x^2-6x)+(y^2+4y)=12\\).",
+      "\\((x-3)^2-9+(y+2)^2-4=12\\).",
+      "\\((x-3)^2+(y+2)^2=25\\): centro \\((3,-2)\\), radio 5."
+     ],
+     "ans": "(x−3)² + (y+2)² = 25",
+     "hint": "Completa por separado en x y en y.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "cuad"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "cq7",
+     "lvl": 3,
+     "title": "Coeficientes distintos",
+     "q": "<p>Completa cuadrados en \\(4x^2+y^2-16x-2y+13=0\\). ¿Qué cónica es?</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\(4(x-2)^2+(y-1)^2=4\\)",
+        "\\(4(x-2)^2+(y-1)^2=13\\)",
+        "\\(4(x-4)^2+(y-1)^2=52\\)",
+        "\\((x-2)^2+(y-1)^2=4\\)",
+        "\\(4(x-2)^2+(y-1)^2=-4\\)"
+       ]
+      },
+      {
+       "p": "Cónica",
+       "o": [
+        "Elipse \\(\\frac{(x-2)^2}1+\\frac{(y-1)^2}4=1\\)",
+        "Circunferencia de radio 2",
+        "Hipérbola",
+        "Parábola",
+        "Conjunto vacío"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4(x^2-4x)+(y^2-2y)=-13\\).",
+      "\\(4[(x-2)^2-4]+[(y-1)^2\\) \\(-1]=\\) \\(-13\\Rightarrow\\) \\(4(x-2)^2+(y-1)^2=\\) \\(-13+16+1=4\\).",
+      "Dividiendo entre 4: \\(\\frac{(x-2)^2}1+\\frac{(y-1)^2}4=1\\): elipse con centro \\((2,1)\\), eje mayor vertical."
+     ],
+     "ans": "4(x−2)² + (y−1)² = 4: elipse",
+     "hint": "16 + 1 − 13 = 4.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "cq8",
+     "lvl": 3,
+     "title": "Signos opuestos",
+     "q": "<p>Completa cuadrados en \\(9x^2-4y^2-18x+16y-43=0\\).</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "\\(9(x-1)^2-4(y-2)^2=36\\)",
+        "\\(9(x-1)^2-4(y-2)^2=43\\)",
+        "\\(9(x-1)^2-4(y-2)^2=68\\)",
+        "\\(9(x-1)^2+4(y-2)^2=36\\)",
+        "\\(9(x+1)^2-4(y+2)^2=36\\)"
+       ]
+      },
+      {
+       "p": "Cónica",
+       "o": [
+        "Hipérbola \\(\\frac{(x-1)^2}4-\\frac{(y-2)^2}9=1\\)",
+        "Elipse",
+        "Circunferencia",
+        "Parábola",
+        "Dos rectas"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(9(x^2-2x)-4(y^2-4y)=43\\).",
+      "\\(9[(x-1)^2-1]-4[(y-2)^2\\) \\(-4]=\\) \\(43\\Rightarrow\\) \\(9(x-1)^2-4(y-2)^2=\\) \\(43+9-16=36\\).",
+      "Dividiendo entre 36: \\(\\frac{(x-1)^2}4-\\frac{(y-2)^2}9=1\\): hipérbola horizontal de centro \\((1,2)\\)."
+     ],
+     "ans": "9(x−1)² − 4(y−2)² = 36: hipérbola",
+     "hint": "Cuidado: −4 · (−4) = +16 al sacarlo, que pasa restando.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      [
+       "hiper"
+      ]
+     ]
+    },
+    {
+     "id": "cq9",
+     "lvl": 2,
+     "title": "¿Circunferencia, punto o nada?",
+     "q": "<p>Completa cuadrados en (a) \\(x^2+y^2+4x-2y+5=0\\) y (b) \\(x^2+y^2-6x+8y+50=0\\). ¿Qué representa cada una?</p>",
+     "checks": [
+      {
+       "p": "(a)",
+       "o": [
+        "El punto \\((-2,1)\\)",
+        "Circunferencia de centro \\((-2,1)\\) y radio \\(\\sqrt5\\)",
+        "Conjunto vacío",
+        "Circunferencia de centro \\((2,-1)\\) y radio 5",
+        "El punto \\((2,-1)\\)"
+       ]
+      },
+      {
+       "p": "(b)",
+       "o": [
+        "Conjunto vacío",
+        "Circunferencia de centro \\((3,-4)\\) y radio 5",
+        "El punto \\((3,-4)\\)",
+        "Circunferencia de centro \\((-3,4)\\) y radio 5",
+        "Circunferencia de radio \\(\\sqrt{50}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "(a) \\((x+2)^2-4+(y-1)^2-1+5=\\) \\(0\\Rightarrow\\) \\((x+2)^2+(y-1)^2=0\\): solo el punto \\((-2,1)\\).",
+      "(b) \\((x-3)^2-9+(y+4)^2-16\\) \\(+50=\\) \\(0\\Rightarrow\\) \\((x-3)^2+(y+4)^2=-25\\).",
+      "Una suma de cuadrados no puede ser negativa: (b) es el conjunto vacío."
+     ],
+     "ans": "(a) el punto (−2, 1); (b) conjunto vacío",
+     "hint": "Mira el signo del lado derecho al final.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "cuad"
+      ],
+      [
+       "degen"
+      ]
+     ]
+    }
+   ]
+  },
   {
    "id": "conic",
    "name": "Cónicas: circunferencia y parábola",
@@ -351,6 +781,1354 @@
      "open": false,
      "solfig": null,
      "tags": [
+      [],
+      [
+       "circ"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "conelh",
+   "name": "Elipse, hipérbola y cómo reconocer cada cónica (sem. 10)",
+   "teo": "<p>Las cuatro cónicas salen de cortar un cono doble con un plano y todas son casos de \\(Ax^2+Cy^2+Dx+Ey+F=0\\).</p>\n<p><strong>Elipse:</strong> \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\) con \\(a\\gt b\\) (eje mayor horizontal); focos a distancia \\(c\\) del centro, \\(c^2=a^2-b^2\\).</p>\n<p><strong>Hipérbola:</strong> \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\) (abre horizontal) o \\(\\frac{(y-k)^2}{a^2}-\\frac{(x-h)^2}{b^2}=1\\) (abre vertical); \\(c^2=a^2+b^2\\). Aquí no importa si \\(a\\gt b\\): \\(a\\) va con el término positivo.</p>",
+   "form": [
+    "Elipse: \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2-b^2\\)",
+    "Hipérbola: \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2+b^2\\)",
+    "Asíntotas: \\(y-k=\\pm\\frac ba(x-h)\\) (horizontal) · \\(\\pm\\frac ab\\) (vertical)",
+    "Parábola: \\(a=\\frac1{4p}\\) en \\(y=ax^2\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de calcular, <strong>reconoce</strong> la cónica mirando los términos al cuadrado: eso te dice qué forma canónica buscar al completar cuadrados.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Una sola variable al cuadrado:</strong> parábola (\\(x^2\\) → eje vertical; \\(y^2\\) → eje horizontal).</li><li><strong>\\(x^2\\) y \\(y^2\\) con igual coeficiente:</strong> circunferencia.</li><li><strong>Mismo signo, coeficientes distintos:</strong> elipse; el eje mayor va con el denominador mayor.</li><li><strong>Signos opuestos:</strong> hipérbola; abre hacia la variable con signo positivo.</li><li><strong>Abertura de la parábola:</strong> en \\(y=ax^2\\), \\(p=\\frac1{4a}\\); a mayor \\(|a|\\), más cerrada.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Clasifica por los términos cuadráticos.</li><li><strong>2.</strong> Completa cuadrados y deja 1 al lado derecho (elipse, hipérbola).</li><li><strong>3.</strong> Lee centro, \\(a\\), \\(b\\); calcula \\(c\\) con la relación correcta.</li><li><strong>4.</strong> Ubica focos sobre el eje mayor (elipse) o el eje del término positivo (hipérbola).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\frac{(x+1)^2}{16}+\\frac{(y-2)^2}9=1\\): centro \\((-1,2)\\), \\(a=4\\), \\(b=3\\), \\(c=\\sqrt7\\), focos \\((-1\\pm\\sqrt7,\\,2)\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\(c^2=a^2-b^2\\) en una hipérbola (ahí es \\(a^2+b^2\\)) o leer el centro con el signo cambiado: \\((x+1)\\) da \\(h=-1\\).</div>",
+   "ex": [
+    {
+     "id": "ce1",
+     "lvl": 1,
+     "title": "¿Qué cónica es? (I)",
+     "q": "<p>Clasifica \\(9x^2+16y^2=144\\).</p>",
+     "checks": [
+      {
+       "p": "Cónica",
+       "o": [
+        "Elipse",
+        "Circunferencia",
+        "Hipérbola",
+        "Parábola",
+        "Punto"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2\\) y \\(y^2\\) con el mismo signo y coeficientes distintos (9 y 16): elipse.",
+      "Dividiendo entre 144: \\(\\frac{x^2}{16}+\\frac{y^2}9=1\\), con \\(a=4\\), \\(b=3\\)."
+     ],
+     "ans": "Elipse",
+     "hint": "Compara los coeficientes de x² y y².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clasif"
+      ],
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "ce2",
+     "lvl": 1,
+     "title": "¿Qué cónica es? (II)",
+     "q": "<p>Clasifica \\(x=2y^2+12y+13\\).</p>",
+     "checks": [
+      {
+       "p": "Cónica",
+       "o": [
+        "Parábola de eje horizontal",
+        "Parábola de eje vertical",
+        "Hipérbola",
+        "Elipse",
+        "Circunferencia"
+       ]
+      }
+     ],
+     "steps": [
+      "Solo \\(y\\) está al cuadrado y \\(x\\) es lineal: parábola.",
+      "Como la que está al cuadrado es \\(y\\), el eje es horizontal (abre a la derecha porque \\(2\\gt0\\))."
+     ],
+     "ans": "Parábola horizontal",
+     "hint": "¿Cuántas variables están al cuadrado?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clasif"
+      ],
+      [
+       "parab"
+      ]
+     ]
+    },
+    {
+     "id": "ce3",
+     "lvl": 1,
+     "title": "¿Qué cónica es? (III)",
+     "q": "<p>¿Qué representa \\(x^2+y^2=2x\\)?</p>",
+     "checks": [
+      {
+       "p": "Curva",
+       "o": [
+        "Circunferencia de centro \\((1,0)\\) y radio 1",
+        "Circunferencia de centro \\((0,0)\\) y radio \\(\\sqrt2\\)",
+        "Parábola",
+        "Circunferencia de centro \\((2,0)\\) y radio 2",
+        "Elipse"
+       ]
+      }
+     ],
+     "steps": [
+      "Igual coeficiente en \\(x^2\\) y \\(y^2\\): circunferencia.",
+      "\\(x^2-2x+y^2=0\\Rightarrow\\) \\((x-1)^2+y^2=1\\): centro \\((1,0)\\), radio 1 (pasa por el origen)."
+     ],
+     "ans": "Circunferencia centro (1, 0), radio 1",
+     "hint": "Pasa 2x a la izquierda y completa cuadrados.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clasif"
+      ],
+      [
+       "cuad"
+      ]
+     ]
+    },
+    {
+     "id": "ce4",
+     "lvl": 2,
+     "title": "¿Qué cónica es? (IV)",
+     "q": "<p>Clasifica \\(x^2-2y^2=8\\) y \\(3x^2=4y^2+12\\).</p>",
+     "checks": [
+      {
+       "p": "Ambas son",
+       "o": [
+        "Hipérbolas horizontales",
+        "Elipses",
+        "Una elipse y una hipérbola",
+        "Hipérbolas verticales",
+        "Parábolas"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-2y^2=8\\Rightarrow\\frac{x^2}8-\\frac{y^2}4=1\\).",
+      "\\(3x^2-4y^2=12\\Rightarrow\\frac{x^2}4-\\frac{y^2}3=1\\).",
+      "Signos opuestos con el término de \\(x\\) positivo: ambas son hipérbolas que abren horizontalmente."
+     ],
+     "ans": "Ambas hipérbolas horizontales",
+     "hint": "Pasa todo a un lado y mira los signos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hiper"
+      ],
+      [
+       "hiper"
+      ],
+      [
+       "clasif"
+      ]
+     ]
+    },
+    {
+     "id": "ce5",
+     "lvl": 2,
+     "title": "Elementos de una elipse",
+     "q": "<p>Para \\(\\frac{(x+1)^2}{16}+\\frac{(y-2)^2}9=1\\), halla el centro y los focos.</p>",
+     "checks": [
+      {
+       "p": "Centro",
+       "o": [
+        "\\((-1,2)\\)",
+        "\\((1,-2)\\)",
+        "\\((-1,-2)\\)",
+        "\\((16,9)\\)",
+        "\\((1,2)\\)"
+       ]
+      },
+      {
+       "p": "Focos",
+       "o": [
+        "\\((-1\\pm\\sqrt7,\\ 2)\\)",
+        "\\((-1\\pm5,\\ 2)\\)",
+        "\\((-1,\\ 2\\pm\\sqrt7)\\)",
+        "\\((-1\\pm4,\\ 2)\\)",
+        "\\((1\\pm\\sqrt7,\\ -2)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro: \\(x+1\\Rightarrow h=-1\\), \\(y-2\\Rightarrow k=2\\).",
+      "\\(a^2=16\\) va con \\(x\\): eje mayor horizontal, \\(a=4\\), \\(b=3\\).",
+      "\\(c^2=16-9=7\\Rightarrow c=\\sqrt7\\approx2.65\\); focos \\((-1\\pm\\sqrt7,\\,2)\\)."
+     ],
+     "ans": "Centro (−1, 2); focos (−1 ± √7, 2)",
+     "hint": "En la elipse c² = a² − b².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "elip"
+      ],
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "ce6",
+     "lvl": 2,
+     "title": "Elementos de una hipérbola",
+     "q": "<p>Para \\(\\frac{(y-1)^2}4-\\frac{(x+2)^2}9=1\\), halla los focos y las asíntotas.</p>",
+     "checks": [
+      {
+       "p": "Focos",
+       "o": [
+        "\\((-2,\\ 1\\pm\\sqrt{13})\\)",
+        "\\((-2\\pm\\sqrt{13},\\ 1)\\)",
+        "\\((-2,\\ 1\\pm\\sqrt5)\\)",
+        "\\((2,\\ -1\\pm\\sqrt{13})\\)",
+        "\\((-2,\\ 1\\pm3)\\)"
+       ]
+      },
+      {
+       "p": "Asíntotas",
+       "o": [
+        "\\(y-1=\\pm\\frac23(x+2)\\)",
+        "\\(y-1=\\pm\\frac32(x+2)\\)",
+        "\\(y+1=\\pm\\frac23(x-2)\\)",
+        "\\(y-1=\\pm\\frac49(x+2)\\)",
+        "\\(y=\\pm\\frac23x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((-2,1)\\); el término positivo es el de \\(y\\): abre verticalmente.",
+      "\\(a^2=4\\), \\(b^2=9\\), \\(c^2=a^2+b^2=13\\): focos \\((-2,\\,1\\pm\\sqrt{13})\\).",
+      "Eje vertical: pendientes \\(\\pm\\frac ab=\\pm\\frac23\\): \\(y-1=\\pm\\frac23(x+2)\\)."
+     ],
+     "ans": "Focos (−2, 1 ± √13); asíntotas y − 1 = ±(2/3)(x + 2)",
+     "hint": "En la hipérbola c² = a² + b².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hiper"
+      ],
+      [
+       "hiper"
+      ],
+      [
+       "hiper"
+      ]
+     ]
+    },
+    {
+     "id": "ce7",
+     "lvl": 2,
+     "title": "Abertura de una parábola",
+     "q": "<p>Escribe \\(y=2x^2\\) como \\(x^2=4py\\) y compárala con \\(y=\\frac12x^2\\).</p>",
+     "checks": [
+      {
+       "p": "p de y = 2x²",
+       "o": [
+        "\\(p=\\frac18\\), foco \\(\\left(0,\\frac18\\right)\\), directriz \\(y=-\\frac18\\)",
+        "\\(p=2\\), foco \\((0,2)\\)",
+        "\\(p=\\frac12\\), foco \\(\\left(0,\\frac12\\right)\\)",
+        "\\(p=8\\), foco \\((0,8)\\)",
+        "\\(p=\\frac14\\), foco \\(\\left(0,\\frac14\\right)\\)"
+       ]
+      },
+      {
+       "p": "¿Cuál es más cerrada?",
+       "o": [
+        "\\(y=2x^2\\) (menor \\(p\\))",
+        "\\(y=\\frac12x^2\\) (mayor \\(p\\))",
+        "Son igual de abiertas",
+        "Depende de \\(x\\)",
+        "Ninguna: ambas son rectas"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=2x^2\\Rightarrow x^2=\\frac12y\\Rightarrow4p=\\frac12\\Rightarrow\\) \\(p=\\frac18\\).",
+      "\\(y=\\frac12x^2\\Rightarrow x^2=2y\\Rightarrow p=\\frac12\\).",
+      "\\(|a|=\\frac1{4|p|}\\): mayor \\(|a|\\), menor \\(p\\) y parábola más cerrada. \\(y=2x^2\\) es más cerrada."
+     ],
+     "ans": "p = 1/8; y = 2x² es más cerrada",
+     "hint": "4p es el coeficiente de y.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ],
+      [
+       "focal"
+      ]
+     ]
+    },
+    {
+     "id": "ce8",
+     "lvl": 3,
+     "title": "LORAN: el barco en una hipérbola",
+     "q": "<p>Dos estaciones están a 400 km (focos en \\((\\pm200,0)\\)) y la diferencia de distancias del barco a ellas es 240 km. El barco está en la rama derecha con \\(y=100\\) km. ¿Cuál es su coordenada \\(x\\)?</p>",
+     "checks": [
+      {
+       "p": "a, b, c",
+       "o": [
+        "\\(a=120,\\ b=160,\\ c=200\\)",
+        "\\(a=240,\\ b=160,\\ c=400\\)",
+        "\\(a=120,\\ b=80,\\ c=200\\)",
+        "\\(a=200,\\ b=120,\\ c=240\\)",
+        "\\(a=120,\\ b=233,\\ c=200\\)"
+       ]
+      },
+      {
+       "p": "x del barco",
+       "o": [
+        "\\(\\approx141.5\\) km",
+        "\\(\\approx120\\) km",
+        "\\(\\approx156.2\\) km",
+        "\\(\\approx200\\) km",
+        "\\(\\approx100\\) km"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2a=240\\Rightarrow a=120\\); \\(2c=400\\Rightarrow c=200\\); \\(b^2=c^2-a^2=25600\\Rightarrow b=160\\).",
+      "Ecuación: \\(\\frac{x^2}{14400}-\\frac{y^2}{25600}=1\\).",
+      "Con \\(y=100\\): \\(x^2=\\) \\(14400\\big(1+\\frac{10000}{25600}\\big)=\\) \\(20025\\Rightarrow\\) \\(x\\approx141.5\\) km (rama derecha: \\(x\\gt0\\))."
+     ],
+     "ans": "a = 120, b = 160, c = 200; x ≈ 141.5 km",
+     "hint": "La diferencia constante es 2a.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hiper"
+      ],
+      [
+       "hiper"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ce9",
+     "lvl": 2,
+     "title": "Parábola vertical: de general a ordinaria",
+     "q": "<p>Lleva \\(y=2x^2-8x+5\\) a la forma \\((x-h)^2=4p(y-k)\\). Halla el vértice y \\(p\\).</p>",
+     "checks": [
+      {
+       "p": "Forma ordinaria",
+       "o": [
+        "\\((x-2)^2=\\frac12(y+3)\\)",
+        "\\((x-2)^2=2(y+3)\\)",
+        "\\((x-2)^2=\\frac12(y-3)\\)",
+        "\\((x+2)^2=\\frac12(y+3)\\)",
+        "\\((x-4)^2=\\frac12(y+11)\\)"
+       ]
+      },
+      {
+       "p": "Vértice y p",
+       "o": [
+        "\\((2,-3)\\), \\(p=\\frac18\\)",
+        "\\((2,-3)\\), \\(p=\\frac12\\)",
+        "\\((2,3)\\), \\(p=\\frac18\\)",
+        "\\((-2,-3)\\), \\(p=2\\)",
+        "\\((2,-3)\\), \\(p=2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=2(x^2-4x)+5=\\) \\(2[(x-2)^2-4]+5=\\) \\(2(x-2)^2-3\\).",
+      "\\(y+3=2(x-2)^2\\Rightarrow\\) \\((x-2)^2=\\frac12(y+3)\\).",
+      "Vértice \\((2,-3)\\); \\(4p=\\frac12\\Rightarrow p=\\frac18\\gt0\\): abre hacia arriba (también \\(p=\\frac1{4a}=\\frac18\\))."
+     ],
+     "ans": "(x−2)² = ½(y+3); vértice (2, −3), p = 1/8",
+     "hint": "Factoriza el 2 antes de completar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ]
+     ]
+    },
+    {
+     "id": "ce10",
+     "lvl": 2,
+     "title": "Parábola horizontal: foco y directriz",
+     "q": "<p>Para \\(x=y^2+6y+8\\), halla el vértice, el foco y la directriz.</p>",
+     "checks": [
+      {
+       "p": "Vértice",
+       "o": [
+        "\\((-1,-3)\\)",
+        "\\((8,-3)\\)",
+        "\\((-3,-1)\\)",
+        "\\((1,3)\\)",
+        "\\((-1,3)\\)"
+       ]
+      },
+      {
+       "p": "Foco y directriz",
+       "o": [
+        "Foco \\((-0.75,-3)\\), directriz \\(x=-1.25\\)",
+        "Foco \\((0,-3)\\), directriz \\(x=-2\\)",
+        "Foco \\((-1,-2.75)\\), directriz \\(y=-3.25\\)",
+        "Foco \\((-1.25,-3)\\), directriz \\(x=-0.75\\)",
+        "Foco \\((-0.75,3)\\), directriz \\(x=-1.25\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=(y+3)^2-9+8=\\) \\((y+3)^2-1\\Rightarrow\\) \\((y+3)^2=x+1\\).",
+      "Vértice \\((-1,-3)\\), eje horizontal; \\(4p=1\\Rightarrow p=\\frac14\\): abre a la derecha.",
+      "Foco \\((-1+0.25,\\,-3)=\\) \\((-0.75,-3)\\); directriz \\(x=-1-0.25=-1.25\\)."
+     ],
+     "ans": "Vértice (−1, −3); foco (−0.75, −3); directriz x = −1.25",
+     "hint": "La variable al cuadrado es y: eje horizontal.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "conint",
+   "name": "Intersecciones con cónicas (sem. 10)",
+   "teo": "<p>Para cortar una recta con una cónica (o dos cónicas) se <strong>sustituye</strong> una ecuación en la otra y se resuelve la ecuación que queda.</p>\n<p>Si queda una cuadrática, su <strong>discriminante</strong> da la posición: \\(\\Delta\\gt0\\) dos puntos (secante), \\(\\Delta=0\\) un punto (tangente), \\(\\Delta\\lt0\\) ninguno (exterior).</p>\n<p>Con dos cónicas puede salir una ecuación de cuarto grado bicuadrada: se usa \\(t=x^2\\) y solo sirven los \\(t\\ge0\\).</p>",
+   "form": [
+    "Sustituir y resolver: \\(ax^2+bx+c=0\\)",
+    "\\(\\Delta=b^2-4ac\\)",
+    "Tangente \\(\\iff\\Delta=0\\)",
+    "Bicuadrada: \\(t=x^2\\), descartar \\(t\\lt0\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un punto de intersección cumple <strong>las dos ecuaciones a la vez</strong>. Por eso se resuelve el sistema, y el número de soluciones reales es el número de puntos de corte.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Despeja lo más simple:</strong> la variable de la recta, o \\(y\\) de la parábola \\(y=f(x)\\).</li><li><strong>Completa los puntos:</strong> cada \\(x\\) hallado se reemplaza en la ecuación más simple para obtener su \\(y\\).</li><li><strong>Tangencia:</strong> pedir \\(\\Delta=0\\) permite hallar un parámetro (por ejemplo, la pendiente \\(m\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Sustituye y ordena como \\(ax^2+bx+c=0\\).</li><li><strong>2.</strong> Calcula \\(\\Delta\\) para saber cuántos puntos hay.</li><li><strong>3.</strong> Resuelve y completa las coordenadas.</li><li><strong>4.</strong> Verifica en ambas ecuaciones.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(x^2+y^2=25\\) y \\(y=x+1\\): \\(2x^2+2x-24=0\\Rightarrow x=3\\) o \\(x=-4\\); puntos \\((3,4)\\) y \\((-4,-3)\\).</div>\n<div class=\"err\"><b>Error común:</b> quedarse con los valores de \\(x\\) y no dar los puntos completos, o aceptar \\(x^2=t\\lt0\\) como solución.</div>",
+   "ex": [
+    {
+     "id": "ci1",
+     "lvl": 1,
+     "title": "Recta y circunferencia",
+     "q": "<p>Halla los puntos donde \\(y=x+1\\) corta a \\(x^2+y^2=25\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((3,4)\\) y \\((-4,-3)\\)",
+        "\\((4,3)\\) y \\((-3,-4)\\)",
+        "\\((3,4)\\) y \\((4,3)\\)",
+        "Solo \\((3,4)\\)",
+        "No se cortan"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(x+1)^2=25\\Rightarrow\\) \\(2x^2+2x-24=0\\Rightarrow\\) \\(x^2+x-12=0\\).",
+      "\\((x+4)(x-3)=0\\Rightarrow x=-4\\) o \\(x=3\\).",
+      "\\(y=x+1\\): \\((-4,-3)\\) y \\((3,4)\\). Dos puntos: secante."
+     ],
+     "ans": "(3, 4) y (−4, −3)",
+     "hint": "Reemplaza y = x + 1 en la circunferencia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "intdisc"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ci2",
+     "lvl": 2,
+     "title": "¿Se cortan?",
+     "q": "<p>Posición de la recta \\(y=2x+6\\) respecto de \\(x^2+y^2-4x+2y-4=0\\).</p>",
+     "checks": [
+      {
+       "p": "Posición",
+       "o": [
+        "Exterior: \\(\\Delta=-304\\lt0\\)",
+        "Secante: \\(\\Delta=304\\gt0\\)",
+        "Tangente: \\(\\Delta=0\\)",
+        "Secante en \\((0,6)\\) y \\((-2,2)\\)",
+        "Pasa por el centro"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(2x+6)^2-4x+2(2x\\) \\(+6)-4=\\) \\(0\\Rightarrow\\) \\(5x^2+24x+44=0\\).",
+      "\\(\\Delta=24^2-4\\cdot5\\cdot44=\\) \\(576-880=-304\\).",
+      "\\(\\Delta\\lt0\\): no hay puntos comunes; la recta es exterior."
+     ],
+     "ans": "Exterior (Δ = −304)",
+     "hint": "Desarrolla con cuidado (2x+6)².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      [
+       "intdisc"
+      ]
+     ]
+    },
+    {
+     "id": "ci3",
+     "lvl": 2,
+     "title": "Recta y parábola",
+     "q": "<p>Halla la intersección de \\(y=x^2-4x+3\\) y \\(y=2x-6\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "Tangente en \\((3,0)\\)",
+        "Secante en \\((3,0)\\) y \\((1,0)\\)",
+        "No se cortan",
+        "Tangente en \\((2,-2)\\)",
+        "Secante en \\((3,0)\\) y \\((6,6)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-4x+3=2x-6\\Rightarrow\\) \\(x^2-6x+9=0\\).",
+      "\\(\\Delta=36-36=0\\): raíz doble \\(x=3\\).",
+      "\\(y=2(3)-6=0\\). La recta toca a la parábola solo en \\((3,0)\\): es tangente."
+     ],
+     "ans": "Tangente en (3, 0)",
+     "hint": "Iguala las dos expresiones de y.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ci4",
+     "lvl": 2,
+     "title": "Circunferencia y recta x + y = 7",
+     "q": "<p>Resuelve el sistema \\(x^2+y^2=25\\), \\(x+y=7\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((3,4)\\) y \\((4,3)\\)",
+        "\\((3,4)\\) y \\((-4,-3)\\)",
+        "\\((0,7)\\) y \\((7,0)\\)",
+        "\\((5,2)\\) y \\((2,5)\\)",
+        "No hay solución"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=7-x\\Rightarrow x^2+(7-x)^2=25\\Rightarrow\\) \\(2x^2-14x+24=0\\).",
+      "\\(x^2-7x+12=0\\Rightarrow x=3\\) o \\(x=4\\).",
+      "Puntos: \\((3,4)\\) y \\((4,3)\\)."
+     ],
+     "ans": "(3, 4) y (4, 3)",
+     "hint": "Despeja y de la recta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "intdisc"
+      ]
+     ]
+    },
+    {
+     "id": "ci5",
+     "lvl": 2,
+     "title": "Dos parábolas",
+     "q": "<p>Halla los puntos donde se cruzan \\(y=x^2-2\\) y \\(y=6-x^2\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((2,2)\\) y \\((-2,2)\\)",
+        "\\((2,2)\\) y \\((-2,-2)\\)",
+        "\\((4,14)\\) y \\((-4,14)\\)",
+        "Solo \\((0,-2)\\)",
+        "\\((\\sqrt2,0)\\) y \\((-\\sqrt2,0)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-2=6-x^2\\Rightarrow2x^2=8\\Rightarrow x=\\pm2\\).",
+      "\\(y=4-2=2\\) en ambos: \\((2,2)\\) y \\((-2,2)\\)."
+     ],
+     "ans": "(2, 2) y (−2, 2)",
+     "hint": "Iguala y despeja x².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ci6",
+     "lvl": 2,
+     "title": "Completar y cortar",
+     "q": "<p>Escribe \\(x^2+y^2-4x-6y+8=0\\) en forma canónica y halla sus puntos de corte con \\(y=x+2\\).</p>",
+     "checks": [
+      {
+       "p": "Canónica",
+       "o": [
+        "\\((x-2)^2+(y-3)^2=5\\)",
+        "\\((x-2)^2+(y-3)^2=8\\)",
+        "\\((x+2)^2+(y+3)^2=5\\)",
+        "\\((x-2)^2+(y-3)^2=21\\)",
+        "\\((x-4)^2+(y-6)^2=44\\)"
+       ]
+      },
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((0,2)\\) y \\((3,5)\\)",
+        "\\((0,2)\\) y \\((2,4)\\)",
+        "\\((1,3)\\) y \\((3,5)\\)",
+        "Solo \\((0,2)\\)",
+        "No se cortan"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x-2)^2-4+(y-3)^2-9+8=\\) \\(0\\Rightarrow\\) \\((x-2)^2+(y-3)^2=5\\).",
+      "Con \\(y=x+2\\): \\((x-2)^2+(x-1)^2=5\\Rightarrow\\) \\(2x^2-6x=0\\Rightarrow x=0\\) o \\(x=3\\).",
+      "Puntos \\((0,2)\\) y \\((3,5)\\)."
+     ],
+     "ans": "(x−2)² + (y−3)² = 5; (0, 2) y (3, 5)",
+     "hint": "4 + 9 − 8 = 5.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ci7",
+     "lvl": 3,
+     "title": "Circunferencia y parábola",
+     "q": "<p>Halla la intersección de \\(x^2+y^2=20\\) y \\(y=x^2-4\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación que queda",
+       "o": [
+        "\\(x^4-7x^2-4=0\\)",
+        "\\(x^4-8x^2-4=0\\)",
+        "\\(x^4+x^2-4=0\\)",
+        "\\(x^4-7x^2+36=0\\)",
+        "\\(2x^2-24=0\\)"
+       ]
+      },
+      {
+       "p": "Puntos (aprox.)",
+       "o": [
+        "\\((\\pm2.74,\\ 3.53)\\)",
+        "\\((\\pm2.74,\\ 3.53)\\) y \\((\\pm0.73,\\ -3.47)\\)",
+        "\\((\\pm2,\\ 0)\\)",
+        "\\((\\pm3.53,\\ 2.74)\\)",
+        "No se cortan"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(x^2-4)^2=20\\Rightarrow\\) \\(x^4-7x^2-4=0\\).",
+      "\\(t=x^2\\): \\(t=\\frac{7\\pm\\sqrt{65}}2\\); solo \\(t=\\frac{7+\\sqrt{65}}2\\approx7.53\\) es positivo.",
+      "\\(x\\approx\\pm2.74\\), \\(y=t-4\\approx3.53\\): dos puntos simétricos \\((\\pm2.74,\\ 3.53)\\)."
+     ],
+     "ans": "(±2.74, 3.53)",
+     "hint": "Haz t = x² y descarta t < 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ci8",
+     "lvl": 3,
+     "title": "Tres puntos de corte",
+     "q": "<p>Resuelve \\(x^2+y^2-6x-4y+9=0\\) y \\(x^2-6x-y+9=0\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((3,0)\\), \\((3+\\sqrt3,\\,3)\\) y \\((3-\\sqrt3,\\,3)\\)",
+        "\\((3,0)\\) y \\((3,3)\\)",
+        "\\((3+\\sqrt3,\\,3)\\) y \\((3-\\sqrt3,\\,3)\\)",
+        "\\((0,9)\\) y \\((3,0)\\)",
+        "\\((3,0)\\), \\((5,4)\\) y \\((1,4)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "La segunda: \\(y=(x-3)^2\\). La primera: \\((x-3)^2+(y-2)^2=4\\).",
+      "Sustituyendo \\((x-3)^2=y\\): \\(y+(y-2)^2=4\\Rightarrow y^2-3y=0\\Rightarrow\\) \\(y=0\\) o \\(y=3\\).",
+      "\\(y=0\\Rightarrow x=3\\); \\(y=3\\Rightarrow(x-3)^2=3\\Rightarrow x=3\\pm\\sqrt3\\). Tres puntos."
+     ],
+     "ans": "(3, 0), (3 ± √3, 3)",
+     "hint": "Sustituye (x−3)² completo, no x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cuad"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ci9",
+     "lvl": 3,
+     "title": "Recta tangente: hallar m",
+     "q": "<p>¿Para qué \\(m\\) la recta \\(y=mx+2\\) es tangente a \\(y^2=8x\\)? ¿En qué punto?</p>",
+     "checks": [
+      {
+       "p": "m",
+       "o": [
+        "\\(m=1\\)",
+        "\\(m=2\\)",
+        "\\(m=-1\\)",
+        "\\(m=\\frac12\\)",
+        "\\(m=4\\)"
+       ]
+      },
+      {
+       "p": "Punto de tangencia",
+       "o": [
+        "\\((2,4)\\)",
+        "\\((1,3)\\)",
+        "\\((4,6)\\)",
+        "\\((0,2)\\)",
+        "\\((2,-4)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((mx+2)^2=8x\\Rightarrow\\) \\(m^2x^2+(4m-8)x+4=0\\).",
+      "Tangente: \\(\\Delta=(4m-8)^2-16m^2=\\) \\(64-64m=0\\Rightarrow\\) \\(m=1\\).",
+      "Con \\(m=1\\): \\(x^2-4x+4=0\\Rightarrow x=2\\), \\(y=4\\)."
+     ],
+     "ans": "m = 1; punto (2, 4)",
+     "hint": "Pide Δ = 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ci10",
+     "lvl": 3,
+     "title": "¿Siempre hay tangente?",
+     "q": "<p>¿Para qué valores de \\(m\\) la recta \\(y=mx+1\\) es tangente a \\(y=x^2+2x\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Para ninguno: \\(\\Delta=(2-m)^2+4\\gt0\\) siempre",
+        "Solo \\(m=2\\)",
+        "\\(m=0\\) y \\(m=4\\)",
+        "Para todo \\(m\\)",
+        "Solo \\(m=-2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+2x=mx+1\\Rightarrow\\) \\(x^2+(2-m)x-1=0\\).",
+      "\\(\\Delta=(2-m)^2+4\\), que nunca vale 0: siempre hay dos cortes.",
+      "Geométricamente, \\((0,1)\\) está dentro de la parábola (encima de ella): ninguna recta por ese punto puede ser tangente."
+     ],
+     "ans": "Ninguno: Δ > 0 para todo m",
+     "hint": "Escribe Δ y fíjate si puede ser 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ci11",
+     "lvl": 2,
+     "title": "Tres cortes con tangencia",
+     "q": "<p>Halla la intersección de \\(x^2+(y-1)^2=1\\) y \\(y=x^2\\).</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((0,0)\\), \\((1,1)\\) y \\((-1,1)\\)",
+        "\\((1,1)\\) y \\((-1,1)\\)",
+        "Solo \\((0,0)\\)",
+        "\\((0,0)\\) y \\((0,2)\\)",
+        "No se cortan"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(x^2-1)^2=1\\Rightarrow\\) \\(x^4-x^2=0\\Rightarrow x^2(x^2-1)=0\\).",
+      "\\(x=0\\) o \\(x=\\pm1\\); con \\(y=x^2\\): \\((0,0)\\), \\((1,1)\\), \\((-1,1)\\).",
+      "En \\((0,0)\\) las curvas se tocan (tangencia): por eso \\(x=0\\) es raíz doble."
+     ],
+     "ans": "(0, 0), (1, 1) y (−1, 1)",
+     "hint": "Factoriza x².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [],
+      [
+       "intdisc"
+      ]
+     ]
+    },
+    {
+     "id": "ci12",
+     "lvl": 2,
+     "title": "La trampa de x² negativo",
+     "q": "<p>¿La parábola \\(y=x^2+4\\) corta a la circunferencia \\(x^2+y^2=9\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No: en ambos casos \\(x^2=y-4\\lt0\\)",
+        "Sí, en \\(y\\approx3.14\\)",
+        "Sí, en dos puntos con \\(y\\approx-4.14\\)",
+        "Sí, es tangente en \\((0,3)\\)",
+        "Sí, en cuatro puntos"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2=y-4\\Rightarrow(y-4)+y^2=9\\Rightarrow\\) \\(y^2+y-13=0\\Rightarrow y\\approx3.14\\) o \\(y\\approx-4.14\\).",
+      "Pero \\(x^2=y-4\\) da \\(-0.86\\) y \\(-8.14\\): negativos, sin \\(x\\) real.",
+      "No hay intersección: el vértice \\((0,4)\\) ya está fuera de la circunferencia de radio 3."
+     ],
+     "ans": "No se cortan",
+     "hint": "Después de hallar y, revisa que x² = y − 4 no sea negativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "intdisc"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "conapl",
+   "name": "Problemas de aplicación con cónicas (sem. 10)",
+   "teo": "<p>En los problemas de contexto, lo primero es <strong>elegir el sistema de coordenadas</strong> (dónde va el origen y hacia dónde apunta cada eje); de eso depende la ecuación.</p>\n<p><strong>Parábola:</strong> si se conocen el vértice y otro punto, usa \\((x-h)^2=4p(y-k)\\) o \\(y=a(x-h)^2+k\\). La propiedad reflectora dice que los rayos paralelos al eje van al <strong>foco</strong>.</p>\n<p><strong>Circunferencia:</strong> centro y radio; un punto está dentro si su distancia al centro es menor que el radio.</p>",
+   "form": [
+    "\\(x^2=4py\\): foco \\((0,p)\\)",
+    "\\(y^2=4px\\): foco \\((p,0)\\)",
+    "\\(y=a(x-h)^2+k\\) con vértice \\((h,k)\\)",
+    "Dentro del círculo: \\((x-h)^2+(y-k)^2\\lt r^2\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antenas, faros y cocinas solares son parabólicos porque concentran los rayos en el foco. Puentes, túneles y chorros de agua se modelan con parábolas, elipses o circunferencias según su forma.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Ancho y profundidad:</strong> en una antena \\(y^2=4px\\) con diámetro \\(D\\) y profundidad \\(d\\), el borde es el punto \\(\\left(d,\\frac D2\\right)\\).</li><li><strong>Simetría:</strong> si sale de \\(x=0\\) y cae en \\(x=L\\), el vértice está en \\(x=\\frac L2\\).</li><li><strong>¿Pasa o no pasa?:</strong> evalúa la altura del arco en el borde del objeto, no en el centro.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y coloca el origen donde simplifique (vértice o centro).</li><li><strong>2.</strong> Escribe la forma canónica con los datos.</li><li><strong>3.</strong> Usa un punto conocido para hallar \\(p\\) o \\(a\\).</li><li><strong>4.</strong> Evalúa lo que pide el problema y responde en contexto.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> cocina solar \\(x^2=12y\\): \\(4p=12\\Rightarrow p=3\\); la olla va a 3 cm del vértice, en el foco.</div>\n<div class=\"err\"><b>Error común:</b> tomar el diámetro completo como coordenada (es la mitad) o confundir \\(4p\\) con \\(p\\).</div>",
+   "ex": [
+    {
+     "id": "ca1",
+     "lvl": 1,
+     "title": "Cocina solar",
+     "q": "<p>El reflector de una cocina solar es \\(x^2=12y\\) (cm). ¿Dónde va la olla? Si se quiere el foco a 6 cm del vértice, ¿cuál es la nueva ecuación?</p>",
+     "checks": [
+      {
+       "p": "Posición de la olla",
+       "o": [
+        "En el foco, a 3 cm del vértice",
+        "En el foco, a 12 cm del vértice",
+        "En el vértice",
+        "A 6 cm del vértice",
+        "A 4 cm del vértice"
+       ]
+      },
+      {
+       "p": "Nueva ecuación",
+       "o": [
+        "\\(x^2=24y\\) (más abierta)",
+        "\\(x^2=6y\\) (más cerrada)",
+        "\\(x^2=24y\\) (más cerrada)",
+        "\\(x^2=36y\\)",
+        "\\(x^2=12(y-6)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4p=12\\Rightarrow p=3\\): foco \\((0,3)\\). Los rayos paralelos al eje se concentran ahí.",
+      "Con \\(p=6\\): \\(x^2=4(6)y=24y\\).",
+      "Mayor \\(p\\) ⇒ parábola más abierta (\\(y=\\frac{x^2}{24}\\) crece más lento que \\(\\frac{x^2}{12}\\))."
+     ],
+     "ans": "Olla a 3 cm; nueva x² = 24y, más abierta",
+     "hint": "El coeficiente es 4p.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "focal"
+      ],
+      [
+       "parab"
+      ],
+      [
+       "focal"
+      ]
+     ]
+    },
+    {
+     "id": "ca2",
+     "lvl": 2,
+     "title": "Antena parabólica",
+     "q": "<p>Una antena tiene sección \\(y^2=4px\\), 2 m de diámetro y 0.5 m de profundidad. ¿Dónde va el receptor?</p>",
+     "checks": [
+      {
+       "p": "Foco",
+       "o": [
+        "\\((0.5,\\ 0)\\): a 0.5 m del vértice",
+        "\\((2,\\ 0)\\)",
+        "\\((0.25,\\ 0)\\)",
+        "\\((1,\\ 0)\\)",
+        "\\((0,\\ 0.5)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El borde está en \\(x=0.5\\) (profundidad) y \\(y=1\\) (radio, la mitad del diámetro).",
+      "\\(1^2=4p(0.5)\\Rightarrow p=0.5\\).",
+      "Foco \\((p,0)=(0.5,0)\\): el receptor va a 0.5 m del vértice."
+     ],
+     "ans": "p = 0.5 m; receptor en (0.5, 0)",
+     "hint": "Usa la mitad del diámetro.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "parab"
+      ],
+      [
+       "focal"
+      ]
+     ]
+    },
+    {
+     "id": "ca3",
+     "lvl": 2,
+     "title": "Bombilla de una farola",
+     "q": "<p>Un reflector \\(y^2=4px\\) tiene 30 cm de diámetro y 10 cm de profundidad. ¿A qué distancia del vértice va la bombilla?</p>",
+     "checks": [
+      {
+       "p": "Distancia",
+       "o": [
+        "\\(5.625\\) cm",
+        "\\(22.5\\) cm",
+        "\\(7.5\\) cm",
+        "\\(2.25\\) cm",
+        "\\(10\\) cm"
+       ]
+      }
+     ],
+     "steps": [
+      "Borde: \\((10,\\ 15)\\).",
+      "\\(15^2=4p\\cdot10\\Rightarrow225=40p\\Rightarrow\\) \\(p=5.625\\) cm.",
+      "La bombilla va en el foco, a 5.625 cm del vértice."
+     ],
+     "ans": "5.625 cm",
+     "hint": "225 = 40p.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "parab"
+      ],
+      [
+       "focal"
+      ]
+     ]
+    },
+    {
+     "id": "ca4",
+     "lvl": 2,
+     "title": "Chorro de una fuente",
+     "q": "<p>Un chorro sale del suelo en \\(x=0\\), cae en \\(x=8\\) m y su altura máxima es 4 m. ¿Qué altura tiene a 2 m de la salida?</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(y=-\\frac14(x-4)^2+4\\)",
+        "\\(y=-\\frac12(x-4)^2+4\\)",
+        "\\(y=-\\frac14x^2+4\\)",
+        "\\(y=\\frac14(x-4)^2+4\\)",
+        "\\(y=-(x-4)^2+4\\)"
+       ]
+      },
+      {
+       "p": "Altura en x = 2",
+       "o": [
+        "\\(3\\) m",
+        "\\(2\\) m",
+        "\\(1\\) m",
+        "\\(3.5\\) m",
+        "\\(4\\) m"
+       ]
+      }
+     ],
+     "steps": [
+      "Por simetría el vértice está en \\((4,4)\\): \\(y=a(x-4)^2+4\\).",
+      "Pasa por \\((0,0)\\): \\(0=16a+4\\Rightarrow a=-\\frac14\\).",
+      "\\(y(2)=-\\frac14(4)+4=3\\) m."
+     ],
+     "ans": "y = −¼(x−4)² + 4; 3 m",
+     "hint": "El vértice está en el punto medio.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ca5",
+     "lvl": 2,
+     "title": "¿Se moja?",
+     "q": "<p>Un surtidor lanza agua desde el suelo; sube a 2 m y cae a 4 m del punto de salida. Una persona de 1.70 m está a 1 m del surtidor, en la trayectoria. ¿A qué altura pasa el chorro ahí?</p>",
+     "checks": [
+      {
+       "p": "Altura en x = 1",
+       "o": [
+        "\\(1.5\\) m: el chorro la golpea (está por debajo de 1.70 m)",
+        "\\(2\\) m: pasa por encima",
+        "\\(1.75\\) m: pasa por encima",
+        "\\(1\\) m: la golpea",
+        "\\(0.5\\) m: no la toca"
+       ]
+      }
+     ],
+     "steps": [
+      "Vértice \\((2,2)\\), pasa por \\((0,0)\\): \\(y=-\\frac12(x-2)^2+2=\\) \\(-\\frac12x^2+2x\\).",
+      "\\(y(1)=-\\frac12+2=1.5\\) m.",
+      "1.5 m \\(\\lt\\) 1.70 m: el chorro choca con la persona; se moja."
+     ],
+     "ans": "1.5 m: se moja",
+     "hint": "a = −2/4 = −½.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "ca6",
+     "lvl": 2,
+     "title": "Rueda de la fortuna",
+     "q": "<p>El eje de una rueda de 40 m de diámetro está a 25 m del suelo. Con el origen en el suelo bajo el centro, escribe la ecuación y halla las alturas máxima y mínima.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2+(y-25)^2=400\\)",
+        "\\(x^2+(y-25)^2=40\\)",
+        "\\(x^2+(y+25)^2=400\\)",
+        "\\(x^2+(y-25)^2=1600\\)",
+        "\\((x-25)^2+y^2=400\\)"
+       ]
+      },
+      {
+       "p": "Alturas",
+       "o": [
+        "Máxima 45 m, mínima 5 m",
+        "Máxima 65 m, mínima 0 m",
+        "Máxima 45 m, mínima 0 m",
+        "Máxima 40 m, mínima 10 m",
+        "Máxima 25 m, mínima 5 m"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((0,25)\\), radio 20.",
+      "\\(x^2+(y-25)^2=20^2=400\\).",
+      "Punto más alto \\(25+20=45\\) m; más bajo \\(25-20=5\\) m."
+     ],
+     "ans": "x² + (y−25)² = 400; 45 m y 5 m",
+     "hint": "Radio = mitad del diámetro.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      [
+       "circ"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ca7",
+     "lvl": 2,
+     "title": "Cobertura de una antena",
+     "q": "<p>Una antena en \\(A(2,3)\\) tiene alcance de 5 km. ¿El pueblo \\(P(6,4)\\) recibe señal?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Sí: \\((6-2)^2+(4-3)^2=17\\lt25\\)",
+        "No: \\(17\\gt5\\)",
+        "Sí: está justo en el borde",
+        "No: \\((6-2)^2+(4-3)^2=41\\gt25\\)",
+        "No se puede saber sin graficar"
+       ]
+      }
+     ],
+     "steps": [
+      "Cobertura: \\((x-2)^2+(y-3)^2\\le25\\) (círculo con su borde).",
+      "\\(P\\): \\(16+1=17\\).",
+      "\\(17\\lt25\\Rightarrow d=\\sqrt{17}\\approx4.12\\) km \\(\\lt5\\): está dentro."
+     ],
+     "ans": "Sí, d ≈ 4.12 km < 5 km",
+     "hint": "Compara con r² = 25, no con 5.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      [],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "ca8",
+     "lvl": 3,
+     "title": "¿Pasa el camión por el túnel?",
+     "q": "<p>Un túnel parabólico mide 8 m de alto y 12 m de ancho al nivel del suelo. Un camión de 3 m de ancho y 5 m de alto va por el centro. ¿Pasa?</p>",
+     "checks": [
+      {
+       "p": "Ecuación (vértice en el origen, en lo alto)",
+       "o": [
+        "\\(x^2=-4.5y\\)",
+        "\\(x^2=4.5y\\)",
+        "\\(x^2=-18y\\)",
+        "\\(x^2=-\\frac98y\\)",
+        "\\(y^2=-4.5x\\)"
+       ]
+      },
+      {
+       "p": "Altura del túnel en el borde del camión",
+       "o": [
+        "\\(7.5\\) m: pasa con holgura",
+        "\\(5\\) m: pasa justo",
+        "\\(4.5\\) m: no pasa",
+        "\\(8\\) m: pasa",
+        "\\(2\\) m: no pasa"
+       ]
+      }
+     ],
+     "steps": [
+      "Vértice (punto más alto) en el origen, abre hacia abajo: \\(x^2=4py\\), con el suelo en \\(y=-8\\) y \\(x=\\pm6\\).",
+      "\\(36=4p(-8)\\Rightarrow4p=-4.5\\): \\(x^2=-4.5y\\).",
+      "Borde del camión \\(x=1.5\\): \\(y=-\\frac{2.25}{4.5}=-0.5\\). Altura sobre el suelo: \\(8-0.5=7.5\\) m \\(\\gt5\\) m: pasa."
+     ],
+     "ans": "x² = −4.5y; 7.5 m en el borde: pasa",
+     "hint": "Evalúa en x = 1.5 (mitad del ancho del camión).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ca9",
+     "lvl": 3,
+     "title": "Tres arcos para un puente",
+     "q": "<p>Un puente de 24 m de luz y 8 m de flecha se sostiene con un arco parabólico, uno elíptico (semiejes 12 y 8) o uno circular. ¿Qué altura tiene cada uno a 4 m del centro?</p>",
+     "checks": [
+      {
+       "p": "Alturas a 4 m",
+       "o": [
+        "Parábola \\(\\approx7.11\\), elipse \\(\\approx7.54\\), círculo \\(\\approx7.37\\) m",
+        "Parábola \\(\\approx7.54\\), elipse \\(\\approx7.11\\), círculo \\(\\approx7.37\\) m",
+        "Las tres miden 8 m",
+        "Parábola \\(\\approx6.67\\), elipse \\(\\approx7.54\\), círculo \\(\\approx7.11\\) m",
+        "Parábola \\(\\approx7.11\\), elipse \\(\\approx7.37\\), círculo \\(\\approx7.54\\) m"
+       ]
+      },
+      {
+       "p": "Más alta cerca de los bordes",
+       "o": [
+        "La elíptica",
+        "La parabólica",
+        "La circular",
+        "Las tres igual",
+        "Depende del material"
+       ]
+      }
+     ],
+     "steps": [
+      "Parábola por \\((0,8)\\) y \\((\\pm12,0)\\): \\(y=8-\\frac{x^2}{18}\\Rightarrow y(4)\\approx7.11\\).",
+      "Elipse \\(\\frac{x^2}{144}+\\frac{y^2}{64}=1\\Rightarrow\\) \\(y(4)=8\\sqrt{\\frac89}\\approx7.54\\).",
+      "Círculo por \\((0,8)\\) y \\((\\pm12,0)\\): centro \\((0,-5)\\), \\(R=13\\Rightarrow\\) \\(y(4)=-5+\\sqrt{153}\\approx7.37\\).",
+      "La elipse da más altura cerca de los bordes: mejor para vehículos altos."
+     ],
+     "ans": "Parábola 7.11, elipse 7.54, círculo 7.37; la elíptica",
+     "hint": "Para el círculo: 144 + h² = (8 − h)².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "elip"
+      ],
+      [
+       "circ"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "ca10",
+     "lvl": 1,
+     "title": "Rotonda",
+     "q": "<p>Una rotonda circular tiene radio 15 m y centro en \\((0,0)\\). ¿La entrada en \\((12,9)\\) está dentro, fuera o sobre el borde?</p>",
+     "checks": [
+      {
+       "p": "Posición",
+       "o": [
+        "Sobre el borde: \\(12^2+9^2=225=15^2\\)",
+        "Dentro: \\(12+9=21\\lt225\\)",
+        "Fuera: \\(12^2+9^2\\gt15\\)",
+        "Dentro: \\(\\sqrt{12^2+9^2}=13\\)",
+        "Fuera: la distancia es 21 m"
+       ]
+      }
+     ],
+     "steps": [
+      "Borde: \\(x^2+y^2=225\\).",
+      "\\(12^2+9^2=144+81=225\\): la distancia al centro es \\(\\sqrt{225}=15\\) m.",
+      "Igual al radio: la entrada está exactamente sobre el borde."
+     ],
+     "ans": "Sobre el borde (distancia 15 m)",
+     "hint": "Compara x² + y² con r² = 225.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
       [],
       [
        "circ"
@@ -1291,6 +3069,48 @@
    "f": "\\(|R|=\\sqrt{R_x^2+R_y^2},\\ \\tan\\alpha=\\tfrac{R_y}{R_x}\\)",
    "x": "Suma componente a componente. Ojo con el cuadrante: si Rx < 0, suma 180° al ángulo que da la calculadora.",
    "home": "vect1"
+  },
+  "cuad": {
+   "n": "Completar cuadrados",
+   "f": "\\(x^2+bx=\\left(x+\\tfrac b2\\right)^2-\\left(\\tfrac b2\\right)^2\\)",
+   "x": "Suma y resta el cuadrado de la mitad del coeficiente de \\(x\\). Si hay un coeficiente \\(a\\ne1\\), primero factorízalo de los términos con \\(x\\).",
+   "home": "cuadsq"
+  },
+  "elip": {
+   "n": "Elipse",
+   "f": "\\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2-b^2\\)",
+   "x": "Suma de distancias a los focos constante (\\(2a\\)). El eje mayor va con el denominador más grande.",
+   "home": "conelh"
+  },
+  "hiper": {
+   "n": "Hipérbola",
+   "f": "\\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2+b^2\\)",
+   "x": "Diferencia de distancias a los focos constante (\\(2a\\)). Abre hacia el término positivo; asíntotas con pendiente \\(\\pm\\frac ba\\) (horizontal) o \\(\\pm\\frac ab\\) (vertical).",
+   "home": "conelh"
+  },
+  "clasif": {
+   "n": "Reconocer la cónica",
+   "f": "\\(Ax^2+Cy^2+Dx+Ey+F=0\\)",
+   "x": "Una sola variable al cuadrado: parábola. \\(A=C\\): circunferencia. \\(A,C\\) del mismo signo y distintos: elipse. Signos opuestos: hipérbola.",
+   "home": "conelh"
+  },
+  "degen": {
+   "n": "Cónica degenerada",
+   "f": "\\((x-h)^2+(y-k)^2=R\\) con \\(R\\le0\\)",
+   "x": "Si \\(R=0\\) es solo un punto; si \\(R\\lt0\\) no hay puntos reales (conjunto vacío).",
+   "home": "cuadsq"
+  },
+  "intdisc": {
+   "n": "Intersección y discriminante",
+   "f": "\\(\\Delta\\gt0\\): 2 puntos · \\(\\Delta=0\\): tangente · \\(\\Delta\\lt0\\): no se cortan",
+   "x": "Sustituye la recta (o una curva) en la otra ecuación y analiza la cuadrática que queda.",
+   "home": "conint"
+  },
+  "focal": {
+   "n": "Propiedad reflectora",
+   "f": "\\(x^2=4py\\Rightarrow\\) foco en \\((0,p)\\)",
+   "x": "Los rayos paralelos al eje se reflejan hacia el foco: ahí van la olla, el receptor o la bombilla. A mayor \\(|p|\\), parábola más abierta (\\(a=\\frac1{4p}\\)).",
+   "home": "conapl"
   }
  },
  "simEx": [
@@ -2393,5 +4213,5 @@
  "short": "EA5",
  "guide": true,
  "sub": "Sem. 10 y 11",
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA5 2026-1</b>: P1 dos circunferencias polares \\(r=a\\cos\\theta\\) y \\(r=b\\sin\\theta\\): cartesianas, intersecciones, rectangulares, distancia y gráfica (10 pts) · P2 simetrías de una cardioide (4) · P3 suma de dos vectores con magnitud y ángulo (6). El sílabo pide además circunferencia y parábola en cartesianas, que no salieron en 2026-1 pero están en el primer tema."
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Semana 10 (cónicas) ya está:</b> completar cuadrados, circunferencia y parábola, un vistazo a elipse e hipérbola, intersecciones y problemas de aplicación. <b>Mapa de la EA5 2026-1</b>: P1 dos circunferencias polares \\(r=a\\cos\\theta\\) y \\(r=b\\sin\\theta\\): cartesianas, intersecciones, rectangulares, distancia y gráfica (10 pts) · P2 simetrías de una cardioide (4) · P3 suma de dos vectores con magnitud y ángulo (6). El simulacro reproduce las 5 versiones de esa EA."
 }

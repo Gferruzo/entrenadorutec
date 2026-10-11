@@ -1,5 +1,5 @@
 {
- "form": "<p class=\"note\">Hoja de repaso de la ED3 (semana 9; la semana 10 se agrega al llegar su guía).</p>\n<div class=\"fgrid\">\n<div><b>Extremos absolutos</b><br>Compara \\(f(a),f(b)\\) y \\(f(c)\\) en críticos interiores</div>\n<div><b>Segunda derivada</b><br>\\(f''(c)\\gt0\\): mínimo · \\(f''(c)\\lt0\\): máximo</div>\n<div><b>Protocolo</b><br>Interpretar → dibujar → restricción → \\(Q=f(x)\\) → dominio → \\(f'=0\\), \\(f''\\) → conclusión</div>\n<div><b>Restricciones típicas</b><br>\\(x+2y=P\\) · \\(V=\\pi r^2h\\) · \\(w^2+h^2=4R^2\\)</div>\n<div><b>Cilindro</b><br>\\(S=2\\pi r^2+2\\pi rh\\)</div>\n<div><b>Cono</b><br>\\(V=\\frac13\\pi r^2h\\), lateral \\(\\pi r\\sqrt{r^2+h^2}\\)</div>\n<div><b>Óptimo con parámetro</b><br>\\(x^*(t)\\); sensibilidad \\(\\frac{dx^*}{dt}\\)</div>\n<div><b>Razones relacionadas</b><br>\\(\\frac{dV}{dt}=\\frac{dV}{dr}\\frac{dr}{dt}\\) · \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)</div>\n<div><b>Antiderivadas</b><br>\\(t^n\\to\\frac{t^{n+1}}{n+1}\\), \\(\\frac1t\\to\\ln|t|\\), \\(e^{kt}\\to\\frac{e^{kt}}k\\)</div>\n<div><b>Trigonométricas</b><br>\\(\\cos kt\\to\\frac{\\sin kt}k\\), \\(\\sin kt\\to-\\frac{\\cos kt}k\\), \\(\\sec^2t\\to\\tan t\\)</div>\n<div><b>Valor inicial</b><br>\\(F+C\\) → sustituir \\(y(t_0)=y_0\\) → verificar derivando</div>\n<div><b>EDO separable</b><br>\\(\\frac{dy}{h(y)}=g(t)\\,dt\\) · \\(y'=ky\\Rightarrow y=y_0e^{kt}\\)</div>\n<div><b>Newton</b><br>\\(T=T_a+(T_0-T_a)e^{-kt}\\) · vida media \\(k=\\frac{\\ln2}{t_{1/2}}\\)</div>\n</div>",
+ "form": "<p class=\"note\">Hoja de repaso de la ED3 (semanas 9 y 10).</p>\n<div class=\"fgrid\">\n<div><b>Extremos absolutos</b><br>Compara \\(f(a),f(b)\\) y \\(f(c)\\) en críticos interiores</div>\n<div><b>Segunda derivada</b><br>\\(f''(c)\\gt0\\): mínimo · \\(f''(c)\\lt0\\): máximo</div>\n<div><b>Protocolo</b><br>Interpretar → dibujar → restricción → \\(Q=f(x)\\) → dominio → \\(f'=0\\), \\(f''\\) → conclusión</div>\n<div><b>Restricciones típicas</b><br>\\(x+2y=P\\) · \\(V=\\pi r^2h\\) · \\(w^2+h^2=4R^2\\)</div>\n<div><b>Cilindro</b><br>\\(S=2\\pi r^2+2\\pi rh\\)</div>\n<div><b>Cono</b><br>\\(V=\\frac13\\pi r^2h\\), lateral \\(\\pi r\\sqrt{r^2+h^2}\\)</div>\n<div><b>Óptimo con parámetro</b><br>\\(x^*(t)\\); sensibilidad \\(\\frac{dx^*}{dt}\\)</div>\n<div><b>Razones relacionadas</b><br>\\(\\frac{dV}{dt}=\\frac{dV}{dr}\\frac{dr}{dt}\\) · \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)</div>\n<div><b>Antiderivadas</b><br>\\(t^n\\to\\frac{t^{n+1}}{n+1}\\), \\(\\frac1t\\to\\ln|t|\\), \\(e^{kt}\\to\\frac{e^{kt}}k\\)</div>\n<div><b>Trigonométricas</b><br>\\(\\cos kt\\to\\frac{\\sin kt}k\\), \\(\\sin kt\\to-\\frac{\\cos kt}k\\), \\(\\sec^2t\\to\\tan t\\)</div>\n<div><b>Valor inicial</b><br>\\(F+C\\) → sustituir \\(y(t_0)=y_0\\) → verificar derivando</div>\n<div><b>EDO separable</b><br>\\(\\frac{dy}{h(y)}=g(t)\\,dt\\) · \\(y'=ky\\Rightarrow y=y_0e^{kt}\\)</div>\n<div><b>Newton</b><br>\\(T=T_a+(T_0-T_a)e^{-kt}\\) · vida media \\(k=\\frac{\\ln2}{t_{1/2}}\\)</div>\n<div><b>Integral indefinida</b><br>\\(\\int f\\,dx=F+C\\iff F'=f\\) · linealidad: separa sumas y constantes</div>\n<div><b>Tabla</b><br>\\(\\int a^x=\\frac{a^x}{\\ln a}\\), \\(\\int\\sec^2x=\\tan x\\), \\(\\int\\csc^2x=-\\cot x\\), \\(\\int\\sec x\\tan x=\\sec x\\)</div>\n<div><b>Sustitución</b><br>\\(u=g(x)\\), \\(du=g'(x)\\,dx\\); que no quede ninguna \\(x\\)</div>\n<div><b>Partes</b><br>\\(\\int u\\,dv=uv-\\int v\\,du\\) · ILATE: I > L > A > T > E</div>\n<div><b>Resultados útiles</b><br>\\(\\int xe^x=e^x(x-1)\\), \\(\\int\\ln x=x\\ln x-x\\), \\(\\int te^{-t}=-(t+1)e^{-t}\\)</div>\n<div><b>IRCA</b><br>Interpretar → representar (EDO) → calcular (C y constantes) → analizar (\\(t\\to\\infty\\), conclusión)</div>\n</div>",
  "formSim": false,
  "id": "calculo-ed3",
  "code": "CC6103",
@@ -7,7 +7,7 @@
  "exam": "ED3 (semanas 9 y 10)",
  "short": "ED3",
  "sub": "Sem. 9 y 10",
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> y, según la guía 09, evalúa: gráficas a partir de \\(f'\\) y \\(f''\\), optimización (estática y tasas relacionadas) y antiderivadas (reglas básicas, valor inicial y EDO separables). Por ahora está la semana 9; la semana 10 (integral indefinida y sustitución) se suma cuando llegue su guía.",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> (60 min, 20 puntos: conceptual 6, procedimental 9 y aplicación con IRCA 5) y evalúa optimización en contexto, antiderivada e integral indefinida, sustitución e integración por partes, y EDO de variables separables con condición inicial. El simulacro sigue ese formato.",
  "topics": [
   {
    "id": "w9graf",
@@ -2437,6 +2437,1736 @@
      ]
     }
    ]
+  },
+  {
+   "id": "w10int",
+   "name": "Sem. 10 · Integral indefinida, linealidad y tabla",
+   "teo": "<p>\\(F\\) es <strong>antiderivada</strong> de \\(f\\) si \\(F'(x)=f(x)\\). La <strong>integral indefinida</strong> representa a toda la familia: \\(\\int f(x)\\,dx=F(x)+C\\). Cada valor de \\(C\\) es la misma curva desplazada verticalmente, y una condición inicial elige una de ellas.</p>\n<p>La integral es <strong>lineal</strong>: \\(\\int(af+bg)\\,dx=\\) \\(a\\int f\\,dx+b\\int g\\,dx\\). Pero <strong>no</strong> se reparte en productos ni cocientes: \\(\\int fg\\,dx\\ne\\int f\\,dx\\cdot\\int g\\,dx\\).</p>\n<p><strong>Validación siempre:</strong> deriva tu resultado; si no sale el integrando, está mal.</p>",
+   "form": [
+    "\\(\\int x^ndx=\\) \\(\\frac{x^{n+1}}{n+1}+C\\ (n\\ne-1)\\)",
+    "\\(\\int\\frac1x\\,dx=\\ln|x|+C\\)",
+    "\\(\\int e^{kx}dx=\\frac{e^{kx}}k+C\\)",
+    "\\(\\int a^xdx=\\frac{a^x}{\\ln a}+C\\)",
+    "\\(\\int\\cos x=\\sin x\\), \\(\\int\\sin x=-\\cos x\\)",
+    "\\(\\int\\sec^2x=\\tan x\\), \\(\\int\\csc^2x=-\\cot x\\)",
+    "\\(\\int\\sec x\\tan x=\\sec x\\), \\(\\int\\csc x\\cot x=-\\csc x\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En la semana 9 reconstruías una función a partir de su tasa \"a ojo\". Ahora eso tiene símbolo: \\(\\int f(x)\\,dx\\). La \\(\\int\\) es una S alargada (de <em>summa</em>), \\(f(x)\\) es el integrando y \\(dx\\) dice cuál es la variable.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(\\int2x\\,dx=x^2+C\\); \\(x^2-2\\), \\(x^2\\), \\(x^2+4\\)… son la misma parábola subida o bajada.</li><li><strong>Linealidad:</strong> separa sumas y saca constantes: \\(\\int(3x^2+2x-5)\\,dx=\\) \\(x^3+x^2-5x+C\\).</li><li><strong>Raíces como potencias:</strong> \\(\\frac1{\\sqrt x}=x^{-1/2}\\), \\(\\frac1{\\sqrt[3]x}=x^{-1/3}\\) antes de integrar.</li><li><strong>Lo que no es propiedad:</strong> \\(\\int x\\cdot x\\,dx=\\frac{x^3}3\\), pero \\(\\int x\\,dx\\cdot\\int x\\,dx\\) da \\(\\frac{x^4}4\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Reescribe (raíces y fracciones como potencias).</li><li><strong>2.</strong> Separa con linealidad.</li><li><strong>3.</strong> Usa la tabla término a término y escribe un solo \\(+C\\).</li><li><strong>4.</strong> Verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int\\big(3^x+4x^3-\\frac2{\\sqrt[3]x}\\big)dx=\\) \\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\big(\\sec^2x-\\sin x+\\frac4x\\big)dx=\\) \\(\\tan x+\\cos x+4\\ln|x|+C\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac1k\\) (\\(\\int e^{3x}dx=\\frac{e^{3x}}3\\), no \\(e^{3x}\\)), cambiar mal el signo en \\(\\int\\sin x=-\\cos x\\), o usar la regla de la potencia con \\(n=-1\\) (ahí sale \\(\\ln|x|\\)).</div>",
+   "ex": [
+    {
+     "id": "w10i1",
+     "lvl": 1,
+     "title": "Polinomio término a término",
+     "q": "<p>Calcula \\(\\int(6x^2-4x+3)\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(2x^3-2x^2+3x+C\\)",
+        "\\(12x-4+C\\)",
+        "\\(6x^3-4x^2+3x+C\\)",
+        "\\(2x^3-4x^2+3x+C\\)",
+        "\\(2x^3-2x^2+3+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Linealidad: \\(6\\int x^2dx-4\\int x\\,dx+3\\int dx\\).",
+      "\\(6\\cdot\\frac{x^3}3-4\\cdot\\frac{x^2}2+3x=\\) \\(2x^3-2x^2+3x\\).",
+      "Verificación: \\((2x^3-2x^2+3x)'=\\) \\(6x^2-4x+3\\). ✓"
+     ],
+     "ans": "2x³ − 2x² + 3x + C",
+     "hint": "Sube el exponente en 1 y divide entre el nuevo exponente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lineal"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10i2",
+     "lvl": 1,
+     "title": "Exponencial, 1/x y coseno",
+     "q": "<p>Calcula \\(\\int\\big(e^x+\\frac1x+\\cos x\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(e^x+\\ln|x|+\\sin x+C\\)",
+        "\\(e^x-\\frac1{x^2}+\\sin x+C\\)",
+        "\\(e^x+\\ln|x|-\\sin x+C\\)",
+        "\\(e^x+\\ln|x|-\\cos x+C\\)",
+        "\\(xe^x+\\ln|x|+\\sin x+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int e^xdx=e^x\\), \\(\\int\\frac1x\\,dx=\\ln|x|\\), \\(\\int\\cos x\\,dx=\\sin x\\).",
+      "Suma y un solo \\(+C\\): \\(e^x+\\ln|x|+\\sin x+C\\)."
+     ],
+     "ans": "eˣ + ln|x| + sin x + C",
+     "hint": "1/x es el único caso donde no sirve la regla de la potencia.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla2"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    },
+    {
+     "id": "w10i3",
+     "lvl": 2,
+     "title": "Potencias con raíz y base 2",
+     "q": "<p>Calcula \\(\\int\\big(2^x+x^3-\\frac5{\\sqrt x}\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-10\\sqrt x+C\\)",
+        "\\(2^x\\ln2+\\frac{x^4}4-10\\sqrt x+C\\)",
+        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4+10\\sqrt x+C\\)",
+        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-\\frac52\\sqrt x+C\\)",
+        "\\(\\frac{2^{x+1}}{x+1}+\\frac{x^4}4-10\\sqrt x+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Reescribe \\(\\frac5{\\sqrt x}=5x^{-1/2}\\).",
+      "\\(\\int2^xdx=\\frac{2^x}{\\ln2}\\) (no es una potencia de \\(x\\): la variable está en el exponente).",
+      "\\(\\int5x^{-1/2}dx=5\\cdot\\frac{x^{1/2}}{1/2}=\\) \\(10\\sqrt x\\).",
+      "Resultado: \\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-10\\sqrt x+C\\)."
+     ],
+     "ans": "2ˣ/ln2 + x⁴/4 − 10√x + C",
+     "hint": "Escribe la raíz como x^(−1/2).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    },
+    {
+     "id": "w10i4",
+     "lvl": 2,
+     "title": "Trigonométricas de la tabla",
+     "q": "<p>Calcula \\(\\int\\big(\\csc^2x+\\sec x\\tan x\\) \\(-e^{2x}\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(-\\cot x+\\sec x-\\frac{e^{2x}}2+C\\)",
+        "\\(\\cot x+\\sec x-\\frac{e^{2x}}2+C\\)",
+        "\\(-\\cot x+\\tan x-\\frac{e^{2x}}2+C\\)",
+        "\\(-\\cot x+\\sec x-2e^{2x}+C\\)",
+        "\\(-\\cot x-\\sec x-\\frac{e^{2x}}2+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int\\csc^2x\\,dx=-\\cot x\\) porque \\((\\cot x)'=-\\csc^2x\\).",
+      "\\(\\int\\sec x\\tan x\\,dx=\\sec x\\).",
+      "\\(\\int e^{2x}dx=\\frac{e^{2x}}2\\).",
+      "Total: \\(-\\cot x+\\sec x-\\frac{e^{2x}}2+C\\)."
+     ],
+     "ans": "−cot x + sec x − e^(2x)/2 + C",
+     "hint": "¿Qué función tiene derivada −csc²x?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    },
+    {
+     "id": "w10i5",
+     "lvl": 2,
+     "title": "Con factores dentro",
+     "q": "<p>Calcula \\(\\int\\big(\\frac3x+5e^{3x}\\) \\(-2\\cos(2x)\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(3\\ln|x|+\\frac53e^{3x}-\\sin(2x)\\) \\(+C\\)",
+        "\\(3\\ln|x|+15e^{3x}\\) \\(-4\\sin(2x)+C\\)",
+        "\\(3\\ln|x|+\\frac53e^{3x}+\\sin(2x)\\) \\(+C\\)",
+        "\\(-\\frac3{x^2}+\\frac53e^{3x}-\\sin(2x)+C\\)",
+        "\\(3\\ln|x|+5e^{3x}-2\\sin(2x)\\) \\(+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int\\frac3x\\,dx=3\\ln|x|\\).",
+      "\\(\\int5e^{3x}dx=5\\cdot\\frac{e^{3x}}3\\).",
+      "\\(\\int2\\cos(2x)\\,dx=\\) \\(2\\cdot\\frac{\\sin(2x)}2=\\sin(2x)\\).",
+      "Resultado: \\(3\\ln|x|+\\frac53e^{3x}-\\sin(2x)\\) \\(+C\\)."
+     ],
+     "ans": "3ln|x| + (5/3)e^(3x) − sin(2x) + C",
+     "hint": "Cuando hay kx adentro, se divide entre k.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10i6",
+     "lvl": 1,
+     "title": "¿Qué NO es propiedad?",
+     "q": "<p>¿Cuál de estas afirmaciones es <strong>falsa</strong>?</p>",
+     "checks": [
+      {
+       "p": "Afirmación falsa",
+       "o": [
+        "\\(\\int f(x)g(x)\\,dx=\\) \\(\\int f(x)\\,dx\\cdot\\int g(x)\\,dx\\)",
+        "Si \\(F\\) y \\(G\\) son antiderivadas de \\(f\\), entonces \\(F-G\\) es constante.",
+        "La constante \\(C\\) se determina con una condición inicial.",
+        "\\(\\int(af+bg)\\,dx=\\) \\(a\\int f\\,dx+b\\int g\\,dx\\)",
+        "Al sustituir \\(u=g(x)\\), no debe quedar ninguna \\(x\\) antes de integrar."
+       ]
+      }
+     ],
+     "steps": [
+      "La linealidad solo vale para sumas y constantes.",
+      "Contraejemplo: \\(\\int x\\cdot x\\,dx=\\frac{x^3}3+C\\), pero \\(\\int x\\,dx\\cdot\\int x\\,dx\\) tiene un término \\(\\frac{x^4}4\\).",
+      "Las demás son verdaderas (la de \\(F-G\\) sale de que \\((F-G)'=0\\))."
+     ],
+     "ans": "∫fg dx ≠ ∫f dx · ∫g dx",
+     "hint": "Prueba con f = g = x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lineal"
+      ],
+      [
+       "lineal"
+      ],
+      [
+       "anti"
+      ]
+     ]
+    },
+    {
+     "id": "w10i7",
+     "lvl": 2,
+     "title": "Valida derivando",
+     "q": "<p>Deriva el lado derecho de cada igualdad. ¿Cuál es <strong>correcta</strong>?</p>",
+     "checks": [
+      {
+       "p": "Correcta",
+       "o": [
+        "\\(\\int\\sin(2x)\\,dx=-\\frac12\\cos(2x)+C\\)",
+        "\\(\\int e^{3x}dx=e^{3x}+C\\)",
+        "\\(\\int x^4dx=x^5+C\\)",
+        "\\(\\int\\cos(3x)\\,dx=3\\sin(3x)+C\\)",
+        "\\(\\int\\frac1{x^2}\\,dx=\\ln(x^2)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\big(-\\frac12\\cos2x\\big)'=\\) \\(-\\frac12\\cdot(-\\sin2x)\\cdot2=\\sin2x\\). ✓",
+      "\\((e^{3x})'=3e^{3x}\\) ✗; \\((x^5)'=5x^4\\) ✗; \\((3\\sin3x)'=9\\cos3x\\) ✗.",
+      "\\((\\ln x^2)'=\\frac2x\\ne\\frac1{x^2}\\) ✗; la correcta sería \\(-\\frac1x+C\\)."
+     ],
+     "ans": "∫sin(2x)dx = −½cos(2x) + C",
+     "hint": "Si la derivada no devuelve el integrando, está mal.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "verifd"
+      ],
+      [
+       "cad"
+      ],
+      [
+       "tabla2"
+      ]
+     ]
+    },
+    {
+     "id": "w10i8",
+     "lvl": 2,
+     "title": "Valor inicial con seno",
+     "q": "<p>Resuelve \\(y'(t)=\\sin(2t)\\) con \\(y(0)=1\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=-\\frac12\\cos(2t)+\\frac32\\)",
+        "\\(y=-\\frac12\\cos(2t)+1\\)",
+        "\\(y=\\frac12\\cos(2t)+\\frac12\\)",
+        "\\(y=-2\\cos(2t)+3\\)",
+        "\\(y=-\\cos(2t)+2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=\\int\\sin(2t)\\,dt=\\) \\(-\\frac12\\cos(2t)+C\\).",
+      "\\(y(0)=-\\frac12\\cos0+C=\\) \\(-\\frac12+C=1\\Rightarrow\\) \\(C=\\frac32\\).",
+      "\\(y=-\\frac12\\cos(2t)+\\frac32\\). Ojo: \\(\\cos0=1\\), no 0."
+     ],
+     "ans": "y = −½cos(2t) + 3/2",
+     "hint": "cos 0 vale 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla2"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "pvi"
+      ]
+     ]
+    },
+    {
+     "id": "w10i9",
+     "lvl": 2,
+     "title": "La curva que pasa por un punto",
+     "q": "<p>De la familia \\(\\int2x\\,dx\\), ¿qué curva pasa por el punto \\((2,1)\\)?</p>",
+     "checks": [
+      {
+       "p": "Curva",
+       "o": [
+        "\\(y=x^2-3\\)",
+        "\\(y=x^2+1\\)",
+        "\\(y=x^2-2\\)",
+        "\\(y=x^2+3\\)",
+        "\\(y=2x^2-7\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int2x\\,dx=x^2+C\\): parábolas desplazadas verticalmente.",
+      "\\(1=2^2+C\\Rightarrow C=-3\\).",
+      "\\(y=x^2-3\\): la parábola \\(x^2\\) bajada 3 unidades."
+     ],
+     "ans": "y = x² − 3",
+     "hint": "C es un desplazamiento vertical.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "anti"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10i10",
+     "lvl": 3,
+     "title": "Raíz cúbica y base 3",
+     "q": "<p>Calcula \\(\\int\\big(3^x+4x^3-\\frac2{\\sqrt[3]x}\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\)",
+        "\\(\\frac{3^x}{\\ln3}+x^4-\\frac43x^{2/3}+C\\)",
+        "\\(3^x\\ln3+x^4-3x^{2/3}+C\\)",
+        "\\(\\frac{3^x}{\\ln3}+x^4+3x^{2/3}+C\\)",
+        "\\(\\frac{3^x}{\\ln3}+x^4-3x^{4/3}+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac2{\\sqrt[3]x}=2x^{-1/3}\\).",
+      "\\(\\int2x^{-1/3}dx=2\\cdot\\frac{x^{2/3}}{2/3}=\\) \\(3x^{2/3}\\).",
+      "\\(\\int3^xdx=\\frac{3^x}{\\ln3}\\), \\(\\int4x^3dx=x^4\\).",
+      "Resultado: \\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\)."
+     ],
+     "ans": "3ˣ/ln3 + x⁴ − 3x^(2/3) + C",
+     "hint": "−1/3 + 1 = 2/3; dividir entre 2/3 es multiplicar por 3/2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "tabla2"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w10sus",
+   "name": "Sem. 10 · Método de sustitución",
+   "teo": "<p>La sustitución es la <strong>regla de la cadena al revés</strong>: si \\(\\frac d{dx}F(g(x))=\\) \\(F'(g(x))\\,g'(x)\\), entonces \\(\\int f(g(x))\\,g'(x)\\,dx=\\) \\(\\int f(u)\\,du\\) con \\(u=g(x)\\), \\(du=g'(x)\\,dx\\).</p>\n<p><strong>Protocolo:</strong> (1) elige \\(u\\) = la función interna; (2) calcula \\(du\\) y despeja; (3) reescribe <em>todo</em> en \\(u\\); (4) integra con la tabla; (5) regresa a \\(x\\).</p>\n<p>Si después de sustituir queda alguna \\(x\\), la elección de \\(u\\) es mala o falta ajustar una constante (por ejemplo, \\(x\\,dx=\\frac12du\\)).</p>",
+   "form": [
+    "\\(u=g(x)\\Rightarrow du=g'(x)\\,dx\\)",
+    "\\(\\int u^n\\,du=\\frac{u^{n+1}}{n+1}\\)",
+    "\\(\\int\\frac{du}u=\\ln|u|\\)",
+    "\\(\\int e^u du=e^u\\), \\(\\int\\cos u\\,du=\\sin u\\)",
+    "\\(\\int\\frac{du}{1+u^2}=\\arctan u\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Busca en el integrando una <strong>pareja</strong>: una función \"de adentro\" y su derivada multiplicando afuera. \\(3x^2(x^3+1)^4\\): adentro está \\(x^3+1\\) y afuera su derivada \\(3x^2\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Patrones típicos:</strong> \\(\\frac{g'}{g}\\to\\ln|g|\\); \\(g'\\,e^{g}\\to e^{g}\\); \\(\\frac{\\ln x}x\\) con \\(u=\\ln x\\); \\(\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\) con \\(u=\\tan x\\).</li><li><strong>Constantes que faltan:</strong> en \\(\\int x\\sqrt{x^2+4}\\,dx\\), \\(du=2x\\,dx\\Rightarrow x\\,dx=\\frac12du\\).</li><li><strong>Linealidad primero:</strong> si hay una suma, separa y usa una sustitución distinta en cada parte (\\(u\\) en una, \\(w\\) en otra).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Qué está \"dentro\" de una potencia, raíz, exponencial, log o trig? Esa es \\(u\\).</li><li><strong>2.</strong> Deriva: \\(du=\\dots dx\\). ¿Está ese factor en el integrando?</li><li><strong>3.</strong> Reescribe, integra y vuelve a \\(x\\).</li><li><strong>4.</strong> Verifica derivando (sale la regla de la cadena).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\frac{\\cos(\\ln x)}x\\,dx\\): \\(u=\\ln x\\), \\(du=\\frac{dx}x\\Rightarrow\\) \\(\\int\\cos u\\,du=\\sin(\\ln x)+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> \\(\\int\\big(\\frac{2x}{x^2+5}\\) \\(+\\sin^3x\\cos x\\big)dx=\\) \\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\).</div>\n<div class=\"err\"><b>Error común:</b> cambiar \\(x^3+1\\) por \\(u\\) pero no reemplazar \\(dx\\) por \\(du\\) (queda un \\(x^2\\) suelto o falta el \\(\\frac13\\)), u olvidar regresar a la variable \\(x\\) al final.</div>",
+   "ex": [
+    {
+     "id": "w10u1",
+     "lvl": 1,
+     "title": "La pareja función–derivada",
+     "q": "<p>Calcula \\(\\int3x^2(x^3+1)^4\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{(x^3+1)^5}5+C\\)",
+        "\\((x^3+1)^5+C\\)",
+        "\\(\\frac{3x^2(x^3+1)^5}5+C\\)",
+        "\\(\\frac{(x^3+1)^5}{15}+C\\)",
+        "\\(\\frac{x^3(x^3+1)^5}5+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^3+1\\Rightarrow du=3x^2dx\\): el \\(3x^2dx\\) completo es \\(du\\).",
+      "\\(\\int u^4du=\\frac{u^5}5+C\\).",
+      "Regresando: \\(\\frac{(x^3+1)^5}5+C\\)."
+     ],
+     "ans": "(x³+1)⁵/5 + C",
+     "hint": "Lo de adentro del paréntesis es u.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "w10u2",
+     "lvl": 1,
+     "title": "ln x sobre x",
+     "q": "<p>Calcula \\(\\int\\frac{\\ln x}x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{(\\ln x)^2}2+C\\)",
+        "\\(\\ln|\\ln x|+C\\)",
+        "\\((\\ln x)^2+C\\)",
+        "\\(x\\ln x-x+C\\)",
+        "\\(\\frac1{2x^2}+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\ln x\\Rightarrow du=\\frac1x\\,dx\\).",
+      "\\(\\int u\\,du=\\frac{u^2}2+C=\\frac{(\\ln x)^2}2+C\\)."
+     ],
+     "ans": "(ln x)²/2 + C",
+     "hint": "La derivada de ln x es 1/x, que ya está.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "tabla2"
+      ]
+     ]
+    },
+    {
+     "id": "w10u3",
+     "lvl": 2,
+     "title": "Potencia negativa",
+     "q": "<p>Calcula \\(\\int\\frac{x}{(x^2+1)^3}\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(-\\frac1{4(x^2+1)^2}+C\\)",
+        "\\(-\\frac1{2(x^2+1)^2}+C\\)",
+        "\\(\\frac1{4(x^2+1)^2}+C\\)",
+        "\\(-\\frac1{8(x^2+1)^4}+C\\)",
+        "\\(\\frac12\\ln(x^2+1)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^2+1\\Rightarrow du=2x\\,dx\\Rightarrow\\) \\(x\\,dx=\\frac12du\\).",
+      "\\(\\frac12\\int u^{-3}du=\\frac12\\cdot\\frac{u^{-2}}{-2}=\\) \\(-\\frac1{4u^2}\\).",
+      "Resultado: \\(-\\frac1{4(x^2+1)^2}+C\\)."
+     ],
+     "ans": "−1/(4(x²+1)²) + C",
+     "hint": "Escribe 1/u³ como u^(−3).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ajuste"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "w10u4",
+     "lvl": 2,
+     "title": "Exponencial compuesta",
+     "q": "<p>Calcula \\(\\int e^{2x}\\cos(e^{2x})\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac12\\sin(e^{2x})+C\\)",
+        "\\(\\sin(e^{2x})+C\\)",
+        "\\(2\\sin(e^{2x})+C\\)",
+        "\\(-\\frac12\\sin(e^{2x})+C\\)",
+        "\\(\\frac12e^{2x}\\sin(e^{2x})+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=e^{2x}\\Rightarrow du=2e^{2x}dx\\Rightarrow\\) \\(e^{2x}dx=\\frac{du}2\\).",
+      "\\(\\frac12\\int\\cos u\\,du=\\frac12\\sin u\\).",
+      "Resultado: \\(\\frac12\\sin(e^{2x})+C\\)."
+     ],
+     "ans": "½ sin(e^(2x)) + C",
+     "hint": "u es lo que está dentro del coseno.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ajuste"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "w10u5",
+     "lvl": 2,
+     "title": "x por e a la x²",
+     "q": "<p>Calcula \\(\\int x\\,e^{x^2}dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac12e^{x^2}+C\\)",
+        "\\(e^{x^2}+C\\)",
+        "\\(2e^{x^2}+C\\)",
+        "\\(\\frac12x^2e^{x^2}+C\\)",
+        "\\(\\frac{e^{x^2}}{2x}+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^2\\Rightarrow du=2x\\,dx\\Rightarrow\\) \\(x\\,dx=\\frac12du\\).",
+      "\\(\\frac12\\int e^udu=\\frac12e^{x^2}+C\\)."
+     ],
+     "ans": "½ e^(x²) + C",
+     "hint": "La x de afuera es casi la derivada de x².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ajuste"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "w10u6",
+     "lvl": 2,
+     "title": "Tangente bajo raíz",
+     "q": "<p>Calcula \\(\\int\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(2\\sqrt{\\tan x}+C\\)",
+        "\\(\\sqrt{\\tan x}+C\\)",
+        "\\(\\frac12\\sqrt{\\tan x}+C\\)",
+        "\\(\\frac23(\\tan x)^{3/2}+C\\)",
+        "\\(-\\frac2{\\sqrt{\\tan x}}+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\tan x\\Rightarrow du=\\sec^2x\\,dx\\).",
+      "\\(\\int u^{-1/2}du=\\frac{u^{1/2}}{1/2}=2\\sqrt u\\).",
+      "Resultado: \\(2\\sqrt{\\tan x}+C\\). Verificación: \\((2\\sqrt{\\tan x})'=\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\). ✓"
+     ],
+     "ans": "2√(tan x) + C",
+     "hint": "¿De quién es derivada sec²x?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10u7",
+     "lvl": 2,
+     "title": "Suma con dos sustituciones",
+     "q": "<p>Calcula \\(\\int\\big(\\frac{2x}{x^2+5}\\) \\(+\\sin^3x\\cos x\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\)",
+        "\\(2\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\)",
+        "\\(\\ln(x^2+5)-\\frac{\\sin^4x}4+C\\)",
+        "\\(\\ln(x^2+5)+\\frac{\\cos^4x}4+C\\)",
+        "\\(\\frac1{x^2+5}+\\frac{\\sin^4x}4+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Linealidad: \\(I_1=\\int\\frac{2x}{x^2+5}dx\\), \\(I_2=\\int\\sin^3x\\cos x\\,dx\\).",
+      "\\(I_1\\): \\(u=x^2+5\\), \\(du=2x\\,dx\\Rightarrow\\) \\(\\int\\frac{du}u=\\ln(x^2+5)\\) (siempre positivo).",
+      "\\(I_2\\): \\(w=\\sin x\\), \\(dw=\\cos x\\,dx\\Rightarrow\\) \\(\\int w^3dw=\\frac{\\sin^4x}4\\).",
+      "Suma: \\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\)."
+     ],
+     "ans": "ln(x²+5) + sin⁴x/4 + C",
+     "hint": "Separa la suma y usa una sustitución en cada parte.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lineal"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10u8",
+     "lvl": 2,
+     "title": "Raíz y exponencial",
+     "q": "<p>Calcula \\(\\int\\big(x\\sqrt{x^2+4}\\) \\(+e^{\\sin x}\\cos x\\big)dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac13(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
+        "\\(\\frac23(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
+        "\\(\\frac13(x^2+4)^{3/2}-e^{\\sin x}+C\\)",
+        "\\(\\frac12(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
+        "\\(\\frac13(x^2+4)^{3/2}\\) \\(+e^{\\sin x}\\cos x+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(I_1\\): \\(u=x^2+4\\), \\(x\\,dx=\\frac12du\\Rightarrow\\) \\(\\frac12\\int u^{1/2}du=\\frac12\\cdot\\frac23u^{3/2}=\\) \\(\\frac13(x^2+4)^{3/2}\\).",
+      "\\(I_2\\): \\(w=\\sin x\\), \\(dw=\\cos x\\,dx\\Rightarrow\\) \\(\\int e^wdw=e^{\\sin x}\\).",
+      "Resultado: \\(\\frac13(x^2+4)^{3/2}+e^{\\sin x}+C\\)."
+     ],
+     "ans": "⅓(x²+4)^(3/2) + e^(sin x) + C",
+     "hint": "No olvides el ½ que sale de x dx = ½ du.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ajuste"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    },
+    {
+     "id": "w10u9",
+     "lvl": 2,
+     "title": "Caza de errores",
+     "q": "<p>Un estudiante resuelve \\(\\int x^2(x^3+1)^4dx\\) así: «\\(u=x^3+1\\), entonces \\(\\int u^4du=\\frac{u^5}5\\), resultado \\(\\frac{(x^3+1)^5}5+C\\)». ¿Cuál es el error y la respuesta correcta?</p>",
+     "checks": [
+      {
+       "p": "Diagnóstico",
+       "o": [
+        "No ajustó \\(du\\): \\(x^2dx=\\frac13du\\); la respuesta es \\(\\frac{(x^3+1)^5}{15}+C\\)",
+        "Eligió mal \\(u\\); debía ser \\(u=x^2\\)",
+        "No hay error; la respuesta es correcta",
+        "Faltó multiplicar por \\(3x^2\\): la respuesta es \\(\\frac{3x^2(x^3+1)^5}5+C\\)",
+        "La potencia debía bajar: \\(\\frac{(x^3+1)^3}3+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(du=3x^2dx\\), pero en el integrando solo hay \\(x^2dx=\\frac13du\\).",
+      "\\(\\frac13\\int u^4du=\\frac{u^5}{15}\\Rightarrow\\) \\(\\frac{(x^3+1)^5}{15}+C\\).",
+      "Al derivar la respuesta del estudiante sale \\(3x^2(x^3+1)^4\\): el triple de lo pedido."
+     ],
+     "ans": "Faltó el factor 1/3: (x³+1)⁵/15 + C",
+     "hint": "Deriva la respuesta del estudiante y compara.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ajuste"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10u10",
+     "lvl": 3,
+     "title": "Arcotangente escondida",
+     "q": "<p>Calcula \\(\\int\\frac{dx}{1+4x^2}\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac12\\arctan(2x)+C\\)",
+        "\\(\\arctan(2x)+C\\)",
+        "\\(2\\arctan(2x)+C\\)",
+        "\\(\\frac12\\arctan x+C\\)",
+        "\\(\\frac18\\ln(1+4x^2)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(1+4x^2=1+(2x)^2\\): toma \\(u=2x\\), \\(du=2\\,dx\\Rightarrow dx=\\frac{du}2\\).",
+      "\\(\\frac12\\int\\frac{du}{1+u^2}=\\frac12\\arctan u\\).",
+      "Resultado: \\(\\frac12\\arctan(2x)+C\\). (El \\(\\ln\\) no sirve: arriba no está la derivada \\(8x\\).)"
+     ],
+     "ans": "½ arctan(2x) + C",
+     "hint": "Recuerda (arctan u)′ = u′/(1+u²).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "atan"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10u11",
+     "lvl": 3,
+     "title": "x por ln x en el denominador",
+     "q": "<p>Calcula \\(\\int\\frac{dx}{x\\ln x}\\) para \\(x\\gt1\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\ln|\\ln x|+C\\)",
+        "\\(\\frac{(\\ln x)^2}2+C\\)",
+        "\\(\\frac1{\\ln x}+C\\)",
+        "\\(-\\frac1{(\\ln x)^2}+C\\)",
+        "\\(\\ln x\\cdot\\ln|x|+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\ln x\\Rightarrow du=\\frac{dx}x\\).",
+      "\\(\\int\\frac{du}u=\\ln|u|=\\ln|\\ln x|+C\\)."
+     ],
+     "ans": "ln|ln x| + C",
+     "hint": "Reescribe como (1/ln x)·(1/x) dx.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "tabla2"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w10par",
+   "name": "Sem. 10 · Integración por partes e ILATE",
+   "teo": "<p>De la regla del producto \\((uv)'=u'v+uv'\\) sale \\(\\int u\\,dv=uv-\\int v\\,du\\) («un día vi una vaca vestida de uniforme»).</p>\n<p><strong>ILATE</strong> ordena qué elegir como \\(u\\): Inversa trigonométrica, Logarítmica, Algebraica, Trigonométrica, Exponencial. Lo que aparece primero es \\(u\\); el resto es \\(dv\\). Es una regla práctica: la elección es buena si \\(\\int v\\,du\\) queda más simple.</p>\n<p>Variantes: <strong>múltiple</strong> (\\(x^2e^x\\), \\(x^2\\sin x\\): aplicar dos veces) y <strong>cíclica</strong> (\\(e^{ax}\\sin bx\\): reaparece la integral original y se despeja).</p>",
+   "form": [
+    "\\(\\int u\\,dv=uv-\\int v\\,du\\)",
+    "ILATE: I > L > A > T > E",
+    "\\(\\int xe^xdx=e^x(x-1)+C\\)",
+    "\\(\\int\\ln x\\,dx=x\\ln x-x+C\\)",
+    "\\(\\int x\\cos x\\,dx=\\) \\(x\\sin x+\\cos x+C\\)",
+    "\\(\\int x^2e^xdx=\\) \\(e^x(x^2-2x+2)+C\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Partes sirve para un <strong>producto de dos tipos distintos</strong> de funciones (algebraica por exponencial, log por algebraica…), donde no hay una pareja función–derivada para sustituir.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Elegir \\(u\\):</strong> la que se simplifica al derivar (\\(x\\to1\\), \\(\\ln x\\to\\frac1x\\)). \\(dv\\) debe ser fácil de integrar.</li><li><strong>Log o arctan solos:</strong> \\(\\int\\ln x\\,dx\\) se escribe \\(\\int(\\ln x)(1)\\,dx\\) con \\(u=\\ln x\\), \\(dv=dx\\).</li><li><strong>Múltiple:</strong> \\(x^n\\) por \\(e^x\\) o trig necesita \\(n\\) aplicaciones.</li><li><strong>Cíclica:</strong> llama \\(I\\) a la integral, aplica partes dos veces y despeja \\(I\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica los tipos y elige \\(u\\) con ILATE.</li><li><strong>2.</strong> Calcula \\(du\\) (derivando) y \\(v\\) (integrando \\(dv\\)).</li><li><strong>3.</strong> Aplica \\(uv-\\int v\\,du\\).</li><li><strong>4.</strong> Resuelve la integral nueva (quizá con partes otra vez) y verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int x^2\\sin x\\,dx\\): \\(u=x^2\\), \\(v=-\\cos x\\Rightarrow\\) \\(-x^2\\cos x+2\\int x\\cos x\\,dx=\\) \\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10, cíclica):</b> \\(\\int e^{2x}\\sin3x\\,dx=\\) \\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\).</div>\n<div class=\"err\"><b>Error común:</b> elegir \\(u=e^x\\) en \\(\\int xe^x\\,dx\\): la nueva integral \\(\\int\\frac{x^2}2e^xdx\\) es peor. También olvidar el signo menos de \\(v=-\\cos x\\) cuando \\(dv=\\sin x\\,dx\\).</div>",
+   "ex": [
+    {
+     "id": "w10p1",
+     "lvl": 1,
+     "title": "ILATE: ¿quién es u?",
+     "q": "<p>En \\(\\int x^2\\ln x\\,dx\\), según ILATE, ¿qué conviene tomar como \\(u\\)?</p>",
+     "checks": [
+      {
+       "p": "u",
+       "o": [
+        "\\(u=\\ln x\\)",
+        "\\(u=x^2\\)",
+        "\\(u=x^2\\ln x\\)",
+        "\\(u=\\frac{x^3}3\\)",
+        "\\(u=\\frac1x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "ILATE: la L (logarítmica) va antes que la A (algebraica).",
+      "\\(u=\\ln x\\Rightarrow du=\\frac{dx}x\\); \\(dv=x^2dx\\Rightarrow v=\\frac{x^3}3\\).",
+      "\\(\\int v\\,du=\\int\\frac{x^2}3dx\\) es inmediata: buena elección."
+     ],
+     "ans": "u = ln x",
+     "hint": "L va antes que A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ilate"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ]
+     ]
+    },
+    {
+     "id": "w10p2",
+     "lvl": 1,
+     "title": "x por eˣ",
+     "q": "<p>Calcula \\(\\int xe^x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(e^x(x-1)+C\\)",
+        "\\(xe^x+C\\)",
+        "\\(e^x(x+1)+C\\)",
+        "\\(\\frac{x^2}2e^x+C\\)",
+        "\\(e^x(1-x)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "ILATE: \\(u=x\\) (A), \\(dv=e^xdx\\) (E). \\(du=dx\\), \\(v=e^x\\).",
+      "\\(xe^x-\\int e^xdx=xe^x-e^x+C=\\) \\(e^x(x-1)+C\\)."
+     ],
+     "ans": "eˣ(x − 1) + C",
+     "hint": "u = x se simplifica al derivar.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ilate"
+      ],
+      [
+       "partes"
+      ]
+     ]
+    },
+    {
+     "id": "w10p3",
+     "lvl": 1,
+     "title": "Logaritmo solo",
+     "q": "<p>Calcula \\(\\int\\ln x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(x\\ln x-x+C\\)",
+        "\\(\\frac1x+C\\)",
+        "\\(x\\ln x+x+C\\)",
+        "\\(\\frac{(\\ln x)^2}2+C\\)",
+        "\\(x\\ln x+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Escribe \\(\\ln x=(\\ln x)\\cdot1\\): \\(u=\\ln x\\), \\(dv=dx\\). \\(du=\\frac{dx}x\\), \\(v=x\\).",
+      "\\(x\\ln x-\\int x\\cdot\\frac1x\\,dx=\\) \\(x\\ln x-x+C\\)."
+     ],
+     "ans": "x ln x − x + C",
+     "hint": "El dv puede ser solo dx.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ilate"
+      ],
+      [
+       "partes"
+      ]
+     ]
+    },
+    {
+     "id": "w10p4",
+     "lvl": 2,
+     "title": "x por coseno",
+     "q": "<p>Calcula \\(\\int x\\cos x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(x\\sin x+\\cos x+C\\)",
+        "\\(x\\sin x-\\cos x+C\\)",
+        "\\(-x\\sin x+\\cos x+C\\)",
+        "\\(\\frac{x^2}2\\sin x+C\\)",
+        "\\(\\sin x+x\\cos x+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x\\), \\(dv=\\cos x\\,dx\\); \\(du=dx\\), \\(v=\\sin x\\).",
+      "\\(x\\sin x-\\int\\sin x\\,dx=\\) \\(x\\sin x-(-\\cos x)=\\) \\(x\\sin x+\\cos x\\).",
+      "Verificación: \\((x\\sin x+\\cos x)'=\\) \\(\\sin x+x\\cos x-\\sin x=\\) \\(x\\cos x\\). ✓"
+     ],
+     "ans": "x sin x + cos x + C",
+     "hint": "Cuidado: ∫sin x dx = −cos x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "tabla2"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10p5",
+     "lvl": 2,
+     "title": "Partes dos veces",
+     "q": "<p>Calcula \\(\\int x^2e^x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(e^x(x^2-2x+2)+C\\)",
+        "\\(e^x(x^2+2x+2)+C\\)",
+        "\\(e^x(x^2-2x)+C\\)",
+        "\\(x^2e^x-2e^x+C\\)",
+        "\\(e^x(x^2-x+1)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^2\\), \\(dv=e^xdx\\): \\(x^2e^x-2\\int xe^xdx\\).",
+      "\\(\\int xe^xdx=e^x(x-1)\\) (partes otra vez).",
+      "\\(x^2e^x-2e^x(x-1)=\\) \\(e^x(x^2-2x+2)+C\\)."
+     ],
+     "ans": "eˣ(x² − 2x + 2) + C",
+     "hint": "Cada aplicación baja un grado a x².",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10p6",
+     "lvl": 2,
+     "title": "x por ln x",
+     "q": "<p>Calcula \\(\\int x\\ln x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{x^2\\ln x}2-\\frac{x^2}4+C\\)",
+        "\\(\\frac{x^2\\ln x}2+\\frac{x^2}4+C\\)",
+        "\\(x\\ln x-x+C\\)",
+        "\\(\\frac{x^2\\ln x}2+C\\)",
+        "\\(\\frac{x^2\\ln x}2-\\frac{x^2}2+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "ILATE: \\(u=\\ln x\\), \\(dv=x\\,dx\\); \\(du=\\frac{dx}x\\), \\(v=\\frac{x^2}2\\).",
+      "\\(\\frac{x^2}2\\ln x-\\int\\frac{x^2}2\\cdot\\frac1x\\,dx=\\) \\(\\frac{x^2\\ln x}2-\\int\\frac x2\\,dx\\).",
+      "\\(=\\frac{x^2\\ln x}2-\\frac{x^2}4+C\\)."
+     ],
+     "ans": "x²ln x/2 − x²/4 + C",
+     "hint": "Aquí u = ln x, no x.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ilate"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "tabla2"
+      ]
+     ]
+    },
+    {
+     "id": "w10p7",
+     "lvl": 2,
+     "title": "x² por seno",
+     "q": "<p>Calcula \\(\\int x^2\\sin x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\)",
+        "\\(-x^2\\cos x+2x\\sin x-2\\cos x\\) \\(+C\\)",
+        "\\(x^2\\cos x-2x\\sin x-2\\cos x\\) \\(+C\\)",
+        "\\(-x^2\\cos x+2x\\sin x+C\\)",
+        "\\(-x^2\\cos x-2x\\sin x+2\\cos x\\) \\(+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^2\\), \\(dv=\\sin x\\,dx\\); \\(du=2x\\,dx\\), \\(v=-\\cos x\\): \\(-x^2\\cos x+2\\int x\\cos x\\,dx\\).",
+      "\\(\\int x\\cos x\\,dx=x\\sin x+\\cos x\\).",
+      "Total: \\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\)."
+     ],
+     "ans": "−x²cos x + 2x sin x + 2cos x + C",
+     "hint": "El menos de v = −cos x cambia el signo de la segunda integral.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10p8",
+     "lvl": 3,
+     "title": "Arcotangente sola",
+     "q": "<p>Calcula \\(\\int\\arctan x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(x\\arctan x-\\frac12\\ln(1+x^2)\\) \\(+C\\)",
+        "\\(x\\arctan x+\\frac12\\ln(1+x^2)\\) \\(+C\\)",
+        "\\(x\\arctan x-\\ln(1+x^2)+C\\)",
+        "\\(\\frac1{1+x^2}+C\\)",
+        "\\(\\arctan x-\\frac12\\ln(1+x^2)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "ILATE: \\(u=\\arctan x\\) (I), \\(dv=dx\\). \\(du=\\frac{dx}{1+x^2}\\), \\(v=x\\).",
+      "\\(x\\arctan x-\\int\\frac{x}{1+x^2}dx\\).",
+      "Sustitución \\(w=1+x^2\\): \\(\\int\\frac{x\\,dx}{1+x^2}=\\frac12\\ln(1+x^2)\\).",
+      "Resultado: \\(x\\arctan x-\\frac12\\ln(1+x^2)\\) \\(+C\\)."
+     ],
+     "ans": "x arctan x − ½ln(1+x²) + C",
+     "hint": "Partes y luego una sustitución.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ilate"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "sust"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10p9",
+     "lvl": 3,
+     "title": "Cíclica: eˣ por seno",
+     "q": "<p>Calcula \\(I=\\int e^x\\sin x\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{e^x}2(\\sin x-\\cos x)+C\\)",
+        "\\(\\frac{e^x}2(\\sin x+\\cos x)+C\\)",
+        "\\(e^x(\\sin x-\\cos x)+C\\)",
+        "\\(-e^x\\cos x+C\\)",
+        "\\(\\frac{e^x}2(\\cos x-\\sin x)+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\sin x\\), \\(dv=e^xdx\\): \\(I=e^x\\sin x-\\int e^x\\cos x\\,dx\\).",
+      "Otra vez, \\(u=\\cos x\\): \\(\\int e^x\\cos x\\,dx=e^x\\cos x+I\\).",
+      "\\(I=e^x\\sin x-e^x\\cos x-I\\Rightarrow\\) \\(2I=e^x(\\sin x-\\cos x)\\).",
+      "\\(I=\\frac{e^x}2(\\sin x-\\cos x)+C\\)."
+     ],
+     "ans": "eˣ(sin x − cos x)/2 + C",
+     "hint": "Reaparece I: pásala al otro lado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "ciclica"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10p10",
+     "lvl": 3,
+     "title": "Cíclica de la guía",
+     "q": "<p>Calcula \\(I=\\int e^{2x}\\sin(3x)\\,dx\\).</p>",
+     "checks": [
+      {
+       "p": "Resultado",
+       "o": [
+        "\\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\)",
+        "\\(\\frac{e^{2x}}{13}(2\\sin3x+3\\cos3x)\\) \\(+C\\)",
+        "\\(\\frac{e^{2x}}{13}(3\\sin3x-2\\cos3x)\\) \\(+C\\)",
+        "\\(\\frac{e^{2x}}5(2\\sin3x-3\\cos3x)\\) \\(+C\\)",
+        "\\(\\frac{e^{2x}}4(2\\sin3x-3\\cos3x)\\) \\(+C\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\sin3x\\), \\(v=\\frac12e^{2x}\\): \\(I=\\frac12e^{2x}\\sin3x-\\frac32J\\), \\(J=\\int e^{2x}\\cos3x\\,dx\\).",
+      "En \\(J\\): \\(J=\\frac12e^{2x}\\cos3x+\\frac32I\\).",
+      "\\(I=\\) \\(\\frac12e^{2x}\\sin3x\\) \\(-\\frac34e^{2x}\\cos3x-\\frac94I\\Rightarrow\\) \\(\\frac{13}4I=\\) \\(e^{2x}\\big(\\frac12\\sin3x-\\frac34\\cos3x\\big)\\).",
+      "\\(I=\\) \\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\)."
+     ],
+     "ans": "e^(2x)(2sin3x − 3cos3x)/13 + C",
+     "hint": "1 + 9/4 = 13/4.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "ciclica"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10p11",
+     "lvl": 2,
+     "title": "¿Qué pasa si eliges mal?",
+     "q": "<p>En \\(\\int xe^x\\,dx\\), un estudiante toma \\(u=e^x\\) y \\(dv=x\\,dx\\). ¿Qué ocurre?</p>",
+     "checks": [
+      {
+       "p": "Consecuencia",
+       "o": [
+        "Le queda \\(\\int\\frac{x^2}2e^xdx\\), más difícil que la original",
+        "Llega al mismo resultado con menos pasos",
+        "La integral se vuelve cíclica y se despeja",
+        "Obtiene \\(\\frac{x^2}2e^x+C\\), que es correcto",
+        "No se puede aplicar partes con esa elección"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(u=e^x\\): \\(du=e^xdx\\), \\(v=\\frac{x^2}2\\).",
+      "\\(\\int u\\,dv=\\frac{x^2}2e^x-\\int\\frac{x^2}2e^xdx\\): la potencia de \\(x\\) subió.",
+      "Por eso ILATE pone la A antes que la E: \\(u=x\\) se simplifica al derivar."
+     ],
+     "ans": "La nueva integral es peor (∫x²eˣ/2 dx)",
+     "hint": "¿La nueva integral es más simple o más complicada?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "partes"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "ilate"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "w10edo",
+   "name": "Sem. 10 · EDO separables con sustitución o partes (IRCA)",
+   "teo": "<p>Una EDO \\(\\frac{dy}{dt}=g(t)\\,h(y)\\) se resuelve separando \\(\\frac{dy}{h(y)}=g(t)\\,dt\\) e integrando <strong>ambos lados</strong>. Ahora esas integrales pueden necesitar sustitución o partes.</p>\n<p><strong>Protocolo:</strong> (1) reconoce el producto \\(g(t)h(y)\\); (2) separa; (3) integra (una sola constante); (4) usa la condición inicial; (5) despeja \\(y(t)\\); (6) verifica derivando.</p>\n<p>En problemas de contexto se usa <strong>IRCA</strong>: Interpretación, Representación, Cálculo y Análisis (límite a largo plazo, monotonía y conclusión en palabras del problema).</p>",
+   "form": [
+    "\\(\\frac{dy}{h(y)}=g(t)\\,dt\\)",
+    "\\(\\ln|y|=G(t)+K\\Rightarrow\\) \\(y=Ae^{G(t)}\\)",
+    "\\(\\int\\frac t{\\sqrt{1+t^2}}dt=\\sqrt{1+t^2}\\)",
+    "\\(\\int te^{-t}dt=-(t+1)e^{-t}\\)",
+    "\\(\\int\\ln t\\,dt=t\\ln t-t\\)",
+    "Newton: \\(T=T_a+(T_0-T_a)e^{-kt}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Separar es el mismo truco de la semana 9; lo nuevo es que el lado de \\(t\\) ya no es inmediato. Primero separas y después decides: ¿sustitución o partes?</p>\n<h3>Conceptos clave</h3><ul><li><strong>Forma exponencial:</strong> si queda \\(\\ln|y|=G(t)+K\\), entonces \\(y=Ae^{G(t)}\\) y \\(A\\) sale de la condición inicial.</li><li><strong>Elegir técnica:</strong> \\(\\frac t{t^2+1}\\) o \\(\\frac{\\ln t}t\\) → sustitución; \\(te^{-t}\\) o \\(\\ln t\\) → partes.</li><li><strong>Soluciones constantes:</strong> si \\(h(y_0)=0\\), \\(y=y_0\\) también es solución y la separación no la ve.</li><li><strong>Análisis (fase A):</strong> signo de \\(y'\\), límite cuando \\(t\\to\\infty\\) y validez del modelo.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>I.</strong> Variables, unidades, tasa y condición inicial.</li><li><strong>R.</strong> Escribe la EDO y sepárala.</li><li><strong>C.</strong> Integra (sustitución o partes), aplica la condición inicial y despeja.</li><li><strong>A.</strong> Verifica derivando, analiza \\(t\\to\\infty\\) y concluye en contexto.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> \\(\\frac{dy}{dt}=y\\ln t\\), \\(y(1)=1\\): \\(\\ln y=t\\ln t-t+C\\), \\(C=1\\Rightarrow y=t^te^{1-t}\\).</div>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> farmacocinética \\(\\frac{dC}{dt}=-2te^{-t}C\\), \\(C(0)=20\\): \\(C=20e^{2[(t+1)e^{-t}-1]}\\), \\(C(2)\\approx6.10\\) mg/L y \\(C\\to20e^{-2}\\approx2.71\\) mg/L.</div>\n<div class=\"err\"><b>Error común:</b> poner una constante en cada lado y aplicar la condición inicial solo a una, o despejar \\(y\\) olvidando que \\(e^{G+K}=e^K\\cdot e^G\\) (la constante multiplica, no suma).</div>",
+   "ex": [
+    {
+     "id": "w10e1",
+     "lvl": 1,
+     "title": "Separable con t²",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=3t^2y\\) con \\(y(0)=1\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=e^{t^3}\\)",
+        "\\(y=e^{3t^2}\\)",
+        "\\(y=1+t^3\\)",
+        "\\(y=e^{6t}\\)",
+        "\\(y=t^3e^t\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dy}y=3t^2dt\\Rightarrow\\ln|y|=t^3+K\\Rightarrow\\) \\(y=Ae^{t^3}\\).",
+      "\\(y(0)=A=1\\Rightarrow y=e^{t^3}\\)."
+     ],
+     "ans": "y = e^(t³)",
+     "hint": "∫3t² dt = t³.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ]
+     ]
+    },
+    {
+     "id": "w10e2",
+     "lvl": 1,
+     "title": "dy/dt = t/y",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac ty\\) con \\(y(0)=2\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=\\sqrt{t^2+4}\\)",
+        "\\(y=\\sqrt{t^2+2}\\)",
+        "\\(y=\\frac{t^2}2+2\\)",
+        "\\(y=t+2\\)",
+        "\\(y=(t^2+4)^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y\\,dy=t\\,dt\\Rightarrow\\frac{y^2}2=\\frac{t^2}2+K\\Rightarrow\\) \\(y^2=t^2+C\\).",
+      "\\(y(0)=2\\Rightarrow C=4\\); como \\(y\\gt0\\), \\(y=\\sqrt{t^2+4}\\)."
+     ],
+     "ans": "y = √(t² + 4)",
+     "hint": "Pasa la y multiplicando al lado de dy.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ]
+     ]
+    },
+    {
+     "id": "w10e3",
+     "lvl": 2,
+     "title": "Exponencial de una resta",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=e^{t-y}\\) con \\(y(0)=0\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=t\\)",
+        "\\(y=\\ln(e^t+1)\\)",
+        "\\(y=e^t-1\\)",
+        "\\(y=-t\\)",
+        "\\(y=\\ln(2e^t-1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e^{t-y}=e^t\\cdot e^{-y}\\Rightarrow\\) \\(e^ydy=e^tdt\\).",
+      "\\(e^y=e^t+C\\); \\(y(0)=0\\Rightarrow1=1+C\\Rightarrow C=0\\).",
+      "\\(e^y=e^t\\Rightarrow y=t\\). Verificación: \\(y'=1=e^{t-t}\\). ✓"
+     ],
+     "ans": "y = t",
+     "hint": "e^(t−y) = eᵗ·e^(−y).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      [
+       "verifd"
+      ]
+     ]
+    },
+    {
+     "id": "w10e4",
+     "lvl": 2,
+     "title": "Con seno",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=y\\sin t\\) con \\(y(0)=1\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=e^{1-\\cos t}\\)",
+        "\\(y=e^{-\\cos t}\\)",
+        "\\(y=e^{\\cos t-1}\\)",
+        "\\(y=e^{\\sin t}\\)",
+        "\\(y=1-\\cos t\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dy}y=\\sin t\\,dt\\Rightarrow\\) \\(\\ln|y|=-\\cos t+K\\Rightarrow\\) \\(y=Ae^{-\\cos t}\\).",
+      "\\(y(0)=Ae^{-1}=1\\Rightarrow A=e\\).",
+      "\\(y=e\\cdot e^{-\\cos t}=e^{1-\\cos t}\\)."
+     ],
+     "ans": "y = e^(1 − cos t)",
+     "hint": "En t = 0, cos 0 = 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10e5",
+     "lvl": 2,
+     "title": "y + 1 en el denominador",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac1{y+1}\\) con \\(y(0)=0\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=-1+\\sqrt{1+2t}\\)",
+        "\\(y=-1-\\sqrt{1+2t}\\)",
+        "\\(y=\\sqrt{2t}\\)",
+        "\\(y=-1+\\sqrt{1+t}\\)",
+        "\\(y=e^t-1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((y+1)\\,dy=dt\\Rightarrow\\frac{y^2}2+y=t+C\\); \\(y(0)=0\\Rightarrow C=0\\).",
+      "\\(y^2+2y-2t=0\\Rightarrow\\) \\((y+1)^2=1+2t\\).",
+      "Como \\(y(0)=0\\), se toma la raíz positiva: \\(y=-1+\\sqrt{1+2t}\\)."
+     ],
+     "ans": "y = −1 + √(1+2t)",
+     "hint": "Completa el cuadrado: y² + 2y = (y+1)² − 1.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [],
+      [
+       "pvi"
+      ]
+     ]
+    },
+    {
+     "id": "w10e6",
+     "lvl": 3,
+     "title": "Partes dentro de una EDO",
+     "q": "<p>Resuelve \\(\\frac{dy}{dt}=y\\ln t\\) con \\(y(1)=1\\) y \\(t\\gt0\\). Luego calcula \\(y(e)\\).</p>",
+     "checks": [
+      {
+       "p": "y(t)",
+       "o": [
+        "\\(y=e^{t\\ln t-t+1}=t^te^{1-t}\\)",
+        "\\(y=e^{\\ln t/t}\\)",
+        "\\(y=e^{t\\ln t-t}\\)",
+        "\\(y=t^te^{t-1}\\)",
+        "\\(y=e^{(\\ln t)^2/2}\\)"
+       ]
+      },
+      {
+       "p": "y(e)",
+       "o": [
+        "\\(e\\approx2.72\\)",
+        "\\(1\\)",
+        "\\(e^e\\approx15.15\\)",
+        "\\(e^{-1}\\approx0.37\\)",
+        "\\(e^2\\approx7.39\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Separar (\\(y\\gt0\\)): \\(\\int\\frac{dy}y=\\int\\ln t\\,dt\\).",
+      "Partes: \\(\\int\\ln t\\,dt=t\\ln t-t\\).",
+      "\\(\\ln y=t\\ln t-t+C\\); \\(y(1)=1\\Rightarrow0=-1+C\\Rightarrow C=1\\).",
+      "\\(y=e^{t\\ln t-t+1}=t^te^{1-t}\\); \\(y(e)=e^{e-e+1}=e\\)."
+     ],
+     "ans": "y = tᵗe^(1−t); y(e) = e",
+     "hint": "∫ln t dt se hace por partes.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "partes"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10e7",
+     "lvl": 3,
+     "title": "Bacterias con sustitución",
+     "q": "<p>Una población de bacterias cumple \\(\\frac{dP}{dt}=\\frac{t}{\\sqrt{1+t^2}}P\\), con \\(P(0)=100\\). Halla \\(P(t)\\) y \\(P(\\sqrt3)\\).</p>",
+     "checks": [
+      {
+       "p": "P(t)",
+       "o": [
+        "\\(P=100e^{\\sqrt{1+t^2}-1}\\)",
+        "\\(P=100e^{\\sqrt{1+t^2}}\\)",
+        "\\(P=100\\sqrt{1+t^2}\\)",
+        "\\(P=100e^{(1+t^2)^{3/2}}\\)",
+        "\\(P=100e^{t^2/2}\\)"
+       ]
+      },
+      {
+       "p": "P(√3)",
+       "o": [
+        "\\(100e\\approx271.8\\)",
+        "\\(200\\)",
+        "\\(100e^2\\approx738.9\\)",
+        "\\(100e^{\\sqrt3}\\approx565.1\\)",
+        "\\(100e^{3/2}\\approx448.2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dP}P=\\frac t{\\sqrt{1+t^2}}dt\\).",
+      "\\(u=1+t^2\\), \\(du=2t\\,dt\\): \\(\\int\\frac t{\\sqrt{1+t^2}}dt=\\sqrt{1+t^2}\\).",
+      "\\(\\ln P=\\sqrt{1+t^2}+K\\Rightarrow\\) \\(P=Ae^{\\sqrt{1+t^2}}\\); \\(100=Ae^1\\Rightarrow A=\\frac{100}e\\).",
+      "\\(P=100e^{\\sqrt{1+t^2}-1}\\); \\(P(\\sqrt3)=100e^{2-1}=\\) \\(100e\\approx271.8\\)."
+     ],
+     "ans": "P = 100e^(√(1+t²) − 1); P(√3) ≈ 271.8",
+     "hint": "En t = 0, √(1+0) = 1, no 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10e8",
+     "lvl": 2,
+     "title": "Epidemia con tasa variable",
+     "q": "<p>En una población cerrada, \\(\\frac{dI}{dt}=\\frac t{t^2+1}I\\), con \\(I(0)=I_0\\). ¿Por cuánto se multiplican los infectados entre \\(t=0\\) y \\(t=3\\)?</p>",
+     "checks": [
+      {
+       "p": "I(t)",
+       "o": [
+        "\\(I=I_0\\sqrt{t^2+1}\\)",
+        "\\(I=I_0e^{t^2+1}\\)",
+        "\\(I=I_0(t^2+1)\\)",
+        "\\(I=I_0e^{\\arctan t}\\)",
+        "\\(I=I_0\\ln(t^2+1)\\)"
+       ]
+      },
+      {
+       "p": "I(3)/I₀",
+       "o": [
+        "\\(\\sqrt{10}\\approx3.16\\)",
+        "\\(10\\)",
+        "\\(e^{10}\\)",
+        "\\(\\ln10\\approx2.30\\)",
+        "\\(5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dI}I=\\frac t{t^2+1}dt\\); con \\(u=t^2+1\\): \\(\\int\\frac{t\\,dt}{t^2+1}=\\frac12\\ln(t^2+1)\\).",
+      "\\(\\ln I=\\frac12\\ln(t^2+1)+K\\Rightarrow\\) \\(I=A\\sqrt{t^2+1}\\); \\(A=I_0\\).",
+      "\\(\\frac{I(3)}{I_0}=\\sqrt{10}\\approx3.16\\). Crece mucho más lento que un modelo exponencial \\(I_0e^{kt}\\)."
+     ],
+     "ans": "I = I₀√(t²+1); se multiplica por √10 ≈ 3.16",
+     "hint": "½ ln(t²+1) = ln √(t²+1).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "lnprop"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10e9",
+     "lvl": 3,
+     "title": "Desintegración con ln t / t",
+     "q": "<p>\\(\\frac{dN}{dt}=-\\frac{\\ln t}tN\\), con \\(N(1)=N_0\\). ¿Qué fracción de \\(N_0\\) queda en \\(t=e\\)?</p>",
+     "checks": [
+      {
+       "p": "N(t)",
+       "o": [
+        "\\(N=N_0e^{-(\\ln t)^2/2}\\)",
+        "\\(N=N_0e^{-\\ln t/t}\\)",
+        "\\(N=N_0t^{-1}\\)",
+        "\\(N=N_0e^{(\\ln t)^2/2}\\)",
+        "\\(N=N_0e^{-t\\ln t+t-1}\\)"
+       ]
+      },
+      {
+       "p": "N(e)/N₀",
+       "o": [
+        "\\(e^{-1/2}\\approx0.607\\)",
+        "\\(e^{-1}\\approx0.368\\)",
+        "\\(\\frac12\\)",
+        "\\(e^{1/2}\\approx1.65\\)",
+        "\\(e^{-2}\\approx0.135\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{dN}N=-\\frac{\\ln t}t\\,dt\\); \\(u=\\ln t\\), \\(du=\\frac{dt}t\\): \\(\\int\\frac{\\ln t}t\\,dt=\\frac{(\\ln t)^2}2\\).",
+      "\\(N=Ae^{-(\\ln t)^2/2}\\); \\(N(1)=A=N_0\\) porque \\(\\ln1=0\\).",
+      "\\(\\frac{N(e)}{N_0}=e^{-1/2}\\approx0.607\\): queda el 60.7 %."
+     ],
+     "ans": "N = N₀e^(−(ln t)²/2); queda ≈ 60.7 %",
+     "hint": "u = ln t.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "pvi"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "w10e10",
+     "lvl": 3,
+     "title": "Torricelli: vaciado de un tanque",
+     "q": "<p>La altura del agua cumple \\(\\frac{dh}{dt}=-0.1\\sqrt h\\) (h en m, t en s), con \\(h(0)=5\\). ¿En cuánto tiempo se vacía?</p>",
+     "checks": [
+      {
+       "p": "h(t)",
+       "o": [
+        "\\(h=\\big(\\sqrt5-0.05t\\big)^2\\)",
+        "\\(h=5e^{-0.1t}\\)",
+        "\\(h=5-0.1t\\)",
+        "\\(h=\\big(\\sqrt5-0.1t\\big)^2\\)",
+        "\\(h=\\sqrt{5-0.05t}\\)"
+       ]
+      },
+      {
+       "p": "Tiempo de vaciado",
+       "o": [
+        "\\(20\\sqrt5\\approx44.7\\) s",
+        "\\(50\\) s",
+        "\\(10\\sqrt5\\approx22.4\\) s",
+        "nunca se vacía",
+        "\\(\\sqrt5\\approx2.24\\) s"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(h^{-1/2}dh=-0.1\\,dt\\Rightarrow\\) \\(2\\sqrt h=-0.1t+C\\); \\(C=2\\sqrt5\\).",
+      "\\(\\sqrt h=\\sqrt5-0.05t\\Rightarrow\\) \\(h=(\\sqrt5-0.05t)^2\\), válido mientras \\(\\sqrt5-0.05t\\ge0\\).",
+      "\\(h=0\\iff\\) \\(t=\\frac{\\sqrt5}{0.05}=20\\sqrt5\\approx44.7\\) s. A diferencia del decaimiento exponencial, aquí sí llega a 0 en tiempo finito."
+     ],
+     "ans": "h = (√5 − 0.05t)²; se vacía en ≈ 44.7 s",
+     "hint": "∫h^(−1/2) dh = 2√h.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "validez"
+      ],
+      [
+       "irca"
+      ]
+     ]
+    }
+   ]
   }
  ],
  "figs": {},
@@ -2612,6 +4342,226 @@
     ],
     []
    ]
+  },
+  {
+   "id": "w10s1",
+   "lvl": 3,
+   "title": "Represa (IRCA)",
+   "q": "<p>Una represa recibe agua a razón de \\(\\frac{dV}{dt}=50e^{-0.1t}\\) m³/día, con \\(V(0)=200\\) m³. Halla \\(V(t)\\), su valor a largo plazo y cuándo llega a 400 m³.</p>",
+   "checks": [
+    {
+     "p": "V(t)",
+     "o": [
+      "\\(V=700-500e^{-0.1t}\\)",
+      "\\(V=200+50e^{-0.1t}\\)",
+      "\\(V=-500e^{-0.1t}\\)",
+      "\\(V=200-5e^{-0.1t}\\)",
+      "\\(V=700+500e^{-0.1t}\\)"
+     ]
+    },
+    {
+     "p": "lím V(t)",
+     "o": [
+      "\\(700\\) m³",
+      "\\(200\\) m³",
+      "\\(500\\) m³",
+      "\\(\\infty\\)",
+      "\\(250\\) m³"
+     ]
+    },
+    {
+     "p": "Tiempo para 400 m³",
+     "o": [
+      "\\(\\approx5.11\\) días",
+      "\\(\\approx6.93\\) días",
+      "\\(\\approx10\\) días",
+      "\\(\\approx2.23\\) días",
+      "nunca llega"
+     ]
+    }
+   ],
+   "steps": [
+    "<b>I:</b> \\(V(t)\\) en m³, \\(t\\ge0\\) en días; tasa \\(50e^{-0.1t}\\); \\(V(0)=200\\).",
+    "<b>R–C:</b> \\(V=\\int50e^{-0.1t}dt=\\) \\(\\frac{50}{-0.1}e^{-0.1t}+C=\\) \\(-500e^{-0.1t}+C\\); \\(200=-500+C\\Rightarrow C=700\\).",
+    "<b>A:</b> \\(e^{-0.1t}\\to0\\Rightarrow V\\to700\\) m³ (saturación).",
+    "\\(700-500e^{-0.1t}=400\\Rightarrow\\) \\(e^{-0.1t}=0.6\\Rightarrow\\) \\(t=-\\frac{\\ln0.6}{0.1}\\approx5.11\\) días. \\(V'\\gt0\\) y \\(V''\\lt0\\): crece cada vez más lento."
+   ],
+   "ans": "V = 700 − 500e^(−0.1t); → 700 m³; 400 m³ en ≈ 5.11 días",
+   "hint": "Dividir entre −0.1 es multiplicar por −10.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "irca"
+    ],
+    [
+     "pvi"
+    ],
+    [
+     "validez"
+    ],
+    [
+     "conc"
+    ]
+   ]
+  },
+  {
+   "id": "w10s2",
+   "lvl": 3,
+   "title": "Café que se enfría (IRCA)",
+   "q": "<p>Un café a 90 °C se deja en una habitación a 22 °C: \\(\\frac{dT}{dt}=-k(T-22)\\). A los 10 min está a 65 °C. Halla \\(k\\) y el tiempo para llegar a 40 °C.</p>",
+   "checks": [
+    {
+     "p": "k",
+     "o": [
+      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\ \\text{min}^{-1}\\)",
+      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{90}{65}\\approx0.0325\\ \\text{min}^{-1}\\)",
+      "\\(k=\\frac{25}{10}=2.5\\ \\text{min}^{-1}\\)",
+      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{43}{68}\\approx\\) \\(-0.0458\\ \\text{min}^{-1}\\)",
+      "\\(k=\\) \\(\\ln\\frac{68}{43}\\approx0.458\\ \\text{min}^{-1}\\)"
+     ]
+    },
+    {
+     "p": "Tiempo para 40 °C",
+     "o": [
+      "\\(\\approx29.0\\) min",
+      "\\(\\approx20.0\\) min",
+      "\\(\\approx38.4\\) min",
+      "\\(\\approx14.5\\) min",
+      "nunca llega"
+     ]
+    }
+   ],
+   "steps": [
+    "<b>I–R:</b> \\(\\frac{dT}{T-22}=-k\\,dt\\), con \\(T(0)=90\\) y \\(T(10)=65\\).",
+    "<b>C:</b> \\(\\ln(T-22)=-kt+K\\Rightarrow\\) \\(T=22+68e^{-kt}\\).",
+    "\\(65=22+68e^{-10k}\\Rightarrow\\) \\(e^{-10k}=\\frac{43}{68}\\Rightarrow\\) \\(k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\).",
+    "\\(40=22+68e^{-kt}\\Rightarrow\\) \\(t=\\frac1k\\ln\\frac{68}{18}\\approx29.0\\) min.",
+    "<b>A:</b> \\(T\\to22\\) °C: se acerca a la temperatura ambiente sin alcanzarla."
+   ],
+   "ans": "k ≈ 0.0458 min⁻¹; 40 °C a los ≈ 29 min",
+   "hint": "La diferencia inicial es 90 − 22 = 68.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sep"
+    ],
+    [
+     "newton"
+    ],
+    [
+     "pvi"
+    ],
+    [],
+    [
+     "irca"
+    ]
+   ]
+  },
+  {
+   "id": "w10s3",
+   "lvl": 3,
+   "title": "Farmacocinética (IRCA)",
+   "q": "<p>La concentración de un fármaco cumple \\(\\frac{dC}{dt}=-2te^{-t}C\\) (mg/L, h), con \\(C(0)=20\\). Calcula \\(C(2)\\), la concentración a largo plazo y el instante de máxima eliminación relativa \\(r(t)=2te^{-t}\\).</p>",
+   "checks": [
+    {
+     "p": "C(2)",
+     "o": [
+      "\\(\\approx6.10\\) mg/L",
+      "\\(\\approx2.71\\) mg/L",
+      "\\(\\approx11.79\\) mg/L",
+      "\\(\\approx14.7\\) mg/L",
+      "\\(\\approx0.61\\) mg/L"
+     ]
+    },
+    {
+     "p": "Largo plazo",
+     "o": [
+      "\\(20e^{-2}\\approx2.71\\) mg/L (13.5 % de la dosis)",
+      "\\(0\\) mg/L",
+      "\\(20\\) mg/L",
+      "\\(20e^{-1}\\approx7.36\\) mg/L",
+      "\\(10\\) mg/L"
+     ]
+    },
+    {
+     "p": "Eliminación máxima",
+     "o": [
+      "\\(t=1\\) h",
+      "\\(t=0\\) h",
+      "\\(t=2\\) h",
+      "\\(t=e\\) h",
+      "\\(t=\\ln2\\) h"
+     ]
+    }
+   ],
+   "steps": [
+    "<b>R:</b> \\(\\int\\frac{dC}C=-2\\int te^{-t}dt\\); por partes (\\(u=t\\), \\(dv=e^{-t}dt\\)): \\(\\int te^{-t}dt=-(t+1)e^{-t}\\).",
+    "<b>C:</b> \\(\\ln C=2(t+1)e^{-t}+K\\); \\(C(0)=20\\Rightarrow K=\\ln20-2\\). \\(C=20e^{2[(t+1)e^{-t}-1]}\\).",
+    "\\(C(2)=\\) \\(20e^{2(3e^{-2}-1)}\\approx6.10\\) mg/L.",
+    "<b>A:</b> \\((t+1)e^{-t}\\to0\\Rightarrow\\) \\(C\\to20e^{-2}\\approx2.71\\) mg/L: el 13.5 % nunca se elimina.",
+    "\\(r'(t)=2e^{-t}(1-t)=0\\Rightarrow\\) \\(t=1\\) h (cambia de + a −): máxima actividad de las enzimas."
+   ],
+   "ans": "C(2) ≈ 6.10 mg/L; → 2.71 mg/L; máximo en t = 1 h",
+   "hint": "Por partes con u = t.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sep"
+    ],
+    [
+     "partes"
+    ],
+    [
+     "pvi"
+    ],
+    [
+     "irca"
+    ],
+    [
+     "crec"
+    ]
+   ]
+  },
+  {
+   "id": "w10s4",
+   "lvl": 2,
+   "title": "¿Qué técnica usarías?",
+   "q": "<p>Para hallar \\(y(t)\\) en dos casos: (a) \\(y'(t)=\\frac t{t^2+1}\\) y (b) \\(y'(t)=te^{-t}\\). ¿Qué técnica corresponde a cada uno?</p>",
+   "checks": [
+    {
+     "p": "Técnicas",
+     "o": [
+      "(a) sustitución \\(u=t^2+1\\); (b) partes con \\(u=t\\)",
+      "(a) partes; (b) sustitución \\(u=-t\\)",
+      "Ambas por sustitución",
+      "Ambas por partes",
+      "(a) inmediata (\\(\\ln|t|\\)); (b) partes"
+     ]
+    }
+   ],
+   "steps": [
+    "(a) Arriba está (casi) la derivada de \\(t^2+1\\): sustitución, \\(y=\\frac12\\ln(t^2+1)+C\\).",
+    "(b) Producto algebraica × exponencial, sin pareja función–derivada: partes con \\(u=t\\) (ILATE): \\(y=-(t+1)e^{-t}+C\\)."
+   ],
+   "ans": "(a) sustitución; (b) partes",
+   "hint": "¿Aparece la derivada de una función interna?",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "sust"
+    ],
+    [
+     "ilate"
+    ]
+   ]
   }
  ],
  "concepts": {
@@ -2746,64 +4696,148 @@
    "f": "\\(k=\\frac{\\ln2}{t_{1/2}}\\)",
    "x": "En el decaimiento \\(m=m_0e^{-kt}\\), la vida media es el tiempo en que la masa se reduce a la mitad. Cada vida media divide la masa entre 2.",
    "home": "w9edo"
+  },
+  "lineal": {
+   "n": "Linealidad de la integral",
+   "f": "\\(\\int(af+bg)\\,dx=a\\int f\\,dx+b\\int g\\,dx\\)",
+   "x": "Separa sumas y saca constantes. Para productos y cocientes NO funciona: ahí se necesita sustitución o partes.",
+   "home": "w10int"
+  },
+  "tabla2": {
+   "n": "Tabla de integrales inmediatas",
+   "f": "\\(\\int x^ndx=\\frac{x^{n+1}}{n+1}\\), \\(\\int\\frac{dx}x=\\ln|x|\\), \\(\\int a^xdx=\\frac{a^x}{\\ln a}\\)",
+   "x": "Más \\(\\int\\sec^2x=\\tan x\\), \\(\\int\\csc^2x=-\\cot x\\), \\(\\int\\sec x\\tan x=\\sec x\\) y \\(\\int\\csc x\\cot x=-\\csc x\\).",
+   "home": "w10int"
+  },
+  "sust": {
+   "n": "Método de sustitución",
+   "f": "\\(\\int f(g(x))\\,g'(x)\\,dx=\\int f(u)\\,du\\), con \\(u=g(x)\\)",
+   "x": "Es la regla de la cadena al revés: busca una función interna cuya derivada también esté en el integrando. Después de sustituir no debe quedar ninguna x.",
+   "home": "w10sus"
+  },
+  "ajuste": {
+   "n": "Ajustar la constante en du",
+   "f": "\\(du=2x\\,dx\\Rightarrow x\\,dx=\\tfrac12du\\)",
+   "x": "Si en el integrando falta un factor numérico de du, se despeja y sale como constante fuera de la integral.",
+   "home": "w10sus"
+  },
+  "partes": {
+   "n": "Integración por partes",
+   "f": "\\(\\int u\\,dv=uv-\\int v\\,du\\)",
+   "x": "Viene de la regla del producto. «Un día vi una vaca vestida de uniforme».",
+   "home": "w10par"
+  },
+  "ilate": {
+   "n": "Regla ILATE",
+   "f": "Inversa trig. > Logarítmica > Algebraica > Trigonométrica > Exponencial",
+   "x": "Se elige como \\(u\\) la que aparece primero; el resto es \\(dv\\). Es una regla práctica: la elección es buena si \\(\\int v\\,du\\) queda más simple.",
+   "home": "w10par"
+  },
+  "ciclica": {
+   "n": "Partes cíclica",
+   "f": "\\(I=\\dots-c\\,I\\Rightarrow (1+c)I=\\dots\\)",
+   "x": "Con exponencial por seno o coseno, aplica partes dos veces: vuelve a aparecer la integral original y se despeja como incógnita.",
+   "home": "w10par"
+  },
+  "atan": {
+   "n": "Derivada de arctan",
+   "f": "\\((\\arctan u)'=\\frac{u'}{1+u^2}\\)",
+   "x": "Por eso \\(\\int\\frac{du}{1+u^2}=\\arctan u+C\\).",
+   "home": "w10sus"
+  },
+  "lnprop": {
+   "n": "Propiedades del logaritmo",
+   "f": "\\(a\\ln b=\\ln b^a\\), \\(e^{\\ln A}=A\\)",
+   "x": "\\(\\frac12\\ln(t^2+1)=\\ln\\sqrt{t^2+1}\\), así que \\(e^{\\frac12\\ln(t^2+1)}=\\sqrt{t^2+1}\\).",
+   "home": "w10edo"
+  },
+  "irca": {
+   "n": "Esquema IRCA",
+   "f": "Interpretación → Representación → Cálculo → Análisis",
+   "x": "I: variables, tasa y condición inicial. R: EDO y separación. C: integrar y hallar constantes. A: verificar, límite a largo plazo y conclusión en contexto.",
+   "home": "w10edo"
   }
  },
  "sim": {
   "minutes": 60,
   "slots": [
    {
-    "pts": 4,
-    "name": "Gráficas y extremos absolutos",
+    "pts": 3,
+    "name": "Conceptual: integral indefinida y elección de técnica",
     "pool": [
-     "w9g1",
-     "w9g5",
-     "w9g7",
-     "w9g8",
-     "w9s2"
+     "w10i6",
+     "w10i7",
+     "w10i9",
+     "w10p1",
+     "w10p11",
+     "w10u9",
+     "w10s4"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Conceptual: valor inicial y EDO separables",
+    "pool": [
+     "w9e2",
+     "w10i8",
+     "w10e1",
+     "w10e2",
+     "w9a4",
+     "w9a6"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Procedimental: sustitución",
+    "pool": [
+     "w10u3",
+     "w10u4",
+     "w10u6",
+     "w10u7",
+     "w10u8",
+     "w10u10",
+     "w10u11"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Procedimental: integración por partes",
+    "pool": [
+     "w10p4",
+     "w10p5",
+     "w10p6",
+     "w10p7",
+     "w10p8",
+     "w10p9"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Procedimental: EDO separable con sustitución o partes",
+    "pool": [
+     "w10e3",
+     "w10e4",
+     "w10e5",
+     "w10e6",
+     "w10e7",
+     "w10e8",
+     "w10e9"
     ]
    },
    {
     "pts": 5,
-    "name": "Optimización en contexto",
+    "name": "Aplicación (IRCA): optimización o modelo con EDO",
     "pool": [
      "w9o3",
      "w9o4",
      "w9o5",
      "w9o7",
      "w9s1",
-     "w9s4"
-    ]
-   },
-   {
-    "pts": 3,
-    "name": "Óptimo con parámetro o razones relacionadas",
-    "pool": [
-     "w9d2",
-     "w9d4",
-     "w9d5",
-     "w9r5",
-     "w9r6"
-    ]
-   },
-   {
-    "pts": 4,
-    "name": "Antiderivadas y valor inicial",
-    "pool": [
-     "w9a4",
-     "w9a6",
-     "w9a8",
-     "w9a9",
-     "w9a10"
-    ]
-   },
-   {
-    "pts": 4,
-    "name": "EDO separables",
-    "pool": [
-     "w9e6",
-     "w9e7",
-     "w9e9",
-     "w9s3"
+     "w9s4",
+     "w10s1",
+     "w10s2",
+     "w10s3",
+     "w10e10"
     ]
    }
   ]
