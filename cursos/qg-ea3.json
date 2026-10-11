@@ -611,6 +611,24 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "fases",
+     "t": "Diagrama de fases interactivo",
+     "p": "Arrastra el punto para ver en qué fase está la sustancia. Cambia la presión (Lima, Huancayo, olla a presión…) y mira dónde funde y dónde hierve. Compara el agua con el CO₂.",
+     "o": {
+      "sub": "h2o"
+     }
+    },
+    {
+     "w": "sep",
+     "t": "Armador de separación de mezclas",
+     "p": "Elige una mezcla y arma tu diagrama de flujo: escoge una fracción y aplícale un método. Te dice qué sale y por qué, o en qué te equivocaste.",
+     "o": {
+      "mix": "s9"
+     }
+    }
    ]
   },
   {
@@ -936,6 +954,16 @@
        "factor"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "fc",
+     "t": "Cadena de factores de conversión",
+     "p": "Arma la cadena con las tarjetas hasta que solo quede la unidad pedida. Si una unidad no se tacha, dale la vuelta al factor.",
+     "o": {
+      "set": "s10"
+     }
     }
    ]
   },
@@ -1306,6 +1334,16 @@
        "materia"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "fc",
+     "t": "Cadena de factores: concentraciones",
+     "p": "M, %m/m, %v/v y ppm también son factores de conversión: úsalos como puentes entre unidades.",
+     "o": {
+      "set": "s11"
+     }
     }
    ]
   }

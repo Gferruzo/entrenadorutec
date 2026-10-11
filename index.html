@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Entrenador de exámenes</title>
 <link rel="manifest" href="manifest.json">
-<!-- version: 2026-10-07 modo de estudio rediseñado -->
+<!-- version: 2026-10-11 química interactiva -->
 <meta name="theme-color" content="#F4F7FA">
 <script>
 (function(){var t=null;try{t=localStorage.getItem('ent-theme')}catch(e){}
@@ -814,6 +814,30 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 .ced.cin{min-height:3.5em}
 .blk.lab{border-color:var(--cyan);background:var(--card)}
 .blk.lab summary{color:var(--cyan)}
+/* Química: herramientas interactivas */
+.qgbg{fill:var(--paper)}.qgax{font:500 10px Figtree,sans-serif;fill:var(--muted)}
+.qgc{fill:none;stroke-width:2.4}.qgsg{stroke:var(--sol)}.qglg{stroke:var(--exe)}.qgsl{stroke:var(--teo)}
+.qgreg{font:700 12px Figtree,sans-serif;fill:var(--muted);opacity:.8}
+.qgref{stroke:var(--ink);stroke-width:1.2;stroke-dasharray:5 4;opacity:.7}
+.qgdot{fill:var(--ink)}.qgcut1{fill:var(--teo)}.qgcut2{fill:var(--exe)}
+.qgpt{fill:var(--cyan);fill-opacity:.85;stroke:var(--card);stroke-width:2}
+.qgphase{font:800 1.15rem Figtree,sans-serif;color:var(--cyan)}
+.qgfr{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.qgf{flex:1 1 220px;text-align:left;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:8px 10px;font:inherit;cursor:pointer}
+.qgf small{color:var(--muted);font-weight:600}.qgf.on{border-color:var(--cyan);box-shadow:0 0 0 2px var(--teo-bg)}
+.qgf.done{border-color:var(--ok);background:var(--ok-bg)}.qgf.waste{opacity:.55}
+.qgchip{display:inline-block;margin:4px 4px 0 0;padding:2px 8px;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line)}
+.qgchip small{font-weight:500;color:var(--muted)}.qg-l{background:var(--teo-bg)}.qg-d{background:var(--exe-bg)}.qg-s{background:var(--paper)}
+.qgok{color:var(--ok);font-weight:700}.qgbad{color:var(--bad);font-weight:700}
+.qglogw summary{cursor:pointer;font-weight:700;padding:4px 0}.qglog{margin:4px 0 8px;padding-left:1.3em;font-size:.9rem}.qglog li{margin:3px 0}
+.qgdesc{margin:.3em 0;font-size:.95rem}
+.qgchain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.qgfrac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-size:.9rem;line-height:1.25}
+.qgfrac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px 1px}.qgfrac>span:last-child{padding:1px 4px 0}
+.qgterm{border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:4px 6px;font:600 .9rem Figtree,sans-serif}
+button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thickness:2px}
+.qgx{font-weight:800;color:var(--muted)}.qgres{font-weight:800;color:var(--cyan)}
+.qgcard{border-radius:10px;padding:6px 10px}
 .lwrap{margin:4px 0 16px}.lwrap h4{font:800 .95rem Figtree,sans-serif;margin:.4em 0 .2em;color:var(--ink)}
 .lw{margin:8px 0}
 .lwtl{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
@@ -1236,6 +1260,214 @@ function mountRREF(box,o){
   function readEdit(){const ins=mt.querySelectorAll('input');let ok=true;ins.forEach(e=>{const v=LWQ.p(e.value);if(!v){e.classList.add('bad');ok=false}else{e.classList.remove('bad');M[+e.dataset.i][+e.dataset.j]=v}});if(ok)M0=M.map(r=>r.slice());return ok}
   render()}
 const LW={tl:mountTL,det:(b,o)=>mountTL(b,Object.assign({mode:'det'},o)),rref:mountRREF};
+/* ===== Herramientas interactivas (Química General): diagrama de fases, separación de mezclas y factores de conversión ===== */
+const qgN=(v,d)=>{d=d==null?2:d;if(v===0)return'0';const a=Math.abs(v);if(a>=1e5||a<1e-3){const e=Math.floor(Math.log10(a));const m=v/10**e;return(Math.round(m*1000)/1000).toString().replace('.',',')+' × 10'+String(e).split('').map(c=>'⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)]||(c==='-'?'⁻':c)).join('')}
+  const r=Math.round(v*10**d)/10**d;let [i,f]=Math.abs(r).toString().split('.');i=i.replace(/\B(?=(\d{3})+(?!\d))/g,' ');return(r<0?'−':'')+i+(f?','+f:'')};
+/* ---------- Diagrama de fases ---------- */
+const QG_SUBS={
+  h2o:{n:'Agua (H₂O)',tr:[0.01,0.00604],cr:[374,218],nb:100,tmin:-60,tmax:420,sg:[-20,0.00102],mk:-0.0075,
+       note:'La línea sólido–líquido se inclina a la izquierda: el agua líquida es más densa que el hielo.'},
+  co2:{n:'Dióxido de carbono (CO₂)',tr:[-56.6,5.11],cr:[31,72.8],tmin:-120,tmax:80,sg:[-78.5,1],mk:0.016,
+       note:'El punto triple está a 5,1 atm: a 1 atm el CO₂ sólido (hielo seco) sublima, nunca funde.'}};
+const QG_PRES=[['Lima · 1 atm',1],['Huancayo · 0,68 atm',0.68],['Cerro de Pasco · 0,6 atm',0.6],['Olla a presión · 2 atm',2],['10 atm',10],['0,003 atm',0.003]];
+function mountFases(box,o){
+  let key=o.sub||'h2o',S=QG_SUBS[key],Pref=1,pt=null;
+  const W=320,H=260,x0=46,x1=308,y0=226,y1=14,LP0=-3,LP1=3;
+  const K=t=>t+273.15;
+  const X=t=>x0+(t-S.tmin)/(S.tmax-S.tmin)*(x1-x0),Y=p=>y0-(Math.log10(p)-LP0)/(LP1-LP0)*(y0-y1);
+  const Ti=x=>S.tmin+(x-x0)/(x1-x0)*(S.tmax-S.tmin),Pi=y=>10**(LP0+(y0-y)/(y0-y1)*(LP1-LP0));
+  // curvas: ln P lineal en 1/T por tramos
+  const lin=(a,b,t)=>{const u=1/K(t),ua=1/K(a[0]),ub=1/K(b[0]);const la=Math.log(a[1]),lb=Math.log(b[1]);return Math.exp(la+(lb-la)*(u-ua)/(ub-ua))};
+  const pv=t=>{if(S.nb!=null){return t<=S.nb?lin(S.tr,[S.nb,1],t):lin([S.nb,1],S.cr,t)}return lin(S.tr,S.cr,t)};
+  const ps=t=>lin(S.sg,S.tr,t);
+  const tm=p=>S.tr[0]+S.mk*(p-S.tr[1]);
+  const tv=p=>{let a=S.tr[0],b=S.cr[0];for(let i=0;i<60;i++){const m=(a+b)/2;if(pv(m)<p)a=m;else b=m}return(a+b)/2};
+  const tsub=p=>{let a=S.tmin-200,b=S.tr[0];for(let i=0;i<60;i++){const m=(a+b)/2;if(ps(m)<p)a=m;else b=m}return(a+b)/2};
+  function phase(t,p){
+    if(t>S.cr[0]&&p>S.cr[1])return['Fluido supercrítico','Por encima de T y P críticas: líquido y gas ya no se distinguen.'];
+    if(p>=S.tr[1]&&t<tm(p))return['Sólido','A la izquierda de la línea de fusión.'];
+    if(p<S.tr[1]&&t<S.tr[0]&&p>ps(t))return['Sólido','Por encima de la curva de sublimación.'];
+    if(t<=S.cr[0]&&p>pv(t)&&p>=S.tr[1])return['Líquido','Entre la línea de fusión y la curva de vaporización.'];
+    return['Gas','Por debajo de las curvas de vaporización y sublimación.']}
+  box.innerHTML='<div class="lwtop qgsub"></div><div class="lwtl"><svg viewBox="0 0 '+W+' '+H+'" class="lwsvg" role="img" aria-label="Diagrama de fases interactivo"></svg><div class="lwside"><div class="lwmsg qgph"></div><div class="lwinfo qgcut"></div><p class="note">Toca o arrastra dentro del diagrama para mover el punto. Eje de presión en escala logarítmica.</p></div></div><p class="note" style="margin-bottom:2px">Presión externa:</p><div class="lwpre qgp"></div>';
+  const svg=box.querySelector('svg'),ph=box.querySelector('.qgph'),cut=box.querySelector('.qgcut'),sb=box.querySelector('.qgsub'),pb=box.querySelector('.qgp');
+  Object.keys(QG_SUBS).forEach(k=>{const b=el('button','lwb'+(k===key?' on':''),QG_SUBS[k].n);b.type='button';b.onclick=()=>{key=k;S=QG_SUBS[k];pt=null;sb.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));draw()};sb.append(b)});
+  QG_PRES.forEach(([n,p])=>{const b=el('button','lwb'+(p===Pref?' on':''),n);b.type='button';b.onclick=()=>{Pref=p;pt=null;pb.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));draw()};pb.append(b)});
+  const NS='http://www.w3.org/2000/svg';
+  function E(t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.append(e);return e}
+  function path(f,a,b,n){let d='';n=n||80;for(let i=0;i<=n;i++){const t=a+(b-a)*i/n;const p=f(t);if(p<10**LP0||p>10**LP1)continue;d+=(d?'L':'M')+X(t).toFixed(1)+' '+Y(p).toFixed(1)}return d}
+  function draw(){
+    svg.innerHTML='';
+    // regiones (rellenos suaves)
+    E('rect',{x:x0,y:y1,width:x1-x0,height:y0-y1,class:'qgbg'});
+    for(let e=LP0;e<=LP1;e++){E('line',{x1:x0,x2:x1,y1:Y(10**e),y2:Y(10**e),class:'lwg'});E('text',{x:x0-4,y:Y(10**e)+4,'text-anchor':'end',class:'qgax'},e===0?'1':(e>0?'10'+'⁰¹²³'[e]:'10⁻'+'⁰¹²³'[-e]))}
+    const st=(S.tmax-S.tmin)>300?100:40;
+    for(let t=Math.ceil(S.tmin/st)*st;t<=S.tmax;t+=st){E('line',{x1:X(t),x2:X(t),y1:y1,y2:y0,class:'lwg'});E('text',{x:X(t),y:y0+14,'text-anchor':'middle',class:'qgax'},t)}
+    E('text',{x:x1,y:H-2,'text-anchor':'end',class:'qgax'},'T (°C)');E('text',{x:4,y:10,class:'qgax'},'P (atm)');
+    E('line',{x1:x0,y1:y0,x2:x1,y2:y0,class:'lwax'});E('line',{x1:x0,y1:y0,x2:x0,y2:y1,class:'lwax'});
+    // curvas
+    E('path',{d:path(ps,S.tmin,S.tr[0]),class:'qgc qgsg'});
+    E('path',{d:path(pv,S.tr[0],S.cr[0]),class:'qgc qglg'});
+    let dm='';for(let i=0;i<=40;i++){const p=10**(Math.log10(S.tr[1])+(LP1-Math.log10(S.tr[1]))*i/40);dm+=(dm?'L':'M')+X(tm(p)).toFixed(1)+' '+Y(p).toFixed(1)}
+    E('path',{d:dm,class:'qgc qgsl'});
+    // etiquetas de fase
+    const lab=(t,p,s)=>E('text',{x:X(t),y:Y(p),'text-anchor':'middle',class:'qgreg'},s);
+    if(key==='h2o'){lab(-38,30,'Sólido');lab(60,60,'Líquido');lab(220,0.02,'Gas')}else{lab(-95,80,'Sólido');lab(0,300,'Líquido');lab(20,0.05,'Gas')}
+    // presión de referencia
+    E('line',{x1:x0,x2:x1,y1:Y(Pref),y2:Y(Pref),class:'qgref'});
+    E('text',{x:x1-2,y:Y(Pref)-4,'text-anchor':'end',class:'lwlab'},qgN(Pref,3)+' atm');
+    // puntos T y C
+    E('circle',{cx:X(S.tr[0]),cy:Y(S.tr[1]),r:4,class:'qgdot'});E('text',{x:X(S.tr[0])+6,y:Y(S.tr[1])+13,class:'lwlab'},'T');
+    E('circle',{cx:X(S.cr[0]),cy:Y(S.cr[1]),r:4,class:'qgdot'});E('text',{x:X(S.cr[0])+6,y:Y(S.cr[1])-6,class:'lwlab'},'C');
+    // cortes con la presión de referencia
+    let html='<p><b>A '+qgN(Pref,3)+' atm:</b></p>';
+    if(Pref>=S.tr[1]){const tf=tm(Pref);E('circle',{cx:X(tf),cy:Y(Pref),r:4.5,class:'qgcut1'});
+      html+='<p>🧊→💧 Funde a <b>'+qgN(tf,1)+' °C</b></p>';
+      if(Pref<S.cr[1]){const tb=tv(Pref);E('circle',{cx:X(tb),cy:Y(Pref),r:4.5,class:'qgcut2'});html+='<p>💧→💨 Hierve a <b>'+qgN(tb,0)+' °C</b></p>'}
+      else html+='<p>Sobre la presión crítica no hay ebullición.</p>'}
+    else{const tsb=tsub(Pref);E('circle',{cx:X(tsb),cy:Y(Pref),r:4.5,class:'qgcut2'});html+='<p>🧊→💨 <b>Sublima</b> a '+qgN(tsb,1)+' °C. Por debajo del punto triple no existe el líquido.</p>'}
+    if(key==='h2o'&&Pref<1&&Pref>=S.tr[1])html+='<p class="note">Menos presión → la curva L–G se corta a menor temperatura → el agua hierve antes de 100 °C.</p>';
+    if(key==='h2o'&&Pref>1&&Pref<S.cr[1])html+='<p class="note">Más presión → hierve a más de 100 °C: por eso la olla a presión cocina más rápido.</p>';
+    cut.innerHTML=html+'<p class="note">'+S.note+'</p>';
+    // punto arrastrable
+    const p0=pt||[key==='h2o'?25:-20,Pref];
+    const [f,why]=phase(p0[0],p0[1]);
+    E('circle',{cx:X(p0[0]),cy:Y(p0[1]),r:7,class:'qgpt'});
+    ph.innerHTML='<p><b>'+qgN(p0[0],1)+' °C · '+qgN(p0[1],3)+' atm</b></p><p class="qgphase">'+f+'</p><p class="note">'+why+'</p>';
+  }
+  function at(ev){const r=svg.getBoundingClientRect();const sx=(ev.clientX-r.left)*W/r.width,sy=(ev.clientY-r.top)*H/r.height;
+    const x=Math.max(x0,Math.min(x1,sx)),y=Math.max(y1,Math.min(y0,sy));pt=[Ti(x),Pi(y)];draw()}
+  let drag=false;svg.addEventListener('pointerdown',e=>{drag=true;svg.setPointerCapture(e.pointerId);at(e)});
+  svg.addEventListener('pointermove',e=>{if(drag)at(e)});svg.addEventListener('pointerup',()=>drag=false);svg.addEventListener('pointercancel',()=>drag=false);
+  draw()}
+
+/* ---------- Armador de separación de mezclas ---------- */
+const QG_COMP={
+  agua:{n:'Agua',e:'l',pol:'p',teb:100},metanol:{n:'Metanol',e:'l',pol:'p',teb:65},etanol:{n:'Etanol',e:'l',pol:'p',teb:78},
+  aceite:{n:'Aceite',e:'l',pol:'a',teb:300},hexano:{n:'Hexano',e:'l',pol:'a',teb:69},
+  nacl:{n:'NaCl',e:'s',sol:'p',tam:'polvo'},azucar:{n:'Azúcar',e:'s',sol:'p',tam:'polvo'},
+  pt:{n:'Pt (granallas)',e:'s',tam:'granalla'},zn:{n:'Zn (polvo)',e:'s',tam:'polvo'},co:{n:'Co (granallas)',e:'s',mag:1,tam:'granalla'},
+  fe:{n:'Fe (limaduras)',e:'s',mag:1,tam:'polvo'},ni:{n:'Ni (limaduras)',e:'s',mag:1,tam:'polvo'},cu:{n:'Cu (polvo)',e:'s',tam:'polvo'},
+  au:{n:'Au (granallas)',e:'s',tam:'granalla'},arena:{n:'Arena (SiO₂)',e:'s',tam:'granalla'},parafina:{n:'Parafina',e:'s',sol:'a',tam:'polvo'},
+  yodo:{n:'I₂',e:'s',sol:'a',tam:'polvo'}};
+const QG_MIX={
+  s9:{n:'Sesión 9: catalizadores',c:['agua','metanol','nacl','pt','zn','co'],d:'Restos de metanol, solución acuosa de NaCl y catalizadores: Pt en granallas, Zn en polvo y Co en granallas.'},
+  basico:{n:'Arena, sal y hierro',c:['arena','nacl','fe'],d:'Una mezcla sólida de arena, sal de mesa y limaduras de hierro.'},
+  aceite:{n:'Agua, aceite y sal',c:['agua','aceite','nacl'],d:'Agua con sal disuelta y una capa de aceite encima.'},
+  ewaste:{n:'Residuos electrónicos',c:['ni','cu','au','nacl','parafina'],d:'Mezcla sólida tras triturar tarjetas: Ni en limaduras, Cu en polvo, Au en granallas, NaCl y parafina (sólido apolar).'},
+  yodo:{n:'Yodo, sal y arena',c:['yodo','nacl','arena'],d:'Mezcla sólida de yodo (apolar), sal y arena.'}};
+const QG_MET=[['iman','🧲 Imantación'],['tamiz','🕳️ Tamizado'],['agua','💧 Agregar agua'],['hexano','🛢️ Agregar hexano'],['filtro','🧻 Filtración'],['decant','⚗️ Decantación'],['destila','🔥 Destilación'],['evapora','♨️ Evaporación']];
+function mountSep(box,o){
+  let mk=o.mix||'s9',fr,sel,log,lost,addN;
+  box.innerHTML='<div class="lwtop qgmix"></div><p class="qgdesc"></p><p class="note">1) Toca una fracción para elegirla · 2) toca el método que le aplicarías.</p><div class="qgfr"></div><div class="lwpre qgmet"></div><div class="lwmsg qgmsg"></div><details class="qglogw" open><summary>Tu diagrama de flujo</summary><ol class="qglog"></ol></details><div class="lwbtns"><button type="button" class="lwb qgundo">↩ Deshacer</button><button type="button" class="lwb qgrst">Reiniciar</button></div>';
+  const mx=box.querySelector('.qgmix'),ds=box.querySelector('.qgdesc'),fb=box.querySelector('.qgfr'),mb=box.querySelector('.qgmet'),msg=box.querySelector('.qgmsg'),lg=box.querySelector('.qglog');
+  let hist=[];
+  Object.keys(QG_MIX).forEach(k=>{const b=el('button','lwb'+(k===mk?' on':''),QG_MIX[k].n);b.type='button';b.onclick=()=>{mk=k;mx.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));reset()};mx.append(b)});
+  const C=id=>QG_COMP[id.split('#')[0]];
+  const nm=id=>C(id).n+(id.includes('#')?' (agregado)':'');
+  const original=id=>!id.includes('#');
+  function info(f){const L=f.filter(i=>C(i).e==='l'),Sd=f.filter(i=>C(i).e==='s');
+    const pols=[...new Set(L.map(i=>C(i).pol))];
+    const dis=Sd.filter(i=>C(i).sol&&pols.includes(C(i).sol)),und=Sd.filter(i=>!dis.includes(i));
+    return{L,S:Sd,pols,dis,und}}
+  function reset(){const m=QG_MIX[mk];fr=[m.c.slice()];sel=0;log=[];lost=[];addN=0;hist=[];ds.textContent=m.d;msg.innerHTML='';render()}
+  function snap(){hist.push(JSON.stringify({fr,sel,log,lost,addN}))}
+  function say(ok,t){msg.innerHTML='<p class="'+(ok?'qgok':'qgbad')+'">'+(ok?'✔ ':'✘ ')+t+'</p>'}
+  function chips(f){return f.map(i=>{const c=C(i);const I=info(f);const tag=c.e==='l'?'líquido':(I.dis.includes(i)?'disuelto':'sólido');return'<span class="qgchip qg-'+(c.e==='l'?'l':(I.dis.includes(i)?'d':'s'))+'">'+nm(i)+' <small>'+tag+'</small></span>'}).join('')}
+  function pure(f){return f.length===1&&original(f[0])}
+  function render(){
+    fb.innerHTML='';
+    fr.forEach((f,k)=>{const I=info(f);const phases=I.pols.length;
+      const d=el('button','qgf'+(k===sel?' on':'')+(pure(f)?' done':'')+(f.every(i=>!original(i))?' waste':''),'');d.type='button';
+      const tipo=pure(f)?'✔ Recuperado':(f.every(i=>!original(i))?'Solvente agregado (descartable)':(I.L.length?(phases>1?'Heterogénea: líquidos inmiscibles':(I.und.length?'Heterogénea: sólido + líquido':'Homogénea (solución)')):(f.length>1?'Mezcla de sólidos':'Sólido')));
+      d.innerHTML='<b>Fracción '+(k+1)+'</b> <small>'+tipo+'</small><div>'+chips(f)+'</div>';
+      d.onclick=()=>{sel=k;render()};fb.append(d)});
+    lg.innerHTML=log.map(x=>'<li>'+x+'</li>').join('')||'<li class="note">Aún no aplicas ningún método.</li>';
+    const left=QG_MIX[mk].c.filter(i=>!lost.includes(i)&&!fr.some(f=>pure(f)&&f[0]===i));
+    if(lost.length)msg.insertAdjacentHTML('beforeend','<p class="qgbad">Perdiste: '+lost.map(nm).join(', ')+'. Usa ↩ Deshacer.</p>');
+    else if(!left.length)msg.innerHTML='<p class="qgok">🎉 ¡Separaste todos los componentes! Revisa tu diagrama de flujo abajo.</p>';
+  }
+  function apply(m){const f=fr[sel];if(!f)return;const I=info(f);const out=(parts,txt)=>{snap();fr.splice(sel,1,...parts.filter(p=>p.length));log.push(txt);sel=Math.min(sel,fr.length-1);render()};
+    const names=a=>a.map(nm).join(', ');
+    if(pure(f))return say(false,'Esa fracción ya es un componente puro.');
+    if(m==='iman'){if(I.L.length)return say(false,'Hay líquido en la fracción. Primero sepáralo (filtración) y trabaja con los sólidos secos.');
+      const mg=f.filter(i=>C(i).mag),no=f.filter(i=>!C(i).mag);if(!mg.length)return say(false,'Ningún componente es ferromagnético (solo Fe, Co y Ni son atraídos por el imán).');if(!no.length)return say(false,'Todos son magnéticos: el imán no los separa entre sí.');
+      say(true,'El imán atrae a '+names(mg)+(mg.length>1?' (ferromagnéticos).':' (ferromagnético).'));return out([mg,no],'Imantación de {'+names(f)+'} → '+names(mg)+' | '+names(no))}
+    if(m==='tamiz'){if(I.L.length)return say(false,'El tamizado es para sólidos secos. Primero retira el líquido.');
+      const g={};f.forEach(i=>{(g[C(i).tam]=g[C(i).tam]||[]).push(i)});const ks=Object.keys(g);if(ks.length<2)return say(false,'Todos los sólidos tienen el mismo tamaño de partícula: el tamiz no los separa.');
+      say(true,'El tamiz retiene las granallas y deja pasar el polvo.');return out(ks.map(k=>g[k]),'Tamizado de {'+names(f)+'} → '+ks.map(k=>names(g[k])).join(' | '))}
+    if(m==='agua'||m==='hexano'){if(I.L.length)return say(false,'Para la disolución selectiva parte de una mezcla de sólidos secos.');
+      const pol=m==='agua'?'p':'a';const s=f.filter(i=>C(i).sol===pol);if(!s.length)return say(false,'Ningún sólido se disuelve en '+(m==='agua'?'agua':'hexano')+'. '+(m==='agua'?'El agua disuelve iónicos y polares (ion–dipolo, puente de H).':'El hexano solo disuelve apolares (London).'));
+      addN++;const id=m+'#'+addN;say(true,names(s)+' se disuelve en '+(m==='agua'?'agua (ion–dipolo / puente de H)':'hexano (London)')+'. Ahora fíltralo para separar lo insoluble.');
+      return out([f.concat([id])],'Se agrega '+(m==='agua'?'agua':'hexano')+' a {'+names(f)+'} → se disuelve '+names(s))}
+    if(m==='filtro'){if(!I.L.length)return say(false,'No hay líquido: la filtración separa un sólido insoluble de un líquido.');if(!I.und.length)return say(false,'No hay sólidos sin disolver. Lo disuelto atraviesa el filtro: es una mezcla homogénea.');
+      const liq=f.filter(i=>!I.und.includes(i));say(true,'El filtro retiene '+names(I.und)+'; el líquido y lo disuelto pasan.');return out([I.und,liq],'Filtración de {'+names(f)+'} → sólido: '+names(I.und)+' | filtrado: '+names(liq))}
+    if(m==='decant'){if(I.pols.length<2)return say(false,'La decantación separa líquidos inmiscibles (dos fases). Aquí hay '+(I.L.length?'una sola fase líquida.':'solo sólidos.'));
+      if(I.und.length)return say(false,'Primero filtra los sólidos que no se disuelven.');
+      const ph=I.pols.map(p=>f.filter(i=>(C(i).e==='l'&&C(i).pol===p)||(C(i).e==='s'&&C(i).sol===p)));say(true,'Se forman dos capas (polar y apolar) que se separan con el embudo de decantación.');
+      return out(ph,'Decantación de {'+names(f)+'} → '+ph.map(names).join(' | '))}
+    if(m==='destila'){if(!I.L.length)return say(false,'No hay líquido que destilar.');if(I.pols.length>1)return say(false,'Hay dos líquidos inmiscibles: es más simple decantar primero.');if(I.und.length)return say(false,'Primero filtra los sólidos sin disolver.');
+      if(I.L.length===1&&!I.dis.length)return say(false,'Ya es un solo líquido.');
+      const L=I.L.slice().sort((a,b)=>C(a).teb-C(b).teb);const v=L[0];
+      if(C(v).teb>250)return say(false,names([v])+' tiene un punto de ebullición muy alto; no conviene destilarlo.');
+      const rest=f.filter(i=>i!==v);say(true,'Sale primero '+names([v])+' (menor Teb, '+C(v).teb+' °C): se condensa y se recupera.');
+      return out([[v],rest],'Destilación de {'+names(f)+'} → destilado: '+names([v])+' ('+C(v).teb+' °C) | residuo: '+names(rest))}
+    if(m==='evapora'){if(!I.L.length)return say(false,'No hay líquido que evaporar.');if(!I.dis.length)return say(false,'No hay sólido disuelto que recuperar. Si quieres separar líquidos, usa destilación.');if(I.und.length)return say(false,'Primero filtra los sólidos sin disolver.');if(I.pols.length>1)return say(false,'Primero separa las capas (decantación).');
+      const lo=I.L.filter(original);snap();fr.splice(sel,1,I.dis);log.push('Evaporación de {'+names(f)+'} → queda '+names(I.dis)+(lo.length?' (se pierde '+names(lo)+')':''));
+      if(lo.length){lost.push(...lo);say(false,'Recuperaste '+names(I.dis)+', pero '+names(lo)+(lo.length>1?' se evaporaron y se perdieron. Si también hay que recuperarlos':' se evaporó y se perdió. Si también hay que recuperarlo')+', usa destilación.')}else say(true,'El solvente agregado se evapora y queda '+names(I.dis)+'.');
+      render()}}
+  QG_MET.forEach(([k,n])=>{const b=el('button','lwb',n);b.type='button';b.onclick=()=>apply(k);mb.append(b)});
+  box.querySelector('.qgrst').onclick=reset;
+  box.querySelector('.qgundo').onclick=()=>{if(!hist.length)return;const s=JSON.parse(hist.pop());fr=s.fr;sel=s.sel;log=s.log;lost=s.lost;addN=s.addN;msg.innerHTML='';render()};
+  reset()}
+
+/* ---------- Cadena de factores de conversión ---------- */
+const QG_FC={
+  s10:[
+   {q:'¿Cuántos mol hay en 20 g de NaOH?',v:20,n:['g NaOH'],d:[],to:'mol NaOH',f:[[1,'mol NaOH',40,'g NaOH'],[6.022e23,'unidades NaOH',1,'mol NaOH'],[1000,'mg NaOH',1,'g NaOH']]},
+   {q:'Convierte 72 km/h a m/s.',v:72,n:['km'],d:['h'],to:'m/s',f:[[1000,'m',1,'km'],[1,'h',3600,'s'],[1,'h',60,'min'],[100,'cm',1,'m']]},
+   {q:'¿Cuántas moléculas hay en 9 g de H₂O?',v:9,n:['g H₂O'],d:[],to:'moléculas H₂O',f:[[1,'mol H₂O',18,'g H₂O'],[6.022e23,'moléculas H₂O',1,'mol H₂O'],[1,'mL H₂O',1,'g H₂O']]},
+   {q:'¿Cuántos mol hay en 46 mL de etanol (ρ = 0,8 g/mL)?',v:46,n:['mL etanol'],d:[],to:'mol etanol',f:[[0.8,'g etanol',1,'mL etanol'],[1,'mol etanol',46,'g etanol'],[1,'L etanol',1000,'mL etanol']]},
+   {q:'¿Cuántos átomos de H hay en 0,5 mol de CH₄?',v:0.5,n:['mol CH₄'],d:[],to:'átomos H',f:[[4,'mol H',1,'mol CH₄'],[6.022e23,'átomos H',1,'mol H'],[16,'g CH₄',1,'mol CH₄']]},
+   {q:'¿Cuántos litros hay en 2 m³?',v:2,n:['m³'],d:[],to:'L',f:[[1000,'dm³',1,'m³'],[1,'L',1,'dm³'],[1000,'mL',1,'L']]}],
+  s11:[
+   {q:'¿Cuántos gramos de glucosa hay en 500 mL de solución 0,2 M? (M = 180 g/mol)',v:500,n:['mL sol'],d:[],to:'g glucosa',f:[[1,'L sol',1000,'mL sol'],[0.2,'mol glucosa',1,'L sol'],[180,'g glucosa',1,'mol glucosa'],[1.0,'g sol',1,'mL sol']]},
+   {q:'¿Cuántos mol de NaOH hay en 1 L de solución al 20 %m/m (ρ = 1,2 g/mL)?',v:1,n:['L sol'],d:[],to:'mol NaOH',f:[[1000,'mL sol',1,'L sol'],[1.2,'g sol',1,'mL sol'],[20,'g NaOH',100,'g sol'],[1,'mol NaOH',40,'g NaOH']]},
+   {q:'¿Cuánto etanol hay en 750 mL de vino al 12 %v/v?',v:750,n:['mL vino'],d:[],to:'mL etanol',f:[[12,'mL etanol',100,'mL vino'],[0.8,'g etanol',1,'mL etanol'],[1,'L vino',1000,'mL vino']]},
+   {q:'¿Cuántos mg de Pb hay en 3 L de agua con 0,4 ppm (mg/L)?',v:3,n:['L agua'],d:[],to:'mg Pb',f:[[0.4,'mg Pb',1,'L agua'],[1000,'mL agua',1,'L agua'],[1,'g Pb',1000,'mg Pb']]},
+   {q:'¿Cuántos mol de NaCl hay en 250 mL de solución 0,4 M?',v:250,n:['mL sol'],d:[],to:'mol NaCl',f:[[1,'L sol',1000,'mL sol'],[0.4,'mol NaCl',1,'L sol'],[58.5,'g NaCl',1,'mol NaCl']]}]};
+function mountFC(box,o){
+  const P=QG_FC[o.set||'s10']||QG_FC.s10;let k=0,ch=[];
+  box.innerHTML='<div class="lwtop qgfcp"></div><p class="qgq"></p><div class="qgchain"></div><div class="lwmsg qgfm"></div><p class="note">Toca un factor para agregarlo a la cadena. Toca un factor de la cadena para invertirlo (dar vuelta la fracción). Las unidades que se cancelan se tachan.</p><div class="lwpre qgcards"></div><div class="lwbtns"><button type="button" class="lwb qgpop">↩ Quitar último</button><button type="button" class="lwb qgclr">Reiniciar</button></div>';
+  const pb=box.querySelector('.qgfcp'),q=box.querySelector('.qgq'),cn=box.querySelector('.qgchain'),fm=box.querySelector('.qgfm'),cards=box.querySelector('.qgcards');
+  P.forEach((p,i)=>{const b=el('button','lwb'+(i===k?' on':''),'Problema '+(i+1));b.type='button';b.onclick=()=>{k=i;ch=[];pb.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));render()};pb.append(b)});
+  const frac=(n,d,cl)=>'<span class="qgfrac">'+'<span>'+n+'</span><span>'+d+'</span></span>';
+  function render(){const p=P[k];q.innerHTML='<b>'+p.q+'</b> <span class="note">Meta: '+p.to+'</span>';
+    // unidades
+    let N=p.n.slice(),D=p.d.slice();const terms=[{v:p.v,n:p.n.slice(),d:p.d.slice(),start:1}];
+    ch.forEach(c=>{const f=p.f[c.i];const t=c.inv?{v:f[2]/f[0],nv:f[2],nu:f[3],dv:f[0],du:f[1]}:{v:f[0]/f[2],nv:f[0],nu:f[1],dv:f[2],du:f[3]};terms.push({v:t.v,nv:t.nv,dv:t.dv,n:[t.nu],d:[t.du],ci:ch.indexOf(c)});N.push(t.nu);D.push(t.du)});
+    // cancelar
+    const cancel={};const Nn=N.slice(),Dd=D.slice();
+    for(let i=0;i<Nn.length;i++){const j=Dd.indexOf(Nn[i]);if(j>=0&&Nn[i]){cancel[Nn[i]]=(cancel[Nn[i]]||0)+1;Dd[j]=null;Nn[i]=null}}
+    const leftN=Nn.filter(Boolean),leftD=Dd.filter(Boolean);
+    const used={};const u=x=>{if(cancel[x]&&(used[x]||0)<cancel[x]*2){used[x]=(used[x]||0)+1;return'<s>'+x+'</s>'}return x};
+    let val=p.v;terms.slice(1).forEach(t=>val*=t.v);
+    let h='';terms.forEach((t,i)=>{if(i===0)h+='<span class="qgterm qgstart">'+(t.d.length?frac(qgN(t.v,3)+' '+t.n.map(u).join('·'),t.d.map(u).join('·')):qgN(t.v,3)+' '+t.n.map(u).join('·'))+'</span>';
+      else h+='<span class="qgx">×</span><button type="button" class="qgterm" data-ci="'+t.ci+'" title="Toca para invertir">'+frac(qgN(t.nv,3)+' '+u(t.n[0]),qgN(t.dv,3)+' '+u(t.d[0]))+'</button>'});
+    const unit=leftN.join('·')+(leftD.length?'/'+leftD.join('·'):'');
+    h+='<span class="qgx">=</span><span class="qgres">'+qgN(val,3)+' '+(unit||'(sin unidades)')+'</span>';
+    cn.innerHTML=h;
+    cn.querySelectorAll('button.qgterm').forEach(b=>b.onclick=()=>{ch[+b.dataset.ci].inv=!ch[+b.dataset.ci].inv;render()});
+    const target=p.to.includes('/')?p.to.split('/'):[p.to];
+    const ok=leftN.length===1&&leftN[0]===target[0]&&(target.length===1?leftD.length===0:(leftD.length===1&&leftD[0]===target[1]));
+    if(ok)fm.innerHTML='<p class="qgok">🎉 ¡Llegaste! '+qgN(val,3)+' '+p.to+'</p>';
+    else if(Dd.some((x,i)=>x&&i>=p.d.length))fm.innerHTML='<p class="qgbad">La unidad «'+Dd.find((x,i)=>x&&i>=p.d.length)+'» quedó abajo sin cancelarse: toca ese factor para darle la vuelta o quítalo.</p>';
+    else fm.innerHTML=ch.length?'<p class="note">Quedan: '+(unit||'—')+'. Sigue hasta llegar a «'+p.to+'».</p>':'';
+    cards.innerHTML='';p.f.forEach((f,i)=>{const b=el('button','lwb qgcard',frac(qgN(f[0],3)+' '+f[1],qgN(f[2],3)+' '+f[3]));b.type='button';b.onclick=()=>{ch.push({i,inv:false});render()};cards.append(b)})}
+  box.querySelector('.qgpop').onclick=()=>{ch.pop();render()};box.querySelector('.qgclr').onclick=()=>{ch=[];render()};
+  render()}
+LW.fases=mountFases;LW.sep=mountSep;LW.fc=mountFC;
+
 function mountW(root){if(!root||!root.querySelectorAll)return;root.querySelectorAll('.lw[data-w]:not([data-on])').forEach(b=>{b.dataset.on=1;const f=LW[b.dataset.w];if(!f)return;let o={};try{o=JSON.parse(b.dataset.o||'{}')}catch(e){}try{f(b,o)}catch(e){console.error(e);b.textContent='No se pudo cargar esta herramienta.'}})}
 
 function typeset(n){try{mountW(n)}catch(e){console.error(e)}try{pyHlAll(n)}catch(e){}const run=()=>MathJax.typesetPromise([n]).catch(()=>{});if(window.__mj)run();else{const p=window.__tq;window.__tq=()=>{p&&p();run();};}}
