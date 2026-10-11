@@ -394,6 +394,8 @@ body:has(#vMenu:not([hidden])){background-color:#FFFFFF;background-image:linear-
 .nbopt{align-self:stretch;margin-left:5%;text-align:left;border:1.5px solid #222;background:#fff;color:#222;border-radius:999px;padding:6px 12px 5px;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:1px;line-height:1.15}
 .nbopt:hover,.nbopt:focus-visible{background:#222;color:#fff}
 .nbopt b{font:700 .74rem Lora,Georgia,serif}
+.nbopt em{display:none;font:800 .66rem Figtree,sans-serif;font-style:normal;margin-top:2px}
+@media not ((hover:hover) and (pointer:fine)){.nbopt:not(.nbsoon) em{display:block}}
 .nbopt span{font:.64rem Figtree,sans-serif;opacity:.75}
 .nbopt i{display:block;height:2px;background:rgba(0,0,0,.12);border-radius:2px;overflow:hidden;margin-top:2px}
 .nbopt:hover i{background:rgba(255,255,255,.3)}
@@ -713,14 +715,14 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 /* ===== Mis cursos / Otros cursos ===== */
 .mishead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
 .mist{margin:0;font:600 1.5rem/1.1 Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1;color:#3B3B3B;letter-spacing:-.015em}
-.mist small{font:600 .9rem Lora,Georgia,serif;color:#7A7A7A;margin-left:6px}
+.mist small{font:700 .95rem Lora,Georgia,serif;color:#454545;margin-left:6px}
 .misnote{margin:4px 0 6px;font:600 .92rem/1.5 Lora,Georgia,serif;color:#666}
 .misempty{grid-column:1/-1;border:2px dashed #B9B2A6;border-radius:12px;padding:22px 16px;text-align:center;font:600 .95rem/1.5 Lora,Georgia,serif;color:#777}
 #vMenu .menu.mine:has(.nbcell) .misempty{display:none}
 details.otros{margin-top:22px;border-top:1.5px solid #CFC8BC;padding-top:6px}
 details.otros>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:8px 0}
 details.otros>summary::-webkit-details-marker{display:none}
-details.otros>summary::before{content:'▸';font-size:1rem;color:#7A7A7A;transition:transform .2s}
+details.otros>summary::before{content:'▸';font-size:1.45rem;line-height:1;color:#3B3B3B;transition:transform .2s}
 details.otros[open]>summary::before{transform:rotate(90deg)}
 details.otros>summary .mist{font-size:1.25rem}
 .nbcell{position:relative;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
@@ -1304,7 +1306,7 @@ GEN['com2-ep']=[
    steps:['Una refutación pertinente plantea una excepción del mismo asunto: en caso de que '+s.x+'.','Las demás repiten el dato, enuncian la garantía (que apoya la tesis) o hablan de otro tema.'],ans:'En caso de que '+s.x}}}
 ];
 
-const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,list:[]});m.get(k).list.push(c)});return[...m.values()]})();
+const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,nbn:c.nbname,list:[]});m.get(k).list.push(c)});return[...m.values()]})();
 const NBCOL=['#CDBBE6','#F6C9A8','#AADCC4','#BBD5EF','#F0A69E','#F2DC9C','#D9C4AA'];
 const COVERS={"CI2": "img/portada-CI2.jpg", "CC6103": "img/portada-CC6103.jpg", "CC6201": "img/portada-CC6201.jpg", "IN6013": "img/portada-IN6013.jpg", "CS6005": "img/portada-CS6005.jpg", "AD6002": "img/portada-AD6002.jpg", "CC6101": "img/portada-CC6101.jpg"};
 const HOVER=matchMedia('(hover:hover) and (pointer:fine)');
@@ -1329,7 +1331,7 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
     const pg=el('div','nbpage nbpaper');pg.append(el('span','nbhead',g.list.length>1?'Elige qué preparar':'Cobertura disponible'));
     g.list.forEach(c=>{if(c.soon){const b=el('button','nbopt nbsoon','<b>🔒 '+(c.short||c.exam.replace(/\s*\(.*?\)/,''))+'</b><span>Próximamente</span>');b.disabled=true;b.onclick=e=>e.stopPropagation();pg.append(b);return}
       const x=stats(c),md=medal(c),p=x.total?Math.round(100*x.solved/x.total):0;
-      const b=el('button','nbopt','<b>'+(c.short||c.exam)+'</b><span>'+(c.sub?c.sub+(x.solved?' · '+p+' %':'')+(md?' · '+md[1]:''):(x.solved?p+' % avanzado':'Sin empezar')+(md?' · '+md[1]:''))+'</span><i><u style="width:'+p+'%"></u></i>');
+      const b=el('button','nbopt','<b>'+(c.short||c.exam)+'</b><span>'+(c.sub?c.sub+(x.solved?' · '+p+' %':'')+(md?' · '+md[1]:''):(x.solved?p+' % avanzado':'Sin empezar')+(md?' · '+md[1]:''))+'</span><i><u style="width:'+p+'%"></u></i><em>Practicar →</em>');
       b.onclick=e=>{e.stopPropagation();openCourse(c.id)};pg.append(b)});
     const book=el('div','nbbook');
     book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront"></div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
@@ -1337,8 +1339,8 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
     nb.onmouseenter=()=>{if(HOVER.matches&&!editMenu&&!document.querySelector('.nbchosen'))openNb(nb)};nb.onmouseleave=()=>{if(HOVER.matches)closeNb(nb)};
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};
     nb.onkeydown=e=>{if(e.target===nb&&(e.key==='Enter'||e.key===' ')){e.preventDefault();enterGroup(nb,g)}};
-    nb.onclick=()=>{if(editMenu||performance.now()-dragEnd<450)return;if(HOVER.matches||nb.classList.contains('open'))enterGroup(nb,g);else openNb(nb)};
-    cell.append(nb,el('div','nbname',g.name));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
+    nb.onclick=()=>{if(editMenu||performance.now()-dragEnd<450)return;if(HOVER.matches)enterGroup(nb,g);else if(nb.classList.contains('open'))closeNb(nb);else openNb(nb)};
+    cell.append(nb,el('div','nbname',g.nbn||g.name));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
     if(editMenu&&where){const x=el('button','misx'+(where==='otros'?' add':''),where==='otros'?'+':'−');x.type='button';
       x.setAttribute('aria-label',(where==='otros'?'Agregar ':'Quitar ')+g.name+(where==='otros'?' a':' de')+' Mis cursos');
       x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
