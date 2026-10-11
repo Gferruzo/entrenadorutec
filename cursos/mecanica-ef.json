@@ -13,7 +13,7 @@
  "topics": [
   {
    "id": "vec",
-   "name": "Sem. 1–8 · Vectores y componentes",
+   "name": "Sem. 1 · Vectores y componentes",
    "teo": "<p>Un vector tiene <strong>magnitud</strong> y <strong>dirección</strong>. Si el ángulo \\(\\theta\\) se mide desde el eje \\(+x\\) en sentido antihorario, sus componentes son \\(A_x=A\\cos\\theta\\) y \\(A_y=A\\sin\\theta\\). El signo de cada componente depende del cuadrante.</p>\n<p>Para sumar vectores, suma componente por componente. Para hallar la dirección del resultado usa \\(\\tan\\phi=A_y/A_x\\), pero <strong>revisa el cuadrante</strong>: la calculadora da ángulos entre −90° y 90°, así que si \\(A_x\\lt0\\) debes sumar 180°.</p>",
    "form": [
     "\\(A_x=A\\cos\\theta,\\ A_y=A\\sin\\theta\\)",
@@ -265,7 +265,7 @@
   },
   {
    "id": "dint",
-   "name": "Sem. 1–8 · Derivadas e integrales en física",
+   "name": "Sem. 1 · Derivadas e integrales en física",
    "teo": "<p>La <strong>derivada</strong> es la rapidez de cambio y, en una gráfica, la <strong>pendiente</strong>: \\(v=\\frac{dx}{dt}\\) es la pendiente de \\(x\\)–\\(t\\), y \\(a=\\frac{dv}{dt}\\) la de \\(v\\)–\\(t\\). Lo mismo en rotación: \\(\\omega=\\frac{d\\theta}{dt}\\), \\(\\alpha=\\frac{d\\omega}{dt}\\).</p>\n<p>La <strong>integral</strong> es acumulación y, en una gráfica, el <strong>área bajo la curva</strong>: el área bajo \\(v\\)–\\(t\\) es el desplazamiento \\(\\Delta x\\); bajo \\(a\\)–\\(t\\) es \\(\\Delta v\\); bajo \\(\\alpha\\)–\\(t\\) es \\(\\Delta\\omega\\); bajo \\(\\omega\\)–\\(t\\) es \\(\\Delta\\theta\\). Las áreas debajo del eje cuentan negativas.</p>",
    "form": [
     "\\((t^n)'=nt^{n-1}\\)",
@@ -519,7 +519,7 @@
   },
   {
    "id": "cinl",
-   "name": "Sem. 1–8 · Cinemática lineal y gráficas",
+   "name": "Sem. 2 · Cinemática lineal y gráficas",
    "teo": "<p><strong>Desplazamiento</strong> \\(\\Delta\\vec r\\) es el cambio de posición (vector); <strong>distancia</strong> es lo que recorrió (escalar, siempre positiva). Velocidad media \\(\\vec v_{med}=\\frac{\\Delta\\vec r}{\\Delta t}\\); rapidez media \\(r_{med}=\\frac{d}{\\Delta t}\\).</p>\n<p>En \\(x\\)–\\(t\\), el móvil <strong>cambia de sentido</strong> donde la gráfica tiene un máximo o mínimo (la velocidad cambia de signo). En \\(v\\)–\\(t\\), cambia de sentido donde la curva cruza el eje. Si \\(v\\) y \\(a\\) tienen el mismo signo, acelera; si tienen signos opuestos, frena.</p>",
    "form": [
     "\\(\\vec v_{med}=\\dfrac{\\Delta\\vec r}{\\Delta t},\\ \\ r_{med}=\\dfrac{d}{\\Delta t}\\)",
@@ -860,7 +860,7 @@
   },
   {
    "id": "rot",
-   "name": "Sem. 1–8 · Cinemática rotacional",
+   "name": "Sem. 3 · Cinemática rotacional",
    "teo": "<p>En rotación usamos \\(\\theta\\) (rad), \\(\\omega=\\frac{d\\theta}{dt}\\) y \\(\\alpha=\\frac{d\\omega}{dt}\\). Con la regla de la mano derecha y \\(z\\) saliendo del papel: giro antihorario \\(\\Rightarrow+\\hat k\\), horario \\(\\Rightarrow-\\hat k\\).</p>\n<p>Un punto a distancia \\(R\\) del eje: arco \\(s=R\\theta\\), rapidez \\(v=\\omega R\\), aceleración tangencial \\(a_T=\\alpha R\\) (cambia la rapidez) y radial \\(a_R=\\omega^2R=\\frac{v^2}{R}\\) (cambia la dirección, apunta al centro). Aunque \\(\\omega\\) sea constante, \\(a_R\\neq0\\). Todos los puntos del cuerpo tienen la misma \\(\\omega\\), pero distinta \\(v\\).</p>",
    "form": [
     "\\(s=R\\Delta\\theta,\\ v=\\omega R\\)",
@@ -1165,7 +1165,7 @@
   },
   {
    "id": "iner",
-   "name": "Sem. 1–8 · Momento de inercia y Steiner",
+   "name": "Sem. 4 · Momento de inercia y Steiner",
    "teo": "<p>El momento de inercia \\(I=\\sum m_ir_i^2\\) mide qué tan difícil es cambiar la rotación de un cuerpo <strong>respecto a un eje</strong>. Depende de la masa y de qué tan lejos del eje está: mientras más lejos, mayor \\(I\\). Por eso siempre hay que decir respecto a qué eje.</p>\n<p>Las tablas dan \\(I\\) respecto a un eje por el centro de masa. Para un eje paralelo a distancia \\(d\\) se usa <strong>Steiner</strong>: \\(I=I_{cm}+Md^2\\). Solo funciona si uno de los dos ejes pasa por el CM. Para cuerpos compuestos, los momentos se suman; si hay un agujero, se resta el de la parte quitada.</p>",
    "form": [
     "Masa puntual: \\(I=mr^2\\)",
@@ -1469,8 +1469,315 @@
    "lesson": "<h3>Idea central</h3><p>El momento de inercia es la «masa rotacional»: indica cuánto cuesta cambiar la rotación, y depende de cómo se reparte la masa respecto al eje.</p>\n<h3>Conceptos clave</h3><ul><li>\\(I=\\sum m_ir_i^2\\): más lejos del eje, más inercia.</li><li>Tablas: disco \\(\\frac12MR^2\\), esfera sólida \\(\\frac25MR^2\\), barra (cm) \\(\\frac1{12}ML^2\\), anillo \\(MR^2\\).</li><li>Steiner: \\(I=I_{cm}+Md^2\\), con \\(d\\) entre ejes paralelos.</li><li>Sistemas compuestos: suma los \\(I\\) respecto al mismo eje.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> barra respecto a un extremo: \\(\\frac1{12}ML^2+M\\left(\\frac L2\\right)^2=\\frac13ML^2\\).</div>\n<div class=\"err\"><b>Error común:</b> aplicar Steiner entre dos ejes que no pasan por el CM.</div>"
   },
   {
+   "id": "dcl",
+   "name": "Sem. 4 · DCL y fricción",
+   "teo": "<p>Un <strong>DCL</strong> aísla el sistema y dibuja solo las fuerzas que <strong>otros</strong> cuerpos le hacen: peso (en el CM, vertical hacia abajo), normal (perpendicular a la superficie de contacto), fricción (paralela a la superficie), tensión (a lo largo de la cuerda). No existen \"fuerzas de movimiento\" ni \"fuerza de inercia\"; y no se dibujan las fuerzas que el sistema hace sobre otros.</p>\n<p>La <strong>fricción</strong> se opone al deslizamiento (o a la tendencia a deslizar) entre las superficies, no necesariamente al movimiento del cuerpo. Estática: \\(f_s\\le\\mu_sN\\) (se ajusta a lo necesario, solo vale \\(\\mu_sN\\) a punto de deslizar). Cinética: \\(f_k=\\mu_kN\\).</p>",
+   "form": [
+    "\\(f_s\\le\\mu_sN\\), \\(f_{s,max}=\\mu_sN\\)",
+    "\\(f_k=\\mu_kN\\)",
+    "\\(\\sum\\vec F=m\\vec a\\)",
+    "Plano inclinado: \\(N=mg\\cos\\theta\\)"
+   ],
+   "ex": [
+    {
+     "id": "mf1",
+     "lvl": 1,
+     "title": "DCL: bloque en reposo en una rampa",
+     "q": "<p>Un bloque está en reposo sobre una rampa rugosa. ¿Cuál es su DCL correcto?</p>",
+     "checks": [
+      {
+       "p": "DCL",
+       "o": [
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"54.1\" y2=\"72.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"48.9,75.4 54.3,68.3 57.8,74.3\"/><text class=\"dl\" x=\"38.5\" y=\"85.4\" text-anchor=\"middle\">f</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"16.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,10.4 87.0,18.7 80.0,18.7\"/><text class=\"dl\" x=\"83.5\" y=\"2.4\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"49.7\" y2=\"74.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"44.5,77.9 50.0,70.8 53.5,76.8\"/><text class=\"dl\" x=\"34.1\" y=\"87.9\" text-anchor=\"middle\">F<tspan font-size=\"8\">mov</tspan></text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "Peso vertical hacia abajo; normal perpendicular a la rampa.",
+      "El bloque tiende a resbalar hacia abajo: la fricción estática apunta hacia arriba de la rampa.",
+      "No existe una «fuerza de movimiento»; solo fuerzas que otros cuerpos le hacen."
+     ],
+     "ans": "Peso, normal perpendicular y fricción hacia arriba de la rampa",
+     "hint": "¿Hacia dónde tiende a resbalar?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trab",
+       "dcl"
+      ],
+      [
+       "fric"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf2",
+     "lvl": 1,
+     "title": "Fricción: V o F",
+     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
+     "checks": [
+      {
+       "p": "a) La fricción siempre se opone al movimiento del objeto.",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "b) La fricción estática siempre vale \\(\\mu_sN\\).",
+       "o": [
+        "Falso",
+        "Verdadero"
+       ],
+       "ord": [
+        1,
+        0
+       ]
+      },
+      {
+       "p": "c) El peso se dibuja en el centro de masa.",
+       "o": [
+        "Verdadero",
+        "Falso"
+       ],
+       "ord": [
+        0,
+        1
+       ]
+      }
+     ],
+     "steps": [
+      "a) F: se opone al deslizamiento relativo; al caminar, la fricción te empuja hacia adelante.",
+      "b) F: \\(f_s\\le\\mu_sN\\); solo es igual a punto de deslizar.",
+      "c) V."
+     ],
+     "ans": "F, F, V",
+     "hint": "Piensa en cómo caminas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "fric"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf3",
+     "lvl": 1,
+     "title": "¿Cuánta fricción?",
+     "q": "<p>Un bloque de 2 kg está en reposo sobre una mesa horizontal (\\(\\mu_s=0{,}5\\), \\(\\mu_k=0{,}3\\)).</p>",
+     "checks": [
+      {
+       "p": "Fricción si nadie lo empuja",
+       "o": [
+        "\\(0\\)",
+        "\\(10\\ \\text{N}\\)",
+        "\\(6\\ \\text{N}\\)",
+        "\\(20\\ \\text{N}\\)",
+        "\\(5\\ \\text{N}\\)"
+       ]
+      },
+      {
+       "p": "Fricción si lo empujan con 6 N horizontales",
+       "o": [
+        "\\(6\\ \\text{N}\\)",
+        "\\(10\\ \\text{N}\\)",
+        "\\(0\\)",
+        "\\(3\\ \\text{N}\\)",
+        "\\(20\\ \\text{N}\\)"
+       ]
+      },
+      {
+       "p": "Aceleración si lo empujan con 15 N",
+       "o": [
+        "\\(4{,}5\\ \\text{m/s}^2\\)",
+        "\\(2{,}5\\ \\text{m/s}^2\\)",
+        "\\(7{,}5\\ \\text{m/s}^2\\)",
+        "\\(0\\)",
+        "\\(5\\ \\text{m/s}^2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Sin fuerza horizontal no hay tendencia a deslizar: \\(f=0\\).",
+      "\\(f_{s,max}=0{,}5(20)=10\\) N \\(\\gt6\\) N: no se mueve, \\(f_s=6\\) N.",
+      "15 N \\(\\gt\\) 10 N: desliza, \\(f_k=0{,}3(20)=6\\) N, \\(a=\\frac{15-6}{2}=4{,}5\\) m/s²."
+     ],
+     "ans": "0; 6 N; 4,5 m/s²",
+     "hint": "Compara con μsN antes de usar μk.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "fric"
+      ],
+      [
+       "newt"
+      ]
+     ]
+    },
+    {
+     "id": "mf4",
+     "lvl": 2,
+     "title": "Bloques apilados (Examen 2 2024-1)",
+     "q": "<p>A (5 kg) está sobre B (10 kg); se jala A con 200 N y ambos se mueven juntos. Entre B y el piso \\(\\mu_k=0{,}8\\).</p>",
+     "checks": [
+      {
+       "p": "Aceleración",
+       "o": [
+        "\\(\\approx5{,}33\\ \\text{m/s}^2\\)",
+        "\\(\\approx13{,}3\\ \\text{m/s}^2\\)",
+        "\\(8\\ \\text{m/s}^2\\)",
+        "\\(\\approx2{,}67\\ \\text{m/s}^2\\)",
+        "\\(20\\ \\text{m/s}^2\\)"
+       ]
+      },
+      {
+       "p": "Fricción entre A y B",
+       "o": [
+        "\\(\\approx173\\ \\text{N}\\)",
+        "\\(120\\ \\text{N}\\)",
+        "\\(200\\ \\text{N}\\)",
+        "\\(\\approx26{,}7\\ \\text{N}\\)",
+        "\\(80\\ \\text{N}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(N_{piso}=(5+10)10=150\\) N; \\(f_{piso}=0{,}8(150)=120\\) N.",
+      "Sistema: \\(200-120=15a\\Rightarrow a\\approx5{,}33\\) m/s².",
+      "Solo A: \\(200-f_{AB}=5a\\Rightarrow f_{AB}\\approx173\\) N."
+     ],
+     "ans": "≈5,33 m/s²; ≈173 N",
+     "hint": "Primero el sistema completo, luego un bloque.",
+     "fig": "bloques",
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "teor",
+       "newt"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "mf5",
+     "lvl": 2,
+     "title": "DCL: carrete que rueda (Examen 1 2025-2)",
+     "q": "<p>El carrete es jalado por una cuerda horizontal en su parte superior y rueda sin deslizar hacia la derecha. Se sabe que la fricción le <strong>da</strong> energía de traslación. ¿Cuál es su DCL?</p>",
+     "checks": [
+      {
+       "p": "DCL",
+       "o": [
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"41.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,100.0 43.3,96.5 43.3,103.5\"/><text class=\"dl\" x=\"23.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"134.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,62.0 131.7,65.5 131.7,58.5\"/><text class=\"dl\" x=\"152.0\" y=\"66.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"41.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,62.0 43.3,58.5 43.3,65.5\"/><text class=\"dl\" x=\"23.0\" y=\"66.0\" text-anchor=\"middle\">F<tspan font-size=\"8\">in</tspan></text></svg>"
+       ]
+      }
+     ],
+     "steps": [
+      "F horizontal aplicada arriba; peso en el centro; normal en el contacto.",
+      "Si la fricción da energía de traslación, apunta hacia la derecha (a favor del movimiento del CM) y actúa en el punto de contacto.",
+      "No existe una «fuerza de inercia»."
+     ],
+     "ans": "F arriba, fricción hacia la derecha en el contacto, peso y normal",
+     "hint": "Usa el dato de la energía de traslación.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "frod"
+      ],
+      [
+       "dcl"
+      ]
+     ]
+    },
+    {
+     "id": "mf6",
+     "lvl": 3,
+     "title": "Zapatito en el auto (Examen 3 2023-1)",
+     "q": "<p>Un zapatito de 20 g cuelga del retrovisor de un auto que acelera. La cuerda forma 37° con la vertical (\\(\\sin37^\\circ=0{,}6\\), \\(\\cos37^\\circ=0{,}8\\)).</p>",
+     "checks": [
+      {
+       "p": "DCL del zapatito (el auto acelera hacia la derecha)",
+       "o": [
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"58.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"54.9,20.1 62.7,24.6 57.1,28.8\"/><text class=\"dl\" x=\"47.7\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"16.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,10.0 88.5,18.3 81.5,18.3\"/><text class=\"dl\" x=\"85.0\" y=\"2.0\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"51.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"45.0,60.0 53.3,56.5 53.3,63.5\"/><text class=\"dl\" x=\"33.0\" y=\"64.0\" text-anchor=\"middle\">ma</text></svg>",
+        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"119.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,60.0 116.7,63.5 116.7,56.5\"/><text class=\"dl\" x=\"137.0\" y=\"64.0\" text-anchor=\"middle\">F</text></svg>"
+       ]
+      },
+      {
+       "p": "Aceleración del auto",
+       "o": [
+        "\\(7{,}5\\ \\text{m/s}^2\\)",
+        "\\(6\\ \\text{m/s}^2\\)",
+        "\\(8\\ \\text{m/s}^2\\)",
+        "\\(13{,}3\\ \\text{m/s}^2\\)",
+        "\\(10\\ \\text{m/s}^2\\)"
+       ]
+      },
+      {
+       "p": "Si el auto acelera más, el ángulo…",
+       "o": [
+        "Aumenta",
+        "Disminuye",
+        "Se mantiene",
+        "Se vuelve cero",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Solo actúan el peso y la tensión (no existe una «fuerza ma»). La tensión se inclina hacia donde acelera el auto.",
+      "\\(T\\cos37^\\circ=mg\\) y \\(T\\sin37^\\circ=ma\\Rightarrow a=g\\tan37^\\circ=10\\cdot\\frac{0{,}6}{0{,}8}=7{,}5\\) m/s².",
+      "\\(\\tan\\theta=a/g\\): si \\(a\\) crece, \\(\\theta\\) crece."
+     ],
+     "ans": "T inclinada hacia la aceleración y mg; 7,5 m/s²; aumenta",
+     "hint": "Divide las dos ecuaciones de Newton.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dcl"
+      ],
+      [
+       "newt"
+      ],
+      []
+     ]
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>El DCL es el primer paso de casi todo problema: aislar el cuerpo y dibujar solo las fuerzas que otros cuerpos le hacen.</p>\n<h3>Conceptos clave</h3><ul><li>Peso (en el CM, hacia abajo), normal (perpendicular al contacto), fricción (paralela), tensión (a lo largo de la cuerda).</li><li>Fricción estática \\(f_s\\le\\mu_sN\\); cinética \\(f_k=\\mu_kN\\).</li><li>En la rodadura sin deslizar, la fricción es estática.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> bloque en plano inclinado: \\(N=mg\\cos\\theta\\).</div>\n<div class=\"err\"><b>Error común:</b> dibujar una «fuerza de movimiento» o suponer siempre \\(N=mg\\).</div>"
+  },
+  {
    "id": "ener",
-   "name": "Sem. 1–8 · Energía cinética",
+   "name": "Sem. 5 · Energía cinética",
    "teo": "<p>La energía cinética es la energía asociada al movimiento. Se separa en <strong>traslación</strong> \\(K_{tras}=\\tfrac12Mv_{cm}^2\\) (el CM se desplaza) y <strong>rotación</strong> \\(K_{rot}=\\tfrac12I_{cm}\\omega^2\\) (gira alrededor de su CM). Nunca es negativa.</p>\n<p>Si rueda <strong>sin deslizar</strong>, \\(v_{cm}=\\omega R\\), y puedes escribir todo en función de \\(v\\). Un ventilador girando en su lugar solo tiene \\(K_{rot}\\); una caja que se desliza solo \\(K_{tras}\\); una rueda que rueda tiene ambas.</p>",
    "form": [
     "\\(K=\\tfrac12Mv_{cm}^2+\\tfrac12I_{cm}\\omega^2\\)",
@@ -1764,7 +2071,7 @@
   },
   {
    "id": "trab",
-   "name": "Sem. 1–8 · Trabajo y teorema trabajo-energía",
+   "name": "Sem. 6 · Trabajo y teorema trabajo-energía",
    "teo": "<p>Trabajar es <strong>transferir energía</strong>. Una fuerza <strong>da</strong> energía (trabajo +) si está a favor del movimiento, y <strong>quita</strong> energía (trabajo −) si está en contra. Si es perpendicular al desplazamiento, no hace trabajo (la normal en una superficie fija, la tensión de un péndulo).</p>\n<p>Teorema: \\(W_{neto}=\\Delta K\\), y se separa en \\(W_{neto,tras}=\\Delta K_{tras}\\) y \\(W_{neto,rot}=\\Delta K_{rot}\\). En la <strong>rodadura sin deslizar</strong>, la fricción estática quita energía de un tipo y da la misma cantidad del otro: \\(W^{fr}_{tras}=-W^{fr}_{rot}\\), así que su trabajo total es cero.</p>\n<p>El peso: \\(W_{mg}=+mgh\\) si baja, \\(-mgh\\) si sube; si vuelve a la misma altura, cero. En una cuerda ideal, la tensión quita energía a un cuerpo y se la da al otro.</p>",
    "form": [
     "\\(W=F|\\Delta\\vec r|\\cos\\theta\\)",
@@ -2148,7 +2455,7 @@
   },
   {
    "id": "torq",
-   "name": "Sem. 1–8 · Torque y equilibrio",
+   "name": "Sem. 7 · Torque y equilibrio",
    "teo": "<p>El torque mide la capacidad de una fuerza de <strong>hacer girar</strong> un objeto respecto a un eje: \\(\\vec\\tau=\\vec r\\times\\vec F\\), con módulo \\(\\tau=rF\\sin\\phi\\) (máximo si la fuerza es perpendicular a \\(\\vec r\\)). Si la línea de acción de la fuerza pasa por el eje, su torque es cero.</p>\n<p>Dirección con la mano derecha: si la fuerza intenta girar el objeto en sentido antihorario (con \\(z\\) saliendo del papel), \\(\\vec\\tau\\) apunta a \\(+\\hat k\\); horario, a \\(-\\hat k\\). En <strong>equilibrio estático</strong>: \\(\\sum\\vec F=0\\) y \\(\\sum\\vec\\tau=0\\) respecto a cualquier punto; conviene tomar torques donde hay incógnitas, para eliminarlas.</p>",
    "form": [
     "\\(\\tau=rF\\sin\\phi\\) (brazo de palanca \\(r\\sin\\phi\\))",
@@ -2427,313 +2734,6 @@
     }
    ],
    "lesson": "<h3>Idea central</h3><p>El torque es la «fuerza de giro»: depende de la fuerza, de dónde se aplica y del ángulo.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\tau=rF\\sin\\phi\\); máximo con fuerza perpendicular.</li><li>Si la línea de acción pasa por el eje, \\(\\tau=0\\).</li><li>Dirección: mano derecha (antihorario \\(+\\hat k\\)).</li><li>Equilibrio: \\(\\sum\\vec F=0\\) y \\(\\sum\\vec\\tau=0\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Elige el eje (donde hay fuerzas desconocidas, para eliminarlas).</li><li><strong>2.</strong> Calcula cada torque con signo.</li><li><strong>3.</strong> Plantea las sumas igual a cero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> fuerza de 20 N a 0,3 m del eje, perpendicular: \\(\\tau=6\\) N·m.</div>\n<div class=\"err\"><b>Error común:</b> usar la distancia al punto de aplicación en vez del brazo de palanca cuando la fuerza no es perpendicular.</div>"
-  },
-  {
-   "id": "dcl",
-   "name": "Sem. 1–8 · DCL y fricción",
-   "teo": "<p>Un <strong>DCL</strong> aísla el sistema y dibuja solo las fuerzas que <strong>otros</strong> cuerpos le hacen: peso (en el CM, vertical hacia abajo), normal (perpendicular a la superficie de contacto), fricción (paralela a la superficie), tensión (a lo largo de la cuerda). No existen \"fuerzas de movimiento\" ni \"fuerza de inercia\"; y no se dibujan las fuerzas que el sistema hace sobre otros.</p>\n<p>La <strong>fricción</strong> se opone al deslizamiento (o a la tendencia a deslizar) entre las superficies, no necesariamente al movimiento del cuerpo. Estática: \\(f_s\\le\\mu_sN\\) (se ajusta a lo necesario, solo vale \\(\\mu_sN\\) a punto de deslizar). Cinética: \\(f_k=\\mu_kN\\).</p>",
-   "form": [
-    "\\(f_s\\le\\mu_sN\\), \\(f_{s,max}=\\mu_sN\\)",
-    "\\(f_k=\\mu_kN\\)",
-    "\\(\\sum\\vec F=m\\vec a\\)",
-    "Plano inclinado: \\(N=mg\\cos\\theta\\)"
-   ],
-   "ex": [
-    {
-     "id": "mf1",
-     "lvl": 1,
-     "title": "DCL: bloque en reposo en una rampa",
-     "q": "<p>Un bloque está en reposo sobre una rampa rugosa. ¿Cuál es su DCL correcto?</p>",
-     "checks": [
-      {
-       "p": "DCL",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"54.1\" y2=\"72.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"48.9,75.4 54.3,68.3 57.8,74.3\"/><text class=\"dl\" x=\"38.5\" y=\"85.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"16.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,10.4 87.0,18.7 80.0,18.7\"/><text class=\"dl\" x=\"83.5\" y=\"2.4\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"49.7\" y2=\"74.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"44.5,77.9 50.0,70.8 53.5,76.8\"/><text class=\"dl\" x=\"34.1\" y=\"87.9\" text-anchor=\"middle\">F<tspan font-size=\"8\">mov</tspan></text></svg>"
-       ]
-      }
-     ],
-     "steps": [
-      "Peso vertical hacia abajo; normal perpendicular a la rampa.",
-      "El bloque tiende a resbalar hacia abajo: la fricción estática apunta hacia arriba de la rampa.",
-      "No existe una «fuerza de movimiento»; solo fuerzas que otros cuerpos le hacen."
-     ],
-     "ans": "Peso, normal perpendicular y fricción hacia arriba de la rampa",
-     "hint": "¿Hacia dónde tiende a resbalar?",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "trab",
-       "dcl"
-      ],
-      [
-       "fric"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "mf2",
-     "lvl": 1,
-     "title": "Fricción: V o F",
-     "q": "<p>Indica si cada afirmación es verdadera o falsa.</p>",
-     "checks": [
-      {
-       "p": "a) La fricción siempre se opone al movimiento del objeto.",
-       "o": [
-        "Falso",
-        "Verdadero"
-       ],
-       "ord": [
-        1,
-        0
-       ]
-      },
-      {
-       "p": "b) La fricción estática siempre vale \\(\\mu_sN\\).",
-       "o": [
-        "Falso",
-        "Verdadero"
-       ],
-       "ord": [
-        1,
-        0
-       ]
-      },
-      {
-       "p": "c) El peso se dibuja en el centro de masa.",
-       "o": [
-        "Verdadero",
-        "Falso"
-       ],
-       "ord": [
-        0,
-        1
-       ]
-      }
-     ],
-     "steps": [
-      "a) F: se opone al deslizamiento relativo; al caminar, la fricción te empuja hacia adelante.",
-      "b) F: \\(f_s\\le\\mu_sN\\); solo es igual a punto de deslizar.",
-      "c) V."
-     ],
-     "ans": "F, F, V",
-     "hint": "Piensa en cómo caminas.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "fric"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "mf3",
-     "lvl": 1,
-     "title": "¿Cuánta fricción?",
-     "q": "<p>Un bloque de 2 kg está en reposo sobre una mesa horizontal (\\(\\mu_s=0{,}5\\), \\(\\mu_k=0{,}3\\)).</p>",
-     "checks": [
-      {
-       "p": "Fricción si nadie lo empuja",
-       "o": [
-        "\\(0\\)",
-        "\\(10\\ \\text{N}\\)",
-        "\\(6\\ \\text{N}\\)",
-        "\\(20\\ \\text{N}\\)",
-        "\\(5\\ \\text{N}\\)"
-       ]
-      },
-      {
-       "p": "Fricción si lo empujan con 6 N horizontales",
-       "o": [
-        "\\(6\\ \\text{N}\\)",
-        "\\(10\\ \\text{N}\\)",
-        "\\(0\\)",
-        "\\(3\\ \\text{N}\\)",
-        "\\(20\\ \\text{N}\\)"
-       ]
-      },
-      {
-       "p": "Aceleración si lo empujan con 15 N",
-       "o": [
-        "\\(4{,}5\\ \\text{m/s}^2\\)",
-        "\\(2{,}5\\ \\text{m/s}^2\\)",
-        "\\(7{,}5\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(5\\ \\text{m/s}^2\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "Sin fuerza horizontal no hay tendencia a deslizar: \\(f=0\\).",
-      "\\(f_{s,max}=0{,}5(20)=10\\) N \\(\\gt6\\) N: no se mueve, \\(f_s=6\\) N.",
-      "15 N \\(\\gt\\) 10 N: desliza, \\(f_k=0{,}3(20)=6\\) N, \\(a=\\frac{15-6}{2}=4{,}5\\) m/s²."
-     ],
-     "ans": "0; 6 N; 4,5 m/s²",
-     "hint": "Compara con μsN antes de usar μk.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "fric"
-      ],
-      [
-       "newt"
-      ]
-     ]
-    },
-    {
-     "id": "mf4",
-     "lvl": 2,
-     "title": "Bloques apilados (Examen 2 2024-1)",
-     "q": "<p>A (5 kg) está sobre B (10 kg); se jala A con 200 N y ambos se mueven juntos. Entre B y el piso \\(\\mu_k=0{,}8\\).</p>",
-     "checks": [
-      {
-       "p": "Aceleración",
-       "o": [
-        "\\(\\approx5{,}33\\ \\text{m/s}^2\\)",
-        "\\(\\approx13{,}3\\ \\text{m/s}^2\\)",
-        "\\(8\\ \\text{m/s}^2\\)",
-        "\\(\\approx2{,}67\\ \\text{m/s}^2\\)",
-        "\\(20\\ \\text{m/s}^2\\)"
-       ]
-      },
-      {
-       "p": "Fricción entre A y B",
-       "o": [
-        "\\(\\approx173\\ \\text{N}\\)",
-        "\\(120\\ \\text{N}\\)",
-        "\\(200\\ \\text{N}\\)",
-        "\\(\\approx26{,}7\\ \\text{N}\\)",
-        "\\(80\\ \\text{N}\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(N_{piso}=(5+10)10=150\\) N; \\(f_{piso}=0{,}8(150)=120\\) N.",
-      "Sistema: \\(200-120=15a\\Rightarrow a\\approx5{,}33\\) m/s².",
-      "Solo A: \\(200-f_{AB}=5a\\Rightarrow f_{AB}\\approx173\\) N."
-     ],
-     "ans": "≈5,33 m/s²; ≈173 N",
-     "hint": "Primero el sistema completo, luego un bloque.",
-     "fig": "bloques",
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "teor",
-       "newt"
-      ],
-      []
-     ]
-    },
-    {
-     "id": "mf5",
-     "lvl": 2,
-     "title": "DCL: carrete que rueda (Examen 1 2025-2)",
-     "q": "<p>El carrete es jalado por una cuerda horizontal en su parte superior y rueda sin deslizar hacia la derecha. Se sabe que la fricción le <strong>da</strong> energía de traslación. ¿Cuál es su DCL?</p>",
-     "checks": [
-      {
-       "p": "DCL",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"41.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,100.0 43.3,96.5 43.3,103.5\"/><text class=\"dl\" x=\"23.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"134.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,62.0 131.7,65.5 131.7,58.5\"/><text class=\"dl\" x=\"152.0\" y=\"66.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"41.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,62.0 43.3,58.5 43.3,65.5\"/><text class=\"dl\" x=\"23.0\" y=\"66.0\" text-anchor=\"middle\">F<tspan font-size=\"8\">in</tspan></text></svg>"
-       ]
-      }
-     ],
-     "steps": [
-      "F horizontal aplicada arriba; peso en el centro; normal en el contacto.",
-      "Si la fricción da energía de traslación, apunta hacia la derecha (a favor del movimiento del CM) y actúa en el punto de contacto.",
-      "No existe una «fuerza de inercia»."
-     ],
-     "ans": "F arriba, fricción hacia la derecha en el contacto, peso y normal",
-     "hint": "Usa el dato de la energía de traslación.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "frod"
-      ],
-      [
-       "dcl"
-      ]
-     ]
-    },
-    {
-     "id": "mf6",
-     "lvl": 3,
-     "title": "Zapatito en el auto (Examen 3 2023-1)",
-     "q": "<p>Un zapatito de 20 g cuelga del retrovisor de un auto que acelera. La cuerda forma 37° con la vertical (\\(\\sin37^\\circ=0{,}6\\), \\(\\cos37^\\circ=0{,}8\\)).</p>",
-     "checks": [
-      {
-       "p": "DCL del zapatito (el auto acelera hacia la derecha)",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"58.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"54.9,20.1 62.7,24.6 57.1,28.8\"/><text class=\"dl\" x=\"47.7\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"16.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,10.0 88.5,18.3 81.5,18.3\"/><text class=\"dl\" x=\"85.0\" y=\"2.0\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"51.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"45.0,60.0 53.3,56.5 53.3,63.5\"/><text class=\"dl\" x=\"33.0\" y=\"64.0\" text-anchor=\"middle\">ma</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"119.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,60.0 116.7,63.5 116.7,56.5\"/><text class=\"dl\" x=\"137.0\" y=\"64.0\" text-anchor=\"middle\">F</text></svg>"
-       ]
-      },
-      {
-       "p": "Aceleración del auto",
-       "o": [
-        "\\(7{,}5\\ \\text{m/s}^2\\)",
-        "\\(6\\ \\text{m/s}^2\\)",
-        "\\(8\\ \\text{m/s}^2\\)",
-        "\\(13{,}3\\ \\text{m/s}^2\\)",
-        "\\(10\\ \\text{m/s}^2\\)"
-       ]
-      },
-      {
-       "p": "Si el auto acelera más, el ángulo…",
-       "o": [
-        "Aumenta",
-        "Disminuye",
-        "Se mantiene",
-        "Se vuelve cero",
-        "No se puede saber"
-       ]
-      }
-     ],
-     "steps": [
-      "Solo actúan el peso y la tensión (no existe una «fuerza ma»). La tensión se inclina hacia donde acelera el auto.",
-      "\\(T\\cos37^\\circ=mg\\) y \\(T\\sin37^\\circ=ma\\Rightarrow a=g\\tan37^\\circ=10\\cdot\\frac{0{,}6}{0{,}8}=7{,}5\\) m/s².",
-      "\\(\\tan\\theta=a/g\\): si \\(a\\) crece, \\(\\theta\\) crece."
-     ],
-     "ans": "T inclinada hacia la aceleración y mg; 7,5 m/s²; aumenta",
-     "hint": "Divide las dos ecuaciones de Newton.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "dcl"
-      ],
-      [
-       "newt"
-      ],
-      []
-     ]
-    }
-   ],
-   "lesson": "<h3>Idea central</h3><p>El DCL es el primer paso de casi todo problema: aislar el cuerpo y dibujar solo las fuerzas que otros cuerpos le hacen.</p>\n<h3>Conceptos clave</h3><ul><li>Peso (en el CM, hacia abajo), normal (perpendicular al contacto), fricción (paralela), tensión (a lo largo de la cuerda).</li><li>Fricción estática \\(f_s\\le\\mu_sN\\); cinética \\(f_k=\\mu_kN\\).</li><li>En la rodadura sin deslizar, la fricción es estática.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> bloque en plano inclinado: \\(N=mg\\cos\\theta\\).</div>\n<div class=\"err\"><b>Error común:</b> dibujar una «fuerza de movimiento» o suponer siempre \\(N=mg\\).</div>"
   },
   {
    "id": "s9fric",

@@ -13,7 +13,7 @@
  "topics": [
   {
    "id": "tipos",
-   "name": "Repaso parcial · Datos y tipos de datos",
+   "name": "Sem. 1 · Datos y tipos de datos",
    "teo": "<p>Un <strong>dato</strong> representa un hecho, evento o característica que se puede guardar y procesar para generar información y decidir.</p>\n<p><strong>Según su estructura:</strong> estructurados (filas y columnas: bases de datos, Excel), semiestructurados (sin tabla rígida pero con etiquetas o claves: JSON, XML, correos con metadatos) y no estructurados (sin formato fijo: texto libre, imágenes, audio, video; requieren IA o procesamiento de lenguaje).</p>\n<p><strong>Según su naturaleza:</strong> cualitativos (describen cualidades: sexo, estado civil, nivel educativo) y cuantitativos (cantidades con las que se opera: edad, ingreso, número de reclamos). Un número que solo identifica (DNI, código) es cualitativo.</p>\n<p><strong>Fuentes:</strong> internas (ERP, CRM, ventas, call center: confiables y baratas, pero limitadas a la empresa) y externas (INEI, censos, Google Trends, open data: muestran el mercado, pero su calidad y costo varían).</p>\n<p><strong>Calidad</strong> (¿correctos, completos, oportunos?), <strong>consistencia</strong> (¿las mismas reglas y formatos en toda la empresa?) y <strong>confiabilidad</strong> (¿vienen de una fuente verificada que refleja la realidad?).</p>",
    "form": [
     "Estructurado: filas y columnas",
@@ -302,7 +302,7 @@
   },
   {
    "id": "bd",
-   "name": "Repaso parcial · Bases de datos relacionales",
+   "name": "Sem. 2 · Bases de datos relacionales",
    "teo": "<p>Una <strong>base de datos relacional</strong> es un conjunto de tablas independientes conectadas mediante relaciones. Cada tabla guarda un solo tipo de información, y las relaciones permiten reconstruir la información completa sin repetirla.</p>\n<p><strong>Tabla</strong> = datos de una entidad (ESTUDIANTES). <strong>Registro</strong> = una fila (los datos de Ana Torres). <strong>Campo</strong> = una columna (DNI, correo).</p>\n<p><strong>Clave primaria (PK):</strong> identifica cada registro de forma única; no puede repetirse ni quedar vacía. <strong>Clave foránea (FK):</strong> campo que conecta con otra tabla; es la PK de esa otra tabla copiada como referencia.</p>\n<p><strong>Modelo entidad–relación:</strong> entidades (rectángulos), atributos y relaciones con cardinalidad (1 a N, N a M). Una relación N a M (un estudiante lleva muchos cursos y un curso tiene muchos estudiantes) se resuelve con una <strong>tabla intermedia</strong> (MATRÍCULA) que tiene dos FK.</p>",
    "form": [
     "Tabla · registro (fila) · campo (columna)",
@@ -579,7 +579,7 @@
   },
   {
    "id": "integ",
-   "name": "Repaso parcial · Organización e integridad",
+   "name": "Sem. 3 · Organización e integridad",
    "teo": "<p><strong>Organización:</strong> cada tabla guarda un solo tipo de información; evitar <strong>redundancia</strong> (si un dato se obtiene por relación, no se repite); y usar nombres de campos consistentes (si una tabla usa ID_cliente, todas lo llaman igual).</p>\n<p><strong>Integridad de entidad:</strong> toda tabla tiene PK, que no se repite ni queda vacía. <strong>Integridad referencial:</strong> toda FK apunta a una PK que sí existe (evita «referencias fantasma»). <strong>Integridad de dominio:</strong> cada campo acepta solo valores del tipo y rango correctos (sin texto en campos numéricos ni fechas imposibles).</p>",
    "form": [
     "Entidad: PK única y no nula",
@@ -833,7 +833,7 @@
   },
   {
    "id": "sel",
-   "name": "Repaso parcial · SQL: SELECT básico",
+   "name": "Sem. 4 · SQL: SELECT básico",
    "teo": "<p>SQL es un lenguaje <strong>declarativo</strong>: dices <em>qué</em> quieres, no cómo obtenerlo. Estructura: <code>SELECT columnas FROM tabla;</code></p>\n<p><code>SELECT *</code> trae todas las columnas; <code>SELECT TOP 5 ...</code> limita a las primeras filas (en SQL Server; si hay menos filas, trae las que haya); <code>AS</code> renombra una columna solo en el resultado; <code>DISTINCT</code> devuelve valores únicos.</p>\n<p>Errores comunes: escribir mal el nombre de una columna (los acentos y espacios dan error; mayúsculas y minúsculas no), confundir el orden (primero SELECT, luego FROM) y usar SELECT * cuando solo necesitas dos columnas.</p>",
    "form": [
     "<code>SELECT col1, col2 FROM tabla;</code>",
@@ -1071,7 +1071,7 @@
   },
   {
    "id": "agg",
-   "name": "Repaso parcial · Filtrar, ordenar y agregar",
+   "name": "Sem. 4 · Filtrar, ordenar y agregar",
    "teo": "<p><code>WHERE</code> filtra filas: operadores <code>= &gt; &lt; &gt;= &lt;= &lt;&gt;</code>; los textos van entre comillas simples (<code>&#x27;Bebidas&#x27;</code>), los números no. <code>AND</code> exige todas las condiciones (reduce más); <code>OR</code> basta con una. Usa paréntesis al mezclarlos.</p><p><code>ORDER BY col ASC|DESC</code> ordena (ASC es el valor por defecto). Funciones de agregación: <code>COUNT SUM AVG MIN MAX</code>; sin GROUP BY resumen toda la tabla en <strong>una sola fila</strong>. <code>GROUP BY</code> junta filas con el mismo valor y resume cada grupo; si pides una columna normal junto a una agregación, necesitas GROUP BY. <code>HAVING</code> filtra <em>grupos</em> (WHERE filtra filas antes de agrupar).</p>\n<p>Orden de las cláusulas: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY.</p>",
    "form": [
     "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
@@ -1407,7 +1407,7 @@
   },
   {
    "id": "join",
-   "name": "Repaso parcial · JOIN",
+   "name": "Sem. 5 · JOIN",
    "teo": "<p>La información está repartida en varias tablas (para evitar redundancia), así que casi toda pregunta de negocio necesita <strong>combinarlas</strong>. Un JOIN une filas de dos tablas usando una columna en común, normalmente PK con FK.</p>\n<p><code>INNER JOIN</code>: solo las filas que tienen coincidencia en <strong>ambas</strong> tablas. <code>LEFT JOIN</code>: <strong>todas</strong> las filas de la tabla de la izquierda, tengan o no pareja (las que no, salen con NULL). Pregunta clave: ¿me interesan los casos «sin pareja»?</p>\n<p>Los alias de tabla (<code>Ventas v</code>) acortan la escritura. Se pueden encadenar varios JOIN, cada uno con su ON. Errores comunes: olvidar ON (producto cartesiano), comparar columnas equivocadas en el ON, usar INNER cuando se necesitaban los casos sin pareja, y no usar alias cuando una columna existe en ambas tablas.</p>",
    "form": [
     "<code>FROM A a INNER JOIN B b ON a.id = b.id</code>",
@@ -1667,7 +1667,7 @@
   },
   {
    "id": "limp",
-   "name": "Repaso parcial · Preparación y limpieza de datos",
+   "name": "Sem. 6 · Preparación y limpieza de datos",
    "teo": "<p>Los datos casi nunca llegan listos. El flujo: (1) <strong>importar e integrar</strong> fuentes (decidir qué columna de una corresponde a cuál de la otra), (2) <strong>limpiar</strong> formatos, espacios y mayúsculas, (3) decidir qué hacer con <strong>faltantes, duplicados y errores</strong>, y (4) <strong>transformar</strong> variables.</p>\n<p>Herramientas en SQL Server: <code>TRIM</code> (quita espacios al inicio y al final), <code>UPPER</code>, <code>LEN</code>, <code>REPLACE</code>, <code>TRY_CAST(texto AS DECIMAL(6,2))</code> (devuelve NULL si no puede convertir). Los nulos se buscan con <code>IS NULL</code> (nunca <code>= NULL</code>). Duplicados: <code>GROUP BY ... HAVING COUNT(*) &gt; 1</code>. Cambios: <code>UPDATE tabla SET col = valor WHERE ...</code> y <code>DELETE</code>. Transformar: crear un rango con <code>CASE WHEN ... THEN ... ELSE ... END</code>, separar una fecha o calcular Monto = Cantidad × Precio.</p>\n<p>Regla de oro: nunca rellenar un faltante «a ciegas» sin entender por qué falta, y antes de borrar un duplicado decidir qué versión conservar.</p>",
    "form": [
     "<code>UPDATE t SET col = UPPER(TRIM(col));</code>",
@@ -1949,7 +1949,7 @@
   },
   {
    "id": "impu",
-   "name": "Repaso parcial · Valores faltantes e imputación",
+   "name": "Sem. 6 · Valores faltantes e imputación",
    "teo": "<p>Ante un faltante hay tres caminos: <strong>eliminar</strong> la fila, <strong>imputar</strong> un valor estadístico o crear una <strong>categoría explícita</strong> («Sin dato»). No hay una única respuesta: se evalúa el <strong>razonamiento</strong>.</p>\n<p>Variable <strong>cuantitativa</strong> (Monto): se puede imputar con la media (o la mediana si hay atípicos). Variable <strong>cualitativa</strong> (Segmento): con la moda. Pero si imputar inventaría información relevante (distrito, método de pago, datos de contacto), mejor usa «Sin dato»: conserva el hecho de que no se sabe.</p>\n<p>En SQL: <code>AVG(Monto)</code> ya ignora los NULL; la moda sale con <code>GROUP BY ... ORDER BY COUNT(*) DESC</code>; la imputación es <code>UPDATE t SET col = valor WHERE col IS NULL;</code> y al final se verifica que no quede ningún NULL.</p>",
    "form": [
     "Cuantitativa → media (o mediana)",
@@ -2273,7 +2273,7 @@
   },
   {
    "id": "desc",
-   "name": "Repaso parcial · Análisis descriptivo",
+   "name": "Sem. 7 · Análisis descriptivo",
    "teo": "<p><strong>Tendencia central:</strong> media (sensible a extremos), mediana (valor del medio al ordenar; resistente a extremos) y moda (el más frecuente; única para categóricas). <strong>Dispersión:</strong> rango (máx − mín), varianza y desviación estándar (en las mismas unidades que el dato).</p>\n<p>Si la media es mayor que la mediana, la distribución está <strong>sesgada a la derecha</strong>: unos pocos valores altos «jalan» la media. Un criterio simple de <strong>atípico</strong>: estar a más de 2 desviaciones estándar de la media. Un atípico puede ser un error o información valiosa.</p>\n<p>En SQL Server: <code>AVG</code>, <code>PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Monto) OVER ()</code> (mediana), <code>VAR</code>, <code>STDEV</code>. Comparar grupos = GROUP BY + agregaciones. Mayor desviación estándar = grupo más impredecible.</p>",
    "form": [
     "Media · mediana · moda",
@@ -2573,7 +2573,7 @@
   },
   {
    "id": "hall",
-   "name": "Repaso parcial · Indicadores y hallazgos",
+   "name": "Sem. 7 · Indicadores y hallazgos",
    "teo": "<p>Un <strong>dato</strong> describe un hecho («se vendieron 3 unidades»). Un <strong>indicador</strong> es una variable calculada que resume una pregunta de negocio («ticket promedio = AVG(Monto)»). Un <strong>hallazgo</strong> conecta el número con una posible causa o acción.</p>\n<p>Estructura de un hallazgo: <em>«[Grupo] muestra [comportamiento], lo que podría deberse a [causa], y sugiere [acción]»</em>. Calcular no es interpretar: cuidado con promedios «maquillados» por atípicos y con diferencias entre grupos que la alta dispersión vuelve poco significativas.</p>\n<p>Y una idea de narración que ya practicaste: la misma historia se cuenta distinto según el público (lenguaje, ejemplos y nivel de detalle).</p>",
    "form": [
     "Dato → indicador → hallazgo",
