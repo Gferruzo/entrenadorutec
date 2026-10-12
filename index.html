@@ -1159,7 +1159,7 @@ const $=id=>document.getElementById(id);
      'topic' (tema abierto: {t,main}), 'simq' (pregunta del simulacro ya corregida: {q,qi,box,acts}).
    · Ayudas: pullpy.data(e,extra) arma el contexto del ejercicio; pullpy.box(padre) crea la burbuja
      (.load(), .say(texto), .err(código)); pullpy.btn(texto,fn) crea el botón con su estilo. */
-const PULLPY={url:'',name:'Pullpy',img:'',needLogin:true,fx:{}};
+const PULLPY={url:'https://pullpy.gferruzo2007.workers.dev',name:'Pullpy',img:'',needLogin:true,fx:{}};
 try{const u=S.get('pullpy-url','');if(u)PULLPY.url=u}catch(e){}
 const pullpy={
   on(){return !!PULLPY.url},
