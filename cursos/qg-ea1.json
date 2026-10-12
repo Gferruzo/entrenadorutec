@@ -1281,6 +1281,16 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "tabla",
+     "t": "Tabla periódica interactiva",
+     "p": "Toca un elemento para ver su configuración, ubicación, Lewis e ion estable. En «Adivina el elemento» te doy una pista como en las EA (Aa, Bb…) y tú lo encuentras en la tabla.",
+     "o": {
+      "mode": "explora"
+     }
+    }
    ]
   },
   {
@@ -1756,6 +1766,16 @@
        "en"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "tabla",
+     "t": "Tendencias en la tabla periódica",
+     "p": "Elige radio, energía de ionización o electronegatividad y mira el mapa de calor. Recuerda justificarlo con Coulomb: Z, apantallamiento y distancia.",
+     "o": {
+      "mode": "tend"
+     }
     }
    ]
   }

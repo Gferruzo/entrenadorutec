@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NotPull</title>
 <link rel="manifest" href="manifest.json">
-<!-- version: 2026-10-11 química interactiva -->
+<!-- version: 2026-10-12 química: Lewis, 3D, análisis y tabla -->
 <meta name="theme-color" content="#F4F7FA">
 <script>
 (function(){var t=null;try{t=localStorage.getItem('ent-theme')}catch(e){}
@@ -830,6 +830,29 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 .blk.lab{border-color:var(--cyan);background:var(--card)}
 .blk.lab summary{color:var(--cyan)}
 /* Química: herramientas interactivas */
+.qglw{width:100%;height:auto;display:block;margin:6px auto}.qgbond{stroke:var(--ink);stroke-width:2}.qglp{fill:var(--exe)}
+.qgat{font:800 17px Figtree,sans-serif;fill:var(--ink)}.qgcf{font:700 11px Figtree,sans-serif;fill:var(--muted)}.qgcf.nz{fill:var(--bad)}
+.qglt{font:800 1.1rem Figtree,sans-serif;margin:.4em 0}
+.qgls{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.qgls p{margin:.3em 0}.qgls.cur{background:var(--teo-bg);border-radius:8px;padding:8px}
+.qgln{flex:none;width:24px;height:24px;border-radius:50%;background:var(--cyan);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.8rem}
+.qglopts{display:flex;flex-wrap:wrap;gap:8px}.qglopt{flex:1 1 150px;border:1.5px solid var(--line);border-radius:10px;padding:6px;background:var(--card);font-size:.88rem}.qglopt.best{border-color:var(--ok);background:var(--ok-bg)}
+.qg3d{cursor:grab}.qg3b{stroke:var(--muted);stroke-width:6;stroke-linecap:round}.qg3lp{fill:var(--exe);fill-opacity:.18;stroke:var(--exe);stroke-opacity:.5}
+.qg3a{stroke:rgba(0,0,0,.35);stroke-width:1}.qg3l{font:800 12px Figtree,sans-serif;fill:#0f1726}
+.qg3d1{stroke:var(--sol);stroke-width:2.5}.qg3d1h{fill:var(--sol)}.qg3d2{stroke:var(--bad);stroke-width:3.5}.qg3d2h{fill:var(--bad)}
+.qgas{border-top:1px solid var(--line);padding:8px 0}.qgas.cur{background:var(--teo-bg);border-radius:8px;padding:8px}.qgas p{margin:.35em 0}
+.lwb.good{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}.lwb.bad{border-color:var(--bad);background:var(--bad-bg);color:var(--bad)}
+.qgsum{background:var(--sol-bg);border-radius:8px;padding:10px}
+.qgafig .dg{margin:4px 0}
+.qggrid{display:grid;grid-template-columns:16px repeat(18,minmax(0,1fr));gap:2px;margin:8px 0;max-width:720px}
+.qghd{font:700 .55rem Figtree,sans-serif;color:var(--muted);text-align:center;align-self:center}
+.qgel{aspect-ratio:1;border:1px solid var(--line);border-radius:4px;padding:0;background:var(--card);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;min-width:0;line-height:1.05;overflow:hidden}
+.qgel b{font:800 clamp(.5rem,2.3vw,.85rem) Figtree,sans-serif}.qgel small{font-size:clamp(.38rem,1.4vw,.55rem);opacity:.75}.qgel i{font-style:normal;font-size:.5rem;display:none}
+@media(min-width:640px){.qgel i{display:block}}@media(max-width:520px){.qgel small{display:none}}
+.qgel.on{outline:3px solid var(--cyan);outline-offset:1px}
+.qgc-m{background:var(--exe-bg)}.qgc-nm{background:var(--ok-bg)}.qgc-mt{background:var(--for-bg)}.qgc-ng{background:var(--teo-bg)}
+.qgleg{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem}.qgleg span{padding:2px 8px;border-radius:6px;border:1px solid var(--line)}
+.qgtname{font-size:1.05rem}.qgclue{font-size:1.05rem;font-weight:700;color:var(--cyan)}
+
 .qgbg{fill:var(--paper)}.qgax{font:500 10px Figtree,sans-serif;fill:var(--muted)}
 .qgc{fill:none;stroke-width:2.4}.qgsg{stroke:var(--sol)}.qglg{stroke:var(--exe)}.qgsl{stroke:var(--teo)}
 .qgreg{font:700 12px Figtree,sans-serif;fill:var(--muted);opacity:.8}
@@ -1533,6 +1556,233 @@ function mountFC(box,o){
   box.querySelector('.qgpop').onclick=()=>{ch.pop();render()};box.querySelector('.qgclr').onclick=()=>{ch=[];render()};
   render()}
 LW.fases=mountFases;LW.sep=mountSep;LW.fc=mountFC;
+
+/* ===== Química General: Lewis paso a paso, moléculas 3D, plantilla de análisis y tabla periódica ===== */
+const QG_VAL={H:1,He:2,B:3,C:4,N:5,O:6,F:7,Ne:8,P:5,S:6,Cl:7,Se:6,Br:7,I:7};
+const QG_EN={H:2.1,C:2.5,N:3.0,O:3.5,F:4.0,P:2.1,S:2.5,Cl:3.0,Se:2.4,Br:2.8,I:2.5,B:2.0};
+const qgSup=n=>String(n).split('').map(c=>'⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)]||c).join('');
+const qgChg=c=>c===0?'':(Math.abs(c)===1?'':qgSup(Math.abs(c)))+(c>0?'⁺':'⁻');
+const qgGeo=(x,e)=>({'2,0':['AX₂','Lineal'],'3,0':['AX₃','Trigonal plana'],'2,1':['AX₂E','Angular'],'4,0':['AX₄','Tetraédrica'],'3,1':['AX₃E','Piramidal trigonal'],'2,2':['AX₂E₂','Angular']})[x+','+e]||['—','—'];
+/* ---------- Lewis paso a paso ---------- */
+const QG_LAY={lin:[[0,0],[-1,0],[1,0]],tri:[[0,0],[0,-1],[-0.87,0.5],[0.87,0.5]],ang:[[0,0],[-0.85,0.6],[0.85,0.6]],pyr:[[0,0],[-1,0.25],[1,0.25],[0,1]],tet:[[0,0],[0,-1],[-1,0],[1,0],[0,1]]};
+const QG_LW=[
+ {f:'H₂O',a:['O','H','H'],lay:'ang',S:[{b:[1,1],lp:[2,0,0]}]},
+ {f:'NH₃',a:['N','H','H','H'],lay:'pyr',S:[{b:[1,1,1],lp:[1,0,0,0]}]},
+ {f:'CH₄',a:['C','H','H','H','H'],lay:'tet',S:[{b:[1,1,1,1],lp:[0,0,0,0,0]}]},
+ {f:'CO₂',a:['C','O','O'],lay:'lin',S:[{b:[2,2],lp:[0,2,2]},{b:[3,1],lp:[0,1,3]}]},
+ {f:'HCN',a:['H','C','N'],lay:'chain',cen:1,S:[{b:[1,3],lp:[0,0,1]}]},
+ {f:'PCl₃',a:['P','Cl','Cl','Cl'],lay:'pyr',S:[{b:[1,1,1],lp:[1,3,3,3]}]},
+ {f:'CCl₄',a:['C','Cl','Cl','Cl','Cl'],lay:'tet',S:[{b:[1,1,1,1],lp:[0,3,3,3,3]}]},
+ {f:'CH₂O',a:['C','O','H','H'],lay:'tri',S:[{b:[2,1,1],lp:[0,2,0,0]}]},
+ {f:'COCl₂',a:['C','O','Cl','Cl'],lay:'tri',S:[{b:[2,1,1],lp:[0,2,3,3]},{b:[1,2,1],lp:[0,3,2,3]}]},
+ {f:'H₂Se',a:['Se','H','H'],lay:'ang',S:[{b:[1,1],lp:[2,0,0]}]},
+ {f:'SCl₂',a:['S','Cl','Cl'],lay:'ang',S:[{b:[1,1],lp:[2,3,3]}]},
+ {f:'PH₃',a:['P','H','H','H'],lay:'pyr',S:[{b:[1,1,1],lp:[1,0,0,0]}]},
+ {f:'CF₄',a:['C','F','F','F','F'],lay:'tet',S:[{b:[1,1,1,1],lp:[0,3,3,3,3]}]},
+ {f:'SO₂',a:['S','O','O'],lay:'ang',S:[{b:[2,1],lp:[1,2,3]}],res:'Hay 2 estructuras resonantes equivalentes (el doble enlace puede ir a cualquiera de los O).'},
+ {f:'NH₄⁺',q:1,a:['N','H','H','H','H'],lay:'tet',S:[{b:[1,1,1,1],lp:[0,0,0,0,0]}]},
+ {f:'H₃O⁺',q:1,a:['O','H','H','H'],lay:'pyr',S:[{b:[1,1,1],lp:[1,0,0,0]}]},
+ {f:'[CO₃]²⁻',q:-2,a:['C','O','O','O'],lay:'tri',S:[{b:[2,1,1],lp:[0,2,3,3]}],res:'Hay 3 estructuras resonantes equivalentes (el doble enlace puede ir a cualquiera de los tres O).'},
+ {f:'[NO₃]⁻',q:-1,a:['N','O','O','O'],lay:'tri',S:[{b:[2,1,1],lp:[0,2,3,3]}],res:'Hay 3 estructuras resonantes equivalentes.'},
+ {f:'[NO₂]⁻',q:-1,a:['N','O','O'],lay:'ang',S:[{b:[2,1],lp:[1,2,3]}],res:'Hay 2 estructuras resonantes equivalentes.'},
+ {f:'[PO₃]³⁻',q:-3,a:['P','O','O','O'],lay:'pyr',S:[{b:[1,1,1],lp:[1,3,3,3]}]},
+ {f:'[OCN]⁻',q:-1,a:['O','C','N'],lay:'chain',cen:1,S:[{b:[2,2],lp:[2,0,2]},{b:[3,1],lp:[1,0,3]},{b:[1,3],lp:[3,0,1]}]},
+ {f:'N₂O',a:['N','N','O'],lay:'chain',cen:1,S:[{b:[2,2],lp:[2,0,2]},{b:[3,1],lp:[1,0,3]},{b:[1,3],lp:[3,0,1]}]}];
+function qgLwInfo(sp){const n=sp.a.length,q=sp.q||0;const chain=sp.lay==='chain';const cen=chain?sp.cen:0;
+  const bonds=s=>chain?s.b.map((o,k)=>[k,k+1,o]):s.b.map((o,k)=>[0,k+1,o]);
+  const N=sp.a.reduce((t,x)=>t+(x==='H'?2:8),0),V=sp.a.reduce((t,x)=>t+QG_VAL[x],0)-q,Sb=N-V,L=V-Sb;
+  const cf=s=>{const B=bonds(s);return sp.a.map((x,i)=>QG_VAL[x]-(2*s.lp[i]+B.filter(b=>b[0]===i||b[1]===i).reduce((t,b)=>t+b[2],0)))};
+  const score=s=>{const c=cf(s);const en=sp.a.map(x=>QG_EN[x]||0);const neg=c.reduce((t,v,i)=>t+(v<0?-v*(4-en[i]):0),0);return c.reduce((t,v)=>t+Math.abs(v),0)*10+neg};
+  let best=0;sp.S.forEach((s,i)=>{if(score(s)<score(sp.S[best]))best=i});
+  const s0=sp.S[best],B0=bonds(s0);const X=B0.filter(b=>b[0]===cen||b[1]===cen).length,E=s0.lp[cen];
+  return{N,V,Sb,L,bonds,cf,best,cen,X,E,n,q}}
+function qgLwSvg(sp,s,I,showCF,skel){
+  const lay=sp.lay==='chain'?sp.a.map((_,i)=>[i-(sp.a.length-1)/2,0]):QG_LAY[sp.lay];const sc=52,pad=40;
+  const xs=lay.map(p=>p[0]),ys=lay.map(p=>p[1]);const mnx=Math.min(...xs),mny=Math.min(...ys);
+  const P=lay.map(p=>[(p[0]-mnx)*sc+pad,(p[1]-mny)*sc+pad]);const W=(Math.max(...xs)-mnx)*sc+2*pad,H=(Math.max(...ys)-mny)*sc+2*pad;
+  let o='<svg class="qglw" viewBox="0 0 '+W+' '+H+'" style="max-width:'+Math.min(W*1.3,300)+'px" role="img" aria-label="Estructura de Lewis de '+sp.f+'">';
+  const B=I.bonds(s);const dirs=sp.a.map(()=>[]);
+  B.forEach(([i,j,ord])=>{const [x1,y1]=P[i],[x2,y2]=P[j];const L=Math.hypot(x2-x1,y2-y1),ux=(x2-x1)/L,uy=(y2-y1)/L,nx=-uy,ny=ux;
+    dirs[i].push(Math.atan2(uy,ux));dirs[j].push(Math.atan2(-uy,-ux));const k=skel?1:ord;const offs=k===1?[0]:k===2?[-3.5,3.5]:[-6,0,6];
+    offs.forEach(d=>{o+='<line class="qgbond" x1="'+(x1+ux*12+nx*d).toFixed(1)+'" y1="'+(y1+uy*12+ny*d).toFixed(1)+'" x2="'+(x2-ux*12+nx*d).toFixed(1)+'" y2="'+(y2-uy*12+ny*d).toFixed(1)+'"/>'})});
+  if(!skel)sp.a.forEach((x,i)=>{const used=dirs[i].slice();const cand=[-Math.PI/2,Math.PI/2,0,Math.PI,-Math.PI/4,-3*Math.PI/4,Math.PI/4,3*Math.PI/4];
+    for(let k=0;k<s.lp[i];k++){let bestA=cand[0],bd=-1;cand.forEach(a=>{const d=used.length?Math.min(...used.map(u=>{let t=Math.abs(a-u)%(2*Math.PI);return t>Math.PI?2*Math.PI-t:t})):9;if(d>bd+1e-6){bd=d;bestA=a}});used.push(bestA);
+      const cx=P[i][0]+Math.cos(bestA)*15,cy=P[i][1]+Math.sin(bestA)*15,px=-Math.sin(bestA)*3.6,py=Math.cos(bestA)*3.6;
+      o+='<circle class="qglp" cx="'+(cx+px).toFixed(1)+'" cy="'+(cy+py).toFixed(1)+'" r="2.3"/><circle class="qglp" cx="'+(cx-px).toFixed(1)+'" cy="'+(cy-py).toFixed(1)+'" r="2.3"/>'}});
+  const cfs=I.cf(s);
+  sp.a.forEach((x,i)=>{o+='<text class="qgat" x="'+P[i][0]+'" y="'+(P[i][1]+5)+'" text-anchor="middle">'+x+'</text>';
+    if(showCF){const v=cfs[i];o+='<text class="qgcf'+(v?' nz':'')+'" x="'+(P[i][0]+13)+'" y="'+(P[i][1]-12)+'">'+(v>0?'+'+v:v<0?'−'+(-v):'0')+'</text>'}});
+  if(sp.q&&!skel)o+='<text class="qgat" x="'+(W-6)+'" y="16" text-anchor="end">'+qgChg(sp.q)+'</text>';
+  return o+'</svg>'}
+function mountLewis(box,o){
+  let k=Math.max(0,QG_LW.findIndex(s=>s.f===o.sp)),step=0;
+  box.innerHTML='<div class="lwtop qglsp"></div><div class="qglsteps"></div><div class="lwbtns"><button type="button" class="lwb qgprev">◀ Anterior</button><button type="button" class="lwb pri qgnext">Siguiente paso ▶</button><button type="button" class="lwb qgall">Ver todo</button></div>';
+  const top=box.querySelector('.qglsp'),st=box.querySelector('.qglsteps');
+  QG_LW.forEach((s,i)=>{const b=el('button','lwb'+(i===k?' on':''),s.f);b.type='button';b.onclick=()=>{k=i;step=0;top.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));render()};top.append(b)});
+  const NAMES=['Electrones individuales (N)','Electrones de valencia (V)','Electrones enlazantes','Esqueleto','Pares libres','Carga formal','Geometría (RPECV)'];
+  function render(){const sp=QG_LW[k],I=qgLwInfo(sp);const cnt={};sp.a.forEach(x=>cnt[x]=(cnt[x]||0)+1);const els=Object.keys(cnt);
+    const q=sp.q||0;const parts=[];
+    parts.push('<p><b>N</b> = '+els.map(x=>cnt[x]+' × '+(x==='H'?2:8)+' ('+x+')').join(' + ')+' = <b>'+I.N+'</b></p><p class="note">8 por cada átomo y 2 por cada H.</p>');
+    parts.push('<p><b>V</b> = '+els.map(x=>cnt[x]+' × '+QG_VAL[x]+' ('+x+')').join(' + ')+(q?(q<0?' + '+(-q)+' (carga '+qgChg(q)+')':' − '+q+' (carga '+qgChg(q)+')'):'')+' = <b>'+I.V+'</b></p>'+(q?'<p class="note">'+(q<0?'Anión: se SUMA la carga.':'Catión: se RESTA la carga.')+'</p>':''));
+    parts.push('<p><b>Enlazantes</b> = N − V = '+I.N+' − '+I.V+' = <b>'+I.Sb+'</b> → <b>'+I.Sb/2+' enlaces</b></p>');
+    const nsk=sp.a.length-1,extra=I.Sb/2-nsk;
+    parts.push('<p>Átomo central: <b>'+sp.a[I.cen]+'</b>'+(sp.a.includes('H')?' (el H solo forma un enlace, nunca va al centro)':'')+'. Con enlaces simples uso '+nsk+'.'+(extra>0?' Faltan <b>'+extra+'</b> enlace(s): van como doble'+(extra>1?'s o triple':'')+'.':' No faltan enlaces: todos son simples.')+'</p>'+qgLwSvg(sp,sp.S[0],I,false,true));
+    parts.push('<p><b>Libres</b> = V − enlazantes = '+I.V+' − '+I.Sb+' = <b>'+I.L+'</b> → <b>'+I.L/2+' pares</b>, repartidos para completar octetos (H con 2).</p>'+qgLwSvg(sp,sp.S[I.best],I,false,false)+(sp.res?'<p class="note">'+sp.res+'</p>':''));
+    let cfh='<p class="note">CF = valencia − [no enlazantes + ½·enlazantes]. Se elige la de CF más cercanas a 0 y, si hay una negativa, en el átomo más electronegativo.</p><div class="qglopts">';
+    sp.S.forEach((s,i)=>{const c=I.cf(s);cfh+='<div class="qglopt'+(i===I.best?' best':'')+'">'+(sp.S.length>1?'<b>('+'abc'[i]+')</b>':'')+qgLwSvg(sp,s,I,true,false)+'<p>'+sp.a.map((x,j)=>x+': '+(c[j]>0?'+':'')+c[j]).join(' · ')+'</p><p class="note">Σ CF = '+c.reduce((t,v)=>t+v,0)+' = carga '+(q||0)+(i===I.best&&sp.S.length>1?' ✔ más probable':'')+'</p></div>'});
+    parts.push(cfh+'</div>');
+    const g=qgGeo(I.X,I.E);
+    parts.push(I.X<2?'<p>Molécula diatómica: lineal.</p>':'<p>Átomo central <b>'+sp.a[I.cen]+'</b>: '+I.X+' átomos enlazados + '+I.E+' par(es) libre(s) = <b>'+(I.X+I.E)+' dominios</b> → <b>'+g[0]+' · '+g[1]+'</b></p><p class="note">Un enlace doble o triple cuenta como un solo dominio.</p>');
+    st.innerHTML='<h4 class="qglt">'+sp.f+'</h4>'+parts.slice(0,step+1).map((p,i)=>'<div class="qgls'+(i===step?' cur':'')+'"><span class="qgln">'+(i+1)+'</span><div><b>'+NAMES[i]+'</b>'+p+'</div></div>').join('');
+    box.querySelector('.qgprev').disabled=step===0;box.querySelector('.qgnext').disabled=step===6}
+  box.querySelector('.qgprev').onclick=()=>{step=Math.max(0,step-1);render()};
+  box.querySelector('.qgnext').onclick=()=>{step=Math.min(6,step+1);render()};
+  box.querySelector('.qgall').onclick=()=>{step=6;render()};
+  render()}
+
+/* ---------- Moléculas 3D con dipolos ---------- */
+const QG_DIR={lin:[[1,0,0],[-1,0,0]],tri:[[0,1,0],[-0.866,-0.5,0],[0.866,-0.5,0]],tet:[[0,1,0],[0.943,-0.333,0],[-0.471,-0.333,0.816],[-0.471,-0.333,-0.816]]};
+const QG_3D=[
+ {f:'CO₂',c:'C',g:'lin',L:['O','O']},{f:'H₂O',c:'O',g:'tet',L:['H','H'],E:2},{f:'NH₃',c:'N',g:'tet',L:['H','H','H'],E:1},
+ {f:'CH₄',c:'C',g:'tet',L:['H','H','H','H']},{f:'CCl₄',c:'C',g:'tet',L:['Cl','Cl','Cl','Cl']},{f:'CHCl₃',c:'C',g:'tet',L:['H','Cl','Cl','Cl']},
+ {f:'CH₂Cl₂',c:'C',g:'tet',L:['H','H','Cl','Cl']},{f:'CH₂O',c:'C',g:'tri',L:['O','H','H']},{f:'COCl₂',c:'C',g:'tri',L:['O','Cl','Cl']},
+ {f:'HCN',c:'C',g:'lin',L:['N','H']},{f:'CS₂',c:'C',g:'lin',L:['S','S']},{f:'SCl₂',c:'S',g:'tet',L:['Cl','Cl'],E:2},
+ {f:'PCl₃',c:'P',g:'tet',L:['Cl','Cl','Cl'],E:1},{f:'NF₃',c:'N',g:'tet',L:['F','F','F'],E:1},{f:'SO₂',c:'S',g:'tri',L:['O','O'],E:1},{f:'CF₄',c:'C',g:'tet',L:['F','F','F','F']}];
+const QG_COL={H:'#e8edf2',C:'#4b5563',N:'#3b6fd8',O:'#e0474c',F:'#7fd18b',Cl:'#33a852',S:'#e6c12e',P:'#f08c2e',Se:'#c27a3a'};
+const qgDEN=(a,b)=>((a==='C'&&b==='H')||(a==='H'&&b==='C'))?0:Math.abs((QG_EN[a]||0)-(QG_EN[b]||0));
+function mountMol3D(box,o){
+  let k=Math.max(0,QG_3D.findIndex(m=>m.f===o.m)),yaw=0.6,pitch=0.35,show={lp:true,bd:true,net:true},auto=!matchMedia('(prefers-reduced-motion: reduce)').matches,raf=0;
+  box.innerHTML='<div class="lwtop qg3m"></div><div class="lwtl"><svg viewBox="-150 -130 300 260" class="lwsvg qg3d" role="img" aria-label="Molécula en 3D"></svg><div class="lwside"><div class="lwmsg qg3msg"></div><div class="lwpre qg3t"></div><p class="note">Arrastra para girar la molécula. Las flechas apuntan al átomo más electronegativo (δ⁻).</p></div></div>';
+  const mb=box.querySelector('.qg3m'),svg=box.querySelector('svg'),msg=box.querySelector('.qg3msg'),tb=box.querySelector('.qg3t');
+  QG_3D.forEach((m,i)=>{const b=el('button','lwb'+(i===k?' on':''),m.f);b.type='button';b.onclick=()=>{k=i;mb.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));draw()};mb.append(b)});
+  [['lp','Pares libres'],['bd','Dipolos de enlace'],['net','Dipolo neto']].forEach(([key,n])=>{const b=el('button','lwb on',n);b.type='button';b.onclick=()=>{show[key]=!show[key];b.classList.toggle('on',show[key]);draw()};tb.append(b)});
+  function geom(m){const D=QG_DIR[m.g];let lig,lp=[];
+    if(m.g==='tet'&&m.E){lig=m.E===1?D.slice(1):D.slice(1,3);lp=m.E===1?[D[0]]:[D[0],D[3]]}
+    else if(m.g==='tri'&&m.E){lig=D.slice(1);lp=[D[0]]}else lig=D.slice(0,m.L.length);
+    return{lig:lig.map((d,i)=>{const r=m.L[i]==='H'?0.72:1;return[d[0]*r,d[1]*r,d[2]*r]}),lp}}
+  function rot(p){const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+    let x=p[0]*cy+p[2]*sy,z=-p[0]*sy+p[2]*cy;let y=p[1]*cp-z*sp;z=p[1]*sp+z*cp;return[x,y,z]}
+  const S=88,pr=p=>{const r=rot(p);const f=1/(1+r[2]*0.12);return[r[0]*S*f,-r[1]*S*f,r[2]]};
+  function draw(){const m=QG_3D[k],G=geom(m);const items=[];const C0=[0,0,0];
+    G.lig.forEach((p,i)=>{const a=pr(C0),b=pr(p);items.push({z:(a[2]+b[2])/2-0.01,s:'<line class="qg3b" x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'"/>'})});
+    if(show.lp)G.lp.forEach(d=>{const p=pr([d[0]*0.62,d[1]*0.62,d[2]*0.62]);items.push({z:p[2],s:'<ellipse class="qg3lp" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" rx="15" ry="15"/><circle class="qglp" cx="'+(p[0]-4).toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="2.4"/><circle class="qglp" cx="'+(p[0]+4).toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="2.4"/>'})});
+    const atoms=[[m.c,C0]].concat(m.L.map((x,i)=>[x,G.lig[i]]));
+    atoms.forEach(([x,p])=>{const q=pr(p);const r=(x==='H'?11:16)*(1/(1+q[2]*0.12));items.push({z:q[2],s:'<circle cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+QG_COL[x]+'" class="qg3a"/><text class="qg3l" x="'+q[0].toFixed(1)+'" y="'+(q[1]+4).toFixed(1)+'" text-anchor="middle">'+x+'</text>'})});
+    // dipolos
+    let net=[0,0,0];const bl=[];
+    G.lig.forEach((p,i)=>{const x=m.L[i],d=qgDEN(m.c,x);const toLig=(QG_EN[x]||0)>(QG_EN[m.c]||0);const L=Math.hypot(...p);const u=p.map(v=>v/L);const v=u.map(c=>c*d*(toLig?1:-1));net=net.map((c,j)=>c+v[j]);bl.push([x,d]);
+      if(show.bd&&d>0){const s0=toLig?0.3:0.85,s1=toLig?0.85:0.3;const a=pr(p.map(c=>c*s0/L*L)),b=pr(p.map(c=>c*s1));const off=9;const dx=b[0]-a[0],dy=b[1]-a[1],ll=Math.hypot(dx,dy)||1;const nx=-dy/ll*off,ny=dx/ll*off;
+        items.push({z:9,s:qgArrow(a[0]+nx,a[1]+ny,b[0]+nx,b[1]+ny,'qg3d1')})}});
+    const nm=Math.hypot(...net);
+    if(show.net&&nm>0.05){const e=net.map(c=>c/nm*Math.min(1.25,0.45+nm*0.5));const a=pr([0,0,0]),b=pr(e);items.push({z:10,s:qgArrow(a[0],a[1],b[0],b[1],'qg3d2')})}
+    items.sort((a,b)=>b.z-a.z);svg.innerHTML=items.map(i=>i.s).join('');
+    const g=qgGeo(m.L.length,m.E||0);const polB=[...new Set(bl.filter(b=>b[1]>0).map(b=>m.c+'–'+b[0]))],apB=[...new Set(bl.filter(b=>b[1]===0).map(b=>m.c+'–'+b[0]))];
+    msg.innerHTML='<p><b>'+m.f+'</b> · '+g[1]+' ('+g[0]+')</p>'+(polB.length?'<p>Enlaces polares: '+polB.map(b=>b+' (ΔEN '+qgDEN(...b.split('–')).toFixed(1).replace('.',',')+')').join(', ')+'</p>':'')+(apB.length?'<p>Enlaces apolares: '+apB.join(', ')+(apB.some(b=>b.includes('H')&&b.includes('C'))?' (C–H se toma como apolar)':'')+'</p>':'')+
+      (nm>0.05?'<p class="qgphase">Polar · μ ≠ 0</p><p class="note">Los dipolos no se compensan: queda una flecha neta.</p>':'<p class="qgphase">Apolar · μ = 0</p><p class="note">'+(polB.length?'Hay enlaces polares, pero la geometría simétrica hace que se cancelen.':'Todos sus enlaces son apolares.')+'</p>')}
+  function qgArrow(x1,y1,x2,y2,c){const a=Math.atan2(y2-y1,x2-x1),h=8;return'<line class="'+c+'" x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'"/><polygon class="'+c+'h" points="'+x2.toFixed(1)+','+y2.toFixed(1)+' '+(x2-h*Math.cos(a-0.45)).toFixed(1)+','+(y2-h*Math.sin(a-0.45)).toFixed(1)+' '+(x2-h*Math.cos(a+0.45)).toFixed(1)+','+(y2-h*Math.sin(a+0.45)).toFixed(1)+'"/>'+
+    '<line class="'+c+'" x1="'+(x1-5*Math.sin(a)).toFixed(1)+'" y1="'+(y1+5*Math.cos(a)).toFixed(1)+'" x2="'+(x1+5*Math.sin(a)).toFixed(1)+'" y2="'+(y1-5*Math.cos(a)).toFixed(1)+'"/>'}
+  let drag=null;svg.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];auto=false;svg.setPointerCapture(e.pointerId)});
+  svg.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*0.012;pitch=Math.max(-1.4,Math.min(1.4,pitch+(e.clientY-drag[1])*0.012));drag=[e.clientX,e.clientY];draw()});
+  const end=()=>drag=null;svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  const tick=()=>{if(!box.isConnected)return;if(auto){yaw+=0.006;draw()}raf=requestAnimationFrame(tick)};draw();if(auto)raf=requestAnimationFrame(tick)}
+
+/* ---------- Plantilla de análisis (formato de examen) ---------- */
+function mountAnaliza(box,o){
+  const M=o.mols||[];let k=0,st;
+  box.innerHTML='<div class="lwtop qgam"></div><div class="qgafig"></div><div class="qgasteps"></div>';
+  const mb=box.querySelector('.qgam'),fg=box.querySelector('.qgafig'),sb=box.querySelector('.qgasteps');
+  M.forEach((m,i)=>{const b=el('button','lwb'+(i===k?' on':''),m.n);b.type='button';b.onclick=()=>{k=i;mb.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));reset()};mb.append(b)});
+  const den=bt=>{const [a,b]=bt.split(/[–=≡]/);return Math.abs((QG_EN[a]||0)-(QG_EN[b]||0))};
+  const isPol=bt=>{const [a,b]=bt.split(/[–=≡]/);return qgDEN(a,b)>0};
+  const f1=v=>v.toFixed(1).replace('.',',');
+  function reset(){const m=M[k];st={step:0,b:{},fim:{},pol:null,pred:null,ok:[]};fg.innerHTML=(m.fig&&F[m.fig]?F[m.fig]:'')+'<p class="note">'+(m.f||'')+(m.f?' · ':'')+'EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0</p>';render()}
+  function render(){const m=M[k];let h='';
+    // Paso 1
+    h+='<div class="qgas'+(st.step===0?' cur':'')+'"><b>1. Polaridad de enlace</b><p class="note">Toca cada tipo de enlace para marcarlo como polar o apolar (incluye los C–H que no se dibujan).</p><div class="lwpre">';
+    m.bt.forEach(bt=>{const v=st.b[bt];const chk=st.step>0;h+='<button type="button" class="lwb qgbt'+(v?' on':'')+(chk?(v===(isPol(bt)?'p':'a')?' good':' bad'):'')+'" data-bt="'+bt+'">'+bt+(v?' · '+(v==='p'?'polar':'apolar'):'')+(chk?' (ΔEN '+f1(den(bt))+')':'')+'</button>'});
+    h+='</div>';if(st.step===0)h+='<button type="button" class="lwb pri qgc1">Comprobar</button>';else h+='<p class="'+(st.ok[0]?'qgok':'qgbad')+'">'+(st.ok[0]?'✔ Bien.':'✘ Revisa los marcados en rojo.')+' Polares: '+(m.bt.filter(isPol).join(', ')||'ninguno')+'. Apolares: '+(m.bt.filter(b=>!isPol(b)).join(', ')||'ninguno')+(m.bt.some(b=>b==='C–H')?' (C–H se toma como apolar).':'.')+'</p>';h+='</div>';
+    if(st.step>=1){h+='<div class="qgas'+(st.step===1?' cur':'')+'"><b>2. Polaridad de molécula</b><div class="lwpre">';
+      ['Polar','Apolar'].forEach(x=>{const v=x==='Polar';h+='<button type="button" class="lwb qgpm'+(st.pol===v?(v===m.pol?' good':' bad'):'')+'" data-v="'+(v?1:0)+'"'+(st.step>1?' disabled':'')+'>'+x+'</button>'});h+='</div>';
+      if(st.step>1)h+='<p class="'+(st.ok[1]?'qgok':'qgbad')+'">'+(st.ok[1]?'✔ ':'✘ Es '+(m.pol?'polar':'apolar')+'. ')+m.why+'</p>';h+='</div>'}
+    if(st.step>=2){const ALL=['London','Dipolo–dipolo','Puente de H','Ion–dipolo'];h+='<div class="qgas'+(st.step===2?' cur':'')+'"><b>3. Fuerzas intermoleculares presentes</b><div class="lwpre">';
+      ALL.forEach(x=>{const v=!!st.fim[x],chk=st.step>2;h+='<button type="button" class="lwb qgfi'+(v?' on':'')+(chk?(v===m.fim.includes(x)?' good':' bad'):'')+'" data-f="'+x+'"'+(chk?' disabled':'')+'>'+x+'</button>'});h+='</div>';
+      if(st.step===2)h+='<button type="button" class="lwb pri qgc3">Comprobar</button>';else h+='<p class="'+(st.ok[2]?'qgok':'qgbad')+'">'+(st.ok[2]?'✔ ':'✘ ')+'Presentes: '+m.fim.join(', ')+'.</p>';h+='</div>'}
+    if(st.step>=3){h+='<div class="qgas'+(st.step===3?' cur':'')+'"><b>4. FIM predominante</b><div class="lwpre">';
+      m.fim.forEach(x=>{h+='<button type="button" class="lwb qgpr'+(st.pred===x?(x===m.pred?' good':' bad'):'')+'" data-f="'+x+'"'+(st.step>3?' disabled':'')+'>'+x+'</button>'});h+='</div>';
+      if(st.step>3)h+='<p class="'+(st.ok[3]?'qgok':'qgbad')+'">'+(st.ok[3]?'✔ ':'✘ Es '+m.pred+'. ')+m.predwhy+'</p>';h+='</div>'}
+    if(st.step>=4){const sc=st.ok.filter(Boolean).length;h+='<div class="qgas qgsum"><b>Así lo escribirías en el examen</b><p><b>Polaridad de enlace:</b> '+m.bt.map(b=>b+' ΔEN = '+f1(den(b))+' → '+(isPol(b)?'polar':'apolar'+(b==='C–H'?' (por convención)':''))).join('; ')+'.</p><p><b>Polaridad de molécula:</b> '+(m.pol?'polar':'apolar')+'. '+m.why+'</p><p><b>FIM:</b> '+m.fim.join(', ')+'. <b>Predominante:</b> '+m.pred+'. '+m.predwhy+'</p><p class="note">Acertaste '+sc+' de 4 pasos.</p><button type="button" class="lwb qgrep">Repetir</button></div>'}
+    sb.innerHTML=h;
+    sb.querySelectorAll('.qgbt').forEach(b=>b.onclick=()=>{if(st.step>0)return;const bt=b.dataset.bt;st.b[bt]=st.b[bt]==='p'?'a':'p';render()});
+    const c1=sb.querySelector('.qgc1');if(c1)c1.onclick=()=>{if(m.bt.some(b=>!st.b[b])){c1.textContent='Marca todos los enlaces primero';return}st.ok[0]=m.bt.every(b=>st.b[b]===(isPol(b)?'p':'a'));st.step=1;render()};
+    sb.querySelectorAll('.qgpm').forEach(b=>b.onclick=()=>{if(st.step!==1)return;st.pol=b.dataset.v==='1';st.ok[1]=st.pol===m.pol;st.step=2;render()});
+    sb.querySelectorAll('.qgfi').forEach(b=>b.onclick=()=>{if(st.step!==2)return;st.fim[b.dataset.f]=!st.fim[b.dataset.f];render()});
+    const c3=sb.querySelector('.qgc3');if(c3)c3.onclick=()=>{st.ok[2]=['London','Dipolo–dipolo','Puente de H','Ion–dipolo'].every(x=>!!st.fim[x]===m.fim.includes(x));st.step=3;render()};
+    sb.querySelectorAll('.qgpr').forEach(b=>b.onclick=()=>{if(st.step!==3)return;st.pred=b.dataset.f;st.ok[3]=st.pred===m.pred;st.step=4;render()});
+    const rp=sb.querySelector('.qgrep');if(rp)rp.onclick=reset;}
+  reset()}
+
+/* ---------- Tabla periódica interactiva ---------- */
+// [Z, símbolo, nombre, grupo, periodo, EN, radio (pm), EI1 (kJ/mol), clase, estado]
+const QG_PT=`1 H Hidrógeno 1 1 2.1 53 1312 nm g|2 He Helio 18 1 - 31 2372 ng g|3 Li Litio 1 2 1.0 167 520 m s|4 Be Berilio 2 2 1.5 112 900 m s|5 B Boro 13 2 2.0 87 801 mt s|6 C Carbono 14 2 2.5 67 1086 nm s|7 N Nitrógeno 15 2 3.0 56 1402 nm g|8 O Oxígeno 16 2 3.5 48 1314 nm g|9 F Flúor 17 2 4.0 42 1681 nm g|10 Ne Neón 18 2 - 38 2081 ng g|11 Na Sodio 1 3 0.9 190 496 m s|12 Mg Magnesio 2 3 1.2 145 738 m s|13 Al Aluminio 13 3 1.5 118 578 m s|14 Si Silicio 14 3 1.8 111 787 mt s|15 P Fósforo 15 3 2.1 98 1012 nm s|16 S Azufre 16 3 2.5 88 1000 nm s|17 Cl Cloro 17 3 3.0 79 1251 nm g|18 Ar Argón 18 3 - 71 1521 ng g|19 K Potasio 1 4 0.8 243 419 m s|20 Ca Calcio 2 4 1.0 194 590 m s|21 Sc Escandio 3 4 1.3 184 633 m s|22 Ti Titanio 4 4 1.5 176 659 m s|23 V Vanadio 5 4 1.6 171 651 m s|24 Cr Cromo 6 4 1.6 166 653 m s|25 Mn Manganeso 7 4 1.5 161 717 m s|26 Fe Hierro 8 4 1.8 156 763 m s|27 Co Cobalto 9 4 1.9 152 760 m s|28 Ni Níquel 10 4 1.9 149 737 m s|29 Cu Cobre 11 4 1.9 145 745 m s|30 Zn Cinc 12 4 1.6 142 906 m s|31 Ga Galio 13 4 1.6 136 579 m s|32 Ge Germanio 14 4 1.8 125 762 mt s|33 As Arsénico 15 4 2.0 114 947 mt s|34 Se Selenio 16 4 2.4 103 941 nm s|35 Br Bromo 17 4 2.8 94 1140 nm l|36 Kr Kriptón 18 4 - 88 1351 ng g|37 Rb Rubidio 1 5 0.8 265 403 m s|38 Sr Estroncio 2 5 1.0 219 550 m s|39 Y Itrio 3 5 1.2 212 600 m s|40 Zr Circonio 4 5 1.4 206 640 m s|41 Nb Niobio 5 5 1.6 198 652 m s|42 Mo Molibdeno 6 5 1.8 190 684 m s|43 Tc Tecnecio 7 5 1.9 183 702 m s|44 Ru Rutenio 8 5 2.2 178 710 m s|45 Rh Rodio 9 5 2.2 173 720 m s|46 Pd Paladio 10 5 2.2 169 804 m s|47 Ag Plata 11 5 1.9 165 731 m s|48 Cd Cadmio 12 5 1.7 161 868 m s|49 In Indio 13 5 1.7 156 558 m s|50 Sn Estaño 14 5 1.8 145 709 m s|51 Sb Antimonio 15 5 1.9 133 834 mt s|52 Te Telurio 16 5 2.1 123 869 mt s|53 I Yodo 17 5 2.5 115 1008 nm s|54 Xe Xenón 18 5 - 108 1170 ng g|55 Cs Cesio 1 6 0.7 298 376 m s|56 Ba Bario 2 6 0.9 253 503 m s|57 La Lantano 3 6 1.1 226 538 m s|72 Hf Hafnio 4 6 1.3 208 659 m s|73 Ta Tantalio 5 6 1.5 200 761 m s|74 W Wolframio 6 6 1.7 193 770 m s|75 Re Renio 7 6 1.9 188 760 m s|76 Os Osmio 8 6 2.2 185 840 m s|77 Ir Iridio 9 6 2.2 180 880 m s|78 Pt Platino 10 6 2.2 177 870 m s|79 Au Oro 11 6 2.4 174 890 m s|80 Hg Mercurio 12 6 1.9 171 1007 m l|81 Tl Talio 13 6 1.8 156 589 m s|82 Pb Plomo 14 6 1.9 154 716 m s|83 Bi Bismuto 15 6 1.9 143 703 m s|84 Po Polonio 16 6 2.0 135 812 m s|85 At Astato 17 6 2.2 127 890 nm s|86 Rn Radón 18 6 - 120 1037 ng g`.split('|').map(r=>{const p=r.split(' ');return{z:+p[0],s:p[1],n:p[2],g:+p[3],p:+p[4],en:p[5]==='-'?null:+p[5],r:+p[6],ei:+p[7],c:p[8],e:p[9]}});
+const QG_ORD=[[1,'s',2],[2,'s',2],[2,'p',6],[3,'s',2],[3,'p',6],[4,'s',2],[3,'d',10],[4,'p',6],[5,'s',2],[4,'d',10],[5,'p',6],[6,'s',2],[4,'f',14],[5,'d',10],[6,'p',6]];
+const QG_NG={2:'He',10:'Ne',18:'Ar',36:'Kr',54:'Xe'};
+const QG_REAL={24:'[Ar] 4s¹ 3d⁵',29:'[Ar] 4s¹ 3d¹⁰',42:'[Kr] 5s¹ 4d⁵',47:'[Kr] 5s¹ 4d¹⁰',46:'[Kr] 4d¹⁰',79:'[Xe] 6s¹ 4f¹⁴ 5d¹⁰',78:'[Xe] 6s¹ 4f¹⁴ 5d⁹',57:'[Xe] 6s² 5d¹'};
+function qgConf(z){let left=z,out=[];for(const [n,l,m] of QG_ORD){if(left<=0)break;const e=Math.min(m,left);out.push([n,l,e]);left-=e}
+  let core=0;Object.keys(QG_NG).map(Number).forEach(c=>{if(c<z)core=c});let acc=0,i=0;while(i<out.length&&acc<core){acc+=out[i][2];i++}
+  const tail=out.slice(i).map(([n,l,e])=>n+l+qgSup(e)).join(' ');const last=out[out.length-1];
+  const nmax=Math.max(...out.map(x=>x[0]));const val=out.filter(x=>x[0]===nmax&&(x[1]==='s'||x[1]==='p')).reduce((t,x)=>t+x[2],0);
+  return{txt:(core?'['+QG_NG[core]+'] ':'')+tail,full:out.map(([n,l,e])=>n+l+qgSup(e)).join(' '),last:last[0]+last[1]+qgSup(last[2]),lastL:last[1],nmax,val}}
+const qgGA=g=>g<=2?g+'A':g>=13?(g-10)+'A':(g<=7?g+'B':g<=10?'8B':(g-10)+'B');
+const qgIon=e=>{const g=e.g;if(e.c==='ng'||g===14||(g>=3&&g<=12))return null;if(e.z===1)return'H⁺ / H⁻';const q={1:1,2:2,13:3,15:-3,16:-2,17:-1}[g];if(q==null)return null;if(g===13&&e.z===5)return null;if(g===15&&e.p>3)return null;if(g===16&&e.p>4)return null;return e.s+qgChg(q)};
+const QG_CL={m:'Metal',nm:'No metal',mt:'Metaloide',ng:'Gas noble'},QG_ST={s:'sólido',l:'líquido',g:'gas'};
+function mountTabla(box,o){
+  let mode=o.mode||'explora',prop='r',cur=null,quiz=null;
+  box.innerHTML='<div class="lwtop qgtm"></div><div class="qgtp"></div><div class="qgpt"></div><div class="lwmsg qgtc"></div>';
+  const tm=box.querySelector('.qgtm'),tp=box.querySelector('.qgtp'),pt=box.querySelector('.qgpt'),card=box.querySelector('.qgtc');
+  [['explora','🔎 Explorar'],['tend','🌡️ Tendencias'],['adivina','🎯 Adivina el elemento']].forEach(([k,n])=>{const b=el('button','lwb'+(k===mode?' on':''),n);b.type='button';b.onclick=()=>{mode=k;cur=null;tm.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===b));if(mode==='adivina')newQ();render()};tm.append(b)});
+  const PROPS={r:['Radio atómico (pm)','Más Z con el mismo nivel → el núcleo atrae más la nube → el radio baja hacia la derecha. Al bajar se agregan niveles (más distancia y apantallamiento) → el radio sube.'],
+    ei:['Energía de ionización (kJ/mol)','Mismo periodo: más Z, distancia similar → más atracción → cuesta más quitar un e⁻. Al bajar: más niveles y apantallamiento → menos atracción → EI menor. Los gases nobles tienen la mayor de su periodo.'],
+    en:['Electronegatividad (Pauling)','Igual que la EI: crece a la derecha y hacia arriba. El F (4,0) es el máximo. Los gases nobles casi no forman enlaces: no se les asigna valor.']};
+  function color(v,mn,mx){const t=(v-mn)/(mx-mn);return'hsl('+(220-200*t).toFixed(0)+' 75% '+(58-6*t).toFixed(0)+'% / .85)'}
+  function render(){
+    tp.innerHTML='';
+    if(mode==='tend'){Object.keys(PROPS).forEach(k=>{const b=el('button','lwb'+(k===prop?' on':''),PROPS[k][0]);b.type='button';b.onclick=()=>{prop=k;render()};tp.append(b)});tp.className='lwpre qgtp'}
+    else tp.className='qgtp';
+    const vals=QG_PT.map(e=>e[prop]).filter(v=>v!=null),mn=Math.min(...vals),mx=Math.max(...vals);
+    let h='<div class="qggrid">';for(let g=1;g<=18;g++)h+='<div class="qghd" style="grid-column:'+(g+1)+';grid-row:1">'+qgGA(g)+'</div>';for(let p=1;p<=6;p++)h+='<div class="qghd" style="grid-column:1;grid-row:'+(p+1)+'">'+p+'</div>';
+    QG_PT.forEach(e=>{let st='grid-column:'+(e.g+1)+';grid-row:'+(e.p+1)+';';let extra='';
+      if(mode==='tend'){const v=e[prop];if(v!=null){st+='background:'+color(v,mn,mx)+';color:#0f1726';extra='<i>'+(prop==='en'?qgN(v,1):v)+'</i>'}else st+='opacity:.35;'}
+      h+='<button type="button" class="qgel qgc-'+e.c+(cur===e.z?' on':'')+'" data-z="'+e.z+'" style="'+st+'" title="'+e.n+'">'+'<small>'+e.z+'</small>'+'<b>'+e.s+'</b>'+extra+'</button>'});
+    h+='</div>';
+    if(mode!=='tend')h+='<div class="qgleg">'+Object.keys(QG_CL).map(k=>'<span class="qgc-'+k+'">'+QG_CL[k]+'</span>').join('')+'</div>';
+    else h+='<div class="qgleg"><span style="background:'+color(mn,mn,mx)+'">menor</span><span style="background:'+color((mn+mx)/2,mn,mx)+'">…</span><span style="background:'+color(mx,mn,mx)+'">mayor</span></div>';
+    pt.innerHTML=h;
+    pt.querySelectorAll('.qgel').forEach(b=>b.onclick=()=>pick(+b.dataset.z));
+    if(mode==='tend'&&!cur)card.innerHTML='<p><b>'+PROPS[prop][0]+'</b></p><p>'+PROPS[prop][1]+'</p><p class="note">Valores aproximados. En el examen justifica con Z, apantallamiento y distancia (ley de Coulomb), no solo con la flecha.</p>';
+    if(mode==='adivina')showQ()}
+  function info(e){const c=qgConf(e.z);const rep=e.g<=2||e.g>=13;const ion=qgIon(e);
+    return'<p class="qgtname"><b>'+e.s+'</b> · '+e.n+' (Z = '+e.z+')</p><p>'+QG_CL[e.c]+' · '+QG_ST[e.e]+' a 25 °C'+([26,27,28].includes(e.z)?' · ferromagnético':'')+'</p>'+
+      '<p><b>Configuración:</b> '+(e.z===57?'[Xe] 6s² 4f¹ (por Aufbau)':c.txt)+'</p>'+(QG_REAL[e.z]?'<p class="note">Real: '+QG_REAL[e.z]+' (excepción; en el curso se usa Aufbau).</p>':'')+
+      '<p><b>Periodo</b> '+e.p+' · <b>grupo</b> '+qgGA(e.g)+' · <b>bloque</b> '+(e.z===57?'f':c.lastL)+(rep&&e.c!=='ng'?' · <b>e⁻ de valencia:</b> '+c.val:'')+(e.c==='ng'?' · octeto completo':'')+'</p>'+
+      (rep&&e.z>2?'<p><b>Lewis:</b> '+e.s+' con '+c.val+' punto'+(c.val>1?'s':'')+'</p>':'')+(ion?'<p><b>Ion estable:</b> '+ion+'</p>':'')+
+      '<p class="note">EN '+(e.en!=null?qgN(e.en,1):'—')+' · radio '+e.r+' pm · EI '+e.ei+' kJ/mol</p>'}
+  function pick(z){const e=QG_PT.find(x=>x.z===z);if(mode==='adivina'){answer(e);return}cur=z;render();card.innerHTML=info(e)+(mode==='tend'?'<p class="note">'+PROPS[prop][1]+'</p>':'')}
+  function newQ(){const pool=QG_PT.filter(e=>(e.g<=2||e.g>=13)&&e.z>2&&e.p>=2&&e.p<=5);const e=pool[Math.floor(Math.random()*pool.length)];const c=qgConf(e.z);const ion=qgIon(e);
+    const clues=[];
+    clues.push('Está en el periodo '+e.p+' y el grupo '+qgGA(e.g)+'.');
+    clues.push('Su configuración electrónica termina en '+c.last+'.');
+    if(e.c!=='ng')clues.push('Tiene '+c.val+' electrones de valencia y '+c.nmax+' niveles de energía.');
+    if(ion){const q={1:1,2:2,13:3,15:-3,16:-2,17:-1}[e.g];const ne=e.z-q;const ng=Object.keys(QG_NG).find(k=>+k===ne);clues.push('Su ion estable es '+(q>0?'un catión ':'un anión ')+(Math.abs(q)===1?'monovalente':Math.abs(q)===2?'divalente':'trivalente')+(ng?' isoelectrónico con el '+QG_NG[ng]:'')+', y tiene '+c.nmax+' niveles de energía.')}
+    if(e.c!=='ng')clues.push('Su símbolo de Lewis tiene '+c.val+' punto'+(c.val>1?'s':'')+' y está en el periodo '+e.p+'.');
+    const ci=clues.slice(1);const pickc=ci[Math.floor(Math.random()*ci.length)];quiz={e,clue:pickc,full:clues[0],tries:0,done:false}}
+  function showQ(){if(!quiz)newQ();card.innerHTML='<p><b>¿Qué elemento es?</b></p><p class="qgclue">'+quiz.clue+'</p>'+(quiz.msg||'')+'<div class="lwbtns"><button type="button" class="lwb qgnq">'+(quiz.done?'Otro elemento ▶':'Saltar')+'</button>'+(!quiz.done?'<button type="button" class="lwb qghint">Pista</button>':'')+'</div>';
+    card.querySelector('.qgnq').onclick=()=>{newQ();cur=null;render()};const hb=card.querySelector('.qghint');if(hb)hb.onclick=()=>{quiz.msg='<p class="note">Pista: '+quiz.full+'</p>';showQ()}}
+  function answer(e){if(quiz.done)return;quiz.tries++;cur=e.z;
+    if(e.z===quiz.e.z){quiz.done=true;quiz.msg='<p class="qgok">✔ ¡Correcto! Es '+e.n+'.</p>'+info(e)}
+    else{const c=qgConf(e.z);quiz.msg='<p class="qgbad">✘ '+e.s+' ('+e.n+') está en el periodo '+e.p+', grupo '+qgGA(e.g)+(e.c!=='ng'&&(e.g<=2||e.g>=13)?', con '+c.val+' e⁻ de valencia':'')+'. Intenta otra vez.</p>'}
+    render()}
+  render()}
+LW.lewis=mountLewis;LW.mol3d=mountMol3D;LW.analiza=mountAnaliza;LW.tabla=mountTabla;
 
 function mountW(root){if(!root||!root.querySelectorAll)return;root.querySelectorAll('.lw[data-w]:not([data-on])').forEach(b=>{b.dataset.on=1;const f=LW[b.dataset.w];if(!f)return;let o={};try{o=JSON.parse(b.dataset.o||'{}')}catch(e){}try{f(b,o)}catch(e){console.error(e);b.textContent='No se pudo cargar esta herramienta.'}})}
 

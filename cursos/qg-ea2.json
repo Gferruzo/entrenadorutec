@@ -1271,6 +1271,16 @@
       ]
      ]
     }
+   ],
+   "tools": [
+    {
+     "w": "lewis",
+     "t": "Lewis paso a paso (método del curso)",
+     "p": "Elige una especie y avanza paso a paso: N, V, enlazantes, esqueleto, pares libres, carga formal y geometría. Cuando hay varias estructuras, compáralas por su carga formal.",
+     "o": {
+      "sp": "[CO₃]²⁻"
+     }
+    }
    ]
   },
   {
@@ -1746,6 +1756,174 @@
        "cambio"
       ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "mol3d",
+     "t": "Moléculas en 3D y dipolos",
+     "p": "Gira la molécula y prende las flechas: si los dipolos de enlace se cancelan, la molécula es apolar. Compara CO₂ con H₂O y CCl₄ con CHCl₃.",
+     "o": {
+      "m": "CO₂"
+     }
+    },
+    {
+     "w": "analiza",
+     "t": "Plantilla de análisis (formato de examen)",
+     "p": "Completa las casillas como en el examen: polaridad de enlace → polaridad de molécula → FIM → predominante.",
+     "o": {
+      "mols": [
+       {
+        "n": "Isopropanol",
+        "fig": "isopropanol",
+        "f": "C₃H₇OH",
+        "bt": [
+         "C–C",
+         "C–H",
+         "C–O",
+         "O–H"
+        ],
+        "pol": true,
+        "why": "Los enlaces polares C–O y O–H están en un extremo; sus dipolos no se compensan.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo",
+         "Puente de H"
+        ],
+        "pred": "Puente de H",
+        "predwhy": "Tiene H unido a O (O–H)."
+       },
+       {
+        "n": "Hexano",
+        "fig": "hexano",
+        "f": "C₆H₁₄",
+        "bt": [
+         "C–C",
+         "C–H"
+        ],
+        "pol": false,
+        "why": "Todos sus enlaces son apolares.",
+        "fim": [
+         "London"
+        ],
+        "pred": "London",
+        "predwhy": "Es la única FIM de una molécula apolar."
+       },
+       {
+        "n": "Acetona",
+        "fig": "acetona",
+        "f": "C₃H₆O",
+        "bt": [
+         "C–C",
+         "C–H",
+         "C=O"
+        ],
+        "pol": true,
+        "why": "El C=O es polar y ningún otro dipolo lo compensa.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo"
+        ],
+        "pred": "Dipolo–dipolo",
+        "predwhy": "Es polar, pero sus H están unidos a C: no forma puentes de H."
+       },
+       {
+        "n": "Dimetil éter",
+        "fig": "dme",
+        "f": "CH₃OCH₃",
+        "bt": [
+         "C–H",
+         "C–O"
+        ],
+        "pol": true,
+        "why": "El O es angular (2 pares libres): los dos C–O no se cancelan.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo"
+        ],
+        "pred": "Dipolo–dipolo",
+        "predwhy": "No tiene H unido a O, así que no hay puente de H."
+       },
+       {
+        "n": "Metilamina",
+        "fig": "metilamina",
+        "f": "CH₃NH₂",
+        "bt": [
+         "C–H",
+         "C–N",
+         "N–H"
+        ],
+        "pol": true,
+        "why": "C–N y N–H polares en un extremo, sin compensar.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo",
+         "Puente de H"
+        ],
+        "pred": "Puente de H",
+        "predwhy": "Tiene H unido a N (N–H)."
+       },
+       {
+        "n": "Ácido acético",
+        "fig": "acetico",
+        "f": "CH₃COOH",
+        "bt": [
+         "C–C",
+         "C–H",
+         "C=O",
+         "C–O",
+         "O–H"
+        ],
+        "pol": true,
+        "why": "El grupo COOH concentra los dipolos en un extremo.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo",
+         "Puente de H"
+        ],
+        "pred": "Puente de H",
+        "predwhy": "Tiene O–H."
+       },
+       {
+        "n": "Etilenglicol",
+        "fig": "etilenglicol",
+        "f": "C₂H₆O₂",
+        "bt": [
+         "C–C",
+         "C–H",
+         "C–O",
+         "O–H"
+        ],
+        "pol": true,
+        "why": "Los C–O y O–H polares no se compensan.",
+        "fim": [
+         "London",
+         "Dipolo–dipolo",
+         "Puente de H"
+        ],
+        "pred": "Puente de H",
+        "predwhy": "Tiene dos grupos O–H: más sitios de puente de H."
+       },
+       {
+        "n": "Benzoquinona",
+        "fig": "benzoquinona",
+        "f": "C₆H₄O₂",
+        "bt": [
+         "C–C",
+         "C=C",
+         "C–H",
+         "C=O"
+        ],
+        "pol": false,
+        "why": "Los dos C=O son polares, pero están opuestos y se cancelan por simetría.",
+        "fim": [
+         "London"
+        ],
+        "pred": "London",
+        "predwhy": "Al ser apolar, solo tiene London."
+       }
+      ]
+     }
     }
    ]
   }
