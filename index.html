@@ -716,12 +716,18 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 /* ===== Mis cursos / Otros cursos ===== */
 .aporte{margin:28px 0 8px;border:1.5px dashed currentColor;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 .95rem/1.45 Lora,Georgia,serif}
 .aporte p{margin:0;flex:1;min-width:14em}.aporte small{display:block;font-weight:400;opacity:.75}
-.apf{display:grid;gap:10px;margin-top:8px}.apf label{display:grid;gap:4px;font:800 .82rem Figtree}
+.apf{display:grid;gap:10px;margin-top:8px;grid-template-columns:minmax(0,1fr)}.apf label{display:grid;gap:4px;font:800 .82rem Figtree}
 .apf select,.apf input[type=text],.apf textarea{border:1.5px solid var(--ink);border-radius:8px;padding:8px 10px;font:600 .95rem Figtree;background:var(--card);color:var(--ink);width:100%;box-sizing:border-box}
 .apf textarea{min-height:4.5em;resize:vertical}.apf .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .apf input[type=file]{font:600 .88rem Figtree;max-width:100%}
 .apf .chk{display:flex;gap:8px;align-items:flex-start;font:600 .85rem/1.4 Figtree}.apf .chk input{margin-top:3px}
 .apst{font:700 .88rem Figtree;margin:8px 0 0;min-height:1.2em}.apst.ok{color:var(--good,#2f8f4e)}.apst.bad{color:var(--bad)}
+.apfl{display:grid;gap:6px;grid-template-columns:minmax(0,1fr)}.apflt{font:800 .82rem Figtree}
+.apdrop{display:grid;gap:2px;justify-items:center;width:100%;border:1.5px dashed var(--ink);border-radius:10px;background:transparent;color:var(--ink);padding:14px 10px;cursor:pointer;font:800 .95rem Figtree}
+.apdrop small{font:600 .78rem Figtree;color:var(--muted)}.apdrop:hover,.apdrop.on{background:var(--ink);color:var(--paper)}.apdrop:hover small,.apdrop.on small{color:inherit;opacity:.8}
+.aplist{display:grid;gap:6px;grid-template-columns:minmax(0,1fr)}.apfi{display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:8px;padding:6px 6px 6px 10px;font:600 .88rem Figtree}
+.apfn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.apfi small{color:var(--muted);white-space:nowrap}
+.apx{border:0;background:transparent;color:var(--ink);font:800 .9rem Figtree;cursor:pointer;padding:2px 8px;border-radius:6px}.apx:hover{background:var(--ink);color:var(--paper)}
 .mishead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
 .mist{margin:0;font:600 1.5rem/1.1 Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1;color:#3B3B3B;letter-spacing:-.015em}
 .mist small{font:700 .95rem Lora,Georgia,serif;color:#454545;margin-left:6px}
@@ -1784,7 +1790,15 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   const lw=el('label',null,'Semana');const sw=document.createElement('select');['—',...Array.from({length:16},(_,i)=>String(i+1))].forEach(v=>{const o=document.createElement('option');o.textContent=v;sw.append(o)});lw.append(sw);
   const lt=el('label',null,'Tipo');const st=document.createElement('select');['Clase / PPT','Guía o práctica','Examen pasado','Solucionario','Otro'].forEach(v=>{const o=document.createElement('option');o.textContent=v;st.append(o)});lt.append(st);
   r2.append(lw,lt);
-  const lf=el('label',null,'Archivos (hasta 10, máx. 15 MB c/u)');const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*';lf.append(fi);
+  const lf=el('div','apfl');lf.append(el('span','apflt','Archivos (hasta 10, máx. 15 MB c/u)'));const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*';fi.hidden=true;
+  let FL=[];const drop=el('button','apdrop','<b>📎 Elegir archivos</b><small>o arrástralos aquí · PDF o fotos</small>');drop.type='button';const lst=el('div','aplist');
+  const kb=x=>x<1048576?Math.max(1,Math.round(x/1024))+' KB':(x/1048576).toFixed(1).replace('.',',')+' MB';
+  const draw=()=>{lst.innerHTML='';FL.forEach((x,i)=>{const r=el('div','apfi');r.append(el('span','apfn',(/pdf$/i.test(x.name)?'📄 ':'🖼️ ')+x.name.replace(/[&<>]/g,'')),el('small',null,kb(x.size)));const q=el('button','apx','✕');q.type='button';q.setAttribute('aria-label','Quitar');q.onclick=()=>{FL.splice(i,1);draw()};r.append(q);lst.append(r)});
+    drop.querySelector('b').textContent=FL.length?'📎 Agregar más archivos':'📎 Elegir archivos'};
+  const addF=fs=>{const seen=new Set(FL.map(x=>x.name+x.size));[...fs].forEach(x=>{if(!seen.has(x.name+x.size))FL.push(x)});draw()};
+  drop.onclick=()=>fi.click();fi.onchange=()=>{addF(fi.files);fi.value=''};
+  drop.ondragover=e=>{e.preventDefault();drop.classList.add('on')};drop.ondragleave=()=>drop.classList.remove('on');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('on');addF(e.dataTransfer.files)};
+  lf.append(drop,lst,fi);
   const lnt=el('label',null,'Nota (opcional)');const ta=document.createElement('textarea');ta.maxLength=500;ta.placeholder='Ej.: parcial 2025-2, profe X, trae solucionario…';lnt.append(ta);
   f.append(lc,ln,r2,lf,lnt);n.append(f);
   const stx=el('p','apst');n.append(stx);
@@ -1793,7 +1807,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   const mimeOf=fl=>fl.type||({pdf:'application/pdf',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp',heic:'image/heic'})[(fl.name.split('.').pop()||'').toLowerCase()]||'';
   const ok=['application/pdf','image/jpeg','image/png','image/webp','image/heic'];
   const b64=fl=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=()=>rej(r.error);r.readAsDataURL(fl)});
-  go.onclick=async()=>{const fs=[...fi.files];
+  go.onclick=async()=>{const fs=FL.slice();
     if(sc.value==='__nuevo'&&!inN.value.trim())return say('Escribe el nombre del curso nuevo.','bad');
     if(!fs.length)return say('Elige al menos un archivo.','bad');
     if(fs.length>10)return say('Máximo 10 archivos por envío.','bad');
