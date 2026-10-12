@@ -1786,8 +1786,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   r2.append(lw,lt);
   const lf=el('label',null,'Archivos (hasta 10, máx. 15 MB c/u)');const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*';lf.append(fi);
   const lnt=el('label',null,'Nota (opcional)');const ta=document.createElement('textarea');ta.maxLength=500;ta.placeholder='Ej.: parcial 2025-2, profe X, trae solucionario…';lnt.append(ta);
-  const ck=el('label','chk');const cb=document.createElement('input');cb.type='checkbox';ck.append(cb,el('span',null,'Confirmo que puedo compartir este material y que no es de una evaluación que aún se esté tomando.'));
-  f.append(lc,ln,r2,lf,lnt,ck);n.append(f);
+  f.append(lc,ln,r2,lf,lnt);n.append(f);
   const stx=el('p','apst');n.append(stx);
   const bt=el('div','mbtns');const cl=el('button',null,'Cancelar');cl.onclick=closeModal;const go=el('button','pri','Enviar');bt.append(go,cl);n.append(bt);
   const say=(t,c)=>{stx.textContent=t;stx.className='apst'+(c?' '+c:'')};
@@ -1801,7 +1800,6 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
     if(fs.some(x=>!ok.includes(mimeOf(x))))return say('Solo se aceptan PDF o fotos (JPG, PNG, WEBP, HEIC).','bad');
     if(fs.some(x=>x.size>15*1048576))return say('Cada archivo debe pesar menos de 15 MB.','bad');
     if(fs.reduce((a,x)=>a+x.size,0)>35*1048576)return say('En total no puede pasar de 35 MB. Envíalo en partes.','bad');
-    if(!cb.checked)return say('Marca la casilla de confirmación.','bad');
     go.disabled=cl.disabled=true;say('Preparando archivos…');
     try{const files=[];for(const x of fs)files.push({name:x.name,mime:mimeOf(x),data:await b64(x)});
       say('Enviando… no cierres esta ventana.');
