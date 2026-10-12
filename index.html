@@ -1773,8 +1773,8 @@ function mkSort(grid){if(!window.Sortable)return;
       if(sel.join()!==MIS.sel.join()){setMis(sel);hintDone()}setTimeout(renderMenu,0)}}))}
 const BUZON='https://script.google.com/macros/s/AKfycbxDDwrpRzMVAMoqvmyMfWF72TxPkhLmFDqIIhxStEdHuEClpvX7vd3pcOCbtQrpjF5K/exec';
 function aporteBox(){const b=el('div','aporte');b.append(el('p',null,'¿Tienes clases, guías o exámenes pasados?<small>Pásanos el material y lo convertimos en práctica para todos.</small>'));
-  const bt=el('button','statsbtn','Aportar material');bt.onclick=aporteModal;b.append(bt);return b}
-function aporteModal(){const n=el('div');n.append(el('h2',null,'Aportar material'));
+  const bt=el('button','statsbtn','📤 Aportar material');bt.onclick=aporteModal;b.append(bt);return b}
+function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar material'));
   const u=FBA&&FBA.auth.currentUser;
   if(!u){const g=el('div','acguest','<b>Inicia sesión para enviar material.</b><br>Así sabemos de quién viene y evitamos spam.');
     if(FBA){const lb=el('div','mbtns');const li=el('button','pri','Iniciar sesión con Google');li.onclick=()=>{closeModal();FBA.login()};lb.append(li);g.append(lb)}
