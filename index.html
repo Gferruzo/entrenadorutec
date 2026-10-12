@@ -982,6 +982,19 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 .lwsug{background:var(--teo-bg);border-radius:8px;padding:0 10px}.lwsug:empty{display:none}.lwsug{padding:6px 10px}
 .lwinfo{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
 .lwhist{margin:6px 0 0;padding-left:1.4em;font-size:.92rem}
+.almat{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:.3em 0 .5em}.alml{font-weight:700}
+.almsc{overflow-x:auto;max-width:100%;padding:2px 0}
+.almt{border-collapse:separate;border-spacing:5px;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-radius:9px;padding:0 3px}
+.almt td{padding:0;text-align:center;border:0;background:none}.almt td.bar{border-left:2px dashed var(--muted);padding-left:6px}
+.almt td.fx{font:600 1rem Figtree,sans-serif;min-width:2.6em;color:var(--muted)}.almt .fin{width:60px}
+.alesc .lwmat2.good .lwm2{outline:2px solid var(--ok);border-radius:8px}.alesc .lwmat2.bad .lwm2{outline:2px solid var(--bad);border-radius:8px}
+.alF{fill:var(--teo);fill-opacity:.32;stroke:var(--teo);stroke-width:1.6}.alF.good{fill:var(--ok);stroke:var(--ok)}.alF.bad{fill:var(--bad);stroke:var(--bad)}
+.alF0{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:3 3}.alghost{fill:none;stroke:var(--tan,#c08a3e);stroke-width:2.2;stroke-dasharray:6 4}
+.alcols{display:inline-flex;gap:2px;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-radius:9px;padding:2px 4px}.alcols.rw{flex-direction:column}
+.alcol{display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 9px;border:1.5px solid transparent;border-radius:8px;background:none;font:600 1rem Figtree,sans-serif;color:var(--ink);cursor:pointer;min-width:2.4em}
+.alcols.rw .alcol{flex-direction:row;gap:14px;justify-content:space-around}.alcol span{min-width:1.6em;text-align:center}.alcol.bar{border-left:2px dashed var(--muted)}
+.alcol.on{border-color:var(--cyan);background:var(--teo-bg)}.alcol.good{border-color:var(--ok);background:var(--ok-bg)}.alcol.bad{border-color:var(--bad);background:var(--bad-bg)}.alcol:disabled{cursor:default;opacity:1}
+
 .lwsz{display:inline-flex;align-items:center;gap:6px;font-size:.9rem}
 .pullpy{display:flex;gap:10px;align-items:flex-start;margin:.7em 0;padding:10px 12px;border:1px solid var(--sol);background:var(--sol-bg);border-radius:14px}
 .pullpy .pav{flex:0 0 36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:21px;overflow:hidden}.pullpy .pav img{width:100%;height:100%;object-fit:cover}
@@ -2506,7 +2519,7 @@ function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e
 /* ================= INTERACTIVOS (num, cls, shift, tap, fill, order) =================
    Cada tipo: IW[t](ch,o) → {el, filled(), grade()→{f:0..1,msg}, mark(g), reveal(), lock(), reset?(), note?, need?}
    o = {key (semilla para barajar), pre (ya resuelto), sim (simulacro), on (avisa cambios)} */
-const numV=s=>{s=String(s).trim().replace(/\s/g,'').replace(/[−–]/g,'-').replace(',','.');return s===''?NaN:Number(s)};
+const numV=s=>{s=String(s).trim().replace(/\s/g,'').replace(/[−–]/g,'-').replace(',','.');if(s==='')return NaN;const q=s.match(/^([+-]?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);return q?(+q[2]?q[1]/q[2]:NaN):Number(s)};
 const numOk=(v,a,tol)=>!isNaN(v)&&Math.abs(v-a)<=(tol!=null?tol:Math.max(0.011,Math.abs(a)*0.005));
 const fmtC=v=>String(v).replace('.',',');
 const SVGNS='http://www.w3.org/2000/svg';
@@ -3065,6 +3078,99 @@ IW.vecdraw=(ch,o)=>{const w=el('div','vdw');const fig=el('div','plfig'),ro=el('p
   return{el:w,note:'Arrastra la punta del vector verde con el dedo.',need:'Mueve el vector antes de comprobar.',okMsg:'¡Vector correcto!',
    filled:()=>touched,grade(){const ok=Math.abs(p[0]-ch.a[0])<1e-9&&Math.abs(p[1]-ch.a[1])<1e-9;return{f:ok?1:0,msg:ok?'':'Ese vector es ('+fmtV(p[0])+'; '+fmtV(p[1])+'). '+(ch.e||'Revisa componente por componente.')}},
    mark(g){st=g.f>=1?'good':'bad';draw()},reveal(){p=ch.a.slice();st='good';draw()},lock(){lk=true;draw()}}};
+/* ================= ÁLGEBRA LINEAL: interactivos de práctica =================
+   mat:  completa una matriz. ch.a=[[…]] (números o "a/b"), ch.l (etiqueta TeX), ch.show=[[i,j],…] celdas dadas, ch.bar=k (línea antes de la col. k), ch.tol, ch.e
+   esc:  escalona tú con operaciones por fila. ch.m=[[…]], ch.na (columnas de A; el resto va tras la barra), ch.goal='esc'|'red', ch.e
+   tlc:  arrastra T(e₁) y T(e₂). ch.a=[[a,b],[c,d]], ch.ghost (dibuja la figura destino), ch.R, ch.snap, ch.e
+   cols: toca columnas (o filas con ch.sel='row') de una matriz. ch.m, ch.a=[índices desde 0], ch.l, ch.bar, ch.e */
+const alV=s=>{s=String(s).replace(/\s/g,'').replace(/[−–]/g,'-').replace(',','.');const q=LWQ.p(s);return q?q[0]/q[1]:NaN};
+const alS=v=>{if(typeof v==='string')return v.replace(/-/g,'−');if(Number.isInteger(v))return String(v).replace('-','−');for(let d=2;d<=60;d++){const n=Math.round(v*d);if(Math.abs(n/d-v)<1e-9)return(n<0?'−':'')+Math.abs(n)+'/'+d}return String(Math.round(v*1000)/1000).replace('-','−').replace('.',',')};
+IW.mat=(ch,o)=>{const w=el('div','almat');if(ch.l)w.append(el('span','alml',ch.l));const t=el('table','almt');const ins=[];
+  const giv=new Set((ch.show||[]).map(p=>p[0]+','+p[1]));
+  ch.a.forEach((r,i)=>{const tr=el('tr');r.forEach((c,j)=>{const td=el('td',ch.bar!=null&&j===ch.bar?'bar':null);
+    if(giv.has(i+','+j)){td.className=(td.className?td.className+' ':'')+'fx';td.textContent=alS(c)}
+    else{const x=el('input','fin');x.inputMode='text';x.placeholder='?';x.autocomplete='off';x.setAttribute('aria-label','Fila '+(i+1)+', columna '+(j+1));x.oninput=()=>{x.classList.remove('bad','good');o.on&&o.on()};td.append(x);ins.push({i:x,a:c})}
+    tr.append(td)});t.append(tr)});
+  const sc=el('div','almsc');sc.append(t);w.append(sc);typeset(w);
+  const ok=x=>numOk(alV(x.i.value),alV(x.a),ch.tol!=null?ch.tol:0.006);
+  return{el:w,note:'Escribe cada entrada: entero, decimal o fracción (por ejemplo −3, 0,5 o 4/5).',need:'Completa todas las casillas de la matriz.',okMsg:'¡Matriz correcta!',
+   filled:()=>ins.every(x=>x.i.value.trim()!==''),
+   grade(){const bad=ins.filter(x=>!ok(x)).length;return{f:(ins.length-bad)/ins.length,msg:bad?(bad===1?'Una entrada no está bien (en rojo).':bad+' entradas no están bien (en rojo).')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){ins.forEach(x=>{const k=ok(x);x.i.classList.toggle('good',k);x.i.classList.toggle('bad',!k)})},
+   reveal(){ins.forEach(x=>{if(!ok(x)){x.i.value=alS(x.a);x.i.classList.remove('bad');x.i.classList.add('rev')}else x.i.classList.add('good')})},
+   lock(){ins.forEach(x=>x.i.disabled=true)}}};
+IW.esc=(ch,o)=>{const goal=ch.goal||'esc';const M0=ch.m.map(r=>r.map(x=>LWQ.p(String(x))));const nA=ch.na||M0[0].length;let M,hist,lk=false,hint=null,st='';
+  const F=i=>'F'+lwSub[i+1];
+  const reset0=()=>{M=M0.map(r=>r.slice());hist=[];hint=null;st=''};reset0();
+  const piv=X=>X.map(r=>{let j=0;while(j<nA&&LWQ.z(r[j]))j++;return j<nA?j:-1});
+  const why=X=>{const p=piv(X);let last=-1,zi=-1;for(let i=0;i<p.length;i++){if(p[i]<0){if(zi<0)zi=i;continue}
+      if(zi>=0)return'La fila '+(zi+1)+' es nula y quedó encima de una fila con pivote: las filas nulas van abajo.';
+      if(p[i]<=last)return'Debajo del pivote de la columna '+(last+1)+' todavía hay una entrada distinta de 0 (fila '+(i+1)+').';last=p[i]}
+    if(goal==='red'){for(let i=0;i<p.length;i++){if(p[i]<0)continue;if(!LWQ.one(X[i][p[i]]))return'Ya está escalonada. Para la reducida, el pivote de la fila '+(i+1)+' debe valer 1.';
+      for(let k=0;k<X.length;k++)if(k!==i&&!LWQ.z(X[k][p[i]]))return'Ya está escalonada. Para la reducida, falta hacer 0 encima/debajo del pivote de la fila '+(i+1)+'.'}}
+    return''};
+  const sug=()=>{const n=M.length;let r=0;for(let c=0;c<nA&&r<n;c++){let q=r;while(q<n&&LWQ.z(M[q][c]))q++;if(q===n)continue;
+      if(q!==r)return{t:'swap',i:r,j:q};for(let k=r+1;k<n;k++)if(!LWQ.z(M[k][c]))return{t:'comb',i:k,j:r,k:LWQ.neg(LWQ.div(M[k][c],M[r][c]))};r++}
+    if(goal!=='red')return null;const p=piv(M);for(let i=n-1;i>=0;i--){if(p[i]<0)continue;const c=p[i];if(!LWQ.one(M[i][c]))return{t:'scale',i,k:LWQ.div([1,1],M[i][c])};
+      for(let k=0;k<n;k++)if(k!==i&&!LWQ.z(M[k][c]))return{t:'comb',i:k,j:i,k:LWQ.neg(M[k][c])}}return null};
+  const optxt=x=>x.t==='swap'?F(x.i)+' ↔ '+F(x.j):x.t==='scale'?F(x.i)+' → '+LWQ.s(x.k)+'·'+F(x.i):F(x.i)+' → '+F(x.i)+(x.k[0]<0?' − ':' + ')+(LWQ.one([Math.abs(x.k[0]),x.k[1]])?'':LWQ.s([Math.abs(x.k[0]),x.k[1]]))+F(x.j);
+  const apply=(x,auto)=>{const m=M.map(r=>r.slice());if(x.t==='swap')[m[x.i],m[x.j]]=[m[x.j],m[x.i]];else if(x.t==='scale')m[x.i]=m[x.i].map(v=>LWQ.mul(v,x.k));else m[x.i]=m[x.i].map((v,j)=>LWQ.add(v,LWQ.mul(x.k,m[x.j][j])));M=m;hist.push({x,auto});hint=null;st=''};
+  const w=el('div','alesc');const mt=el('div','lwmat2'),opk=el('div','lwopk'),opf=el('div','lwopf'),bt=el('div','lwbtns'),hn=el('div','lwsug'),hs=el('ol','lwhist');w.append(mt,opk,opf,bt,hn,hs);let op='comb';
+  const render=()=>{const p=piv(M),done=!why(M);let h='<table class="lwm2">';M.forEach((r,i)=>{h+='<tr><th>'+F(i)+'</th>';r.forEach((v,j)=>{h+='<td class="'+(j===nA?'bar ':'')+(done&&p[i]===j?'piv':'')+'">'+LWQ.s(v)+'</td>'});h+='</tr>'});
+    mt.innerHTML=h+'</table>';mt.classList.toggle('good',st==='good');mt.classList.toggle('bad',st==='bad');
+    hs.innerHTML=hist.map(y=>'<li>'+optxt(y.x)+(y.auto?' <span class="note">(solución)</span>':'')+'</li>').join('');
+    opk.innerHTML='';opf.innerHTML='';bt.innerHTML='';hn.innerHTML=hint?'<p>'+hint+'</p>':'';if(lk)return;
+    [['swap','Fᵢ ↔ Fⱼ'],['scale','Fᵢ → k·Fᵢ'],['comb','Fᵢ → Fᵢ + k·Fⱼ']].forEach(([k,tx])=>{const b=el('button','lwb'+(op===k?' on':''),tx);b.type='button';b.onclick=()=>{op=k;render()};opk.append(b)});
+    const sel=(c,v)=>'<select class="'+c+'">'+M.map((_,i)=>'<option value="'+i+'"'+(i===v?' selected':'')+'>'+F(i)+'</option>').join('')+'</select>';
+    opf.innerHTML=op==='swap'?sel('oi',0)+' ↔ '+sel('oj',1):op==='scale'?sel('oi',0)+' → <input class="ok" value="" placeholder="k" size="4"> · <span class="fi"></span>':sel('oi',1)+' → <span class="fi"></span> + <input class="ok" value="" placeholder="k" size="4"> · '+sel('oj',0);
+    const oiE=opf.querySelector('.oi'),upd=()=>opf.querySelectorAll('.fi').forEach(x=>x.textContent=F(+oiE.value));oiE.onchange=upd;upd();
+    const ap=el('button','lwb pri','Aplicar');ap.type='button';const er=el('span','lwerr');opf.append(' ',ap,er);
+    ap.onclick=()=>{const i=+oiE.value,jE=opf.querySelector('.oj'),j=jE?+jE.value:-1,kE=opf.querySelector('.ok'),k=kE?LWQ.p(kE.value.replace(/[−–]/g,'-')):null;
+      if(op!=='scale'&&i===j){er.textContent='Elige dos filas distintas.';return}if(op!=='swap'&&!k){er.textContent='Escribe k como entero o fracción (por ejemplo −2 o 1/3).';return}
+      if(LWQ.z(k||[1,1])){er.textContent=op==='scale'?'k no puede ser 0: no sería una operación elemental.':'Con k = 0 la matriz no cambia.';return}
+      apply({t:op,i,j,k});render();o.on&&o.on()};
+    const ud=el('button','lwb','↶ Deshacer');ud.type='button';ud.disabled=!hist.length;ud.onclick=()=>{const hh=hist.slice(0,-1);M=M0.map(r=>r.slice());hist=[];hh.forEach(y=>apply(y.x));render();o.on&&o.on()};bt.append(ud);
+    if(!o.sim){const hb=el('button','lwb','💡 Pista');hb.type='button';hb.onclick=()=>{const s=sug();hint=s?'Prueba: <b>'+optxt(s)+'</b>':'Ya no hacen falta más operaciones: toca «Comprobar».';render()};bt.append(hb)}};
+  render();
+  return{el:w,note:'Elige la operación, las filas y k; luego «Aplicar». Puedes deshacer.'+(goal==='red'?' Meta: forma escalonada <b>reducida</b> (pivotes 1 y ceros arriba y abajo).':' Meta: forma <b>escalonada</b> (ceros debajo de cada pivote).'),
+   need:'Aplica al menos una operación por filas antes de comprobar.',okMsg:goal==='red'?'¡Forma escalonada reducida! Los pivotes quedan resaltados.':'¡Escalonada! Los pivotes quedan resaltados.',
+   filled:()=>hist.length>0||!why(M),
+   grade(){const m=why(M);return{f:m?0:1,msg:m?m+(ch.e?'<br>'+ch.e:''):''}},
+   mark(g){st=g.f>=1?'good':'bad';render()},
+   reveal(){let s,n=0;while((s=sug())&&n++<40)apply(s,true);st='good';render()},
+   lock(){lk=true;render()},reset(){reset0();render();o.on&&o.on()}}};
+IW.tlc=(ch,o)=>{const R=ch.R||Math.max(3,...ch.a.flat().map(Math.abs)),S=300,sc=S/(2*R+1),snap=ch.snap||1;let A=[[1,0],[0,1]],drag=-1,lk=false,touched=false,st='';const T=ch.a;
+  const Fs=[[0,0],[0,2],[1.2,2],[1.2,1.6],[0.4,1.6],[0.4,1.1],[1,1.1],[1,0.7],[0.4,0.7],[0.4,0]];
+  const w=el('div','lwtl altl');w.innerHTML='<svg viewBox="0 0 '+S+' '+S+'" class="lwsvg" role="img" aria-label="Transformación lineal del plano"></svg><div class="lwside"><div class="lwmat"></div><p class="note"></p></div>';
+  const svg=w.querySelector('svg'),mat=w.querySelector('.lwmat'),nt=w.querySelector('.note');const NS='http://www.w3.org/2000/svg';
+  const P=(x,y)=>[S/2+x*sc,S/2-y*sc];const E=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||svg).append(e);return e};
+  const map=(M,p)=>[M[0][0]*p[0]+M[0][1]*p[1],M[1][0]*p[0]+M[1][1]*p[1]];const poly=(M,cls)=>E('polygon',{points:Fs.map(p=>P(...map(M,p)).join(',')).join(' '),class:cls});
+  const arrow=(x,y,cls)=>{const[a,b]=P(0,0),[c,d]=P(x,y);const L=Math.hypot(c-a,d-b);E('line',{x1:a,y1:b,x2:c,y2:d,class:cls});if(L>4){const ux=(c-a)/L,uy=(d-b)/L,h=10;E('polygon',{points:[c,d,c-h*ux-5*uy,d-h*uy+5*ux,c-h*ux+5*uy,d-h*uy-5*ux].join(','),class:cls+'h'})}};
+  const draw=()=>{svg.innerHTML='';for(let k=-R;k<=R;k++){const[a1,b1]=P(k,-R-.5),[a2,b2]=P(k,R+.5);E('line',{x1:a1,y1:b1,x2:a2,y2:b2,class:k?'lwg':'lwax'});const[c3,d3]=P(-R-.5,k),[c4,d4]=P(R+.5,k);E('line',{x1:c3,y1:d3,x2:c4,y2:d4,class:k?'lwg':'lwax'})}
+    poly([[1,0],[0,1]],'alF0');if(ch.ghost)poly(T,'alghost');poly(A,'alF'+(st?' '+st:''));
+    const c1=[A[0][0],A[1][0]],c2=[A[0][1],A[1][1]];arrow(...c1,'lwa1');arrow(...c2,'lwa2');
+    [c1,c2].forEach((p,i)=>{const[x,y]=P(...p);const t=E('text',{x:x+(p[0]>=0?8:-8),y:y-10,class:'lwlab','text-anchor':p[0]>=0?'start':'end'});t.textContent=i?'T(e₂)':'T(e₁)';
+      if(lk)return;const h=E('circle',{cx:x,cy:y,r:14,class:'lwh lwh'+(i+1),tabindex:0});h.addEventListener('pointerdown',ev=>{drag=i;try{svg.setPointerCapture(ev.pointerId)}catch(e){}ev.preventDefault()});
+      h.addEventListener('keydown',ev=>{const d={ArrowLeft:[-snap,0],ArrowRight:[snap,0],ArrowUp:[0,snap],ArrowDown:[0,-snap]}[ev.key];if(!d)return;ev.preventDefault();set(i,p[0]+d[0],p[1]+d[1]);svg.querySelectorAll('.lwh')[i].focus()})});
+    const n=lwNum;mat.innerHTML='<div class="lwml">A =</div><table class="lwm"><tr><td class="k1">'+n(A[0][0])+'</td><td class="k2">'+n(A[0][1])+'</td></tr><tr><td class="k1">'+n(A[1][0])+'</td><td class="k2">'+n(A[1][1])+'</td></tr></table>';
+    nt.innerHTML='La «F» gris es la original'+(ch.ghost?'; la punteada es la meta':'')+'. det A = <b>'+n(A[0][0]*A[1][1]-A[0][1]*A[1][0])+'</b>'};
+  const set=(i,x,y)=>{x=Math.max(-R,Math.min(R,Math.round(x/snap)*snap));y=Math.max(-R,Math.min(R,Math.round(y/snap)*snap));if(A[0][i]===x&&A[1][i]===y)return;A[0][i]=x;A[1][i]=y;touched=true;st='';draw();o.on&&o.on()};
+  svg.addEventListener('pointermove',ev=>{if(drag<0||lk)return;const pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;const q=pt.matrixTransform(svg.getScreenCTM().inverse());set(drag,(q.x-S/2)/sc,(S/2-q.y)/sc)});
+  const end=()=>{drag=-1};svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);draw();
+  return{el:w,note:'Arrastra las puntas de T(e₁) (columna 1) y T(e₂) (columna 2). También puedes usar las flechas del teclado.',need:'Mueve T(e₁) o T(e₂) antes de comprobar.',okMsg:'¡Esa es la matriz!',
+   filled:()=>touched,grade(){const b=[0,1].filter(j=>A[0][j]!==T[0][j]||A[1][j]!==T[1][j]);return{f:b.length?0:1,msg:b.length?'Revisa '+b.map(j=>'<b>T(e'+(j?'₂':'₁')+')</b>').join(' y ')+'.'+(ch.e?'<br>'+ch.e:''):''}},
+   mark(g){st=g.f>=1?'good':'bad';draw()},reveal(){A=T.map(r=>r.slice());st='good';draw()},lock(){lk=true;draw()},reset(){A=[[1,0],[0,1]];touched=false;st='';draw();o.on&&o.on()}}};
+IW.cols=(ch,o)=>{const row=ch.sel==='row';const w=el('div','almat');if(ch.l)w.append(el('span','alml',ch.l));const box=el('div','alcols'+(row?' rw':''));const m=ch.m,nr=m.length,nc=m[0].length;let lk=false;const sel=new Set();const A=new Set(ch.a);
+  const bs=[];for(let k=0;k<(row?nr:nc);k++){const b=el('button','alcol'+(!row&&ch.bar!=null&&k===ch.bar?' bar':''));b.type='button';b.setAttribute('aria-label',(row?'Fila ':'Columna ')+(k+1));
+    for(let t=0;t<(row?nc:nr);t++)b.append(el('span',null,alS(row?m[k][t]:m[t][k])));
+    b.onclick=()=>{if(lk)return;sel.has(k)?sel.delete(k):sel.add(k);b.classList.toggle('on',sel.has(k));bs.forEach(x=>x.classList.remove('good','bad'));o.on&&o.on()};box.append(b);bs.push(b)}
+  const sc=el('div','almsc');sc.append(box);w.append(sc);typeset(w);const nm=row?'filas':'columnas';
+  return{el:w,note:'Toca '+(row?'las filas':'las columnas')+' que correspondan (toca otra vez para quitar).',need:'Elige al menos una '+(row?'fila':'columna')+'.',
+   filled:()=>sel.size>0,grade(){const ok=sel.size===A.size&&[...sel].every(k=>A.has(k));const wr=[...sel].filter(k=>!A.has(k)).length,mi=[...A].filter(k=>!sel.has(k)).length;
+    return{f:ok?1:0,msg:ok?'':(wr?'Marcaste '+wr+' '+(wr===1?nm.slice(0,-1)+' que no va':nm+' que no van')+'. ':'')+(mi?'Te falta'+(mi===1?' una':'n '+mi)+'.':'')+(ch.e?'<br>'+ch.e:'')}},
+   mark(){bs.forEach((b,k)=>{b.classList.toggle('good',sel.has(k)&&A.has(k));b.classList.toggle('bad',sel.has(k)&&!A.has(k))})},
+   reveal(){bs.forEach((b,k)=>{b.classList.remove('on','bad');b.classList.toggle('good',A.has(k));if(sel.has(k)&&!A.has(k))b.classList.add('bad')})},
+   lock(){lk=true;bs.forEach(b=>b.disabled=true)}}};
 /* Cónicas: tipo y deslizadores */
 function conicSpec(t,P){const {h=0,k=0,a=3,b=2,p=1}=P;const r={ps:[],pts:[],vas:[],has:[],lines:[]};
   if(t==='circ'){r.ps.push({x:h+'+'+a+'*cos(t)',y:k+'+'+a+'*sin(t)',t:[0,6.3]});r.pts.push({x:h,y:k,l:'C'});r.eq='(x-'+h+')^2+(y-'+k+')^2='+a*a}

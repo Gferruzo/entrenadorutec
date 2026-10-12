@@ -30,23 +30,27 @@
      "q": "<p>Considera \\(A\\) \\(=\\begin{pmatrix}4&-1&3\\\\2&5&0\\end{pmatrix}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Orden de \\(A\\)",
-       "o": [
-        "\\(2\\times3\\)",
-        "\\(3\\times2\\)",
-        "\\(6\\)",
-        "\\(2\\times2\\)",
-        "\\(3\\times3\\)"
+       "f": [
+        {
+         "l": "filas",
+         "a": 2
+        },
+        {
+         "l": "columnas",
+         "a": 3
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Valor de \\(a_{21}\\)",
-       "o": [
-        "\\(2\\)",
-        "\\(-1\\)",
-        "\\(5\\)",
-        "\\(3\\)",
-        "\\(0\\)"
+       "f": [
+        {
+         "l": "a₂₁ =",
+         "a": 2
+        }
        ]
       }
      ],
@@ -79,14 +83,19 @@
      "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}-1&4\\\\2&5\\end{pmatrix}\\). Calcula \\(3A-B\\).</p>",
      "checks": [
       {
-       "p": "\\(3A-B\\)",
-       "o": [
-        "\\(\\begin{pmatrix}7&-1\\\\-2&4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}5&-1\\\\-2&4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}5&7\\\\2&14\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}7&-1\\\\2&4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}7&1\\\\-2&14\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Escribe \\(3A-B\\).",
+       "a": [
+        [
+         7,
+         -1
+        ],
+        [
+         -2,
+         4
+        ]
+       ],
+       "l": "\\(3A-B=\\)"
       }
      ],
      "steps": [
@@ -114,23 +123,73 @@
      "q": "<p>Sean \\(A\\in\\mathbb R^{4\\times3}\\), \\(B\\in\\mathbb R^{3\\times5}\\) y \\(C\\in\\mathbb R^{5\\times2}\\). Sin calcular entradas, decide.</p>",
      "checks": [
       {
-       "p": "¿Cuál de estos productos está definido (con su orden correcto)?",
-       "o": [
-        "\\(ABC\\), de orden \\(4\\times2\\)",
-        "\\(BA\\), de orden \\(3\\times3\\)",
-        "\\(AC\\), de orden \\(4\\times2\\)",
-        "\\(CB\\), de orden \\(5\\times5\\)",
-        "\\(ABC\\), de orden \\(3\\times5\\)"
+       "t": "cls",
+       "p": "¿Está definido cada producto?",
+       "cats": [
+        "Definido",
+        "No definido"
+       ],
+       "items": [
+        {
+         "x": "\\(AB\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(BA\\)",
+         "c": 1,
+         "e": "BA: (3×5)(4×3) → 5 ≠ 4."
+        },
+        {
+         "x": "\\(BC\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(CB\\)",
+         "c": 1,
+         "e": "CB: (5×2)(3×5) → 2 ≠ 3."
+        },
+        {
+         "x": "\\(ABC\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(AC\\)",
+         "c": 1,
+         "e": "AC: (4×3)(5×2) → 3 ≠ 5."
+        },
+        {
+         "x": "\\(CA\\)",
+         "c": 1,
+         "e": "CA: (5×2)(4×3) → 2 ≠ 4."
+        }
        ]
       },
       {
+       "t": "num",
+       "p": "Orden de \\(ABC\\)",
+       "f": [
+        {
+         "l": "filas",
+         "a": 4
+        },
+        {
+         "l": "columnas",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "t": "num",
        "p": "Orden de \\(BC\\)",
-       "o": [
-        "\\(3\\times2\\)",
-        "\\(5\\times5\\)",
-        "\\(3\\times5\\)",
-        "\\(2\\times3\\)",
-        "No está definido"
+       "f": [
+        {
+         "l": "filas",
+         "a": 3
+        },
+        {
+         "l": "columnas",
+         "a": 2
+        }
        ]
       }
      ],
@@ -164,14 +223,19 @@
      "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}1&2&-1\\\\0&3&2\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}2&1\\\\1&0\\\\3&-2\\end{pmatrix}\\). Calcula \\(AB\\).</p>",
      "checks": [
       {
-       "p": "\\(AB\\)",
-       "o": [
-        "\\(\\begin{pmatrix}1&3\\\\9&-4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&3\\\\9&4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}7&-1\\\\9&-4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&2&-3\\\\0&0&-4\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&9\\\\3&-4\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Calcula \\(AB\\) entrada por entrada (fila de A · columna de B).",
+       "a": [
+        [
+         1,
+         3
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       "l": "\\(AB=\\)"
       }
      ],
      "steps": [
@@ -203,14 +267,34 @@
      "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}0&1\\\\2&3\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "\\(AB\\)",
-       "o": [
-        "\\(\\begin{pmatrix}4&7\\\\8&15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&4\\\\11&16\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}0&2\\\\6&12\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}4&8\\\\7&15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&5\\\\6&13\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Calcula \\(AB\\).",
+       "a": [
+        [
+         4,
+         7
+        ],
+        [
+         8,
+         15
+        ]
+       ],
+       "l": "\\(AB=\\)"
+      },
+      {
+       "t": "mat",
+       "p": "Calcula \\(BA\\).",
+       "a": [
+        [
+         3,
+         4
+        ],
+        [
+         11,
+         16
+        ]
+       ],
+       "l": "\\(BA=\\)"
       },
       {
        "p": "¿Qué muestra comparar \\(AB\\) con \\(BA\\)?",
@@ -262,14 +346,19 @@
        ]
       },
       {
-       "p": "\\(AB\\) correcto",
-       "o": [
-        "\\(\\begin{pmatrix}5&4\\\\14&13\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&2\\\\0&15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}5&4\\\\8&13\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&7\\\\14&13\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}6&4\\\\14&9\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Calcula el \\(AB\\) correcto.",
+       "a": [
+        [
+         5,
+         4
+        ],
+        [
+         14,
+         13
+        ]
+       ],
+       "l": "\\(AB=\\)"
       }
      ],
      "steps": [
@@ -301,24 +390,34 @@
      "q": "<p>En MATLAB: <code>A = [1 2; 3 4]; B = [2 0; 1 5];</code></p><p>Predice lo que devuelven <code>A.*B</code> y <code>A*B</code>.</p>",
      "checks": [
       {
-       "p": "<code>A.*B</code>",
-       "o": [
-        "\\(\\begin{pmatrix}2&0\\\\3&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}4&10\\\\10&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&10\\\\6&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&2\\\\4&9\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&0\\\\1&20\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Resultado de <code>A.*B</code> (entrada por entrada)",
+       "a": [
+        [
+         2,
+         0
+        ],
+        [
+         3,
+         20
+        ]
+       ],
+       "l": "A.*B ="
       },
       {
-       "p": "<code>A*B</code>",
-       "o": [
-        "\\(\\begin{pmatrix}4&10\\\\10&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&0\\\\3&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&10\\\\10&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}4&10\\\\7&20\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&10\\\\11&20\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Resultado de <code>A*B</code> (producto matricial)",
+       "a": [
+        [
+         4,
+         10
+        ],
+        [
+         10,
+         20
+        ]
+       ],
+       "l": "A*B ="
       }
      ],
      "steps": [
@@ -351,14 +450,17 @@
      "q": "<p>\\(V\\) \\(=\\begin{pmatrix}12&8&15\\\\10&11&9\\end{pmatrix}\\) registra unidades vendidas (filas: días; columnas: productos P1, P2, P3) y \\(p\\) \\(=\\begin{pmatrix}20\\\\15\\\\10\\end{pmatrix}\\) son los precios en soles.</p>",
      "checks": [
       {
-       "p": "Ingresos de cada día, \\(Vp\\)",
-       "o": [
-        "\\(\\begin{pmatrix}510\\\\455\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}455\\\\510\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}440\\\\470\\end{pmatrix}\\)",
-        "\\((22,\\ 19,\\ 24)\\)",
-        "\\(\\begin{pmatrix}530\\\\455\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Ingresos de cada día, \\(Vp\\) (en soles)",
+       "a": [
+        [
+         510
+        ],
+        [
+         455
+        ]
+       ],
+       "l": "\\(Vp=\\)"
       },
       {
        "p": "¿Está definido \\(pV\\)?",
@@ -401,13 +503,13 @@
      "q": "<p>Sean \\(A\\) \\(=\\begin{pmatrix}2&y\\\\-x&1\\end{pmatrix}\\) y \\(C\\) \\(=\\begin{pmatrix}-9&2\\\\-6&-7\\end{pmatrix}\\). Si \\(A^2-5A=C\\), halla \\(x+y\\).</p>",
      "checks": [
       {
-       "p": "\\(x+y\\)",
-       "o": [
-        "\\(-4\\)",
-        "\\(4\\)",
-        "\\(-2\\)",
-        "\\(2\\)",
-        "\\(-5\\)"
+       "t": "num",
+       "p": "Halla \\(x+y\\).",
+       "f": [
+        {
+         "l": "x + y =",
+         "a": -4
+        }
        ]
       }
      ],
@@ -444,13 +546,13 @@
      "q": "<p>Halla \\(a+b\\) si \\(AB=I_3\\), con \\(A\\) \\(=\\begin{pmatrix}1&1&0\\\\1&0&1\\\\a&1&2\\end{pmatrix}\\) y \\(B\\) \\(=\\begin{pmatrix}1&2&-1\\\\0&-2&b\\\\-1&-1&1\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "\\(a+b\\)",
-       "o": [
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(2\\)",
-        "\\(4\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Halla \\(a+b\\).",
+       "f": [
+        {
+         "l": "a + b =",
+         "a": 3
+        }
        ]
       }
      ],
@@ -514,6 +616,69 @@
        "orden"
       ]
      ]
+    },
+    {
+     "id": "s1n1",
+     "lvl": 1,
+     "title": "Transpuesta y \\(AA^T\\)",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&-2&0\\\\3&4&5\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "Escribe \\(A^T\\).",
+       "a": [
+        [
+         1,
+         3
+        ],
+        [
+         -2,
+         4
+        ],
+        [
+         0,
+         5
+        ]
+       ],
+       "l": "\\(A^T=\\)"
+      },
+      {
+       "t": "mat",
+       "p": "Calcula \\(AA^T\\).",
+       "a": [
+        [
+         5,
+         -5
+        ],
+        [
+         -5,
+         50
+        ]
+       ],
+       "l": "\\(AA^T=\\)"
+      }
+     ],
+     "steps": [
+      "\\(A^T\\) intercambia filas por columnas: la fila 1 de A pasa a ser la columna 1.",
+      "\\(AA^T\\) es \\(2\\times2\\): entrada (1,1) \\(=1+4+0=5\\); (1,2) \\(=3-8+0=-5\\); (2,2) \\(=9+16+25=50\\).",
+      "Observa que \\(AA^T\\) es simétrica."
+     ],
+     "ans": "A^T es 3×2 y AA^T = [[5, −5], [−5, 50]]",
+     "hint": "La entrada (i, j) de AA^T es fila i de A por fila j de A.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ],
+      [
+       "prod"
+      ]
+     ]
     }
    ]
   },
@@ -538,24 +703,43 @@
      "q": "<p>Considera la forma escalonada \\(R\\) \\(=\\begin{pmatrix}2&-1&3&0\\\\0&5&-2&1\\\\0&0&0&4\\end{pmatrix}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\operatorname{rango}(R)\\)",
-       "o": [
-        "\\(3\\)",
-        "\\(4\\)",
-        "\\(2\\)",
-        "\\(1\\)",
-        "\\(12\\)"
+       "f": [
+        {
+         "l": "rango =",
+         "a": 3
+        }
        ]
       },
       {
-       "p": "¿Qué columna no tiene pivote?",
-       "o": [
-        "La 3",
-        "La 4",
-        "La 2",
-        "Todas tienen pivote",
-        "La 1"
-       ]
+       "t": "cols",
+       "p": "Toca la columna que <b>no</b> tiene pivote.",
+       "m": [
+        [
+         2,
+         -1,
+         3,
+         0
+        ],
+        [
+         0,
+         5,
+         -2,
+         1
+        ],
+        [
+         0,
+         0,
+         0,
+         4
+        ]
+       ],
+       "a": [
+        2
+       ],
+       "l": "\\(R=\\)",
+       "e": "El −2 de la fila 2 no es pivote: el pivote es la primera entrada no nula de la fila."
       }
      ],
      "steps": [
@@ -587,23 +771,17 @@
      "q": "<p>Calcula \\(\\det\\begin{pmatrix}4&-3\\\\2&5\\end{pmatrix}\\) y \\(\\det\\begin{pmatrix}0&7\\\\7&0\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "Primer determinante",
-       "o": [
-        "\\(26\\)",
-        "\\(14\\)",
-        "\\(-26\\)",
-        "\\(23\\)",
-        "\\(17\\)"
-       ]
-      },
-      {
-       "p": "Segundo determinante",
-       "o": [
-        "\\(-49\\)",
-        "\\(49\\)",
-        "\\(0\\)",
-        "\\(14\\)",
-        "\\(-14\\)"
+       "t": "num",
+       "p": "Escribe ambos determinantes.",
+       "f": [
+        {
+         "l": "primero",
+         "a": 26
+        },
+        {
+         "l": "segundo",
+         "a": -49
+        }
        ]
       }
      ],
@@ -636,23 +814,23 @@
      "q": "<p>Se sabe que \\(\\det A=6\\) con \\(A\\in\\mathbb R^{3\\times3}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\det(2A)\\)",
-       "o": [
-        "\\(48\\)",
-        "\\(12\\)",
-        "\\(24\\)",
-        "\\(36\\)",
-        "\\(8\\)"
+       "f": [
+        {
+         "l": "det(2A) =",
+         "a": 48
+        }
        ]
       },
       {
-       "p": "Determinante tras sumar a una fila tres veces otra",
-       "o": [
-        "\\(6\\)",
-        "\\(18\\)",
-        "\\(-6\\)",
-        "\\(24\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Determinante tras \\(F_i\\to F_i+3F_j\\)",
+       "f": [
+        {
+         "l": "det =",
+         "a": 6
+        }
        ]
       }
      ],
@@ -686,13 +864,13 @@
      "q": "<p>Sin cofactores, calcula \\(\\det T\\) para \\(T\\) \\(=\\begin{pmatrix}3&0&0\\\\5&-2&0\\\\1&4&7\\end{pmatrix}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\det T\\)",
-       "o": [
-        "\\(-42\\)",
-        "\\(42\\)",
-        "\\(8\\)",
-        "\\(-6\\)",
-        "\\(0\\)"
+       "f": [
+        {
+         "l": "det T =",
+         "a": -42
+        }
        ]
       }
      ],
@@ -721,13 +899,13 @@
      "q": "<p>Calcula \\(\\det D\\) con \\(D\\) \\(=\\begin{pmatrix}2&0&1\\\\3&-1&2\\\\1&4&0\\end{pmatrix}\\) expandiendo por la primera fila.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\det D\\)",
-       "o": [
-        "\\(-3\\)",
-        "\\(3\\)",
-        "\\(-29\\)",
-        "\\(13\\)",
-        "\\(-16\\)"
+       "f": [
+        {
+         "l": "det D =",
+         "a": -3
+        }
        ]
       }
      ],
@@ -770,13 +948,13 @@
        ]
       },
       {
+       "t": "num",
        "p": "\\(\\det A\\) correcto",
-       "o": [
-        "\\(22\\)",
-        "\\(2\\)",
-        "\\(-22\\)",
-        "\\(14\\)",
-        "\\(30\\)"
+       "f": [
+        {
+         "l": "det A =",
+         "a": 22
+        }
        ]
       }
      ],
@@ -809,23 +987,26 @@
      "q": "<p>Sea \\(A(k)\\) \\(=\\begin{pmatrix}1&2&-1\\\\2&4&k\\\\1&3&0\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "Valor de \\(k\\) para el que \\(\\operatorname{rango}A(k)\\) \\(=2\\)",
-       "o": [
-        "\\(k=-2\\)",
-        "\\(k=2\\)",
-        "\\(k=0\\)",
-        "\\(k=-1\\)",
-        "Ninguno: siempre tiene rango 3"
+       "t": "num",
+       "p": "Valor de \\(k\\) para el que el rango es 2",
+       "f": [
+        {
+         "l": "k =",
+         "a": -2
+        }
        ]
       },
       {
-       "p": "\\(\\det A(k)\\)",
-       "o": [
-        "\\(-k-2\\)",
-        "\\(k+2\\)",
-        "\\(k-2\\)",
-        "\\(2k+4\\)",
-        "\\(-k\\)"
+       "t": "expr",
+       "p": "Escribe \\(\\det A(k)\\) en función de k.",
+       "f": [
+        {
+         "l": "det A(k) =",
+         "a": "-k-2",
+         "v": [
+          "k"
+         ]
+        }
        ]
       }
      ],
@@ -860,13 +1041,13 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&-1\\\\3&5&-3\\\\7&7&m\\end{pmatrix}\\). ¿Para qué valores de m el rango es 3?</p>",
      "checks": [
       {
-       "p": "Rango 3 cuando…",
-       "o": [
-        "\\(m\\neq-7\\)",
-        "\\(m\\neq7\\)",
-        "\\(m=-7\\)",
-        "\\(m\\neq0\\)",
-        "Para todo m"
+       "t": "num",
+       "p": "El rango es 3 para todo m excepto…",
+       "f": [
+        {
+         "l": "m =",
+         "a": -7
+        }
        ]
       },
       {
@@ -909,13 +1090,17 @@
      "q": "<p><code>A = [1 2 -1; 2 4 0; 1 3 0];</code> (es \\(A(k)\\) con \\(k=0\\)). Predice <code>rank(A)</code> y <code>det(A)</code>.</p>",
      "checks": [
       {
-       "p": "Salida",
-       "o": [
-        "<code>rank(A)</code> = 3 y <code>det(A)</code> = −2",
-        "<code>rank(A)</code> = 2 y <code>det(A)</code> = 0",
-        "<code>rank(A)</code> = 3 y <code>det(A)</code> = 2",
-        "<code>rank(A)</code> = 2 y <code>det(A)</code> = −2",
-        "<code>rank(A)</code> = 3 y <code>det(A)</code> = 0"
+       "t": "num",
+       "p": "Predice la salida.",
+       "f": [
+        {
+         "l": "rank(A)",
+         "a": 3
+        },
+        {
+         "l": "det(A)",
+         "a": -2
+        }
        ]
       }
      ],
@@ -949,13 +1134,17 @@
      "q": "<p>Tres sensores (filas) combinan tres señales x, y, z (columnas): \\(S\\) \\(=\\begin{pmatrix}1&0&2\\\\0&1&1\\\\1&1&3\\end{pmatrix}\\). ¿Aporta el tercer sensor información nueva?</p>",
      "checks": [
       {
-       "p": "Rango y determinante",
-       "o": [
-        "\\(\\operatorname{rango}=2\\), \\(\\det S=0\\)",
-        "\\(\\operatorname{rango}=3\\), \\(\\det S=1\\)",
-        "\\(\\operatorname{rango}=3\\), \\(\\det S=0\\)",
-        "\\(\\operatorname{rango}=2\\), \\(\\det S=2\\)",
-        "\\(\\operatorname{rango}=1\\), \\(\\det S=0\\)"
+       "t": "num",
+       "p": "Rango y determinante de S",
+       "f": [
+        {
+         "l": "rango",
+         "a": 2
+        },
+        {
+         "l": "det S",
+         "a": 0
+        }
        ]
       },
       {
@@ -1000,13 +1189,13 @@
      "q": "<p>Dos drones salen del mismo punto con desplazamientos \\(u=(4,1)\\) y \\(v=(2,5)\\) km. ¿Qué área tiene el paralelogramo que forman?</p>",
      "checks": [
       {
-       "p": "Área",
-       "o": [
-        "\\(18\\ \\text{km}^2\\)",
-        "\\(22\\ \\text{km}^2\\)",
-        "\\(9\\ \\text{km}^2\\)",
-        "\\(-18\\ \\text{km}^2\\)",
-        "\\(20\\ \\text{km}^2\\)"
+       "t": "num",
+       "p": "Área del paralelogramo",
+       "f": [
+        {
+         "l": "Área",
+         "a": 18
+        }
        ]
       }
      ],
@@ -1035,13 +1224,13 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}200&0&-3&100\\\\200&-3&7&100\\\\200&1&3&100\\\\200&2&-1&100\\end{pmatrix}\\) y \\(B\\) cualquier matriz 4 × 4. Calcula \\(\\det(AB)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\det(AB)\\)",
-       "o": [
-        "\\(0\\)",
-        "\\(200\\cdot100\\cdot\\det B\\)",
-        "\\(\\det B\\)",
-        "\\(2\\det B\\)",
-        "No se puede sin conocer \\(B\\)"
+       "f": [
+        {
+         "l": "det(AB) =",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1074,13 +1263,35 @@
      "q": "<p>Usando solo operaciones por filas, calcula \\(\\det A\\) para \\(A\\) \\(=\\begin{pmatrix}1&-4&2\\\\-2&8&-9\\\\-1&7&0\\end{pmatrix}\\).</p>",
      "checks": [
       {
+       "t": "esc",
+       "p": "Escalona A con operaciones por fila (anota cuáles cambian el determinante).",
+       "m": [
+        [
+         1,
+         -4,
+         2
+        ],
+        [
+         -2,
+         8,
+         -9
+        ],
+        [
+         -1,
+         7,
+         0
+        ]
+       ],
+       "goal": "esc"
+      },
+      {
+       "t": "num",
        "p": "\\(\\det A\\)",
-       "o": [
-        "\\(15\\)",
-        "\\(-15\\)",
-        "\\(5\\)",
-        "\\(0\\)",
-        "\\(30\\)"
+       "f": [
+        {
+         "l": "det A =",
+         "a": 15
+        }
        ]
       }
      ],
@@ -1104,7 +1315,8 @@
       [
        "detmas"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s2e14",
@@ -1113,23 +1325,23 @@
      "q": "<p>Sea \\(H\\) \\(=\\begin{pmatrix}2&-1&0\\\\1&3&-2\\\\0&1&1\\end{pmatrix}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\det H\\)",
-       "o": [
-        "\\(11\\)",
-        "\\(9\\)",
-        "\\(-11\\)",
-        "\\(10\\)",
-        "\\(5\\)"
+       "f": [
+        {
+         "l": "det H =",
+         "a": 11
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Entrada (1, 2) de \\(\\operatorname{adj}(H)\\)",
-       "o": [
-        "\\(1\\)",
-        "\\(-1\\)",
-        "\\(2\\)",
-        "\\(-2\\)",
-        "\\(4\\)"
+       "f": [
+        {
+         "l": "adj(H)₁₂ =",
+         "a": 1
+        }
        ]
       }
      ],
@@ -1154,6 +1366,155 @@
        "cof"
       ]
      ]
+    },
+    {
+     "id": "s2n1",
+     "lvl": 2,
+     "title": "Escalona y lee el rango",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&3&-1&2\\\\2&6&1&1\\\\3&9&0&3\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "t": "esc",
+       "p": "Escalona \\(A\\).",
+       "m": [
+        [
+         1,
+         3,
+         -1,
+         2
+        ],
+        [
+         2,
+         6,
+         1,
+         1
+        ],
+        [
+         3,
+         9,
+         0,
+         3
+        ]
+       ],
+       "goal": "esc"
+      },
+      {
+       "t": "num",
+       "p": "\\(\\operatorname{rango}(A)\\)",
+       "f": [
+        {
+         "l": "rango =",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "t": "cols",
+       "p": "Toca las columnas pivote.",
+       "m": [
+        [
+         1,
+         3,
+         -1,
+         2
+        ],
+        [
+         2,
+         6,
+         1,
+         1
+        ],
+        [
+         3,
+         9,
+         0,
+         3
+        ]
+       ],
+       "a": [
+        0,
+        2
+       ],
+       "l": "\\(A=\\)",
+       "e": "La columna 2 es el triple de la 1: nunca tiene pivote."
+      }
+     ],
+     "steps": [
+      "\\(F_2\\to F_2-2F_1\\) y \\(F_3\\to F_3-3F_1\\): quedan \\((0,0,3,-3)\\) en ambas filas.",
+      "\\(F_3\\to F_3-F_2\\): fila nula.",
+      "Pivotes en las columnas 1 y 3 ⇒ rango 2."
+     ],
+     "ans": "Rango 2; columnas pivote 1 y 3",
+     "hint": "Haz ceros debajo del primer pivote y mira qué columna queda vacía.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "esc"
+      ],
+      [
+       "esc"
+      ],
+      [
+       "rango"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s2n2",
+     "lvl": 1,
+     "title": "Determinante como área",
+     "q": "<p>Los vectores \\(u=(3,1)\\) y \\(v=(1,2)\\) forman un paralelogramo.</p>",
+     "checks": [
+      {
+       "t": "tlc",
+       "p": "Arma la matriz \\([u\\ v]\\): T(e₁) = u y T(e₂) = v.",
+       "a": [
+        [
+         3,
+         1
+        ],
+        [
+         1,
+         2
+        ]
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Área del paralelogramo",
+       "f": [
+        {
+         "l": "Área",
+         "a": 5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La matriz con columnas u y v es \\(\\begin{pmatrix}3&1\\\\1&2\\end{pmatrix}\\).",
+      "\\(\\det=3\\cdot2-1\\cdot1=5\\).",
+      "El cuadrado unitario se transforma en el paralelogramo de lados u y v: su área es \\(|\\det|=5\\)."
+     ],
+     "ans": "Área = |det| = 5",
+     "hint": "El área es el valor absoluto del determinante de la matriz [u v].",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "det2"
+      ],
+      [
+       "det2"
+      ],
+      [
+       "area"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -1222,23 +1583,50 @@
      "q": "<p>Un sistema de 3 incógnitas tiene \\(\\operatorname{rango}(A)\\) \\(=\\operatorname{rango}([A\\mid b])\\) \\(=2\\).</p>",
      "checks": [
       {
-       "p": "Clasificación",
-       "o": [
-        "Compatible indeterminado con 1 variable libre",
+       "t": "cls",
+       "p": "Clasifica cada sistema con Rouché–Frobenius (n = número de incógnitas).",
+       "cats": [
         "Compatible determinado",
-        "Incompatible",
-        "Compatible indeterminado con 2 variables libres",
-        "No se puede clasificar sin resolver"
+        "Compatible indeterminado",
+        "Incompatible"
+       ],
+       "items": [
+        {
+         "x": "n = 3, rango(A) = rango([A|b]) = 2",
+         "c": 1
+        },
+        {
+         "x": "n = 3, rango(A) = 2, rango([A|b]) = 3",
+         "c": 2,
+         "e": "Si el rango de la aumentada sube, aparece una fila [0 … 0 | c ≠ 0]."
+        },
+        {
+         "x": "n = 3, rango(A) = rango([A|b]) = 3",
+         "c": 0
+        },
+        {
+         "x": "n = 4, rango(A) = rango([A|b]) = 3",
+         "c": 1,
+         "e": "Rangos iguales pero menores que n: hay n − r = 1 variable libre."
+        },
+        {
+         "x": "n = 2, rango(A) = 1, rango([A|b]) = 2",
+         "c": 2
+        },
+        {
+         "x": "n = 2, rango(A) = rango([A|b]) = 2",
+         "c": 0
+        }
        ]
       },
       {
-       "p": "¿Y si \\(\\operatorname{rango}([A\\mid b])\\) \\(=3\\)?",
-       "o": [
-        "Sería incompatible",
-        "Sería compatible determinado",
-        "Seguiría indeterminado",
-        "Tendría 3 variables libres",
-        "Sería homogéneo"
+       "t": "num",
+       "p": "Variables libres en el primer caso",
+       "f": [
+        {
+         "l": "variables libres",
+         "a": 1
+        }
        ]
       }
      ],
@@ -1271,6 +1659,35 @@
      "title": "Leer la escalonada",
      "q": "<p>Un sistema 3 × 3 se escalona a \\(\\left[\\begin{array}{ccc|c}1&2&-1&4\\\\0&1&3&-2\\\\0&0&0&5\\end{array}\\right]\\).</p>",
      "checks": [
+      {
+       "t": "cols",
+       "p": "Toca la fila que delata el tipo de sistema.",
+       "m": [
+        [
+         1,
+         2,
+         -1,
+         4
+        ],
+        [
+         0,
+         1,
+         3,
+         -2
+        ],
+        [
+         0,
+         0,
+         0,
+         5
+        ]
+       ],
+       "a": [
+        2
+       ],
+       "sel": "row",
+       "e": "Busca una fila con ceros en A y algo distinto de 0 en b."
+      },
       {
        "p": "Clasificación",
        "o": [
@@ -1307,14 +1724,42 @@
      "q": "<p>Escribe en la forma \\(Ax=b\\): \\(3x-y+2z=8\\), \\(x+2y-z=1\\), \\(2x-3y+z=5\\).</p>",
      "checks": [
       {
+       "t": "mat",
        "p": "Matriz de coeficientes \\(A\\)",
-       "o": [
-        "\\(\\begin{pmatrix}3&-1&2\\\\1&2&-1\\\\2&-3&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&1&2\\\\-1&2&-3\\\\2&-1&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&-1&2&8\\\\1&2&-1&1\\\\2&-3&1&5\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&1&2\\\\1&2&1\\\\2&3&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}8&1&5\\end{pmatrix}\\)"
-       ]
+       "a": [
+        [
+         3,
+         -1,
+         2
+        ],
+        [
+         1,
+         2,
+         -1
+        ],
+        [
+         2,
+         -3,
+         1
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "mat",
+       "p": "Vector \\(b\\)",
+       "a": [
+        [
+         8
+        ],
+        [
+         1
+        ],
+        [
+         5
+        ]
+       ],
+       "l": "\\(b=\\)"
       }
      ],
      "steps": [
@@ -1342,13 +1787,47 @@
      "q": "<p>Resuelve y clasifica: \\(x+y-z=0\\), \\(2x-y+z=9\\), \\(x+2y+z=3\\).</p>",
      "checks": [
       {
-       "p": "Solución \\((x,y,z)\\)",
-       "o": [
-        "\\((3,-1,2)\\)",
-        "\\((3,-\\tfrac{17}{5},-\\tfrac25)\\)",
-        "\\((3,1,-2)\\)",
-        "\\((1,2,3)\\)",
-        "No tiene solución"
+       "t": "esc",
+       "p": "Escalona la matriz aumentada \\([A\\mid b]\\).",
+       "m": [
+        [
+         1,
+         1,
+         -1,
+         0
+        ],
+        [
+         2,
+         -1,
+         1,
+         9
+        ],
+        [
+         1,
+         2,
+         1,
+         3
+        ]
+       ],
+       "goal": "esc",
+       "na": 3
+      },
+      {
+       "t": "num",
+       "p": "Solución por sustitución hacia atrás",
+       "f": [
+        {
+         "l": "x",
+         "a": 3
+        },
+        {
+         "l": "y",
+         "a": -1
+        },
+        {
+         "l": "z",
+         "a": 2
+        }
        ]
       }
      ],
@@ -1374,7 +1853,8 @@
        "rouche"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s3e5",
@@ -1393,13 +1873,21 @@
        ]
       },
       {
-       "p": "Solución si \\(k\\neq-2\\)",
-       "o": [
-        "\\((\\tfrac32,\\tfrac12,0)\\)",
-        "\\((2,0,0)\\)",
-        "\\((1,1,0)\\)",
-        "\\((\\tfrac12,\\tfrac32,0)\\)",
-        "Infinitas soluciones"
+       "t": "num",
+       "p": "Solución si \\(k\\neq-2\\) (puedes escribir fracciones)",
+       "f": [
+        {
+         "l": "x",
+         "a": 1.5
+        },
+        {
+         "l": "y",
+         "a": 0.5
+        },
+        {
+         "l": "z",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1443,13 +1931,30 @@
        ]
       },
       {
-       "p": "Conjunto solución (con \\(z=t\\))",
-       "o": [
-        "\\((6-t,\\ 2,\\ t)\\)",
-        "\\((\\tfrac{14-2t}{3},\\ \\tfrac{8-t}{3},\\ t)\\)",
-        "\\((8-t,\\ 2,\\ t)\\)",
-        "\\((6,\\ 2,\\ 0)\\) únicamente",
-        "\\((6-t,\\ 2-t,\\ t)\\)"
+       "t": "expr",
+       "p": "Conjunto solución con \\(z=t\\)",
+       "f": [
+        {
+         "l": "x =",
+         "a": "6-t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "y =",
+         "a": "2",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "z =",
+         "a": "t",
+         "v": [
+          "t"
+         ]
+        }
        ]
       }
      ],
@@ -1482,13 +1987,21 @@
      "q": "<p>Se vendieron 500 entradas de zonas A (S/ 100), B (S/ 80) y C (S/ 50); se recaudó S/ 38 000 y se vendieron 100 más de B que de A.</p>",
      "checks": [
       {
-       "p": "Entradas (A, B, C)",
-       "o": [
-        "\\((125,\\ 225,\\ 150)\\)",
-        "\\((150,\\ 250,\\ 100)\\)",
-        "\\((100,\\ 200,\\ 200)\\)",
-        "\\((125,\\ 225,\\ 160)\\)",
-        "\\((200,\\ 100,\\ 200)\\)"
+       "t": "num",
+       "p": "Entradas vendidas",
+       "f": [
+        {
+         "l": "Zona A",
+         "a": 125
+        },
+        {
+         "l": "Zona B",
+         "a": 225
+        },
+        {
+         "l": "Zona C",
+         "a": 150
+        }
        ]
       }
      ],
@@ -1521,14 +2034,34 @@
      "q": "<p><code>A = [1 1 1; 2 -1 1; 1 2 -1]; b = [6; 3; 2];</code> ¿Qué devuelven <code>rank(A)</code>, <code>rank([A b])</code> y <code>A\\b</code>?</p>",
      "checks": [
       {
-       "p": "Salida",
-       "o": [
-        "3, 3 y \\((1,2,3)^T\\)",
-        "2, 3 y un aviso de matriz singular",
-        "3, 3 y \\((3,2,1)^T\\)",
-        "2, 2 y \\((1,2,3)^T\\)",
-        "3, 4 y \\((1,2,3)^T\\)"
+       "t": "num",
+       "p": "Rangos",
+       "f": [
+        {
+         "l": "rank(A)",
+         "a": 3
+        },
+        {
+         "l": "rank([A b])",
+         "a": 3
+        }
        ]
+      },
+      {
+       "t": "mat",
+       "p": "Salida de <code>A\\b</code>",
+       "a": [
+        [
+         1
+        ],
+        [
+         2
+        ],
+        [
+         3
+        ]
+       ],
+       "l": "A\\b ="
       }
      ],
      "steps": [
@@ -1560,23 +2093,64 @@
      "q": "<p>Clasifica y resuelve: \\(\\left[\\begin{array}{cccc|c}1&0&-3&3&4\\\\0&1&2&-1&-1\\\\1&2&1&1&2\\end{array}\\right]\\), incógnitas \\((x,y,z,w)\\).</p>",
      "checks": [
       {
-       "p": "Clasificación",
-       "o": [
-        "Compatible indeterminado con 2 variables libres",
-        "Compatible indeterminado con 1 variable libre",
-        "Compatible determinado",
-        "Incompatible",
-        "Compatible indeterminado con 3 variables libres"
+       "t": "esc",
+       "p": "Lleva la aumentada a la forma escalonada <b>reducida</b>.",
+       "m": [
+        [
+         1,
+         0,
+         -3,
+         3,
+         4
+        ],
+        [
+         0,
+         1,
+         2,
+         -1,
+         -1
+        ],
+        [
+         1,
+         2,
+         1,
+         1,
+         2
+        ]
+       ],
+       "goal": "red",
+       "na": 4
+      },
+      {
+       "t": "num",
+       "p": "Variables libres",
+       "f": [
+        {
+         "l": "variables libres",
+         "a": 2
+        }
        ]
       },
       {
-       "p": "Solución general",
-       "o": [
-        "\\(x=4+3z-3w,\\ y=-1-2z+w\\)",
-        "\\(x=4-3z+3w,\\ y=-1+2z-w\\)",
-        "\\(x=4,\\ y=-1,\\ z=w=0\\)",
-        "\\(x=4+3z,\\ y=-1-2z,\\ w=0\\)",
-        "No tiene solución"
+       "t": "expr",
+       "p": "Solución general (z y w libres)",
+       "f": [
+        {
+         "l": "x =",
+         "a": "4+3z-3w",
+         "v": [
+          "z",
+          "w"
+         ]
+        },
+        {
+         "l": "y =",
+         "a": "-1-2z+w",
+         "v": [
+          "z",
+          "w"
+         ]
+        }
        ]
       }
      ],
@@ -1601,7 +2175,8 @@
       [
        "libres"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s3e10",
@@ -1610,13 +2185,21 @@
      "q": "<p>Resuelve: \\(x_1+2x_2-x_3=1\\), \\(2x_1+5x_2-3x_3=2\\), \\(3x_1+6x_2-2x_3=0\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Solución",
-       "o": [
-        "\\((4,-3,-3)\\)",
-        "\\((1,0,0)\\)",
-        "\\((4,3,-3)\\)",
-        "Infinitas soluciones",
-        "No tiene solución"
+       "f": [
+        {
+         "l": "x₁",
+         "a": 4
+        },
+        {
+         "l": "x₂",
+         "a": -3
+        },
+        {
+         "l": "x₃",
+         "a": -3
+        }
        ]
       }
      ],
@@ -1649,13 +2232,21 @@
      "q": "<p>Hay 60 camiones grandes (x), medianos (y) y pequeños (z). Cargan 15, 10 y 5 t (total 475 t) y recorren 400, 300 y 100 km (total 12 500 km).</p>",
      "checks": [
       {
-       "p": "\\((x,y,z)\\)",
-       "o": [
-        "\\((5,\\ 25,\\ 30)\\)",
-        "\\((10,\\ 20,\\ 30)\\)",
-        "\\((5,\\ 30,\\ 25)\\)",
-        "Infinitas soluciones",
-        "No tiene solución"
+       "t": "num",
+       "p": "Número de camiones",
+       "f": [
+        {
+         "l": "x (grandes)",
+         "a": 5
+        },
+        {
+         "l": "y (medianos)",
+         "a": 25
+        },
+        {
+         "l": "z (pequeños)",
+         "a": 30
+        }
        ]
       }
      ],
@@ -1717,6 +2308,120 @@
       ],
       [
        "filas0"
+      ]
+     ]
+    },
+    {
+     "id": "s3n1",
+     "lvl": 2,
+     "title": "Gauss–Jordan completo",
+     "q": "<p>Resuelve \\(2x+y-z=8\\), \\(-3x-y+2z=-11\\), \\(-2x+y+2z=-3\\).</p>",
+     "checks": [
+      {
+       "t": "esc",
+       "p": "Lleva \\([A\\mid b]\\) a la forma escalonada reducida.",
+       "m": [
+        [
+         2,
+         1,
+         -1,
+         8
+        ],
+        [
+         -3,
+         -1,
+         2,
+         -11
+        ],
+        [
+         -2,
+         1,
+         2,
+         -3
+        ]
+       ],
+       "goal": "red",
+       "na": 3
+      },
+      {
+       "t": "num",
+       "p": "Lee la solución",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": 3
+        },
+        {
+         "l": "z",
+         "a": -1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Con la reducida, cada fila dice directamente el valor de una variable.",
+      "rref \\(=\\left[\\begin{array}{ccc|c}1&0&0&2\\\\0&1&0&3\\\\0&0&1&-1\\end{array}\\right]\\).",
+      "Comprueba: \\(2(2)+3-(-1)=8\\) ✓."
+     ],
+     "ans": "(2, 3, −1)",
+     "hint": "Si el primer pivote no es 1, divide la fila (o intercambia filas) para trabajar con números cómodos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "gauss"
+      ],
+      [
+       "gauss"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s3n2",
+     "lvl": 1,
+     "title": "Ordena el método de Gauss",
+     "q": "<p>Ordena los pasos para resolver y clasificar un sistema lineal.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Escribir la matriz aumentada \\([A\\mid b]\\).",
+        "Hacer ceros debajo del primer pivote.",
+        "Hacer ceros debajo de los pivotes siguientes (forma escalonada).",
+        "Comparar \\(\\operatorname{rango}(A)\\) con \\(\\operatorname{rango}([A\\mid b])\\) y con n.",
+        "Si es compatible, sustitución hacia atrás (o Gauss–Jordan) para la solución."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero se arma la aumentada; luego se escalona columna por columna.",
+      "Con la escalonada se clasifica (Rouché–Frobenius) antes de despejar.",
+      "Solo si es compatible tiene sentido despejar."
+     ],
+     "ans": "Aumentada → escalonar → clasificar → resolver",
+     "hint": "No se puede clasificar sin escalonar primero.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "gauss"
+      ],
+      [
+       "rouche"
+      ],
+      [
+       "gauss"
       ]
      ]
     }
@@ -1808,6 +2513,41 @@
      "q": "<p>Calculando una inversa 3 × 3 se llega a \\(\\left[\\begin{array}{ccc|ccc}1&0&2&1&0&0\\\\0&1&-1&0&1&0\\\\0&0&0&2&-1&1\\end{array}\\right]\\).</p>",
      "checks": [
       {
+       "t": "cols",
+       "p": "Toca la fila que te dice que no hay inversa.",
+       "m": [
+        [
+         1,
+         0,
+         2,
+         1,
+         0,
+         0
+        ],
+        [
+         0,
+         1,
+         -1,
+         0,
+         1,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         2,
+         -1,
+         1
+        ]
+       ],
+       "a": [
+        2
+       ],
+       "sel": "row",
+       "e": "Mira solo el bloque izquierdo (A): ¿alguna fila quedó en ceros?"
+      },
+      {
        "p": "¿Qué concluyes?",
        "o": [
         "La matriz no es invertible: su rango es menor que 3",
@@ -1843,14 +2583,39 @@
      "q": "<p>Halla la inversa de \\(A\\) \\(=\\begin{pmatrix}2&1\\\\1&3\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "\\(A^{-1}\\)",
-       "o": [
-        "\\(\\tfrac15\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)",
-        "\\(\\tfrac15\\begin{pmatrix}3&1\\\\1&2\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)",
-        "\\(\\tfrac15\\begin{pmatrix}2&-1\\\\-1&3\\end{pmatrix}\\)",
-        "\\(\\tfrac17\\begin{pmatrix}3&-1\\\\-1&2\\end{pmatrix}\\)"
-       ]
+       "t": "esc",
+       "p": "Aplica Gauss–Jordan a \\([A\\mid I]\\) hasta que el bloque izquierdo sea \\(I\\).",
+       "m": [
+        [
+         2,
+         1,
+         1,
+         0
+        ],
+        [
+         1,
+         3,
+         0,
+         1
+        ]
+       ],
+       "goal": "red",
+       "na": 2
+      },
+      {
+       "t": "mat",
+       "p": "Escribe \\(A^{-1}\\) (lee el bloque derecho).",
+       "a": [
+        [
+         "3/5",
+         "-1/5"
+        ],
+        [
+         "-1/5",
+         "2/5"
+        ]
+       ],
+       "l": "\\(A^{-1}=\\)"
       }
      ],
      "steps": [
@@ -1873,7 +2638,8 @@
       [
        "inv2"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s4e4",
@@ -1882,13 +2648,17 @@
      "q": "<p>Cada litro de Mix usa 2 kg de manzana y 1 de piña; cada litro de Tropical, 1 kg de manzana y 3 de piña. Se gastan exactamente 9 kg de manzana y 7 de piña. Usa \\(x=A^{-1}b\\).</p>",
      "checks": [
       {
-       "p": "Litros (Mix, Tropical)",
-       "o": [
-        "\\((4,\\ 1)\\)",
-        "\\((1,\\ 4)\\)",
-        "\\((3,\\ 2)\\)",
-        "\\((\\tfrac{20}{5},\\ \\tfrac{14}{5})\\)",
-        "\\((5,\\ 1)\\)"
+       "t": "num",
+       "p": "Litros de cada jugo",
+       "f": [
+        {
+         "l": "Mix",
+         "a": 4
+        },
+        {
+         "l": "Tropical",
+         "a": 1
+        }
        ]
       }
      ],
@@ -1922,23 +2692,27 @@
      "q": "<p>Sea \\(A(k)\\) \\(=\\begin{pmatrix}1&2\\\\3&k\\end{pmatrix}\\) y \\(b=(5,16)^T\\).</p>",
      "checks": [
       {
-       "p": "¿Para qué k no es invertible?",
-       "o": [
-        "\\(k=6\\)",
-        "\\(k=-6\\)",
-        "\\(k=7\\)",
-        "\\(k=0\\)",
-        "Siempre es invertible"
+       "t": "num",
+       "p": "Valor de k sin inversa",
+       "f": [
+        {
+         "l": "k =",
+         "a": 6
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Con \\(k=7\\), solución de \\(Ax=b\\)",
-       "o": [
-        "\\((3,\\ 1)\\)",
-        "\\((1,\\ 3)\\)",
-        "\\((35,\\ -15)\\)",
-        "\\((3,\\ -1)\\)",
-        "\\((5,\\ 0)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 3
+        },
+        {
+         "l": "y",
+         "a": 1
+        }
        ]
       }
      ],
@@ -1971,23 +2745,32 @@
      "q": "<p>Una hectárea de maíz necesita 1 jornal de siembra y 3 de cosecha; una de frijol, 1 y 2. Se usan 5 jornales de siembra y 13 de cosecha.</p>",
      "checks": [
       {
-       "p": "\\(A^{-1}\\) con \\(A\\) \\(=\\begin{pmatrix}1&1\\\\3&2\\end{pmatrix}\\)",
-       "o": [
-        "\\(\\begin{pmatrix}-2&1\\\\3&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&-1\\\\-3&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}-2&3\\\\1&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&-1\\\\-3&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&-1\\\\-3&2\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "\\(A^{-1}\\)",
+       "a": [
+        [
+         -2,
+         1
+        ],
+        [
+         3,
+         -1
+        ]
+       ],
+       "l": "\\(A^{-1}=\\)"
       },
       {
-       "p": "Hectáreas (maíz, frijol)",
-       "o": [
-        "\\((3,\\ 2)\\)",
-        "\\((2,\\ 3)\\)",
-        "\\((-3,\\ 8)\\)",
-        "\\((5,\\ 0)\\)",
-        "\\((1,\\ 4)\\)"
+       "t": "num",
+       "p": "Hectáreas",
+       "f": [
+        {
+         "l": "maíz",
+         "a": 3
+        },
+        {
+         "l": "frijol",
+         "a": 2
+        }
        ]
       }
      ],
@@ -2020,14 +2803,58 @@
      "q": "<p>Halla la inversa de \\(A\\) \\(=\\begin{pmatrix}1&0&4\\\\0&2&0\\\\0&2&5\\end{pmatrix}\\) con Gauss–Jordan.</p>",
      "checks": [
       {
-       "p": "\\(A^{-1}\\)",
-       "o": [
-        "\\(\\begin{pmatrix}1&\\tfrac45&-\\tfrac45\\\\0&\\tfrac12&0\\\\0&-\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&-\\tfrac45&\\tfrac45\\\\0&\\tfrac12&0\\\\0&\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&0&-\\tfrac45\\\\0&\\tfrac12&0\\\\0&-\\tfrac15&\\tfrac15\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&0&\\tfrac14\\\\0&\\tfrac12&0\\\\0&\\tfrac12&\\tfrac15\\end{pmatrix}\\)",
-        "No es invertible"
-       ]
+       "t": "esc",
+       "p": "Gauss–Jordan sobre \\([A\\mid I]\\).",
+       "m": [
+        [
+         1,
+         0,
+         4,
+         1,
+         0,
+         0
+        ],
+        [
+         0,
+         2,
+         0,
+         0,
+         1,
+         0
+        ],
+        [
+         0,
+         2,
+         5,
+         0,
+         0,
+         1
+        ]
+       ],
+       "goal": "red",
+       "na": 3
+      },
+      {
+       "t": "mat",
+       "p": "Escribe \\(A^{-1}\\).",
+       "a": [
+        [
+         1,
+         "4/5",
+         "-4/5"
+        ],
+        [
+         0,
+         "1/2",
+         0
+        ],
+        [
+         0,
+         "-1/5",
+         "1/5"
+        ]
+       ],
+       "l": "\\(A^{-1}=\\)"
       }
      ],
      "steps": [
@@ -2050,7 +2877,8 @@
       [
        "inv"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s4e8",
@@ -2058,6 +2886,28 @@
      "title": "¿Tiene inversa? (EA 2026-1)",
      "q": "<p>Decide con Gauss–Jordan si \\(B\\) \\(=\\begin{pmatrix}1&2&1\\\\2&4&3\\\\1&2&2\\end{pmatrix}\\) es invertible.</p>",
      "checks": [
+      {
+       "t": "esc",
+       "p": "Escalona \\(B\\) y observa los pivotes.",
+       "m": [
+        [
+         1,
+         2,
+         1
+        ],
+        [
+         2,
+         4,
+         3
+        ],
+        [
+         1,
+         2,
+         2
+        ]
+       ],
+       "goal": "esc"
+      },
       {
        "p": "Conclusión",
        "o": [
@@ -2085,7 +2935,8 @@
       [
        "invcond"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s4e9",
@@ -2168,14 +3019,19 @@
      "q": "<p>Calcula la inversa de \\(A\\) \\(=\\begin{pmatrix}3&1\\\\5&2\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "\\(A^{-1}\\)",
-       "o": [
-        "\\(\\begin{pmatrix}2&-1\\\\-5&3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&1\\\\5&3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}-2&1\\\\5&-3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&-5\\\\-1&3\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "\\(A^{-1}=\\dfrac{1}{\\det A}\\operatorname{adj}(A)\\)",
+       "a": [
+        [
+         2,
+         -1
+        ],
+        [
+         -5,
+         3
+        ]
+       ],
+       "l": "\\(A^{-1}=\\)"
       }
      ],
      "steps": [
@@ -2193,6 +3049,46 @@
       ],
       [
        "inv"
+      ]
+     ]
+    },
+    {
+     "id": "s4n1",
+     "lvl": 1,
+     "title": "Pasos de Gauss–Jordan para A⁻¹",
+     "q": "<p>Ordena el procedimiento para hallar la inversa de una matriz cuadrada A.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Formar la matriz \\([A\\mid I]\\).",
+        "Escalonar: ceros debajo de cada pivote.",
+        "Si aparece una fila nula en el bloque A, parar: A no es invertible.",
+        "Convertir los pivotes en 1 y hacer ceros encima de ellos.",
+        "Leer \\(A^{-1}\\) en el bloque derecho y verificar \\(AA^{-1}=I\\)."
+       ]
+      }
+     ],
+     "steps": [
+      "Se trabaja sobre \\([A\\mid I]\\): las mismas operaciones que llevan A a I llevan I a \\(A^{-1}\\).",
+      "La fila nula en A aparece al escalonar, antes de la reducida.",
+      "La verificación final evita errores de aritmética."
+     ],
+     "ans": "[A | I] → escalonar → (¿fila nula?) → reducida → leer y verificar",
+     "hint": "Piensa en qué momento ya puedes saber si A no es invertible.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invgj"
+      ],
+      [
+       "invcond"
+      ],
+      [
+       "invgj"
       ]
      ]
     }
@@ -2243,13 +3139,49 @@
      "q": "<p>¿Cuál de estos conjuntos es un subespacio de \\(\\mathbb R^3\\)?</p>",
      "checks": [
       {
-       "p": "Subespacio",
-       "o": [
-        "\\(\\{(x,y,z): 2x-y+z=0\\}\\)",
-        "\\(\\{(x,y,z): x+y+z=2\\}\\)",
-        "\\(\\{(x,y,z): z=xy\\}\\)",
-        "\\(\\{(x,y,z): x\\ge0\\}\\)",
-        "\\(\\{(x,y,z): x^2+y^2=z\\}\\)"
+       "t": "cls",
+       "p": "¿Cuáles son subespacios de \\(\\mathbb R^3\\)?",
+       "cats": [
+        "Subespacio",
+        "No es subespacio"
+       ],
+       "items": [
+        {
+         "x": "\\(\\{(x,y,z): 2x-y+z=0\\}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\{(x,y,z): x+y+z=1\\}\\)",
+         "c": 1,
+         "e": "x + y + z = 1 no contiene al (0, 0, 0)."
+        },
+        {
+         "x": "\\(\\{(x,y,z): x\\ge0\\}\\)",
+         "c": 1,
+         "e": "Falla el escalar: −1·(1, 0, 0) sale del conjunto."
+        },
+        {
+         "x": "\\(\\{(x,y,z): z=x^2\\}\\)",
+         "c": 1,
+         "e": "No es lineal: (1,0,1) está, pero 2·(1,0,1) = (2,0,2) no (2 ≠ 4)."
+        },
+        {
+         "x": "\\(\\{(t,2t,-t): t\\in\\mathbb R\\}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\{(x,y,z): x=y=z\\}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\{(x,y,z): xy=0\\}\\)",
+         "c": 1,
+         "e": "(1,0,0) + (0,1,0) = (1,1,0) y 1·1 ≠ 0: falla la suma."
+        },
+        {
+         "x": "\\(\\{(0,0,0)\\}\\)",
+         "c": 0
+        }
        ]
       }
      ],
@@ -2349,13 +3281,39 @@
      "q": "<p>¿Es LI el conjunto \\(v_1=(1,2,1)\\), \\(v_2=(0,1,1)\\), \\(v_3=(2,3,1)\\)?</p>",
      "checks": [
       {
-       "p": "Conclusión",
-       "o": [
-        "LD, con \\(v_3=2v_1-v_2\\)",
-        "LD, con \\(v_3=2v_1+v_2\\)",
-        "LI, porque ningún vector es múltiplo de otro",
-        "LI, porque el rango es 3",
-        "LD, con \\(v_3=v_1+v_2\\)"
+       "t": "esc",
+       "p": "Pon \\(v_1,v_2,v_3\\) como columnas y escalona.",
+       "m": [
+        [
+         1,
+         0,
+         2
+        ],
+        [
+         2,
+         1,
+         3
+        ],
+        [
+         1,
+         1,
+         1
+        ]
+       ],
+       "goal": "esc"
+      },
+      {
+       "t": "num",
+       "p": "Escribe \\(v_3=a\\,v_1+b\\,v_2\\).",
+       "f": [
+        {
+         "l": "a",
+         "a": 2
+        },
+        {
+         "l": "b",
+         "a": -1
+        }
        ]
       }
      ],
@@ -2379,7 +3337,8 @@
       [
        "comb"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s5e5",
@@ -2388,13 +3347,42 @@
      "q": "<p>Con \\(v_1=(1,2,1)\\) y \\(v_2=(0,1,1)\\), ¿cuál de estos vectores está en \\(\\operatorname{Gen}\\{v_1,v_2\\}\\)?</p>",
      "checks": [
       {
-       "p": "Vector",
-       "o": [
-        "\\((3,5,2)\\)",
-        "\\((1,0,0)\\)",
-        "\\((0,0,1)\\)",
-        "\\((1,1,1)\\)",
-        "\\((2,4,3)\\)"
+       "t": "cls",
+       "p": "¿Qué vectores están en \\(\\operatorname{Gen}\\{v_1,v_2\\}\\)? (Pista: \\(av_1+bv_2=(a,\\,2a+b,\\,a+b)\\).)",
+       "cats": [
+        "Está en Gen",
+        "No está"
+       ],
+       "items": [
+        {
+         "x": "\\((3,5,2)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\((1,3,2)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\((2,4,1)\\)",
+         "c": 1,
+         "e": "Los vectores del generado cumplen y = x + z; (2,4,1): 2 + 1 ≠ 4."
+        },
+        {
+         "x": "\\((0,1,1)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\((1,1,1)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\((4,4,0)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\((2,2,1)\\)",
+         "c": 1
+        }
        ]
       }
      ],
@@ -2427,13 +3415,13 @@
      "q": "<p>Tres soportes tienen direcciones \\(f_1=(1,0,0)\\), \\(f_2=(1,1,0)\\), \\(f_3=(1,1,k)\\). La estructura es estable si son LI. ¿Para qué k no lo es?</p>",
      "checks": [
       {
-       "p": "Valor crítico",
-       "o": [
-        "\\(k=0\\)",
-        "\\(k=1\\)",
-        "\\(k=-1\\)",
-        "Ninguno",
-        "Para todo \\(k\\neq0\\)"
+       "t": "num",
+       "p": "Valor crítico de k",
+       "f": [
+        {
+         "l": "k =",
+         "a": 0
+        }
        ]
       }
      ],
@@ -2501,14 +3489,36 @@
      "q": "<p><code>M = [1 0 2; 2 1 3; 1 1 1];</code> ¿Qué devuelven <code>rank(M)</code> y <code>rref(M)</code>?</p>",
      "checks": [
       {
-       "p": "Salida",
-       "o": [
-        "2 y \\(\\begin{pmatrix}1&0&2\\\\0&1&-1\\\\0&0&0\\end{pmatrix}\\)",
-        "3 y \\(I_3\\)",
-        "2 y \\(\\begin{pmatrix}1&0&2\\\\0&1&1\\\\0&0&0\\end{pmatrix}\\)",
-        "3 y \\(\\begin{pmatrix}1&0&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}\\)",
-        "1 y \\(\\begin{pmatrix}1&0&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)"
+       "t": "num",
+       "p": "<code>rank(M)</code>",
+       "f": [
+        {
+         "l": "rank =",
+         "a": 2
+        }
        ]
+      },
+      {
+       "t": "mat",
+       "p": "<code>rref(M)</code>",
+       "a": [
+        [
+         1,
+         0,
+         2
+        ],
+        [
+         0,
+         1,
+         -1
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "l": "rref(M) ="
       }
      ],
      "steps": [
@@ -2537,13 +3547,17 @@
      "q": "<p>Sean \\(v_1=(1,3,-1)\\), \\(v_2=(2,1,1)\\), \\(v_3=(0,5,-3)\\). Halla x e y tales que \\(v_2=xv_1+yv_3\\).</p>",
      "checks": [
       {
-       "p": "\\((x,y)\\)",
-       "o": [
-        "\\((2,-1)\\)",
-        "\\((-2,1)\\)",
-        "\\((2,1)\\)",
-        "\\((1,-2)\\)",
-        "No existen"
+       "t": "num",
+       "p": "Coeficientes",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": -1
+        }
        ]
       }
      ],
@@ -2576,13 +3590,13 @@
      "q": "<p>Sean \\(v_1=(1,0,0)\\), \\(v_2=(2,1,1)\\), \\(v_3=(3,2,a)\\). ¿Para qué valores de a el conjunto es base de \\(\\mathbb R^3\\)?</p>",
      "checks": [
       {
-       "p": "Valores de a",
-       "o": [
-        "\\(a\\neq2\\)",
-        "\\(a=2\\)",
-        "\\(a\\neq3\\)",
-        "\\(a\\neq0\\)",
-        "Para todo a"
+       "t": "num",
+       "p": "Es base para todo a excepto…",
+       "f": [
+        {
+         "l": "a =",
+         "a": 2
+        }
        ]
       }
      ],
@@ -2687,6 +3701,146 @@
        "li"
       ]
      ]
+    },
+    {
+     "id": "s5n1",
+     "lvl": 1,
+     "title": "Dibuja una combinación lineal",
+     "q": "<p>Sean \\(u=(2,1)\\) y \\(v=(-1,2)\\).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(w=2u-v\\).",
+       "a": [
+        5,
+        0
+       ],
+       "l": "w",
+       "given": [
+        {
+         "v": [
+          2,
+          1
+         ],
+         "l": "u"
+        },
+        {
+         "v": [
+          -1,
+          2
+         ],
+         "l": "v"
+        }
+       ],
+       "e": "2u = (4, 2) y −v = (1, −2)."
+      },
+      {
+       "t": "num",
+       "p": "Escribe \\((0,5)=a\\,u+b\\,v\\).",
+       "f": [
+        {
+         "l": "a",
+         "a": 1
+        },
+        {
+         "l": "b",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(2u-v=(4,2)-(-1,2)=(5,0)\\).",
+      "Para \\((0,5)\\): \\(2a-b=0\\) y \\(a+2b=5\\) ⇒ \\(a=1,\\ b=2\\).",
+      "Como u y v son LI, generan todo \\(\\mathbb R^2\\): cualquier vector se escribe así de forma única."
+     ],
+     "ans": "w = (5, 0); (0, 5) = u + 2v",
+     "hint": "Primero escala, luego suma componente a componente.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comb"
+      ],
+      [
+       "comb"
+      ],
+      [
+       "li"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s5n2",
+     "lvl": 2,
+     "title": "¿LI o LD? Clasifica",
+     "q": "<p>Decide si cada conjunto es linealmente independiente.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada conjunto.",
+       "cats": [
+        "LI",
+        "LD"
+       ],
+       "items": [
+        {
+         "x": "\\(\\{(1,2),\\ (2,4)\\}\\)",
+         "c": 1,
+         "e": "(2,4) = 2(1,2)."
+        },
+        {
+         "x": "\\(\\{(1,0),\\ (0,1)\\}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\{(1,2,3),\\ (2,4,6),\\ (0,1,0)\\}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\{(1,0,0),\\ (1,1,0),\\ (1,1,1)\\}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\{(1,2),\\ (3,4),\\ (5,6)\\}\\)",
+         "c": 1,
+         "e": "Tres vectores en ℝ² siempre son LD."
+        },
+        {
+         "x": "\\(\\{(0,0,0),\\ (1,2,3)\\}\\)",
+         "c": 1,
+         "e": "Todo conjunto con el vector cero es LD."
+        },
+        {
+         "x": "\\(\\{(1,1,0),\\ (0,1,1)\\}\\)",
+         "c": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Atajos: un vector es múltiplo de otro ⇒ LD; contiene al cero ⇒ LD; más vectores que la dimensión ⇒ LD.",
+      "Si no aplica un atajo, ponlos como columnas y escalona: LI si hay un pivote por columna.",
+      "\\(\\{(1,0,0),(1,1,0),(1,1,1)\\}\\) es triangular con diagonal no nula: LI."
+     ],
+     "ans": "LI: (1,0),(0,1); (1,0,0),(1,1,0),(1,1,1); (1,1,0),(0,1,1). El resto LD.",
+     "hint": "Busca primero múltiplos, el vector cero o demasiados vectores.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "li"
+      ],
+      [
+       "li"
+      ],
+      [
+       "li"
+      ]
+     ]
     }
    ],
    "tools": [
@@ -2738,13 +3892,13 @@
      "q": "<p>\\(W\\) \\(=\\operatorname{Gen}\\{(1,0,1),(0,1,1),(1,1,2)\\}\\). ¿Cuánto vale \\(\\dim W\\)?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(\\dim W\\)",
-       "o": [
-        "\\(2\\)",
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(6\\)"
+       "f": [
+        {
+         "l": "dim W =",
+         "a": 2
+        }
        ]
       }
      ],
@@ -2773,14 +3927,31 @@
      "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\2&4&7\\\\1&2&4\\end{pmatrix}\\), \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&2&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\). Un compañero da como base de Col(A) a \\(\\{(1,0,0),(0,1,0)\\}\\).</p>",
      "checks": [
       {
-       "p": "Base correcta de Col(A)",
-       "o": [
-        "\\(\\{(1,2,1),\\ (3,7,4)\\}\\)",
-        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
-        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
-        "\\(\\{(1,2,0),\\ (0,0,1)\\}\\)",
-        "\\(\\{(1,2,3),\\ (2,4,7)\\}\\)"
-       ]
+       "t": "cols",
+       "p": "Toca las columnas de \\(A\\) que forman una base de Col(A).",
+       "m": [
+        [
+         1,
+         2,
+         3
+        ],
+        [
+         2,
+         4,
+         7
+        ],
+        [
+         1,
+         2,
+         4
+        ]
+       ],
+       "a": [
+        0,
+        2
+       ],
+       "l": "\\(A=\\)",
+       "e": "Las columnas pivote de la rref (1 y 3) señalan qué columnas de la matriz <b>original</b> usar."
       }
      ],
      "steps": [
@@ -2812,23 +3983,17 @@
      "q": "<p>A es una matriz 4 × 6 de rango 3.</p>",
      "checks": [
       {
-       "p": "Nulidad de A",
-       "o": [
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(2\\)",
-        "\\(6\\)",
-        "\\(4\\)"
-       ]
-      },
-      {
-       "p": "\\(\\dim\\operatorname{Row}(A)\\)",
-       "o": [
-        "\\(3\\)",
-        "\\(4\\)",
-        "\\(6\\)",
-        "\\(1\\)",
-        "\\(2\\)"
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "nulidad",
+         "a": 3
+        },
+        {
+         "l": "dim Row(A)",
+         "a": 3
+        }
        ]
       }
      ],
@@ -2857,24 +4022,64 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&2&1&3\\\\2&4&0&6\\\\1&2&2&3\\end{pmatrix}\\), con \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&2&0&3\\\\0&0&1&0\\\\0&0&0&0\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "Base de Col(A)",
-       "o": [
-        "\\(\\{(1,2,1),\\ (1,0,2)\\}\\)",
-        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
-        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
-        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
-        "\\(\\{(1,2,1),\\ (1,0,2),\\ (3,6,3)\\}\\)"
-       ]
+       "t": "cols",
+       "p": "Base de Col(A): toca las columnas de \\(A\\).",
+       "m": [
+        [
+         1,
+         2,
+         1,
+         3
+        ],
+        [
+         2,
+         4,
+         0,
+         6
+        ],
+        [
+         1,
+         2,
+         2,
+         3
+        ]
+       ],
+       "a": [
+        0,
+        2
+       ],
+       "l": "\\(A=\\)"
       },
       {
-       "p": "Base de Row(A)",
-       "o": [
-        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
-        "\\(\\{(1,2,1),\\ (1,0,2)\\}\\)",
-        "\\(\\{(1,2,1,3),\\ (2,4,0,6),\\ (1,2,2,3)\\}\\)",
-        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
-        "\\(\\{(1,2,0,3)\\}\\)"
-       ]
+       "t": "cols",
+       "p": "Base de Row(A): toca las filas de la rref.",
+       "m": [
+        [
+         1,
+         2,
+         0,
+         3
+        ],
+        [
+         0,
+         0,
+         1,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         0
+        ]
+       ],
+       "a": [
+        0,
+        1
+       ],
+       "l": "\\(\\text{rref}(A)=\\)",
+       "sel": "row",
+       "e": "Las filas no nulas de la escalonada generan Row(A)."
       }
      ],
      "steps": [
@@ -2907,13 +4112,44 @@
      "q": "<p>Con la misma \\(A\\) \\(=\\begin{pmatrix}1&2&1&3\\\\2&4&0&6\\\\1&2&2&3\\end{pmatrix}\\) (rref con pivotes en columnas 1 y 3), halla una base de Nul(A).</p>",
      "checks": [
       {
-       "p": "Base de Nul(A)",
-       "o": [
-        "\\(\\{(-2,1,0,0),\\ (-3,0,0,1)\\}\\)",
-        "\\(\\{(2,-1,0,0),\\ (3,0,0,1)\\}\\)",
-        "\\(\\{(-2,1,0,0)\\}\\)",
-        "\\(\\{(1,2,0,3),\\ (0,0,1,0)\\}\\)",
-        "\\(\\{(-2,0,1,0),\\ (-3,0,0,1)\\}\\)"
+       "t": "mat",
+       "p": "Escribe los vectores de la base como columnas (\\(x_2=1, x_4=0\\) y luego \\(x_2=0, x_4=1\\)).",
+       "a": [
+        [
+         -2,
+         -3
+        ],
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "l": "\\((v_1\\ \\ v_2)=\\)",
+       "show": [
+        [
+         1,
+         0
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         3,
+         0
+        ],
+        [
+         3,
+         1
+        ]
        ]
       }
      ],
@@ -2946,23 +4182,35 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&2\\\\0&1&1\\\\1&0&k\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "¿Para qué k el rango es menor que 3?",
-       "o": [
-        "\\(k=1\\)",
-        "\\(k=3\\)",
-        "\\(k=0\\)",
-        "\\(k=2\\)",
-        "Ninguno"
+       "t": "num",
+       "p": "Valor de k",
+       "f": [
+        {
+         "l": "k =",
+         "a": 1
+        }
        ]
       },
       {
-       "p": "Base de Nul(A) para ese k",
-       "o": [
-        "\\(\\{(-1,-1,1)\\}\\)",
-        "\\(\\{(1,1,1)\\}\\)",
-        "\\(\\{(-2,-1,1)\\}\\)",
-        "\\(\\{(0,0,0)\\}\\)",
-        "\\(\\{(-1,1,1)\\}\\)"
+       "t": "mat",
+       "p": "Base de Nul(A) para ese k (con \\(x_3=1\\))",
+       "a": [
+        [
+         -1
+        ],
+        [
+         -1
+        ],
+        [
+         1
+        ]
+       ],
+       "l": "\\(v=\\)",
+       "show": [
+        [
+         2,
+         0
+        ]
        ]
       }
      ],
@@ -2996,14 +4244,31 @@
      "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&0&2\\\\2&1&5\\\\1&1&3\\end{pmatrix}\\), \\(\\text{rref}(A)\\) \\(=\\begin{pmatrix}1&0&2\\\\0&1&1\\\\0&0&0\\end{pmatrix}\\). Un estudiante da como base de Col(A) a \\(\\{(1,0,0),(0,1,0)\\}\\).</p>",
      "checks": [
       {
-       "p": "Base correcta",
-       "o": [
-        "\\(\\{(1,2,1),\\ (0,1,1)\\}\\)",
-        "\\(\\{(1,0,0),\\ (0,1,0)\\}\\)",
-        "\\(\\{(1,0,2),\\ (0,1,1)\\}\\)",
-        "\\(\\{(1,2,1),\\ (2,4,2)\\}\\)",
-        "\\(\\{(2,5,3)\\}\\)"
-       ]
+       "t": "cols",
+       "p": "Toca las columnas de \\(A\\) que sí forman base de Col(A).",
+       "m": [
+        [
+         1,
+         0,
+         2
+        ],
+        [
+         2,
+         1,
+         5
+        ],
+        [
+         1,
+         1,
+         3
+        ]
+       ],
+       "a": [
+        0,
+        1
+       ],
+       "l": "\\(A=\\)",
+       "e": "Pivotes en las columnas 1 y 2 de la rref → columnas 1 y 2 de A."
       }
      ],
      "steps": [
@@ -3035,13 +4300,21 @@
      "q": "<p><code>A = [1 2 1 3; 2 4 0 6; 1 2 2 3]; [R,p] = rref(A); null(A,'r')</code></p>",
      "checks": [
       {
-       "p": "¿Qué valen p y cuántas columnas tiene <code>null(A,'r')</code>?",
-       "o": [
-        "<code>p = [1 3]</code> y 2 columnas",
-        "<code>p = [1 2]</code> y 2 columnas",
-        "<code>p = [1 3]</code> y 1 columna",
-        "<code>p = [1 2 3]</code> y 1 columna",
-        "<code>p = [2 4]</code> y 2 columnas"
+       "t": "num",
+       "p": "Predice",
+       "f": [
+        {
+         "l": "p(1)",
+         "a": 1
+        },
+        {
+         "l": "p(2)",
+         "a": 3
+        },
+        {
+         "l": "columnas de null",
+         "a": 2
+        }
        ]
       }
      ],
@@ -3071,13 +4344,13 @@
      "q": "<p>Tres ecuaciones de calibración (filas) sobre 4 sensores (columnas): \\(A\\) \\(=\\begin{pmatrix}1&2&0&2\\\\1&2&1&1\\\\1&2&0&2\\end{pmatrix}\\).</p>",
      "checks": [
       {
-       "p": "Ecuaciones esencialmente distintas, \\(\\dim\\operatorname{Row}(A)\\)",
-       "o": [
-        "\\(2\\)",
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(4\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "\\(\\dim\\operatorname{Row}(A)\\)",
+       "f": [
+        {
+         "l": "dim Row =",
+         "a": 2
+        }
        ]
       },
       {
@@ -3120,13 +4393,13 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&2&-1&1\\\\1&2&0&3\\\\1&2&-1&1\\\\1&2&0&3\\end{pmatrix}\\) y \\(v=(-12,\\ 3,\\ x,\\ x+6)\\). ¿Para qué x está v en Nul(A)?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Valor de x",
-       "o": [
-        "\\(x=-4\\)",
-        "\\(x=4\\)",
-        "\\(x=-6\\)",
-        "\\(x=0\\)",
-        "Para todo x"
+       "f": [
+        {
+         "l": "x =",
+         "a": -4
+        }
        ]
       },
       {
@@ -3169,13 +4442,13 @@
      "q": "<p>A es 5 × 7 con rango 4. ¿Cuántas variables libres tiene \\(Ax=0\\)?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Variables libres",
-       "o": [
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(2\\)",
-        "\\(4\\)",
-        "\\(7\\)"
+       "f": [
+        {
+         "l": "variables libres",
+         "a": 3
+        }
        ]
       }
      ],
@@ -3192,6 +4465,145 @@
        "rn"
       ]
      ]
+    },
+    {
+     "id": "s6n1",
+     "lvl": 3,
+     "title": "De la matriz a sus bases",
+     "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&2&0&1\\\\2&4&1&4\\\\3&6&1&5\\end{pmatrix}\\).</p>",
+     "checks": [
+      {
+       "t": "esc",
+       "p": "Lleva \\(A\\) a la forma escalonada reducida.",
+       "m": [
+        [
+         1,
+         2,
+         0,
+         1
+        ],
+        [
+         2,
+         4,
+         1,
+         4
+        ],
+        [
+         3,
+         6,
+         1,
+         5
+        ]
+       ],
+       "goal": "red"
+      },
+      {
+       "t": "cols",
+       "p": "Toca las columnas de \\(A\\) que forman una base de Col(A).",
+       "m": [
+        [
+         1,
+         2,
+         0,
+         1
+        ],
+        [
+         2,
+         4,
+         1,
+         4
+        ],
+        [
+         3,
+         6,
+         1,
+         5
+        ]
+       ],
+       "a": [
+        0,
+        2
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "dim Col(A)",
+         "a": 2
+        },
+        {
+         "l": "dim Nul(A)",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "t": "mat",
+       "p": "Base de Nul(A) como columnas (\\(x_2=1,x_4=0\\) y \\(x_2=0,x_4=1\\))",
+       "a": [
+        [
+         -2,
+         -1
+        ],
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         -2
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "l": "\\((v_1\\ \\ v_2)=\\)",
+       "show": [
+        [
+         1,
+         0
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         3,
+         0
+        ],
+        [
+         3,
+         1
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "rref \\(=\\begin{pmatrix}1&2&0&1\\\\0&0&1&2\\\\0&0&0&0\\end{pmatrix}\\): pivotes en las columnas 1 y 3.",
+      "Base de Col(A): columnas 1 y 3 de A, \\(\\{(1,2,3),(0,1,1)\\}\\). Rango 2, nulidad 4 − 2 = 2.",
+      "Nul: \\(x_1=-2x_2-x_4\\), \\(x_3=-2x_4\\) ⇒ base \\(\\{(-2,1,0,0),(-1,0,-2,1)\\}\\)."
+     ],
+     "ans": "Col: columnas 1 y 3; dim Col = dim Nul = 2; Nul = Gen{(−2,1,0,0), (−1,0,−2,1)}",
+     "hint": "Las variables libres son las de las columnas sin pivote.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "col"
+      ],
+      [
+       "col"
+      ],
+      [
+       "nul"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -3245,13 +4657,38 @@
      "q": "<p>\\(A\\) \\(=\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}\\), \\(b_1=(3,6)\\), \\(b_2=(3,5)\\).</p>",
      "checks": [
       {
-       "p": "¿Con cuál es consistente \\(Ax=b\\)?",
-       "o": [
-        "Solo con \\(b_1\\)",
-        "Solo con \\(b_2\\)",
-        "Con ambos",
-        "Con ninguno",
-        "Con ambos, con solución única"
+       "t": "cls",
+       "p": "¿Para qué \\(b\\) es consistente \\(Ax=b\\)? (Col(A) es la recta \\(b_2=2b_1\\).)",
+       "cats": [
+        "Consistente",
+        "Inconsistente"
+       ],
+       "items": [
+        {
+         "x": "\\(b=(3,6)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(b=(3,5)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(b=(1,2)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(b=(0,0)\\)",
+         "c": 0,
+         "e": "Ax = 0 siempre es consistente (x = 0)."
+        },
+        {
+         "x": "\\(b=(2,3)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(b=(-1,-2)\\)",
+         "c": 0
+        }
        ]
       }
      ],
@@ -3316,6 +4753,32 @@
      "q": "<p>Sea \\(A\\) \\(=\\begin{pmatrix}1&1&1\\\\1&2&3\\\\2&3&4\\end{pmatrix}\\) y \\(b=(6,11,17)\\).</p>",
      "checks": [
       {
+       "t": "esc",
+       "p": "Lleva \\([A\\mid b]\\) a la forma escalonada reducida.",
+       "m": [
+        [
+         1,
+         1,
+         1,
+         6
+        ],
+        [
+         1,
+         2,
+         3,
+         11
+        ],
+        [
+         2,
+         3,
+         4,
+         17
+        ]
+       ],
+       "goal": "red",
+       "na": 3
+      },
+      {
        "p": "Clasificación",
        "o": [
         "Compatible indeterminado (rango 2)",
@@ -3326,13 +4789,30 @@
        ]
       },
       {
-       "p": "Solución general",
-       "o": [
-        "\\((1,5,0)+t(1,-2,1)\\)",
-        "\\((1,2,3)\\) únicamente",
-        "\\((1,5,0)+t(1,2,1)\\)",
-        "\\((6,0,0)+t(1,-2,1)\\)",
-        "\\((1,5,0)+t(-1,2,1)\\)"
+       "t": "expr",
+       "p": "Solución general con \\(z=t\\)",
+       "f": [
+        {
+         "l": "x =",
+         "a": "1+t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "y =",
+         "a": "5-2t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "z =",
+         "a": "t",
+         "v": [
+          "t"
+         ]
+        }
        ]
       }
      ],
@@ -3356,7 +4836,8 @@
       [
        "rn"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "s7e4",
@@ -3365,23 +4846,23 @@
      "q": "<p>\\(x+y+z=2\\), \\(x+2y+z=3\\), \\(2x+3y+2z=k\\).</p>",
      "checks": [
       {
-       "p": "¿Para qué k es consistente?",
-       "o": [
-        "\\(k=5\\)",
-        "\\(k=7\\)",
-        "\\(k\\neq5\\)",
-        "Para todo k",
-        "\\(k=0\\)"
+       "t": "num",
+       "p": "Valor de k consistente",
+       "f": [
+        {
+         "l": "k =",
+         "a": 5
+        }
        ]
       },
       {
-       "p": "Con ese k, grados de libertad",
-       "o": [
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(2\\)",
-        "\\(3\\)",
-        "No hay solución"
+       "t": "num",
+       "p": "Grados de libertad",
+       "f": [
+        {
+         "l": "variables libres",
+         "a": 1
+        }
        ]
       }
      ],
@@ -3414,13 +4895,33 @@
      "q": "<p>Para \\(A\\) \\(=\\begin{pmatrix}1&2&3\\\\2&4&6\\end{pmatrix}\\), \\(b=(1,2)\\), un estudiante reduce a \\([1\\ 2\\ 3\\mid1]\\) y responde «la solución es \\(x=(1,0,0)\\)».</p>",
      "checks": [
       {
-       "p": "Solución general correcta",
-       "o": [
-        "\\((1,0,0)\\) \\(+r(-2,1,0)\\) \\(+s(-3,0,1)\\)",
-        "\\((1,0,0)\\) únicamente",
-        "\\((1,0,0)\\) \\(+r(2,1,0)\\) \\(+s(3,0,1)\\)",
-        "\\((1,0,0)+r(-2,1,0)\\)",
-        "No tiene solución"
+       "t": "expr",
+       "p": "Solución general con \\(x_2=r\\), \\(x_3=s\\)",
+       "f": [
+        {
+         "l": "x₁ =",
+         "a": "1-2r-3s",
+         "v": [
+          "r",
+          "s"
+         ]
+        },
+        {
+         "l": "x₂ =",
+         "a": "r",
+         "v": [
+          "r",
+          "s"
+         ]
+        },
+        {
+         "l": "x₃ =",
+         "a": "s",
+         "v": [
+          "r",
+          "s"
+         ]
+        }
        ]
       }
      ],
@@ -3453,13 +4954,30 @@
      "q": "<p>Flujos (autos/min) en 3 intersecciones: \\(x_1+x_2=80\\), \\(x_2+x_3=50\\), \\(x_1-x_3+x_4=30\\).</p>",
      "checks": [
       {
-       "p": "Solución general",
-       "o": [
-        "\\((30,50,0,0)\\) \\(+t(1,-1,1,0)\\)",
-        "\\((80,0,50,0)\\) \\(+t(1,-1,1,0)\\)",
-        "\\((30,50,0,0)\\) únicamente",
-        "\\((30,50,0,0)\\) \\(+t(1,1,-1,0)\\)",
-        "No tiene solución"
+       "t": "expr",
+       "p": "Solución general con \\(x_3=t\\)",
+       "f": [
+        {
+         "l": "x₁ =",
+         "a": "30+t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "x₂ =",
+         "a": "50-t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "x₄ =",
+         "a": "0",
+         "v": [
+          "t"
+         ]
+        }
        ]
       },
       {
@@ -3512,13 +5030,23 @@
        ]
       },
       {
-       "p": "Solución general",
-       "o": [
-        "\\((3,1,0)+t(1,1,1)\\)",
-        "\\((2,1,0)+t(1,1,1)\\)",
-        "\\((3,1,0)\\) únicamente",
-        "\\((3,1,0)+t(1,-1,1)\\)",
-        "\\((1,1,1)+t(3,1,0)\\)"
+       "t": "expr",
+       "p": "Solución general con \\(I_3=t\\)",
+       "f": [
+        {
+         "l": "I₁ =",
+         "a": "3+t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "I₂ =",
+         "a": "1+t",
+         "v": [
+          "t"
+         ]
+        }
        ]
       }
      ],
@@ -3611,13 +5139,33 @@
        ]
       },
       {
-       "p": "Solución general",
-       "o": [
-        "\\((500,0,0,500,0)\\) \\(+r(1,-1,1,0,0)\\) \\(+s(-1,1,0,-1,1)\\)",
-        "\\((500,0,0,500,0)\\) únicamente",
-        "\\((250,250,0,250,250)\\) \\(+r(1,-1,1,0,0)\\)",
-        "\\((500,0,0,500,0)\\) \\(+r(1,1,1,0,0)\\) \\(+s(1,1,0,1,1)\\)",
-        "No tiene solución"
+       "t": "expr",
+       "p": "Solución general con \\(x_3=r\\), \\(x_5=s\\)",
+       "f": [
+        {
+         "l": "x₁ =",
+         "a": "500+r-s",
+         "v": [
+          "r",
+          "s"
+         ]
+        },
+        {
+         "l": "x₂ =",
+         "a": "s-r",
+         "v": [
+          "r",
+          "s"
+         ]
+        },
+        {
+         "l": "x₄ =",
+         "a": "500-s",
+         "v": [
+          "r",
+          "s"
+         ]
+        }
        ]
       }
      ],
@@ -3651,14 +5199,20 @@
      "q": "<p><code>A = [1 1 1; 1 2 3; 2 3 4]; null(A,'r')</code></p>",
      "checks": [
       {
-       "p": "Salida",
-       "o": [
-        "\\((1,-2,1)^T\\)",
-        "Una matriz vacía",
-        "\\((1,2,3)^T\\)",
-        "\\((-1,2,1)^T\\)",
-        "\\(I_3\\)"
-       ]
+       "t": "mat",
+       "p": "Salida de <code>null(A,'r')</code>",
+       "a": [
+        [
+         1
+        ],
+        [
+         -2
+        ],
+        [
+         1
+        ]
+       ],
+       "l": "null ="
       }
      ],
      "steps": [
@@ -3690,13 +5244,30 @@
      "q": "<p>Un estudiante halla que \\(x_p=(1,2,0)\\) cumple \\(Ax=b\\) y luego descubre que \\(\\operatorname{Nul}(A)\\) \\(=\\operatorname{Gen}\\{(1,-1,1)\\}\\).</p>",
      "checks": [
       {
-       "p": "Conjunto solución",
-       "o": [
-        "\\((1,2,0)+t(1,-1,1)\\), \\(t\\in\\mathbb R\\)",
-        "Solo \\((1,2,0)\\)",
-        "\\(t(1,-1,1)\\)",
-        "\\((1,2,0)\\) y \\((1,-1,1)\\)",
-        "\\((2,1,1)\\) únicamente"
+       "t": "expr",
+       "p": "Conjunto solución (con parámetro t)",
+       "f": [
+        {
+         "l": "x =",
+         "a": "1+t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "y =",
+         "a": "2-t",
+         "v": [
+          "t"
+         ]
+        },
+        {
+         "l": "z =",
+         "a": "t",
+         "v": [
+          "t"
+         ]
+        }
        ]
       }
      ],
@@ -3712,6 +5283,78 @@
      "tags": [
       [
        "unic"
+      ],
+      [
+       "xpxh"
+      ]
+     ]
+    },
+    {
+     "id": "s7n1",
+     "lvl": 1,
+     "title": "Predice antes de calcular",
+     "q": "<p>Sin resolver, decide cuántas soluciones tiene \\(Ax=b\\) en cada caso.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada caso.",
+       "cats": [
+        "Única",
+        "Infinitas",
+        "Ninguna",
+        "Depende de b"
+       ],
+       "items": [
+        {
+         "x": "A 3×3, rango 3",
+         "c": 0
+        },
+        {
+         "x": "A 3×5, rango 3",
+         "c": 1,
+         "e": "Rango = número de filas ⇒ siempre consistente; 5 − 3 = 2 variables libres."
+        },
+        {
+         "x": "A 5×3, rango 3, con b ∈ Col(A)",
+         "c": 0
+        },
+        {
+         "x": "A 5×3, rango 3, b cualquiera",
+         "c": 3,
+         "e": "Con más filas que rango, algunos b no están en Col(A)."
+        },
+        {
+         "x": "A 3×3, rango 2, con b ∉ Col(A)",
+         "c": 2
+        },
+        {
+         "x": "A 2×4, rango 2",
+         "c": 1
+        },
+        {
+         "x": "\\(Ax=0\\) con A 3×3 de rango 2",
+         "c": 1,
+         "e": "El sistema homogéneo siempre es consistente; con 1 variable libre hay infinitas."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Si \\(b\\in\\operatorname{Col}(A)\\) hay solución; si además rango = n (columnas) es única.",
+      "Rango = m (filas) garantiza consistencia para todo b.",
+      "El número de variables libres es n − rango."
+     ],
+     "ans": "Ver la clasificación de cada caso",
+     "hint": "Compara el rango con el número de filas (consistencia) y con el de columnas (unicidad).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rouche"
+      ],
+      [
+       "rouche"
       ],
       [
        "xpxh"
@@ -3771,23 +5414,39 @@
      "q": "<p>Sea \\(T(x,y)=(3x,\\ x-y)\\).</p>",
      "checks": [
       {
-       "p": "\\(T(1,2)\\)",
-       "o": [
-        "\\((3,-1)\\)",
-        "\\((3,1)\\)",
-        "\\((1,-1)\\)",
-        "\\((3,3)\\)",
-        "\\((6,-1)\\)"
+       "t": "vecdraw",
+       "p": "Dibuja \\(T(1,2)\\).",
+       "a": [
+        3,
+        -1
+       ],
+       "l": "T(v)",
+       "given": [
+        {
+         "v": [
+          1,
+          2
+         ],
+         "l": "v"
+        }
        ]
       },
       {
-       "p": "\\(T(-2,0)\\)",
-       "o": [
-        "\\((-6,-2)\\)",
-        "\\((-6,2)\\)",
-        "\\((6,-2)\\)",
-        "\\((-2,-2)\\)",
-        "\\((0,0)\\)"
+       "t": "vecdraw",
+       "p": "Dibuja \\(T(-2,0)\\).",
+       "a": [
+        -6,
+        -2
+       ],
+       "l": "T(u)",
+       "given": [
+        {
+         "v": [
+          -2,
+          0
+         ],
+         "l": "u"
+        }
        ]
       }
      ],
@@ -3816,23 +5475,35 @@
      "q": "<p>Sea \\(T(x,y)=(x+y,\\ 2x,\\ -y)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(T(4,-1)\\)",
-       "o": [
-        "\\((3,8,1)\\)",
-        "\\((5,8,1)\\)",
-        "\\((3,8,-1)\\)",
-        "\\((3,4,1)\\)",
-        "\\((3,8)\\)"
+       "f": [
+        {
+         "l": "1ª comp.",
+         "a": 3
+        },
+        {
+         "l": "2ª comp.",
+         "a": 8
+        },
+        {
+         "l": "3ª comp.",
+         "a": 1
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Tamaño de la matriz estándar",
-       "o": [
-        "\\(3\\times2\\)",
-        "\\(2\\times3\\)",
-        "\\(3\\times3\\)",
-        "\\(2\\times2\\)",
-        "\\(1\\times3\\)"
+       "f": [
+        {
+         "l": "filas",
+         "a": 3
+        },
+        {
+         "l": "columnas",
+         "a": 2
+        }
        ]
       }
      ],
@@ -3865,13 +5536,38 @@
      "q": "<p>¿Cuál de estas aplicaciones se descarta como lineal <strong>solo</strong> calculando \\(T(0,0)\\)?</p>",
      "checks": [
       {
-       "p": "Aplicación",
-       "o": [
-        "\\(g(x,y)=(x+1,\\ y)\\)",
-        "\\(h(x,y)=(x^2,\\ y)\\)",
-        "\\(f(x,y)=(x-y,\\ 3y)\\)",
-        "\\(p(x,y)=(x,\\ xy)\\)",
-        "\\(r(x,y)=(-y,\\ x)\\)"
+       "t": "cls",
+       "p": "¿Cuáles se descartan solo con \\(T(0,0)\\)?",
+       "cats": [
+        "Se descarta: T(0) ≠ 0",
+        "T(0) = 0: hay que revisar más"
+       ],
+       "items": [
+        {
+         "x": "\\(g(x,y)=(x+1,\\ y)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(h(x,y)=(x^2,\\ y)\\)",
+         "c": 1,
+         "e": "h(0,0) = (0,0): la prueba del cero no la descarta (aunque no es lineal)."
+        },
+        {
+         "x": "\\(p(x,y)=(2x,\\ y-3)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(q(x,y)=(x+y,\\ xy)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(r(x,y)=(x,\\ y+1)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(s(x,y)=(3x,\\ -y)\\)",
+         "c": 1
+        }
        ]
       }
      ],
@@ -3900,13 +5596,43 @@
      "q": "<p>¿Cuál de estas reglas es una transformación lineal?</p>",
      "checks": [
       {
-       "p": "Regla lineal",
-       "o": [
-        "\\(T(x,y)=(x+2y,\\ 3x-y)\\)",
-        "\\(T(x,y)=(x+2,\\ y)\\)",
-        "\\(T(x,y)=(x^2,\\ y)\\)",
-        "\\(T(x,y)=(x,\\ xy)\\)",
-        "\\(T(x,y)=(x+y,\\ y^2)\\)"
+       "t": "cls",
+       "p": "¿Lineal o no?",
+       "cats": [
+        "Lineal",
+        "No lineal"
+       ],
+       "items": [
+        {
+         "x": "\\(T(x,y)=(x+2y,\\ 3x-y)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(T(x,y)=(x+1,\\ y)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(T(x,y)=(xy,\\ x)\\)",
+         "c": 1,
+         "e": "El producto xy no es lineal."
+        },
+        {
+         "x": "\\(T(x,y)=(2x,\\ 0)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(T(x,y)=(|x|,\\ y)\\)",
+         "c": 1,
+         "e": "|x| falla con escalares negativos."
+        },
+        {
+         "x": "\\(T(x,y)=(x-y,\\ y,\\ x)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(T(x,y)=(x^2,\\ y)\\)",
+         "c": 1
+        }
        ]
       }
      ],
@@ -3937,23 +5663,31 @@
      "q": "<p>T es lineal con \\(T(1,0)=(4,-1)\\) y \\(T(0,1)=(2,3)\\).</p>",
      "checks": [
       {
-       "p": "Matriz estándar",
-       "o": [
-        "\\(\\begin{pmatrix}4&2\\\\-1&3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}4&-1\\\\2&3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&4\\\\3&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}4&0\\\\0&3\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}-1&3\\\\4&2\\end{pmatrix}\\)"
+       "t": "tlc",
+       "p": "Arma la matriz estándar arrastrando \\(T(e_1)\\) y \\(T(e_2)\\).",
+       "a": [
+        [
+         4,
+         2
+        ],
+        [
+         -1,
+         3
+        ]
        ]
       },
       {
+       "t": "num",
        "p": "\\(T(3,-2)\\)",
-       "o": [
-        "\\((8,-9)\\)",
-        "\\((14,-9)\\)",
-        "\\((8,3)\\)",
-        "\\((16,-9)\\)",
-        "\\((10,-7)\\)"
+       "f": [
+        {
+         "l": "1ª comp.",
+         "a": 8
+        },
+        {
+         "l": "2ª comp.",
+         "a": -9
+        }
        ]
       }
      ],
@@ -3996,13 +5730,40 @@
        ]
       },
       {
-       "p": "\\(T(1,2)\\) con la matriz correcta",
-       "o": [
-        "\\((-1,2,7)\\)",
-        "\\((5,2)\\)",
-        "\\((1,2,7)\\)",
-        "\\((-1,4,7)\\)",
-        "\\((3,2,5)\\)"
+       "t": "mat",
+       "p": "Matriz estándar correcta (3 × 2)",
+       "a": [
+        [
+         1,
+         -1
+        ],
+        [
+         2,
+         0
+        ],
+        [
+         1,
+         3
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "\\(T(1,2)\\)",
+       "f": [
+        {
+         "l": "1ª",
+         "a": -1
+        },
+        {
+         "l": "2ª",
+         "a": 2
+        },
+        {
+         "l": "3ª",
+         "a": 7
+        }
        ]
       }
      ],
@@ -4035,13 +5796,17 @@
      "q": "<p>T es lineal con \\(T(e_1)=(1,2)\\), \\(T(e_2)=(-1,0)\\) y \\(T(e_3)=(3,1)\\). Calcula \\(T(2,-1,1)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(T(2,-1,1)\\)",
-       "o": [
-        "\\((6,5)\\)",
-        "\\((4,5)\\)",
-        "\\((6,3)\\)",
-        "\\((0,5)\\)",
-        "\\((2,-1,1)\\)"
+       "f": [
+        {
+         "l": "1ª comp.",
+         "a": 6
+        },
+        {
+         "l": "2ª comp.",
+         "a": 5
+        }
        ]
       }
      ],
@@ -4148,14 +5913,30 @@
      "q": "<p><code>A = [2 -1; 1 3]; v = [3; -2]; Tv = A*v, Te2 = A*[0;1]</code></p>",
      "checks": [
       {
-       "p": "<code>Tv</code> y <code>Te2</code>",
-       "o": [
-        "\\((8,-3)\\) y \\((-1,3)\\)",
-        "\\((8,-3)\\) y \\((1,3)\\)",
-        "\\((4,9)\\) y \\((-1,3)\\)",
-        "\\((8,9)\\) y \\((2,1)\\)",
-        "\\((6,-6)\\) y \\((-1,3)\\)"
-       ]
+       "t": "mat",
+       "p": "<code>Tv</code>",
+       "a": [
+        [
+         8
+        ],
+        [
+         -3
+        ]
+       ],
+       "l": "Tv ="
+      },
+      {
+       "t": "mat",
+       "p": "<code>Te2</code>",
+       "a": [
+        [
+         -1
+        ],
+        [
+         3
+        ]
+       ],
+       "l": "Te2 ="
       }
      ],
      "steps": [
@@ -4188,13 +5969,17 @@
      "q": "<p>El control corrige la trayectoria con T lineal: \\(T(1,0)=(1.2,\\ 0.4)\\), \\(T(0,1)=(-0.3,\\ 1.1)\\). Punto planeado \\(p=(4,2)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Posición corregida \\(Ap\\)",
-       "o": [
-        "\\((4.2,\\ 3.8)\\)",
-        "\\((5.4,\\ 1.0)\\)",
-        "\\((4.8,\\ 2.2)\\)",
-        "\\((4.2,\\ 1.8)\\)",
-        "\\((3.6,\\ 3.8)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 4.2
+        },
+        {
+         "l": "y",
+         "a": 3.8
+        }
        ]
       },
       {
@@ -4237,23 +6022,34 @@
      "q": "<p>Tres motores (comando \\(u\\in\\mathbb R^3\\)) mueven la mesa en 2 direcciones (mm). El sistema es lineal. Pruebas: \\(u=(2,0,0)\\to(2,4)\\), \\(u=(1,1,0)\\to(3,2)\\), \\(u=(0,0,-1)\\to(1,-1)\\).</p>",
      "checks": [
       {
-       "p": "Matriz A",
-       "o": [
-        "\\(\\begin{pmatrix}1&2&-1\\\\2&0&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&3&1\\\\4&2&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&3&-1\\\\2&2&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&2\\\\2&0\\\\-1&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}1&2&1\\\\2&0&-1\\end{pmatrix}\\)"
-       ]
+       "t": "mat",
+       "p": "Matriz \\(A\\) (columnas: \\(T(e_1), T(e_2), T(e_3)\\))",
+       "a": [
+        [
+         1,
+         2,
+         -1
+        ],
+        [
+         2,
+         0,
+         1
+        ]
+       ],
+       "l": "\\(A=\\)"
       },
       {
+       "t": "num",
        "p": "Desplazamiento con \\(u=(4,-2,6)\\)",
-       "o": [
-        "\\((-6,\\ 14)\\)",
-        "\\((-3,\\ 7)\\)",
-        "\\((6,\\ -14)\\)",
-        "\\((-6,\\ 7)\\)",
-        "\\((2,\\ 14)\\)"
+       "f": [
+        {
+         "l": "x (mm)",
+         "a": -6
+        },
+        {
+         "l": "y (mm)",
+         "a": 14
+        }
        ]
       }
      ],
@@ -4290,13 +6086,21 @@
      "q": "<p>\\(T:\\mathbb R^3\\) \\(\\to\\mathbb R^3\\) con \\(T(e_1)=(1,2,0)\\), \\(T(e_2)=(0,1,-1)\\), \\(T(e_3)=(1,3,-1)\\). Se sabe que \\(T(2,4,5)=(7,23,-9)\\) y que \\(u=(1,-1,1)\\) cumple \\((4,2,7)=(2,4,5)+2u\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "\\(T(4,2,7)\\) sin multiplicar por A",
-       "o": [
-        "\\((11,\\ 31,\\ -9)\\)",
-        "\\((9,\\ 27,\\ -9)\\)",
-        "\\((11,\\ 31,\\ -1)\\)",
-        "\\((14,\\ 46,\\ -18)\\)",
-        "\\((7,\\ 23,\\ -9)\\)"
+       "f": [
+        {
+         "l": "1ª",
+         "a": 11
+        },
+        {
+         "l": "2ª",
+         "a": 31
+        },
+        {
+         "l": "3ª",
+         "a": -9
+        }
        ]
       },
       {
@@ -4339,13 +6143,17 @@
      "q": "<p>Un filtro de imágenes usa \\(T(x,y)=(2x,\\ -y)\\).</p>",
      "checks": [
       {
-       "p": "Matriz estándar",
-       "o": [
-        "\\(\\begin{pmatrix}2&0\\\\0&-1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}0&2\\\\-1&0\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&0\\\\0&1\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}-1&0\\\\0&2\\end{pmatrix}\\)",
-        "\\(\\begin{pmatrix}2&-1\\\\0&0\\end{pmatrix}\\)"
+       "t": "tlc",
+       "p": "Arma la matriz del filtro arrastrando \\(T(e_1)\\) y \\(T(e_2)\\).",
+       "a": [
+        [
+         2,
+         0
+        ],
+        [
+         0,
+         -1
+        ]
        ]
       },
       {
@@ -4384,13 +6192,17 @@
      "q": "<p>T es lineal con \\(T(e_1)=(2,1)\\) y \\(T(e_2)=(-1,3)\\).</p>",
      "checks": [
       {
-       "p": "\\(T(3,2)\\) sin escribir la matriz",
-       "o": [
-        "\\((4,\\ 9)\\)",
-        "\\((8,\\ 3)\\)",
-        "\\((5,\\ 9)\\)",
-        "\\((4,\\ 3)\\)",
-        "\\((6,\\ 6)\\)"
+       "t": "num",
+       "p": "\\(T(3,2)\\)",
+       "f": [
+        {
+         "l": "1ª comp.",
+         "a": 4
+        },
+        {
+         "l": "2ª comp.",
+         "a": 9
+        }
        ]
       },
       {
@@ -4416,6 +6228,164 @@
      "tags": [
       [
        "linb"
+      ],
+      [
+       "mest"
+      ]
+     ]
+    },
+    {
+     "id": "s9n1",
+     "lvl": 2,
+     "title": "Reconoce la transformación",
+     "q": "<p>Construye la matriz estándar de cada transformación arrastrando \\(T(e_1)\\) y \\(T(e_2)\\).</p>",
+     "checks": [
+      {
+       "t": "tlc",
+       "p": "Haz que la «F» coincida con la figura punteada.",
+       "a": [
+        [
+         0,
+         -1
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "ghost": true,
+       "e": "La figura está girada 90° antihorario: e₁ = (1, 0) va a (0, 1)."
+      },
+      {
+       "t": "tlc",
+       "p": "Reflexión respecto de la recta \\(y=x\\).",
+       "a": [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "e": "Reflejar en y = x intercambia coordenadas: e₁ ↦ (0, 1) y e₂ ↦ (1, 0)."
+      },
+      {
+       "t": "tlc",
+       "p": "Haz que la «F» coincida con la figura punteada.",
+       "a": [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "ghost": true,
+       "e": "Es una cizalla horizontal: e₁ no se mueve y e₂ se inclina a (1, 1)."
+      }
+     ],
+     "steps": [
+      "La columna j de la matriz estándar es \\(T(e_j)\\): basta ver a dónde van \\((1,0)\\) y \\((0,1)\\).",
+      "Rotación 90°: \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\); reflexión en \\(y=x\\): \\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\).",
+      "Cizalla: \\(\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\) (det = 1: conserva el área)."
+     ],
+     "ans": "Rotación [[0,−1],[1,0]]; reflexión [[0,1],[1,0]]; cizalla [[1,1],[0,1]]",
+     "hint": "Fíjate en el palo vertical de la F (sigue a e₂) y en su brazo (sigue a e₁).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "geo"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9n2",
+     "lvl": 1,
+     "title": "Imágenes con T(e₁) y T(e₂)",
+     "q": "<p>T es lineal con \\(T(e_1)=(2,1)\\) y \\(T(e_2)=(-1,1)\\).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(T(1,1)\\).",
+       "a": [
+        1,
+        2
+       ],
+       "l": "T(1,1)",
+       "given": [
+        {
+         "v": [
+          2,
+          1
+         ],
+         "l": "T(e₁)"
+        },
+        {
+         "v": [
+          -1,
+          1
+         ],
+         "l": "T(e₂)"
+        }
+       ],
+       "e": "T(1,1) = T(e₁) + T(e₂)."
+      },
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(T(2,-1)\\).",
+       "a": [
+        5,
+        1
+       ],
+       "l": "T(2,−1)",
+       "given": [
+        {
+         "v": [
+          2,
+          1
+         ],
+         "l": "T(e₁)"
+        },
+        {
+         "v": [
+          -1,
+          1
+         ],
+         "l": "T(e₂)"
+        }
+       ],
+       "e": "T(2,−1) = 2T(e₁) − T(e₂)."
+      }
+     ],
+     "steps": [
+      "Por linealidad, \\(T(x,y)=x\\,T(e_1)+y\\,T(e_2)\\).",
+      "\\(T(1,1)=(2,1)+(-1,1)=(1,2)\\).",
+      "\\(T(2,-1)=2(2,1)-(-1,1)=(5,1)\\)."
+     ],
+     "ans": "T(1,1) = (1, 2); T(2, −1) = (5, 1)",
+     "hint": "Escala T(e₁) y T(e₂) por las coordenadas del vector y súmalos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tl"
+      ],
+      [
+       "mest"
       ],
       [
        "mest"
@@ -4786,14 +6756,31 @@
    "q": "<p>Dada \\(A\\) \\(=\\begin{pmatrix}2&4&3\\\\2&5&5\\\\0&1&2\\\\-2&-4&-3\\end{pmatrix}\\): (a) obtén una forma escalonada; (b) escribe una base de Row(A) y su dimensión.</p>",
    "checks": [
     {
-     "p": "Forma escalonada",
-     "o": [
-      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)",
-      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\)",
-      "\\(\\begin{pmatrix}2&4&3\\\\0&1&2\\\\0&1&2\\\\0&0&0\\end{pmatrix}\\)",
-      "\\(\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\)",
-      "\\(\\begin{pmatrix}2&4&3\\\\0&9&2\\\\0&0&0\\\\0&0&0\\end{pmatrix}\\)"
-     ]
+     "t": "esc",
+     "p": "(a) Escalona \\(A\\).",
+     "m": [
+      [
+       2,
+       4,
+       3
+      ],
+      [
+       2,
+       5,
+       5
+      ],
+      [
+       0,
+       1,
+       2
+      ],
+      [
+       -2,
+       -4,
+       -3
+      ]
+     ],
+     "goal": "esc"
     },
     {
      "p": "Base y dimensión de Row(A)",
@@ -4830,7 +6817,8 @@
     [
      "dim"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "ep4",
@@ -4839,23 +6827,30 @@
    "q": "<p>Dada \\(A\\) \\(=\\begin{pmatrix}2&-3&5&-1\\\\0&4&a&2a\\\\0&0&a&2\\\\0&0&3&a+1\\end{pmatrix}\\), calcula \\(\\det A\\) en términos de a y halla los valores de a para los que \\(\\det A=0\\).</p>",
    "checks": [
     {
-     "p": "\\(\\det A\\)",
-     "o": [
-      "\\(8(a+3)(a-2)\\)",
-      "\\(8(a-3)(a+2)\\)",
-      "\\(8a(a+1)\\)",
-      "\\(2(a+3)(a-2)\\)",
-      "\\(8(a^2+a+6)\\)"
+     "t": "expr",
+     "p": "\\(\\det A\\) en términos de a",
+     "f": [
+      {
+       "l": "det A =",
+       "a": "8(a+3)(a-2)",
+       "v": [
+        "a"
+       ]
+      }
      ]
     },
     {
-     "p": "\\(\\det A=0\\) cuando…",
-     "o": [
-      "\\(a=-3\\) o \\(a=2\\)",
-      "\\(a=3\\) o \\(a=-2\\)",
-      "\\(a=0\\) o \\(a=-1\\)",
-      "Ningún valor real",
-      "\\(a=2\\) solamente"
+     "t": "num",
+     "p": "Valores de a con \\(\\det A=0\\)",
+     "f": [
+      {
+       "l": "a (menor)",
+       "a": -3
+      },
+      {
+       "l": "a (mayor)",
+       "a": 2
+      }
      ]
     }
    ],
@@ -4888,13 +6883,19 @@
    "q": "<p>Dada \\(B\\) \\(=\\begin{pmatrix}3&1&0&2\\\\0&a&1&4\\\\0&2&a&-1\\\\0&0&0&2\\end{pmatrix}\\), halla los valores de a con \\(\\det B=0\\).</p>",
    "checks": [
     {
-     "p": "\\(\\det B=0\\) cuando…",
-     "o": [
-      "\\(a=\\pm\\sqrt2\\)",
-      "\\(a=\\pm2\\)",
-      "\\(a=0\\)",
-      "\\(a=2\\) o \\(a=1\\)",
-      "Ningún valor real"
+     "t": "num",
+     "p": "Valores de a con \\(\\det B=0\\) (decimales con 2 cifras)",
+     "f": [
+      {
+       "l": "a (negativo)",
+       "a": -1.41421356,
+       "tol": 0.01
+      },
+      {
+       "l": "a (positivo)",
+       "a": 1.41421356,
+       "tol": 0.01
+      }
      ]
     }
    ],
@@ -4957,13 +6958,21 @@
      ]
     },
     {
-     "p": "(V) Con \\(a=3\\), \\((x_1,x_2,x_3)\\)",
-     "o": [
-      "\\((6,\\ 6,\\ 1)\\)",
-      "\\((6,\\ 1,\\ 6)\\)",
-      "\\((5,\\ 7,\\ 0)\\)",
-      "\\((7,\\ 5,\\ 2)\\)",
-      "\\((6,\\ 6,\\ -1)\\)"
+     "t": "num",
+     "p": "(V) Con \\(a=3\\), distribución",
+     "f": [
+      {
+       "l": "x₁",
+       "a": 6
+      },
+      {
+       "l": "x₂",
+       "a": 6
+      },
+      {
+       "l": "x₃",
+       "a": 1
+      }
      ]
     }
    ],
@@ -5015,13 +7024,21 @@
      ]
     },
     {
-     "p": "(V) Con \\(a=2\\), \\((x_1,x_2,x_3)\\)",
-     "o": [
-      "\\((5,\\ 7,\\ 2)\\)",
-      "\\((7,\\ 5,\\ 4)\\)",
-      "\\((6,\\ 6,\\ 3)\\)",
-      "\\((5,\\ 7,\\ -2)\\)",
-      "\\((4,\\ 8,\\ 1)\\)"
+     "t": "num",
+     "p": "(V) Con \\(a=2\\), distribución",
+     "f": [
+      {
+       "l": "x₁",
+       "a": 5
+      },
+      {
+       "l": "x₂",
+       "a": 7
+      },
+      {
+       "l": "x₃",
+       "a": 2
+      }
      ]
     }
    ],
