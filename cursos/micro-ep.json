@@ -127,34 +127,50 @@
      "id": "mf3",
      "lvl": 1,
      "title": "¿Micro o macro?",
-     "q": "<p>Clasifica cada pregunta.</p>",
+     "q": "<p>Clasifica cada pregunta. Recuerda: micro = una persona, una empresa o un mercado; macro = la economía en conjunto.</p>",
      "checks": [
       {
-       "p": "«¿Cuántos panes debería hornear una panadería de Surco al día?»",
-       "o": [
+       "t": "cls",
+       "p": "Toca si cada pregunta es de micro o de macro.",
+       "cats": [
         "Microeconomía",
-        "Macroeconomía",
-        "Ninguna",
-        "Ambas por igual",
-        "Economía centralizada"
-       ]
-      },
-      {
-       "p": "«¿Por qué subió la tasa de desempleo en el Perú?»",
-       "o": [
-        "Macroeconomía",
-        "Microeconomía",
-        "Economía de la empresa",
-        "Teoría del consumidor",
-        "Ninguna"
+        "Macroeconomía"
+       ],
+       "items": [
+        {
+         "x": "«¿Cuántos panes debería hornear una panadería de Surco al día?»",
+         "c": 0
+        },
+        {
+         "x": "«¿Por qué subió la tasa de desempleo en el Perú?»",
+         "c": 1
+        },
+        {
+         "x": "«¿Cómo fija Gloria el precio de su leche?»",
+         "c": 0,
+         "e": "Gloria es enorme, pero es <b>una</b> empresa en <b>un</b> mercado: es micro."
+        },
+        {
+         "x": "«¿Cuánto creció el PBI del Perú este año?»",
+         "c": 1
+        },
+        {
+         "x": "«¿Por qué una familia compra más pollo cuando sube el precio de la carne?»",
+         "c": 0
+        },
+        {
+         "x": "«¿Qué medidas se toman para frenar la inflación?»",
+         "c": 1,
+         "e": "La inflación es el nivel <b>general</b> de precios: es macro."
+        }
        ]
       }
      ],
      "steps": [
-      "La panadería es <strong>una empresa</strong> tomando una decisión de producción: eso es micro.",
-      "El desempleo del país es una variable <strong>agregada</strong> (suma de todos los mercados laborales): eso es macro."
+      "Micro estudia <strong>unidades de decisión</strong>: un consumidor, una empresa (aunque sea enorme) o un mercado específico: panadería, Gloria, la familia que compra pollo.",
+      "Macro estudia la economía <strong>en conjunto</strong>: desempleo, PBI e inflación."
      ],
-     "ans": "Micro; macro",
+     "ans": "Micro: panadería, Gloria, familia. Macro: desempleo, PBI, inflación.",
      "hint": "¿Una unidad o todo el país?",
      "fig": null,
      "draw": false,
@@ -163,7 +179,9 @@
       [
        "micmac"
       ],
-      []
+      [
+       "micmac"
+      ]
      ]
     },
     {
@@ -216,41 +234,58 @@
      "q": "<p>¿Qué escuela corresponde a cada idea?</p>",
      "checks": [
       {
-       "p": "«La riqueza de una nación se mide por el oro y la plata que acumula.»",
-       "o": [
+       "t": "cls",
+       "p": "Une cada idea con su escuela.",
+       "cats": [
         "Mercantilismo",
         "Fisiocracia",
-        "Escuela clásica",
-        "Keynesianismo",
-        "Marxismo"
-       ]
-      },
-      {
-       "p": "«En una crisis, el Estado debe aumentar el gasto público para reactivar la economía.»",
-       "o": [
-        "Keynesianismo",
-        "Escuela clásica",
-        "Fisiocracia",
-        "Mercantilismo",
-        "Laissez-faire puro"
+        "Clásica",
+        "Marxista",
+        "Neoclásica",
+        "Keynesiana"
+       ],
+       "items": [
+        {
+         "x": "«La riqueza de una nación se mide por el oro y la plata que acumula.»",
+         "c": 0
+        },
+        {
+         "x": "«La tierra y la agricultura son la verdadera fuente de riqueza.»",
+         "c": 1
+        },
+        {
+         "x": "«El mercado se autorregula con la mano invisible.»",
+         "c": 2
+        },
+        {
+         "x": "«El valor viene del trabajo y en el capitalismo hay explotación.»",
+         "c": 3
+        },
+        {
+         "x": "«Las decisiones se toman en el margen: utilidad y costo marginal.»",
+         "c": 4
+        },
+        {
+         "x": "«En una crisis, el Estado debe aumentar el gasto público para reactivar la economía.»",
+         "c": 5
+        }
        ]
       }
      ],
      "steps": [
-      "Los mercantilistas veían la riqueza en los metales preciosos, por eso buscaban exportar más que importar.",
-      "Keynes defendía la intervención del Estado cuando la demanda cae, lo contrario del <em>laissez-faire</em> clásico."
+      "Mercantilismo: oro y plata, exportar más que importar. Fisiocracia: la tierra.",
+      "Clásica (Smith, Ricardo): mano invisible y especialización. Marxista: el valor viene del trabajo.",
+      "Neoclásica o marginalista: «en el margen». Keynesiana: gasto público en crisis."
      ],
-     "ans": "Mercantilismo; keynesianismo",
+     "ans": "Merc., Fisio., Clásica, Marxista, Neoclásica, Keynesiana",
      "hint": "Piensa en la época de cada escuela.",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
       [],
-      [
-       "tipos",
-       "rdec"
-      ]
+      [],
+      []
      ]
     },
     {
@@ -284,6 +319,67 @@
       [
        "escasez",
        "exceso"
+      ]
+     ]
+    },
+    {
+     "id": "mf7",
+     "lvl": 1,
+     "title": "Tipos de economía",
+     "q": "<p>¿Qué tipo de economía describe cada frase?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada frase.",
+       "cats": [
+        "De mercado",
+        "Centralizada",
+        "Mixta"
+       ],
+       "items": [
+        {
+         "x": "Los privados deciden qué producir y consumir; el Estado casi no interviene (laissez-faire).",
+         "c": 0
+        },
+        {
+         "x": "Un ministerio decide cuántos zapatos fabrica cada fábrica del país.",
+         "c": 1
+        },
+        {
+         "x": "Empresas privadas compiten, pero el Estado regula y ofrece educación pública.",
+         "c": 2,
+         "e": "Hay mercado <b>y</b> Estado: es mixta, como la mayoría de países."
+        },
+        {
+         "x": "Los precios salen de las decisiones de compradores y vendedores.",
+         "c": 0
+        },
+        {
+         "x": "El Estado fija los precios y reparte la producción.",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "De mercado (laissez-faire): deciden los privados y los precios salen de compradores y vendedores.",
+      "Centralizada: el Estado decide qué se produce y cómo se reparte.",
+      "Mixta: conviven el mercado y el Estado. En la práctica, la mayoría de economías son mixtas."
+     ],
+     "ans": "Mercado; centralizada; mixta; mercado; centralizada",
+     "hint": "¿Quién decide: los privados, el Estado o ambos?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tipos"
+      ],
+      [
+       "tipos"
+      ],
+      [
+       "tipos"
       ]
      ]
     },
@@ -382,16 +478,45 @@
      "id": "mc3",
      "lvl": 2,
      "title": "Calcular la utilidad marginal",
-     "q": "<p>La utilidad total de comer helados es:</p><div class=\"tbl\"><table><tr><th>Helados</th><th>UT</th></tr><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>18</td></tr><tr><td>3</td><td>24</td></tr><tr><td>4</td><td>27</td></tr></table></div>",
+     "q": "<p>La tabla muestra la utilidad total (UT) de comer helados. Completa la utilidad marginal (UMg).</p>",
      "checks": [
       {
-       "p": "UMg del tercer helado",
-       "o": [
-        "6",
-        "24",
-        "8",
-        "3",
-        "18"
+       "t": "fill",
+       "p": "Completa la UMg de cada helado",
+       "head": [
+        "Helados",
+        "UT",
+        "UMg"
+       ],
+       "rows": [
+        [
+         1,
+         10,
+         {
+          "a": 10
+         }
+        ],
+        [
+         2,
+         18,
+         {
+          "a": 8
+         }
+        ],
+        [
+         3,
+         24,
+         {
+          "a": 6
+         }
+        ],
+        [
+         4,
+         27,
+         {
+          "a": 3
+         }
+        ]
        ]
       },
       {
@@ -406,11 +531,11 @@
       }
      ],
      "steps": [
-      "La UMg es lo que <strong>añade</strong> la unidad: \\(UMg_3=UT_3-UT_2=24-18=6\\).",
-      "Las UMg son 10, 8, 6 y 3: cada vez menores.",
+      "La UMg es lo que <strong>añade</strong> cada helado: UT de ahora menos UT anterior. El primero añade 10 − 0 = 10.",
+      "UMg: 10, 18 − 10 = 8, 24 − 18 = 6 y 27 − 24 = 3: cada vez menores.",
       "Por eso hay utilidad marginal decreciente: el tercer helado gusta, pero menos que el primero."
      ],
-     "ans": "6; UMg decreciente",
+     "ans": "UMg: 10, 8, 6, 3; UMg decreciente",
      "hint": "Resta la UT anterior.",
      "fig": null,
      "draw": false,
@@ -419,7 +544,9 @@
       [
        "umg"
       ],
-      [],
+      [
+       "umg"
+      ],
       []
      ]
     },
@@ -460,35 +587,73 @@
      "id": "mc5",
      "lvl": 3,
      "title": "¿Cuándo dejar de consumir?",
-     "q": "<p>UT de porciones de pizza:</p><div class=\"tbl\"><table><tr><th>Porciones</th><th>UT</th></tr><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>20</td></tr><tr><td>3</td><td>25</td></tr><tr><td>4</td><td>27</td></tr><tr><td>5</td><td>26</td></tr></table></div>",
+     "q": "<p>La tabla muestra la UT de comer porciones de pizza. Completa la UMg y decide cuándo dejar de comer.</p>",
      "checks": [
       {
-       "p": "¿Con cuántas porciones se maximiza la UT?",
-       "o": [
-        "4",
-        "5",
-        "3",
-        "1",
-        "2"
+       "t": "fill",
+       "p": "Completa la UMg de cada porción",
+       "head": [
+        "Porciones",
+        "UT",
+        "UMg"
+       ],
+       "rows": [
+        [
+         1,
+         12,
+         {
+          "a": 12
+         }
+        ],
+        [
+         2,
+         20,
+         {
+          "a": 8
+         }
+        ],
+        [
+         3,
+         25,
+         {
+          "a": 5
+         }
+        ],
+        [
+         4,
+         27,
+         {
+          "a": 2
+         }
+        ],
+        [
+         5,
+         26,
+         {
+          "a": -1,
+          "tol": 0.01
+         }
+        ]
        ]
       },
       {
-       "p": "UMg de la quinta porción",
-       "o": [
-        "−1",
-        "26",
-        "1",
-        "0",
-        "−26"
+       "t": "num",
+       "p": "¿Con cuántas porciones se maximiza la UT?",
+       "f": [
+        {
+         "l": "Porciones",
+         "a": 4,
+         "e": "mira dónde la UMg deja de ser positiva."
+        }
        ]
       }
      ],
      "steps": [
-      "UMg: 12, 8, 5, 2 y −1.",
-      "Mientras la UMg sea positiva, comer una porción más suma satisfacción. La quinta tiene UMg negativa: resta.",
+      "UMg: 12, 20 − 12 = 8, 25 − 20 = 5, 27 − 25 = 2 y 26 − 27 = −1.",
+      "Mientras la UMg sea positiva, una porción más suma satisfacción. La quinta tiene UMg negativa: resta.",
       "Por eso la UT es máxima en 4 porciones (27)."
      ],
-     "ans": "4 porciones; UMg = −1",
+     "ans": "UMg: 12, 8, 5, 2, −1; 4 porciones",
      "hint": "Para cuando la UMg se vuelve negativa.",
      "fig": null,
      "draw": false,
@@ -499,7 +664,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mb1",
@@ -657,23 +823,33 @@
      "q": "<p>Identifica el efecto en cada caso.</p>",
      "checks": [
       {
-       "p": "a) Sube el precio del café y algunas personas empiezan a comprar té.",
-       "o": [
+       "t": "cls",
+       "p": "¿Efecto sustitución o efecto ingreso?",
+       "cats": [
         "Efecto sustitución",
-        "Efecto ingreso",
-        "Efecto calidad",
-        "Bien Veblen",
-        "Movimiento de la oferta"
-       ]
-      },
-      {
-       "p": "b) Baja el precio del arroz y una familia siente que su dinero le rinde más, así que compra más de todo.",
-       "o": [
-        "Efecto ingreso",
-        "Efecto sustitución",
-        "Precio de referencia",
-        "Bien Giffen",
-        "Desplazamiento de la oferta"
+        "Efecto ingreso"
+       ],
+       "items": [
+        {
+         "x": "Sube el precio del café y algunas personas empiezan a comprar té.",
+         "c": 0
+        },
+        {
+         "x": "Baja el precio del arroz y una familia siente que su dinero le rinde más, así que compra más de todo.",
+         "c": 1
+        },
+        {
+         "x": "Sube el pasaje en taxi y empiezas a usar más el bus.",
+         "c": 0
+        },
+        {
+         "x": "Sube el precio de la carne y una familia siente que su sueldo alcanza menos, así que compra menos en general.",
+         "c": 1
+        },
+        {
+         "x": "Baja el precio del pollo y lo compras en lugar del pescado.",
+         "c": 0
+        }
        ]
       },
       {
@@ -688,11 +864,11 @@
       }
      ],
      "steps": [
-      "a) Cambias a un bien parecido más barato: <strong>sustitución</strong>.",
-      "b) El cambio de precio cambia tu poder adquisitivo: <strong>ingreso</strong>.",
-      "c) En el Giffen, la pérdida de poder adquisitivo pesa tanto que se compra <em>más</em> del bien básico aunque esté más caro."
+      "Si <strong>reemplazas</strong> el bien por otro parecido (café → té, taxi → bus, pescado → pollo), es efecto <strong>sustitución</strong>.",
+      "Si el cambio de precio cambia lo que te <strong>alcanza</strong> (tu poder adquisitivo) y compras más o menos de todo, es efecto <strong>ingreso</strong>.",
+      "En el Giffen, la pérdida de poder adquisitivo pesa tanto que se compra <em>más</em> del bien básico aunque esté más caro."
      ],
-     "ans": "Sustitución; ingreso; domina el efecto ingreso",
+     "ans": "S, I, S, I, S; domina el efecto ingreso",
      "hint": "¿Reemplazas el bien o cambia lo que te alcanza?",
      "fig": null,
      "draw": false,
@@ -717,61 +893,54 @@
      "q": "<p>¿Qué factor del valor percibido actúa en cada caso?</p>",
      "checks": [
       {
-       "p": "a) Una marca lanza solo 500 pares de zapatillas numeradas.",
-       "o": [
+       "t": "cls",
+       "p": "¿Qué factor del valor percibido actúa?",
+       "cats": [
         "Exclusividad",
         "Moda",
         "Precio de referencia",
         "Efecto calidad",
         "Restricción presupuestaria"
-       ]
-      },
-      {
-       "p": "b) Un vaso térmico se vuelve viral en TikTok y todos lo quieren.",
-       "o": [
-        "Moda",
-        "Exclusividad",
-        "Precio de referencia",
-        "Efecto calidad",
-        "Restricción presupuestaria"
-       ]
-      },
-      {
-       "p": "c) «Este vino cuesta S/ 180, debe ser mucho mejor que el de S/ 40.»",
-       "o": [
-        "Efecto calidad",
-        "Exclusividad",
-        "Moda",
-        "Precio de referencia",
-        "Restricción presupuestaria"
-       ]
-      },
-      {
-       "p": "d) Un estudiante elige el menú de S/ 12 porque no le alcanza para otra cosa.",
-       "o": [
-        "Restricción presupuestaria",
-        "Exclusividad",
-        "Moda",
-        "Precio de referencia",
-        "Efecto calidad"
+       ],
+       "items": [
+        {
+         "x": "Una marca lanza solo 500 pares de zapatillas numeradas.",
+         "c": 0
+        },
+        {
+         "x": "Un vaso térmico se vuelve viral en TikTok y todos lo quieren.",
+         "c": 1
+        },
+        {
+         "x": "Un polo de S/ 48 «se ve barato» porque al lado hay uno de S/ 89.",
+         "c": 2
+        },
+        {
+         "x": "«Este vino cuesta S/ 180, debe ser mucho mejor que el de S/ 40.»",
+         "c": 3
+        },
+        {
+         "x": "Un estudiante elige el menú de S/ 12 porque no le alcanza para otra cosa.",
+         "c": 4
+        },
+        {
+         "x": "Una cartera de edición limitada que solo venden por invitación.",
+         "c": 0
+        }
        ]
       }
      ],
      "steps": [
-      "a) Escaso y difícil de conseguir: <strong>exclusividad</strong>.",
-      "b) Lo socialmente deseado en ese momento: <strong>moda</strong>.",
-      "c) El precio alto se lee como señal de calidad: <strong>efecto calidad</strong>.",
-      "d) Lo que puede pagar limita su elección: <strong>restricción presupuestaria</strong>."
+      "Exclusividad: lo difícil de conseguir (500 pares, por invitación). Moda: lo que todos quieren ahora.",
+      "Precio de referencia: comparas con otro precio. Efecto calidad: «más caro = debe ser mejor».",
+      "Restricción presupuestaria: lo que tu ingreso te permite pagar."
      ],
-     "ans": "Exclusividad; moda; efecto calidad; restricción presupuestaria",
+     "ans": "Excl., moda, ref., calidad, restricción, excl.",
      "hint": "",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
-      [
-       "valor"
-      ],
       [
        "valor"
       ],
@@ -844,7 +1013,7 @@
   {
    "id": "b2",
    "name": "Sem. 3–4 · Oferta y demanda: equilibrio y desplazamientos",
-   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> calcular el equilibrio en <strong>todos</strong> los casos y dibujar bien los desplazamientos de oferta y demanda en el gráfico de la empresa para cada escenario. Si solo calculas el equilibrio pero fallas los desplazamientos, bajas a 3.</p>\n<p><strong>Ley de la demanda:</strong> si el precio sube, la cantidad demandada baja (relación inversa, <em>ceteris paribus</em>), por el efecto sustitución y el efecto ingreso. <strong>Ley de la oferta:</strong> si el precio sube, la cantidad ofrecida sube (relación directa). Excepciones: bien <strong>Giffen</strong> (bienes de subsistencia) y bien <strong>Veblen</strong> (lujo).</p>\n<p><strong>Regla de oro:</strong> si cambia el <strong>precio del propio bien</strong>, hay un <strong>movimiento a lo largo</strong> de la curva. Si cambia <strong>cualquier otro factor</strong>, la curva se <strong>desplaza</strong> (derecha = aumento, izquierda = reducción).</p>\n<p>Desplazan la <strong>demanda:</strong> ingreso (normal ↑ / inferior ↓), precio de bienes relacionados (sustituto sube → D ↑; complemento sube → D ↓), gustos, población, expectativas y estacionalidad. Desplazan la <strong>oferta:</strong> costo de insumos y salarios, tecnología, clima o desastres, número de productores.</p>\n<p>El <strong>equilibrio</strong> ocurre donde se cruzan las curvas: la cantidad ofrecida es igual a la demandada (\\(Q_s=Q_d\\)), y no hay presión para que el precio cambie. Se halla igualando las ecuaciones, despejando \\(p^*\\) y reemplazando para obtener \\(Q^*\\).</p>\n<p>A un precio <strong>mayor</strong> que el de equilibrio, \\(Q_s\\gt Q_d\\): <strong>sobreproducción</strong> (exceso de oferta) de \\(Q_s-Q_d\\). A un precio <strong>menor</strong>, \\(Q_d\\gt Q_s\\): <strong>escasez</strong> (exceso de demanda) de \\(Q_d-Q_s\\).</p>\n<p><strong>Desplazamientos simultáneos:</strong> si ambas curvas se mueven, una de las dos variables (precio o cantidad) queda <strong>indeterminada</strong>, porque depende de cuál curva se mueve más.</p>\n<h4>Método de 4 pasos para cualquier gráfico</h4><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h4>Calcular el equilibrio, paso a paso</h4><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
+   "teo": "<p class=\"note\"><b>Rúbrica (5 pts):</b> calcular el equilibrio en <strong>todos</strong> los casos y dibujar bien los desplazamientos de oferta y demanda en el gráfico de la empresa para cada escenario. Si solo calculas el equilibrio pero fallas los desplazamientos, bajas a 3.</p>\n<p><strong>Ley de la demanda:</strong> si el precio sube, la cantidad demandada baja (relación inversa, <em>ceteris paribus</em>), por el efecto sustitución y el efecto ingreso. <strong>Ley de la oferta:</strong> si el precio sube, la cantidad ofrecida sube (relación directa). Excepciones: bien <strong>Giffen</strong> (bienes de subsistencia) y bien <strong>Veblen</strong> (lujo).</p>\n<p><strong>Regla de oro:</strong> si cambia el <strong>precio del propio bien</strong>, hay un <strong>movimiento a lo largo</strong> de la curva. Si cambia <strong>cualquier otro factor</strong>, la curva se <strong>desplaza</strong> (derecha = aumento, izquierda = reducción).</p>\n<p>Desplazan la <strong>demanda:</strong> ingreso (normal ↑ / inferior ↓), precio de bienes relacionados (sustituto sube → D ↑; complemento sube → D ↓), gustos, población, expectativas y estacionalidad. Desplazan la <strong>oferta:</strong> costo de insumos y salarios, tecnología, clima o desastres, número de productores.</p>\n<p>El <strong>equilibrio</strong> ocurre donde se cruzan las curvas: la cantidad ofrecida es igual a la demandada (\\(Q_s=Q_d\\)), y no hay presión para que el precio cambie. Se halla igualando las ecuaciones, despejando \\(p^*\\) y reemplazando para obtener \\(Q^*\\).</p>\n<p>A un precio <strong>mayor</strong> que el de equilibrio, \\(Q_s\\gt Q_d\\): <strong>sobreproducción</strong> (exceso de oferta) de \\(Q_s-Q_d\\). A un precio <strong>menor</strong>, \\(Q_d\\gt Q_s\\): <strong>escasez</strong> (exceso de demanda) de \\(Q_d-Q_s\\).</p>\n<p><strong>Desplazamientos simultáneos:</strong> si ambas curvas se mueven, una de las dos variables (precio o cantidad) queda <strong>indeterminada</strong>, porque depende de cuál curva se mueve más.</p>\n<h4>Método de 4 pasos para cualquier gráfico</h4><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h4>Calcular el equilibrio, paso a paso</h4><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\) \\(\\Rightarrow 1\\,000=100p\\) \\(\\Rightarrow  p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
    "form": [
     "Método: precio propio → movimiento; factor externo → desplazamiento",
     "Precio del bien → movimiento en la curva",
@@ -859,7 +1028,7 @@
     "D↑ y O↓: P sube, Q indeterminada",
     "Estacionalidad y expectativas desplazan oferta y demanda"
    ],
-   "lesson": "<h3>▸ Desplazamientos</h3><h4>Idea central</h4><p>Cada curva responde a una pregunta: la <strong>demanda</strong> dice cuánto quieren y pueden comprar los consumidores a cada precio; la <strong>oferta</strong>, cuánto quieren y pueden vender los productores a cada precio. Lo difícil del examen es saber <strong>qué curva</strong> se mueve y <strong>cómo</strong>.</p>\n<h4>Movimiento vs desplazamiento</h4><ul><li>Cambia el <strong>precio del propio bien</strong> → cambia la <strong>cantidad</strong> demandada u ofrecida: movimiento a lo largo de la curva. La curva no se mueve.</li><li>Cambia <strong>otro factor</strong> → cambia la demanda u oferta: la curva entera se desplaza.</li></ul>\n<h4>Factores de la demanda</h4><ul><li><strong>Ingreso:</strong> bien normal (ropa de marca, restaurantes) → D se desplaza a la derecha si sube el ingreso; bien inferior (ropa de segundo uso, transporte público) → a la izquierda.</li><li><strong>Bienes relacionados:</strong> sustitutos (pollo y res, laptops y tablets): si sube el precio del sustituto, D del original → derecha. Complementarios (impresora y cartucho, café y azúcar): si sube el precio del complemento, D del original → izquierda.</li><li><strong>Gustos, población, expectativas</strong> (si se espera que suba el precio, compro hoy: D → derecha) y <strong>estacionalidad</strong>.</li></ul>\n<h4>Factores de la oferta</h4><ul><li><strong>Costos:</strong> insumos o salarios más caros → O a la izquierda; más baratos → a la derecha.</li><li><strong>Tecnología</strong> más eficiente → O a la derecha.</li><li><strong>Clima, desastres, huelgas de proveedores</strong> → O a la izquierda.</li><li><strong>Número de productores</strong> ↑ → O a la derecha.</li></ul>\n<h4>Excepciones a la ley de la demanda</h4><ul><li><strong>Giffen:</strong> bienes de subsistencia en pobreza extrema (papas en la hambruna irlandesa, pan, arroz): al subir su precio se compran más.</li><li><strong>Veblen:</strong> bienes de lujo (Ferrari, Rolex): la exclusividad hace que un precio mayor aumente su atractivo.</li></ul>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de clase):</b> «Un fenómeno climático ahuyenta los peces que se usan como insumo» → afecta a los <strong>productores</strong> de enlatados (su insumo es más escaso y caro) → la <strong>oferta</strong> se desplaza a la <strong>izquierda</strong>. En cambio, «disminuye el precio de los enlatados» es el precio del propio bien → <strong>movimiento</strong> hacia abajo por la curva de oferta (se ofrece menos cantidad).</div>\n<div class=\"err\"><b>Errores comunes:</b> (1) decir que un cambio en el precio del bien «desplaza la curva»; (2) confundir sustitutos con complementarios; (3) mover la demanda cuando el shock es de costos (eso afecta a los productores, es oferta).</div><h3>▸ Equilibrio</h3><h4>Idea central</h4><p>El mercado «busca» el precio donde compradores y vendedores quieren la misma cantidad. Si el precio está por encima, sobra producto y los vendedores bajan precios; si está por debajo, falta producto y el precio sube.</p>\n<h4>Cómo calcular el equilibrio</h4><ol><li>Identifica cuál ecuación es la demanda (la que tiene <strong>−p</strong>: más precio, menos cantidad) y cuál la oferta (<strong>+p</strong>).</li><li>Iguala \\(Q_d=Q_s\\) y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en cualquiera de las dos ecuaciones para obtener \\(Q^*\\) (sale lo mismo en ambas: úsalo para comprobar).</li></ol>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de la leche):</b> \\(S=50+10p\\), \\(D=900-15p\\). Igualando: \\(50+10p=900-15p\\Rightarrow25p=850\\Rightarrow p^*=34\\). Cantidad: \\(S=50+340=390\\) (y \\(D=900-510=390\\) ✓). Si bajan los costos y la oferta pasa a \\(S=250+10p\\): \\(250+10p=900-15p\\Rightarrow p^*=26,\\ Q^*=510\\). Más oferta: <strong>baja el precio y sube la cantidad</strong>.</div>\n<h4>Escasez y sobreproducción</h4><p>Evalúa ambas ecuaciones en el precio dado y réstalas. Si \\(Q_d\\gt Q_s\\), hay escasez; si \\(Q_s\\gt Q_d\\), sobreproducción.</p>\n<h4>Desplazamientos simultáneos</h4><div class=\"tbl\"><table><tr><th>Cambio</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D ↑ y O ↑</td><td>Indeterminado</td><td>Sube</td></tr><tr><td>D ↓ y O ↓</td><td>Indeterminado</td><td>Baja</td></tr><tr><td>D ↑ y O ↓</td><td>Sube</td><td>Indeterminada</td></tr><tr><td>D ↓ y O ↑</td><td>Baja</td><td>Indeterminada</td></tr></table></div>\n<div class=\"err\"><b>Errores comunes:</b> (1) restar al revés y decir «escasez» cuando hay sobreproducción; (2) olvidar comprobar \\(Q^*\\) en ambas ecuaciones; (3) en las cuadráticas, quedarse con \\(p=0\\), que no tiene sentido económico.</div><h3>▸ Método y equilibrio explicados</h3><h3>Método de 4 pasos para cualquier gráfico</h3><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h3>Calcular el equilibrio, paso a paso</h3><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
+   "lesson": "<h3>▸ Desplazamientos</h3><h4>Idea central</h4><p>Cada curva responde a una pregunta: la <strong>demanda</strong> dice cuánto quieren y pueden comprar los consumidores a cada precio; la <strong>oferta</strong>, cuánto quieren y pueden vender los productores a cada precio. Lo difícil del examen es saber <strong>qué curva</strong> se mueve y <strong>cómo</strong>.</p>\n<h4>Movimiento vs desplazamiento</h4><ul><li>Cambia el <strong>precio del propio bien</strong> → cambia la <strong>cantidad</strong> demandada u ofrecida: movimiento a lo largo de la curva. La curva no se mueve.</li><li>Cambia <strong>otro factor</strong> → cambia la demanda u oferta: la curva entera se desplaza.</li></ul>\n<h4>Factores de la demanda</h4><ul><li><strong>Ingreso:</strong> bien normal (ropa de marca, restaurantes) → D se desplaza a la derecha si sube el ingreso; bien inferior (ropa de segundo uso, transporte público) → a la izquierda.</li><li><strong>Bienes relacionados:</strong> sustitutos (pollo y res, laptops y tablets): si sube el precio del sustituto, D del original → derecha. Complementarios (impresora y cartucho, café y azúcar): si sube el precio del complemento, D del original → izquierda.</li><li><strong>Gustos, población, expectativas</strong> (si se espera que suba el precio, compro hoy: D → derecha) y <strong>estacionalidad</strong>.</li></ul>\n<h4>Factores de la oferta</h4><ul><li><strong>Costos:</strong> insumos o salarios más caros → O a la izquierda; más baratos → a la derecha.</li><li><strong>Tecnología</strong> más eficiente → O a la derecha.</li><li><strong>Clima, desastres, huelgas de proveedores</strong> → O a la izquierda.</li><li><strong>Número de productores</strong> ↑ → O a la derecha.</li></ul>\n<h4>Excepciones a la ley de la demanda</h4><ul><li><strong>Giffen:</strong> bienes de subsistencia en pobreza extrema (papas en la hambruna irlandesa, pan, arroz): al subir su precio se compran más.</li><li><strong>Veblen:</strong> bienes de lujo (Ferrari, Rolex): la exclusividad hace que un precio mayor aumente su atractivo.</li></ul>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de clase):</b> «Un fenómeno climático ahuyenta los peces que se usan como insumo» → afecta a los <strong>productores</strong> de enlatados (su insumo es más escaso y caro) → la <strong>oferta</strong> se desplaza a la <strong>izquierda</strong>. En cambio, «disminuye el precio de los enlatados» es el precio del propio bien → <strong>movimiento</strong> hacia abajo por la curva de oferta (se ofrece menos cantidad).</div>\n<div class=\"err\"><b>Errores comunes:</b> (1) decir que un cambio en el precio del bien «desplaza la curva»; (2) confundir sustitutos con complementarios; (3) mover la demanda cuando el shock es de costos (eso afecta a los productores, es oferta).</div><h3>▸ Equilibrio</h3><h4>Idea central</h4><p>El mercado «busca» el precio donde compradores y vendedores quieren la misma cantidad. Si el precio está por encima, sobra producto y los vendedores bajan precios; si está por debajo, falta producto y el precio sube.</p>\n<h4>Cómo calcular el equilibrio</h4><ol><li>Identifica cuál ecuación es la demanda (la que tiene <strong>−p</strong>: más precio, menos cantidad) y cuál la oferta (<strong>+p</strong>).</li><li>Iguala \\(Q_d=Q_s\\) y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en cualquiera de las dos ecuaciones para obtener \\(Q^*\\) (sale lo mismo en ambas: úsalo para comprobar).</li></ol>\n<div class=\"ej\"><b>Ejemplo resuelto (caso de la leche):</b> \\(S=50+10p\\), \\(D=900-15p\\). Igualando: \\(50+10p=900-15p\\) \\(\\Rightarrow 25p=850\\) \\(\\Rightarrow  p^*=34\\). Cantidad: \\(S=50+340=390\\) (y \\(D=900-510=390\\) ✓). Si bajan los costos y la oferta pasa a \\(S=250+10p\\): \\(250+10p=900-15p\\) \\(\\Rightarrow  p^*=26,\\ Q^*=510\\). Más oferta: <strong>baja el precio y sube la cantidad</strong>.</div>\n<h4>Escasez y sobreproducción</h4><p>Evalúa ambas ecuaciones en el precio dado y réstalas. Si \\(Q_d\\gt Q_s\\), hay escasez; si \\(Q_s\\gt Q_d\\), sobreproducción.</p>\n<h4>Desplazamientos simultáneos</h4><div class=\"tbl\"><table><tr><th>Cambio</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D ↑ y O ↑</td><td>Indeterminado</td><td>Sube</td></tr><tr><td>D ↓ y O ↓</td><td>Indeterminado</td><td>Baja</td></tr><tr><td>D ↑ y O ↓</td><td>Sube</td><td>Indeterminada</td></tr><tr><td>D ↓ y O ↑</td><td>Baja</td><td>Indeterminada</td></tr></table></div>\n<div class=\"err\"><b>Errores comunes:</b> (1) restar al revés y decir «escasez» cuando hay sobreproducción; (2) olvidar comprobar \\(Q^*\\) en ambas ecuaciones; (3) en las cuadráticas, quedarse con \\(p=0\\), que no tiene sentido económico.</div><h3>▸ Método y equilibrio explicados</h3><h3>Método de 4 pasos para cualquier gráfico</h3><ol><li>¿Lo que cambia es el <strong>precio del propio bien</strong> o un <strong>factor externo</strong>?</li><li>Si es el precio → <strong>movimiento sobre la curva</strong> (cambia la cantidad demandada u ofrecida). Si es un factor externo → <strong>se desplaza toda la curva</strong>.</li><li>¿Afecta a compradores (demanda) o a productores (oferta)? ¿A la derecha (aumenta) o a la izquierda (disminuye)?</li><li>Concluye qué pasa con el <strong>precio y la cantidad de equilibrio</strong>.</li></ol><p><strong>Desplazan la demanda:</strong> ingreso, precio de sustitutos y complementarios, gustos y moda, expectativas, población y estacionalidad. <strong>Desplazan la oferta:</strong> precio de insumos y salarios, tecnología, número de ofertantes, clima, estacionalidad y expectativas.</p><h3>Calcular el equilibrio, paso a paso</h3><p>El equilibrio es el precio donde lo que quieren comprar es igual a lo que quieren vender. En el gráfico, es el cruce de las dos curvas.</p><ol><li>Iguala las ecuaciones: \\(Q_d=Q_s\\).</li><li>Junta las p a un lado y los números al otro, y despeja \\(p^*\\).</li><li>Reemplaza \\(p^*\\) en <em>cualquiera</em> de las dos ecuaciones para hallar \\(Q^*\\) (verifica con la otra: debe salir igual).</li></ol><div class=\"ej\"><b>Ejemplo:</b> \\(Q_d=1\\,200-40p\\), \\(Q_s=200+60p\\). Igualo: \\(1\\,200-40p=200+60p\\) \\(\\Rightarrow 1\\,000=100p\\) \\(\\Rightarrow  p^*=10\\). Reemplazo: \\(Q^*=1\\,200-400=800\\) (y \\(200+600=800\\) ✓).</div><p><strong>Si el precio no es el de equilibrio:</strong> evalúa las dos ecuaciones en ese precio y resta. Si \\(Q_d&gt;Q_s\\) hay <strong>escasez</strong> (precio muy bajo: todos quieren y no alcanza). Si \\(Q_s&gt;Q_d\\) hay <strong>sobreproducción</strong> (precio muy alto: sobra mercadería).</p><p><strong>Si te dan una curva nueva</strong> (por ejemplo, la demanda pasa a \\(Q_d=1\\,400-40p\\)), simplemente repites los 3 pasos con la ecuación nueva y comparas con el equilibrio anterior.</p><p><strong>Si se mueven las dos curvas a la vez</strong>, analiza cada una por separado y mira qué empujan:</p><div class=\"tbl\"><table><tr><th>Caso</th><th>Precio</th><th>Cantidad</th></tr><tr><td>D↑ y O↑</td><td>?</td><td>sube</td></tr><tr><td>D↓ y O↓</td><td>?</td><td>baja</td></tr><tr><td>D↑ y O↓</td><td>sube</td><td>?</td></tr><tr><td>D↓ y O↑</td><td>baja</td><td>?</td></tr></table></div><p>La que queda con «?» depende de cuál curva se mueve más.</p>",
    "ex": [
     {
      "id": "mo1",
@@ -957,13 +1126,20 @@
      "q": "<p>Un fenómeno climático ahuyenta los peces que se usan como insumo. ¿Qué pasa en el mercado de enlatados de pescado?</p>",
      "checks": [
       {
-       "p": "Gráfico",
-       "o": [
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       "t": "shift",
+       "p": "Mueve la curva que corresponde.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": -1,
+         "e": "El clima afecta a los <b>productores</b> (su insumo): es la oferta."
+        }
        ]
       }
      ],
@@ -972,7 +1148,7 @@
       "Con el mismo precio de venta, los productores pueden ofrecer menos: la <strong>oferta se desplaza a la izquierda</strong>.",
       "La demanda no cambia: los consumidores no tienen un motivo nuevo para comprar más o menos."
      ],
-     "ans": "Oferta a la izquierda",
+     "ans": "Oferta a la izquierda: P sube, Q baja",
      "hint": "¿A quién afecta: a compradores o vendedores?",
      "fig": null,
      "draw": false,
@@ -989,16 +1165,24 @@
      "id": "mo4",
      "lvl": 2,
      "title": "La trampa del precio propio",
-     "q": "<p>Disminuye el <strong>precio de los enlatados</strong> de pescado. ¿Qué gráfico representa el efecto sobre la oferta de enlatados?</p>",
+     "q": "<p>Disminuye el <strong>precio de los enlatados</strong> de pescado. ¿Qué pasa con las curvas del mercado de enlatados?</p>",
      "checks": [
       {
-       "p": "Gráfico",
-       "o": [
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>"
+       "t": "shift",
+       "p": "Mueve la curva que corresponde (si corresponde).",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0,
+         "e": "Es el precio del propio bien: ninguna curva se desplaza."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0,
+         "e": "Es el precio del propio bien: ninguna curva se desplaza."
+        }
        ]
       }
      ],
@@ -1025,13 +1209,20 @@
      "q": "<p>Sube el precio de la carne de pollo, que es un sustituto perfecto de la carne de res. ¿Qué pasa en el mercado de carne de res?</p>",
      "checks": [
       {
-       "p": "Gráfico",
-       "o": [
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       "t": "shift",
+       "p": "Mueve la curva del mercado de carne de res.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 1,
+         "e": "Sube el precio de un <b>sustituto</b>: más gente se pasa a la res."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1039,7 +1230,7 @@
       "Pollo y res son <strong>sustitutos</strong>: si el pollo se encarece, la gente se pasa a la res.",
       "A cualquier precio de la res se demanda más: la <strong>demanda de res se desplaza a la derecha</strong>."
      ],
-     "ans": "Demanda a la derecha",
+     "ans": "Demanda de res a la derecha",
      "hint": "Sustituto más caro → me paso al otro.",
      "fig": null,
      "draw": false,
@@ -1055,73 +1246,163 @@
      "id": "mr6",
      "lvl": 2,
      "title": "Aplica el método de 4 pasos",
-     "q": "<p>¿Qué pasa en cada mercado?</p>",
+     "q": "<p>Aplica el método de 4 pasos: ¿precio propio o factor externo?, ¿compradores o productores?, ¿derecha o izquierda?</p>",
      "checks": [
       {
-       "p": "a) Llega el verano y la gente quiere más helados.",
-       "o": [
-        "La demanda se desplaza a la derecha: p y Q suben",
-        "La oferta se desplaza a la derecha: p baja y Q sube",
-        "Movimiento sobre la curva de demanda",
-        "La demanda se desplaza a la izquierda: p y Q bajan",
-        "La oferta se desplaza a la izquierda: p sube y Q baja"
-       ]
-      },
-      {
-       "p": "b) Un distrito recibe muchos nuevos vecinos y aumenta el número de compradores de pan.",
-       "o": [
-        "La demanda se desplaza a la derecha: p y Q suben",
-        "La oferta se desplaza a la derecha: p baja y Q sube",
-        "Movimiento sobre la curva de oferta",
-        "La demanda se desplaza a la izquierda: p y Q bajan",
-        "No cambia nada"
-       ]
-      },
-      {
-       "p": "c) Baja el precio de los enlatados de pescado.",
-       "o": [
-        "Movimiento sobre la curva (no hay desplazamiento)",
-        "La oferta se desplaza a la izquierda",
-        "La oferta se desplaza a la derecha",
-        "La demanda se desplaza a la derecha",
-        "La demanda se desplaza a la izquierda"
-       ]
-      },
-      {
-       "p": "d) Sube el salario de los trabajadores de las fábricas de enlatados.",
-       "o": [
-        "La oferta se desplaza a la izquierda: p sube y Q baja",
-        "La oferta se desplaza a la derecha: p baja y Q sube",
-        "La demanda se desplaza a la derecha: p y Q suben",
-        "Movimiento sobre la curva de oferta",
-        "La demanda se desplaza a la izquierda: p y Q bajan"
+       "t": "cls",
+       "p": "¿Qué pasa con las curvas en cada caso?",
+       "cats": [
+        "Demanda →",
+        "Demanda ←",
+        "Oferta →",
+        "Oferta ←",
+        "Movimiento sobre la curva"
+       ],
+       "items": [
+        {
+         "x": "Llega el verano y la gente quiere más helados.",
+         "c": 0
+        },
+        {
+         "x": "Un distrito recibe muchos nuevos vecinos que compran pan.",
+         "c": 0
+        },
+        {
+         "x": "Baja el precio de los enlatados de pescado (mercado de enlatados).",
+         "c": 4,
+         "e": "Es el precio del <b>propio</b> bien: movimiento, no desplazamiento."
+        },
+        {
+         "x": "Sube el salario de los trabajadores de las fábricas de enlatados.",
+         "c": 3
+        },
+        {
+         "x": "Sube el precio del azúcar (mercado de tortas).",
+         "c": 3,
+         "e": "El azúcar es un <b>insumo</b> de las tortas: oferta."
+        },
+        {
+         "x": "Una nueva tecnología abarata la fabricación de celulares.",
+         "c": 2
+        },
+        {
+         "x": "Baja el precio del té (mercado de café).",
+         "c": 1,
+         "e": "El té es <b>sustituto</b> del café: si se abarata, se compra menos café."
+        },
+        {
+         "x": "Entran más productores al mercado de palta.",
+         "c": 2
+        }
        ]
       }
      ],
      "steps": [
-      "a) Factor externo (estacionalidad) que afecta a compradores → D→ → p y Q suben.",
-      "b) Más población → D→ → p y Q suben.",
-      "c) Es el precio del propio bien → movimiento sobre la curva, no desplazamiento.",
-      "d) Sube el costo de producir → O← → p sube y Q baja."
+      "Paso 1: si cambia el precio del propio bien, es <strong>movimiento</strong> sobre la curva (enlatados).",
+      "Paso 2: si afecta a compradores (verano, vecinos, precio de un sustituto) es la <strong>demanda</strong>; si afecta a productores (salarios, insumos, tecnología, número de productores) es la <strong>oferta</strong>.",
+      "Paso 3: aumenta → derecha; disminuye → izquierda. Costos más altos → oferta a la izquierda; tecnología o más productores → oferta a la derecha."
      ],
-     "ans": "D→; D→; movimiento; O←",
+     "ans": "D→, D→, mov., O←, O←, O→, D←, O→",
      "hint": "Paso 1: ¿es el precio del propio bien?",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
       [
-       "doble",
        "movdes"
       ],
       [
-       "movdes"
+       "relac",
+       "oferta"
       ],
+      [
+       "oferta"
+      ]
+     ]
+    },
+    {
+     "id": "mo11",
+     "lvl": 2,
+     "title": "Ordena el método: cacao y chocolate",
+     "q": "<p>Sube el precio del <strong>cacao</strong>, insumo del chocolate. ¿Qué pasa en el mercado de chocolate? Ordena el razonamiento.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "El precio del cacao no es el precio del chocolate: es un factor externo, así que hay desplazamiento.",
+        "El cacao es un insumo: afecta a los productores, es la oferta.",
+        "El insumo se encarece: la oferta se desplaza a la izquierda.",
+        "Nuevo equilibrio: el precio del chocolate sube y la cantidad baja."
+       ]
+      }
+     ],
+     "steps": [
+      "Paso 1: ¿precio propio o factor externo? Externo → desplazamiento.",
+      "Paso 2: ¿compradores o productores? Productores → oferta.",
+      "Paso 3: insumo más caro → izquierda.",
+      "Paso 4: con la oferta a la izquierda, el cruce sube (p ↑) y se corre a la izquierda (Q ↓)."
+     ],
+     "ans": "Externo → oferta → izquierda → p sube, Q baja",
+     "hint": "Sigue el método de 4 pasos.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
       [
        "movdes"
       ],
       [
        "oferta"
+      ],
+      [
+       "oferta"
+      ],
+      [
+       "equil"
+      ]
+     ]
+    },
+    {
+     "id": "mo12",
+     "lvl": 2,
+     "title": "Ordena el método: pasajes en julio",
+     "q": "<p>Los viajeros <strong>esperan</strong> que los pasajes de avión suban en julio. ¿Qué pasa hoy en el mercado de pasajes? Ordena el razonamiento.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "No cambió el precio de hoy: cambiaron las expectativas, así que hay desplazamiento.",
+        "Las expectativas son de los compradores: es la demanda.",
+        "Compran hoy antes de que suba: la demanda se desplaza a la derecha.",
+        "Nuevo equilibrio: el precio y la cantidad de hoy suben."
+       ]
+      }
+     ],
+     "steps": [
+      "Paso 1: lo que cambia es una expectativa, no el precio actual: desplazamiento.",
+      "Paso 2: los que esperan la subida son los compradores: demanda.",
+      "Paso 3: adelantan su compra → derecha.",
+      "Paso 4: demanda a la derecha → p y Q suben."
+     ],
+     "ans": "Externo → demanda → derecha → p y Q suben",
+     "hint": "Las expectativas de los compradores mueven la demanda.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "movdes"
+      ],
+      [
+       "movdes"
+      ],
+      [
+       "movdes"
+      ],
+      [
+       "equil"
       ]
      ]
     },
@@ -1132,13 +1413,20 @@
      "q": "<p>Aumenta el ingreso de los compradores de carne de res, <strong>asumiendo que es un bien inferior</strong>. ¿Qué pasa con su demanda?</p>",
      "checks": [
       {
-       "p": "Efecto",
-       "o": [
-        "La demanda se desplaza a la izquierda",
-        "La demanda se desplaza a la derecha",
-        "Movimiento a lo largo de la demanda",
-        "La oferta se desplaza a la derecha",
-        "No pasa nada"
+       "t": "shift",
+       "p": "Mueve la curva del mercado de carne de res.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": -1,
+         "e": "En un bien <b>inferior</b>, si sube el ingreso se compra menos."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1175,13 +1463,20 @@
        ]
       },
       {
-       "p": "¿Qué pasa con la demanda de impresoras?",
-       "o": [
-        "Se desplaza a la izquierda",
-        "Se desplaza a la derecha",
-        "Movimiento a lo largo",
-        "No cambia",
-        "Se vuelve un bien Giffen"
+       "t": "shift",
+       "p": "¿Qué pasa en el mercado de impresoras? Mueve la curva.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": -1,
+         "e": "Si el complemento se encarece, usar la impresora cuesta más."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1199,7 +1494,8 @@
        "relac"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mo8",
@@ -1208,13 +1504,20 @@
      "q": "<p>Una innovación en la tecnología de pantallas reduce sus costos. ¿Qué pasa en el mercado de televisores?</p>",
      "checks": [
       {
-       "p": "Gráfico",
-       "o": [
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"76\" y1=\"112\" x2=\"174\" y2=\"26\"/><text class=\"dl\" x=\"177\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"117\" y2=\"74\"/><polygon class=\"arh\" points=\"122,74 114,77 114,71\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O₀</text><line class=\"co nw\" x1=\"28\" y1=\"112\" x2=\"126\" y2=\"26\"/><text class=\"dl\" x=\"129\" y=\"36\">O₁</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><line class=\"ar\" x1=\"100\" y1=\"74\" x2=\"83\" y2=\"74\"/><polygon class=\"arh\" points=\"78,74 86,71 86,77\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"76\" y1=\"26\" x2=\"174\" y2=\"112\"/><text class=\"dl\" x=\"177\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"117\" y2=\"64\"/><polygon class=\"arh\" points=\"122,64 114,67 114,61\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D₀</text><line class=\"cd nw\" x1=\"28\" y1=\"26\" x2=\"126\" y2=\"112\"/><text class=\"dl\" x=\"129\" y=\"116\">D₁</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"ar\" x1=\"100\" y1=\"64\" x2=\"83\" y2=\"64\"/><polygon class=\"arh\" points=\"78,64 86,61 86,67\"/></svg>",
-        "<svg class=\"dg sd\" viewBox=\"0 0 196 148\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"24\" y1=\"10\" x2=\"24\" y2=\"128\"/><line class=\"gl\" x1=\"24\" y1=\"128\" x2=\"176\" y2=\"128\"/><text class=\"dl\" x=\"10\" y=\"18\">P</text><text class=\"dl\" x=\"170\" y=\"142\">Q</text><line class=\"co\" x1=\"52\" y1=\"112\" x2=\"150\" y2=\"26\"/><text class=\"dl\" x=\"153\" y=\"36\">O</text><line class=\"cd\" x1=\"52\" y1=\"26\" x2=\"150\" y2=\"112\"/><text class=\"dl\" x=\"153\" y=\"116\">D</text><circle class=\"pt\" cx=\"132\" cy=\"42\" r=\"4\"/><circle class=\"pt\" cx=\"84\" cy=\"84\" r=\"4\"/><line class=\"ar\" x1=\"130\" y1=\"44\" x2=\"91\" y2=\"78\"/><polygon class=\"arh\" points=\"87,81 90,74 95,79\"/></svg>"
+       "t": "shift",
+       "p": "Mueve la curva del mercado de televisores.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 1,
+         "e": "La tecnología abarata producir: afecta a los productores."
+        }
        ]
       }
      ],
@@ -1222,7 +1525,7 @@
       "La innovación baja los <strong>costos de producción</strong>: afecta a los productores.",
       "Producir cada televisor cuesta menos, así que a cualquier precio pueden ofrecer más: la <strong>oferta se desplaza a la derecha</strong>."
      ],
-     "ans": "Oferta a la derecha",
+     "ans": "Oferta a la derecha: P baja, Q sube",
      "hint": "Tecnología = oferta.",
      "fig": null,
      "draw": false,
@@ -1238,34 +1541,51 @@
      "id": "mo9",
      "lvl": 3,
      "title": "Giffen o Veblen",
-     "q": "<p>Clasifica cada caso.</p>",
+     "q": "<p>Clasifica cada caso según el tipo de bien.</p>",
      "checks": [
       {
-       "p": "Sube el precio del Rolex y se vende más",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada bien.",
+       "cats": [
         "Bien Veblen",
         "Bien Giffen",
-        "Bien inferior",
         "Bien normal",
-        "Bien complementario"
-       ]
-      },
-      {
-       "p": "En pobreza extrema sube el precio del pan y se compra más pan",
-       "o": [
-        "Bien Giffen",
-        "Bien Veblen",
-        "Bien de lujo",
-        "Bien sustituto",
-        "Bien normal"
+        "Bien inferior"
+       ],
+       "items": [
+        {
+         "x": "Sube el precio del Rolex y se vende más.",
+         "c": 0
+        },
+        {
+         "x": "En pobreza extrema sube el precio del pan y se compra más pan.",
+         "c": 1
+        },
+        {
+         "x": "Papas durante la hambruna irlandesa: subió su precio y se compraron más.",
+         "c": 1
+        },
+        {
+         "x": "Un Ferrari más caro resulta más atractivo por la exclusividad.",
+         "c": 0
+        },
+        {
+         "x": "Sube el ingreso y la familia va más a restaurantes.",
+         "c": 2
+        },
+        {
+         "x": "Sube el ingreso y la familia compra menos ropa de segundo uso.",
+         "c": 3
+        }
        ]
       }
      ],
      "steps": [
-      "<strong>Veblen:</strong> lujo; el precio alto da exclusividad y estatus.",
-      "<strong>Giffen:</strong> subsistencia; al encarecerse el pan, las familias ya no pueden pagar otros alimentos y compran más pan para no pasar hambre."
+      "Veblen: lujo, el precio alto da exclusividad (Rolex, Ferrari).",
+      "Giffen: bien de subsistencia en pobreza; domina el efecto ingreso (pan, papas en la hambruna).",
+      "Normal: sube el ingreso → se compra más (restaurantes). Inferior: sube el ingreso → se compra menos (ropa de segundo uso)."
      ],
-     "ans": "Veblen; Giffen",
+     "ans": "Veblen, Giffen, Giffen, Veblen, normal, inferior",
      "hint": "Lujo vs subsistencia.",
      "fig": null,
      "draw": false,
@@ -1274,7 +1594,13 @@
       [
        "giffen"
       ],
-      []
+      [
+       "giffen",
+       "efsi"
+      ],
+      [
+       "ingreso"
+      ]
      ]
     },
     {
@@ -1284,13 +1610,20 @@
      "q": "<p>Los consumidores esperan que el precio de los smartphones suba el próximo mes. ¿Qué pasa hoy con la demanda de smartphones?</p>",
      "checks": [
       {
-       "p": "Efecto",
-       "o": [
-        "Se desplaza a la derecha: compran ahora antes de que suba",
-        "Se desplaza a la izquierda",
-        "Movimiento a lo largo de la demanda",
-        "La oferta se desplaza a la izquierda",
-        "No cambia hasta el próximo mes"
+       "t": "shift",
+       "p": "Mueve la curva del mercado de smartphones (hoy).",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 1,
+         "e": "Si esperas que suba, compras <b>hoy</b>: la demanda de hoy aumenta."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0
+        }
        ]
       }
      ],
@@ -1375,36 +1708,195 @@
      ]
     },
     {
+     "id": "me11",
+     "lvl": 2,
+     "title": "Escasez en números",
+     "q": "<p>\\(Q_d=600-20p\\) y \\(Q_s=100+30p\\). El precio está fijado en 6.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Equilibrio",
+       "f": [
+        {
+         "l": "p*",
+         "a": 10,
+         "e": "iguala 600 − 20p = 100 + 30p."
+        },
+        {
+         "l": "Q*",
+         "a": 400
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Evalúa ambas ecuaciones en p = 6",
+       "f": [
+        {
+         "l": "Q<sub>d</sub>",
+         "a": 480,
+         "e": "600 − 20·6."
+        },
+        {
+         "l": "Q<sub>s</sub>",
+         "a": 280,
+         "e": "100 + 30·6."
+        }
+       ]
+      },
+      {
+       "p": "A p = 6 hay…",
+       "o": [
+        "Escasez de 200",
+        "Sobreproducción de 200",
+        "Escasez de 120",
+        "Sobreproducción de 80",
+        "Equilibrio: no sobra ni falta"
+       ]
+      }
+     ],
+     "steps": [
+      "Iguala: \\(600-20p=100+30p\\) \\(\\Rightarrow  500=50p\\) \\(\\Rightarrow  p^*=10\\). \\(Q^*=600-200=400\\).",
+      "En p = 6: \\(Q_d=600-120=480\\) y \\(Q_s=100+180=280\\).",
+      "Como \\(Q_d\\gt Q_s\\) (el precio está por debajo del equilibrio), hay <strong>escasez</strong> de 480 − 280 = 200."
+     ],
+     "ans": "(10; 400); 480 y 280; escasez de 200",
+     "hint": "Debajo del equilibrio falta producto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [
+       "exceso"
+      ],
+      [
+       "exceso"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "mt1",
+     "lvl": 2,
+     "title": "Toca el gráfico: sobreproducción y escasez",
+     "q": "<p>En el gráfico hay dos precios fuera del equilibrio: \\(P_1\\) (arriba) y \\(P_2\\) (abajo).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "A \\(P_1\\), toca el tramo que mide la sobreproducción.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 232\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V200H292\"/><text class=\"dl\" x=\"12\" y=\"22\">P</text><text class=\"dl\" x=\"282\" y=\"222\">Q</text><line x1=\"74.7\" y1=\"32.6\" x2=\"253.3\" y2=\"170.2\" style=\"stroke:var(--curve);stroke-width:2.4\"/><text class=\"dl\" x=\"257.3\" y=\"166.2\">D</text><line x1=\"74.7\" y1=\"170.2\" x2=\"253.3\" y2=\"32.6\" style=\"stroke:var(--exe);stroke-width:2.4\"/><text class=\"dl\" x=\"257.3\" y=\"36.6\">O</text><line class=\"dsh\" x1=\"40\" y1=\"58.6\" x2=\"288\" y2=\"58.6\"/><text class=\"dl\" x=\"14\" y=\"62.6\">P₁</text><line class=\"dsh\" x1=\"40\" y1=\"146.1\" x2=\"288\" y2=\"146.1\"/><text class=\"dl\" x=\"14\" y=\"150.1\">P₂</text><rect data-z=\"qd1\" x=\"42\" y=\"51.6\" width=\"64.5\" height=\"14\" rx=\"4\"/><rect data-z=\"sobre\" x=\"108.5\" y=\"51.6\" width=\"111.0\" height=\"14\" rx=\"4\"/><rect data-z=\"qs2\" x=\"42\" y=\"139.1\" width=\"62.1\" height=\"14\" rx=\"4\"/><rect data-z=\"esc\" x=\"106.1\" y=\"139.1\" width=\"115.8\" height=\"14\" rx=\"4\"/></svg>",
+       "a": [
+        "sobre"
+       ],
+       "e": "La sobreproducción es la distancia horizontal <b>entre</b> la demanda y la oferta."
+      },
+      {
+       "t": "tap",
+       "p": "A \\(P_2\\), toca el tramo que mide la escasez.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 232\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V200H292\"/><text class=\"dl\" x=\"12\" y=\"22\">P</text><text class=\"dl\" x=\"282\" y=\"222\">Q</text><line x1=\"74.7\" y1=\"32.6\" x2=\"253.3\" y2=\"170.2\" style=\"stroke:var(--curve);stroke-width:2.4\"/><text class=\"dl\" x=\"257.3\" y=\"166.2\">D</text><line x1=\"74.7\" y1=\"170.2\" x2=\"253.3\" y2=\"32.6\" style=\"stroke:var(--exe);stroke-width:2.4\"/><text class=\"dl\" x=\"257.3\" y=\"36.6\">O</text><line class=\"dsh\" x1=\"40\" y1=\"58.6\" x2=\"288\" y2=\"58.6\"/><text class=\"dl\" x=\"14\" y=\"62.6\">P₁</text><line class=\"dsh\" x1=\"40\" y1=\"146.1\" x2=\"288\" y2=\"146.1\"/><text class=\"dl\" x=\"14\" y=\"150.1\">P₂</text><rect data-z=\"qd1\" x=\"42\" y=\"51.6\" width=\"64.5\" height=\"14\" rx=\"4\"/><rect data-z=\"sobre\" x=\"108.5\" y=\"51.6\" width=\"111.0\" height=\"14\" rx=\"4\"/><rect data-z=\"qs2\" x=\"42\" y=\"139.1\" width=\"62.1\" height=\"14\" rx=\"4\"/><rect data-z=\"esc\" x=\"106.1\" y=\"139.1\" width=\"115.8\" height=\"14\" rx=\"4\"/></svg>",
+       "a": [
+        "esc"
+       ],
+       "e": "La escasez es la distancia entre lo que se quiere comprar y lo que se ofrece."
+      }
+     ],
+     "steps": [
+      "A \\(P_1\\) (sobre el equilibrio) se ofrece más de lo que se compra: el tramo entre la demanda (izquierda) y la oferta (derecha) es la <strong>sobreproducción</strong> \\(Q_s-Q_d\\).",
+      "A \\(P_2\\) (bajo el equilibrio) se quiere comprar más de lo que se ofrece: el tramo entre la oferta y la demanda es la <strong>escasez</strong> \\(Q_d-Q_s\\)."
+     ],
+     "ans": "El tramo entre las curvas en cada precio",
+     "hint": "El exceso es la distancia horizontal entre las dos curvas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "exceso"
+      ],
+      [
+       "exceso"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "mt2",
+     "lvl": 2,
+     "title": "Toca el nuevo equilibrio",
+     "q": "<p>Sube el ingreso de los consumidores (bien normal) y la demanda pasa de \\(D_0\\) a \\(D_1\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el nuevo punto de equilibrio.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 232\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V200H292\"/><text class=\"dl\" x=\"12\" y=\"22\">P</text><text class=\"dl\" x=\"282\" y=\"222\">Q</text><line class=\"dsh\" x1=\"74.7\" y1=\"32.6\" x2=\"253.3\" y2=\"170.2\"/><text class=\"dm\" x=\"249.3\" y=\"186.2\">D₀</text><line x1=\"119.4\" y1=\"32.6\" x2=\"288.0\" y2=\"162.6\" style=\"stroke:var(--curve);stroke-width:2.4\"/><text class=\"dl\" x=\"270.0\" y=\"154.6\">D₁</text><line x1=\"74.7\" y1=\"170.2\" x2=\"253.3\" y2=\"32.6\" style=\"stroke:var(--exe);stroke-width:2.4\"/><text class=\"dl\" x=\"231.3\" y=\"34.6\">O</text><circle data-z=\"e0\" cx=\"164.0\" cy=\"101.4\" r=\"9\"/><circle data-z=\"e1\" cx=\"186.3\" cy=\"84.2\" r=\"9\"/><circle data-z=\"a\" cx=\"208.6\" cy=\"101.4\" r=\"9\"/><circle data-z=\"c\" cx=\"228.5\" cy=\"151.1\" r=\"9\"/></svg>",
+       "a": [
+        "e1"
+       ],
+       "e": "El equilibrio es el cruce de la demanda <b>nueva</b> con la oferta."
+      }
+     ],
+     "steps": [
+      "El equilibrio siempre es el <strong>cruce</strong> de la demanda con la oferta.",
+      "Con la demanda nueva \\(D_1\\), el cruce con O está más arriba y más a la derecha: p y Q suben."
+     ],
+     "ans": "El cruce de D₁ con O",
+     "hint": "Busca dónde se cruzan D₁ y O.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [
+       "ingreso"
+      ]
+     ]
+    },
+    {
      "id": "me3",
      "lvl": 2,
      "title": "Caso: mercado de la leche",
      "q": "<p>\\(S=50+10p\\) y \\(D=900-15p\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Equilibrio inicial",
-       "o": [
-        "\\(p^*=34,\\ Q^*=390\\)",
-        "\\(p^*=26,\\ Q^*=510\\)",
-        "\\(p^*=34,\\ Q^*=850\\)",
-        "\\(p^*=38,\\ Q^*=330\\)",
-        "\\(p^*=17,\\ Q^*=220\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 34
+        },
+        {
+         "l": "Q*",
+         "a": 390,
+         "e": "reemplaza p* en S o en D: 50 + 10·34."
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Bajan los costos y la oferta pasa a \\(S=250+10p\\). Nuevo equilibrio:",
-       "o": [
-        "\\(p^*=26,\\ Q^*=510\\)",
-        "\\(p^*=34,\\ Q^*=390\\)",
-        "\\(p^*=26,\\ Q^*=390\\)",
-        "\\(p^*=42,\\ Q^*=270\\)",
-        "\\(p^*=65,\\ Q^*=900\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 26,
+         "e": "iguala 250 + 10p = 900 − 15p."
+        },
+        {
+         "l": "Q*",
+         "a": 510
+        }
        ]
       }
      ],
      "steps": [
       "Igualamos oferta y demanda: \\(50+10p=900-15p\\). Pasamos las \\(p\\) a un lado: \\(25p=850\\), así que \\(p^*=34\\).",
       "Reemplazamos en la oferta: \\(50+10(34)=390\\). Comprobamos con la demanda: \\(900-15(34)=390\\) ✓.",
-      "Con la nueva oferta: \\(250+10p=900-15p\\Rightarrow25p=650\\Rightarrow p^*=26\\); \\(Q^*=250+260=510\\).",
+      "Con la nueva oferta: \\(250+10p=900-15p\\) \\(\\Rightarrow 25p=650\\) \\(\\Rightarrow  p^*=26\\); \\(Q^*=250+260=510\\).",
       "Interpretación: bajar los costos desplaza la oferta a la derecha, así que el precio baja (34 → 26) y la cantidad sube (390 → 510)."
      ],
      "ans": "(34; 390) y (26; 510)",
@@ -1419,7 +1911,8 @@
       [],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me4",
@@ -1438,13 +1931,18 @@
        ]
       },
       {
+       "t": "num",
        "p": "Equilibrio",
-       "o": [
-        "\\(p^*=20,\\ Q^*=15\\,400\\)",
-        "\\(p^*=10,\\ Q^*=15\\,700\\)",
-        "\\(p^*=20,\\ Q^*=16\\,000\\)",
-        "\\(p^*=30,\\ Q^*=15\\,100\\)",
-        "\\(p^*=2000,\\ Q^*=0\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 20,
+         "e": "iguala (1) y (2): 16 000 − 30p = 14 000 + 70p."
+        },
+        {
+         "l": "Q*",
+         "a": 15400
+        }
        ]
       },
       {
@@ -1460,8 +1958,8 @@
      ],
      "steps": [
       "La demanda tiene pendiente negativa (\\(-30p\\)): es la (1). La oferta tiene \\(+70p\\): es la (2).",
-      "Igualamos: \\(16\\,000-30p=14\\,000+70p\\Rightarrow2\\,000=100p\\Rightarrow p^*=20\\); \\(Q^*=16\\,000-600=15\\,400\\).",
-      "En \\(p=50\\): \\(Q_d=16\\,000-1\\,500=14\\,500\\) y \\(Q_s=14\\,000+3\\,500=17\\,500\\).",
+      "Igualamos: \\(16\\,000-30p\\) \\(=14\\,000+70p\\) \\(\\Rightarrow 2\\,000=100p\\) \\(\\Rightarrow  p^*=20\\); \\(Q^*=16\\,000-600=15\\,400\\).",
+      "En \\(p=50\\): \\(Q_d\\) \\(=16\\,000-1\\,500\\) \\(=14\\,500\\) y \\(Q_s\\) \\(=14\\,000+3\\,500\\) \\(=17\\,500\\).",
       "\\(Q_s\\gt Q_d\\): sobreproducción de \\(17\\,500-14\\,500=3\\,000\\). Tiene sentido: 50 está por encima del precio de equilibrio."
      ],
      "ans": "(1); (20; 15 400); sobreproducción de 3 000",
@@ -1478,7 +1976,8 @@
       [
        "exceso"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me5",
@@ -1487,13 +1986,18 @@
      "q": "<p>\\(Q_d=8\\,000-500p\\) y \\(Q_s=2\\,000+1\\,000p\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Equilibrio",
-       "o": [
-        "\\(p^*=4,\\ Q^*=6\\,000\\)",
-        "\\(p^*=6,\\ Q^*=5\\,000\\)",
-        "\\(p^*=4,\\ Q^*=8\\,000\\)",
-        "\\(p^*=3,\\ Q^*=6\\,500\\)",
-        "\\(p^*=5,\\ Q^*=7\\,000\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 4,
+         "e": "iguala 8 000 − 500p = 2 000 + 1 000p."
+        },
+        {
+         "l": "Q*",
+         "a": 6000
+        }
        ]
       },
       {
@@ -1508,7 +2012,7 @@
       }
      ],
      "steps": [
-      "\\(8\\,000-500p=2\\,000+1\\,000p\\Rightarrow6\\,000=1\\,500p\\Rightarrow p^*=4\\); \\(Q^*=8\\,000-2\\,000=6\\,000\\).",
+      "\\(8\\,000-500p\\) \\(=2\\,000+1\\,000p\\) \\(\\Rightarrow 6\\,000=1\\,500p\\) \\(\\Rightarrow  p^*=4\\); \\(Q^*=8\\,000-2\\,000=6\\,000\\).",
       "En \\(p=3\\): \\(Q_d=6\\,500\\) y \\(Q_s=5\\,000\\).",
       "\\(Q_d\\gt Q_s\\): <strong>escasez</strong> de 1 500. Tiene sentido: el precio está debajo del de equilibrio, así que muchos quieren comprar y pocos vender."
      ],
@@ -1526,7 +2030,8 @@
        "escasez",
        "exceso"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me6",
@@ -1535,21 +2040,26 @@
      "q": "<p>\\(Q_d=400p-2p^2\\) y \\(Q_s=100p+p^2\\). Halla el equilibrio.</p>",
      "checks": [
       {
-       "p": "Equilibrio",
-       "o": [
-        "\\(p^*=100,\\ Q^*=20\\,000\\)",
-        "\\(p^*=0,\\ Q^*=0\\)",
-        "\\(p^*=50,\\ Q^*=7\\,500\\)",
-        "\\(p^*=300,\\ Q^*=120\\,000\\)",
-        "\\(p^*=100,\\ Q^*=10\\,000\\)"
+       "t": "num",
+       "p": "Equilibrio (descarta p = 0)",
+       "f": [
+        {
+         "l": "p*",
+         "a": 100,
+         "e": "iguala, pasa todo a un lado y factoriza p: p(300 − 3p) = 0."
+        },
+        {
+         "l": "Q*",
+         "a": 20000
+        }
        ]
       }
      ],
      "steps": [
-      "Igualamos: \\(400p-2p^2=100p+p^2\\Rightarrow300p=3p^2\\).",
+      "Igualamos: \\(400p-2p^2=100p+p^2\\) \\(\\Rightarrow 300p=3p^2\\).",
       "Factorizamos: \\(3p(100-p)=0\\), con soluciones \\(p=0\\) o \\(p=100\\).",
       "\\(p=0\\) no tiene sentido económico (nadie vende gratis), así que \\(p^*=100\\).",
-      "\\(Q^*=100(100)+100^2=20\\,000\\). Comprobación: \\(400(100)-2(100)^2=40\\,000-20\\,000=20\\,000\\) ✓."
+      "\\(Q^*\\) \\(=100(100)+100^2\\) \\(=20\\,000\\). Comprobación: \\(400(100)-2(100)^2\\) \\(=40\\,000-20\\,000\\) \\(=20\\,000\\) ✓."
      ],
      "ans": "(100; 20 000)",
      "hint": "Descarta p = 0.",
@@ -1572,13 +2082,18 @@
      "q": "<p>Datos del mercado:</p><div class=\"tbl\"><table><tr><th>Precio ($)</th><th>Ofrecen</th><th>Desean comprar</th></tr><tr><td>30</td><td>1 500</td><td>3 500</td></tr><tr><td>40</td><td>2 000</td><td>3 000</td></tr><tr><td>50</td><td>2 500</td><td>2 500</td></tr><tr><td>60</td><td>3 000</td><td>2 000</td></tr></table></div>",
      "checks": [
       {
+       "t": "num",
        "p": "Equilibrio",
-       "o": [
-        "p = 50, Q = 2 500",
-        "p = 40, Q = 2 000",
-        "p = 60, Q = 3 000",
-        "p = 45, Q = 2 750",
-        "p = 30, Q = 3 500"
+       "f": [
+        {
+         "l": "p",
+         "a": 50,
+         "e": "busca la fila donde ofrecen = desean comprar."
+        },
+        {
+         "l": "Q",
+         "a": 2500
+        }
        ]
       },
       {
@@ -1607,7 +2122,8 @@
        "escasez",
        "exceso"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me8",
@@ -1615,6 +2131,26 @@
      "title": "Desplazamientos simultáneos (helados)",
      "q": "<p>Predice el efecto en el mercado de helados.</p>",
      "checks": [
+      {
+       "t": "shift",
+       "p": "Primero: aumenta el calor y baja el precio del azúcar. Mueve las dos curvas.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 1,
+         "e": "El calor afecta a los compradores."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 1,
+         "e": "El azúcar es un insumo de los productores."
+        }
+       ],
+       "ro": false,
+       "none": false
+      },
       {
        "p": "Aumenta el calor y baja el precio del azúcar (insumo)",
        "o": [
@@ -1647,12 +2183,16 @@
      "draw": false,
      "solfig": null,
      "tags": [
-      [],
+      [
+       "movdes",
+       "oferta"
+      ],
       [
        "doble"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me9",
@@ -1661,29 +2201,38 @@
      "q": "<p>Demanda \\(q=15\\,000-1\\,500p\\); oferta \\(q=1\\,500p\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Equilibrio",
-       "o": [
-        "\\(p^*=5,\\ q^*=7\\,500\\)",
-        "\\(p^*=10,\\ q^*=15\\,000\\)",
-        "\\(p^*=5,\\ q^*=15\\,000\\)",
-        "\\(p^*=6,\\ q^*=9\\,000\\)",
-        "\\(p^*=2{,}5,\\ q^*=3\\,750\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 5,
+         "e": "iguala 15 000 − 1 500p = 1 500p."
+        },
+        {
+         "l": "q*",
+         "a": 7500
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Sube el ingreso y la demanda pasa a \\(q=18\\,000-1\\,500p\\). Nuevo equilibrio:",
-       "o": [
-        "\\(p^*=6,\\ q^*=9\\,000\\)",
-        "\\(p^*=5,\\ q^*=7\\,500\\)",
-        "\\(p^*=12,\\ q^*=0\\)",
-        "\\(p^*=6,\\ q^*=7\\,500\\)",
-        "\\(p^*=4,\\ q^*=6\\,000\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 6
+        },
+        {
+         "l": "q*",
+         "a": 9000
+        }
        ]
       }
      ],
      "steps": [
-      "\\(15\\,000-1\\,500p=1\\,500p\\Rightarrow3\\,000p=15\\,000\\Rightarrow p^*=5\\); \\(q^*=7\\,500\\).",
-      "Nueva demanda: \\(18\\,000-1\\,500p=1\\,500p\\Rightarrow p^*=6\\); \\(q^*=9\\,000\\).",
+      "\\(15\\,000-1\\,500p=1\\,500p\\) \\(\\Rightarrow 3\\,000p=15\\,000\\) \\(\\Rightarrow  p^*=5\\); \\(q^*=7\\,500\\).",
+      "Nueva demanda: \\(18\\,000-1\\,500p=1\\,500p\\) \\(\\Rightarrow  p^*=6\\); \\(q^*=9\\,000\\).",
       "Interpretación: con más ingreso (bien normal), la demanda se desplaza a la derecha: suben el precio y la cantidad."
      ],
      "ans": "(5; 7 500) y (6; 9 000)",
@@ -1699,7 +2248,8 @@
       [
        "ingreso"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me10",
@@ -1708,50 +2258,74 @@
      "q": "<p>En el mercado de cafés de un distrito: \\(Q_d=1\\,200-40p\\) y \\(Q_s=200+60p\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Equilibrio inicial",
-       "o": [
-        "\\(p^*=10,\\ Q^*=800\\)",
-        "\\(p^*=20,\\ Q^*=400\\)",
-        "\\(p^*=10,\\ Q^*=1\\,200\\)",
-        "\\(p^*=14,\\ Q^*=640\\)",
-        "\\(p^*=8,\\ Q^*=880\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 10,
+         "e": "iguala 1 200 − 40p = 200 + 60p."
+        },
+        {
+         "l": "Q*",
+         "a": 800
+        }
        ]
       },
       {
-       "p": "Escenario A: sube el precio de la leche (insumo). En el gráfico…",
-       "o": [
-        "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja",
-        "La demanda se desplaza a la izquierda: \\(p^*\\) y \\(Q^*\\) bajan",
-        "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
-        "Hay un movimiento a lo largo de la demanda; ninguna curva se desplaza",
-        "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben"
+       "t": "shift",
+       "p": "Escenario A: sube el precio de la leche (insumo). Mueve la curva en el gráfico.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": -1,
+         "e": "La leche es insumo: afecta al productor."
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Con el escenario A la oferta pasa a \\(Q_s=100+60p\\). Nuevo equilibrio:",
-       "o": [
-        "\\(p^*=11,\\ Q^*=760\\)",
-        "\\(p^*=9,\\ Q^*=840\\)",
-        "\\(p^*=11,\\ Q^*=860\\)",
-        "\\(p^*=10,\\ Q^*=700\\)",
-        "\\(p^*=13,\\ Q^*=680\\)"
+       "f": [
+        {
+         "l": "p*",
+         "a": 11,
+         "e": "iguala 1 200 − 40p = 100 + 60p."
+        },
+        {
+         "l": "Q*",
+         "a": 760
+        }
        ]
       },
       {
-       "p": "Escenario B: abre una universidad al costado (más compradores). En el gráfico…",
-       "o": [
-        "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
-        "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
-        "La demanda se desplaza a la izquierda: \\(p^*\\) y \\(Q^*\\) bajan",
-        "Movimiento a lo largo de la oferta; nada se desplaza",
-        "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja"
+       "t": "shift",
+       "p": "Escenario B (desde el inicio): abre una universidad al costado (más compradores). Mueve la curva.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 1,
+         "e": "Más compradores: número de consumidores."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0
+        }
        ]
       }
      ],
      "steps": [
-      "Equilibrio: \\(1\\,200-40p=200+60p\\Rightarrow1\\,000=100p\\Rightarrow p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
+      "Equilibrio: \\(1\\,200-40p=200+60p\\) \\(\\Rightarrow 1\\,000=100p\\) \\(\\Rightarrow  p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
       "A) La leche es un <strong>insumo</strong>: afecta al productor, no al comprador. Sube el costo → la oferta se va a la izquierda → en el gráfico, el nuevo cruce está más arriba (p sube) y más a la izquierda (Q baja).",
-      "Nuevo equilibrio: \\(1\\,200-40p=100+60p\\Rightarrow1\\,100=100p\\Rightarrow p^*=11\\); \\(Q^*=1\\,200-440=760\\). Confirma lo del gráfico: p sube de 10 a 11 y Q baja de 800 a 760.",
+      "Nuevo equilibrio: \\(1\\,200-40p=100+60p\\) \\(\\Rightarrow 1\\,100=100p\\) \\(\\Rightarrow  p^*=11\\); \\(Q^*=1\\,200-440=760\\). Confirma lo del gráfico: p sube de 10 a 11 y Q baja de 800 a 760.",
       "B) Más compradores = <strong>número de consumidores</strong> ↑ → la demanda se va a la derecha → p y Q suben."
      ],
      "ans": "(10; 800); O←; (11; 760); D→",
@@ -1773,7 +2347,107 @@
       [
        "movdes"
       ]
-     ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "me12",
+     "lvl": 3,
+     "title": "Caso empresa: palta en tres escenarios",
+     "q": "<p>Mercado local de palta: \\(Q_d=2\\,000-50p\\) y \\(Q_s=500+100p\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Equilibrio inicial",
+       "f": [
+        {
+         "l": "p*",
+         "a": 10,
+         "e": "iguala 2 000 − 50p = 500 + 100p."
+        },
+        {
+         "l": "Q*",
+         "a": 1500
+        }
+       ]
+      },
+      {
+       "t": "shift",
+       "p": "Escenario A: una helada malogra parte de la cosecha. Mueve la curva.",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": -1,
+         "e": "La helada afecta a los productores (clima)."
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Con la helada, la oferta pasa a \\(Q_s=200+100p\\). Nuevo equilibrio:",
+       "f": [
+        {
+         "l": "p*",
+         "a": 12,
+         "e": "iguala 2 000 − 50p = 200 + 100p."
+        },
+        {
+         "l": "Q*",
+         "a": 1400
+        }
+       ]
+      },
+      {
+       "t": "shift",
+       "p": "Escenario B (desde el inicio): baja el precio de la palta en el mercado. ¿Qué curvas se desplazan?",
+       "c": [
+        {
+         "k": "D",
+         "tp": "d",
+         "a": 0,
+         "e": "Es el precio del propio bien: movimiento sobre la curva."
+        },
+        {
+         "k": "O",
+         "tp": "o",
+         "a": 0,
+         "e": "Es el precio del propio bien: movimiento sobre la curva."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Iguala: \\(2\\,000-50p=500+100p\\) \\(\\Rightarrow 1\\,500=150p\\) \\(\\Rightarrow  p^*=10\\); \\(Q^*=2\\,000-500=1\\,500\\).",
+      "A) La helada es clima: afecta a los <strong>productores</strong> → oferta a la izquierda (p sube, Q baja).",
+      "Nuevo equilibrio: \\(2\\,000-50p=200+100p\\) \\(\\Rightarrow 1\\,800=150p\\) \\(\\Rightarrow  p^*=12\\); \\(Q^*=2\\,000-600=1\\,400\\). Confirma el gráfico: p de 10 a 12 y Q de 1 500 a 1 400.",
+      "B) Trampa: es el precio del <strong>propio bien</strong>. No se desplaza ninguna curva: hay un movimiento a lo largo de ellas."
+     ],
+     "ans": "(10; 1 500); O←; (12; 1 400); ninguna se desplaza",
+     "hint": "Clima → productores. Precio propio → movimiento.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "equil"
+      ],
+      [
+       "oferta"
+      ],
+      [
+       "equil"
+      ],
+      [
+       "movdes"
+      ]
+     ],
+     "chain": true
     }
    ]
   },
@@ -1789,7 +2463,7 @@
     "Producción máxima: \\(PMg=0\\)",
     "Factores ×k → Q más que ×k: economías de escala"
    ],
-   "lesson": "<h3>1. ¿Qué es la función de producción?</h3><p>Piensa en ella como la <strong>receta de la empresa</strong>: te dice cuánto produces (Q) según cuántos trabajadores (L) y cuánto capital (K: local, máquinas) usas. En el <strong>corto plazo</strong> el local y las máquinas no cambian (K está fijo); lo único que puedes mover es cuánta gente contratas. En el <strong>largo plazo</strong> puedes cambiarlo todo.</p><h3>2. Producto medio (PMe): el promedio</h3><p>\\(PMe=\\dfrac{Q}{L}\\). Responde: <em>«¿cuánto produce, en promedio, cada trabajador?»</em> Si 3 cocineros hacen 60 pizzas, el PMe es 60/3 = 20 pizzas por cocinero.</p><h3>3. Producto marginal (PMg): el aporte del último</h3><p>\\(PMg=\\dfrac{\\Delta Q}{\\Delta L}\\). Responde: <em>«¿cuánto agregó el último que entró?»</em> Si con 4 cocineros salen 72 pizzas, el cuarto aportó 72 − 60 = 12. Si te dan una fórmula, el PMg es la <strong>derivada</strong> \\(\\dfrac{dQ}{dL}\\).</p><h3>4. ¿Por qué el PMg termina cayendo?</h3><p>Imagina una cocina pequeña con un solo horno. Los primeros cocineros ayudan muchísimo, pero si sigues metiendo gente en el mismo espacio, empiezan a estorbarse y cada uno nuevo aporta menos. Eso es la <strong>ley de rendimientos decrecientes</strong>: con un factor fijo, el PMg tarde o temprano baja. Si sigues contratando, puede llegar a ser negativo.</p><h3>5. Cómo se relacionan PMe y PMg (como el promedio de notas)</h3><p>Si entra un alumno nuevo y saca <em>más</em> que el promedio del salón, el promedio sube; si saca <em>menos</em>, baja. Igual aquí:</p><ul><li>PMg &gt; PMe → el PMe está subiendo.</li><li>PMg &lt; PMe → el PMe está bajando.</li><li>PMg = PMe → el PMe está en su <strong>máximo</strong>.</li></ul><h3>6. Las cuatro cosas que te piden (con fórmula)</h3><div class=\"tbl\"><table><tr><th>Te piden</th><th>Qué haces</th><th>Ejemplo con \\(Q=30L^2-L^3\\)</th></tr><tr><td>PMe</td><td>Divide Q entre L</td><td>\\(30L-L^2\\)</td></tr><tr><td>PMg</td><td>Deriva Q</td><td>\\(60L-3L^2\\)</td></tr><tr><td>PMe máximo</td><td>Deriva el PMe e iguala a 0 (ahí PMe = PMg)</td><td>\\(30-2L=0\\Rightarrow L=15\\); PMe = 225</td></tr><tr><td>Producción máxima</td><td>Iguala el PMg a 0</td><td>\\(3L(20-L)=0\\Rightarrow L=20\\); Q = 4 000</td></tr></table></div><p>Siempre ocurre en este orden: primero el PMg llega a su tope, luego el PMe (L = 15) y al final la producción total (L = 20). Si tu PMe máximo sale <em>después</em> de la producción máxima, revisa tus cuentas.</p><h3>7. Economías de escala (largo plazo)</h3><p>Ahora la empresa crece completa: más local, más máquinas y más gente <em>a la vez</em>. La pregunta es: si multiplico <strong>todos</strong> los factores por k, ¿la producción crece más, igual o menos que k veces?</p><div class=\"tbl\"><table><tr><th>Factores ×2 y la producción…</th><th>Se llama</th><th>Qué pasa con el costo por unidad</th></tr><tr><td>más que se duplica (×2,3)</td><td>Rendimientos crecientes → <strong>economías de escala</strong></td><td>Baja</td></tr><tr><td>se duplica exacto</td><td>Rendimientos constantes</td><td>Igual</td></tr><tr><td>menos que se duplica (×1,7)</td><td>Rendimientos decrecientes → <strong>deseconomías</strong></td><td>Sube</td></tr></table></div><p>Para justificar en el examen: <em>«Al duplicar todos los factores, la producción aumenta en más del doble; por lo tanto hay rendimientos crecientes a escala y la empresa presenta economías de escala, porque su costo por unidad disminuye.»</em></p><h3>Trampas típicas</h3><ul><li>Calcular el PMg como Q/L (eso es el PMe).</li><li>Si L avanza de 10 en 10, olvidar dividir ΔQ entre 10.</li><li>No verificar que el punto crítico del PMe sea un máximo (si la parábola abre hacia arriba, es un mínimo).</li><li>Llamar «economías de escala» a agregar trabajadores con la planta fija: eso es corto plazo (rendimientos decrecientes del trabajo).</li></ul><h3>Ejemplos resueltos</h3><div class=\"ej\"><b>Ejemplo resuelto (tabla de clase):</b> L = 0, 1, 2, 3, 4, 5 y Q = 0, 100, 500, 600, 650, 660.<br>PMe: 100/1 = 100; 500/2 = 250; 600/3 = 200; 650/4 = 162,5; 660/5 = 132.<br>PMg: (100−0)/1 = 100; (500−100)/1 = 400; 100; 50; 10.<br>Desde el tercer trabajador el PMg cae: <strong>rendimientos decrecientes</strong>.</div><div class=\"ej\"><b>Ejemplo resuelto (con función):</b> \\(Q=90L^2-20L^3\\). \\(PMe=\\frac QL=90L-20L^2\\). \\(PMg=\\frac{dQ}{dL}=180L-60L^2\\). PMe máximo: derivamos el PMe e igualamos a cero: \\(90-40L=0\\Rightarrow L=2{,}25\\); \\(PMe=90(2{,}25)-20(2{,}25)^2=101{,}25\\). Comprobación: en \\(L=2{,}25\\), \\(PMg=101{,}25\\) también (el PMg corta al PMe en su máximo).</div><div class=\"err\"><b>Errores comunes:</b> (1) calcular el PMg dividiendo Q entre L (eso es el PMe); (2) si L avanza de 10 en 10, olvidar dividir ΔQ entre 10; (3) en el PMe máximo, no verificar que sea un máximo: si el PMe es una parábola que abre hacia arriba, el punto crítico es un <strong>mínimo</strong>.</div><div class=\"ej\"><b>Escala:</b> 2 trabajadores + 1 máquina → 100 unidades. Con 4 + 2 (todo ×2) → 230 unidades (×2,3): rendimientos crecientes, cada unidad cuesta menos: <strong>economías de escala</strong>.</div><div class=\"err\"><b>Error común:</b> decir «economías de escala» cuando solo se agregan trabajadores con la planta fija. Eso es corto plazo (rendimientos decrecientes del trabajo).</div>",
+   "lesson": "<h3>1. ¿Qué es la función de producción?</h3><p>Piensa en ella como la <strong>receta de la empresa</strong>: te dice cuánto produces (Q) según cuántos trabajadores (L) y cuánto capital (K: local, máquinas) usas. En el <strong>corto plazo</strong> el local y las máquinas no cambian (K está fijo); lo único que puedes mover es cuánta gente contratas. En el <strong>largo plazo</strong> puedes cambiarlo todo.</p><h3>2. Producto medio (PMe): el promedio</h3><p>\\(PMe=\\dfrac{Q}{L}\\). Responde: <em>«¿cuánto produce, en promedio, cada trabajador?»</em> Si 3 cocineros hacen 60 pizzas, el PMe es 60/3 = 20 pizzas por cocinero.</p><h3>3. Producto marginal (PMg): el aporte del último</h3><p>\\(PMg=\\dfrac{\\Delta Q}{\\Delta L}\\). Responde: <em>«¿cuánto agregó el último que entró?»</em> Si con 4 cocineros salen 72 pizzas, el cuarto aportó 72 − 60 = 12. Si te dan una fórmula, el PMg es la <strong>derivada</strong> \\(\\dfrac{dQ}{dL}\\).</p><h3>4. ¿Por qué el PMg termina cayendo?</h3><p>Imagina una cocina pequeña con un solo horno. Los primeros cocineros ayudan muchísimo, pero si sigues metiendo gente en el mismo espacio, empiezan a estorbarse y cada uno nuevo aporta menos. Eso es la <strong>ley de rendimientos decrecientes</strong>: con un factor fijo, el PMg tarde o temprano baja. Si sigues contratando, puede llegar a ser negativo.</p><h3>5. Cómo se relacionan PMe y PMg (como el promedio de notas)</h3><p>Si entra un alumno nuevo y saca <em>más</em> que el promedio del salón, el promedio sube; si saca <em>menos</em>, baja. Igual aquí:</p><ul><li>PMg &gt; PMe → el PMe está subiendo.</li><li>PMg &lt; PMe → el PMe está bajando.</li><li>PMg = PMe → el PMe está en su <strong>máximo</strong>.</li></ul><h3>6. Las cuatro cosas que te piden (con fórmula)</h3><div class=\"tbl\"><table><tr><th>Te piden</th><th>Qué haces</th><th>Ejemplo con \\(Q=30L^2-L^3\\)</th></tr><tr><td>PMe</td><td>Divide Q entre L</td><td>\\(30L-L^2\\)</td></tr><tr><td>PMg</td><td>Deriva Q</td><td>\\(60L-3L^2\\)</td></tr><tr><td>PMe máximo</td><td>Deriva el PMe e iguala a 0 (ahí PMe = PMg)</td><td>\\(30-2L=0\\Rightarrow L=15\\); PMe = 225</td></tr><tr><td>Producción máxima</td><td>Iguala el PMg a 0</td><td>\\(3L(20-L)=0\\Rightarrow L=20\\); Q = 4 000</td></tr></table></div><p>Siempre ocurre en este orden: primero el PMg llega a su tope, luego el PMe (L = 15) y al final la producción total (L = 20). Si tu PMe máximo sale <em>después</em> de la producción máxima, revisa tus cuentas.</p><h3>7. Economías de escala (largo plazo)</h3><p>Ahora la empresa crece completa: más local, más máquinas y más gente <em>a la vez</em>. La pregunta es: si multiplico <strong>todos</strong> los factores por k, ¿la producción crece más, igual o menos que k veces?</p><div class=\"tbl\"><table><tr><th>Factores ×2 y la producción…</th><th>Se llama</th><th>Qué pasa con el costo por unidad</th></tr><tr><td>más que se duplica (×2,3)</td><td>Rendimientos crecientes → <strong>economías de escala</strong></td><td>Baja</td></tr><tr><td>se duplica exacto</td><td>Rendimientos constantes</td><td>Igual</td></tr><tr><td>menos que se duplica (×1,7)</td><td>Rendimientos decrecientes → <strong>deseconomías</strong></td><td>Sube</td></tr></table></div><p>Para justificar en el examen: <em>«Al duplicar todos los factores, la producción aumenta en más del doble; por lo tanto hay rendimientos crecientes a escala y la empresa presenta economías de escala, porque su costo por unidad disminuye.»</em></p><h3>Trampas típicas</h3><ul><li>Calcular el PMg como Q/L (eso es el PMe).</li><li>Si L avanza de 10 en 10, olvidar dividir ΔQ entre 10.</li><li>No verificar que el punto crítico del PMe sea un máximo (si la parábola abre hacia arriba, es un mínimo).</li><li>Llamar «economías de escala» a agregar trabajadores con la planta fija: eso es corto plazo (rendimientos decrecientes del trabajo).</li></ul><h3>Ejemplos resueltos</h3><div class=\"ej\"><b>Ejemplo resuelto (tabla de clase):</b> L = 0, 1, 2, 3, 4, 5 y Q = 0, 100, 500, 600, 650, 660.<br>PMe: 100/1 = 100; 500/2 = 250; 600/3 = 200; 650/4 = 162,5; 660/5 = 132.<br>PMg: (100−0)/1 = 100; (500−100)/1 = 400; 100; 50; 10.<br>Desde el tercer trabajador el PMg cae: <strong>rendimientos decrecientes</strong>.</div><div class=\"ej\"><b>Ejemplo resuelto (con función):</b> \\(Q=90L^2-20L^3\\). \\(PMe=\\frac QL=90L-20L^2\\). \\(PMg=\\frac{dQ}{dL}=180L-60L^2\\). PMe máximo: derivamos el PMe e igualamos a cero: \\(90-40L=0\\Rightarrow L=2{,}25\\); \\(PMe\\) \\(=90(2{,}25)-20(2{,}25)^2\\) \\(=101{,}25\\). Comprobación: en \\(L=2{,}25\\), \\(PMg=101{,}25\\) también (el PMg corta al PMe en su máximo).</div><div class=\"err\"><b>Errores comunes:</b> (1) calcular el PMg dividiendo Q entre L (eso es el PMe); (2) si L avanza de 10 en 10, olvidar dividir ΔQ entre 10; (3) en el PMe máximo, no verificar que sea un máximo: si el PMe es una parábola que abre hacia arriba, el punto crítico es un <strong>mínimo</strong>.</div><div class=\"ej\"><b>Escala:</b> 2 trabajadores + 1 máquina → 100 unidades. Con 4 + 2 (todo ×2) → 230 unidades (×2,3): rendimientos crecientes, cada unidad cuesta menos: <strong>economías de escala</strong>.</div><div class=\"err\"><b>Error común:</b> decir «economías de escala» cuando solo se agregan trabajadores con la planta fija. Eso es corto plazo (rendimientos decrecientes del trabajo).</div>",
    "ex": [
     {
      "id": "mp1",
@@ -1989,13 +2663,14 @@
      "q": "<p>Con la tabla anterior (PMg = 100, 400, 100, 50, 10), ¿desde qué trabajador se observan rendimientos decrecientes?</p>",
      "checks": [
       {
-       "p": "Desde el trabajador…",
-       "o": [
-        "3",
-        "1",
-        "2",
-        "5",
-        "Nunca"
+       "t": "num",
+       "p": "Desde el trabajador número…",
+       "f": [
+        {
+         "l": "N.º",
+         "a": 3,
+         "e": "busca desde cuándo el PMg empieza a bajar."
+        }
        ]
       }
      ],
@@ -2045,7 +2720,7 @@
       }
      ],
      "steps": [
-      "PMe = Q/L: dividimos cada término entre L: \\(\\frac{30L^2}{L}+\\frac{200L}{L}-\\frac{L^3}{L}=30L+200-L^2\\).",
+      "PMe = Q/L: dividimos cada término entre L: \\(\\frac{30L^2}{L}+\\frac{200L}{L}-\\frac{L^3}{L}\\) \\(=30L+200-L^2\\).",
       "PMg = derivada de Q respecto de L: \\((30L^2)'=60L\\), \\((200L)'=200\\), \\((L^3)'=3L^2\\). Así \\(PMg=60L+200-3L^2\\)."
      ],
      "ans": "PMe \\(=30L+200-L^2\\); PMg \\(=60L+200-3L^2\\)",
@@ -2069,31 +2744,29 @@
      "q": "<p>\\(Q=90L^2-20L^3\\). Halla el PMe máximo.</p>",
      "checks": [
       {
-       "p": "¿En qué L?",
-       "o": [
-        "\\(L=2{,}25\\)",
-        "\\(L=4{,}5\\)",
-        "\\(L=3\\)",
-        "\\(L=1{,}5\\)",
-        "\\(L=9\\)"
-       ]
-      },
-      {
-       "p": "Valor del PMe máximo",
-       "o": [
-        "\\(101{,}25\\)",
-        "\\(202{,}5\\)",
-        "\\(90\\)",
-        "\\(126{,}56\\)",
-        "\\(45\\)"
+       "t": "num",
+       "p": "PMe máximo",
+       "f": [
+        {
+         "l": "L",
+         "a": 2.25,
+         "e": "deriva el PMe = 90L − 20L² e iguala a 0.",
+         "tol": 0.01
+        },
+        {
+         "l": "PMe",
+         "a": 101.25,
+         "e": "reemplaza L = 2,25 en el PMe.",
+         "tol": 0.05
+        }
        ]
       }
      ],
      "steps": [
       "Primero el PMe: \\(PMe=\\frac QL=90L-20L^2\\).",
-      "El máximo está donde su derivada vale cero: \\(\\frac{d\\,PMe}{dL}=90-40L=0\\Rightarrow L=2{,}25\\). Es un máximo porque el término \\(-20L^2\\) hace que la parábola abra hacia abajo.",
-      "Valor: \\(90(2{,}25)-20(2{,}25)^2=202{,}5-101{,}25=101{,}25\\).",
-      "Comprobación: \\(PMg=180L-60L^2=405-303{,}75=101{,}25\\). En el máximo del PMe, PMe = PMg ✓."
+      "El máximo está donde su derivada vale cero: \\(\\frac{d\\,PMe}{dL}=90-40L=0\\) \\(\\Rightarrow  L=2{,}25\\). Es un máximo porque el término \\(-20L^2\\) hace que la parábola abra hacia abajo.",
+      "Valor: \\(90(2{,}25)-20(2{,}25)^2\\) \\(=202{,}5-101{,}25\\) \\(=101{,}25\\).",
+      "Comprobación: \\(PMg\\) \\(=180L-60L^2\\) \\(=405-303{,}75\\) \\(=101{,}25\\). En el máximo del PMe, PMe = PMg ✓."
      ],
      "ans": "L = 2,25; PMe = 101,25",
      "hint": "Deriva el PMe, no Q.",
@@ -2193,7 +2866,7 @@
      ],
      "steps": [
       "PMe = Q/L. Por ejemplo, \\(240\\,000/30=8\\,000\\).",
-      "PMg = ΔQ/ΔL, y aquí ΔL = 10. Por ejemplo, para L = 30: \\((240\\,000-80\\,000)/10=16\\,000\\).",
+      "PMg = ΔQ/ΔL, y aquí ΔL = 10. Por ejemplo, para L = 30: \\((240\\,000-80\\,000)/10\\) \\(=16\\,000\\).",
       "Error típico: olvidar dividir entre 10 y poner 160 000."
      ],
      "ans": "PMe: 4 000; 8 000; 15 000; 24 000; 36 000. PMg: 6 000; 16 000; 36 000; 60 000; 96 000",
@@ -2253,30 +2926,26 @@
      "q": "<p>\\(Q=24L^2-L^3\\) (capital fijo). ¿Con cuántos trabajadores se alcanza la <strong>producción máxima</strong> y cuánto es?</p>",
      "checks": [
       {
-       "p": "¿En qué L?",
-       "o": [
-        "\\(L=16\\)",
-        "\\(L=12\\)",
-        "\\(L=8\\)",
-        "\\(L=24\\)",
-        "\\(L=20\\)"
-       ]
-      },
-      {
+       "t": "num",
        "p": "Producción máxima",
-       "o": [
-        "\\(2\\,048\\)",
-        "\\(1\\,728\\)",
-        "\\(1\\,024\\)",
-        "\\(144\\)",
-        "\\(4\\,096\\)"
+       "f": [
+        {
+         "l": "L",
+         "a": 16,
+         "e": "iguala el PMg = 48L − 3L² a 0."
+        },
+        {
+         "l": "Q",
+         "a": 2048,
+         "e": "reemplaza L = 16 en Q."
+        }
        ]
       }
      ],
      "steps": [
       "La producción total es máxima cuando el último trabajador ya no agrega nada: \\(PMg=0\\).",
-      "\\(PMg=\\frac{dQ}{dL}=48L-3L^2=3L(16-L)=0\\Rightarrow L=16\\).",
-      "\\(Q=24(16)^2-16^3=6\\,144-4\\,096=2\\,048\\).",
+      "\\(PMg\\) \\(=\\frac{dQ}{dL}\\) \\(=48L-3L^2\\) \\(=3L(16-L)\\) \\(=0\\) \\(\\Rightarrow  L=16\\).",
+      "\\(Q\\) \\(=24(16)^2-16^3\\) \\(=6\\,144-4\\,096\\) \\(=2\\,048\\).",
       "No confundir: \\(L=12\\) es donde el PMe es máximo (\\(PMe=24L-L^2\\)); \\(L=8\\) es donde el PMg es máximo."
      ],
      "ans": "L = 16; Q = 2 048",
@@ -2323,30 +2992,41 @@
        ]
       },
       {
+       "t": "num",
        "p": "PMe máximo",
-       "o": [
-        "\\(225\\) en \\(L=15\\)",
-        "\\(300\\) en \\(L=20\\)",
-        "\\(225\\) en \\(L=10\\)",
-        "\\(4\\,000\\) en \\(L=20\\)",
-        "\\(450\\) en \\(L=15\\)"
+       "f": [
+        {
+         "l": "L",
+         "a": 15,
+         "e": "deriva el PMe = 30L − L² e iguala a 0."
+        },
+        {
+         "l": "PMe",
+         "a": 225
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Producción máxima",
-       "o": [
-        "\\(4\\,000\\) en \\(L=20\\)",
-        "\\(3\\,375\\) en \\(L=15\\)",
-        "\\(225\\) en \\(L=15\\)",
-        "\\(4\\,500\\) en \\(L=30\\)",
-        "\\(2\\,000\\) en \\(L=10\\)"
+       "f": [
+        {
+         "l": "L",
+         "a": 20,
+         "e": "iguala el PMg = 60L − 3L² a 0."
+        },
+        {
+         "l": "Q",
+         "a": 4000,
+         "e": "reemplaza L = 20 en Q."
+        }
        ]
       }
      ],
      "steps": [
       "\\(PMe=\\frac QL=30L-L^2\\) y \\(PMg=\\frac{dQ}{dL}=60L-3L^2\\).",
-      "PMe máximo: \\(\\frac{d\\,PMe}{dL}=30-2L=0\\Rightarrow L=15\\); \\(PMe=450-225=225\\). Es máximo porque \\(-L^2\\) abre hacia abajo. Comprobación: \\(PMg(15)=900-675=225=PMe\\).",
-      "Producción máxima: \\(PMg=3L(20-L)=0\\Rightarrow L=20\\); \\(Q=30(400)-8\\,000=4\\,000\\).",
+      "PMe máximo: \\(\\frac{d\\,PMe}{dL}=30-2L=0\\) \\(\\Rightarrow  L=15\\); \\(PMe=450-225=225\\). Es máximo porque \\(-L^2\\) abre hacia abajo. Comprobación: \\(PMg(15)\\) \\(=900-675\\) \\(=225\\) \\(=PMe\\).",
+      "Producción máxima: \\(PMg=3L(20-L)=0\\Rightarrow L=20\\); \\(Q\\) \\(=30(400)-8\\,000\\) \\(=4\\,000\\).",
       "Orden típico: primero el PMe toca su máximo (L = 15) y después la producción total (L = 20)."
      ],
      "ans": "PMe máx 225 (L=15); Q máx 4 000 (L=20)",
@@ -2369,7 +3049,8 @@
       [
        "qmax"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mp11",
@@ -2378,54 +3059,50 @@
      "q": "<p>Una fábrica produce 100 unidades con 2 trabajadores y 1 máquina. Analiza cada caso de <strong>largo plazo</strong> (cambian todos los factores).</p>",
      "checks": [
       {
-       "p": "a) Duplica todo (4 trabajadores y 2 máquinas) y produce 230.",
-       "o": [
-        "Rendimientos crecientes a escala (economías de escala)",
-        "Rendimientos constantes a escala",
-        "Rendimientos decrecientes a escala (deseconomías de escala)",
-        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "b) Triplica todo (6 trabajadores y 3 máquinas) y produce 300.",
-       "o": [
-        "Rendimientos constantes a escala",
-        "Rendimientos crecientes a escala (economías de escala)",
-        "Rendimientos decrecientes a escala (deseconomías de escala)",
-        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "c) Duplica todo y produce 170.",
-       "o": [
-        "Rendimientos decrecientes a escala (deseconomías de escala)",
-        "Rendimientos crecientes a escala (economías de escala)",
-        "Rendimientos constantes a escala",
-        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "d) Mantiene 1 máquina, pasa de 2 a 4 trabajadores y la producción sube de 100 a 150.",
-       "o": [
-        "Rendimientos decrecientes del trabajo (no es un tema de escala)",
-        "Rendimientos crecientes a escala (economías de escala)",
-        "Rendimientos constantes a escala",
-        "Rendimientos decrecientes a escala (deseconomías de escala)",
-        "No se puede saber"
+       "t": "cls",
+       "p": "¿Qué hay en cada caso?",
+       "cats": [
+        "Crecientes a escala",
+        "Constantes a escala",
+        "Decrecientes a escala",
+        "Rend. decrecientes del trabajo"
+       ],
+       "items": [
+        {
+         "x": "Duplica todo (4 trabajadores y 2 máquinas) y produce 230.",
+         "c": 0
+        },
+        {
+         "x": "Triplica todo (6 trabajadores y 3 máquinas) y produce 300.",
+         "c": 1
+        },
+        {
+         "x": "Duplica todo y produce 170.",
+         "c": 2
+        },
+        {
+         "x": "Mantiene 1 máquina, pasa de 2 a 4 trabajadores y la producción sube de 100 a 150.",
+         "c": 3,
+         "e": "Solo cambia el trabajo: es corto plazo, no escala."
+        },
+        {
+         "x": "Multiplica todo por 3 y produce 360.",
+         "c": 0
+        },
+        {
+         "x": "Duplica todo y produce exactamente 200.",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "Regla: si todos los factores se multiplican por <em>k</em>, compara la producción con <em>k</em> veces la inicial.",
-      "a) Factores ×2, producción ×2,3 (más que el doble): <strong>crecientes</strong>. Cada unidad sale más barata → economías de escala (el CU baja).",
-      "b) Factores ×3, producción ×3: <strong>constantes</strong> (el CU no cambia).",
-      "c) Factores ×2, producción ×1,7: <strong>decrecientes</strong> → deseconomías de escala (el CU sube).",
-      "d) Trampa: solo cambia el trabajo y la máquina sigue fija. Eso es corto plazo: ley de rendimientos decrecientes, no escala."
+      "Regla: si todos los factores se multiplican por <em>k</em>, compara la producción con <em>k</em> veces la inicial (100).",
+      "×2 → 230 y ×3 → 360: más que proporcional, <strong>crecientes</strong> (economías de escala, el CU baja). ×3 → 300 y ×2 → 200: <strong>constantes</strong>.",
+      "×2 → 170: menos que el doble, <strong>decrecientes</strong> (deseconomías, el CU sube).",
+      "Trampa: si solo cambia el trabajo y la máquina sigue fija, es corto plazo: rendimientos decrecientes del trabajo, no escala."
      ],
-     "ans": "Crecientes; constantes; decrecientes; rend. decrecientes del trabajo",
+     "ans": "Crec., const., decr., rend. decr. del trabajo, crec., const.",
      "hint": "¿Cambian TODOS los factores o solo uno?",
      "fig": null,
      "draw": false,
@@ -2435,17 +3112,183 @@
        "escprod"
       ],
       [
-       "escprod"
-      ],
-      [
        "escprod",
        "escala"
       ],
       [
+       "escprod"
+      ],
+      [
        "rdec",
        "cp"
+      ]
+     ]
+    },
+    {
+     "id": "mp12",
+     "lvl": 3,
+     "title": "Toca en los gráficos de producción",
+     "q": "<p>Los gráficos muestran el PT (arriba) y el PMe y el PMg (abajo) de un taller con capital fijo.</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el punto donde el PMg llega a su máximo (desde ahí hay rendimientos decrecientes).",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 360\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V150H292\"/><text class=\"dl\" x=\"10\" y=\"18\">PT</text><text class=\"dl\" x=\"286\" y=\"168\">L</text><polyline points=\"40.0,150.0 42.7,149.9 45.4,149.8 48.1,149.5 50.8,149.1 53.5,148.6 56.2,148.0 58.9,147.3 61.6,146.5 64.3,145.7 67.0,144.7 69.7,143.6 72.3,142.5 75.0,141.3 77.7,140.0 80.4,138.6 83.1,137.1 85.8,135.6 88.5,134.0 91.2,132.4 93.9,130.7 96.6,128.9 99.3,127.1 102.0,125.2 104.7,123.3 107.4,121.3 110.1,119.3 112.8,117.3 115.5,115.2 118.2,113.0 120.9,110.9 123.6,108.7 126.3,106.5 129.0,104.2 131.7,102.0 134.3,99.7 137.0,97.4 139.7,95.1 142.4,92.8 145.1,90.5 147.8,88.2 150.5,85.9 153.2,83.5 155.9,81.2 158.6,78.9 161.3,76.7 164.0,74.4 166.7,72.1 169.4,69.9 172.1,67.7 174.8,65.5 177.5,63.3 180.2,61.2 182.9,59.1 185.6,57.1 188.3,55.0 191.0,53.1 193.7,51.1 196.3,49.3 199.0,47.4 201.7,45.7 204.4,44.0 207.1,42.3 209.8,40.7 212.5,39.2 215.2,37.8 217.9,36.4 220.6,35.1 223.3,33.9 226.0,32.7 228.7,31.7 231.4,30.7 234.1,29.8 236.8,29.0 239.5,28.3 242.2,27.8 244.9,27.3 247.6,26.9 250.3,26.6 253.0,26.4 255.7,26.4 258.3,26.4 261.0,26.6 263.7,26.9 266.4,27.3 269.1,27.9 271.8,28.6 274.5,29.4 277.2,30.3\" style=\"fill:none;stroke:var(--curve);stroke-width:2.4\"/><path class=\"gl\" d=\"M40 190V330\"/><line class=\"gl\" x1=\"40\" y1=\"287.2\" x2=\"292\" y2=\"287.2\"/><text class=\"dl\" x=\"286\" y=\"281.2\">L</text><polyline points=\"40.0,287.2 42.7,285.1 45.4,283.0 48.1,281.0 50.8,279.0 53.5,277.0 56.2,275.0 58.9,273.1 61.6,271.3 64.3,269.4 67.0,267.6 69.7,265.9 72.3,264.1 75.0,262.4 77.7,260.8 80.4,259.2 83.1,257.6 85.8,256.0 88.5,254.5 91.2,253.0 93.9,251.6 96.6,250.2 99.3,248.8 102.0,247.5 104.7,246.2 107.4,244.9 110.1,243.7 112.8,242.5 115.5,241.3 118.2,240.2 120.9,239.1 123.6,238.1 126.3,237.1 129.0,236.1 131.7,235.1 134.3,234.2 137.0,233.3 139.7,232.5 142.4,231.7 145.1,230.9 147.8,230.2 150.5,229.5 153.2,228.9 155.9,228.2 158.6,227.6 161.3,227.1 164.0,226.6 166.7,226.1 169.4,225.7 172.1,225.2 174.8,224.9 177.5,224.5 180.2,224.2 182.9,224.0 185.6,223.7 188.3,223.5 191.0,223.4 193.7,223.2 196.3,223.2 199.0,223.1 201.7,223.1 204.4,223.1 207.1,223.2 209.8,223.2 212.5,223.4 215.2,223.5 217.9,223.7 220.6,224.0 223.3,224.2 226.0,224.5 228.7,224.9 231.4,225.2 234.1,225.7 236.8,226.1 239.5,226.6 242.2,227.1 244.9,227.6 247.6,228.2 250.3,228.9 253.0,229.5 255.7,230.2 258.3,230.9 261.0,231.7 263.7,232.5 266.4,233.3 269.1,234.2 271.8,235.1 274.5,236.1 277.2,237.1\" style=\"fill:none;stroke:var(--exe);stroke-width:2.4\"/><polyline points=\"40.0,287.2 42.7,283.0 45.4,278.9 48.1,274.9 50.8,271.0 53.5,267.2 56.2,263.5 58.9,259.9 61.6,256.4 64.3,253.1 67.0,249.8 69.7,246.7 72.3,243.6 75.0,240.7 77.7,237.8 80.4,235.1 83.1,232.5 85.8,230.0 88.5,227.6 91.2,225.3 93.9,223.1 96.6,221.0 99.3,219.0 102.0,217.2 104.7,215.4 107.4,213.7 110.1,212.2 112.8,210.7 115.5,209.4 118.2,208.2 120.9,207.0 123.6,206.0 126.3,205.1 129.0,204.3 131.7,203.6 134.3,203.0 137.0,202.6 139.7,202.2 142.4,201.9 145.1,201.8 147.8,201.7 150.5,201.8 153.2,201.9 155.9,202.2 158.6,202.6 161.3,203.0 164.0,203.6 166.7,204.3 169.4,205.1 172.1,206.0 174.8,207.0 177.5,208.2 180.2,209.4 182.9,210.7 185.6,212.2 188.3,213.7 191.0,215.4 193.7,217.2 196.3,219.0 199.0,221.0 201.7,223.1 204.4,225.3 207.1,227.6 209.8,230.0 212.5,232.5 215.2,235.1 217.9,237.8 220.6,240.7 223.3,243.6 226.0,246.7 228.7,249.8 231.4,253.1 234.1,256.4 236.8,259.9 239.5,263.5 242.2,267.2 244.9,271.0 247.6,274.9 250.3,278.9 253.0,283.0 255.7,287.2 258.3,291.6 261.0,296.0 263.7,300.5 266.4,305.2 269.1,310.0 271.8,314.8 274.5,319.8 277.2,324.9\" style=\"fill:none;stroke:var(--sol);stroke-width:2.4\"/><text class=\"dl\" x=\"268.6\" y=\"229.1\">PMe</text><text class=\"dl\" x=\"214.1\" y=\"328.9\">PMg</text><line class=\"dsh\" x1=\"255.7\" y1=\"26.4\" x2=\"255.7\" y2=\"287.2\"/><circle data-z=\"pmgmax\" cx=\"147.8\" cy=\"201.7\" r=\"9\"/><circle data-z=\"pmemax\" cx=\"201.7\" cy=\"223.1\" r=\"9\"/><circle data-z=\"pmg0\" cx=\"255.7\" cy=\"287.2\" r=\"9\"/><circle data-z=\"ptmax\" cx=\"255.7\" cy=\"26.4\" r=\"9\"/><circle data-z=\"ptinf\" cx=\"147.8\" cy=\"88.2\" r=\"9\"/></svg>",
+       "a": [
+        "pmgmax"
+       ],
+       "e": "Es la cima de la curva del PMg."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el punto donde el PMe es máximo.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 360\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V150H292\"/><text class=\"dl\" x=\"10\" y=\"18\">PT</text><text class=\"dl\" x=\"286\" y=\"168\">L</text><polyline points=\"40.0,150.0 42.7,149.9 45.4,149.8 48.1,149.5 50.8,149.1 53.5,148.6 56.2,148.0 58.9,147.3 61.6,146.5 64.3,145.7 67.0,144.7 69.7,143.6 72.3,142.5 75.0,141.3 77.7,140.0 80.4,138.6 83.1,137.1 85.8,135.6 88.5,134.0 91.2,132.4 93.9,130.7 96.6,128.9 99.3,127.1 102.0,125.2 104.7,123.3 107.4,121.3 110.1,119.3 112.8,117.3 115.5,115.2 118.2,113.0 120.9,110.9 123.6,108.7 126.3,106.5 129.0,104.2 131.7,102.0 134.3,99.7 137.0,97.4 139.7,95.1 142.4,92.8 145.1,90.5 147.8,88.2 150.5,85.9 153.2,83.5 155.9,81.2 158.6,78.9 161.3,76.7 164.0,74.4 166.7,72.1 169.4,69.9 172.1,67.7 174.8,65.5 177.5,63.3 180.2,61.2 182.9,59.1 185.6,57.1 188.3,55.0 191.0,53.1 193.7,51.1 196.3,49.3 199.0,47.4 201.7,45.7 204.4,44.0 207.1,42.3 209.8,40.7 212.5,39.2 215.2,37.8 217.9,36.4 220.6,35.1 223.3,33.9 226.0,32.7 228.7,31.7 231.4,30.7 234.1,29.8 236.8,29.0 239.5,28.3 242.2,27.8 244.9,27.3 247.6,26.9 250.3,26.6 253.0,26.4 255.7,26.4 258.3,26.4 261.0,26.6 263.7,26.9 266.4,27.3 269.1,27.9 271.8,28.6 274.5,29.4 277.2,30.3\" style=\"fill:none;stroke:var(--curve);stroke-width:2.4\"/><path class=\"gl\" d=\"M40 190V330\"/><line class=\"gl\" x1=\"40\" y1=\"287.2\" x2=\"292\" y2=\"287.2\"/><text class=\"dl\" x=\"286\" y=\"281.2\">L</text><polyline points=\"40.0,287.2 42.7,285.1 45.4,283.0 48.1,281.0 50.8,279.0 53.5,277.0 56.2,275.0 58.9,273.1 61.6,271.3 64.3,269.4 67.0,267.6 69.7,265.9 72.3,264.1 75.0,262.4 77.7,260.8 80.4,259.2 83.1,257.6 85.8,256.0 88.5,254.5 91.2,253.0 93.9,251.6 96.6,250.2 99.3,248.8 102.0,247.5 104.7,246.2 107.4,244.9 110.1,243.7 112.8,242.5 115.5,241.3 118.2,240.2 120.9,239.1 123.6,238.1 126.3,237.1 129.0,236.1 131.7,235.1 134.3,234.2 137.0,233.3 139.7,232.5 142.4,231.7 145.1,230.9 147.8,230.2 150.5,229.5 153.2,228.9 155.9,228.2 158.6,227.6 161.3,227.1 164.0,226.6 166.7,226.1 169.4,225.7 172.1,225.2 174.8,224.9 177.5,224.5 180.2,224.2 182.9,224.0 185.6,223.7 188.3,223.5 191.0,223.4 193.7,223.2 196.3,223.2 199.0,223.1 201.7,223.1 204.4,223.1 207.1,223.2 209.8,223.2 212.5,223.4 215.2,223.5 217.9,223.7 220.6,224.0 223.3,224.2 226.0,224.5 228.7,224.9 231.4,225.2 234.1,225.7 236.8,226.1 239.5,226.6 242.2,227.1 244.9,227.6 247.6,228.2 250.3,228.9 253.0,229.5 255.7,230.2 258.3,230.9 261.0,231.7 263.7,232.5 266.4,233.3 269.1,234.2 271.8,235.1 274.5,236.1 277.2,237.1\" style=\"fill:none;stroke:var(--exe);stroke-width:2.4\"/><polyline points=\"40.0,287.2 42.7,283.0 45.4,278.9 48.1,274.9 50.8,271.0 53.5,267.2 56.2,263.5 58.9,259.9 61.6,256.4 64.3,253.1 67.0,249.8 69.7,246.7 72.3,243.6 75.0,240.7 77.7,237.8 80.4,235.1 83.1,232.5 85.8,230.0 88.5,227.6 91.2,225.3 93.9,223.1 96.6,221.0 99.3,219.0 102.0,217.2 104.7,215.4 107.4,213.7 110.1,212.2 112.8,210.7 115.5,209.4 118.2,208.2 120.9,207.0 123.6,206.0 126.3,205.1 129.0,204.3 131.7,203.6 134.3,203.0 137.0,202.6 139.7,202.2 142.4,201.9 145.1,201.8 147.8,201.7 150.5,201.8 153.2,201.9 155.9,202.2 158.6,202.6 161.3,203.0 164.0,203.6 166.7,204.3 169.4,205.1 172.1,206.0 174.8,207.0 177.5,208.2 180.2,209.4 182.9,210.7 185.6,212.2 188.3,213.7 191.0,215.4 193.7,217.2 196.3,219.0 199.0,221.0 201.7,223.1 204.4,225.3 207.1,227.6 209.8,230.0 212.5,232.5 215.2,235.1 217.9,237.8 220.6,240.7 223.3,243.6 226.0,246.7 228.7,249.8 231.4,253.1 234.1,256.4 236.8,259.9 239.5,263.5 242.2,267.2 244.9,271.0 247.6,274.9 250.3,278.9 253.0,283.0 255.7,287.2 258.3,291.6 261.0,296.0 263.7,300.5 266.4,305.2 269.1,310.0 271.8,314.8 274.5,319.8 277.2,324.9\" style=\"fill:none;stroke:var(--sol);stroke-width:2.4\"/><text class=\"dl\" x=\"268.6\" y=\"229.1\">PMe</text><text class=\"dl\" x=\"214.1\" y=\"328.9\">PMg</text><line class=\"dsh\" x1=\"255.7\" y1=\"26.4\" x2=\"255.7\" y2=\"287.2\"/><circle data-z=\"pmgmax\" cx=\"147.8\" cy=\"201.7\" r=\"9\"/><circle data-z=\"pmemax\" cx=\"201.7\" cy=\"223.1\" r=\"9\"/><circle data-z=\"pmg0\" cx=\"255.7\" cy=\"287.2\" r=\"9\"/><circle data-z=\"ptmax\" cx=\"255.7\" cy=\"26.4\" r=\"9\"/><circle data-z=\"ptinf\" cx=\"147.8\" cy=\"88.2\" r=\"9\"/></svg>",
+       "a": [
+        "pmemax"
+       ],
+       "e": "El PMg corta al PMe justo en su máximo."
+      },
+      {
+       "t": "tap",
+       "p": "En la línea punteada pasan dos cosas a la vez. Toca los dos puntos.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 360\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"gl\" d=\"M40 8V150H292\"/><text class=\"dl\" x=\"10\" y=\"18\">PT</text><text class=\"dl\" x=\"286\" y=\"168\">L</text><polyline points=\"40.0,150.0 42.7,149.9 45.4,149.8 48.1,149.5 50.8,149.1 53.5,148.6 56.2,148.0 58.9,147.3 61.6,146.5 64.3,145.7 67.0,144.7 69.7,143.6 72.3,142.5 75.0,141.3 77.7,140.0 80.4,138.6 83.1,137.1 85.8,135.6 88.5,134.0 91.2,132.4 93.9,130.7 96.6,128.9 99.3,127.1 102.0,125.2 104.7,123.3 107.4,121.3 110.1,119.3 112.8,117.3 115.5,115.2 118.2,113.0 120.9,110.9 123.6,108.7 126.3,106.5 129.0,104.2 131.7,102.0 134.3,99.7 137.0,97.4 139.7,95.1 142.4,92.8 145.1,90.5 147.8,88.2 150.5,85.9 153.2,83.5 155.9,81.2 158.6,78.9 161.3,76.7 164.0,74.4 166.7,72.1 169.4,69.9 172.1,67.7 174.8,65.5 177.5,63.3 180.2,61.2 182.9,59.1 185.6,57.1 188.3,55.0 191.0,53.1 193.7,51.1 196.3,49.3 199.0,47.4 201.7,45.7 204.4,44.0 207.1,42.3 209.8,40.7 212.5,39.2 215.2,37.8 217.9,36.4 220.6,35.1 223.3,33.9 226.0,32.7 228.7,31.7 231.4,30.7 234.1,29.8 236.8,29.0 239.5,28.3 242.2,27.8 244.9,27.3 247.6,26.9 250.3,26.6 253.0,26.4 255.7,26.4 258.3,26.4 261.0,26.6 263.7,26.9 266.4,27.3 269.1,27.9 271.8,28.6 274.5,29.4 277.2,30.3\" style=\"fill:none;stroke:var(--curve);stroke-width:2.4\"/><path class=\"gl\" d=\"M40 190V330\"/><line class=\"gl\" x1=\"40\" y1=\"287.2\" x2=\"292\" y2=\"287.2\"/><text class=\"dl\" x=\"286\" y=\"281.2\">L</text><polyline points=\"40.0,287.2 42.7,285.1 45.4,283.0 48.1,281.0 50.8,279.0 53.5,277.0 56.2,275.0 58.9,273.1 61.6,271.3 64.3,269.4 67.0,267.6 69.7,265.9 72.3,264.1 75.0,262.4 77.7,260.8 80.4,259.2 83.1,257.6 85.8,256.0 88.5,254.5 91.2,253.0 93.9,251.6 96.6,250.2 99.3,248.8 102.0,247.5 104.7,246.2 107.4,244.9 110.1,243.7 112.8,242.5 115.5,241.3 118.2,240.2 120.9,239.1 123.6,238.1 126.3,237.1 129.0,236.1 131.7,235.1 134.3,234.2 137.0,233.3 139.7,232.5 142.4,231.7 145.1,230.9 147.8,230.2 150.5,229.5 153.2,228.9 155.9,228.2 158.6,227.6 161.3,227.1 164.0,226.6 166.7,226.1 169.4,225.7 172.1,225.2 174.8,224.9 177.5,224.5 180.2,224.2 182.9,224.0 185.6,223.7 188.3,223.5 191.0,223.4 193.7,223.2 196.3,223.2 199.0,223.1 201.7,223.1 204.4,223.1 207.1,223.2 209.8,223.2 212.5,223.4 215.2,223.5 217.9,223.7 220.6,224.0 223.3,224.2 226.0,224.5 228.7,224.9 231.4,225.2 234.1,225.7 236.8,226.1 239.5,226.6 242.2,227.1 244.9,227.6 247.6,228.2 250.3,228.9 253.0,229.5 255.7,230.2 258.3,230.9 261.0,231.7 263.7,232.5 266.4,233.3 269.1,234.2 271.8,235.1 274.5,236.1 277.2,237.1\" style=\"fill:none;stroke:var(--exe);stroke-width:2.4\"/><polyline points=\"40.0,287.2 42.7,283.0 45.4,278.9 48.1,274.9 50.8,271.0 53.5,267.2 56.2,263.5 58.9,259.9 61.6,256.4 64.3,253.1 67.0,249.8 69.7,246.7 72.3,243.6 75.0,240.7 77.7,237.8 80.4,235.1 83.1,232.5 85.8,230.0 88.5,227.6 91.2,225.3 93.9,223.1 96.6,221.0 99.3,219.0 102.0,217.2 104.7,215.4 107.4,213.7 110.1,212.2 112.8,210.7 115.5,209.4 118.2,208.2 120.9,207.0 123.6,206.0 126.3,205.1 129.0,204.3 131.7,203.6 134.3,203.0 137.0,202.6 139.7,202.2 142.4,201.9 145.1,201.8 147.8,201.7 150.5,201.8 153.2,201.9 155.9,202.2 158.6,202.6 161.3,203.0 164.0,203.6 166.7,204.3 169.4,205.1 172.1,206.0 174.8,207.0 177.5,208.2 180.2,209.4 182.9,210.7 185.6,212.2 188.3,213.7 191.0,215.4 193.7,217.2 196.3,219.0 199.0,221.0 201.7,223.1 204.4,225.3 207.1,227.6 209.8,230.0 212.5,232.5 215.2,235.1 217.9,237.8 220.6,240.7 223.3,243.6 226.0,246.7 228.7,249.8 231.4,253.1 234.1,256.4 236.8,259.9 239.5,263.5 242.2,267.2 244.9,271.0 247.6,274.9 250.3,278.9 253.0,283.0 255.7,287.2 258.3,291.6 261.0,296.0 263.7,300.5 266.4,305.2 269.1,310.0 271.8,314.8 274.5,319.8 277.2,324.9\" style=\"fill:none;stroke:var(--sol);stroke-width:2.4\"/><text class=\"dl\" x=\"268.6\" y=\"229.1\">PMe</text><text class=\"dl\" x=\"214.1\" y=\"328.9\">PMg</text><line class=\"dsh\" x1=\"255.7\" y1=\"26.4\" x2=\"255.7\" y2=\"287.2\"/><circle data-z=\"pmgmax\" cx=\"147.8\" cy=\"201.7\" r=\"9\"/><circle data-z=\"pmemax\" cx=\"201.7\" cy=\"223.1\" r=\"9\"/><circle data-z=\"pmg0\" cx=\"255.7\" cy=\"287.2\" r=\"9\"/><circle data-z=\"ptmax\" cx=\"255.7\" cy=\"26.4\" r=\"9\"/><circle data-z=\"ptinf\" cx=\"147.8\" cy=\"88.2\" r=\"9\"/></svg>",
+       "a": [
+        "pmg0",
+        "ptmax"
+       ],
+       "multi": true,
+       "e": "Cuando el PMg vale 0, el PT deja de crecer."
+      }
+     ],
+     "steps": [
+      "El PMg es la pendiente del PT: su máximo es donde el PT crece más rápido. Desde ahí, cada trabajador aporta menos (rendimientos decrecientes).",
+      "Mientras PMg > PMe, el PMe sube; cuando PMg < PMe, baja. Por eso el PMg corta al PMe en el <strong>máximo del PMe</strong>.",
+      "Cuando el PMg llega a 0, el último trabajador no aporta nada: el <strong>PT es máximo</strong>. Orden siempre: tope del PMg, luego del PMe y al final del PT."
+     ],
+     "ans": "Cima del PMg; cruce PMg-PMe; PMg = 0 y PT máximo",
+     "hint": "Recuerda el orden: primero el PMg, luego el PMe y al final el PT.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rdec"
       ],
-      []
+      [
+       "pme"
+      ],
+      [
+       "qmax"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "mp13",
+     "lvl": 2,
+     "title": "Ordena: cómo hallar el PMe máximo",
+     "q": "<p>Te dan \\(Q=f(L)\\) con capital fijo y te piden el PMe máximo. Ordena el procedimiento.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Divide Q entre L para obtener el PMe.",
+        "Deriva el PMe con respecto a L.",
+        "Iguala esa derivada a cero y despeja L.",
+        "Reemplaza ese L en el PMe para obtener su valor máximo.",
+        "Comprueba: en ese L, el PMg es igual al PMe."
+       ]
+      }
+     ],
+     "steps": [
+      "PMe = Q/L.",
+      "El máximo de una función está donde su derivada vale 0: deriva el PMe.",
+      "Despeja L de \\(PMe'=0\\).",
+      "El valor del PMe máximo sale de reemplazar ese L en el PMe (no en Q).",
+      "Comprobación: el PMg corta al PMe en su máximo, así que ahí PMg = PMe."
+     ],
+     "ans": "Q/L → derivar → igualar a 0 → reemplazar → comprobar",
+     "hint": "Primero necesitas la fórmula del PMe.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pme"
+      ],
+      [
+       "deriv"
+      ],
+      [
+       "deriv"
+      ],
+      [
+       "pme"
+      ],
+      [
+       "pme"
+      ]
+     ]
+    },
+    {
+     "id": "mp14",
+     "lvl": 1,
+     "title": "¿Corto o largo plazo?",
+     "q": "<p>Clasifica cada situación.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Corto o largo plazo?",
+       "cats": [
+        "Corto plazo",
+        "Largo plazo"
+       ],
+       "items": [
+        {
+         "x": "Contratas 3 cocineros más en la misma cocina.",
+         "c": 0
+        },
+        {
+         "x": "Abres un segundo local con más hornos y personal.",
+         "c": 1
+        },
+        {
+         "x": "El tamaño de la planta no puede cambiar.",
+         "c": 0
+        },
+        {
+         "x": "Todos los factores de producción son variables.",
+         "c": 1
+        },
+        {
+         "x": "Aparecen rendimientos decrecientes del trabajo.",
+         "c": 0
+        },
+        {
+         "x": "Analizas si hay economías de escala.",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Corto plazo: al menos un factor (local, máquinas) está fijo; solo mueves el trabajo. Ahí aparecen los rendimientos decrecientes.",
+      "Largo plazo: todo puede cambiar. Ahí se analizan las economías de escala."
+     ],
+     "ans": "C, L, C, L, C, L",
+     "hint": "¿Puede cambiar el local y las máquinas?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cp"
+      ],
+      [
+       "cp",
+       "escprod"
+      ]
      ]
     }
    ]
@@ -2559,39 +3402,156 @@
      ]
     },
     {
+     "id": "mk10",
+     "lvl": 1,
+     "title": "¿Explícito o implícito?",
+     "q": "<p>Clasifica cada costo de un emprendimiento.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Qué tipo de costo es?",
+       "cats": [
+        "Explícito",
+        "Implícito (de oportunidad)"
+       ],
+       "items": [
+        {
+         "x": "Los materiales que compras.",
+         "c": 0
+        },
+        {
+         "x": "Los sueldos de tus empleados.",
+         "c": 0
+        },
+        {
+         "x": "El alquiler que pagas por el local.",
+         "c": 0
+        },
+        {
+         "x": "La luz y el agua.",
+         "c": 0
+        },
+        {
+         "x": "El sueldo que dejas de ganar por trabajar en tu negocio.",
+         "c": 1
+        },
+        {
+         "x": "El alquiler que no cobras por usar tu propio local.",
+         "c": 1
+        },
+        {
+         "x": "Los intereses que no ganas por usar tus ahorros.",
+         "c": 1,
+         "e": "Ojo: son los <b>intereses</b>, no el capital entero."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Explícito: sale dinero de tu bolsillo y hay boleta (materiales, sueldos, alquiler pagado, servicios).",
+      "Implícito: no pagas nada, pero renuncias a tu mejor alternativa: sueldo que dejas, alquiler que no cobras, intereses que no ganas."
+     ],
+     "ans": "E, E, E, E, I, I, I",
+     "hint": "¿Sale dinero o renuncias a algo?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "benef"
+      ],
+      [
+       "coport"
+      ]
+     ]
+    },
+    {
+     "id": "mk11",
+     "lvl": 1,
+     "title": "¿Fijo o variable?",
+     "q": "<p>Una fábrica de mochilas clasifica sus costos.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Costo fijo o variable?",
+       "cats": [
+        "Costo fijo",
+        "Costo variable"
+       ],
+       "items": [
+        {
+         "x": "Alquiler de la maquinaria.",
+         "c": 0
+        },
+        {
+         "x": "Materiales de cada mochila.",
+         "c": 1
+        },
+        {
+         "x": "Seguro mensual del local.",
+         "c": 0
+        },
+        {
+         "x": "Tela por mochila.",
+         "c": 1
+        },
+        {
+         "x": "Sueldo fijo del vigilante.",
+         "c": 0
+        },
+        {
+         "x": "Comisión por cada mochila vendida.",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Fijo: no cambia aunque produzcas más o menos (alquiler, seguro, sueldo fijo).",
+      "Variable: crece con cada unidad (materiales, tela, comisión por unidad)."
+     ],
+     "ans": "F, V, F, V, F, V",
+     "hint": "¿Cambia si produces una mochila más?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ct"
+      ],
+      [
+       "ct"
+      ]
+     ]
+    },
+    {
      "id": "mk3",
      "lvl": 2,
      "title": "Caso Luis (clase)",
      "q": "<p>Luis gana S/ 20 por hora en una academia. Un día no va y pasa 10 horas sembrando semillas que le costaron S/ 100. Vende la cosecha en S/ 180.</p>",
      "checks": [
       {
-       "p": "Costo de oportunidad",
-       "o": [
-        "S/ 200",
-        "S/ 100",
-        "S/ 20",
-        "S/ 300",
-        "S/ 80"
-       ]
-      },
-      {
-       "p": "Utilidad contable",
-       "o": [
-        "S/ 80",
-        "−S/ 120",
-        "S/ 180",
-        "S/ −20",
-        "S/ 100"
-       ]
-      },
-      {
-       "p": "Beneficio económico",
-       "o": [
-        "−S/ 120",
-        "S/ 80",
-        "S/ 180",
-        "S/ 0",
-        "−S/ 20"
+       "t": "num",
+       "p": "Completa el caso de Luis",
+       "f": [
+        {
+         "l": "Costo de oportunidad",
+         "a": 200,
+         "u": "S/",
+         "e": "es lo que deja de ganar: S/ 20 × 10 horas."
+        },
+        {
+         "l": "Utilidad contable",
+         "a": 80,
+         "u": "S/",
+         "e": "ingreso − costos explícitos (las semillas)."
+        },
+        {
+         "l": "Beneficio económico",
+         "a": -120,
+         "u": "S/",
+         "e": "utilidad contable − costo de oportunidad (puede ser negativo)."
+        }
        ]
       }
      ],
@@ -2624,23 +3584,21 @@
      "q": "<p>MatLab planea un laboratorio: costos fijos y variables de US$ 1 000 000 al año e ingresos de US$ 1 200 000. Dejaría de lado una ampliación que generaría US$ 250 000.</p>",
      "checks": [
       {
-       "p": "Utilidad contable",
-       "o": [
-        "US$ 200 000",
-        "US$ 950 000",
-        "−US$ 50 000",
-        "US$ 1 200 000",
-        "US$ 250 000"
-       ]
-      },
-      {
-       "p": "Beneficio económico",
-       "o": [
-        "−US$ 50 000",
-        "US$ 200 000",
-        "US$ 450 000",
-        "US$ 0",
-        "US$ 250 000"
+       "t": "num",
+       "p": "Completa el caso",
+       "f": [
+        {
+         "l": "Utilidad contable",
+         "a": 200000,
+         "u": "US$",
+         "e": "ingresos − costos."
+        },
+        {
+         "l": "Beneficio económico",
+         "a": -50000,
+         "u": "US$",
+         "e": "resta la ampliación a la que renuncia."
+        }
        ]
       },
       {
@@ -2674,7 +3632,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mk5",
@@ -2923,33 +3882,29 @@
      "q": "<p>Costos totales por cantidad producida:</p><div class=\"tbl\"><table><tr><th>Q</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr><tr><td>Empresa A</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td><td>110</td><td>120</td></tr><tr><td>Empresa B</td><td>11</td><td>24</td><td>39</td><td>56</td><td>75</td><td>96</td><td>119</td></tr><tr><td>Empresa C</td><td>21</td><td>34</td><td>49</td><td>66</td><td>85</td><td>106</td><td>129</td></tr></table></div>",
      "checks": [
       {
-       "p": "Empresa A",
-       "o": [
+       "t": "cls",
+       "p": "¿Qué presenta cada empresa?",
+       "cats": [
         "Economías de escala",
         "Deseconomías de escala",
-        "Rendimientos constantes",
-        "Primero economías y luego deseconomías",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "Empresa B",
-       "o": [
-        "Deseconomías de escala",
-        "Economías de escala",
-        "Rendimientos constantes",
-        "Primero economías y luego deseconomías",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "Empresa C",
-       "o": [
-        "Primero economías y luego deseconomías",
-        "Economías de escala",
-        "Deseconomías de escala",
-        "Rendimientos constantes",
-        "No se puede saber"
+        "Primero economías, luego deseconomías"
+       ],
+       "items": [
+        {
+         "x": "Empresa A",
+         "c": 0,
+         "e": "Calcula el CT/Q de A: 60, 35, 26,7… siempre baja."
+        },
+        {
+         "x": "Empresa B",
+         "c": 1,
+         "e": "El CT/Q de B: 11, 12, 13, 14… siempre sube."
+        },
+        {
+         "x": "Empresa C",
+         "c": 2,
+         "e": "El CT/Q de C primero baja y luego sube."
+        }
        ]
       }
      ],
@@ -2982,43 +3937,43 @@
      "q": "<p>Ana deja un empleo donde ganaba S/ 3 000 al mes para abrir una cafetería en un local propio, que podría alquilar en S/ 1 500 al mes. Cada mes vende S/ 12 000 y paga S/ 4 000 en insumos, S/ 3 000 de sueldos a dos empleados y S/ 500 de luz y agua.</p>",
      "checks": [
       {
-       "p": "Costos explícitos",
-       "o": [
-        "S/ 7 500",
-        "S/ 12 000",
-        "S/ 4 500",
-        "S/ 4 000",
-        "S/ 9 000"
+       "t": "num",
+       "p": "Completa el caso de Ana (montos mensuales)",
+       "f": [
+        {
+         "l": "Costos explícitos",
+         "a": 7500,
+         "u": "S/",
+         "e": "insumos + sueldos + servicios."
+        },
+        {
+         "l": "Costo de oportunidad",
+         "a": 4500,
+         "u": "S/",
+         "e": "el sueldo que dejó + el alquiler que no cobra."
+        },
+        {
+         "l": "Utilidad contable",
+         "a": 4500,
+         "u": "S/",
+         "e": "ventas − costos explícitos."
+        },
+        {
+         "l": "Beneficio económico",
+         "a": 0,
+         "u": "S/",
+         "e": "utilidad contable − costo de oportunidad."
+        }
        ]
       },
       {
-       "p": "Costo de oportunidad (implícito)",
+       "p": "¿Qué significa ese beneficio económico?",
        "o": [
-        "S/ 4 500",
-        "S/ 3 000",
-        "S/ 1 500",
-        "S/ 7 500",
-        "S/ 0"
-       ]
-      },
-      {
-       "p": "Utilidad contable",
-       "o": [
-        "S/ 4 500",
-        "S/ 0",
-        "S/ 12 000",
-        "S/ 7 500",
-        "S/ 3 000"
-       ]
-      },
-      {
-       "p": "Beneficio económico",
-       "o": [
-        "S/ 0: gana justo lo mismo que en su mejor alternativa (beneficio normal)",
-        "S/ 4 500: le conviene mucho",
-        "−S/ 4 500: está perdiendo",
-        "S/ 3 000: le conviene",
-        "No se puede calcular sin el precio del café"
+        "Beneficio normal: gana lo mismo que en su mejor alternativa",
+        "Que el negocio pierde dinero",
+        "Que la utilidad contable también es cero",
+        "Que conviene cerrar de inmediato",
+        "Que no tiene costos implícitos"
        ]
       }
      ],
@@ -3047,7 +4002,8 @@
        "benef",
        "coport"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mk9",
@@ -3056,33 +4012,27 @@
      "q": "<p>Una fábrica alquila maquinaria por S/ 2 000 al mes (costo fijo) y gasta S/ 30 en materiales y mano de obra por mochila. Este mes produce y vende 400 mochilas a S/ 50 cada una. El dueño invirtió S/ 50 000 de sus ahorros, que en el banco le darían S/ 500 al mes, y dejó un trabajo de S/ 2 500 al mes.</p>",
      "checks": [
       {
-       "p": "Costo total",
-       "o": [
-        "S/ 14 000",
-        "S/ 12 000",
-        "S/ 2 030",
-        "S/ 20 000",
-        "S/ 17 000"
-       ]
-      },
-      {
-       "p": "Costo unitario",
-       "o": [
-        "S/ 35",
-        "S/ 30",
-        "S/ 50",
-        "S/ 5",
-        "S/ 42,50"
-       ]
-      },
-      {
-       "p": "Utilidad contable",
-       "o": [
-        "S/ 6 000",
-        "S/ 8 000",
-        "S/ 3 000",
-        "S/ 20 000",
-        "S/ 6 000 − 50 000 = −S/ 44 000"
+       "t": "num",
+       "p": "Costos y utilidad",
+       "f": [
+        {
+         "l": "Costo total",
+         "a": 14000,
+         "u": "S/",
+         "e": "CF + CV = 2 000 + 30 × 400."
+        },
+        {
+         "l": "Costo unitario",
+         "a": 35,
+         "u": "S/",
+         "e": "CT / Q."
+        },
+        {
+         "l": "Utilidad contable",
+         "a": 6000,
+         "u": "S/",
+         "e": "IT − CT, con IT = 50 × 400."
+        }
        ]
       },
       {
@@ -3123,6 +4073,55 @@
        "coport"
       ],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "mk12",
+     "lvl": 2,
+     "title": "Ordena la receta del beneficio económico",
+     "q": "<p>Ordena los pasos para resolver un caso de costos completo.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Separa los datos en costos explícitos, implícitos e ingresos.",
+        "Calcula el costo total: CT = CF + CV.",
+        "Calcula la utilidad contable: IT − CT.",
+        "Resta el costo de oportunidad para obtener el beneficio económico.",
+        "Concluye: si el beneficio económico es positivo, conviene; si es negativo, no."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero ordena los datos: qué se paga, a qué se renuncia y cuánto entra.",
+      "CT = CF + CV.",
+      "Utilidad contable = IT − CT (solo lo pagado).",
+      "Beneficio económico = utilidad contable − costo de oportunidad.",
+      "La rúbrica pide concluir: el número solo no basta."
+     ],
+     "ans": "Separar → CT → UC → BE → concluir",
+     "hint": "El beneficio económico sale de la utilidad contable.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "coport"
+      ],
+      [
+       "ct"
+      ],
+      [
+       "benef"
+      ],
+      [
+       "benef"
+      ],
+      [
+       "benef"
+      ]
      ]
     }
    ]
@@ -3289,13 +4288,18 @@
    "q": "<p>\\(Q_d=1\\,200-40p\\) y \\(Q_s=300+50p\\).</p>",
    "checks": [
     {
+     "t": "num",
      "p": "Equilibrio",
-     "o": [
-      "\\(p^*=10,\\ Q^*=800\\)",
-      "\\(p^*=15,\\ Q^*=600\\)",
-      "\\(p^*=10,\\ Q^*=1\\,200\\)",
-      "\\(p^*=9,\\ Q^*=840\\)",
-      "\\(p^*=20,\\ Q^*=400\\)"
+     "f": [
+      {
+       "l": "p*",
+       "a": 10,
+       "e": "iguala 1 200 − 40p = 300 + 50p."
+      },
+      {
+       "l": "Q*",
+       "a": 800
+      }
      ]
     },
     {
@@ -3310,7 +4314,7 @@
     }
    ],
    "steps": [
-    "\\(1\\,200-40p=300+50p\\Rightarrow900=90p\\Rightarrow p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
+    "\\(1\\,200-40p=300+50p\\) \\(\\Rightarrow 900=90p\\) \\(\\Rightarrow  p^*=10\\); \\(Q^*=1\\,200-400=800\\).",
     "En \\(p=8\\): \\(Q_d=880\\), \\(Q_s=700\\). Escasez de 180."
    ],
    "ans": "(10; 800); escasez de 180",
@@ -3321,7 +4325,8 @@
    "tags": [
     [],
     []
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "mis2",
@@ -3330,13 +4335,15 @@
    "q": "<p>TechInnova lanzaría una app con costos de US$ 800 000 e ingresos de US$ 1 500 000 al año, dejando un proyecto que generaría US$ 300 000.</p>",
    "checks": [
     {
+     "t": "num",
      "p": "Beneficio económico",
-     "o": [
-      "US$ 400 000",
-      "US$ 700 000",
-      "US$ 1 200 000",
-      "−US$ 300 000",
-      "US$ 1 000 000"
+     "f": [
+      {
+       "l": "BE",
+       "a": 400000,
+       "u": "US$",
+       "e": "ingresos − costos − el proyecto al que renuncia."
+      }
      ]
     },
     {
@@ -3362,7 +4369,8 @@
    "tags": [
     [],
     []
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "mis3",
@@ -3371,18 +4379,23 @@
    "q": "<p>\\(Q=60L^2-2L^3\\). ¿Cuál es el PMe máximo?</p>",
    "checks": [
     {
+     "t": "num",
      "p": "PMe máximo",
-     "o": [
-      "\\(450\\) en \\(L=15\\)",
-      "\\(900\\) en \\(L=15\\)",
-      "\\(450\\) en \\(L=30\\)",
-      "\\(600\\) en \\(L=20\\)",
-      "\\(225\\) en \\(L=7{,}5\\)"
+     "f": [
+      {
+       "l": "L",
+       "a": 15,
+       "e": "PMe = 60L − 2L²; deriva e iguala a 0."
+      },
+      {
+       "l": "PMe",
+       "a": 450
+      }
      ]
     }
    ],
    "steps": [
-    "\\(PMe=60L-2L^2\\); \\(\\frac{d\\,PMe}{dL}=60-4L=0\\Rightarrow L=15\\).",
+    "\\(PMe=60L-2L^2\\); \\(\\frac{d\\,PMe}{dL}=60-4L=0\\) \\(\\Rightarrow  L=15\\).",
     "\\(PMe=900-450=450\\). Es máximo porque \\(-2L^2\\) abre hacia abajo."
    ],
    "ans": "450 en L = 15",
@@ -3556,49 +4569,72 @@
    "q": "<p>Mercado de bicicletas urbanas: \\(Q_d=900-30p\\) y \\(Q_s=-100+20p\\) (p en cientos de soles).</p>",
    "checks": [
     {
+     "t": "num",
      "p": "Equilibrio inicial",
-     "o": [
-      "\\(p^*=20,\\ Q^*=300\\)",
-      "\\(p^*=16,\\ Q^*=420\\)",
-      "\\(p^*=20,\\ Q^*=900\\)",
-      "\\(p^*=25,\\ Q^*=150\\)",
-      "\\(p^*=18,\\ Q^*=360\\)"
+     "f": [
+      {
+       "l": "p*",
+       "a": 20,
+       "e": "iguala 900 − 30p = −100 + 20p."
+      },
+      {
+       "l": "Q*",
+       "a": 300
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Una campaña de vida saludable cambia la demanda a \\(Q_d=1\\,150-30p\\). Nuevo equilibrio:",
-     "o": [
-      "\\(p^*=25,\\ Q^*=400\\)",
-      "\\(p^*=20,\\ Q^*=550\\)",
-      "\\(p^*=25,\\ Q^*=375\\)",
-      "\\(p^*=23,\\ Q^*=460\\)",
-      "\\(p^*=15,\\ Q^*=700\\)"
+     "f": [
+      {
+       "l": "p*",
+       "a": 25
+      },
+      {
+       "l": "Q*",
+       "a": 400
+      }
      ]
     },
     {
-     "p": "El gobierno da un subsidio a los fabricantes. En el gráfico…",
-     "o": [
-      "La oferta se desplaza a la derecha: \\(p^*\\) baja y \\(Q^*\\) sube",
-      "La demanda se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
-      "La oferta se desplaza a la izquierda: \\(p^*\\) sube y \\(Q^*\\) baja",
-      "Movimiento a lo largo de la oferta",
-      "La demanda se desplaza a la izquierda"
+     "t": "shift",
+     "p": "Desde el inicio: el gobierno da un subsidio a los fabricantes. Mueve la curva.",
+     "c": [
+      {
+       "k": "D",
+       "tp": "d",
+       "a": 0
+      },
+      {
+       "k": "O",
+       "tp": "o",
+       "a": 1,
+       "e": "El subsidio abarata producir."
+      }
      ]
     },
     {
-     "p": "Sube el precio de los scooters eléctricos (sustituto). En el gráfico…",
-     "o": [
-      "La demanda de bicicletas se desplaza a la derecha: \\(p^*\\) y \\(Q^*\\) suben",
-      "La demanda de bicicletas se desplaza a la izquierda",
-      "La oferta de bicicletas se desplaza a la derecha",
-      "Movimiento a lo largo de la demanda de bicicletas",
-      "No pasa nada en el mercado de bicicletas"
+     "t": "shift",
+     "p": "Desde el inicio: sube el precio de los scooters eléctricos (sustituto). Mueve la curva.",
+     "c": [
+      {
+       "k": "D",
+       "tp": "d",
+       "a": 1,
+       "e": "Sube el precio de un sustituto."
+      },
+      {
+       "k": "O",
+       "tp": "o",
+       "a": 0
+      }
      ]
     }
    ],
    "steps": [
-    "\\(900-30p=-100+20p\\Rightarrow1\\,000=50p\\Rightarrow p^*=20\\); \\(Q^*=900-600=300\\).",
-    "\\(1\\,150-30p=-100+20p\\Rightarrow1\\,250=50p\\Rightarrow p^*=25\\); \\(Q^*=1\\,150-750=400\\) (demanda a la derecha: p y Q suben).",
+    "\\(900-30p=-100+20p\\) \\(\\Rightarrow 1\\,000=50p\\) \\(\\Rightarrow  p^*=20\\); \\(Q^*=900-600=300\\).",
+    "\\(1\\,150-30p=-100+20p\\) \\(\\Rightarrow 1\\,250=50p\\) \\(\\Rightarrow  p^*=25\\); \\(Q^*=1\\,150-750=400\\) (demanda a la derecha: p y Q suben).",
     "El subsidio abarata producir → oferta a la derecha → p baja, Q sube.",
     "Sustituto más caro → la gente se pasa a las bicicletas → demanda a la derecha."
    ],
@@ -3620,7 +4656,8 @@
     [
      "relac"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "mis7",
@@ -3639,23 +4676,33 @@
      ]
     },
     {
+     "t": "num",
      "p": "PMe máximo",
-     "o": [
-      "\\(288\\) en \\(L=12\\)",
-      "\\(576\\) en \\(L=12\\)",
-      "\\(288\\) en \\(L=16\\)",
-      "\\(4\\,096\\) en \\(L=16\\)",
-      "\\(144\\) en \\(L=6\\)"
+     "f": [
+      {
+       "l": "L",
+       "a": 12,
+       "e": "PMe = 48L − 2L²; deriva e iguala a 0."
+      },
+      {
+       "l": "PMe",
+       "a": 288
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Producción máxima",
-     "o": [
-      "\\(4\\,096\\) en \\(L=16\\)",
-      "\\(3\\,456\\) en \\(L=12\\)",
-      "\\(288\\) en \\(L=12\\)",
-      "\\(6\\,144\\) en \\(L=24\\)",
-      "\\(2\\,048\\) en \\(L=8\\)"
+     "f": [
+      {
+       "l": "L",
+       "a": 16,
+       "e": "iguala el PMg a 0."
+      },
+      {
+       "l": "Q",
+       "a": 4096
+      }
      ]
     },
     {
@@ -3671,8 +4718,8 @@
    ],
    "steps": [
     "\\(PMg=\\frac{dQ}{dL}=96L-6L^2\\); \\(PMe=48L-2L^2\\).",
-    "PMe máx: \\(48-4L=0\\Rightarrow L=12\\); \\(PMe=576-288=288\\) (y \\(PMg(12)=1\\,152-864=288\\)).",
-    "Q máx: \\(6L(16-L)=0\\Rightarrow L=16\\); \\(Q=48(256)-2(4\\,096)=12\\,288-8\\,192=4\\,096\\).",
+    "PMe máx: \\(48-4L=0\\Rightarrow L=12\\); \\(PMe=576-288=288\\) (y \\(PMg(12)\\) \\(=1\\,152-864\\) \\(=288\\)).",
+    "Q máx: \\(6L(16-L)=0\\Rightarrow L=16\\); \\(Q\\) \\(=48(256)-2(4\\,096)\\) \\(=12\\,288-8\\,192\\) \\(=4\\,096\\).",
     "Factores ×2 y producción ×2,3: rendimientos crecientes → economías de escala."
    ],
    "ans": "PMe máx 288 (L=12); Q máx 4 096 (L=16); economías de escala",
@@ -3694,7 +4741,8 @@
     [
      "escprod"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "mis8",
@@ -3703,33 +4751,27 @@
    "q": "<p>Carla dejó su trabajo de diseñadora (S/ 4 000 al mes) y abrió una imprenta en un local propio que podría alquilar en S/ 1 200 al mes. Sus costos fijos son S/ 6 000 al mes y el costo variable es S/ 2 por libro. Este mes imprime y vende 3 000 libros a S/ 6.</p>",
    "checks": [
     {
-     "p": "Costo total",
-     "o": [
-      "S/ 12 000",
-      "S/ 6 000",
-      "S/ 18 000",
-      "S/ 17 200",
-      "S/ 6 002"
-     ]
-    },
-    {
-     "p": "Costo unitario",
-     "o": [
-      "S/ 4",
-      "S/ 2",
-      "S/ 6",
-      "S/ 5,73",
-      "S/ 3"
-     ]
-    },
-    {
-     "p": "Utilidad contable",
-     "o": [
-      "S/ 6 000",
-      "S/ 12 000",
-      "S/ 800",
-      "S/ 18 000",
-      "S/ 0"
+     "t": "num",
+     "p": "Costos y utilidad",
+     "f": [
+      {
+       "l": "Costo total",
+       "a": 12000,
+       "u": "S/",
+       "e": "CF + CV = 6 000 + 2 × 3 000."
+      },
+      {
+       "l": "Costo unitario",
+       "a": 4,
+       "u": "S/",
+       "e": "CT / Q."
+      },
+      {
+       "l": "Utilidad contable",
+       "a": 6000,
+       "u": "S/",
+       "e": "IT − CT, con IT = 6 × 3 000."
+      }
      ]
     },
     {
@@ -3768,7 +4810,8 @@
      "benef",
      "coport"
     ]
-   ]
+   ],
+   "chain": true
   }
  ],
  "sim": {
@@ -3796,7 +4839,8 @@
     "pool": [
      "me10",
      "mis6",
-     "me9"
+     "me9",
+     "me12"
     ]
    },
    {
@@ -3804,7 +4848,8 @@
     "name": "Producción: PMe, PMg, máximos y escala",
     "pool": [
      "mp10",
-     "mis7"
+     "mis7",
+     "mp12"
     ]
    },
    {
@@ -3819,7 +4864,7 @@
   ]
  },
  "free": true,
- "intro": "Organizado según la rúbrica del parcial: 4 bloques de 5 puntos cada uno. Los bloques están abiertos, así que puedes empezar por el que más te cueste, y el simulacro siempre está disponible.",
+ "intro": "Organizado según la rúbrica del parcial: 4 bloques de 5 puntos cada uno. Los bloques están abiertos, así que puedes empezar por el que más te cueste, y el simulacro siempre está disponible. Ahora con ejercicios interactivos: mover curvas, tocar el gráfico, escribir el número y clasificar tarjetas.",
  "short": "Examen parcial",
  "sub": "Sem. 1 a 7",
  "guide": true
