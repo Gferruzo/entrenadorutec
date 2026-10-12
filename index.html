@@ -229,6 +229,28 @@ pre.code{background:var(--grid);border:1px solid var(--line);border-radius:6px;p
 code{font:0.9em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--grid);padding:1px 4px;border-radius:4px;white-space:pre-wrap;word-break:break-word}
 .opt code{background:transparent;padding:0;font-size:.86rem}
 .tbl table,.sol table{border-collapse:collapse;background:var(--card)}.tbl th,.tbl td{border:1px solid var(--line);padding:4px 9px;text-align:left}.tbl th{font-weight:800}.enun .tbl table{font-family:Figtree,sans-serif;font-size:.9rem;width:auto;min-width:50%}
+.chs{width:100%;max-width:360px;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:8px}.chs.sm{width:150px;max-width:150px;border:0;background:transparent}
+.chs text{font:500 11px Figtree,sans-serif}.chs .cht{font:800 13px Figtree,sans-serif;fill:var(--ink)}.chs .chsub{fill:var(--muted);font-size:10.5px}.chs .chk{fill:var(--muted)}.chs .chv{fill:var(--ink);font-weight:700}
+.chs .chg{stroke:var(--grid);stroke-width:1}.chs .chgh{stroke:var(--ink);stroke-width:1.3;opacity:.55}.chs .chbx{fill:none;stroke:var(--ink);stroke-width:1.6}
+.chs .chax{fill:none;stroke:var(--ink);stroke-width:1.4}.chs .chl{fill:none;stroke-width:2.6;stroke-linejoin:round}.chs .chcut{stroke:var(--bad);stroke-width:2;fill:none}
+.chfig{margin:.4em 0}.teo .chfig,.lesson .chfig{margin:.6em 0}.chpair{display:flex;flex-wrap:wrap;gap:8px}.chpair>div{flex:1 1 230px;min-width:0}.chgal>div{flex:1 1 140px}.chpair p{margin:.2em 0;font-size:.85rem;color:var(--muted)}
+.chtog{display:grid;gap:6px;margin:.5em 0}
+.chsw{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 10px;font:600 .88rem Figtree,sans-serif;cursor:pointer}
+.chsw i{flex:none;width:34px;height:20px;border-radius:999px;background:var(--line);position:relative;transition:background .15s}
+.chsw i::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.chsw.on i{background:var(--ok)}.chsw.on i::after{left:16px}.chsw.good{border-color:var(--ok);background:var(--ok-bg)}.chsw.bad{border-color:var(--bad);background:var(--bad-bg)}.chsw:disabled{cursor:default;opacity:1}
+.tapw td.tz,.tapw th.tz{cursor:pointer;outline:2px dashed var(--line);outline-offset:-3px}.tapw td.tz.on,.tapw th.tz.on{background:rgba(123,63,196,.22);outline-color:var(--sol)}
+.tapw td.tz.good,.tapw th.tz.good{background:var(--ok-bg);outline-color:var(--ok)}.tapw td.tz.bad,.tapw th.tz.bad{background:var(--bad-bg);outline-color:var(--bad)}
+.tapw .tbl table{font-size:.8rem}.tapw .tbl th,.tapw .tbl td{padding:4px 6px}.tapw caption{text-align:left;font-weight:800;padding:2px 0}.tapw .tbl{overflow-x:auto;max-width:100%}
+.sqlw{margin:.2em 0}.sqlta{width:100%;box-sizing:border-box;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border:1.5px solid var(--line);border-radius:8px;padding:8px;background:var(--paper);color:var(--ink);resize:vertical}
+.sqlta.good{border-color:var(--ok);background:var(--ok-bg)}.sqlta.bad{border-color:var(--bad)}
+.sqlkeys{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}.sqlkeys button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:5px 7px;font:600 .78rem ui-monospace,Menlo,monospace;cursor:pointer;min-height:30px}
+.sqlsch{margin:.2em 0 .5em}.sqlsch summary{cursor:pointer;font-weight:700;font-size:.9rem}.sqltn{margin:.5em 0 .1em}
+.sqlw .tbl,.jtabs .tbl,.jres .tbl,.sqlout .tbl{overflow-x:auto;max-width:100%}.sqlw table,.jtabs table,.jres table{font:12px ui-monospace,Menlo,monospace}.tbl td.nul{color:var(--bad);font-style:italic}
+.sqlout{margin-top:6px}.sqlout pre.code{white-space:pre-wrap}
+.jbar{display:flex;gap:6px;flex-wrap:wrap;margin:.3em 0 .5em}.jm{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;font:700 .8rem ui-monospace,Menlo,monospace;cursor:pointer}.jm.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.jtabs{display:flex;gap:8px;flex-wrap:wrap}.jtabs>.tbl{flex:1 1 140px}.jtabs caption,.jres caption{font:800 .85rem Figtree,sans-serif;text-align:left;padding:2px 0}
+tr.jok td{background:var(--ok-bg)}tr.jno td{opacity:.4}tr.jnul td{background:var(--bad-bg)}
 .numw{display:grid;gap:8px;margin:.2em 0 .4em}.nrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nrow .nl{min-width:2.6em;font-weight:700}.nrow .fin{width:112px}.nu{color:var(--muted);font-size:.9rem}
 .fin.rev{border-color:var(--ok);border-style:dashed;color:var(--ok)}.fin:disabled{opacity:1}
 .clsw{display:grid;gap:8px;margin:.2em 0 .3em}.crow{border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--card)}.crow.good{border-color:var(--ok);background:var(--ok-bg)}.crow.bad{border-color:var(--bad);background:var(--bad-bg)}.crow.rev{border-color:var(--ok);border-style:dashed}
@@ -2570,8 +2592,8 @@ const IW={
    lock(){lk=true;w.classList.add('lk');upBtns();if(nb)nb.disabled=true},
    reset(){cs.forEach(C2=>{C2.pos=0;C2.off=0;C2.ln.classList.remove('good','bad')});touched=none=false;nb&&nb.classList.remove('on');draw();upBtns();o.on&&o.on()}}},
  /* tap: toca zonas de un SVG (elementos con data-z). ch.svg o ch.fig; ch.a=['id',…]; ch.multi */
- tap(ch,o){const w=el('div','tapw');w.innerHTML=ch.svg||F[ch.fig]||'';const s=w.querySelector('svg');let lk=false;const sel=new Set();
-  const zs=s?[...s.querySelectorAll('[data-z]')]:[];
+ tap(ch,o){const w=el('div','tapw');w.innerHTML=ch.svg||(ch.chart?'<div class="chfig">'+chartSVG(ch.chart)+'</div>':'')||ch.html||F[ch.fig]||'';let lk=false;const sel=new Set();
+  const zs=[...w.querySelectorAll('[data-z]')];
   const upd=()=>zs.forEach(z=>z.classList.toggle('on',sel.has(z.dataset.z)));
   zs.forEach(z=>{z.classList.add('tz');z.setAttribute('tabindex','0');z.setAttribute('role','button');
    const act=()=>{if(lk)return;const id=z.dataset.z;if(ch.multi){sel.has(id)?sel.delete(id):sel.add(id)}else{const had=sel.has(id);sel.clear();if(!had)sel.add(id)}zs.forEach(x=>x.classList.remove('good','bad'));upd();o.on&&o.on()};
@@ -2585,6 +2607,162 @@ const IW={
    reveal(){zs.forEach(z=>{const id=z.dataset.z;z.classList.remove('on','bad');z.classList.toggle('good',A.has(id));if(sel.has(id)&&!A.has(id))z.classList.add('bad')})},
    lock(){lk=true;w.classList.add('lk')}}}
 };
+/* ================= GRÁFICOS (chartSVG), SQL EJECUTABLE Y JOIN =================
+   chartSVG(s) dibuja barras ('bar' | 'hbar'), líneas ('line'), dispersión ('scatter'), pastel ('pie'),
+   apiladas al 100 % ('stack') y doble eje ('dual'). Opciones: labels, values, title, sub, unit,
+   zero (false → empieza en s.min), d3, rainbow, emph (etiqueta), grid ('heavy'), sort, cut (quita el último),
+   vals (etiquetas de valor), note, zones (para «tocar»: {on:'title'|'yaxis'|'xaxis'|'bar'|'point'|'legend'|'plot', i, id}). */
+const CPAL=['#4C78A8','#F58518','#54A24B','#E45756','#72B7B2','#EECA3B','#B279A2','#9D755D'];
+const escX=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function niceMax(v){if(v<=0)return 1;const p=Math.pow(10,Math.floor(Math.log10(v)));for(const m of [1,1.2,1.5,2,2.5,3,4,5,6,8,10])if(m*p>=v)return m*p;return 10*p}
+function fmtV(v,u){const r=Math.abs(v)>=100?Math.round(v):Math.round(v*100)/100;let t=String(r).replace('.',',');if(Math.abs(r)>=1000)t=t.replace(/\B(?=(\d{3})+(?!\d))/g,' ');return (u&&u!=='%'?u+' ':'')+t+(u==='%'?' %':'')}
+function chartSVG(s0){const s=Object.assign({},s0);let L=(s.labels||[]).slice(),V=(s.values||[]).slice();
+  if(s.cut&&L.length){L.pop();V.pop();if(s.values2){s.values2=s.values2.slice(0,-1)}}
+  if(s.sort&&(s.type==='bar'||s.type==='hbar')){const ix=L.map((_,i)=>i).sort((a,b)=>V[b]-V[a]);L=ix.map(i=>L[i]);V=ix.map(i=>V[i])}
+  const type=s.type||'bar',W=s.w||320,tl=s.title?1:0,T=10+(s.title?22:0)+(s.sub?16:0);
+  const H=s.h||(type==='hbar'?T+18+L.length*26:type==='pie'?T+150:T+190);
+  let o='<svg class="chs'+(s.small?' sm':'')+'" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img">';
+  const Z={};const zone=(k,x,y,w,h,r)=>{Z[k]=[x,y,w,h,r||4]};
+  if(s.title){o+='<text class="cht" x="8" y="'+(T-(s.sub?22:6))+'">'+escX(s.title)+'</text>';zone('title',4,T-(s.sub?40:24),W-8,20)}
+  if(s.sub)o+='<text class="chsub" x="8" y="'+(T-6)+'">'+escX(s.sub)+'</text>';
+  const col=(i,lab)=>s.emph!=null?(lab===s.emph||i===s.emph?'var(--tan)':'var(--chgray,#A7B1C2)'):s.rainbow?CPAL[i%CPAL.length]:'var(--curve)';
+  const grid=(x0,x1,y)=>s.grid==='heavy'?'<line class="chgh" x1="'+x0+'" y1="'+y+'" x2="'+x1+'" y2="'+y+'"/>':'<line class="chg" x1="'+x0+'" y1="'+y+'" x2="'+x1+'" y2="'+y+'"/>';
+  if(type==='bar'||type==='line'||type==='dual'){
+    const X0=s.small?8:s.dual||type==='dual'?40:44,X1=W-(type==='dual'?40:10),Y0=T+6,Y1=H-26;
+    const mx=niceMax(Math.max(...V)*(s.vals?1.08:1)),mn=s.zero===false?(s.min!=null?s.min:0):0;
+    const yv=v=>Y1-(Y1-Y0)*(v-mn)/(mx-mn);
+    for(let k=0;k<=4;k++){const v=mn+(mx-mn)*k/4,y=yv(v);if(s.grid||k)o+=grid(X0,X1,y);if(!s.small)o+='<text class="chk" x="'+(X0-5)+'" y="'+(y+4)+'" text-anchor="end">'+fmtV(v)+'</text>'}
+    if(s.grid==='heavy')o+='<rect class="chbx" x="'+X0+'" y="'+Y0+'" width="'+(X1-X0)+'" height="'+(Y1-Y0)+'"/>';
+    zone('yaxis',2,Y0-4,X0-2,Y1-Y0+8);zone('plot',X0,Y0,X1-X0,Y1-Y0);zone('xaxis',X0,Y1+2,X1-X0,22);
+    const n=L.length,bw=(X1-X0)/n;
+    if(type==='bar'){const gap=bw*.28;
+      L.forEach((lab,i)=>{const x=X0+i*bw+gap/2,w=bw-gap,y=yv(Math.max(V[i],mn)),h=Y1-y,c=col(i,lab);
+        if(s.d3){const d=Math.min(9,w*.35);o+='<polygon fill="'+c+'" opacity=".55" points="'+x+','+y+' '+(x+d)+','+(y-d)+' '+(x+w+d)+','+(y-d)+' '+(x+w)+','+y+'"/><polygon fill="'+c+'" opacity=".35" points="'+(x+w)+','+y+' '+(x+w+d)+','+(y-d)+' '+(x+w+d)+','+(Y1-d)+' '+(x+w)+','+Y1+'"/><rect x="'+(x+4)+'" y="'+(y+4)+'" width="'+w+'" height="'+Math.max(0,h-4)+'" fill="#000" opacity=".12"/>'}
+        o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+c+'"'+(s.part===i?' class="chpart"':'')+'/>';
+        if(s.part===i)o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="url(#hatch)" opacity="0"/>';
+        if(s.vals)o+='<text class="chv" x="'+(x+w/2)+'" y="'+(y-4)+'" text-anchor="middle">'+fmtV(V[i],s.unit)+'</text>';
+        o+='<text class="chk" x="'+(x+w/2)+'" y="'+(Y1+14)+'" text-anchor="middle">'+escX(lab)+'</text>';zone('bar'+i,x-2,Math.min(y,Y1-14)-(s.d3?10:2),w+4+(s.d3?10:0),Math.max(h,14)+(s.d3?10:2))})}
+    else{const pts=V.map((v,i)=>[X0+bw*(i+.5),yv(v)]);
+      o+='<polyline class="chl" points="'+pts.map(p=>p.join(',')).join(' ')+'" style="stroke:'+(s.emph!=null?'var(--chgray,#A7B1C2)':'var(--curve)')+'"/>';
+      if(type==='dual'&&s.values2){const m2=s.max2||niceMax(Math.max(...s.values2)),n2=s.min2||0,y2=v=>Y1-(Y1-Y0)*(v-n2)/(m2-n2);
+        o+='<polyline class="chl" points="'+s.values2.map((v,i)=>[X0+bw*(i+.5),y2(v)].join(',')).join(' ')+'" style="stroke:var(--tan)"/>';
+        for(let k=0;k<=4;k++){const v=n2+(m2-n2)*k/4;o+='<text class="chk" x="'+(X1+4)+'" y="'+(y2(v)+4)+'">'+fmtV(v)+'</text>'}
+        if(s.leg)o+='<text class="chk" x="'+X0+'" y="'+(Y0+10)+'" style="fill:var(--curve)">'+escX(s.leg[0])+'</text><text class="chk" x="'+(X1-4)+'" y="'+(Y0+10)+'" text-anchor="end" style="fill:var(--tan)">'+escX(s.leg[1])+'</text>'}
+      pts.forEach((p,i)=>{o+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.2" style="fill:'+(s.emph!=null?'var(--chgray,#A7B1C2)':'var(--curve)')+'"/>';zone('point'+i,p[0]-9,p[1]-9,18,18,9)});
+      const step=Math.ceil(n/7);L.forEach((lab,i)=>{if(i%step===0||i===n-1)o+='<text class="chk" x="'+(X0+bw*(i+.5))+'" y="'+(Y1+14)+'" text-anchor="middle">'+escX(lab)+'</text>'})}
+    o+='<path class="chax" d="M'+X0+' '+Y0+'V'+Y1+'H'+X1+'"/>';
+    if(s.zero===false&&mn>0)o+='<path class="chcut" d="M'+(X0-6)+' '+(Y1-4)+'l12 -5M'+(X0-6)+' '+(Y1+2)+'l12 -5"/>'}
+  else if(type==='hbar'){const X0=s.lw||(s.small?30:84),X1=W-(s.vals?44:12),Y0=T+4,n=L.length,bh=26;const mx=niceMax(Math.max(...V)),mn=s.zero===false?(s.min||0):0;const xv=v=>X0+(X1-X0)*(v-mn)/(mx-mn);
+    if(s.grid==='heavy'){for(let k=1;k<=4;k++){const x=xv(mn+(mx-mn)*k/4);o+='<line class="chgh" x1="'+x+'" y1="'+Y0+'" x2="'+x+'" y2="'+(Y0+n*bh)+'"/>'}o+='<rect class="chbx" x="'+X0+'" y="'+Y0+'" width="'+(X1-X0)+'" height="'+(n*bh)+'"/>'}
+    L.forEach((lab,i)=>{const y=Y0+i*bh,c=col(i,lab),x2=xv(Math.max(V[i],mn));o+='<rect x="'+X0+'" y="'+(y+5)+'" width="'+(x2-X0)+'" height="'+(bh-10)+'" fill="'+c+'"/>';
+      o+='<text class="chk" x="'+(X0-6)+'" y="'+(y+bh/2+4)+'" text-anchor="end">'+escX(lab)+'</text>';if(s.vals)o+='<text class="chv" x="'+(x2+4)+'" y="'+(y+bh/2+4)+'">'+fmtV(V[i],s.unit)+'</text>';zone('bar'+i,2,y+2,W-4,bh-4)});
+    o+='<path class="chax" d="M'+X0+' '+(Y0)+'V'+(Y0+n*bh)+'"/>';zone('yaxis',2,Y0,X0,n*bh)}
+  else if(type==='scatter'){const X0=s.small?8:44,X1=W-10,Y0=T+6,Y1=H-30,P=s.pts||[];const xs=P.map(p=>p[0]),ys=P.map(p=>p[1]);
+    const xm=niceMax(Math.max(...xs)),ym=niceMax(Math.max(...ys));const xv=v=>X0+(X1-X0)*v/xm,yv=v=>Y1-(Y1-Y0)*v/ym;
+    for(let k=1;k<=4;k++){o+=grid(X0,X1,yv(ym*k/4));if(!s.small)o+='<text class="chk" x="'+(X0-5)+'" y="'+(yv(ym*k/4)+4)+'" text-anchor="end">'+fmtV(ym*k/4)+'</text>'}
+    P.forEach((p,i)=>{o+='<circle cx="'+xv(p[0])+'" cy="'+yv(p[1])+'" r="3.4" fill="var(--curve)" fill-opacity=".7"/>';zone('point'+i,xv(p[0])-8,yv(p[1])-8,16,16,8)});
+    o+='<path class="chax" d="M'+X0+' '+Y0+'V'+Y1+'H'+X1+'"/>';if(s.xl)o+='<text class="chk" x="'+X1+'" y="'+(Y1+24)+'" text-anchor="end">'+escX(s.xl)+'</text>';if(s.yl)o+='<text class="chk" x="'+(X0+4)+'" y="'+(Y0+8)+'">'+escX(s.yl)+'</text>'}
+  else if(type==='pie'){const cx=s.legend===false?W/2:96,cy=T+72,r=64,tot=V.reduce((a,b)=>a+b,0);let a0=-Math.PI/2;
+    if(s.d3)o+='<ellipse cx="'+cx+'" cy="'+(cy+10)+'" rx="'+r+'" ry="'+(r*.92)+'" fill="#000" opacity=".15"/>';
+    V.forEach((v,i)=>{const a1=a0+2*Math.PI*v/tot,lg=a1-a0>Math.PI?1:0;o+='<path d="M'+cx+' '+cy+'L'+(cx+r*Math.cos(a0))+' '+(cy+r*Math.sin(a0))+'A'+r+' '+r+' 0 '+lg+' 1 '+(cx+r*Math.cos(a1))+' '+(cy+r*Math.sin(a1))+'Z" fill="'+(s.emph!=null?col(i,L[i]):CPAL[i%8])+'" stroke="var(--card)" stroke-width="1.5"/>';a0=a1});
+    if(s.legend!==false)L.forEach((lab,i)=>{const y=T+12+i*18;o+='<rect x="178" y="'+(y-9)+'" width="10" height="10" fill="'+(s.emph!=null?col(i,lab):CPAL[i%8])+'"/><text class="chk" x="193" y="'+y+'">'+escX(lab)+'</text>'});zone('legend',172,T,W-174,L.length*18+6);zone('plot',cx-r,cy-r,2*r,2*r)}
+  else if(type==='stack'){const X0=s.small?8:44,X1=W-10,Y0=T+6,Y1=H-(s.small?22:44),G=s.groups||[],S=s.series||[],n=G.length,bw=(X1-X0)/n;
+    G.forEach((g,gi)=>{const tot=S.reduce((a,x)=>a+x.vals[gi],0);let y=Y1;S.forEach((x,si)=>{const h=(Y1-Y0)*x.vals[gi]/tot;y-=h;o+='<rect x="'+(X0+gi*bw+bw*.15)+'" y="'+y+'" width="'+(bw*.7)+'" height="'+h+'" fill="'+CPAL[si%8]+'" stroke="var(--card)" stroke-width="1"/>'});o+='<text class="chk" x="'+(X0+gi*bw+bw/2)+'" y="'+(Y1+14)+'" text-anchor="middle">'+escX(g)+'</text>'});
+    if(!s.small)[0,50,100].forEach(p=>o+='<text class="chk" x="'+(X0-5)+'" y="'+(Y1-(Y1-Y0)*p/100+4)+'" text-anchor="end">'+p+' %</text>');
+    let lx=X0;if(!s.small)S.forEach((x,si)=>{o+='<rect x="'+lx+'" y="'+(H-14)+'" width="9" height="9" fill="'+CPAL[si%8]+'"/><text class="chk" x="'+(lx+12)+'" y="'+(H-6)+'">'+escX(x.n)+'</text>';lx+=18+x.n.length*6.2});
+    o+='<path class="chax" d="M'+X0+' '+Y0+'V'+Y1+'H'+X1+'"/>'}
+  if(s.note)o+='<text class="chsub" x="8" y="'+(H-3)+'">'+escX(s.note)+'</text>';
+  (s.zones||[]).forEach(z=>{const r=Z[z.on+(z.i!=null?z.i:'')];if(!r)return;o+=r[4]>=8&&z.on==='point'?'<circle data-z="'+z.id+'" cx="'+(r[0]+r[2]/2)+'" cy="'+(r[1]+r[3]/2)+'" r="'+r[4]+'"/>':'<rect data-z="'+z.id+'" x="'+r[0]+'" y="'+r[1]+'" width="'+r[2]+'" height="'+r[3]+'" rx="'+r[4]+'"/>'});
+  return o+'</svg>'}
+/* Herramienta «🧪» y figura en teoría/enunciados: <div class="lw" data-w="chart" data-o='{…}'>.
+   Con o.tog se vuelve un laboratorio con interruptores (sin nota). */
+function chTogUI(base,tog,root,onChange){const fig=el('div','chfig');const box=el('div','chtog');root.append(fig,box);const st=tog.map(t=>({t,cur:!!t.v}));
+  const spec=()=>Object.assign({},base,...st.map(x=>x.cur?(x.t.on||{}):(x.t.off||{})));
+  const draw=()=>{fig.innerHTML=chartSVG(spec())};
+  st.forEach(x=>{const b=el('button','chsw'+(x.cur?' on':''),'<i></i><span>'+x.t.l+'</span>');b.type='button';b.setAttribute('role','switch');b.setAttribute('aria-checked',String(x.cur));x.b=b;
+    b.onclick=()=>{if(root.dataset.lk)return;x.cur=!x.cur;b.classList.toggle('on',x.cur);b.setAttribute('aria-checked',String(x.cur));b.classList.remove('good','bad');draw();onChange&&onChange()};box.append(b)});
+  draw();return{st,draw}}
+LW.chart=(b,o)=>{if(o.tog){chTogUI(o.c||o,o.tog,b)}else b.innerHTML='<div class="chfig">'+chartSVG(o)+'</div>'};
+/* fix: «arregla el gráfico». ch.c = gráfico base; ch.tog=[{l,v:inicio,good:valor correcto,on:{…},off:{…},e}] */
+IW.fix=(ch,o)=>{const w=el('div','fixw');let lk=false;const U=chTogUI(ch.c,ch.tog,w,o.on);let touched=false;U.st.forEach(x=>{const f=x.b.onclick;x.b.onclick=()=>{touched=true;f()}});
+  return{el:w,note:'Activa o desactiva cada opción hasta que el gráfico quede honesto y claro.',okMsg:'¡Gráfico arreglado!',need:'Cambia al menos una opción antes de comprobar.',
+   filled:()=>touched,
+   grade(){const bad=U.st.filter(x=>x.cur!==!!x.t.good);const ex=bad.filter(x=>x.t.e).slice(0,3).map(x=>'<br>• '+x.t.e).join('');return{f:bad.length?0:1,msg:bad.length?'Todavía hay '+(bad.length===1?'una opción':bad.length+' opciones')+' por corregir (en rojo).'+ex:''}},
+   mark(){U.st.forEach(x=>{const k=x.cur===!!x.t.good;x.b.classList.toggle('good',k);x.b.classList.toggle('bad',!k)})},
+   reveal(){U.st.forEach(x=>{if(x.cur!==!!x.t.good){x.cur=!!x.t.good;x.b.classList.toggle('on',x.cur);x.b.setAttribute('aria-checked',String(x.cur))}x.b.classList.remove('bad');x.b.classList.add('good')});U.draw()},
+   lock(){lk=true;w.dataset.lk=1;U.st.forEach(x=>x.b.disabled=true)}}};
+
+/* ---------- SQL en el navegador (sql.js / SQLite) con traducción mínima de SQL Server ---------- */
+const SQLJS='https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/';
+let SQLP=null;
+function sqlLib(){if(SQLP)return SQLP;SQLP=new Promise((res,rej)=>{const sc=document.createElement('script');sc.src=SQLJS+'sql-wasm.js';
+  sc.onload=()=>window.initSqlJs({locateFile:f=>SQLJS+f}).then(res,rej);sc.onerror=()=>rej(new Error('net'));document.head.append(sc)});SQLP.catch(()=>{SQLP=null});return SQLP}
+function sqlDB(S,spec){const db=new S.Database();
+  try{db.create_aggregate('STDEV',{init:()=>[],step:(a,v)=>{if(v!=null)a.push(+v);return a},finalize:a=>{if(a.length<2)return null;const m=a.reduce((x,y)=>x+y,0)/a.length;return Math.sqrt(a.reduce((x,y)=>x+(y-m)*(y-m),0)/(a.length-1))}});
+      db.create_aggregate('VAR',{init:()=>[],step:(a,v)=>{if(v!=null)a.push(+v);return a},finalize:a=>{if(a.length<2)return null;const m=a.reduce((x,y)=>x+y,0)/a.length;return a.reduce((x,y)=>x+(y-m)*(y-m),0)/(a.length-1)}})}catch(e){}
+  for(const tn in spec){const t=spec[tn];const cols=t.cols.map(c=>{const nm=c.replace(/:.*/,''),ty=(c.split(':')[1]||'');return '"'+nm+'" '+(ty==='n'?'REAL':ty==='i'?'INTEGER':'TEXT COLLATE NOCASE')});
+    db.run('CREATE TABLE "'+tn+'" ('+cols.join(',')+')');const st=db.prepare('INSERT INTO "'+tn+'" VALUES ('+t.cols.map(()=>'?').join(',')+')');t.rows.forEach(r=>st.run(r));st.free()}
+  return db}
+function sqlTr(q){q=String(q).replace(/--[^\n]*/g,' ').trim();
+  q=q.replace(/\bLEN\s*\(/gi,'LENGTH(').replace(/\bISNULL\s*\(/gi,'IFNULL(').replace(/\bGETDATE\s*\(\s*\)/gi,"DATE('now')");
+  const m=q.match(/^\s*SELECT\s+(DISTINCT\s+)?TOP\s*\(?\s*(\d+)\s*\)?\s+/i);if(m){q=q.replace(m[0],'SELECT '+(m[1]||''));q=q.replace(/;\s*$/,'')+' LIMIT '+m[2]}
+  return q}
+function sqlRun(db,q){const parts=sqlTr(q).split(/;\s*(?=\S)/).map(x=>x.replace(/;\s*$/,'').trim()).filter(Boolean);let last=null;
+  for(const p of parts){const r=db.exec(p);if(r.length)last=r[r.length-1];else last={columns:[],values:[],mod:db.getRowsModified()}}return last||{columns:[],values:[]}}
+const sqlErr=m=>{m=String(m||'');let x=m.match(/no such column: ([\w.]+)/i);if(x)return 'No existe la columna «'+x[1]+'». Revisa cómo se escribe (sin espacios ni tildes).';
+  x=m.match(/no such table: (\w+)/i);if(x)return 'No existe la tabla «'+x[1]+'».';if(/near "(\w+)": syntax error/i.test(m))return 'Error de sintaxis cerca de «'+m.match(/near "([^"]+)"/i)[1]+'». Revisa el orden de las cláusulas y las comas.';
+  if(/incomplete input/i.test(m))return 'La consulta está incompleta.';if(/misuse of aggregate/i.test(m))return 'Uso incorrecto de una agregación: en WHERE no van COUNT/SUM/AVG (eso va en HAVING).';
+  if(/ambiguous column/i.test(m))return 'Columna ambigua: existe en las dos tablas. Ponle el alias (por ejemplo v.ID_cliente).';return 'Error: '+m}
+function sqlTable(r,max){if(!r||!r.columns.length)return el('p','note',r&&r.mod!=null?'Instrucción ejecutada: '+r.mod+' fila(s) modificada(s).':'Sin resultado.');
+  const w=el('div','tbl sqlres');const t=el('table');max=max||12;t.innerHTML='<tr>'+r.columns.map(c=>'<th>'+escX(c)+'</th>').join('')+'</tr>'+r.values.slice(0,max).map(v=>'<tr>'+v.map(x=>'<td'+(x==null?' class="nul"':'')+'>'+(x==null?'NULL':escX(typeof x==='number'?Math.round(x*100)/100:x))+'</td>').join('')+'</tr>').join('');
+  w.append(t);if(r.values.length>max)w.append(el('p','note','… y '+(r.values.length-max)+' fila(s) más.'));w.append(el('p','note',r.values.length+' fila(s).'));return w}
+const sqlNorm=v=>v==null?null:typeof v==='number'?Math.round(v*100)/100:(/^-?\d+(\.\d+)?$/.test(String(v).trim())?Math.round(+v*100)/100:String(v).trim().toLowerCase());
+function sqlSame(a,b,ord){if(!a||!b)return 'Sin resultado.';if(a.columns.length!==b.columns.length)return 'Tu resultado tiene '+a.columns.length+' columna(s) y debería tener '+b.columns.length+'.';
+  if(a.values.length!==b.values.length)return 'Tu resultado tiene '+a.values.length+' fila(s) y debería tener '+b.values.length+'.';
+  const k=r=>JSON.stringify(r.map(sqlNorm));let A=a.values.map(k),B=b.values.map(k);if(!ord){A=A.slice().sort();B=B.slice().sort()}
+  for(let i=0;i<A.length;i++)if(A[i]!==B[i])return ord&&a.values.map(k).slice().sort().join()===b.values.map(k).slice().sort().join()?'Las filas son las correctas, pero el orden no.':'Algunos valores no coinciden con el resultado esperado.';return ''}
+const SQLKEYS=['SELECT','FROM','WHERE','AND','OR','GROUP BY','HAVING','ORDER BY','DESC','JOIN','LEFT JOIN','ON','AS','COUNT(*)','SUM(','AVG(','MIN(','MAX(','DISTINCT','TOP','IS NULL','UPDATE','SET','=','>','<','*',',','(',')',"'",';'];
+function sqlBox(o){const box=el('div','sqlw');const tb=o.tables||{};
+  const sch=el('details','sqlsch','<summary>📋 Ver tablas ('+Object.keys(tb).join(', ')+')</summary>');
+  for(const tn in tb){sch.append(el('p','sqltn','<b>'+tn+'</b>'));sch.append(sqlTable({columns:tb[tn].cols.map(c=>c.replace(/:.*/,'')),values:tb[tn].rows},8))}
+  const ta=el('textarea','sqlta');ta.rows=4;ta.spellcheck=false;ta.autocapitalize='off';ta.autocomplete='off';ta.setAttribute('autocorrect','off');ta.placeholder='Escribe tu consulta…';ta.value=o.start||'';
+  const keys=el('div','sqlkeys');SQLKEYS.forEach(k=>{const b=el('button',null,escX(k));b.type='button';b.onclick=()=>{if(ta.readOnly)return;const s=ta.selectionStart,e=ta.selectionEnd,pre=ta.value.slice(0,s),sp=/[\s(]$/.test(pre)||!pre||/^[,);')]/.test(k)?'':' ';const ins=sp+k+(/[(']$/.test(k)?'':' ');ta.setRangeText(ins,s,e,'end');ta.focus();ta.dispatchEvent(new Event('input'))};keys.append(b)});
+  const run=el('button','sqlrun','▶ Ejecutar');run.type='button';const out=el('div','sqlout');
+  const acts=el('div','oacts');acts.append(run);box.append(sch,ta,keys,acts,out);
+  let S=null,db=null;const fresh=async()=>{if(!S)S=await sqlLib();if(db)db.close();db=sqlDB(S,tb);return db};
+  const exec=async(q)=>{const d=await fresh();try{return{r:sqlRun(d,q)}}catch(e){return{err:sqlErr(e.message)}}};
+  run.onclick=async()=>{if(!ta.value.trim())return;out.innerHTML='<p class="note">⏳ Ejecutando… (la primera vez carga el motor SQL)</p>';
+    try{const x=await exec(ta.value);out.innerHTML='';out.append(x.err?el('p','fb bad',x.err):sqlTable(x.r))}catch(e){out.innerHTML='';out.append(el('p','fb bad','No se pudo cargar el motor SQL. La primera vez necesita internet.'))}};
+  return{el:box,ta,out,exec,acts}}
+LW.sql=(b,o)=>{const x=sqlBox({tables:o.tables||(C&&C.db)||{},start:o.start||''});b.append(x.el)};
+/* sql: ch.a = consulta modelo; ch.ord = importa el orden; ch.check = consulta que verifica el estado (para UPDATE); ch.names = alias exigidos */
+IW.sql=(ch,o)=>{const tb={};const all=ch.db||(C&&C.db)||{};(ch.tables||Object.keys(all)).forEach(k=>{if(all[k])tb[k]=all[k]});
+  const X=sqlBox({tables:tb,start:ch.start||''});X.ta.addEventListener('input',()=>{X.ta.classList.remove('bad','good');R=null;o.on&&o.on()});let R=null,lk=false;
+  const prep=async()=>{if(R&&R.q===X.ta.value)return R;const q=X.ta.value;
+    try{const u=await X.exec(ch.check?q+';\n'+ch.check:q);const e=await X.exec(ch.check?ch.a+';\n'+ch.check:ch.a);
+      if(u.err)return R={q,f:0,msg:u.err,res:null};let msg=sqlSame(u.r,e.r,!!ch.ord);
+      if(!msg&&ch.names){const got=u.r.columns.map(c=>c.toLowerCase());const miss=ch.names.filter(n=>!got.includes(n.toLowerCase()));if(miss.length)msg='El resultado está bien, pero falta el alias '+miss.map(m=>'«'+m+'»').join(' y ')+' (usa AS).'}
+      return R={q,f:msg?0:1,msg,res:u.r}}catch(e){return R={q,f:0,msg:'No se pudo cargar el motor SQL. La primera vez necesita internet.',res:null}}};
+  return{el:X.el,note:'Usa los botones para escribir más rápido en el celular. «Ejecutar» te muestra el resultado; «Comprobar» lo compara con el esperado.',need:'Escribe tu consulta antes de comprobar.',okMsg:'¡Consulta correcta!',
+   filled:()=>X.ta.value.trim()!=='',prep,
+   async agrade(){await prep();return this.grade()},
+   grade(){return R?{f:R.f,msg:R.msg}:{f:0,msg:'Sin ejecutar.'}},
+   mark(g){X.ta.classList.toggle('good',g.f>=1);X.ta.classList.toggle('bad',g.f<1);if(R&&R.res){X.out.innerHTML='';X.out.append(sqlTable(R.res))}},
+   reveal(){if(!R||R.f<1){X.out.append(el('p','note','<b>Consulta modelo:</b>'));const p=el('pre','code');p.textContent=ch.a;X.out.append(p)}},
+   lock(){lk=true;X.ta.readOnly=true;X.el.querySelectorAll('.sqlkeys button').forEach(b=>b.disabled=true)}}};
+/* JOIN visual: o.L / o.R = {name, cols, rows}, o.lk / o.rk = índice de la columna clave */
+LW.join=(b,o)=>{const A=o.L,B=o.R,ka=o.lk||0,kb=o.rk||0;let mode='inner';
+  const bar=el('div','jbar');['inner','left','cross'].forEach(m=>{const x=el('button','jm'+(m===mode?' on':''),m==='inner'?'INNER JOIN':m==='left'?'LEFT JOIN':'Sin ON');x.type='button';x.onclick=()=>{mode=m;bar.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));draw()};bar.append(x)});
+  const tw=el('div','jtabs'),res=el('div','jres'),cap=el('p','note');b.append(bar,tw,cap,res);
+  const tab=(T,hl)=>{const w=el('div','tbl');const t=el('table');t.innerHTML='<caption>'+T.name+'</caption><tr>'+T.cols.map(c=>'<th>'+c+'</th>').join('')+'</tr>'+T.rows.map((r,i)=>'<tr class="'+(hl[i]||'')+'">'+r.map(v=>'<td>'+(v==null?'NULL':escX(v))+'</td>').join('')+'</tr>').join('');w.append(t);return w};
+  const draw=()=>{const rows=[];const ma=A.rows.map(()=>0),mb=B.rows.map(()=>0);
+    if(mode==='cross')A.rows.forEach(a=>B.rows.forEach(r=>rows.push({v:[...a,...r],c:'jx'})));
+    else A.rows.forEach((a,i)=>{const hit=B.rows.map((r,j)=>[r,j]).filter(([r])=>r[kb]===a[ka]);hit.forEach(([r,j])=>{ma[i]++;mb[j]++;rows.push({v:[...a,...r],c:'jok'})});if(!hit.length&&mode==='left')rows.push({v:[...a,...B.cols.map(()=>null)],c:'jnul'})});
+    tw.innerHTML='';tw.append(tab(A,A.rows.map((_,i)=>mode==='cross'?'':ma[i]?'jok':'jno')),tab(B,B.rows.map((_,j)=>mode==='cross'?'':mb[j]?'jok':'jno')));
+    cap.innerHTML=mode==='inner'?'Solo las filas con pareja en ambas tablas (en verde). Las grises se pierden.':mode==='left'?'Todas las filas de <b>'+A.name+'</b>; las que no tienen pareja salen con NULL (en rojo).':'Sin ON se combina cada fila con cada fila: '+A.rows.length+' × '+B.rows.length+' = '+(A.rows.length*B.rows.length)+' filas (producto cartesiano).';
+    res.innerHTML='';const w=el('div','tbl');const t=el('table');t.innerHTML='<caption>Resultado: '+rows.length+' filas</caption><tr>'+[...A.cols.map(c=>A.name[0].toLowerCase()+'.'+c),...B.cols.map(c=>B.name[0].toLowerCase()+'.'+c)].map(c=>'<th>'+c+'</th>').join('')+'</tr>'+rows.map(r=>'<tr class="'+r.c+'">'+r.v.map(v=>'<td'+(v==null?' class="nul"':'')+'>'+(v==null?'NULL':escX(v))+'</td>').join('')+'</tr>').join('');w.append(t);res.append(w)};
+  draw()};
+
 const isIW=ch=>!!(ch&&ch.t&&IW[ch.t]);
 /* Práctica/guía: widget + botón Comprobar. cb={onTry,onBad,onGood} */
 function iwPractice(ch,box,fb,qi,pre,cb,e,key){const w=IW[ch.t](ch,{key,pre});box.append(w.el);
@@ -2592,7 +2770,7 @@ function iwPractice(ch,box,fb,qi,pre,cb,e,key){const w=IW[ch.t](ch,{key,pre});bo
   if(w.note||ch.note)box.append(el('p','note',[w.note,ch.note].filter(Boolean).join(' ')));
   const bt=el('div','oacts');const chk=el('button','pri',ch.btn||'Comprobar');bt.append(chk);
   if(w.reset){const rs=el('button',null,'Reiniciar');rs.onclick=()=>{w.reset();fb.textContent=''};bt.append(rs)}box.append(bt);
-  chk.onclick=()=>{if(!w.filled()){fb.className='fb bad';fb.innerHTML=w.need||'Completa tu respuesta antes de comprobar.';return}cb.onTry();const g=w.grade();w.mark(g);
+  chk.onclick=async()=>{if(!w.filled()){fb.className='fb bad';fb.innerHTML=w.need||'Completa tu respuesta antes de comprobar.';return}cb.onTry();if(w.agrade){chk.disabled=true;fb.className='fb';fb.textContent='⏳ Revisando…'}const g=w.agrade?await w.agrade():w.grade();chk.disabled=false;w.mark(g);
     if(g.f>=1){w.lock();bt.remove();fb.className='fb good';fb.innerHTML=w.okMsg||'¡Correcto!';cb.onGood(qi)}
     else{fb.className='fb bad';fb.innerHTML=g.msg||'Hay errores, marcados en rojo.';typeset(fb);cb.onBad();pullpy.hook('error',{e,qi,ch,oi:null,box,fb})}};
   return w}
@@ -3113,7 +3291,8 @@ let sendArm=0;$('simsend').onclick=()=>{if(SIMS&&SIMS.grading)return;const need=
   if(have<need&&!sendArm){sendArm=1;$('simsend').textContent='Faltan '+(need-have)+'. ¿Entregar igual?';setTimeout(()=>{sendArm=0;$('simsend').textContent='Entregar'},3500);return}sendArm=0;$('simsend').textContent='Entregar';gradeSim(false)};
 let backArm=0;$('simback').onclick=()=>{if(SIMS&&!SIMS.done&&!backArm){backArm=1;$('simback').textContent='¿Salir? Se pierde el intento';setTimeout(()=>{backArm=0;$('simback').textContent='← Salir'},3500);return}
   backArm=0;$('simback').textContent='← Salir';SIMS=null;openCourse(C.id)};
-async function gradeSim(timeout){if(!SIMS||SIMS.done||SIMS.grading)return;const cq=SIMS.qs.filter(q=>q.cb);
+async function gradeSim(timeout){if(!SIMS||SIMS.done||SIMS.grading)return;
+  {const pw=SIMS.qs.flatMap(q=>Object.values(q.w||{})).filter(w=>w.prep&&w.filled());if(pw.length){SIMS.grading=true;$('simprog').textContent='⏳ Corrigiendo…';for(const w of pw){try{await w.prep()}catch(e){}}SIMS.grading=false}}const cq=SIMS.qs.filter(q=>q.cb);
   if(cq.length){SIMS.grading=true;$('simsend').disabled=true;$('simprog').textContent='⏳ Corrigiendo tu código…';
     for(const q of cq){q.cs={};q.cr={};for(const ci in q.cb){const xb=q.cb[ci];const r=await xb.check(false);q.cs[ci]=(r&&xb.dirty())?r.pass/r.total:0;q.cr[ci]=r}}
     $('simsend').disabled=false;SIMS.grading=false}

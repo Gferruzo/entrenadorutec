@@ -8,7 +8,7 @@
  "short": "Examen final",
  "sub": "Todo el curso",
  "free": true,
- "intro": "Repaso acumulado del curso con todos los temas abiertos. Primero lo del parcial y luego <b>la semana 9: fundamentos de visualización</b> (gráfico o tabla, contexto, elegir el gráfico por objetivo, escalas y sesgos, títulos y jerarquía visual), que pesa más en el simulacro. Se actualiza cada semana.",
+ "intro": "Repaso acumulado del curso con todos los temas abiertos. Primero lo del parcial y luego <b>la semana 9: fundamentos de visualización</b> (gráfico o tabla, contexto, elegir el gráfico por objetivo, escalas y sesgos, títulos y jerarquía visual), que pesa más en el simulacro. Ahora con gráficos de verdad: los auditas tocándolos, los arreglas con interruptores y escribes SQL que se ejecuta y se corrige solo. Se actualiza cada semana.",
  "form": "<p class=\"note\">Hoja de repaso del examen final: lo del parcial (datos, SQL, limpieza y descriptivo) y, desde la semana 9, visualización.</p><div class=\"fgrid\"><div><b>Gráfico o tabla</b><br>Patrón → gráfico · valor exacto → tabla</div><div><b>Contexto</b><br>Audiencia · decisión · idea en una frase</div><div><b>Comparar</b><br>Barras ordenadas</div><div><b>Tendencia</b><br>Líneas (revisa la cobertura del periodo)</div><div><b>Relación</b><br>Dispersión (también descarta hipótesis)</div><div><b>Composición</b><br>Barras · apiladas al 100 % entre grupos · pastel solo 2–3 partes</div><div><b>Escalas</b><br>Barras desde 0 · eje truncado exagera</div><div><b>Sesgos</b><br>3D · doble eje · colores engañosos · cherry picking · datos incompletos</div><div><b>Claridad</b><br>Título = conclusión · un color de énfasis · sin desorden</div><div><b>5 segundos</b><br>¿Qué se lleva el lector?</div></div>",
  "topics": [
   {
@@ -27,30 +27,71 @@
     {
      "id": "dd1",
      "lvl": 1,
-     "title": "¿Qué estructura tiene?",
-     "q": "<p>Una app de delivery guarda cada pedido como un archivo JSON con claves como <code>\"cliente\"</code>, <code>\"items\"</code> y <code>\"total\"</code>. Estos datos son:</p>",
+     "title": "Estructura de los datos",
+     "q": "<p>Una empresa de retail revisa los datos que tiene. ¿Qué estructura tiene cada uno?</p>",
      "checks": [
       {
-       "p": "Estructura",
-       "o": [
-        "Semiestructurados",
-        "Estructurados",
-        "No estructurados",
-        "Cuantitativos",
-        "Externos"
+       "t": "cls",
+       "p": "Clasifica cada dato según su estructura.",
+       "cats": [
+        "Estructurado",
+        "Semiestructurado",
+        "No estructurado"
+       ],
+       "items": [
+        {
+         "x": "Pedidos de una app guardados como JSON con claves «cliente», «items» y «total».",
+         "c": 1
+        },
+        {
+         "x": "La tabla de ventas en Excel, con filas y columnas.",
+         "c": 0
+        },
+        {
+         "x": "Las grabaciones de audio del call center.",
+         "c": 2
+        },
+        {
+         "x": "Una factura electrónica en XML.",
+         "c": 1
+        },
+        {
+         "x": "Reseñas escritas en texto libre en la app.",
+         "c": 2
+        },
+        {
+         "x": "La tabla Clientes de la base de datos.",
+         "c": 0
+        },
+        {
+         "x": "Fotos de los productos.",
+         "c": 2
+        },
+        {
+         "x": "Un correo: remitente y fecha son etiquetas; el cuerpo es texto libre.",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "No están en una tabla rígida, pero sí tienen claves que organizan la información: son semiestructurados."
+      "Estructurados: filas y columnas (Excel, tablas de una base de datos).",
+      "Semiestructurados: sin tabla rígida, pero con etiquetas o claves (JSON, XML, correo con metadatos).",
+      "No estructurados: sin formato fijo (texto libre, audio, imágenes, video)."
      ],
-     "ans": "Semiestructurados",
+     "ans": "Semi, estr., no, semi, no, estr., no, semi",
      "hint": "¿Hay filas y columnas o hay etiquetas?",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
+      [
+       "estr"
+      ],
+      [
+       "estr"
+      ],
       [
        "estr"
       ]
@@ -118,30 +159,58 @@
     {
      "id": "dd3",
      "lvl": 1,
-     "title": "¿Interna o externa?",
-     "q": "<p>Una cadena de tiendas usa datos del INEI sobre la población de cada distrito de Lima. Esa fuente es:</p>",
+     "title": "¿Fuente interna o externa?",
+     "q": "<p>¿De qué tipo de fuente viene cada dato?</p>",
      "checks": [
       {
-       "p": "Fuente",
-       "o": [
-        "Externa",
+       "t": "cls",
+       "p": "¿Interna o externa?",
+       "cats": [
         "Interna",
-        "No estructurada",
-        "Primaria interna",
-        "Transaccional"
+        "Externa"
+       ],
+       "items": [
+        {
+         "x": "Datos del INEI sobre la población de cada distrito.",
+         "c": 1
+        },
+        {
+         "x": "Las ventas registradas en el ERP.",
+         "c": 0
+        },
+        {
+         "x": "La base de clientes del CRM.",
+         "c": 0
+        },
+        {
+         "x": "Búsquedas en Google Trends.",
+         "c": 1
+        },
+        {
+         "x": "Los registros del call center.",
+         "c": 0
+        },
+        {
+         "x": "Datos abiertos de la municipalidad.",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "Viene de fuera de la organización y ayuda a entender el entorno: es externa."
+      "Interna: la genera la propia empresa (ERP, CRM, ventas, call center): confiable y barata, pero solo muestra lo de la empresa.",
+      "Externa: viene de fuera (INEI, Google Trends, open data): muestra el mercado, pero su calidad y costo varían."
      ],
-     "ans": "Externa",
+     "ans": "Ext., int., int., ext., int., ext.",
      "hint": "¿Quién generó el dato?",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
+      [
+       "fuente"
+      ],
       [
        "fuente"
       ]
@@ -154,42 +223,48 @@
      "q": "<p>En la empresa Gargate S.A.C. se detectan tres situaciones. Identifica qué problema es cada una.</p>",
      "checks": [
       {
-       "p": "El sistema registra la producción de un día como −500 botellas",
-       "o": [
+       "t": "cls",
+       "p": "¿Qué problema es cada uno?",
+       "cats": [
         "Calidad",
         "Consistencia",
-        "Confiabilidad",
-        "Fuente externa",
-        "Estructura"
-       ]
-      },
-      {
-       "p": "Producción reporta 8 500 unidades; Logística, 8.5 millares; Ventas, 8500",
-       "o": [
-        "Consistencia",
-        "Calidad",
-        "Confiabilidad",
-        "Duplicado",
-        "Integridad referencial"
-       ]
-      },
-      {
-       "p": "Producción informa 10 000 unidades y el ERP, 8 950",
-       "o": [
-        "Confiabilidad",
-        "Consistencia",
-        "Calidad",
-        "Dato no estructurado",
-        "Fuente externa"
+        "Confiabilidad"
+       ],
+       "items": [
+        {
+         "x": "El sistema registra la producción de un día como −500 botellas.",
+         "c": 0
+        },
+        {
+         "x": "Producción reporta 8 500 unidades; Logística, 8.5 millares; Ventas, 85 cientos.",
+         "c": 1
+        },
+        {
+         "x": "Producción informa 10 000 unidades y el ERP, 8 950.",
+         "c": 2
+        },
+        {
+         "x": "Al 20 % de los pedidos le falta la fecha.",
+         "c": 0,
+         "e": "Datos incompletos: es un problema de <b>calidad</b> (¿correctos y completos?)."
+        },
+        {
+         "x": "Un área anota fechas como dd/mm y otra como mm/dd.",
+         "c": 1
+        },
+        {
+         "x": "La cifra viene de una encuesta sin verificar y no coincide con lo vendido.",
+         "c": 2
+        }
        ]
       }
      ],
      "steps": [
-      "−500 es imposible: el dato no es correcto (calidad).",
-      "El mismo valor con formatos y reglas distintas entre áreas: consistencia.",
-      "Dos fuentes dicen cosas distintas: ¿en cuál confiar? Confiabilidad."
+      "Calidad: ¿los datos son correctos, completos y oportunos? (−500 botellas, fechas faltantes).",
+      "Consistencia: ¿se usan las mismas reglas y formatos en toda la empresa? (unidades distintas, formatos de fecha).",
+      "Confiabilidad: ¿vienen de una fuente verificada que refleja la realidad? (cifras que no cuadran con el ERP)."
      ],
-     "ans": "Calidad, consistencia, confiabilidad",
+     "ans": "Cal., cons., conf., cal., cons., conf.",
      "hint": "Consistencia = mismas reglas; confiabilidad = ¿a quién le creo?",
      "fig": null,
      "draw": false,
@@ -199,8 +274,12 @@
       [
        "ccc"
       ],
-      [],
-      []
+      [
+       "ccc"
+      ],
+      [
+       "ccc"
+      ]
      ]
     },
     {
@@ -246,51 +325,59 @@
      "q": "<p>Una empresa analiza a sus clientes. Clasifica cada dato.</p>",
      "checks": [
       {
-       "p": "«Tiempo como cliente (meses)»",
-       "o": [
+       "t": "cls",
+       "p": "¿Cuantitativo o cualitativo?",
+       "cats": [
         "Cuantitativo",
-        "Cualitativo",
-        "No estructurado",
-        "Semiestructurado",
-        "Fuente externa"
-       ]
-      },
-      {
-       "p": "«Reseñas escritas en la app»",
-       "o": [
-        "No estructurado",
-        "Estructurado",
-        "Cuantitativo",
-        "Semiestructurado",
-        "Cualitativo estructurado"
-       ]
-      },
-      {
-       "p": "«Nivel educativo»",
-       "o": [
-        "Cualitativo (con orden)",
-        "Cuantitativo continuo",
-        "Cuantitativo discreto",
-        "No estructurado",
-        "Sin clasificación"
+        "Cualitativo"
+       ],
+       "items": [
+        {
+         "x": "Tiempo como cliente (meses).",
+         "c": 0
+        },
+        {
+         "x": "Nivel educativo.",
+         "c": 1
+        },
+        {
+         "x": "Número de reclamos.",
+         "c": 0
+        },
+        {
+         "x": "DNI.",
+         "c": 1,
+         "e": "Aunque tiene números, solo <b>identifica</b>: no tiene sentido promediarlo."
+        },
+        {
+         "x": "Estado civil.",
+         "c": 1
+        },
+        {
+         "x": "Ingreso mensual.",
+         "c": 0
+        },
+        {
+         "x": "Código postal.",
+         "c": 1,
+         "e": "Identifica una zona: es cualitativo."
+        }
        ]
       }
      ],
      "steps": [
-      "Meses: cantidad con la que se opera.",
-      "Texto libre sin formato fijo: no estructurado.",
-      "Describe una cualidad; tiene un orden (primaria < secundaria < superior)."
+      "Cuantitativo: cantidades con las que se opera (meses, reclamos, ingreso).",
+      "Cualitativo: describe cualidades (nivel educativo, estado civil). Un número que solo identifica (DNI, código postal) también es cualitativo."
      ],
-     "ans": "Cuantitativo; no estructurado; cualitativo",
+     "ans": "Cuant., cual., cuant., cual., cual., cuant., cual.",
      "hint": "Pregúntate si se puede operar y si tiene formato fijo.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
-      [],
       [
-       "estr"
+       "nat"
       ],
       [
        "nat"
@@ -315,32 +402,56 @@
     {
      "id": "db1",
      "lvl": 1,
-     "title": "Elementos de una tabla",
-     "q": "<p>En la tabla ESTUDIANTES, la fila completa con los datos de Ana Torres es un:</p>",
+     "title": "Toca: registro, campo y PK",
+     "q": "<p>Mira la tabla ESTUDIANTES.</p>",
      "checks": [
       {
-       "p": "Es un",
-       "o": [
-        "Registro",
-        "Campo",
-        "Atributo",
-        "Tipo de dato",
-        "Esquema"
-       ]
+       "t": "tap",
+       "p": "Toca el <b>registro</b> de Ana Torres.",
+       "a": [
+        "r2"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>ESTUDIANTES</caption><tr><th data-z=\"hcod\">Codigo</th><th data-z=\"hnom\">Nombre</th><th data-z=\"hcor\">Correo</th><th data-z=\"hcar\">Carrera</th></tr><tr data-z=\"r1\"><td>20261</td><td>Luis Mora</td><td>lmora@utec.edu.pe</td><td>Electrónica</td></tr><tr data-z=\"r2\"><td>20262</td><td>Ana Torres</td><td>atorres@utec.edu.pe</td><td>Industrial</td></tr><tr data-z=\"r3\"><td>20263</td><td>Rosa Quispe</td><td>rquispe@utec.edu.pe</td><td>Civil</td></tr></table></div>",
+       "e": "Un registro es una <b>fila</b> completa."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el <b>campo</b> donde se guarda el correo.",
+       "a": [
+        "hcor"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>ESTUDIANTES</caption><tr><th data-z=\"hcod\">Codigo</th><th data-z=\"hnom\">Nombre</th><th data-z=\"hcor\">Correo</th><th data-z=\"hcar\">Carrera</th></tr><tr data-z=\"r1\"><td>20261</td><td>Luis Mora</td><td>lmora@utec.edu.pe</td><td>Electrónica</td></tr><tr data-z=\"r2\"><td>20262</td><td>Ana Torres</td><td>atorres@utec.edu.pe</td><td>Industrial</td></tr><tr data-z=\"r3\"><td>20263</td><td>Rosa Quispe</td><td>rquispe@utec.edu.pe</td><td>Civil</td></tr></table></div>",
+       "e": "Un campo es una <b>columna</b>."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el campo que sirve como <b>clave primaria</b>.",
+       "a": [
+        "hcod"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>ESTUDIANTES</caption><tr><th data-z=\"hcod\">Codigo</th><th data-z=\"hnom\">Nombre</th><th data-z=\"hcor\">Correo</th><th data-z=\"hcar\">Carrera</th></tr><tr data-z=\"r1\"><td>20261</td><td>Luis Mora</td><td>lmora@utec.edu.pe</td><td>Electrónica</td></tr><tr data-z=\"r2\"><td>20262</td><td>Ana Torres</td><td>atorres@utec.edu.pe</td><td>Industrial</td></tr><tr data-z=\"r3\"><td>20263</td><td>Rosa Quispe</td><td>rquispe@utec.edu.pe</td><td>Civil</td></tr></table></div>",
+       "e": "La PK identifica cada fila de forma única: el nombre puede repetirse."
       }
      ],
      "steps": [
-      "Fila = registro; columna = campo."
+      "Registro = una <strong>fila</strong>: los datos completos de Ana Torres.",
+      "Campo = una <strong>columna</strong>: Correo.",
+      "La PK es el Codigo: único y nunca vacío. El nombre no sirve, porque dos estudiantes pueden llamarse igual."
      ],
-     "ans": "Registro",
+     "ans": "Fila de Ana; columna Correo; Codigo",
      "hint": "Fila vs columna.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
-      []
-     ]
+      [],
+      [],
+      [
+       "pk"
+      ]
+     ],
+     "chain": true
     },
     {
      "id": "db2",
@@ -438,28 +549,28 @@
     {
      "id": "db4",
      "lvl": 2,
-     "title": "Leer una tabla",
-     "q": "<p>MATRÍCULA tiene los campos <code>id_matricula</code>, <code>codigo_estudiante</code>, <code>codigo_curso</code>, <code>semestre</code> y <code>fecha_matricula</code>.</p>",
+     "title": "Toca la PK y las FK",
+     "q": "<p>MATRÍCULA conecta a ESTUDIANTES con CURSOS.</p>",
      "checks": [
       {
-       "p": "¿Cuál es la clave primaria?",
-       "o": [
-        "id_matricula",
-        "codigo_estudiante",
-        "codigo_curso",
-        "semestre",
-        "fecha_matricula"
-       ]
+       "t": "tap",
+       "p": "Toca la <b>clave primaria</b>.",
+       "a": [
+        "pk"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>MATRÍCULA</caption><tr><th data-z=\"pk\">id_<wbr>matricula</th><th data-z=\"fk1\">codigo_<wbr>estudiante</th><th data-z=\"fk2\">codigo_<wbr>curso</th><th data-z=\"sem\">semestre</th><th data-z=\"fec\">fecha_<wbr>matricula</th></tr><tr><td>M001</td><td>20261</td><td>CC6105</td><td>2026-2</td><td>2026-08-10</td></tr><tr><td>M002</td><td>20262</td><td>IN6013</td><td>2026-2</td><td>2026-08-11</td></tr></table></div>",
+       "e": "La PK identifica cada matrícula."
       },
       {
-       "p": "¿Cuáles son claves foráneas?",
-       "o": [
-        "codigo_estudiante y codigo_curso",
-        "id_matricula y semestre",
-        "Solo codigo_curso",
-        "Solo id_matricula",
-        "Ninguna"
-       ]
+       "t": "tap",
+       "p": "Toca las <b>claves foráneas</b> (son dos).",
+       "a": [
+        "fk1",
+        "fk2"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>MATRÍCULA</caption><tr><th data-z=\"pk\">id_<wbr>matricula</th><th data-z=\"fk1\">codigo_<wbr>estudiante</th><th data-z=\"fk2\">codigo_<wbr>curso</th><th data-z=\"sem\">semestre</th><th data-z=\"fec\">fecha_<wbr>matricula</th></tr><tr><td>M001</td><td>20261</td><td>CC6105</td><td>2026-2</td><td>2026-08-10</td></tr><tr><td>M002</td><td>20262</td><td>IN6013</td><td>2026-2</td><td>2026-08-11</td></tr></table></div>",
+       "multi": true,
+       "e": "Las FK apuntan a las PK de ESTUDIANTES y CURSOS."
       }
      ],
      "steps": [
@@ -477,7 +588,8 @@
        "pk"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "db5",
@@ -573,6 +685,65 @@
        "imp"
       ]
      ]
+    },
+    {
+     "id": "db7",
+     "lvl": 2,
+     "title": "¿1 a N o N a M?",
+     "q": "<p>¿Qué cardinalidad tiene cada relación?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada relación.",
+       "cats": [
+        "1 a N",
+        "N a M"
+       ],
+       "items": [
+        {
+         "x": "Un profesor dicta varios cursos; cada curso tiene un solo profesor.",
+         "c": 0
+        },
+        {
+         "x": "Un estudiante lleva varios cursos; un curso tiene varios estudiantes.",
+         "c": 1
+        },
+        {
+         "x": "Un cliente hace muchas ventas; cada venta es de un cliente.",
+         "c": 0
+        },
+        {
+         "x": "Un pedido tiene varios productos; un producto aparece en muchos pedidos.",
+         "c": 1
+        },
+        {
+         "x": "Una tienda tiene muchos empleados; cada empleado trabaja en una tienda.",
+         "c": 0
+        },
+        {
+         "x": "Un libro tiene varios autores; un autor escribe varios libros.",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "1 a N: de un lado puede haber muchos, del otro solo uno. La FK va en la tabla del lado N (CURSOS, VENTAS, EMPLEADOS).",
+      "N a M: muchos en ambos lados. Se resuelve con una <strong>tabla intermedia</strong> con dos FK (MATRÍCULA, DETALLE_PEDIDO)."
+     ],
+     "ans": "1:N, N:M, 1:N, N:M, 1:N, N:M",
+     "hint": "Pregunta en las dos direcciones: ¿uno o muchos?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fk"
+      ],
+      [
+       "nm"
+      ]
+     ]
     }
    ],
    "lesson": "<h3>Idea central</h3><p>Una base de datos relacional guarda cada tipo de información en su propia tabla y las conecta con claves, para no repetir datos.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Tabla</strong> = entidad; <strong>registro</strong> = fila; <strong>campo</strong> = columna.</li><li><strong>PK:</strong> identifica cada fila; única y no nula.</li><li><strong>FK:</strong> campo que apunta a la PK de otra tabla.</li><li>Relación 1 a muchos: la FK va en la tabla del lado «muchos».</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> VENTAS tiene <code>ID_cliente</code> (FK) que apunta a CLIENTES(<code>ID_cliente</code>, PK).</div>\n<div class=\"err\"><b>Error común:</b> usar el nombre como PK: puede repetirse.</div>"
@@ -591,24 +762,55 @@
     {
      "id": "ig1",
      "lvl": 1,
-     "title": "Venta fantasma",
-     "q": "<p>Una venta tiene <code>ID_cliente = 9999</code>, pero ese cliente no existe en CLIENTES. ¿Qué integridad se viola?</p>",
+     "title": "¿Qué integridad se viola?",
+     "q": "<p>Clasifica cada problema.</p>",
      "checks": [
       {
-       "p": "Integridad",
-       "o": [
-        "Referencial",
+       "t": "cls",
+       "p": "¿Qué integridad se viola?",
+       "cats": [
         "De entidad",
-        "De dominio",
-        "Consistencia",
-        "Ninguna"
+        "Referencial",
+        "De dominio"
+       ],
+       "items": [
+        {
+         "x": "Una venta tiene ID_cliente = 9999, pero ese cliente no existe.",
+         "c": 1
+        },
+        {
+         "x": "En Clientes aparece Edad = «veinticinco».",
+         "c": 2
+        },
+        {
+         "x": "Dos clientes tienen el mismo ID_cliente.",
+         "c": 0
+        },
+        {
+         "x": "Un producto no tiene ID_producto (vacío).",
+         "c": 0
+        },
+        {
+         "x": "Una fecha de venta es 31/02/2026.",
+         "c": 2
+        },
+        {
+         "x": "Una matrícula apunta a un curso que no existe.",
+         "c": 1
+        },
+        {
+         "x": "Una nota de 25 en una escala de 0 a 20.",
+         "c": 2
+        }
        ]
       }
      ],
      "steps": [
-      "La FK apunta a una PK inexistente: integridad referencial."
+      "Entidad: la PK se repite o queda vacía.",
+      "Referencial: una FK apunta a una PK que no existe («referencia fantasma»).",
+      "Dominio: el valor no es del tipo o rango correcto (texto en un número, fecha imposible, nota fuera de escala)."
      ],
-     "ans": "Referencial",
+     "ans": "Ref., dom., ent., ent., dom., ref., dom.",
      "hint": "¿Apunta a algo que existe?",
      "fig": null,
      "draw": false,
@@ -616,39 +818,13 @@
      "solfig": null,
      "tags": [
       [
-       "pk",
-       "fk",
-       "integ"
-      ]
-     ]
-    },
-    {
-     "id": "ig2",
-     "lvl": 1,
-     "title": "Texto en un campo numérico",
-     "q": "<p>En la tabla CLIENTES aparece <code>Edad = 'veinticinco'</code>. ¿Qué integridad se viola?</p>",
-     "checks": [
-      {
-       "p": "Integridad",
-       "o": [
-        "De dominio",
-        "De entidad",
-        "Referencial",
-        "De redundancia",
-        "Ninguna"
-       ]
-      }
-     ],
-     "steps": [
-      "Un campo numérico con texto: el valor está fuera de su dominio."
-     ],
-     "ans": "De dominio",
-     "hint": "Tipo y rango del campo.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
+       "integ",
+       "pk"
+      ],
+      [
+       "integ",
+       "fk"
+      ],
       [
        "integ"
       ]
@@ -716,28 +892,34 @@
     {
      "id": "ig4",
      "lvl": 2,
-     "title": "Encuentra los errores",
-     "q": "<p>Tabla MATRÍCULAS:</p><div class=\"tbl\"><table><tr><th>ID_matricula</th><th>ID_estudiante</th><th>ID_seccion</th><th>Nota_final</th></tr><tr><td>1</td><td>101</td><td>S01</td><td>17</td></tr><tr><td>1</td><td>102</td><td>S02</td><td>catorce</td></tr><tr><td>3</td><td>(vacío)</td><td>S01</td><td>15</td></tr></table></div>",
+     "title": "Encuentra los errores en la tabla",
+     "q": "<p>Revisa la tabla MATRÍCULAS.</p>",
      "checks": [
       {
-       "p": "El ID_matricula = 1 repetido viola la integridad…",
-       "o": [
-        "De entidad",
-        "Referencial",
-        "De dominio",
-        "Consistencia",
-        "Ninguna"
-       ]
+       "t": "tap",
+       "p": "Toca la celda que viola la integridad <b>de entidad</b>.",
+       "a": [
+        "b1"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>MATRÍCULAS</caption><tr><th>ID_<wbr>matricula</th><th>ID_<wbr>estudiante</th><th>ID_<wbr>seccion</th><th>Nota_<wbr>final</th></tr><tr><td data-z=\"a1\">1</td><td>101</td><td>S01</td><td data-z=\"n17\">17</td></tr><tr><td data-z=\"b1\">1</td><td>102</td><td data-z=\"sec\">S02</td><td data-z=\"nota\">catorce</td></tr><tr><td data-z=\"c1\">3</td><td data-z=\"vac\">(vacío)</td><td>S01</td><td>15</td></tr></table></div>",
+       "e": "La PK no puede repetirse: el segundo «1» la viola."
       },
       {
-       "p": "La nota «catorce» viola la integridad…",
-       "o": [
-        "De dominio",
-        "De entidad",
-        "Referencial",
-        "Confiabilidad",
-        "Ninguna"
-       ]
+       "t": "tap",
+       "p": "Toca la celda que viola la integridad <b>de dominio</b>.",
+       "a": [
+        "nota"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>MATRÍCULAS</caption><tr><th>ID_<wbr>matricula</th><th>ID_<wbr>estudiante</th><th>ID_<wbr>seccion</th><th>Nota_<wbr>final</th></tr><tr><td data-z=\"a1\">1</td><td>101</td><td>S01</td><td data-z=\"n17\">17</td></tr><tr><td data-z=\"b1\">1</td><td>102</td><td data-z=\"sec\">S02</td><td data-z=\"nota\">catorce</td></tr><tr><td data-z=\"c1\">3</td><td data-z=\"vac\">(vacío)</td><td>S01</td><td>15</td></tr></table></div>",
+       "e": "Un texto en un campo numérico viola el dominio."
+      },
+      {
+       "t": "tap",
+       "p": "Toca la FK vacía: esa matrícula no se puede vincular a ningún estudiante.",
+       "a": [
+        "vac"
+       ],
+       "html": "<div class=\"tbl\"><table><caption>MATRÍCULAS</caption><tr><th>ID_<wbr>matricula</th><th>ID_<wbr>estudiante</th><th>ID_<wbr>seccion</th><th>Nota_<wbr>final</th></tr><tr><td data-z=\"a1\">1</td><td>101</td><td>S01</td><td data-z=\"n17\">17</td></tr><tr><td data-z=\"b1\">1</td><td>102</td><td data-z=\"sec\">S02</td><td data-z=\"nota\">catorce</td></tr><tr><td data-z=\"c1\">3</td><td data-z=\"vac\">(vacío)</td><td>S01</td><td>15</td></tr></table></div>"
       }
      ],
      "steps": [
@@ -761,7 +943,8 @@
       [
        "fk"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ig5",
@@ -846,22 +1029,20 @@
      "id": "sq1",
      "lvl": 1,
      "title": "Elegir columnas",
-     "q": "<p>Quieres ver solo el nombre y el precio de los productos. ¿Qué consulta es correcta?</p>",
+     "q": "<p>Quieres ver solo el nombre y el precio de los productos.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT Nombre_producto, Precio FROM Productos;</code>",
-        "<code>SELECT * FROM Productos;</code>",
-        "<code>SELECT FROM Productos Nombre_producto, Precio;</code>",
-        "<code>SELECT Nombre_producto AND Precio FROM Productos;</code>",
-        "<code>FROM Productos SELECT Nombre_producto, Precio;</code>"
+       "t": "sql",
+       "p": "Escribe la consulta que muestra solo el nombre y el precio de los productos.",
+       "a": "SELECT Nombre_producto, Precio FROM Productos;",
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "Columnas separadas por coma después de SELECT, y la tabla después de FROM.",
-      "<code>SELECT *</code> traería todas las columnas."
+      "Las columnas que quieres van después de SELECT, separadas por coma; la tabla, después de FROM.",
+      "Modelo: <code>SELECT Nombre_producto, Precio FROM Productos;</code>"
      ],
      "ans": "SELECT Nombre_producto, Precio FROM Productos;",
      "hint": "Primero qué, luego de dónde.",
@@ -873,7 +1054,9 @@
       [
        "sel"
       ],
-      []
+      [
+       "sel"
+      ]
      ]
     },
     {
@@ -883,13 +1066,14 @@
      "q": "<p>La tabla Productos tiene 52 filas. ¿Cuántas filas devuelve <code>SELECT TOP 100 * FROM Productos;</code>?</p>",
      "checks": [
       {
-       "p": "Filas",
-       "o": [
-        "52",
-        "100",
-        "0 (da error)",
-        "48",
-        "1"
+       "t": "num",
+       "p": "¿Cuántas filas devuelve?",
+       "f": [
+        {
+         "l": "Filas",
+         "a": 52,
+         "e": "TOP solo pone un máximo: si hay menos filas, trae las que haya."
+        }
        ]
       }
      ],
@@ -971,23 +1155,33 @@
      "id": "sq4",
      "lvl": 2,
      "title": "¿Qué devuelve DISTINCT?",
-     "q": "<p>Con esta tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><p>¿Cuántas filas devuelve <code>SELECT DISTINCT Categoria FROM Productos;</code>?</p>",
+     "q": "<p>Con esta tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_<wbr>producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div>",
      "checks": [
       {
-       "p": "Filas",
-       "o": [
-        "3",
-        "6",
-        "2",
-        "1",
-        "4"
+       "t": "num",
+       "p": "¿Cuántas filas devuelve <code>SELECT DISTINCT Categoria FROM Productos;</code>?",
+       "f": [
+        {
+         "l": "Filas",
+         "a": 3,
+         "e": "cuenta las categorías sin repetir."
+        }
+       ]
+      },
+      {
+       "t": "sql",
+       "p": "Ahora escríbela y ejecútala.",
+       "a": "SELECT DISTINCT Categoria FROM Productos;",
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "Categorías únicas: Bebidas, Snacks y Abarrotes."
+      "DISTINCT deja cada valor una sola vez. Categorías únicas: Bebidas, Snacks y Abarrotes → 3 filas.",
+      "Modelo: <code>SELECT DISTINCT Categoria FROM Productos;</code>"
      ],
-     "ans": "3",
+     "ans": "3; SELECT DISTINCT Categoria FROM Productos;",
      "hint": "Cuenta categorías distintas, no productos.",
      "fig": null,
      "draw": false,
@@ -996,8 +1190,12 @@
      "tags": [
       [
        "distinct"
+      ],
+      [
+       "distinct"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "sq5",
@@ -1033,25 +1231,26 @@
      "id": "sq6",
      "lvl": 3,
      "title": "Combinar TOP, AS y columnas",
-     "q": "<p>¿Qué consulta muestra los primeros 10 productos, con Nombre_producto renombrado como «Producto», y su Categoria?</p>",
+     "q": "<p>Usa TOP y AS en la misma consulta.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT TOP 10 Nombre_producto AS Producto, Categoria FROM Productos;</code>",
-        "<code>SELECT Nombre_producto AS Producto, Categoria TOP 10 FROM Productos;</code>",
-        "<code>SELECT TOP 10 Producto AS Nombre_producto, Categoria FROM Productos;</code>",
-        "<code>SELECT Nombre_producto AS Producto, Categoria FROM Productos LIMIT 10;</code>",
-        "<code>SELECT TOP 10 AS Producto Nombre_producto, Categoria FROM Productos;</code>"
+       "t": "sql",
+       "p": "Muestra los primeros 3 productos con Nombre_producto renombrado como «Producto», y su Categoria.",
+       "a": "SELECT TOP 3 Nombre_producto AS Producto, Categoria FROM Productos;",
+       "ord": true,
+       "names": [
+        "Producto"
+       ],
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "TOP va justo después de SELECT.",
-      "El alias va después de la columna: columna AS alias.",
-      "LIMIT es de MySQL; en SQL Server (el del curso) se usa TOP."
+      "TOP n va justo después de SELECT; AS renombra la columna solo en el resultado.",
+      "Modelo: <code>SELECT TOP 3 Nombre_producto AS Producto, Categoria FROM Productos;</code>"
      ],
-     "ans": "SELECT TOP 10 Nombre_producto AS Producto, Categoria FROM Productos;",
+     "ans": "SELECT TOP 3 Nombre_producto AS Producto, Categoria FROM Productos;",
      "hint": "En SQL Server se usa TOP, no LIMIT.",
      "fig": null,
      "draw": false,
@@ -1059,15 +1258,23 @@
      "solfig": null,
      "tags": [
       [
-       "sel",
        "top"
       ],
-      [],
-      []
+      [
+       "top"
+      ]
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>SQL es declarativo: describes qué quieres obtener y el motor decide cómo.</p>\n<h3>Conceptos clave</h3><ul><li><code>SELECT col1, col2 FROM tabla;</code></li><li><code>SELECT *</code> trae todo; <code>TOP n</code> limita filas; <code>AS</code> renombra en el resultado.</li><li><code>DISTINCT</code> quita repetidos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT DISTINCT Categoria FROM Productos;</code> lista cada categoría una sola vez.</div>\n<div class=\"err\"><b>Error común:</b> escribir mal un nombre de columna o poner <code>TOP</code> después de las columnas.</div>"
+   "lesson": "<h3>Idea central</h3><p>SQL es declarativo: describes qué quieres obtener y el motor decide cómo.</p>\n<h3>Conceptos clave</h3><ul><li><code>SELECT col1, col2 FROM tabla;</code></li><li><code>SELECT *</code> trae todo; <code>TOP n</code> limita filas; <code>AS</code> renombra en el resultado.</li><li><code>DISTINCT</code> quita repetidos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT DISTINCT Categoria FROM Productos;</code> lista cada categoría una sola vez.</div>\n<div class=\"err\"><b>Error común:</b> escribir mal un nombre de columna o poner <code>TOP</code> después de las columnas.</div>",
+   "tools": [
+    {
+     "w": "sql",
+     "t": "Laboratorio SQL",
+     "p": "Practica libre con las tablas del curso (Productos, Clientes, Tiendas, Ventas). Nada de lo que hagas aquí cuenta.",
+     "o": {}
+    }
+   ]
   },
   {
    "id": "agg",
@@ -1085,29 +1292,31 @@
      "id": "ag1",
      "lvl": 1,
      "title": "Filtrar texto",
-     "q": "<p>¿Qué filtro trae solo los productos de la categoría Bebidas?</p>",
+     "q": "<p>Filtra con WHERE. Ojo: los textos van entre comillas simples.</p>",
      "checks": [
       {
-       "p": "Filtro",
-       "o": [
-        "<code>WHERE Categoria = &#x27;Bebidas&#x27;</code>",
-        "<code>WHERE Categoria = Bebidas</code>",
-        "<code>WHERE Categoria == &#x27;Bebidas&#x27;</code>",
-        "<code>HAVING Categoria = &#x27;Bebidas&#x27;</code>",
-        "<code>WHERE &#x27;Categoria&#x27; = Bebidas</code>"
+       "t": "sql",
+       "p": "Trae todas las columnas de los productos de la categoría Bebidas.",
+       "a": "SELECT * FROM Productos WHERE Categoria = 'Bebidas';",
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "Los textos van entre comillas simples y la comparación usa un solo =."
+      "El filtro va en WHERE; el texto, entre comillas simples.",
+      "Modelo: <code>SELECT * FROM Productos WHERE Categoria = 'Bebidas';</code>"
      ],
-     "ans": "<code>WHERE Categoria = &#x27;Bebidas&#x27;</code>",
+     "ans": "WHERE Categoria = 'Bebidas'",
      "hint": "Comillas simples en el texto.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
+      [
+       "where"
+      ],
       [
        "where"
       ]
@@ -1120,13 +1329,14 @@
      "q": "<p>La tabla Ventas tiene 2 000 filas. ¿Cuántas filas devuelve esta consulta?</p><pre class=\"code\">SELECT COUNT(*) AS Total_ventas, SUM(Monto) AS Monto_total,\n       AVG(Monto) AS Ticket_promedio\nFROM Ventas;</pre>",
      "checks": [
       {
-       "p": "Filas",
-       "o": [
-        "1",
-        "2 000",
-        "3",
-        "0",
-        "Depende de los montos"
+       "t": "num",
+       "p": "¿Cuántas filas devuelve?",
+       "f": [
+        {
+         "l": "Filas",
+         "a": 1,
+         "e": "sin GROUP BY, las agregaciones resumen toda la tabla."
+        }
        ]
       }
      ],
@@ -1213,13 +1423,14 @@
      "q": "<p>Con esta tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><pre class=\"code\">SELECT COUNT(*) FROM Productos\nWHERE Categoria = &#x27;Snacks&#x27; AND Precio &lt; 3.50;</pre>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "2",
-        "3",
-        "1",
-        "4",
-        "5"
+       "t": "num",
+       "p": "Resultado de la consulta",
+       "f": [
+        {
+         "l": "COUNT(*)",
+         "a": 2,
+         "e": "primero quédate con los Snacks y luego con los de precio < 3.50."
+        }
        ]
       }
      ],
@@ -1242,24 +1453,43 @@
      "id": "ag5",
      "lvl": 2,
      "title": "Agrupar y ordenar",
-     "q": "<p>Con la misma tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><pre class=\"code\">SELECT Categoria, AVG(Precio) AS Precio_promedio\nFROM Productos\nGROUP BY Categoria\nORDER BY Precio_promedio DESC;</pre>",
+     "q": "<p>Con la misma tabla Productos:</p><div class=\"tbl\"><table><tr><th>Nombre_producto</th><th>Categoria</th><th>Precio</th></tr><tr><td>Agua</td><td>Bebidas</td><td>2.50</td></tr><tr><td>Gaseosa</td><td>Bebidas</td><td>3.80</td></tr><tr><td>Papas</td><td>Snacks</td><td>4.20</td></tr><tr><td>Galletas</td><td>Snacks</td><td>3.20</td></tr><tr><td>Chifles</td><td>Snacks</td><td>3.00</td></tr><tr><td>Arroz</td><td>Abarrotes</td><td>5.50</td></tr></table></div><pre class=\"code\">SELECT Categoria, AVG(Precio) AS Precio_promedio\nFROM Productos\nGROUP BY Categoria\nORDER BY Precio_promedio DESC;</pre><p>Completa la tabla del resultado (redondea a 2 decimales).</p>",
      "checks": [
       {
-       "p": "¿Qué muestra la primera fila?",
-       "o": [
-        "Abarrotes, 5.50",
-        "Snacks, 3.47",
-        "Bebidas, 3.15",
-        "Snacks, 4.20",
-        "Abarrotes, 3.70"
+       "t": "fill",
+       "p": "Completa el resultado en el orden en que sale",
+       "head": [
+        "Categoria",
+        "Precio_promedio"
+       ],
+       "rows": [
+        [
+         "Abarrotes",
+         {
+          "a": 5.5
+         }
+        ],
+        [
+         "Snacks",
+         {
+          "a": 3.47,
+          "tol": 0.01
+         }
+        ],
+        [
+         "Bebidas",
+         {
+          "a": 3.15
+         }
+        ]
        ]
       }
      ],
      "steps": [
       "Promedios: Abarrotes 5.50; Snacks (4.20 + 3.20 + 3.00)/3 ≈ 3.47; Bebidas (2.50 + 3.80)/2 = 3.15.",
-      "DESC ordena de mayor a menor: primero Abarrotes."
+      "DESC ordena de mayor a menor: Abarrotes, Snacks y Bebidas."
      ],
-     "ans": "Abarrotes, 5.50",
+     "ans": "Abarrotes 5.50; Snacks 3.47; Bebidas 3.15",
      "hint": "Calcula el promedio de cada grupo.",
      "fig": null,
      "draw": false,
@@ -1278,24 +1508,22 @@
      "id": "ag6",
      "lvl": 2,
      "title": "AND y OR juntos",
-     "q": "<p>¿Qué filtro trae productos de Bebidas <strong>o</strong> Snacks que además cuesten más de 5?</p>",
+     "q": "<p>Mezcla AND y OR. Pista: AND se evalúa antes que OR.</p>",
      "checks": [
       {
-       "p": "Filtro",
-       "o": [
-        "<code>WHERE (Categoria = &#x27;Bebidas&#x27; OR Categoria = &#x27;Snacks&#x27;) AND Precio &gt; 5</code>",
-        "<code>WHERE Categoria = &#x27;Bebidas&#x27; OR Categoria = &#x27;Snacks&#x27; AND Precio &gt; 5</code>",
-        "<code>WHERE Categoria = &#x27;Bebidas&#x27; AND &#x27;Snacks&#x27; AND Precio &gt; 5</code>",
-        "<code>WHERE Categoria = &#x27;Bebidas&#x27; OR &#x27;Snacks&#x27; OR Precio &gt; 5</code>",
-        "<code>WHERE (Categoria = &#x27;Bebidas&#x27; AND Categoria = &#x27;Snacks&#x27;) OR Precio &gt; 5</code>"
+       "t": "sql",
+       "p": "Trae los productos de Bebidas o Snacks que además cuesten más de 3.50.",
+       "a": "SELECT * FROM Productos WHERE (Categoria = 'Bebidas' OR Categoria = 'Snacks') AND Precio > 3.50;",
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "AND se evalúa antes que OR: sin paréntesis, la segunda opción traería todas las Bebidas sin importar el precio.",
-      "Los paréntesis agrupan la condición de categoría."
+      "Sin paréntesis, AND se evalúa primero: saldría «Bebidas» (todas) o «Snacks caros», y se colaría el Agua de 2.50.",
+      "Con paréntesis: <code>WHERE (Categoria = 'Bebidas' OR Categoria = 'Snacks') AND Precio > 3.50</code> → Gaseosa y Papas."
      ],
-     "ans": "Con paréntesis alrededor del OR",
+     "ans": "WHERE (… OR …) AND Precio > 3.50",
      "hint": "AND tiene prioridad sobre OR.",
      "fig": null,
      "draw": false,
@@ -1305,7 +1533,10 @@
       [
        "andor"
       ],
-      []
+      [
+       "andor",
+       "where"
+      ]
      ]
     },
     {
@@ -1344,24 +1575,22 @@
      "id": "ag8",
      "lvl": 3,
      "title": "Filtrar grupos",
-     "q": "<p>¿Qué consulta muestra las categorías que tienen <strong>más de 5 productos</strong>?</p>",
+     "q": "<p>Filtra grupos, no filas.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT Categoria, COUNT(*) FROM Productos GROUP BY Categoria HAVING COUNT(*) &gt; 5;</code>",
-        "<code>SELECT Categoria, COUNT(*) FROM Productos WHERE COUNT(*) &gt; 5 GROUP BY Categoria;</code>",
-        "<code>SELECT Categoria, COUNT(*) FROM Productos GROUP BY Categoria WHERE COUNT(*) &gt; 5;</code>",
-        "<code>SELECT Categoria FROM Productos HAVING Categoria &gt; 5;</code>",
-        "<code>SELECT COUNT(*) &gt; 5 FROM Productos GROUP BY Categoria;</code>"
+       "t": "sql",
+       "p": "Muestra las categorías que tienen más de 1 producto, con cuántos tienen.",
+       "a": "SELECT Categoria, COUNT(*) AS Num_productos FROM Productos GROUP BY Categoria HAVING COUNT(*) > 1;",
+       "tables": [
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "El conteo existe recién después de agrupar, por eso se filtra con HAVING.",
-      "WHERE no puede usar funciones de agregación."
+      "Agrupa por categoría y cuenta: GROUP BY Categoria con COUNT(*).",
+      "El filtro sobre un conteo va en HAVING (WHERE no acepta agregaciones): <code>HAVING COUNT(*) > 1</code> → Bebidas 2 y Snacks 3."
      ],
-     "ans": "GROUP BY ... HAVING COUNT(*) > 5",
+     "ans": "GROUP BY Categoria HAVING COUNT(*) > 1",
      "hint": "WHERE filtra filas; HAVING, grupos.",
      "fig": null,
      "draw": false,
@@ -1369,18 +1598,30 @@
      "solfig": null,
      "tags": [
       [
-       "nat",
-       "gb"
+       "gb",
+       "aggf"
       ],
-      []
+      [
+       "gb"
+      ]
      ]
     },
     {
      "id": "ag9",
      "lvl": 3,
      "title": "Escribe la consulta",
-     "q": "<p>Escribe en tu cuaderno una consulta que muestre, <strong>por categoría</strong>, el precio mínimo de Productos, ordenado de menor a mayor. Luego compárala con la solución.</p>",
-     "checks": [],
+     "q": "<p>Escribe y ejecuta la consulta.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Muestra, por categoría, el precio mínimo, ordenado de menor a mayor.",
+       "a": "SELECT Categoria, MIN(Precio) AS Precio_minimo FROM Productos GROUP BY Categoria ORDER BY Precio_minimo;",
+       "ord": true,
+       "tables": [
+        "Productos"
+       ]
+      }
+     ],
      "steps": [
       "Modelo: <code>SELECT Categoria, MIN(Precio) AS Precio_minimo FROM Productos GROUP BY Categoria ORDER BY Precio_minimo ASC;</code>",
       "Autoevaluación: ¿usaste MIN? ¿agrupaste por Categoria? ¿ordenaste con ORDER BY (ASC o sin nada)? ¿el alias está bien escrito?"
@@ -1401,9 +1642,90 @@
        "top"
       ]
      ]
+    },
+    {
+     "id": "ag10",
+     "lvl": 2,
+     "title": "Arma la consulta en orden",
+     "q": "<p>Ordena las cláusulas para armar una consulta válida.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca las partes en orden.",
+       "items": [
+        "SELECT Categoria, COUNT(*) AS N",
+        "FROM Productos",
+        "WHERE Precio > 3",
+        "GROUP BY Categoria",
+        "HAVING COUNT(*) > 1",
+        "ORDER BY N DESC;"
+       ]
+      }
+     ],
+     "steps": [
+      "Orden fijo: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY.",
+      "WHERE filtra filas <em>antes</em> de agrupar; HAVING filtra grupos <em>después</em>; ORDER BY siempre al final."
+     ],
+     "ans": "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+     "hint": "ORDER BY siempre va al final.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "orden"
+      ],
+      [
+       "gb",
+       "orden"
+      ]
+     ]
+    },
+    {
+     "id": "ag11",
+     "lvl": 3,
+     "title": "Total vendido por tienda",
+     "q": "<p>La gerencia quiere el total vendido (suma de Monto) por tienda, de mayor a menor.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Muestra ID_tienda y el total vendido, ordenado de mayor a menor.",
+       "a": "SELECT ID_tienda, SUM(Monto) AS Total FROM Ventas GROUP BY ID_tienda ORDER BY Total DESC;",
+       "ord": true,
+       "tables": [
+        "Ventas"
+       ]
+      }
+     ],
+     "steps": [
+      "Agrupa por ID_tienda y suma el Monto.",
+      "Ordena por el total con DESC. Modelo: <code>SELECT ID_tienda, SUM(Monto) AS Total FROM Ventas GROUP BY ID_tienda ORDER BY Total DESC;</code>"
+     ],
+     "ans": "Tienda 1: 56,10; tienda 2: 42,40; tienda 3: 26,60",
+     "hint": "SUM con GROUP BY y ORDER BY … DESC.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf",
+       "gb"
+      ],
+      [
+       "orden"
+      ]
+     ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Primero filtras qué filas entran, luego las agrupas y resumes, y al final ordenas.</p>\n<h3>Conceptos clave</h3><ul><li>Orden: <code>SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY</code>.</li><li><code>WHERE</code> filtra filas; <code>HAVING</code> filtra grupos.</li><li><code>COUNT SUM AVG MIN MAX</code>; <code>AVG</code> ignora NULL.</li><li><code>AND</code> se evalúa antes que <code>OR</code>: usa paréntesis.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT Categoria, AVG(Precio) FROM Productos GROUP BY Categoria HAVING AVG(Precio) &gt; 50;</code></div>\n<div class=\"err\"><b>Error común:</b> usar <code>WHERE</code> con una función de agregación: eso va en <code>HAVING</code>.</div>"
+   "lesson": "<h3>Idea central</h3><p>Primero filtras qué filas entran, luego las agrupas y resumes, y al final ordenas.</p>\n<h3>Conceptos clave</h3><ul><li>Orden: <code>SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY</code>.</li><li><code>WHERE</code> filtra filas; <code>HAVING</code> filtra grupos.</li><li><code>COUNT SUM AVG MIN MAX</code>; <code>AVG</code> ignora NULL.</li><li><code>AND</code> se evalúa antes que <code>OR</code>: usa paréntesis.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>SELECT Categoria, AVG(Precio) FROM Productos GROUP BY Categoria HAVING AVG(Precio) &gt; 50;</code></div>\n<div class=\"err\"><b>Error común:</b> usar <code>WHERE</code> con una función de agregación: eso va en <code>HAVING</code>.</div>",
+   "tools": [
+    {
+     "w": "sql",
+     "t": "Laboratorio SQL",
+     "p": "Prueba WHERE, GROUP BY, HAVING y ORDER BY con las tablas del curso.",
+     "o": {}
+    }
+   ]
   },
   {
    "id": "join",
@@ -1514,23 +1836,19 @@
      "q": "<p>Tablas Clientes y Ventas:</p><div class=\"tbl\"><table><tr><th>ID_cliente</th><th>Nombre</th></tr><tr><td>1</td><td>Ana</td></tr><tr><td>2</td><td>Luis</td></tr><tr><td>3</td><td>Rosa</td></tr></table></div><div class=\"tbl\"><table><tr><th>ID_venta</th><th>ID_cliente</th><th>Monto</th></tr><tr><td>V1</td><td>1</td><td>20</td></tr><tr><td>V2</td><td>1</td><td>35</td></tr><tr><td>V3</td><td>2</td><td>15</td></tr></table></div>",
      "checks": [
       {
-       "p": "<code>SELECT * FROM Clientes c INNER JOIN Ventas v ON c.ID_cliente = v.ID_cliente;</code> devuelve…",
-       "o": [
-        "3 filas",
-        "4 filas",
-        "2 filas",
-        "6 filas",
-        "9 filas"
-       ]
-      },
-      {
-       "p": "<code>SELECT * FROM Clientes c LEFT JOIN Ventas v ON c.ID_cliente = v.ID_cliente;</code> devuelve…",
-       "o": [
-        "4 filas",
-        "3 filas",
-        "6 filas",
-        "2 filas",
-        "9 filas"
+       "t": "num",
+       "p": "Cuenta las filas",
+       "f": [
+        {
+         "l": "INNER JOIN",
+         "a": 3,
+         "e": "solo las ventas con cliente: Ana tiene 2 y Luis 1."
+        },
+        {
+         "l": "LEFT JOIN",
+         "a": 4,
+         "e": "todos los clientes: Rosa no compró y sale una vez con NULL."
+        }
        ]
       }
      ],
@@ -1557,23 +1875,23 @@
      "id": "jn4",
      "lvl": 2,
      "title": "El ON correcto",
-     "q": "<p>Quieres ver el nombre del producto de cada venta. ¿Qué JOIN es correcto?</p>",
+     "q": "<p>El nombre del producto está en Productos; la venta, en Ventas. Únelas.</p>",
      "checks": [
       {
-       "p": "JOIN",
-       "o": [
-        "<code>FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_producto</code>",
-        "<code>FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_tienda</code>",
-        "<code>FROM Ventas v JOIN Productos p</code>",
-        "<code>FROM Ventas v JOIN Productos p ON v.ID_venta = p.ID_producto</code>",
-        "<code>FROM Ventas, Productos WHERE Monto &gt; 0</code>"
+       "t": "sql",
+       "p": "Muestra el ID de cada venta y el nombre del producto vendido.",
+       "a": "SELECT v.ID_venta, p.Nombre_producto FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_producto;",
+       "tables": [
+        "Ventas",
+        "Productos"
        ]
       }
      ],
      "steps": [
-      "Se une la FK de Ventas con la PK de Productos: ambas ID_producto."
+      "Ventas tiene la FK ID_producto; Productos, la PK ID_producto: esa es la condición del ON.",
+      "Modelo: <code>SELECT v.ID_venta, p.Nombre_producto FROM Ventas v JOIN Productos p ON v.ID_producto = p.ID_producto;</code>"
      ],
-     "ans": "<code>ON v.ID_producto = p.ID_producto</code>",
+     "ans": "… JOIN Productos p ON v.ID_producto = p.ID_producto",
      "hint": "FK con su PK.",
      "fig": null,
      "draw": false,
@@ -1581,9 +1899,10 @@
      "solfig": null,
      "tags": [
       [
-       "pk",
-       "fk",
        "on"
+      ],
+      [
+       "join"
       ]
      ]
     },
@@ -1591,25 +1910,23 @@
      "id": "jn5",
      "lvl": 3,
      "title": "Pregunta de negocio",
-     "q": "<p>¿Qué consulta muestra el número de ventas realizadas por cada tienda?</p>",
+     "q": "<p>El nombre de la tienda está en Tiendas.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT t.Nombre_tienda, COUNT(*) AS Num_ventas FROM Ventas v JOIN Tiendas t ON v.ID_tienda = t.ID_tienda GROUP BY t.Nombre_tienda;</code>",
-        "<code>SELECT t.Nombre_tienda, COUNT(*) FROM Ventas v JOIN Tiendas t ON v.ID_tienda = t.ID_tienda;</code>",
-        "<code>SELECT t.Nombre_tienda, COUNT(*) FROM Ventas v JOIN Tiendas t ON v.ID_venta = t.ID_tienda GROUP BY t.Nombre_tienda;</code>",
-        "<code>SELECT Nombre_tienda, SUM(ID_venta) FROM Tiendas GROUP BY Nombre_tienda;</code>",
-        "<code>SELECT COUNT(*) FROM Tiendas GROUP BY ID_tienda;</code>"
+       "t": "sql",
+       "p": "Muestra el número de ventas de cada tienda, con el nombre de la tienda.",
+       "a": "SELECT t.Nombre_tienda, COUNT(*) AS Num_ventas FROM Ventas v JOIN Tiendas t ON v.ID_tienda = t.ID_tienda GROUP BY t.Nombre_tienda;",
+       "tables": [
+        "Ventas",
+        "Tiendas"
        ]
       }
      ],
      "steps": [
-      "JOIN Ventas–Tiendas por ID_tienda (no hace falta Productos).",
-      "COUNT(*) por tienda exige GROUP BY.",
-      "La tercera une columnas equivocadas; la cuarta suma IDs, que no tiene sentido."
+      "Une Ventas con Tiendas por ID_tienda.",
+      "Agrupa por el nombre y cuenta: <code>… GROUP BY t.Nombre_tienda</code>. La Molina 4, San Borja 3, Surco 3."
      ],
-     "ans": "JOIN por ID_tienda + COUNT + GROUP BY",
+     "ans": "JOIN Tiendas + GROUP BY t.Nombre_tienda",
      "hint": "Reto final de la semana 5.",
      "fig": null,
      "draw": false,
@@ -1617,14 +1934,11 @@
      "solfig": null,
      "tags": [
       [
-       "join"
-      ],
-      [
-       "aggf",
-       "gb"
-      ],
-      [
+       "join",
        "on"
+      ],
+      [
+       "gb"
       ]
      ]
     },
@@ -1632,24 +1946,23 @@
      "id": "jn6",
      "lvl": 3,
      "title": "¿INNER o LEFT?",
-     "q": "<p>La gerencia quiere un listado de <strong>todos</strong> los productos con su total vendido, incluyendo los que nunca se vendieron (para retirarlos). ¿Qué usas?</p>",
+     "q": "<p>La gerencia quiere ver también los productos que nunca se vendieron (para retirarlos).</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>FROM Productos p LEFT JOIN Ventas v ON p.ID_producto = v.ID_producto</code>",
-        "<code>FROM Productos p INNER JOIN Ventas v ON p.ID_producto = v.ID_producto</code>",
-        "<code>FROM Ventas v LEFT JOIN Productos p ON v.ID_producto = p.ID_producto</code>",
-        "<code>FROM Productos p JOIN Ventas v ON p.Precio = v.Monto</code>",
-        "Una sola tabla, sin JOIN"
+       "t": "sql",
+       "p": "Lista todos los productos con su número de ventas, incluidos los que nunca se vendieron (con 0).",
+       "a": "SELECT p.Nombre_producto, COUNT(v.ID_venta) AS Num_ventas FROM Productos p LEFT JOIN Ventas v ON p.ID_producto = v.ID_producto GROUP BY p.Nombre_producto;",
+       "tables": [
+        "Productos",
+        "Ventas"
        ]
       }
      ],
      "steps": [
-      "Los productos sin ventas deben aparecer: LEFT JOIN con Productos a la izquierda.",
-      "Con INNER desaparecerían justo los que se quieren detectar."
+      "«Incluidos los que nunca se vendieron» → LEFT JOIN desde Productos.",
+      "Cuenta <code>COUNT(v.ID_venta)</code>, no COUNT(*): con LEFT JOIN, un producto sin ventas tiene una fila con NULL, y COUNT(*) la contaría como 1. Chifles debe salir con 0."
      ],
-     "ans": "Productos LEFT JOIN Ventas",
+     "ans": "Productos LEFT JOIN Ventas + COUNT(v.ID_venta)",
      "hint": "¿Qué tabla debe conservar todas sus filas?",
      "fig": null,
      "draw": false,
@@ -1659,11 +1972,111 @@
       [
        "join"
       ],
-      []
+      [
+       "nul",
+       "aggf"
+      ]
+     ]
+    },
+    {
+     "id": "jn7",
+     "lvl": 3,
+     "title": "Clientes que nunca compraron",
+     "q": "<p>Marketing quiere llamar a los clientes que nunca compraron.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Muestra el nombre de los clientes sin ninguna venta.",
+       "a": "SELECT c.Nombre FROM Clientes c LEFT JOIN Ventas v ON c.ID_cliente = v.ID_cliente WHERE v.ID_venta IS NULL;",
+       "tables": [
+        "Clientes",
+        "Ventas"
+       ]
+      }
+     ],
+     "steps": [
+      "LEFT JOIN desde Clientes: los que no tienen pareja salen con NULL en las columnas de Ventas.",
+      "Quédate solo con esos: <code>WHERE v.ID_venta IS NULL</code> → Elena Soto."
+     ],
+     "ans": "LEFT JOIN + WHERE v.ID_venta IS NULL",
+     "hint": "Sin pareja = NULL en la otra tabla.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "join"
+      ],
+      [
+       "nul"
+      ]
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Como los datos están repartidos en tablas, las preguntas de negocio suelen necesitar unirlas por su columna común.</p>\n<h3>Conceptos clave</h3><ul><li><strong>INNER JOIN:</strong> solo filas con pareja en ambas tablas.</li><li><strong>LEFT JOIN:</strong> todas las de la izquierda; sin pareja salen con NULL.</li><li>Sintaxis: <code>FROM A JOIN B ON A.id = B.id</code>.</li><li>Clientes sin compras: <code>LEFT JOIN</code> + <code>WHERE B.id IS NULL</code>.</li></ul>\n<div class=\"err\"><b>Error común:</b> usar INNER cuando la pregunta pide «todos los clientes, aunque no hayan comprado».</div>"
+   "lesson": "<h3>Idea central</h3><p>Como los datos están repartidos en tablas, las preguntas de negocio suelen necesitar unirlas por su columna común.</p>\n<h3>Conceptos clave</h3><ul><li><strong>INNER JOIN:</strong> solo filas con pareja en ambas tablas.</li><li><strong>LEFT JOIN:</strong> todas las de la izquierda; sin pareja salen con NULL.</li><li>Sintaxis: <code>FROM A JOIN B ON A.id = B.id</code>.</li><li>Clientes sin compras: <code>LEFT JOIN</code> + <code>WHERE B.id IS NULL</code>.</li></ul>\n<div class=\"err\"><b>Error común:</b> usar INNER cuando la pregunta pide «todos los clientes, aunque no hayan comprado».</div>",
+   "tools": [
+    {
+     "w": "join",
+     "t": "Visualizador de JOIN",
+     "p": "Toca INNER, LEFT o «Sin ON» y mira qué filas se unen.",
+     "o": {
+      "L": {
+       "name": "Clientes",
+       "cols": [
+        "ID_cliente",
+        "Nombre"
+       ],
+       "rows": [
+        [
+         1,
+         "Ana"
+        ],
+        [
+         2,
+         "Luis"
+        ],
+        [
+         3,
+         "Rosa"
+        ]
+       ]
+      },
+      "R": {
+       "name": "Ventas",
+       "cols": [
+        "ID_venta",
+        "ID_cliente",
+        "Monto"
+       ],
+       "rows": [
+        [
+         "V1",
+         1,
+         20
+        ],
+        [
+         "V2",
+         1,
+         35
+        ],
+        [
+         "V3",
+         2,
+         15
+        ]
+       ]
+      },
+      "lk": 0,
+      "rk": 1
+     }
+    },
+    {
+     "w": "sql",
+     "t": "Laboratorio SQL",
+     "p": "Prueba tus JOIN con las tablas del curso.",
+     "o": {}
+    }
+   ]
   },
   {
    "id": "limp",
@@ -1684,13 +2097,14 @@
      "q": "<p>¿Cuántos clientes distintos representan estas filas?</p><div class=\"tbl\"><table><tr><th>Cliente</th><th>Distrito</th><th>Precio</th></tr><tr><td>Ana Ruiz</td><td>lima</td><td>S/ 25.00</td></tr><tr><td>ana ruiz</td><td>Lima</td><td>25</td></tr><tr><td>Luis Paredes</td><td>LIMA</td><td>25.0</td></tr></table></div>",
      "checks": [
       {
-       "p": "Clientes",
-       "o": [
-        "2",
-        "3",
-        "1",
-        "Imposible saberlo",
-        "4"
+       "t": "num",
+       "p": "¿Cuántos clientes distintos hay?",
+       "f": [
+        {
+         "l": "Clientes",
+         "a": 2,
+         "e": "«Ana Ruiz» y «ana ruiz» son la misma persona escrita distinto."
+        }
        ]
       }
      ],
@@ -1774,22 +2188,20 @@
      "id": "lp3",
      "lvl": 2,
      "title": "Detectar duplicados",
-     "q": "<p>¿Qué consulta muestra los clientes repetidos (mismo nombre y correo)?</p>",
+     "q": "<p>Busca duplicados en Clientes_Crudo.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT Nombre, Correo, COUNT(*) AS Veces FROM Clientes_Crudo GROUP BY Nombre, Correo HAVING COUNT(*) &gt; 1;</code>",
-        "<code>SELECT DISTINCT Nombre, Correo FROM Clientes_Crudo;</code>",
-        "<code>SELECT Nombre, Correo FROM Clientes_Crudo WHERE COUNT(*) &gt; 1;</code>",
-        "<code>SELECT * FROM Clientes_Crudo WHERE Nombre = Nombre;</code>",
-        "<code>SELECT Nombre, COUNT(*) FROM Clientes_Crudo GROUP BY Nombre HAVING COUNT(*) = 1;</code>"
+       "t": "sql",
+       "p": "Muestra los clientes repetidos (mismo nombre y correo) y cuántas veces aparecen.",
+       "a": "SELECT Nombre, Correo, COUNT(*) AS Veces FROM Clientes_Crudo GROUP BY Nombre, Correo HAVING COUNT(*) > 1;",
+       "tables": [
+        "Clientes_Crudo"
        ]
       }
      ],
      "steps": [
-      "Agrupa por los campos que definen el duplicado y filtra los grupos con más de una fila.",
-      "DISTINCT los ocultaría, no los detecta."
+      "Agrupa por los campos que deberían ser únicos (Nombre y Correo) y cuenta.",
+      "Los grupos con más de una fila son duplicados: <code>HAVING COUNT(*) > 1</code> → Ana Ruiz y Luis Paredes, 2 veces cada uno."
      ],
      "ans": "GROUP BY Nombre, Correo HAVING COUNT(*) > 1",
      "hint": "Duplicado = grupo con más de una fila.",
@@ -1802,7 +2214,8 @@
        "dup"
       ],
       [
-       "distinct"
+       "dup",
+       "gb"
       ]
      ]
     },
@@ -1810,24 +2223,23 @@
      "id": "lp4",
      "lvl": 2,
      "title": "Estandarizar texto",
-     "q": "<p>La columna Distrito tiene «lima», « Lima» y «LIMA». ¿Qué instrucción la deja estandarizada en la tabla?</p>",
+     "q": "<p>La columna Distrito tiene «&nbsp;lima», «LIMA», «Lima» y «San Borja&nbsp;». Al comprobar, se revisa cómo quedó la tabla.</p>",
      "checks": [
       {
-       "p": "Instrucción",
-       "o": [
-        "<code>UPDATE Clientes_Crudo SET Distrito = UPPER(TRIM(Distrito));</code>",
-        "<code>SELECT UPPER(TRIM(Distrito)) FROM Clientes_Crudo;</code>",
-        "<code>UPDATE Clientes_Crudo Distrito = UPPER(Distrito);</code>",
-        "<code>UPDATE Clientes_Crudo SET Distrito = &#x27;LIMA&#x27; WHERE Distrito IS NULL;</code>",
-        "<code>DELETE FROM Clientes_Crudo WHERE Distrito &lt;&gt; &#x27;LIMA&#x27;;</code>"
+       "t": "sql",
+       "p": "Escribe la instrucción que deja estandarizada la columna Distrito (sin espacios y en mayúsculas).",
+       "a": "UPDATE Clientes_Crudo SET Distrito = UPPER(TRIM(Distrito));",
+       "check": "SELECT ID, Distrito FROM Clientes_Crudo ORDER BY ID",
+       "tables": [
+        "Clientes_Crudo"
        ]
       }
      ],
      "steps": [
-      "SELECT solo muestra; para cambiar la tabla se usa UPDATE ... SET.",
-      "TRIM quita espacios y UPPER unifica mayúsculas."
+      "TRIM quita los espacios al inicio y al final; UPPER pasa todo a mayúsculas.",
+      "Para cambiar la tabla se usa UPDATE … SET: <code>UPDATE Clientes_Crudo SET Distrito = UPPER(TRIM(Distrito));</code>"
      ],
-     "ans": "<code>UPDATE ... SET Distrito = UPPER(TRIM(Distrito));</code>",
+     "ans": "UPDATE Clientes_Crudo SET Distrito = UPPER(TRIM(Distrito));",
      "hint": "Mostrar ≠ modificar.",
      "fig": null,
      "draw": false,
@@ -1835,10 +2247,10 @@
      "solfig": null,
      "tags": [
       [
-       "sel",
-       "upd"
+       "clean"
       ],
       [
+       "upd",
        "clean"
       ]
      ]
@@ -1880,24 +2292,51 @@
      "id": "lp6",
      "lvl": 3,
      "title": "Transformar a categoría",
-     "q": "<p>¿Qué valor de Rango_precio obtiene un Shampoo de 14.90?</p><pre class=\"code\">CASE WHEN Precio &lt; 5  THEN &#x27;Bajo&#x27;\n     WHEN Precio &lt; 15 THEN &#x27;Medio&#x27;\n     ELSE &#x27;Alto&#x27; END AS Rango_precio</pre>",
+     "q": "<p>Regla: <code>CASE WHEN Precio &lt; 5 THEN 'Bajo' WHEN Precio &lt; 15 THEN 'Medio' ELSE 'Alto' END</code></p>",
      "checks": [
       {
-       "p": "Rango",
-       "o": [
-        "Medio",
-        "Alto",
+       "t": "cls",
+       "p": "¿Qué Rango_precio obtiene cada producto?",
+       "cats": [
         "Bajo",
-        "NULL",
-        "Error"
+        "Medio",
+        "Alto"
+       ],
+       "items": [
+        {
+         "x": "Agua, S/ 2.50",
+         "c": 0
+        },
+        {
+         "x": "Shampoo, S/ 14.90",
+         "c": 1
+        },
+        {
+         "x": "Arroz, S/ 5.00",
+         "c": 1,
+         "e": "5 no es menor que 5: no entra en «Bajo», sí en «Medio»."
+        },
+        {
+         "x": "Detergente, S/ 15.00",
+         "c": 2,
+         "e": "15 no es menor que 15: cae en ELSE, «Alto»."
+        },
+        {
+         "x": "Chifles, S/ 3.00",
+         "c": 0
+        },
+        {
+         "x": "Aceite, S/ 9.80",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "CASE evalúa en orden: 14.90 no es menor que 5, pero sí menor que 15 → «Medio».",
-      "Es una transformación: no inventa datos, agrupa los existentes."
+      "CASE revisa las condiciones en orden y se queda con la primera que se cumple.",
+      "Menor que 5 → Bajo; si no, menor que 15 → Medio; si no → Alto. Ojo con los límites: 5.00 es Medio y 15.00 es Alto."
      ],
-     "ans": "Medio",
+     "ans": "Bajo, Medio, Medio, Alto, Bajo, Medio",
      "hint": "Se queda en la primera condición que se cumple.",
      "fig": null,
      "draw": false,
@@ -1907,7 +2346,9 @@
       [
        "trans"
       ],
-      []
+      [
+       "trans"
+      ]
      ]
     },
     {
@@ -1943,6 +2384,74 @@
       ],
       []
      ]
+    },
+    {
+     "id": "lp8",
+     "lvl": 1,
+     "title": "Correos vacíos",
+     "q": "<p>Busca los clientes sin correo en Clientes_Crudo.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Muestra el nombre de los clientes cuyo correo está vacío (NULL).",
+       "a": "SELECT Nombre FROM Clientes_Crudo WHERE Correo IS NULL;",
+       "tables": [
+        "Clientes_Crudo"
+       ]
+      }
+     ],
+     "steps": [
+      "Los nulos se buscan con <code>IS NULL</code>: <code>= NULL</code> nunca es verdadero.",
+      "Modelo: <code>SELECT Nombre FROM Clientes_Crudo WHERE Correo IS NULL;</code> → Rosa Díaz."
+     ],
+     "ans": "WHERE Correo IS NULL",
+     "hint": "NULL no se compara con «=».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nul"
+      ],
+      [
+       "nul"
+      ]
+     ]
+    },
+    {
+     "id": "lp9",
+     "lvl": 1,
+     "title": "Ordena el flujo de preparación",
+     "q": "<p>Ordena el flujo de preparación de datos visto en clase.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Importar e integrar las fuentes.",
+        "Limpiar formatos, espacios y mayúsculas.",
+        "Decidir qué hacer con faltantes, duplicados y errores.",
+        "Transformar variables (rangos, Monto = Cantidad × Precio)."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero se juntan las fuentes y se decide qué columna corresponde a cuál.",
+      "Luego se limpian formatos; después se tratan faltantes y duplicados; al final se transforman variables."
+     ],
+     "ans": "Importar → limpiar → faltantes y duplicados → transformar",
+     "hint": "No se transforma lo que aún está sucio.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "clean"
+      ],
+      [
+       "trans"
+      ]
+     ]
     }
    ],
    "lesson": "<h3>Idea central</h3><p>Los datos llegan sucios. Limpiar es hacerlos consistentes antes de analizarlos.</p>\n<h3>Conceptos clave</h3><ul><li>Flujo: importar → limpiar formatos → tratar faltantes y duplicados → transformar.</li><li><code>TRIM UPPER LEN REPLACE TRY_CAST</code>.</li><li>Duplicados: <code>GROUP BY campos HAVING COUNT(*) &gt; 1</code>.</li><li>Transformar: <code>CASE WHEN … THEN … END</code>.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> « lima» y «LIMA» se unifican con <code>UPPER(TRIM(Ciudad))</code>.</div>\n<div class=\"err\"><b>Error común:</b> borrar filas antes de entender por qué están mal.</div>"
@@ -1962,25 +2471,56 @@
     {
      "id": "im1",
      "lvl": 1,
-     "title": "Faltante numérico",
-     "q": "<p>A 4 ventas les falta el Monto. ¿Qué imputación estadística es la típica?</p>",
+     "title": "Decide el tratamiento",
+     "q": "<p>Decide el tratamiento de cada faltante.</p>",
      "checks": [
       {
-       "p": "Imputar con",
-       "o": [
-        "La media (o la mediana)",
-        "La moda",
-        "El texto «Sin dato»",
-        "El valor 0 siempre",
-        "El monto máximo"
+       "t": "cls",
+       "p": "¿Cómo tratarías cada faltante?",
+       "cats": [
+        "Media",
+        "Mediana",
+        "Moda",
+        "«Sin dato»"
+       ],
+       "items": [
+        {
+         "x": "Faltan 4 valores de Monto; los montos no tienen atípicos.",
+         "c": 0
+        },
+        {
+         "x": "Faltan valores de Monto y hay unas ventas enormes atípicas.",
+         "c": 1,
+         "e": "Con atípicos, la mediana es más resistente."
+        },
+        {
+         "x": "A 3 clientes les falta el Segmento.",
+         "c": 2
+        },
+        {
+         "x": "A 3 clientes les falta el Distrito.",
+         "c": 3,
+         "e": "Imputar inventaría dónde vive el cliente."
+        },
+        {
+         "x": "A 4 ventas les falta el Método de pago.",
+         "c": 3,
+         "e": "Imputar la moda inventaría cómo pagó el cliente."
+        },
+        {
+         "x": "A 2 clientes les falta el correo.",
+         "c": 3,
+         "e": "Un dato de contacto nunca se inventa."
+        }
        ]
       }
      ],
      "steps": [
-      "Monto es cuantitativo: media, o mediana si hay valores extremos.",
-      "«Sin dato» no es posible en un campo numérico."
+      "Cuantitativa: media; si hay atípicos, mediana.",
+      "Cualitativa: moda.",
+      "Si imputar inventaría información relevante (distrito, método de pago, contacto), mejor «Sin dato»."
      ],
-     "ans": "La media",
+     "ans": "Media, mediana, moda, Sin dato, Sin dato, Sin dato",
      "hint": "¿Qué tipo de variable es?",
      "fig": null,
      "draw": false,
@@ -1988,42 +2528,12 @@
      "solfig": null,
      "tags": [
       [
-       "nat",
-       "imp",
-       "mm"
+       "imp"
       ],
-      []
-     ]
-    },
-    {
-     "id": "im2",
-     "lvl": 1,
-     "title": "Faltante categórico",
-     "q": "<p>A 3 clientes les falta el Segmento. Si decides imputar con un estadístico, ¿cuál usas?</p>",
-     "checks": [
-      {
-       "p": "Estadístico",
-       "o": [
-        "La moda",
-        "La media",
-        "La mediana",
-        "La desviación estándar",
-        "El rango"
-       ]
-      }
-     ],
-     "steps": [
-      "Segmento es cualitativo: solo la moda (el valor más frecuente) tiene sentido."
-     ],
-     "ans": "La moda",
-     "hint": "La media no existe para categorías.",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
       [
-       "nat",
+       "imp"
+      ],
+      [
        "imp"
       ]
      ]
@@ -2169,24 +2679,22 @@
      "id": "im6",
      "lvl": 2,
      "title": "Encontrar la moda",
-     "q": "<p>¿Qué consulta ayuda a identificar el Segmento más frecuente?</p>",
+     "q": "<p>Para imputar con la moda, primero hay que encontrarla.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT Segmento, COUNT(*) AS Frecuencia FROM Clientes_Eval GROUP BY Segmento ORDER BY Frecuencia DESC;</code>",
-        "<code>SELECT AVG(Segmento) FROM Clientes_Eval;</code>",
-        "<code>SELECT DISTINCT Segmento FROM Clientes_Eval;</code>",
-        "<code>SELECT MAX(Segmento) FROM Clientes_Eval;</code>",
-        "<code>UPDATE Clientes_Eval SET Segmento = MODA;</code>"
+       "t": "sql",
+       "p": "Cuenta cuántos clientes hay en cada Segmento (de más a menos frecuente).",
+       "a": "SELECT Segmento, COUNT(*) AS Frecuencia FROM Clientes GROUP BY Segmento ORDER BY Frecuencia DESC;",
+       "tables": [
+        "Clientes"
        ]
       }
      ],
      "steps": [
-      "Contar por grupo y ordenar de mayor a menor: la primera fila es la moda.",
-      "MAX de un texto es el último alfabéticamente, no el más frecuente."
+      "Agrupa por Segmento y cuenta; ordena de mayor a menor.",
+      "La primera fila es la moda: Regular (3). El NULL aparece como un grupo aparte."
      ],
-     "ans": "GROUP BY + COUNT + ORDER BY DESC",
+     "ans": "GROUP BY Segmento ORDER BY COUNT(*) DESC",
      "hint": "Moda = el que más se repite.",
      "fig": null,
      "draw": false,
@@ -2194,10 +2702,12 @@
      "solfig": null,
      "tags": [
       [
-       "gb",
-       "imp"
+       "imp",
+       "gb"
       ],
-      []
+      [
+       "nul"
+      ]
      ]
     },
     {
@@ -2238,24 +2748,22 @@
      "id": "im8",
      "lvl": 3,
      "title": "Verificación final",
-     "q": "<p>¿Qué consulta confirma que ya no queda ningún NULL en Segmento ni en Distrito?</p>",
+     "q": "<p>Antes de cerrar la limpieza, verifica los NULL que quedan.</p>",
      "checks": [
       {
-       "p": "Consulta",
-       "o": [
-        "<code>SELECT COUNT(*) FROM Clientes_Eval WHERE Segmento IS NULL OR Distrito IS NULL;</code>",
-        "<code>SELECT COUNT(*) FROM Clientes_Eval WHERE Segmento IS NULL AND Distrito IS NULL;</code>",
-        "<code>SELECT * FROM Clientes_Eval WHERE Segmento = NULL;</code>",
-        "<code>SELECT COUNT(Segmento) FROM Clientes_Eval;</code>",
-        "<code>SELECT DISTINCT Distrito FROM Clientes_Eval;</code>"
+       "t": "sql",
+       "p": "¿Cuántos clientes tienen el Segmento vacío?",
+       "a": "SELECT COUNT(*) FROM Clientes WHERE Segmento IS NULL;",
+       "tables": [
+        "Clientes"
        ]
       }
      ],
      "steps": [
-      "Con OR cuenta las filas que tengan <em>al menos</em> un NULL: debe dar 0.",
-      "Con AND solo contaría las que tienen ambos vacíos y podría ocultar faltantes."
+      "Cuenta con COUNT(*) filtrando con IS NULL.",
+      "Hoy sale 1 (Elena Soto). Después de imputar, la misma consulta debería dar 0."
      ],
-     "ans": "WHERE ... IS NULL OR ... IS NULL → 0",
+     "ans": "SELECT COUNT(*) FROM Clientes WHERE Segmento IS NULL;",
      "hint": "¿Basta con que falte uno?",
      "fig": null,
      "draw": false,
@@ -2265,7 +2773,9 @@
       [
        "nul"
       ],
-      []
+      [
+       "imp"
+      ]
      ]
     }
    ],
@@ -2291,23 +2801,22 @@
      "q": "<p>Montos: 2, 3, 3, 5, 12.</p>",
      "checks": [
       {
-       "p": "Media",
-       "o": [
-        "5",
-        "3",
-        "4",
-        "12",
-        "6"
-       ]
-      },
-      {
-       "p": "Mediana",
-       "o": [
-        "3",
-        "5",
-        "4",
-        "2",
-        "3.5"
+       "t": "num",
+       "p": "Calcula",
+       "f": [
+        {
+         "l": "Media",
+         "a": 5
+        },
+        {
+         "l": "Mediana",
+         "a": 3,
+         "e": "ordena los datos y toma el del medio."
+        },
+        {
+         "l": "Moda",
+         "a": 3
+        }
        ]
       }
      ],
@@ -2430,23 +2939,20 @@
      "q": "<p>Responde.</p>",
      "checks": [
       {
-       "p": "Rango de 4, 9, 15, 7, 30",
-       "o": [
-        "26",
-        "30",
-        "4",
-        "13",
-        "22"
-       ]
-      },
-      {
-       "p": "Umbral de atípico con media 16.82 y DE 12.46",
-       "o": [
-        "≈ 41.74",
-        "≈ 29.28",
-        "≈ 4.36",
-        "≈ 33.64",
-        "≈ 54.20"
+       "t": "num",
+       "p": "Calcula",
+       "f": [
+        {
+         "l": "Rango de 4, 9, 15, 7, 30",
+         "a": 26,
+         "e": "máximo − mínimo."
+        },
+        {
+         "l": "Umbral de atípico (media 16.82, DE 12.46)",
+         "a": 41.74,
+         "e": "media + 2 × DE.",
+         "tol": 0.01
+        }
        ]
       }
      ],
@@ -2567,6 +3073,92 @@
        "on"
       ]
      ]
+    },
+    {
+     "id": "de8",
+     "lvl": 2,
+     "title": "Media vs mediana con un atípico",
+     "q": "<p>Ventas: 10, 12, 11 y 90.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Calcula",
+       "f": [
+        {
+         "l": "Media",
+         "a": 30.75
+        },
+        {
+         "l": "Mediana",
+         "a": 11.5,
+         "e": "con 4 datos, promedia los dos del medio."
+        }
+       ]
+      },
+      {
+       "p": "¿Qué medida describe mejor una venta típica?",
+       "o": [
+        "La mediana: el 90 jala la media hacia arriba",
+        "La media: siempre es la mejor",
+        "El rango",
+        "La moda: siempre existe",
+        "Da igual: ambas valen 30,75"
+       ]
+      }
+     ],
+     "steps": [
+      "Media = 123/4 = 30,75. Ordenados: 10, 11, 12, 90 → mediana = (11 + 12)/2 = 11,5.",
+      "La media está muy lejos de casi todos los datos por el 90: con atípicos, la mediana describe mejor lo típico."
+     ],
+     "ans": "Media 30,75; mediana 11,5; la mediana",
+     "hint": "Ordena antes de buscar la mediana.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mm"
+      ],
+      [
+       "mm",
+       "atip"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "de9",
+     "lvl": 3,
+     "title": "Comparar tiendas en SQL",
+     "q": "<p>Compara las tiendas: ticket promedio y número de ventas.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Muestra ID_tienda, el ticket promedio (AVG de Monto) y el número de ventas.",
+       "a": "SELECT ID_tienda, AVG(Monto) AS Ticket, COUNT(*) AS Num_ventas FROM Ventas GROUP BY ID_tienda;",
+       "tables": [
+        "Ventas"
+       ]
+      }
+     ],
+     "steps": [
+      "Comparar grupos = GROUP BY + agregaciones.",
+      "Modelo: <code>SELECT ID_tienda, AVG(Monto) AS Ticket, COUNT(*) AS Num_ventas FROM Ventas GROUP BY ID_tienda;</code> La tienda 3 tiene el ticket más bajo (≈ 8,87)."
+     ],
+     "ans": "GROUP BY ID_tienda con AVG y COUNT",
+     "hint": "Una fila por tienda.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aggf",
+       "gb"
+      ],
+      [
+       "disp"
+      ]
+     ]
     }
    ],
    "lesson": "<h3>Idea central</h3><p>Resumir los datos con pocas medidas te dice cómo se comportan: dónde se concentran y cuánto varían.</p>\n<h3>Conceptos clave</h3><ul><li>Media (sensible a extremos), mediana (resistente), moda.</li><li>Rango, varianza y desviación estándar.</li><li>Media > mediana: sesgo a la derecha.</li><li>Atípico simple: más de 2 DE sobre la media.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> ventas 10, 12, 11, 90: media 30,75 y mediana 11,5; el 90 jala la media.</div>\n<div class=\"err\"><b>Error común:</b> reportar solo la media con atípicos.</div>"
@@ -2584,30 +3176,59 @@
     {
      "id": "hl1",
      "lvl": 1,
-     "title": "¿Cuál es un indicador?",
-     "q": "<p>¿Cuál de estos es un <strong>indicador</strong>?</p>",
+     "title": "Dato, indicador o hallazgo",
+     "q": "<p>Clasifica cada frase.</p>",
      "checks": [
       {
-       "p": "Indicador",
-       "o": [
-        "El ticket promedio: AVG(Monto)",
-        "El monto de la venta V001",
-        "El nombre del cliente",
-        "La fecha de una venta",
-        "El ID de la tienda"
+       "t": "cls",
+       "p": "¿Dato, indicador o hallazgo?",
+       "cats": [
+        "Dato",
+        "Indicador",
+        "Hallazgo"
+       ],
+       "items": [
+        {
+         "x": "Se vendieron 3 unidades de Agua el 1 de agosto.",
+         "c": 0
+        },
+        {
+         "x": "Ticket promedio = AVG(Monto).",
+         "c": 1
+        },
+        {
+         "x": "La Tienda 3 vende 15 % menos, posiblemente por su ubicación; conviene revisar su surtido.",
+         "c": 2
+        },
+        {
+         "x": "Número de clientes nuevos por mes.",
+         "c": 1
+        },
+        {
+         "x": "El cliente 4 compró Arroz.",
+         "c": 0
+        },
+        {
+         "x": "Los clientes Premium gastan el doble, lo que sugiere un programa de fidelización.",
+         "c": 2
+        }
        ]
       }
      ],
      "steps": [
-      "Un indicador resume muchas filas en un número con significado de negocio."
+      "Dato: un hecho registrado.",
+      "Indicador: una medida calculada que responde una pregunta de negocio.",
+      "Hallazgo: conecta el número con una posible causa y una acción."
      ],
-     "ans": "Ticket promedio",
+     "ans": "D, I, H, I, D, H",
      "hint": "Resume, no describe un solo hecho.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
+      [],
+      [],
       [
        "hall"
       ]
@@ -2772,21 +3393,34 @@
     {
      "id": "hl6",
      "lvl": 3,
-     "title": "Redacta un hallazgo",
-     "q": "<p>Con estos resultados, redacta en tu cuaderno un hallazgo preliminar: la Tienda 2 tiene el ticket promedio más alto (≈ 18.01) y la Tienda 3 el más bajo (≈ 15.60); hay 104 ventas atípicas altas (≈ 5%). Luego compáralo con el modelo.</p>",
-     "checks": [],
-     "steps": [
-      "Modelo: «La Tienda 3 tiene un ticket promedio ≈ 15% menor que la Tienda 2, lo que podría deberse a un mix de productos más barato o a su ubicación, y sugiere revisar su surtido o impulsar productos de mayor valor.»",
-      "Autoevaluación: ¿nombraste el grupo? ¿describiste el comportamiento con un número comparado? ¿propusiste una causa posible (no una certeza)? ¿terminaste con una acción?"
+     "title": "Arma un hallazgo",
+     "q": "<p>Resultados: la Tienda 2 tiene el ticket promedio más alto (≈ 18.01) y la Tienda 3 el más bajo (≈ 15.60). Arma el hallazgo con la plantilla: grupo → comportamiento → causa → acción.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Arma el hallazgo en el orden de la plantilla.",
+       "items": [
+        "La Tienda 3",
+        "tiene un ticket promedio ≈ 15 % menor que la Tienda 2,",
+        "lo que podría deberse a un surtido más barato o a su ubicación,",
+        "y sugiere revisar su surtido e impulsar productos de mayor valor."
+       ]
+      }
      ],
-     "ans": "Hallazgo con grupo, comportamiento, causa y acción",
+     "steps": [
+      "Plantilla: «[Grupo] muestra [comportamiento], lo que podría deberse a [causa], y sugiere [acción]».",
+      "La causa va como posibilidad («podría deberse»), no como certeza, y siempre se cierra con una acción."
+     ],
+     "ans": "Grupo → comportamiento → causa → acción",
      "hint": "Usa la estructura del laboratorio.",
      "fig": null,
      "draw": true,
      "open": true,
      "solfig": null,
      "tags": [
-      [],
+      [
+       "hall"
+      ],
       [
        "hall"
       ]
@@ -2798,7 +3432,7 @@
   {
    "id": "v9ctx",
    "name": "Sem. 9 · Gráfico o tabla y contexto",
-   "teo": "<p>Un <strong>gráfico</strong> sirve para ver un <strong>patrón</strong> (quién es mayor, cómo cambia algo, si dos variables se mueven juntas); una <strong>tabla</strong>, para consultar <strong>valores exactos</strong>. Un buen informe usa ambos.</p><p>Antes de graficar, responde: ¿quién es la audiencia y qué sabe?, ¿qué necesita saber o decidir?, ¿cuál es la idea principal en una frase? Si no puedes, aún no estás listo para elegir un gráfico.</p>",
+   "teo": "<p>Un <strong>gráfico</strong> sirve para ver un <strong>patrón</strong> (quién es mayor, cómo cambia algo, si dos variables se mueven juntas); una <strong>tabla</strong>, para consultar <strong>valores exactos</strong>. Un buen informe usa ambos.</p><p>Antes de graficar, responde: ¿quién es la audiencia y qué sabe?, ¿qué necesita saber o decidir?, ¿cuál es la idea principal en una frase? Si no puedes, aún no estás listo para elegir un gráfico.</p><p><b>Mismos datos, dos formatos.</b> En la tabla tienes que leer y comparar cada número; en las barras ordenadas el ranking salta a la vista.</p><div class=\"tbl\"><table><tr><th>Tienda</th><th>Ventas (S/)</th></tr><tr><td>San Borja</td><td>4 000</td></tr><tr><td>Surco</td><td>4 600</td></tr><tr><td>La Molina</td><td>5 000</td></tr><tr><td>Jesús María</td><td>3 200</td></tr><tr><td>Miraflores</td><td>3 700</td></tr></table></div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"San Borja\", \"Surco\", \"La Molina\", \"Jesús María\", \"Miraflores\"], \"values\": [4000, 4600, 5000, 3200, 3700], \"sort\": true, \"emph\": \"La Molina\", \"vals\": true, \"unit\": \"S/\", \"title\": \"La Molina lidera: 25 % más que San Borja\"}'></div>",
    "form": [
     "Tabla → valores exactos o dato puntual",
     "Gráfico → patrón, ranking, tendencia, relación",
@@ -2809,24 +3443,49 @@
     {
      "id": "v9c1",
      "lvl": 1,
-     "title": "¿Gráfico o tabla? (I)",
-     "q": "<p>El gerente necesita el monto exacto vendido por cada una de las 52 referencias para conciliar con contabilidad. ¿Qué conviene?</p>",
+     "title": "¿Gráfico o tabla?",
+     "q": "<p>¿Qué formato conviene en cada caso?</p>",
      "checks": [
       {
-       "p": "Formato",
-       "o": [
-        "Una tabla",
-        "Un gráfico de pastel",
-        "Un gráfico de líneas",
-        "Un gráfico de dispersión",
-        "Un gráfico 3D"
+       "t": "cls",
+       "p": "¿Gráfico o tabla?",
+       "cats": [
+        "Gráfico",
+        "Tabla"
+       ],
+       "items": [
+        {
+         "x": "El gerente necesita el monto exacto de cada una de las 52 referencias para conciliar con contabilidad.",
+         "c": 1
+        },
+        {
+         "x": "En una reunión de 5 minutos quieren saber qué tienda vende más y cuál menos.",
+         "c": 0
+        },
+        {
+         "x": "Mostrar cómo evolucionó el ticket promedio mes a mes.",
+         "c": 0
+        },
+        {
+         "x": "El precio exacto de cada producto para actualizar el sistema.",
+         "c": 1
+        },
+        {
+         "x": "Ver si el precio y las unidades vendidas se relacionan.",
+         "c": 0
+        },
+        {
+         "x": "El teléfono de cada cliente para llamarlo.",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "Necesita valores exactos y consultar datos puntuales: tabla."
+      "Gráfico: para ver un <strong>patrón</strong> (ranking, tendencia, relación).",
+      "Tabla: para consultar <strong>valores exactos</strong> o un dato puntual."
      ],
-     "ans": "Tabla",
+     "ans": "T, G, G, T, G, T",
      "hint": "¿Busca un patrón o un valor exacto?",
      "fig": null,
      "draw": false,
@@ -2834,38 +3493,9 @@
      "tags": [
       [
        "grvstab"
-      ]
-     ]
-    },
-    {
-     "id": "v9c2",
-     "lvl": 1,
-     "title": "¿Gráfico o tabla? (II)",
-     "q": "<p>En una reunión de 5 minutos quieren saber qué tienda vende más y cuál menos. ¿Qué conviene?</p>",
-     "checks": [
-      {
-       "p": "Formato",
-       "o": [
-        "Un gráfico de barras ordenadas",
-        "Una tabla sin ordenar",
-        "Un gráfico de dispersión",
-        "Un pastel 3D",
-        "Un texto con todos los montos"
-       ]
-      }
-     ],
-     "steps": [
-      "Buscan un ranking (patrón): barras ordenadas de mayor a menor lo muestran en segundos."
-     ],
-     "ans": "Barras ordenadas",
-     "hint": "Quieren ver quién es mayor.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
+      ],
       [
-       "grvstab",
-       "objgraf"
+       "grvstab"
       ]
      ]
     },
@@ -2967,7 +3597,7 @@
      "id": "v9c6",
      "lvl": 2,
      "title": "Tabla convertida en gráfico",
-     "q": "<p>¿Qué ganó la clase al pasar la tabla de montos por tienda a un gráfico de barras?</p>",
+     "q": "<p>¿Qué ganó la clase al pasar la tabla de montos por tienda a un gráfico de barras?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"San Borja\", \"Surco\", \"La Molina\", \"Jesús María\", \"Miraflores\"], \"values\": [4000, 4600, 5000, 3200, 3700], \"sort\": true, \"emph\": \"La Molina\", \"vals\": true, \"unit\": \"S/\", \"title\": \"La Molina lidera: 25 % más que San Borja\"}'></div>",
      "checks": [
       {
        "p": "Ganancia",
@@ -2993,13 +3623,186 @@
        "grvstab"
       ]
      ]
+    },
+    {
+     "id": "v9c7",
+     "lvl": 1,
+     "title": "Encuéntralo en 2 segundos",
+     "q": "<p>Este gráfico tiene los datos de la tabla de la teoría, pero sin ordenar.</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca la barra de la tienda que <b>menos</b> vende.",
+       "a": [
+        "jm"
+       ],
+       "chart": {
+        "type": "hbar",
+        "labels": [
+         "San Borja",
+         "Surco",
+         "La Molina",
+         "Jesús María",
+         "Miraflores"
+        ],
+        "values": [
+         4000,
+         4600,
+         5000,
+         3200,
+         3700
+        ],
+        "title": "Ventas por tienda (S/)",
+        "zones": [
+         {
+          "on": "bar",
+          "i": 0,
+          "id": "sb"
+         },
+         {
+          "on": "bar",
+          "i": 1,
+          "id": "su"
+         },
+         {
+          "on": "bar",
+          "i": 2,
+          "id": "lm"
+         },
+         {
+          "on": "bar",
+          "i": 3,
+          "id": "jm"
+         },
+         {
+          "on": "bar",
+          "i": 4,
+          "id": "mi"
+         }
+        ]
+       },
+       "e": "La barra más corta es la que menos vende."
+      }
+     ],
+     "steps": [
+      "En un gráfico de barras comparas longitudes: la más corta salta a la vista (Jesús María).",
+      "En la tabla tendrías que leer y comparar los cinco números. Ordenar las barras lo haría aún más rápido."
+     ],
+     "ans": "Jesús María",
+     "hint": "Busca la barra más corta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "grvstab"
+      ],
+      [
+       "objgraf"
+      ]
+     ]
+    },
+    {
+     "id": "v9c8",
+     "lvl": 1,
+     "title": "Antes de graficar",
+     "q": "<p>Ordena las preguntas que se responden antes de elegir un gráfico.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "¿Quién es la audiencia y qué sabe?",
+        "¿Qué necesita saber o decidir?",
+        "¿Cuál es la idea principal, en una frase?",
+        "Elegir el gráfico que muestra esa idea."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero el contexto: audiencia y decisión.",
+      "Si no puedes decir la idea principal en una frase, aún no estás listo para elegir el gráfico."
+     ],
+     "ans": "Audiencia → decisión → idea → gráfico",
+     "hint": "El gráfico es lo último.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ctx"
+      ],
+      [
+       "ctx"
+      ]
+     ]
+    },
+    {
+     "id": "v9c9",
+     "lvl": 2,
+     "title": "¿Es una idea principal?",
+     "q": "<p>¿Cuáles sirven como idea principal de un gráfico del informe?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada frase.",
+       "cats": [
+        "Sí es idea principal",
+        "No lo es"
+       ],
+       "items": [
+        {
+         "x": "«La Molina vende 25 % más que San Borja en el semestre.»",
+         "c": 0
+        },
+        {
+         "x": "«Ventas por tienda.»",
+         "c": 1,
+         "e": "Solo describe el tema: no dice qué muestra el dato."
+        },
+        {
+         "x": "«Las ventas cayeron 8 % desde que abrió la competencia.»",
+         "c": 0
+        },
+        {
+         "x": "«Gráfico de barras de ventas.»",
+         "c": 1
+        },
+        {
+         "x": "«Los clientes Premium compran el doble cada mes.»",
+         "c": 0
+        },
+        {
+         "x": "«Datos del primer semestre.»",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Una idea principal es una frase que el dato respalda: dice qué pasa, con un número o comparación.",
+      "«Ventas por tienda» o «Gráfico de barras» solo nombran el tema."
+     ],
+     "ans": "Sí, no, sí, no, sí, no",
+     "hint": "¿La frase dice una conclusión?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ctx"
+      ],
+      [
+       "titulo"
+      ]
+     ]
     }
    ]
   },
   {
    "id": "v9tipo",
    "name": "Sem. 9 · Elegir el gráfico según el objetivo",
-   "teo": "<p><strong>Comparar</strong> categorías → barras ordenadas. <strong>Tendencia</strong> en el tiempo → líneas. <strong>Relación</strong> entre dos variables numéricas → dispersión. <strong>Composición</strong> (qué parte del total aporta cada categoría) → barras ordenadas; para comparar composición entre grupos, barras apiladas al 100 %.</p><p>El <strong>pastel</strong> solo funciona con 2 o 3 partes muy distintas.</p>",
+   "teo": "<p><strong>Comparar</strong> categorías → barras ordenadas. <strong>Tendencia</strong> en el tiempo → líneas. <strong>Relación</strong> entre dos variables numéricas → dispersión. <strong>Composición</strong> (qué parte del total aporta cada categoría) → barras ordenadas; para comparar composición entre grupos, barras apiladas al 100 %.</p><p>El <strong>pastel</strong> solo funciona con 2 o 3 partes muy distintas.</p><p><b>Galería.</b> Cada objetivo tiene su gráfico:</p><div class=\"chpair chgal\"><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"A\", \"B\", \"C\", \"D\"], \"values\": [9, 7, 5, 3], \"small\": true, \"w\": 150, \"h\": 110}'></div><p>Comparar → barras ordenadas</p></div><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"Ene\", \"Feb\", \"Mar\", \"Abr\", \"May\", \"Jun\", \"Jul\"], \"values\": [4200, 4350, 4100, 4500, 4650, 4800, 4900], \"small\": true, \"w\": 150, \"h\": 110}'></div><p>Tendencia → líneas</p></div><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"scatter\", \"pts\": [[25.6, 214], [26.9, 30], [8.9, 150], [15.3, 255], [23.8, 97], [29.1, 111], [18.1, 252], [7.7, 55], [9.5, 213], [4.2, 224], [8.6, 252], [16.7, 200], [24.6, 250], [5.7, 45], [22.3, 250], [25.7, 104], [15.0, 45], [11.6, 100], [18.9, 253], [7.3, 161], [15.1, 241], [16.4, 35], [24.4, 160], [27.6, 43], [22.0, 122]], \"small\": true, \"w\": 150, \"h\": 110}'></div><p>Relación → dispersión</p></div><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"stack\", \"groups\": [\"A\", \"B\", \"C\", \"D\"], \"series\": [{\"n\": \"Lácteos\", \"vals\": [30, 22, 40, 28]}, {\"n\": \"Bebidas\", \"vals\": [25, 35, 20, 30]}, {\"n\": \"Snacks\", \"vals\": [45, 43, 40, 42]}], \"small\": true, \"w\": 150, \"h\": 110}'></div><p>Composición entre grupos → apiladas al 100 %</p></div></div>",
    "form": [
     "Comparar → barras ordenadas",
     "Tendencia → líneas",
@@ -3012,24 +3815,55 @@
     {
      "id": "v9t1",
      "lvl": 1,
-     "title": "Ticket promedio mes a mes",
-     "q": "<p>¿Cómo cambió el ticket promedio mes a mes durante el último año?</p>",
+     "title": "Elige el gráfico según el objetivo",
+     "q": "<p>Elige el gráfico según el objetivo.</p>",
      "checks": [
       {
-       "p": "Gráfico",
-       "o": [
-        "Líneas",
+       "t": "cls",
+       "p": "¿Qué gráfico usas para cada pregunta?",
+       "cats": [
         "Barras ordenadas",
+        "Líneas",
         "Dispersión",
-        "Pastel",
-        "Barras apiladas al 100 %"
+        "Apiladas al 100 %"
+       ],
+       "items": [
+        {
+         "x": "¿Cómo cambió el ticket promedio mes a mes?",
+         "c": 1
+        },
+        {
+         "x": "¿Qué distrito tiene más clientes?",
+         "c": 0
+        },
+        {
+         "x": "¿Los que compran más veces gastan más por compra?",
+         "c": 2
+        },
+        {
+         "x": "¿Qué % aporta cada categoría en cada una de las 4 tiendas?",
+         "c": 3
+        },
+        {
+         "x": "Ranking de vendedores del mes.",
+         "c": 0
+        },
+        {
+         "x": "¿La temperatura del día se relaciona con las ventas de helados?",
+         "c": 2
+        },
+        {
+         "x": "Visitas a la web semana a semana.",
+         "c": 1
+        }
        ]
       }
      ],
      "steps": [
-      "Es una tendencia en el tiempo: líneas."
+      "Comparar categorías → barras ordenadas. Tendencia en el tiempo → líneas.",
+      "Relación entre dos variables numéricas → dispersión. Composición comparada entre grupos → apiladas al 100 %."
      ],
-     "ans": "Líneas",
+     "ans": "L, B, D, A, B, D, L",
      "hint": "Hay un eje de tiempo.",
      "fig": null,
      "draw": false,
@@ -3037,66 +3871,7 @@
      "tags": [
       [
        "objgraf"
-      ]
-     ]
-    },
-    {
-     "id": "v9t2",
-     "lvl": 1,
-     "title": "Distrito con más clientes",
-     "q": "<p>¿Qué distrito tiene más clientes registrados?</p>",
-     "checks": [
-      {
-       "p": "Gráfico",
-       "o": [
-        "Barras ordenadas",
-        "Líneas",
-        "Dispersión",
-        "Pastel de 15 porciones",
-        "Doble eje"
-       ]
-      }
-     ],
-     "steps": [
-      "Es una comparación entre categorías: barras ordenadas de mayor a menor."
-     ],
-     "ans": "Barras ordenadas",
-     "hint": "",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "objgraf"
-      ]
-     ]
-    },
-    {
-     "id": "v9t3",
-     "lvl": 1,
-     "title": "Frecuencia y gasto",
-     "q": "<p>¿Los clientes que compran más veces también gastan más por compra?</p>",
-     "checks": [
-      {
-       "p": "Gráfico",
-       "o": [
-        "Dispersión",
-        "Líneas",
-        "Barras ordenadas",
-        "Pastel",
-        "Barras apiladas"
-       ]
-      }
-     ],
-     "steps": [
-      "Relación entre dos variables numéricas (frecuencia y gasto por compra): dispersión."
-     ],
-     "ans": "Dispersión",
-     "hint": "Dos variables numéricas.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
+      ],
       [
        "objgraf"
       ]
@@ -3111,11 +3886,11 @@
       {
        "p": "Gráfico",
        "o": [
-        "Barras apiladas al 100 %",
-        "Cuatro pasteles de 7 porciones",
-        "Líneas",
-        "Dispersión",
-        "Un pastel 3D"
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"stack\", \"groups\": [\"T1\", \"T2\", \"T3\", \"T4\"], \"series\": [{\"n\": \"Lácteos\", \"vals\": [30, 22, 40, 28]}, {\"n\": \"Bebidas\", \"vals\": [25, 35, 20, 30]}, {\"n\": \"Snacks\", \"vals\": [45, 43, 40, 42]}], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"pie\", \"labels\": [\"a\", \"b\", \"c\"], \"values\": [3, 4, 5], \"small\": true, \"w\": 150, \"legend\": false, \"h\": 150}'></div><span>Un pastel por tienda</span>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"T1\", \"T2\", \"T3\", \"T4\"], \"values\": [5, 7, 6, 8], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"scatter\", \"pts\": [[25.6, 214], [26.9, 30], [8.9, 150], [15.3, 255], [23.8, 97], [29.1, 111], [18.1, 252], [7.7, 55], [9.5, 213], [4.2, 224], [8.6, 252], [16.7, 200], [24.6, 250], [5.7, 45], [22.3, 250]], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"T1\", \"T2\", \"T3\", \"T4\"], \"values\": [9, 8, 7, 6], \"small\": true, \"w\": 150, \"h\": 110}'></div>"
        ]
       }
      ],
@@ -3141,7 +3916,7 @@
      "id": "v9t5",
      "lvl": 2,
      "title": "La caída de agosto",
-     "q": "<p>Un gráfico de líneas de ventas mensuales cae de golpe en agosto-26. ¿Qué verificas antes de decir que las ventas se desplomaron?</p>",
+     "q": "<p>Un gráfico de líneas de ventas mensuales cae de golpe en agosto-26. ¿Qué verificas antes de decir que las ventas se desplomaron?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"Ene\", \"Feb\", \"Mar\", \"Abr\", \"May\", \"Jun\", \"Jul\", \"Ago\"], \"values\": [4200, 4350, 4100, 4500, 4650, 4800, 4900, 2300], \"title\": \"Ventas mensuales 2026 (S/)\"}'></div>",
      "checks": [
       {
        "p": "Verificar",
@@ -3174,7 +3949,7 @@
      "id": "v9t6",
      "lvl": 2,
      "title": "Precio y unidades",
-     "q": "<p>Con los 52 productos, la correlación entre precio y unidades vendidas es ≈ 0,06. ¿Qué concluyes?</p>",
+     "q": "<p>Con los 52 productos, la correlación entre precio y unidades vendidas es ≈ 0,06. ¿Qué concluyes?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"scatter\", \"pts\": [[25.6, 214], [26.9, 30], [8.9, 150], [15.3, 255], [23.8, 97], [29.1, 111], [18.1, 252], [7.7, 55], [9.5, 213], [4.2, 224], [8.6, 252], [16.7, 200], [24.6, 250], [5.7, 45], [22.3, 250], [25.7, 104], [15.0, 45], [11.6, 100], [18.9, 253], [7.3, 161], [15.1, 241], [16.4, 35], [24.4, 160], [27.6, 43], [22.0, 122], [21.7, 220], [20.5, 20], [18.9, 231], [26.2, 82], [22.3, 200], [26.3, 68], [27.6, 76], [8.3, 56], [24.4, 134], [4.1, 101], [26.4, 258], [15.4, 97], [17.2, 200], [5.1, 105], [24.7, 158], [7.3, 224], [18.7, 170], [9.7, 43], [18.5, 118], [10.5, 81], [9.8, 68], [24.9, 28], [19.0, 188], [8.9, 37], [4.1, 213], [5.2, 58], [27.8, 235]], \"xl\": \"Precio (S/)\", \"yl\": \"Unidades\", \"title\": \"Precio vs unidades: sin relación\"}'></div>",
      "checks": [
       {
        "p": "Conclusión",
@@ -3205,7 +3980,7 @@
      "id": "v9t7",
      "lvl": 2,
      "title": "Pastel de 7 porciones",
-     "q": "<p>¿Por qué se recomienda cambiar un pastel de 7 categorías por barras ordenadas?</p>",
+     "q": "<p>¿Por qué se recomienda cambiar un pastel de 7 categorías por barras ordenadas?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"pie\", \"labels\": [\"Lácteos\", \"Bebidas\", \"Snacks\", \"Abarrotes\", \"Limpieza\", \"C. personal\", \"Panadería\"], \"values\": [18, 17, 16, 15, 13, 12, 9], \"title\": \"Ventas por categoría\"}'></div>",
      "checks": [
       {
        "p": "Razón",
@@ -3231,13 +4006,177 @@
        "pastel"
       ]
      ]
+    },
+    {
+     "id": "v9t8",
+     "lvl": 2,
+     "title": "Arregla el pastel de 7 porciones",
+     "q": "<p>Este pastel debería responder «¿qué categoría vende más?». Arréglalo.</p>",
+     "checks": [
+      {
+       "t": "fix",
+       "p": "Ajusta el gráfico.",
+       "c": {
+        "type": "pie",
+        "labels": [
+         "Lácteos",
+         "Bebidas",
+         "Snacks",
+         "Abarrotes",
+         "Limpieza",
+         "C. personal",
+         "Panadería"
+        ],
+        "values": [
+         18,
+         17,
+         16,
+         15,
+         13,
+         12,
+         9
+        ],
+        "title": "Ventas por categoría",
+        "d3": true
+       },
+       "tog": [
+        {
+         "l": "Cambiar a barras horizontales",
+         "v": false,
+         "good": true,
+         "on": {
+          "type": "hbar"
+         },
+         "e": "El ojo compara mejor longitudes que ángulos: usa barras."
+        },
+        {
+         "l": "Ordenar de mayor a menor",
+         "v": false,
+         "good": true,
+         "on": {
+          "sort": true
+         },
+         "e": "Ordena las barras para que el ranking se lea solo."
+        },
+        {
+         "l": "Mostrar el valor de cada barra",
+         "v": false,
+         "good": true,
+         "on": {
+          "vals": true,
+          "unit": "%"
+         },
+         "e": "Con valores no hay que adivinar cuánto es cada una."
+        },
+        {
+         "l": "Efecto 3D",
+         "v": true,
+         "good": false,
+         "on": {
+          "d3": true
+         },
+         "off": {
+          "d3": false
+         },
+         "e": "El 3D distorsiona y no aporta datos."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Con 7 porciones parecidas, el ojo no distingue ángulos: barras horizontales ordenadas.",
+      "Valores visibles y sin 3D: ahora se ve que Lácteos (18 %) apenas supera a Bebidas (17 %)."
+     ],
+     "ans": "Barras horizontales, ordenadas, con valores y sin 3D",
+     "hint": "Pastel solo para 2–3 partes muy distintas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pastel"
+      ],
+      [
+       "sesgo"
+      ]
+     ]
+    },
+    {
+     "id": "v9t9",
+     "lvl": 1,
+     "title": "¿Cuál muestra la tendencia?",
+     "q": "<p>Quieres mostrar cómo evolucionaron las visitas a la web en 12 semanas.</p>",
+     "checks": [
+      {
+       "p": "¿Qué gráfico eliges?",
+       "o": [
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"], \"values\": [30, 32, 31, 35, 38, 37, 41, 44, 43, 47, 50, 52], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"pie\", \"labels\": [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], \"values\": [3, 4, 5, 3, 2, 4], \"small\": true, \"w\": 150, \"legend\": false, \"h\": 150}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"S1\", \"S2\", \"S3\", \"S4\"], \"values\": [30, 32, 31, 35], \"small\": true, \"w\": 150}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"stack\", \"groups\": [\"S1\", \"S2\", \"S3\", \"S4\"], \"series\": [{\"n\": \"Lácteos\", \"vals\": [30, 22, 40, 28]}, {\"n\": \"Bebidas\", \"vals\": [25, 35, 20, 30]}, {\"n\": \"Snacks\", \"vals\": [45, 43, 40, 42]}], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"scatter\", \"pts\": [[25.6, 214], [26.9, 30], [8.9, 150], [15.3, 255], [23.8, 97], [29.1, 111], [18.1, 252], [7.7, 55], [9.5, 213], [4.2, 224], [8.6, 252], [16.7, 200]], \"small\": true, \"w\": 150, \"h\": 110}'></div>"
+       ]
+      }
+     ],
+     "steps": [
+      "El tiempo va en el eje horizontal y la línea muestra si sube o baja: líneas.",
+      "Pastel, barras horizontales o apiladas no muestran la evolución con claridad."
+     ],
+     "ans": "Líneas",
+     "hint": "Tiempo → líneas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objgraf"
+      ],
+      [
+       "objgraf"
+      ]
+     ]
+    },
+    {
+     "id": "v9t10",
+     "lvl": 1,
+     "title": "¿Cuál compara mejor?",
+     "q": "<p>Quieres comparar las ventas de 5 tiendas.</p>",
+     "checks": [
+      {
+       "p": "¿Qué gráfico eliges?",
+       "o": [
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"LM\", \"Su\", \"SB\", \"Mi\", \"JM\"], \"values\": [5000, 4600, 4000, 3700, 3200], \"small\": true, \"w\": 150}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"pie\", \"labels\": [\"San Borja\", \"Surco\", \"La Molina\", \"Jesús María\", \"Miraflores\"], \"values\": [4000, 4600, 5000, 3200, 3700], \"small\": true, \"w\": 150, \"legend\": false, \"h\": 150}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"SB\", \"Su\", \"LM\", \"JM\", \"Mi\"], \"values\": [4000, 4600, 5000, 3200, 3700], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"scatter\", \"pts\": [[1, 40], [2, 46], [3, 50], [4, 32], [5, 37]], \"small\": true, \"w\": 150, \"h\": 110}'></div>",
+        "<div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"SB\", \"Su\", \"LM\", \"JM\", \"Mi\"], \"values\": [4000, 4600, 5000, 3200, 3700], \"rainbow\": true, \"d3\": true, \"small\": true, \"w\": 150, \"h\": 110}'></div>"
+       ]
+      }
+     ],
+     "steps": [
+      "Comparar categorías → barras <strong>ordenadas</strong>, de un solo color.",
+      "La línea sugiere una evolución que no existe; el pastel obliga a comparar ángulos; el 3D con colores distrae."
+     ],
+     "ans": "Barras ordenadas",
+     "hint": "Comparar → barras ordenadas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objgraf"
+      ],
+      [
+       "sesgo"
+      ]
+     ]
     }
    ]
   },
   {
    "id": "v9err",
    "name": "Sem. 9 · Escalas, errores y sesgos",
-   "teo": "<p>Un gráfico <strong>correcto</strong> puede seguir engañando. Errores frecuentes: <strong>eje truncado</strong> (exagera diferencias), <strong>efectos 3D</strong>, sombras y decoración, <strong>pastel</strong> con muchas porciones, <strong>dos ejes verticales</strong> que sugieren relaciones inexistentes, <strong>colores engañosos</strong>, y <strong>cherry picking</strong> o datos incompletos mostrados como completos.</p>",
+   "teo": "<p>Un gráfico <strong>correcto</strong> puede seguir engañando. Errores frecuentes: <strong>eje truncado</strong> (exagera diferencias), <strong>efectos 3D</strong>, sombras y decoración, <strong>pastel</strong> con muchas porciones, <strong>dos ejes verticales</strong> que sugieren relaciones inexistentes, <strong>colores engañosos</strong>, y <strong>cherry picking</strong> o datos incompletos mostrados como completos.</p><p><b>El mismo dato, dos ejes.</b> La Molina vende S/ 5 000 y San Borja S/ 4 000.</p><div class=\"chpair\"><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"La Molina\", \"San Borja\"], \"values\": [5000, 4000], \"vals\": true, \"zero\": false, \"min\": 3500, \"title\": \"Eje desde 3 500\"}'></div><p>Parece que vende 3 veces más.</p></div><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"La Molina\", \"San Borja\"], \"values\": [5000, 4000], \"vals\": true, \"title\": \"Eje desde 0\"}'></div><p>Vende 25 % más: la realidad.</p></div></div>",
    "form": [
     "Barras: eje desde 0",
     "Sin 3D ni decoración",
@@ -3251,16 +4190,29 @@
      "id": "v9e1",
      "lvl": 2,
      "title": "Eje desde 3500",
-     "q": "<p>Supón que La Molina vende S/ 5000 y San Borja S/ 4000 (25 % más, como en la clase). En barras con el eje desde 3500, ¿cuántas veces más larga se ve la barra de La Molina?</p>",
+     "q": "<p>La Molina vende S/ 5 000 y San Borja S/ 4 000. Mira el gráfico:</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"La Molina\", \"San Borja\"], \"values\": [5000, 4000], \"vals\": false, \"zero\": false, \"min\": 3500, \"title\": \"Ventas por tienda\"}'></div>",
      "checks": [
       {
-       "p": "Proporción",
-       "o": [
-        "3 veces (1500 vs. 500), aunque en realidad vende 25 % más",
-        "1,25 veces, igual que la realidad",
-        "5 veces",
-        "Igual de larga",
-        "2 veces"
+       "t": "num",
+       "p": "¿Cuántas veces más larga se ve la barra de La Molina?",
+       "f": [
+        {
+         "l": "Veces",
+         "a": 3,
+         "e": "mide las barras desde 3 500: 5 000 − 3 500 y 4 000 − 3 500."
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "¿Cuánto más vende en realidad?",
+       "f": [
+        {
+         "l": "Más",
+         "a": 25,
+         "u": "%",
+         "e": "5 000 / 4 000 = 1,25."
+        }
        ]
       }
      ],
@@ -3280,7 +4232,8 @@
       [
        "escala"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "v9e2",
@@ -3348,7 +4301,7 @@
      "id": "v9e4",
      "lvl": 2,
      "title": "Dos ejes verticales",
-     "q": "<p>Un gráfico pone «ventas» en el eje izquierdo y «temperatura» en el derecho, con escalas ajustadas para que las líneas se superpongan. ¿Qué riesgo tiene?</p>",
+     "q": "<p>Un gráfico pone «ventas» en el eje izquierdo y «temperatura» en el derecho, con escalas ajustadas para que las líneas se superpongan. ¿Qué riesgo tiene?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"dual\", \"labels\": [\"Ene\", \"Feb\", \"Mar\", \"Abr\", \"May\", \"Jun\"], \"values\": [4200, 4350, 4100, 4500, 4650, 4800], \"values2\": [17, 18, 16, 19, 20, 21], \"min2\": 14, \"max2\": 22, \"leg\": [\"Ventas\", \"Temperatura\"], \"title\": \"Ventas y temperatura\"}'></div>",
      "checks": [
       {
        "p": "Riesgo",
@@ -3383,7 +4336,7 @@
      "id": "v9e5",
      "lvl": 1,
      "title": "Efecto 3D",
-     "q": "<p>¿Qué problema tiene un gráfico de barras en 3D con sombras?</p>",
+     "q": "<p>¿Qué problema tiene un gráfico de barras en 3D con sombras?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"Lácteos\", \"Bebidas\", \"Snacks\"], \"values\": [18, 17, 16], \"d3\": true, \"rainbow\": true, \"title\": \"Ventas por categoría\"}'></div>",
      "checks": [
       {
        "p": "Problema",
@@ -3444,46 +4397,414 @@
     {
      "id": "v9e7",
      "lvl": 3,
-     "title": "Audita este gráfico",
-     "q": "<p>Un gráfico de barras 3D muestra ventas de enero a agosto-26 (agosto con datos hasta el día 14), el eje empieza en 3000 y el título es «Ventas». ¿Cuántos problemas tiene?</p>",
+     "title": "Audita y arregla este gráfico",
+     "q": "<p>Un gráfico de ventas de enero a agosto-26 (agosto con datos solo hasta el día 14).</p>",
      "checks": [
       {
-       "p": "Problemas",
+       "t": "tap",
+       "p": "Toca los <b>tres</b> lugares con problemas.",
+       "a": [
+        "tit",
+        "eje",
+        "ago"
+       ],
+       "chart": {
+        "type": "bar",
+        "labels": [
+         "Ene",
+         "Feb",
+         "Mar",
+         "Abr",
+         "May",
+         "Jun",
+         "Jul",
+         "Ago"
+        ],
+        "values": [
+         4200,
+         4350,
+         4100,
+         4500,
+         4650,
+         4800,
+         4900,
+         2300
+        ],
+        "zero": false,
+        "min": 2000,
+        "d3": true,
+        "title": "Ventas",
+        "zones": [
+         {
+          "on": "title",
+          "id": "tit"
+         },
+         {
+          "on": "yaxis",
+          "id": "eje"
+         },
+         {
+          "on": "bar",
+          "i": 7,
+          "id": "ago"
+         },
+         {
+          "on": "bar",
+          "i": 2,
+          "id": "mar"
+         },
+         {
+          "on": "bar",
+          "i": 5,
+          "id": "jun"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "Mira el título, dónde empieza el eje y el último mes (con datos solo hasta el 14)."
+      },
+      {
+       "p": "¿Qué cuarto problema tiene, que afecta a todas las barras?",
        "o": [
-        "Cuatro: 3D, mes incompleto, eje truncado y título que no dice la conclusión",
-        "Uno: el título",
-        "Ninguno",
-        "Dos: 3D y color",
-        "Tres: 3D, eje y pastel"
+        "El efecto 3D",
+        "Las barras son verticales",
+        "Tiene 8 meses",
+        "Usa un solo color",
+        "No tiene leyenda"
+       ]
+      },
+      {
+       "t": "fix",
+       "p": "Ahora arréglalo.",
+       "c": {
+        "type": "bar",
+        "labels": [
+         "Ene",
+         "Feb",
+         "Mar",
+         "Abr",
+         "May",
+         "Jun",
+         "Jul",
+         "Ago"
+        ],
+        "values": [
+         4200,
+         4350,
+         4100,
+         4500,
+         4650,
+         4800,
+         4900,
+         2300
+        ],
+        "zero": false,
+        "min": 2000,
+        "d3": true,
+        "title": "Ventas"
+       },
+       "tog": [
+        {
+         "l": "Eje desde 0",
+         "v": false,
+         "good": true,
+         "on": {
+          "zero": true
+         },
+         "off": {
+          "zero": false,
+          "min": 2000
+         },
+         "e": "En barras el eje empieza en 0."
+        },
+        {
+         "l": "Efecto 3D",
+         "v": true,
+         "good": false,
+         "on": {
+          "d3": true
+         },
+         "off": {
+          "d3": false
+         },
+         "e": "Quita el 3D."
+        },
+        {
+         "l": "Quitar agosto (incompleto)",
+         "v": false,
+         "good": true,
+         "on": {
+          "cut": true
+         },
+         "e": "Agosto solo tiene datos hasta el 14: o se quita o se marca."
+        },
+        {
+         "l": "Título con la conclusión",
+         "v": false,
+         "good": true,
+         "on": {
+          "title": "Las ventas crecieron cada mes hasta julio"
+         },
+         "e": "El título debe decir la conclusión."
+        }
        ]
       }
      ],
      "steps": [
-      "3D: distorsiona. Agosto incompleto: crea una caída falsa. Eje desde 3000: exagera diferencias.",
-      "Título «Ventas»: solo nombra el tema. Además, para meses, una línea muestra mejor la tendencia."
+      "Problemas que se tocan: el título «Ventas» no dice la conclusión, el eje empieza en 2 000 (exagera las diferencias) y agosto está incompleto (parece una caída).",
+      "El cuarto problema es el 3D: distorsiona todas las barras.",
+      "Arreglo: eje desde 0, sin 3D, agosto fuera (o marcado) y un título con la conclusión."
      ],
-     "ans": "Cuatro problemas",
+     "ans": "Título, eje y agosto; 3D; arreglar los cuatro",
      "hint": "Recorre la lista de errores frecuentes.",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
       [
-       "sesgo",
+       "escala",
+       "sesgo"
+      ],
+      [
+       "sesgo"
+      ],
+      [
+       "titulo"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v9e8",
+     "lvl": 1,
+     "title": "Arregla el eje",
+     "q": "<p>Este gráfico exagera la diferencia entre La Molina y San Borja.</p>",
+     "checks": [
+      {
+       "t": "fix",
+       "p": "Ajusta el gráfico.",
+       "c": {
+        "type": "bar",
+        "labels": [
+         "La Molina",
+         "San Borja"
+        ],
+        "values": [
+         5000,
+         4000
+        ],
+        "vals": false,
+        "zero": false,
+        "min": 3500,
+        "title": "Ventas por tienda (S/)"
+       },
+       "tog": [
+        {
+         "l": "Eje desde 0",
+         "v": false,
+         "good": true,
+         "on": {
+          "zero": true
+         },
+         "off": {
+          "zero": false,
+          "min": 3500
+         },
+         "e": "En barras el eje empieza en 0."
+        },
+        {
+         "l": "Mostrar los valores",
+         "v": false,
+         "good": true,
+         "on": {
+          "vals": true,
+          "unit": "S/"
+         },
+         "e": "Los valores confirman que la diferencia es de 25 %."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "En barras se comparan longitudes: el eje debe empezar en 0.",
+      "Con los valores a la vista, el lector confirma que la diferencia es 25 %, no «3 veces»."
+     ],
+     "ans": "Eje desde 0 y valores visibles",
+     "hint": "Barras → desde 0.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
        "escala"
       ],
       [
-       "titulo",
-       "objgraf"
+       "escala"
       ]
      ]
+    },
+    {
+     "id": "v9e9",
+     "lvl": 2,
+     "title": "¿Qué error tiene?",
+     "q": "<p>Un informe muestra este gráfico:</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"Mar\", \"Abr\", \"May\"], \"values\": [4100, 4500, 4650], \"title\": \"¡El año fue un éxito!\"}'></div>",
+     "checks": [
+      {
+       "p": "¿Qué error hay?",
+       "o": [
+        "Cherry picking: muestra solo los meses que convienen",
+        "Eje truncado en un gráfico de barras",
+        "Efecto 3D",
+        "Doble eje",
+        "Colores engañosos"
+       ]
+      }
+     ],
+     "steps": [
+      "Solo muestra marzo a mayo, justo los meses que suben, para hablar de «el año».",
+      "Eso es cherry picking: elegir el periodo a conveniencia. Con el año completo la historia podría ser otra."
+     ],
+     "ans": "Cherry picking",
+     "hint": "¿Qué meses faltan?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sesgo"
+      ],
+      [
+       "sesgo"
+      ]
+     ]
+    },
+    {
+     "id": "v9e10",
+     "lvl": 2,
+     "title": "Clasifica el error",
+     "q": "<p>¿Qué error tiene cada gráfico?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada descripción.",
+       "cats": [
+        "Eje truncado",
+        "Efecto 3D",
+        "Doble eje",
+        "Cherry picking",
+        "Datos incompletos"
+       ],
+       "items": [
+        {
+         "x": "Barras de ventas con el eje desde 3 500.",
+         "c": 0
+        },
+        {
+         "x": "Pastel inclinado con sombras.",
+         "c": 1
+        },
+        {
+         "x": "Ventas a la izquierda y temperatura a la derecha, ajustadas para que coincidan.",
+         "c": 2
+        },
+        {
+         "x": "Solo se muestran los 3 meses buenos del año.",
+         "c": 3
+        },
+        {
+         "x": "El último mes cae de golpe porque solo tiene datos hasta el día 14.",
+         "c": 4
+        },
+        {
+         "x": "Barras con relieve y perspectiva.",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Eje truncado y 3D distorsionan las longitudes; el doble eje sugiere relaciones que no existen.",
+      "Cherry picking elige el periodo a conveniencia; los datos incompletos se muestran como si fueran completos."
+     ],
+     "ans": "Eje, 3D, doble eje, cherry picking, incompletos, 3D",
+     "hint": "Piensa qué truco usa cada uno.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "escala",
+       "sesgo"
+      ],
+      [
+       "sesgo"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "chart",
+     "t": "Juega con el gráfico",
+     "p": "Activa y desactiva cada truco y mira cómo cambia la impresión.",
+     "o": {
+      "c": {
+       "type": "bar",
+       "labels": [
+        "La Molina",
+        "San Borja",
+        "Surco"
+       ],
+       "values": [
+        5000,
+        4000,
+        4600
+       ],
+       "title": "Ventas por tienda (S/)"
+      },
+      "tog": [
+       {
+        "l": "Eje desde 0",
+        "v": true,
+        "on": {
+         "zero": true
+        },
+        "off": {
+         "zero": false,
+         "min": 3500
+        }
+       },
+       {
+        "l": "Efecto 3D",
+        "v": false,
+        "on": {
+         "d3": true
+        }
+       },
+       {
+        "l": "Un color por barra",
+        "v": false,
+        "on": {
+         "rainbow": true
+        }
+       },
+       {
+        "l": "Mostrar valores",
+        "v": false,
+        "on": {
+         "vals": true,
+         "unit": "S/"
+        }
+       }
+      ]
+     }
     }
    ]
   },
   {
    "id": "v9clar",
    "name": "Sem. 9 · Títulos, jerarquía y desorden",
-   "teo": "<p>De un gráfico <strong>correcto</strong> a uno <strong>claro</strong>: título que dice la <strong>conclusión</strong>, un solo color de <strong>énfasis</strong> con el resto en gris, y <strong>cero desorden</strong> (cada elemento tiene que ganarse su lugar).</p><p>Prueba de los 5 segundos: si el lector solo mira 5 segundos, ¿qué se lleva?</p>",
+   "teo": "<p>De un gráfico <strong>correcto</strong> a uno <strong>claro</strong>: título que dice la <strong>conclusión</strong>, un solo color de <strong>énfasis</strong> con el resto en gris, y <strong>cero desorden</strong> (cada elemento tiene que ganarse su lugar).</p><p>Prueba de los 5 segundos: si el lector solo mira 5 segundos, ¿qué se lleva?</p><p><b>Antes y después.</b> Mismos datos: a la izquierda todo compite por la atención; a la derecha hay un solo foco.</p><div class=\"chpair\"><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"Lácteos\", \"Bebidas\", \"Snacks\", \"Abarrotes\", \"Limpieza\", \"C. personal\", \"Panadería\"], \"values\": [18, 17, 16, 15, 13, 12, 9], \"unit\": \"%\", \"title\": \"Ventas por categoría\", \"rainbow\": true, \"grid\": \"heavy\"}'></div><p>Colores sin significado y cuadrícula intensa.</p></div><div><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"Lácteos\", \"Bebidas\", \"Snacks\", \"Abarrotes\", \"Limpieza\", \"C. personal\", \"Panadería\"], \"values\": [18, 17, 16, 15, 13, 12, 9], \"unit\": \"%\", \"title\": \"Lácteos lidera con 18 %\", \"sort\": true, \"emph\": \"Lácteos\", \"vals\": true}'></div><p>Un color de énfasis, ordenado y con título que concluye.</p></div></div>",
    "form": [
     "Título = conclusión",
     "Un color de énfasis + grises",
@@ -3528,28 +4849,71 @@
      "id": "v9l2",
      "lvl": 1,
      "title": "Un color para lo que importa",
-     "q": "<p>Quieres que el lector mire primero la categoría Lácteos. ¿Cómo coloreas el gráfico de barras?</p>",
+     "q": "<p>Quieres que el lector mire primero la categoría Lácteos.</p>",
      "checks": [
       {
-       "p": "Color",
-       "o": [
-        "Lácteos en un color de énfasis y el resto en gris",
-        "Cada barra de un color distinto",
-        "Todas rojas",
-        "Lácteos en gris y el resto en colores",
-        "Con degradados y sombras"
+       "t": "fix",
+       "p": "Ajusta los colores.",
+       "c": {
+        "type": "hbar",
+        "labels": [
+         "Lácteos",
+         "Bebidas",
+         "Snacks",
+         "Abarrotes",
+         "Limpieza",
+         "C. personal",
+         "Panadería"
+        ],
+        "values": [
+         18,
+         17,
+         16,
+         15,
+         13,
+         12,
+         9
+        ],
+        "unit": "%",
+        "title": "Ventas por categoría",
+        "sort": true,
+        "vals": true
+       },
+       "tog": [
+        {
+         "l": "Un color distinto por barra",
+         "v": true,
+         "good": false,
+         "on": {
+          "rainbow": true
+         },
+         "e": "Si todo tiene color, nada destaca."
+        },
+        {
+         "l": "Lácteos en color de énfasis (el resto en gris)",
+         "v": false,
+         "good": true,
+         "on": {
+          "emph": "Lácteos"
+         },
+         "e": "Un solo color de énfasis guía la mirada."
+        }
        ]
       }
      ],
      "steps": [
-      "Jerarquía visual: un color de énfasis + grises para el contexto."
+      "Si cada barra tiene un color distinto, nada destaca.",
+      "Lácteos en un color de énfasis y el resto en gris: el ojo va directo ahí."
      ],
-     "ans": "Énfasis + grises",
+     "ans": "Lácteos en color de énfasis y el resto en gris",
      "hint": "",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
+      [
+       "foco"
+      ],
       [
        "foco"
       ]
@@ -3559,24 +4923,56 @@
      "id": "v9l3",
      "lvl": 2,
      "title": "¿Qué se quita?",
-     "q": "<p>¿Cuál de estos elementos es candidato a eliminar para reducir el desorden?</p>",
+     "q": "<p>Cada elemento tiene que ganarse su lugar.</p>",
      "checks": [
       {
-       "p": "Eliminar",
-       "o": [
-        "Líneas de cuadrícula intensas y bordes",
-        "Las etiquetas de las unidades (S/)",
-        "El título explicativo",
-        "El eje de valores en barras",
-        "La fuente de los datos"
+       "t": "cls",
+       "p": "¿Se queda o se quita?",
+       "cats": [
+        "Se queda",
+        "Se quita"
+       ],
+       "items": [
+        {
+         "x": "Título que dice la conclusión.",
+         "c": 0
+        },
+        {
+         "x": "Cuadrícula intensa y bordes.",
+         "c": 1
+        },
+        {
+         "x": "Sombras y efectos.",
+         "c": 1
+        },
+        {
+         "x": "Etiquetas con unidades (S/, %).",
+         "c": 0
+        },
+        {
+         "x": "Leyenda que repite lo que ya dicen los ejes.",
+         "c": 1
+        },
+        {
+         "x": "Logo gigante de la empresa.",
+         "c": 1
+        },
+        {
+         "x": "Eje que empieza en 0.",
+         "c": 0
+        },
+        {
+         "x": "Un color de énfasis.",
+         "c": 0
+        }
        ]
       }
      ],
      "steps": [
-      "Cuadrícula intensa, bordes, leyendas repetidas y decoración no ayudan a entender.",
-      "Unidades, título y fuente sí aportan información."
+      "Se queda lo que ayuda a entender: título con conclusión, unidades, eje honesto y un foco.",
+      "Se quita lo que no aporta: cuadrícula intensa, bordes, sombras, leyendas repetidas y decoración."
      ],
-     "ans": "Cuadrícula intensa y bordes",
+     "ans": "Q, X, X, Q, X, X, Q, Q",
      "hint": "",
      "fig": null,
      "draw": false,
@@ -3585,7 +4981,9 @@
       [
        "desorden"
       ],
-      []
+      [
+       "desorden"
+      ]
      ]
     },
     {
@@ -3681,6 +5079,285 @@
        "escala"
       ]
      ]
+    },
+    {
+     "id": "v9l7",
+     "lvl": 3,
+     "title": "De correcto a claro",
+     "q": "<p>Este gráfico es correcto, pero nada destaca. Hazlo claro: el mensaje es que Lácteos lidera.</p>",
+     "checks": [
+      {
+       "t": "fix",
+       "p": "Ajusta el gráfico.",
+       "c": {
+        "type": "hbar",
+        "labels": [
+         "Lácteos",
+         "Bebidas",
+         "Snacks",
+         "Abarrotes",
+         "Limpieza",
+         "C. personal",
+         "Panadería"
+        ],
+        "values": [
+         18,
+         17,
+         16,
+         15,
+         13,
+         12,
+         9
+        ],
+        "unit": "%",
+        "title": "Ventas por categoría",
+        "rainbow": true,
+        "grid": "heavy"
+       },
+       "tog": [
+        {
+         "l": "Ordenar de mayor a menor",
+         "v": false,
+         "good": true,
+         "on": {
+          "sort": true
+         },
+         "e": "Ordena para que el ranking se lea solo."
+        },
+        {
+         "l": "Cuadrícula intensa",
+         "v": true,
+         "good": false,
+         "on": {
+          "grid": "heavy"
+         },
+         "off": {
+          "grid": null
+         },
+         "e": "La cuadrícula intensa es desorden."
+        },
+        {
+         "l": "Un color distinto por barra",
+         "v": true,
+         "good": false,
+         "on": {
+          "rainbow": true
+         },
+         "off": {
+          "rainbow": false
+         },
+         "e": "Si todo tiene color, nada destaca."
+        },
+        {
+         "l": "Destacar Lácteos",
+         "v": false,
+         "good": true,
+         "on": {
+          "emph": "Lácteos"
+         },
+         "e": "Un solo color de énfasis."
+        },
+        {
+         "l": "Título con la conclusión",
+         "v": false,
+         "good": true,
+         "on": {
+          "title": "Lácteos lidera con 18 %"
+         },
+         "e": "El título debe decir la conclusión."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Ordenar, quitar la cuadrícula intensa y los colores sin significado.",
+      "Un color de énfasis para Lácteos y un título que diga la conclusión: pasa la prueba de los 5 segundos."
+     ],
+     "ans": "Ordenar, sin cuadrícula ni arcoíris, destacar Lácteos, título con conclusión",
+     "hint": "Un foco, cero desorden.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "desorden"
+      ],
+      [
+       "foco",
+       "titulo"
+      ]
+     ]
+    },
+    {
+     "id": "v9l8",
+     "lvl": 1,
+     "title": "Prueba de los 5 segundos",
+     "q": "<p>Mira este gráfico solo 5 segundos.</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca lo primero que vio tu ojo.",
+       "a": [
+        "lac"
+       ],
+       "chart": {
+        "type": "hbar",
+        "labels": [
+         "Lácteos",
+         "Bebidas",
+         "Snacks",
+         "Abarrotes",
+         "Limpieza",
+         "C. personal",
+         "Panadería"
+        ],
+        "values": [
+         18,
+         17,
+         16,
+         15,
+         13,
+         12,
+         9
+        ],
+        "unit": "%",
+        "title": "Lácteos lidera con 18 %",
+        "sort": true,
+        "emph": "Lácteos",
+        "zones": [
+         {
+          "on": "bar",
+          "i": 0,
+          "id": "lac"
+         },
+         {
+          "on": "bar",
+          "i": 1,
+          "id": "beb"
+         },
+         {
+          "on": "bar",
+          "i": 2,
+          "id": "sna"
+         },
+         {
+          "on": "bar",
+          "i": 3,
+          "id": "aba"
+         },
+         {
+          "on": "bar",
+          "i": 4,
+          "id": "lim"
+         },
+         {
+          "on": "bar",
+          "i": 5,
+          "id": "cpe"
+         },
+         {
+          "on": "bar",
+          "i": 6,
+          "id": "pan"
+         }
+        ]
+       },
+       "e": "El color de énfasis guía la mirada a Lácteos."
+      }
+     ],
+     "steps": [
+      "El ojo detecta primero el color, el tamaño y la posición: la barra de color en la cima.",
+      "Si eso coincide con el título («Lácteos lidera»), el gráfico pasa la prueba de los 5 segundos."
+     ],
+     "ans": "Lácteos",
+     "hint": "Lo que tiene color distinto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "foco"
+      ],
+      [
+       "foco"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "chart",
+     "t": "De correcto a claro",
+     "p": "Prueba cada ajuste y aplica la prueba de los 5 segundos.",
+     "o": {
+      "c": {
+       "type": "hbar",
+       "labels": [
+        "Lácteos",
+        "Bebidas",
+        "Snacks",
+        "Abarrotes",
+        "Limpieza",
+        "C. personal",
+        "Panadería"
+       ],
+       "values": [
+        18,
+        17,
+        16,
+        15,
+        13,
+        12,
+        9
+       ],
+       "unit": "%",
+       "title": "Ventas por categoría"
+      },
+      "tog": [
+       {
+        "l": "Ordenar de mayor a menor",
+        "v": false,
+        "on": {
+         "sort": true
+        }
+       },
+       {
+        "l": "Un color distinto por barra",
+        "v": true,
+        "on": {
+         "rainbow": true
+        }
+       },
+       {
+        "l": "Destacar Lácteos",
+        "v": false,
+        "on": {
+         "emph": "Lácteos"
+        }
+       },
+       {
+        "l": "Cuadrícula intensa",
+        "v": true,
+        "on": {
+         "grid": "heavy"
+        }
+       },
+       {
+        "l": "Título con la conclusión",
+        "v": false,
+        "on": {
+         "title": "Lácteos lidera con 18 %"
+        }
+       },
+       {
+        "l": "Mostrar valores",
+        "v": false,
+        "on": {
+         "vals": true
+        }
+       }
+      ]
+     }
     }
    ]
   }
@@ -4108,7 +5785,7 @@
    "id": "v9s2",
    "lvl": 3,
    "title": "Caso: un gráfico engañoso",
-   "q": "<p>Un póster dice: «¡Nuestras ventas se triplicaron!» con dos barras: 4100 y 4300, y el eje empieza en 4000. ¿Qué responde un analista?</p>",
+   "q": "<p>Un póster dice: «¡Nuestras ventas se triplicaron!» con dos barras: 4100 y 4300, y el eje empieza en 4000. ¿Qué responde un analista?</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"2025\", \"2026\"], \"values\": [4100, 4300], \"zero\": false, \"min\": 4000, \"title\": \"¡Nuestras ventas se triplicaron!\"}'></div>",
    "checks": [
     {
      "p": "Respuesta",
@@ -4144,18 +5821,33 @@
    "q": "<p>Hallazgos: (1) qué categoría vende más, (2) cómo variaron las ventas por mes, (3) si el descuento se relaciona con las unidades vendidas. ¿Qué gráficos?</p>",
    "checks": [
     {
-     "p": "Gráficos",
-     "o": [
-      "(1) barras ordenadas, (2) líneas, (3) dispersión",
-      "(1) pastel, (2) barras, (3) líneas",
-      "Los tres en pastel",
-      "(1) dispersión, (2) pastel, (3) barras",
-      "Los tres en tabla"
+     "t": "cls",
+     "p": "¿Qué gráfico para cada hallazgo?",
+     "cats": [
+      "Barras ordenadas",
+      "Líneas",
+      "Dispersión"
+     ],
+     "items": [
+      {
+       "x": "Qué categoría vende más.",
+       "c": 0
+      },
+      {
+       "x": "Cómo variaron las ventas por mes.",
+       "c": 1
+      },
+      {
+       "x": "Si el descuento se relaciona con las unidades vendidas.",
+       "c": 2
+      }
      ]
     }
    ],
    "steps": [
-    "Comparar → barras; tendencia → líneas; relación entre dos variables numéricas → dispersión."
+    "(1) Comparar categorías → barras ordenadas.",
+    "(2) Evolución en el tiempo → líneas.",
+    "(3) Relación entre dos variables numéricas → dispersión."
    ],
    "ans": "Barras, líneas, dispersión",
    "hint": "",
@@ -4165,8 +5857,161 @@
    "tags": [
     [
      "objgraf"
+    ],
+    [
+     "objgraf"
+    ],
+    [
+     "objgraf"
     ]
    ]
+  },
+  {
+   "id": "v9s4",
+   "lvl": 3,
+   "title": "Caso: el gráfico del directorio",
+   "q": "<p>Para el directorio, un practicante preparó este gráfico de ventas por distrito (S/ miles). El mensaje que se quiere dar: Surco es el distrito que más vende.</p>",
+   "checks": [
+    {
+     "t": "tap",
+     "p": "Toca los dos lugares con problemas: el que exagera y el que no comunica.",
+     "a": [
+      "eje",
+      "tit"
+     ],
+     "chart": {
+      "type": "bar",
+      "labels": [
+       "Lima",
+       "Surco",
+       "S. Borja",
+       "Lince"
+      ],
+      "values": [
+       42,
+       58,
+       47,
+       39
+      ],
+      "zero": false,
+      "min": 30,
+      "rainbow": true,
+      "title": "Gráfico 1",
+      "zones": [
+       {
+        "on": "title",
+        "id": "tit"
+       },
+       {
+        "on": "yaxis",
+        "id": "eje"
+       },
+       {
+        "on": "bar",
+        "i": 1,
+        "id": "sur"
+       },
+       {
+        "on": "xaxis",
+        "id": "xax"
+       }
+      ]
+     },
+     "multi": true
+    },
+    {
+     "t": "fix",
+     "p": "Arréglalo para el directorio.",
+     "c": {
+      "type": "bar",
+      "labels": [
+       "Lima",
+       "Surco",
+       "S. Borja",
+       "Lince"
+      ],
+      "values": [
+       42,
+       58,
+       47,
+       39
+      ],
+      "zero": false,
+      "min": 30,
+      "rainbow": true,
+      "title": "Gráfico 1"
+     },
+     "tog": [
+      {
+       "l": "Eje desde 0",
+       "v": false,
+       "good": true,
+       "on": {
+        "zero": true
+       },
+       "off": {
+        "zero": false,
+        "min": 30
+       }
+      },
+      {
+       "l": "Un color por barra",
+       "v": true,
+       "good": false,
+       "on": {
+        "rainbow": true
+       },
+       "off": {
+        "rainbow": false
+       }
+      },
+      {
+       "l": "Surco en color de énfasis",
+       "v": false,
+       "good": true,
+       "on": {
+        "emph": "Surco"
+       }
+      },
+      {
+       "l": "Ordenar de mayor a menor",
+       "v": false,
+       "good": true,
+       "on": {
+        "sort": true
+       }
+      },
+      {
+       "l": "Título con la conclusión",
+       "v": false,
+       "good": true,
+       "on": {
+        "title": "Surco lidera las ventas: S/ 58 mil"
+       }
+      }
+     ]
+    }
+   ],
+   "steps": [
+    "El eje desde 30 exagera las diferencias y el título «Gráfico 1» no dice nada.",
+    "Arreglo: eje en 0, ordenar, un solo color de énfasis (Surco) y un título con la conclusión."
+   ],
+   "ans": "Eje y título; arreglar los cinco",
+   "hint": "Honesto primero, claro después.",
+   "fig": null,
+   "draw": false,
+   "solfig": null,
+   "tags": [
+    [
+     "escala",
+     "titulo"
+    ],
+    [
+     "foco",
+     "titulo"
+    ]
+   ],
+   "chain": true
   }
  ],
  "sim": {
@@ -4180,7 +6025,9 @@
      "ag5",
      "sq6",
      "jn3",
-     "jn5"
+     "jn5",
+     "ag11",
+     "jn6"
     ]
    },
    {
@@ -4191,17 +6038,21 @@
      "im8",
      "lp6",
      "de4",
-     "de6"
+     "de6",
+     "im1",
+     "de8"
     ]
    },
    {
     "pts": 3,
     "name": "Sem. 9: gráfico o tabla y contexto",
     "pool": [
-     "v9c2",
+     "v9c1",
      "v9c4",
      "v9c5",
-     "v9c6"
+     "v9c6",
+     "v9c7",
+     "v9c9"
     ]
    },
    {
@@ -4212,7 +6063,9 @@
      "v9t5",
      "v9t6",
      "v9t7",
-     "v9s3"
+     "v9s3",
+     "v9t8",
+     "v9t10"
     ]
    },
    {
@@ -4223,7 +6076,9 @@
      "v9e3",
      "v9e4",
      "v9e7",
-     "v9s2"
+     "v9s2",
+     "v9e8",
+     "v9e10"
     ]
    },
    {
@@ -4234,9 +6089,267 @@
      "v9l3",
      "v9l4",
      "v9l6",
-     "v9s1"
+     "v9s1",
+     "v9l7",
+     "v9s4"
     ]
    }
   ]
- }
+ },
+ "db": {
+  "Productos": {
+   "cols": [
+    "ID_producto:i",
+    "Nombre_producto",
+    "Categoria",
+    "Precio:n"
+   ],
+   "rows": [
+    [
+     1,
+     "Agua",
+     "Bebidas",
+     2.5
+    ],
+    [
+     2,
+     "Gaseosa",
+     "Bebidas",
+     3.8
+    ],
+    [
+     3,
+     "Papas",
+     "Snacks",
+     4.2
+    ],
+    [
+     4,
+     "Galletas",
+     "Snacks",
+     3.2
+    ],
+    [
+     5,
+     "Chifles",
+     "Snacks",
+     3.0
+    ],
+    [
+     6,
+     "Arroz",
+     "Abarrotes",
+     5.5
+    ]
+   ]
+  },
+  "Clientes": {
+   "cols": [
+    "ID_cliente:i",
+    "Nombre",
+    "Distrito",
+    "Segmento"
+   ],
+   "rows": [
+    [
+     1,
+     "Ana Ruiz",
+     "Surco",
+     "Premium"
+    ],
+    [
+     2,
+     "Luis Paredes",
+     "Lima",
+     "Regular"
+    ],
+    [
+     3,
+     "Rosa Díaz",
+     "San Borja",
+     "Regular"
+    ],
+    [
+     4,
+     "Carlos Vega",
+     "La Molina",
+     "Regular"
+    ],
+    [
+     5,
+     "Elena Soto",
+     "Surco",
+     null
+    ]
+   ]
+  },
+  "Tiendas": {
+   "cols": [
+    "ID_tienda:i",
+    "Nombre_tienda",
+    "Distrito"
+   ],
+   "rows": [
+    [
+     1,
+     "La Molina",
+     "La Molina"
+    ],
+    [
+     2,
+     "San Borja",
+     "San Borja"
+    ],
+    [
+     3,
+     "Surco",
+     "Surco"
+    ]
+   ]
+  },
+  "Ventas": {
+   "cols": [
+    "ID_venta:i",
+    "Fecha",
+    "ID_cliente:i",
+    "ID_producto:i",
+    "ID_tienda:i",
+    "Cantidad:i",
+    "Monto:n"
+   ],
+   "rows": [
+    [
+     1,
+     "2026-08-01",
+     1,
+     1,
+     1,
+     4,
+     10.0
+    ],
+    [
+     2,
+     "2026-08-01",
+     2,
+     3,
+     2,
+     2,
+     8.4
+    ],
+    [
+     3,
+     "2026-08-02",
+     1,
+     6,
+     1,
+     3,
+     16.5
+    ],
+    [
+     4,
+     "2026-08-02",
+     3,
+     2,
+     2,
+     5,
+     19.0
+    ],
+    [
+     5,
+     "2026-08-03",
+     4,
+     4,
+     3,
+     2,
+     6.4
+    ],
+    [
+     6,
+     "2026-08-03",
+     2,
+     1,
+     2,
+     6,
+     15.0
+    ],
+    [
+     7,
+     "2026-08-04",
+     4,
+     6,
+     1,
+     4,
+     22.0
+    ],
+    [
+     8,
+     "2026-08-04",
+     3,
+     3,
+     3,
+     1,
+     4.2
+    ],
+    [
+     9,
+     "2026-08-05",
+     1,
+     2,
+     1,
+     2,
+     7.6
+    ],
+    [
+     10,
+     "2026-08-05",
+     4,
+     4,
+     3,
+     5,
+     16.0
+    ]
+   ]
+  },
+  "Clientes_Crudo": {
+   "cols": [
+    "ID:i",
+    "Nombre",
+    "Correo",
+    "Distrito"
+   ],
+   "rows": [
+    [
+     1,
+     "Ana Ruiz",
+     "ana@mail.com",
+     " lima"
+    ],
+    [
+     2,
+     "Luis Paredes",
+     "luis@mail.com",
+     "LIMA"
+    ],
+    [
+     3,
+     "Ana Ruiz",
+     "ana@mail.com",
+     "Lima"
+    ],
+    [
+     4,
+     "Rosa Díaz",
+     null,
+     "San Borja "
+    ],
+    [
+     5,
+     "Luis Paredes",
+     "luis@mail.com",
+     "lima"
+    ]
+   ]
+  }
+ },
+ "guide": true
 }
