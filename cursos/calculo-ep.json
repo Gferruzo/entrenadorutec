@@ -1,5 +1,5 @@
 {
- "form": "<p class=\"note\">Tu examen no trae formulario oficial: esta es una hoja de repaso con lo esencial que debes saber de memoria.</p>\n<div class=\"fgrid\">\n<div>\\(a^2-b^2=(a-b)(a+b),\\ \\ a^3-b^3=(a-b)(a^2+ab+b^2)\\)</div>\n<div>\\((\\sqrt A-B)(\\sqrt A+B)=A-B^2\\)</div>\n<div>\\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x}{x}=1,\\ \\lim_{x\\to0}\\frac{e^x-1}{x}=1,\\ \\lim_{x\\to0}\\frac{\\ln(1+x)}{x}=1\\)</div>\n<div>\\(f'(x)=\\displaystyle\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\)</div>\n<div>Continua en \\(a\\): \\(\\lim_{x\\to a}f(x)=f(a)\\); derivable: \\(f'_-(a)=f'_+(a)\\)</div>\n<div>\\((uv)'=u'v+uv',\\ \\ \\left(\\frac uv\\right)'=\\frac{u'v-uv'}{v^2}\\)</div>\n<div>\\((f(g(x)))'=f'(g(x))\\,g'(x)\\)</div>\n<div>\\((x^n)'=nx^{n-1},\\ (e^u)'=e^uu',\\ (\\ln u)'=\\frac{u'}{u},\\ (a^u)'=a^u\\ln a\\,u'\\)</div>\n<div>\\((\\sin u)'=\\cos u\\,u',\\ (\\cos u)'=-\\sin u\\,u',\\ (\\tan u)'=\\sec^2u\\,u'\\)</div>\n<div>\\((\\arcsin u)'=\\frac{u'}{\\sqrt{1-u^2}},\\ (\\arctan u)'=\\frac{u'}{1+u^2},\\ (\\mathrm{arcsec}\\,u)'=\\frac{u'}{|u|\\sqrt{u^2-1}}\\)</div>\n<div>Implícita: \\(\\frac{d}{dx}[y^n]=ny^{n-1}y'\\); tangente \\(y-y_0=m(x-x_0)\\)</div>\n<div>L'Hôpital: \\(\\lim\\frac fg=\\lim\\frac{f'}{g'}\\) si da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\)</div>\n<div>\\(dy=f'(x)dx,\\ \\ L(x)=f(a)+f'(a)(x-a),\\ \\ E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)</div>\n<div>\\(P_2(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2}(x-a)^2\\)</div>\n<div>\\(f'\\gt0\\): crece; \\(f''\\gt0\\): cóncava ↑; inflexión donde cambia la concavidad</div>\n<div>\\(\\frac{dy}{dt}=\\frac{dy}{dx}\\frac{dx}{dt}\\)</div>\n</div>",
+ "form": "<p class=\"note\">Tu examen no trae formulario oficial: esta es una hoja de repaso con lo esencial que debes saber de memoria.</p>\n<div class=\"fgrid\">\n<div>\\(a^2-b^2=(a-b)(a+b),\\ \\ a^3-b^3=(a-b)(a^2+ab+b^2)\\)</div>\n<div>\\((\\sqrt A-B)(\\sqrt A+B)=A-B^2\\)</div>\n<div>\\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x}{x}=1,\\ \\lim_{x\\to0}\\frac{e^x-1}{x}=1,\\ \\lim_{x\\to0}\\frac{\\ln(1+x)}{x}=1\\)</div>\n<div>\\(f'(x)=\\displaystyle\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\)</div>\n<div>Continua en \\(a\\): \\(\\lim_{x\\to a}f(x)=f(a)\\); derivable: \\(f'_-(a)=f'_+(a)\\)</div>\n<div>\\((uv)'=u'v+uv',\\ \\ \\left(\\frac uv\\right)'=\\frac{u'v-uv'}{v^2}\\)</div>\n<div>\\((f(g(x)))'=f'(g(x))\\,g'(x)\\)</div>\n<div>\\((x^n)'=nx^{n-1},\\ (e^u)'=e^uu',\\ (\\ln u)'=\\frac{u'}{u},\\ (a^u)'=a^u\\ln a\\,u'\\)</div>\n<div>\\((\\sin u)'=\\cos u\\,u',\\ (\\cos u)'=-\\sin u\\,u',\\ (\\tan u)'=\\sec^2u\\,u'\\)</div>\n<div>\\((\\arcsin u)'=\\frac{u'}{\\sqrt{1-u^2}},\\ (\\arctan u)'=\\frac{u'}{1+u^2},\\ (\\mathrm{arcsec}\\,u)'=\\frac{u'}{|u|\\sqrt{u^2-1}}\\)</div>\n<div>Implícita: \\(\\frac{d}{dx}[y^n]=ny^{n-1}y'\\); tangente \\(y-y_0=m(x-x_0)\\)</div>\n<div>L'Hôpital: \\(\\lim\\frac fg=\\lim\\frac{f'}{g'}\\) si da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\)</div>\n<div>\\(dy=f'(x)dx,\\ \\ L(x)=f(a)+f'(a)(x-a),\\ \\ E_\\%=\\left|\\frac{dy}{y}\\right|\\cdot100\\)</div>\n<div>\\(P_2(x)=f(a)\\) \\(+f'(a)(x-a)\\) \\(+\\frac{f''(a)}{2}(x-a)^2\\)</div>\n<div>\\(f'\\gt0\\): crece; \\(f''\\gt0\\): cóncava ↑; inflexión donde cambia la concavidad</div>\n<div>\\(\\frac{dy}{dt}=\\frac{dy}{dx}\\frac{dx}{dt}\\)</div>\n</div>",
  "formSim": false,
  "id": "calculo-ep",
  "code": "CC6103",
@@ -26,16 +26,16 @@
      "id": "lim1",
      "lvl": 1,
      "title": "Análisis de error",
-     "q": "<p>Un estudiante calcula \\(\\displaystyle\\lim_{x\\to4}\\frac{x^2-16}{x-4}=\\frac{0}{0}=0\\). ¿Cuál es el valor correcto del límite?</p>",
+     "q": "<p>Un estudiante calcula \\(\\displaystyle\\lim_{x\\to4}\\frac{x^2-16}{x-4}\\) \\(=\\frac{0}{0}\\) \\(=0\\). ¿Cuál es el valor correcto del límite?</p>",
      "checks": [
       {
-       "p": "Valor del límite",
-       "o": [
-        "\\(8\\)",
-        "\\(0\\)",
-        "No existe",
-        "\\(4\\)",
-        "\\(16\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "8",
+         "v": []
+        }
        ]
       }
      ],
@@ -66,13 +66,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\infty}\\frac{5x^2+2}{3x^2-1}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac53\\)",
-        "\\(\\infty\\)",
-        "\\(0\\)",
-        "\\(-2\\)",
-        "\\(5\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "5/3",
+         "v": []
+        }
        ]
       }
      ],
@@ -142,13 +142,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to2}\\frac{x^2+x-6}{x^2-4}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac54\\)",
-        "\\(0\\)",
-        "\\(\\frac32\\)",
-        "\\(1\\)",
-        "No existe"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "5/4",
+         "v": []
+        }
        ]
       }
      ],
@@ -182,20 +182,20 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to3}\\frac{\\sqrt{x+1}-2}{x-3}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac14\\)",
-        "\\(\\frac12\\)",
-        "\\(0\\)",
-        "\\(4\\)",
-        "\\(\\frac18\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "1/4",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "Multiplica por el conjugado \\(\\sqrt{x+1}+2\\).",
       "Numerador: \\((x+1)-4=x-3\\).",
-      "Queda \\(\\dfrac{1}{\\sqrt{x+1}+2}\\to\\dfrac{1}{2+2}=\\dfrac14\\)."
+      "Queda \\(\\dfrac{1}{\\sqrt{x+1}+2}\\to\\dfrac{1}{2+2}\\) \\(=\\dfrac14\\)."
      ],
      "ans": "\\(\\frac14\\)",
      "hint": "Conjugado del numerador.",
@@ -217,19 +217,27 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to a}\\frac{x^4-a^4}{x^3-a^3}\\), con \\(a\\neq0\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{4a}{3}\\)",
-        "\\(\\frac{3a}{4}\\)",
-        "\\(a\\)",
-        "\\(\\frac43\\)",
-        "\\(0\\)"
+       "t": "expr",
+       "p": "Escribe el límite (en términos de a).",
+       "f": [
+        {
+         "a": "4*a/3",
+         "v": [
+          "a"
+         ],
+         "dom": {
+          "a": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "\\(x^4-a^4=(x-a)(x+a)(x^2+a^2)\\); \\(x^3-a^3=(x-a)(x^2+ax+a^2)\\).",
-      "Cancela \\((x-a)\\) y evalúa: \\(\\dfrac{(2a)(2a^2)}{3a^2}=\\dfrac{4a^3}{3a^2}\\).",
+      "\\(x^4-a^4\\) \\(=(x-a)(x+a)(x^2+a^2)\\); \\(x^3-a^3\\) \\(=(x-a)(x^2+ax+a^2)\\).",
+      "Cancela \\((x-a)\\) y evalúa: \\(\\dfrac{(2a)(2a^2)}{3a^2}\\) \\(=\\dfrac{4a^3}{3a^2}\\).",
       "Simplifica: \\(\\frac{4a}{3}\\)."
      ],
      "ans": "\\(\\frac{4a}{3}\\)",
@@ -255,20 +263,20 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to2}\\frac{\\sqrt{6-x}-2}{\\sqrt{3-x}-1}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12\\)",
-        "\\(2\\)",
-        "\\(\\frac14\\)",
-        "\\(-\\frac12\\)",
-        "\\(1\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "1/2",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "Multiplica por los dos conjugados: \\(\\sqrt{6-x}+2\\) y \\(\\sqrt{3-x}+1\\).",
       "Arriba queda \\((2-x)(\\sqrt{3-x}+1)\\); abajo \\((2-x)(\\sqrt{6-x}+2)\\).",
-      "Cancela \\((2-x)\\): \\(\\dfrac{\\sqrt{3-x}+1}{\\sqrt{6-x}+2}\\to\\dfrac{2}{4}=\\dfrac12\\)."
+      "Cancela \\((2-x)\\): \\(\\dfrac{\\sqrt{3-x}+1}{\\sqrt{6-x}+2}\\to\\dfrac{2}{4}\\) \\(=\\dfrac12\\)."
      ],
      "ans": "\\(\\frac12\\)",
      "hint": "Hay raíz arriba y abajo: usa ambos conjugados.",
@@ -295,20 +303,28 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\alpha}\\frac{\\sqrt[3]x-\\sqrt[3]\\alpha}{x-\\alpha}\\), \\(\\alpha\\neq0\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\dfrac{1}{3\\sqrt[3]{\\alpha^2}}\\)",
-        "\\(\\dfrac{1}{3\\sqrt[3]{\\alpha}}\\)",
-        "\\(3\\sqrt[3]{\\alpha^2}\\)",
-        "\\(\\dfrac{1}{2\\sqrt{\\alpha}}\\)",
-        "\\(0\\)"
+       "t": "expr",
+       "p": "Escribe el límite (en términos de α).",
+       "f": [
+        {
+         "a": "1/(3*cbrt(α^2))",
+         "v": [
+          "α"
+         ],
+         "dom": {
+          "α": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "Sea \\(u=\\sqrt[3]x,\\ v=\\sqrt[3]\\alpha\\): \\(x-\\alpha=u^3-v^3=(u-v)(u^2+uv+v^2)\\).",
+      "Sea \\(u\\) \\(=\\sqrt[3]x,\\ v\\) \\(=\\sqrt[3]\\alpha\\): \\(x-\\alpha\\) \\(=u^3-v^3\\) \\(=(u-v)(u^2+uv+v^2)\\).",
       "Cancela \\((u-v)\\): \\(\\dfrac{1}{u^2+uv+v^2}\\).",
-      "Con \\(u\\to v\\): \\(\\dfrac{1}{3v^2}=\\dfrac{1}{3\\sqrt[3]{\\alpha^2}}\\)."
+      "Con \\(u\\to v\\): \\(\\dfrac{1}{3v^2}\\) \\(=\\dfrac{1}{3\\sqrt[3]{\\alpha^2}}\\)."
      ],
      "ans": "\\(\\dfrac{1}{3\\sqrt[3]{\\alpha^2}}\\)",
      "hint": "Escribe \\(x-\\alpha\\) como diferencia de cubos.",
@@ -332,18 +348,31 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\frac{a}{2b}}\\frac{a^2x-4b^2x^3}{a-2bx}\\), con \\(a,b\\neq0\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{a^2}{b}\\)",
-        "\\(\\frac{a}{2b}\\)",
-        "\\(a^2\\)",
-        "\\(\\frac{a^2}{2b}\\)",
-        "\\(0\\)"
+       "t": "expr",
+       "p": "Escribe el límite (en términos de a y b).",
+       "f": [
+        {
+         "a": "a^2/b",
+         "v": [
+          "a",
+          "b"
+         ],
+         "dom": {
+          "a": [
+           0.5,
+           3
+          ],
+          "b": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "\\(a^2x-4b^2x^3=x(a-2bx)(a+2bx)\\).",
+      "\\(a^2x-4b^2x^3\\) \\(=x(a-2bx)(a+2bx)\\).",
       "Cancela: queda \\(x(a+2bx)\\).",
       "En \\(x=\\frac a{2b}\\): \\(\\frac{a}{2b}\\cdot2a=\\frac{a^2}b\\)."
      ],
@@ -363,7 +392,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Un límite describe hacia dónde <strong>se acerca</strong> \\(f(x)\\) cuando \\(x\\) se aproxima a \\(a\\), sin importar cuánto vale (o si existe) \\(f(a)\\). Por eso, mientras calculas el límite, \\(x\\ne a\\) y puedes cancelar el factor \\((x-a)\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Sustitución directa:</strong> si al reemplazar sale un número, ese es el límite.</li><li><strong>Indeterminación \\(\\frac00\\):</strong> no es 0 ni «no existe»; es una señal de que hay un factor común escondido.</li><li><strong>Laterales:</strong> \\(\\lim_{x\\to a}f(x)\\) existe solo si \\(\\lim_{x\\to a^-}=\\lim_{x\\to a^+}\\).</li><li><strong>Al infinito:</strong> divide entre la mayor potencia de \\(x\\); con grados iguales, el límite es el cociente de coeficientes principales.</li><li><strong>Límite notable:</strong> \\(\\lim_{x\\to0}\\frac{\\sin x}{x}=1\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Sustituye.</li><li><strong>2.</strong> Si sale \\(\\frac00\\), factoriza (diferencia de cuadrados o cubos) o racionaliza con el conjugado.</li><li><strong>3.</strong> Cancela el factor que se anula y vuelve a sustituir.</li><li><strong>4.</strong> Si hay valor absoluto o función por tramos, calcula los laterales por separado.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to3}\\frac{x^2-9}{x-3}=\\lim_{x\\to3}(x+3)=6\\).</div>\n<div class=\"err\"><b>Error común:</b> escribir \\(\\frac00=0\\) o detenerse ahí. También olvidar que \\(\\sqrt{x^2}=|x|\\), lo que cambia el signo de los límites en \\(-\\infty\\).</div>"
+   "lesson": "<h3>Idea central</h3><p>Un límite describe hacia dónde <strong>se acerca</strong> \\(f(x)\\) cuando \\(x\\) se aproxima a \\(a\\), sin importar cuánto vale (o si existe) \\(f(a)\\). Por eso, mientras calculas el límite, \\(x\\ne a\\) y puedes cancelar el factor \\((x-a)\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Sustitución directa:</strong> si al reemplazar sale un número, ese es el límite.</li><li><strong>Indeterminación \\(\\frac00\\):</strong> no es 0 ni «no existe»; es una señal de que hay un factor común escondido.</li><li><strong>Laterales:</strong> \\(\\lim_{x\\to a}f(x)\\) existe solo si \\(\\lim_{x\\to a^-}=\\lim_{x\\to a^+}\\).</li><li><strong>Al infinito:</strong> divide entre la mayor potencia de \\(x\\); con grados iguales, el límite es el cociente de coeficientes principales.</li><li><strong>Límite notable:</strong> \\(\\lim_{x\\to0}\\frac{\\sin x}{x}=1\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Sustituye.</li><li><strong>2.</strong> Si sale \\(\\frac00\\), factoriza (diferencia de cuadrados o cubos) o racionaliza con el conjugado.</li><li><strong>3.</strong> Cancela el factor que se anula y vuelve a sustituir.</li><li><strong>4.</strong> Si hay valor absoluto o función por tramos, calcula los laterales por separado.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to3}\\frac{x^2-9}{x-3}\\) \\(=\\lim_{x\\to3}(x+3)\\) \\(=6\\).</div>\n<div class=\"err\"><b>Error común:</b> escribir \\(\\frac00=0\\) o detenerse ahí. También olvidar que \\(\\sqrt{x^2}=|x|\\), lo que cambia el signo de los límites en \\(-\\infty\\).</div>"
   },
   {
    "id": "cont",
@@ -383,13 +412,13 @@
      "q": "<p>\\(f(x)=\\begin{cases}x^2+k,& x\\lt1\\\\2x+3,& x\\ge1\\end{cases}\\). ¿Qué \\(k\\) hace a \\(f\\) continua en \\(x=1\\)?</p>",
      "checks": [
       {
-       "p": "k",
-       "o": [
-        "\\(4\\)",
-        "\\(5\\)",
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(-4\\)"
+       "t": "num",
+       "p": "Valor de k",
+       "f": [
+        {
+         "l": "k",
+         "a": 4
+        }
        ]
       }
      ],
@@ -469,8 +498,8 @@
      ],
      "steps": [
       "\\(f(2)=3\\), \\(\\lim_{2^-}=3\\), \\(\\lim_{2^+}=3\\): continua.",
-      "\\(f'_-(2)=\\lim_{h\\to0^-}\\frac{(2+h)^2-1-3}{h}=\\lim(4+h)=4\\).",
-      "\\(f'_+(2)=\\lim_{h\\to0^+}\\frac{3h}{h}=3\\).",
+      "\\(f'_-(2)\\) \\(=\\lim_{h\\to0^-}\\frac{(2+h)^2-1-3}{h}\\) \\(=\\lim(4+h)\\) \\(=4\\).",
+      "\\(f'_+(2)\\) \\(=\\lim_{h\\to0^+}\\frac{3h}{h}\\) \\(=3\\).",
       "\\(4\\neq3\\): esquina."
      ],
      "ans": "Continua, no derivable",
@@ -510,7 +539,7 @@
      "steps": [
       "\\(\\lim_{2^-}f=4+2a+1=5+2a\\).",
       "\\(\\lim_{2^+}f=2b+3\\).",
-      "\\(5+2a=2b+3\\iff2a=2b-2\\iff a=b-1\\). \\(\\blacksquare\\)"
+      "\\(5+2a\\) \\(=2b+3\\iff2a\\) \\(=2b-2\\iff a\\) \\(=b-1\\). \\(\\blacksquare\\)"
      ],
      "ans": "\\(5+2a=2b+3\\), de donde \\(a=b-1\\)",
      "hint": "Calcula cada lateral por separado.",
@@ -556,9 +585,9 @@
      ],
      "steps": [
       "En 0: \\(L(0)=0\\) y ambos laterales valen 0. Continua.",
-      "\\(L'_-(0)=\\lim_{h\\to0^-}\\frac{\\sin h}{h}=1\\); \\(L'_+(0)=\\lim\\frac hh=1\\). Derivable.",
+      "\\(L'_-(0)\\) \\(=\\lim_{h\\to0^-}\\frac{\\sin h}{h}\\) \\(=1\\); \\(L'_+(0)=\\lim\\frac hh=1\\). Derivable.",
       "En 1: \\(L(1)=\\cos2\\pi=1\\); laterales: \\(1\\) y \\(1\\). Continua.",
-      "\\(L'_-(1)=1\\); \\(L'_+(1)=\\lim_{h\\to0^+}\\frac{\\cos(2\\pi h)-1}{h}=0\\). \\(1\\neq0\\): no derivable."
+      "\\(L'_-(1)=1\\); \\(L'_+(1)\\) \\(=\\lim_{h\\to0^+}\\frac{\\cos(2\\pi h)-1}{h}\\) \\(=0\\). \\(1\\neq0\\): no derivable."
      ],
      "ans": "En 0: continua y derivable (V). En 1: continua, no derivable (F).",
      "hint": "Recuerda \\(\\cos(2\\pi(1+h))=\\cos(2\\pi h)\\).",
@@ -609,7 +638,7 @@
       "En 0: \\(f(0)=0\\); laterales 0 y 0. Continua.",
       "\\(f'_-(0)=\\lim\\frac{e^h-1}{h}=1\\); \\(f'_+(0)=\\lim\\frac{h^2}{h}=0\\). No derivable.",
       "En 1: \\(f(1)=1\\); laterales 1 y 1. Continua.",
-      "\\(f'_-(1)=\\lim\\frac{(1+h)^2-1}{h}=2\\); \\(f'_+(1)=\\lim\\frac{2\\ln(1+h)}{h}=2\\). Derivable, \\(f'(1)=2\\)."
+      "\\(f'_-(1)\\) \\(=\\lim\\frac{(1+h)^2-1}{h}\\) \\(=2\\); \\(f'_+(1)\\) \\(=\\lim\\frac{2\\ln(1+h)}{h}\\) \\(=2\\). Derivable, \\(f'(1)=2\\)."
      ],
      "ans": "En 0: continua, no derivable. En 1: continua y derivable.",
      "hint": "Límites notables de e y ln.",
@@ -638,13 +667,17 @@
      "q": "<p>Halla \\(a,b\\) para que \\(f(x)=\\begin{cases}x^2,& x\\le1\\\\ax+b,& x\\gt1\\end{cases}\\) sea derivable en \\(x=1\\).</p>",
      "checks": [
       {
-       "p": "(a, b)",
-       "o": [
-        "\\(a=2,\\ b=-1\\)",
-        "\\(a=1,\\ b=0\\)",
-        "\\(a=2,\\ b=1\\)",
-        "\\(a=-1,\\ b=2\\)",
-        "\\(a=0,\\ b=1\\)"
+       "t": "num",
+       "p": "Parámetros",
+       "f": [
+        {
+         "l": "a",
+         "a": 2
+        },
+        {
+         "l": "b",
+         "a": -1
+        }
        ]
       }
      ],
@@ -690,18 +723,21 @@
      "q": "<p>Por definición, halla \\(f'(x)\\) para \\(f(x)=x^2-2x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(2x-2\\)",
-        "\\(2x\\)",
-        "\\(x-2\\)",
-        "\\(2x-2+h\\)",
-        "\\(x^2-2\\)"
+       "t": "expr",
+       "p": "Escribe f′(x).",
+       "f": [
+        {
+         "a": "2*x-2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f(x+h)-f(x)=2xh+h^2-2h\\).",
+      "\\(f(x+h)-f(x)\\) \\(=2xh+h^2-2h\\).",
       "Entre \\(h\\): \\(2x+h-2\\).",
       "\\(h\\to0\\): \\(2x-2\\)."
      ],
@@ -726,18 +762,18 @@
      "q": "<p>Por definición, halla \\(f'(1)\\) para \\(f(x)=x^2+3x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\)",
-       "o": [
-        "\\(5\\)",
-        "\\(4\\)",
-        "\\(3\\)",
-        "\\(2\\)",
-        "\\(7\\)"
+       "t": "expr",
+       "p": "Valor de f′(1)",
+       "f": [
+        {
+         "a": "5",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f(1+h)=(1+h)^2+3(1+h)=4+5h+h^2\\); \\(f(1)=4\\).",
+      "\\(f(1+h)\\) \\(=(1+h)^2+3(1+h)\\) \\(=4+5h+h^2\\); \\(f(1)=4\\).",
       "\\(\\dfrac{5h+h^2}{h}=5+h\\).",
       "\\(h\\to0\\): \\(5\\)."
      ],
@@ -762,13 +798,13 @@
      "q": "<p>Por definición, halla \\(f'(2)\\) para \\(f(x)=\\frac1x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(2)\\)",
-       "o": [
-        "\\(-\\frac14\\)",
-        "\\(\\frac14\\)",
-        "\\(-\\frac12\\)",
-        "\\(\\frac12\\)",
-        "\\(-4\\)"
+       "t": "expr",
+       "p": "Valor de f′(2)",
+       "f": [
+        {
+         "a": "-1/4",
+         "v": []
+        }
        ]
       }
      ],
@@ -799,13 +835,16 @@
      "q": "<p>Por definición, halla \\(f'(x)\\) para \\(f(x)=\\sqrt{x+2}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{1}{2\\sqrt{x+2}}\\)",
-        "\\(\\dfrac{1}{\\sqrt{x+2}}\\)",
-        "\\(2\\sqrt{x+2}\\)",
-        "\\(\\dfrac{1}{2\\sqrt x}\\)",
-        "\\(\\dfrac{x+2}{2}\\)"
+       "t": "expr",
+       "p": "Escribe f′(x).",
+       "f": [
+        {
+         "a": "1/(2*sqrt(x+2))",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -836,19 +875,28 @@
      "q": "<p>Por definición, halla \\(f'(x)\\) para \\(f(x)=\\dfrac{x}{x-1}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(-\\dfrac{1}{(x-1)^2}\\)",
-        "\\(\\dfrac{1}{(x-1)^2}\\)",
-        "\\(\\dfrac{1}{x-1}\\)",
-        "\\(\\dfrac{2x-1}{(x-1)^2}\\)",
-        "\\(-\\dfrac{x}{(x-1)^2}\\)"
+       "t": "expr",
+       "p": "Escribe f′(x).",
+       "f": [
+        {
+         "a": "-1/(x-1)^2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) =",
+         "dom": {
+          "x": [
+           1.5,
+           4
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
       "Común denominador \\((x+h-1)(x-1)\\).",
-      "Numerador: \\((x+h)(x-1)-x(x+h-1)=-h\\).",
+      "Numerador: \\((x+h)(x-1)-x(x+h-1)\\) \\(=-h\\).",
       "\\(\\dfrac{-1}{(x+h-1)(x-1)}\\to-\\dfrac1{(x-1)^2}\\)."
      ],
      "ans": "\\(-\\dfrac{1}{(x-1)^2}\\)",
@@ -873,20 +921,34 @@
      "q": "<p>Por definición, halla \\(f'(x)\\) para \\(f(x)=x\\sqrt{x+b}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{3x+2b}{2\\sqrt{x+b}}\\)",
-        "\\(\\dfrac{x}{2\\sqrt{x+b}}\\)",
-        "\\(\\sqrt{x+b}\\)",
-        "\\(\\dfrac{3x+b}{2\\sqrt{x+b}}\\)",
-        "\\(\\dfrac{1}{2\\sqrt{x+b}}\\)"
+       "t": "expr",
+       "p": "Escribe f′(x) (en términos de x y b).",
+       "f": [
+        {
+         "a": "(3*x+2*b)/(2*sqrt(x+b))",
+         "v": [
+          "x",
+          "b"
+         ],
+         "l": "f′(x) =",
+         "dom": {
+          "x": [
+           0.3,
+           3
+          ],
+          "b": [
+           0.3,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "Suma y resta \\(x\\sqrt{x+h+b}\\): \\(\\dfrac{(x+h)\\sqrt{x+h+b}-x\\sqrt{x+b}}{h}=\\sqrt{x+h+b}+x\\,\\dfrac{\\sqrt{x+h+b}-\\sqrt{x+b}}{h}\\).",
+      "Suma y resta \\(x\\sqrt{x+h+b}\\): \\(\\dfrac{(x+h)\\sqrt{x+h+b}-x\\sqrt{x+b}}{h}\\) \\(=\\sqrt{x+h+b}+x\\,\\dfrac{\\sqrt{x+h+b}-\\sqrt{x+b}}{h}\\).",
       "El primer término \\(\\to\\sqrt{x+b}\\). El segundo, con conjugado, \\(\\to\\dfrac{x}{2\\sqrt{x+b}}\\).",
-      "Suma: \\(\\dfrac{2(x+b)+x}{2\\sqrt{x+b}}=\\dfrac{3x+2b}{2\\sqrt{x+b}}\\)."
+      "Suma: \\(\\dfrac{2(x+b)+x}{2\\sqrt{x+b}}\\) \\(=\\dfrac{3x+2b}{2\\sqrt{x+b}}\\)."
      ],
      "ans": "\\(\\dfrac{3x+2b}{2\\sqrt{x+b}}\\)",
      "hint": "Suma y resta \\(x\\sqrt{x+h+b}\\) en el numerador.",
@@ -911,13 +973,27 @@
      "q": "<p>Por definición, calcula \\(f'(x)\\) para \\(f(x)=x^3-a^3\\sqrt x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(3x^2-\\dfrac{a^3}{2\\sqrt x}\\)",
-        "\\(3x^2-3a^2\\sqrt x\\)",
-        "\\(3x^2-\\dfrac{a^3}{\\sqrt x}\\)",
-        "\\(3x^2+\\dfrac{a^3}{2\\sqrt x}\\)",
-        "\\(3x^2-\\dfrac{3a^2}{2\\sqrt x}\\)"
+       "t": "expr",
+       "p": "Escribe f′(x) (en términos de x y a).",
+       "f": [
+        {
+         "a": "3*x^2-a^3/(2*sqrt(x))",
+         "v": [
+          "x",
+          "a"
+         ],
+         "l": "f′(x) =",
+         "dom": {
+          "x": [
+           0.3,
+           3
+          ],
+          "a": [
+           0.3,
+           2
+          ]
+         }
+        }
        ]
       }
      ],
@@ -952,19 +1028,22 @@
      "q": "<p>Por definición, calcula \\(f'(x)\\) para \\(f(x)=x^3-2x+3\\sqrt{x+1}\\), \\(x\\gt-1\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(3x^2-2+\\dfrac{3}{2\\sqrt{x+1}}\\)",
-        "\\(3x^2-2+\\dfrac{1}{2\\sqrt{x+1}}\\)",
-        "\\(3x^2+\\dfrac{3}{2\\sqrt{x+1}}\\)",
-        "\\(3x^2-2+\\dfrac{3}{\\sqrt{x+1}}\\)",
-        "\\(3x^2-2-\\dfrac{3}{2\\sqrt{x+1}}\\)"
+       "t": "expr",
+       "p": "Escribe f′(x).",
+       "f": [
+        {
+         "a": "3*x^2-2+3/(2*sqrt(x+1))",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
      "steps": [
       "Tres límites: cúbico \\(\\to3x^2\\); lineal \\(\\frac{-2h}h=-2\\).",
-      "Raíz: \\(3\\dfrac{\\sqrt{x+h+1}-\\sqrt{x+1}}{h}\\cdot\\dfrac{\\sqrt{x+h+1}+\\sqrt{x+1}}{\\sqrt{x+h+1}+\\sqrt{x+1}}=\\dfrac{3}{\\sqrt{x+h+1}+\\sqrt{x+1}}\\).",
+      "Raíz: \\(3\\dfrac{\\sqrt{x+h+1}-\\sqrt{x+1}}{h}\\cdot\\dfrac{\\sqrt{x+h+1}+\\sqrt{x+1}}{\\sqrt{x+h+1}+\\sqrt{x+1}}\\) \\(=\\dfrac{3}{\\sqrt{x+h+1}+\\sqrt{x+1}}\\).",
       "\\(h\\to0\\): \\(\\dfrac{3}{2\\sqrt{x+1}}\\)."
      ],
      "ans": "\\(3x^2-2+\\dfrac{3}{2\\sqrt{x+1}}\\)",
@@ -983,7 +1062,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La derivada es la pendiente de la recta tangente, y se obtiene como límite de pendientes de rectas secantes cuando los dos puntos se juntan.</p>\n<h3>Conceptos clave</h3><ul><li>\\(f'(x)=\\displaystyle\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\).</li><li>Al sustituir \\(h=0\\) directamente siempre sale \\(\\frac00\\): hay que simplificar primero.</li><li>El objetivo algebraico es que \\(h\\) quede como factor de todo el numerador.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe \\(f(x+h)\\) con cuidado (paréntesis en cada \\(x\\)).</li><li><strong>2.</strong> Resta \\(f(x)\\) y simplifica: los términos sin \\(h\\) deben cancelarse.</li><li><strong>3.</strong> Raíces: multiplica por el conjugado. Fracciones: común denominador.</li><li><strong>4.</strong> Cancela \\(h\\) y recién entonces haz \\(h\\to0\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(f(x)=\\sqrt x\\): \\(\\frac{\\sqrt{x+h}-\\sqrt x}{h}\\cdot\\frac{\\sqrt{x+h}+\\sqrt x}{\\sqrt{x+h}+\\sqrt x}=\\frac{1}{\\sqrt{x+h}+\\sqrt x}\\to\\frac1{2\\sqrt x}\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el paréntesis al elevar \\((x+h)^2=x^2+2xh+h^2\\), o usar reglas de derivación cuando piden explícitamente «por definición».</div>"
+   "lesson": "<h3>Idea central</h3><p>La derivada es la pendiente de la recta tangente, y se obtiene como límite de pendientes de rectas secantes cuando los dos puntos se juntan.</p>\n<h3>Conceptos clave</h3><ul><li>\\(f'(x)\\) \\(=\\displaystyle\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\).</li><li>Al sustituir \\(h=0\\) directamente siempre sale \\(\\frac00\\): hay que simplificar primero.</li><li>El objetivo algebraico es que \\(h\\) quede como factor de todo el numerador.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe \\(f(x+h)\\) con cuidado (paréntesis en cada \\(x\\)).</li><li><strong>2.</strong> Resta \\(f(x)\\) y simplifica: los términos sin \\(h\\) deben cancelarse.</li><li><strong>3.</strong> Raíces: multiplica por el conjugado. Fracciones: común denominador.</li><li><strong>4.</strong> Cancela \\(h\\) y recién entonces haz \\(h\\to0\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(f(x)=\\sqrt x\\): \\(\\frac{\\sqrt{x+h}-\\sqrt x}{h}\\cdot\\frac{\\sqrt{x+h}+\\sqrt x}{\\sqrt{x+h}+\\sqrt x}\\) \\(=\\frac{1}{\\sqrt{x+h}+\\sqrt x}\\to\\frac1{2\\sqrt x}\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el paréntesis al elevar \\((x+h)^2=x^2+2xh+h^2\\), o usar reglas de derivación cuando piden explícitamente «por definición».</div>"
   },
   {
    "id": "reg",
@@ -1005,13 +1084,16 @@
      "q": "<p>Deriva \\(f(x)=\\dfrac{x-3}{x+3}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{6}{(x+3)^2}\\)",
-        "\\(\\dfrac{-6}{(x+3)^2}\\)",
-        "\\(\\dfrac{2x}{(x+3)^2}\\)",
-        "\\(1\\)",
-        "\\(\\dfrac{6}{x+3}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "6/(x+3)^2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1040,13 +1122,16 @@
      "q": "<p>Deriva \\(f(x)=x^3\\ln x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(3x^2\\ln x+x^2\\)",
-        "\\(3x^2\\ln x\\)",
-        "\\(3x\\)",
-        "\\(x^2\\ln x+3x^2\\)",
-        "\\(3x^2+\\frac1x\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "3*x^2*ln(x)+x^2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1075,13 +1160,16 @@
      "q": "<p>Deriva \\(f(x)=\\dfrac{x^2-7}{x^2+7}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{28x}{(x^2+7)^2}\\)",
-        "\\(\\dfrac{-28x}{(x^2+7)^2}\\)",
-        "\\(\\dfrac{14x}{(x^2+7)^2}\\)",
-        "\\(1\\)",
-        "\\(\\dfrac{4x^3}{(x^2+7)^2}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "28*x/(x^2+7)^2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1110,13 +1198,16 @@
      "q": "<p>Deriva \\(g(x)=\\dfrac{\\cos x}{x+1}\\).</p>",
      "checks": [
       {
-       "p": "\\(g'(x)\\)",
-       "o": [
-        "\\(\\dfrac{-(x+1)\\sin x-\\cos x}{(x+1)^2}\\)",
-        "\\(\\dfrac{(x+1)\\sin x-\\cos x}{(x+1)^2}\\)",
-        "\\(\\dfrac{-\\sin x}{1}\\)",
-        "\\(\\dfrac{-(x+1)\\sin x+\\cos x}{(x+1)^2}\\)",
-        "\\(\\dfrac{\\cos x-\\sin x}{(x+1)^2}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "(-(x+1)*sin(x)-cos(x))/(x+1)^2",
+         "v": [
+          "x"
+         ],
+         "l": "g′(x) ="
+        }
        ]
       }
      ],
@@ -1145,13 +1236,16 @@
      "q": "<p>Deriva \\(f(x)=(2x^3-x)e^x\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(e^x(2x^3+6x^2-x-1)\\)",
-        "\\(e^x(6x^2-1)\\)",
-        "\\(e^x(2x^3-x)\\)",
-        "\\(e^x(2x^3+6x^2+x-1)\\)",
-        "\\(6x^2e^x\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "e^x*(2*x^3+6*x^2-x-1)",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1178,13 +1272,16 @@
      "q": "<p>Deriva \\(h(x)=\\dfrac{x^2\\ln x}{x+1}\\), \\(x\\gt0\\).</p>",
      "checks": [
       {
-       "p": "\\(h'(x)\\)",
-       "o": [
-        "\\(\\dfrac{x^2\\ln x+2x\\ln x+x^2+x}{(x+1)^2}\\)",
-        "\\(\\dfrac{2x\\ln x+x}{(x+1)^2}\\)",
-        "\\(\\dfrac{x^2\\ln x+2x\\ln x+x^2-x}{(x+1)^2}\\)",
-        "\\(\\dfrac{3x^2\\ln x+x}{(x+1)^2}\\)",
-        "\\(\\dfrac{2x\\ln x+x}{x+1}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "(x^2*ln(x)+2*x*ln(x)+x^2+x)/(x+1)^2",
+         "v": [
+          "x"
+         ],
+         "l": "h′(x) ="
+        }
        ]
       }
      ],
@@ -1216,13 +1313,16 @@
      "q": "<p>Deriva \\(f(x)=\\dfrac{e^x}{x^2+1}\\) y escribe el resultado factorizado.</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{e^x(x-1)^2}{(x^2+1)^2}\\)",
-        "\\(\\dfrac{e^x(x+1)^2}{(x^2+1)^2}\\)",
-        "\\(\\dfrac{e^x}{2x}\\)",
-        "\\(\\dfrac{e^x(x^2-2x)}{(x^2+1)^2}\\)",
-        "\\(\\dfrac{e^x(1-x)}{(x^2+1)^2}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "e^x*(x-1)^2/(x^2+1)^2",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1245,7 +1345,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Las reglas evitan repetir el límite cada vez. Producto y cociente se usan cuando dos funciones se multiplican o dividen y no conviene simplificar antes.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Producto:</strong> \\((uv)'=u'v+uv'\\).</li><li><strong>Cociente:</strong> \\(\\left(\\frac uv\\right)'=\\frac{u'v-uv'}{v^2}\\) (el orden importa).</li><li><strong>Potencia:</strong> \\((x^n)'=nx^{n-1}\\), también para \\(n\\) fraccionario o negativo.</li><li>Reescribe raíces y fracciones como potencias: \\(\\frac{3}{x^2}=3x^{-2}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\left(\\frac{x^2}{x+1}\\right)'=\\frac{2x(x+1)-x^2}{(x+1)^2}=\\frac{x^2+2x}{(x+1)^2}\\).</div>\n<div class=\"err\"><b>Error común:</b> invertir el orden del numerador en el cociente (cambia el signo) o derivar «arriba entre abajo» por separado.</div>"
+   "lesson": "<h3>Idea central</h3><p>Las reglas evitan repetir el límite cada vez. Producto y cociente se usan cuando dos funciones se multiplican o dividen y no conviene simplificar antes.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Producto:</strong> \\((uv)'=u'v+uv'\\).</li><li><strong>Cociente:</strong> \\(\\left(\\frac uv\\right)'=\\frac{u'v-uv'}{v^2}\\) (el orden importa).</li><li><strong>Potencia:</strong> \\((x^n)'=nx^{n-1}\\), también para \\(n\\) fraccionario o negativo.</li><li>Reescribe raíces y fracciones como potencias: \\(\\frac{3}{x^2}=3x^{-2}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\left(\\frac{x^2}{x+1}\\right)'\\) \\(=\\frac{2x(x+1)-x^2}{(x+1)^2}\\) \\(=\\frac{x^2+2x}{(x+1)^2}\\).</div>\n<div class=\"err\"><b>Error común:</b> invertir el orden del numerador en el cociente (cambia el signo) o derivar «arriba entre abajo» por separado.</div>"
   },
   {
    "id": "cad",
@@ -1267,13 +1367,16 @@
      "q": "<p>Deriva \\(f(x)=e^{\\sin(x^2)}\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(2x\\cos(x^2)\\,e^{\\sin(x^2)}\\)",
-        "\\(\\cos(x^2)\\,e^{\\sin(x^2)}\\)",
-        "\\(2x\\,e^{\\sin(x^2)}\\)",
-        "\\(e^{\\cos(x^2)}\\)",
-        "\\(2x\\cos(x)\\,e^{\\sin(x^2)}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "2*x*cos(x^2)*e^(sin(x^2))",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1302,18 +1405,27 @@
      "q": "<p>Deriva \\(g(x)=\\ln(\\cos x)\\).</p>",
      "checks": [
       {
-       "p": "\\(g'(x)\\)",
-       "o": [
-        "\\(-\\tan x\\)",
-        "\\(\\tan x\\)",
-        "\\(\\frac{1}{\\cos x}\\)",
-        "\\(-\\cot x\\)",
-        "\\(-\\sin x\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "-tan(x)",
+         "v": [
+          "x"
+         ],
+         "l": "g′(x) =",
+         "dom": {
+          "x": [
+           0.1,
+           1.4
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\dfrac{(\\cos x)'}{\\cos x}=\\dfrac{-\\sin x}{\\cos x}\\).",
+      "\\(\\dfrac{(\\cos x)'}{\\cos x}\\) \\(=\\dfrac{-\\sin x}{\\cos x}\\).",
       "\\(=-\\tan x\\)."
      ],
      "ans": "\\(-\\tan x\\)",
@@ -1336,13 +1448,22 @@
      "q": "<p>Deriva \\(f(x)=\\ln(\\ln x)\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{1}{x\\ln x}\\)",
-        "\\(\\dfrac{1}{\\ln x}\\)",
-        "\\(\\dfrac{\\ln x}{x}\\)",
-        "\\(\\dfrac1x\\)",
-        "\\(\\dfrac{1}{x^2\\ln x}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "1/(x*ln(x))",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) =",
+         "dom": {
+          "x": [
+           1.2,
+           4
+          ]
+         }
+        }
        ]
       }
      ],
@@ -1369,13 +1490,16 @@
      "q": "<p>Deriva \\(f(x)=\\sin(\\cos(x^2+2))\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(-2x\\sin(x^2+2)\\cos(\\cos(x^2+2))\\)",
-        "\\(2x\\sin(x^2+2)\\cos(\\cos(x^2+2))\\)",
-        "\\(\\cos(\\cos(x^2+2))\\)",
-        "\\(-\\sin(x^2+2)\\cos(\\cos(x^2+2))\\)",
-        "\\(-2x\\cos(x^2+2)\\sin(\\sin(x^2+2))\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "-2*x*sin(x^2+2)*cos(cos(x^2+2))",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1404,18 +1528,21 @@
      "q": "<p>Deriva \\(f(x)=\\ln(axe^{-x})\\), \\(a\\gt0\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\frac1x-1\\)",
-        "\\(\\frac1x+1\\)",
-        "\\(\\frac{1}{axe^{-x}}\\)",
-        "\\(\\frac ax-1\\)",
-        "\\(-\\frac1x\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "1/x-1",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\ln a+\\ln x+\\ln e^{-x}=\\ln a+\\ln x-x\\).",
+      "\\(\\ln a+\\ln x+\\ln e^{-x}\\) \\(=\\ln a+\\ln x-x\\).",
       "Deriva: \\(0+\\frac1x-1\\)."
      ],
      "ans": "\\(\\frac1x-1\\)",
@@ -1437,13 +1564,22 @@
      "q": "<p>Deriva \\(T(x)=\\sqrt{\\tan(e^x)}\\).</p>",
      "checks": [
       {
-       "p": "\\(T'(x)\\)",
-       "o": [
-        "\\(\\dfrac{e^x\\sec^2(e^x)}{2\\sqrt{\\tan(e^x)}}\\)",
-        "\\(\\dfrac{\\sec^2(e^x)}{2\\sqrt{\\tan(e^x)}}\\)",
-        "\\(\\dfrac{e^x}{2\\sqrt{\\tan(e^x)}}\\)",
-        "\\(e^x\\sec^2(e^x)\\sqrt{\\tan(e^x)}\\)",
-        "\\(\\dfrac{e^x\\tan(e^x)}{2}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "e^x*sec(e^x)^2/(2*sqrt(tan(e^x)))",
+         "v": [
+          "x"
+         ],
+         "l": "T′(x) =",
+         "dom": {
+          "x": [
+           -2,
+           0.4
+          ]
+         }
+        }
        ]
       }
      ],
@@ -1474,18 +1610,21 @@
      "q": "<p>Deriva \\(g(x)=x\\ln(x^2e^{-x})\\).</p>",
      "checks": [
       {
-       "p": "\\(g'(x)\\)",
-       "o": [
-        "\\(2\\ln x+2-2x\\)",
-        "\\(2\\ln x-x\\)",
-        "\\(2\\ln x+2-x\\)",
-        "\\(\\frac2x-1\\)",
-        "\\(2\\ln x-2x\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "2*ln(x)+2-2*x",
+         "v": [
+          "x"
+         ],
+         "l": "g′(x) ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\ln(x^2e^{-x})=2\\ln x-x\\Rightarrow g=2x\\ln x-x^2\\).",
+      "\\(\\ln(x^2e^{-x})=2\\ln x-x\\) \\(\\Rightarrow  g=2x\\ln x-x^2\\).",
       "\\((2x\\ln x)'=2\\ln x+2\\); \\((x^2)'=2x\\).",
       "\\(g'=2\\ln x+2-2x\\)."
      ],
@@ -1509,21 +1648,30 @@
      "id": "cad8",
      "lvl": 3,
      "title": "Lambda del repaso",
-     "q": "<p>Deriva \\(\\Lambda(t)=\\dfrac{1}{3e^{3t}(1-t)^3}\\).</p>",
+     "q": "<p>Deriva \\(\\Lambda(t)\\) \\(=\\dfrac{1}{3e^{3t}(1-t)^3}\\).</p>",
      "checks": [
       {
-       "p": "\\(\\Lambda'(t)\\)",
-       "o": [
-        "\\(\\dfrac{t}{e^{3t}(1-t)^4}\\)",
-        "\\(\\dfrac{-t}{e^{3t}(1-t)^4}\\)",
-        "\\(\\dfrac{1}{e^{3t}(1-t)^4}\\)",
-        "\\(\\dfrac{t}{3e^{3t}(1-t)^4}\\)",
-        "\\(\\dfrac{2-t}{e^{3t}(1-t)^4}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "t/(e^(3*t)*(1-t)^4)",
+         "v": [
+          "t"
+         ],
+         "l": "Λ′(t) =",
+         "dom": {
+          "t": [
+           0,
+           0.8
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "Reescribe: \\(\\Lambda=\\tfrac13e^{-3t}(1-t)^{-3}\\).",
+      "Reescribe: \\(\\Lambda\\) \\(=\\tfrac13e^{-3t}(1-t)^{-3}\\).",
       "Producto: \\(\\tfrac13\\left[-3e^{-3t}(1-t)^{-3}+e^{-3t}\\cdot3(1-t)^{-4}\\right]\\).",
       "Factoriza \\(e^{-3t}(1-t)^{-4}\\): \\([-(1-t)+1]=t\\)."
      ],
@@ -1551,13 +1699,16 @@
      "q": "<p>Deriva \\(f(x)=(2^{x+1}-2^x)^3\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(3\\ln2\\cdot8^x\\)",
-        "\\(3(2^{x+1}-2^x)^2\\)",
-        "\\(3\\cdot8^x\\)",
-        "\\(\\ln2\\cdot8^x\\)",
-        "\\(8^x\\ln8\\cdot3\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "3*ln(2)*8^x",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) ="
+        }
        ]
       }
      ],
@@ -1580,7 +1731,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Cuando una función está dentro de otra, la derivada se multiplica capa por capa: primero la de afuera (sin tocar lo de adentro) y luego por la derivada de lo de adentro.</p>\n<h3>Conceptos clave</h3><ul><li>\\((f(g(x)))'=f'(g(x))\\cdot g'(x)\\).</li><li>\\((u^n)'=nu^{n-1}u'\\), \\((e^u)'=e^uu'\\), \\((\\ln u)'=\\frac{u'}u\\).</li><li>\\((\\sin u)'=\\cos u\\,u'\\), \\((\\cos u)'=-\\sin u\\,u'\\), \\((\\tan u)'=\\sec^2u\\,u'\\).</li><li>Con tres capas hay tres factores.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica la capa exterior.</li><li><strong>2.</strong> Deríva la exterior dejando igual su argumento.</li><li><strong>3.</strong> Multiplica por la derivada del argumento; repite si hay más capas.</li><li><strong>4.</strong> Si hay \\(\\ln\\) de productos o potencias, sepáralo con propiedades antes.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\frac{d}{dx}\\sin^3(2x)=3\\sin^2(2x)\\cdot\\cos(2x)\\cdot2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar multiplicar por la derivada interna, sobre todo en \\(e^{kx}\\) o \\(\\sin(kx)\\).</div>"
+   "lesson": "<h3>Idea central</h3><p>Cuando una función está dentro de otra, la derivada se multiplica capa por capa: primero la de afuera (sin tocar lo de adentro) y luego por la derivada de lo de adentro.</p>\n<h3>Conceptos clave</h3><ul><li>\\((f(g(x)))'\\) \\(=f'(g(x))\\cdot g'(x)\\).</li><li>\\((u^n)'=nu^{n-1}u'\\), \\((e^u)'=e^uu'\\), \\((\\ln u)'=\\frac{u'}u\\).</li><li>\\((\\sin u)'=\\cos u\\,u'\\), \\((\\cos u)'=-\\sin u\\,u'\\), \\((\\tan u)'=\\sec^2u\\,u'\\).</li><li>Con tres capas hay tres factores.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica la capa exterior.</li><li><strong>2.</strong> Deríva la exterior dejando igual su argumento.</li><li><strong>3.</strong> Multiplica por la derivada del argumento; repite si hay más capas.</li><li><strong>4.</strong> Si hay \\(\\ln\\) de productos o potencias, sepáralo con propiedades antes.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\frac{d}{dx}\\sin^3(2x)\\) \\(=3\\sin^2(2x)\\cdot\\cos(2x)\\cdot2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar multiplicar por la derivada interna, sobre todo en \\(e^{kx}\\) o \\(\\sin(kx)\\).</div>"
   },
   {
    "id": "est",
@@ -1598,13 +1749,15 @@
      "q": "<p>Se muestra \\(f(x)=x^2\\) y su tangente en \\(x=1\\). Con los puntos marcados en la recta, estima \\(f'(1)\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\)",
-       "o": [
-        "\\(2\\)",
-        "\\(1\\)",
-        "\\(4\\)",
-        "\\(\\frac12\\)",
-        "\\(3\\)"
+       "t": "num",
+       "p": "Estima f′(1)",
+       "f": [
+        {
+         "l": "f′(1)",
+         "a": 2,
+         "e": "pendiente = Δy/Δx entre dos puntos de la recta.",
+         "tol": 0.05
+        }
        ]
       }
      ],
@@ -1633,13 +1786,13 @@
      "q": "<p>La tangente a \\(f\\) en \\(x=3\\) pasa por \\((1,5)\\) y \\((5,-3)\\). ¿Cuánto vale \\(f'(3)\\)?</p>",
      "checks": [
       {
-       "p": "\\(f'(3)\\)",
-       "o": [
-        "\\(-2\\)",
-        "\\(2\\)",
-        "\\(-\\frac12\\)",
-        "\\(-8\\)",
-        "\\(\\frac12\\)"
+       "t": "num",
+       "p": "Valor de f′(3)",
+       "f": [
+        {
+         "l": "f′(3)",
+         "a": -2
+        }
        ]
       }
      ],
@@ -1662,13 +1815,15 @@
      "q": "<p>(2 pts) Traza con regla la tangente en \\(x=1\\), elige dos puntos de ella y estima \\(f'(1)\\). Cada línea fina vale 0,05 en \\(x\\) y 0,1 en \\(y\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\) aproximado",
-       "o": [
-        "\\(\\approx-1.2\\)",
-        "\\(\\approx-0.5\\)",
-        "\\(\\approx1.2\\)",
-        "\\(\\approx-2.5\\)",
-        "\\(\\approx-0.25\\)"
+       "t": "num",
+       "p": "f′(1) aproximado",
+       "f": [
+        {
+         "l": "f′(1)",
+         "a": -1.2,
+         "e": "traza la tangente y mide Δy/Δx con la cuadrícula.",
+         "tol": 0.3
+        }
        ]
       }
      ],
@@ -1697,13 +1852,15 @@
      "q": "<p>(3 pts) Determina de forma aproximada la derivada en \\(x=1\\). Cada línea fina vale 0,1 en \\(x\\) y 0,5 en \\(y\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(1)\\) aproximado",
-       "o": [
-        "\\(\\approx-4.8\\)",
-        "\\(\\approx-2.3\\)",
-        "\\(\\approx-1\\)",
-        "\\(\\approx4.8\\)",
-        "\\(\\approx-10\\)"
+       "t": "num",
+       "p": "f′(1) aproximado",
+       "f": [
+        {
+         "l": "f′(1)",
+         "a": -4.8,
+         "e": "traza la tangente y mide Δy/Δx con la cuadrícula.",
+         "tol": 0.6
+        }
        ]
       }
      ],
@@ -1726,7 +1883,27 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La derivada en un punto es la pendiente de la tangente. Desde una gráfica la estimas dibujando esa tangente y midiendo su inclinación.</p>\n<h3>Conceptos clave</h3><ul><li>Traza una recta que toque la curva en el punto y siga su dirección.</li><li>Toma dos puntos <em>de la recta</em>, lejanos entre sí.</li><li>\\(m=\\frac{\\Delta y}{\\Delta x}\\) usando los valores de los ejes, no cuadraditos.</li><li>Curva bajando → pendiente negativa; máximo o mínimo → pendiente 0.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> si la tangente pasa por \\((1,2)\\) y \\((4,8)\\), \\(f'\\approx\\frac{6}{3}=2\\).</div>\n<div class=\"err\"><b>Error común:</b> contar cuadraditos cuando las escalas de los ejes son distintas.</div>"
+   "lesson": "<h3>Idea central</h3><p>La derivada en un punto es la pendiente de la tangente. Desde una gráfica la estimas dibujando esa tangente y midiendo su inclinación.</p>\n<h3>Conceptos clave</h3><ul><li>Traza una recta que toque la curva en el punto y siga su dirección.</li><li>Toma dos puntos <em>de la recta</em>, lejanos entre sí.</li><li>\\(m=\\frac{\\Delta y}{\\Delta x}\\) usando los valores de los ejes, no cuadraditos.</li><li>Curva bajando → pendiente negativa; máximo o mínimo → pendiente 0.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> si la tangente pasa por \\((1,2)\\) y \\((4,8)\\), \\(f'\\approx\\frac{6}{3}=2\\).</div>\n<div class=\"err\"><b>Error común:</b> contar cuadraditos cuando las escalas de los ejes son distintas.</div>",
+   "tools": [
+    {
+     "w": "plot",
+     "t": "La tangente en vivo",
+     "p": "Mueve el punto sobre f(x) = x² y mira cómo cambia la pendiente de la tangente.",
+     "o": {
+      "f": "x^2",
+      "xr": [
+       -3,
+       3
+      ],
+      "yr": [
+       -1,
+       8
+      ],
+      "x0": 1,
+      "der": false
+     }
+    }
+   ]
   },
   {
    "id": "lho",
@@ -1745,13 +1922,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(x+1)}{x}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(e\\)",
-        "No existe"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "1",
+         "v": []
+        }
        ]
       }
      ],
@@ -1779,13 +1956,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan(4x)}{x+\\sin(2x)}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac43\\)",
-        "\\(4\\)",
-        "\\(2\\)",
-        "\\(\\frac23\\)",
-        "\\(0\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "4/3",
+         "v": []
+        }
        ]
       }
      ],
@@ -1815,13 +1992,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0^+}x\\ln x\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(0\\)",
-        "\\(-\\infty\\)",
-        "\\(1\\)",
-        "\\(-1\\)",
-        "No existe"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "0",
+         "v": []
+        }
        ]
       }
      ],
@@ -1851,13 +2028,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to\\infty}xe^{-x}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(1\\)",
-        "\\(e\\)",
-        "\\(-\\infty\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "0",
+         "v": []
+        }
        ]
       }
      ],
@@ -1885,13 +2062,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12\\)",
-        "\\(1\\)",
-        "\\(0\\)",
-        "\\(\\infty\\)",
-        "\\(2\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "1/2",
+         "v": []
+        }
        ]
       }
      ],
@@ -1919,13 +2096,13 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2-5x+6}-x\\right)\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(-\\frac52\\)",
-        "\\(0\\)",
-        "\\(-5\\)",
-        "\\(\\frac52\\)",
-        "\\(\\infty\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "-5/2",
+         "v": []
+        }
        ]
       }
      ],
@@ -1954,18 +2131,18 @@
      "q": "<p>Calcula \\(\\displaystyle\\lim_{x\\to0}\\frac{x^2-\\sin^2x}{x^2\\sin^2x}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac13\\)",
-        "\\(0\\)",
-        "\\(1\\)",
-        "\\(\\frac16\\)",
-        "\\(\\infty\\)"
+       "t": "expr",
+       "p": "Escribe el valor exacto del límite.",
+       "f": [
+        {
+         "a": "1/3",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "Cerca de 0, \\(\\sin x\\approx x-\\frac{x^3}6\\Rightarrow\\sin^2x\\approx x^2-\\frac{x^4}3\\).",
+      "Cerca de 0, \\(\\sin x\\approx x-\\frac{x^3}6\\) \\(\\Rightarrow \\sin^2x\\approx x^2-\\frac{x^4}3\\).",
       "Numerador \\(\\approx\\frac{x^4}3\\); denominador \\(\\approx x^4\\).",
       "Límite \\(\\frac13\\). (Por L'Hôpital sale igual, pero requiere derivar 4 veces.)"
      ],
@@ -1983,9 +2160,72 @@
        "lhop"
       ]
      ]
+    },
+    {
+     "id": "lho8",
+     "lvl": 1,
+     "title": "¿Qué indeterminación es?",
+     "q": "<p>Al sustituir directamente, ¿qué forma aparece en cada límite?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada límite.",
+       "cats": [
+        "0/0",
+        "∞/∞",
+        "0·∞",
+        "∞ − ∞",
+        "No es indeterminado"
+       ],
+       "items": [
+        {
+         "x": "\\(\\lim_{x\\to0}\\frac{\\ln(x+1)}{x}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\lim_{x\\to\\infty}\\frac{5x^2+2}{3x^2-1}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\lim_{x\\to\\infty}xe^{-x}\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(\\lim_{x\\to0^+}x\\ln x\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(\\lim_{x\\to\\infty}\\left(\\sqrt{x^2+1}-x\\right)\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(\\lim_{x\\to0}\\frac{x+1}{x+2}\\)",
+         "c": 4,
+         "e": "Al sustituir sale 1/2: no hay indeterminación, el límite es 1/2."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "L’Hôpital solo se aplica directo a 0/0 e ∞/∞.",
+      "0·∞ se reescribe como cociente (x ln x = ln x / (1/x)); ∞ − ∞ con conjugado o común denominador. Si al sustituir sale un número, ese es el límite."
+     ],
+     "ans": "0/0, ∞/∞, 0·∞, 0·∞, ∞ − ∞, no",
+     "hint": "Sustituye y mira qué sale.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lhop"
+      ],
+      [
+       "formas"
+      ]
+     ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Si un límite da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes reemplazar el cociente por el cociente de las derivadas.</p>\n<h3>Conceptos clave</h3><ul><li>Se deriva numerador y denominador <strong>por separado</strong> (no es la regla del cociente).</li><li>Si sigue indeterminado, repite.</li><li>\\(0\\cdot\\infty\\): reescríbelo como cociente. \\(\\infty-\\infty\\): común denominador o conjugado.</li><li>Formas \\(1^\\infty,0^0,\\infty^0\\): toma \\(\\ln\\) primero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\overset{H}{=}\\lim\\frac{e^x-1}{2x}\\overset{H}{=}\\lim\\frac{e^x}2=\\frac12\\).</div>\n<div class=\"err\"><b>Error común:</b> aplicar L'Hôpital sin verificar la indeterminación, lo que da respuestas falsas.</div>"
+   "lesson": "<h3>Idea central</h3><p>Si un límite da \\(\\frac00\\) o \\(\\frac\\infty\\infty\\), puedes reemplazar el cociente por el cociente de las derivadas.</p>\n<h3>Conceptos clave</h3><ul><li>Se deriva numerador y denominador <strong>por separado</strong> (no es la regla del cociente).</li><li>Si sigue indeterminado, repite.</li><li>\\(0\\cdot\\infty\\): reescríbelo como cociente. \\(\\infty-\\infty\\): común denominador o conjugado.</li><li>Formas \\(1^\\infty,0^0,\\infty^0\\): toma \\(\\ln\\) primero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\overset{H}{=}\\lim\\frac{e^x-1}{2x}\\overset{H}{=}\\lim\\frac{e^x}2\\) \\(=\\frac12\\).</div>\n<div class=\"err\"><b>Error común:</b> aplicar L'Hôpital sin verificar la indeterminación, lo que da respuestas falsas.</div>"
   },
   {
    "id": "dif",
@@ -2006,18 +2246,18 @@
      "q": "<p>\\(f(x)=x^{3/2}\\), \\(x=4\\), \\(dx=0.05\\). Calcula \\(dy\\).</p>",
      "checks": [
       {
-       "p": "\\(dy\\)",
-       "o": [
-        "\\(0.15\\)",
-        "\\(0.075\\)",
-        "\\(0.3\\)",
-        "\\(0.1505\\)",
-        "\\(0.05\\)"
+       "t": "num",
+       "p": "Diferencial",
+       "f": [
+        {
+         "l": "dy",
+         "a": 0.15
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f'(x)=\\frac32\\sqrt x\\Rightarrow f'(4)=3\\).",
+      "\\(f'(x)=\\frac32\\sqrt x\\) \\(\\Rightarrow  f'(4)=3\\).",
       "\\(dy=3\\cdot0.05=0.15\\). (El cambio real es \\(\\approx0.15047\\).)"
      ],
      "ans": "\\(0.15\\)",
@@ -2041,13 +2281,16 @@
      "q": "<p>\\(y=\\ln(1+x^2)\\), \\(x=1\\), \\(dx=-0.02\\). ¿Error relativo porcentual aproximado respecto a \\(y(1)\\)?</p>",
      "checks": [
       {
-       "p": "Error %",
-       "o": [
-        "\\(\\approx2.89\\%\\)",
-        "\\(2\\%\\)",
-        "\\(\\approx1.44\\%\\)",
-        "\\(0.02\\%\\)",
-        "\\(\\approx4\\%\\)"
+       "t": "num",
+       "p": "Error relativo",
+       "f": [
+        {
+         "l": "Error",
+         "a": 2.89,
+         "u": "%",
+         "e": "dy/y con dy = f′(1)·dx.",
+         "tol": 0.05
+        }
        ]
       }
      ],
@@ -2078,19 +2321,21 @@
      "q": "<p>\\(Q(p)=12\\sqrt p\\). Linealiza en \\(p=9\\) y estima \\(Q(9.3)\\).</p>",
      "checks": [
       {
-       "p": "\\(Q(9.3)\\) estimado",
-       "o": [
-        "\\(36.6\\)",
-        "\\(36.3\\)",
-        "\\(37.8\\)",
-        "\\(36.06\\)",
-        "\\(38.4\\)"
+       "t": "num",
+       "p": "Estimación",
+       "f": [
+        {
+         "l": "Q(9.3) ≈",
+         "a": 36.6,
+         "e": "L(p) = Q(9) + Q′(9)(p − 9).",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(Q(9)=36\\); \\(Q'(p)=\\frac{6}{\\sqrt p}\\Rightarrow Q'(9)=2\\).",
-      "\\(L(p)=36+2(p-9)\\Rightarrow L(9.3)=36.6\\).",
+      "\\(Q(9)=36\\); \\(Q'(p)=\\frac{6}{\\sqrt p}\\) \\(\\Rightarrow  Q'(9)=2\\).",
+      "\\(L(p)=36+2(p-9)\\) \\(\\Rightarrow  L(9.3)=36.6\\).",
       "Real: \\(12\\sqrt{9.3}\\approx36.595\\); error \\(\\approx0.005\\) (0.014 %)."
      ],
      "ans": "\\(36.6\\)",
@@ -2117,18 +2362,21 @@
      "q": "<p>\\(C(V)=80e^{0.04V}\\) mg/L, \\(V=5\\), \\(dV=\\pm0.03\\). Error porcentual aproximado de \\(C\\).</p>",
      "checks": [
       {
-       "p": "Error %",
-       "o": [
-        "\\(0.12\\%\\)",
-        "\\(1.2\\%\\)",
-        "\\(3\\%\\)",
-        "\\(0.04\\%\\)",
-        "\\(0.117\\%\\)"
+       "t": "num",
+       "p": "Error porcentual",
+       "f": [
+        {
+         "l": "Error",
+         "a": 0.12,
+         "u": "%",
+         "e": "dC/C = 0.04·dV.",
+         "tol": 0.005
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\frac{dC}C=0.04\\,dV=0.04\\cdot0.03=0.0012\\).",
+      "\\(\\frac{dC}C\\) \\(=0.04\\,dV\\) \\(=0.04\\cdot0.03\\) \\(=0.0012\\).",
       "\\(0.12\\%\\). (Error absoluto: \\(3.2e^{0.2}\\cdot0.03\\approx0.117\\) mg/L.)"
      ],
      "ans": "\\(0.12\\%\\)",
@@ -2153,20 +2401,22 @@
      "q": "<p>Estima \\(\\text{arcsec}(1.269)\\) linealizando en \\(a=1.25\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Estimación",
-       "o": [
-        "\\(\\approx0.6638\\)",
-        "\\(\\approx0.6435\\)",
-        "\\(\\approx0.6232\\)",
-        "\\(\\approx0.6590\\)",
-        "\\(\\approx0.7458\\)"
+       "f": [
+        {
+         "l": "arcsec(1.269) ≈",
+         "a": 0.6638,
+         "e": "L(x) = arcsec(1.25) + (x − 1.25)/(1.25·√(1.25² − 1)).",
+         "tol": 0.0005
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\text{arcsec}(1.25)=\\arccos(0.8)\\approx0.6435\\).",
-      "\\(f'(1.25)=\\dfrac{1}{1.25\\sqrt{0.5625}}=\\dfrac{1}{0.9375}\\approx1.0667\\).",
-      "\\(L=0.6435+1.0667\\cdot0.019\\approx0.6638\\). Real \\(\\approx0.6632\\); error \\(\\approx0.0006\\)."
+      "\\(\\text{arcsec}(1.25)\\) \\(=\\arccos(0.8)\\approx0.6435\\).",
+      "\\(f'(1.25)\\) \\(=\\dfrac{1}{1.25\\sqrt{0.5625}}\\) \\(=\\dfrac{1}{0.9375}\\approx1.0667\\).",
+      "\\(L\\) \\(=0.6435+1.0667\\cdot0.019\\approx0.6638\\). Real \\(\\approx0.6632\\); error \\(\\approx0.0006\\)."
      ],
      "ans": "\\(\\approx0.6638\\)",
      "hint": "\\(\\text{arcsec}\\,u=\\arccos(1/u)\\).",
@@ -2191,19 +2441,22 @@
      "q": "<p>Vaso cónico de altura 10 cm y radio 3 cm. Con agua a \\(h=5\\) cm medida con \\(\\pm0.02\\) cm, estima el error del volumen.</p>",
      "checks": [
       {
-       "p": "\\(|dV|\\)",
-       "o": [
-        "\\(\\approx0.141\\ \\text{cm}^3\\)",
-        "\\(\\approx0.047\\ \\text{cm}^3\\)",
-        "\\(\\approx1.41\\ \\text{cm}^3\\)",
-        "\\(\\approx0.283\\ \\text{cm}^3\\)",
-        "\\(\\approx0.0707\\ \\text{cm}^3\\)"
+       "t": "num",
+       "p": "Error del volumen",
+       "f": [
+        {
+         "l": "|dV|",
+         "a": 0.141,
+         "u": "cm³",
+         "e": "V = π(3h/10)²h/3; dV = V′(5)·0.02.",
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
-      "Semejanza: \\(r=0.3h\\Rightarrow V=\\frac13\\pi(0.3h)^2h=0.03\\pi h^3\\).",
-      "\\(dV=0.09\\pi h^2dh=0.09\\pi\\cdot25\\cdot0.02\\).",
+      "Semejanza: \\(r=0.3h\\) \\(\\Rightarrow  V\\) \\(=\\frac13\\pi(0.3h)^2h\\) \\(=0.03\\pi h^3\\).",
+      "\\(dV\\) \\(=0.09\\pi h^2dh\\) \\(=0.09\\pi\\cdot25\\cdot0.02\\).",
       "\\(=0.045\\pi\\approx0.141\\ \\text{cm}^3\\)."
      ],
      "ans": "\\(\\approx0.141\\) cm³",
@@ -2222,14 +2475,14 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Cerca de un punto, una curva se parece a su recta tangente. Con esa recta aproximas valores y estimas errores.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Linealización:</strong> \\(L(x)=f(a)+f'(a)(x-a)\\).</li><li><strong>Diferencial:</strong> \\(dy=f'(x)\\,dx\\approx\\Delta y\\).</li><li>Error absoluto \\(|dy|\\), relativo \\(\\left|\\frac{dy}y\\right|\\), porcentual \\(\\times100\\).</li><li>Si \\(y=Ae^{g(x)}\\): \\(\\frac{dy}{y}=g'(x)\\,dx\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\sqrt{4{,}1}\\approx2+\\frac1{4}(0{,}1)=2{,}025\\) (con \\(f=\\sqrt x\\), \\(a=4\\)).</div>\n<div class=\"err\"><b>Error común:</b> usar como \\(a\\) un punto donde no conoces \\(f(a)\\) exactamente; elige el valor «bonito» más cercano.</div>"
+   "lesson": "<h3>Idea central</h3><p>Cerca de un punto, una curva se parece a su recta tangente. Con esa recta aproximas valores y estimas errores.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Linealización:</strong> \\(L(x)=f(a)+f'(a)(x-a)\\).</li><li><strong>Diferencial:</strong> \\(dy\\) \\(=f'(x)\\,dx\\approx\\Delta y\\).</li><li>Error absoluto \\(|dy|\\), relativo \\(\\left|\\frac{dy}y\\right|\\), porcentual \\(\\times100\\).</li><li>Si \\(y=Ae^{g(x)}\\): \\(\\frac{dy}{y}=g'(x)\\,dx\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\sqrt{4{,}1}\\approx2+\\frac1{4}(0{,}1)\\) \\(=2{,}025\\) (con \\(f=\\sqrt x\\), \\(a=4\\)).</div>\n<div class=\"err\"><b>Error común:</b> usar como \\(a\\) un punto donde no conoces \\(f(a)\\) exactamente; elige el valor «bonito» más cercano.</div>"
   },
   {
    "id": "tay",
    "name": "Sem. 5 · Polinomios de Taylor",
    "teo": "<p>El polinomio de Taylor de grado \\(n\\) alrededor de \\(a\\) copia el valor y las primeras \\(n\\) derivadas de \\(f\\) en \\(a\\). Grado 1 es la linealización; grado 2 agrega la curvatura.</p>\n<p>Para usarlo: calcula \\(f(a),f'(a),f''(a),\\dots\\), arma el polinomio y evalúa en el punto cercano. Error absoluto \\(|real-aprox|\\); porcentual dividido entre el real.</p>",
    "form": [
-    "\\(P_2(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2}(x-a)^2\\)",
+    "\\(P_2(x)=f(a)\\) \\(+f'(a)(x-a)\\) \\(+\\frac{f''(a)}{2}(x-a)^2\\)",
     "\\(P_3\\) suma \\(\\frac{f'''(a)}{6}(x-a)^3\\)",
     "\\(\\cos x\\approx1-\\frac{x^2}2\\)",
     "\\(\\tan x\\approx x+\\frac{x^3}3\\)"
@@ -2242,19 +2495,20 @@
      "q": "<p>\\(S(x)=100\\cos x\\). Con \\(P_2\\) alrededor de 0, estima \\(S(0.30)\\).</p>",
      "checks": [
       {
-       "p": "\\(P_2(0.3)\\)",
-       "o": [
-        "\\(95.5\\)",
-        "\\(100\\)",
-        "\\(97\\)",
-        "\\(91\\)",
-        "\\(95.53\\)"
+       "t": "num",
+       "p": "Estimación",
+       "f": [
+        {
+         "l": "P₂(0.3)",
+         "a": 95.5,
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(S(0)=100,\\ S'(0)=0,\\ S''(0)=-100\\).",
-      "\\(P_2=100-50x^2\\Rightarrow P_2(0.3)=95.5\\).",
+      "\\(S(0)\\) \\(=100,\\ S'(0)\\) \\(=0,\\ S''(0)\\) \\(=-100\\).",
+      "\\(P_2=100-50x^2\\) \\(\\Rightarrow  P_2(0.3)=95.5\\).",
       "Real \\(95.534\\); \\(P_1=100\\) tiene error 4.7 %, \\(P_2\\) solo 0.035 %."
      ],
      "ans": "\\(95.5\\)",
@@ -2279,19 +2533,20 @@
      "q": "<p>Con \\(P_2\\) de \\(\\cos x\\) alrededor de \\(\\frac\\pi3\\), estima \\(\\cos\\left(\\frac\\pi3+0.05\\right)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Estimación",
-       "o": [
-        "\\(\\approx0.45607\\)",
-        "\\(\\approx0.54330\\)",
-        "\\(\\approx0.45670\\)",
-        "\\(\\approx0.45000\\)",
-        "\\(\\approx0.47500\\)"
+       "f": [
+        {
+         "l": "P₂ ≈",
+         "a": 0.45607,
+         "tol": 0.0001
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f=\\frac12,\\ f'=-\\frac{\\sqrt3}2,\\ f''=-\\frac12\\) en \\(\\frac\\pi3\\).",
-      "\\(P_2=\\frac12-\\frac{\\sqrt3}{2}(0.05)-\\frac14(0.05)^2=0.5-0.043301-0.000625\\).",
+      "\\(f\\) \\(=\\frac12,\\ f'\\) \\(=-\\frac{\\sqrt3}2,\\ f''\\) \\(=-\\frac12\\) en \\(\\frac\\pi3\\).",
+      "\\(P_2\\) \\(=\\frac12-\\frac{\\sqrt3}{2}(0.05)-\\frac14(0.05)^2\\) \\(=0.5-0.043301-0.000625\\).",
       "\\(\\approx0.456074\\). Real \\(0.456092\\); error \\(\\approx1.8\\times10^{-5}\\)."
      ],
      "ans": "\\(\\approx0.45607\\)",
@@ -2316,13 +2571,14 @@
      "q": "<p>Para \\(\\tan x\\) alrededor de 0, \\(P_1=P_2=x\\) y \\(P_3=x+\\frac{x^3}{3}\\). ¿Cuál es \\(P_3(0.12)\\)?</p>",
      "checks": [
       {
-       "p": "\\(P_3(0.12)\\)",
-       "o": [
-        "\\(0.120576\\)",
-        "\\(0.12\\)",
-        "\\(0.121728\\)",
-        "\\(0.120288\\)",
-        "\\(0.1205793\\)"
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "P₃(0.12)",
+         "a": 0.120576,
+         "tol": 1e-06
+        }
        ]
       }
      ],
@@ -2353,19 +2609,20 @@
      "q": "<p>\\(v(h)=\\sqrt{2gh}\\), \\(g=9.8\\). Con \\(P_2\\) alrededor de \\(h=5\\), estima \\(v(5.2)\\).</p>",
      "checks": [
       {
-       "p": "\\(P_2(5.2)\\)",
-       "o": [
-        "\\(\\approx10.0955\\)",
-        "\\(\\approx10.0975\\)",
-        "\\(\\approx9.8995\\)",
-        "\\(\\approx10.1985\\)",
-        "\\(\\approx10.0935\\)"
+       "t": "num",
+       "p": "Estimación",
+       "f": [
+        {
+         "l": "P₂(5.2)",
+         "a": 10.0955,
+         "tol": 0.001
+        }
        ]
       }
      ],
      "steps": [
-      "\\(v(5)=\\sqrt{98}\\approx9.8995\\); \\(v'=\\frac{g}{\\sqrt{2gh}}\\approx0.98995\\); \\(v''=-\\frac{g^2}{(2gh)^{3/2}}\\approx-0.098995\\).",
-      "\\(P_2=9.8995+0.98995(0.2)-\\frac{0.098995}{2}(0.04)\\approx10.09550\\).",
+      "\\(v(5)\\) \\(=\\sqrt{98}\\approx9.8995\\); \\(v'\\) \\(=\\frac{g}{\\sqrt{2gh}}\\approx0.98995\\); \\(v''\\) \\(=-\\frac{g^2}{(2gh)^{3/2}}\\approx-0.098995\\).",
+      "\\(P_2\\) \\(=9.8995+0.98995(0.2)-\\frac{0.098995}{2}(0.04)\\approx10.09550\\).",
       "Real \\(\\sqrt{101.92}\\approx10.09554\\); error \\(\\approx0.0004\\%\\)."
      ],
      "ans": "\\(\\approx10.0955\\)",
@@ -2390,19 +2647,21 @@
      "q": "<p>\\(P(\\theta)=500\\cos\\theta\\). Con \\(P_2\\) alrededor de \\(\\frac\\pi6\\), estima \\(P\\left(\\frac\\pi6+0.04\\right)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Estimación",
-       "o": [
-        "\\(\\approx422.67\\ \\text{W}\\)",
-        "\\(\\approx423.01\\ \\text{W}\\)",
-        "\\(\\approx433.01\\ \\text{W}\\)",
-        "\\(\\approx412.67\\ \\text{W}\\)",
-        "\\(\\approx422.32\\ \\text{W}\\)"
+       "f": [
+        {
+         "l": "P₂ ≈",
+         "a": 422.67,
+         "u": "W",
+         "tol": 0.05
+        }
        ]
       }
      ],
      "steps": [
-      "\\(P=250\\sqrt3,\\ P'=-250,\\ P''=-250\\sqrt3\\) en \\(\\frac\\pi6\\).",
-      "\\(P_2=433.013-250(0.04)-125\\sqrt3(0.0016)=433.013-10-0.346\\).",
+      "\\(P\\) \\(=250\\sqrt3,\\ P'\\) \\(=-250,\\ P''\\) \\(=-250\\sqrt3\\) en \\(\\frac\\pi6\\).",
+      "\\(P_2\\) \\(=433.013-250(0.04)-125\\sqrt3(0.0016)\\) \\(=433.013-10-0.346\\).",
       "\\(\\approx422.67\\) W. Real \\(422.669\\); error \\(\\approx0.0006\\%\\)."
      ],
      "ans": "\\(\\approx422.67\\) W",
@@ -2421,7 +2680,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Un polinomio de Taylor imita a \\(f\\) cerca de \\(a\\) copiando su valor y sus derivadas. Más grado, mejor aproximación cerca de \\(a\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(P_1(x)=f(a)+f'(a)(x-a)\\) (linealización).</li><li>\\(P_2(x)=P_1(x)+\\frac{f''(a)}2(x-a)^2\\).</li><li>Error: \\(|f(x)-P_n(x)|\\); porcentual dividido entre el valor real.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula \\(f(a),f'(a),f''(a)\\).</li><li><strong>2.</strong> Arma el polinomio con potencias de \\((x-a)\\).</li><li><strong>3.</strong> Evalúa en el punto pedido y compara con el valor real si lo piden.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(e^x\\) en \\(a=0\\): \\(P_2=1+x+\\frac{x^2}2\\); \\(e^{0{,}1}\\approx1{,}105\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac12\\) (factorial) en el término cuadrático.</div>"
+   "lesson": "<h3>Idea central</h3><p>Un polinomio de Taylor imita a \\(f\\) cerca de \\(a\\) copiando su valor y sus derivadas. Más grado, mejor aproximación cerca de \\(a\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(P_1(x)\\) \\(=f(a)+f'(a)(x-a)\\) (linealización).</li><li>\\(P_2(x)\\) \\(=P_1(x)+\\frac{f''(a)}2(x-a)^2\\).</li><li>Error: \\(|f(x)-P_n(x)|\\); porcentual dividido entre el valor real.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula \\(f(a),f'(a),f''(a)\\).</li><li><strong>2.</strong> Arma el polinomio con potencias de \\((x-a)\\).</li><li><strong>3.</strong> Evalúa en el punto pedido y compara con el valor real si lo piden.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(e^x\\) en \\(a=0\\): \\(P_2=1+x+\\frac{x^2}2\\); \\(e^{0{,}1}\\approx1{,}105\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac12\\) (factorial) en el término cuadrático.</div>"
   },
   {
    "id": "apl",
@@ -2440,20 +2699,23 @@
      "q": "<p>\\(R(T)=100e^{0.004(T-20)}\\) Ω y \\(T(t)=20+3t+0.2t^2\\) (t en min). Halla \\(\\frac{dR}{dt}\\) en \\(t=5\\).</p>",
      "checks": [
       {
-       "p": "\\(dR/dt\\)",
-       "o": [
-        "\\(\\approx2.17\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx0.43\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx2.00\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx10.8\\ \\Omega/\\text{min}\\)",
-        "\\(\\approx1.30\\ \\Omega/\\text{min}\\)"
+       "t": "num",
+       "p": "Razón de cambio",
+       "f": [
+        {
+         "l": "dR/dt",
+         "a": 2.17,
+         "u": "Ω/min",
+         "e": "regla de la cadena: R′(T)·T′(t) en t = 5.",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "\\(T(5)=40\\); \\(T'(t)=3+0.4t\\Rightarrow T'(5)=5\\).",
-      "\\(R'(T)=0.4e^{0.004(T-20)}\\Rightarrow R'(40)=0.4e^{0.08}\\approx0.4333\\).",
-      "\\(\\frac{dR}{dt}=0.4333\\cdot5\\approx2.17\\) Ω/min: la resistencia aumenta."
+      "\\(R'(T)\\) \\(=0.4e^{0.004(T-20)}\\) \\(\\Rightarrow  R'(40)\\) \\(=0.4e^{0.08}\\approx0.4333\\).",
+      "\\(\\frac{dR}{dt}\\) \\(=0.4333\\cdot5\\approx2.17\\) Ω/min: la resistencia aumenta."
      ],
      "ans": "≈ 2.17 Ω/min",
      "hint": "Cadena: R′(T)·T′(t).",
@@ -2478,29 +2740,29 @@
      "q": "<p>\\(m=6\\) kg, \\(v(t)=3+0.2t^2\\), \\(K=\\frac12mv^2\\). Halla \\(\\frac{dK}{dt}\\) en \\(t=4\\) s y el error porcentual en \\(K\\) si \\(dt=0.05\\) s.</p>",
      "checks": [
       {
-       "p": "\\(dK/dt\\)",
-       "o": [
-        "\\(59.52\\ \\text{J/s}\\)",
-        "\\(37.2\\ \\text{J/s}\\)",
-        "\\(29.76\\ \\text{J/s}\\)",
-        "\\(115.32\\ \\text{J/s}\\)",
-        "\\(9.6\\ \\text{J/s}\\)"
-       ]
-      },
-      {
-       "p": "Error %",
-       "o": [
-        "\\(\\approx2.58\\%\\)",
-        "\\(\\approx5.16\\%\\)",
-        "\\(\\approx0.05\\%\\)",
-        "\\(\\approx2.98\\%\\)",
-        "\\(\\approx1.29\\%\\)"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "dK/dt",
+         "a": 59.52,
+         "u": "J/s",
+         "e": "K′ = m·v·v′.",
+         "tol": 0.02
+        },
+        {
+         "l": "Error",
+         "a": 2.58,
+         "u": "%",
+         "e": "dK/K con dK = K′(4)·0.05.",
+         "tol": 0.03
+        }
        ]
       }
      ],
      "steps": [
       "\\(v(4)=6.2\\), \\(v'=0.4t=1.6\\).",
-      "\\(\\frac{dK}{dt}=mv\\,v'=6\\cdot6.2\\cdot1.6=59.52\\) J/s.",
+      "\\(\\frac{dK}{dt}\\) \\(=mv\\,v'\\) \\(=6\\cdot6.2\\cdot1.6\\) \\(=59.52\\) J/s.",
       "\\(K(4)=3\\cdot6.2^2=115.32\\) J; \\(dK=59.52\\cdot0.05=2.976\\) J.",
       "\\(\\frac{2.976}{115.32}\\approx2.58\\%\\)."
      ],
@@ -2529,13 +2791,16 @@
      "q": "<p>\\(C(T)=12e^{-0.02(T-30)^2}\\) g/L. a) \\(T\\) sube a 0.4 °C/min: halla \\(\\frac{dC}{dt}\\) en \\(T=32\\). b) Con \\(\\Delta T=\\pm0.5\\) °C, ¿error porcentual? Se admite máximo 1.5 %.</p>",
      "checks": [
       {
-       "p": "a) \\(dC/dt\\)",
-       "o": [
-        "\\(\\approx-0.354\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-0.886\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx0.354\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-0.160\\ \\text{g/(L·min)}\\)",
-        "\\(\\approx-4.43\\ \\text{g/(L·min)}\\)"
+       "t": "num",
+       "p": "a) Razón de cambio",
+       "f": [
+        {
+         "l": "dC/dt",
+         "a": -0.354,
+         "u": "g/(L·min)",
+         "e": "C′(T)·0.4 en T = 32.",
+         "tol": 0.003
+        }
        ]
       },
       {
@@ -2550,10 +2815,10 @@
       }
      ],
      "steps": [
-      "\\(C(32)=12e^{-0.08}\\approx11.077\\).",
-      "\\(C'(T)=C\\cdot(-0.04)(T-30)\\Rightarrow C'(32)\\approx-0.886\\) g/(L·°C).",
-      "a) \\(\\frac{dC}{dt}=-0.886\\cdot0.4\\approx-0.354\\): pasado el óptimo, calentar reduce la biomasa.",
-      "b) \\(\\left|\\frac{dC}C\\right|=0.04\\cdot2\\cdot0.5=0.04=4\\%\\gt1.5\\%\\): no cumple."
+      "\\(C(32)\\) \\(=12e^{-0.08}\\approx11.077\\).",
+      "\\(C'(T)\\) \\(=C\\cdot(-0.04)(T-30)\\) \\(\\Rightarrow  C'(32)\\approx-0.886\\) g/(L·°C).",
+      "a) \\(\\frac{dC}{dt}\\) \\(=-0.886\\cdot0.4\\approx-0.354\\): pasado el óptimo, calentar reduce la biomasa.",
+      "b) \\(\\left|\\frac{dC}C\\right|\\) \\(=0.04\\cdot2\\cdot0.5\\) \\(=0.04\\) \\(=4\\%\\gt1.5\\%\\): no cumple."
      ],
      "ans": "a) ≈ −0.354 g/(L·min); b) 4 %, no cumple",
      "hint": "Atajo: dC/C = −2k(T−30)dT.",
@@ -2573,7 +2838,8 @@
        "err",
        "atajo"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "apl4",
@@ -2582,19 +2848,22 @@
      "q": "<p>\\(I(x)=100e^{-0.04(x-5)^2}\\) lux. El robot está en \\(x=10\\) m y avanza a 0.5 m/s. Traza la tangente en \\(x=10\\), estima su pendiente y halla \\(\\frac{dI}{dt}\\). Interpreta.</p>",
      "checks": [
       {
-       "p": "\\(dI/dt\\) aproximado",
-       "o": [
-        "\\(\\approx-7.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-14.7\\ \\text{lux/s}\\)",
-        "\\(\\approx7.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-29.4\\ \\text{lux/s}\\)",
-        "\\(\\approx-3.7\\ \\text{lux/s}\\)"
+       "t": "num",
+       "p": "Estimación",
+       "f": [
+        {
+         "l": "dI/dt",
+         "a": -7.4,
+         "u": "lux/s",
+         "e": "pendiente de la tangente × 0.5 m/s.",
+         "tol": 0.8
+        }
        ]
       }
      ],
      "steps": [
       "Tangente: puntos \\(\\approx(8,66)\\) y \\((10,37)\\Rightarrow m\\approx-14.5\\) lux/m.",
-      "Analítico: \\(I'(10)=36.8\\cdot(-0.4)\\approx-14.7\\) lux/m.",
+      "Analítico: \\(I'(10)\\) \\(=36.8\\cdot(-0.4)\\approx-14.7\\) lux/m.",
       "\\(\\frac{dI}{dt}\\approx-14.7\\cdot0.5\\approx-7.4\\) lux/s: al alejarse de la luminaria, recibe menos luz."
      ],
      "ans": "≈ −7.4 lux/s",
@@ -2632,7 +2901,7 @@
       }
      ],
      "steps": [
-      "\\(\\frac{dI}{I}=-0.08(x-5)\\,dx=-0.4\\cdot0.1\\).",
+      "\\(\\frac{dI}{I}\\) \\(=-0.08(x-5)\\,dx\\) \\(=-0.4\\cdot0.1\\).",
       "\\(4\\%\\gt3\\%\\): no cumple."
      ],
      "ans": "4 %, no cumple",
@@ -2671,13 +2940,13 @@
      "q": "<p>Para \\(x^2+y^2=25\\), halla la pendiente de la tangente en \\((3,4)\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "Pendiente",
-       "o": [
-        "\\(-\\frac34\\)",
-        "\\(\\frac34\\)",
-        "\\(-\\frac43\\)",
-        "\\(\\frac43\\)",
-        "\\(-1\\)"
+       "f": [
+        {
+         "a": "-3/4",
+         "v": []
+        }
        ]
       }
      ],
@@ -2704,13 +2973,27 @@
      "q": "<p>Halla \\(\\frac{dy}{dx}\\) si \\(xy+y^2=4\\).</p>",
      "checks": [
       {
-       "p": "\\(y'\\)",
-       "o": [
-        "\\(\\dfrac{-y}{x+2y}\\)",
-        "\\(\\dfrac{y}{x+2y}\\)",
-        "\\(\\dfrac{-y}{2y}\\)",
-        "\\(\\dfrac{-x}{x+2y}\\)",
-        "\\(\\dfrac{-1}{x+2y}\\)"
+       "t": "expr",
+       "p": "Escribe y′ en términos de x e y.",
+       "f": [
+        {
+         "a": "-y/(x+2*y)",
+         "v": [
+          "x",
+          "y"
+         ],
+         "l": "y′ =",
+         "dom": {
+          "x": [
+           0.5,
+           3
+          ],
+          "y": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
@@ -2737,13 +3020,16 @@
      "q": "<p>Halla la recta tangente a \\(3x^2y=6\\) en \\((1,2)\\).</p>",
      "checks": [
       {
-       "p": "Recta",
-       "o": [
-        "\\(y=-4x+6\\)",
-        "\\(y=4x-2\\)",
-        "\\(y=-2x+4\\)",
-        "\\(y=-4x+2\\)",
-        "\\(y=-\\frac14x+\\frac94\\)"
+       "t": "expr",
+       "p": "Escribe la recta tangente.",
+       "f": [
+        {
+         "a": "-4*x+6",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
@@ -2774,19 +3060,19 @@
      "q": "<p>Pendiente de la tangente en \\((5,2)\\) para \\(x^2-y^2x=5\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "Pendiente",
-       "o": [
-        "\\(\\frac{3}{10}\\)",
-        "\\(-\\frac{3}{10}\\)",
-        "\\(\\frac{10}{3}\\)",
-        "\\(\\frac{7}{10}\\)",
-        "\\(\\frac{3}{5}\\)"
+       "f": [
+        {
+         "a": "3/10",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "Verifica: \\(25-20=5\\) ✓.",
-      "\\(2x-(2xyy'+y^2)=0\\Rightarrow y'=\\dfrac{2x-y^2}{2xy}\\).",
+      "\\(2x-(2xyy'+y^2)=0\\) \\(\\Rightarrow  y'=\\dfrac{2x-y^2}{2xy}\\).",
       "\\(\\dfrac{10-4}{20}=\\dfrac{3}{10}\\)."
      ],
      "ans": "\\(\\frac3{10}\\)",
@@ -2811,13 +3097,27 @@
      "q": "<p>Halla \\(\\frac{dy}{dx}\\) si \\(e^y=x+y\\).</p>",
      "checks": [
       {
-       "p": "\\(y'\\)",
-       "o": [
-        "\\(\\dfrac{1}{e^y-1}\\)",
-        "\\(\\dfrac{1}{e^y+1}\\)",
-        "\\(e^{-y}\\)",
-        "\\(\\dfrac{e^y}{1-e^y}\\)",
-        "\\(\\dfrac{1+y}{e^y}\\)"
+       "t": "expr",
+       "p": "Escribe y′ en términos de y.",
+       "f": [
+        {
+         "a": "1/(e^y-1)",
+         "v": [
+          "x",
+          "y"
+         ],
+         "l": "y′ =",
+         "dom": {
+          "x": [
+           0.5,
+           3
+          ],
+          "y": [
+           0.3,
+           2
+          ]
+         }
+        }
        ]
       }
      ],
@@ -2844,19 +3144,33 @@
      "q": "<p>Halla \\(\\frac{dy}{dx}\\) si \\(\\sin(xy)=x\\).</p>",
      "checks": [
       {
-       "p": "\\(y'\\)",
-       "o": [
-        "\\(\\dfrac{1-y\\cos(xy)}{x\\cos(xy)}\\)",
-        "\\(\\dfrac{1}{x\\cos(xy)}\\)",
-        "\\(\\dfrac{1+y\\cos(xy)}{x\\cos(xy)}\\)",
-        "\\(\\dfrac{1-\\cos(xy)}{x}\\)",
-        "\\(-\\dfrac yx\\)"
+       "t": "expr",
+       "p": "Escribe y′ en términos de x e y.",
+       "f": [
+        {
+         "a": "(1-y*cos(x*y))/(x*cos(x*y))",
+         "v": [
+          "x",
+          "y"
+         ],
+         "l": "y′ =",
+         "dom": {
+          "x": [
+           0.2,
+           1
+          ],
+          "y": [
+           0.2,
+           1
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\cos(xy)(y+xy')=1\\).",
-      "\\(x\\cos(xy)\\,y'=1-y\\cos(xy)\\)."
+      "\\(x\\cos(xy)\\,y'\\) \\(=1-y\\cos(xy)\\)."
      ],
      "ans": "\\(\\dfrac{1-y\\cos(xy)}{x\\cos(xy)}\\)",
      "hint": "Cadena y luego producto.",
@@ -2877,19 +3191,19 @@
      "q": "<p>Pendiente de la tangente en \\((3,3)\\) a \\(x^2e^{y-3}-(x-2)y^2=0\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "Pendiente",
-       "o": [
-        "\\(1\\)",
-        "\\(-1\\)",
-        "\\(3\\)",
-        "\\(\\frac13\\)",
-        "\\(0\\)"
+       "f": [
+        {
+         "a": "1",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "Verifica: \\(9-9=0\\) ✓.",
-      "\\(2xe^{y-3}+x^2e^{y-3}y'-[y^2+(x-2)2yy']=0\\).",
+      "\\(2xe^{y-3}+x^2e^{y-3}y'-[y^2+(x-2)2yy']\\) \\(=0\\).",
       "En \\((3,3)\\): \\(6+9y'-9-6y'=0\\Rightarrow y'=1\\)."
      ],
      "ans": "\\(1\\)",
@@ -2914,20 +3228,23 @@
      "q": "<p>Recta tangente a \\(x^3+y^3-6xy=0\\) en \\(\\left(\\frac43,\\frac83\\right)\\).</p>",
      "checks": [
       {
-       "p": "Recta",
-       "o": [
-        "\\(y=\\frac45x+\\frac85\\)",
-        "\\(y=\\frac54x+1\\)",
-        "\\(y=-\\frac45x+\\frac{56}{15}\\)",
-        "\\(y=\\frac45x+\\frac83\\)",
-        "\\(y=2x\\)"
+       "t": "expr",
+       "p": "Escribe la recta tangente.",
+       "f": [
+        {
+         "a": "4/5*x+8/5",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
      "steps": [
       "\\(y'=\\dfrac{2y-x^2}{y^2-2x}\\).",
       "\\(\\dfrac{32/9}{40/9}=\\frac45\\).",
-      "\\(y=\\frac83+\\frac45(x-\\frac43)=\\frac45x+\\frac85\\)."
+      "\\(y\\) \\(=\\frac83+\\frac45(x-\\frac43)\\) \\(=\\frac45x+\\frac85\\)."
      ],
      "ans": "\\(y=\\frac45x+\\frac85\\)",
      "hint": "Divide entre 3 tras derivar.",
@@ -2951,18 +3268,21 @@
      "q": "<p>Recta tangente a \\((x^2+4)y=8\\) en \\((2,1)\\).</p>",
      "checks": [
       {
-       "p": "Recta",
-       "o": [
-        "\\(y=-\\frac12x+2\\)",
-        "\\(y=\\frac12x\\)",
-        "\\(y=-x+3\\)",
-        "\\(y=-\\frac14x+\\frac32\\)",
-        "\\(y=-2x+5\\)"
+       "t": "expr",
+       "p": "Escribe la recta tangente.",
+       "f": [
+        {
+         "a": "-1/2*x+2",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(2xy+(x^2+4)y'=0\\Rightarrow y'=\\dfrac{-2xy}{x^2+4}\\).",
+      "\\(2xy+(x^2+4)y'=0\\) \\(\\Rightarrow  y'=\\dfrac{-2xy}{x^2+4}\\).",
       "En \\((2,1)\\): \\(-\\frac48=-\\frac12\\).",
       "\\(y-1=-\\frac12(x-2)\\)."
      ],
@@ -3003,13 +3323,22 @@
      "q": "<p>Deriva \\(f(x)=\\arcsin(x^2-1)\\).</p>",
      "checks": [
       {
-       "p": "\\(f'(x)\\)",
-       "o": [
-        "\\(\\dfrac{2x}{\\sqrt{1-(x^2-1)^2}}\\)",
-        "\\(\\dfrac{1}{\\sqrt{1-(x^2-1)^2}}\\)",
-        "\\(\\dfrac{2x}{1+(x^2-1)^2}\\)",
-        "\\(\\dfrac{-2x}{\\sqrt{1-(x^2-1)^2}}\\)",
-        "\\(\\dfrac{2x}{\\sqrt{1-x^2}}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "2*x/sqrt(1-(x^2-1)^2)",
+         "v": [
+          "x"
+         ],
+         "l": "f′(x) =",
+         "dom": {
+          "x": [
+           0.2,
+           1.3
+          ]
+         }
+        }
        ]
       }
      ],
@@ -3038,13 +3367,13 @@
      "q": "<p>Pendiente de la tangente a \\(y=\\arctan\\frac x2\\) en \\(\\left(2,\\frac\\pi4\\right)\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "Pendiente",
-       "o": [
-        "\\(\\frac14\\)",
-        "\\(\\frac12\\)",
-        "\\(1\\)",
-        "\\(\\frac15\\)",
-        "\\(2\\)"
+       "f": [
+        {
+         "a": "1/4",
+         "v": []
+        }
        ]
       }
      ],
@@ -3071,19 +3400,22 @@
      "q": "<p>Con derivación logarítmica, deriva \\(y=(x^2+2)^2(x^3+3)^3\\).</p>",
      "checks": [
       {
-       "p": "\\(y'\\)",
-       "o": [
-        "\\(y\\left[\\dfrac{4x}{x^2+2}+\\dfrac{9x^2}{x^3+3}\\right]\\)",
-        "\\(y\\left[\\dfrac{2x}{x^2+2}+\\dfrac{3x^2}{x^3+3}\\right]\\)",
-        "\\(y\\left[\\dfrac{4x}{x^2+2}\\cdot\\dfrac{9x^2}{x^3+3}\\right]\\)",
-        "\\(4x(x^2+2)\\cdot9x^2(x^3+3)^2\\)",
-        "\\(y\\left[\\dfrac{2}{x^2+2}+\\dfrac{3}{x^3+3}\\right]\\)"
+       "t": "expr",
+       "p": "Escribe y′ solo en términos de x.",
+       "f": [
+        {
+         "a": "(x^2+2)^2*(x^3+3)^3*(4*x/(x^2+2)+9*x^2/(x^3+3))",
+         "v": [
+          "x"
+         ],
+         "l": "y′ ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\ln y=2\\ln(x^2+2)+3\\ln(x^3+3)\\).",
-      "\\(\\dfrac{y'}{y}=\\dfrac{4x}{x^2+2}+\\dfrac{9x^2}{x^3+3}\\).",
+      "\\(\\ln y\\) \\(=2\\ln(x^2+2)+3\\ln(x^3+3)\\).",
+      "\\(\\dfrac{y'}{y}\\) \\(=\\dfrac{4x}{x^2+2}+\\dfrac{9x^2}{x^3+3}\\).",
       "Multiplica por \\(y\\)."
      ],
      "ans": "\\(y\\left[\\dfrac{4x}{x^2+2}+\\dfrac{9x^2}{x^3+3}\\right]\\)",
@@ -3107,19 +3439,22 @@
      "q": "<p>Deriva \\(y=x^{2\\sqrt x}\\).</p>",
      "checks": [
       {
-       "p": "\\(y'\\)",
-       "o": [
-        "\\(x^{2\\sqrt x}\\,\\dfrac{\\ln x+2}{\\sqrt x}\\)",
-        "\\(2\\sqrt x\\,x^{2\\sqrt x-1}\\)",
-        "\\(x^{2\\sqrt x}\\ln x\\)",
-        "\\(x^{2\\sqrt x}\\,\\dfrac{\\ln x}{\\sqrt x}\\)",
-        "\\(x^{2\\sqrt x}\\,\\dfrac{\\ln x+1}{2\\sqrt x}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "x^(2*sqrt(x))*(ln(x)+2)/sqrt(x)",
+         "v": [
+          "x"
+         ],
+         "l": "y′ ="
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\ln y=2\\sqrt x\\ln x\\).",
-      "\\(\\dfrac{y'}{y}=\\dfrac{\\ln x}{\\sqrt x}+\\dfrac{2\\sqrt x}{x}=\\dfrac{\\ln x+2}{\\sqrt x}\\).",
+      "\\(\\dfrac{y'}{y}\\) \\(=\\dfrac{\\ln x}{\\sqrt x}+\\dfrac{2\\sqrt x}{x}\\) \\(=\\dfrac{\\ln x+2}{\\sqrt x}\\).",
       "Multiplica por \\(y\\)."
      ],
      "ans": "\\(x^{2\\sqrt x}\\dfrac{\\ln x+2}{\\sqrt x}\\)",
@@ -3143,19 +3478,28 @@
      "q": "<p>Deriva \\(g(x)=\\text{arcsec}(e^{2x})\\), \\(x\\gt0\\).</p>",
      "checks": [
       {
-       "p": "\\(g'(x)\\)",
-       "o": [
-        "\\(\\dfrac{2}{\\sqrt{e^{4x}-1}}\\)",
-        "\\(\\dfrac{2e^{2x}}{\\sqrt{e^{4x}-1}}\\)",
-        "\\(\\dfrac{1}{\\sqrt{e^{4x}-1}}\\)",
-        "\\(\\dfrac{2}{1+e^{4x}}\\)",
-        "\\(\\dfrac{2}{\\sqrt{1-e^{4x}}}\\)"
+       "t": "expr",
+       "p": "Escribe la derivada.",
+       "f": [
+        {
+         "a": "2/sqrt(e^(4*x)-1)",
+         "v": [
+          "x"
+         ],
+         "l": "g′(x) =",
+         "dom": {
+          "x": [
+           0.2,
+           2
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=e^{2x},\\ u'=2e^{2x}\\).",
-      "\\(\\dfrac{2e^{2x}}{e^{2x}\\sqrt{e^{4x}-1}}=\\dfrac{2}{\\sqrt{e^{4x}-1}}\\)."
+      "\\(\\dfrac{2e^{2x}}{e^{2x}\\sqrt{e^{4x}-1}}\\) \\(=\\dfrac{2}{\\sqrt{e^{4x}-1}}\\)."
      ],
      "ans": "\\(\\dfrac{2}{\\sqrt{e^{4x}-1}}\\)",
      "hint": "El \\(e^{2x}\\) se cancela.",
@@ -3176,20 +3520,23 @@
      "q": "<p>Ecuación de la tangente a \\(y=(x^2+1)^{\\sqrt x}\\) en \\(x=1\\).</p>",
      "checks": [
       {
-       "p": "Recta",
-       "o": [
-        "\\(y=2+(2+\\ln2)(x-1)\\)",
-        "\\(y=2+(1+\\ln2)(x-1)\\)",
-        "\\(y=2+2(x-1)\\)",
-        "\\(y=1+(2+\\ln2)(x-1)\\)",
-        "\\(y=2+\\ln2\\,(x-1)\\)"
+       "t": "expr",
+       "p": "Escribe la recta tangente.",
+       "f": [
+        {
+         "a": "2+(2+ln(2))*(x-1)",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
      "steps": [
       "\\(y(1)=2\\). \\(\\ln y=\\sqrt x\\ln(x^2+1)\\).",
-      "\\(\\dfrac{y'}{y}=\\dfrac{\\ln(x^2+1)}{2\\sqrt x}+\\dfrac{2x\\sqrt x}{x^2+1}\\); en 1: \\(\\frac{\\ln2}{2}+1\\).",
-      "\\(y'(1)=2\\left(\\frac{\\ln2}2+1\\right)=2+\\ln2\\)."
+      "\\(\\dfrac{y'}{y}\\) \\(=\\dfrac{\\ln(x^2+1)}{2\\sqrt x}+\\dfrac{2x\\sqrt x}{x^2+1}\\); en 1: \\(\\frac{\\ln2}{2}+1\\).",
+      "\\(y'(1)\\) \\(=2\\left(\\frac{\\ln2}2+1\\right)\\) \\(=2+\\ln2\\)."
      ],
      "ans": "\\(y=2+(2+\\ln2)(x-1)\\)",
      "hint": "Calcula y(1) primero.",
@@ -3209,23 +3556,32 @@
      "id": "log7",
      "lvl": 3,
      "title": "Todo se simplifica",
-     "q": "<p>Deriva \\(j(x)=\\frac12\\ln\\left(\\frac{x+1}{x-1}\\right)+\\arctan x\\), \\(x\\gt1\\).</p>",
+     "q": "<p>Deriva \\(j(x)\\) \\(=\\frac12\\ln\\left(\\frac{x+1}{x-1}\\right)+\\arctan x\\), \\(x\\gt1\\).</p>",
      "checks": [
       {
-       "p": "\\(j'(x)\\)",
-       "o": [
-        "\\(\\dfrac{-2}{x^4-1}\\)",
-        "\\(\\dfrac{2}{x^4-1}\\)",
-        "\\(\\dfrac{-1}{x^2-1}\\)",
-        "\\(\\dfrac{2x^2}{x^4-1}\\)",
-        "\\(0\\)"
+       "t": "expr",
+       "p": "Escribe la derivada simplificada.",
+       "f": [
+        {
+         "a": "-2/(x^4-1)",
+         "v": [
+          "x"
+         ],
+         "l": "j′(x) =",
+         "dom": {
+          "x": [
+           1.2,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\frac12[\\ln(x+1)-\\ln(x-1)]'=\\frac12\\left[\\frac1{x+1}-\\frac1{x-1}\\right]=\\dfrac{-1}{x^2-1}\\).",
+      "\\(\\frac12[\\ln(x+1)-\\ln(x-1)]'\\) \\(=\\frac12\\left[\\frac1{x+1}-\\frac1{x-1}\\right]\\) \\(=\\dfrac{-1}{x^2-1}\\).",
       "\\((\\arctan x)'=\\dfrac{1}{x^2+1}\\).",
-      "Suma: \\(\\dfrac{-(x^2+1)+(x^2-1)}{x^4-1}=\\dfrac{-2}{x^4-1}\\)."
+      "Suma: \\(\\dfrac{-(x^2+1)+(x^2-1)}{x^4-1}\\) \\(=\\dfrac{-2}{x^4-1}\\)."
      ],
      "ans": "\\(\\dfrac{-2}{x^4-1}\\)",
      "hint": "Separa el logaritmo.",
@@ -3243,7 +3599,7 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La derivación logarítmica transforma productos, cocientes y potencias en sumas, lo que simplifica mucho. Es obligatoria cuando la variable está en la base y en el exponente.</p>\n<h3>Conceptos clave</h3><ul><li>Toma \\(\\ln\\) en ambos lados y usa \\(\\ln(ab)=\\ln a+\\ln b\\), \\(\\ln a^n=n\\ln a\\).</li><li>Al derivar, el lado izquierdo da \\(\\frac{y'}{y}\\).</li><li>\\((\\arcsin u)'=\\frac{u'}{\\sqrt{1-u^2}}\\), \\((\\arctan u)'=\\frac{u'}{1+u^2}\\), \\((\\text{arcsec}\\,u)'=\\frac{u'}{|u|\\sqrt{u^2-1}}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(y=x^x\\): \\(\\ln y=x\\ln x\\Rightarrow\\frac{y'}y=\\ln x+1\\Rightarrow y'=x^x(\\ln x+1)\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\((x^n)'=nx^{n-1}\\) con exponente variable, o olvidar multiplicar por \\(y\\) al final.</div>"
+   "lesson": "<h3>Idea central</h3><p>La derivación logarítmica transforma productos, cocientes y potencias en sumas, lo que simplifica mucho. Es obligatoria cuando la variable está en la base y en el exponente.</p>\n<h3>Conceptos clave</h3><ul><li>Toma \\(\\ln\\) en ambos lados y usa \\(\\ln(ab)=\\ln a+\\ln b\\), \\(\\ln a^n=n\\ln a\\).</li><li>Al derivar, el lado izquierdo da \\(\\frac{y'}{y}\\).</li><li>\\((\\arcsin u)'\\) \\(=\\frac{u'}{\\sqrt{1-u^2}}\\), \\((\\arctan u)'=\\frac{u'}{1+u^2}\\), \\((\\text{arcsec}\\,u)'\\) \\(=\\frac{u'}{|u|\\sqrt{u^2-1}}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(y=x^x\\): \\(\\ln y=x\\ln x\\) \\(\\Rightarrow \\frac{y'}y=\\ln x+1\\) \\(\\Rightarrow  y'=x^x(\\ln x+1)\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\((x^n)'=nx^{n-1}\\) con exponente variable, o olvidar multiplicar por \\(y\\) al final.</div>"
   },
   {
    "id": "raz",
@@ -3264,19 +3620,19 @@
      "q": "<p>El volumen de un cubo crece a 10 cm³/min. ¿Qué tan rápido crece el área superficial cuando la arista mide 30 cm?</p>",
      "checks": [
       {
-       "p": "\\(dA/dt\\)",
-       "o": [
-        "\\(\\frac43\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(\\frac1{270}\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(4\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(360\\ \\text{cm}^2/\\text{min}\\)",
-        "\\(\\frac23\\ \\text{cm}^2/\\text{min}\\)"
+       "t": "expr",
+       "p": "dA/dt (cm²/min)",
+       "f": [
+        {
+         "a": "4/3",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\frac{dV}{dt}=3L^2\\frac{dL}{dt}\\Rightarrow\\frac{dL}{dt}=\\frac{10}{2700}=\\frac1{270}\\).",
-      "\\(\\frac{dA}{dt}=12L\\frac{dL}{dt}=360\\cdot\\frac1{270}=\\frac43\\)."
+      "\\(\\frac{dV}{dt}=3L^2\\frac{dL}{dt}\\) \\(\\Rightarrow \\frac{dL}{dt}=\\frac{10}{2700}=\\frac1{270}\\).",
+      "\\(\\frac{dA}{dt}\\) \\(=12L\\frac{dL}{dt}\\) \\(=360\\cdot\\frac1{270}\\) \\(=\\frac43\\)."
      ],
      "ans": "\\(\\frac43\\) cm²/min",
      "hint": "Primero halla dL/dt.",
@@ -3299,19 +3655,19 @@
      "q": "<p>\\(r(t)=6+0.25t\\) cm. ¿\\(\\frac{dV}{dt}\\) en \\(t=8\\) s?</p>",
      "checks": [
       {
-       "p": "\\(dV/dt\\)",
-       "o": [
-        "\\(64\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(256\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(16\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(\\frac{2048}{3}\\pi\\ \\text{cm}^3/\\text{s}\\)",
-        "\\(8\\pi\\ \\text{cm}^3/\\text{s}\\)"
+       "t": "expr",
+       "p": "dV/dt (cm³/s)",
+       "f": [
+        {
+         "a": "64*π",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(r(8)=8\\).",
-      "\\(\\frac{dV}{dt}=4\\pi r^2\\cdot0.25=\\pi r^2=64\\pi\\approx201\\)."
+      "\\(\\frac{dV}{dt}\\) \\(=4\\pi r^2\\cdot0.25\\) \\(=\\pi r^2\\) \\(=64\\pi\\approx201\\)."
      ],
      "ans": "\\(64\\pi\\) cm³/s",
      "hint": "dr/dt = 0.25.",
@@ -3333,19 +3689,20 @@
      "q": "<p>Escalera de 10 m; la base se aleja a 3 m/s. ¿A qué rapidez baja el extremo superior cuando la base está a 6 m?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Rapidez de descenso",
-       "o": [
-        "\\(2.25\\ \\text{m/s}\\)",
-        "\\(4\\ \\text{m/s}\\)",
-        "\\(3\\ \\text{m/s}\\)",
-        "\\(1.8\\ \\text{m/s}\\)",
-        "\\(0.75\\ \\text{m/s}\\)"
+       "f": [
+        {
+         "l": "dy/dt",
+         "a": 2.25,
+         "u": "m/s"
+        }
        ]
       }
      ],
      "steps": [
       "\\(x^2+y^2=100\\); con \\(x=6\\), \\(y=8\\).",
-      "\\(2xx'+2yy'=0\\Rightarrow y'=-\\frac{6\\cdot3}{8}=-2.25\\).",
+      "\\(2xx'+2yy'=0\\) \\(\\Rightarrow  y'=-\\frac{6\\cdot3}{8}=-2.25\\).",
       "Baja a 2.25 m/s."
      ],
      "ans": "2.25 m/s",
@@ -3371,20 +3728,20 @@
      "q": "<p>Cono invertido de altura 10 cm y radio 3 cm; entra agua a 2 cm³/s. ¿Qué tan rápido sube el nivel cuando \\(h=5\\) cm?</p>",
      "checks": [
       {
-       "p": "\\(dh/dt\\)",
-       "o": [
-        "\\(\\frac{8}{9\\pi}\\approx0.283\\ \\text{cm/s}\\)",
-        "\\(\\frac{2}{9\\pi}\\ \\text{cm/s}\\)",
-        "\\(\\frac{8}{25\\pi}\\ \\text{cm/s}\\)",
-        "\\(\\frac{4}{9\\pi}\\ \\text{cm/s}\\)",
-        "\\(0.8\\ \\text{cm/s}\\)"
+       "t": "expr",
+       "p": "dh/dt (cm/s)",
+       "f": [
+        {
+         "a": "8/(9*π)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(r=0.3h\\Rightarrow V=0.03\\pi h^3\\).",
       "\\(\\frac{dV}{dt}=0.09\\pi h^2\\frac{dh}{dt}\\).",
-      "\\(2=0.09\\pi(25)h'\\Rightarrow h'=\\frac{2}{2.25\\pi}=\\frac8{9\\pi}\\)."
+      "\\(2=0.09\\pi(25)h'\\) \\(\\Rightarrow  h'=\\frac{2}{2.25\\pi}=\\frac8{9\\pi}\\)."
      ],
      "ans": "\\(\\frac{8}{9\\pi}\\approx0.283\\) cm/s",
      "hint": "Elimina r con semejanza.",
@@ -3408,20 +3765,21 @@
      "q": "<p>Edificio de 400 pies; el ángulo de elevación del Sol decrece 0.25 rad/h. ¿Qué tan rápido crece la sombra cuando \\(\\theta=\\frac\\pi6\\)?</p>",
      "checks": [
       {
-       "p": "\\(dx/dt\\)",
-       "o": [
-        "\\(400\\ \\text{pies/h}\\)",
-        "\\(100\\ \\text{pies/h}\\)",
-        "\\(-400\\ \\text{pies/h}\\)",
-        "\\(133.3\\ \\text{pies/h}\\)",
-        "\\(1600\\ \\text{pies/h}\\)"
+       "t": "num",
+       "p": "Rapidez",
+       "f": [
+        {
+         "l": "dx/dt",
+         "a": 400,
+         "u": "pies/h"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\tan\\theta=\\frac{400}{x}\\Rightarrow x=400\\cot\\theta\\).",
-      "\\(x'=-400\\csc^2\\theta\\,\\theta'\\).",
-      "\\(\\csc^2\\frac\\pi6=4\\): \\(x'=-400\\cdot4\\cdot(-0.25)=400\\)."
+      "\\(\\tan\\theta=\\frac{400}{x}\\) \\(\\Rightarrow  x=400\\cot\\theta\\).",
+      "\\(x'\\) \\(=-400\\csc^2\\theta\\,\\theta'\\).",
+      "\\(\\csc^2\\frac\\pi6=4\\): \\(x'\\) \\(=-400\\cdot4\\cdot(-0.25)\\) \\(=400\\)."
      ],
      "ans": "400 pies/h",
      "hint": "θ′ es negativo.",
@@ -3445,20 +3803,22 @@
      "q": "<p>Un globo sube a 2 m/s; un niño en bicicleta va a 5 m/s por el suelo. Cuando pasa debajo, el globo está a 15 m. ¿Qué tan rápido crece la distancia 3 s después?</p>",
      "checks": [
       {
-       "p": "\\(dd/dt\\)",
-       "o": [
-        "\\(\\approx4.53\\ \\text{m/s}\\)",
-        "\\(7\\ \\text{m/s}\\)",
-        "\\(\\approx5.39\\ \\text{m/s}\\)",
-        "\\(\\approx2.91\\ \\text{m/s}\\)",
-        "\\(\\approx3.14\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Rapidez",
+       "f": [
+        {
+         "l": "dd/dt",
+         "a": 4.53,
+         "u": "m/s",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "A los 3 s: \\(x=15\\), \\(h=21\\), \\(d=\\sqrt{666}\\approx25.81\\).",
       "\\(d^2=x^2+h^2\\Rightarrow dd'=xx'+hh'\\).",
-      "\\(d'=\\frac{15\\cdot5+21\\cdot2}{25.81}=\\frac{117}{25.81}\\approx4.53\\)."
+      "\\(d'\\) \\(=\\frac{15\\cdot5+21\\cdot2}{25.81}\\) \\(=\\frac{117}{25.81}\\approx4.53\\)."
      ],
      "ans": "≈ 4.53 m/s",
      "hint": "Calcula x, h y d en t = 3 antes de sustituir.",
@@ -3482,19 +3842,20 @@
      "q": "<p>\\(\\frac1f=\\frac1p+\\frac1q\\) con \\(f=15\\) cm fijo. El objeto se aleja a 5 cm/s. ¿Cómo cambia \\(q\\) cuando \\(p=30\\) cm?</p>",
      "checks": [
       {
-       "p": "\\(dq/dt\\)",
-       "o": [
-        "\\(-5\\ \\text{cm/s}\\)",
-        "\\(5\\ \\text{cm/s}\\)",
-        "\\(-2.5\\ \\text{cm/s}\\)",
-        "\\(-10\\ \\text{cm/s}\\)",
-        "\\(-1.25\\ \\text{cm/s}\\)"
+       "t": "num",
+       "p": "Rapidez",
+       "f": [
+        {
+         "l": "dq/dt",
+         "a": -5,
+         "u": "cm/s"
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\frac1q=\\frac1{15}-\\frac1{30}\\Rightarrow q=30\\).",
-      "\\(0=-\\frac{p'}{p^2}-\\frac{q'}{q^2}\\Rightarrow q'=-\\frac{q^2}{p^2}p'\\).",
+      "\\(0=-\\frac{p'}{p^2}-\\frac{q'}{q^2}\\) \\(\\Rightarrow  q'=-\\frac{q^2}{p^2}p'\\).",
       "\\(q'=-1\\cdot5=-5\\): la imagen se acerca a 5 cm/s."
      ],
      "ans": "−5 cm/s",
@@ -3517,18 +3878,20 @@
      "q": "<p>\\(C(t)=\\frac{1}{t^2+1}\\ln(1+M^2)\\). En \\(t=3\\) s, \\(M=4\\) GB y \\(M'=0.5\\) GB/s. Halla \\(\\frac{dC}{dt}\\).</p>",
      "checks": [
       {
-       "p": "\\(dC/dt\\)",
-       "o": [
-        "\\(\\approx-0.146\\ \\%/\\text{s}\\)",
-        "\\(\\approx0.024\\ \\%/\\text{s}\\)",
-        "\\(\\approx-0.170\\ \\%/\\text{s}\\)",
-        "\\(\\approx0.194\\ \\%/\\text{s}\\)",
-        "\\(\\approx-0.012\\ \\%/\\text{s}\\)"
+       "t": "num",
+       "p": "Razón de cambio",
+       "f": [
+        {
+         "l": "dC/dt",
+         "a": -0.146,
+         "u": "%/s",
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
-      "Producto: \\(C'=\\dfrac{-2t}{(t^2+1)^2}\\ln(1+M^2)+\\dfrac{1}{t^2+1}\\cdot\\dfrac{2MM'}{1+M^2}\\).",
+      "Producto: \\(C'\\) \\(=\\dfrac{-2t}{(t^2+1)^2}\\ln(1+M^2)+\\dfrac{1}{t^2+1}\\cdot\\dfrac{2MM'}{1+M^2}\\).",
       "\\(=\\frac{-6}{100}\\ln17+\\frac{1}{10}\\cdot\\frac{4}{17}\\approx-0.1700+0.0235\\).",
       "\\(\\approx-0.146\\) %/s: el uso de CPU baja."
      ],
@@ -3635,7 +3998,7 @@
       }
      ],
      "steps": [
-      "\\(f'=\\dfrac{(x^2+1)-2x^2}{(x^2+1)^2}=\\dfrac{1-x^2}{(x^2+1)^2}\\).",
+      "\\(f'\\) \\(=\\dfrac{(x^2+1)-2x^2}{(x^2+1)^2}\\) \\(=\\dfrac{1-x^2}{(x^2+1)^2}\\).",
       "Críticos: \\(x=\\pm1\\).",
       "Signo: − en \\((-\\infty,-1)\\), + en \\((-1,1)\\), − en \\((1,\\infty)\\).",
       "Mín. en \\(-1\\) (valor \\(-\\frac12\\)); máx. en \\(1\\) (valor \\(\\frac12\\))."
@@ -3684,9 +4047,9 @@
       }
      ],
      "steps": [
-      "\\(f'=15x^4-60x^2=15x^2(x^2-4)\\): críticos \\(0,\\pm2\\).",
+      "\\(f'\\) \\(=15x^4-60x^2\\) \\(=15x^2(x^2-4)\\): críticos \\(0,\\pm2\\).",
       "Signo: + , −, −, +. En 0 no cambia de signo: no hay extremo.",
-      "\\(f''=60x^3-120x=60x(x^2-2)\\): cambia de signo en \\(0,\\pm\\sqrt2\\)."
+      "\\(f''\\) \\(=60x^3-120x\\) \\(=60x(x^2-2)\\): cambia de signo en \\(0,\\pm\\sqrt2\\)."
      ],
      "ans": "Máx. −2, mín. 2; inflexiones \\(0,\\pm\\sqrt2\\)",
      "hint": "En x = 0, \\(f'\\) no cambia de signo.",
@@ -3940,9 +4303,277 @@
       ],
       []
      ]
+    },
+    {
+     "id": "graf9",
+     "lvl": 2,
+     "title": "Tabla de signos",
+     "q": "<p>\\(f(x)=x^3-12x\\), con \\(f'(x)=3x^2-12\\) y \\(f''(x)=6x\\). Los puntos importantes son \\(x=-2\\), \\(0\\) y \\(2\\).</p>",
+     "checks": [
+      {
+       "t": "signs",
+       "p": "Completa los signos en cada intervalo.",
+       "pts": [
+        "-2",
+        "0",
+        "2"
+       ],
+       "rows": [
+        {
+         "n": "f′(x)",
+         "a": [
+          "+",
+          "-",
+          "-",
+          "+"
+         ]
+        },
+        {
+         "n": "f″(x)",
+         "a": [
+          "-",
+          "-",
+          "+",
+          "+"
+         ]
+        }
+       ]
+      },
+      {
+       "p": "¿Qué concluyes?",
+       "o": [
+        "Máx. en x = −2, mín. en x = 2, inflexión en x = 0",
+        "Mín. en x = −2, máx. en x = 2, inflexión en x = 0",
+        "Máx. en x = 0 y sin inflexiones",
+        "Máx. en x = −2 y mín. en x = 0",
+        "No tiene extremos"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(f'=3(x-2)(x+2)\\): positiva fuera de \\([-2,2]\\) y negativa dentro. Prueba un valor en cada intervalo (por ejemplo \\(f'(0)=-12\\lt0\\)).",
+      "\\(f''=6x\\): negativa para \\(x\\lt0\\) y positiva para \\(x\\gt0\\).",
+      "f′ pasa de + a − en −2 (máximo) y de − a + en 2 (mínimo); f″ cambia de signo en 0 (inflexión)."
+     ],
+     "ans": "Máx. en −2, mín. en 2, inflexión en 0",
+     "hint": "Evalúa un número de prueba en cada intervalo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ],
+      [
+       "crec",
+       "conc"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "graf10",
+     "lvl": 2,
+     "title": "Toca sobre la gráfica de f′",
+     "q": "<p>La gráfica muestra \\(f'(x)=(x-1)(x-4)\\) en \\([0,5]\\). Recuerda: es la <b>derivada</b>, no \\(f\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca los intervalos donde <b>f crece</b>.",
+       "a": [
+        "a",
+        "c"
+       ],
+       "plot": {
+        "xr": [
+         0,
+         5
+        ],
+        "yr": [
+         -3,
+         5
+        ],
+        "fs": [
+         {
+          "f": "(x-1)*(x-4)",
+          "cl": "d1",
+          "l": "f′"
+         }
+        ],
+        "zones": [
+         {
+          "t": "int",
+          "a": 0,
+          "b": 1,
+          "id": "a"
+         },
+         {
+          "t": "int",
+          "a": 1,
+          "b": 4,
+          "id": "b"
+         },
+         {
+          "t": "int",
+          "a": 4,
+          "b": 5,
+          "id": "c"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "f crece donde f′ está <b>por encima</b> del eje."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el punto donde f tiene un <b>máximo local</b>.",
+       "a": [
+        "m1"
+       ],
+       "plot": {
+        "xr": [
+         0,
+         5
+        ],
+        "yr": [
+         -3,
+         5
+        ],
+        "fs": [
+         {
+          "f": "(x-1)*(x-4)",
+          "cl": "d1",
+          "l": "f′"
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 1,
+          "y": 0,
+          "id": "m1"
+         },
+         {
+          "t": "pt",
+          "x": 2.5,
+          "y": -2.25,
+          "id": "v"
+         },
+         {
+          "t": "pt",
+          "x": 4,
+          "y": 0,
+          "id": "m4"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 4,
+          "id": "y0"
+         }
+        ]
+       },
+       "e": "Máximo: f′ cruza el eje pasando de + a −."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el punto que corresponde a la <b>inflexión</b> de f.",
+       "a": [
+        "v"
+       ],
+       "plot": {
+        "xr": [
+         0,
+         5
+        ],
+        "yr": [
+         -3,
+         5
+        ],
+        "fs": [
+         {
+          "f": "(x-1)*(x-4)",
+          "cl": "d1",
+          "l": "f′"
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 1,
+          "y": 0,
+          "id": "m1"
+         },
+         {
+          "t": "pt",
+          "x": 2.5,
+          "y": -2.25,
+          "id": "v"
+         },
+         {
+          "t": "pt",
+          "x": 4,
+          "y": 0,
+          "id": "m4"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 4,
+          "id": "y0"
+         }
+        ]
+       },
+       "e": "Las cimas y valles de f′ son inflexiones de f."
+      }
+     ],
+     "steps": [
+      "f crece donde f′ > 0: en (0, 1) y (4, 5).",
+      "En x = 1, f′ pasa de + a −: máximo local de f (en x = 4, de − a +: mínimo).",
+      "El valle de f′ (x = 2,5) es donde f′ deja de bajar y empieza a subir: ahí cambia la concavidad de f."
+     ],
+     "ans": "Crece en (0,1) ∪ (4,5); máx. en 1; inflexión en 2,5",
+     "hint": "Lees f′: arriba del eje = f crece.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ]
+     ],
+     "chain": true
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Las derivadas cuentan la forma de \\(f\\): \\(f'\\) dice si sube o baja y \\(f''\\) dice hacia dónde se curva.</p>\n<h3>Conceptos clave</h3><ul><li>\\(f'\\gt0\\): crece; \\(f'\\lt0\\): decrece.</li><li>\\(f'\\) cambia de + a −: máximo; de − a +: mínimo. Si solo toca 0 sin cambiar signo, no hay extremo.</li><li>\\(f''\\gt0\\): cóncava hacia arriba; \\(f''\\lt0\\): hacia abajo.</li><li>Inflexión: donde cambia la concavidad (picos y valles de la gráfica de \\(f'\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Halla puntos críticos (\\(f'=0\\) o no existe).</li><li><strong>2.</strong> Arma la tabla de signos de \\(f'\\).</li><li><strong>3.</strong> Haz lo mismo con \\(f''\\) para concavidad.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(f(x)=x^3-3x\\): \\(f'=3(x-1)(x+1)\\); máximo en \\(-1\\), mínimo en \\(1\\); \\(f''=6x\\): inflexión en 0.</div>\n<div class=\"err\"><b>Error común:</b> leer la gráfica de \\(f'\\) como si fuera la de \\(f\\): donde \\(f'\\) está arriba del eje, \\(f\\) crece, aunque \\(f'\\) esté bajando.</div>"
+   "lesson": "<h3>Idea central</h3><p>Las derivadas cuentan la forma de \\(f\\): \\(f'\\) dice si sube o baja y \\(f''\\) dice hacia dónde se curva.</p>\n<h3>Conceptos clave</h3><ul><li>\\(f'\\gt0\\): crece; \\(f'\\lt0\\): decrece.</li><li>\\(f'\\) cambia de + a −: máximo; de − a +: mínimo. Si solo toca 0 sin cambiar signo, no hay extremo.</li><li>\\(f''\\gt0\\): cóncava hacia arriba; \\(f''\\lt0\\): hacia abajo.</li><li>Inflexión: donde cambia la concavidad (picos y valles de la gráfica de \\(f'\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Halla puntos críticos (\\(f'=0\\) o no existe).</li><li><strong>2.</strong> Arma la tabla de signos de \\(f'\\).</li><li><strong>3.</strong> Haz lo mismo con \\(f''\\) para concavidad.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(f(x)=x^3-3x\\): \\(f'=3(x-1)(x+1)\\); máximo en \\(-1\\), mínimo en \\(1\\); \\(f''=6x\\): inflexión en 0.</div>\n<div class=\"err\"><b>Error común:</b> leer la gráfica de \\(f'\\) como si fuera la de \\(f\\): donde \\(f'\\) está arriba del eje, \\(f\\) crece, aunque \\(f'\\) esté bajando.</div>",
+   "tools": [
+    {
+     "w": "plot",
+     "t": "f, f′ y f″ juntas",
+     "p": "Activa f′ y f″ y mueve el punto: donde f′ cruza el eje hay extremo; donde f″ cambia de signo, inflexión.",
+     "o": {
+      "f": "x^3-3*x^2-9*x+5",
+      "xr": [
+       -4,
+       6
+      ],
+      "yr": [
+       -30,
+       30
+      ],
+      "x0": -1
+     }
+    }
+   ]
   }
  ],
  "figs": {
@@ -4186,7 +4817,7 @@
   },
   "taylor": {
    "n": "Polinomio de Taylor",
-   "f": "\\(P_2(x)=f(a)+f'(a)(x-a)+\\tfrac{f''(a)}{2}(x-a)^2\\)",
+   "f": "\\(P_2(x)=f(a)\\) \\(+f'(a)(x-a)\\) \\(+\\tfrac{f''(a)}{2}(x-a)^2\\)",
    "x": "Cada término copia una derivada más de \\(f\\) en \\(a\\).",
    "home": "tay"
   },
@@ -4235,7 +4866,7 @@
    ],
    "steps": [
     "\\(f(0)=1\\); \\(\\lim_{0^-}(x^2+1)=1\\); \\(\\lim_{0^+}e^x=1\\). Continua.",
-    "\\(f'_-(0)=\\lim_{h\\to0^-}\\frac{h^2}{h}=0\\); \\(f'_+(0)=\\lim_{h\\to0^+}\\frac{e^h-1}{h}=1\\).",
+    "\\(f'_-(0)\\) \\(=\\lim_{h\\to0^-}\\frac{h^2}{h}\\) \\(=0\\); \\(f'_+(0)\\) \\(=\\lim_{h\\to0^+}\\frac{e^h-1}{h}\\) \\(=1\\).",
     "\\(0\\neq1\\): no derivable."
    ],
    "ans": "Continua, no derivable",
@@ -4268,7 +4899,7 @@
    ],
    "steps": [
     "\\(f(0)=0\\); ambos laterales valen 0. Continua.",
-    "\\(f'_-(0)=\\lim_{h\\to0^-}\\frac{\\sin 2h}{h}=2\\); \\(f'_+(0)=\\lim\\frac{2h}{h}=2\\).",
+    "\\(f'_-(0)\\) \\(=\\lim_{h\\to0^-}\\frac{\\sin 2h}{h}\\) \\(=2\\); \\(f'_+(0)=\\lim\\frac{2h}{h}=2\\).",
     "Iguales: derivable, \\(f'(0)=2\\)."
    ],
    "ans": "Continua y derivable",
@@ -4320,7 +4951,7 @@
     }
    ],
    "steps": [
-    "\\(f'=3x^2-6x-9=3(x-3)(x+1)\\): críticos \\(-1\\) y \\(3\\).",
+    "\\(f'\\) \\(=3x^2-6x-9\\) \\(=3(x-3)(x+1)\\): críticos \\(-1\\) y \\(3\\).",
     "Signo de \\(f'\\): + , −, +. Máx. en \\(-1\\), mín. en \\(3\\).",
     "\\(f''=6x-6\\): negativa si \\(x\\lt1\\), positiva si \\(x\\gt1\\). Inflexión en \\(x=1\\)."
    ],
@@ -4342,13 +4973,16 @@
    "q": "<p>Por definición, calcula \\(f'(x)\\) para \\(f(x)=2x^2+\\sqrt{x+4}\\).</p>",
    "checks": [
     {
-     "p": "\\(f'(x)\\)",
-     "o": [
-      "\\(4x+\\dfrac{1}{2\\sqrt{x+4}}\\)",
-      "\\(4x+\\dfrac{1}{\\sqrt{x+4}}\\)",
-      "\\(2x+\\dfrac{1}{2\\sqrt{x+4}}\\)",
-      "\\(4x+2\\sqrt{x+4}\\)",
-      "\\(4x-\\dfrac{1}{2\\sqrt{x+4}}\\)"
+     "t": "expr",
+     "p": "Escribe f′(x).",
+     "f": [
+      {
+       "a": "4*x+1/(2*sqrt(x+4))",
+       "v": [
+        "x"
+       ],
+       "l": "f′(x) ="
+      }
      ]
     }
    ],
@@ -4375,19 +5009,22 @@
    "q": "<p>Por definición, calcula \\(f'(x)\\) para \\(f(x)=x^3+\\dfrac1x\\).</p>",
    "checks": [
     {
-     "p": "\\(f'(x)\\)",
-     "o": [
-      "\\(3x^2-\\dfrac1{x^2}\\)",
-      "\\(3x^2+\\dfrac1{x^2}\\)",
-      "\\(3x^2-\\dfrac1x\\)",
-      "\\(x^2-\\dfrac1{x^2}\\)",
-      "\\(3x^2\\)"
+     "t": "expr",
+     "p": "Escribe f′(x).",
+     "f": [
+      {
+       "a": "3*x^2-1/x^2",
+       "v": [
+        "x"
+       ],
+       "l": "f′(x) ="
+      }
      ]
     }
    ],
    "steps": [
     "Cúbico: \\(\\frac{3x^2h+3xh^2+h^3}{h}\\to3x^2\\).",
-    "Fracción: \\(\\frac{\\frac1{x+h}-\\frac1x}{h}=\\frac{-1}{x(x+h)}\\to-\\frac1{x^2}\\)."
+    "Fracción: \\(\\frac{\\frac1{x+h}-\\frac1x}{h}\\) \\(=\\frac{-1}{x(x+h)}\\to-\\frac1{x^2}\\)."
    ],
    "ans": "\\(3x^2-\\dfrac1{x^2}\\)",
    "hint": "",
@@ -4406,19 +5043,19 @@
    "q": "<p>Pendiente de la tangente a \\(x^3+y^3=9xy\\) en \\((2,4)\\).</p>",
    "checks": [
     {
+     "t": "expr",
      "p": "Pendiente",
-     "o": [
-      "\\(\\frac45\\)",
-      "\\(\\frac54\\)",
-      "\\(-\\frac45\\)",
-      "\\(2\\)",
-      "\\(\\frac25\\)"
+     "f": [
+      {
+       "a": "4/5",
+       "v": []
+      }
      ]
     }
    ],
    "steps": [
     "Verifica: \\(8+64=72=9\\cdot8\\) ✓.",
-    "\\(3x^2+3y^2y'=9y+9xy'\\Rightarrow y'=\\dfrac{3y-x^2}{y^2-3x}\\).",
+    "\\(3x^2+3y^2y'=9y+9xy'\\) \\(\\Rightarrow  y'=\\dfrac{3y-x^2}{y^2-3x}\\).",
     "\\(\\dfrac{12-4}{16-6}=\\dfrac{8}{10}\\)."
    ],
    "ans": "\\(\\frac45\\)",
@@ -4439,19 +5076,19 @@
    "q": "<p>Pendiente de la tangente a \\(x^2y+y^3=10\\) en \\((3,1)\\).</p>",
    "checks": [
     {
+     "t": "expr",
      "p": "Pendiente",
-     "o": [
-      "\\(-\\frac12\\)",
-      "\\(\\frac12\\)",
-      "\\(-\\frac23\\)",
-      "\\(-2\\)",
-      "\\(-\\frac16\\)"
+     "f": [
+      {
+       "a": "-1/2",
+       "v": []
+      }
      ]
     }
    ],
    "steps": [
     "Verifica: \\(9+1=10\\) ✓.",
-    "\\(2xy+x^2y'+3y^2y'=0\\Rightarrow y'=\\dfrac{-2xy}{x^2+3y^2}\\).",
+    "\\(2xy+x^2y'+3y^2y'=0\\) \\(\\Rightarrow  y'=\\dfrac{-2xy}{x^2+3y^2}\\).",
     "\\(\\dfrac{-6}{12}=-\\dfrac12\\)."
    ],
    "ans": "\\(-\\frac12\\)",
@@ -4472,13 +5109,15 @@
    "q": "<p>La temperatura en una varilla es \\(T(x)=90e^{-0.01(x-10)^2}\\) °C (\\(x\\) en cm). Una sonda se mueve a 2 cm/s.<br>a) Halla \\(\\frac{dT}{dt}\\) cuando \\(x=15\\) cm.<br>b) Si la posición tiene incertidumbre \\(\\pm0.2\\) cm, estima el error porcentual de \\(T\\). Se admite máximo 3 %.</p>",
    "checks": [
     {
-     "p": "a) \\(dT/dt\\)",
-     "o": [
-      "\\(\\approx-14.0\\ ^\\circ\\text{C/s}\\)",
-      "\\(\\approx-7.0\\ ^\\circ\\text{C/s}\\)",
-      "\\(\\approx14.0\\ ^\\circ\\text{C/s}\\)",
-      "\\(\\approx-70.1\\ ^\\circ\\text{C/s}\\)",
-      "\\(\\approx-1.4\\ ^\\circ\\text{C/s}\\)"
+     "t": "num",
+     "p": "a) Razón de cambio",
+     "f": [
+      {
+       "l": "dT/dt",
+       "a": -14.0,
+       "u": "°C/s",
+       "tol": 0.1
+      }
      ]
     },
     {
@@ -4493,10 +5132,10 @@
     }
    ],
    "steps": [
-    "\\(T(15)=90e^{-0.25}\\approx70.09\\) °C.",
-    "\\(T'(x)=T\\cdot(-0.02)(x-10)\\Rightarrow T'(15)\\approx70.09\\cdot(-0.1)\\approx-7.01\\) °C/cm.",
-    "a) \\(\\frac{dT}{dt}=-7.01\\cdot2\\approx-14.0\\) °C/s: la sonda se aleja del punto más caliente.",
-    "b) \\(\\left|\\frac{dT}{T}\\right|=0.02\\cdot5\\cdot0.2=0.02=2\\%\\le3\\%\\): cumple."
+    "\\(T(15)\\) \\(=90e^{-0.25}\\approx70.09\\) °C.",
+    "\\(T'(x)\\) \\(=T\\cdot(-0.02)(x-10)\\) \\(\\Rightarrow  T'(15)\\approx70.09\\cdot(-0.1)\\approx-7.01\\) °C/cm.",
+    "a) \\(\\frac{dT}{dt}\\) \\(=-7.01\\cdot2\\approx-14.0\\) °C/s: la sonda se aleja del punto más caliente.",
+    "b) \\(\\left|\\frac{dT}{T}\\right|\\) \\(=0.02\\cdot5\\cdot0.2\\) \\(=0.02\\) \\(=2\\%\\le3\\%\\): cumple."
    ],
    "ans": "a) ≈ −14.0 °C/s; b) 2 %, cumple",
    "hint": "",
@@ -4508,7 +5147,8 @@
     [],
     [],
     []
-   ]
+   ],
+   "chain": true
   }
  ],
  "sim": {
@@ -4530,7 +5170,8 @@
     "pool": [
      "simg1",
      "graf4",
-     "graf5"
+     "graf5",
+     "graf9"
     ]
    },
    {
@@ -4572,5 +5213,6 @@
    }
   ]
  },
- "free": true
+ "free": true,
+ "intro": "Organizado por semanas (1 a 7): límites, continuidad, derivadas (definición, reglas, cadena), L’Hôpital, diferenciales, Taylor, derivación implícita, razones relacionadas y análisis con f′ y f″. Ahora escribes tus respuestas como fórmulas (derivadas, integrales y límites) y se corrigen solas, aunque las escribas de otra forma equivalente. Hay graficador, tabla de signos, modelos de optimización con deslizador y campo de pendientes."
 }

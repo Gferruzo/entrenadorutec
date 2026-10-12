@@ -8,7 +8,7 @@
  "short": "ED3",
  "sub": "Sem. 9 y 10",
  "guide": true,
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> (60 min, 20 puntos: conceptual 6, procedimental 9 y aplicación con IRCA 5) y evalúa optimización en contexto, antiderivada e integral indefinida, sustitución e integración por partes, y EDO de variables separables con condición inicial. El simulacro sigue ese formato.",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> (60 min, 20 puntos: conceptual 6, procedimental 9 y aplicación con IRCA 5) y evalúa optimización en contexto, antiderivada e integral indefinida, sustitución e integración por partes, y EDO de variables separables con condición inicial. El simulacro sigue ese formato. Ahora escribes tus respuestas como fórmulas (derivadas, integrales y límites) y se corrigen solas, aunque las escribas de otra forma equivalente. Hay graficador, tabla de signos, modelos de optimización con deslizador y campo de pendientes.",
  "topics": [
   {
    "id": "w9graf",
@@ -30,28 +30,36 @@
      "q": "<p>Halla los extremos absolutos de \\(f(x)=x^3-6x^2+9x+1\\) en \\([-1,2]\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Máximo absoluto",
-       "o": [
-        "\\((1,\\ 5)\\)",
-        "\\((2,\\ 3)\\)",
-        "\\((3,\\ 1)\\)",
-        "\\((-1,\\ -15)\\)",
-        "No tiene"
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "f(x)",
+         "a": 5
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Mínimo absoluto",
-       "o": [
-        "\\((-1,\\ -15)\\)",
-        "\\((3,\\ 1)\\)",
-        "\\((2,\\ 3)\\)",
-        "\\((1,\\ 5)\\)",
-        "No tiene"
+       "f": [
+        {
+         "l": "x",
+         "a": -1
+        },
+        {
+         "l": "f(x)",
+         "a": -15
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f'(x)=3x^2-12x+9=3(x-1)(x-3)\\). Críticos: \\(x=1\\) y \\(x=3\\); solo \\(x=1\\) está dentro de \\([-1,2]\\).",
+      "\\(f'(x)\\) \\(=3x^2-12x+9\\) \\(=3(x-1)(x-3)\\). Críticos: \\(x=1\\) y \\(x=3\\); solo \\(x=1\\) está dentro de \\([-1,2]\\).",
       "Evalúa: \\(f(-1)=-1-6-9+1=-15\\), \\(f(1)=1-6+9+1=5\\), \\(f(2)=8-24+18+1=3\\).",
       "Máximo absoluto \\((1,5)\\), mínimo absoluto \\((-1,-15)\\), en un extremo del intervalo."
      ],
@@ -70,7 +78,8 @@
       [
        "absc"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9g2",
@@ -101,7 +110,7 @@
      ],
      "steps": [
       "\\(e^{-x}\\gt0\\) siempre, así que el signo de \\(f''\\) es el de \\(x^2-4x+2\\).",
-      "Raíces: \\(x=\\frac{4\\pm\\sqrt{16-8}}{2}=2\\pm\\sqrt2\\approx0.59\\) y \\(3.41\\).",
+      "Raíces: \\(x\\) \\(=\\frac{4\\pm\\sqrt{16-8}}{2}\\) \\(=2\\pm\\sqrt2\\approx0.59\\) y \\(3.41\\).",
       "La parábola \\(x^2-4x+2\\) es negativa entre sus raíces: cóncava hacia abajo en \\((2-\\sqrt2,\\,2+\\sqrt2)\\). Como cambia de signo en ambas, hay dos inflexiones."
      ],
      "ans": "Cóncava ↓ en (2−√2, 2+√2); inflexiones en x = 2 ± √2",
@@ -197,13 +206,16 @@
        ]
       },
       {
-       "p": "Asíntota oblicua",
-       "o": [
-        "\\(y=x\\)",
-        "\\(y=x+1\\)",
-        "\\(y=1\\)",
-        "\\(y=2x\\)",
-        "No tiene"
+       "t": "expr",
+       "p": "Escribe la asíntota oblicua.",
+       "f": [
+        {
+         "a": "x",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
@@ -225,7 +237,8 @@
        "crec"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9g5",
@@ -254,20 +267,20 @@
        ]
       },
       {
+       "t": "num",
        "p": "Valor mínimo",
-       "o": [
-        "\\(-27\\)",
-        "\\(0\\)",
-        "\\(-16\\)",
-        "\\(-81\\)",
-        "\\(27\\)"
+       "f": [
+        {
+         "l": "f(3)",
+         "a": -27
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f'(x)=4x^3-12x^2=4x^2(x-3)\\). Críticos: \\(x=0\\) y \\(x=3\\).",
+      "\\(f'(x)\\) \\(=4x^3-12x^2\\) \\(=4x^2(x-3)\\). Críticos: \\(x=0\\) y \\(x=3\\).",
       "\\(4x^2\\ge0\\), así que el signo de \\(f'\\) es el de \\(x-3\\): negativo antes de 3 (también a ambos lados de 0) y positivo después. En 0 no cambia de signo: no hay extremo. En 3 pasa de − a +: mínimo.",
-      "\\(f''(x)=12x^2-24x=12x(x-2)\\): cambia de signo en 0 y en 2, así que ambos son inflexiones.",
+      "\\(f''(x)\\) \\(=12x^2-24x\\) \\(=12x(x-2)\\): cambia de signo en 0 y en 2, así que ambos son inflexiones.",
       "\\(f(3)=81-108=-27\\)."
      ],
      "ans": "Mín. en x = 3 (f = −27); x = 0 no es extremo; inflexiones en 0 y 2",
@@ -286,7 +299,8 @@
        "conc"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9g6",
@@ -295,13 +309,21 @@
      "q": "<p>Halla \\(b,c,d\\) para que \\(f(x)=x^3+bx^2+cx+d\\) tenga un punto de inflexión en \\(x=2\\), un extremo en \\(x=1\\) y \\(f(0)=-5\\). ¿Qué tipo de extremo es?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Parámetros",
-       "o": [
-        "\\(b=-6,\\ c=9,\\ d=-5\\)",
-        "\\(b=-3,\\ c=0,\\ d=-5\\)",
-        "\\(b=6,\\ c=9,\\ d=-5\\)",
-        "\\(b=-6,\\ c=-9,\\ d=5\\)",
-        "\\(b=-6,\\ c=12,\\ d=-5\\)"
+       "f": [
+        {
+         "l": "b",
+         "a": -6
+        },
+        {
+         "l": "c",
+         "a": 9
+        },
+        {
+         "l": "d",
+         "a": -5
+        }
        ]
       },
       {
@@ -337,7 +359,8 @@
       [
        "f2c"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9g7",
@@ -346,30 +369,30 @@
      "q": "<p>Halla los extremos absolutos de \\(f(x)=x+2\\cos x\\) en \\([-\\pi,\\pi]\\).</p>",
      "checks": [
       {
-       "p": "Máximo absoluto",
-       "o": [
-        "\\(\\frac\\pi6+\\sqrt3\\approx2.26\\)",
-        "\\(\\pi-2\\approx1.14\\)",
-        "\\(\\frac{5\\pi}6-\\sqrt3\\approx0.89\\)",
-        "\\(\\pi+2\\approx5.14\\)",
-        "\\(2\\)"
+       "t": "expr",
+       "p": "Máximo absoluto (valor exacto)",
+       "f": [
+        {
+         "a": "π/6+sqrt(3)",
+         "v": []
+        }
        ]
       },
       {
-       "p": "Mínimo absoluto",
-       "o": [
-        "\\(-\\pi-2\\approx-5.14\\)",
-        "\\(\\frac{5\\pi}6-\\sqrt3\\approx0.89\\)",
-        "\\(-\\frac\\pi6-\\sqrt3\\approx-2.26\\)",
-        "\\(-2\\)",
-        "\\(-\\pi\\approx-3.14\\)"
+       "t": "expr",
+       "p": "Mínimo absoluto (valor exacto)",
+       "f": [
+        {
+         "a": "-π-2",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(f'(x)=1-2\\sin x=0\\Rightarrow\\sin x=\\tfrac12\\Rightarrow x=\\tfrac\\pi6\\) o \\(x=\\tfrac{5\\pi}6\\), ambos en \\([-\\pi,\\pi]\\).",
-      "\\(f(\\tfrac\\pi6)=\\tfrac\\pi6+\\sqrt3\\approx2.256\\); \\(f(\\tfrac{5\\pi}6)=\\tfrac{5\\pi}6-\\sqrt3\\approx0.886\\).",
-      "Bordes: \\(f(-\\pi)=-\\pi-2\\approx-5.142\\); \\(f(\\pi)=\\pi-2\\approx1.142\\).",
+      "\\(f'(x)=1-2\\sin x=0\\) \\(\\Rightarrow \\sin x=\\tfrac12\\) \\(\\Rightarrow  x=\\tfrac\\pi6\\) o \\(x=\\tfrac{5\\pi}6\\), ambos en \\([-\\pi,\\pi]\\).",
+      "\\(f(\\tfrac\\pi6)\\) \\(=\\tfrac\\pi6+\\sqrt3\\approx2.256\\); \\(f(\\tfrac{5\\pi}6)\\) \\(=\\tfrac{5\\pi}6-\\sqrt3\\approx0.886\\).",
+      "Bordes: \\(f(-\\pi)\\) \\(=-\\pi-2\\approx-5.142\\); \\(f(\\pi)\\) \\(=\\pi-2\\approx1.142\\).",
       "Máximo absoluto en \\(x=\\tfrac\\pi6\\); mínimo absoluto en el borde \\(x=-\\pi\\)."
      ],
      "ans": "Máx. π/6 + √3 ≈ 2.26; mín. −π − 2 ≈ −5.14",
@@ -388,7 +411,8 @@
       [
        "absc"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9g8",
@@ -397,30 +421,39 @@
      "q": "<p>Halla los extremos absolutos de \\(f(x)=\\dfrac{3x-4}{x^2+1}\\) en \\([-2,2]\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Máximo absoluto",
-       "o": [
-        "\\(0.4\\ \\text{en}\\ x=2\\)",
-        "\\(-2\\ \\text{en}\\ x=-2\\)",
-        "\\(0.5\\ \\text{en}\\ x=3\\)",
-        "\\(-4.5\\ \\text{en}\\ x=-\\tfrac13\\)",
-        "\\(0\\ \\text{en}\\ x=\\tfrac43\\)"
+       "f": [
+        {
+         "l": "valor",
+         "a": 0.4
+        },
+        {
+         "l": "en x =",
+         "a": 2
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Mínimo absoluto",
-       "o": [
-        "\\(-4.5\\ \\text{en}\\ x=-\\tfrac13\\)",
-        "\\(-2\\ \\text{en}\\ x=-2\\)",
-        "\\(-4\\ \\text{en}\\ x=0\\)",
-        "\\(0.4\\ \\text{en}\\ x=2\\)",
-        "\\(-5\\ \\text{en}\\ x=-\\tfrac13\\)"
+       "f": [
+        {
+         "l": "valor",
+         "a": -4.5
+        },
+        {
+         "l": "en x =",
+         "a": -0.3333,
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
-      "Cociente: \\(f'(x)=\\dfrac{3(x^2+1)-(3x-4)(2x)}{(x^2+1)^2}=\\dfrac{-3x^2+8x+3}{(x^2+1)^2}=\\dfrac{-(3x+1)(x-3)}{(x^2+1)^2}\\).",
+      "Cociente: \\(f'(x)\\) \\(=\\dfrac{3(x^2+1)-(3x-4)(2x)}{(x^2+1)^2}\\) \\(=\\dfrac{-3x^2+8x+3}{(x^2+1)^2}\\) \\(=\\dfrac{-(3x+1)(x-3)}{(x^2+1)^2}\\).",
       "Críticos: \\(x=-\\tfrac13\\) (dentro) y \\(x=3\\) (fuera de \\([-2,2]\\)).",
-      "\\(f(-\\tfrac13)=\\dfrac{-5}{10/9}=-4.5\\); \\(f(-2)=\\dfrac{-10}{5}=-2\\); \\(f(2)=\\dfrac25=0.4\\).",
+      "\\(f(-\\tfrac13)\\) \\(=\\dfrac{-5}{10/9}\\) \\(=-4.5\\); \\(f(-2)=\\dfrac{-10}{5}=-2\\); \\(f(2)=\\dfrac25=0.4\\).",
       "Máximo absoluto \\(0.4\\) en \\(x=2\\) (borde); mínimo absoluto \\(-4.5\\) en \\(x=-\\tfrac13\\)."
      ],
      "ans": "Máx. 0.4 en x = 2; mín. −4.5 en x = −1/3",
@@ -441,7 +474,203 @@
       [
        "absc"
       ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "w9g9",
+     "lvl": 2,
+     "title": "Tabla de signos con punto crítico doble",
+     "q": "<p>\\(f(x)=x^4-4x^3\\), con \\(f'(x)=4x^2(x-3)\\) y \\(f''(x)=12x(x-2)\\). Los puntos importantes son \\(x=0\\), \\(2\\) y \\(3\\).</p>",
+     "checks": [
+      {
+       "t": "signs",
+       "p": "Completa los signos.",
+       "pts": [
+        "0",
+        "2",
+        "3"
+       ],
+       "rows": [
+        {
+         "n": "f′(x)",
+         "a": [
+          "-",
+          "-",
+          "-",
+          "+"
+         ]
+        },
+        {
+         "n": "f″(x)",
+         "a": [
+          "+",
+          "-",
+          "+",
+          "+"
+         ]
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4x^2\\ge0\\), así que el signo de \\(f'\\) es el de \\(x-3\\): negativo antes de 3 y positivo después. En \\(x=0\\) no cambia de signo: no hay extremo.",
+      "\\(f''=12x(x-2)\\): positivo fuera de \\([0,2]\\) y negativo dentro: inflexiones en 0 y 2."
+     ],
+     "ans": "f′: −, −, −, +; f″: +, −, +, +",
+     "hint": "x² nunca es negativo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ]
      ]
+    },
+    {
+     "id": "w9g10",
+     "lvl": 2,
+     "title": "Toca las asíntotas",
+     "q": "<p>La gráfica es \\(f(x)=\\dfrac{x^2}{x^2-1}\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca las asíntotas <b>verticales</b>.",
+       "a": [
+        "v1",
+        "v2"
+       ],
+       "plot": {
+        "xr": [
+         -4,
+         4
+        ],
+        "yr": [
+         -4,
+         5
+        ],
+        "fs": [
+         {
+          "f": "x^2/(x^2-1)",
+          "cl": "f",
+          "l": "f"
+         }
+        ],
+        "zones": [
+         {
+          "t": "va",
+          "x": -1,
+          "id": "v1"
+         },
+         {
+          "t": "va",
+          "x": 1,
+          "id": "v2"
+         },
+         {
+          "t": "va",
+          "x": 0,
+          "id": "v0"
+         },
+         {
+          "t": "ha",
+          "y": 1,
+          "id": "h1"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "Las verticales están donde el denominador se anula: x² − 1 = 0."
+      },
+      {
+       "t": "tap",
+       "p": "Toca la asíntota <b>horizontal</b>.",
+       "a": [
+        "h1"
+       ],
+       "plot": {
+        "xr": [
+         -4,
+         4
+        ],
+        "yr": [
+         -4,
+         5
+        ],
+        "fs": [
+         {
+          "f": "x^2/(x^2-1)",
+          "cl": "f",
+          "l": "f"
+         }
+        ],
+        "zones": [
+         {
+          "t": "va",
+          "x": -1,
+          "id": "v1"
+         },
+         {
+          "t": "va",
+          "x": 1,
+          "id": "v2"
+         },
+         {
+          "t": "ha",
+          "y": 1,
+          "id": "h1"
+         },
+         {
+          "t": "ha",
+          "y": 0,
+          "id": "h0"
+         }
+        ]
+       },
+       "e": "Mismo grado arriba y abajo: y = cociente de los coeficientes principales."
+      }
+     ],
+     "steps": [
+      "Asíntotas verticales: x² − 1 = 0 → x = ±1 (el numerador no se anula ahí).",
+      "Horizontal: mismo grado → y = 1/1 = 1."
+     ],
+     "ans": "x = ±1 y y = 1",
+     "hint": "Denominador cero → vertical.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "crec"
+      ],
+      [
+       "conc"
+      ]
+     ],
+     "chain": true
+    }
+   ],
+   "tools": [
+    {
+     "w": "plot",
+     "t": "Explora x²e^(−x)",
+     "p": "Mueve el punto y activa f′ y f″ para ver extremos e inflexiones.",
+     "o": {
+      "f": "x^2*e^(-x)",
+      "xr": [
+       -1,
+       7
+      ],
+      "yr": [
+       -0.5,
+       1.5
+      ],
+      "x0": 1
+     }
     }
    ]
   },
@@ -458,7 +687,7 @@
     "Cono desde sector: \\(r=\\frac{R\\theta}{2\\pi}\\), \\(h=\\sqrt{R^2-r^2}\\), \\(V=\\frac13\\pi r^2h\\)",
     "Costo: \\(C=c_1A_1+c_2A_2+\\cdots\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>Optimizar en contexto es <strong>modelar</strong> antes de derivar. El cálculo (\\(f'=0\\), \\(f''\\)) es lo mismo de la Semana 7; lo nuevo es construir la función, su dominio y defender la respuesta.</p>\n<h3>Conceptos clave (esquema IRCA)</h3><ul><li><strong>I · Interpretación:</strong> variable de decisión, magnitud a optimizar \\(Q\\), datos fijos y dominio contextual.</li><li><strong>R · Representación:</strong> esquema con variables, restricción (la ecuación que las liga) y \\(Q=f(x)\\) en una sola variable.</li><li><strong>C · Cálculo:</strong> \\(f'(x)=0\\), clasificación con \\(f''\\) o comparando extremos.</li><li><strong>A · Análisis:</strong> unidades, restricción verificada, soluciones extrañas descartadas y conclusión escrita.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra (\\(x\\), \\(y\\), \\(r\\), \\(h\\)…).</li><li><strong>2.</strong> Escribe la restricción y despeja una variable.</li><li><strong>3.</strong> Sustituye en \\(Q\\) y simplifica <em>antes</em> de derivar.</li><li><strong>4.</strong> Dominio contextual: longitudes positivas, alturas \\(\\gt0\\), etc.</li><li><strong>5.</strong> Deriva, iguala a cero, clasifica y responde con unidades.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> santuario junto a un acantilado con 2 400 m de cerca. Restricción \\(x+2y=2400\\) (el lado del acantilado no se cerca). \\(A(x)=\\frac{2400x-x^2}{2}\\), \\(A'=1200-x=0\\Rightarrow x=1200\\) m, \\(y=600\\) m, \\(A''=-1\\lt0\\): máximo de \\(720\\,000\\) m².</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> tanque cilindro-cónico de \\(12\\pi\\) m³: \\(C(r)=\\pi\\big[(60+100\\sqrt2)r^2+\\frac{1440}r\\big]\\), \\(r^*\\approx1.53\\) m, \\(h^*\\approx4.62\\) m, \\(C\\approx\\$4\\,439\\).</div>\n<div class=\"err\"><b>Error común:</b> plantear \\(2x+2y=P\\) cuando un lado no lleva cerca, o derivar sin haber dejado la función en una sola variable.</div>",
+   "lesson": "<h3>Idea central</h3><p>Optimizar en contexto es <strong>modelar</strong> antes de derivar. El cálculo (\\(f'=0\\), \\(f''\\)) es lo mismo de la Semana 7; lo nuevo es construir la función, su dominio y defender la respuesta.</p>\n<h3>Conceptos clave (esquema IRCA)</h3><ul><li><strong>I · Interpretación:</strong> variable de decisión, magnitud a optimizar \\(Q\\), datos fijos y dominio contextual.</li><li><strong>R · Representación:</strong> esquema con variables, restricción (la ecuación que las liga) y \\(Q=f(x)\\) en una sola variable.</li><li><strong>C · Cálculo:</strong> \\(f'(x)=0\\), clasificación con \\(f''\\) o comparando extremos.</li><li><strong>A · Análisis:</strong> unidades, restricción verificada, soluciones extrañas descartadas y conclusión escrita.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra (\\(x\\), \\(y\\), \\(r\\), \\(h\\)…).</li><li><strong>2.</strong> Escribe la restricción y despeja una variable.</li><li><strong>3.</strong> Sustituye en \\(Q\\) y simplifica <em>antes</em> de derivar.</li><li><strong>4.</strong> Dominio contextual: longitudes positivas, alturas \\(\\gt0\\), etc.</li><li><strong>5.</strong> Deriva, iguala a cero, clasifica y responde con unidades.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> santuario junto a un acantilado con 2 400 m de cerca. Restricción \\(x+2y=2400\\) (el lado del acantilado no se cerca). \\(A(x)=\\frac{2400x-x^2}{2}\\), \\(A'=1200-x=0\\Rightarrow x=1200\\) m, \\(y=600\\) m, \\(A''=-1\\lt0\\): máximo de \\(720\\,000\\) m².</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> tanque cilindro-cónico de \\(12\\pi\\) m³: \\(C(r)\\) \\(=\\pi\\big[(60+100\\sqrt2)r^2+\\frac{1440}r\\big]\\), \\(r^*\\approx1.53\\) m, \\(h^*\\approx4.62\\) m, \\(C\\approx\\$4\\,439\\).</div>\n<div class=\"err\"><b>Error común:</b> plantear \\(2x+2y=P\\) cuando un lado no lleva cerca, o derivar sin haber dejado la función en una sola variable.</div>",
    "ex": [
     {
      "id": "w9o1",
@@ -477,29 +706,36 @@
        ]
       },
       {
+       "t": "num",
        "p": "Dimensiones de área máxima",
-       "o": [
-        "\\(x=300\\text{ m},\\ y=100\\text{ m}\\)",
-        "\\(x=200\\text{ m},\\ y=200/3\\text{ m}\\)",
-        "\\(x=150\\text{ m},\\ y=150\\text{ m}\\)",
-        "\\(x=300\\text{ m},\\ y=150\\text{ m}\\)",
-        "\\(x=100\\text{ m},\\ y=300\\text{ m}\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 300,
+         "u": "m"
+        },
+        {
+         "l": "y",
+         "a": 100,
+         "u": "m"
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Área máxima",
-       "o": [
-        "\\(30\\,000\\text{ m}^2\\)",
-        "\\(45\\,000\\text{ m}^2\\)",
-        "\\(22\\,500\\text{ m}^2\\)",
-        "\\(13\\,333\\text{ m}^2\\)",
-        "\\(60\\,000\\text{ m}^2\\)"
+       "f": [
+        {
+         "l": "A",
+         "a": 30000,
+         "u": "m²"
+        }
        ]
       }
      ],
      "steps": [
       "Se cercan: un lado paralelo (\\(x\\)) y <em>tres</em> segmentos perpendiculares (los dos bordes y la división): \\(x+3y=600\\).",
-      "\\(A=xy=(600-3y)y=600y-3y^2\\), con \\(0\\lt y\\lt200\\).",
+      "\\(A\\) \\(=xy\\) \\(=(600-3y)y\\) \\(=600y-3y^2\\), con \\(0\\lt y\\lt200\\).",
       "\\(A'(y)=600-6y=0\\Rightarrow y=100\\); \\(A''=-6\\lt0\\): máximo. \\(x=600-300=300\\).",
       "\\(A=300\\cdot100=30\\,000\\) m². Verificación: \\(300+3(100)=600\\) ✓."
      ],
@@ -519,7 +755,8 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o2",
@@ -528,41 +765,52 @@
      "q": "<p>De una lámina cuadrada de 40 cm se cortan cuadrados de lado \\(x\\) en las esquinas y se doblan los lados para formar una caja sin tapa.</p>",
      "checks": [
       {
-       "p": "Función y dominio",
-       "o": [
-        "\\(V=(40-2x)^2x,\\ 0\\lt x\\lt20\\)",
-        "\\(V=(40-x)^2x,\\ 0\\lt x\\lt40\\)",
-        "\\(V=(40-2x)x^2,\\ 0\\lt x\\lt20\\)",
-        "\\(V=(40-2x)^2x,\\ 0\\lt x\\lt40\\)",
-        "\\(V=40^2x,\\ x\\gt0\\)"
+       "t": "expr",
+       "p": "Escribe la función objetivo.",
+       "f": [
+        {
+         "a": "(40-2*x)^2*x",
+         "v": [
+          "x"
+         ],
+         "l": "V(x) =",
+         "dom": {
+          "x": [
+           1,
+           19
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "Corte óptimo",
-       "o": [
-        "\\(x=\\tfrac{20}3\\approx6.67\\text{ cm}\\)",
-        "\\(x=10\\text{ cm}\\)",
-        "\\(x=20\\text{ cm}\\)",
-        "\\(x=5\\text{ cm}\\)",
-        "\\(x=\\tfrac{40}3\\approx13.3\\text{ cm}\\)"
+       "t": "expr",
+       "p": "Corte óptimo x (exacto, en cm)",
+       "f": [
+        {
+         "a": "20/3",
+         "v": []
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Volumen máximo",
-       "o": [
-        "\\(\\approx4\\,741\\text{ cm}^3\\)",
-        "\\(4\\,000\\text{ cm}^3\\)",
-        "\\(\\approx3\\,556\\text{ cm}^3\\)",
-        "\\(\\approx9\\,481\\text{ cm}^3\\)",
-        "\\(4\\,500\\text{ cm}^3\\)"
+       "f": [
+        {
+         "l": "V",
+         "a": 4741,
+         "u": "cm³",
+         "tol": 2
+        }
        ]
       }
      ],
      "steps": [
       "La base queda de lado \\(40-2x\\) y la altura es \\(x\\): \\(V=(40-2x)^2x\\). Necesitamos \\(x\\gt0\\) y \\(40-2x\\gt0\\): \\(0\\lt x\\lt20\\).",
-      "\\(V'=(40-2x)^2-4x(40-2x)=(40-2x)(40-6x)=0\\Rightarrow x=20\\) (fuera del dominio) o \\(x=\\tfrac{20}3\\).",
+      "\\(V'\\) \\(=(40-2x)^2-4x(40-2x)\\) \\(=(40-2x)(40-6x)\\) \\(=0\\) \\(\\Rightarrow  x=20\\) (fuera del dominio) o \\(x=\\tfrac{20}3\\).",
       "\\(V''(x)=24x-320\\); \\(V''(\\tfrac{20}3)=-160\\lt0\\): máximo.",
-      "\\(V=(\\tfrac{80}3)^2\\cdot\\tfrac{20}3=\\tfrac{128\\,000}{27}\\approx4\\,740.7\\) cm³."
+      "\\(V\\) \\(=(\\tfrac{80}3)^2\\cdot\\tfrac{20}3\\) \\(=\\tfrac{128\\,000}{27}\\approx4\\,740.7\\) cm³."
      ],
      "ans": "x = 20/3 cm; V ≈ 4 741 cm³",
      "hint": "Factoriza (40 − 2x) en la derivada.",
@@ -580,7 +828,8 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o3",
@@ -589,30 +838,45 @@
      "q": "<p>Una caja <strong>sin tapa</strong> de base cuadrada debe tener 32 000 cm³. ¿Qué dimensiones usan la menor cantidad de material?</p>",
      "checks": [
       {
-       "p": "Función de área",
-       "o": [
-        "\\(S(x)=x^2+\\frac{128\\,000}{x}\\)",
-        "\\(S(x)=2x^2+\\frac{128\\,000}{x}\\)",
-        "\\(S(x)=x^2+\\frac{32\\,000}{x}\\)",
-        "\\(S(x)=x^2+4x\\)",
-        "\\(S(x)=2x^2+\\frac{64\\,000}{x}\\)"
+       "t": "expr",
+       "p": "Escribe el área de material en función de x.",
+       "f": [
+        {
+         "a": "x^2+128000/x",
+         "v": [
+          "x"
+         ],
+         "l": "S(x) =",
+         "dom": {
+          "x": [
+           5,
+           60
+          ]
+         }
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Dimensiones óptimas",
-       "o": [
-        "\\(x=40\\text{ cm},\\ h=20\\text{ cm}\\)",
-        "\\(x\\approx31.7\\text{ cm},\\ h\\approx31.7\\text{ cm}\\)",
-        "\\(x=20\\text{ cm},\\ h=80\\text{ cm}\\)",
-        "\\(x=40\\text{ cm},\\ h=40\\text{ cm}\\)",
-        "\\(x=32\\text{ cm},\\ h=31.25\\text{ cm}\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 40,
+         "u": "cm"
+        },
+        {
+         "l": "h",
+         "a": 20,
+         "u": "cm"
+        }
        ]
       }
      ],
      "steps": [
-      "Restricción: \\(x^2h=32\\,000\\Rightarrow h=\\frac{32\\,000}{x^2}\\).",
-      "Sin tapa: base \\(x^2\\) + 4 caras \\(4xh\\). \\(S=x^2+4x\\cdot\\frac{32\\,000}{x^2}=x^2+\\frac{128\\,000}x\\), \\(x\\gt0\\).",
-      "\\(S'=2x-\\frac{128\\,000}{x^2}=0\\Rightarrow x^3=64\\,000\\Rightarrow x=40\\) cm; \\(S''=2+\\frac{256\\,000}{x^3}\\gt0\\): mínimo (absoluto, \\(S\\) es convexa).",
+      "Restricción: \\(x^2h=32\\,000\\) \\(\\Rightarrow  h=\\frac{32\\,000}{x^2}\\).",
+      "Sin tapa: base \\(x^2\\) + 4 caras \\(4xh\\). \\(S\\) \\(=x^2+4x\\cdot\\frac{32\\,000}{x^2}\\) \\(=x^2+\\frac{128\\,000}x\\), \\(x\\gt0\\).",
+      "\\(S'=2x-\\frac{128\\,000}{x^2}=0\\) \\(\\Rightarrow  x^3=64\\,000\\) \\(\\Rightarrow  x=40\\) cm; \\(S''=2+\\frac{256\\,000}{x^3}\\gt0\\): mínimo (absoluto, \\(S\\) es convexa).",
       "\\(h=\\frac{32\\,000}{1600}=20\\) cm. Sin tapa, la caja óptima tiene altura igual a la mitad del lado (con tapa sería un cubo)."
      ],
      "ans": "x = 40 cm, h = 20 cm",
@@ -631,7 +895,8 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o4",
@@ -640,13 +905,15 @@
      "q": "<p>Una lata cilíndrica cerrada debe contener 500 cm³.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Radio que minimiza el material",
-       "o": [
-        "\\(r=\\sqrt[3]{250/\\pi}\\approx4.30\\text{ cm}\\)",
-        "\\(r=\\sqrt[3]{500/\\pi}\\approx5.42\\text{ cm}\\)",
-        "\\(r=\\sqrt{250/\\pi}\\approx8.92\\text{ cm}\\)",
-        "\\(r=\\sqrt[3]{125/\\pi}\\approx3.41\\text{ cm}\\)",
-        "\\(r=5\\text{ cm}\\)"
+       "f": [
+        {
+         "l": "r",
+         "a": 4.3,
+         "u": "cm",
+         "tol": 0.01
+        }
        ]
       },
       {
@@ -661,10 +928,10 @@
       }
      ],
      "steps": [
-      "\\(h=\\frac{500}{\\pi r^2}\\). Material: \\(S=2\\pi r^2+2\\pi rh=2\\pi r^2+\\frac{1000}r\\).",
-      "\\(S'=4\\pi r-\\frac{1000}{r^2}=0\\Rightarrow r^3=\\frac{250}\\pi\\Rightarrow r\\approx4.30\\) cm, y \\(h=\\frac{500}{\\pi r^2}=2r\\approx8.60\\) cm (altura igual al diámetro).",
-      "Con la pared al doble: \\(C\\propto2\\pi r^2+2\\cdot\\frac{1000}r\\). \\(C'=4\\pi r-\\frac{2000}{r^2}=0\\Rightarrow r^3=\\frac{500}\\pi\\), \\(r\\approx5.42\\) cm.",
-      "\\(h=\\frac{500}{\\pi r^2}=\\frac{500}{\\pi r^3}\\,r=r\\). Al encarecer la pared, conviene una lata más ancha y baja: \\(h=r\\) en vez de \\(h=2r\\)."
+      "\\(h=\\frac{500}{\\pi r^2}\\). Material: \\(S\\) \\(=2\\pi r^2+2\\pi rh\\) \\(=2\\pi r^2+\\frac{1000}r\\).",
+      "\\(S'=4\\pi r-\\frac{1000}{r^2}=0\\) \\(\\Rightarrow  r^3=\\frac{250}\\pi\\) \\(\\Rightarrow  r\\approx4.30\\) cm, y \\(h\\) \\(=\\frac{500}{\\pi r^2}\\) \\(=2r\\approx8.60\\) cm (altura igual al diámetro).",
+      "Con la pared al doble: \\(C\\propto2\\pi r^2+2\\cdot\\frac{1000}r\\). \\(C'=4\\pi r-\\frac{2000}{r^2}=0\\) \\(\\Rightarrow  r^3=\\frac{500}\\pi\\), \\(r\\approx5.42\\) cm.",
+      "\\(h\\) \\(=\\frac{500}{\\pi r^2}\\) \\(=\\frac{500}{\\pi r^3}\\,r\\) \\(=r\\). Al encarecer la pared, conviene una lata más ancha y baja: \\(h=r\\) en vez de \\(h=2r\\)."
      ],
      "ans": "r ≈ 4.30 cm (h = 2r); con pared al doble, h = r",
      "hint": "Escribe el costo con pesos: tapas × 1, pared × 2.",
@@ -682,7 +949,8 @@
        "costo"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o5",
@@ -691,39 +959,52 @@
      "q": "<p>Una central está en una orilla de un río de 3 km de ancho; la fábrica está en la otra orilla, 8 km río abajo. El cable cuesta $6 000/km bajo el agua y $2 000/km por tierra. El cable cruza en diagonal hasta un punto a \\(x\\) km río abajo y sigue por tierra.</p>",
      "checks": [
       {
-       "p": "Función de costo",
-       "o": [
-        "\\(C=6000\\sqrt{x^2+9}+2000(8-x)\\)",
-        "\\(C=6000(x+3)+2000(8-x)\\)",
-        "\\(C=2000\\sqrt{x^2+9}+6000(8-x)\\)",
-        "\\(C=6000\\sqrt{x^2+64}+2000x\\)",
-        "\\(C=6000\\sqrt{x^2+3}+2000(8-x)\\)"
+       "t": "expr",
+       "p": "Escribe la función de costo.",
+       "f": [
+        {
+         "a": "6000*sqrt(x^2+9)+2000*(8-x)",
+         "v": [
+          "x"
+         ],
+         "l": "C(x) =",
+         "dom": {
+          "x": [
+           0,
+           8
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "Punto óptimo de llegada",
-       "o": [
-        "\\(x=\\tfrac{3}{\\sqrt8}\\approx1.06\\text{ km}\\)",
-        "\\(x=0\\text{ km}\\)",
-        "\\(x=3\\text{ km}\\)",
-        "\\(x=\\tfrac{9}{8}\\approx1.13\\text{ km}\\)",
-        "\\(x=8\\text{ km}\\)"
+       "t": "num",
+       "p": "Punto óptimo",
+       "f": [
+        {
+         "l": "x",
+         "a": 1.06,
+         "u": "km",
+         "tol": 0.01
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Costo mínimo",
-       "o": [
-        "\\(\\approx\\$32\\,971\\)",
-        "\\(\\$34\\,000\\)",
-        "\\(\\approx\\$51\\,264\\)",
-        "\\(\\approx\\$30\\,000\\)",
-        "\\(\\approx\\$35\\,456\\)"
+       "f": [
+        {
+         "l": "C",
+         "a": 32971,
+         "u": "$",
+         "tol": 5
+        }
        ]
       }
      ],
      "steps": [
       "Tramo bajo el agua: hipotenusa \\(\\sqrt{x^2+3^2}\\). Tramo por tierra: \\(8-x\\). Dominio \\([0,8]\\).",
-      "\\(C'=\\frac{6000x}{\\sqrt{x^2+9}}-2000=0\\Rightarrow3x=\\sqrt{x^2+9}\\Rightarrow8x^2=9\\Rightarrow x=\\frac3{\\sqrt8}\\approx1.061\\) km.",
+      "\\(C'\\) \\(=\\frac{6000x}{\\sqrt{x^2+9}}-2000\\) \\(=0\\) \\(\\Rightarrow 3x=\\sqrt{x^2+9}\\) \\(\\Rightarrow 8x^2=9\\) \\(\\Rightarrow  x\\) \\(=\\frac3{\\sqrt8}\\approx1.061\\) km.",
       "\\(C(1.061)\\approx\\$32\\,971\\). Compara con los extremos: \\(C(0)=\\$34\\,000\\), \\(C(8)\\approx\\$51\\,264\\). El mínimo absoluto es interior.",
       "Conviene cruzar en diagonal hasta 1.06 km río abajo; cruzar perpendicular o ir todo bajo el agua cuesta más."
      ],
@@ -743,7 +1024,8 @@
        "absc"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o6",
@@ -752,30 +1034,38 @@
      "q": "<p>De un tronco de radio 15 in se corta una viga rectangular de ancho \\(w\\) y altura \\(h\\). Su resistencia es \\(S=wh^2\\).</p>",
      "checks": [
       {
-       "p": "Dimensiones de máxima resistencia",
-       "o": [
-        "\\(w=\\tfrac{30}{\\sqrt3}\\approx17.3,\\ h\\approx24.5\\text{ in}\\)",
-        "\\(w=h=15\\sqrt2\\approx21.2\\text{ in}\\)",
-        "\\(w\\approx24.5,\\ h\\approx17.3\\text{ in}\\)",
-        "\\(w=15,\\ h=15\\sqrt3\\approx26.0\\text{ in}\\)",
-        "\\(w=10,\\ h\\approx28.3\\text{ in}\\)"
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "w",
+         "a": 17.3,
+         "u": "in",
+         "tol": 0.1
+        },
+        {
+         "l": "h",
+         "a": 24.5,
+         "u": "in",
+         "tol": 0.1
+        }
        ]
       },
       {
-       "p": "Razón h/w óptima",
-       "o": [
-        "\\(\\sqrt2\\)",
-        "\\(1\\)",
-        "\\(2\\)",
-        "\\(\\sqrt3\\)",
-        "\\(\\tfrac1{\\sqrt2}\\)"
+       "t": "expr",
+       "p": "Razón h/w (exacta)",
+       "f": [
+        {
+         "a": "sqrt(2)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "La diagonal es el diámetro: \\(w^2+h^2=30^2=900\\Rightarrow h^2=900-w^2\\).",
-      "\\(S(w)=w(900-w^2)=900w-w^3\\), \\(0\\lt w\\lt30\\). \\(S'=900-3w^2=0\\Rightarrow w=\\sqrt{300}\\approx17.32\\) in.",
-      "\\(S''=-6w\\lt0\\): máximo. \\(h=\\sqrt{900-300}=\\sqrt{600}\\approx24.49\\) in, y \\(h/w=\\sqrt2\\).",
+      "La diagonal es el diámetro: \\(w^2+h^2=30^2=900\\) \\(\\Rightarrow  h^2=900-w^2\\).",
+      "\\(S(w)\\) \\(=w(900-w^2)\\) \\(=900w-w^3\\), \\(0\\lt w\\lt30\\). \\(S'=900-3w^2=0\\) \\(\\Rightarrow  w\\) \\(=\\sqrt{300}\\approx17.32\\) in.",
+      "\\(S''=-6w\\lt0\\): máximo. \\(h\\) \\(=\\sqrt{900-300}\\) \\(=\\sqrt{600}\\approx24.49\\) in, y \\(h/w=\\sqrt2\\).",
       "La viga más resistente no es la de mayor área (esa sería cuadrada, \\(w=h\\)): necesita más altura para resistir la flexión."
      ],
      "ans": "w ≈ 17.3 in, h ≈ 24.5 in; h/w = √2",
@@ -794,7 +1084,8 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o7",
@@ -803,41 +1094,54 @@
      "q": "<p>Un tanque cerrado tiene cuerpo cilíndrico (radio \\(r\\), altura \\(h\\)), tapa plana y fondo cónico de altura \\(r\\). Volumen total \\(9\\pi\\) m³. Costos: tapa $80/m², pared $50/m², fondo cónico $120/m² (área lateral del cono \\(\\sqrt2\\,\\pi r^2\\)).</p>",
      "checks": [
       {
-       "p": "Altura del cilindro y dominio",
-       "o": [
-        "\\(h=\\frac9{r^2}-\\frac r3,\\ 0\\lt r\\lt3\\)",
-        "\\(h=\\frac9{r^2},\\ r\\gt0\\)",
-        "\\(h=\\frac9{r^2}-r,\\ 0\\lt r\\lt\\sqrt[3]9\\)",
-        "\\(h=\\frac{9\\pi}{r^2}-\\frac r3,\\ r\\gt0\\)",
-        "\\(h=\\frac{27}{r^2}-\\frac r3,\\ 0\\lt r\\lt3\\)"
+       "t": "expr",
+       "p": "Escribe h en función de r.",
+       "f": [
+        {
+         "a": "9/r^2-r/3",
+         "v": [
+          "r"
+         ],
+         "l": "h =",
+         "dom": {
+          "r": [
+           0.5,
+           2.9
+          ]
+         }
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Radio óptimo",
-       "o": [
-        "\\(r^*\\approx1.28\\text{ m}\\)",
-        "\\(r^*\\approx1.53\\text{ m}\\)",
-        "\\(r^*\\approx1.07\\text{ m}\\)",
-        "\\(r^*\\approx2.00\\text{ m}\\)",
-        "\\(r^*=3\\text{ m}\\)"
+       "f": [
+        {
+         "l": "r*",
+         "a": 1.28,
+         "u": "m",
+         "tol": 0.01
+        }
        ]
       },
       {
-       "p": "Altura cilíndrica óptima",
-       "o": [
-        "\\(h^*\\approx5.10\\text{ m}\\)",
-        "\\(h^*\\approx4.62\\text{ m}\\)",
-        "\\(h^*\\approx5.52\\text{ m}\\)",
-        "\\(h^*\\approx3.84\\text{ m}\\)",
-        "\\(h^*\\approx1.28\\text{ m}\\)"
+       "t": "num",
+       "p": "Altura óptima",
+       "f": [
+        {
+         "l": "h*",
+         "a": 5.1,
+         "u": "m",
+         "tol": 0.02
+        }
        ]
       }
      ],
      "steps": [
-      "Volumen: \\(\\pi r^2h+\\tfrac13\\pi r^3=9\\pi\\Rightarrow h=\\frac9{r^2}-\\frac r3\\). \\(h\\gt0\\iff r^3\\lt27\\iff r\\lt3\\).",
-      "\\(C=80\\pi r^2+50(2\\pi rh)+120\\sqrt2\\,\\pi r^2\\). Como \\(100\\pi rh=\\frac{900\\pi}r-\\frac{100\\pi r^2}3\\): \\(C(r)=\\pi\\big[k\\,r^2+\\frac{900}r\\big]\\) con \\(k=80-\\tfrac{100}3+120\\sqrt2\\approx216.37\\).",
-      "\\(C'=\\pi\\big[2kr-\\frac{900}{r^2}\\big]=0\\Rightarrow r^3=\\frac{450}k\\approx2.080\\Rightarrow r^*\\approx1.276\\) m. \\(C''=\\pi\\big[2k+\\frac{1800}{r^3}\\big]\\gt0\\): mínimo.",
-      "\\(h^*=\\frac9{1.276^2}-\\frac{1.276}3\\approx5.10\\) m; costo \\(\\approx\\$3323\\)."
+      "Volumen: \\(\\pi r^2h+\\tfrac13\\pi r^3\\) \\(=9\\pi\\) \\(\\Rightarrow  h=\\frac9{r^2}-\\frac r3\\). \\(h\\gt0\\iff r^3\\lt27\\iff r\\lt3\\).",
+      "\\(C\\) \\(=80\\pi r^2+50(2\\pi rh)+120\\sqrt2\\,\\pi r^2\\). Como \\(100\\pi rh\\) \\(=\\frac{900\\pi}r-\\frac{100\\pi r^2}3\\): \\(C(r)\\) \\(=\\pi\\big[k\\,r^2+\\frac{900}r\\big]\\) con \\(k\\) \\(=80-\\tfrac{100}3+120\\sqrt2\\approx216.37\\).",
+      "\\(C'\\) \\(=\\pi\\big[2kr-\\frac{900}{r^2}\\big]\\) \\(=0\\) \\(\\Rightarrow  r^3=\\frac{450}k\\approx2.080\\) \\(\\Rightarrow  r^*\\approx1.276\\) m. \\(C''\\) \\(=\\pi\\big[2k+\\frac{1800}{r^3}\\big]\\gt0\\): mínimo.",
+      "\\(h^*\\) \\(=\\frac9{1.276^2}-\\frac{1.276}3\\approx5.10\\) m; costo \\(\\approx\\$3323\\)."
      ],
      "ans": "r* ≈ 1.28 m, h* ≈ 5.10 m",
      "hint": "Simplifica la función de costo antes de derivar: junta los términos en r².",
@@ -856,7 +1160,8 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o8",
@@ -865,31 +1170,35 @@
      "q": "<p>De una lámina circular de radio \\(R=3\\) m se retira un sector y con el resto (ángulo \\(\\theta\\)) se forma un cono. Se sabe que el volumen es máximo cuando \\(r=R\\sqrt{2/3}\\).</p>",
      "checks": [
       {
-       "p": "Ángulo óptimo del sector usado",
-       "o": [
-        "\\(\\theta^*=2\\pi\\sqrt{2/3}\\approx5.13\\text{ rad}\\ (293.9^\\circ)\\)",
-        "\\(\\theta^*=\\pi\\text{ rad}\\ (180^\\circ)\\)",
-        "\\(\\theta^*\\approx1.15\\text{ rad}\\ (66.1^\\circ)\\)",
-        "\\(\\theta^*=\\tfrac{4\\pi}3\\ (240^\\circ)\\)",
-        "\\(\\theta^*=2\\pi\\sqrt{1/3}\\approx3.63\\text{ rad}\\)"
+       "t": "num",
+       "p": "Ángulo óptimo",
+       "f": [
+        {
+         "l": "θ*",
+         "a": 5.13,
+         "u": "rad",
+         "tol": 0.01
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Volumen máximo",
-       "o": [
-        "\\(\\approx10.88\\text{ m}^3\\)",
-        "\\(\\approx6.30\\text{ m}^3\\)",
-        "\\(\\approx32.65\\text{ m}^3\\)",
-        "\\(\\approx14.14\\text{ m}^3\\)",
-        "\\(\\approx3.63\\text{ m}^3\\)"
+       "f": [
+        {
+         "l": "V",
+         "a": 10.88,
+         "u": "m³",
+         "tol": 0.02
+        }
        ]
       }
      ],
      "steps": [
-      "El arco del sector se vuelve la circunferencia de la base: \\(R\\theta=2\\pi r\\Rightarrow r=\\frac{R\\theta}{2\\pi}\\). La generatriz es \\(R\\): \\(h=\\sqrt{R^2-r^2}\\).",
-      "Con \\(r=R\\sqrt{2/3}\\): \\(\\theta=\\frac{2\\pi r}R=2\\pi\\sqrt{2/3}\\approx5.130\\) rad. Se descarta un sector de \\(\\approx66.1^\\circ\\).",
-      "\\(r=3\\sqrt{2/3}\\approx2.449\\) m, \\(h=\\sqrt{9-6}=\\sqrt3\\approx1.732\\) m.",
-      "\\(V=\\tfrac13\\pi r^2h=\\tfrac13\\pi(6)(\\sqrt3)=2\\sqrt3\\,\\pi\\approx10.88\\) m³. En general \\(V_{máx}=\\frac{2\\pi R^3}{9\\sqrt3}\\approx0.128\\,\\pi R^3\\)."
+      "El arco del sector se vuelve la circunferencia de la base: \\(R\\theta=2\\pi r\\) \\(\\Rightarrow  r=\\frac{R\\theta}{2\\pi}\\). La generatriz es \\(R\\): \\(h=\\sqrt{R^2-r^2}\\).",
+      "Con \\(r=R\\sqrt{2/3}\\): \\(\\theta\\) \\(=\\frac{2\\pi r}R\\) \\(=2\\pi\\sqrt{2/3}\\approx5.130\\) rad. Se descarta un sector de \\(\\approx66.1^\\circ\\).",
+      "\\(r\\) \\(=3\\sqrt{2/3}\\approx2.449\\) m, \\(h\\) \\(=\\sqrt{9-6}\\) \\(=\\sqrt3\\approx1.732\\) m.",
+      "\\(V\\) \\(=\\tfrac13\\pi r^2h\\) \\(=\\tfrac13\\pi(6)(\\sqrt3)\\) \\(=2\\sqrt3\\,\\pi\\approx10.88\\) m³. En general \\(V_{máx}\\) \\(=\\frac{2\\pi R^3}{9\\sqrt3}\\approx0.128\\,\\pi R^3\\)."
      ],
      "ans": "θ* ≈ 5.13 rad (293.9°); V ≈ 10.88 m³",
      "hint": "La generatriz del cono es el radio de la lámina.",
@@ -905,7 +1214,8 @@
        "pit"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o9",
@@ -924,19 +1234,26 @@
        ]
       },
       {
+       "t": "num",
        "p": "Diseño óptimo",
-       "o": [
-        "\\(x=0.5\\text{ km},\\ y=\\tfrac1\\pi\\approx0.318\\text{ km}\\)",
-        "\\(x=1\\text{ km},\\ y=0\\)",
-        "\\(x=y=\\tfrac2{2+\\pi}\\approx0.389\\text{ km}\\)",
-        "\\(x=0.25\\text{ km},\\ y=\\tfrac{1.5}\\pi\\text{ km}\\)",
-        "\\(x=\\tfrac1\\pi,\\ y=0.5\\text{ km}\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 0.5,
+         "u": "km"
+        },
+        {
+         "l": "y",
+         "a": 0.318,
+         "u": "km",
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
       "Dos semicírculos de diámetro \\(y\\) forman una circunferencia: longitud \\(\\pi y\\). Total: \\(2x+\\pi y=2\\).",
-      "\\(x=\\frac{2-\\pi y}2\\Rightarrow A(y)=\\frac{2y-\\pi y^2}2\\), con \\(0\\lt y\\lt\\frac2\\pi\\).",
+      "\\(x=\\frac{2-\\pi y}2\\) \\(\\Rightarrow  A(y)=\\frac{2y-\\pi y^2}2\\), con \\(0\\lt y\\lt\\frac2\\pi\\).",
       "\\(A'=1-\\pi y=0\\Rightarrow y=\\frac1\\pi\\); \\(A''=-\\pi\\lt0\\): máximo. \\(x=\\frac{2-1}2=0.5\\) km.",
       "Las rectas usan exactamente la mitad de la pista (1 km) y las curvas la otra mitad. \\(A=\\frac{0.5}\\pi\\approx0.159\\) km²."
      ],
@@ -956,38 +1273,42 @@
        "f2c"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9o10",
      "lvl": 3,
      "title": "Bifurcación vascular (Poiseuille)",
-     "q": "<p>La resistencia en una bifurcación es \\(R(\\theta)=C\\Big(\\frac{a-b\\cot\\theta}{r_1^4}+\\frac{b\\csc\\theta}{r_2^4}\\Big)\\), \\(0\\lt\\theta\\lt\\frac\\pi2\\). El óptimo cumple \\(\\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\). Si la rama mide el 80 % del radio principal (\\(r_2=0.8\\,r_1\\)), ¿cuál es el ángulo óptimo?</p>",
+     "q": "<p>La resistencia en una bifurcación es \\(R(\\theta)\\) \\(=C\\Big(\\frac{a-b\\cot\\theta}{r_1^4}+\\frac{b\\csc\\theta}{r_2^4}\\Big)\\), \\(0\\lt\\theta\\lt\\frac\\pi2\\). El óptimo cumple \\(\\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\). Si la rama mide el 80 % del radio principal (\\(r_2=0.8\\,r_1\\)), ¿cuál es el ángulo óptimo?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Ángulo óptimo",
-       "o": [
-        "\\(\\theta^*\\approx65.8^\\circ\\)",
-        "\\(\\theta^*\\approx36.9^\\circ\\)",
-        "\\(\\theta^*\\approx79.0^\\circ\\)",
-        "\\(\\theta^*\\approx24.2^\\circ\\)",
-        "\\(\\theta^*\\approx50.0^\\circ\\)"
+       "f": [
+        {
+         "l": "θ*",
+         "a": 65.8,
+         "u": "°",
+         "tol": 0.2
+        }
        ]
       },
       {
-       "p": "Si la rama es mucho más delgada (r₂ ≪ r₁), θ* tiende a",
-       "o": [
-        "\\(90^\\circ\\)",
-        "\\(0^\\circ\\)",
-        "\\(45^\\circ\\)",
-        "\\(60^\\circ\\)",
-        "\\(180^\\circ\\)"
+       "t": "num",
+       "p": "Límite",
+       "f": [
+        {
+         "l": "θ* →",
+         "a": 90,
+         "u": "°"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(R'(\\theta)=Cb\\csc\\theta\\Big(\\frac{\\csc\\theta}{r_1^4}-\\frac{\\cot\\theta}{r_2^4}\\Big)=0\\Rightarrow\\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\).",
-      "\\(\\cos\\theta^*=0.8^4=0.4096\\Rightarrow\\theta^*=\\arccos(0.4096)\\approx65.8^\\circ\\).",
+      "\\(R'(\\theta)\\) \\(=Cb\\csc\\theta\\Big(\\frac{\\csc\\theta}{r_1^4}-\\frac{\\cot\\theta}{r_2^4}\\Big)\\) \\(=0\\) \\(\\Rightarrow \\cos\\theta^*=\\frac{r_2^4}{r_1^4}\\).",
+      "\\(\\cos\\theta^*\\) \\(=0.8^4\\) \\(=0.4096\\) \\(\\Rightarrow \\theta^*\\) \\(=\\arccos(0.4096)\\approx65.8^\\circ\\).",
       "Si \\(r_2\\ll r_1\\), \\((r_2/r_1)^4\\to0\\) y \\(\\theta^*\\to90^\\circ\\): los vasos muy finos salen casi perpendiculares para recorrer lo menos posible por el tramo de alta resistencia."
      ],
      "ans": "θ* ≈ 65.8°; tiende a 90°",
@@ -999,7 +1320,83 @@
       [],
       [],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "w9o11",
+     "lvl": 1,
+     "title": "Ordena los 7 pasos",
+     "q": "<p>Ordena los 7 pasos para resolver un problema de optimización.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Interpretar el enunciado.",
+        "Dibujar y nombrar las variables.",
+        "Plantear la restricción.",
+        "Escribir la función objetivo en una sola variable.",
+        "Fijar el dominio contextual.",
+        "Optimizar: derivar, igualar a 0 y clasificar.",
+        "Argumentar la conclusión con unidades."
+       ]
+      }
+     ],
+     "steps": [
+      "Entender y dibujar antes de escribir fórmulas.",
+      "La restricción permite dejar la función objetivo en una sola variable; el dominio sale del contexto.",
+      "Recién entonces se deriva; al final se concluye en el lenguaje del problema."
+     ],
+     "ans": "Interpretar → dibujar → restricción → objetivo → dominio → optimizar → argumentar",
+     "hint": "Derivar es casi lo último.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rest"
+      ],
+      [
+       "domc"
+      ],
+      [
+       "f2c"
+      ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "opt",
+     "t": "Caja sin tapa (lámina de 40 cm)",
+     "p": "Mueve el corte x y busca el volumen máximo antes de derivar.",
+     "o": {
+      "kind": "caja",
+      "L": 40,
+      "lab": "Corte x (cm):"
+     }
+    },
+    {
+     "w": "opt",
+     "t": "Lata de 500 cm³",
+     "p": "Cambia el radio y busca el área mínima de material.",
+     "o": {
+      "kind": "lata",
+      "V": 500,
+      "lab": "Radio r (cm):"
+     }
+    },
+    {
+     "w": "opt",
+     "t": "Corral junto al río (600 m de cerca)",
+     "p": "Cambia el lado paralelo al río y busca el área máxima.",
+     "o": {
+      "kind": "corral",
+      "P": 600,
+      "k": 3,
+      "lab": "Lado x (m):"
+     }
     }
    ]
   },
@@ -1023,30 +1420,33 @@
      "q": "<p>El costo diario de almacenar \\(x\\) unidades es \\(C(x)=\\frac{2000}x+4x+300\\). La política de reposición es \\(x^*(t)=\\sqrt{500+40t}\\) (\\(t\\) en días).</p>",
      "checks": [
       {
-       "p": "Óptimo para t = 0",
-       "o": [
-        "\\(x^*=\\sqrt{500}\\approx22.4\\)",
-        "\\(x^*=500\\)",
-        "\\(x^*=\\sqrt{2000}\\approx44.7\\)",
-        "\\(x^*=\\sqrt{300}\\approx17.3\\)",
-        "\\(x^*=10\\)"
+       "t": "num",
+       "p": "Óptimo en t = 0",
+       "f": [
+        {
+         "l": "x*",
+         "a": 22.4,
+         "tol": 0.05
+        }
        ]
       },
       {
-       "p": "Ritmo de cambio del óptimo en t = 10 días",
-       "o": [
-        "\\(\\tfrac23\\approx0.67\\text{ unid./día}\\)",
-        "\\(\\tfrac43\\approx1.33\\text{ unid./día}\\)",
-        "\\(30\\text{ unid./día}\\)",
-        "\\(20\\text{ unid./día}\\)",
-        "\\(\\tfrac1{30}\\text{ unid./día}\\)"
+       "t": "num",
+       "p": "Ritmo de cambio en t = 10",
+       "f": [
+        {
+         "l": "dx*/dt",
+         "a": 0.67,
+         "u": "unid./día",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(C'(x)=-\\frac{2000}{x^2}+4=0\\Rightarrow x^2=500\\Rightarrow x=\\sqrt{500}\\approx22.4\\); \\(C''=\\frac{4000}{x^3}\\gt0\\): mínimo. Coincide con \\(x^*(0)\\).",
-      "\\(\\frac{dx^*}{dt}=\\frac{40}{2\\sqrt{500+40t}}=\\frac{20}{\\sqrt{500+40t}}\\).",
-      "En \\(t=10\\): \\(\\frac{20}{\\sqrt{900}}=\\frac23\\approx0.67\\) unidades por día. Es positivo pero decrece: el inventario óptimo sube cada vez más despacio."
+      "\\(C'(x)=-\\frac{2000}{x^2}+4=0\\) \\(\\Rightarrow  x^2=500\\) \\(\\Rightarrow  x=\\sqrt{500}\\approx22.4\\); \\(C''=\\frac{4000}{x^3}\\gt0\\): mínimo. Coincide con \\(x^*(0)\\).",
+      "\\(\\frac{dx^*}{dt}\\) \\(=\\frac{40}{2\\sqrt{500+40t}}\\) \\(=\\frac{20}{\\sqrt{500+40t}}\\).",
+      "En \\(t=10\\): \\(\\frac{20}{\\sqrt{900}}\\) \\(=\\frac23\\approx0.67\\) unidades por día. Es positivo pero decrece: el inventario óptimo sube cada vez más despacio."
      ],
      "ans": "x*(0) ≈ 22.4; dx*/dt(10) = 2/3 unid./día",
      "hint": "Regla de la cadena para la raíz: (√u)′ = u′/(2√u).",
@@ -1063,47 +1463,55 @@
       [
        "param"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9d2",
      "lvl": 2,
      "title": "Dosificación en una planta de agua",
-     "q": "<p>El índice de costo por dosificación \\(x\\) (mg/L) en el día \\(t\\) es \\(I(x,t)=\\frac13x^2-(4+0.3t)x+60\\). La masa de contaminante removido cumple \\(y'(t)=12-1.5t\\) con \\(y(0)=4\\) toneladas.</p>",
+     "q": "<p>El índice de costo por dosificación \\(x\\) (mg/L) en el día \\(t\\) es \\(I(x,t)\\) \\(=\\frac13x^2-(4+0.3t)x+60\\). La masa de contaminante removido cumple \\(y'(t)=12-1.5t\\) con \\(y(0)=4\\) toneladas.</p>",
      "checks": [
       {
-       "p": "Dosis óptima",
-       "o": [
-        "\\(x^*(t)=6+0.45t\\)",
-        "\\(x^*(t)=4+0.3t\\)",
-        "\\(x^*(t)=12+0.9t\\)",
-        "\\(x^*(t)=2+0.15t\\)",
-        "\\(x^*(t)=6-0.45t\\)"
+       "t": "expr",
+       "p": "Escribe la dosis óptima.",
+       "f": [
+        {
+         "a": "6+0.45*t",
+         "v": [
+          "t"
+         ],
+         "l": "x*(t) ="
+        }
        ]
       },
       {
-       "p": "Masa removida",
-       "o": [
-        "\\(y(t)=12t-0.75t^2+4\\)",
-        "\\(y(t)=12t-1.5t^2+4\\)",
-        "\\(y(t)=12t-0.75t^2\\)",
-        "\\(y(t)=-1.5\\)",
-        "\\(y(t)=12-0.75t^2+4\\)"
+       "t": "expr",
+       "p": "Escribe la masa removida.",
+       "f": [
+        {
+         "a": "12*t-0.75*t^2+4",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       },
       {
-       "p": "Rango de validez (mientras se siga removiendo)",
-       "o": [
-        "\\(0\\le t\\le8\\text{ días}\\)",
-        "\\(0\\le t\\le16\\text{ días}\\)",
-        "\\(0\\le t\\le4\\text{ días}\\)",
-        "\\(t\\ge0\\)",
-        "\\(0\\le t\\le12\\text{ días}\\)"
+       "t": "num",
+       "p": "Validez",
+       "f": [
+        {
+         "l": "t máx",
+         "a": 8,
+         "u": "días"
+        }
        ]
       }
      ],
      "steps": [
-      "Con \\(t\\) fijo: \\(\\frac{\\partial I}{\\partial x}=\\frac23x-(4+0.3t)=0\\Rightarrow x^*=\\frac32(4+0.3t)=6+0.45t\\). Segunda derivada \\(\\frac23\\gt0\\): mínimo. \\(\\frac{dx^*}{dt}=0.45\\) mg/L por día.",
+      "Con \\(t\\) fijo: \\(\\frac{\\partial I}{\\partial x}\\) \\(=\\frac23x-(4+0.3t)\\) \\(=0\\) \\(\\Rightarrow  x^*\\) \\(=\\frac32(4+0.3t)\\) \\(=6+0.45t\\). Segunda derivada \\(\\frac23\\gt0\\): mínimo. \\(\\frac{dx^*}{dt}=0.45\\) mg/L por día.",
       "Antiderivada de \\(12-1.5t\\): \\(y=12t-0.75t^2+C\\); \\(y(0)=4\\Rightarrow C=4\\).",
       "\\(y''(t)=-1.5\\lt0\\): la remoción se desacelera.",
       "\\(y'(t)\\ge0\\iff t\\le8\\). Después de 8 días el modelo diría que se 'des-remueve' contaminante, lo que no tiene sentido físico."
@@ -1127,22 +1535,25 @@
       [
        "validez"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9d3",
      "lvl": 2,
      "title": "Sensibilidad térmica del tanque",
-     "q": "<p>En el tanque cilindro-cónico de la guía, \\(r^*(T)=\\Big[\\frac{36}{(3+5\\sqrt2)\\,(1-\\beta(T-20))}\\Big]^{1/3}\\) con \\(\\beta=2.07\\times10^{-4}\\ ^\\circ\\)C\\(^{-1}\\), y en \\(T_0=20\\) °C se obtiene \\(\\frac{dr^*}{dT}\\approx1.055\\times10^{-4}\\) m/°C.</p>",
+     "q": "<p>En el tanque cilindro-cónico de la guía, \\(r^*(T)\\) \\(=\\Big[\\frac{36}{(3+5\\sqrt2)\\,(1-\\beta(T-20))}\\Big]^{1/3}\\) con \\(\\beta=2.07\\times10^{-4}\\ ^\\circ\\)C\\(^{-1}\\), y en \\(T_0=20\\) °C se obtiene \\(\\frac{dr^*}{dT}\\approx1.055\\times10^{-4}\\) m/°C.</p>",
      "checks": [
       {
-       "p": "Cambio aproximado de r* al pasar de 20 °C a 35 °C",
-       "o": [
-        "\\(\\approx1.6\\text{ mm}\\)",
-        "\\(\\approx0.16\\text{ mm}\\)",
-        "\\(\\approx16\\text{ mm}\\)",
-        "\\(\\approx3.7\\text{ mm}\\)",
-        "\\(\\approx0.11\\text{ mm}\\)"
+       "t": "num",
+       "p": "Cambio de r*",
+       "f": [
+        {
+         "l": "Δr*",
+         "a": 1.6,
+         "u": "mm",
+         "tol": 0.1
+        }
        ]
       },
       {
@@ -1157,7 +1568,7 @@
       }
      ],
      "steps": [
-      "\\(\\Delta r^*\\approx\\frac{dr^*}{dT}\\Delta T=1.055\\times10^{-4}\\cdot15\\approx1.58\\times10^{-3}\\) m \\(\\approx1.6\\) mm.",
+      "\\(\\Delta r^*\\approx\\frac{dr^*}{dT}\\Delta T\\) \\(=1.055\\times10^{-4}\\cdot15\\approx1.58\\times10^{-3}\\) m \\(\\approx1.6\\) mm.",
       "Al calentarse el agua baja su densidad: la misma masa ocupa más volumen y el óptimo crece un poco (\\(\\frac{dr^*}{dT}\\gt0\\)).",
       "1.6 mm es menor que la tolerancia de fabricación: un único diseño cubre el rango de operación."
      ],
@@ -1174,38 +1585,43 @@
       [
        "validez"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9d4",
      "lvl": 3,
      "title": "Ganancia con demanda creciente",
-     "q": "<p>La ganancia mensual de una empresa es \\(G(x,t)=-2x^2+(80+6t)x-500\\) (soles), donde \\(x\\) son las unidades producidas y \\(t\\) los meses.</p>",
+     "q": "<p>La ganancia mensual de una empresa es \\(G(x,t)\\) \\(=-2x^2+(80+6t)x-500\\) (soles), donde \\(x\\) son las unidades producidas y \\(t\\) los meses.</p>",
      "checks": [
       {
-       "p": "Producción óptima",
-       "o": [
-        "\\(x^*(t)=20+1.5t\\)",
-        "\\(x^*(t)=40+3t\\)",
-        "\\(x^*(t)=80+6t\\)",
-        "\\(x^*(t)=20+6t\\)",
-        "\\(x^*(t)=20\\)"
+       "t": "expr",
+       "p": "Escribe la producción óptima.",
+       "f": [
+        {
+         "a": "20+1.5*t",
+         "v": [
+          "t"
+         ],
+         "l": "x*(t) ="
+        }
        ]
       },
       {
-       "p": "Ritmo de cambio de la ganancia máxima en t = 0",
-       "o": [
-        "\\(120\\text{ soles/mes}\\)",
-        "\\(300\\text{ soles/mes}\\)",
-        "\\(6\\text{ soles/mes}\\)",
-        "\\(240\\text{ soles/mes}\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Ritmo de cambio",
+       "f": [
+        {
+         "l": "dG*/dt",
+         "a": 120,
+         "u": "soles/mes"
+        }
        ]
       }
      ],
      "steps": [
-      "Con \\(t\\) fijo: \\(\\frac{\\partial G}{\\partial x}=-4x+80+6t=0\\Rightarrow x^*=\\frac{80+6t}4=20+1.5t\\). \\(\\frac{\\partial^2G}{\\partial x^2}=-4\\lt0\\): máximo.",
-      "Ganancia máxima: \\(G^*(t)=G(x^*,t)=\\frac{(80+6t)^2}8-500\\).",
+      "Con \\(t\\) fijo: \\(\\frac{\\partial G}{\\partial x}\\) \\(=-4x+80+6t\\) \\(=0\\) \\(\\Rightarrow  x^*=\\frac{80+6t}4=20+1.5t\\). \\(\\frac{\\partial^2G}{\\partial x^2}\\) \\(=-4\\lt0\\): máximo.",
+      "Ganancia máxima: \\(G^*(t)\\) \\(=G(x^*,t)\\) \\(=\\frac{(80+6t)^2}8-500\\).",
       "\\(\\frac{dG^*}{dt}=\\frac{2(80+6t)(6)}8\\); en \\(t=0\\): \\(\\frac{960}8=120\\) soles por mes. (\\(G^*(0)=300\\) soles.)"
      ],
      "ans": "x* = 20 + 1.5t; dG*/dt(0) = 120 soles/mes",
@@ -1221,7 +1637,8 @@
       [
        "param"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9d5",
@@ -1230,30 +1647,34 @@
      "q": "<p>Una lata cilíndrica cerrada debe contener \\(V(t)=500+20t\\) cm³ (\\(t\\) en días), y siempre se diseña con el mínimo material. Para volumen \\(V\\) fijo, el óptimo cumple \\(r^3=\\frac{V}{2\\pi}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Radio óptimo en t = 0",
-       "o": [
-        "\\(\\approx4.30\\text{ cm}\\)",
-        "\\(\\approx5.42\\text{ cm}\\)",
-        "\\(\\approx4.81\\text{ cm}\\)",
-        "\\(\\approx3.41\\text{ cm}\\)",
-        "\\(\\approx8.92\\text{ cm}\\)"
+       "f": [
+        {
+         "l": "r",
+         "a": 4.3,
+         "u": "cm",
+         "tol": 0.01
+        }
        ]
       },
       {
-       "p": "Ritmo de cambio del radio óptimo en t = 0",
-       "o": [
-        "\\(\\approx0.057\\text{ cm/día}\\)",
-        "\\(\\approx0.17\\text{ cm/día}\\)",
-        "\\(\\approx3.18\\text{ cm/día}\\)",
-        "\\(\\approx0.019\\text{ cm/día}\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Ritmo de cambio",
+       "f": [
+        {
+         "l": "dr/dt",
+         "a": 0.057,
+         "u": "cm/día",
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
-      "\\(r^*(0)=\\sqrt[3]{\\frac{500}{2\\pi}}\\approx4.301\\) cm.",
-      "Derivamos la condición \\((r^*)^3=\\frac{V(t)}{2\\pi}\\) respecto a \\(t\\): \\(3(r^*)^2\\frac{dr^*}{dt}=\\frac{V'(t)}{2\\pi}=\\frac{20}{2\\pi}\\).",
-      "\\(\\frac{dr^*}{dt}=\\frac{20}{2\\pi\\cdot3(4.301)^2}\\approx0.0574\\) cm/día."
+      "\\(r^*(0)\\) \\(=\\sqrt[3]{\\frac{500}{2\\pi}}\\approx4.301\\) cm.",
+      "Derivamos la condición \\((r^*)^3=\\frac{V(t)}{2\\pi}\\) respecto a \\(t\\): \\(3(r^*)^2\\frac{dr^*}{dt}\\) \\(=\\frac{V'(t)}{2\\pi}\\) \\(=\\frac{20}{2\\pi}\\).",
+      "\\(\\frac{dr^*}{dt}\\) \\(=\\frac{20}{2\\pi\\cdot3(4.301)^2}\\approx0.0574\\) cm/día."
      ],
      "ans": "r*(0) ≈ 4.30 cm; dr*/dt ≈ 0.057 cm/día",
      "hint": "Deriva implícitamente la condición de optimalidad.",
@@ -1269,7 +1690,8 @@
       [
        "param"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9d6",
@@ -1299,7 +1721,7 @@
       }
      ],
      "steps": [
-      "\\(\\frac{dx^*}{dt}=\\frac{20}{2\\sqrt{400+20t}}=\\frac{10}{\\sqrt{400+20t}}\\gt0\\): el óptimo siempre sube.",
+      "\\(\\frac{dx^*}{dt}\\) \\(=\\frac{20}{2\\sqrt{400+20t}}\\) \\(=\\frac{10}{\\sqrt{400+20t}}\\gt0\\): el óptimo siempre sube.",
       "El denominador crece sin cota, así que \\(\\frac{dx^*}{dt}\\to0\\): los aumentos son cada vez menores.",
       "Derivada idénticamente nula significa función constante: el mismo óptimo sirve para todo \\(t\\)."
      ],
@@ -1331,7 +1753,7 @@
     "Pitágoras: \\(x^2+y^2=L^2\\Rightarrow x\\dot x+y\\dot y=0\\)",
     "Balance: \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>La regla de la cadena convierte una relación geométrica en una relación entre <strong>velocidades</strong>. Es la herramienta que conecta esta semana con las antiderivadas: si conoces \\(\\frac{dr}{dt}\\) en función de \\(r\\), puedes reconstruir \\(r(t)\\).</p>\n<h3>Conceptos clave</h3><ul><li>Las variables dependen de \\(t\\): al derivar \\(r^3\\) aparece \\(3r^2\\,\\frac{dr}{dt}\\).</li><li>Que \\(\\frac{dV}{dt}\\) sea constante <strong>no</strong> implica que \\(\\frac{dr}{dt}\\) lo sea.</li><li>Elimina variables con semejanza antes de derivar (cono: \\(r=\\frac RHh\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra lo que cambia.</li><li><strong>2.</strong> Escribe la ecuación que liga las magnitudes.</li><li><strong>3.</strong> Deriva respecto a \\(t\\).</li><li><strong>4.</strong> Sustituye el instante y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo inflado a 100 cm³/s: \\(100=4\\pi r^2\\frac{dr}{dt}\\Rightarrow\\frac{dr}{dt}=\\frac{25}{\\pi r^2}\\). Con \\(r=5\\) cm, \\(\\frac{dr}{dt}\\approx0.318\\) cm/s; luego va bajando.</div>\n<div class=\"err\"><b>Error común:</b> sustituir el valor del instante antes de derivar (por ejemplo, poner \\(r=5\\) en \\(V\\) y derivar una constante).</div>",
+   "lesson": "<h3>Idea central</h3><p>La regla de la cadena convierte una relación geométrica en una relación entre <strong>velocidades</strong>. Es la herramienta que conecta esta semana con las antiderivadas: si conoces \\(\\frac{dr}{dt}\\) en función de \\(r\\), puedes reconstruir \\(r(t)\\).</p>\n<h3>Conceptos clave</h3><ul><li>Las variables dependen de \\(t\\): al derivar \\(r^3\\) aparece \\(3r^2\\,\\frac{dr}{dt}\\).</li><li>Que \\(\\frac{dV}{dt}\\) sea constante <strong>no</strong> implica que \\(\\frac{dr}{dt}\\) lo sea.</li><li>Elimina variables con semejanza antes de derivar (cono: \\(r=\\frac RHh\\)).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Dibuja y nombra lo que cambia.</li><li><strong>2.</strong> Escribe la ecuación que liga las magnitudes.</li><li><strong>3.</strong> Deriva respecto a \\(t\\).</li><li><strong>4.</strong> Sustituye el instante y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo inflado a 100 cm³/s: \\(100=4\\pi r^2\\frac{dr}{dt}\\) \\(\\Rightarrow \\frac{dr}{dt}=\\frac{25}{\\pi r^2}\\). Con \\(r=5\\) cm, \\(\\frac{dr}{dt}\\approx0.318\\) cm/s; luego va bajando.</div>\n<div class=\"err\"><b>Error común:</b> sustituir el valor del instante antes de derivar (por ejemplo, poner \\(r=5\\) en \\(V\\) y derivar una constante).</div>",
    "ex": [
     {
      "id": "w9r1",
@@ -1340,19 +1762,19 @@
      "q": "<p>Un derrame forma una mancha circular cuyo radio crece a 0.5 m/min. ¿A qué ritmo crece el área cuando \\(r=20\\) m?</p>",
      "checks": [
       {
-       "p": "dA/dt",
-       "o": [
-        "\\(20\\pi\\approx62.8\\text{ m}^2/\\text{min}\\)",
-        "\\(40\\pi\\approx125.7\\text{ m}^2/\\text{min}\\)",
-        "\\(10\\pi\\approx31.4\\text{ m}^2/\\text{min}\\)",
-        "\\(200\\pi\\text{ m}^2/\\text{min}\\)",
-        "\\(\\pi\\text{ m}^2/\\text{min}\\)"
+       "t": "expr",
+       "p": "dA/dt (m²/min, exacto)",
+       "f": [
+        {
+         "a": "20*π",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(A=\\pi r^2\\Rightarrow\\frac{dA}{dt}=2\\pi r\\frac{dr}{dt}\\).",
-      "\\(\\frac{dA}{dt}=2\\pi(20)(0.5)=20\\pi\\approx62.8\\) m²/min."
+      "\\(A=\\pi r^2\\) \\(\\Rightarrow \\frac{dA}{dt}=2\\pi r\\frac{dr}{dt}\\).",
+      "\\(\\frac{dA}{dt}\\) \\(=2\\pi(20)(0.5)\\) \\(=20\\pi\\approx62.8\\) m²/min."
      ],
      "ans": "20π ≈ 62.8 m²/min",
      "hint": "Deriva A = πr² respecto a t.",
@@ -1373,13 +1795,13 @@
      "q": "<p>Un globo esférico se infla a razón constante de 100 cm³/s.</p>",
      "checks": [
       {
-       "p": "dr/dt cuando r = 5 cm",
-       "o": [
-        "\\(\\frac1\\pi\\approx0.318\\text{ cm/s}\\)",
-        "\\(\\frac4\\pi\\approx1.27\\text{ cm/s}\\)",
-        "\\(100\\text{ cm/s}\\)",
-        "\\(\\frac1{4\\pi}\\approx0.080\\text{ cm/s}\\)",
-        "\\(\\frac{25}{\\pi}\\approx7.96\\text{ cm/s}\\)"
+       "t": "expr",
+       "p": "dr/dt cuando r = 5 (cm/s, exacto)",
+       "f": [
+        {
+         "a": "1/π",
+         "v": []
+        }
        ]
       },
       {
@@ -1394,8 +1816,8 @@
       }
      ],
      "steps": [
-      "\\(\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\Rightarrow\\frac{dr}{dt}=\\frac{100}{4\\pi r^2}=\\frac{25}{\\pi r^2}\\).",
-      "En \\(r=5\\): \\(\\frac{25}{25\\pi}=\\frac1\\pi\\approx0.318\\) cm/s.",
+      "\\(\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\) \\(\\Rightarrow \\frac{dr}{dt}\\) \\(=\\frac{100}{4\\pi r^2}\\) \\(=\\frac{25}{\\pi r^2}\\).",
+      "En \\(r=5\\): \\(\\frac{25}{25\\pi}\\) \\(=\\frac1\\pi\\approx0.318\\) cm/s.",
       "\\(\\frac{dr}{dt}\\) es inversamente proporcional a \\(r^2\\): al duplicar el radio, la rapidez se divide entre 4 (\\(\\approx0.080\\) cm/s)."
      ],
      "ans": "1/π ≈ 0.318 cm/s; 4 veces más lento",
@@ -1409,7 +1831,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9r3",
@@ -1418,20 +1841,20 @@
      "q": "<p>Una escalera de 10 m está apoyada en una pared; su base se aleja a 1 m/s. Sea \\(\\theta\\) el ángulo entre la escalera y el piso. ¿Con qué rapidez cambia \\(\\theta\\) cuando la base está a 6 m de la pared?</p>",
      "checks": [
       {
-       "p": "dθ/dt",
-       "o": [
-        "\\(-\\tfrac18\\text{ rad/s}\\)",
-        "\\(-\\tfrac16\\text{ rad/s}\\)",
-        "\\(-\\tfrac34\\text{ rad/s}\\)",
-        "\\(\\tfrac18\\text{ rad/s}\\)",
-        "\\(-\\tfrac1{10}\\text{ rad/s}\\)"
+       "t": "expr",
+       "p": "dθ/dt (rad/s)",
+       "f": [
+        {
+         "a": "-1/8",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(x=10\\cos\\theta\\Rightarrow\\frac{dx}{dt}=-10\\sin\\theta\\,\\frac{d\\theta}{dt}\\).",
+      "\\(x=10\\cos\\theta\\) \\(\\Rightarrow \\frac{dx}{dt}\\) \\(=-10\\sin\\theta\\,\\frac{d\\theta}{dt}\\).",
       "Con \\(x=6\\), la altura es \\(8\\) (Pitágoras), así que \\(\\sin\\theta=\\frac8{10}\\).",
-      "\\(1=-10\\cdot0.8\\cdot\\frac{d\\theta}{dt}\\Rightarrow\\frac{d\\theta}{dt}=-\\frac18\\) rad/s: el ángulo disminuye (la escalera se acuesta)."
+      "\\(1=-10\\cdot0.8\\cdot\\frac{d\\theta}{dt}\\) \\(\\Rightarrow \\frac{d\\theta}{dt}=-\\frac18\\) rad/s: el ángulo disminuye (la escalera se acuesta)."
      ],
      "ans": "dθ/dt = −1/8 rad/s",
      "hint": "Relaciona x con θ usando coseno.",
@@ -1455,19 +1878,20 @@
      "q": "<p>El volumen de un cubo crece a 24 cm³/s. ¿A qué ritmo crece su área superficial cuando el lado mide 4 cm?</p>",
      "checks": [
       {
-       "p": "dS/dt",
-       "o": [
-        "\\(24\\text{ cm}^2/\\text{s}\\)",
-        "\\(48\\text{ cm}^2/\\text{s}\\)",
-        "\\(12\\text{ cm}^2/\\text{s}\\)",
-        "\\(0.5\\text{ cm}^2/\\text{s}\\)",
-        "\\(96\\text{ cm}^2/\\text{s}\\)"
+       "t": "num",
+       "p": "Ritmo",
+       "f": [
+        {
+         "l": "dS/dt",
+         "a": 24,
+         "u": "cm²/s"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(V=s^3\\Rightarrow24=3s^2\\frac{ds}{dt}=48\\frac{ds}{dt}\\Rightarrow\\frac{ds}{dt}=0.5\\) cm/s.",
-      "\\(S=6s^2\\Rightarrow\\frac{dS}{dt}=12s\\frac{ds}{dt}=12(4)(0.5)=24\\) cm²/s."
+      "\\(V=s^3\\) \\(\\Rightarrow 24=3s^2\\frac{ds}{dt}=48\\frac{ds}{dt}\\) \\(\\Rightarrow \\frac{ds}{dt}=0.5\\) cm/s.",
+      "\\(S=6s^2\\) \\(\\Rightarrow \\frac{dS}{dt}\\) \\(=12s\\frac{ds}{dt}\\) \\(=12(4)(0.5)\\) \\(=24\\) cm²/s."
      ],
      "ans": "24 cm²/s",
      "hint": "Primero halla ds/dt con el volumen.",
@@ -1490,20 +1914,22 @@
      "q": "<p>Un tanque cónico invertido mide 8 m de alto y 6 m de diámetro arriba. Pierde agua a 20 000 cm³/min mientras se le bombea agua. Cuando la profundidad es 4 m, el nivel sube a 15 cm/min. ¿Cuál es el caudal de entrada?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Caudal de entrada",
-       "o": [
-        "\\(\\approx1.080\\text{ m}^3/\\text{min}\\)",
-        "\\(\\approx1.060\\text{ m}^3/\\text{min}\\)",
-        "\\(\\approx1.040\\text{ m}^3/\\text{min}\\)",
-        "\\(\\approx4.24\\text{ m}^3/\\text{min}\\)",
-        "\\(\\approx0.290\\text{ m}^3/\\text{min}\\)"
+       "f": [
+        {
+         "l": "Q",
+         "a": 1.08,
+         "u": "m³/min",
+         "tol": 0.005
+        }
        ]
       }
      ],
      "steps": [
-      "Semejanza: \\(\\frac rh=\\frac38\\Rightarrow r=\\frac{3h}8\\). \\(V=\\frac13\\pi\\big(\\frac{3h}8\\big)^2h=\\frac{3\\pi}{64}h^3\\).",
-      "\\(\\frac{dV}{dt}=\\frac{9\\pi}{64}h^2\\frac{dh}{dt}=\\frac{9\\pi}{64}(16)(0.15)\\approx1.0603\\) m³/min (en metros: 15 cm/min = 0.15 m/min).",
-      "Balance: \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\Rightarrow Q_{ent}=1.0603+0.02\\approx1.080\\) m³/min (20 000 cm³ = 0.02 m³)."
+      "Semejanza: \\(\\frac rh=\\frac38\\Rightarrow r=\\frac{3h}8\\). \\(V\\) \\(=\\frac13\\pi\\big(\\frac{3h}8\\big)^2h\\) \\(=\\frac{3\\pi}{64}h^3\\).",
+      "\\(\\frac{dV}{dt}\\) \\(=\\frac{9\\pi}{64}h^2\\frac{dh}{dt}\\) \\(=\\frac{9\\pi}{64}(16)(0.15)\\approx1.0603\\) m³/min (en metros: 15 cm/min = 0.15 m/min).",
+      "Balance: \\(\\frac{dV}{dt}=Q_{ent}-Q_{sal}\\) \\(\\Rightarrow  Q_{ent}\\) \\(=1.0603+0.02\\approx1.080\\) m³/min (20 000 cm³ = 0.02 m³)."
      ],
      "ans": "≈ 1.080 m³/min (≈ 1 080 000 cm³/min)",
      "hint": "Pasa todo a metros y no olvides sumar lo que se pierde.",
@@ -1526,16 +1952,18 @@
      "id": "w9r6",
      "lvl": 3,
      "title": "Tanque de doble cámara",
-     "q": "<p>Un tanque tiene volumen efectivo \\(V(h)=-3h^4+40h^3-162h^2+216h\\) (m³), \\(0\\le h\\le6\\). Entra agua a 30 m³/min y sale por una fuga a \\(4h\\) m³/min.</p>",
+     "q": "<p>Un tanque tiene volumen efectivo \\(V(h)\\) \\(=-3h^4+40h^3-162h^2+216h\\) (m³), \\(0\\le h\\le6\\). Entra agua a 30 m³/min y sale por una fuga a \\(4h\\) m³/min.</p>",
      "checks": [
       {
-       "p": "dh/dt cuando h = 2 m",
-       "o": [
-        "\\(\\approx-0.458\\text{ m/min}\\)",
-        "\\(\\approx0.458\\text{ m/min}\\)",
-        "\\(\\approx0.625\\text{ m/min}\\)",
-        "\\(\\approx-0.625\\text{ m/min}\\)",
-        "\\(\\approx0.153\\text{ m/min}\\)"
+       "t": "num",
+       "p": "Ritmo",
+       "f": [
+        {
+         "l": "dh/dt",
+         "a": -0.458,
+         "u": "m/min",
+         "tol": 0.002
+        }
        ]
       },
       {
@@ -1550,8 +1978,8 @@
       }
      ],
      "steps": [
-      "\\(V'(h)=-12h^3+120h^2-324h+216=-12(h-1)(h-3)(h-6)\\); \\(V'(2)=-48\\).",
-      "Balance: \\(V'(h)\\frac{dh}{dt}=30-4h\\Rightarrow\\frac{dh}{dt}=\\frac{30-8}{-48}\\approx-0.458\\) m/min.",
+      "\\(V'(h)\\) \\(=-12h^3+120h^2-324h+216\\) \\(=-12(h-1)(h-3)(h-6)\\); \\(V'(2)=-48\\).",
+      "Balance: \\(V'(h)\\frac{dh}{dt}=30-4h\\) \\(\\Rightarrow \\frac{dh}{dt}\\) \\(=\\frac{30-8}{-48}\\approx-0.458\\) m/min.",
       "Entra más de lo que sale (\\(22\\gt0\\)), pero en \\(1\\lt h\\lt3\\) el volumen efectivo <em>disminuye</em> con la altura (\\(V'\\lt0\\)), así que el nivel baja."
      ],
      "ans": "≈ −0.458 m/min; el nivel baja",
@@ -1567,7 +1995,8 @@
        "balance"
       ],
       []
-     ]
+     ],
+     "chain": true
     }
    ]
   },
@@ -1584,7 +2013,7 @@
     "\\(\\sec^2t\\to\\tan t\\)",
     "\\(a(t)\\to v(t)\\to s(t)\\): dos antiderivadas, dos condiciones"
    ],
-   "lesson": "<h3>Idea central</h3><p>Derivar responde \"¿cómo cambia?\". Antiderivar responde la pregunta inversa: <strong>si sé cómo cambia, ¿cuál es la magnitud?</strong> La tasa sola no basta; hace falta un dato (condición inicial) para saber cuál miembro de la familia es.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(F(x)+C\\) son copias desplazadas verticalmente; \\(C\\) identifica a cada una.</li><li><strong>Validación:</strong> deriva tu respuesta; debe salir exactamente la tasa original.</li><li><strong>Unidades:</strong> si \\(y'\\) está en m/s, \\(y\\) está en m.</li><li><strong>Antiderivadas sucesivas:</strong> de \\(a(t)\\) a \\(v(t)\\) con \\(v(0)\\), luego a \\(s(t)\\) con \\(s(0)\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Término por término, busca la pareja en la tabla (ojo con el factor \\(\\frac1k\\)).</li><li><strong>2.</strong> Escribe \\(+C\\).</li><li><strong>3.</strong> Sustituye \\(t_0\\) y despeja \\(C\\).</li><li><strong>4.</strong> Verifica derivando y comprobando \\(y(t_0)=y_0\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=6t^2-4t+5\\), \\(y(1)=10\\). \\(y=2t^3-2t^2+5t+C\\); \\(10=5+C\\Rightarrow C=5\\). \\(y=2t^3-2t^2+5t+5\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=e^{-2t}+\\cos3t\\), \\(y(0)=1\\): \\(y=-\\frac12e^{-2t}+\\frac13\\sin3t+C\\), \\(C=\\frac32\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar \\(C\\), o al evaluar en \\(t_0=0\\) creer que \\(e^{0}\\) o \\(\\cos0\\) valen 0 (valen 1). También olvidar el \\(\\frac1k\\): la antiderivada de \\(e^{2t}\\) es \\(\\frac{e^{2t}}2\\), no \\(e^{2t}\\).</div>",
+   "lesson": "<h3>Idea central</h3><p>Derivar responde \"¿cómo cambia?\". Antiderivar responde la pregunta inversa: <strong>si sé cómo cambia, ¿cuál es la magnitud?</strong> La tasa sola no basta; hace falta un dato (condición inicial) para saber cuál miembro de la familia es.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(F(x)+C\\) son copias desplazadas verticalmente; \\(C\\) identifica a cada una.</li><li><strong>Validación:</strong> deriva tu respuesta; debe salir exactamente la tasa original.</li><li><strong>Unidades:</strong> si \\(y'\\) está en m/s, \\(y\\) está en m.</li><li><strong>Antiderivadas sucesivas:</strong> de \\(a(t)\\) a \\(v(t)\\) con \\(v(0)\\), luego a \\(s(t)\\) con \\(s(0)\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Término por término, busca la pareja en la tabla (ojo con el factor \\(\\frac1k\\)).</li><li><strong>2.</strong> Escribe \\(+C\\).</li><li><strong>3.</strong> Sustituye \\(t_0\\) y despeja \\(C\\).</li><li><strong>4.</strong> Verifica derivando y comprobando \\(y(t_0)=y_0\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=6t^2-4t+5\\), \\(y(1)=10\\). \\(y=2t^3-2t^2+5t+C\\); \\(10=5+C\\Rightarrow C=5\\). \\(y=2t^3-2t^2+5t+5\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> \\(y'=e^{-2t}+\\cos3t\\), \\(y(0)=1\\): \\(y\\) \\(=-\\frac12e^{-2t}+\\frac13\\sin3t+C\\), \\(C=\\frac32\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar \\(C\\), o al evaluar en \\(t_0=0\\) creer que \\(e^{0}\\) o \\(\\cos0\\) valen 0 (valen 1). También olvidar el \\(\\frac1k\\): la antiderivada de \\(e^{2t}\\) es \\(\\frac{e^{2t}}2\\), no \\(e^{2t}\\).</div>",
    "ex": [
     {
      "id": "w9a1",
@@ -1593,19 +2022,23 @@
      "q": "<p>Halla la familia de antiderivadas de \\(f(t)=t^3-2t+5\\).</p>",
      "checks": [
       {
-       "p": "Antiderivada general",
-       "o": [
-        "\\(\\frac{t^4}4-t^2+5t+C\\)",
-        "\\(3t^2-2+C\\)",
-        "\\(t^4-t^2+5t+C\\)",
-        "\\(\\frac{t^4}4-2t^2+5t+C\\)",
-        "\\(\\frac{t^4}4-t^2+C\\)"
+       "t": "expr",
+       "p": "Escribe la antiderivada general.",
+       "f": [
+        {
+         "a": "t^4/4-t^2+5*t",
+         "v": [
+          "t"
+         ],
+         "l": "F(t) =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "Término a término: \\(t^3\\to\\frac{t^4}4\\), \\(-2t\\to-t^2\\), \\(5\\to5t\\).",
-      "Se suma \\(C\\). Verificación: \\(\\frac{d}{dt}\\big(\\frac{t^4}4-t^2+5t\\big)=t^3-2t+5\\) ✓."
+      "Se suma \\(C\\). Verificación: \\(\\frac{d}{dt}\\big(\\frac{t^4}4-t^2+5t\\big)\\) \\(=t^3-2t+5\\) ✓."
      ],
      "ans": "t⁴/4 − t² + 5t + C",
      "hint": "Sube el exponente en 1 y divide entre el nuevo exponente.",
@@ -1629,13 +2062,17 @@
      "q": "<p>¿Cuál es una antiderivada de \\(f(t)=e^{2t}\\)?</p>",
      "checks": [
       {
-       "p": "Antiderivada",
-       "o": [
-        "\\(\\frac{e^{2t}}2+C\\)",
-        "\\(2e^{2t}+C\\)",
-        "\\(e^{2t}+C\\)",
-        "\\(\\frac{e^{2t+1}}{2t+1}+C\\)",
-        "\\(e^{t^2}+C\\)"
+       "t": "expr",
+       "p": "Escribe una antiderivada.",
+       "f": [
+        {
+         "a": "e^(2*t)/2",
+         "v": [
+          "t"
+         ],
+         "l": "F(t) =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -1664,20 +2101,24 @@
      "q": "<p>Halla la antiderivada general de \\(f(t)=\\sin(2t)+3\\cos t\\).</p>",
      "checks": [
       {
-       "p": "Antiderivada general",
-       "o": [
-        "\\(-\\frac{\\cos2t}2+3\\sin t+C\\)",
-        "\\(\\frac{\\cos2t}2+3\\sin t+C\\)",
-        "\\(-2\\cos2t+3\\sin t+C\\)",
-        "\\(-\\frac{\\cos2t}2-3\\sin t+C\\)",
-        "\\(2\\cos2t-3\\sin t+C\\)"
+       "t": "expr",
+       "p": "Escribe la antiderivada general.",
+       "f": [
+        {
+         "a": "-cos(2*t)/2+3*sin(t)",
+         "v": [
+          "t"
+         ],
+         "l": "F(t) =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\sin(kt)\\to-\\frac{\\cos(kt)}k\\): \\(\\sin2t\\to-\\frac{\\cos2t}2\\).",
       "\\(\\cos t\\to\\sin t\\): \\(3\\cos t\\to3\\sin t\\).",
-      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac{\\cos2t}2\\big)=\\sin2t\\) ✓."
+      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac{\\cos2t}2\\big)\\) \\(=\\sin2t\\) ✓."
      ],
      "ans": "−cos(2t)/2 + 3 sin t + C",
      "hint": "La derivada de cos es −sen: cuida el signo.",
@@ -1703,20 +2144,24 @@
      "q": "<p>Halla la antiderivada general de \\(f(t)=5e^{-3t}-2\\sin(4t)\\).</p>",
      "checks": [
       {
-       "p": "Antiderivada general",
-       "o": [
-        "\\(-\\frac53e^{-3t}+\\frac12\\cos4t+C\\)",
-        "\\(\\frac53e^{-3t}+\\frac12\\cos4t+C\\)",
-        "\\(-15e^{-3t}+8\\cos4t+C\\)",
-        "\\(-\\frac53e^{-3t}-\\frac12\\cos4t+C\\)",
-        "\\(-\\frac53e^{-3t}+2\\cos4t+C\\)"
+       "t": "expr",
+       "p": "Escribe la antiderivada general.",
+       "f": [
+        {
+         "a": "-5/3*e^(-3*t)+1/2*cos(4*t)",
+         "v": [
+          "t"
+         ],
+         "l": "F(t) =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(e^{-3t}\\to\\frac{e^{-3t}}{-3}\\), así que \\(5e^{-3t}\\to-\\frac53e^{-3t}\\).",
-      "\\(\\sin4t\\to-\\frac{\\cos4t}4\\), así que \\(-2\\sin4t\\to+\\frac24\\cos4t=\\frac12\\cos4t\\).",
-      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac53e^{-3t}\\big)=5e^{-3t}\\) y \\(\\frac{d}{dt}\\big(\\frac12\\cos4t\\big)=-2\\sin4t\\) ✓."
+      "\\(\\sin4t\\to-\\frac{\\cos4t}4\\), así que \\(-2\\sin4t\\to+\\frac24\\cos4t\\) \\(=\\frac12\\cos4t\\).",
+      "Verificación: \\(\\frac{d}{dt}\\big(-\\frac53e^{-3t}\\big)\\) \\(=5e^{-3t}\\) y \\(\\frac{d}{dt}\\big(\\frac12\\cos4t\\big)\\) \\(=-2\\sin4t\\) ✓."
      ],
      "ans": "−(5/3)e^(−3t) + (1/2)cos(4t) + C",
      "hint": "Dos signos menos se cancelan en el término del seno.",
@@ -1742,13 +2187,16 @@
      "q": "<p>Halla \\(y(t)\\) si \\(y'(t)=6t^2+2\\) y \\(y(1)=4\\).</p>",
      "checks": [
       {
-       "p": "Solución",
-       "o": [
-        "\\(y=2t^3+2t\\)",
-        "\\(y=2t^3+2t+4\\)",
-        "\\(y=2t^3+2t+C\\)",
-        "\\(y=12t\\)",
-        "\\(y=6t^3+2t-4\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "2*t^3+2*t",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
@@ -1781,20 +2229,20 @@
      "q": "<p>\\(y'(t)=\\sqrt t+\\frac1t\\) para \\(t\\gt0\\), con \\(y(1)=2\\). Calcula \\(y(4)\\).</p>",
      "checks": [
       {
-       "p": "y(4)",
-       "o": [
-        "\\(\\frac{20}3+\\ln4\\approx8.05\\)",
-        "\\(\\frac{16}3+\\ln4\\approx6.72\\)",
-        "\\(\\frac{20}3\\approx6.67\\)",
-        "\\(4+\\ln4\\approx5.39\\)",
-        "\\(\\frac{22}3+\\ln4\\approx8.72\\)"
+       "t": "expr",
+       "p": "y(4) (exacto)",
+       "f": [
+        {
+         "a": "20/3+ln(4)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\sqrt t=t^{1/2}\\to\\frac{t^{3/2}}{3/2}=\\frac23t^{3/2}\\); \\(\\frac1t\\to\\ln t\\). \\(y=\\frac23t^{3/2}+\\ln t+C\\).",
+      "\\(\\sqrt t\\) \\(=t^{1/2}\\to\\frac{t^{3/2}}{3/2}\\) \\(=\\frac23t^{3/2}\\); \\(\\frac1t\\to\\ln t\\). \\(y=\\frac23t^{3/2}+\\ln t+C\\).",
       "\\(y(1)=\\frac23+0+C=2\\Rightarrow C=\\frac43\\).",
-      "\\(y(4)=\\frac23\\cdot8+\\ln4+\\frac43=\\frac{20}3+\\ln4\\approx8.05\\)."
+      "\\(y(4)\\) \\(=\\frac23\\cdot8+\\ln4+\\frac43\\) \\(=\\frac{20}3+\\ln4\\approx8.05\\)."
      ],
      "ans": "y(4) = 20/3 + ln 4 ≈ 8.05",
      "hint": "4^(3/2) = 8 y ln 1 = 0.",
@@ -1818,13 +2266,13 @@
      "q": "<p>\\(y'(t)=\\cos t+\\sin t\\), \\(y(0)=1\\). Calcula \\(y(\\pi)\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "y(π)",
-       "o": [
-        "\\(3\\)",
-        "\\(1\\)",
-        "\\(2\\)",
-        "\\(-1\\)",
-        "\\(0\\)"
+       "f": [
+        {
+         "a": "3",
+         "v": []
+        }
        ]
       }
      ],
@@ -1855,23 +2303,32 @@
      "q": "<p>Una partícula tiene aceleración \\(a(t)=4-t\\) (m/s²), con \\(v(0)=0\\) y \\(s(0)=5\\) m.</p>",
      "checks": [
       {
-       "p": "Posición",
-       "o": [
-        "\\(s(t)=2t^2-\\frac{t^3}6+5\\)",
-        "\\(s(t)=4t-\\frac{t^2}2+5\\)",
-        "\\(s(t)=2t^2-\\frac{t^3}3+5\\)",
-        "\\(s(t)=2t^2-\\frac{t^3}6\\)",
-        "\\(s(t)=4t^2-\\frac{t^3}6+5\\)"
+       "t": "expr",
+       "p": "Escribe la posición.",
+       "f": [
+        {
+         "a": "2*t^2-t^3/6+5",
+         "v": [
+          "t"
+         ],
+         "l": "s(t) ="
+        }
        ]
       },
       {
-       "p": "Velocidad máxima y posición en t = 6 s",
-       "o": [
-        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=41\\text{ m}\\)",
-        "\\(v_{máx}=4\\text{ m/s};\\ s(6)=41\\text{ m}\\)",
-        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=36\\text{ m}\\)",
-        "\\(v_{máx}=16\\text{ m/s};\\ s(6)=5\\text{ m}\\)",
-        "\\(v_{máx}=8\\text{ m/s};\\ s(6)=77\\text{ m}\\)"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "v máx",
+         "a": 8,
+         "u": "m/s"
+        },
+        {
+         "l": "s(6)",
+         "a": 41,
+         "u": "m"
+        }
        ]
       }
      ],
@@ -1897,7 +2354,8 @@
        "crec"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9a9",
@@ -1906,29 +2364,38 @@
      "q": "<p>Un cohete parte del reposo desde una plataforma de 50 m con aceleración \\(a(t)=4t\\) (m/s²) durante 20 s; luego se apaga el motor y solo actúa la gravedad (\\(a=-9.8\\) m/s²).</p>",
      "checks": [
       {
-       "p": "Altura y velocidad al apagar el motor",
-       "o": [
-        "\\(s(20)\\approx5\\,383\\text{ m},\\ v(20)=800\\text{ m/s}\\)",
-        "\\(s(20)\\approx5\\,333\\text{ m},\\ v(20)=800\\text{ m/s}\\)",
-        "\\(s(20)=850\\text{ m},\\ v(20)=80\\text{ m/s}\\)",
-        "\\(s(20)\\approx10\\,717\\text{ m},\\ v(20)=1\\,600\\text{ m/s}\\)",
-        "\\(s(20)\\approx5\\,383\\text{ m},\\ v(20)=80\\text{ m/s}\\)"
+       "t": "num",
+       "p": "Al apagar el motor",
+       "f": [
+        {
+         "l": "s(20)",
+         "a": 5383,
+         "u": "m",
+         "tol": 1
+        },
+        {
+         "l": "v(20)",
+         "a": 800,
+         "u": "m/s"
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Altitud máxima",
-       "o": [
-        "\\(\\approx38\\,036\\text{ m}\\)",
-        "\\(\\approx5\\,383\\text{ m}\\)",
-        "\\(\\approx32\\,653\\text{ m}\\)",
-        "\\(\\approx70\\,689\\text{ m}\\)",
-        "\\(\\approx43\\,419\\text{ m}\\)"
+       "f": [
+        {
+         "l": "s máx",
+         "a": 38036,
+         "u": "m",
+         "tol": 5
+        }
        ]
       }
      ],
      "steps": [
       "Tramo 1: \\(v=2t^2\\) (\\(v(0)=0\\)), \\(s=\\frac23t^3+50\\) (\\(s(0)=50\\)).",
-      "En \\(t=20\\): \\(v=800\\) m/s, \\(s=\\frac23(8000)+50\\approx5\\,383.3\\) m.",
+      "En \\(t=20\\): \\(v=800\\) m/s, \\(s\\) \\(=\\frac23(8000)+50\\approx5\\,383.3\\) m.",
       "Tramo 2: \\(v=800-9.8(t-20)\\), que se anula a los \\(\\frac{800}{9.8}\\approx81.6\\) s de apagado.",
       "Subida extra: \\(\\frac{800^2}{2\\cdot9.8}\\approx32\\,653\\) m. Altitud máxima \\(\\approx5\\,383+32\\,653\\approx38\\,036\\) m."
      ],
@@ -1948,7 +2415,8 @@
        "pvi"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9a10",
@@ -1957,23 +2425,35 @@
      "q": "<p>Una partícula se mueve con \\(v(t)=6t-2t^2\\) (m/s), \\(t\\in[0,3]\\), y \\(s(0)=0\\).</p>",
      "checks": [
       {
-       "p": "Instante y posición de máxima distancia",
-       "o": [
-        "\\(t=3\\text{ s},\\ s=9\\text{ m}\\)",
-        "\\(t=1.5\\text{ s},\\ s=4.5\\text{ m}\\)",
-        "\\(t=3\\text{ s},\\ s=0\\text{ m}\\)",
-        "\\(t=1.5\\text{ s},\\ s=9\\text{ m}\\)",
-        "\\(t=2\\text{ s},\\ s\\approx6.67\\text{ m}\\)"
+       "t": "num",
+       "p": "Máxima distancia",
+       "f": [
+        {
+         "l": "t",
+         "a": 3,
+         "u": "s"
+        },
+        {
+         "l": "s",
+         "a": 9,
+         "u": "m"
+        }
        ]
       },
       {
-       "p": "Aceleración en t = 1 y t = 2.5",
-       "o": [
-        "\\(a(1)=2,\\ a(2.5)=-4\\text{ m/s}^2\\)",
-        "\\(a(1)=4,\\ a(2.5)=2.5\\text{ m/s}^2\\)",
-        "\\(a(1)=-2,\\ a(2.5)=4\\text{ m/s}^2\\)",
-        "\\(a(1)=2,\\ a(2.5)=4\\text{ m/s}^2\\)",
-        "\\(a(1)=6,\\ a(2.5)=-4\\text{ m/s}^2\\)"
+       "t": "num",
+       "p": "Aceleraciones",
+       "f": [
+        {
+         "l": "a(1)",
+         "a": 2,
+         "u": "m/s²"
+        },
+        {
+         "l": "a(2.5)",
+         "a": -4,
+         "u": "m/s²"
+        }
        ]
       }
      ],
@@ -2000,14 +2480,15 @@
       [
        "validez"
       ]
-     ]
+     ],
+     "chain": true
     }
    ]
   },
   {
    "id": "w9edo",
    "name": "Sem. 9 · EDO por variables separables (introducción)",
-   "teo": "<p>Una EDO de primer orden relaciona \\(y\\), \\(t\\) y \\(y'\\). Es <strong>separable</strong> si se puede escribir \\(\\frac{dy}{dt}=g(t)\\,h(y)\\): un factor solo con \\(t\\) por otro solo con \\(y\\).</p>\n<p>Protocolo: (1) separa \\(\\frac{dy}{h(y)}=g(t)\\,dt\\); (2) antideriva cada lado; (3) aplica la condición inicial; (4) despeja \\(y(t)\\); (5) verifica derivando.</p>\n<p>El caso más importante es \\(y'=ky\\Rightarrow y=y_0e^{kt}\\) (crecimiento si \\(k\\gt0\\), decaimiento si \\(k\\lt0\\)), y su variante \\(T'=-k(T-T_a)\\Rightarrow T=T_a+(T_0-T_a)e^{-kt}\\) (enfriamiento de Newton).</p>",
+   "teo": "<p>Una EDO de primer orden relaciona \\(y\\), \\(t\\) y \\(y'\\). Es <strong>separable</strong> si se puede escribir \\(\\frac{dy}{dt}=g(t)\\,h(y)\\): un factor solo con \\(t\\) por otro solo con \\(y\\).</p>\n<p>Protocolo: (1) separa \\(\\frac{dy}{h(y)}=g(t)\\,dt\\); (2) antideriva cada lado; (3) aplica la condición inicial; (4) despeja \\(y(t)\\); (5) verifica derivando.</p>\n<p>El caso más importante es \\(y'=ky\\Rightarrow y=y_0e^{kt}\\) (crecimiento si \\(k\\gt0\\), decaimiento si \\(k\\lt0\\)), y su variante \\(T'=-k(T-T_a)\\) \\(\\Rightarrow  T=T_a+(T_0-T_a)e^{-kt}\\) (enfriamiento de Newton).</p>",
    "form": [
     "Separable: \\(\\frac{dy}{dt}=g(t)h(y)\\Rightarrow\\frac{dy}{h(y)}=g(t)\\,dt\\)",
     "\\(y'=ky\\Rightarrow y=y_0e^{kt}\\)",
@@ -2015,7 +2496,7 @@
     "Vida media: \\(k=\\frac{\\ln2}{t_{1/2}}\\)",
     "\\(\\frac{dy}{y}\\to\\ln|y|\\), \\(y\\,dy\\to\\frac{y^2}2\\), \\(y^{-1/2}dy\\to2\\sqrt y\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>A veces la tasa de cambio depende del <strong>estado actual</strong> (\\(y\\)) y no solo del tiempo. Entonces no basta con antiderivar \\(y'(t)\\): hay que separar las variables y antiderivar a cada lado.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Separable:</strong> \\(y'=ty\\), \\(y'=\\frac ty\\), \\(y'=e^{t-y}=e^te^{-y}\\) lo son; \\(y'=t+y\\) no (es una suma, no un producto).</li><li><strong>Una sola constante:</strong> las constantes de ambos lados se juntan en una.</li><li><strong>Exponencial:</strong> de \\(\\ln|y|=kt+K\\) sale \\(y=Ae^{kt}\\), con \\(A=y(0)\\).</li><li><strong>Asíntota:</strong> en Newton, \\(T\\to T_a\\); en la logística, \\(y\\to\\) capacidad de carga.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe la EDO como producto \\(g(t)h(y)\\).</li><li><strong>2.</strong> Pasa \\(h(y)\\) a dividir al lado de \\(dy\\).</li><li><strong>3.</strong> Antideriva ambos lados y añade una constante.</li><li><strong>4.</strong> Usa la condición inicial y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo a 100 cm³/s con \\(r(0)=5\\): \\(r^2dr=\\frac{25}\\pi dt\\Rightarrow\\frac{r^3}3=\\frac{25}\\pi t+C\\), \\(C=\\frac{125}3\\), \\(r(t)=\\sqrt[3]{\\frac{75}\\pi t+125}\\). El radio crece como \\(t^{1/3}\\), cada vez más lento.</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> café a 90 °C en ambiente de 20 °C, \\(k=0.05\\): \\(T=20+70e^{-0.05t}\\); llega a 60 °C en \\(\\approx11.2\\) min.</div>\n<div class=\"err\"><b>Error común:</b> aplicar la condición inicial antes de despejar mal el exponente, o escribir \\(e^{kt+K}=e^{kt}+e^K\\) (en realidad es \\(e^K\\cdot e^{kt}\\)).</div>",
+   "lesson": "<h3>Idea central</h3><p>A veces la tasa de cambio depende del <strong>estado actual</strong> (\\(y\\)) y no solo del tiempo. Entonces no basta con antiderivar \\(y'(t)\\): hay que separar las variables y antiderivar a cada lado.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Separable:</strong> \\(y'=ty\\), \\(y'=\\frac ty\\), \\(y'=e^{t-y}=e^te^{-y}\\) lo son; \\(y'=t+y\\) no (es una suma, no un producto).</li><li><strong>Una sola constante:</strong> las constantes de ambos lados se juntan en una.</li><li><strong>Exponencial:</strong> de \\(\\ln|y|=kt+K\\) sale \\(y=Ae^{kt}\\), con \\(A=y(0)\\).</li><li><strong>Asíntota:</strong> en Newton, \\(T\\to T_a\\); en la logística, \\(y\\to\\) capacidad de carga.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe la EDO como producto \\(g(t)h(y)\\).</li><li><strong>2.</strong> Pasa \\(h(y)\\) a dividir al lado de \\(dy\\).</li><li><strong>3.</strong> Antideriva ambos lados y añade una constante.</li><li><strong>4.</strong> Usa la condición inicial y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> globo a 100 cm³/s con \\(r(0)=5\\): \\(r^2dr=\\frac{25}\\pi dt\\) \\(\\Rightarrow \\frac{r^3}3=\\frac{25}\\pi t+C\\), \\(C=\\frac{125}3\\), \\(r(t)\\) \\(=\\sqrt[3]{\\frac{75}\\pi t+125}\\). El radio crece como \\(t^{1/3}\\), cada vez más lento.</div>\n<div class=\"ej\"><b>Ejemplo (Guía 09):</b> café a 90 °C en ambiente de 20 °C, \\(k=0.05\\): \\(T=20+70e^{-0.05t}\\); llega a 60 °C en \\(\\approx11.2\\) min.</div>\n<div class=\"err\"><b>Error común:</b> aplicar la condición inicial antes de despejar mal el exponente, o escribir \\(e^{kt+K}=e^{kt}+e^K\\) (en realidad es \\(e^K\\cdot e^{kt}\\)).</div>",
    "ex": [
     {
      "id": "w9e1",
@@ -2024,18 +2505,18 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=2y\\) con \\(y(0)=3\\) y calcula \\(y(1)\\).</p>",
      "checks": [
       {
-       "p": "y(1)",
-       "o": [
-        "\\(3e^2\\approx22.17\\)",
-        "\\(3e\\approx8.15\\)",
-        "\\(e^6\\approx403.4\\)",
-        "\\(9\\)",
-        "\\(3+e^2\\approx10.39\\)"
+       "t": "expr",
+       "p": "y(1) (exacto)",
+       "f": [
+        {
+         "a": "3*e^2",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "Separando: \\(\\frac{dy}y=2\\,dt\\Rightarrow\\ln|y|=2t+K\\Rightarrow y=Ae^{2t}\\).",
+      "Separando: \\(\\frac{dy}y=2\\,dt\\) \\(\\Rightarrow \\ln|y|=2t+K\\) \\(\\Rightarrow  y=Ae^{2t}\\).",
       "\\(y(0)=A=3\\): \\(y=3e^{2t}\\).",
       "\\(y(1)=3e^2\\approx22.17\\)."
      ],
@@ -2100,18 +2581,27 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=3t^2y\\), \\(y(0)=1\\).</p>",
      "checks": [
       {
-       "p": "Solución",
-       "o": [
-        "\\(y=e^{t^3}\\)",
-        "\\(y=e^{3t^2}\\)",
-        "\\(y=t^3+1\\)",
-        "\\(y=e^{t^3}+1\\)",
-        "\\(y=e^{6t}\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "e^(t^3)",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) =",
+         "dom": {
+          "t": [
+           0,
+           1.2
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\frac{dy}y=3t^2dt\\Rightarrow\\ln|y|=t^3+K\\).",
+      "\\(\\frac{dy}y=3t^2dt\\) \\(\\Rightarrow \\ln|y|=t^3+K\\).",
       "\\(y=Ae^{t^3}\\); \\(y(0)=A=1\\).",
       "Verificación: \\(y'=3t^2e^{t^3}=3t^2y\\) ✓."
      ],
@@ -2139,18 +2629,18 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac ty\\), \\(y(0)=2\\) (con \\(y\\gt0\\)) y calcula \\(y(2\\sqrt3)\\).</p>",
      "checks": [
       {
+       "t": "expr",
        "p": "y(2√3)",
-       "o": [
-        "\\(4\\)",
-        "\\(2\\)",
-        "\\(2\\sqrt3\\)",
-        "\\(\\sqrt{10}\\)",
-        "\\(16\\)"
+       "f": [
+        {
+         "a": "4",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(y\\,dy=t\\,dt\\Rightarrow\\frac{y^2}2=\\frac{t^2}2+K\\Rightarrow y^2=t^2+C\\).",
+      "\\(y\\,dy=t\\,dt\\) \\(\\Rightarrow \\frac{y^2}2=\\frac{t^2}2+K\\) \\(\\Rightarrow  y^2=t^2+C\\).",
       "\\(y(0)=2\\Rightarrow C=4\\): \\(y=\\sqrt{t^2+4}\\) (rama positiva).",
       "\\(y(2\\sqrt3)=\\sqrt{12+4}=4\\)."
      ],
@@ -2176,18 +2666,18 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=e^{t-y}\\) con \\(y(0)=\\ln2\\) y calcula \\(y(\\ln3)\\).</p>",
      "checks": [
       {
-       "p": "y(ln 3)",
-       "o": [
-        "\\(\\ln4\\)",
-        "\\(\\ln3\\)",
-        "\\(\\ln5\\)",
-        "\\(\\ln6\\)",
-        "\\(\\ln3+\\ln2\\)"
+       "t": "expr",
+       "p": "y(ln 3) (exacto)",
+       "f": [
+        {
+         "a": "ln(4)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(e^{t-y}=e^te^{-y}\\Rightarrow e^y\\,dy=e^t\\,dt\\Rightarrow e^y=e^t+C\\).",
+      "\\(e^{t-y}=e^te^{-y}\\) \\(\\Rightarrow  e^y\\,dy=e^t\\,dt\\) \\(\\Rightarrow  e^y=e^t+C\\).",
       "\\(y(0)=\\ln2\\Rightarrow2=1+C\\Rightarrow C=1\\): \\(y=\\ln(e^t+1)\\).",
       "\\(y(\\ln3)=\\ln(3+1)=\\ln4\\)."
      ],
@@ -2213,30 +2703,32 @@
      "q": "<p>Un café a 90 °C se enfría en una habitación a 22 °C según \\(\\frac{dT}{dt}=-k(T-22)\\). A los 10 min está a 65 °C.</p>",
      "checks": [
       {
-       "p": "Constante k",
-       "o": [
-        "\\(k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\text{ min}^{-1}\\)",
-        "\\(k=\\frac1{10}\\ln\\frac{90}{65}\\approx0.0325\\text{ min}^{-1}\\)",
-        "\\(k=\\frac{25}{10}=2.5\\text{ min}^{-1}\\)",
-        "\\(k=\\frac1{10}\\ln\\frac{43}{68}\\approx-0.0458\\text{ min}^{-1}\\)",
-        "\\(k=0.05\\text{ min}^{-1}\\)"
+       "t": "expr",
+       "p": "k (exacto, en min⁻¹)",
+       "f": [
+        {
+         "a": "1/10*ln(68/43)",
+         "v": []
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Tiempo hasta 40 °C",
-       "o": [
-        "\\(\\approx29.0\\text{ min}\\)",
-        "\\(\\approx20.8\\text{ min}\\)",
-        "\\(\\approx40.9\\text{ min}\\)",
-        "\\(\\approx16.0\\text{ min}\\)",
-        "\\(\\approx10.0\\text{ min}\\)"
+       "f": [
+        {
+         "l": "t",
+         "a": 29.0,
+         "u": "min",
+         "tol": 0.1
+        }
        ]
       }
      ],
      "steps": [
-      "Separando: \\(\\frac{dT}{T-22}=-k\\,dt\\Rightarrow T=22+Ae^{-kt}\\); \\(T(0)=90\\Rightarrow A=68\\).",
-      "\\(65=22+68e^{-10k}\\Rightarrow e^{-10k}=\\frac{43}{68}\\Rightarrow k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.04583\\).",
-      "\\(40=22+68e^{-kt}\\Rightarrow e^{-kt}=\\frac{18}{68}\\Rightarrow t=\\frac{\\ln(68/18)}k\\approx29.0\\) min.",
+      "Separando: \\(\\frac{dT}{T-22}=-k\\,dt\\) \\(\\Rightarrow  T=22+Ae^{-kt}\\); \\(T(0)=90\\Rightarrow A=68\\).",
+      "\\(65=22+68e^{-10k}\\) \\(\\Rightarrow  e^{-10k}=\\frac{43}{68}\\) \\(\\Rightarrow  k\\) \\(=\\frac1{10}\\ln\\frac{68}{43}\\approx0.04583\\).",
+      "\\(40=22+68e^{-kt}\\) \\(\\Rightarrow  e^{-kt}=\\frac{18}{68}\\) \\(\\Rightarrow  t\\) \\(=\\frac{\\ln(68/18)}k\\approx29.0\\) min.",
       "Cuando \\(t\\to\\infty\\), \\(T\\to22\\) °C: el café se acerca a la temperatura ambiente sin cruzarla."
      ],
      "ans": "k ≈ 0.0458 min⁻¹; t ≈ 29.0 min",
@@ -2254,58 +2746,8 @@
       ],
       [],
       []
-     ]
-    },
-    {
-     "id": "w9e7",
-     "lvl": 3,
-     "title": "Vaciado de un tanque (Torricelli)",
-     "q": "<p>La altura de agua en un tanque cumple \\(\\frac{dh}{dt}=-0.1\\sqrt h\\) (m, s), con \\(h(0)=5\\) m.</p>",
-     "checks": [
-      {
-       "p": "Altura a los 20 s",
-       "o": [
-        "\\(\\approx1.53\\text{ m}\\)",
-        "\\(\\approx3.00\\text{ m}\\)",
-        "\\(\\approx1.24\\text{ m}\\)",
-        "\\(\\approx3.21\\text{ m}\\)",
-        "\\(0\\text{ m}\\)"
-       ]
-      },
-      {
-       "p": "Tiempo total de vaciado",
-       "o": [
-        "\\(\\approx44.7\\text{ s}\\)",
-        "\\(50\\text{ s}\\)",
-        "\\(\\approx22.4\\text{ s}\\)",
-        "\\(\\approx89.4\\text{ s}\\)",
-        "\\(\\approx11.2\\text{ s}\\)"
-       ]
-      }
      ],
-     "steps": [
-      "\\(h^{-1/2}dh=-0.1\\,dt\\Rightarrow2\\sqrt h=-0.1t+C\\); \\(h(0)=5\\Rightarrow C=2\\sqrt5\\).",
-      "\\(\\sqrt h=\\sqrt5-0.05t\\Rightarrow h(t)=(\\sqrt5-0.05t)^2\\).",
-      "\\(h(20)=(2.236-1)^2\\approx1.53\\) m.",
-      "Se vacía cuando \\(\\sqrt5-0.05t=0\\Rightarrow t=\\frac{\\sqrt5}{0.05}\\approx44.7\\) s. A diferencia de un vaciado lineal, baja rápido al inicio y despacio al final."
-     ],
-     "ans": "h(20) ≈ 1.53 m; se vacía en ≈ 44.7 s",
-     "hint": "La antiderivada de h^(−1/2) es 2√h.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "sep"
-      ],
-      [
-       "pvi"
-      ],
-      [],
-      [
-       "validez"
-      ]
-     ]
+     "chain": true
     },
     {
      "id": "w9e8",
@@ -2314,19 +2756,20 @@
      "q": "<p>El yodo-131 tiene vida media de 8 días y decae según \\(\\frac{dm}{dt}=-km\\). Si hay 80 mg, ¿cuándo quedarán 5 mg?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Tiempo",
-       "o": [
-        "\\(32\\text{ días}\\)",
-        "\\(16\\text{ días}\\)",
-        "\\(128\\text{ días}\\)",
-        "\\(40\\text{ días}\\)",
-        "\\(\\approx22.2\\text{ días}\\)"
+       "f": [
+        {
+         "l": "t",
+         "a": 32,
+         "u": "días"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(m=80e^{-kt}\\) y \\(m(8)=40\\Rightarrow k=\\frac{\\ln2}8\\approx0.0866\\) día\\(^{-1}\\).",
-      "\\(5=80e^{-kt}\\Rightarrow e^{-kt}=\\frac1{16}\\Rightarrow t=\\frac{\\ln16}k=\\frac{4\\ln2}{\\ln2/8}=32\\) días.",
+      "\\(m=80e^{-kt}\\) y \\(m(8)=40\\) \\(\\Rightarrow  k=\\frac{\\ln2}8\\approx0.0866\\) día\\(^{-1}\\).",
+      "\\(5=80e^{-kt}\\) \\(\\Rightarrow  e^{-kt}=\\frac1{16}\\) \\(\\Rightarrow  t\\) \\(=\\frac{\\ln16}k\\) \\(=\\frac{4\\ln2}{\\ln2/8}\\) \\(=32\\) días.",
       "Atajo: \\(80\\to40\\to20\\to10\\to5\\) son 4 vidas medias \\(=32\\) días."
      ],
      "ans": "32 días",
@@ -2351,30 +2794,41 @@
      "q": "<p>Un globo esférico se infla a 50 cm³/s y su radio inicial es 3 cm. Usa \\(\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}\\).</p>",
      "checks": [
       {
-       "p": "Radio en función del tiempo",
-       "o": [
-        "\\(r(t)=\\sqrt[3]{\\frac{37.5}\\pi t+27}\\)",
-        "\\(r(t)=\\sqrt[3]{\\frac{75}\\pi t+125}\\)",
-        "\\(r(t)=3+\\frac{12.5}\\pi t\\)",
-        "\\(r(t)=\\sqrt[3]{\\frac{12.5}\\pi t+27}\\)",
-        "\\(r(t)=\\sqrt[3]{\\frac{37.5}\\pi t}+3\\)"
+       "t": "expr",
+       "p": "Escribe r(t).",
+       "f": [
+        {
+         "a": "(37.5/π*t+27)^(1/3)",
+         "v": [
+          "t"
+         ],
+         "l": "r(t) =",
+         "dom": {
+          "t": [
+           0,
+           20
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "r(10)",
-       "o": [
-        "\\(\\approx5.27\\text{ cm}\\)",
-        "\\(\\approx42.8\\text{ cm}\\)",
-        "\\(\\approx3.79\\text{ cm}\\)",
-        "\\(\\approx6.81\\text{ cm}\\)",
-        "\\(\\approx4.18\\text{ cm}\\)"
+       "t": "num",
+       "p": "Radio a los 10 s",
+       "f": [
+        {
+         "l": "r(10)",
+         "a": 5.27,
+         "u": "cm",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(50=4\\pi r^2\\frac{dr}{dt}\\Rightarrow r^2dr=\\frac{12.5}\\pi dt\\).",
-      "\\(\\frac{r^3}3=\\frac{12.5}\\pi t+C\\Rightarrow r^3=\\frac{37.5}\\pi t+3C\\); con \\(r(0)=3\\): \\(3C=27\\).",
-      "\\(r(10)=\\sqrt[3]{\\frac{375}\\pi+27}\\approx\\sqrt[3]{146.4}\\approx5.27\\) cm. El radio crece como \\(t^{1/3}\\): cóncavo, cada vez más lento."
+      "\\(50=4\\pi r^2\\frac{dr}{dt}\\) \\(\\Rightarrow  r^2dr=\\frac{12.5}\\pi dt\\).",
+      "\\(\\frac{r^3}3=\\frac{12.5}\\pi t+C\\) \\(\\Rightarrow  r^3=\\frac{37.5}\\pi t+3C\\); con \\(r(0)=3\\): \\(3C=27\\).",
+      "\\(r(10)\\) \\(=\\sqrt[3]{\\frac{375}\\pi+27}\\approx\\sqrt[3]{146.4}\\approx5.27\\) cm. El radio crece como \\(t^{1/3}\\): cóncavo, cada vez más lento."
      ],
      "ans": "r(t) = ∛(37.5t/π + 27); r(10) ≈ 5.27 cm",
      "hint": "Separa r² dr y antideriva: r³/3.",
@@ -2390,39 +2844,40 @@
        "pvi"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w9e10",
      "lvl": 2,
      "title": "Verificar una solución logística",
-     "q": "<p>Los infectados en una población cumplen \\(I'=0.2\\,I\\big(1-\\frac I{1000}\\big)\\), \\(I(0)=50\\). Se propone \\(I(t)=\\dfrac{1000}{1+19e^{-0.2t}}\\).</p>",
+     "q": "<p>Los infectados en una población cumplen \\(I'\\) \\(=0.2\\,I\\big(1-\\frac I{1000}\\big)\\), \\(I(0)=50\\). Se propone \\(I(t)=\\dfrac{1000}{1+19e^{-0.2t}}\\).</p>",
      "checks": [
       {
-       "p": "Límite a largo plazo",
-       "o": [
-        "\\(1000\\)",
-        "\\(50\\)",
-        "\\(\\infty\\)",
-        "\\(950\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Largo plazo",
+       "f": [
+        {
+         "l": "lím I(t)",
+         "a": 1000
+        }
        ]
       },
       {
-       "p": "¿Cuándo llega a 500 infectados?",
-       "o": [
-        "\\(t=\\frac{\\ln19}{0.2}\\approx14.7\\)",
-        "\\(t=\\frac{\\ln2}{0.2}\\approx3.5\\)",
-        "\\(t=\\frac{19}{0.2}=95\\)",
-        "\\(t=\\frac{\\ln10}{0.2}\\approx11.5\\)",
-        "\\(t=\\frac{\\ln19}{2}\\approx1.47\\)"
+       "t": "expr",
+       "p": "¿Cuándo llega a 500? (t exacto)",
+       "f": [
+        {
+         "a": "ln(19)/0.2",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "Condición inicial: \\(I(0)=\\frac{1000}{1+19}=50\\) ✓. Derivando: \\(I'=\\frac{1000\\cdot19\\cdot0.2e^{-0.2t}}{(1+19e^{-0.2t})^2}\\), que coincide con \\(0.2I(1-\\frac I{1000})\\) ✓.",
+      "Condición inicial: \\(I(0)=\\frac{1000}{1+19}=50\\) ✓. Derivando: \\(I'\\) \\(=\\frac{1000\\cdot19\\cdot0.2e^{-0.2t}}{(1+19e^{-0.2t})^2}\\), que coincide con \\(0.2I(1-\\frac I{1000})\\) ✓.",
       "Si \\(t\\to\\infty\\), \\(e^{-0.2t}\\to0\\) y \\(I\\to1000\\): la epidemia se satura en la capacidad de la población.",
-      "\\(500=\\frac{1000}{1+19e^{-0.2t}}\\Rightarrow19e^{-0.2t}=1\\Rightarrow t=\\frac{\\ln19}{0.2}\\approx14.7\\)."
+      "\\(500=\\frac{1000}{1+19e^{-0.2t}}\\) \\(\\Rightarrow 19e^{-0.2t}=1\\) \\(\\Rightarrow  t\\) \\(=\\frac{\\ln19}{0.2}\\approx14.7\\)."
      ],
      "ans": "→ 1000; I = 500 en t ≈ 14.7",
      "hint": "Mitad de la capacidad: el denominador debe valer 2.",
@@ -2435,7 +2890,30 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
+    }
+   ],
+   "tools": [
+    {
+     "w": "campo",
+     "t": "Campo de pendientes: enfriamiento",
+     "p": "dT/dt = −0,0458 (T − 22). Toca un punto para elegir la temperatura inicial.",
+     "o": {
+      "f": "-0.0458*(y-22)",
+      "tr": [
+       0,
+       60
+      ],
+      "yr": [
+       0,
+       100
+      ],
+      "ic": [
+       0,
+       90
+      ]
+     }
     }
    ]
   },
@@ -2452,7 +2930,7 @@
     "\\(\\int\\sec^2x=\\tan x\\), \\(\\int\\csc^2x=-\\cot x\\)",
     "\\(\\int\\sec x\\tan x=\\sec x\\), \\(\\int\\csc x\\cot x=-\\csc x\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>En la semana 9 reconstruías una función a partir de su tasa \"a ojo\". Ahora eso tiene símbolo: \\(\\int f(x)\\,dx\\). La \\(\\int\\) es una S alargada (de <em>summa</em>), \\(f(x)\\) es el integrando y \\(dx\\) dice cuál es la variable.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(\\int2x\\,dx=x^2+C\\); \\(x^2-2\\), \\(x^2\\), \\(x^2+4\\)… son la misma parábola subida o bajada.</li><li><strong>Linealidad:</strong> separa sumas y saca constantes: \\(\\int(3x^2+2x-5)\\,dx=\\) \\(x^3+x^2-5x+C\\).</li><li><strong>Raíces como potencias:</strong> \\(\\frac1{\\sqrt x}=x^{-1/2}\\), \\(\\frac1{\\sqrt[3]x}=x^{-1/3}\\) antes de integrar.</li><li><strong>Lo que no es propiedad:</strong> \\(\\int x\\cdot x\\,dx=\\frac{x^3}3\\), pero \\(\\int x\\,dx\\cdot\\int x\\,dx\\) da \\(\\frac{x^4}4\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Reescribe (raíces y fracciones como potencias).</li><li><strong>2.</strong> Separa con linealidad.</li><li><strong>3.</strong> Usa la tabla término a término y escribe un solo \\(+C\\).</li><li><strong>4.</strong> Verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int\\big(3^x+4x^3-\\frac2{\\sqrt[3]x}\\big)dx=\\) \\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\big(\\sec^2x-\\sin x+\\frac4x\\big)dx=\\) \\(\\tan x+\\cos x+4\\ln|x|+C\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac1k\\) (\\(\\int e^{3x}dx=\\frac{e^{3x}}3\\), no \\(e^{3x}\\)), cambiar mal el signo en \\(\\int\\sin x=-\\cos x\\), o usar la regla de la potencia con \\(n=-1\\) (ahí sale \\(\\ln|x|\\)).</div>",
+   "lesson": "<h3>Idea central</h3><p>En la semana 9 reconstruías una función a partir de su tasa \"a ojo\". Ahora eso tiene símbolo: \\(\\int f(x)\\,dx\\). La \\(\\int\\) es una S alargada (de <em>summa</em>), \\(f(x)\\) es el integrando y \\(dx\\) dice cuál es la variable.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Familia de curvas:</strong> \\(\\int2x\\,dx=x^2+C\\); \\(x^2-2\\), \\(x^2\\), \\(x^2+4\\)… son la misma parábola subida o bajada.</li><li><strong>Linealidad:</strong> separa sumas y saca constantes: \\(\\int(3x^2+2x-5)\\,dx=\\) \\(x^3+x^2-5x+C\\).</li><li><strong>Raíces como potencias:</strong> \\(\\frac1{\\sqrt x}=x^{-1/2}\\), \\(\\frac1{\\sqrt[3]x}=x^{-1/3}\\) antes de integrar.</li><li><strong>Lo que no es propiedad:</strong> \\(\\int x\\cdot x\\,dx=\\frac{x^3}3\\), pero \\(\\int x\\,dx\\cdot\\int x\\,dx\\) da \\(\\frac{x^4}4\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Reescribe (raíces y fracciones como potencias).</li><li><strong>2.</strong> Separa con linealidad.</li><li><strong>3.</strong> Usa la tabla término a término y escribe un solo \\(+C\\).</li><li><strong>4.</strong> Verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int\\big(3^x+4x^3-\\frac2{\\sqrt[3]x}\\big)dx\\) \\(=\\) \\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\big(\\sec^2x-\\sin x+\\frac4x\\big)dx\\) \\(=\\) \\(\\tan x+\\cos x+4\\ln|x|+C\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el \\(\\frac1k\\) (\\(\\int e^{3x}dx=\\frac{e^{3x}}3\\), no \\(e^{3x}\\)), cambiar mal el signo en \\(\\int\\sin x=-\\cos x\\), o usar la regla de la potencia con \\(n=-1\\) (ahí sale \\(\\ln|x|\\)).</div>",
    "ex": [
     {
      "id": "w10i1",
@@ -2461,13 +2939,17 @@
      "q": "<p>Calcula \\(\\int(6x^2-4x+3)\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(2x^3-2x^2+3x+C\\)",
-        "\\(12x-4+C\\)",
-        "\\(6x^3-4x^2+3x+C\\)",
-        "\\(2x^3-4x^2+3x+C\\)",
-        "\\(2x^3-2x^2+3+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "2*x^3-2*x^2+3*x",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -2500,13 +2982,17 @@
      "q": "<p>Calcula \\(\\int\\big(e^x+\\frac1x+\\cos x\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(e^x+\\ln|x|+\\sin x+C\\)",
-        "\\(e^x-\\frac1{x^2}+\\sin x+C\\)",
-        "\\(e^x+\\ln|x|-\\sin x+C\\)",
-        "\\(e^x+\\ln|x|-\\cos x+C\\)",
-        "\\(xe^x+\\ln|x|+\\sin x+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "e^x+ln(abs(x))+sin(x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -2535,20 +3021,24 @@
      "q": "<p>Calcula \\(\\int\\big(2^x+x^3-\\frac5{\\sqrt x}\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-10\\sqrt x+C\\)",
-        "\\(2^x\\ln2+\\frac{x^4}4-10\\sqrt x+C\\)",
-        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4+10\\sqrt x+C\\)",
-        "\\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-\\frac52\\sqrt x+C\\)",
-        "\\(\\frac{2^{x+1}}{x+1}+\\frac{x^4}4-10\\sqrt x+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "2^x/ln(2)+x^4/4-10*sqrt(x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "Reescribe \\(\\frac5{\\sqrt x}=5x^{-1/2}\\).",
       "\\(\\int2^xdx=\\frac{2^x}{\\ln2}\\) (no es una potencia de \\(x\\): la variable está en el exponente).",
-      "\\(\\int5x^{-1/2}dx=5\\cdot\\frac{x^{1/2}}{1/2}=\\) \\(10\\sqrt x\\).",
+      "\\(\\int5x^{-1/2}dx\\) \\(=5\\cdot\\frac{x^{1/2}}{1/2}\\) \\(=\\) \\(10\\sqrt x\\).",
       "Resultado: \\(\\frac{2^x}{\\ln2}+\\frac{x^4}4-10\\sqrt x+C\\)."
      ],
      "ans": "2ˣ/ln2 + x⁴/4 − 10√x + C",
@@ -2576,13 +3066,23 @@
      "q": "<p>Calcula \\(\\int\\big(\\csc^2x+\\sec x\\tan x\\) \\(-e^{2x}\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(-\\cot x+\\sec x-\\frac{e^{2x}}2+C\\)",
-        "\\(\\cot x+\\sec x-\\frac{e^{2x}}2+C\\)",
-        "\\(-\\cot x+\\tan x-\\frac{e^{2x}}2+C\\)",
-        "\\(-\\cot x+\\sec x-2e^{2x}+C\\)",
-        "\\(-\\cot x-\\sec x-\\frac{e^{2x}}2+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "-cot(x)+sec(x)-e^(2*x)/2",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.2,
+           1.3
+          ]
+         }
+        }
        ]
       }
      ],
@@ -2619,13 +3119,17 @@
      "q": "<p>Calcula \\(\\int\\big(\\frac3x+5e^{3x}\\) \\(-2\\cos(2x)\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(3\\ln|x|+\\frac53e^{3x}-\\sin(2x)\\) \\(+C\\)",
-        "\\(3\\ln|x|+15e^{3x}\\) \\(-4\\sin(2x)+C\\)",
-        "\\(3\\ln|x|+\\frac53e^{3x}+\\sin(2x)\\) \\(+C\\)",
-        "\\(-\\frac3{x^2}+\\frac53e^{3x}-\\sin(2x)+C\\)",
-        "\\(3\\ln|x|+5e^{3x}-2\\sin(2x)\\) \\(+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "3*ln(abs(x))+5/3*e^(3*x)-sin(2*x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -2712,7 +3216,7 @@
       }
      ],
      "steps": [
-      "\\(\\big(-\\frac12\\cos2x\\big)'=\\) \\(-\\frac12\\cdot(-\\sin2x)\\cdot2=\\sin2x\\). ✓",
+      "\\(\\big(-\\frac12\\cos2x\\big)'=\\) \\(-\\frac12\\cdot(-\\sin2x)\\cdot2\\) \\(=\\sin2x\\). ✓",
       "\\((e^{3x})'=3e^{3x}\\) ✗; \\((x^5)'=5x^4\\) ✗; \\((3\\sin3x)'=9\\cos3x\\) ✗.",
       "\\((\\ln x^2)'=\\frac2x\\ne\\frac1{x^2}\\) ✗; la correcta sería \\(-\\frac1x+C\\)."
      ],
@@ -2740,13 +3244,16 @@
      "q": "<p>Resuelve \\(y'(t)=\\sin(2t)\\) con \\(y(0)=1\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=-\\frac12\\cos(2t)+\\frac32\\)",
-        "\\(y=-\\frac12\\cos(2t)+1\\)",
-        "\\(y=\\frac12\\cos(2t)+\\frac12\\)",
-        "\\(y=-2\\cos(2t)+3\\)",
-        "\\(y=-\\cos(2t)+2\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "-1/2*cos(2*t)+3/2",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
@@ -2779,13 +3286,16 @@
      "q": "<p>De la familia \\(\\int2x\\,dx\\), ¿qué curva pasa por el punto \\((2,1)\\)?</p>",
      "checks": [
       {
-       "p": "Curva",
-       "o": [
-        "\\(y=x^2-3\\)",
-        "\\(y=x^2+1\\)",
-        "\\(y=x^2-2\\)",
-        "\\(y=x^2+3\\)",
-        "\\(y=2x^2-7\\)"
+       "t": "expr",
+       "p": "Escribe la curva.",
+       "f": [
+        {
+         "a": "x^2-3",
+         "v": [
+          "x"
+         ],
+         "l": "y ="
+        }
        ]
       }
      ],
@@ -2816,19 +3326,23 @@
      "q": "<p>Calcula \\(\\int\\big(3^x+4x^3-\\frac2{\\sqrt[3]x}\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\)",
-        "\\(\\frac{3^x}{\\ln3}+x^4-\\frac43x^{2/3}+C\\)",
-        "\\(3^x\\ln3+x^4-3x^{2/3}+C\\)",
-        "\\(\\frac{3^x}{\\ln3}+x^4+3x^{2/3}+C\\)",
-        "\\(\\frac{3^x}{\\ln3}+x^4-3x^{4/3}+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "3^x/ln(3)+x^4-3*x^(2/3)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\frac2{\\sqrt[3]x}=2x^{-1/3}\\).",
-      "\\(\\int2x^{-1/3}dx=2\\cdot\\frac{x^{2/3}}{2/3}=\\) \\(3x^{2/3}\\).",
+      "\\(\\int2x^{-1/3}dx\\) \\(=2\\cdot\\frac{x^{2/3}}{2/3}\\) \\(=\\) \\(3x^{2/3}\\).",
       "\\(\\int3^xdx=\\frac{3^x}{\\ln3}\\), \\(\\int4x^3dx=x^4\\).",
       "Resultado: \\(\\frac{3^x}{\\ln3}+x^4-3x^{2/3}+C\\)."
      ],
@@ -2863,7 +3377,7 @@
     "\\(\\int e^u du=e^u\\), \\(\\int\\cos u\\,du=\\sin u\\)",
     "\\(\\int\\frac{du}{1+u^2}=\\arctan u\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>Busca en el integrando una <strong>pareja</strong>: una función \"de adentro\" y su derivada multiplicando afuera. \\(3x^2(x^3+1)^4\\): adentro está \\(x^3+1\\) y afuera su derivada \\(3x^2\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Patrones típicos:</strong> \\(\\frac{g'}{g}\\to\\ln|g|\\); \\(g'\\,e^{g}\\to e^{g}\\); \\(\\frac{\\ln x}x\\) con \\(u=\\ln x\\); \\(\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\) con \\(u=\\tan x\\).</li><li><strong>Constantes que faltan:</strong> en \\(\\int x\\sqrt{x^2+4}\\,dx\\), \\(du=2x\\,dx\\Rightarrow x\\,dx=\\frac12du\\).</li><li><strong>Linealidad primero:</strong> si hay una suma, separa y usa una sustitución distinta en cada parte (\\(u\\) en una, \\(w\\) en otra).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Qué está \"dentro\" de una potencia, raíz, exponencial, log o trig? Esa es \\(u\\).</li><li><strong>2.</strong> Deriva: \\(du=\\dots dx\\). ¿Está ese factor en el integrando?</li><li><strong>3.</strong> Reescribe, integra y vuelve a \\(x\\).</li><li><strong>4.</strong> Verifica derivando (sale la regla de la cadena).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\frac{\\cos(\\ln x)}x\\,dx\\): \\(u=\\ln x\\), \\(du=\\frac{dx}x\\Rightarrow\\) \\(\\int\\cos u\\,du=\\sin(\\ln x)+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> \\(\\int\\big(\\frac{2x}{x^2+5}\\) \\(+\\sin^3x\\cos x\\big)dx=\\) \\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\).</div>\n<div class=\"err\"><b>Error común:</b> cambiar \\(x^3+1\\) por \\(u\\) pero no reemplazar \\(dx\\) por \\(du\\) (queda un \\(x^2\\) suelto o falta el \\(\\frac13\\)), u olvidar regresar a la variable \\(x\\) al final.</div>",
+   "lesson": "<h3>Idea central</h3><p>Busca en el integrando una <strong>pareja</strong>: una función \"de adentro\" y su derivada multiplicando afuera. \\(3x^2(x^3+1)^4\\): adentro está \\(x^3+1\\) y afuera su derivada \\(3x^2\\).</p>\n<h3>Conceptos clave</h3><ul><li><strong>Patrones típicos:</strong> \\(\\frac{g'}{g}\\to\\ln|g|\\); \\(g'\\,e^{g}\\to e^{g}\\); \\(\\frac{\\ln x}x\\) con \\(u=\\ln x\\); \\(\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\) con \\(u=\\tan x\\).</li><li><strong>Constantes que faltan:</strong> en \\(\\int x\\sqrt{x^2+4}\\,dx\\), \\(du=2x\\,dx\\Rightarrow x\\,dx=\\frac12du\\).</li><li><strong>Linealidad primero:</strong> si hay una suma, separa y usa una sustitución distinta en cada parte (\\(u\\) en una, \\(w\\) en otra).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> ¿Qué está \"dentro\" de una potencia, raíz, exponencial, log o trig? Esa es \\(u\\).</li><li><strong>2.</strong> Deriva: \\(du=\\dots dx\\). ¿Está ese factor en el integrando?</li><li><strong>3.</strong> Reescribe, integra y vuelve a \\(x\\).</li><li><strong>4.</strong> Verifica derivando (sale la regla de la cadena).</li></ul>\n<div class=\"ej\"><b>Ejemplo (Guía 10):</b> \\(\\int\\frac{\\cos(\\ln x)}x\\,dx\\): \\(u=\\ln x\\), \\(du=\\frac{dx}x\\Rightarrow\\) \\(\\int\\cos u\\,du\\) \\(=\\sin(\\ln x)+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> \\(\\int\\big(\\frac{2x}{x^2+5}\\) \\(+\\sin^3x\\cos x\\big)dx=\\) \\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\).</div>\n<div class=\"err\"><b>Error común:</b> cambiar \\(x^3+1\\) por \\(u\\) pero no reemplazar \\(dx\\) por \\(du\\) (queda un \\(x^2\\) suelto o falta el \\(\\frac13\\)), u olvidar regresar a la variable \\(x\\) al final.</div>",
    "ex": [
     {
      "id": "w10u1",
@@ -2872,13 +3386,17 @@
      "q": "<p>Calcula \\(\\int3x^2(x^3+1)^4\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{(x^3+1)^5}5+C\\)",
-        "\\((x^3+1)^5+C\\)",
-        "\\(\\frac{3x^2(x^3+1)^5}5+C\\)",
-        "\\(\\frac{(x^3+1)^5}{15}+C\\)",
-        "\\(\\frac{x^3(x^3+1)^5}5+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "(x^3+1)^5/5",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -2911,19 +3429,23 @@
      "q": "<p>Calcula \\(\\int\\frac{\\ln x}x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{(\\ln x)^2}2+C\\)",
-        "\\(\\ln|\\ln x|+C\\)",
-        "\\((\\ln x)^2+C\\)",
-        "\\(x\\ln x-x+C\\)",
-        "\\(\\frac1{2x^2}+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "(ln(x))^2/2",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=\\ln x\\Rightarrow du=\\frac1x\\,dx\\).",
-      "\\(\\int u\\,du=\\frac{u^2}2+C=\\frac{(\\ln x)^2}2+C\\)."
+      "\\(\\int u\\,du\\) \\(=\\frac{u^2}2+C\\) \\(=\\frac{(\\ln x)^2}2+C\\)."
      ],
      "ans": "(ln x)²/2 + C",
      "hint": "La derivada de ln x es 1/x, que ya está.",
@@ -2946,19 +3468,23 @@
      "q": "<p>Calcula \\(\\int\\frac{x}{(x^2+1)^3}\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(-\\frac1{4(x^2+1)^2}+C\\)",
-        "\\(-\\frac1{2(x^2+1)^2}+C\\)",
-        "\\(\\frac1{4(x^2+1)^2}+C\\)",
-        "\\(-\\frac1{8(x^2+1)^4}+C\\)",
-        "\\(\\frac12\\ln(x^2+1)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "-1/(4*(x^2+1)^2)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=x^2+1\\Rightarrow du=2x\\,dx\\Rightarrow\\) \\(x\\,dx=\\frac12du\\).",
-      "\\(\\frac12\\int u^{-3}du=\\frac12\\cdot\\frac{u^{-2}}{-2}=\\) \\(-\\frac1{4u^2}\\).",
+      "\\(\\frac12\\int u^{-3}du\\) \\(=\\frac12\\cdot\\frac{u^{-2}}{-2}\\) \\(=\\) \\(-\\frac1{4u^2}\\).",
       "Resultado: \\(-\\frac1{4(x^2+1)^2}+C\\)."
      ],
      "ans": "−1/(4(x²+1)²) + C",
@@ -2985,19 +3511,23 @@
      "q": "<p>Calcula \\(\\int e^{2x}\\cos(e^{2x})\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12\\sin(e^{2x})+C\\)",
-        "\\(\\sin(e^{2x})+C\\)",
-        "\\(2\\sin(e^{2x})+C\\)",
-        "\\(-\\frac12\\sin(e^{2x})+C\\)",
-        "\\(\\frac12e^{2x}\\sin(e^{2x})+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "1/2*sin(e^(2*x))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=e^{2x}\\Rightarrow du=2e^{2x}dx\\Rightarrow\\) \\(e^{2x}dx=\\frac{du}2\\).",
-      "\\(\\frac12\\int\\cos u\\,du=\\frac12\\sin u\\).",
+      "\\(\\frac12\\int\\cos u\\,du\\) \\(=\\frac12\\sin u\\).",
       "Resultado: \\(\\frac12\\sin(e^{2x})+C\\)."
      ],
      "ans": "½ sin(e^(2x)) + C",
@@ -3024,13 +3554,17 @@
      "q": "<p>Calcula \\(\\int x\\,e^{x^2}dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12e^{x^2}+C\\)",
-        "\\(e^{x^2}+C\\)",
-        "\\(2e^{x^2}+C\\)",
-        "\\(\\frac12x^2e^{x^2}+C\\)",
-        "\\(\\frac{e^{x^2}}{2x}+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "1/2*e^(x^2)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3059,20 +3593,30 @@
      "q": "<p>Calcula \\(\\int\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(2\\sqrt{\\tan x}+C\\)",
-        "\\(\\sqrt{\\tan x}+C\\)",
-        "\\(\\frac12\\sqrt{\\tan x}+C\\)",
-        "\\(\\frac23(\\tan x)^{3/2}+C\\)",
-        "\\(-\\frac2{\\sqrt{\\tan x}}+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "2*sqrt(tan(x))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.1,
+           1.4
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=\\tan x\\Rightarrow du=\\sec^2x\\,dx\\).",
-      "\\(\\int u^{-1/2}du=\\frac{u^{1/2}}{1/2}=2\\sqrt u\\).",
-      "Resultado: \\(2\\sqrt{\\tan x}+C\\). Verificación: \\((2\\sqrt{\\tan x})'=\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\). ✓"
+      "\\(\\int u^{-1/2}du\\) \\(=\\frac{u^{1/2}}{1/2}\\) \\(=2\\sqrt u\\).",
+      "Resultado: \\(2\\sqrt{\\tan x}+C\\). Verificación: \\((2\\sqrt{\\tan x})'\\) \\(=\\frac{\\sec^2x}{\\sqrt{\\tan x}}\\). ✓"
      ],
      "ans": "2√(tan x) + C",
      "hint": "¿De quién es derivada sec²x?",
@@ -3098,13 +3642,17 @@
      "q": "<p>Calcula \\(\\int\\big(\\frac{2x}{x^2+5}\\) \\(+\\sin^3x\\cos x\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\)",
-        "\\(2\\ln(x^2+5)+\\frac{\\sin^4x}4+C\\)",
-        "\\(\\ln(x^2+5)-\\frac{\\sin^4x}4+C\\)",
-        "\\(\\ln(x^2+5)+\\frac{\\cos^4x}4+C\\)",
-        "\\(\\frac1{x^2+5}+\\frac{\\sin^4x}4+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "ln(x^2+5)+sin(x)^4/4",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3139,18 +3687,22 @@
      "q": "<p>Calcula \\(\\int\\big(x\\sqrt{x^2+4}\\) \\(+e^{\\sin x}\\cos x\\big)dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac13(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
-        "\\(\\frac23(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
-        "\\(\\frac13(x^2+4)^{3/2}-e^{\\sin x}+C\\)",
-        "\\(\\frac12(x^2+4)^{3/2}+e^{\\sin x}+C\\)",
-        "\\(\\frac13(x^2+4)^{3/2}\\) \\(+e^{\\sin x}\\cos x+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "1/3*(x^2+4)^(3/2)+e^(sin(x))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(I_1\\): \\(u=x^2+4\\), \\(x\\,dx=\\frac12du\\Rightarrow\\) \\(\\frac12\\int u^{1/2}du=\\frac12\\cdot\\frac23u^{3/2}=\\) \\(\\frac13(x^2+4)^{3/2}\\).",
+      "\\(I_1\\): \\(u=x^2+4\\), \\(x\\,dx=\\frac12du\\Rightarrow\\) \\(\\frac12\\int u^{1/2}du\\) \\(=\\frac12\\cdot\\frac23u^{3/2}\\) \\(=\\) \\(\\frac13(x^2+4)^{3/2}\\).",
       "\\(I_2\\): \\(w=\\sin x\\), \\(dw=\\cos x\\,dx\\Rightarrow\\) \\(\\int e^wdw=e^{\\sin x}\\).",
       "Resultado: \\(\\frac13(x^2+4)^{3/2}+e^{\\sin x}+C\\)."
      ],
@@ -3217,19 +3769,23 @@
      "q": "<p>Calcula \\(\\int\\frac{dx}{1+4x^2}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac12\\arctan(2x)+C\\)",
-        "\\(\\arctan(2x)+C\\)",
-        "\\(2\\arctan(2x)+C\\)",
-        "\\(\\frac12\\arctan x+C\\)",
-        "\\(\\frac18\\ln(1+4x^2)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "1/2*arctan(2*x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(1+4x^2=1+(2x)^2\\): toma \\(u=2x\\), \\(du=2\\,dx\\Rightarrow dx=\\frac{du}2\\).",
-      "\\(\\frac12\\int\\frac{du}{1+u^2}=\\frac12\\arctan u\\).",
+      "\\(\\frac12\\int\\frac{du}{1+u^2}\\) \\(=\\frac12\\arctan u\\).",
       "Resultado: \\(\\frac12\\arctan(2x)+C\\). (El \\(\\ln\\) no sirve: arriba no está la derivada \\(8x\\).)"
      ],
      "ans": "½ arctan(2x) + C",
@@ -3256,19 +3812,29 @@
      "q": "<p>Calcula \\(\\int\\frac{dx}{x\\ln x}\\) para \\(x\\gt1\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\ln|\\ln x|+C\\)",
-        "\\(\\frac{(\\ln x)^2}2+C\\)",
-        "\\(\\frac1{\\ln x}+C\\)",
-        "\\(-\\frac1{(\\ln x)^2}+C\\)",
-        "\\(\\ln x\\cdot\\ln|x|+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "ln(abs(ln(x)))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti",
+         "dom": {
+          "x": [
+           1.2,
+           4
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=\\ln x\\Rightarrow du=\\frac{dx}x\\).",
-      "\\(\\int\\frac{du}u=\\ln|u|=\\ln|\\ln x|+C\\)."
+      "\\(\\int\\frac{du}u\\) \\(=\\ln|u|\\) \\(=\\ln|\\ln x|+C\\)."
      ],
      "ans": "ln|ln x| + C",
      "hint": "Reescribe como (1/ln x)·(1/x) dx.",
@@ -3298,7 +3864,7 @@
     "\\(\\int x\\cos x\\,dx=\\) \\(x\\sin x+\\cos x+C\\)",
     "\\(\\int x^2e^xdx=\\) \\(e^x(x^2-2x+2)+C\\)"
    ],
-   "lesson": "<h3>Idea central</h3><p>Partes sirve para un <strong>producto de dos tipos distintos</strong> de funciones (algebraica por exponencial, log por algebraica…), donde no hay una pareja función–derivada para sustituir.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Elegir \\(u\\):</strong> la que se simplifica al derivar (\\(x\\to1\\), \\(\\ln x\\to\\frac1x\\)). \\(dv\\) debe ser fácil de integrar.</li><li><strong>Log o arctan solos:</strong> \\(\\int\\ln x\\,dx\\) se escribe \\(\\int(\\ln x)(1)\\,dx\\) con \\(u=\\ln x\\), \\(dv=dx\\).</li><li><strong>Múltiple:</strong> \\(x^n\\) por \\(e^x\\) o trig necesita \\(n\\) aplicaciones.</li><li><strong>Cíclica:</strong> llama \\(I\\) a la integral, aplica partes dos veces y despeja \\(I\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica los tipos y elige \\(u\\) con ILATE.</li><li><strong>2.</strong> Calcula \\(du\\) (derivando) y \\(v\\) (integrando \\(dv\\)).</li><li><strong>3.</strong> Aplica \\(uv-\\int v\\,du\\).</li><li><strong>4.</strong> Resuelve la integral nueva (quizá con partes otra vez) y verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int x^2\\sin x\\,dx\\): \\(u=x^2\\), \\(v=-\\cos x\\Rightarrow\\) \\(-x^2\\cos x+2\\int x\\cos x\\,dx=\\) \\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10, cíclica):</b> \\(\\int e^{2x}\\sin3x\\,dx=\\) \\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\).</div>\n<div class=\"err\"><b>Error común:</b> elegir \\(u=e^x\\) en \\(\\int xe^x\\,dx\\): la nueva integral \\(\\int\\frac{x^2}2e^xdx\\) es peor. También olvidar el signo menos de \\(v=-\\cos x\\) cuando \\(dv=\\sin x\\,dx\\).</div>",
+   "lesson": "<h3>Idea central</h3><p>Partes sirve para un <strong>producto de dos tipos distintos</strong> de funciones (algebraica por exponencial, log por algebraica…), donde no hay una pareja función–derivada para sustituir.</p>\n<h3>Conceptos clave</h3><ul><li><strong>Elegir \\(u\\):</strong> la que se simplifica al derivar (\\(x\\to1\\), \\(\\ln x\\to\\frac1x\\)). \\(dv\\) debe ser fácil de integrar.</li><li><strong>Log o arctan solos:</strong> \\(\\int\\ln x\\,dx\\) se escribe \\(\\int(\\ln x)(1)\\,dx\\) con \\(u=\\ln x\\), \\(dv=dx\\).</li><li><strong>Múltiple:</strong> \\(x^n\\) por \\(e^x\\) o trig necesita \\(n\\) aplicaciones.</li><li><strong>Cíclica:</strong> llama \\(I\\) a la integral, aplica partes dos veces y despeja \\(I\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica los tipos y elige \\(u\\) con ILATE.</li><li><strong>2.</strong> Calcula \\(du\\) (derivando) y \\(v\\) (integrando \\(dv\\)).</li><li><strong>3.</strong> Aplica \\(uv-\\int v\\,du\\).</li><li><strong>4.</strong> Resuelve la integral nueva (quizá con partes otra vez) y verifica derivando.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 1):</b> \\(\\int x^2\\sin x\\,dx\\): \\(u=x^2\\), \\(v=-\\cos x\\Rightarrow\\) \\(-x^2\\cos x+2\\int x\\cos x\\,dx\\) \\(=\\) \\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\).</div>\n<div class=\"ej\"><b>Ejemplo (Guía 10, cíclica):</b> \\(\\int e^{2x}\\sin3x\\,dx=\\) \\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\).</div>\n<div class=\"err\"><b>Error común:</b> elegir \\(u=e^x\\) en \\(\\int xe^x\\,dx\\): la nueva integral \\(\\int\\frac{x^2}2e^xdx\\) es peor. También olvidar el signo menos de \\(v=-\\cos x\\) cuando \\(dv=\\sin x\\,dx\\).</div>",
    "ex": [
     {
      "id": "w10p1",
@@ -3346,19 +3912,23 @@
      "q": "<p>Calcula \\(\\int xe^x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(e^x(x-1)+C\\)",
-        "\\(xe^x+C\\)",
-        "\\(e^x(x+1)+C\\)",
-        "\\(\\frac{x^2}2e^x+C\\)",
-        "\\(e^x(1-x)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "e^x*(x-1)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "ILATE: \\(u=x\\) (A), \\(dv=e^xdx\\) (E). \\(du=dx\\), \\(v=e^x\\).",
-      "\\(xe^x-\\int e^xdx=xe^x-e^x+C=\\) \\(e^x(x-1)+C\\)."
+      "\\(xe^x-\\int e^xdx\\) \\(=xe^x-e^x+C\\) \\(=\\) \\(e^x(x-1)+C\\)."
      ],
      "ans": "eˣ(x − 1) + C",
      "hint": "u = x se simplifica al derivar.",
@@ -3381,13 +3951,17 @@
      "q": "<p>Calcula \\(\\int\\ln x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(x\\ln x-x+C\\)",
-        "\\(\\frac1x+C\\)",
-        "\\(x\\ln x+x+C\\)",
-        "\\(\\frac{(\\ln x)^2}2+C\\)",
-        "\\(x\\ln x+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "x*ln(x)-x",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3416,13 +3990,17 @@
      "q": "<p>Calcula \\(\\int x\\cos x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(x\\sin x+\\cos x+C\\)",
-        "\\(x\\sin x-\\cos x+C\\)",
-        "\\(-x\\sin x+\\cos x+C\\)",
-        "\\(\\frac{x^2}2\\sin x+C\\)",
-        "\\(\\sin x+x\\cos x+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "x*sin(x)+cos(x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3455,13 +4033,17 @@
      "q": "<p>Calcula \\(\\int x^2e^x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(e^x(x^2-2x+2)+C\\)",
-        "\\(e^x(x^2+2x+2)+C\\)",
-        "\\(e^x(x^2-2x)+C\\)",
-        "\\(x^2e^x-2e^x+C\\)",
-        "\\(e^x(x^2-x+1)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "e^x*(x^2-2*x+2)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3492,19 +4074,23 @@
      "q": "<p>Calcula \\(\\int x\\ln x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{x^2\\ln x}2-\\frac{x^2}4+C\\)",
-        "\\(\\frac{x^2\\ln x}2+\\frac{x^2}4+C\\)",
-        "\\(x\\ln x-x+C\\)",
-        "\\(\\frac{x^2\\ln x}2+C\\)",
-        "\\(\\frac{x^2\\ln x}2-\\frac{x^2}2+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "x^2*ln(x)/2-x^2/4",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "ILATE: \\(u=\\ln x\\), \\(dv=x\\,dx\\); \\(du=\\frac{dx}x\\), \\(v=\\frac{x^2}2\\).",
-      "\\(\\frac{x^2}2\\ln x-\\int\\frac{x^2}2\\cdot\\frac1x\\,dx=\\) \\(\\frac{x^2\\ln x}2-\\int\\frac x2\\,dx\\).",
+      "\\(\\frac{x^2}2\\ln x-\\int\\frac{x^2}2\\cdot\\frac1x\\,dx\\) \\(=\\) \\(\\frac{x^2\\ln x}2-\\int\\frac x2\\,dx\\).",
       "\\(=\\frac{x^2\\ln x}2-\\frac{x^2}4+C\\)."
      ],
      "ans": "x²ln x/2 − x²/4 + C",
@@ -3531,19 +4117,23 @@
      "q": "<p>Calcula \\(\\int x^2\\sin x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\)",
-        "\\(-x^2\\cos x+2x\\sin x-2\\cos x\\) \\(+C\\)",
-        "\\(x^2\\cos x-2x\\sin x-2\\cos x\\) \\(+C\\)",
-        "\\(-x^2\\cos x+2x\\sin x+C\\)",
-        "\\(-x^2\\cos x-2x\\sin x+2\\cos x\\) \\(+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "-x^2*cos(x)+2*x*sin(x)+2*cos(x)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "\\(u=x^2\\), \\(dv=\\sin x\\,dx\\); \\(du=2x\\,dx\\), \\(v=-\\cos x\\): \\(-x^2\\cos x+2\\int x\\cos x\\,dx\\).",
-      "\\(\\int x\\cos x\\,dx=x\\sin x+\\cos x\\).",
+      "\\(\\int x\\cos x\\,dx\\) \\(=x\\sin x+\\cos x\\).",
       "Total: \\(-x^2\\cos x+2x\\sin x+2\\cos x\\) \\(+C\\)."
      ],
      "ans": "−x²cos x + 2x sin x + 2cos x + C",
@@ -3568,20 +4158,24 @@
      "q": "<p>Calcula \\(\\int\\arctan x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(x\\arctan x-\\frac12\\ln(1+x^2)\\) \\(+C\\)",
-        "\\(x\\arctan x+\\frac12\\ln(1+x^2)\\) \\(+C\\)",
-        "\\(x\\arctan x-\\ln(1+x^2)+C\\)",
-        "\\(\\frac1{1+x^2}+C\\)",
-        "\\(\\arctan x-\\frac12\\ln(1+x^2)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "x*arctan(x)-1/2*ln(1+x^2)",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
       "ILATE: \\(u=\\arctan x\\) (I), \\(dv=dx\\). \\(du=\\frac{dx}{1+x^2}\\), \\(v=x\\).",
       "\\(x\\arctan x-\\int\\frac{x}{1+x^2}dx\\).",
-      "Sustitución \\(w=1+x^2\\): \\(\\int\\frac{x\\,dx}{1+x^2}=\\frac12\\ln(1+x^2)\\).",
+      "Sustitución \\(w=1+x^2\\): \\(\\int\\frac{x\\,dx}{1+x^2}\\) \\(=\\frac12\\ln(1+x^2)\\).",
       "Resultado: \\(x\\arctan x-\\frac12\\ln(1+x^2)\\) \\(+C\\)."
      ],
      "ans": "x arctan x − ½ln(1+x²) + C",
@@ -3609,19 +4203,23 @@
      "q": "<p>Calcula \\(I=\\int e^x\\sin x\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{e^x}2(\\sin x-\\cos x)+C\\)",
-        "\\(\\frac{e^x}2(\\sin x+\\cos x)+C\\)",
-        "\\(e^x(\\sin x-\\cos x)+C\\)",
-        "\\(-e^x\\cos x+C\\)",
-        "\\(\\frac{e^x}2(\\cos x-\\sin x)+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "e^x/2*(sin(x)-cos(x))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(u=\\sin x\\), \\(dv=e^xdx\\): \\(I=e^x\\sin x-\\int e^x\\cos x\\,dx\\).",
-      "Otra vez, \\(u=\\cos x\\): \\(\\int e^x\\cos x\\,dx=e^x\\cos x+I\\).",
+      "\\(u=\\sin x\\), \\(dv=e^xdx\\): \\(I\\) \\(=e^x\\sin x-\\int e^x\\cos x\\,dx\\).",
+      "Otra vez, \\(u=\\cos x\\): \\(\\int e^x\\cos x\\,dx\\) \\(=e^x\\cos x+I\\).",
       "\\(I=e^x\\sin x-e^x\\cos x-I\\Rightarrow\\) \\(2I=e^x(\\sin x-\\cos x)\\).",
       "\\(I=\\frac{e^x}2(\\sin x-\\cos x)+C\\)."
      ],
@@ -3650,13 +4248,17 @@
      "q": "<p>Calcula \\(I=\\int e^{2x}\\sin(3x)\\,dx\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\frac{e^{2x}}{13}(2\\sin3x-3\\cos3x)\\) \\(+C\\)",
-        "\\(\\frac{e^{2x}}{13}(2\\sin3x+3\\cos3x)\\) \\(+C\\)",
-        "\\(\\frac{e^{2x}}{13}(3\\sin3x-2\\cos3x)\\) \\(+C\\)",
-        "\\(\\frac{e^{2x}}5(2\\sin3x-3\\cos3x)\\) \\(+C\\)",
-        "\\(\\frac{e^{2x}}4(2\\sin3x-3\\cos3x)\\) \\(+C\\)"
+       "t": "expr",
+       "p": "Escribe el resultado (con + C).",
+       "f": [
+        {
+         "a": "e^(2*x)/13*(2*sin(3*x)-3*cos(3*x))",
+         "v": [
+          "x"
+         ],
+         "l": "∫ =",
+         "mode": "anti"
+        }
        ]
       }
      ],
@@ -3703,7 +4305,7 @@
      ],
      "steps": [
       "Con \\(u=e^x\\): \\(du=e^xdx\\), \\(v=\\frac{x^2}2\\).",
-      "\\(\\int u\\,dv=\\frac{x^2}2e^x-\\int\\frac{x^2}2e^xdx\\): la potencia de \\(x\\) subió.",
+      "\\(\\int u\\,dv\\) \\(=\\frac{x^2}2e^x-\\int\\frac{x^2}2e^xdx\\): la potencia de \\(x\\) subió.",
       "Por eso ILATE pone la A antes que la E: \\(u=x\\) se simplifica al derivar."
      ],
      "ans": "La nueva integral es peor (∫x²eˣ/2 dx)",
@@ -3720,6 +4322,86 @@
       ],
       [
        "ilate"
+      ]
+     ]
+    },
+    {
+     "id": "w10p12",
+     "lvl": 2,
+     "title": "¿Qué técnica usarías?",
+     "q": "<p>Elige la técnica para cada integral.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada integral.",
+       "cats": [
+        "Tabla directa",
+        "Sustitución",
+        "Partes",
+        "Partes cíclica"
+       ],
+       "items": [
+        {
+         "x": "\\(\\int\\cos x\\,dx\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\int 2x(x^2+1)^5\\,dx\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\int xe^x\\,dx\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(\\int e^x\\sin x\\,dx\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(\\int\\frac{\\ln x}{x}\\,dx\\)",
+         "c": 1,
+         "e": "u = ln x: su derivada 1/x ya está."
+        },
+        {
+         "x": "\\(\\int x\\ln x\\,dx\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(\\int(3x^2+1)\\,dx\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\int e^{2x}\\cos3x\\,dx\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(\\int xe^{x^2}\\,dx\\)",
+         "c": 1,
+         "e": "u = x²: du = 2x dx, la x ya está."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Tabla directa: ya es una fórmula de la tabla.",
+      "Sustitución: aparece una función y (salvo constante) su derivada.",
+      "Partes: producto de funciones de distinto tipo (ILATE). Cíclica: exponencial por seno o coseno; la integral reaparece y se despeja."
+     ],
+     "ans": "T, S, P, C, S, P, T, C, S",
+     "hint": "¿Está la derivada de la función interna?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla2"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "partes",
+       "ciclica"
       ]
      ]
     }
@@ -3740,59 +4422,27 @@
    "lesson": "<h3>Idea central</h3><p>Separar es el mismo truco de la semana 9; lo nuevo es que el lado de \\(t\\) ya no es inmediato. Primero separas y después decides: ¿sustitución o partes?</p>\n<h3>Conceptos clave</h3><ul><li><strong>Forma exponencial:</strong> si queda \\(\\ln|y|=G(t)+K\\), entonces \\(y=Ae^{G(t)}\\) y \\(A\\) sale de la condición inicial.</li><li><strong>Elegir técnica:</strong> \\(\\frac t{t^2+1}\\) o \\(\\frac{\\ln t}t\\) → sustitución; \\(te^{-t}\\) o \\(\\ln t\\) → partes.</li><li><strong>Soluciones constantes:</strong> si \\(h(y_0)=0\\), \\(y=y_0\\) también es solución y la separación no la ve.</li><li><strong>Análisis (fase A):</strong> signo de \\(y'\\), límite cuando \\(t\\to\\infty\\) y validez del modelo.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>I.</strong> Variables, unidades, tasa y condición inicial.</li><li><strong>R.</strong> Escribe la EDO y sepárala.</li><li><strong>C.</strong> Integra (sustitución o partes), aplica la condición inicial y despeja.</li><li><strong>A.</strong> Verifica derivando, analiza \\(t\\to\\infty\\) y concluye en contexto.</li></ul>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> \\(\\frac{dy}{dt}=y\\ln t\\), \\(y(1)=1\\): \\(\\ln y=t\\ln t-t+C\\), \\(C=1\\Rightarrow y=t^te^{1-t}\\).</div>\n<div class=\"ej\"><b>Ejemplo (Clase 2):</b> farmacocinética \\(\\frac{dC}{dt}=-2te^{-t}C\\), \\(C(0)=20\\): \\(C=20e^{2[(t+1)e^{-t}-1]}\\), \\(C(2)\\approx6.10\\) mg/L y \\(C\\to20e^{-2}\\approx2.71\\) mg/L.</div>\n<div class=\"err\"><b>Error común:</b> poner una constante en cada lado y aplicar la condición inicial solo a una, o despejar \\(y\\) olvidando que \\(e^{G+K}=e^K\\cdot e^G\\) (la constante multiplica, no suma).</div>",
    "ex": [
     {
-     "id": "w10e1",
-     "lvl": 1,
-     "title": "Separable con t²",
-     "q": "<p>Resuelve \\(\\frac{dy}{dt}=3t^2y\\) con \\(y(0)=1\\).</p>",
-     "checks": [
-      {
-       "p": "y(t)",
-       "o": [
-        "\\(y=e^{t^3}\\)",
-        "\\(y=e^{3t^2}\\)",
-        "\\(y=1+t^3\\)",
-        "\\(y=e^{6t}\\)",
-        "\\(y=t^3e^t\\)"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(\\frac{dy}y=3t^2dt\\Rightarrow\\ln|y|=t^3+K\\Rightarrow\\) \\(y=Ae^{t^3}\\).",
-      "\\(y(0)=A=1\\Rightarrow y=e^{t^3}\\)."
-     ],
-     "ans": "y = e^(t³)",
-     "hint": "∫3t² dt = t³.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "sep"
-      ],
-      [
-       "pvi"
-      ]
-     ]
-    },
-    {
      "id": "w10e2",
      "lvl": 1,
      "title": "dy/dt = t/y",
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac ty\\) con \\(y(0)=2\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=\\sqrt{t^2+4}\\)",
-        "\\(y=\\sqrt{t^2+2}\\)",
-        "\\(y=\\frac{t^2}2+2\\)",
-        "\\(y=t+2\\)",
-        "\\(y=(t^2+4)^2\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "sqrt(t^2+4)",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(y\\,dy=t\\,dt\\Rightarrow\\frac{y^2}2=\\frac{t^2}2+K\\Rightarrow\\) \\(y^2=t^2+C\\).",
+      "\\(y\\,dy=t\\,dt\\) \\(\\Rightarrow \\frac{y^2}2=\\frac{t^2}2+K\\) \\(\\Rightarrow\\) \\(y^2=t^2+C\\).",
       "\\(y(0)=2\\Rightarrow C=4\\); como \\(y\\gt0\\), \\(y=\\sqrt{t^2+4}\\)."
      ],
      "ans": "y = √(t² + 4)",
@@ -3816,13 +4466,16 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=e^{t-y}\\) con \\(y(0)=0\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=t\\)",
-        "\\(y=\\ln(e^t+1)\\)",
-        "\\(y=e^t-1\\)",
-        "\\(y=-t\\)",
-        "\\(y=\\ln(2e^t-1)\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "t",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
@@ -3855,13 +4508,16 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=y\\sin t\\) con \\(y(0)=1\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=e^{1-\\cos t}\\)",
-        "\\(y=e^{-\\cos t}\\)",
-        "\\(y=e^{\\cos t-1}\\)",
-        "\\(y=e^{\\sin t}\\)",
-        "\\(y=1-\\cos t\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "e^(1-cos(t))",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
@@ -3892,18 +4548,21 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=\\frac1{y+1}\\) con \\(y(0)=0\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=-1+\\sqrt{1+2t}\\)",
-        "\\(y=-1-\\sqrt{1+2t}\\)",
-        "\\(y=\\sqrt{2t}\\)",
-        "\\(y=-1+\\sqrt{1+t}\\)",
-        "\\(y=e^t-1\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "-1+sqrt(1+2*t)",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\((y+1)\\,dy=dt\\Rightarrow\\frac{y^2}2+y=t+C\\); \\(y(0)=0\\Rightarrow C=0\\).",
+      "\\((y+1)\\,dy=dt\\) \\(\\Rightarrow \\frac{y^2}2+y=t+C\\); \\(y(0)=0\\Rightarrow C=0\\).",
       "\\(y^2+2y-2t=0\\Rightarrow\\) \\((y+1)^2=1+2t\\).",
       "Como \\(y(0)=0\\), se toma la raíz positiva: \\(y=-1+\\sqrt{1+2t}\\)."
      ],
@@ -3929,23 +4588,32 @@
      "q": "<p>Resuelve \\(\\frac{dy}{dt}=y\\ln t\\) con \\(y(1)=1\\) y \\(t\\gt0\\). Luego calcula \\(y(e)\\).</p>",
      "checks": [
       {
-       "p": "y(t)",
-       "o": [
-        "\\(y=e^{t\\ln t-t+1}=t^te^{1-t}\\)",
-        "\\(y=e^{\\ln t/t}\\)",
-        "\\(y=e^{t\\ln t-t}\\)",
-        "\\(y=t^te^{t-1}\\)",
-        "\\(y=e^{(\\ln t)^2/2}\\)"
+       "t": "expr",
+       "p": "Escribe la solución.",
+       "f": [
+        {
+         "a": "e^(t*ln(t)-t+1)",
+         "v": [
+          "t"
+         ],
+         "l": "y(t) =",
+         "dom": {
+          "t": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "y(e)",
-       "o": [
-        "\\(e\\approx2.72\\)",
-        "\\(1\\)",
-        "\\(e^e\\approx15.15\\)",
-        "\\(e^{-1}\\approx0.37\\)",
-        "\\(e^2\\approx7.39\\)"
+       "t": "expr",
+       "p": "y(e) (exacto)",
+       "f": [
+        {
+         "a": "e",
+         "v": []
+        }
        ]
       }
      ],
@@ -3971,7 +4639,8 @@
        "pvi"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w10e7",
@@ -3980,29 +4649,32 @@
      "q": "<p>Una población de bacterias cumple \\(\\frac{dP}{dt}=\\frac{t}{\\sqrt{1+t^2}}P\\), con \\(P(0)=100\\). Halla \\(P(t)\\) y \\(P(\\sqrt3)\\).</p>",
      "checks": [
       {
-       "p": "P(t)",
-       "o": [
-        "\\(P=100e^{\\sqrt{1+t^2}-1}\\)",
-        "\\(P=100e^{\\sqrt{1+t^2}}\\)",
-        "\\(P=100\\sqrt{1+t^2}\\)",
-        "\\(P=100e^{(1+t^2)^{3/2}}\\)",
-        "\\(P=100e^{t^2/2}\\)"
+       "t": "expr",
+       "p": "Escribe P(t).",
+       "f": [
+        {
+         "a": "100*e^(sqrt(1+t^2)-1)",
+         "v": [
+          "t"
+         ],
+         "l": "P(t) ="
+        }
        ]
       },
       {
-       "p": "P(√3)",
-       "o": [
-        "\\(100e\\approx271.8\\)",
-        "\\(200\\)",
-        "\\(100e^2\\approx738.9\\)",
-        "\\(100e^{\\sqrt3}\\approx565.1\\)",
-        "\\(100e^{3/2}\\approx448.2\\)"
+       "t": "expr",
+       "p": "P(√3) (exacto)",
+       "f": [
+        {
+         "a": "100*e",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\frac{dP}P=\\frac t{\\sqrt{1+t^2}}dt\\).",
-      "\\(u=1+t^2\\), \\(du=2t\\,dt\\): \\(\\int\\frac t{\\sqrt{1+t^2}}dt=\\sqrt{1+t^2}\\).",
+      "\\(u=1+t^2\\), \\(du=2t\\,dt\\): \\(\\int\\frac t{\\sqrt{1+t^2}}dt\\) \\(=\\sqrt{1+t^2}\\).",
       "\\(\\ln P=\\sqrt{1+t^2}+K\\Rightarrow\\) \\(P=Ae^{\\sqrt{1+t^2}}\\); \\(100=Ae^1\\Rightarrow A=\\frac{100}e\\).",
       "\\(P=100e^{\\sqrt{1+t^2}-1}\\); \\(P(\\sqrt3)=100e^{2-1}=\\) \\(100e\\approx271.8\\)."
      ],
@@ -4022,7 +4694,8 @@
        "pvi"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w10e8",
@@ -4031,30 +4704,33 @@
      "q": "<p>En una población cerrada, \\(\\frac{dI}{dt}=\\frac t{t^2+1}I\\), con \\(I(0)=I_0\\). ¿Por cuánto se multiplican los infectados entre \\(t=0\\) y \\(t=3\\)?</p>",
      "checks": [
       {
-       "p": "I(t)",
-       "o": [
-        "\\(I=I_0\\sqrt{t^2+1}\\)",
-        "\\(I=I_0e^{t^2+1}\\)",
-        "\\(I=I_0(t^2+1)\\)",
-        "\\(I=I_0e^{\\arctan t}\\)",
-        "\\(I=I_0\\ln(t^2+1)\\)"
+       "t": "expr",
+       "p": "Escribe el factor de crecimiento I(t)/I₀.",
+       "f": [
+        {
+         "a": "sqrt(t^2+1)",
+         "v": [
+          "t"
+         ],
+         "l": "I(t)/I₀ ="
+        }
        ]
       },
       {
-       "p": "I(3)/I₀",
-       "o": [
-        "\\(\\sqrt{10}\\approx3.16\\)",
-        "\\(10\\)",
-        "\\(e^{10}\\)",
-        "\\(\\ln10\\approx2.30\\)",
-        "\\(5\\)"
+       "t": "expr",
+       "p": "I(3)/I₀ (exacto)",
+       "f": [
+        {
+         "a": "sqrt(10)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\frac{dI}I=\\frac t{t^2+1}dt\\); con \\(u=t^2+1\\): \\(\\int\\frac{t\\,dt}{t^2+1}=\\frac12\\ln(t^2+1)\\).",
+      "\\(\\frac{dI}I=\\frac t{t^2+1}dt\\); con \\(u=t^2+1\\): \\(\\int\\frac{t\\,dt}{t^2+1}\\) \\(=\\frac12\\ln(t^2+1)\\).",
       "\\(\\ln I=\\frac12\\ln(t^2+1)+K\\Rightarrow\\) \\(I=A\\sqrt{t^2+1}\\); \\(A=I_0\\).",
-      "\\(\\frac{I(3)}{I_0}=\\sqrt{10}\\approx3.16\\). Crece mucho más lento que un modelo exponencial \\(I_0e^{kt}\\)."
+      "\\(\\frac{I(3)}{I_0}\\) \\(=\\sqrt{10}\\approx3.16\\). Crece mucho más lento que un modelo exponencial \\(I_0e^{kt}\\)."
      ],
      "ans": "I = I₀√(t²+1); se multiplica por √10 ≈ 3.16",
      "hint": "½ ln(t²+1) = ln √(t²+1).",
@@ -4069,7 +4745,8 @@
        "lnprop"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w10e9",
@@ -4078,30 +4755,39 @@
      "q": "<p>\\(\\frac{dN}{dt}=-\\frac{\\ln t}tN\\), con \\(N(1)=N_0\\). ¿Qué fracción de \\(N_0\\) queda en \\(t=e\\)?</p>",
      "checks": [
       {
-       "p": "N(t)",
-       "o": [
-        "\\(N=N_0e^{-(\\ln t)^2/2}\\)",
-        "\\(N=N_0e^{-\\ln t/t}\\)",
-        "\\(N=N_0t^{-1}\\)",
-        "\\(N=N_0e^{(\\ln t)^2/2}\\)",
-        "\\(N=N_0e^{-t\\ln t+t-1}\\)"
+       "t": "expr",
+       "p": "Escribe la fracción N(t)/N₀.",
+       "f": [
+        {
+         "a": "e^(-(ln(t))^2/2)",
+         "v": [
+          "t"
+         ],
+         "l": "N(t)/N₀ =",
+         "dom": {
+          "t": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "N(e)/N₀",
-       "o": [
-        "\\(e^{-1/2}\\approx0.607\\)",
-        "\\(e^{-1}\\approx0.368\\)",
-        "\\(\\frac12\\)",
-        "\\(e^{1/2}\\approx1.65\\)",
-        "\\(e^{-2}\\approx0.135\\)"
+       "t": "expr",
+       "p": "N(e)/N₀ (exacto)",
+       "f": [
+        {
+         "a": "e^(-1/2)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\frac{dN}N=-\\frac{\\ln t}t\\,dt\\); \\(u=\\ln t\\), \\(du=\\frac{dt}t\\): \\(\\int\\frac{\\ln t}t\\,dt=\\frac{(\\ln t)^2}2\\).",
       "\\(N=Ae^{-(\\ln t)^2/2}\\); \\(N(1)=A=N_0\\) porque \\(\\ln1=0\\).",
-      "\\(\\frac{N(e)}{N_0}=e^{-1/2}\\approx0.607\\): queda el 60.7 %."
+      "\\(\\frac{N(e)}{N_0}\\) \\(=e^{-1/2}\\approx0.607\\): queda el 60.7 %."
      ],
      "ans": "N = N₀e^(−(ln t)²/2); queda ≈ 60.7 %",
      "hint": "u = ln t.",
@@ -4116,7 +4802,8 @@
        "pvi"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "w10e10",
@@ -4125,30 +4812,39 @@
      "q": "<p>La altura del agua cumple \\(\\frac{dh}{dt}=-0.1\\sqrt h\\) (h en m, t en s), con \\(h(0)=5\\). ¿En cuánto tiempo se vacía?</p>",
      "checks": [
       {
-       "p": "h(t)",
-       "o": [
-        "\\(h=\\big(\\sqrt5-0.05t\\big)^2\\)",
-        "\\(h=5e^{-0.1t}\\)",
-        "\\(h=5-0.1t\\)",
-        "\\(h=\\big(\\sqrt5-0.1t\\big)^2\\)",
-        "\\(h=\\sqrt{5-0.05t}\\)"
+       "t": "expr",
+       "p": "Escribe h(t).",
+       "f": [
+        {
+         "a": "(sqrt(5)-0.05*t)^2",
+         "v": [
+          "t"
+         ],
+         "l": "h(t) =",
+         "dom": {
+          "t": [
+           0,
+           40
+          ]
+         }
+        }
        ]
       },
       {
-       "p": "Tiempo de vaciado",
-       "o": [
-        "\\(20\\sqrt5\\approx44.7\\) s",
-        "\\(50\\) s",
-        "\\(10\\sqrt5\\approx22.4\\) s",
-        "nunca se vacía",
-        "\\(\\sqrt5\\approx2.24\\) s"
+       "t": "expr",
+       "p": "Tiempo de vaciado en s (exacto)",
+       "f": [
+        {
+         "a": "20*sqrt(5)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(h^{-1/2}dh=-0.1\\,dt\\Rightarrow\\) \\(2\\sqrt h=-0.1t+C\\); \\(C=2\\sqrt5\\).",
       "\\(\\sqrt h=\\sqrt5-0.05t\\Rightarrow\\) \\(h=(\\sqrt5-0.05t)^2\\), válido mientras \\(\\sqrt5-0.05t\\ge0\\).",
-      "\\(h=0\\iff\\) \\(t=\\frac{\\sqrt5}{0.05}=20\\sqrt5\\approx44.7\\) s. A diferencia del decaimiento exponencial, aquí sí llega a 0 en tiempo finito."
+      "\\(h=0\\iff\\) \\(t\\) \\(=\\frac{\\sqrt5}{0.05}\\) \\(=20\\sqrt5\\approx44.7\\) s. A diferencia del decaimiento exponencial, aquí sí llega a 0 en tiempo finito."
      ],
      "ans": "h = (√5 − 0.05t)²; se vacía en ≈ 44.7 s",
      "hint": "∫h^(−1/2) dh = 2√h.",
@@ -4165,7 +4861,68 @@
       [
        "irca"
       ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "w10e11",
+     "lvl": 1,
+     "title": "Ordena el protocolo de una EDO separable",
+     "q": "<p>Ordena los pasos para resolver una EDO separable.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Reconocer el producto g(t)·h(y).",
+        "Separar: dy/h(y) = g(t) dt.",
+        "Integrar ambos lados (una sola constante).",
+        "Usar la condición inicial para hallar C.",
+        "Despejar y(t).",
+        "Verificar derivando."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero comprobar que se puede separar; luego separar e integrar (una sola constante basta).",
+      "La condición inicial fija C; se despeja y(t) y se verifica derivando."
+     ],
+     "ans": "Reconocer → separar → integrar → condición inicial → despejar → verificar",
+     "hint": "Verificar siempre va al final.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sep"
+      ],
+      [
+       "pvi",
+       "verifd"
+      ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "campo",
+     "t": "Campo de pendientes: dy/dt = y·sen t",
+     "p": "Toca un punto para elegir y(0) y mira la solución y = y₀·e^(1 − cos t).",
+     "o": {
+      "f": "y*sin(t)",
+      "tr": [
+       0,
+       10
+      ],
+      "yr": [
+       0,
+       8
+      ],
+      "ic": [
+       0,
+       1
+      ]
+     }
     }
    ]
   }
@@ -4179,31 +4936,33 @@
    "q": "<p>Una ventana es un rectángulo coronado por un semicírculo (diámetro igual al ancho \\(x\\)). Su perímetro total es 6 m. ¿Qué ancho deja pasar la mayor cantidad de luz (área máxima)?</p>",
    "checks": [
     {
-     "p": "Ancho óptimo",
-     "o": [
-      "\\(x=\\frac{12}{4+\\pi}\\approx1.68\\text{ m}\\)",
-      "\\(x=\\frac{6}{2+\\pi}\\approx1.17\\text{ m}\\)",
-      "\\(x=2\\text{ m}\\)",
-      "\\(x=\\frac{12}{\\pi}\\approx3.82\\text{ m}\\)",
-      "\\(x=\\frac{6}{4+\\pi}\\approx0.84\\text{ m}\\)"
+     "t": "expr",
+     "p": "Ancho óptimo x (exacto, en m)",
+     "f": [
+      {
+       "a": "12/(4+π)",
+       "v": []
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Altura del rectángulo",
-     "o": [
-      "\\(y=\\frac x2\\approx0.84\\text{ m}\\)",
-      "\\(y=x\\approx1.68\\text{ m}\\)",
-      "\\(y=2x\\approx3.36\\text{ m}\\)",
-      "\\(y=1\\text{ m}\\)",
-      "\\(y=\\frac x4\\approx0.42\\text{ m}\\)"
+     "f": [
+      {
+       "l": "y",
+       "a": 0.84,
+       "u": "m",
+       "tol": 0.01
+      }
      ]
     }
    ],
    "steps": [
-    "Perímetro: base \\(x\\), dos lados \\(y\\) y medio círculo \\(\\frac{\\pi x}2\\): \\(x+2y+\\frac{\\pi x}2=6\\Rightarrow y=\\frac{6-x-\\pi x/2}2\\).",
-    "Área: \\(A=xy+\\frac{\\pi x^2}8=3x-x^2\\big(\\tfrac12+\\tfrac\\pi8\\big)\\).",
-    "\\(A'=3-x\\big(1+\\tfrac\\pi4\\big)=0\\Rightarrow x=\\frac{12}{4+\\pi}\\approx1.68\\) m; \\(A''\\lt0\\): máximo.",
-    "\\(y=\\frac{6-1.68(1+\\pi/2)}2\\approx0.84\\) m \\(=\\frac x2\\)."
+    "Perímetro: base \\(x\\), dos lados \\(y\\) y medio círculo \\(\\frac{\\pi x}2\\): \\(x+2y+\\frac{\\pi x}2=6\\) \\(\\Rightarrow  y=\\frac{6-x-\\pi x/2}2\\).",
+    "Área: \\(A\\) \\(=xy+\\frac{\\pi x^2}8\\) \\(=3x-x^2\\big(\\tfrac12+\\tfrac\\pi8\\big)\\).",
+    "\\(A'\\) \\(=3-x\\big(1+\\tfrac\\pi4\\big)\\) \\(=0\\) \\(\\Rightarrow  x=\\frac{12}{4+\\pi}\\approx1.68\\) m; \\(A''\\lt0\\): máximo.",
+    "\\(y\\) \\(=\\frac{6-1.68(1+\\pi/2)}2\\approx0.84\\) m \\(=\\frac x2\\)."
    ],
    "ans": "x = 12/(4+π) ≈ 1.68 m; y ≈ 0.84 m",
    "hint": "El semicírculo aporta πx/2 al perímetro y πx²/8 al área.",
@@ -4219,7 +4978,8 @@
      "f2c"
     ],
     []
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "w9s2",
@@ -4228,13 +4988,16 @@
    "q": "<p>Se sabe que \\(f'(x)=3x^2-12\\) y \\(f(0)=5\\). Halla \\(f\\) y sus extremos locales.</p>",
    "checks": [
     {
-     "p": "f(x)",
-     "o": [
-      "\\(x^3-12x+5\\)",
-      "\\(x^3-12x\\)",
-      "\\(6x+5\\)",
-      "\\(3x^3-12x+5\\)",
-      "\\(x^3-12+5\\)"
+     "t": "expr",
+     "p": "Escribe f(x).",
+     "f": [
+      {
+       "a": "x^3-12*x+5",
+       "v": [
+        "x"
+       ],
+       "l": "f(x) ="
+      }
      ]
     },
     {
@@ -4250,7 +5013,7 @@
    ],
    "steps": [
     "Antiderivada: \\(f=x^3-12x+C\\); \\(f(0)=5\\Rightarrow C=5\\).",
-    "\\(f'=3(x-2)(x+2)=0\\Rightarrow x=\\pm2\\); \\(f''=6x\\).",
+    "\\(f'=3(x-2)(x+2)=0\\) \\(\\Rightarrow  x=\\pm2\\); \\(f''=6x\\).",
     "\\(f''(-2)\\lt0\\): máximo \\(f(-2)=-8+24+5=21\\). \\(f''(2)\\gt0\\): mínimo \\(f(2)=8-24+5=-11\\)."
    ],
    "ans": "f = x³ − 12x + 5; máx. (−2, 21), mín. (2, −11)",
@@ -4269,7 +5032,8 @@
     [
      "f2c"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "w9s3",
@@ -4278,19 +5042,19 @@
    "q": "<p>Una pieza sale del horno a 200 °C a un ambiente de 25 °C y cumple \\(\\frac{dT}{dt}=-0.1(T-25)\\) (min). ¿Cuándo llega a 60 °C?</p>",
    "checks": [
     {
-     "p": "Tiempo",
-     "o": [
-      "\\(10\\ln5\\approx16.1\\text{ min}\\)",
-      "\\(10\\ln\\frac{200}{60}\\approx12.0\\text{ min}\\)",
-      "\\(\\ln5\\approx1.61\\text{ min}\\)",
-      "\\(35\\text{ min}\\)",
-      "\\(10\\ln\\frac{175}{25}\\approx19.5\\text{ min}\\)"
+     "t": "expr",
+     "p": "Tiempo en min (exacto)",
+     "f": [
+      {
+       "a": "10*ln(5)",
+       "v": []
+      }
      ]
     }
    ],
    "steps": [
     "Separando: \\(T=25+175e^{-0.1t}\\).",
-    "\\(60=25+175e^{-0.1t}\\Rightarrow e^{-0.1t}=\\frac{35}{175}=\\frac15\\).",
+    "\\(60=25+175e^{-0.1t}\\) \\(\\Rightarrow  e^{-0.1t}=\\frac{35}{175}=\\frac15\\).",
     "\\(t=10\\ln5\\approx16.1\\) min."
    ],
    "ans": "t = 10 ln 5 ≈ 16.1 min",
@@ -4314,19 +5078,25 @@
    "q": "<p>Una caja cerrada de base cuadrada debe tener 2 000 cm³. El material de la base y la tapa cuesta el doble que el de las caras laterales. ¿Qué dimensiones minimizan el costo?</p>",
    "checks": [
     {
+     "t": "num",
      "p": "Dimensiones",
-     "o": [
-      "\\(x=10\\text{ cm},\\ h=20\\text{ cm}\\)",
-      "\\(x=h=\\sqrt[3]{2000}\\approx12.6\\text{ cm}\\)",
-      "\\(x=20\\text{ cm},\\ h=5\\text{ cm}\\)",
-      "\\(x\\approx15.9\\text{ cm},\\ h\\approx7.9\\text{ cm}\\)",
-      "\\(x=10\\text{ cm},\\ h=10\\text{ cm}\\)"
+     "f": [
+      {
+       "l": "x",
+       "a": 10,
+       "u": "cm"
+      },
+      {
+       "l": "h",
+       "a": 20,
+       "u": "cm"
+      }
      ]
     }
    ],
    "steps": [
     "\\(h=\\frac{2000}{x^2}\\). Costo (en unidades de \\(c\\)): base y tapa \\(2\\cdot2x^2\\), laterales \\(4xh\\): \\(C=4x^2+\\frac{8000}x\\).",
-    "\\(C'=8x-\\frac{8000}{x^2}=0\\Rightarrow x^3=1000\\Rightarrow x=10\\) cm; \\(C''=8+\\frac{16000}{x^3}\\gt0\\): mínimo.",
+    "\\(C'=8x-\\frac{8000}{x^2}=0\\) \\(\\Rightarrow  x^3=1000\\) \\(\\Rightarrow  x=10\\) cm; \\(C''=8+\\frac{16000}{x^3}\\gt0\\): mínimo.",
     "\\(h=\\frac{2000}{100}=20\\) cm: como base y tapa son caras, conviene hacerlas pequeñas y la caja más alta."
    ],
    "ans": "x = 10 cm, h = 20 cm",
@@ -4351,33 +5121,45 @@
    "q": "<p>Una represa recibe agua a razón de \\(\\frac{dV}{dt}=50e^{-0.1t}\\) m³/día, con \\(V(0)=200\\) m³. Halla \\(V(t)\\), su valor a largo plazo y cuándo llega a 400 m³.</p>",
    "checks": [
     {
-     "p": "V(t)",
-     "o": [
-      "\\(V=700-500e^{-0.1t}\\)",
-      "\\(V=200+50e^{-0.1t}\\)",
-      "\\(V=-500e^{-0.1t}\\)",
-      "\\(V=200-5e^{-0.1t}\\)",
-      "\\(V=700+500e^{-0.1t}\\)"
+     "t": "expr",
+     "p": "Escribe V(t).",
+     "f": [
+      {
+       "a": "700-500*e^(-0.1*t)",
+       "v": [
+        "t"
+       ],
+       "l": "V(t) =",
+       "dom": {
+        "t": [
+         0,
+         20
+        ]
+       }
+      }
      ]
     },
     {
-     "p": "lím V(t)",
-     "o": [
-      "\\(700\\) m³",
-      "\\(200\\) m³",
-      "\\(500\\) m³",
-      "\\(\\infty\\)",
-      "\\(250\\) m³"
+     "t": "num",
+     "p": "Largo plazo",
+     "f": [
+      {
+       "l": "lím V",
+       "a": 700,
+       "u": "m³"
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Tiempo para 400 m³",
-     "o": [
-      "\\(\\approx5.11\\) días",
-      "\\(\\approx6.93\\) días",
-      "\\(\\approx10\\) días",
-      "\\(\\approx2.23\\) días",
-      "nunca llega"
+     "f": [
+      {
+       "l": "t",
+       "a": 5.11,
+       "u": "días",
+       "tol": 0.01
+      }
      ]
     }
    ],
@@ -4385,7 +5167,7 @@
     "<b>I:</b> \\(V(t)\\) en m³, \\(t\\ge0\\) en días; tasa \\(50e^{-0.1t}\\); \\(V(0)=200\\).",
     "<b>R–C:</b> \\(V=\\int50e^{-0.1t}dt=\\) \\(\\frac{50}{-0.1}e^{-0.1t}+C=\\) \\(-500e^{-0.1t}+C\\); \\(200=-500+C\\Rightarrow C=700\\).",
     "<b>A:</b> \\(e^{-0.1t}\\to0\\Rightarrow V\\to700\\) m³ (saturación).",
-    "\\(700-500e^{-0.1t}=400\\Rightarrow\\) \\(e^{-0.1t}=0.6\\Rightarrow\\) \\(t=-\\frac{\\ln0.6}{0.1}\\approx5.11\\) días. \\(V'\\gt0\\) y \\(V''\\lt0\\): crece cada vez más lento."
+    "\\(700-500e^{-0.1t}=400\\Rightarrow\\) \\(e^{-0.1t}=0.6\\Rightarrow\\) \\(t\\) \\(=-\\frac{\\ln0.6}{0.1}\\approx5.11\\) días. \\(V'\\gt0\\) y \\(V''\\lt0\\): crece cada vez más lento."
    ],
    "ans": "V = 700 − 500e^(−0.1t); → 700 m³; 400 m³ en ≈ 5.11 días",
    "hint": "Dividir entre −0.1 es multiplicar por −10.",
@@ -4405,7 +5187,8 @@
     [
      "conc"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "w10s2",
@@ -4414,31 +5197,33 @@
    "q": "<p>Un café a 90 °C se deja en una habitación a 22 °C: \\(\\frac{dT}{dt}=-k(T-22)\\). A los 10 min está a 65 °C. Halla \\(k\\) y el tiempo para llegar a 40 °C.</p>",
    "checks": [
     {
-     "p": "k",
-     "o": [
-      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\ \\text{min}^{-1}\\)",
-      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{90}{65}\\approx0.0325\\ \\text{min}^{-1}\\)",
-      "\\(k=\\frac{25}{10}=2.5\\ \\text{min}^{-1}\\)",
-      "\\(k=\\) \\(\\frac1{10}\\ln\\frac{43}{68}\\approx\\) \\(-0.0458\\ \\text{min}^{-1}\\)",
-      "\\(k=\\) \\(\\ln\\frac{68}{43}\\approx0.458\\ \\text{min}^{-1}\\)"
+     "t": "expr",
+     "p": "k (exacto)",
+     "f": [
+      {
+       "a": "1/10*ln(68/43)",
+       "v": []
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Tiempo para 40 °C",
-     "o": [
-      "\\(\\approx29.0\\) min",
-      "\\(\\approx20.0\\) min",
-      "\\(\\approx38.4\\) min",
-      "\\(\\approx14.5\\) min",
-      "nunca llega"
+     "f": [
+      {
+       "l": "t",
+       "a": 29.0,
+       "u": "min",
+       "tol": 0.1
+      }
      ]
     }
    ],
    "steps": [
     "<b>I–R:</b> \\(\\frac{dT}{T-22}=-k\\,dt\\), con \\(T(0)=90\\) y \\(T(10)=65\\).",
     "<b>C:</b> \\(\\ln(T-22)=-kt+K\\Rightarrow\\) \\(T=22+68e^{-kt}\\).",
-    "\\(65=22+68e^{-10k}\\Rightarrow\\) \\(e^{-10k}=\\frac{43}{68}\\Rightarrow\\) \\(k=\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\).",
-    "\\(40=22+68e^{-kt}\\Rightarrow\\) \\(t=\\frac1k\\ln\\frac{68}{18}\\approx29.0\\) min.",
+    "\\(65=22+68e^{-10k}\\Rightarrow\\) \\(e^{-10k}=\\frac{43}{68}\\Rightarrow\\) \\(k\\) \\(=\\frac1{10}\\ln\\frac{68}{43}\\approx0.0458\\).",
+    "\\(40=22+68e^{-kt}\\Rightarrow\\) \\(t\\) \\(=\\frac1k\\ln\\frac{68}{18}\\approx29.0\\) min.",
     "<b>A:</b> \\(T\\to22\\) °C: se acerca a la temperatura ambiente sin alcanzarla."
    ],
    "ans": "k ≈ 0.0458 min⁻¹; 40 °C a los ≈ 29 min",
@@ -4460,7 +5245,8 @@
     [
      "irca"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "w10s3",
@@ -4469,33 +5255,38 @@
    "q": "<p>La concentración de un fármaco cumple \\(\\frac{dC}{dt}=-2te^{-t}C\\) (mg/L, h), con \\(C(0)=20\\). Calcula \\(C(2)\\), la concentración a largo plazo y el instante de máxima eliminación relativa \\(r(t)=2te^{-t}\\).</p>",
    "checks": [
     {
+     "t": "num",
      "p": "C(2)",
-     "o": [
-      "\\(\\approx6.10\\) mg/L",
-      "\\(\\approx2.71\\) mg/L",
-      "\\(\\approx11.79\\) mg/L",
-      "\\(\\approx14.7\\) mg/L",
-      "\\(\\approx0.61\\) mg/L"
+     "f": [
+      {
+       "l": "C(2)",
+       "a": 6.1,
+       "u": "mg/L",
+       "tol": 0.02
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Largo plazo",
-     "o": [
-      "\\(20e^{-2}\\approx2.71\\) mg/L (13.5 % de la dosis)",
-      "\\(0\\) mg/L",
-      "\\(20\\) mg/L",
-      "\\(20e^{-1}\\approx7.36\\) mg/L",
-      "\\(10\\) mg/L"
+     "f": [
+      {
+       "l": "C(∞)",
+       "a": 2.71,
+       "u": "mg/L",
+       "tol": 0.01
+      }
      ]
     },
     {
+     "t": "num",
      "p": "Eliminación máxima",
-     "o": [
-      "\\(t=1\\) h",
-      "\\(t=0\\) h",
-      "\\(t=2\\) h",
-      "\\(t=e\\) h",
-      "\\(t=\\ln2\\) h"
+     "f": [
+      {
+       "l": "t",
+       "a": 1,
+       "u": "h"
+      }
      ]
     }
    ],
@@ -4527,7 +5318,8 @@
     [
      "crec"
     ]
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "w10s4",
@@ -4781,7 +5573,7 @@
     "pool": [
      "w9e2",
      "w10i8",
-     "w10e1",
+     "w9e3",
      "w10e2",
      "w9a4",
      "w9a6"
