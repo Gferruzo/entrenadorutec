@@ -12,7 +12,7 @@
 const FB_PROJECT = 'entrenadorutec';            // proyecto de Firebase de NotPull (login)
 const ORIGENES = ['https://gferruzo.github.io']; // páginas que pueden usar a Pullpy
 // Se prueban en orden; si Google retira uno (404), pasa al siguiente.
-const MODELOS = ['gemini-flash-latest', 'gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-3.5-flash-lite'];
+const MODELOS = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.5-flash-lite', 'gemini-3.6-flash', 'gemini-3.1-flash-lite'];
 const NECESITA_LOGIN = true;                     // solo usuarios con sesión iniciada
 const MAX_DATA = 16000;                          // tamaño máximo de lo que manda la app
 
@@ -87,14 +87,16 @@ export default {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_KEY },
           body: cuerpo,
+          signal: AbortSignal.timeout(20000),
         });
         j = await r.json();
-      } catch { return res({ ok: false, error: 'ia' }, 502); }
-      if (r.status !== 404) break;
+      } catch { r = { ok: false, status: 504 }; j = { error: { status: 'TIMEOUT', message: 'sin respuesta en 20 s' } }; }
+      // 404 = modelo retirado; 429/500/503/504 = saturado o caído → probar el siguiente
+      if (![404, 429, 500, 503, 504].includes(r.status)) break;
     }
     if (!r.ok) {
       const det = ((j && j.error) || {});
-      return res({ ok: false, error: r.status === 429 ? 'ocupado' : 'ia', detalle: { modelo: model, status: r.status, estado: det.status, mensaje: String(det.message || '').slice(0, 300) } }, 502);
+      return res({ ok: false, error: [429, 503, 504].includes(r.status) ? 'ocupado' : 'ia', detalle: { modelo: model, status: r.status, estado: det.status, mensaje: String(det.message || '').slice(0, 300) } }, 502);
     }
     const text = ((((j.candidates || [])[0] || {}).content || {}).parts || []).map(p => p.text || '').join('').trim();
     if (!text) return res({ ok: false, error: 'vacio' }, 502);
