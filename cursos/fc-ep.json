@@ -11960,5 +11960,6 @@
  },
  "short": "Examen final",
  "sub": "Todo el curso",
+ "guide": true,
  "free": true
 }

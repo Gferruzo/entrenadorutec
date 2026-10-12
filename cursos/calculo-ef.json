@@ -7,6 +7,7 @@
  "exam": "Examen final 2026-2 (todo el curso)",
  "short": "Examen final",
  "sub": "Todo el curso",
+ "guide": true,
  "free": true,
  "intro": "Repaso acumulado del curso, con los temas ordenados por semana. Aquí todos los temas están abiertos desde el inicio para que vayas directo a lo que necesites. <b>El examen final vale 30 %</b> y pone el énfasis en las semanas 9 a 15, así que el simulacro tiene la mayoría de preguntas de esas semanas y una parte menor de repaso de las semanas 1 a 7 (con L'Hôpital). Se actualiza cada vez que se agrega una semana nueva.",
  "topics": [

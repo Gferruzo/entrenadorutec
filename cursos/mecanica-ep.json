@@ -3215,5 +3215,6 @@
  },
  "short": "Examen parcial",
  "sub": "Sem. 1 a 8",
+ "guide": true,
  "free": true
 }

@@ -6,6 +6,7 @@
  "exam": "Examen final 2026-2",
  "short": "Examen final",
  "sub": "Todo el curso",
+ "guide": true,
  "free": true,
  "intro": "Repaso acumulado con todos los temas abiertos: primero los 4 bloques del parcial y luego <b>la semana 9: externalidades</b> (definición y tipos, el gráfico de mercado vs. óptimo, impuestos pigouvianos, subsidios, permisos negociables y el teorema de Coase), que pesa más en el simulacro. Se actualiza cada semana.",
  "form": "<p class=\"note\">Hoja de repaso del examen final: lo del parcial y, desde la semana 9, externalidades.</p><div class=\"fgrid\"><div><b>Externalidad</b><br>Efecto no compensado sobre un tercero</div><div><b>Negativa</b><br>Costo social &gt; privado · \\(Q_m\\gt Q^*\\) · impuesto</div><div><b>Positiva</b><br>Valor social &gt; privado · \\(Q_m\\lt Q^*\\) · subsidio</div><div><b>Gráfico</b><br>Negativa: sube la oferta · positiva: sube la demanda</div><div><b>Pigou</b><br>Impuesto por unidad = costo externo</div><div><b>Políticas públicas</b><br>Órdenes y controles · mercado (impuestos, subsidios, permisos) · educación</div><div><b>Permisos</b><br>Total fijo; reduce quien lo hace más barato</div><div><b>Coase</b><br>Negociación sin costos + derechos claros ⇒ eficiencia sin Estado</div></div>",

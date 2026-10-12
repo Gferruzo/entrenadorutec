@@ -5,6 +5,7 @@
  "exam": "EA3 (semana 11)",
  "short": "EA3",
  "sub": "Sem. 9 a 11",
+ "guide": true,
  "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La EA3 es en el laboratorio de la semana 11 (30 min)</b> y cubre transformaciones lineales. Por ahora está la semana 9 (linealidad y matriz estándar); las semanas 10 y 11 se suman cuando lleguen sus guías.",
  "form": "<p class=\"note\">Hoja de repaso de la EA3 (por ahora, semana 9).</p>\n<div class=\"fgrid\">\n<div><b>Lineal</b><br>\\(T(au+bv)=aT(u)+bT(v)\\)</div>\n<div><b>Descarte</b><br>\\(T(0)\\neq0\\Rightarrow\\) no lineal</div>\n<div><b>Matriz estándar</b><br>\\(A\\) \\(=[T(e_1)\\cdots T(e_n)]\\in\\mathbb R^{m\\times n}\\)</div>\n</div>",
  "formSim": false,

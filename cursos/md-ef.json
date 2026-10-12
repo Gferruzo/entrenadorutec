@@ -6,6 +6,7 @@
  "exam": "Examen final 2026-2",
  "short": "Examen final",
  "sub": "Todo el curso",
+ "guide": true,
  "free": true,
  "intro": "Repaso acumulado con todos los temas abiertos: primero los temas del parcial y luego <b>la semana 9: conjuntos I</b> (definición y notación, cardinal, subconjuntos e igualdad con demostraciones, diagramas de Venn y operaciones), que pesa más en el simulacro. En el examen real debes justificar todo: aquí marcas y luego revisas la justificación en «Ver solución». Se actualiza cada semana.",
  "form": "<p class=\"note\">Hoja de repaso del examen final: lo del parcial y, desde la semana 9, conjuntos.</p><div class=\"fgrid\"><div><b>Conjunto</b><br>No ordenado, bien definido, sin repetidos</div><div><b>Notación</b><br>Extensión \\(\\{1,2\\}\\) · comprensión \\(\\{x\\in A:P(x)\\}\\)</div><div><b>Cardinal</b><br>\\(|\\varnothing|=0\\), \\(|\\{\\varnothing\\}|=1\\)</div><div><b>Subconjunto</b><br>\\(\\forall x(x\\in A\\to x\\in B)\\) · demostrar con \\(x\\) arbitrario</div><div><b>No subconjunto</b><br>\\(\\exists x(x\\in A\\wedge x\\notin B)\\) · contraejemplo</div><div><b>Igualdad</b><br>\\(A\\subseteq B\\wedge B\\subseteq A\\)</div><div><b>Operaciones</b><br>\\(\\cup\\leftrightarrow\\vee\\), \\(\\cap\\leftrightarrow\\wedge\\), \\(\\overline A=U-A\\)</div><div><b>Contar</b><br>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\)</div></div>",

@@ -3821,5 +3821,6 @@
  "free": true,
  "intro": "Organizado según la rúbrica del parcial: 4 bloques de 5 puntos cada uno. Los bloques están abiertos, así que puedes empezar por el que más te cueste, y el simulacro siempre está disponible.",
  "short": "Examen parcial",
- "sub": "Sem. 1 a 7"
+ "sub": "Sem. 1 a 7",
+ "guide": true
 }
