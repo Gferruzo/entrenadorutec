@@ -118,13 +118,14 @@
      "q": "<p>\\(\\vec V_1\\) mide 5 m/s y forma +150° con el eje \\(+x\\). ¿Cuánto vale \\(V_{1x}\\)?</p>",
      "checks": [
       {
-       "p": "\\(V_{1x}\\)",
-       "o": [
-        "\\(-4{,}33\\ \\text{m/s}\\)",
-        "\\(4{,}33\\ \\text{m/s}\\)",
-        "\\(-2{,}5\\ \\text{m/s}\\)",
-        "\\(2{,}5\\ \\text{m/s}\\)",
-        "\\(-5\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Componente x",
+       "f": [
+        {
+         "l": "V₁ₓ",
+         "a": -4.33,
+         "u": "m/s"
+        }
        ]
       }
      ],
@@ -149,13 +150,21 @@
      "q": "<p>Con \\(\\vec V_1\\) (5 m/s, 150°) y \\(\\vec V_2\\) (4 m/s, −70°), halla \\(\\vec V_1+\\vec V_2\\).</p>",
      "checks": [
       {
-       "p": "\\(\\vec V_1+\\vec V_2\\)",
-       "o": [
-        "\\((-2{,}96\\,\\hat i-1{,}26\\,\\hat j)\\ \\text{m/s}\\)",
-        "\\((-5{,}70\\,\\hat i+6{,}26\\,\\hat j)\\ \\text{m/s}\\)",
-        "\\((1{,}37\\,\\hat i-3{,}76\\,\\hat j)\\ \\text{m/s}\\)",
-        "\\((-2{,}96\\,\\hat i+1{,}26\\,\\hat j)\\ \\text{m/s}\\)",
-        "\\((9\\,\\hat i+80\\,\\hat j)\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Componentes de la suma",
+       "f": [
+        {
+         "l": "x",
+         "a": -2.96,
+         "u": "m/s",
+         "tol": 0.02
+        },
+        {
+         "l": "y",
+         "a": -1.26,
+         "u": "m/s",
+         "tol": 0.02
+        }
        ]
       }
      ],
@@ -184,13 +193,16 @@
      "q": "<p>Si \\(\\vec R=(-2{,}96\\,\\hat i-1{,}26\\,\\hat j)\\) m/s, ¿qué ángulo forma con el eje \\(+x\\) (antihorario)?</p>",
      "checks": [
       {
-       "p": "Ángulo",
-       "o": [
-        "\\(\\approx203^\\circ\\)",
-        "\\(\\approx23^\\circ\\)",
-        "\\(\\approx-23^\\circ\\)",
-        "\\(\\approx157^\\circ\\)",
-        "\\(\\approx113^\\circ\\)"
+       "t": "num",
+       "p": "Ángulo con +x (antihorario)",
+       "f": [
+        {
+         "l": "θ",
+         "a": 203,
+         "u": "°",
+         "e": "Está en el III cuadrante: 180° + arctan(1,26/2,96).",
+         "tol": 0.8
+        }
        ]
       }
      ],
@@ -219,13 +231,15 @@
      "q": "<p>Para \\(\\vec R=\\vec V_1+\\vec V_2\\) del ejercicio anterior, responde.</p>",
      "checks": [
       {
-       "p": "\\(|\\vec R|\\)",
-       "o": [
-        "\\(\\approx3{,}22\\ \\text{m/s}\\)",
-        "\\(9\\ \\text{m/s}\\)",
-        "\\(1\\ \\text{m/s}\\)",
-        "\\(\\approx4{,}22\\ \\text{m/s}\\)",
-        "\\(\\approx1{,}70\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Magnitud",
+       "f": [
+        {
+         "l": "|R|",
+         "a": 3.22,
+         "u": "m/s",
+         "tol": 0.02
+        }
        ]
       },
       {
@@ -254,10 +268,29 @@
        "pit"
       ],
       []
-     ]
+     ],
+     "chain": true
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Un vector tiene magnitud y dirección. Casi todo en mecánica se resuelve separando los vectores en componentes \\(x\\) e \\(y\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(A_x=A\\cos\\theta,\\ A_y=A\\sin\\theta\\) (con \\(\\theta\\) desde \\(+x\\), antihorario).</li><li>Suma: componente a componente.</li><li>Magnitud \\(\\sqrt{A_x^2+A_y^2}\\); dirección con \\(\\tan\\phi=\\frac{A_y}{A_x}\\) revisando el cuadrante.</li><li>Vectores unitarios \\(\\hat i,\\hat j,\\hat k\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\vec A=10\\) a \\(120^\\circ\\): \\(A_x=-5\\), \\(A_y=8{,}66\\).</div>\n<div class=\"err\"><b>Error común:</b> confiar en el ángulo de la calculadora: \\(\\tan^{-1}\\) solo da entre −90° y 90°; si \\(A_x\\lt0\\), suma 180°.</div>"
+   "lesson": "<h3>Idea central</h3><p>Un vector tiene magnitud y dirección. Casi todo en mecánica se resuelve separando los vectores en componentes \\(x\\) e \\(y\\).</p>\n<h3>Conceptos clave</h3><ul><li>\\(A_x=A\\cos\\theta,\\ A_y=A\\sin\\theta\\) (con \\(\\theta\\) desde \\(+x\\), antihorario).</li><li>Suma: componente a componente.</li><li>Magnitud \\(\\sqrt{A_x^2+A_y^2}\\); dirección con \\(\\tan\\phi=\\frac{A_y}{A_x}\\) revisando el cuadrante.</li><li>Vectores unitarios \\(\\hat i,\\hat j,\\hat k\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\vec A=10\\) a \\(120^\\circ\\): \\(A_x=-5\\), \\(A_y=8{,}66\\).</div>\n<div class=\"err\"><b>Error común:</b> confiar en el ángulo de la calculadora: \\(\\tan^{-1}\\) solo da entre −90° y 90°; si \\(A_x\\lt0\\), suma 180°.</div>",
+   "tools": [
+    {
+     "w": "vec",
+     "t": "Suma vectores arrastrando",
+     "p": "Mueve las puntas: mira las componentes, el cuadrante y la resultante (diagonal del paralelogramo).",
+     "o": {
+      "u": [
+       -4,
+       2
+      ],
+      "v": [
+       2,
+       -4
+      ],
+      "sum": true
+     }
+    }
+   ]
   },
   {
    "id": "dint",
@@ -312,13 +345,14 @@
      "q": "<p>\\(x(t)=3t^2-2t+1\\) (m). ¿Cuál es la velocidad en \\(t=2\\) s?</p>",
      "checks": [
       {
-       "p": "\\(v(2)\\)",
-       "o": [
-        "\\(10\\ \\text{m/s}\\)",
-        "\\(9\\ \\text{m/s}\\)",
-        "\\(12\\ \\text{m/s}\\)",
-        "\\(6\\ \\text{m/s}\\)",
-        "\\(4\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Velocidad",
+       "f": [
+        {
+         "l": "v(2)",
+         "a": 10,
+         "u": "m/s"
+        }
        ]
       }
      ],
@@ -405,13 +439,14 @@
      "q": "<p>\\(v(t)=4t-t^2\\) (m/s) y \\(x(0)=0\\). ¿Cuánto vale \\(x(3)\\)?</p>",
      "checks": [
       {
-       "p": "\\(x(3)\\)",
-       "o": [
-        "\\(9\\ \\text{m}\\)",
-        "\\(3\\ \\text{m}\\)",
-        "\\(27\\ \\text{m}\\)",
-        "\\(18\\ \\text{m}\\)",
-        "\\(6\\ \\text{m}\\)"
+       "t": "num",
+       "p": "Posición",
+       "f": [
+        {
+         "l": "x(3)",
+         "a": 9,
+         "u": "m"
+        }
        ]
       }
      ],
@@ -438,13 +473,22 @@
      "q": "<p>La gráfica muestra \\(\\alpha_z(t)\\). En \\(t=0\\), \\(\\vec\\omega=10\\hat k\\) rad/s. Halla \\(\\omega_z(t)\\) en el primer tramo (0 a 7 s).</p>",
      "checks": [
       {
-       "p": "\\(\\omega_z(t)\\)",
-       "o": [
-        "\\(10-\\dfrac{t^2}{28}\\)",
-        "\\(-\\dfrac{t}{14}\\)",
-        "\\(10-\\dfrac{t}{14}\\)",
-        "\\(10-\\dfrac{t^2}{14}\\)",
-        "\\(10+\\dfrac{t^2}{28}\\)"
+       "t": "expr",
+       "p": "Escribe ω_z(t) (usa t como variable).",
+       "f": [
+        {
+         "a": "10-t^2/28",
+         "v": [
+          "t"
+         ],
+         "l": "ω_z(t) =",
+         "dom": {
+          "t": [
+           0,
+           7
+          ]
+         }
+        }
        ]
       }
      ],
@@ -471,13 +515,15 @@
      "q": "<p>Con la misma gráfica, responde.</p>",
      "checks": [
       {
-       "p": "\\(\\bar\\alpha\\) entre 0 y 12 s",
-       "o": [
-        "\\(\\approx-0{,}35\\ \\text{rad/s}^2\\)",
-        "\\(-0{,}5\\ \\text{rad/s}^2\\)",
-        "\\(-0{,}25\\ \\text{rad/s}^2\\)",
-        "\\(\\approx-4{,}25\\ \\text{rad/s}^2\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Aceleración angular media",
+       "f": [
+        {
+         "l": "ᾱ",
+         "a": -0.35,
+         "u": "rad/s²",
+         "tol": 0.01
+        }
        ]
       },
       {
@@ -508,7 +554,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     }
    ],
    "lesson": "<h3>Idea central</h3><p>La derivada mide rapidez de cambio (pendiente) y la integral mide acumulación (área). Con eso pasas entre posición, velocidad y aceleración.</p>\n<h3>Conceptos clave</h3><ul><li>\\(v=\\frac{dx}{dt}\\), \\(a=\\frac{dv}{dt}\\); \\(\\omega=\\frac{d\\theta}{dt}\\), \\(\\alpha=\\frac{d\\omega}{dt}\\).</li><li>Área bajo \\(v\\)–\\(t\\) = \\(\\Delta x\\); bajo \\(a\\)–\\(t\\) = \\(\\Delta v\\).</li><li>Área bajo el eje cuenta negativa.</li><li>Para posición final: \\(x_f=x_0+\\Delta x\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> si \\(v(t)=3t^2\\), entre 0 y 2 s: \\(\\Delta x=\\int_0^2 3t^2dt=8\\) m.</div>\n<div class=\"err\"><b>Error común:</b> confundir desplazamiento (áreas con signo) con distancia (áreas en valor absoluto).</div>"
@@ -531,13 +578,19 @@
      "q": "<p>Un móvil sale de \\(x=0\\), llega a \\(x=10\\) m y regresa hasta \\(x=4\\) m. ¿Desplazamiento y distancia?</p>",
      "checks": [
       {
-       "p": "(Δx, d)",
-       "o": [
-        "\\(\\Delta x=4\\) m, \\(d=16\\) m",
-        "\\(\\Delta x=16\\) m, \\(d=4\\) m",
-        "\\(\\Delta x=4\\) m, \\(d=4\\) m",
-        "\\(\\Delta x=10\\) m, \\(d=14\\) m",
-        "\\(\\Delta x=-6\\) m, \\(d=16\\) m"
+       "t": "num",
+       "p": "Desplazamiento y distancia",
+       "f": [
+        {
+         "l": "Δx",
+         "a": 4,
+         "u": "m"
+        },
+        {
+         "l": "d",
+         "a": 16,
+         "u": "m"
+        }
        ]
       }
      ],
@@ -630,33 +683,36 @@
        ]
       },
       {
+       "t": "num",
        "p": "Desplazamiento de 0 a 6 s",
-       "o": [
-        "\\(0\\ \\text{m}\\)",
-        "\\(20\\ \\text{m}\\)",
-        "\\(10\\ \\text{m}\\)",
-        "\\(-10\\ \\text{m}\\)",
-        "\\(6\\ \\text{m}\\)"
+       "f": [
+        {
+         "l": "Δx",
+         "a": 0,
+         "u": "m"
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Distancia de 0 a 6 s",
-       "o": [
-        "\\(20\\ \\text{m}\\)",
-        "\\(0\\ \\text{m}\\)",
-        "\\(10\\ \\text{m}\\)",
-        "\\(15\\ \\text{m}\\)",
-        "\\(30\\ \\text{m}\\)"
+       "f": [
+        {
+         "l": "d",
+         "a": 20,
+         "u": "m"
+        }
        ]
       },
       {
-       "p": "\\(\\vec v\\) en t = 2 s",
-       "o": [
-        "\\(2{,}5\\,\\hat i\\ \\text{m/s}\\)",
-        "\\(5\\,\\hat i\\ \\text{m/s}\\)",
-        "\\(-5\\,\\hat i\\ \\text{m/s}\\)",
-        "\\(10\\,\\hat i\\ \\text{m/s}\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Velocidad en t = 2 s",
+       "f": [
+        {
+         "l": "vₓ",
+         "a": 2.5,
+         "u": "m/s"
+        }
        ]
       }
      ],
@@ -681,7 +737,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mc4",
@@ -690,33 +747,40 @@
      "q": "<p>La gráfica muestra \\(v(t)\\) de un carrito sobre el eje \\(x\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "¿Cuándo cambia de sentido?",
-       "o": [
-        "\\(t\\approx10{,}7\\) s",
-        "\\(t=8\\) s",
-        "\\(t=12\\) s",
-        "Nunca",
-        "\\(t=4\\) s"
+       "f": [
+        {
+         "l": "t",
+         "a": 10.7,
+         "u": "s",
+         "e": "Donde la recta corta el eje: v = 0.",
+         "tol": 0.15
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Desplazamiento de 0 a 12 s",
-       "o": [
-        "\\(56\\ \\text{m}\\)",
-        "\\(61{,}3\\ \\text{m}\\)",
-        "\\(48\\ \\text{m}\\)",
-        "\\(64\\ \\text{m}\\)",
-        "\\(52\\ \\text{m}\\)"
+       "f": [
+        {
+         "l": "Δx",
+         "a": 56,
+         "u": "m",
+         "e": "Área con signo bajo v–t.",
+         "tol": 0.6
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Aceleración en t = 10 s",
-       "o": [
-        "\\(-3\\ \\text{m/s}^2\\)",
-        "\\(3\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(2\\ \\text{m/s}^2\\)",
-        "\\(-4\\ \\text{m/s}^2\\)"
+       "f": [
+        {
+         "l": "a",
+         "a": -3,
+         "u": "m/s²"
+        }
        ]
       }
      ],
@@ -745,7 +809,8 @@
       [
        "despd"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mc5",
@@ -764,13 +829,15 @@
        ]
       },
       {
-       "p": "Rapidez al impactar el piso",
-       "o": [
-        "\\(\\approx49\\ \\text{m/s}\\)",
-        "\\(20\\ \\text{m/s}\\)",
-        "\\(\\approx45\\ \\text{m/s}\\)",
-        "\\(\\approx40\\ \\text{m/s}\\)",
-        "\\(60\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Rapidez al impactar",
+       "f": [
+        {
+         "l": "v",
+         "a": 49,
+         "u": "m/s",
+         "tol": 0.3
+        }
        ]
       }
      ],
@@ -792,7 +859,8 @@
        "mruv"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mc6",
@@ -801,33 +869,47 @@
      "q": "<p>\\(\\vec v=(-2\\hat i+3t\\hat j)\\) m/s y \\(\\vec r_0=(1{,}5\\hat i-\\hat j)\\) m.</p>",
      "checks": [
       {
-       "p": "\\(\\vec r(2)\\)",
-       "o": [
-        "\\((-2{,}5\\hat i+5\\hat j)\\ \\text{m}\\)",
-        "\\((-2{,}5\\hat i+6\\hat j)\\ \\text{m}\\)",
-        "\\((-4\\hat i+6\\hat j)\\ \\text{m}\\)",
-        "\\((1{,}5\\hat i+5\\hat j)\\ \\text{m}\\)",
-        "\\((-2\\hat i+6\\hat j)\\ \\text{m}\\)"
+       "t": "num",
+       "p": "Posición en t = 2 s",
+       "f": [
+        {
+         "l": "x",
+         "a": -2.5,
+         "u": "m"
+        },
+        {
+         "l": "y",
+         "a": 5,
+         "u": "m"
+        }
        ]
       },
       {
-       "p": "\\(\\vec v_{med}\\) entre 0 y 2 s",
-       "o": [
-        "\\((-2\\hat i+3\\hat j)\\ \\text{m/s}\\)",
-        "\\((-2\\hat i+6\\hat j)\\ \\text{m/s}\\)",
-        "\\((-1\\hat i+3\\hat j)\\ \\text{m/s}\\)",
-        "\\((-2\\hat i+1{,}5\\hat j)\\ \\text{m/s}\\)",
-        "\\(3\\hat j\\ \\text{m/s}\\)"
+       "t": "num",
+       "p": "Velocidad media entre 0 y 2 s",
+       "f": [
+        {
+         "l": "x",
+         "a": -2,
+         "u": "m/s"
+        },
+        {
+         "l": "y",
+         "a": 3,
+         "u": "m/s"
+        }
        ]
       },
       {
-       "p": "\\(|\\vec a_T|\\) en t = 2 s",
-       "o": [
-        "\\(\\approx2{,}85\\ \\text{m/s}^2\\)",
-        "\\(3\\ \\text{m/s}^2\\)",
-        "\\(\\approx0{,}95\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(\\approx6{,}32\\ \\text{m/s}^2\\)"
+       "t": "num",
+       "p": "Aceleración tangencial en t = 2 s",
+       "f": [
+        {
+         "l": "|a_T|",
+         "a": 2.85,
+         "u": "m/s²",
+         "tol": 0.02
+        }
        ]
       }
      ],
@@ -849,10 +931,187 @@
       [
        "atan"
       ]
-     ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "mc7",
+     "lvl": 2,
+     "title": "Lee la gráfica v–t tocando",
+     "q": "<p>La gráfica muestra la velocidad \\(v(t)\\) (m/s) de un móvil en línea recta; el eje horizontal es el tiempo (s).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el tramo en que el móvil <b>frena</b> (su rapidez disminuye).",
+       "a": [
+        "i3"
+       ],
+       "plot": {
+        "xr": [
+         0,
+         9.5
+        ],
+        "yr": [
+         -5,
+         5
+        ],
+        "sx": 1,
+        "sy": 1,
+        "fs": [
+         {
+          "f": "2*x",
+          "a": 0,
+          "b": 2
+         },
+         {
+          "f": "4",
+          "a": 2,
+          "b": 5
+         },
+         {
+          "f": "4-2*(x-5)",
+          "a": 5,
+          "b": 9
+         }
+        ],
+        "zones": [
+         {
+          "t": "int",
+          "a": 0,
+          "b": 2,
+          "id": "i1"
+         },
+         {
+          "t": "int",
+          "a": 2,
+          "b": 5,
+          "id": "i2"
+         },
+         {
+          "t": "int",
+          "a": 5,
+          "b": 7,
+          "id": "i3"
+         },
+         {
+          "t": "int",
+          "a": 7,
+          "b": 9,
+          "id": "i4"
+         }
+        ]
+       },
+       "e": "Frena cuando v y a tienen signos opuestos: entre 5 y 7 s v > 0 y la pendiente es negativa. Después de 7 s la rapidez vuelve a crecer (hacia atrás)."
+      },
+      {
+       "t": "tap",
+       "p": "Toca el instante en que <b>cambia de sentido</b>.",
+       "a": [
+        "p3"
+       ],
+       "plot": {
+        "xr": [
+         0,
+         9.5
+        ],
+        "yr": [
+         -5,
+         5
+        ],
+        "sx": 1,
+        "sy": 1,
+        "fs": [
+         {
+          "f": "2*x",
+          "a": 0,
+          "b": 2
+         },
+         {
+          "f": "4",
+          "a": 2,
+          "b": 5
+         },
+         {
+          "f": "4-2*(x-5)",
+          "a": 5,
+          "b": 9
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 2,
+          "y": 4,
+          "id": "p1"
+         },
+         {
+          "t": "pt",
+          "x": 5,
+          "y": 4,
+          "id": "p2"
+         },
+         {
+          "t": "pt",
+          "x": 7,
+          "y": 0,
+          "id": "p3"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 0,
+          "id": "p0"
+         }
+        ]
+       },
+       "e": "Cambia de sentido cuando v cambia de signo (cruza el eje), no cuando la pendiente cambia."
+      }
+     ],
+     "steps": [
+      "Frenar = la rapidez |v| disminuye: v y a con signos opuestos. Entre 5 y 7 s, v > 0 pero la pendiente (a) es −2 m/s².",
+      "En t = 7 s la velocidad pasa de positiva a negativa: ahí cambia de sentido. De 7 a 9 s la rapidez aumenta otra vez, ahora hacia atrás."
+     ],
+     "ans": "Frena de 5 a 7 s; cambia de sentido en t = 7 s",
+     "hint": "Frenar no es lo mismo que tener aceleración negativa.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pend",
+       "sent"
+      ],
+      [
+       "sent"
+      ]
+     ],
+     "chain": true
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La cinemática describe el movimiento sin preguntar por sus causas: dónde está, qué tan rápido y cómo cambia esa rapidez.</p>\n<h3>Conceptos clave</h3><ul><li>Desplazamiento (vector) vs distancia (escalar positivo).</li><li>\\(\\vec v_{med}=\\frac{\\Delta\\vec r}{\\Delta t}\\), rapidez media \\(=\\frac{d}{\\Delta t}\\).</li><li>MRU: \\(x=x_0+v\\Delta t\\). MRUV: \\(x=x_0+v_0\\Delta t+\\frac12a\\Delta t^2\\).</li><li>Cambia de sentido cuando \\(v\\) cambia de signo.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> ida 30 m y vuelta 10 m en 8 s: velocidad media \\(2{,}5\\) m/s, rapidez media \\(5\\) m/s.</div>\n<div class=\"err\"><b>Error común:</b> creer que aceleración negativa significa «frenar»: frena cuando \\(a\\) y \\(v\\) tienen signos opuestos.</div>"
+   "lesson": "<h3>Idea central</h3><p>La cinemática describe el movimiento sin preguntar por sus causas: dónde está, qué tan rápido y cómo cambia esa rapidez.</p>\n<h3>Conceptos clave</h3><ul><li>Desplazamiento (vector) vs distancia (escalar positivo).</li><li>\\(\\vec v_{med}=\\frac{\\Delta\\vec r}{\\Delta t}\\), rapidez media \\(=\\frac{d}{\\Delta t}\\).</li><li>MRU: \\(x=x_0+v\\Delta t\\). MRUV: \\(x=x_0+v_0\\Delta t+\\frac12a\\Delta t^2\\).</li><li>Cambia de sentido cuando \\(v\\) cambia de signo.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> ida 30 m y vuelta 10 m en 8 s: velocidad media \\(2{,}5\\) m/s, rapidez media \\(5\\) m/s.</div>\n<div class=\"err\"><b>Error común:</b> creer que aceleración negativa significa «frenar»: frena cuando \\(a\\) y \\(v\\) tienen signos opuestos.</div>",
+   "tools": [
+    {
+     "w": "kin",
+     "t": "Gráficas enlazadas v–t, x–t y a–t",
+     "p": "Arrastra los puntos de v–t: la posición es el área acumulada y la aceleración es la pendiente.",
+     "o": {
+      "ts": [
+       0,
+       2,
+       4,
+       6,
+       8
+      ],
+      "vs": [
+       0,
+       4,
+       4,
+       -2,
+       -2
+      ]
+     }
+    }
+   ]
   },
   {
    "id": "rot",
@@ -970,23 +1229,20 @@
      "q": "<p>Un punto a 5 cm del eje gira con \\(\\omega=\\pi\\) rad/s constante.</p>",
      "checks": [
       {
-       "p": "Tiempo para media vuelta",
-       "o": [
-        "\\(1\\ \\text{s}\\)",
-        "\\(2\\ \\text{s}\\)",
-        "\\(0{,}5\\ \\text{s}\\)",
-        "\\(\\pi\\ \\text{s}\\)",
-        "\\(3{,}14\\ \\text{s}\\)"
-       ]
-      },
-      {
-       "p": "\\(a_R\\)",
-       "o": [
-        "\\(\\approx0{,}49\\ \\text{m/s}^2\\)",
-        "\\(\\approx0{,}16\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(\\approx4{,}9\\ \\text{m/s}^2\\)",
-        "\\(\\approx0{,}31\\ \\text{m/s}^2\\)"
+       "t": "num",
+       "p": "Media vuelta y aceleración radial",
+       "f": [
+        {
+         "l": "t",
+         "a": 1,
+         "u": "s"
+        },
+        {
+         "l": "a_R",
+         "a": 0.49,
+         "u": "m/s²",
+         "tol": 0.01
+        }
        ]
       }
      ],
@@ -1013,23 +1269,28 @@
      "q": "<p>Una rueda de 20 m de radio parte del reposo con \\(\\alpha=\\frac{\\pi}{100}\\) rad/s² y completa una vuelta en 20 s.</p>",
      "checks": [
       {
-       "p": "\\(|\\vec a_T|\\)",
-       "o": [
-        "\\(\\approx0{,}63\\ \\text{m/s}^2\\)",
-        "\\(\\approx7{,}9\\ \\text{m/s}^2\\)",
-        "\\(\\approx0{,}031\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(\\approx6{,}3\\ \\text{m/s}^2\\)"
+       "t": "num",
+       "p": "Tangencial",
+       "f": [
+        {
+         "l": "|a_T|",
+         "a": 0.63,
+         "u": "m/s²",
+         "tol": 0.01
+        }
        ]
       },
       {
-       "p": "\\(|\\vec a_R|\\) al completar la vuelta",
-       "o": [
-        "\\(\\approx7{,}9\\ \\text{m/s}^2\\)",
-        "\\(\\approx0{,}63\\ \\text{m/s}^2\\)",
-        "\\(\\approx3{,}9\\ \\text{m/s}^2\\)",
-        "\\(\\approx15{,}8\\ \\text{m/s}^2\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Radial al completar la vuelta",
+       "f": [
+        {
+         "l": "|a_R|",
+         "a": 7.9,
+         "u": "m/s²",
+         "e": "ω = αt = π/5 rad/s; a_R = ω²R.",
+         "tol": 0.08
+        }
        ]
       }
      ],
@@ -1051,7 +1312,8 @@
        "mruva"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mr5",
@@ -1060,33 +1322,33 @@
      "q": "<p>La rueda de una carretilla (radio 20 cm) tiene la gráfica \\(\\omega\\)–\\(t\\) mostrada (\\(\\omega\\gt0\\) = avanza).</p>",
      "checks": [
       {
-       "p": "¿Cuánto avanza?",
-       "o": [
-        "\\(5{,}6\\ \\text{m}\\)",
-        "\\(4\\ \\text{m}\\)",
-        "\\(28\\ \\text{m}\\)",
-        "\\(2{,}8\\ \\text{m}\\)",
-        "\\(8\\ \\text{m}\\)"
+       "t": "num",
+       "p": "Avance y retroceso",
+       "f": [
+        {
+         "l": "avanza",
+         "a": 5.6,
+         "u": "m",
+         "tol": 0.1
+        },
+        {
+         "l": "retrocede",
+         "a": 12.1,
+         "u": "m",
+         "tol": 0.2
+        }
        ]
       },
       {
-       "p": "¿Cuánto retrocede?",
-       "o": [
-        "\\(12{,}1\\ \\text{m}\\)",
-        "\\(1{,}21\\ \\text{m}\\)",
-        "\\(60{,}5\\ \\text{m}\\)",
-        "\\(2{,}2\\ \\text{m}\\)",
-        "\\(6{,}05\\ \\text{m}\\)"
-       ]
-      },
-      {
+       "t": "num",
        "p": "Rapidez media de 0 a 25 s",
-       "o": [
-        "\\(\\approx0{,}71\\ \\text{m/s}\\)",
-        "\\(\\approx0{,}26\\ \\text{m/s}\\)",
-        "\\(\\approx0{,}27\\ \\text{m/s}\\)",
-        "\\(\\approx3{,}5\\ \\text{m/s}\\)",
-        "\\(\\approx0{,}22\\ \\text{m/s}\\)"
+       "f": [
+        {
+         "l": "v̄",
+         "a": 0.71,
+         "u": "m/s",
+         "tol": 0.015
+        }
        ]
       }
      ],
@@ -1107,7 +1369,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mr6",
@@ -1116,23 +1379,27 @@
      "q": "<p>Un disco de radio 0,5 m parte del reposo con \\(\\alpha=2\\) rad/s² constante. En \\(t=3\\) s:</p>",
      "checks": [
       {
-       "p": "Número de vueltas",
-       "o": [
-        "\\(\\approx1{,}43\\)",
-        "\\(9\\)",
-        "\\(\\approx2{,}86\\)",
-        "\\(\\approx0{,}95\\)",
-        "\\(3\\)"
+       "t": "num",
+       "p": "Vueltas en 3 s",
+       "f": [
+        {
+         "l": "n",
+         "a": 1.43,
+         "u": "vueltas",
+         "tol": 0.015
+        }
        ]
       },
       {
-       "p": "\\(|\\vec a|\\) de un punto del borde",
-       "o": [
-        "\\(\\approx18{,}0\\ \\text{m/s}^2\\)",
-        "\\(19\\ \\text{m/s}^2\\)",
-        "\\(\\approx36\\ \\text{m/s}^2\\)",
-        "\\(1\\ \\text{m/s}^2\\)",
-        "\\(\\approx4{,}6\\ \\text{m/s}^2\\)"
+       "t": "num",
+       "p": "Aceleración total de un punto del borde",
+       "f": [
+        {
+         "l": "|a|",
+         "a": 18.0,
+         "u": "m/s²",
+         "tol": 0.1
+        }
        ]
       }
      ],
@@ -1154,7 +1421,8 @@
        "atan"
       ],
       []
-     ]
+     ],
+     "chain": true
     }
    ],
    "lesson": "<h3>Idea central</h3><p>La rotación tiene sus propias versiones de posición, velocidad y aceleración, y se conecta con el movimiento lineal de cada punto a través del radio.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\theta\\) en rad, \\(\\omega=\\frac{d\\theta}{dt}\\), \\(\\alpha=\\frac{d\\omega}{dt}\\).</li><li>\\(s=R\\theta,\\ v=\\omega R,\\ a_T=\\alpha R,\\ a_R=\\omega^2R\\).</li><li>Antihorario \\(+\\hat k\\), horario \\(-\\hat k\\).</li><li>Aceleración total: \\(\\sqrt{a_T^2+a_R^2}\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> rueda de \\(R=0{,}5\\) m con \\(\\omega=4\\) rad/s: \\(v=2\\) m/s, \\(a_R=8\\) m/s².</div>\n<div class=\"err\"><b>Error común:</b> trabajar en grados o rpm sin convertir a rad y rad/s.</div>"
@@ -1272,13 +1540,27 @@
      "q": "<p>Cuatro partículas de masa \\(m\\) forman un cuadrado de lado \\(L\\). ¿Cuál es \\(I\\) respecto a un eje perpendicular que pasa por el centro?</p>",
      "checks": [
       {
-       "p": "I",
-       "o": [
-        "\\(2mL^2\\)",
-        "\\(4mL^2\\)",
-        "\\(mL^2\\)",
-        "\\(\\sqrt2\\,mL^2\\)",
-        "\\(\\tfrac12mL^2\\)"
+       "t": "expr",
+       "p": "Escribe I (usa m y L).",
+       "f": [
+        {
+         "a": "2*m*L^2",
+         "v": [
+          "m",
+          "L"
+         ],
+         "l": "I =",
+         "dom": {
+          "m": [
+           0.5,
+           3
+          ],
+          "L": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
@@ -1305,23 +1587,20 @@
      "q": "<p>Barra uniforme de 1,2 kg y 1 m.</p>",
      "checks": [
       {
-       "p": "I respecto a un extremo",
-       "o": [
-        "\\(0{,}4\\ \\text{kg·m}^2\\)",
-        "\\(0{,}1\\ \\text{kg·m}^2\\)",
-        "\\(1{,}2\\ \\text{kg·m}^2\\)",
-        "\\(0{,}3\\ \\text{kg·m}^2\\)",
-        "\\(0{,}6\\ \\text{kg·m}^2\\)"
-       ]
-      },
-      {
-       "p": "I respecto a un eje a 25 cm del centro",
-       "o": [
-        "\\(0{,}175\\ \\text{kg·m}^2\\)",
-        "\\(0{,}1\\ \\text{kg·m}^2\\)",
-        "\\(0{,}4\\ \\text{kg·m}^2\\)",
-        "\\(0{,}075\\ \\text{kg·m}^2\\)",
-        "\\(0{,}25\\ \\text{kg·m}^2\\)"
+       "t": "num",
+       "p": "Momentos de inercia",
+       "f": [
+        {
+         "l": "I extremo",
+         "a": 0.4,
+         "u": "kg·m²"
+        },
+        {
+         "l": "I a 25 cm",
+         "a": 0.175,
+         "u": "kg·m²",
+         "tol": 0.002
+        }
        ]
       }
      ],
@@ -1352,13 +1631,14 @@
      "q": "<p>Cilindro sólido de 1 kg y radio \\(\\sqrt{10}\\) m. ¿Cuánto vale su \\(I\\) respecto al punto de contacto con el piso?</p>",
      "checks": [
       {
-       "p": "I",
-       "o": [
-        "\\(15\\ \\text{kg·m}^2\\)",
-        "\\(5\\ \\text{kg·m}^2\\)",
-        "\\(10\\ \\text{kg·m}^2\\)",
-        "\\(20\\ \\text{kg·m}^2\\)",
-        "\\(25\\ \\text{kg·m}^2\\)"
+       "t": "num",
+       "p": "Momento de inercia",
+       "f": [
+        {
+         "l": "I",
+         "a": 15,
+         "u": "kg·m²"
+        }
        ]
       }
      ],
@@ -1387,13 +1667,15 @@
      "q": "<p>A un disco sólido de 4 kg y \\(R=0{,}2\\) m se le taladra un agujero circular de radio \\(R/2\\) con centro a \\(R/2\\) del centro del disco. La parte removida pesa 1 kg. ¿Cuál es \\(I\\) de la pieza respecto al eje del disco original?</p>",
      "checks": [
       {
-       "p": "I",
-       "o": [
-        "\\(0{,}065\\ \\text{kg·m}^2\\)",
-        "\\(0{,}075\\ \\text{kg·m}^2\\)",
-        "\\(0{,}080\\ \\text{kg·m}^2\\)",
-        "\\(0{,}095\\ \\text{kg·m}^2\\)",
-        "\\(0{,}070\\ \\text{kg·m}^2\\)"
+       "t": "num",
+       "p": "Momento de inercia",
+       "f": [
+        {
+         "l": "I",
+         "a": 0.065,
+         "u": "kg·m²",
+         "tol": 0.001
+        }
        ]
       }
      ],
@@ -1424,23 +1706,45 @@
      "q": "<p>Las cuatro partículas \\(m\\) del cuadrado de lado \\(L\\). Ahora el eje pasa por un <strong>lado</strong> (dos partículas sobre el eje) o por una <strong>diagonal</strong>.</p>",
      "checks": [
       {
-       "p": "Eje por un lado",
-       "o": [
-        "\\(2mL^2\\)",
-        "\\(4mL^2\\)",
-        "\\(mL^2\\)",
-        "\\(\\tfrac12mL^2\\)",
-        "\\(0\\)"
-       ]
-      },
-      {
-       "p": "Eje por la diagonal",
-       "o": [
-        "\\(mL^2\\)",
-        "\\(2mL^2\\)",
-        "\\(\\tfrac12mL^2\\)",
-        "\\(\\sqrt2mL^2\\)",
-        "\\(4mL^2\\)"
+       "t": "expr",
+       "p": "Escribe I en cada caso (usa m y L).",
+       "f": [
+        {
+         "a": "2*m*L^2",
+         "v": [
+          "m",
+          "L"
+         ],
+         "l": "Eje por un lado: I =",
+         "dom": {
+          "m": [
+           0.5,
+           3
+          ],
+          "L": [
+           0.5,
+           3
+          ]
+         }
+        },
+        {
+         "a": "m*L^2",
+         "v": [
+          "m",
+          "L"
+         ],
+         "l": "Eje por la diagonal: I =",
+         "dom": {
+          "m": [
+           0.5,
+           3
+          ],
+          "L": [
+           0.5,
+           3
+          ]
+         }
+        }
        ]
       }
      ],
@@ -1479,16 +1783,55 @@
      "id": "mf1",
      "lvl": 1,
      "title": "DCL: bloque en reposo en una rampa",
-     "q": "<p>Un bloque está en reposo sobre una rampa rugosa. ¿Cuál es su DCL correcto?</p>",
+     "q": "<p>Un bloque está en reposo sobre una rampa rugosa. Arma su DCL.</p>",
      "checks": [
       {
-       "p": "DCL",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"54.1\" y2=\"72.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"48.9,75.4 54.3,68.3 57.8,74.3\"/><text class=\"dl\" x=\"38.5\" y=\"85.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"16.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,10.4 87.0,18.7 80.0,18.7\"/><text class=\"dl\" x=\"83.5\" y=\"2.4\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><polygon class=\"gnd\" points=\"15,110 145,110 145.0,34.9\"/><g transform=\"translate(90.0,66.7) rotate(-30)\"><rect class=\"bx\" x=\"-16\" y=\"-26\" width=\"32\" height=\"26\"/></g><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"83.5\" y2=\"104.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"83.5,110.4 80.0,102.2 87.0,102.2\"/><text class=\"dl\" x=\"83.5\" y=\"126.4\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"64.0\" y2=\"21.7\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"61.0,16.5 68.2,21.9 62.1,25.4\"/><text class=\"dl\" x=\"55.0\" y=\"10.1\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"112.9\" y2=\"38.4\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"118.1,35.4 112.7,42.6 109.2,36.5\"/><text class=\"dl\" x=\"128.5\" y=\"33.4\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"83.5\" y1=\"55.4\" x2=\"49.7\" y2=\"74.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"44.5,77.9 50.0,70.8 53.5,76.8\"/><text class=\"dl\" x=\"34.1\" y=\"87.9\" text-anchor=\"middle\">F<tspan font-size=\"8\">mov</tspan></text></svg>"
+       "t": "dcl",
+       "p": "Arma el DCL del bloque.",
+       "scene": {
+        "type": "plano",
+        "ang": 30
+       },
+       "forces": [
+        {
+         "k": "P",
+         "n": "Peso",
+         "dirs": [
+          "abajo",
+          "arriba"
+         ],
+         "a": "abajo"
+        },
+        {
+         "k": "N",
+         "n": "Normal de la rampa",
+         "dirs": [
+          "perp",
+          "perpin",
+          "arriba"
+         ],
+         "a": "perp",
+         "e": "La normal es perpendicular a la superficie y empuja hacia afuera de ella (no es vertical)."
+        },
+        {
+         "k": "f",
+         "n": "Fricción",
+         "dirs": [
+          "sube",
+          "baja"
+         ],
+         "a": "sube",
+         "e": "El bloque tiende a bajar: la fricción estática apunta hacia arriba del plano."
+        },
+        {
+         "k": "F∥",
+         "n": "«Fuerza de bajada» (mg sen θ)",
+         "dirs": [
+          "baja"
+         ],
+         "a": null,
+         "e": "mg·sen θ no es otra fuerza: es una componente del peso."
+        }
        ]
       }
      ],
@@ -1578,33 +1921,37 @@
      "q": "<p>Un bloque de 2 kg está en reposo sobre una mesa horizontal (\\(\\mu_s=0{,}5\\), \\(\\mu_k=0{,}3\\)).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Fricción si nadie lo empuja",
-       "o": [
-        "\\(0\\)",
-        "\\(10\\ \\text{N}\\)",
-        "\\(6\\ \\text{N}\\)",
-        "\\(20\\ \\text{N}\\)",
-        "\\(5\\ \\text{N}\\)"
+       "f": [
+        {
+         "l": "f",
+         "a": 0,
+         "u": "N"
+        }
        ]
       },
       {
-       "p": "Fricción si lo empujan con 6 N horizontales",
-       "o": [
-        "\\(6\\ \\text{N}\\)",
-        "\\(10\\ \\text{N}\\)",
-        "\\(0\\)",
-        "\\(3\\ \\text{N}\\)",
-        "\\(20\\ \\text{N}\\)"
+       "t": "num",
+       "p": "Fricción si lo empujan con 6 N",
+       "f": [
+        {
+         "l": "f",
+         "a": 6,
+         "u": "N",
+         "e": "μs·N = 10 N alcanza: la estática vale solo lo necesario."
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Aceleración si lo empujan con 15 N",
-       "o": [
-        "\\(4{,}5\\ \\text{m/s}^2\\)",
-        "\\(2{,}5\\ \\text{m/s}^2\\)",
-        "\\(7{,}5\\ \\text{m/s}^2\\)",
-        "\\(0\\)",
-        "\\(5\\ \\text{m/s}^2\\)"
+       "f": [
+        {
+         "l": "a",
+         "a": 4.5,
+         "u": "m/s²"
+        }
        ]
       }
      ],
@@ -1626,7 +1973,8 @@
       [
        "newt"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mf4",
@@ -1635,23 +1983,27 @@
      "q": "<p>A (5 kg) está sobre B (10 kg); se jala A con 200 N y ambos se mueven juntos. Entre B y el piso \\(\\mu_k=0{,}8\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Aceleración",
-       "o": [
-        "\\(\\approx5{,}33\\ \\text{m/s}^2\\)",
-        "\\(\\approx13{,}3\\ \\text{m/s}^2\\)",
-        "\\(8\\ \\text{m/s}^2\\)",
-        "\\(\\approx2{,}67\\ \\text{m/s}^2\\)",
-        "\\(20\\ \\text{m/s}^2\\)"
+       "f": [
+        {
+         "l": "a",
+         "a": 5.33,
+         "u": "m/s²",
+         "tol": 0.02
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Fricción entre A y B",
-       "o": [
-        "\\(\\approx173\\ \\text{N}\\)",
-        "\\(120\\ \\text{N}\\)",
-        "\\(200\\ \\text{N}\\)",
-        "\\(\\approx26{,}7\\ \\text{N}\\)",
-        "\\(80\\ \\text{N}\\)"
+       "f": [
+        {
+         "l": "f",
+         "a": 173,
+         "u": "N",
+         "tol": 1
+        }
        ]
       }
      ],
@@ -1672,7 +2024,8 @@
        "newt"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mf5",
@@ -1681,13 +2034,50 @@
      "q": "<p>El carrete es jalado por una cuerda horizontal en su parte superior y rueda sin deslizar hacia la derecha. Se sabe que la fricción le <strong>da</strong> energía de traslación. ¿Cuál es su DCL?</p>",
      "checks": [
       {
-       "p": "DCL",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"41.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,100.0 43.3,96.5 43.3,103.5\"/><text class=\"dl\" x=\"23.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"134.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,62.0 131.7,65.5 131.7,58.5\"/><text class=\"dl\" x=\"152.0\" y=\"66.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><line class=\"gl\" x1=\"5\" y1=\"100\" x2=\"165\" y2=\"100\"/><circle class=\"bx\" cx=\"80\" cy=\"62\" r=\"38\"/><line class=\"fa\" x1=\"80.0\" y1=\"24.0\" x2=\"134.0\" y2=\"24.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"140.0,24.0 131.7,27.5 131.7,20.5\"/><text class=\"dl\" x=\"152.0\" y=\"28.0\" text-anchor=\"middle\">F</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"119.0\" y2=\"100.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,100.0 116.7,103.5 116.7,96.5\"/><text class=\"dl\" x=\"137.0\" y=\"104.0\" text-anchor=\"middle\">f</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"80.0\" y2=\"96.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,102.0 76.5,93.7 83.5,93.7\"/><text class=\"dl\" x=\"80.0\" y=\"118.0\" text-anchor=\"middle\">W</text><line class=\"fa\" x1=\"80.0\" y1=\"100.0\" x2=\"80.0\" y2=\"76.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"80.0,70.0 83.5,78.3 76.5,78.3\"/><text class=\"dl\" x=\"80.0\" y=\"62.0\" text-anchor=\"middle\">N</text><line class=\"fa\" x1=\"80.0\" y1=\"62.0\" x2=\"41.0\" y2=\"62.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"35.0,62.0 43.3,58.5 43.3,65.5\"/><text class=\"dl\" x=\"23.0\" y=\"66.0\" text-anchor=\"middle\">F<tspan font-size=\"8\">in</tspan></text></svg>"
+       "t": "dcl",
+       "p": "Arma el DCL del carrete.",
+       "scene": {
+        "type": "rueda"
+       },
+       "forces": [
+        {
+         "k": "P",
+         "n": "Peso",
+         "dirs": [
+          "abajo",
+          "arriba"
+         ],
+         "a": "abajo"
+        },
+        {
+         "k": "N",
+         "n": "Normal del piso",
+         "dirs": [
+          "arriba",
+          "abajo"
+         ],
+         "a": "arriba"
+        },
+        {
+         "k": "T",
+         "n": "Tensión de la cuerda",
+         "dirs": [
+          "der",
+          "izq"
+         ],
+         "a": "der",
+         "e": "La cuerda jala hacia donde va: a la derecha."
+        },
+        {
+         "k": "f",
+         "n": "Fricción del piso",
+         "dirs": [
+          "der",
+          "izq"
+         ],
+         "a": "der",
+         "e": "Si la fricción le da energía de traslación, hace trabajo positivo: apunta en el sentido del movimiento."
+        }
        ]
       }
      ],
@@ -1718,23 +2108,53 @@
      "q": "<p>Un zapatito de 20 g cuelga del retrovisor de un auto que acelera. La cuerda forma 37° con la vertical (\\(\\sin37^\\circ=0{,}6\\), \\(\\cos37^\\circ=0{,}8\\)).</p>",
      "checks": [
       {
-       "p": "DCL del zapatito (el auto acelera hacia la derecha)",
-       "o": [
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"58.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"54.9,20.1 62.7,24.6 57.1,28.8\"/><text class=\"dl\" x=\"47.7\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"16.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,10.0 88.5,18.3 81.5,18.3\"/><text class=\"dl\" x=\"85.0\" y=\"2.0\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"111.5\" y2=\"24.9\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"115.1,20.1 112.9,28.8 107.3,24.6\"/><text class=\"dl\" x=\"122.3\" y=\"14.5\" text-anchor=\"middle\">T</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"51.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"45.0,60.0 53.3,56.5 53.3,63.5\"/><text class=\"dl\" x=\"33.0\" y=\"64.0\" text-anchor=\"middle\">ma</text></svg>",
-        "<svg class=\"dg sm\" viewBox=\"0 -24 170 168\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><circle class=\"bx\" cx=\"85\" cy=\"60\" r=\"12\"/><text class=\"dl\" x=\"8\" y=\"14\">→ a del auto</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"85.0\" y2=\"99.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"85.0,105.0 81.5,96.7 88.5,96.7\"/><text class=\"dl\" x=\"85.0\" y=\"121.0\" text-anchor=\"middle\">mg</text><line class=\"fa\" x1=\"85.0\" y1=\"60.0\" x2=\"119.0\" y2=\"60.0\" stroke-width=\"2.2\"/><polygon class=\"fah\" points=\"125.0,60.0 116.7,63.5 116.7,56.5\"/><text class=\"dl\" x=\"137.0\" y=\"64.0\" text-anchor=\"middle\">F</text></svg>"
+       "t": "dcl",
+       "p": "Arma el DCL del zapatito (el auto acelera hacia la derecha).",
+       "scene": {
+        "type": "pendulo",
+        "ang": 37
+       },
+       "forces": [
+        {
+         "k": "P",
+         "n": "Peso",
+         "dirs": [
+          "abajo",
+          "arriba"
+         ],
+         "a": "abajo"
+        },
+        {
+         "k": "T",
+         "n": "Tensión de la cuerda",
+         "dirs": [
+          "cuerda",
+          "arriba"
+         ],
+         "a": "cuerda",
+         "e": "La tensión va a lo largo de la cuerda, hacia el retrovisor."
+        },
+        {
+         "k": "Fi",
+         "n": "«Fuerza hacia atrás» por la inercia",
+         "dirs": [
+          "izq"
+         ],
+         "a": null,
+         "e": "Desde el piso no existe: la aceleración la produce la componente horizontal de T."
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Aceleración del auto",
-       "o": [
-        "\\(7{,}5\\ \\text{m/s}^2\\)",
-        "\\(6\\ \\text{m/s}^2\\)",
-        "\\(8\\ \\text{m/s}^2\\)",
-        "\\(13{,}3\\ \\text{m/s}^2\\)",
-        "\\(10\\ \\text{m/s}^2\\)"
+       "f": [
+        {
+         "l": "a",
+         "a": 7.5,
+         "u": "m/s²",
+         "e": "tan 37° = a/g."
+        }
        ]
       },
       {
@@ -1766,7 +2186,8 @@
        "newt"
       ],
       []
-     ]
+     ],
+     "chain": true
     }
    ],
    "lesson": "<h3>Idea central</h3><p>El DCL es el primer paso de casi todo problema: aislar el cuerpo y dibujar solo las fuerzas que otros cuerpos le hacen.</p>\n<h3>Conceptos clave</h3><ul><li>Peso (en el CM, hacia abajo), normal (perpendicular al contacto), fricción (paralela), tensión (a lo largo de la cuerda).</li><li>Fricción estática \\(f_s\\le\\mu_sN\\); cinética \\(f_k=\\mu_kN\\).</li><li>En la rodadura sin deslizar, la fricción es estática.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> bloque en plano inclinado: \\(N=mg\\cos\\theta\\).</div>\n<div class=\"err\"><b>Error común:</b> dibujar una «fuerza de movimiento» o suponer siempre \\(N=mg\\).</div>"
@@ -1877,13 +2298,15 @@
      "q": "<p>Un rodillo cilíndrico de 0,3 kg y radio 2 cm rueda sin deslizar a 0,8 m/s. ¿Su energía cinética total?</p>",
      "checks": [
       {
-       "p": "K",
-       "o": [
-        "\\(0{,}144\\ \\text{J}\\)",
-        "\\(0{,}096\\ \\text{J}\\)",
-        "\\(0{,}048\\ \\text{J}\\)",
-        "\\(0{,}192\\ \\text{J}\\)",
-        "\\(0{,}24\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Energía cinética total",
+       "f": [
+        {
+         "l": "K",
+         "a": 0.144,
+         "u": "J",
+         "tol": 0.002
+        }
        ]
       }
      ],
@@ -1916,33 +2339,30 @@
      "q": "<p>Cilindro sólido de 1 kg y radio \\(\\sqrt{10}\\) m parte del reposo y rueda sin deslizar hasta \\(v_{cm}=\\sqrt{40}\\) m/s.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Rapidez angular",
-       "o": [
-        "\\(2\\ \\text{rad/s}\\)",
-        "\\(4\\ \\text{rad/s}\\)",
-        "\\(\\sqrt{40}\\ \\text{rad/s}\\)",
-        "\\(\\sqrt{10}\\ \\text{rad/s}\\)",
-        "\\(0{,}5\\ \\text{rad/s}\\)"
+       "f": [
+        {
+         "l": "ω",
+         "a": 2,
+         "u": "rad/s"
+        }
        ]
       },
       {
-       "p": "\\(\\Delta K_{tras}\\)",
-       "o": [
-        "\\(20\\ \\text{J}\\)",
-        "\\(40\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)",
-        "\\(30\\ \\text{J}\\)",
-        "\\(5\\ \\text{J}\\)"
-       ]
-      },
-      {
-       "p": "\\(\\Delta K_{rot}\\)",
-       "o": [
-        "\\(10\\ \\text{J}\\)",
-        "\\(20\\ \\text{J}\\)",
-        "\\(5\\ \\text{J}\\)",
-        "\\(15\\ \\text{J}\\)",
-        "\\(40\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Cambios de energía",
+       "f": [
+        {
+         "l": "ΔK tras",
+         "a": 20,
+         "u": "J"
+        },
+        {
+         "l": "ΔK rot",
+         "a": 10,
+         "u": "J"
+        }
        ]
       }
      ],
@@ -1965,7 +2385,8 @@
        "ktr"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "me5",
@@ -1974,13 +2395,14 @@
      "q": "<p>Una esfera sólida rueda sin deslizar. ¿Qué fracción de su energía cinética total es de rotación?</p>",
      "checks": [
       {
-       "p": "Fracción",
-       "o": [
-        "\\(\\tfrac27\\)",
-        "\\(\\tfrac25\\)",
-        "\\(\\tfrac12\\)",
-        "\\(\\tfrac13\\)",
-        "\\(\\tfrac57\\)"
+       "t": "expr",
+       "p": "Fracción de rotación (exacta)",
+       "f": [
+        {
+         "a": "2/7",
+         "v": [],
+         "l": "K_rot/K ="
+        }
        ]
       }
      ],
@@ -2010,33 +2432,31 @@
      "q": "<p>Un bate de 1 kg se lanza con 50 J de energía de traslación y 72 J de rotación, girando a 3 rad/s. Su CM sube 4 m hasta la altura máxima. Desprecia el aire.</p>",
      "checks": [
       {
-       "p": "\\(I_{cm}\\) del bate",
-       "o": [
-        "\\(16\\ \\text{kg·m}^2\\)",
-        "\\(8\\ \\text{kg·m}^2\\)",
-        "\\(24\\ \\text{kg·m}^2\\)",
-        "\\(48\\ \\text{kg·m}^2\\)",
-        "\\(4\\ \\text{kg·m}^2\\)"
+       "t": "num",
+       "p": "Momento de inercia",
+       "f": [
+        {
+         "l": "I_cm",
+         "a": 16,
+         "u": "kg·m²"
+        }
        ]
       },
       {
-       "p": "Rapidez del CM en la altura máxima",
-       "o": [
-        "\\(\\approx4{,}47\\ \\text{m/s}\\)",
-        "\\(0\\)",
-        "\\(10\\ \\text{m/s}\\)",
-        "\\(\\approx8{,}94\\ \\text{m/s}\\)",
-        "\\(\\approx6{,}32\\ \\text{m/s}\\)"
-       ]
-      },
-      {
-       "p": "Rapidez angular en la altura máxima",
-       "o": [
-        "\\(3\\ \\text{rad/s}\\)",
-        "\\(0\\)",
-        "\\(1{,}5\\ \\text{rad/s}\\)",
-        "\\(6\\ \\text{rad/s}\\)",
-        "No se puede saber"
+       "t": "num",
+       "p": "En la altura máxima",
+       "f": [
+        {
+         "l": "v_cm",
+         "a": 4.47,
+         "u": "m/s",
+         "tol": 0.02
+        },
+        {
+         "l": "ω",
+         "a": 3,
+         "u": "rad/s"
+        }
        ]
       }
      ],
@@ -2060,10 +2480,21 @@
       [
        "torq"
       ]
-     ]
+     ],
+     "chain": true
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>La energía cinética es energía de movimiento y se reparte entre traslación del centro de masa y rotación alrededor de él.</p>\n<h3>Conceptos clave</h3><ul><li>\\(K_{tras}=\\frac12Mv_{cm}^2\\), \\(K_{rot}=\\frac12I_{cm}\\omega^2\\).</li><li>Rodar sin deslizar: \\(v_{cm}=\\omega R\\).</li><li>\\(K\\ge0\\) siempre.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> disco que rueda: \\(K=\\frac12Mv^2+\\frac12\\cdot\\frac12MR^2\\cdot\\frac{v^2}{R^2}=\\frac34Mv^2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar la parte rotacional en un objeto que rueda.</div>"
+   "lesson": "<h3>Idea central</h3><p>La energía cinética es energía de movimiento y se reparte entre traslación del centro de masa y rotación alrededor de él.</p>\n<h3>Conceptos clave</h3><ul><li>\\(K_{tras}=\\frac12Mv_{cm}^2\\), \\(K_{rot}=\\frac12I_{cm}\\omega^2\\).</li><li>Rodar sin deslizar: \\(v_{cm}=\\omega R\\).</li><li>\\(K\\ge0\\) siempre.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> disco que rueda: \\(K=\\frac12Mv^2+\\frac12\\cdot\\frac12MR^2\\cdot\\frac{v^2}{R^2}=\\frac34Mv^2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar la parte rotacional en un objeto que rueda.</div>",
+   "tools": [
+    {
+     "w": "rodar",
+     "t": "Carrera en la rampa",
+     "p": "Suelta un bloque sin fricción, una esfera, un disco y un aro: mira quién llega primero y por qué.",
+     "o": {
+      "ang": 20
+     }
+    }
+   ]
   },
   {
    "id": "trab",
@@ -2176,13 +2607,14 @@
      "q": "<p>Una fuerza de 20 N forma 60° con la horizontal y arrastra una caja 3 m sobre el piso. ¿Trabajo de la fuerza?</p>",
      "checks": [
       {
-       "p": "W",
-       "o": [
-        "\\(30\\ \\text{J}\\)",
-        "\\(60\\ \\text{J}\\)",
-        "\\(52\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)",
-        "\\(-30\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Trabajo",
+       "f": [
+        {
+         "l": "W",
+         "a": 30,
+         "u": "J"
+        }
        ]
       }
      ],
@@ -2207,23 +2639,19 @@
      "q": "<p>Tarzán (80 kg) oscila con una soga. Pasa por el punto más bajo a 5 m/s y, al regresar, vuelve a pasar a 4 m/s. Entre ambos pasos:</p>",
      "checks": [
       {
-       "p": "Trabajo del peso",
-       "o": [
-        "\\(0\\)",
-        "\\(-360\\ \\text{J}\\)",
-        "\\(+360\\ \\text{J}\\)",
-        "\\(-800\\ \\text{J}\\)",
-        "No se puede saber"
-       ]
-      },
-      {
-       "p": "Trabajo del aire",
-       "o": [
-        "\\(-360\\ \\text{J}\\)",
-        "\\(0\\)",
-        "\\(+360\\ \\text{J}\\)",
-        "\\(-40\\ \\text{J}\\)",
-        "\\(-1000\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Trabajos",
+       "f": [
+        {
+         "l": "W peso",
+         "a": 0,
+         "u": "J"
+        },
+        {
+         "l": "W aire",
+         "a": -360,
+         "u": "J"
+        }
        ]
       }
      ],
@@ -2254,33 +2682,39 @@
      "q": "<p>Se jala una caja de peso 10 N por una rampa lisa de 15°. La gráfica da la componente de la tensión a lo largo de la rampa. La caja sube 3 m.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Trabajo de la tensión",
-       "o": [
-        "\\(15\\ \\text{J}\\)",
-        "\\(30\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)",
-        "\\(20\\ \\text{J}\\)",
-        "\\(7{,}5\\ \\text{J}\\)"
+       "f": [
+        {
+         "l": "W_T",
+         "a": 15,
+         "u": "J",
+         "e": "Área bajo la gráfica."
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Trabajo del peso",
-       "o": [
-        "\\(\\approx-7{,}8\\ \\text{J}\\)",
-        "\\(-30\\ \\text{J}\\)",
-        "\\(\\approx+7{,}8\\ \\text{J}\\)",
-        "\\(\\approx-29\\ \\text{J}\\)",
-        "\\(0\\)"
+       "f": [
+        {
+         "l": "W_P",
+         "a": -7.8,
+         "u": "J",
+         "tol": 0.08
+        }
        ]
       },
       {
-       "p": "\\(\\Delta K\\) de la caja",
-       "o": [
-        "\\(\\approx7{,}2\\ \\text{J}\\)",
-        "\\(15\\ \\text{J}\\)",
-        "\\(\\approx22{,}8\\ \\text{J}\\)",
-        "\\(-15\\ \\text{J}\\)",
-        "\\(0\\)"
+       "t": "num",
+       "p": "Cambio de energía cinética",
+       "f": [
+        {
+         "l": "ΔK",
+         "a": 7.2,
+         "u": "J",
+         "tol": 0.08
+        }
        ]
       }
      ],
@@ -2310,7 +2744,8 @@
       [
        "teor"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mt6",
@@ -2319,43 +2754,35 @@
      "q": "<p>El carrete (cilindro sólido, 1 kg, \\(R=\\sqrt{10}\\) m) rueda sin deslizar desde el reposo jalado por \\(F\\). La fricción <strong>da</strong> 5 J de energía de traslación y el CM llega a \\(\\sqrt{40}\\) m/s. (Recuerda: \\(\\Delta K_{tras}=20\\) J, \\(\\Delta K_{rot}=10\\) J.)</p>",
      "checks": [
       {
-       "p": "\\(W_{neto}\\)",
-       "o": [
-        "\\(30\\ \\text{J}\\)",
-        "\\(20\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)",
-        "\\(35\\ \\text{J}\\)",
-        "\\(25\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Trabajo neto",
+       "f": [
+        {
+         "l": "W neto",
+         "a": 30,
+         "u": "J"
+        }
        ]
       },
       {
-       "p": "Trabajo de rotación de la fricción",
-       "o": [
-        "\\(-5\\ \\text{J}\\)",
-        "\\(+5\\ \\text{J}\\)",
-        "\\(0\\)",
-        "\\(-10\\ \\text{J}\\)",
-        "\\(+10\\ \\text{J}\\)"
-       ]
-      },
-      {
-       "p": "Trabajo de rotación de F",
-       "o": [
-        "\\(15\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)",
-        "\\(5\\ \\text{J}\\)",
-        "\\(20\\ \\text{J}\\)",
-        "\\(-5\\ \\text{J}\\)"
-       ]
-      },
-      {
-       "p": "Trabajo de traslación de F",
-       "o": [
-        "\\(15\\ \\text{J}\\)",
-        "\\(20\\ \\text{J}\\)",
-        "\\(25\\ \\text{J}\\)",
-        "\\(5\\ \\text{J}\\)",
-        "\\(10\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Trabajos de cada fuerza",
+       "f": [
+        {
+         "l": "rot. fricción",
+         "a": -5,
+         "u": "J"
+        },
+        {
+         "l": "rot. F",
+         "a": 15,
+         "u": "J"
+        },
+        {
+         "l": "tras. F",
+         "a": 15,
+         "u": "J"
+        }
        ]
       }
      ],
@@ -2380,7 +2807,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mt7",
@@ -2389,33 +2817,33 @@
      "q": "<p>Una polea (disco sólido, 3 kg, radio 20 cm) tiene un alambre enrollado del que cuelga una piedra de 2 kg. Se suelta desde el reposo hasta que la polea tiene 7 J de energía cinética.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Rapidez angular de la polea",
-       "o": [
-        "\\(\\approx15{,}3\\ \\text{rad/s}\\)",
-        "\\(\\approx10{,}8\\ \\text{rad/s}\\)",
-        "\\(\\approx233\\ \\text{rad/s}\\)",
-        "\\(\\approx3{,}1\\ \\text{rad/s}\\)",
-        "\\(\\approx21{,}6\\ \\text{rad/s}\\)"
+       "f": [
+        {
+         "l": "ω",
+         "a": 15.3,
+         "u": "rad/s",
+         "tol": 0.1
+        }
        ]
       },
       {
-       "p": "¿Cuánto cayó la piedra?",
-       "o": [
-        "\\(\\approx0{,}82\\ \\text{m}\\)",
-        "\\(0{,}35\\ \\text{m}\\)",
-        "\\(\\approx0{,}47\\ \\text{m}\\)",
-        "\\(\\approx1{,}63\\ \\text{m}\\)",
-        "\\(0{,}7\\ \\text{m}\\)"
-       ]
-      },
-      {
-       "p": "Trabajo de la tensión sobre la piedra",
-       "o": [
-        "\\(-7\\ \\text{J}\\)",
-        "\\(+7\\ \\text{J}\\)",
-        "\\(0\\)",
-        "\\(\\approx-16{,}3\\ \\text{J}\\)",
-        "\\(\\approx-9{,}3\\ \\text{J}\\)"
+       "t": "num",
+       "p": "Caída y trabajo",
+       "f": [
+        {
+         "l": "h",
+         "a": 0.82,
+         "u": "m",
+         "tol": 0.01
+        },
+        {
+         "l": "W_T piedra",
+         "a": -7,
+         "u": "J",
+         "tol": 0.05
+        }
        ]
       }
      ],
@@ -2444,6 +2872,78 @@
        "teor"
       ],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "mt8",
+     "lvl": 1,
+     "title": "¿Trabajo positivo, negativo o cero?",
+     "q": "<p>Clasifica el trabajo de la fuerza indicada en cada situación.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada caso.",
+       "cats": [
+        "Positivo",
+        "Negativo",
+        "Cero"
+       ],
+       "items": [
+        {
+         "x": "El peso de una pelota que cae",
+         "c": 0
+        },
+        {
+         "x": "La fricción sobre una caja que se arrastra por el piso",
+         "c": 1
+        },
+        {
+         "x": "La normal sobre un bloque que se desliza por el piso",
+         "c": 2
+        },
+        {
+         "x": "La tensión de la cuerda de un péndulo que oscila",
+         "c": 2,
+         "e": "La tensión siempre es perpendicular a la velocidad del péndulo."
+        },
+        {
+         "x": "El peso de una caja que subes por una escalera",
+         "c": 1
+        },
+        {
+         "x": "Tu mano al levantar una mochila",
+         "c": 0
+        },
+        {
+         "x": "La fuerza neta sobre un satélite en órbita circular",
+         "c": 2,
+         "e": "En MCU la fuerza neta es radial, perpendicular al desplazamiento."
+        },
+        {
+         "x": "Tu mano al bajar despacio una caja hasta el piso",
+         "c": 1,
+         "e": "Tu mano empuja hacia arriba y la caja baja."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "W = F·d·cos θ: positivo si la fuerza tiene componente a favor del desplazamiento, negativo si en contra.",
+      "Si la fuerza es perpendicular al desplazamiento en todo momento (normal en piso, tensión del péndulo, fuerza centrípeta), el trabajo es cero."
+     ],
+     "ans": "+, −, 0, 0, −, +, 0, −",
+     "hint": "Compara la dirección de la fuerza con la del movimiento.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trab"
+      ],
+      [
+       "trab"
+      ]
      ]
     }
    ],
@@ -2556,23 +3056,19 @@
      "q": "<p>Se aplican 50 N a 0,4 m del eje de una tuerca.</p>",
      "checks": [
       {
-       "p": "Torque si F es perpendicular",
-       "o": [
-        "\\(20\\ \\text{N·m}\\)",
-        "\\(125\\ \\text{N·m}\\)",
-        "\\(10\\ \\text{N·m}\\)",
-        "\\(12{,}5\\ \\text{N·m}\\)",
-        "\\(200\\ \\text{N·m}\\)"
-       ]
-      },
-      {
-       "p": "Torque si F forma 30° con la llave",
-       "o": [
-        "\\(10\\ \\text{N·m}\\)",
-        "\\(17{,}3\\ \\text{N·m}\\)",
-        "\\(20\\ \\text{N·m}\\)",
-        "\\(5\\ \\text{N·m}\\)",
-        "\\(40\\ \\text{N·m}\\)"
+       "t": "num",
+       "p": "Torques",
+       "f": [
+        {
+         "l": "τ ⟂",
+         "a": 20,
+         "u": "N·m"
+        },
+        {
+         "l": "τ a 30°",
+         "a": 10,
+         "u": "N·m"
+        }
        ]
       }
      ],
@@ -2599,23 +3095,28 @@
      "q": "<p>Para sacar un clavo se necesita \\(F_1=500\\) N aplicada en el clavo, que está a 0,08 m del pivote A y forma 60° con la tabla (usa \\(\\sin60^\\circ\\approx0{,}866\\)). Se aplica \\(F_2\\) horizontal a 0,3 m de altura sobre la tabla.</p>",
      "checks": [
       {
-       "p": "Torque de \\(F_1\\) respecto a A",
-       "o": [
-        "\\(\\approx34{,}6\\ \\text{N·m}\\)",
-        "\\(40\\ \\text{N·m}\\)",
-        "\\(20\\ \\text{N·m}\\)",
-        "\\(150\\ \\text{N·m}\\)",
-        "\\(\\approx69{,}3\\ \\text{N·m}\\)"
+       "t": "num",
+       "p": "Torque de F₁ respecto a A",
+       "f": [
+        {
+         "l": "τ₁",
+         "a": 34.6,
+         "u": "N·m",
+         "tol": 0.1
+        }
        ]
       },
       {
-       "p": "\\(F_2\\) mínima",
-       "o": [
-        "\\(\\approx115\\ \\text{N}\\)",
-        "\\(500\\ \\text{N}\\)",
-        "\\(\\approx133\\ \\text{N}\\)",
-        "\\(\\approx87\\ \\text{N}\\)",
-        "\\(\\approx231\\ \\text{N}\\)"
+       "t": "num",
+       "p": "Fuerza mínima",
+       "f": [
+        {
+         "l": "F₂",
+         "a": 115,
+         "u": "N",
+         "e": "τ₂ = F₂·0,3 debe igualar a τ₁.",
+         "tol": 1
+        }
        ]
       }
      ],
@@ -2635,7 +3136,8 @@
       [
        "equi"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "mq5",
@@ -2690,23 +3192,19 @@
      "q": "<p>Un tractor con conductor pesa 21000 lb (en G) y levanta 900 lb de grava. Está en reposo.</p>",
      "checks": [
       {
-       "p": "Reacción \\(N_A\\)",
-       "o": [
-        "\\(13250\\ \\text{lb}\\)",
-        "\\(8650\\ \\text{lb}\\)",
-        "\\(14750\\ \\text{lb}\\)",
-        "\\(10950\\ \\text{lb}\\)",
-        "\\(21900\\ \\text{lb}\\)"
-       ]
-      },
-      {
-       "p": "Reacción \\(N_B\\)",
-       "o": [
-        "\\(8650\\ \\text{lb}\\)",
-        "\\(13250\\ \\text{lb}\\)",
-        "\\(7150\\ \\text{lb}\\)",
-        "\\(10950\\ \\text{lb}\\)",
-        "\\(900\\ \\text{lb}\\)"
+       "t": "num",
+       "p": "Reacciones",
+       "f": [
+        {
+         "l": "N_A",
+         "a": 13250,
+         "u": "lb"
+        },
+        {
+         "l": "N_B",
+         "a": 8650,
+         "u": "lb"
+        }
        ]
       }
      ],
@@ -2729,7 +3227,21 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>El torque es la «fuerza de giro»: depende de la fuerza, de dónde se aplica y del ángulo.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\tau=rF\\sin\\phi\\); máximo con fuerza perpendicular.</li><li>Si la línea de acción pasa por el eje, \\(\\tau=0\\).</li><li>Dirección: mano derecha (antihorario \\(+\\hat k\\)).</li><li>Equilibrio: \\(\\sum\\vec F=0\\) y \\(\\sum\\vec\\tau=0\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Elige el eje (donde hay fuerzas desconocidas, para eliminarlas).</li><li><strong>2.</strong> Calcula cada torque con signo.</li><li><strong>3.</strong> Plantea las sumas igual a cero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> fuerza de 20 N a 0,3 m del eje, perpendicular: \\(\\tau=6\\) N·m.</div>\n<div class=\"err\"><b>Error común:</b> usar la distancia al punto de aplicación en vez del brazo de palanca cuando la fuerza no es perpendicular.</div>"
+   "lesson": "<h3>Idea central</h3><p>El torque es la «fuerza de giro»: depende de la fuerza, de dónde se aplica y del ángulo.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\tau=rF\\sin\\phi\\); máximo con fuerza perpendicular.</li><li>Si la línea de acción pasa por el eje, \\(\\tau=0\\).</li><li>Dirección: mano derecha (antihorario \\(+\\hat k\\)).</li><li>Equilibrio: \\(\\sum\\vec F=0\\) y \\(\\sum\\vec\\tau=0\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Elige el eje (donde hay fuerzas desconocidas, para eliminarlas).</li><li><strong>2.</strong> Calcula cada torque con signo.</li><li><strong>3.</strong> Plantea las sumas igual a cero.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> fuerza de 20 N a 0,3 m del eje, perpendicular: \\(\\tau=6\\) N·m.</div>\n<div class=\"err\"><b>Error común:</b> usar la distancia al punto de aplicación en vez del brazo de palanca cuando la fuerza no es perpendicular.</div>",
+   "tools": [
+    {
+     "w": "balancin",
+     "t": "Balancín de torques",
+     "p": "Cambia masas, posiciones y el apoyo: el balancín se equilibra cuando la suma de torques es cero.",
+     "o": {
+      "m1": 40,
+      "x1": -1.5,
+      "m2": 30,
+      "x2": 2,
+      "mb": 10
+     }
+    }
+   ]
   }
  ],
  "figs": {
@@ -2912,33 +3424,31 @@
    "q": "<p>Un disco sólido de 2 kg y radio 0,5 m parte del reposo y rueda sin deslizar, jalado desde su centro por una fuerza horizontal de 12 N, durante 3 m.</p>",
    "checks": [
     {
+     "t": "num",
      "p": "Rapidez final del CM",
-     "o": [
-      "\\(\\approx4{,}90\\ \\text{m/s}\\)",
-      "\\(6\\ \\text{m/s}\\)",
-      "\\(\\approx3{,}46\\ \\text{m/s}\\)",
-      "\\(\\approx5{,}66\\ \\text{m/s}\\)",
-      "\\(4\\ \\text{m/s}\\)"
+     "f": [
+      {
+       "l": "v",
+       "a": 4.9,
+       "u": "m/s",
+       "tol": 0.02
+      }
      ]
     },
     {
-     "p": "Energía de rotación final",
-     "o": [
-      "\\(12\\ \\text{J}\\)",
-      "\\(24\\ \\text{J}\\)",
-      "\\(36\\ \\text{J}\\)",
-      "\\(18\\ \\text{J}\\)",
-      "\\(6\\ \\text{J}\\)"
-     ]
-    },
-    {
-     "p": "Trabajo de traslación de la fricción",
-     "o": [
-      "\\(-12\\ \\text{J}\\)",
-      "\\(+12\\ \\text{J}\\)",
-      "\\(0\\)",
-      "\\(-24\\ \\text{J}\\)",
-      "\\(-36\\ \\text{J}\\)"
+     "t": "num",
+     "p": "Energía y trabajo",
+     "f": [
+      {
+       "l": "K_rot",
+       "a": 12,
+       "u": "J"
+      },
+      {
+       "l": "W tras. fricción",
+       "a": -12,
+       "u": "J"
+      }
      ]
     }
    ],
@@ -2958,7 +3468,8 @@
     [],
     [],
     []
-   ]
+   ],
+   "chain": true
   },
   {
    "id": "ms2",
@@ -2967,23 +3478,19 @@
    "q": "<p>La gráfica muestra la velocidad de un móvil sobre el eje \\(x\\).</p>",
    "checks": [
     {
-     "p": "Desplazamiento de 0 a 6 s",
-     "o": [
-      "\\(0\\)",
-      "\\(18\\ \\text{m}\\)",
-      "\\(36\\ \\text{m}\\)",
-      "\\(-18\\ \\text{m}\\)",
-      "\\(9\\ \\text{m}\\)"
-     ]
-    },
-    {
-     "p": "Distancia de 0 a 6 s",
-     "o": [
-      "\\(18\\ \\text{m}\\)",
-      "\\(0\\)",
-      "\\(9\\ \\text{m}\\)",
-      "\\(36\\ \\text{m}\\)",
-      "\\(12\\ \\text{m}\\)"
+     "t": "num",
+     "p": "Desplazamiento y distancia",
+     "f": [
+      {
+       "l": "Δx",
+       "a": 0,
+       "u": "m"
+      },
+      {
+       "l": "d",
+       "a": 18,
+       "u": "m"
+      }
      ]
     }
    ],
@@ -3008,23 +3515,19 @@
    "q": "<p>Una barra uniforme de 4 m y 20 kg está articulada en su extremo izquierdo y sostenida horizontal por una cuerda vertical en el extremo derecho. De la barra cuelga una caja de 10 kg a 1 m de la articulación.</p>",
    "checks": [
     {
-     "p": "Tensión de la cuerda",
-     "o": [
-      "\\(125\\ \\text{N}\\)",
-      "\\(150\\ \\text{N}\\)",
-      "\\(300\\ \\text{N}\\)",
-      "\\(75\\ \\text{N}\\)",
-      "\\(100\\ \\text{N}\\)"
-     ]
-    },
-    {
-     "p": "Fuerza vertical de la articulación",
-     "o": [
-      "\\(175\\ \\text{N}\\)",
-      "\\(125\\ \\text{N}\\)",
-      "\\(300\\ \\text{N}\\)",
-      "\\(150\\ \\text{N}\\)",
-      "\\(200\\ \\text{N}\\)"
+     "t": "num",
+     "p": "Fuerzas",
+     "f": [
+      {
+       "l": "T",
+       "a": 125,
+       "u": "N"
+      },
+      {
+       "l": "V articulación",
+       "a": 175,
+       "u": "N"
+      }
      ]
     }
    ],
@@ -3049,23 +3552,20 @@
    "q": "<p>Dos bloques de 3 kg y 1 kg cuelgan de una cuerda que pasa por una polea y se sueltan desde el reposo. El de 3 kg baja 2 m.</p>",
    "checks": [
     {
-     "p": "Rapidez si la polea es ideal (sin masa)",
-     "o": [
-      "\\(\\approx4{,}47\\ \\text{m/s}\\)",
-      "\\(4\\ \\text{m/s}\\)",
-      "\\(\\approx6{,}32\\ \\text{m/s}\\)",
-      "\\(\\approx3{,}16\\ \\text{m/s}\\)",
-      "\\(2\\ \\text{m/s}\\)"
-     ]
-    },
-    {
-     "p": "Rapidez si la polea es un disco de 2 kg",
-     "o": [
-      "\\(4\\ \\text{m/s}\\)",
-      "\\(\\approx4{,}47\\ \\text{m/s}\\)",
-      "\\(\\approx3{,}65\\ \\text{m/s}\\)",
-      "\\(\\approx5{,}16\\ \\text{m/s}\\)",
-      "\\(\\approx2{,}83\\ \\text{m/s}\\)"
+     "t": "num",
+     "p": "Rapidez final",
+     "f": [
+      {
+       "l": "polea ideal",
+       "a": 4.47,
+       "u": "m/s",
+       "tol": 0.02
+      },
+      {
+       "l": "polea de 2 kg",
+       "a": 4,
+       "u": "m/s"
+      }
      ]
     }
    ],
@@ -3216,5 +3716,6 @@
  "short": "Examen parcial",
  "sub": "Sem. 1 a 8",
  "guide": true,
- "free": true
+ "free": true,
+ "intro": "Ahora tiene interactivos: armas tus DCL tocando, plano inclinado con fricción, poleas y Atwood, balancín de torques, carrera de cuerpos que ruedan, rizo/loma/peralte, gráficas v–t arrastrables y respuestas numéricas o como fórmula."
 }

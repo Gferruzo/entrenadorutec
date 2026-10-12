@@ -270,6 +270,10 @@ code{font:0.9em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:
 .sqlsch{margin:.2em 0 .5em}.sqlsch summary{cursor:pointer;font-weight:700;font-size:.9rem}.sqltn{margin:.5em 0 .1em}
 .sqlw .tbl,.jtabs .tbl,.jres .tbl,.sqlout .tbl{overflow-x:auto;max-width:100%}.sqlw table,.jtabs table,.jres table{font:12px ui-monospace,Menlo,monospace}.tbl td.nul{color:var(--bad);font-style:italic}
 .sqlout{margin-top:6px}.sqlout pre.code{white-space:pre-wrap}
+.mcs .mcb{fill:var(--card);stroke:var(--ink);stroke-width:1.6}.mcs .mcg{fill:var(--grid);stroke:var(--muted);stroke-width:1.2}.mcs .mcl{stroke:var(--ink);stroke-width:1.6;fill:none}.mcs .mcd{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3;fill:none}
+.mcs .mcp{fill:var(--curve)}.mcs .mct{fill:var(--ink);font:600 12px Figtree,sans-serif}.mcs .mct.sm{font:500 10.5px Figtree,sans-serif;fill:var(--muted)}.mcs .mct.fl{font:800 13px Figtree,sans-serif;fill:var(--bad)}
+.mcs .mcf{stroke:var(--bad);stroke-width:2.6}.mcs .mcfF{stroke:var(--curve);stroke-width:2.6}.mcs .mcah{fill:var(--bad)}.mcs .mcahF{fill:var(--curve)}.mcs .mcpan{fill:none;stroke:var(--line)}
+.kinw svg{touch-action:none}.kinw [data-k]{cursor:grab}.dclw .plfig{margin-bottom:.4em}.dcll{display:grid;gap:8px}
 .jbar{display:flex;gap:6px;flex-wrap:wrap;margin:.3em 0 .5em}.jm{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;font:700 .8rem ui-monospace,Menlo,monospace;cursor:pointer}.jm.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .jtabs{display:flex;gap:8px;flex-wrap:wrap}.jtabs>.tbl{flex:1 1 140px}.jtabs caption,.jres caption{font:800 .85rem Figtree,sans-serif;text-align:left;padding:2px 0}
 tr.jok td{background:var(--ok-bg)}tr.jno td{opacity:.4}tr.jnul td{background:var(--bad-bg)}
@@ -3125,6 +3129,115 @@ LW.unit=(b,o)=>{const fig=el('div','plfig'),rg=el('input','plrg'),ro=el('div','p
   rg.oninput=draw;draw()};
 function radTex(d){if(!d)return '0';const g=(a,b)=>b?g(b,a%b):a;const k=g(d,180);const n=d/k,m=180/k;return (n===1?'':n)+'\\pi'+(m===1?'':'/'+m)}
 
+/* ================= MECÁNICA: ESCENAS, DCL Y SIMULADORES (g = 10 m/s²) ================= */
+const G0=10,D2R=Math.PI/180;
+/* sceneSVG(s, flechas): s.type = plano | mesa | colgado | pendulo | rueda | apilado | dosplanos | andamio | rizo | loma | peralte. Devuelve {svg, c:[cx,cy], dir:{nombre:[dx,dy]}} */
+function sceneSVG(s,arrows){const W=320,H=s.h||220;let o='';const dir={abajo:[0,1],arriba:[0,-1],der:[1,0],izq:[-1,0]};let c=[160,110];const T=s.ang!=null?s.ang*D2R:0;
+  const blk=(x,y,w,h,rot,lab)=>'<g transform="translate('+x+' '+y+') rotate('+(-rot)+')"><rect class="mcb" x="'+(-w/2)+'" y="'+(-h/2)+'" width="'+w+'" height="'+h+'" rx="3"/>'+(lab?'<text class="mct" x="0" y="5" text-anchor="middle">'+lab+'</text>':'')+'</g>';
+  if(s.type==='plano'){const x0=30,y0=190,L=270;const x1=x0+L*Math.cos(T),y1=y0-L*Math.sin(T);o+='<polygon class="mcg" points="'+x0+','+y0+' '+x1+','+y0+' '+x1+','+y1+'"/>';
+    o+='<path class="mcl" d="M'+(x0+40)+' '+y0+'A40 40 0 0 0 '+(x0+40*Math.cos(T))+' '+(y0-40*Math.sin(T))+'"/><text class="mct sm" x="'+(x0+48)+'" y="'+(y0-6)+'">'+s.ang+'°</text>';
+    const d=150,bx=x0+d*Math.cos(T),by=y0-d*Math.sin(T),hh=34;c=[bx-hh/2*Math.sin(T),by-hh/2*Math.cos(T)];o+=blk(c[0],c[1],50,hh,s.ang,s.lab||'m');
+    dir.sube=[Math.cos(T),-Math.sin(T)];dir.baja=[-Math.cos(T),Math.sin(T)];dir.perp=[-Math.sin(T),-Math.cos(T)];dir.perpin=[Math.sin(T),Math.cos(T)]}
+  else if(s.type==='mesa'||s.type==='rueda'){o+='<rect class="mcg" x="10" y="160" width="300" height="12"/>';if(s.type==='mesa'){c=[150,138];o+=blk(150,138,64,44,0,s.lab||'m')}
+    else{c=[150,115];o+='<circle class="mcb" cx="150" cy="115" r="45"/><circle class="mcb" cx="150" cy="115" r="18"/><line class="mcl" x1="150" y1="70" x2="250" y2="70"/><text class="mct sm" x="252" y="66">cuerda</text>'}
+    if(s.pulley){o+='<circle class="mcb" cx="296" cy="148" r="12"/><line class="mcl" x1="182" y1="138" x2="296" y2="138"/>'}}
+  else if(s.type==='colgado'){o+='<rect class="mcg" x="100" y="8" width="120" height="10"/><line class="mcl" x1="160" y1="18" x2="160" y2="96"/>';c=[160,120];o+=blk(160,120,50,44,0,s.lab||'m')}
+  else if(s.type==='pendulo'){const a=(s.ang||37)*D2R,L=110;o+='<rect class="mcg" x="150" y="8" width="120" height="10"/><text class="mct sm" x="262" y="34">auto →</text>';const px=210,py=18,bx=px-L*Math.sin(a),by=py+L*Math.cos(a);
+    o+='<line class="mcl" x1="'+px+'" y1="'+py+'" x2="'+bx+'" y2="'+by+'"/><line class="mcd" x1="'+px+'" y1="'+py+'" x2="'+px+'" y2="'+(py+L)+'"/>';c=[bx,by+12];o+='<circle class="mcb" cx="'+c[0]+'" cy="'+c[1]+'" r="14"/>';dir.cuerda=[Math.sin(a),-Math.cos(a)]}
+  else if(s.type==='apilado'){const L=s.labs||['A','B','C','D'];o+='<rect class="mcg" x="10" y="200" width="300" height="10"/>';L.forEach((l,i)=>{const y=200-(L.length-i)*38+19;o+=blk(160,y,150-i*0+(i*14),36,0,l+(s.ms?' ('+s.ms[i]+' kg)':''))});
+    (s.fs||[]).forEach(f=>{const i=L.indexOf(f.on),y=200-(L.length-i)*38+19,w=150+i*14;const x=f.d>0?160+w/2:160-w/2;o+=mcArrow(x,y,f.d*48,0,'mcfF')+'<text class="mct fl" style="fill:var(--curve)" x="'+(x+f.d*24)+'" y="'+(y-9)+'" text-anchor="middle">'+escX(f.l)+'</text>'})}
+  else if(s.type==='dosplanos'){const a1=s.a1*D2R,a2=s.a2*D2R,Hh=95,d1=Hh/Math.tan(a1),d2=Hh/Math.tan(a2),tx=Math.max(20+d1,Math.min(300-d2,160+(d1-d2)/2)),top=[tx,50],yb=top[1]+Hh;const p1=[tx-d1,yb],p2=[tx+d2,yb];
+    o+='<polygon class="mcg" points="'+p1[0]+','+yb+' '+top[0]+','+top[1]+' '+p2[0]+','+yb+'"/><circle class="mcb" cx="'+top[0]+'" cy="'+(top[1]-9)+'" r="9"/>';
+    const L1=Hh/Math.sin(a1),L2=Hh/Math.sin(a2),b1=[tx-0.55*L1*Math.cos(a1),top[1]+0.55*L1*Math.sin(a1)],b2=[tx+0.5*L2*Math.cos(a2),top[1]+0.5*L2*Math.sin(a2)];
+    const c1=[b1[0]-14*Math.sin(a1),b1[1]-14*Math.cos(a1)],c2=[b2[0]+14*Math.sin(a2),b2[1]-14*Math.cos(a2)];
+    o+='<line class="mcl" x1="'+c1[0]+'" y1="'+c1[1]+'" x2="'+(tx-9*Math.sin(a1))+'" y2="'+(top[1]-9-9*Math.cos(a1))+'"/><line class="mcl" x1="'+c2[0]+'" y1="'+c2[1]+'" x2="'+(tx+9*Math.sin(a2))+'" y2="'+(top[1]-9-9*Math.cos(a2))+'"/>';
+    o+=blk(c1[0],c1[1],44,26,s.a1,s.l1||'10 kg')+blk(c2[0],c2[1],40,26,-s.a2,s.l2||'8 kg');
+    o+='<text class="mct sm" x="'+(p1[0]+42)+'" y="'+(yb-6)+'">'+s.a1+'°</text><text class="mct sm" x="'+(p2[0]-30)+'" y="'+(yb-6)+'" text-anchor="end">'+s.a2+'°</text>'}
+  else if(s.type==='andamio'){o+='<rect class="mcb" x="20" y="96" width="280" height="12"/><polygon class="mcg" points="88,108 76,140 100,140"/><polygon class="mcg" points="232,108 220,140 244,140"/><rect class="mcg" x="10" y="140" width="300" height="8"/>';
+    o+='<text class="mct" x="88" y="160" text-anchor="middle">B</text><text class="mct" x="232" y="160" text-anchor="middle">D</text><circle class="mcb" cx="'+(s.px||60)+'" cy="66" r="8"/><line class="mcl" x1="'+(s.px||60)+'" y1="74" x2="'+(s.px||60)+'" y2="96"/><text class="mct sm" x="'+((s.px||60)-14)+'" y="58">pintor</text>'+
+      '<text class="mct sm" x="54" y="124" text-anchor="middle">2,5 m</text><text class="mct sm" x="160" y="124" text-anchor="middle">6 m</text><text class="mct sm" x="266" y="124" text-anchor="middle">2,5 m</text>'}
+  else if(s.type==='rizo'){const cx=160,cy=110,R=80;o+='<circle class="mcl" fill="none" cx="'+cx+'" cy="'+cy+'" r="'+R+'" stroke-dasharray="6 4"/><circle class="mcp" cx="'+cx+'" cy="'+(cy-R)+'" r="9"/><circle class="mcp" cx="'+cx+'" cy="'+(cy+R)+'" r="9"/><text class="mct sm" x="'+(cx+16)+'" y="'+(cy-R-8)+'">arriba</text><text class="mct sm" x="'+(cx+16)+'" y="'+(cy+R+18)+'">abajo</text><circle class="mcd" cx="'+cx+'" cy="'+cy+'" r="2.5"/>';c=[cx,cy-R]}
+  else if(s.type==='loma'){const R=260,yt=105,yc=yt+R,ye=yc-Math.sqrt(R*R-150*150);o+='<path class="mcg" d="M10 205L10 '+ye.toFixed(1)+'A'+R+' '+R+' 0 0 1 310 '+ye.toFixed(1)+'L310 205Z"/><line class="mcd" x1="160" y1="'+yt+'" x2="160" y2="205"/><text class="mct sm" x="166" y="200">hacia el centro ↓</text>';c=[160,yt-14];o+=blk(160,yt-14,60,26,0,'auto')}
+  else if(s.type==='peralte'){const b=(s.ang||20)*D2R;o+='<polygon class="mcg" points="40,180 280,180 280,'+(180-240*Math.tan(b))+'"/>';c=[170,180-130*Math.tan(b)-16];o+=blk(c[0],c[1],56,28,s.ang||20,'auto')+'<text class="mct sm" x="250" y="174" text-anchor="end">'+(s.ang||'β')+(s.ang?'°':'')+'</text><text class="mct sm" x="20" y="20">centro de la curva ←</text>';
+    dir.perp=[-Math.sin(b),-Math.cos(b)];dir.sube=[Math.cos(b),-Math.sin(b)];dir.baja=[-Math.cos(b),Math.sin(b)]}
+  (arrows||[]).forEach(a=>{const d=dir[a.d]||[0,0];o+=mcArrow(c[0],c[1],d[0]*(a.len||62),d[1]*(a.len||62),'mcf'+(a.cl||''),a.l)});
+  return{svg:'<svg class="pls mcs" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mca" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mcah"/></marker><marker id="mcaF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mcahF"/></marker></defs>'+o+'</svg>',c,dir}}
+function mcArrow(x,y,dx,dy,cl,l){let o='<line class="'+cl+'" x1="'+x+'" y1="'+y+'" x2="'+(x+dx)+'" y2="'+(y+dy)+'" marker-end="url(#mca'+(cl==='mcfF'?'F':'')+')"/>';if(l){const n=Math.hypot(dx,dy)||1;o+='<text class="mct fl" x="'+(x+dx*1.12+(-dy/n)*8)+'" y="'+(y+dy*1.12+(dx/n)*8+4)+'" text-anchor="middle">'+escX(l)+'</text>'}return o}
+LW.scene=(b,o)=>{b.innerHTML='<div class="chfig">'+sceneSVG(o,o.arrows).svg+'</div>'};
+/* dcl: arma el diagrama. ch.scene, ch.forces=[{k:'P',n:'Peso',dirs:['abajo'],a:'abajo'|null}] (a null = no actúa) */
+const DLAB={abajo:'↓ abajo',arriba:'↑ arriba',der:'→ derecha',izq:'← izquierda',sube:'↗ sube por el plano',baja:'↙ baja por el plano',perp:'⟂ hacia afuera de la superficie',perpin:'⟂ hacia la superficie',cuerda:'a lo largo de la cuerda'};
+IW.dcl=(ch,o)=>{const w=el('div','dclw');const fig=el('div','plfig'),list=el('div','dcll');w.append(fig,list);const st={};let lk=false,touched=false;
+  const draw=()=>{const ar=ch.forces.filter(f=>st[f.k]).map(f=>({d:st[f.k],l:f.k,cl:f.cls||''}));fig.innerHTML=sceneSVG(ch.scene,ar).svg};
+  const rows=ch.forces.map(f=>{const r=el('div','crow');r.append(el('div','cx','<b>'+f.k+'</b> · '+f.n));const seg=el('div','cseg');const opts=[['', 'No actúa'],...f.dirs.map(d=>[d,DLAB[d]||d])];
+    const bs=opts.map(([d,l])=>{const b=el('button','cb'+(d===''?' on':''),l);b.type='button';b.onclick=()=>{if(lk)return;st[f.k]=d||null;touched=true;bs.forEach(x=>x.classList.toggle('on',x===b));r.classList.remove('good','bad','rev');draw();o.on&&o.on()};seg.append(b);return b});
+    r.append(seg);list.append(r);return{f,r,bs}});
+  draw();
+  return{el:w,note:'Para cada fuerza elige si actúa y hacia dónde. Las flechas aparecen en el dibujo.',need:'Elige al menos una fuerza antes de comprobar.',okMsg:'¡DCL correcto!',
+   filled:()=>touched,
+   grade(){const bad=rows.filter(x=>(st[x.f.k]||null)!==(x.f.a||null));const ex=bad.filter(x=>x.f.e).slice(0,3).map(x=>'<br>• '+x.f.e).join('');return{f:bad.length?0:1,msg:bad.length?(bad.length===1?'Una fuerza no está bien (en rojo).':bad.length+' fuerzas no están bien (en rojo).')+ex:''}},
+   mark(){rows.forEach(x=>{const k=(st[x.f.k]||null)===(x.f.a||null);x.r.classList.toggle('good',k);x.r.classList.toggle('bad',!k)})},
+   reveal(){rows.forEach(x=>{st[x.f.k]=x.f.a||null;const want=x.f.a||'';x.bs.forEach((b,i)=>b.classList.toggle('on',(i===0?'':x.f.dirs[i-1])===want));x.r.classList.remove('bad');x.r.classList.add('good')});draw()},
+   lock(){lk=true;rows.forEach(x=>x.bs.forEach(b=>b.disabled=true))}}};
+/* Simuladores */
+function mkSliders(box,defs,P,cb){defs.forEach(([n,lab,mi,ma,st,u])=>{const r=el('label','cnr');const i=el('input','plrg');i.type='range';i.min=mi;i.max=ma;i.step=st;i.value=P[n];const s=el('b',null,lab+' = '+fmtV(P[n])+(u||''));i.oninput=()=>{P[n]=+i.value;s.textContent=lab+' = '+fmtV(P[n])+(u||'');cb()};r.append(s,i);box.append(r)})}
+LW.plano=(b,o)=>{const fig=el('div','plfig'),sl=el('div','cnsl'),ro=el('div','plro');b.append(fig,sl,ro);const P={ang:o.ang||25,ms:o.ms||0.5,mk:o.mk||0.3,m:o.m||2};
+  const draw=()=>{const t=P.ang*D2R,mg=P.m*G0,par=mg*Math.sin(t),N=mg*Math.cos(t),fmax=P.ms*N,slides=par>fmax+1e-9;const f=slides?P.mk*N:par,a=slides?(par-P.mk*N)/P.m:0;const k=55/Math.max(mg,1);
+    fig.innerHTML=sceneSVG({type:'plano',ang:P.ang,lab:P.m+' kg'},[{d:'abajo',l:'mg',len:mg*k},{d:'perp',l:'N',len:N*k},{d:'sube',l:'f',len:Math.max(8,f*k),cl:'F'}]).svg;
+    ro.innerHTML='mg·sen θ = <b>'+fmtV(par)+' N</b> · N = mg·cos θ = <b>'+fmtV(N)+' N</b> · fricción máx. estática μs·N = <b>'+fmtV(fmax)+' N</b><br>'+(slides?'<b style="color:var(--bad)">Desliza</b>: fricción cinética μk·N = '+fmtV(f)+' N → a = g(sen θ − μk cos θ) = <b>'+fmtV(a)+' m/s²</b>':'<b class="opok">En reposo</b>: la fricción estática vale '+fmtV(f)+' N (igual a mg·sen θ, no a μs·N)')+'<br>Ángulo límite: tan θ = μs → θ = <b>'+fmtV(Math.atan(P.ms)/D2R)+'°</b>'};
+  mkSliders(sl,[['ang','θ',0,60,1,'°'],['ms','μs',0,1,0.05],['mk','μk',0,1,0.05],['m','m',1,10,1,' kg']],P,draw);draw()};
+LW.atwood=(b,o)=>{const fig=el('div','plfig'),bar=el('div','jbar'),sl=el('div','cnsl'),ro=el('div','plro');b.append(bar,fig,sl,ro);let mode=o.mode||'atw';const P={m1:3,m2:1,M:0,mu:0.2};
+  [['atw','Atwood (dos colgando)'],['mesa','Mesa + colgante']].forEach(([k,l])=>{const x=el('button','jm'+(k===mode?' on':''),l);x.type='button';x.onclick=()=>{mode=k;bar.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));draw()};bar.append(x)});
+  const draw=()=>{const g=G0,{m1,m2,M,mu}=P,Ie=M/2;let a,T1,T2,s='';
+    if(mode==='atw'){a=(m1-m2)*g/(m1+m2+Ie);T1=m1*(g-a);T2=m2*(g+a);
+      s='<svg class="pls mcs" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg"><rect class="mcg" x="100" y="8" width="120" height="8"/><line class="mcl" x1="160" y1="16" x2="160" y2="40"/><circle class="mcb" cx="160" cy="54" r="'+(14+M*2)+'"/>'+
+        '<line class="mcl" x1="'+(146-M*2)+'" y1="54" x2="'+(146-M*2)+'" y2="140"/><line class="mcl" x1="'+(174+M*2)+'" y1="54" x2="'+(174+M*2)+'" y2="110"/>'+
+        '<rect class="mcb" x="'+(122-M*2)+'" y="140" width="48" height="'+(24+m1*4)+'"/><text class="mct" x="'+(146-M*2)+'" y="'+(158+m1*2)+'" text-anchor="middle">m₁</text><rect class="mcb" x="'+(150+M*2)+'" y="110" width="48" height="'+(24+m2*4)+'"/><text class="mct" x="'+(174+M*2)+'" y="'+(128+m2*2)+'" text-anchor="middle">m₂</text>'+
+        '<text class="mct sm" x="'+(140-M*2)+'" y="110" text-anchor="end">T₁</text><text class="mct sm" x="'+(180+M*2)+'" y="90">T₂</text></svg>'}
+    else{a=(m2*g-mu*m1*g)/(m1+m2+Ie);if(a<0)a=0;T2=m2*(g-a);T1=a>0?mu*m1*g+m1*a:m2*g;
+      s='<svg class="pls mcs" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg"><rect class="mcg" x="10" y="90" width="250" height="12"/><rect class="mcg" x="248" y="90" width="12" height="120"/><circle class="mcb" cx="268" cy="84" r="'+(10+M*2)+'"/>'+
+        '<rect class="mcb" x="110" y="'+(50-m1*3)+'" width="60" height="'+(40+m1*3)+'"/><text class="mct" x="140" y="76" text-anchor="middle">m₁</text><line class="mcl" x1="170" y1="70" x2="268" y2="'+(74-M*2)+'"/><line class="mcl" x1="'+(278+M*2)+'" y1="84" x2="'+(278+M*2)+'" y2="140"/>'+
+        '<rect class="mcb" x="'+(256+M*2)+'" y="140" width="44" height="'+(24+m2*4)+'"/><text class="mct" x="'+(278+M*2)+'" y="'+(158+m2*2)+'" text-anchor="middle">m₂</text><text class="mct sm" x="20" y="120">μk = '+fmtV(mu)+'</text></svg>'}
+    fig.innerHTML=s;ro.innerHTML='a = <b>'+fmtV(Math.abs(a))+' m/s²</b>'+(a===0&&mode==='mesa'?' (la fricción alcanza para que no se mueva)':'')+' · T₁ = <b>'+fmtV(T1)+' N</b> · T₂ = <b>'+fmtV(T2)+' N</b><br>'+(M>0?'Con polea de masa M las tensiones son <b>distintas</b>: su diferencia hace girar la polea (τ = (T₁ − T₂)·R = Iα).':'Polea ideal (M = 0): T₁ = T₂.')};
+  mkSliders(sl,[['m1','m₁',1,10,1,' kg'],['m2','m₂',1,10,1,' kg'],['M','M polea',0,6,1,' kg'],['mu','μk (mesa)',0,0.8,0.05]],P,draw);draw()};
+LW.balancin=(b,o)=>{const fig=el('div','plfig'),sl=el('div','cnsl'),ro=el('div','plro');b.append(fig,sl,ro);const P={m1:o.m1||40,x1:o.x1||-1.5,m2:o.m2||30,x2:o.x2||2,mb:o.mb||10,piv:o.piv||0};const L=6;
+  const draw=()=>{const g=G0;const tq=[[P.m1*g,P.x1-P.piv],[P.m2*g,P.x2-P.piv],[P.mb*g,0-P.piv]];const net=tq.reduce((s,[F,d])=>s-F*d,0);const ang=Math.max(-12,Math.min(12,-net/40));
+    const X=x=>160+x*45;let s='<svg class="pls mcs" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg"><polygon class="mcg" points="'+X(P.piv)+',120 '+(X(P.piv)-14)+',150 '+(X(P.piv)+14)+',150"/><rect class="mcg" x="10" y="150" width="300" height="8"/>'+
+      '<g transform="rotate('+(-ang)+' '+X(P.piv)+' 120)"><rect class="mcb" x="'+X(-L/2)+'" y="112" width="'+(L*45)+'" height="8"/><rect class="mcb" x="'+(X(P.x1)-16)+'" y="'+(112-14-P.m1/5)+'" width="32" height="'+(14+P.m1/5)+'"/><text class="mct sm" x="'+X(P.x1)+'" y="100" text-anchor="middle">'+P.m1+' kg</text>'+
+      '<rect class="mcb" x="'+(X(P.x2)-16)+'" y="'+(112-14-P.m2/5)+'" width="32" height="'+(14+P.m2/5)+'"/><text class="mct sm" x="'+X(P.x2)+'" y="100" text-anchor="middle">'+P.m2+' kg</text><circle class="mcd" cx="'+X(0)+'" cy="116" r="3"/></g></svg>';
+    fig.innerHTML=s;ro.innerHTML='Torques respecto al apoyo (antihorario +): '+tq.map(([F,d],i)=>['m₁','m₂','barra'][i]+': '+fmtV(-F*d)+' N·m').join(' · ')+'<br>Σ τ = <b>'+fmtV(net)+' N·m</b> → '+(Math.abs(net)<0.5?'<b class="opok">en equilibrio</b>':net>0?'gira en sentido antihorario':'gira en sentido horario')};
+  mkSliders(sl,[['m1','m₁',0,80,5,' kg'],['x1','x₁',-3,3,0.25,' m'],['m2','m₂',0,80,5,' kg'],['x2','x₂',-3,3,0.25,' m'],['mb','barra',0,40,5,' kg'],['piv','apoyo',-2.5,2.5,0.25,' m']],P,draw);draw()};
+LW.rodar=(b,o)=>{const fig=el('div','plfig'),btn=el('button','pbtnx','▶ Soltar en la rampa'),ro=el('div','plro');btn.type='button';b.append(fig,btn,ro);const th=(o.ang||20)*D2R,Lr=5;
+  const K=[['Bloque sin fricción',0,'#9AA8C0'],['Esfera sólida',0.4,'#4C78A8'],['Disco (cilindro)',0.5,'#F58518'],['Aro',1,'#E45756']];let t=0,tm=null;
+  const draw=()=>{let s='<svg class="pls mcs" viewBox="0 0 320 '+(40+K.length*44)+'" xmlns="http://www.w3.org/2000/svg">';K.forEach(([n,c,col],i)=>{const a=G0*Math.sin(th)/(1+c),d=Math.min(Lr,0.5*a*t*t),y=30+i*44,x=20+250*d/Lr;
+      s+='<line class="mcl" x1="20" y1="'+(y+12)+'" x2="276" y2="'+(y+12)+'"/><line class="mcd" x1="276" y1="'+(y-6)+'" x2="276" y2="'+(y+14)+'"/>'+(c?'<circle cx="'+x+'" cy="'+y+'" r="11" fill="'+col+'"/>':'<rect x="'+(x-11)+'" y="'+(y-11)+'" width="22" height="22" fill="'+col+'"/>')+'<text class="mct sm" x="22" y="'+(y-14)+'">'+n+' (I = '+(c?fmtV(c)+'·mR²':'0')+')</text>'});
+    fig.innerHTML=s+'</svg>';ro.innerHTML=K.map(([n,c])=>{const a=G0*Math.sin(th)/(1+c);return n+': a = '+fmtV(a)+' m/s², llega en '+fmtV(Math.sqrt(2*Lr/a))+' s'}).join('<br>')+'<br>Cuanto mayor es I/(mR²), más energía se va a la rotación y más lento baja.'};
+  btn.onclick=()=>{clearInterval(tm);t=0;tm=setInterval(()=>{t+=0.04;draw();if(t>3.2)clearInterval(tm)},40)};draw()};
+LW.circ=(b,o)=>{const fig=el('div','plfig'),bar=el('div','jbar'),sl=el('div','cnsl'),ro=el('div','plro');b.append(bar,fig,sl,ro);let mode=o.mode||'rizo';const P={v:20,R:20,m:80,mu:0.8,ang:20};
+  [['rizo','Rizo vertical'],['loma','Loma'],['peralte','Curva con peralte']].forEach(([k,l])=>{const x=el('button','jm'+(k===mode?' on':''),l);x.type='button';x.onclick=()=>{mode=k;bar.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));draw()};bar.append(x)});
+  const draw=()=>{const {v,R,m,mu,ang}=P,g=G0,ac=v*v/R;let t='a_c = v²/R = <b>'+fmtV(ac)+' m/s²</b><br>';
+    if(mode==='rizo'){fig.innerHTML=sceneSVG({type:'rizo'}).svg;const Nt=m*ac-m*g,Nb=m*ac+m*g;t+='Arriba: N + mg = m v²/R → N = <b>'+fmtV(Nt)+' N</b>'+(Nt<0?' <b style="color:var(--bad)">(negativa: se despega; necesita v ≥ √(gR) = '+fmtV(Math.sqrt(g*R))+' m/s)</b>':'')+'<br>Abajo: N − mg = m v²/R → N = <b>'+fmtV(Nb)+' N</b>'}
+    else if(mode==='loma'){fig.innerHTML=sceneSVG({type:'loma'},[{d:'abajo',l:'mg'},{d:'arriba',l:'N',len:Math.max(6,62*(1-ac/g))}]).svg;const N=m*(g-ac);t+='En la cima: mg − N = m v²/R → N = <b>'+fmtV(Math.max(0,N))+' N</b>'+(N<=0?' <b style="color:var(--bad)">(pierde contacto)</b>':'')+'<br>Pierde contacto cuando v = √(gR) = <b>'+fmtV(Math.sqrt(g*R))+' m/s</b>'}
+    else{const b=ang*D2R;fig.innerHTML=sceneSVG({type:'peralte',ang},[{d:'abajo',l:'mg'},{d:'perp',l:'N'}]).svg;const vid=Math.sqrt(g*R*Math.tan(b)),vmax=Math.sqrt(g*R*(Math.sin(b)+mu*Math.cos(b))/(Math.cos(b)-mu*Math.sin(b)));
+      t+='Rapidez ideal sin fricción: v = √(gR·tan β) = <b>'+fmtV(vid)+' m/s</b><br>Rapidez máxima con μs = '+fmtV(mu)+': <b>'+(Math.cos(b)-mu*Math.sin(b)>0?fmtV(vmax)+' m/s':'sin límite')+'</b> · sin peralte (β = 0): √(μs g R) = '+fmtV(Math.sqrt(mu*g*R))+' m/s'}
+    ro.innerHTML=t};
+  mkSliders(sl,[['v','v',1,60,1,' m/s'],['R','R',5,100,5,' m'],['m','m',10,1000,10,' kg'],['mu','μs',0,1.2,0.05],['ang','β',0,45,1,'°']],P,draw);draw()};
+/* Gráficas de cinemática enlazadas: arrastras los puntos de v(t) */
+LW.kin=(b,o)=>{const fig=el('div','plfig kinw'),ro=el('div','plro');b.append(fig,el('p','note','Arrastra los puntos de la gráfica v–t (arriba): x(t) y a(t) se recalculan solas.'),ro);const ts=o.ts||[0,2,4,6,8],vs=(o.vs||[0,4,4,-2,-2]).slice();
+  const W=320,H=390,L=34,R=10;const X=t=>L+(W-L-R)*t/ts[ts.length-1];const panels=[[10,120,'v (m/s)',-8,8],[140,250,'x (m)',null,null],[270,370,'a (m/s²)',-6,6]];
+  const draw=()=>{const xs=[0];for(let i=1;i<ts.length;i++)xs.push(xs[i-1]+(vs[i]+vs[i-1])/2*(ts[i]-ts[i-1]));const as=ts.slice(1).map((t,i)=>(vs[i+1]-vs[i])/(t-ts[i]));
+    const xr=[Math.min(0,...xs)-2,Math.max(...xs)+2];let s='<svg class="pls mcs" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">';
+    panels.forEach(([y0,y1,lab,lo,hi],pi)=>{if(pi===1){lo=xr[0];hi=xr[1]}const Y=v=>y1-(y1-y0)*(v-lo)/(hi-lo);s+='<rect class="mcpan" x="'+L+'" y="'+y0+'" width="'+(W-L-R)+'" height="'+(y1-y0)+'"/><line class="pla" x1="'+L+'" y1="'+Y(0)+'" x2="'+(W-R)+'" y2="'+Y(0)+'"/><text class="plk" x="'+(L+4)+'" y="'+(y0+12)+'">'+lab+'</text>';
+      ts.forEach(t=>s+='<text class="plk" x="'+X(t)+'" y="'+(y1+11)+'" text-anchor="middle">'+t+'</text>');
+      if(pi===0){s+='<polyline class="plf f" points="'+ts.map((t,i)=>X(t)+','+Y(vs[i])).join(' ')+'"/>';ts.forEach((t,i)=>s+='<circle class="vhd f" data-k="'+i+'" data-y0="'+y0+'" data-y1="'+y1+'" cx="'+X(t)+'" cy="'+Y(vs[i])+'" r="10"/>')}
+      else if(pi===1){let d='';for(let i=0;i<ts.length-1;i++)for(let k=0;k<=10;k++){const tt=ts[i]+(ts[i+1]-ts[i])*k/10,dt=tt-ts[i],xx=xs[i]+vs[i]*dt+0.5*as[i]*dt*dt;d+=(d?'L':'M')+X(tt).toFixed(1)+' '+Y(xx).toFixed(1)}s+='<path class="plf d1" d="'+d+'"/>'}
+      else as.forEach((a,i)=>s+='<line class="plf d2" x1="'+X(ts[i])+'" y1="'+Y(a)+'" x2="'+X(ts[i+1])+'" y2="'+Y(a)+'"/>')});
+    fig.innerHTML=s+'</svg>';
+    ro.innerHTML='Desplazamiento total = área bajo v–t = <b>'+fmtV(xs[xs.length-1])+' m</b> · aceleraciones por tramo (pendientes): '+as.map(a=>fmtV(a)).join(', ')+' m/s²'};
+  let cur=null;
+  fig.addEventListener('pointerdown',ev=>{const h=ev.target.closest('[data-k]');if(!h)return;cur=+h.dataset.k;try{fig.setPointerCapture(ev.pointerId)}catch(e){}ev.preventDefault()});
+  fig.addEventListener('pointermove',ev=>{if(cur==null)return;const sv=fig.querySelector('svg');const [,py]=svgPt(sv,ev,W,H);const [y0,y1,,lo,hi]=panels[0];let v=lo+(y1-py)*(hi-lo)/(y1-y0);v=Math.max(lo,Math.min(hi,Math.round(v)));if(v!==vs[cur]){vs[cur]=v;draw()}});
+  fig.addEventListener('pointerup',()=>{cur=null});fig.addEventListener('pointercancel',()=>{cur=null});
+  draw()};
 LW.graph=(b,o)=>{b.innerHTML='<div class="chfig">'+plotSVG(o)+'</div>'};
 
 const isIW=ch=>!!(ch&&ch.t&&IW[ch.t]);
