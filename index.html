@@ -714,6 +714,14 @@ details.blteo summary{cursor:pointer;font-weight:700;color:var(--teo)}
 }
 
 /* ===== Mis cursos / Otros cursos ===== */
+.aporte{margin:28px 0 8px;border:1.5px dashed currentColor;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 .95rem/1.45 Lora,Georgia,serif}
+.aporte p{margin:0;flex:1;min-width:14em}.aporte small{display:block;font-weight:400;opacity:.75}
+.apf{display:grid;gap:10px;margin-top:8px}.apf label{display:grid;gap:4px;font:800 .82rem Figtree}
+.apf select,.apf input[type=text],.apf textarea{border:1.5px solid var(--ink);border-radius:8px;padding:8px 10px;font:600 .95rem Figtree;background:var(--card);color:var(--ink);width:100%;box-sizing:border-box}
+.apf textarea{min-height:4.5em;resize:vertical}.apf .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.apf input[type=file]{font:600 .88rem Figtree;max-width:100%}
+.apf .chk{display:flex;gap:8px;align-items:flex-start;font:600 .85rem/1.4 Figtree}.apf .chk input{margin-top:3px}
+.apst{font:700 .88rem Figtree;margin:8px 0 0;min-height:1.2em}.apst.ok{color:var(--good,#2f8f4e)}.apst.bad{color:var(--bad)}
 .mishead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
 .mist{margin:0;font:600 1.5rem/1.1 Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1;color:#3B3B3B;letter-spacing:-.015em}
 .mist small{font:700 .95rem Lora,Georgia,serif;color:#454545;margin-left:6px}
@@ -1757,10 +1765,57 @@ function mkSort(grid){if(!window.Sortable)return;
     onEnd(){dragEnd=performance.now();const mine=document.querySelector('#menu .menu.mine');if(!mine)return;
       const sel=[...mine.querySelectorAll('.nbcell')].map(c=>c.dataset.k);
       if(sel.join()!==MIS.sel.join()){setMis(sel);hintDone()}setTimeout(renderMenu,0)}}))}
+const BUZON='https://script.google.com/macros/s/AKfycbxDDwrpRzMVAMoqvmyMfWF72TxPkhLmFDqIIhxStEdHuEClpvX7vd3pcOCbtQrpjF5K/exec';
+function aporteBox(){const b=el('div','aporte');b.append(el('p',null,'¿Tienes clases, guías o exámenes pasados?<small>Pásanos el material y lo convertimos en práctica para todos.</small>'));
+  const bt=el('button','statsbtn','📤 Aportar material');bt.onclick=aporteModal;b.append(bt);return b}
+function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar material'));
+  const u=FBA&&FBA.auth.currentUser;
+  if(!u){const g=el('div','acguest','<b>Inicia sesión para enviar material.</b><br>Así sabemos de quién viene y evitamos spam.');
+    if(FBA){const lb=el('div','mbtns');const li=el('button','pri','Iniciar sesión con Google');li.onclick=()=>{closeModal();FBA.login()};lb.append(li);g.append(lb)}
+    n.append(g);const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n);return}
+  n.append(el('p','sub','Clases, PPTs, guías, prácticas o exámenes de ciclos pasados (PDF o fotos). Lo revisamos y, si sirve, lo agregamos al curso o armamos uno nuevo.'));
+  const f=el('div','apf');
+  const lc=el('label',null,'Curso');const sc=document.createElement('select');
+  GROUPS.forEach(g=>{const o=document.createElement('option');o.value=g.name+(g.code?' ('+g.code+')':'');o.textContent=g.name;sc.append(o)});
+  const on=document.createElement('option');on.value='__nuevo';on.textContent='➕ Otro curso (nuevo)';sc.append(on);lc.append(sc);
+  const ln=el('label',null,'Nombre del curso nuevo');const inN=document.createElement('input');inN.type='text';inN.maxLength=80;inN.placeholder='Ej.: Física II (CC6202)';ln.append(inN);ln.hidden=true;
+  sc.onchange=()=>{ln.hidden=sc.value!=='__nuevo'};
+  const r2=el('div','row2');
+  const lw=el('label',null,'Semana');const sw=document.createElement('select');['—',...Array.from({length:16},(_,i)=>String(i+1))].forEach(v=>{const o=document.createElement('option');o.textContent=v;sw.append(o)});lw.append(sw);
+  const lt=el('label',null,'Tipo');const st=document.createElement('select');['Clase / PPT','Guía o práctica','Examen pasado','Solucionario','Otro'].forEach(v=>{const o=document.createElement('option');o.textContent=v;st.append(o)});lt.append(st);
+  r2.append(lw,lt);
+  const lf=el('label',null,'Archivos (hasta 10, máx. 15 MB c/u)');const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*';lf.append(fi);
+  const lnt=el('label',null,'Nota (opcional)');const ta=document.createElement('textarea');ta.maxLength=500;ta.placeholder='Ej.: parcial 2025-2, profe X, trae solucionario…';lnt.append(ta);
+  const ck=el('label','chk');const cb=document.createElement('input');cb.type='checkbox';ck.append(cb,el('span',null,'Confirmo que puedo compartir este material y que no es de una evaluación que aún se esté tomando.'));
+  f.append(lc,ln,r2,lf,lnt,ck);n.append(f);
+  const stx=el('p','apst');n.append(stx);
+  const bt=el('div','mbtns');const cl=el('button',null,'Cancelar');cl.onclick=closeModal;const go=el('button','pri','Enviar');bt.append(go,cl);n.append(bt);
+  const say=(t,c)=>{stx.textContent=t;stx.className='apst'+(c?' '+c:'')};
+  const mimeOf=fl=>fl.type||({pdf:'application/pdf',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp',heic:'image/heic'})[(fl.name.split('.').pop()||'').toLowerCase()]||'';
+  const ok=['application/pdf','image/jpeg','image/png','image/webp','image/heic'];
+  const b64=fl=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=()=>rej(r.error);r.readAsDataURL(fl)});
+  go.onclick=async()=>{const fs=[...fi.files];
+    if(sc.value==='__nuevo'&&!inN.value.trim())return say('Escribe el nombre del curso nuevo.','bad');
+    if(!fs.length)return say('Elige al menos un archivo.','bad');
+    if(fs.length>10)return say('Máximo 10 archivos por envío.','bad');
+    if(fs.some(x=>!ok.includes(mimeOf(x))))return say('Solo se aceptan PDF o fotos (JPG, PNG, WEBP, HEIC).','bad');
+    if(fs.some(x=>x.size>15*1048576))return say('Cada archivo debe pesar menos de 15 MB.','bad');
+    if(fs.reduce((a,x)=>a+x.size,0)>35*1048576)return say('En total no puede pasar de 35 MB. Envíalo en partes.','bad');
+    if(!cb.checked)return say('Marca la casilla de confirmación.','bad');
+    go.disabled=cl.disabled=true;say('Preparando archivos…');
+    try{const files=[];for(const x of fs)files.push({name:x.name,mime:mimeOf(x),data:await b64(x)});
+      say('Enviando… no cierres esta ventana.');
+      const body={curso:sc.value==='__nuevo'?'NUEVO: '+inN.value.trim():sc.value,semana:sw.value==='—'?'':sw.value,tipo:st.value,nota:ta.value.trim(),usuario:acctName()||'',email:u.email||'',uid:u.uid,files};
+      const r=await fetch(BUZON,{method:'POST',body:JSON.stringify(body)});const j=await r.json();
+      if(!j.ok)throw new Error(j.error||'error');
+      say('¡Listo! Recibimos '+j.n+' archivo'+(j.n>1?'s':'')+'. Gracias por aportar 🙌','ok');
+      bt.innerHTML='';const fin=el('button','pri','Cerrar');fin.onclick=closeModal;bt.append(fin)}
+    catch(e){console.error(e);go.disabled=cl.disabled=false;say('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.','bad')}};
+  openModal(n)}
 function hintDone(){S.set('ent-hint-drag',1)}
 function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(e){}});SORTS=[];m.innerHTML='';
   if(!MIS){const h=el('div','mishead');h.append(el('h2','mist','Todos los cursos'));const b=el('button','statsbtn','✓ Elegir mis cursos');b.onclick=()=>pickerModal();h.append(b);
-    const gr=el('div','menu');GROUPS.forEach(g=>gr.append(mkCell(g)));m.append(h,gr);bellUI();return}
+    const gr=el('div','menu');GROUPS.forEach(g=>gr.append(mkCell(g)));m.append(h,gr,aporteBox());bellUI();return}
   const rest=GROUPS.filter(g=>!MIS.sel.includes(g.key));
   const h=el('div','mishead');h.append(el('h2','mist','Mis cursos'));
   const eb=el('button','statsbtn',editMenu?'✓ Listo':'✏️ Editar');eb.onclick=()=>{editMenu=!editMenu;if(editMenu)hintDone();renderMenu()};h.append(eb);m.append(h);
@@ -1772,7 +1827,7 @@ function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(
   if(rest.length){const d=el('details','otros');d.open=otrosOpen||editMenu;d.ontoggle=()=>{if(!editMenu)otrosOpen=d.open};
     const sm=el('summary');sm.append(el('h2','mist','Otros cursos <small>'+rest.length+'</small>'));d.append(sm);
     const og=el('div','menu otrosg'+(editMenu?' editing':''));rest.forEach(g=>og.append(mkCell(g,'otros')));d.append(og);m.append(d);mkSort(og)}
-  mkSort(mine);bellUI()}
+  m.append(aporteBox());mkSort(mine);bellUI()}
 function pickerModal(kind,after){const n=el('div');const nuevo=kind==='ciclo';
   n.append(el('h2',null,nuevo?'Nuevo ciclo: ¿actualizas tus cursos?':'¿Qué cursos llevas este ciclo?'),
     el('p','sub','Aparecerán primero en «Mis cursos». El resto queda en «Otros cursos», siempre a mano. Puedes cambiarlo cuando quieras con «✏️ Editar».'));
