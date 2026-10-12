@@ -1,0 +1,7 @@
+// Configuración del Worker de Pullpy (Cloudflare lo despliega desde GitHub; carpeta raíz: pullpy)
+{
+  "name": "pullpy",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true
+}
