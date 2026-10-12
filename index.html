@@ -1844,7 +1844,7 @@ const NV_DIAS=15;
 const nvDay=f=>{const p=String(f).split('-').map(Number);return new Date(p[0],(p[1]||1)-1,p[2]||1).getTime()};
 const nvList=()=>{const lim=Date.now()-(NV_DIAS+1)*864e5;return NOVS.filter(n=>n&&n.id&&n.fecha&&nvDay(n.fecha)>=lim).sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha)))};
 const nvMine=n=>!MIS||MIS.sel.includes(n.curso);
-const nvCounts=n=>!NOTI.seen.includes(n.id)&&(n.tipo==='nuevo'||nvMine(n));
+const nvCounts=n=>!NOTI.seen.includes(n.id)&&(n.tipo==='nuevo'||n.tipo==='app'||nvMine(n));
 function notiSave(){NOTI.ts=Date.now();if(NOVS.length){const ids=new Set(NOVS.map(n=>n.id));NOTI.seen=NOTI.seen.filter(i=>ids.has(i));NOTI.open=NOTI.open.filter(i=>ids.has(i))}S.set('ent-noti',NOTI);push(0)}
 function notiMerge(r){if(!r||!Array.isArray(r.seen))return;if(!NOTI){NOTI={seen:[],open:[],ts:0}}
   NOTI.seen=[...new Set([...NOTI.seen,...r.seen])];NOTI.open=[...new Set([...NOTI.open,...(r.open||[])])];S.set('ent-noti',NOTI)}
@@ -1860,12 +1860,12 @@ function bellUI(){const b=$('bellbtn'),c=$('bellct');if(!b)return;const k=NOTI?n
 const nvAgo=f=>{const d=Math.round((new Date().setHours(0,0,0,0)-nvDay(f))/864e5);return d<=0?'Hoy':d===1?'Ayer':'Hace '+d+' días'};
 function bellModal(){const n=el('div');n.append(el('h2',null,'Novedades'));const L=nvList();
   if(!L.length)n.append(el('p','sub','No hay novedades en los últimos '+NV_DIAS+' días.'));
-  else{n.append(el('p','sub','Cursos nuevos y actualizaciones de los últimos '+NV_DIAS+' días. Toca una para ir al curso.'));
+  else{n.append(el('p','sub','Novedades de la app, cursos nuevos y actualizaciones de los últimos '+NV_DIAS+' días. Toca una para verla.'));
     const box=el('div','nvlist');const esc=t=>String(t||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
-    L.forEach(it=>{const g=gByKey(it.curso);const unread=NOTI&&!NOTI.seen.includes(it.id);const up=it.tipo!=='nuevo';
+    L.forEach(it=>{const app=it.tipo==='app';const g=app?null:gByKey(it.curso);const unread=NOTI&&!NOTI.seen.includes(it.id);const up=it.tipo!=='nuevo';
       const b=el('div','nvi'+(unread?' unread':''));b.tabIndex=0;b.setAttribute('role','button');
-      b.innerHTML='<div class="nvt"><span class="nvk'+(up?' upd':'')+'">'+(up?'Actualizado':'Nuevo')+'</span><span>'+esc(g?g.name:it.curso)+'</span><span>· '+nvAgo(it.fecha)+'</span>'+(MIS&&g&&!nvMine(it)?'<span>· en Otros cursos</span>':'')+'</div><div class="nvx">'+esc(it.texto)+'</div>';
-      const go=()=>{const id=it.bloque&&COURSES.some(c=>c.id===it.bloque&&!c.soon)?it.bloque:(g&&(g.list.find(c=>!c.soon)||{}).id);if(!id)return;closeModal();openCourse(id)};
+      b.innerHTML='<div class="nvt"><span class="nvk'+(up&&!app?' upd':'')+'">'+(app?'Novedad':up?'Actualizado':'Nuevo')+'</span><span>'+esc(app?'NotPull':g?g.name:it.curso)+'</span><span>· '+nvAgo(it.fecha)+'</span>'+(MIS&&g&&!nvMine(it)?'<span>· en Otros cursos</span>':'')+'</div><div class="nvx">'+esc(it.texto)+'</div>';
+      const go=()=>{if(app){closeModal();if(it.accion==='aportar')aporteModal();return}const id=it.bloque&&COURSES.some(c=>c.id===it.bloque&&!c.soon)?it.bloque:(g&&(g.list.find(c=>!c.soon)||{}).id);if(!id)return;closeModal();openCourse(id)};
       b.onclick=go;b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}};
       if(!up&&MIS&&g&&!nvMine(it)){const ad=el('button','nvadd','Agregar a Mis cursos');ad.onclick=e=>{e.stopPropagation();setMis(MIS.sel.concat(it.curso));ad.replaceWith(el('span','nvt','✓ Agregado a Mis cursos'));renderMenu()};b.append(ad)}
       box.append(b)});n.append(box)}
