@@ -89,7 +89,10 @@ export default {
       });
       j = await r.json();
     } catch { return res({ ok: false, error: 'ia' }, 502); }
-    if (!r.ok) return res({ ok: false, error: r.status === 429 ? 'ocupado' : 'ia' }, 502);
+    if (!r.ok) {
+      const det = ((j && j.error) || {});
+      return res({ ok: false, error: r.status === 429 ? 'ocupado' : 'ia', detalle: { status: r.status, estado: det.status, mensaje: String(det.message || '').slice(0, 300) } }, 502);
+    }
     const text = ((((j.candidates || [])[0] || {}).content || {}).parts || []).map(p => p.text || '').join('').trim();
     if (!text) return res({ ok: false, error: 'vacio' }, 502);
     return res({ ok: true, text, quedan });

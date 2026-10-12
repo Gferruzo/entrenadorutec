@@ -1177,7 +1177,7 @@ const pullpy={
   async ask(task,data){if(!this.on())throw new Error('off');const h={'Content-Type':'application/json'};const u=this.user();
     if(u){try{h.Authorization='Bearer '+await u.getIdToken()}catch(e){}}else if(PULLPY.needLogin)throw new Error('login');
     let r,j={};try{r=await fetch(PULLPY.url,{method:'POST',headers:h,body:JSON.stringify({task,data:data||{}})});j=await r.json()}catch(e){throw new Error('red')}
-    if(!r.ok||!j.ok)throw new Error(j.error||'ia');return j.text},
+    if(!r.ok||!j.ok){if(j.detalle)console.warn('Pullpy:',j.detalle);throw new Error(j.error||'ia')}return j.text},
   msg(c){return({login:'Inicia sesión para hablar conmigo 🐙',limite:'Ya usaste tus consultas de hoy. ¡Mañana seguimos!',ocupado:'Estoy con muchas consultas ahorita. Intenta en un minuto.',red:'No tengo conexión. Revisa tu internet e intenta de nuevo.'})[c]||'No pude responder ahora. Intenta de nuevo en un rato.'},
   md(t){const esc=x=>x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     return esc(t).split(/\n{2,}/).map(b=>{const L=b.split('\n');
