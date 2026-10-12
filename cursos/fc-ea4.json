@@ -12,7 +12,7 @@
    "teo": "<p>\\(f(x)=a\\sin(b(x-h))+k\\) o con coseno. <strong>Eje</strong> \\(k=\\frac{\\max+\\min}2\\); <strong>amplitud</strong> \\(|a|=\\frac{\\max-\\min}2\\); <strong>período</strong> \\(T=\\frac{2\\pi}{|b|}\\) (y al revés \\(b=\\frac{2\\pi}T\\)); <strong>desfase</strong> \\(h\\).</p><p>Para leer \\(h\\): con <strong>seno</strong>, \\(h\\) es donde la onda cruza el eje <em>subiendo</em>; con <strong>coseno</strong>, donde está en su <em>máximo</em>. Si \\(a\\lt0\\), la onda empieza al revés (bajando, o en el mínimo).</p><p>Entre un máximo y el mínimo siguiente pasa <strong>medio período</strong>. Si te dan la forma \\(A\\sin(Bx+C)+D\\), el desfase es \\(-\\frac CB\\). Trabaja en radianes.</p>",
    "form": [
     "\\(f(x)=a\\sin(b(x-h))+k\\)",
-    "\\(k=\\dfrac{\\max+\\min}2,\\ |a|=\\dfrac{\\max-\\min}2\\)",
+    "\\(k=\\dfrac{\\max+\\min}2\\), \\(|a|=\\dfrac{\\max-\\min}2\\)",
     "\\(T=\\dfrac{2\\pi}{|b|}\\iff b=\\dfrac{2\\pi}T\\)",
     "Máx → mín: \\(\\tfrac T2\\)",
     "Seno: cruza el eje subiendo en \\(h\\) · coseno: máximo en \\(h\\)"
@@ -22,16 +22,16 @@
      "id": "fs1",
      "lvl": 1,
      "title": "Leer parámetros",
-     "q": "<p>Para \\(f(x)=2\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+1\\):</p>",
+     "q": "<p>Para \\(f(x)\\) \\(=2\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+1\\):</p>",
      "checks": [
       {
-       "p": "Período",
-       "o": [
-        "\\(\\pi\\)",
-        "\\(2\\pi\\)",
-        "\\(4\\pi\\)",
-        "\\(\\tfrac\\pi2\\)",
-        "\\(\\tfrac\\pi4\\)"
+       "t": "expr",
+       "p": "Período (exacto)",
+       "f": [
+        {
+         "a": "π",
+         "v": []
+        }
        ]
       },
       {
@@ -60,22 +60,23 @@
        "param"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs2",
      "lvl": 1,
      "title": "Coseno desfasado",
-     "q": "<p>Para \\(g(x)=1{,}5\\cos\\left(\\tfrac\\pi2(x+0{,}5)\\right)-0{,}5\\):</p>",
+     "q": "<p>Para \\(g(x)\\) \\(=1{,}5\\cos\\left(\\tfrac\\pi2(x+0{,}5)\\right)-0{,}5\\):</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Período",
-       "o": [
-        "\\(4\\)",
-        "\\(\\tfrac\\pi2\\)",
-        "\\(2\\)",
-        "\\(4\\pi\\)",
-        "\\(1\\)"
+       "f": [
+        {
+         "l": "T",
+         "a": 4
+        }
        ]
       },
       {
@@ -104,7 +105,8 @@
        "param"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs3",
@@ -113,33 +115,33 @@
      "q": "<p>Tras un fármaco, la temperatura de una rata oscila: parte de 26 °C, sube a un máximo de 28,5 °C en \\(t=1{,}2\\) min, vuelve a 26 °C en \\(t=2{,}4\\) y baja a un mínimo de 23,5 °C en \\(t=3{,}6\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Eje",
-       "o": [
-        "\\(26\\)",
-        "\\(26{,}5\\)",
-        "\\(27\\)",
-        "\\(25\\)",
-        "\\(28{,}5\\)"
+       "f": [
+        {
+         "l": "k",
+         "a": 26
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Amplitud",
-       "o": [
-        "\\(2{,}5\\)",
-        "\\(5\\)",
-        "\\(2\\)",
-        "\\(1{,}25\\)",
-        "No se puede determinar"
+       "f": [
+        {
+         "l": "a",
+         "a": 2.5
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Período",
-       "o": [
-        "\\(4{,}8\\)",
-        "\\(2{,}4\\)",
-        "\\(3{,}6\\)",
-        "\\(1{,}2\\)",
-        "No se puede determinar"
+       "f": [
+        {
+         "l": "T",
+         "a": 4.8
+        }
        ]
       }
      ],
@@ -160,22 +162,76 @@
       [
        "param"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs4",
      "lvl": 2,
      "title": "Regla desde la gráfica",
-     "q": "<p>Halla la regla \\(f(x)=a\\sin(b(x-h))+k\\) de la gráfica.</p>",
+     "q": "<p>Ajusta la regla \\(f(x)\\) \\(=a\\,\\text{sen}(b(x-h))+k\\) a la onda gris.</p>",
      "checks": [
       {
-       "p": "Regla",
-       "o": [
-        "\\(2\\sin\\left(\\tfrac\\pi2(x-1)\\right)-1\\)",
-        "\\(-3\\sin\\left(\\tfrac\\pi2(x-1)\\right)+1\\)",
-        "\\(-2\\sin\\left(\\tfrac\\pi4(x-1)\\right)+1\\)",
-        "\\(3\\sin\\left(\\tfrac\\pi4(x+1)\\right)-1\\)",
-        "\\(2\\sin\\left(\\tfrac\\pi2(x+1)\\right)-1\\)"
+       "t": "fit",
+       "p": "Ajusta a, b, h y k hasta calzar la onda.",
+       "f": "a*sin(b*(x-h))+k",
+       "show": "a·sen(b(x − h)) + k",
+       "xr": [
+        -2,
+        6
+       ],
+       "yr": [
+        -4,
+        2
+       ],
+       "target": {
+        "a": 2,
+        "b": 1.5707963267948966,
+        "h": 1,
+        "k": -1
+       },
+       "ps": [
+        {
+         "n": "a",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 1
+        },
+        {
+         "n": "b",
+         "vals": [
+          0.5,
+          1,
+          1.5707963267948966,
+          2,
+          3.141592653589793,
+          6.283185307179586
+         ],
+         "lbl": [
+          "1/2",
+          "1",
+          "π/2",
+          "2",
+          "π",
+          "2π"
+         ],
+         "v": 1
+        },
+        {
+         "n": "h",
+         "min": -2,
+         "max": 2,
+         "step": 0.25,
+         "v": 0
+        },
+        {
+         "n": "k",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 0
+        }
        ]
       }
      ],
@@ -186,7 +242,7 @@
      ],
      "ans": "\\(2\\sin\\left(\\tfrac\\pi2(x-1)\\right)-1\\)",
      "hint": "Busca dónde cruza el eje subiendo.",
-     "fig": "sinu1",
+     "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
@@ -207,29 +263,30 @@
      "q": "<p>Un voltaje oscila entre \\(-170\\) V y 170 V con un ciclo cada 24 h: \\(V(t)=A\\sin(Bt+C)\\). A la medianoche (\\(t=0\\)) vale 0 y está aumentando.</p>",
      "checks": [
       {
-       "p": "B",
-       "o": [
-        "\\(\\tfrac\\pi{12}\\)",
-        "\\(\\tfrac\\pi{24}\\)",
-        "\\(24\\)",
-        "\\(12\\pi\\)",
-        "\\(\\tfrac{2\\pi}{12}\\)"
+       "t": "expr",
+       "p": "B (exacto)",
+       "f": [
+        {
+         "a": "π/12",
+         "v": []
+        }
        ]
       },
       {
-       "p": "Voltaje a las 6:00 p.m.",
-       "o": [
-        "\\(-170\\) V",
-        "\\(170\\) V",
-        "\\(0\\) V",
-        "\\(85\\) V",
-        "\\(-85\\) V"
+       "t": "num",
+       "p": "Voltaje a las 6:00 p. m.",
+       "f": [
+        {
+         "l": "V(18)",
+         "a": -170,
+         "u": "V"
+        }
        ]
       }
      ],
      "steps": [
       "\\(A=170,\\ B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\). Empieza en 0 subiendo → \\(C=0\\).",
-      "\\(V(18)=170\\sin\\left(\\tfrac{18\\pi}{12}\\right)=170\\sin\\tfrac{3\\pi}2=-170\\) V."
+      "\\(V(18)\\) \\(=170\\sin\\left(\\tfrac{18\\pi}{12}\\right)\\) \\(=170\\sin\\tfrac{3\\pi}2\\) \\(=-170\\) V."
      ],
      "ans": "\\(B=\\tfrac\\pi{12}\\); \\(-170\\) V",
      "hint": "",
@@ -242,7 +299,8 @@
        "modelo"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs6",
@@ -251,28 +309,38 @@
      "q": "<p>Un estudio de mareas (desde las 9:00 a.m.) registra un máximo de 2,6 m a las 7 h y el mínimo siguiente de 0,52 m a las 25 h.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Período",
-       "o": [
-        "\\(36\\) h",
-        "\\(18\\) h",
-        "\\(24\\) h",
-        "\\(25\\) h",
-        "\\(12\\) h"
+       "f": [
+        {
+         "l": "T",
+         "a": 36,
+         "u": "h"
+        }
        ]
       },
       {
-       "p": "Modelo",
-       "o": [
-        "\\(H=1{,}04\\cos\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
-        "\\(H=1{,}04\\sin\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
-        "\\(H=2{,}08\\cos\\left(\\tfrac\\pi{18}(t-7)\\right)+1{,}56\\)",
-        "\\(H=1{,}04\\cos\\left(\\tfrac\\pi{36}(t-7)\\right)+1{,}56\\)",
-        "\\(H=1{,}56\\cos\\left(\\tfrac\\pi{18}(t-25)\\right)+1{,}04\\)"
+       "t": "expr",
+       "p": "Escribe el modelo.",
+       "f": [
+        {
+         "a": "1.04*cos(π/18*(t-7))+1.56",
+         "v": [
+          "t"
+         ],
+         "l": "H(t) =",
+         "dom": {
+          "t": [
+           0,
+           40
+          ]
+         }
+        }
        ]
       }
      ],
      "steps": [
-      "Del máximo al mínimo: 18 h = \\(\\tfrac T2\\Rightarrow T=36\\) h, \\(b=\\tfrac{2\\pi}{36}=\\tfrac\\pi{18}\\).",
+      "Del máximo al mínimo: 18 h = \\(\\tfrac T2\\Rightarrow T=36\\) h, \\(b\\) \\(=\\tfrac{2\\pi}{36}\\) \\(=\\tfrac\\pi{18}\\).",
       "\\(k=\\frac{2{,}6+0{,}52}2=1{,}56\\), \\(a=\\frac{2{,}6-0{,}52}2=1{,}04\\).",
       "Con coseno, \\(h\\) es el máximo: \\(h=7\\). Verifica: \\(H(0)\\approx1{,}92\\) ✓."
      ],
@@ -290,7 +358,8 @@
       [
        "modelo"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs7",
@@ -299,13 +368,66 @@
      "q": "<p>Una onda tiene un máximo en \\((1{,}25;\\,-0{,}3)\\) y un mínimo en \\((2{,}75;\\,-2{,}7)\\); hay otro máximo en \\(x=2{,}25\\). Empieza en \\((0{,}98;\\,-1{,}65)\\).</p>",
      "checks": [
       {
-       "p": "Regla",
-       "o": [
-        "\\(1{,}2\\sin(2\\pi(x-1))-1{,}5\\)",
-        "\\(1{,}2\\sin(\\pi(x-1))-1{,}5\\)",
-        "\\(2{,}4\\sin(2\\pi(x-1))-1{,}5\\)",
-        "\\(1{,}2\\sin(2\\pi(x-1{,}25))-1{,}5\\)",
-        "\\(-1{,}2\\sin(2\\pi(x-1))-1{,}5\\)"
+       "t": "fit",
+       "p": "Ajusta a, b, h y k hasta calzar la onda.",
+       "f": "a*sin(b*(x-h))+k",
+       "show": "a·sen(b(x − h)) + k",
+       "xr": [
+        0,
+        3
+       ],
+       "yr": [
+        -3,
+        0
+       ],
+       "target": {
+        "a": 1.2,
+        "b": 6.283185307179586,
+        "h": 1,
+        "k": -1.5
+       },
+       "ps": [
+        {
+         "n": "a",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 1
+        },
+        {
+         "n": "b",
+         "vals": [
+          0.5,
+          1,
+          1.5707963267948966,
+          2,
+          3.141592653589793,
+          6.283185307179586
+         ],
+         "lbl": [
+          "1/2",
+          "1",
+          "π/2",
+          "2",
+          "π",
+          "2π"
+         ],
+         "v": 1
+        },
+        {
+         "n": "h",
+         "min": -2,
+         "max": 2,
+         "step": 0.25,
+         "v": 0
+        },
+        {
+         "n": "k",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 0
+        }
        ]
       }
      ],
@@ -316,7 +438,7 @@
      ],
      "ans": "\\(1{,}2\\sin(2\\pi(x-1))-1{,}5\\)",
      "hint": "Del cruce subiendo al máximo pasa T/4.",
-     "fig": "sinu2",
+     "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
@@ -335,13 +457,22 @@
      "q": "<p>Delta Cephei alcanza su brillo máximo el día 1,35 y el mínimo, 3,65, el día 4,05. El brillo varía ±0,35.</p>",
      "checks": [
       {
-       "p": "Modelo",
-       "o": [
-        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+4\\)",
-        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{2{,}7}(t-1{,}35)\\right)+4\\)",
-        "\\(B=0{,}35\\sin\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+4\\)",
-        "\\(B=0{,}35\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-1{,}35)\\right)+3{,}65\\)",
-        "\\(B=0{,}7\\cos\\left(\\tfrac{2\\pi}{5{,}4}(t-4{,}05)\\right)+4\\)"
+       "t": "expr",
+       "p": "Escribe el modelo.",
+       "f": [
+        {
+         "a": "0.35*cos(2*π/5.4*(t-1.35))+4",
+         "v": [
+          "t"
+         ],
+         "l": "B(t) =",
+         "dom": {
+          "t": [
+           0,
+           8
+          ]
+         }
+        }
        ]
       }
      ],
@@ -370,32 +501,33 @@
      "id": "fs9",
      "lvl": 3,
      "title": "Biorritmos",
-     "q": "<p>El potencial emocional es \\(P_2(t)=50\\sin(\\omega t)+50\\) (en %), con período de 28 días.</p>",
+     "q": "<p>El potencial emocional es \\(P_2(t)\\) \\(=50\\sin(\\omega t)+50\\) (en %), con período de 28 días.</p>",
      "checks": [
       {
-       "p": "ω",
-       "o": [
-        "\\(\\tfrac\\pi{14}\\)",
-        "\\(\\tfrac\\pi{28}\\)",
-        "\\(28\\pi\\)",
-        "\\(\\tfrac{14}\\pi\\)",
-        "\\(\\tfrac{2\\pi}{14}\\)"
+       "t": "expr",
+       "p": "ω (exacto)",
+       "f": [
+        {
+         "a": "π/14",
+         "v": []
+        }
        ]
       },
       {
+       "t": "num",
        "p": "P₂(7)",
-       "o": [
-        "\\(100\\) %",
-        "\\(50\\) %",
-        "\\(0\\) %",
-        "\\(75\\) %",
-        "\\(25\\) %"
+       "f": [
+        {
+         "l": "P₂(7)",
+         "a": 100,
+         "u": "%"
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\omega=\\frac{2\\pi}{28}=\\frac\\pi{14}\\).",
-      "\\(P_2(7)=50\\sin\\tfrac\\pi2+50=100\\) % (un cuarto de período: máximo)."
+      "\\(P_2(7)\\) \\(=50\\sin\\tfrac\\pi2+50\\) \\(=100\\) % (un cuarto de período: máximo)."
      ],
      "ans": "\\(\\omega=\\tfrac\\pi{14}\\); 100 %",
      "hint": "",
@@ -408,13 +540,14 @@
        "param"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs10",
      "lvl": 2,
      "title": "Tipo EA: de seno a coseno",
-     "q": "<p>Reescribe \\(f(x)=4\\sin\\left(\\tfrac\\pi2(x-1)\\right)+2\\) como función coseno cambiando solo el parámetro necesario.</p>",
+     "q": "<p>Reescribe \\(f(x)\\) \\(=4\\sin\\left(\\tfrac\\pi2(x-1)\\right)+2\\) como función coseno cambiando solo el parámetro necesario.</p>",
      "checks": [
       {
        "p": "¿Qué parámetro cambia?",
@@ -427,20 +560,23 @@
        ]
       },
       {
-       "p": "Función coseno",
-       "o": [
-        "\\(4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\)",
-        "\\(4\\cos\\left(\\tfrac\\pi2(x-1)\\right)+2\\)",
-        "\\(4\\cos\\left(\\tfrac\\pi2x\\right)+2\\)",
-        "\\(-4\\cos\\left(\\tfrac\\pi2(x-1)\\right)+2\\)",
-        "\\(4\\cos\\left(\\tfrac\\pi2(x-3)\\right)+2\\)"
+       "t": "expr",
+       "p": "Escribe la función coseno.",
+       "f": [
+        {
+         "a": "4*cos(π/2*(x-2))+2",
+         "v": [
+          "x"
+         ],
+         "l": "f(x) ="
+        }
        ]
       }
      ],
      "steps": [
       "Con seno, \\(h=1\\) es donde la onda cruza el eje subiendo. Con coseno, \\(h\\) es donde está el máximo.",
       "\\(T=\\frac{2\\pi}{\\pi/2}=4\\). Del cruce subiendo al máximo pasa \\(\\frac T4=1\\): máximo en \\(x=2\\).",
-      "Solo cambia \\(h\\): \\(f(x)=4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\). Verifica: \\(f(2)=4+2=6\\) = máximo ✓."
+      "Solo cambia \\(h\\): \\(f(x)\\) \\(=4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\). Verifica: \\(f(2)=4+2=6\\) = máximo ✓."
      ],
      "ans": "\\(4\\cos\\left(\\tfrac\\pi2(x-2)\\right)+2\\)",
      "hint": "El máximo está un cuarto de período después del cruce subiendo.",
@@ -454,7 +590,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs11",
@@ -463,33 +600,30 @@
      "q": "<p>\\(f(x)=2\\cos(3x)+1\\). ¿Qué parámetros hay que cambiar para que el mínimo sea \\(-4\\) y el máximo \\(6\\)?</p>",
      "checks": [
       {
-       "p": "Nueva amplitud",
-       "o": [
-        "5",
-        "2",
-        "10",
-        "6",
-        "1"
+       "t": "num",
+       "p": "Nuevos parámetros",
+       "f": [
+        {
+         "l": "amplitud",
+         "a": 5
+        },
+        {
+         "l": "eje k",
+         "a": 1
+        }
        ]
       },
       {
-       "p": "Nuevo eje \\(k\\)",
-       "o": [
-        "1",
-        "2",
-        "5",
-        "−4",
-        "0"
-       ]
-      },
-      {
-       "p": "Nueva función",
-       "o": [
-        "\\(5\\cos(3x)+1\\)",
-        "\\(5\\cos(3x)+2\\)",
-        "\\(10\\cos(3x)+1\\)",
-        "\\(2\\cos(3x)+5\\)",
-        "\\(5\\cos(5x)+1\\)"
+       "t": "expr",
+       "p": "Escribe la nueva función.",
+       "f": [
+        {
+         "a": "5*cos(3*x)+1",
+         "v": [
+          "x"
+         ],
+         "l": "f(x) ="
+        }
        ]
       }
      ],
@@ -508,13 +642,14 @@
        "param"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fs12",
      "lvl": 2,
      "title": "Tipo EA: ¿sube o baja?",
-     "q": "<p>\\(h(t)=5\\sin\\left(\\tfrac\\pi6t\\right)+10\\) (m, h). Entre \\(t=3\\) y \\(t=9\\), ¿la altura aumenta o disminuye?</p>",
+     "q": "<p>\\(h(t)\\) \\(=5\\sin\\left(\\tfrac\\pi6t\\right)+10\\) (m, h). Entre \\(t=3\\) y \\(t=9\\), ¿la altura aumenta o disminuye?</p>",
      "checks": [
       {
        "p": "Comportamiento",
@@ -561,30 +696,40 @@
      "q": "<p>La temperatura de un invernadero varía sinusoidalmente en un ciclo de 24 h: máxima 30 °C a las 15:00 y mínima 18 °C a las 3:00. Toma \\(t=0\\) a las 00:00.</p>",
      "checks": [
       {
-       "p": "Regla",
-       "o": [
-        "\\(6\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
-        "\\(6\\cos\\left(\\tfrac\\pi{12}(t-3)\\right)+24\\)",
-        "\\(12\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+18\\)",
-        "\\(6\\sin\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
-        "\\(6\\cos\\left(\\tfrac\\pi{24}(t-15)\\right)+24\\)"
+       "t": "expr",
+       "p": "Escribe la regla.",
+       "f": [
+        {
+         "a": "6*cos(π/12*(t-15))+24",
+         "v": [
+          "t"
+         ],
+         "l": "T(t) =",
+         "dom": {
+          "t": [
+           0,
+           24
+          ]
+         }
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Temperatura a las 9:00",
-       "o": [
-        "24 °C",
-        "30 °C",
-        "18 °C",
-        "27 °C",
-        "21 °C"
+       "f": [
+        {
+         "l": "T(9)",
+         "a": 24,
+         "u": "°C"
+        }
        ]
       }
      ],
      "steps": [
       "\\(k=\\frac{30+18}2=24\\), \\(A=\\frac{30-18}2=6\\), \\(B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\).",
-      "Coseno con el máximo en \\(t=15\\): \\(T(t)=6\\cos\\left(\\frac\\pi{12}(t-15)\\right)+24\\).",
-      "\\(T(9)=6\\cos\\left(-\\frac\\pi2\\right)+24=24\\) °C: a las 9:00 está justo en el eje, a mitad de camino entre el mínimo (3:00) y el máximo (15:00)."
+      "Coseno con el máximo en \\(t=15\\): \\(T(t)\\) \\(=6\\cos\\left(\\frac\\pi{12}(t-15)\\right)+24\\).",
+      "\\(T(9)\\) \\(=6\\cos\\left(-\\frac\\pi2\\right)+24\\) \\(=24\\) °C: a las 9:00 está justo en el eje, a mitad de camino entre el mínimo (3:00) y el máximo (15:00)."
      ],
      "ans": "\\(6\\cos\\left(\\tfrac\\pi{12}(t-15)\\right)+24\\)",
      "hint": "Del mínimo al máximo pasan 12 h = medio período.",
@@ -598,17 +743,125 @@
       ],
       [],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "fs14",
+     "lvl": 1,
+     "title": "Ajusta la curva",
+     "q": "<p>Sin fórmulas: mueve los deslizadores hasta que tu curva quede encima de la onda gris. Fíjate primero en el eje y la amplitud, luego en el período y al final en el desfase.</p>",
+     "checks": [
+      {
+       "t": "fit",
+       "p": "Ajusta a, b, h y k hasta calzar la onda.",
+       "f": "a*sin(b*(x-h))+k",
+       "show": "a·sen(b(x − h)) + k",
+       "xr": [
+        -1,
+        4
+       ],
+       "yr": [
+        -3,
+        5
+       ],
+       "target": {
+        "a": 3,
+        "b": 3.141592653589793,
+        "h": 0.5,
+        "k": 1
+       },
+       "ps": [
+        {
+         "n": "a",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 1
+        },
+        {
+         "n": "b",
+         "vals": [
+          0.5,
+          1,
+          1.5707963267948966,
+          2,
+          3.141592653589793,
+          6.283185307179586
+         ],
+         "lbl": [
+          "1/2",
+          "1",
+          "π/2",
+          "2",
+          "π",
+          "2π"
+         ],
+         "v": 1
+        },
+        {
+         "n": "h",
+         "min": -2,
+         "max": 2,
+         "step": 0.25,
+         "v": 0
+        },
+        {
+         "n": "k",
+         "min": -3,
+         "max": 3,
+         "step": 0.1,
+         "v": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Eje k = (máx + mín)/2 = 1; amplitud a = (máx − mín)/2 = 3.",
+      "Período 2 → b = 2π/2 = π. La onda empieza a subir desde el eje en x = 0,5 → h = 0,5."
+     ],
+     "ans": "a = 3, b = π, h = 0,5, k = 1",
+     "hint": "Eje y amplitud salen del máximo y el mínimo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "param"
+      ],
+      [
+       "param"
+      ]
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Todo fenómeno que se repite (mareas, voltaje, temperatura) se modela con seno o coseno ajustando cuatro parámetros.</p>\n<h3>Conceptos clave</h3><ul><li>Eje \\(k=\\frac{\\max+\\min}2\\); amplitud \\(|a|=\\frac{\\max-\\min}2\\).</li><li>\\(T=\\frac{2\\pi}{|b|}\\); máx → mín = \\(\\frac T2\\).</li><li>Seno: cruza el eje subiendo en \\(h\\). Coseno: máximo en \\(h\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lee máximo y mínimo → \\(k\\) y \\(a\\).</li><li><strong>2.</strong> Mide el período → \\(b\\).</li><li><strong>3.</strong> Elige seno o coseno y ubica \\(h\\).</li><li><strong>4.</strong> Verifica con un punto conocido.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> máx 2,6 en \\(t=7\\), mín 0,52 en \\(t=25\\): \\(H=1{,}04\\cos\\left(\\frac\\pi{18}(t-7)\\right)+1{,}56\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar la distancia máximo-mínimo como período completo.</div>"
+   "lesson": "<h3>Idea central</h3><p>Todo fenómeno que se repite (mareas, voltaje, temperatura) se modela con seno o coseno ajustando cuatro parámetros.</p>\n<h3>Conceptos clave</h3><ul><li>Eje \\(k=\\frac{\\max+\\min}2\\); amplitud \\(|a|=\\frac{\\max-\\min}2\\).</li><li>\\(T=\\frac{2\\pi}{|b|}\\); máx → mín = \\(\\frac T2\\).</li><li>Seno: cruza el eje subiendo en \\(h\\). Coseno: máximo en \\(h\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lee máximo y mínimo → \\(k\\) y \\(a\\).</li><li><strong>2.</strong> Mide el período → \\(b\\).</li><li><strong>3.</strong> Elige seno o coseno y ubica \\(h\\).</li><li><strong>4.</strong> Verifica con un punto conocido.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> máx 2,6 en \\(t=7\\), mín 0,52 en \\(t=25\\): \\(H\\) \\(=1{,}04\\cos\\left(\\frac\\pi{18}(t-7)\\right)+1{,}56\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar la distancia máximo-mínimo como período completo.</div>",
+   "tools": [
+    {
+     "w": "transf",
+     "t": "Juega con a, b, h y k",
+     "p": "Elige la función base y mueve los deslizadores.",
+     "o": {
+      "bases": [
+       [
+        "sin(x)",
+        "sen x"
+       ],
+       [
+        "cos(x)",
+        "cos x"
+       ]
+      ]
+     }
+    }
+   ]
   },
   {
    "id": "expo",
    "name": "Sem. 8 · Exponentes y ecuaciones exponenciales",
    "teo": "<p><strong>Leyes</strong>: mismas bases, suma exponentes al multiplicar y resta al dividir; potencia de potencia multiplica. \\(a^{-n}=\\frac1{a^n}\\) (¡no cambia el signo!) y \\(a^{m/n}=\\sqrt[n]{a^m}\\).</p><p><strong>Ecuaciones</strong>: escribe todo en la misma base y usa \\(b^M=b^N\\Rightarrow M=N\\). Si aparecen \\(b^{2x}\\) y \\(b^x\\), haz \\(t=b^x\\) (con \\(t\\gt0\\)) y resuelve la cuadrática; descarta los \\(t\\le0\\).</p><p>Siempre verifica: puede salir una identidad (todos los reales) o una cuadrática sin raíces reales (\\(\\varnothing\\)). Si no puedes igualar bases (como \\(3^x=7\\)), necesitas logaritmos.</p>",
    "form": [
-    "\\(a^ma^n=a^{m+n},\\ \\frac{a^m}{a^n}=a^{m-n},\\ (a^m)^n=a^{mn}\\)",
+    "\\(a^ma^n=a^{m+n}\\), \\(\\frac{a^m}{a^n}=a^{m-n}\\), \\((a^m)^n=a^{mn}\\)",
     "\\(a^{-n}=\\frac1{a^n},\\ a^0=1\\)",
     "\\(a^{m/n}=\\sqrt[n]{a^m}\\)",
     "\\(b^M=b^N\\Rightarrow M=N\\)",
@@ -622,13 +875,13 @@
      "q": "<p>Simplifica \\(\\dfrac{16^{3/4}\\cdot2^{-3}}{8^{2/3}}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\tfrac14\\)",
-        "\\(4\\)",
-        "\\(\\tfrac12\\)",
-        "\\(1\\)",
-        "\\(\\tfrac18\\)"
+       "t": "expr",
+       "p": "Resultado (exacto)",
+       "f": [
+        {
+         "a": "1/4",
+         "v": []
+        }
        ]
       }
      ],
@@ -656,13 +909,13 @@
      "q": "<p>Resuelve \\(3^{2x}=81^{x-1}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "x",
-       "o": [
-        "\\(2\\)",
-        "\\(1\\)",
-        "\\(-2\\)",
-        "\\(\\tfrac12\\)",
-        "\\(4\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        }
        ]
       }
      ],
@@ -690,13 +943,26 @@
      "q": "<p>Simplifica \\(\\dfrac{m^3n^{-2}}{m^{-1}n^4}\\).</p>",
      "checks": [
       {
-       "p": "Resultado",
-       "o": [
-        "\\(\\dfrac{m^4}{n^6}\\)",
-        "\\(\\dfrac{m^2}{n^2}\\)",
-        "\\(m^4n^6\\)",
-        "\\(\\dfrac{m^3}{n^8}\\)",
-        "\\(-\\dfrac{m^4}{n^6}\\)"
+       "t": "expr",
+       "p": "Escribe el resultado simplificado.",
+       "f": [
+        {
+         "a": "m^4/n^6",
+         "v": [
+          "m",
+          "n"
+         ],
+         "dom": {
+          "m": [
+           0.5,
+           2
+          ],
+          "n": [
+           0.5,
+           2
+          ]
+         }
+        }
        ]
       }
      ],
@@ -724,13 +990,13 @@
      "q": "<p>Resuelve \\(25^{x-2}=5\\cdot125^x\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "x",
-       "o": [
-        "\\(-5\\)",
-        "\\(5\\)",
-        "\\(-3\\)",
-        "\\(-\\tfrac15\\)",
-        "\\(1\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": -5
+        }
        ]
       }
      ],
@@ -758,13 +1024,17 @@
      "q": "<p>Resuelve \\(4^x-5\\cdot2^x+4=0\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=0,\\ x=2\\)",
-        "\\(x=1,\\ x=4\\)",
-        "\\(x=2\\)",
-        "\\(x=0\\)",
-        "\\(x=1,\\ x=2\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": 0
+        },
+        {
+         "l": "mayor",
+         "a": 2
+        }
        ]
       }
      ],
@@ -792,18 +1062,18 @@
      "q": "<p>Resuelve \\(2^{2x}-6\\cdot2^x-16=0\\).</p>",
      "checks": [
       {
-       "p": "Soluciones",
-       "o": [
-        "\\(x=3\\)",
-        "\\(x=3\\) y \\(x=1\\)",
-        "\\(x=8\\) y \\(x=-2\\)",
-        "\\(\\varnothing\\)",
-        "\\(x=4\\)"
+       "t": "num",
+       "p": "x",
+       "f": [
+        {
+         "l": "x",
+         "a": 3
+        }
        ]
       }
      ],
      "steps": [
-      "\\(u=2^x\\): \\(u^2-6u-16=(u-8)(u+2)=0\\).",
+      "\\(u=2^x\\): \\(u^2-6u-16\\) \\(=(u-8)(u+2)\\) \\(=0\\).",
       "\\(u=-2\\) se descarta (\\(2^x\\gt0\\)). \\(2^x=8\\Rightarrow x=3\\)."
      ],
      "ans": "\\(x=3\\)",
@@ -857,22 +1127,22 @@
      "id": "fe8",
      "lvl": 3,
      "title": "Radicales y fracción",
-     "q": "<p>Resuelve \\(\\sqrt[3]{16^x}\\cdot2^{x+1}=\\tfrac14\\).</p>",
+     "q": "<p>Resuelve \\(\\sqrt[3]{16^x}\\cdot2^{x+1}\\) \\(=\\tfrac14\\).</p>",
      "checks": [
       {
-       "p": "x",
-       "o": [
-        "\\(-\\tfrac97\\)",
-        "\\(-\\tfrac37\\)",
-        "\\(\\tfrac97\\)",
-        "\\(-\\tfrac79\\)",
-        "\\(-1\\)"
+       "t": "expr",
+       "p": "x (exacto)",
+       "f": [
+        {
+         "a": "-9/7",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\sqrt[3]{16^x}=2^{4x/3}\\); producto: \\(2^{4x/3+x+1}=2^{7x/3+1}\\). \\(\\tfrac14=2^{-2}\\).",
-      "\\(\\tfrac{7x}3+1=-2\\Rightarrow x=-\\tfrac97\\)."
+      "\\(\\tfrac{7x}3+1=-2\\) \\(\\Rightarrow  x=-\\tfrac97\\)."
      ],
      "ans": "\\(-\\tfrac97\\)",
      "hint": "",
@@ -927,19 +1197,25 @@
      "q": "<p>Resuelve \\(3^{x+1}\\cdot9^{2x}=27^{x^2}\\).</p>",
      "checks": [
       {
-       "p": "Soluciones",
-       "o": [
-        "\\(\\tfrac{5\\pm\\sqrt{37}}6\\)",
-        "\\(\\tfrac{5\\pm\\sqrt{13}}6\\)",
-        "\\(\\tfrac{-5\\pm\\sqrt{37}}6\\)",
-        "\\(x=1\\)",
-        "\\(\\varnothing\\)"
+       "t": "expr",
+       "p": "Soluciones (exactas)",
+       "f": [
+        {
+         "a": "(5-sqrt(37))/6",
+         "v": [],
+         "l": "menor ="
+        },
+        {
+         "a": "(5+sqrt(37))/6",
+         "v": [],
+         "l": "mayor ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(3^{x+1+4x}=3^{3x^2}\\Rightarrow3x^2-5x-1=0\\).",
-      "\\(x=\\frac{5\\pm\\sqrt{25+12}}6=\\frac{5\\pm\\sqrt{37}}6\\)."
+      "\\(3^{x+1+4x}=3^{3x^2}\\) \\(\\Rightarrow 3x^2-5x-1=0\\).",
+      "\\(x\\) \\(=\\frac{5\\pm\\sqrt{25+12}}6\\) \\(=\\frac{5\\pm\\sqrt{37}}6\\)."
      ],
      "ans": "\\(\\tfrac{5\\pm\\sqrt{37}}6\\)",
      "hint": "",
@@ -977,13 +1253,13 @@
      "q": "<p>Calcula \\(\\log_2\\tfrac18+\\log_327-\\log_5\\tfrac1{25}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Resultado",
-       "o": [
-        "\\(2\\)",
-        "\\(-2\\)",
-        "\\(8\\)",
-        "\\(0\\)",
-        "\\(4\\)"
+       "f": [
+        {
+         "l": "valor",
+         "a": 2
+        }
        ]
       }
      ],
@@ -1011,13 +1287,13 @@
      "q": "<p>Calcula \\(\\log_248-\\log_23\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Resultado",
-       "o": [
-        "\\(4\\)",
-        "\\(16\\)",
-        "\\(\\log_245\\)",
-        "\\(3\\)",
-        "\\(\\tfrac{\\log_248}{\\log_23}\\)"
+       "f": [
+        {
+         "l": "valor",
+         "a": 4
+        }
        ]
       }
      ],
@@ -1043,13 +1319,13 @@
      "q": "<p>Resuelve \\(\\log_3(2x-1)=2\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "x",
-       "o": [
-        "\\(5\\)",
-        "\\(\\tfrac72\\)",
-        "\\(4\\)",
-        "\\(3\\)",
-        "\\(10\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 5
+        }
        ]
       }
      ],
@@ -1086,7 +1362,7 @@
       }
      ],
      "steps": [
-      "\\(\\log[x(x-3)]=1\\Rightarrow x^2-3x=10\\).",
+      "\\(\\log[x(x-3)]=1\\) \\(\\Rightarrow  x^2-3x=10\\).",
       "\\((x-5)(x+2)=0\\Rightarrow x=5,\\ -2\\).",
       "\\(\\log(-2)\\) no existe: se descarta."
      ],
@@ -1110,21 +1386,21 @@
      "id": "fg_5",
      "lvl": 2,
      "title": "Suma de logaritmos",
-     "q": "<p>Resuelve \\(\\log_3(x-1)+\\log_3(x+1)=1\\).</p>",
+     "q": "<p>Resuelve \\(\\log_3(x-1)+\\log_3(x+1)\\) \\(=1\\).</p>",
      "checks": [
       {
-       "p": "Solución",
-       "o": [
-        "\\(x=2\\)",
-        "\\(x=\\pm2\\)",
-        "\\(x=-2\\)",
-        "\\(x=\\sqrt2\\)",
-        "\\(x=4\\)"
+       "t": "num",
+       "p": "x",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\log_3(x^2-1)=1\\Rightarrow x^2-1=3\\Rightarrow x=\\pm2\\).",
+      "\\(\\log_3(x^2-1)=1\\) \\(\\Rightarrow  x^2-1=3\\) \\(\\Rightarrow  x=\\pm2\\).",
       "\\(x=-2\\) hace \\(x-1=-3\\lt0\\): se descarta."
      ],
      "ans": "\\(x=2\\)",
@@ -1149,13 +1425,13 @@
      "q": "<p>Calcula \\(3^{\\log_310}-5^{\\log_52}\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Resultado",
-       "o": [
-        "\\(8\\)",
-        "\\(12\\)",
-        "\\(\\log_38\\)",
-        "\\(2\\)",
-        "\\(5\\)"
+       "f": [
+        {
+         "l": "valor",
+         "a": 8
+        }
        ]
       }
      ],
@@ -1181,13 +1457,13 @@
      "q": "<p>Resuelve \\(3^x=7\\).</p>",
      "checks": [
       {
-       "p": "x",
-       "o": [
-        "\\(\\dfrac{\\ln7}{\\ln3}\\approx1{,}77\\)",
-        "\\(\\ln\\tfrac73\\approx0{,}85\\)",
-        "\\(\\tfrac73\\)",
-        "\\(\\ln7-\\ln3\\)",
-        "\\(\\log_73\\approx0{,}56\\)"
+       "t": "expr",
+       "p": "x (exacto)",
+       "f": [
+        {
+         "a": "ln(7)/ln(3)",
+         "v": []
+        }
        ]
       }
      ],
@@ -1215,19 +1491,19 @@
      "q": "<p>Si \\(\\log_b2=0{,}3\\) y \\(\\log_b3=0{,}5\\), calcula \\(\\log_b12\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Resultado",
-       "o": [
-        "\\(1{,}1\\)",
-        "\\(0{,}8\\)",
-        "\\(0{,}09\\)",
-        "\\(1{,}3\\)",
-        "\\(0{,}6\\)"
+       "f": [
+        {
+         "l": "log_b 12",
+         "a": 1.1
+        }
        ]
       }
      ],
      "steps": [
       "\\(12=2^2\\cdot3\\).",
-      "\\(2\\log_b2+\\log_b3=0{,}6+0{,}5=1{,}1\\)."
+      "\\(2\\log_b2+\\log_b3\\) \\(=0{,}6+0{,}5\\) \\(=1{,}1\\)."
      ],
      "ans": "\\(1{,}1\\)",
      "hint": "",
@@ -1246,7 +1522,7 @@
      "id": "fg_9",
      "lvl": 3,
      "title": "Ninguna sobrevive",
-     "q": "<p>Resuelve \\(\\log(x+6)=\\log(3x-2)-\\log x\\).</p>",
+     "q": "<p>Resuelve \\(\\log(x+6)\\) \\(=\\log(3x-2)-\\log x\\).</p>",
      "checks": [
       {
        "p": "Conjunto solución",
@@ -1260,7 +1536,7 @@
       }
      ],
      "steps": [
-      "\\(\\log(x+6)=\\log\\frac{3x-2}x\\Rightarrow x^2+6x=3x-2\\).",
+      "\\(\\log(x+6)=\\log\\frac{3x-2}x\\) \\(\\Rightarrow  x^2+6x=3x-2\\).",
       "\\(x^2+3x+2=0\\Rightarrow x=-1,\\ -2\\).",
       "Ambas hacen negativos \\(x\\) y \\(3x-2\\): ninguna es válida."
      ],
@@ -1285,13 +1561,17 @@
      "q": "<p>Resuelve \\((\\log_2x)^2-2\\log_2x-3=0\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=8,\\ x=\\tfrac12\\)",
-        "\\(x=3,\\ x=-1\\)",
-        "\\(x=8\\)",
-        "\\(x=\\tfrac18,\\ x=2\\)",
-        "\\(x=9,\\ x=\\tfrac13\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": 0.5
+        },
+        {
+         "l": "mayor",
+         "a": 8
+        }
        ]
       }
      ],
@@ -1319,19 +1599,21 @@
      "q": "<p>La diferencia de temperatura del café con el ambiente es \\(D(t)=70e^{-0{,}1t}\\) (°C, min). ¿Cuándo será 30 °C?</p>",
      "checks": [
       {
-       "p": "t",
-       "o": [
-        "\\(\\approx8{,}47\\) min",
-        "\\(\\approx4{,}29\\) min",
-        "\\(\\approx0{,}85\\) min",
-        "\\(\\approx12{,}04\\) min",
-        "\\(\\approx3{,}68\\) min"
+       "t": "num",
+       "p": "Tiempo",
+       "f": [
+        {
+         "l": "t",
+         "a": 8.47,
+         "u": "min",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "\\(e^{-0{,}1t}=\\frac37\\).",
-      "\\(-0{,}1t=\\ln\\frac37\\Rightarrow t=-10\\ln\\frac37\\approx8{,}47\\)."
+      "\\(-0{,}1t=\\ln\\frac37\\) \\(\\Rightarrow  t\\) \\(=-10\\ln\\frac37\\approx8{,}47\\)."
      ],
      "ans": "≈ 8,47 min",
      "hint": "",
@@ -1353,19 +1635,20 @@
      "q": "<p>En un proceso, \\(t=\\ln(3x+2)-\\ln(x-1)\\). Halla \\(x\\) cuando \\(t=1{,}5\\) min.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "x",
-       "o": [
-        "\\(\\approx4{,}37\\)",
-        "\\(\\approx1{,}48\\)",
-        "\\(\\approx2{,}24\\)",
-        "\\(\\approx6{,}48\\)",
-        "No existe"
+       "f": [
+        {
+         "l": "x",
+         "a": 4.37,
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(e^t=\\frac{3x+2}{x-1}\\Rightarrow xe^t-e^t=3x+2\\).",
-      "\\(x=\\frac{e^t+2}{e^t-3}=\\frac{4{,}4817+2}{1{,}4817}\\approx4{,}37\\).",
+      "\\(e^t=\\frac{3x+2}{x-1}\\) \\(\\Rightarrow  xe^t-e^t=3x+2\\).",
+      "\\(x\\) \\(=\\frac{e^t+2}{e^t-3}\\) \\(=\\frac{4{,}4817+2}{1{,}4817}\\approx4{,}37\\).",
       "Verifica: \\(x\\gt1\\) ✓."
      ],
      "ans": "≈ 4,37",
@@ -1407,23 +1690,23 @@
      "q": "<p>\\(f(t)=20+100e^{-0{,}05t}\\).</p>",
      "checks": [
       {
-       "p": "\\(f(0)\\)",
-       "o": [
-        "120",
-        "100",
-        "20",
-        "80",
-        "0"
+       "t": "num",
+       "p": "Valor inicial",
+       "f": [
+        {
+         "l": "f(0)",
+         "a": 120
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Asíntota horizontal",
-       "o": [
-        "\\(y=20\\)",
-        "\\(y=100\\)",
-        "\\(y=120\\)",
-        "\\(y=0\\)",
-        "\\(t=20\\)"
+       "f": [
+        {
+         "l": "y =",
+         "a": 20
+        }
        ]
       },
       {
@@ -1454,7 +1737,8 @@
        "expmod"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx2",
@@ -1473,30 +1757,30 @@
        ]
       },
       {
+       "t": "num",
        "p": "Asíntota vertical",
-       "o": [
-        "\\(x=3\\)",
-        "\\(x=6\\)",
-        "\\(x=0\\)",
-        "\\(y=3\\)",
-        "No tiene"
+       "f": [
+        {
+         "l": "x =",
+         "a": 3
+        }
        ]
       },
       {
-       "p": "Intercepto con el eje \\(x\\)",
-       "o": [
-        "\\(x=\\tfrac72\\)",
-        "\\(x=3\\)",
-        "\\(x=4\\)",
-        "\\(x=\\tfrac{e}2+3\\)",
-        "No tiene"
+       "t": "num",
+       "p": "Intercepto",
+       "f": [
+        {
+         "l": "x",
+         "a": 3.5
+        }
        ]
       }
      ],
      "steps": [
       "Argumento \\(\\gt0\\): \\(2x-6\\gt0\\Rightarrow x\\gt3\\).",
       "Cuando \\(x\\to3^+\\), el argumento \\(\\to0^+\\) y \\(\\ln\\to-\\infty\\): asíntota \\(x=3\\).",
-      "\\(\\ln(2x-6)=0\\iff2x-6=1\\iff x=\\frac72\\)."
+      "\\(\\ln(2x-6)\\) \\(=0\\iff2x-6\\) \\(=1\\iff x\\) \\(=\\frac72\\)."
      ],
      "ans": "Dom \\((3,\\infty)\\), AV \\(x=3\\), corte \\(x=\\frac72\\)",
      "hint": "",
@@ -1510,7 +1794,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx3",
@@ -1529,13 +1814,13 @@
        ]
       },
       {
-       "p": "Corte con el eje \\(y\\)",
-       "o": [
-        "\\((0,3)\\)",
-        "\\((0;0{,}8)\\)",
-        "\\((0;2{,}4)\\)",
-        "\\((0,1)\\)",
-        "\\((3,0)\\)"
+       "t": "num",
+       "p": "Corte con el eje y",
+       "f": [
+        {
+         "l": "y",
+         "a": 3
+        }
        ]
       },
       {
@@ -1564,13 +1849,14 @@
       [],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx4",
      "lvl": 2,
      "title": "Tipo EA: dominio de una suma de logaritmos",
-     "q": "<p>\\(L(x)=\\log_3(x+2)+\\log_3(4-x)\\). Halla el dominio y los cortes con el eje \\(x\\).</p>",
+     "q": "<p>\\(L(x)\\) \\(=\\log_3(x+2)+\\log_3(4-x)\\). Halla el dominio y los cortes con el eje \\(x\\).</p>",
      "checks": [
       {
        "p": "Dominio",
@@ -1595,8 +1881,8 @@
      ],
      "steps": [
       "\\(x+2\\gt0\\) y \\(4-x\\gt0\\): \\(-2\\lt x\\lt4\\).",
-      "\\(L=0\\iff\\log_3[(x+2)(4-x)]=0\\iff(x+2)(4-x)=1\\).",
-      "\\(-x^2+2x+8=1\\Rightarrow x^2-2x-7=0\\Rightarrow x=1\\pm2\\sqrt2\\approx3{,}83\\) y \\(-1{,}83\\).",
+      "\\(L\\) \\(=0\\iff\\log_3[(x+2)(4-x)]\\) \\(=0\\iff(x+2)(4-x)\\) \\(=1\\).",
+      "\\(-x^2+2x+8=1\\) \\(\\Rightarrow  x^2-2x-7=0\\) \\(\\Rightarrow  x\\) \\(=1\\pm2\\sqrt2\\approx3{,}83\\) y \\(-1{,}83\\).",
       "Ambas están en \\((-2,4)\\): las dos valen."
      ],
      "ans": "\\((-2,4)\\); \\(x=1\\pm2\\sqrt2\\)",
@@ -1621,30 +1907,34 @@
      "q": "<p>Un horno se apaga y su temperatura sigue \\(T(t)=A+Be^{-kt}\\) (°C, min). Al inicio marca 90 °C, a los 5 min 60 °C, y con el tiempo se acerca a 25 °C.</p>",
      "checks": [
       {
-       "p": "\\(A\\) y \\(B\\)",
-       "o": [
-        "\\(A=25,\\ B=65\\)",
-        "\\(A=90,\\ B=-65\\)",
-        "\\(A=25,\\ B=90\\)",
-        "\\(A=65,\\ B=25\\)",
-        "\\(A=60,\\ B=30\\)"
+       "t": "num",
+       "p": "Parámetros",
+       "f": [
+        {
+         "l": "A",
+         "a": 25
+        },
+        {
+         "l": "B",
+         "a": 65
+        }
        ]
       },
       {
-       "p": "\\(k\\)",
-       "o": [
-        "\\(k=\\tfrac15\\ln\\tfrac{13}7\\approx0{,}1238\\)",
-        "\\(k=\\tfrac15\\ln\\tfrac{7}{13}\\)",
-        "\\(k=\\ln\\tfrac{13}7\\approx0{,}619\\)",
-        "\\(k=\\tfrac15\\ln\\tfrac32\\approx0{,}081\\)",
-        "\\(k=\\tfrac{35}{65}\\)"
+       "t": "expr",
+       "p": "k (exacto)",
+       "f": [
+        {
+         "a": "1/5*ln(13/7)",
+         "v": []
+        }
        ]
       }
      ],
      "steps": [
       "Asíntota \\(A=25\\). En \\(t=0\\): \\(25+B=90\\Rightarrow B=65\\).",
-      "\\(t=5\\): \\(25+65e^{-5k}=60\\Rightarrow e^{-5k}=\\frac{35}{65}=\\frac7{13}\\).",
-      "\\(-5k=\\ln\\frac7{13}\\Rightarrow k=\\frac15\\ln\\frac{13}7\\approx0{,}1238\\)."
+      "\\(t=5\\): \\(25+65e^{-5k}=60\\) \\(\\Rightarrow  e^{-5k}=\\frac{35}{65}=\\frac7{13}\\).",
+      "\\(-5k=\\ln\\frac7{13}\\) \\(\\Rightarrow  k\\) \\(=\\frac15\\ln\\frac{13}7\\approx0{,}1238\\)."
      ],
      "ans": "\\(T(t)=25+65e^{-0{,}1238t}\\)",
      "hint": "",
@@ -1660,7 +1950,8 @@
       [
        "lndesp"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx6",
@@ -1691,7 +1982,7 @@
      ],
      "steps": [
       "\\(A=1000\\), \\(B=200-1000=-800\\).",
-      "\\(1000-800e^{-2k}=600\\Rightarrow e^{-2k}=\\frac12\\Rightarrow k=\\frac{\\ln2}2\\approx0{,}347\\).",
+      "\\(1000-800e^{-2k}=600\\) \\(\\Rightarrow  e^{-2k}=\\frac12\\) \\(\\Rightarrow  k=\\frac{\\ln2}2\\approx0{,}347\\).",
       "La distancia al techo \\(800e^{-kt}\\) se achica cada vez menos: crece rápido al inicio y luego se frena."
      ],
      "ans": "Crece cada vez más lento hacia 1000",
@@ -1717,30 +2008,32 @@
      "q": "<p>El espesor de una capa es \\(V(t)=A+B\\ln(t+1)\\) (µm, h). En \\(t=0\\) mide 2 µm y en \\(t=4\\) mide 5 µm.</p>",
      "checks": [
       {
-       "p": "\\(B\\)",
-       "o": [
-        "\\(\\tfrac{3}{\\ln5}\\approx1{,}864\\)",
-        "\\(\\tfrac{3}{\\ln4}\\approx2{,}164\\)",
-        "\\(\\tfrac{5}{\\ln5}\\approx3{,}107\\)",
-        "\\(\\tfrac{\\ln5}{3}\\approx0{,}536\\)",
-        "\\(0{,}75\\)"
+       "t": "expr",
+       "p": "B (exacto)",
+       "f": [
+        {
+         "a": "3/ln(5)",
+         "v": []
+        }
        ]
       },
       {
-       "p": "\\(V(9)\\)",
-       "o": [
-        "\\(\\approx6{,}29\\ \\mu m\\)",
-        "\\(\\approx7{,}5\\ \\mu m\\)",
-        "\\(\\approx4{,}29\\ \\mu m\\)",
-        "\\(\\approx6{,}1\\ \\mu m\\)",
-        "\\(\\approx8\\ \\mu m\\)"
+       "t": "num",
+       "p": "V(9)",
+       "f": [
+        {
+         "l": "V(9)",
+         "a": 6.29,
+         "u": "µm",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "\\(V(0)=A+B\\ln1=A\\Rightarrow A=2\\).",
-      "\\(2+B\\ln5=5\\Rightarrow B=\\frac3{\\ln5}\\approx1{,}864\\).",
-      "\\(V(9)=2+1{,}864\\ln10\\approx6{,}29\\) µm."
+      "\\(2+B\\ln5=5\\) \\(\\Rightarrow  B=\\frac3{\\ln5}\\approx1{,}864\\).",
+      "\\(V(9)\\) \\(=2+1{,}864\\ln10\\approx6{,}29\\) µm."
      ],
      "ans": "\\(V(t)=2+1{,}864\\ln(t+1)\\)",
      "hint": "",
@@ -1754,7 +2047,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx8",
@@ -1763,29 +2057,32 @@
      "q": "<p>Dada \\(t=\\ln x-\\ln(6-x)\\), escribe \\(x(t)\\) y su corte con el eje vertical.</p>",
      "checks": [
       {
-       "p": "\\(x(t)\\)",
-       "o": [
-        "\\(\\dfrac{6e^t}{1+e^t}\\)",
-        "\\(\\dfrac{6}{e^t}\\)",
-        "\\(6e^t-1\\)",
-        "\\(\\dfrac{e^t}{6+e^t}\\)",
-        "\\(6-e^t\\)"
+       "t": "expr",
+       "p": "Escribe x(t).",
+       "f": [
+        {
+         "a": "6*e^t/(1+e^t)",
+         "v": [
+          "t"
+         ],
+         "l": "x(t) ="
+        }
        ]
       },
       {
-       "p": "Corte con el eje vertical (\\(t=0\\))",
-       "o": [
-        "\\(x=3\\)",
-        "\\(x=6\\)",
-        "\\(x=0\\)",
-        "\\(x=1\\)",
-        "No tiene"
+       "t": "num",
+       "p": "Corte con el eje vertical",
+       "f": [
+        {
+         "l": "x(0)",
+         "a": 3
+        }
        ]
       }
      ],
      "steps": [
       "\\(t=\\ln\\frac{x}{6-x}\\Rightarrow e^t=\\frac x{6-x}\\).",
-      "\\(6e^t-xe^t=x\\Rightarrow x(1+e^t)=6e^t\\Rightarrow x=\\frac{6e^t}{1+e^t}\\).",
+      "\\(6e^t-xe^t=x\\) \\(\\Rightarrow  x(1+e^t)=6e^t\\) \\(\\Rightarrow  x=\\frac{6e^t}{1+e^t}\\).",
       "\\(t=0\\): \\(x=\\frac{6}{2}=3\\). No corta el eje horizontal porque \\(x(t)\\gt0\\) siempre."
      ],
      "ans": "\\(x(t)=\\frac{6e^t}{1+e^t}\\)",
@@ -1800,7 +2097,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx9",
@@ -1809,28 +2107,29 @@
      "q": "<p>\\(h(t)=A+B\\ln(t+1)\\). Se sabe que \\(h(1)=1\\) y \\(h(4)=2\\).</p>",
      "checks": [
       {
-       "p": "\\(B\\)",
-       "o": [
-        "\\(\\tfrac1{\\ln2{,}5}\\approx1{,}091\\)",
-        "\\(\\tfrac1{\\ln3}\\approx0{,}910\\)",
-        "\\(\\tfrac1{\\ln5}\\approx0{,}621\\)",
-        "\\(\\ln2{,}5\\approx0{,}916\\)",
-        "\\(\\tfrac13\\)"
+       "t": "expr",
+       "p": "B (exacto)",
+       "f": [
+        {
+         "a": "1/ln(2.5)",
+         "v": []
+        }
        ]
       },
       {
-       "p": "\\(A\\)",
-       "o": [
-        "\\(\\approx0{,}244\\)",
-        "\\(1\\)",
-        "\\(\\approx-0{,}091\\)",
-        "\\(0\\)",
-        "\\(\\approx1{,}756\\)"
+       "t": "num",
+       "p": "A",
+       "f": [
+        {
+         "l": "A",
+         "a": 0.244,
+         "tol": 0.002
+        }
        ]
       }
      ],
      "steps": [
-      "Resta: \\(B(\\ln5-\\ln2)=1\\Rightarrow B=\\frac1{\\ln2{,}5}\\approx1{,}091\\).",
+      "Resta: \\(B(\\ln5-\\ln2)=1\\) \\(\\Rightarrow  B\\) \\(=\\frac1{\\ln2{,}5}\\approx1{,}091\\).",
       "\\(A=1-B\\ln2\\approx0{,}244\\)."
      ],
      "ans": "\\(h(t)\\approx0{,}244+1{,}091\\ln(t+1)\\)",
@@ -1844,7 +2143,8 @@
        "logmod"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "fx10",
@@ -1879,6 +2179,110 @@
       ],
       []
      ]
+    },
+    {
+     "id": "fx11",
+     "lvl": 2,
+     "title": "Ajusta el enfriamiento",
+     "q": "<p>Un horno sigue \\(T(t)=A+Be^{-kt}\\). Ajusta A, B y k a la curva gris.</p>",
+     "checks": [
+      {
+       "t": "fit",
+       "p": "Ajusta A (asíntota), B (diferencia inicial) y k (rapidez).",
+       "f": "A+B*e^(-k*x)",
+       "show": "A + B·e^(−kt)",
+       "xr": [
+        0,
+        40
+       ],
+       "yr": [
+        0,
+        100
+       ],
+       "target": {
+        "A": 25,
+        "B": 65,
+        "k": 0.1
+       },
+       "ps": [
+        {
+         "n": "A",
+         "min": 0,
+         "max": 50,
+         "step": 5,
+         "v": 0
+        },
+        {
+         "n": "B",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "v": 50
+        },
+        {
+         "n": "k",
+         "vals": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.3
+         ],
+         "lbl": [
+          "0,05",
+          "0,10",
+          "0,15",
+          "0,20",
+          "0,30"
+         ],
+         "v": 3
+        }
+       ],
+       "hK": "Revisa A: es el valor al que se acerca la curva. ",
+       "hA": "Revisa B: el valor inicial es A + B. ",
+       "hB": "Revisa k: cuanto mayor, más rápido baja."
+      }
+     ],
+     "steps": [
+      "A es la asíntota (25 °C) y A + B es el valor inicial (90), así que B = 65.",
+      "k controla la rapidez: con k = 0,1 la curva baja a la mitad del camino en unos 7 minutos."
+     ],
+     "ans": "A = 25, B = 65, k = 0,1",
+     "hint": "Empieza por la asíntota.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expmod"
+      ],
+      [
+       "expmod"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "transf",
+     "t": "Exponencial y logaritmo",
+     "p": "Mueve a, b, h y k sobre eˣ y ln x: mira cómo cambian la asíntota y el dominio.",
+     "o": {
+      "bases": [
+       [
+        "e^x",
+        "eˣ"
+       ],
+       [
+        "ln(x)",
+        "ln x"
+       ],
+       [
+        "2^x",
+        "2ˣ"
+       ]
+      ]
+     }
     }
    ]
   }
@@ -2006,8 +2410,8 @@
    ],
    "steps": [
     "Máx 3, mín \\(-1\\): \\(k=1,\\ a=2\\).",
-    "Del máximo (0) al mínimo (4): \\(\\tfrac T2=4\\Rightarrow T=8,\\ b=\\tfrac\\pi4\\).",
-    "Coseno con máximo en \\(x=0\\). Verifica A y C: \\(\\cos(\\pm\\tfrac\\pi2)=0\\Rightarrow y=1\\) ✓."
+    "Del máximo (0) al mínimo (4): \\(\\tfrac T2=4\\) \\(\\Rightarrow  T=8,\\ b=\\tfrac\\pi4\\).",
+    "Coseno con máximo en \\(x=0\\). Verifica A y C: \\(\\cos(\\pm\\tfrac\\pi2)=0\\) \\(\\Rightarrow  y=1\\) ✓."
    ],
    "ans": "\\(2\\cos\\left(\\tfrac\\pi4x\\right)+1\\)",
    "hint": "",
@@ -2039,7 +2443,7 @@
     }
    ],
    "steps": [
-    "\\(\\ln\\frac{2x+1}x=\\ln3\\Rightarrow2x+1=3x\\Rightarrow x=1\\).",
+    "\\(\\ln\\frac{2x+1}x=\\ln3\\) \\(\\Rightarrow 2x+1=3x\\) \\(\\Rightarrow  x=1\\).",
     "Argumentos: 3 y 1, positivos ✓."
    ],
    "ans": "\\(x=1\\)",
@@ -2089,7 +2493,7 @@
    "id": "e4L1",
    "lvl": 2,
    "title": "EA4 lunes · P1",
-   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=3\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+5\\), determina qué parámetros deben cambiar para que el valor mínimo sea 1 y el máximo 8. Escribe la nueva función.</p>",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)\\) \\(=3\\sin\\left(2\\left(x-\\tfrac\\pi4\\right)\\right)+5\\), determina qué parámetros deben cambiar para que el valor mínimo sea 1 y el máximo 8. Escribe la nueva función.</p>",
    "checks": [
     {
      "p": "Parámetros que cambian",
@@ -2115,7 +2519,7 @@
    "steps": [
     "De la gráfica: hoy oscila entre 2 y 8 (eje 5, amplitud 3).",
     "Nuevo eje: \\(k=\\frac{8+1}2=4{,}5\\). Nueva amplitud: \\(A=\\frac{8-1}2=3{,}5\\).",
-    "El período y el desfase no influyen en el máximo ni en el mínimo, así que no cambian: \\(f(x)=3{,}5\\sin\\left(2\\left(x-\\frac\\pi4\\right)\\right)+4{,}5\\)."
+    "El período y el desfase no influyen en el máximo ni en el mínimo, así que no cambian: \\(f(x)\\) \\(=3{,}5\\sin\\left(2\\left(x-\\frac\\pi4\\right)\\right)+4{,}5\\)."
    ],
    "ans": "Cambian A y k",
    "hint": "",
@@ -2160,10 +2564,10 @@
    ],
    "steps": [
     "\\(k=\\frac{38+34}2=36\\), \\(A=\\frac{38-34}2=2\\), \\(B=\\frac{2\\pi}{24}=\\frac\\pi{12}\\).",
-    "Coseno con el máximo en \\(t=14\\): \\(T(t)=2\\cos\\left(\\frac\\pi{12}(t-14)\\right)+36\\). (También vale \\(-2\\cos\\left(\\frac\\pi{12}(t-2)\\right)+36\\).)",
+    "Coseno con el máximo en \\(t=14\\): \\(T(t)\\) \\(=2\\cos\\left(\\frac\\pi{12}(t-14)\\right)+36\\). (También vale \\(-2\\cos\\left(\\frac\\pi{12}(t-2)\\right)+36\\).)",
     "Entre el mínimo (t = 2) y el máximo (t = 14) la función crece; [8, 12] está dentro: aumenta."
    ],
-   "ans": "\\(T(t)=2\\cos\\left(\\tfrac\\pi{12}(t-14)\\right)+36\\)",
+   "ans": "\\(T(t)\\) \\(=2\\cos\\left(\\tfrac\\pi{12}(t-14)\\right)+36\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2185,7 +2589,7 @@
    "id": "e4L3",
    "lvl": 2,
    "title": "EA4 lunes · P3",
-   "q": "<p>(4 pts) \\(g(x)=\\log_2(x+3)+\\log_2(1-2x)\\). Determina el dominio y evalúa \\(g(0)\\).</p>",
+   "q": "<p>(4 pts) \\(g(x)\\) \\(=\\log_2(x+3)+\\log_2(1-2x)\\). Determina el dominio y evalúa \\(g(0)\\).</p>",
    "checks": [
     {
      "p": "Dominio",
@@ -2210,7 +2614,7 @@
    ],
    "steps": [
     "\\(x+3\\gt0\\Rightarrow x\\gt-3\\); \\(1-2x\\gt0\\Rightarrow x\\lt\\frac12\\). Intersección: \\(\\left(-3,\\frac12\\right)\\).",
-    "\\(g(0)=\\log_23+\\log_21=\\log_23\\approx1{,}585\\)."
+    "\\(g(0)\\) \\(=\\log_23+\\log_21\\) \\(=\\log_23\\approx1{,}585\\)."
    ],
    "ans": "Dom \\((-3,\\frac12)\\), \\(g(0)=\\log_23\\)",
    "hint": "",
@@ -2254,7 +2658,7 @@
    ],
    "steps": [
     "\\(A=10\\) (asíntota); \\(10+B=100\\Rightarrow B=90\\).",
-    "\\(10+90e^{-4k}=60\\Rightarrow e^{-4k}=\\frac59\\Rightarrow k=\\frac14\\ln\\frac95\\approx0{,}1469\\).",
+    "\\(10+90e^{-4k}=60\\) \\(\\Rightarrow  e^{-4k}=\\frac59\\) \\(\\Rightarrow  k\\) \\(=\\frac14\\ln\\frac95\\approx0{,}1469\\).",
     "El exceso sobre la basal, \\(90e^{-kt}\\), cae mucho al inicio (de 100 a 60 en 4 h) y cada vez menos al acercarse a 10: disminuye cada vez más lento."
    ],
    "ans": "\\(C(t)=10+90e^{-0{,}1469t}\\)",
@@ -2279,7 +2683,7 @@
    "id": "e4M1",
    "lvl": 2,
    "title": "EA4 miércoles · P1",
-   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=2{,}5\\cos(B(x-1))+k\\), determina \\(B\\) y \\(k\\). Luego cambia el parámetro necesario para reescribirla como función seno.</p><p class=\"note\">La gráfica original no venía en el PDF; esta es una reconstrucción coherente con el enunciado.</p>",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)\\) \\(=2{,}5\\cos(B(x-1))+k\\), determina \\(B\\) y \\(k\\). Luego cambia el parámetro necesario para reescribirla como función seno.</p><p class=\"note\">La gráfica original no venía en el PDF; esta es una reconstrucción coherente con el enunciado.</p>",
    "checks": [
     {
      "p": "\\(B\\) y \\(k\\)",
@@ -2305,7 +2709,7 @@
    "steps": [
     "Máximo 4 en \\(x=1\\), mínimo \\(-1\\) en \\(x=5\\): \\(k=\\frac{4-1}2=1{,}5\\) y medio período es 4, así que \\(T=8\\) y \\(B=\\frac{2\\pi}8=\\frac\\pi4\\).",
     "Para seno, \\(h\\) es el cruce subiendo: un cuarto de período (2) <em>antes</em> del máximo, \\(x=-1\\).",
-    "Solo cambia \\(h\\): \\(f(x)=2{,}5\\sin\\left(\\frac\\pi4(x+1)\\right)+1{,}5\\)."
+    "Solo cambia \\(h\\): \\(f(x)\\) \\(=2{,}5\\sin\\left(\\frac\\pi4(x+1)\\right)+1{,}5\\)."
    ],
    "ans": "\\(2{,}5\\sin\\left(\\tfrac\\pi4(x+1)\\right)+1{,}5\\)",
    "hint": "",
@@ -2352,10 +2756,10 @@
    ],
    "steps": [
     "\\(k=\\frac{27+3}2=15\\), \\(A=\\frac{27-3}2=12\\), \\(B=\\frac{2\\pi}{40}=\\frac\\pi{20}\\).",
-    "Empieza en el máximo: coseno sin desfase, \\(h(t)=12\\cos\\left(\\frac\\pi{20}t\\right)+15\\).",
+    "Empieza en el máximo: coseno sin desfase, \\(h(t)\\) \\(=12\\cos\\left(\\frac\\pi{20}t\\right)+15\\).",
     "Del máximo (\\(t=0\\)) al mínimo (\\(t=20\\)) baja; de 20 a 40 sube."
    ],
-   "ans": "\\(h(t)=12\\cos\\left(\\tfrac\\pi{20}t\\right)+15\\)",
+   "ans": "\\(h(t)\\) \\(=12\\cos\\left(\\tfrac\\pi{20}t\\right)+15\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2375,7 +2779,7 @@
    "id": "e4M3",
    "lvl": 2,
    "title": "EA4 miércoles · P3",
-   "q": "<p>(4 pts) \\(L(x)=\\log_2(x-3)+\\log_2(5-x)\\). Determina el dominio y dónde corta al eje \\(x\\).</p>",
+   "q": "<p>(4 pts) \\(L(x)\\) \\(=\\log_2(x-3)+\\log_2(5-x)\\). Determina el dominio y dónde corta al eje \\(x\\).</p>",
    "checks": [
     {
      "p": "Dominio",
@@ -2400,8 +2804,8 @@
    ],
    "steps": [
     "\\(x\\gt3\\) y \\(x\\lt5\\): dominio \\((3,5)\\).",
-    "\\(\\log_2[(x-3)(5-x)]=0\\iff(x-3)(5-x)=1\\).",
-    "\\(-x^2+8x-15=1\\Rightarrow(x-4)^2=0\\Rightarrow x=4\\), que está en el dominio."
+    "\\(\\log_2[(x-3)(5-x)]\\) \\(=0\\iff(x-3)(5-x)\\) \\(=1\\).",
+    "\\(-x^2+8x-15=1\\) \\(\\Rightarrow (x-4)^2=0\\) \\(\\Rightarrow  x=4\\), que está en el dominio."
    ],
    "ans": "Dom \\((3,5)\\), corte \\((4,0)\\)",
    "hint": "",
@@ -2448,7 +2852,7 @@
    ],
    "steps": [
     "\\(A=35\\), \\(B=5-35=-30\\).",
-    "\\(35-30e^{-3k}=20\\Rightarrow e^{-3k}=\\frac12\\Rightarrow k=\\frac{\\ln2}3\\approx0{,}231\\).",
+    "\\(35-30e^{-3k}=20\\) \\(\\Rightarrow  e^{-3k}=\\frac12\\) \\(\\Rightarrow  k=\\frac{\\ln2}3\\approx0{,}231\\).",
     "Verdadero: en las primeras 3 h sube 15 mg/L, en las 3 siguientes solo 7,5. Lo que falta para 35 se reduce a la mitad cada 3 h."
    ],
    "ans": "\\(M(t)=35-30e^{-0{,}231t}\\)",
@@ -2544,10 +2948,10 @@
    ],
    "steps": [
     "\\(k=22\\), \\(A=12\\), \\(B=\\frac{2\\pi}{30}=\\frac\\pi{15}\\).",
-    "Empieza en el mínimo: coseno invertido, \\(h(t)=-12\\cos\\left(\\frac\\pi{15}t\\right)+22\\).",
+    "Empieza en el mínimo: coseno invertido, \\(h(t)\\) \\(=-12\\cos\\left(\\frac\\pi{15}t\\right)+22\\).",
     "Del mínimo (\\(t=0\\)) al máximo (\\(t=15\\)) sube."
    ],
-   "ans": "\\(h(t)=-12\\cos\\left(\\tfrac\\pi{15}t\\right)+22\\)",
+   "ans": "\\(h(t)\\) \\(=-12\\cos\\left(\\tfrac\\pi{15}t\\right)+22\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2592,7 +2996,7 @@
    ],
    "steps": [
     "\\(t=\\ln\\frac x{10-x}\\Rightarrow e^t=\\frac x{10-x}\\).",
-    "\\(10e^t=x(1+e^t)\\Rightarrow x=\\frac{10e^t}{1+e^t}\\).",
+    "\\(10e^t=x(1+e^t)\\) \\(\\Rightarrow  x=\\frac{10e^t}{1+e^t}\\).",
     "\\(t=0\\Rightarrow x=5\\). \\(x=0\\) exigiría \\(10e^t=0\\), imposible: no corta el eje horizontal."
    ],
    "ans": "\\(x(t)=\\frac{10e^t}{1+e^t}\\)",
@@ -2638,7 +3042,7 @@
    ],
    "steps": [
     "\\(A=20\\), \\(B=120-20=100\\).",
-    "\\(20+100e^{-10k}=70\\Rightarrow e^{-10k}=\\frac12\\Rightarrow k=\\frac{\\ln2}{10}\\approx0{,}0693\\).",
+    "\\(20+100e^{-10k}=70\\) \\(\\Rightarrow  e^{-10k}=\\frac12\\) \\(\\Rightarrow  k\\) \\(=\\frac{\\ln2}{10}\\approx0{,}0693\\).",
     "\\(100e^{-kt}\\) nunca es 0 ni negativo: 20 °C es una asíntota."
    ],
    "ans": "\\(T(t)=20+100e^{-0{,}0693t}\\)",
@@ -2687,7 +3091,7 @@
    "steps": [
     "\\(|A|=3\\), \\(T=\\frac{2\\pi}{\\pi/4}=8\\), eje \\(y=4\\).",
     "Cambia solo el desfase: el seno cruza subiendo en 0 y el máximo está \\(\\frac T4=2\\) después.",
-    "\\(f(x)=3\\cos\\left(\\frac\\pi4(x-2)\\right)+4\\)."
+    "\\(f(x)\\) \\(=3\\cos\\left(\\frac\\pi4(x-2)\\right)+4\\)."
    ],
    "ans": "\\(3\\cos\\left(\\tfrac\\pi4(x-2)\\right)+4\\)",
    "hint": "",
@@ -2734,10 +3138,10 @@
    ],
    "steps": [
     "\\(k=3\\), \\(A=1{,}5\\), \\(B=\\frac{2\\pi}8=\\frac\\pi4\\).",
-    "Altura media y subiendo: seno sin desfase, \\(h(t)=1{,}5\\sin\\left(\\frac\\pi4t\\right)+3\\).",
+    "Altura media y subiendo: seno sin desfase, \\(h(t)\\) \\(=1{,}5\\sin\\left(\\frac\\pi4t\\right)+3\\).",
     "Máximo en \\(\\frac T4=2\\) y vuelve al eje en \\(t=4\\): entre 2 y 4 baja."
    ],
-   "ans": "\\(h(t)=1{,}5\\sin\\left(\\tfrac\\pi4t\\right)+3\\)",
+   "ans": "\\(h(t)\\) \\(=1{,}5\\sin\\left(\\tfrac\\pi4t\\right)+3\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2816,10 +3220,10 @@
    ],
    "steps": [
     "\\(E(0)=A=0{,}5\\).",
-    "\\(0{,}5+B\\ln4=1{,}6\\Rightarrow B=\\frac{1{,}1}{\\ln4}\\approx0{,}793\\).",
+    "\\(0{,}5+B\\ln4=1{,}6\\) \\(\\Rightarrow  B\\) \\(=\\frac{1{,}1}{\\ln4}\\approx0{,}793\\).",
     "\\(B\\gt0\\): siempre crece, pero el logaritmo se aplana: cada vez más lento."
    ],
-   "ans": "\\(E(t)=0{,}5+0{,}793\\ln(t+1)\\)",
+   "ans": "\\(E(t)\\) \\(=0{,}5+0{,}793\\ln(t+1)\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2839,7 +3243,7 @@
    "id": "e4S1",
    "lvl": 2,
    "title": "EA4 sábado · P1",
-   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)=2\\cos\\left(2x-\\frac\\pi2\\right)+5\\), ¿qué parámetro(s) debe cambiar para pasar de coseno a seno? Escribe la nueva función seno.</p>",
+   "q": "<p>(4 pts) Dada la gráfica de \\(f(x)\\) \\(=2\\cos\\left(2x-\\frac\\pi2\\right)+5\\), ¿qué parámetro(s) debe cambiar para pasar de coseno a seno? Escribe la nueva función seno.</p>",
    "checks": [
     {
      "p": "Parámetro que cambia",
@@ -2865,7 +3269,7 @@
    "steps": [
     "Factoriza: \\(2\\cos\\left(2\\left(x-\\frac\\pi4\\right)\\right)+5\\): máximo en \\(x=\\frac\\pi4\\).",
     "Período \\(\\pi\\): el cruce subiendo está \\(\\frac T4=\\frac\\pi4\\) antes del máximo, en \\(x=0\\).",
-    "Seno con \\(h=0\\): \\(f(x)=2\\sin(2x)+5\\). Comprueba con \\(\\cos\\left(\\theta-\\frac\\pi2\\right)=\\sin\\theta\\)."
+    "Seno con \\(h=0\\): \\(f(x)=2\\sin(2x)+5\\). Comprueba con \\(\\cos\\left(\\theta-\\frac\\pi2\\right)\\) \\(=\\sin\\theta\\)."
    ],
    "ans": "\\(2\\sin(2x)+5\\)",
    "hint": "",
@@ -2913,7 +3317,7 @@
     "Coseno con máximo en \\(t=4\\).",
     "Mínimo a las 10:00 y el siguiente máximo a las 16:00: entre 13 y 15 sube."
    ],
-   "ans": "\\(H(t)=1{,}7\\cos\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)",
+   "ans": "\\(H(t)\\) \\(=1{,}7\\cos\\left(\\tfrac\\pi6(t-4)\\right)+3{,}5\\)",
    "hint": "",
    "fig": null,
    "draw": false,
@@ -2948,7 +3352,7 @@
    ],
    "steps": [
     "Divide entre \\(e^x\\gt0\\): \\(e^{2x}=e^2+1\\).",
-    "\\(2x=\\ln(e^2+1)\\Rightarrow x=\\frac12\\ln(e^2+1)\\approx1{,}063\\)."
+    "\\(2x=\\ln(e^2+1)\\) \\(\\Rightarrow  x\\) \\(=\\frac12\\ln(e^2+1)\\approx1{,}063\\)."
    ],
    "ans": "\\(x=\\tfrac12\\ln(e^2+1)\\)",
    "hint": "Saca factor común \\(e^x\\).",
@@ -2993,8 +3397,8 @@
     }
    ],
    "steps": [
-    "\\(A+B\\ln3=0{,}8\\) y \\(A+B\\ln7=1{,}4\\). Resta: \\(B\\ln\\frac73=0{,}6\\Rightarrow B\\approx0{,}708\\).",
-    "\\(A=0{,}8-B\\ln3\\approx0{,}022\\).",
+    "\\(A+B\\ln3=0{,}8\\) y \\(A+B\\ln7=1{,}4\\). Resta: \\(B\\ln\\frac73=0{,}6\\) \\(\\Rightarrow  B\\approx0{,}708\\).",
+    "\\(A\\) \\(=0{,}8-B\\ln3\\approx0{,}022\\).",
     "\\(B\\gt0\\) y \\(\\ln(t+1)\\) crece sin parar pero se aplana: crece cada vez más lento."
    ],
    "ans": "\\(h(t)\\approx0{,}022+0{,}708\\ln(t+1)\\)",
@@ -3219,5 +3623,5 @@
  "short": "EA4",
  "sub": "Sem. 7 a 9",
  "guide": true,
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA4 2026-1</b> (las 5 versiones repiten la misma estructura): P1 sinusoidal desde una gráfica, casi siempre pasar de seno a coseno o cambiar parámetros (4 pts) · P2 modelo sinusoidal con un «¿sube o baja?» (6) · P3 ecuación exponencial/logarítmica o dominio de una suma de logaritmos (4) · P4 modelo \\(A+Be^{-kt}\\) o \\(A+B\\ln(t+1)\\) con una justificación (6). Los ejercicios «Tipo EA» de cada tema imitan esas preguntas."
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa de la EA4 2026-1</b> (las 5 versiones repiten la misma estructura): P1 sinusoidal desde una gráfica, casi siempre pasar de seno a coseno o cambiar parámetros (4 pts) · P2 modelo sinusoidal con un «¿sube o baja?» (6) · P3 ecuación exponencial/logarítmica o dominio de una suma de logaritmos (4) · P4 modelo \\(A+Be^{-kt}\\) o \\(A+B\\ln(t+1)\\) con una justificación (6). Los ejercicios «Tipo EA» de cada tema imitan esas preguntas. Ahora tiene interactivos: graficador polar animado, vectores que arrastras, explorador de cónicas, «ajusta la curva», círculo unitario y respuestas como fórmula que se corrigen solas."
 }

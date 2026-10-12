@@ -9,7 +9,7 @@
   {
    "id": "cuadsq",
    "name": "Sem. 10 · Completar cuadrados",
-   "teo": "<p>Para pasar \\(x^2+bx+c\\) a la forma \\((x-h)^2+k\\) se suma y resta \\(\\left(\\frac b2\\right)^2\\): \\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\).</p>\n<p>Si el coeficiente principal es \\(a\\ne1\\), primero se factoriza \\(a\\) <em>solo</em> de los términos con variable: \\(ax^2+bx+c=a\\left(x^2+\\frac bax\\right)+c\\); al sacar lo restado del paréntesis, se multiplica por \\(a\\).</p>\n<p>Con dos variables se completa por separado en \\(x\\) y en \\(y\\). Es la herramienta para leer centro, radio, vértice o semiejes de una cónica.</p>",
+   "teo": "<p>Para pasar \\(x^2+bx+c\\) a la forma \\((x-h)^2+k\\) se suma y resta \\(\\left(\\frac b2\\right)^2\\): \\(x^2+bx\\) \\(=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\).</p>\n<p>Si el coeficiente principal es \\(a\\ne1\\), primero se factoriza \\(a\\) <em>solo</em> de los términos con variable: \\(ax^2+bx+c\\) \\(=a\\left(x^2+\\frac bax\\right)+c\\); al sacar lo restado del paréntesis, se multiplica por \\(a\\).</p>\n<p>Con dos variables se completa por separado en \\(x\\) y en \\(y\\). Es la herramienta para leer centro, radio, vértice o semiejes de una cónica.</p>",
    "form": [
     "\\(x^2+bx=\\left(x+\\tfrac b2\\right)^2-\\tfrac{b^2}4\\)",
     "\\(ax^2+bx=\\) \\(a\\left[\\left(x+\\tfrac b{2a}\\right)^2-\\tfrac{b^2}{4a^2}\\right]\\)",
@@ -34,13 +34,17 @@
        ]
       },
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=1\\) y \\(x=-7\\)",
-        "\\(x=-1\\) y \\(x=7\\)",
-        "\\(x=1\\) y \\(x=7\\)",
-        "\\(x=-3\\pm\\sqrt7\\)",
-        "no tiene solución real"
+       "f": [
+        {
+         "l": "menor",
+         "a": -7
+        },
+        {
+         "l": "mayor",
+         "a": 1
+        }
        ]
       }
      ],
@@ -62,7 +66,8 @@
        "cuad"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cq2",
@@ -81,13 +86,17 @@
        ]
       },
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=1\\) y \\(x=7\\)",
-        "\\(x=-1\\) y \\(x=-7\\)",
-        "\\(x=4\\pm\\sqrt7\\)",
-        "\\(x=1\\) y \\(x=-7\\)",
-        "\\(x=13\\) y \\(x=-5\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": 1
+        },
+        {
+         "l": "mayor",
+         "a": 7
+        }
        ]
       }
      ],
@@ -107,7 +116,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cq3",
@@ -126,13 +136,17 @@
        ]
       },
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=1\\) y \\(x=5\\)",
-        "\\(x=-1\\) y \\(x=-5\\)",
-        "\\(x=3\\pm\\sqrt8\\)",
-        "\\(x=2\\) y \\(x=4\\)",
-        "\\(x=1\\) y \\(x=-5\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": 1
+        },
+        {
+         "l": "mayor",
+         "a": 5
+        }
        ]
       }
      ],
@@ -154,7 +168,8 @@
        "cuad"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cq4",
@@ -173,13 +188,17 @@
        ]
       },
       {
+       "t": "num",
        "p": "Raíces",
-       "o": [
-        "\\(x=1\\) y \\(x=-5\\)",
-        "\\(x=-1\\) y \\(x=5\\)",
-        "\\(x=-2\\pm3\\sqrt3\\)",
-        "\\(x=1\\) y \\(x=5\\)",
-        "\\(x=-2\\pm\\sqrt{19/3}\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": -5
+        },
+        {
+         "l": "mayor",
+         "a": 1
+        }
        ]
       }
      ],
@@ -201,7 +220,8 @@
        "cuad"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cq5",
@@ -220,19 +240,23 @@
        ]
       },
       {
+       "t": "num",
        "p": "Soluciones",
-       "o": [
-        "\\(x=\\frac12\\) y \\(x=-3\\)",
-        "\\(x=-\\frac12\\) y \\(x=3\\)",
-        "\\(x=\\frac32\\) y \\(x=-1\\)",
-        "\\(x=-\\frac54\\pm\\frac74\\sqrt2\\)",
-        "\\(x=3\\) y \\(x=\\frac12\\)"
+       "f": [
+        {
+         "l": "menor",
+         "a": -3
+        },
+        {
+         "l": "mayor",
+         "a": 0.5
+        }
        ]
       }
      ],
      "steps": [
       "\\(2\\left(x^2+\\frac52x\\right)=3\\); mitad de \\(\\frac52\\) es \\(\\frac54\\), su cuadrado \\(\\frac{25}{16}\\).",
-      "\\(2\\left(x+\\frac54\\right)^2=3+2\\cdot\\frac{25}{16}=\\) \\(\\frac{49}8\\).",
+      "\\(2\\left(x+\\frac54\\right)^2\\) \\(=3+2\\cdot\\frac{25}{16}\\) \\(=\\) \\(\\frac{49}8\\).",
       "\\(\\left(x+\\frac54\\right)^2=\\frac{49}{16}\\Rightarrow\\) \\(x=-\\frac54\\pm\\frac74\\): \\(x=\\frac12\\) o \\(x=-3\\)."
      ],
      "ans": "2(x+5/4)² = 49/8 → x = ½ o −3",
@@ -248,7 +272,8 @@
        "cuad"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cq6",
@@ -257,13 +282,21 @@
      "q": "<p>Escribe \\(x^2+y^2-6x+4y-12=0\\) en la forma \\((x-h)^2+(y-k)^2=R^2\\).</p>",
      "checks": [
       {
-       "p": "Forma",
-       "o": [
-        "\\((x-3)^2+(y+2)^2=25\\)",
-        "\\((x-3)^2+(y+2)^2=12\\)",
-        "\\((x+3)^2+(y-2)^2=25\\)",
-        "\\((x-3)^2+(y+2)^2=-1\\)",
-        "\\((x-6)^2+(y+4)^2=64\\)"
+       "t": "num",
+       "p": "(x − h)² + (y − k)² = R²",
+       "f": [
+        {
+         "l": "h",
+         "a": 3
+        },
+        {
+         "l": "k",
+         "a": -2
+        },
+        {
+         "l": "R²",
+         "a": 25
+        }
        ]
       }
      ],
@@ -433,6 +466,37 @@
        "degen"
       ]
      ]
+    },
+    {
+     "id": "cq10",
+     "lvl": 1,
+     "title": "Ordena: completar cuadrados",
+     "q": "<p>Ordena los pasos para completar cuadrados en \\(ax^2+bx+c=0\\).</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Toca los pasos en orden.",
+       "items": [
+        "Sacar factor común del coeficiente de x².",
+        "Sumar y restar el cuadrado de la mitad del coeficiente de x.",
+        "Escribir el trinomio como binomio al cuadrado.",
+        "Pasar las constantes al otro lado y despejar."
+       ]
+      }
+     ],
+     "steps": [
+      "Primero el coeficiente de x² debe quedar en 1 (dentro del paréntesis).",
+      "La mitad del coeficiente de x, al cuadrado, completa el trinomio cuadrado perfecto; luego se despeja."
+     ],
+     "ans": "Factor común → (b/2)² → binomio² → despejar",
+     "hint": "La mitad del coeficiente de x, al cuadrado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
     }
    ]
   },
@@ -447,7 +511,7 @@
     "\\((y-k)^2=4p(x-h)\\)",
     "Foco: \\(|p|\\) desde el vértice; directriz: \\(|p|\\) al lado opuesto"
    ],
-   "lesson": "<h3>Idea central</h3><p>El sílabo pide circunferencia y parábola. Casi todo se reduce a llevar la ecuación a su forma canónica para leer centro, radio, vértice, foco y directriz.</p>\n<h3>Conceptos clave</h3><ul><li>Completar cuadrados: \\(x^2-6x=(x-3)^2-9\\).</li><li>Circunferencia que pasa por el origen: no tiene término independiente.</li><li>Parábola: la variable que <em>no</em> está al cuadrado indica hacia dónde abre.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa x con x y y con y.</li><li><strong>2.</strong> Completa cuadrados sumando lo mismo en ambos lados.</li><li><strong>3.</strong> Lee los elementos de la forma canónica.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(x^2+y^2-4x=0\\Rightarrow(x-2)^2+y^2=4\\): centro \\((2,0)\\), \\(r=2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar sumar en el lado derecho lo que agregaste al completar cuadrados.</div>",
+   "lesson": "<h3>Idea central</h3><p>El sílabo pide circunferencia y parábola. Casi todo se reduce a llevar la ecuación a su forma canónica para leer centro, radio, vértice, foco y directriz.</p>\n<h3>Conceptos clave</h3><ul><li>Completar cuadrados: \\(x^2-6x=(x-3)^2-9\\).</li><li>Circunferencia que pasa por el origen: no tiene término independiente.</li><li>Parábola: la variable que <em>no</em> está al cuadrado indica hacia dónde abre.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa x con x y y con y.</li><li><strong>2.</strong> Completa cuadrados sumando lo mismo en ambos lados.</li><li><strong>3.</strong> Lee los elementos de la forma canónica.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(x^2+y^2-4x=0\\) \\(\\Rightarrow (x-2)^2+y^2=4\\): centro \\((2,0)\\), \\(r=2\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar sumar en el lado derecho lo que agregaste al completar cuadrados.</div>",
    "ex": [
     {
      "id": "cn1",
@@ -456,28 +520,26 @@
      "q": "<p>\\(x^2+y^2-6x+4y-3=0\\).</p>",
      "checks": [
       {
-       "p": "Centro",
-       "o": [
-        "\\((3,-2)\\)",
-        "\\((-3,2)\\)",
-        "\\((6,-4)\\)",
-        "\\((3,2)\\)",
-        "\\((-6,4)\\)"
-       ]
-      },
-      {
-       "p": "Radio",
-       "o": [
-        "4",
-        "16",
-        "3",
-        "\\(\\sqrt3\\)",
-        "2"
+       "t": "num",
+       "p": "Centro y radio",
+       "f": [
+        {
+         "l": "h",
+         "a": 3
+        },
+        {
+         "l": "k",
+         "a": -2
+        },
+        {
+         "l": "r",
+         "a": 4
+        }
        ]
       }
      ],
      "steps": [
-      "\\((x^2-6x+9)+(y^2+4y+4)=3+9+4\\).",
+      "\\((x^2-6x+9)+(y^2+4y+4)\\) \\(=3+9+4\\).",
       "\\((x-3)^2+(y+2)^2=16\\): centro \\((3,-2)\\), radio 4."
      ],
      "ans": "Centro \\((3,-2)\\), \\(r=4\\)",
@@ -532,13 +594,21 @@
      "q": "<p>\\(x^2+y^2=8y\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Centro y radio",
-       "o": [
-        "\\((0,4)\\), \\(r=4\\)",
-        "\\((0,8)\\), \\(r=8\\)",
-        "\\((4,0)\\), \\(r=4\\)",
-        "\\((0,4)\\), \\(r=16\\)",
-        "\\((0,-4)\\), \\(r=4\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": 0
+        },
+        {
+         "l": "k",
+         "a": 4
+        },
+        {
+         "l": "r",
+         "a": 4
+        }
        ]
       },
       {
@@ -553,7 +623,7 @@
       }
      ],
      "steps": [
-      "\\(x^2+(y^2-8y+16)=16\\Rightarrow x^2+(y-4)^2=16\\).",
+      "\\(x^2+(y^2-8y+16)=16\\) \\(\\Rightarrow  x^2+(y-4)^2=16\\).",
       "\\((0,0)\\): \\(0=0\\) ✓. Este tipo de circunferencia aparece en la EA5 como \\(r=8\\sin\\theta\\)."
      ],
      "ans": "Centro \\((0,4)\\), \\(r=4\\)",
@@ -567,7 +637,8 @@
        "circ"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cn4",
@@ -576,13 +647,17 @@
      "q": "<p>\\(y=(x-2)^2-3\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Vértice",
-       "o": [
-        "\\((2,-3)\\)",
-        "\\((-2,-3)\\)",
-        "\\((2,3)\\)",
-        "\\((-3,2)\\)",
-        "\\((3,-2)\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": -3
+        }
        ]
       },
       {
@@ -609,7 +684,8 @@
      "tags": [
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cn5",
@@ -618,33 +694,41 @@
      "q": "<p>\\((x-1)^2=8(y+2)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Vértice",
-       "o": [
-        "\\((1,-2)\\)",
-        "\\((-1,2)\\)",
-        "\\((1,2)\\)",
-        "\\((8,-2)\\)",
-        "\\((-2,1)\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": 1
+        },
+        {
+         "l": "k",
+         "a": -2
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Foco",
-       "o": [
-        "\\((1,0)\\)",
-        "\\((1,-4)\\)",
-        "\\((3,-2)\\)",
-        "\\((1,6)\\)",
-        "\\((1,-1)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "y",
+         "a": 0
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Directriz",
-       "o": [
-        "\\(y=-4\\)",
-        "\\(y=0\\)",
-        "\\(x=-1\\)",
-        "\\(y=-2\\)",
-        "\\(y=4\\)"
+       "f": [
+        {
+         "l": "y =",
+         "a": -4
+        }
        ]
       }
      ],
@@ -663,7 +747,8 @@
        "parab"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cn6",
@@ -672,13 +757,17 @@
      "q": "<p>\\(y^2=-12x\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Foco",
-       "o": [
-        "\\((-3,0)\\)",
-        "\\((3,0)\\)",
-        "\\((0,-3)\\)",
-        "\\((-12,0)\\)",
-        "\\((0,3)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": -3
+        },
+        {
+         "l": "y",
+         "a": 0
+        }
        ]
       },
       {
@@ -707,7 +796,8 @@
        "parab"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cn7",
@@ -772,7 +862,7 @@
      ],
      "steps": [
       "\\(r^2=2^2+(-5)^2=29\\).",
-      "\\((x-2)^2+(y+5)^2=29\\Rightarrow x^2-4x+4+y^2+10y+25=29\\Rightarrow x^2+y^2-4x+10y=0\\)."
+      "\\((x-2)^2+(y+5)^2=29\\) \\(\\Rightarrow  x^2-4x+4+y^2+10y+25\\) \\(=29\\) \\(\\Rightarrow  x^2+y^2-4x+10y=0\\)."
      ],
      "ans": "\\(x^2+y^2-4x+10y=0\\)",
      "hint": "",
@@ -786,13 +876,152 @@
        "circ"
       ]
      ]
+    },
+    {
+     "id": "cn9",
+     "lvl": 2,
+     "title": "Toca el foco y la directriz",
+     "q": "<p>La gráfica es \\((x-1)^2=8(y+2)\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el <b>foco</b>.",
+       "a": [
+        "F"
+       ],
+       "plot": {
+        "xr": [
+         -6,
+         8
+        ],
+        "yr": [
+         -6,
+         6
+        ],
+        "ps": [
+         {
+          "x": "t",
+          "y": "(t-1)^2/8-2",
+          "t": [
+           -8,
+           10
+          ]
+         }
+        ],
+        "sx": 2,
+        "sy": 2,
+        "zones": [
+         {
+          "t": "pt",
+          "x": 1,
+          "y": -2,
+          "id": "V"
+         },
+         {
+          "t": "pt",
+          "x": 1,
+          "y": 0,
+          "id": "F"
+         },
+         {
+          "t": "pt",
+          "x": 1,
+          "y": 2,
+          "id": "P"
+         },
+         {
+          "t": "pt",
+          "x": 5,
+          "y": 0,
+          "id": "Q"
+         }
+        ]
+       },
+       "e": "4p = 8 → p = 2: el foco está 2 unidades sobre el vértice."
+      },
+      {
+       "t": "tap",
+       "p": "Toca la <b>directriz</b>.",
+       "a": [
+        "d"
+       ],
+       "plot": {
+        "xr": [
+         -6,
+         8
+        ],
+        "yr": [
+         -6,
+         6
+        ],
+        "ps": [
+         {
+          "x": "t",
+          "y": "(t-1)^2/8-2",
+          "t": [
+           -8,
+           10
+          ]
+         }
+        ],
+        "sx": 2,
+        "sy": 2,
+        "zones": [
+         {
+          "t": "ha",
+          "y": -4,
+          "id": "d"
+         },
+         {
+          "t": "ha",
+          "y": 0,
+          "id": "y0"
+         },
+         {
+          "t": "va",
+          "x": 1,
+          "id": "eje"
+         }
+        ]
+       },
+       "e": "La directriz está a p = 2 debajo del vértice: y = −4."
+      }
+     ],
+     "steps": [
+      "Vértice (1, −2); 4p = 8 → p = 2 > 0: abre hacia arriba. Foco: 2 arriba del vértice → (1, 0).",
+      "Directriz: 2 debajo del vértice → y = −4 (recta horizontal)."
+     ],
+     "ans": "Foco (1, 0); directriz y = −4",
+     "hint": "p = 8/4.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ]
+     ],
+     "chain": true
+    }
+   ],
+   "tools": [
+    {
+     "w": "conic",
+     "t": "Explora las cónicas",
+     "p": "Elige la cónica y mueve los parámetros: mira cómo se mueven el centro, el vértice y los focos.",
+     "o": {
+      "t": "pv"
+     }
     }
    ]
   },
   {
    "id": "conelh",
    "name": "Sem. 10 · Elipse, hipérbola y cómo reconocer cada cónica",
-   "teo": "<p>Las cuatro cónicas salen de cortar un cono doble con un plano y todas son casos de \\(Ax^2+Cy^2+Dx+Ey+F=0\\).</p>\n<p><strong>Elipse:</strong> \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\) con \\(a\\gt b\\) (eje mayor horizontal); focos a distancia \\(c\\) del centro, \\(c^2=a^2-b^2\\).</p>\n<p><strong>Hipérbola:</strong> \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\) (abre horizontal) o \\(\\frac{(y-k)^2}{a^2}-\\frac{(x-h)^2}{b^2}=1\\) (abre vertical); \\(c^2=a^2+b^2\\). Aquí no importa si \\(a\\gt b\\): \\(a\\) va con el término positivo.</p>",
+   "teo": "<p>Las cuatro cónicas salen de cortar un cono doble con un plano y todas son casos de \\(Ax^2+Cy^2+Dx+Ey+F=0\\).</p>\n<p><strong>Elipse:</strong> \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}\\) \\(=1\\) con \\(a\\gt b\\) (eje mayor horizontal); focos a distancia \\(c\\) del centro, \\(c^2=a^2-b^2\\).</p>\n<p><strong>Hipérbola:</strong> \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}\\) \\(=1\\) (abre horizontal) o \\(\\frac{(y-k)^2}{a^2}-\\frac{(x-h)^2}{b^2}\\) \\(=1\\) (abre vertical); \\(c^2=a^2+b^2\\). Aquí no importa si \\(a\\gt b\\): \\(a\\) va con el término positivo.</p>",
    "form": [
     "Elipse: \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2-b^2\\)",
     "Hipérbola: \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\), \\(c^2=a^2+b^2\\)",
@@ -804,25 +1033,62 @@
     {
      "id": "ce1",
      "lvl": 1,
-     "title": "¿Qué cónica es? (I)",
-     "q": "<p>Clasifica \\(9x^2+16y^2=144\\).</p>",
+     "title": "¿Qué cónica es?",
+     "q": "<p>Clasifica cada ecuación.</p>",
      "checks": [
       {
-       "p": "Cónica",
-       "o": [
-        "Elipse",
+       "t": "cls",
+       "p": "¿Qué cónica es?",
+       "cats": [
         "Circunferencia",
-        "Hipérbola",
         "Parábola",
-        "Punto"
+        "Elipse",
+        "Hipérbola"
+       ],
+       "items": [
+        {
+         "x": "\\(9x^2+16y^2=144\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(x=2y^2+12y+13\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(x^2+y^2=2x\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(x^2-2y^2=8\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(3x^2=4y^2+12\\)",
+         "c": 3,
+         "e": "Pasa todo a un lado: 3x² − 4y² = 12, signos opuestos."
+        },
+        {
+         "x": "\\(y=x^2-4x\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(4x^2+4y^2=36\\)",
+         "c": 0,
+         "e": "Mismos coeficientes en x² e y²: circunferencia."
+        },
+        {
+         "x": "\\(\\frac{x^2}{9}+\\frac{y^2}{25}=1\\)",
+         "c": 2
+        }
        ]
       }
      ],
      "steps": [
-      "\\(x^2\\) y \\(y^2\\) con el mismo signo y coeficientes distintos (9 y 16): elipse.",
-      "Dividiendo entre 144: \\(\\frac{x^2}{16}+\\frac{y^2}9=1\\), con \\(a=4\\), \\(b=3\\)."
+      "Solo una variable al cuadrado → parábola.",
+      "Ambas al cuadrado con el mismo signo: iguales coeficientes → circunferencia; distintos → elipse.",
+      "Ambas al cuadrado con signos opuestos → hipérbola."
      ],
-     "ans": "Elipse",
+     "ans": "E, P, C, H, H, P, C, E",
      "hint": "Compara los coeficientes de x² y y².",
      "fig": null,
      "draw": false,
@@ -832,42 +1098,10 @@
        "clasif"
       ],
       [
-       "elip"
-      ]
-     ]
-    },
-    {
-     "id": "ce2",
-     "lvl": 1,
-     "title": "¿Qué cónica es? (II)",
-     "q": "<p>Clasifica \\(x=2y^2+12y+13\\).</p>",
-     "checks": [
-      {
-       "p": "Cónica",
-       "o": [
-        "Parábola de eje horizontal",
-        "Parábola de eje vertical",
-        "Hipérbola",
-        "Elipse",
-        "Circunferencia"
-       ]
-      }
-     ],
-     "steps": [
-      "Solo \\(y\\) está al cuadrado y \\(x\\) es lineal: parábola.",
-      "Como la que está al cuadrado es \\(y\\), el eje es horizontal (abre a la derecha porque \\(2\\gt0\\))."
-     ],
-     "ans": "Parábola horizontal",
-     "hint": "¿Cuántas variables están al cuadrado?",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
        "clasif"
       ],
       [
-       "parab"
+       "clasif"
       ]
      ]
     },
@@ -907,58 +1141,23 @@
      ]
     },
     {
-     "id": "ce4",
-     "lvl": 2,
-     "title": "¿Qué cónica es? (IV)",
-     "q": "<p>Clasifica \\(x^2-2y^2=8\\) y \\(3x^2=4y^2+12\\).</p>",
-     "checks": [
-      {
-       "p": "Ambas son",
-       "o": [
-        "Hipérbolas horizontales",
-        "Elipses",
-        "Una elipse y una hipérbola",
-        "Hipérbolas verticales",
-        "Parábolas"
-       ]
-      }
-     ],
-     "steps": [
-      "\\(x^2-2y^2=8\\Rightarrow\\frac{x^2}8-\\frac{y^2}4=1\\).",
-      "\\(3x^2-4y^2=12\\Rightarrow\\frac{x^2}4-\\frac{y^2}3=1\\).",
-      "Signos opuestos con el término de \\(x\\) positivo: ambas son hipérbolas que abren horizontalmente."
-     ],
-     "ans": "Ambas hipérbolas horizontales",
-     "hint": "Pasa todo a un lado y mira los signos.",
-     "fig": null,
-     "draw": false,
-     "solfig": null,
-     "tags": [
-      [
-       "hiper"
-      ],
-      [
-       "hiper"
-      ],
-      [
-       "clasif"
-      ]
-     ]
-    },
-    {
      "id": "ce5",
      "lvl": 2,
      "title": "Elementos de una elipse",
      "q": "<p>Para \\(\\frac{(x+1)^2}{16}+\\frac{(y-2)^2}9=1\\), halla el centro y los focos.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Centro",
-       "o": [
-        "\\((-1,2)\\)",
-        "\\((1,-2)\\)",
-        "\\((-1,-2)\\)",
-        "\\((16,9)\\)",
-        "\\((1,2)\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": -1
+        },
+        {
+         "l": "k",
+         "a": 2
+        }
        ]
       },
       {
@@ -975,7 +1174,7 @@
      "steps": [
       "Centro: \\(x+1\\Rightarrow h=-1\\), \\(y-2\\Rightarrow k=2\\).",
       "\\(a^2=16\\) va con \\(x\\): eje mayor horizontal, \\(a=4\\), \\(b=3\\).",
-      "\\(c^2=16-9=7\\Rightarrow c=\\sqrt7\\approx2.65\\); focos \\((-1\\pm\\sqrt7,\\,2)\\)."
+      "\\(c^2=16-9=7\\) \\(\\Rightarrow  c=\\sqrt7\\approx2.65\\); focos \\((-1\\pm\\sqrt7,\\,2)\\)."
      ],
      "ans": "Centro (−1, 2); focos (−1 ± √7, 2)",
      "hint": "En la elipse c² = a² − b².",
@@ -990,7 +1189,8 @@
       [
        "elip"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ce6",
@@ -1069,7 +1269,7 @@
       }
      ],
      "steps": [
-      "\\(y=2x^2\\Rightarrow x^2=\\frac12y\\Rightarrow4p=\\frac12\\Rightarrow\\) \\(p=\\frac18\\).",
+      "\\(y=2x^2\\) \\(\\Rightarrow  x^2=\\frac12y\\) \\(\\Rightarrow 4p=\\frac12\\) \\(\\Rightarrow\\) \\(p=\\frac18\\).",
       "\\(y=\\frac12x^2\\Rightarrow x^2=2y\\Rightarrow p=\\frac12\\).",
       "\\(|a|=\\frac1{4|p|}\\): mayor \\(|a|\\), menor \\(p\\) y parábola más cerrada. \\(y=2x^2\\) es más cerrada."
      ],
@@ -1097,30 +1297,40 @@
      "q": "<p>Dos estaciones están a 400 km (focos en \\((\\pm200,0)\\)) y la diferencia de distancias del barco a ellas es 240 km. El barco está en la rama derecha con \\(y=100\\) km. ¿Cuál es su coordenada \\(x\\)?</p>",
      "checks": [
       {
-       "p": "a, b, c",
-       "o": [
-        "\\(a=120,\\ b=160,\\ c=200\\)",
-        "\\(a=240,\\ b=160,\\ c=400\\)",
-        "\\(a=120,\\ b=80,\\ c=200\\)",
-        "\\(a=200,\\ b=120,\\ c=240\\)",
-        "\\(a=120,\\ b=233,\\ c=200\\)"
+       "t": "num",
+       "p": "Parámetros",
+       "f": [
+        {
+         "l": "a",
+         "a": 120
+        },
+        {
+         "l": "b",
+         "a": 160
+        },
+        {
+         "l": "c",
+         "a": 200
+        }
        ]
       },
       {
+       "t": "num",
        "p": "x del barco",
-       "o": [
-        "\\(\\approx141.5\\) km",
-        "\\(\\approx120\\) km",
-        "\\(\\approx156.2\\) km",
-        "\\(\\approx200\\) km",
-        "\\(\\approx100\\) km"
+       "f": [
+        {
+         "l": "x",
+         "a": 141.5,
+         "u": "km",
+         "tol": 0.2
+        }
        ]
       }
      ],
      "steps": [
       "\\(2a=240\\Rightarrow a=120\\); \\(2c=400\\Rightarrow c=200\\); \\(b^2=c^2-a^2=25600\\Rightarrow b=160\\).",
       "Ecuación: \\(\\frac{x^2}{14400}-\\frac{y^2}{25600}=1\\).",
-      "Con \\(y=100\\): \\(x^2=\\) \\(14400\\big(1+\\frac{10000}{25600}\\big)=\\) \\(20025\\Rightarrow\\) \\(x\\approx141.5\\) km (rama derecha: \\(x\\gt0\\))."
+      "Con \\(y=100\\): \\(x^2=\\) \\(14400\\big(1+\\frac{10000}{25600}\\big)\\) \\(=\\) \\(20025\\Rightarrow\\) \\(x\\approx141.5\\) km (rama derecha: \\(x\\gt0\\))."
      ],
      "ans": "a = 120, b = 160, c = 200; x ≈ 141.5 km",
      "hint": "La diferencia constante es 2a.",
@@ -1135,7 +1345,8 @@
        "hiper"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ce9",
@@ -1154,13 +1365,21 @@
        ]
       },
       {
+       "t": "num",
        "p": "Vértice y p",
-       "o": [
-        "\\((2,-3)\\), \\(p=\\frac18\\)",
-        "\\((2,-3)\\), \\(p=\\frac12\\)",
-        "\\((2,3)\\), \\(p=\\frac18\\)",
-        "\\((-2,-3)\\), \\(p=2\\)",
-        "\\((2,-3)\\), \\(p=2\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": -3
+        },
+        {
+         "l": "p",
+         "a": 0.125
+        }
        ]
       }
      ],
@@ -1184,7 +1403,8 @@
       [
        "parab"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ce10",
@@ -1193,23 +1413,31 @@
      "q": "<p>Para \\(x=y^2+6y+8\\), halla el vértice, el foco y la directriz.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Vértice",
-       "o": [
-        "\\((-1,-3)\\)",
-        "\\((8,-3)\\)",
-        "\\((-3,-1)\\)",
-        "\\((1,3)\\)",
-        "\\((-1,3)\\)"
+       "f": [
+        {
+         "l": "h",
+         "a": -1
+        },
+        {
+         "l": "k",
+         "a": -3
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Foco y directriz",
-       "o": [
-        "Foco \\((-0.75,-3)\\), directriz \\(x=-1.25\\)",
-        "Foco \\((0,-3)\\), directriz \\(x=-2\\)",
-        "Foco \\((-1,-2.75)\\), directriz \\(y=-3.25\\)",
-        "Foco \\((-1.25,-3)\\), directriz \\(x=-0.75\\)",
-        "Foco \\((-0.75,3)\\), directriz \\(x=-1.25\\)"
+       "f": [
+        {
+         "l": "foco x",
+         "a": -0.75
+        },
+        {
+         "l": "directriz x =",
+         "a": -1.25
+        }
        ]
       }
      ],
@@ -1233,7 +1461,113 @@
       [
        "parab"
       ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "ce11",
+     "lvl": 2,
+     "title": "Toca los focos de la elipse",
+     "q": "<p>La gráfica es \\(\\dfrac{(x+1)^2}{16}+\\dfrac{(y-2)^2}{9}=1\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca los dos <b>focos</b>.",
+       "a": [
+        "f1",
+        "f2"
+       ],
+       "plot": {
+        "xr": [
+         -7,
+         5
+        ],
+        "yr": [
+         -3,
+         7
+        ],
+        "ps": [
+         {
+          "x": "-1+4*cos(t)",
+          "y": "2+3*sin(t)",
+          "t": [
+           0,
+           6.3
+          ]
+         }
+        ],
+        "sx": 2,
+        "sy": 2,
+        "zones": [
+         {
+          "t": "pt",
+          "x": -3.6457513110645907,
+          "y": 2,
+          "id": "f1"
+         },
+         {
+          "t": "pt",
+          "x": 1.6457513110645907,
+          "y": 2,
+          "id": "f2"
+         },
+         {
+          "t": "pt",
+          "x": -5,
+          "y": 2,
+          "id": "v1"
+         },
+         {
+          "t": "pt",
+          "x": 3,
+          "y": 2,
+          "id": "v2"
+         },
+         {
+          "t": "pt",
+          "x": -1,
+          "y": 2,
+          "id": "c"
+         },
+         {
+          "t": "pt",
+          "x": -1,
+          "y": 5,
+          "id": "b1"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "c² = a² − b² = 16 − 9 = 7: los focos están a √7 ≈ 2,65 del centro, sobre el eje mayor."
+      }
+     ],
+     "steps": [
+      "Centro (−1, 2); a² = 16 (eje mayor horizontal), b² = 9.",
+      "c = √(16 − 9) = √7 ≈ 2,65: focos en (−1 ± √7, 2), dentro de la elipse, entre el centro y los vértices."
+     ],
+     "ans": "(−1 ± √7, 2)",
+     "hint": "Los focos están sobre el eje mayor, dentro de la curva.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [
+       "focal"
+      ]
      ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "conic",
+     "t": "Elipse e hipérbola",
+     "p": "Cambia a y b y mira cómo cambian los focos (c² = a² − b² o c² = a² + b²) y las asíntotas.",
+     "o": {
+      "t": "eli"
+     }
     }
    ]
   },
@@ -1398,18 +1732,81 @@
      "q": "<p>Halla los puntos donde se cruzan \\(y=x^2-2\\) y \\(y=6-x^2\\).</p>",
      "checks": [
       {
-       "p": "Puntos",
-       "o": [
-        "\\((2,2)\\) y \\((-2,2)\\)",
-        "\\((2,2)\\) y \\((-2,-2)\\)",
-        "\\((4,14)\\) y \\((-4,14)\\)",
-        "Solo \\((0,-2)\\)",
-        "\\((\\sqrt2,0)\\) y \\((-\\sqrt2,0)\\)"
+       "t": "tap",
+       "p": "Toca los puntos donde se cruzan las dos parábolas.",
+       "a": [
+        "a",
+        "b"
+       ],
+       "plot": {
+        "xr": [
+         -4,
+         4
+        ],
+        "yr": [
+         -3,
+         7
+        ],
+        "fs": [
+         {
+          "f": "x^2-2",
+          "cl": "f",
+          "l": "y = x² − 2"
+         },
+         {
+          "f": "6-x^2",
+          "cl": "d1",
+          "l": "y = 6 − x²",
+          "lx": -2.6
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 2,
+          "y": 2,
+          "id": "a"
+         },
+         {
+          "t": "pt",
+          "x": -2,
+          "y": 2,
+          "id": "b"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 6,
+          "id": "c"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": -2,
+          "id": "d"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "Iguala: x² − 2 = 6 − x² → x² = 4."
+      },
+      {
+       "t": "num",
+       "p": "Confirma con álgebra: las coordenadas del punto de la derecha",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": 2
+        }
        ]
       }
      ],
      "steps": [
-      "\\(x^2-2=6-x^2\\Rightarrow2x^2=8\\Rightarrow x=\\pm2\\).",
+      "\\(x^2-2=6-x^2\\) \\(\\Rightarrow 2x^2=8\\) \\(\\Rightarrow  x=\\pm2\\).",
       "\\(y=4-2=2\\) en ambos: \\((2,2)\\) y \\((-2,2)\\)."
      ],
      "ans": "(2, 2) y (−2, 2)",
@@ -1420,7 +1817,8 @@
      "tags": [
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ci6",
@@ -1498,7 +1896,7 @@
      ],
      "steps": [
       "\\(x^2+(x^2-4)^2=20\\Rightarrow\\) \\(x^4-7x^2-4=0\\).",
-      "\\(t=x^2\\): \\(t=\\frac{7\\pm\\sqrt{65}}2\\); solo \\(t=\\frac{7+\\sqrt{65}}2\\approx7.53\\) es positivo.",
+      "\\(t=x^2\\): \\(t=\\frac{7\\pm\\sqrt{65}}2\\); solo \\(t\\) \\(=\\frac{7+\\sqrt{65}}2\\approx7.53\\) es positivo.",
       "\\(x\\approx\\pm2.74\\), \\(y=t-4\\approx3.53\\): dos puntos simétricos \\((\\pm2.74,\\ 3.53)\\)."
      ],
      "ans": "(±2.74, 3.53)",
@@ -1534,7 +1932,7 @@
      "steps": [
       "La segunda: \\(y=(x-3)^2\\). La primera: \\((x-3)^2+(y-2)^2=4\\).",
       "Sustituyendo \\((x-3)^2=y\\): \\(y+(y-2)^2=4\\Rightarrow y^2-3y=0\\Rightarrow\\) \\(y=0\\) o \\(y=3\\).",
-      "\\(y=0\\Rightarrow x=3\\); \\(y=3\\Rightarrow(x-3)^2=3\\Rightarrow x=3\\pm\\sqrt3\\). Tres puntos."
+      "\\(y=0\\Rightarrow x=3\\); \\(y=3\\) \\(\\Rightarrow (x-3)^2=3\\) \\(\\Rightarrow  x=3\\pm\\sqrt3\\). Tres puntos."
      ],
      "ans": "(3, 0), (3 ± √3, 3)",
      "hint": "Sustituye (x−3)² completo, no x.",
@@ -1556,23 +1954,27 @@
      "q": "<p>¿Para qué \\(m\\) la recta \\(y=mx+2\\) es tangente a \\(y^2=8x\\)? ¿En qué punto?</p>",
      "checks": [
       {
-       "p": "m",
-       "o": [
-        "\\(m=1\\)",
-        "\\(m=2\\)",
-        "\\(m=-1\\)",
-        "\\(m=\\frac12\\)",
-        "\\(m=4\\)"
+       "t": "num",
+       "p": "Pendiente",
+       "f": [
+        {
+         "l": "m",
+         "a": 1
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Punto de tangencia",
-       "o": [
-        "\\((2,4)\\)",
-        "\\((1,3)\\)",
-        "\\((4,6)\\)",
-        "\\((0,2)\\)",
-        "\\((2,-4)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": 4
+        }
        ]
       }
      ],
@@ -1592,7 +1994,8 @@
        "intdisc"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ci10",
@@ -1682,7 +2085,7 @@
       }
      ],
      "steps": [
-      "\\(x^2=y-4\\Rightarrow(y-4)+y^2=9\\Rightarrow\\) \\(y^2+y-13=0\\Rightarrow y\\approx3.14\\) o \\(y\\approx-4.14\\).",
+      "\\(x^2=y-4\\Rightarrow(y-4)+y^2=9\\Rightarrow\\) \\(y^2+y-13=0\\) \\(\\Rightarrow  y\\approx3.14\\) o \\(y\\approx-4.14\\).",
       "Pero \\(x^2=y-4\\) da \\(-0.86\\) y \\(-8.14\\): negativos, sin \\(x\\) real.",
       "No hay intersección: el vértice \\((0,4)\\) ya está fuera de la circunferencia de radio 3."
      ],
@@ -1806,13 +2209,14 @@
      "q": "<p>Un reflector \\(y^2=4px\\) tiene 30 cm de diámetro y 10 cm de profundidad. ¿A qué distancia del vértice va la bombilla?</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Distancia",
-       "o": [
-        "\\(5.625\\) cm",
-        "\\(22.5\\) cm",
-        "\\(7.5\\) cm",
-        "\\(2.25\\) cm",
-        "\\(10\\) cm"
+       "f": [
+        {
+         "l": "p",
+         "a": 5.625,
+         "u": "cm"
+        }
        ]
       }
      ],
@@ -1853,13 +2257,14 @@
        ]
       },
       {
+       "t": "num",
        "p": "Altura en x = 2",
-       "o": [
-        "\\(3\\) m",
-        "\\(2\\) m",
-        "\\(1\\) m",
-        "\\(3.5\\) m",
-        "\\(4\\) m"
+       "f": [
+        {
+         "l": "y",
+         "a": 3,
+         "u": "m"
+        }
        ]
       }
      ],
@@ -1879,7 +2284,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ca5",
@@ -1933,13 +2339,19 @@
        ]
       },
       {
+       "t": "num",
        "p": "Alturas",
-       "o": [
-        "Máxima 45 m, mínima 5 m",
-        "Máxima 65 m, mínima 0 m",
-        "Máxima 45 m, mínima 0 m",
-        "Máxima 40 m, mínima 10 m",
-        "Máxima 25 m, mínima 5 m"
+       "f": [
+        {
+         "l": "máxima",
+         "a": 45,
+         "u": "m"
+        },
+        {
+         "l": "mínima",
+         "a": 5,
+         "u": "m"
+        }
        ]
       }
      ],
@@ -1961,7 +2373,8 @@
        "circ"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "ca7",
@@ -1983,7 +2396,7 @@
      "steps": [
       "Cobertura: \\((x-2)^2+(y-3)^2\\le25\\) (círculo con su borde).",
       "\\(P\\): \\(16+1=17\\).",
-      "\\(17\\lt25\\Rightarrow d=\\sqrt{17}\\approx4.12\\) km \\(\\lt5\\): está dentro."
+      "\\(17\\lt25\\) \\(\\Rightarrow  d=\\sqrt{17}\\approx4.12\\) km \\(\\lt5\\): está dentro."
      ],
      "ans": "Sí, d ≈ 4.12 km < 5 km",
      "hint": "Compara con r² = 25, no con 5.",
@@ -2075,9 +2488,9 @@
       }
      ],
      "steps": [
-      "Parábola por \\((0,8)\\) y \\((\\pm12,0)\\): \\(y=8-\\frac{x^2}{18}\\Rightarrow y(4)\\approx7.11\\).",
-      "Elipse \\(\\frac{x^2}{144}+\\frac{y^2}{64}=1\\Rightarrow\\) \\(y(4)=8\\sqrt{\\frac89}\\approx7.54\\).",
-      "Círculo por \\((0,8)\\) y \\((\\pm12,0)\\): centro \\((0,-5)\\), \\(R=13\\Rightarrow\\) \\(y(4)=-5+\\sqrt{153}\\approx7.37\\).",
+      "Parábola por \\((0,8)\\) y \\((\\pm12,0)\\): \\(y=8-\\frac{x^2}{18}\\) \\(\\Rightarrow  y(4)\\approx7.11\\).",
+      "Elipse \\(\\frac{x^2}{144}+\\frac{y^2}{64}=1\\Rightarrow\\) \\(y(4)\\) \\(=8\\sqrt{\\frac89}\\approx7.54\\).",
+      "Círculo por \\((0,8)\\) y \\((\\pm12,0)\\): centro \\((0,-5)\\), \\(R=13\\Rightarrow\\) \\(y(4)\\) \\(=-5+\\sqrt{153}\\approx7.37\\).",
       "La elipse da más altura cerca de los bordes: mejor para vehículos altos."
      ],
      "ans": "Parábola 7.11, elipse 7.54, círculo 7.37; la elíptica",
@@ -2148,7 +2561,7 @@
     "\\(r=a\\sin\\theta\\iff x^2+\\left(y-\\tfrac a2\\right)^2=\\tfrac{a^2}4\\)",
     "Intersecciones: iguala y revisa el polo"
    ],
-   "lesson": "<h3>Idea central</h3><p>La pregunta grande de la EA5 (10 de 20 puntos) son dos circunferencias polares: pasarlas a cartesianas, intersectarlas, convertir, medir la distancia y graficar.</p>\n<h3>Conceptos clave</h3><ul><li>Multiplicar por \\(r\\) convierte \\(\\cos\\theta\\) en \\(x\\) y \\(\\sin\\theta\\) en \\(y\\).</li><li>\\(a\\cos\\theta=b\\sin\\theta\\Rightarrow\\tan\\theta=\\frac ab\\).</li><li>El ángulo con \\(r\\lt0\\) repite un punto: no lo cuentes dos veces.</li><li>Distancia al polo = \\(|r|\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Pasa cada curva a cartesianas y lee centro y radio.</li><li><strong>2.</strong> Iguala las \\(r\\) y despeja \\(\\tan\\theta\\).</li><li><strong>3.</strong> Calcula \\(r\\) en ese \\(\\theta\\) y añade el polo.</li><li><strong>4.</strong> Convierte a \\((x,y)\\) y grafica ambas circunferencias.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r_1=4\\cos\\theta\\), \\(r_2=4\\sqrt3\\sin\\theta\\): \\(\\tan\\theta=\\frac1{\\sqrt3}\\), \\(\\theta=\\frac\\pi6\\), \\(r=2\\sqrt3\\), punto \\((3,\\sqrt3)\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el polo como punto de intersección.</div>",
+   "lesson": "<h3>Idea central</h3><p>La pregunta grande de la EA5 (10 de 20 puntos) son dos circunferencias polares: pasarlas a cartesianas, intersectarlas, convertir, medir la distancia y graficar.</p>\n<h3>Conceptos clave</h3><ul><li>Multiplicar por \\(r\\) convierte \\(\\cos\\theta\\) en \\(x\\) y \\(\\sin\\theta\\) en \\(y\\).</li><li>\\(a\\cos\\theta=b\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=\\frac ab\\).</li><li>El ángulo con \\(r\\lt0\\) repite un punto: no lo cuentes dos veces.</li><li>Distancia al polo = \\(|r|\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Pasa cada curva a cartesianas y lee centro y radio.</li><li><strong>2.</strong> Iguala las \\(r\\) y despeja \\(\\tan\\theta\\).</li><li><strong>3.</strong> Calcula \\(r\\) en ese \\(\\theta\\) y añade el polo.</li><li><strong>4.</strong> Convierte a \\((x,y)\\) y grafica ambas circunferencias.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r_1=4\\cos\\theta\\), \\(r_2=4\\sqrt3\\sin\\theta\\): \\(\\tan\\theta=\\frac1{\\sqrt3}\\), \\(\\theta=\\frac\\pi6\\), \\(r=2\\sqrt3\\), punto \\((3,\\sqrt3)\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el polo como punto de intersección.</div>",
    "ex": [
     {
      "id": "pl1",
@@ -2157,13 +2570,19 @@
      "q": "<p>Convierte \\(\\left(4,\\frac\\pi3\\right)\\) a coordenadas rectangulares.</p>",
      "checks": [
       {
-       "p": "\\((x,y)\\)",
-       "o": [
-        "\\((2,\\ 2\\sqrt3)\\)",
-        "\\((2\\sqrt3,\\ 2)\\)",
-        "\\((4,\\ 60)\\)",
-        "\\((-2,\\ 2\\sqrt3)\\)",
-        "\\((2,\\ \\sqrt3)\\)"
+       "t": "expr",
+       "p": "(x, y) exactos",
+       "f": [
+        {
+         "a": "2",
+         "v": [],
+         "l": "x ="
+        },
+        {
+         "a": "2*sqrt(3)",
+         "v": [],
+         "l": "y ="
+        }
        ]
       }
      ],
@@ -2189,13 +2608,19 @@
      "q": "<p>Convierte \\((-2,2)\\) a polares con \\(r\\gt0\\) y \\(\\theta\\in[0,2\\pi)\\).</p>",
      "checks": [
       {
-       "p": "\\((r,\\theta)\\)",
-       "o": [
-        "\\(\\left(2\\sqrt2,\\tfrac{3\\pi}4\\right)\\)",
-        "\\(\\left(2\\sqrt2,-\\tfrac{\\pi}4\\right)\\)",
-        "\\(\\left(2\\sqrt2,\\tfrac{\\pi}4\\right)\\)",
-        "\\(\\left(4,\\tfrac{3\\pi}4\\right)\\)",
-        "\\(\\left(2\\sqrt2,\\tfrac{5\\pi}4\\right)\\)"
+       "t": "expr",
+       "p": "(r, θ) exactos",
+       "f": [
+        {
+         "a": "2*sqrt(2)",
+         "v": [],
+         "l": "r ="
+        },
+        {
+         "a": "3*π/4",
+         "v": [],
+         "l": "θ ="
+        }
        ]
       }
      ],
@@ -2244,7 +2669,7 @@
       }
      ],
      "steps": [
-      "Multiplica por \\(r\\): \\(r^2=10r\\cos\\theta\\Rightarrow x^2+y^2=10x\\).",
+      "Multiplica por \\(r\\): \\(r^2=10r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=10x\\).",
       "Completa cuadrados: \\((x-5)^2+y^2=25\\)."
      ],
      "ans": "\\((x-5)^2+y^2=25\\)",
@@ -2280,7 +2705,7 @@
       }
      ],
      "steps": [
-      "\\(r^2=6r\\sin\\theta\\Rightarrow x^2+y^2=6y\\Rightarrow x^2+(y-3)^2=9\\)."
+      "\\(r^2=6r\\sin\\theta\\) \\(\\Rightarrow  x^2+y^2=6y\\) \\(\\Rightarrow  x^2+(y-3)^2=9\\)."
      ],
      "ans": "Circunferencia de centro \\((0,3)\\) y radio 3",
      "hint": "",
@@ -2343,18 +2768,22 @@
        ]
       },
       {
+       "t": "num",
        "p": "Punto no nulo en rectangulares",
-       "o": [
-        "\\((1,1)\\)",
-        "\\((\\sqrt2,\\sqrt2)\\)",
-        "\\((2,2)\\)",
-        "\\(\\left(\\tfrac{\\sqrt2}2,\\tfrac{\\sqrt2}2\\right)\\)",
-        "\\((1,0)\\)"
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "y",
+         "a": 1
+        }
        ]
       }
      ],
      "steps": [
-      "\\(2\\cos\\theta=2\\sin\\theta\\Rightarrow\\tan\\theta=1\\Rightarrow\\theta=\\frac\\pi4\\), \\(r=\\sqrt2\\). (\\(\\theta=\\frac{5\\pi}4\\) da \\(r=-\\sqrt2\\): es el mismo punto.)",
+      "\\(2\\cos\\theta=2\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=1\\) \\(\\Rightarrow \\theta=\\frac\\pi4\\), \\(r=\\sqrt2\\). (\\(\\theta=\\frac{5\\pi}4\\) da \\(r=-\\sqrt2\\): es el mismo punto.)",
       "Polo: la primera pasa con \\(\\theta=\\frac\\pi2\\) y la segunda con \\(\\theta=0\\). No sale al igualar, pero es intersección.",
       "\\(x=\\sqrt2\\cos\\frac\\pi4=1\\), \\(y=1\\)."
      ],
@@ -2370,7 +2799,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "pl7",
@@ -2379,40 +2809,46 @@
      "q": "<p>\\(r_1=6\\sin\\theta\\) y \\(r_2=2\\sqrt3\\cos\\theta\\). Halla el punto de intersección distinto del polo y su distancia al polo.</p>",
      "checks": [
       {
-       "p": "\\(\\theta\\)",
-       "o": [
-        "\\(\\tfrac\\pi6\\)",
-        "\\(\\tfrac\\pi3\\)",
-        "\\(\\tfrac\\pi4\\)",
-        "\\(\\tfrac{2\\pi}3\\)",
-        "\\(\\tfrac{7\\pi}6\\)"
+       "t": "expr",
+       "p": "θ (exacto)",
+       "f": [
+        {
+         "a": "π/6",
+         "v": []
+        }
        ]
       },
       {
-       "p": "Rectangulares",
-       "o": [
-        "\\(\\left(\\tfrac{3\\sqrt3}2,\\tfrac32\\right)\\)",
-        "\\(\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\)",
-        "\\((3,\\sqrt3)\\)",
-        "\\((\\sqrt3,3)\\)",
-        "\\(\\left(3\\sqrt3,3\\right)\\)"
+       "t": "expr",
+       "p": "Rectangulares (exactas)",
+       "f": [
+        {
+         "a": "3*sqrt(3)/2",
+         "v": [],
+         "l": "x ="
+        },
+        {
+         "a": "3/2",
+         "v": [],
+         "l": "y ="
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Distancia al polo",
-       "o": [
-        "3",
-        "\\(2\\sqrt3\\)",
-        "6",
-        "\\(\\sqrt3\\)",
-        "\\(3\\sqrt3\\)"
+       "f": [
+        {
+         "l": "r",
+         "a": 3
+        }
        ]
       }
      ],
      "steps": [
-      "\\(6\\sin\\theta=2\\sqrt3\\cos\\theta\\Rightarrow\\tan\\theta=\\frac{\\sqrt3}3\\Rightarrow\\theta=\\frac\\pi6\\).",
+      "\\(6\\sin\\theta\\) \\(=2\\sqrt3\\cos\\theta\\) \\(\\Rightarrow \\tan\\theta=\\frac{\\sqrt3}3\\) \\(\\Rightarrow \\theta=\\frac\\pi6\\).",
       "\\(r=6\\sin\\frac\\pi6=3\\).",
-      "Rectangulares: \\(\\left(3\\cos\\frac\\pi6,3\\sin\\frac\\pi6\\right)=\\left(\\frac{3\\sqrt3}2,\\frac32\\right)\\). La distancia al polo es \\(|r|=3\\)."
+      "Rectangulares: \\(\\left(3\\cos\\frac\\pi6,3\\sin\\frac\\pi6\\right)\\) \\(=\\left(\\frac{3\\sqrt3}2,\\frac32\\right)\\). La distancia al polo es \\(|r|=3\\)."
      ],
      "ans": "Distancia 3",
      "hint": "",
@@ -2426,7 +2862,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "pl8",
@@ -2461,6 +2898,96 @@
       ],
       []
      ]
+    },
+    {
+     "id": "pl9",
+     "lvl": 2,
+     "title": "Toca las intersecciones",
+     "q": "<p>La gráfica muestra \\(r=2\\cos\\theta\\) y \\(r=2\\,\\text{sen}\\,\\theta\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca <b>todos</b> los puntos de intersección.",
+       "a": [
+        "o",
+        "p"
+       ],
+       "polar": {
+        "R": 2.5,
+        "curves": [
+         {
+          "r": "2*cos(t)",
+          "l": "r = 2cos θ"
+         },
+         {
+          "r": "2*sin(t)",
+          "l": "r = 2sen θ"
+         }
+        ],
+        "zones": [
+         {
+          "x": 0,
+          "y": 0,
+          "id": "o"
+         },
+         {
+          "x": 1,
+          "y": 1,
+          "id": "p"
+         },
+         {
+          "x": 2,
+          "y": 0,
+          "id": "q"
+         },
+         {
+          "x": 0,
+          "y": 2,
+          "id": "s"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "Igualar da θ = π/4 → (1, 1). El polo también: cada curva pasa por él con distinto θ."
+      }
+     ],
+     "steps": [
+      "Al igualar 2cos θ = 2sen θ sale θ = π/4, r = √2: el punto (1, 1).",
+      "El polo también es intersección: r = 2cos θ pasa por él en θ = π/2 y r = 2sen θ en θ = 0. Siempre revisa el polo aparte."
+     ],
+     "ans": "El polo y (1, 1)",
+     "hint": "No olvides el polo.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polint"
+      ],
+      [
+       "polint"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "polar",
+     "t": "Dos curvas polares",
+     "p": "Toca ▶ para ver cómo se dibujan mientras θ avanza. Activa las intersecciones para ver los puntos de corte, polo incluido.",
+     "o": {
+      "R": 2.5,
+      "curves": [
+       {
+        "r": "2*cos(t)",
+        "l": "r = 2cos θ"
+       },
+       {
+        "r": "2*sin(t)",
+        "l": "r = 2sen θ"
+       }
+      ]
+     }
     }
    ]
   },
@@ -2472,7 +2999,7 @@
     "Eje polar: \\(\\theta\\to-\\theta\\)",
     "Eje \\(\\frac\\pi2\\): \\(\\theta\\to\\pi-\\theta\\)",
     "Polo: \\(\\theta\\to\\theta+\\pi\\) o \\(r\\to-r\\)",
-    "\\(\\cos(-\\theta)=\\cos\\theta,\\ \\sin(\\pi-\\theta)=\\sin\\theta\\)",
+    "\\(\\cos(-\\theta)=\\cos\\theta\\), \\(\\sin(\\pi-\\theta)=\\sin\\theta\\)",
     "\\(r=a(1\\pm\\cos\\theta)\\)",
     "Cardioide: toca el polo una vez"
    ],
@@ -2485,13 +3012,21 @@
      "q": "<p>\\(r=3+3\\cos\\theta\\).</p>",
      "checks": [
       {
-       "p": "\\(r(0)\\), \\(r(\\frac\\pi2)\\), \\(r(\\pi)\\)",
-       "o": [
-        "6, 3, 0",
-        "3, 6, 0",
-        "6, 0, 3",
-        "0, 3, 6",
-        "6, 3, 3"
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "r(0)",
+         "a": 6
+        },
+        {
+         "l": "r(π/2)",
+         "a": 3
+        },
+        {
+         "l": "r(π)",
+         "a": 0
+        }
        ]
       },
       {
@@ -2518,7 +3053,8 @@
      "tags": [
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "cd2",
@@ -2558,7 +3094,7 @@
       }
      ],
      "steps": [
-      "\\(\\theta\\to-\\theta\\): \\(2+2\\cos(-\\theta)=2+2\\cos\\theta\\) ✓ simétrica respecto al eje polar.",
+      "\\(\\theta\\to-\\theta\\): \\(2+2\\cos(-\\theta)\\) \\(=2+2\\cos\\theta\\) ✓ simétrica respecto al eje polar.",
       "\\(\\theta\\to\\pi-\\theta\\): \\(2-2\\cos\\theta\\ne\\) original. Contraejemplo: \\((4,0)\\) está en la curva, pero su reflejo \\((4,\\pi)\\) no (\\(r(\\pi)=0\\)).",
       "\\(\\theta\\to\\theta+\\pi\\): \\(2-2\\cos\\theta\\); \\(r\\to-r\\): \\(-2-2\\cos\\theta\\). Ninguna coincide: no es simétrica respecto al polo."
      ],
@@ -2594,7 +3130,7 @@
       }
      ],
      "steps": [
-      "\\(\\theta\\to\\pi-\\theta\\): \\(\\sin(\\pi-\\theta)=\\sin\\theta\\), queda igual ✓.",
+      "\\(\\theta\\to\\pi-\\theta\\): \\(\\sin(\\pi-\\theta)\\) \\(=\\sin\\theta\\), queda igual ✓.",
       "\\(\\theta\\to-\\theta\\) da \\(4+4\\sin\\theta\\) ✗; el polo tampoco."
      ],
      "ans": "Eje vertical",
@@ -2628,7 +3164,7 @@
       }
      ],
      "steps": [
-      "\\(\\cos(-2\\theta)=\\cos2\\theta\\) ✓; \\(\\cos(2\\pi-2\\theta)=\\cos2\\theta\\) ✓; \\(\\cos(2\\theta+2\\pi)=\\cos2\\theta\\) ✓."
+      "\\(\\cos(-2\\theta)\\) \\(=\\cos2\\theta\\) ✓; \\(\\cos(2\\pi-2\\theta)\\) \\(=\\cos2\\theta\\) ✓; \\(\\cos(2\\theta+2\\pi)\\) \\(=\\cos2\\theta\\) ✓."
      ],
      "ans": "Las tres",
      "hint": "",
@@ -2690,7 +3226,7 @@
       }
      ],
      "steps": [
-      "\\(\\sin(\\pi-\\theta)=\\sin\\theta\\) ✓. Tiene sentido: es la circunferencia de centro \\((0;2{,}5)\\), que está sobre el eje vertical."
+      "\\(\\sin(\\pi-\\theta)\\) \\(=\\sin\\theta\\) ✓. Tiene sentido: es la circunferencia de centro \\((0;2{,}5)\\), que está sobre el eje vertical."
      ],
      "ans": "Eje vertical",
      "hint": "",
@@ -2703,13 +3239,90 @@
        "simpol"
       ]
      ]
+    },
+    {
+     "id": "cd7",
+     "lvl": 2,
+     "title": "Clasifica las simetrías",
+     "q": "<p>¿Qué simetrías tiene cada curva?</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada curva.",
+       "cats": [
+        "Solo eje polar",
+        "Solo eje π/2",
+        "Eje polar, eje π/2 y polo"
+       ],
+       "items": [
+        {
+         "x": "\\(r=2+2\\cos\\theta\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(r=4-4\\,\\text{sen}\\,\\theta\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(r=4\\cos2\\theta\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(r=5\\,\\text{sen}\\,\\theta\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(r=3+2\\cos\\theta\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(r=2\\,\\text{sen}\\,2\\theta\\)",
+         "c": 2,
+         "e": "Rosa de 4 pétalos: simétrica respecto de los dos ejes y del polo."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Con cos θ: cambiar θ por −θ no cambia r → simetría con el eje polar.",
+      "Con sen θ: cambiar θ por π − θ no cambia r → simetría con el eje π/2. Las rosas de 4 pétalos tienen las tres."
+     ],
+     "ans": "P, π/2, todas, π/2, P, todas",
+     "hint": "cos → eje polar; sen → eje π/2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "simpol"
+      ],
+      [
+       "simpol"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "polar",
+     "t": "Dibuja una cardioide",
+     "p": "Toca ▶ y activa cada simetría: si la copia reflejada (punteada) coincide con la curva, es simétrica.",
+     "o": {
+      "R": 4.5,
+      "curves": [
+       {
+        "r": "2+2*cos(t)",
+        "l": "r = 2 + 2cos θ"
+       }
+      ]
+     }
     }
    ]
   },
   {
    "id": "vect1",
    "name": "Sem. 11 · Vectores: componentes y resultante",
-   "teo": "<p>Un vector con magnitud \\(|F|\\) y dirección \\(\\theta\\) (desde el eje \\(x\\) positivo, antihorario) tiene componentes \\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)=F_x\\hat i+F_y\\hat j\\).</p><p><strong>Resultante</strong>: suma las \\(x\\) y las \\(y\\) por separado. \\(|R|=\\sqrt{R_x^2+R_y^2}\\). Dirección: \\(\\arctan\\frac{R_y}{R_x}\\) y <em>corrige el cuadrante</em> (si \\(R_x\\lt0\\), suma \\(180^\\circ\\)).</p>",
+   "teo": "<p>Un vector con magnitud \\(|F|\\) y dirección \\(\\theta\\) (desde el eje \\(x\\) positivo, antihorario) tiene componentes \\(\\vec F\\) \\(=|F|(\\cos\\theta,\\sin\\theta)\\) \\(=F_x\\hat i+F_y\\hat j\\).</p><p><strong>Resultante</strong>: suma las \\(x\\) y las \\(y\\) por separado. \\(|R|=\\sqrt{R_x^2+R_y^2}\\). Dirección: \\(\\arctan\\frac{R_y}{R_x}\\) y <em>corrige el cuadrante</em> (si \\(R_x\\lt0\\), suma \\(180^\\circ\\)).</p>",
    "form": [
     "\\(\\vec F=|F|(\\cos\\theta,\\sin\\theta)\\)",
     "\\(\\vec R=\\vec F_1+\\vec F_2\\)",
@@ -2726,18 +3339,25 @@
      "q": "<p>Una fuerza de 50 N forma \\(60^\\circ\\) con el eje \\(x\\) positivo. Escríbela en componentes.</p>",
      "checks": [
       {
-       "p": "\\(\\vec F\\)",
-       "o": [
-        "\\((25;\\ 25\\sqrt3)\\approx(25;\\ 43{,}30)\\ \\text{N}\\)",
-        "\\((25\\sqrt3;\\ 25)\\ \\text{N}\\)",
-        "\\((50;\\ 60)\\ \\text{N}\\)",
-        "\\((-25;\\ 25\\sqrt3)\\ \\text{N}\\)",
-        "\\((25;\\ 25)\\ \\text{N}\\)"
+       "t": "num",
+       "p": "Componentes",
+       "f": [
+        {
+         "l": "Fx",
+         "a": 25,
+         "u": "N"
+        },
+        {
+         "l": "Fy",
+         "a": 43.3,
+         "u": "N",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(F_x=50\\cos60^\\circ=25\\), \\(F_y=50\\sin60^\\circ=25\\sqrt3\\)."
+      "\\(F_x=50\\cos60^\\circ=25\\), \\(F_y\\) \\(=50\\sin60^\\circ\\) \\(=25\\sqrt3\\)."
      ],
      "ans": "\\((25,25\\sqrt3)\\)",
      "hint": "",
@@ -2758,29 +3378,31 @@
      "q": "<p>Halla magnitud y dirección de \\(\\vec v=(-3,4)\\).</p>",
      "checks": [
       {
-       "p": "\\(|\\vec v|\\)",
-       "o": [
-        "5",
-        "7",
-        "1",
-        "25",
-        "\\(\\sqrt7\\)"
+       "t": "num",
+       "p": "Magnitud",
+       "f": [
+        {
+         "l": "|v|",
+         "a": 5
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Dirección",
-       "o": [
-        "126{,}87^\\circ",
-        "-53{,}13^\\circ",
-        "53{,}13^\\circ",
-        "233{,}13^\\circ",
-        "143{,}13^\\circ"
+       "f": [
+        {
+         "l": "θ",
+         "a": 126.87,
+         "u": "°",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "\\(|\\vec v|=\\sqrt{9+16}=5\\).",
-      "La calculadora da \\(\\arctan\\frac4{-3}=-53{,}13^\\circ\\), pero el vector está en el II cuadrante: \\(180^\\circ-53{,}13^\\circ=126{,}87^\\circ\\)."
+      "La calculadora da \\(\\arctan\\frac4{-3}\\) \\(=-53{,}13^\\circ\\), pero el vector está en el II cuadrante: \\(180^\\circ-53{,}13^\\circ\\) \\(=126{,}87^\\circ\\)."
      ],
      "ans": "5 y \\(126{,}87^\\circ\\)",
      "hint": "",
@@ -2793,7 +3415,8 @@
        "resul"
       ],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "v3",
@@ -2802,13 +3425,19 @@
      "q": "<p>Magnitud y dirección de \\((-4,-4)\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Magnitud y dirección",
-       "o": [
-        "\\(4\\sqrt2\\) a \\(225^\\circ\\)",
-        "\\(4\\sqrt2\\) a \\(45^\\circ\\)",
-        "8 a \\(225^\\circ\\)",
-        "\\(4\\sqrt2\\) a \\(135^\\circ\\)",
-        "\\(4\\sqrt2\\) a \\(315^\\circ\\)"
+       "f": [
+        {
+         "l": "|v|",
+         "a": 5.657,
+         "tol": 0.002
+        },
+        {
+         "l": "θ",
+         "a": 225,
+         "u": "°"
+        }
        ]
       }
      ],
@@ -2834,29 +3463,32 @@
      "q": "<p>Fuerzas de 30 N a \\(0^\\circ\\) y 40 N a \\(90^\\circ\\). Halla la resultante.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Magnitud",
-       "o": [
-        "50 N",
-        "70 N",
-        "10 N",
-        "35 N",
-        "1200 N"
+       "f": [
+        {
+         "l": "|R|",
+         "a": 50,
+         "u": "N"
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Dirección",
-       "o": [
-        "53{,}13^\\circ",
-        "36{,}87^\\circ",
-        "45^\\circ",
-        "90^\\circ",
-        "126{,}87^\\circ"
+       "f": [
+        {
+         "l": "θ",
+         "a": 53.13,
+         "u": "°",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
       "\\(\\vec R=(30,40)\\).",
-      "\\(|\\vec R|=50\\), \\(\\alpha=\\arctan\\frac43=53{,}13^\\circ\\)."
+      "\\(|\\vec R|=50\\), \\(\\alpha\\) \\(=\\arctan\\frac43\\) \\(=53{,}13^\\circ\\)."
      ],
      "ans": "50 N a \\(53{,}13^\\circ\\)",
      "hint": "",
@@ -2869,7 +3501,8 @@
       [
        "resul"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "v5",
@@ -2878,30 +3511,44 @@
      "q": "<p>Una fuerza de 100 N a \\(20^\\circ\\) y otra de 80 N a \\(110^\\circ\\).</p>",
      "checks": [
       {
-       "p": "\\(\\vec R\\)",
-       "o": [
-        "\\((66{,}61;\\ 109{,}38)\\)",
-        "\\((169{,}14;\\ 6{,}84)\\)",
-        "\\((121{,}33;\\ 109{,}38)\\)",
-        "\\((180;\\ 130)\\)",
-        "\\((109{,}38;\\ 66{,}61)\\)"
+       "t": "num",
+       "p": "Resultante",
+       "f": [
+        {
+         "l": "Rx",
+         "a": 66.61,
+         "tol": 0.01
+        },
+        {
+         "l": "Ry",
+         "a": 109.38,
+         "tol": 0.01
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Magnitud y dirección",
-       "o": [
-        "\\(128{,}06\\) N a \\(58{,}66^\\circ\\)",
-        "180 N a \\(65^\\circ\\)",
-        "\\(128{,}06\\) N a \\(38{,}66^\\circ\\)",
-        "\\(128{,}06\\) N a \\(121{,}34^\\circ\\)",
-        "\\(20\\) N a \\(58{,}66^\\circ\\)"
+       "f": [
+        {
+         "l": "|R|",
+         "a": 128.06,
+         "u": "N",
+         "tol": 0.01
+        },
+        {
+         "l": "θ",
+         "a": 58.66,
+         "u": "°",
+         "tol": 0.01
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\vec F_1=100(\\cos20^\\circ,\\sin20^\\circ)=(93{,}97;\\ 34{,}2)\\); \\(\\vec F_2=80(\\cos110^\\circ,\\sin110^\\circ)=(-27{,}36;\\ 75{,}18)\\).",
+      "\\(\\vec F_1\\) \\(=100(\\cos20^\\circ,\\sin20^\\circ)\\) \\(=(93{,}97;\\ 34{,}2)\\); \\(\\vec F_2\\) \\(=80(\\cos110^\\circ,\\sin110^\\circ)\\) \\(=(-27{,}36;\\ 75{,}18)\\).",
       "Suma: \\(\\vec R=(66{,}61;\\ 109{,}38)\\).",
-      "\\(|\\vec R|=128{,}06\\) N (son perpendiculares: \\(\\sqrt{100^2+80^2}\\)). \\(\\alpha=\\arctan\\frac{109{,}38}{66{,}61}=58{,}66^\\circ\\), I cuadrante."
+      "\\(|\\vec R|=128{,}06\\) N (son perpendiculares: \\(\\sqrt{100^2+80^2}\\)). \\(\\alpha\\) \\(=\\arctan\\frac{109{,}38}{66{,}61}\\) \\(=58{,}66^\\circ\\), I cuadrante."
      ],
      "ans": "128{,}06 N a 58{,}66^\\circ",
      "hint": "",
@@ -2917,7 +3564,8 @@
       [
        "resul"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "v6",
@@ -2926,19 +3574,26 @@
      "q": "<p>Dos fuerzas de 50 N, a \\(45^\\circ\\) y \\(135^\\circ\\).</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Resultante",
-       "o": [
-        "\\(50\\sqrt2\\approx70{,}71\\) N a \\(90^\\circ\\)",
-        "100 N a \\(90^\\circ\\)",
-        "\\(50\\sqrt2\\) N a \\(45^\\circ\\)",
-        "0 N",
-        "\\(70{,}71\\) N a \\(180^\\circ\\)"
+       "f": [
+        {
+         "l": "|R|",
+         "a": 70.71,
+         "u": "N",
+         "tol": 0.01
+        },
+        {
+         "l": "θ",
+         "a": 90,
+         "u": "°"
+        }
        ]
       }
      ],
      "steps": [
-      "\\(R_x=50\\cos45^\\circ+50\\cos135^\\circ=0\\).",
-      "\\(R_y=2\\cdot50\\sin45^\\circ=50\\sqrt2\\): apunta hacia arriba, \\(90^\\circ\\)."
+      "\\(R_x\\) \\(=50\\cos45^\\circ+50\\cos135^\\circ\\) \\(=0\\).",
+      "\\(R_y\\) \\(=2\\cdot50\\sin45^\\circ\\) \\(=50\\sqrt2\\): apunta hacia arriba, \\(90^\\circ\\)."
      ],
      "ans": "\\(50\\sqrt2\\) N a \\(90^\\circ\\)",
      "hint": "",
@@ -2960,19 +3615,35 @@
      "q": "<p>Sobre un cuerpo actúan \\(\\vec F_1=(3,4)\\) N y \\(\\vec F_2=(-5,2)\\) N. ¿Qué fuerza lo deja en equilibrio?</p>",
      "checks": [
       {
-       "p": "\\(\\vec F_3\\)",
-       "o": [
-        "\\((2,-6)\\)",
-        "\\((-2,6)\\)",
-        "\\((8,2)\\)",
-        "\\((-8,-2)\\)",
-        "\\((2,6)\\)"
-       ]
+       "t": "vecdraw",
+       "p": "Dibuja F₃ desde el origen.",
+       "given": [
+        {
+         "v": [
+          3,
+          4
+         ],
+         "l": "F₁"
+        },
+        {
+         "v": [
+          -5,
+          2
+         ],
+         "l": "F₂"
+        }
+       ],
+       "a": [
+        2,
+        -6
+       ],
+       "l": "F₃",
+       "e": "Debe cumplir F₁ + F₂ + F₃ = 0: F₃ = −(F₁ + F₂)."
       }
      ],
      "steps": [
       "\\(\\vec F_1+\\vec F_2=(-2,6)\\).",
-      "Equilibrio: \\(\\vec F_3=-(\\vec F_1+\\vec F_2)=(2,-6)\\)."
+      "Equilibrio: \\(\\vec F_3\\) \\(=-(\\vec F_1+\\vec F_2)\\) \\(=(2,-6)\\)."
      ],
      "ans": "\\((2,-6)\\)",
      "hint": "",
@@ -2992,18 +3663,24 @@
      "q": "<p>Vector unitario con dirección \\(210^\\circ\\).</p>",
      "checks": [
       {
-       "p": "\\(\\hat u\\)",
-       "o": [
-        "\\(\\left(-\\tfrac{\\sqrt3}2,-\\tfrac12\\right)\\)",
-        "\\(\\left(\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
-        "\\(\\left(-\\tfrac12,-\\tfrac{\\sqrt3}2\\right)\\)",
-        "\\(\\left(-\\tfrac{\\sqrt3}2,\\tfrac12\\right)\\)",
-        "\\((-1,-1)\\)"
+       "t": "expr",
+       "p": "Vector unitario (exacto)",
+       "f": [
+        {
+         "a": "-sqrt(3)/2",
+         "v": [],
+         "l": "x ="
+        },
+        {
+         "a": "-1/2",
+         "v": [],
+         "l": "y ="
+        }
        ]
       }
      ],
      "steps": [
-      "\\(\\hat u=(\\cos210^\\circ,\\sin210^\\circ)\\); \\(210^\\circ\\) está en el III cuadrante, ambos negativos."
+      "\\(\\hat u\\) \\(=(\\cos210^\\circ,\\sin210^\\circ)\\); \\(210^\\circ\\) está en el III cuadrante, ambos negativos."
      ],
      "ans": "\\(\\left(-\\tfrac{\\sqrt3}2,-\\tfrac12\\right)\\)",
      "hint": "",
@@ -3016,6 +3693,126 @@
        "compv"
       ]
      ]
+    },
+    {
+     "id": "v9",
+     "lvl": 1,
+     "title": "Dibuja la suma",
+     "q": "<p>\\(\\vec u=(3,1)\\) y \\(\\vec v=(1,3)\\).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja u + v desde el origen.",
+       "given": [
+        {
+         "v": [
+          3,
+          1
+         ],
+         "l": "u"
+        },
+        {
+         "v": [
+          1,
+          3
+         ],
+         "l": "v"
+        }
+       ],
+       "a": [
+        4,
+        4
+       ],
+       "l": "u + v",
+       "e": "Suma componente a componente."
+      }
+     ],
+     "steps": [
+      "Se suman componente a componente: (3 + 1; 1 + 3) = (4; 4).",
+      "Gráficamente es la diagonal del paralelogramo formado por u y v."
+     ],
+     "ans": "(4, 4)",
+     "hint": "x con x, y con y.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "resul"
+      ],
+      [
+       "resul"
+      ]
+     ]
+    },
+    {
+     "id": "v10",
+     "lvl": 2,
+     "title": "Dibuja 2u − v",
+     "q": "<p>\\(\\vec u=(2,-1)\\) y \\(\\vec v=(-1,3)\\).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja 2u − v desde el origen.",
+       "given": [
+        {
+         "v": [
+          2,
+          -1
+         ],
+         "l": "u"
+        },
+        {
+         "v": [
+          -1,
+          3
+         ],
+         "l": "v"
+        }
+       ],
+       "a": [
+        5,
+        -5
+       ],
+       "l": "2u − v",
+       "e": "2u = (4, −2); luego resta v."
+      }
+     ],
+     "steps": [
+      "2u = (4; −2).",
+      "2u − v = (4 − (−1); −2 − 3) = (5; −5)."
+     ],
+     "ans": "(5, −5)",
+     "hint": "Primero 2u, después resta.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compv"
+      ],
+      [
+       "resul"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "vec",
+     "t": "Vectores arrastrables",
+     "p": "Mueve las puntas y activa la suma: la resultante es la diagonal del paralelogramo.",
+     "o": {
+      "u": [
+       3,
+       1
+      ],
+      "v": [
+       1,
+       3
+      ],
+      "sum": true
+     }
     }
    ]
   }
@@ -3172,8 +3969,8 @@
     }
    ],
    "steps": [
-    "a) \\(r_1\\): \\(r^2=4\\,r\\cos\\theta\\Rightarrow x^2+y^2=4x\\Rightarrow\\left(x-2\\right)^2+y^2=4\\). \\(r_2\\): \\(x^2+y^2=4\\sqrt3y\\Rightarrow x^2+\\left(y-2\\sqrt3\\right)^2=12\\). Centros \\((2,0)\\) y \\((0,2\\sqrt3)\\).",
-    "b) \\(4\\cos\\theta=4\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\tfrac{\\sqrt3}3\\Rightarrow\\theta=\\tfrac\\pi6\\), \\(r=4\\cos\\tfrac\\pi6=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "a) \\(r_1\\): \\(r^2=4\\,r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=4x\\) \\(\\Rightarrow \\left(x-2\\right)^2+y^2=4\\). \\(r_2\\): \\(x^2+y^2=4\\sqrt3y\\) \\(\\Rightarrow  x^2+\\left(y-2\\sqrt3\\right)^2=12\\). Centros \\((2,0)\\) y \\((0,2\\sqrt3)\\).",
+    "b) \\(4\\cos\\theta\\) \\(=4\\sqrt3\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta\\) \\(=\\tfrac{\\sqrt3}3\\) \\(\\Rightarrow \\theta=\\tfrac\\pi6\\), \\(r\\) \\(=4\\cos\\tfrac\\pi6\\) \\(=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
     "c) \\(x=2\\sqrt3\\cos\\tfrac\\pi6\\), \\(y=2\\sqrt3\\sin\\tfrac\\pi6\\): \\(P=\\left(3,\\sqrt3\\right)\\); y el origen \\((0,0)\\).",
     "d) La distancia de P al polo es \\(|r|=2\\sqrt3\\approx3{,}46\\).",
     "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
@@ -3281,9 +4078,9 @@
     }
    ],
    "steps": [
-    "\\(\\vec F_1=50(\\cos30^\\circ,\\sin30^\\circ)\\approx(43{,}3;\\ 25)\\); \\(\\vec F_2=70(\\cos135^\\circ,\\sin135^\\circ)\\approx(-49{,}5;\\ 49{,}5)\\).",
+    "\\(\\vec F_1\\) \\(=50(\\cos30^\\circ,\\sin30^\\circ)\\approx(43{,}3;\\ 25)\\); \\(\\vec F_2\\) \\(=70(\\cos135^\\circ,\\sin135^\\circ)\\approx(-49{,}5;\\ 49{,}5)\\).",
     "\\(\\vec R\\approx(-6{,}2;\\ 74{,}5)\\).",
-    "\\(|\\vec R|=\\sqrt{(-6{,}2)^2+(74{,}5)^2}\\approx74{,}75\\) N. \\(\\arctan\\frac{74{,}5}{-6{,}2}\\approx-85{,}25^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(94{,}75^\\circ\\)."
+    "\\(|\\vec R|\\) \\(=\\sqrt{(-6{,}2)^2+(74{,}5)^2}\\approx74{,}75\\) N. \\(\\arctan\\frac{74{,}5}{-6{,}2}\\approx-85{,}25^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(94{,}75^\\circ\\)."
    ],
    "ans": "\\(74{,}75\\) N a \\(94{,}75^\\circ\\)",
    "hint": "",
@@ -3359,9 +4156,9 @@
     }
    ],
    "steps": [
-    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\Rightarrow x^2+y^2=6x\\Rightarrow\\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\Rightarrow x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
-    "b) \\(6\\cos\\theta=2\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
-    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
+    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=6x\\) \\(\\Rightarrow \\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\) \\(\\Rightarrow  x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
+    "b) \\(6\\cos\\theta\\) \\(=2\\sqrt3\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=\\sqrt3\\) \\(\\Rightarrow \\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P\\) \\(=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
     "d) La distancia de P al polo es \\(|r|=3\\approx3\\).",
     "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
    ],
@@ -3468,9 +4265,9 @@
     }
    ],
    "steps": [
-    "\\(\\vec d_1=40(\\cos45^\\circ,\\sin45^\\circ)\\approx(28{,}28;\\ 28{,}28)\\); \\(\\vec d_2=60(\\cos150^\\circ,\\sin150^\\circ)\\approx(-51{,}96;\\ 30)\\).",
+    "\\(\\vec d_1\\) \\(=40(\\cos45^\\circ,\\sin45^\\circ)\\approx(28{,}28;\\ 28{,}28)\\); \\(\\vec d_2\\) \\(=60(\\cos150^\\circ,\\sin150^\\circ)\\approx(-51{,}96;\\ 30)\\).",
     "\\(\\vec R\\approx(-23{,}68;\\ 58{,}28)\\).",
-    "\\(|\\vec R|=\\sqrt{(-23{,}68)^2+(58{,}28)^2}\\approx62{,}91\\) m. \\(\\arctan\\frac{58{,}28}{-23{,}68}\\approx-67{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(112{,}11^\\circ\\)."
+    "\\(|\\vec R|\\) \\(=\\sqrt{(-23{,}68)^2+(58{,}28)^2}\\approx62{,}91\\) m. \\(\\arctan\\frac{58{,}28}{-23{,}68}\\approx-67{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(112{,}11^\\circ\\)."
    ],
    "ans": "\\(62{,}91\\) m a \\(112{,}11^\\circ\\)",
    "hint": "",
@@ -3492,7 +4289,7 @@
    "id": "e5J1",
    "lvl": 3,
    "title": "EA5 jueves · P1",
-   "q": "<p>Curvas polares \\(r_1=8\\cos\\theta\\) y \\(r_2=\\tfrac8{\\sqrt3}\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
+   "q": "<p>Curvas polares \\(r_1=8\\cos\\theta\\) y \\(r_2\\) \\(=\\tfrac8{\\sqrt3}\\sin\\theta\\).</p><p>a) (2 pts) Ecuaciones cartesianas y tipo de figura. b) (2 pts) Intersecciones en polares, \\(\\theta\\in[0,2\\pi)\\). c) (2 pts) Intersecciones en rectangulares. d) (2 pts) Distancia del polo al punto de intersección no nulo. e) (2 pts) Gráfica de ambas curvas.</p>",
    "checks": [
     {
      "p": "a) Cartesianas",
@@ -3546,8 +4343,8 @@
     }
    ],
    "steps": [
-    "a) \\(r_1\\): \\(r^2=8\\,r\\cos\\theta\\Rightarrow x^2+y^2=8x\\Rightarrow\\left(x-4\\right)^2+y^2=16\\). \\(r_2\\): \\(x^2+y^2=\\tfrac8{\\sqrt3}y\\Rightarrow x^2+\\left(y-\\tfrac4{\\sqrt3}\\right)^2=\\tfrac{16}3\\). Centros \\((4,0)\\) y \\((0,\\tfrac4{\\sqrt3})\\).",
-    "b) \\(8\\cos\\theta=\\tfrac8{\\sqrt3}\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=8\\cos\\tfrac\\pi3=4\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "a) \\(r_1\\): \\(r^2=8\\,r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=8x\\) \\(\\Rightarrow \\left(x-4\\right)^2+y^2=16\\). \\(r_2\\): \\(x^2+y^2=\\tfrac8{\\sqrt3}y\\) \\(\\Rightarrow  x^2+\\left(y-\\tfrac4{\\sqrt3}\\right)^2\\) \\(=\\tfrac{16}3\\). Centros \\((4,0)\\) y \\((0,\\tfrac4{\\sqrt3})\\).",
+    "b) \\(8\\cos\\theta\\) \\(=\\tfrac8{\\sqrt3}\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=\\sqrt3\\) \\(\\Rightarrow \\theta=\\tfrac\\pi3\\), \\(r=8\\cos\\tfrac\\pi3=4\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
     "c) \\(x=4\\cos\\tfrac\\pi3\\), \\(y=4\\sin\\tfrac\\pi3\\): \\(P=\\left(2,2\\sqrt3\\right)\\); y el origen \\((0,0)\\).",
     "d) La distancia de P al polo es \\(|r|=4\\approx4\\).",
     "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
@@ -3655,9 +4452,9 @@
     }
    ],
    "steps": [
-    "\\(\\vec F_1=60(\\cos60^\\circ,\\sin60^\\circ)\\approx(30;\\ 51{,}96)\\); \\(\\vec F_2=80(\\cos150^\\circ,\\sin150^\\circ)\\approx(-69{,}28;\\ 40)\\).",
+    "\\(\\vec F_1\\) \\(=60(\\cos60^\\circ,\\sin60^\\circ)\\approx(30;\\ 51{,}96)\\); \\(\\vec F_2\\) \\(=80(\\cos150^\\circ,\\sin150^\\circ)\\approx(-69{,}28;\\ 40)\\).",
     "\\(\\vec R\\approx(-39{,}28;\\ 91{,}96)\\).",
-    "\\(|\\vec R|=\\sqrt{(-39{,}28)^2+(91{,}96)^2}\\approx100\\) N. \\(\\arctan\\frac{91{,}96}{-39{,}28}\\approx-66{,}87^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(113{,}13^\\circ\\)."
+    "\\(|\\vec R|\\) \\(=\\sqrt{(-39{,}28)^2+(91{,}96)^2}\\approx100\\) N. \\(\\arctan\\frac{91{,}96}{-39{,}28}\\approx-66{,}87^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(113{,}13^\\circ\\)."
    ],
    "ans": "\\(100\\) N a \\(113{,}13^\\circ\\)",
    "hint": "",
@@ -3733,9 +4530,9 @@
     }
    ],
    "steps": [
-    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\Rightarrow x^2+y^2=6x\\Rightarrow\\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\Rightarrow x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
-    "b) \\(6\\cos\\theta=2\\sqrt3\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
-    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
+    "a) \\(r_1\\): \\(r^2=6\\,r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=6x\\) \\(\\Rightarrow \\left(x-3\\right)^2+y^2=9\\). \\(r_2\\): \\(x^2+y^2=2\\sqrt3y\\) \\(\\Rightarrow  x^2+\\left(y-\\sqrt3\\right)^2=3\\). Centros \\((3,0)\\) y \\((0,\\sqrt3)\\).",
+    "b) \\(6\\cos\\theta\\) \\(=2\\sqrt3\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=\\sqrt3\\) \\(\\Rightarrow \\theta=\\tfrac\\pi3\\), \\(r=6\\cos\\tfrac\\pi3=3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "c) \\(x=3\\cos\\tfrac\\pi3\\), \\(y=3\\sin\\tfrac\\pi3\\): \\(P\\) \\(=\\left(\\tfrac32,\\tfrac{3\\sqrt3}2\\right)\\); y el origen \\((0,0)\\).",
     "d) La distancia de P al polo es \\(|r|=3\\approx3\\).",
     "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
    ],
@@ -3842,9 +4639,9 @@
     }
    ],
    "steps": [
-    "\\(\\vec F_1=50(\\cos45^\\circ,\\sin45^\\circ)\\approx(35{,}36;\\ 35{,}36)\\); \\(\\vec F_2=70(\\cos120^\\circ,\\sin120^\\circ)\\approx(-35;\\ 60{,}62)\\).",
+    "\\(\\vec F_1\\) \\(=50(\\cos45^\\circ,\\sin45^\\circ)\\approx(35{,}36;\\ 35{,}36)\\); \\(\\vec F_2\\) \\(=70(\\cos120^\\circ,\\sin120^\\circ)\\approx(-35;\\ 60{,}62)\\).",
     "\\(\\vec R\\approx(0{,}36;\\ 95{,}98)\\).",
-    "\\(|\\vec R|=\\sqrt{(0{,}36)^2+(95{,}98)^2}\\approx95{,}98\\) N. \\(\\arctan\\frac{95{,}98}{0{,}36}\\approx89{,}79^\\circ\\) (I cuadrante), así que la dirección es \\(89{,}79^\\circ\\)."
+    "\\(|\\vec R|\\) \\(=\\sqrt{(0{,}36)^2+(95{,}98)^2}\\approx95{,}98\\) N. \\(\\arctan\\frac{95{,}98}{0{,}36}\\approx89{,}79^\\circ\\) (I cuadrante), así que la dirección es \\(89{,}79^\\circ\\)."
    ],
    "ans": "\\(95{,}98\\) N a \\(89{,}79^\\circ\\)",
    "hint": "",
@@ -3920,8 +4717,8 @@
     }
    ],
    "steps": [
-    "a) \\(r_1\\): \\(r^2=4\\sqrt3\\,r\\cos\\theta\\Rightarrow x^2+y^2=4\\sqrt3x\\Rightarrow\\left(x-2\\sqrt3\\right)^2+y^2=12\\). \\(r_2\\): \\(x^2+y^2=4y\\Rightarrow x^2+\\left(y-2\\right)^2=4\\). Centros \\((2\\sqrt3,0)\\) y \\((0,2)\\).",
-    "b) \\(4\\sqrt3\\cos\\theta=4\\sin\\theta\\Rightarrow\\tan\\theta=\\sqrt3\\Rightarrow\\theta=\\tfrac\\pi3\\), \\(r=4\\sqrt3\\cos\\tfrac\\pi3=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
+    "a) \\(r_1\\): \\(r^2=4\\sqrt3\\,r\\cos\\theta\\) \\(\\Rightarrow  x^2+y^2=4\\sqrt3x\\) \\(\\Rightarrow \\left(x-2\\sqrt3\\right)^2+y^2=12\\). \\(r_2\\): \\(x^2+y^2=4y\\) \\(\\Rightarrow  x^2+\\left(y-2\\right)^2=4\\). Centros \\((2\\sqrt3,0)\\) y \\((0,2)\\).",
+    "b) \\(4\\sqrt3\\cos\\theta\\) \\(=4\\sin\\theta\\) \\(\\Rightarrow \\tan\\theta=\\sqrt3\\) \\(\\Rightarrow \\theta=\\tfrac\\pi3\\), \\(r\\) \\(=4\\sqrt3\\cos\\tfrac\\pi3\\) \\(=2\\sqrt3\\). El ángulo \\(\\theta+\\pi\\) da \\(r\\lt0\\): mismo punto. El polo: \\(r_1=0\\) en \\(\\theta=\\frac\\pi2\\) y \\(r_2=0\\) en \\(\\theta=0\\).",
     "c) \\(x=2\\sqrt3\\cos\\tfrac\\pi3\\), \\(y=2\\sqrt3\\sin\\tfrac\\pi3\\): \\(P=\\left(\\sqrt3,3\\right)\\); y el origen \\((0,0)\\).",
     "d) La distancia de P al polo es \\(|r|=2\\sqrt3\\approx3{,}46\\).",
     "e) Grafica ambas circunferencias con sus centros y radios y marca O y P (figura)."
@@ -4029,9 +4826,9 @@
     }
    ],
    "steps": [
-    "\\(\\vec F_1=40(\\cos30^\\circ,\\sin30^\\circ)\\approx(34{,}64;\\ 20)\\); \\(\\vec F_2=60(\\cos135^\\circ,\\sin135^\\circ)\\approx(-42{,}43;\\ 42{,}43)\\).",
+    "\\(\\vec F_1\\) \\(=40(\\cos30^\\circ,\\sin30^\\circ)\\approx(34{,}64;\\ 20)\\); \\(\\vec F_2\\) \\(=60(\\cos135^\\circ,\\sin135^\\circ)\\approx(-42{,}43;\\ 42{,}43)\\).",
     "\\(\\vec R\\approx(-7{,}79;\\ 62{,}43)\\).",
-    "\\(|\\vec R|=\\sqrt{(-7{,}79)^2+(62{,}43)^2}\\approx62{,}91\\) N. \\(\\arctan\\frac{62{,}43}{-7{,}79}\\approx-82{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(97{,}11^\\circ\\)."
+    "\\(|\\vec R|\\) \\(=\\sqrt{(-7{,}79)^2+(62{,}43)^2}\\approx62{,}91\\) N. \\(\\arctan\\frac{62{,}43}{-7{,}79}\\approx-82{,}89^\\circ\\); como \\(R_x\\lt0\\) (II cuadrante) se suma \\(180^\\circ\\), así que la dirección es \\(97{,}11^\\circ\\)."
    ],
    "ans": "\\(62{,}91\\) N a \\(97{,}11^\\circ\\)",
    "hint": "",
@@ -4213,5 +5010,5 @@
  "short": "EA5",
  "guide": true,
  "sub": "Sem. 10 y 11",
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Semana 10 (cónicas) ya está:</b> completar cuadrados, circunferencia y parábola, un vistazo a elipse e hipérbola, intersecciones y problemas de aplicación. <b>Mapa de la EA5 2026-1</b>: P1 dos circunferencias polares \\(r=a\\cos\\theta\\) y \\(r=b\\sin\\theta\\): cartesianas, intersecciones, rectangulares, distancia y gráfica (10 pts) · P2 simetrías de una cardioide (4) · P3 suma de dos vectores con magnitud y ángulo (6). El simulacro reproduce las 5 versiones de esa EA."
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Semana 10 (cónicas) ya está:</b> completar cuadrados, circunferencia y parábola, un vistazo a elipse e hipérbola, intersecciones y problemas de aplicación. <b>Mapa de la EA5 2026-1</b>: P1 dos circunferencias polares \\(r=a\\cos\\theta\\) y \\(r=b\\sin\\theta\\): cartesianas, intersecciones, rectangulares, distancia y gráfica (10 pts) · P2 simetrías de una cardioide (4) · P3 suma de dos vectores con magnitud y ángulo (6). El simulacro reproduce las 5 versiones de esa EA. Ahora tiene interactivos: graficador polar animado, vectores que arrastras, explorador de cónicas, «ajusta la curva», círculo unitario y respuestas como fórmula que se corrigen solas."
 }
