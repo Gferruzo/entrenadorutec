@@ -2,7 +2,7 @@
  *
  * Configuración en Cloudflare (Worker → Settings → Variables and Secrets):
  *   GEMINI_KEY  (secreto, obligatorio)  API key de Google AI Studio
- *   MODEL       (opcional)              modelo de Gemini; por defecto DEF_MODEL
+ *   MODEL       (opcional)              modelo de Gemini a probar primero (si no, la lista MODELOS)
  *   LIMITE_DIA  (opcional)              consultas por usuario al día; por defecto 40
  * KV opcional (Bindings → KV namespace) con el nombre LIMITES: activa el límite diario.
  *
@@ -11,7 +11,8 @@
  */
 const FB_PROJECT = 'entrenadorutec';            // proyecto de Firebase de NotPull (login)
 const ORIGENES = ['https://gferruzo.github.io']; // páginas que pueden usar a Pullpy
-const DEF_MODEL = 'gemini-2.5-flash';
+// Se prueban en orden; si Google retira uno (404), pasa al siguiente.
+const MODELOS = ['gemini-flash-latest', 'gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-3.5-flash-lite'];
 const NECESITA_LOGIN = true;                     // solo usuarios con sesión iniciada
 const MAX_DATA = 16000;                          // tamaño máximo de lo que manda la app
 
@@ -42,7 +43,7 @@ export default {
     const res = (obj, status = 200) => new Response(JSON.stringify(obj), { status, headers: { ...cors, 'Content-Type': 'application/json; charset=utf-8' } });
 
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
-    if (req.method === 'GET') return res({ ok: true, pullpy: 'listo', tareas: Object.keys(TASKS), modelo: env.MODEL || DEF_MODEL, clave: !!env.GEMINI_KEY, limites: !!env.LIMITES });
+    if (req.method === 'GET') return res({ ok: true, pullpy: 'listo', tareas: Object.keys(TASKS), modelos: [env.MODEL, ...MODELOS].filter(Boolean), clave: !!env.GEMINI_KEY, limites: !!env.LIMITES });
     if (req.method !== 'POST') return res({ ok: false, error: 'metodo' }, 405);
     if (!okOrigin) return res({ ok: false, error: 'origen' }, 403);
     if (!env.GEMINI_KEY) return res({ ok: false, error: 'config' }, 500);
@@ -72,30 +73,32 @@ export default {
       quedan = lim - n - 1;
     }
 
-    // Gemini
-    const model = env.MODEL || DEF_MODEL;
-    const gen = { maxOutputTokens: task.max || 600, temperature: task.temp ?? 0.4 };
-    if (/^gemini-2\.5-flash/.test(model)) gen.thinkingConfig = { thinkingBudget: task.think ?? 0 };
-    let r, j;
-    try {
-      r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_KEY },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: PERSONA + (task.sys ? '\n\n' + task.sys : '') }] },
-          contents: [{ role: 'user', parts: [{ text: task.prompt(data) }] }],
-          generationConfig: gen,
-        }),
-      });
-      j = await r.json();
-    } catch { return res({ ok: false, error: 'ia' }, 502); }
+    // Gemini (prueba los modelos en orden hasta que uno exista)
+    const gen = { maxOutputTokens: Math.max(2048, (task.max || 600) * 4), temperature: task.temp ?? 0.4 };
+    const cuerpo = JSON.stringify({
+      systemInstruction: { parts: [{ text: PERSONA + (task.sys ? '\n\n' + task.sys : '') }] },
+      contents: [{ role: 'user', parts: [{ text: task.prompt(data) }] }],
+      generationConfig: gen,
+    });
+    let r, j, model;
+    for (model of [env.MODEL, ...MODELOS].filter(Boolean)) {
+      try {
+        r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_KEY },
+          body: cuerpo,
+        });
+        j = await r.json();
+      } catch { return res({ ok: false, error: 'ia' }, 502); }
+      if (r.status !== 404) break;
+    }
     if (!r.ok) {
       const det = ((j && j.error) || {});
-      return res({ ok: false, error: r.status === 429 ? 'ocupado' : 'ia', detalle: { status: r.status, estado: det.status, mensaje: String(det.message || '').slice(0, 300) } }, 502);
+      return res({ ok: false, error: r.status === 429 ? 'ocupado' : 'ia', detalle: { modelo: model, status: r.status, estado: det.status, mensaje: String(det.message || '').slice(0, 300) } }, 502);
     }
     const text = ((((j.candidates || [])[0] || {}).content || {}).parts || []).map(p => p.text || '').join('').trim();
     if (!text) return res({ ok: false, error: 'vacio' }, 502);
-    return res({ ok: true, text, quedan });
+    return res({ ok: true, text, quedan, modelo: model });
   },
 };
 
