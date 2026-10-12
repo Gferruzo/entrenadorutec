@@ -892,6 +892,12 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 .lwinfo{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
 .lwhist{margin:6px 0 0;padding-left:1.4em;font-size:.92rem}
 .lwsz{display:inline-flex;align-items:center;gap:6px;font-size:.9rem}
+.pullpy{display:flex;gap:10px;align-items:flex-start;margin:.7em 0;padding:10px 12px;border:1px solid var(--sol);background:var(--sol-bg);border-radius:14px}
+.pullpy .pav{flex:0 0 36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:21px;overflow:hidden}.pullpy .pav img{width:100%;height:100%;object-fit:cover}
+.pullpy .pbody{flex:1;min-width:0}.pullpy .pname{font:800 .82rem Figtree,sans-serif;color:var(--sol);margin-bottom:2px}.pullpy .pout p{margin:.25em 0}.pullpy .pout ul{margin:.25em 0;padding-left:1.2em}.pullpy .perr{color:var(--bad)}
+.pdots{display:inline-flex;gap:4px;padding:6px 0}.pdots i{width:7px;height:7px;border-radius:50%;background:var(--sol);opacity:.3;animation:pdot 1s infinite}.pdots i:nth-child(2){animation-delay:.15s}.pdots i:nth-child(3){animation-delay:.3s}
+@keyframes pdot{50%{opacity:1;transform:translateY(-3px)}}
+.ppbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--sol);background:var(--sol-bg);color:var(--sol);font:700 .85rem Figtree,sans-serif;padding:6px 12px;border-radius:999px;cursor:pointer}.ppbtn img{width:20px;height:20px;border-radius:50%}
 </style>
 </head>
 <body>
@@ -1143,6 +1149,52 @@ GEN['micro-ep']=[
 
 const S={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const $=id=>document.getElementById(id);
+/* ================= PULLPY (IA de NotPull) =================
+   Base lista y APAGADA mientras PULLPY.url esté vacía (no se muestra nada).
+   · Prender: poner la URL del Cloudflare Worker (pullpy/worker.js) en PULLPY.url.
+     Para probar solo en tu navegador: localStorage.setItem('pullpy-url','"https://…workers.dev"').
+   · Agregar una función: 1) su tarea en TASKS de pullpy/worker.js, 2) registrarla aquí en PULLPY.fx:
+       PULLPY.fx.<nombre>={at:'<enganche>',run(ctx){ … pullpy.ask('<tarea>',datos) … }}
+     Enganches: 'error' (falló una alternativa: {e,qi,ch,oi,box,fb}), 'ex' (tarjeta de ejercicio: {e,card,acts}),
+     'topic' (tema abierto: {t,main}), 'simq' (pregunta del simulacro ya corregida: {q,qi,box,acts}).
+   · Ayudas: pullpy.data(e,extra) arma el contexto del ejercicio; pullpy.box(padre) crea la burbuja
+     (.load(), .say(texto), .err(código)); pullpy.btn(texto,fn) crea el botón con su estilo. */
+const PULLPY={url:'',name:'Pullpy',img:'',needLogin:true,fx:{}};
+try{const u=S.get('pullpy-url','');if(u)PULLPY.url=u}catch(e){}
+const pullpy={
+  on(){return !!PULLPY.url},
+  user(){return (FBA&&FBA.auth&&FBA.auth.currentUser)||null},
+  ready(){return this.on()&&(!PULLPY.needLogin||!!this.user())},
+  hook(at,ctx){if(!this.on())return;for(const k in PULLPY.fx){const f=PULLPY.fx[k];if(f&&f.at===at&&!f.off){try{f.run(ctx)}catch(e){console.error('Pullpy/'+k,e)}}}},
+  txt(h,max){if(h==null)return '';const d=document.createElement('div');d.innerHTML=String(h).replace(/<br\s*\/?>/gi,'\n').replace(/<\/(p|li|div|h\d|tr)>/gi,'\n');
+    let t=(d.textContent||'').replace(/[ \t]+/g,' ').replace(/\n\s*\n+/g,'\n').trim();if(max&&t.length>max)t=t.slice(0,max)+'…';return t},
+  topicOf(e){return (T||[]).find(t=>(t.ex||[]).includes(e))||null},
+  data(e,extra){const tp=this.topicOf(e);
+    return Object.assign({curso:C?C.name:'',bloque:C?C.exam:'',tema:tp?tp.name:'',teoria:tp?this.txt(tp.teo,4000):'',
+      ejercicio:this.txt(e.title),enunciado:this.txt(e.q,3000),
+      preguntas:(e.checks||[]).map(ch=>({pregunta:this.txt(ch.p),correcta:ch.o?this.txt(ch.o[0]):undefined,otras:ch.o?ch.o.slice(1).map(x=>this.txt(x)):undefined})),
+      solucion:(e.steps||[]).map(x=>this.txt(x)),respuesta:this.txt(e.ans),pista:this.txt(e.hint)},extra||{})},
+  async ask(task,data){if(!this.on())throw new Error('off');const h={'Content-Type':'application/json'};const u=this.user();
+    if(u){try{h.Authorization='Bearer '+await u.getIdToken()}catch(e){}}else if(PULLPY.needLogin)throw new Error('login');
+    let r,j={};try{r=await fetch(PULLPY.url,{method:'POST',headers:h,body:JSON.stringify({task,data:data||{}})});j=await r.json()}catch(e){throw new Error('red')}
+    if(!r.ok||!j.ok)throw new Error(j.error||'ia');return j.text},
+  msg(c){return({login:'Inicia sesión para hablar conmigo 🐙',limite:'Ya usaste tus consultas de hoy. ¡Mañana seguimos!',ocupado:'Estoy con muchas consultas ahorita. Intenta en un minuto.',red:'No tengo conexión. Revisa tu internet e intenta de nuevo.'})[c]||'No pude responder ahora. Intenta de nuevo en un rato.'},
+  md(t){const esc=x=>x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return esc(t).split(/\n{2,}/).map(b=>{const L=b.split('\n');
+      if(L.every(l=>/^\s*([-*•]|\d+[.)])\s+/.test(l)))return '<ul>'+L.map(l=>'<li>'+l.replace(/^\s*([-*•]|\d+[.)])\s+/,'')+'</li>').join('')+'</ul>';
+      return '<p>'+L.join('<br>')+'</p>'}).join('').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')},
+  box(parent,where){const b=el('div','pullpy');const av=el('div','pav',PULLPY.img?'<img src="'+PULLPY.img+'" alt="">':'🐙');const bd=el('div','pbody');
+    bd.append(el('div','pname',PULLPY.name));const out=el('div','pout');bd.append(out);b.append(av,bd);
+    if(parent){if(where==='after')parent.after(b);else parent.append(b)}
+    b.load=()=>{out.innerHTML='<span class="pdots"><i></i><i></i><i></i></span>';return b};
+    b.say=t=>{out.innerHTML=pullpy.md(t);typeset(out);return b};
+    b.err=c=>{out.innerHTML='<p class="perr">'+pullpy.msg(c&&c.message||c)+'</p>';return b};
+    return b},
+  btn(label,fn){const x=el('button','ppbtn',(PULLPY.img?'<img src="'+PULLPY.img+'" alt="">':'🐙 ')+'<span>'+label+'</span>');x.type='button';x.onclick=fn;return x},
+  test(){return this.ask('prueba',{}).then(t=>{console.log('Pullpy:',t);return t})}
+};
+window.pullpy=pullpy;
+
 const LN={1:'Básico',2:'Intermedio',3:'Nivel examen'},LC={1:'var(--l1)',2:'var(--l2)',3:'var(--l3)'};
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
@@ -1986,6 +2038,7 @@ function exCard(e){if(e.write)return writeCard(e);
   bh.onclick=()=>{hint.hidden=!hint.hidden;bh.textContent=hint.hidden?'Pista':'Ocultar pista';if(!hint.hidden&&!e.draw){const r=rec(e.id);if(!r.s&&!r.h){r.h=1;save()}}};
   if(bv)bv.onclick=()=>{if(!ver.dataset.built){buildVer(e,ver,c,stt,setBs);typeset(ver)}ver.hidden=!ver.hidden;bv.textContent=ver.hidden?vLabel:'Ocultar opciones'};
   bs.onclick=()=>{if(lockSol())return;if(!sol.dataset.built){buildSol(e,sol,true);typeset(sol)}sol.hidden=!sol.hidden;setBs()};
+  pullpy.hook('ex',{e,card:c,acts});
   if(bv&&isCodeEx(e)){buildVer(e,ver,c,stt,setBs);ver.hidden=false;bv.textContent='Ocultar el editor';bv.onclick=()=>{ver.hidden=!ver.hidden;bv.textContent=ver.hidden?vLabel:'Ocultar el editor'}}
   return c}
 /* ================= PYTHON EN EL NAVEGADOR (Pyodide en un Web Worker) ================= */
@@ -2129,7 +2182,7 @@ function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e
       if(pre&&oi===0){b.classList.add('good');ok[qi]=true}if(pre)b.disabled=true;
       b.onclick=()=>{onTry();
         if(oi===0){b.classList.add('good');grid.querySelectorAll('.opt').forEach(x=>x.disabled=true);fb.className='fb good';fb.textContent='¡Correcto!';onGood(qi)}
-        else{b.classList.add('bad');b.disabled=true;fb.className='fb bad';fb.textContent='No es esa. Revisa tu procedimiento e intenta otra opción.';onBad()}};
+        else{b.classList.add('bad');b.disabled=true;fb.className='fb bad';fb.textContent='No es esa. Revisa tu procedimiento e intenta otra opción.';onBad();pullpy.hook('error',{e,qi,ch,oi,box,fb})}};
       grid.append(b)});box.append(grid,fb);ver.append(box)});
   if(pre)ver.append(el('p','note',e.draw?'Lectura comprobada.':'Ya resolviste este ejercicio.'))}
 function buildOrder(ch,box,fb,qi,pre,onTry,onBad,onGood,e){
@@ -2217,6 +2270,7 @@ function renderTopic(){const t=T[st.topic];main.innerHTML='';
   if(!vis)main.append(el('p','empty','Este tema no tiene ejercicios de este nivel. Elige otro nivel arriba.'));
   const pend=t.ex.filter(e=>!isDone(e)&&st.level&&e.lvl!==st.level).length;
   if(pend)main.append(el('p','note',pend+' ejercicio(s) pendiente(s) en otros niveles. Para desbloquear el siguiente tema necesitas todos.'));
+  pullpy.hook('topic',{t,main});
   topicHeader();document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.l===st.level));typeset(main);hlWhen(teo.querySelector('.hlz'))}
 document.querySelectorAll('.step').forEach(b=>b.onclick=()=>{st.level=+b.dataset.l;savePrefs();renderTopic()});
 
@@ -2686,7 +2740,7 @@ function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
     box.querySelectorAll('.opts').forEach(g=>{const ci=+g.dataset.ci;g.querySelectorAll('.opt').forEach(b=>{b.disabled=true;const oi=+b.dataset.oi;if(oi===0)b.classList.add('good');else if(q.sel[ci]===oi)b.classList.add('bad')})});
     box.querySelector('h3 span').textContent=(Math.round(q.pts*10)/10)+' / '+q.slot.pts+' pts';
     const sb=el('div','acts');const bs=el('button','bs','Ver solución');const sol=el('div','sol');sol.hidden=true;sb.append(bs);box.append(sb,sol);
-    bs.onclick=()=>{if(!sol.dataset.built){buildSol(q.ex,sol,false);typeset(sol)}sol.hidden=!sol.hidden;bs.textContent=sol.hidden?'Ver solución':'Ocultar solución'};q.ok=ok===n});
+    bs.onclick=()=>{if(!sol.dataset.built){buildSol(q.ex,sol,false);typeset(sol)}sol.hidden=!sol.hidden;bs.textContent=sol.hidden?'Ver solución':'Ocultar solución'};q.ok=ok===n;pullpy.hook('simq',{q,qi,box,acts:sb})});
   if(SIMS.mode!=='quick'){const now=Date.now();SIMS.qs.forEach(q=>{const id=q.ex.id;if(!X[id])return;const r=rec(id);
       if(q.ok){qGood(r,now);if(SIMS.mode==='rescue'&&!r.s){r.s=1;r.f=1}}
       else qBad(r,now)});save();timeReport()}
