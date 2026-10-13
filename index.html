@@ -450,6 +450,22 @@ details.sotros>summary{cursor:pointer;font:800 .8rem Figtree;text-transform:uppe
 .tpnm u{display:block;position:relative;height:9cqw;margin-top:6cqw;border:1px solid var(--k);background-image:linear-gradient(90deg,var(--k) .6px,transparent .6px),linear-gradient(var(--k) .6px,transparent .6px);background-size:9.3% 33.4%}
 .tpnm u::after{content:'';position:absolute;left:50%;top:-1px;bottom:-1px;width:1.5px;background:var(--k)}
 .tpnm s{display:block;height:5cqw;border-bottom:1px solid var(--k)}
+.misx.mispt{right:32px;font-size:1rem}
+.tped .tpprev{position:relative;width:min(190px,52vw);aspect-ratio:.86;margin:6px auto 4px;border-radius:6px 12px 12px 6px;box-shadow:0 10px 18px -9px rgba(30,30,40,.45);-webkit-backface-visibility:visible;backface-visibility:visible}
+.tped .tpprev::after{display:none}
+.tplab{margin:12px 0 6px;font:800 .78rem Figtree,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tprow{display:flex;flex-wrap:wrap;gap:8px}
+.tprow:has(.tpcol){gap:20px 10px;padding-bottom:6px}
+.tppat{display:flex;flex-direction:column;align-items:center;gap:4px;width:64px;border:0;background:none;padding:0;cursor:pointer;color:var(--ink)}
+.tppat small{font:600 .68rem/1.1 Figtree,sans-serif;text-align:center}
+.tped .tpmini{position:relative;display:block;width:52px;aspect-ratio:.86;border-radius:3px 6px 6px 3px;outline:2px solid transparent;outline-offset:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.4)}
+.tped .tpmini::after{display:none}
+.tped .tppat.on .tpmini{outline-color:var(--ink)}
+.tpcol{position:relative;width:34px;height:34px;border-radius:999px;border:1.5px solid rgba(0,0,0,.25);cursor:pointer;padding:0;outline:2px solid transparent;outline-offset:2px}
+.tpcol i{position:absolute;right:6px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:999px;border:1px solid rgba(0,0,0,.15)}
+.tpcol em{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);font:700 .6rem Figtree,sans-serif;font-style:normal;color:var(--muted)}
+.tpcol.on{outline-color:var(--ink)}
+.tped .mbtns{margin-top:22px}
 /* ===== MENÚ ESTILO CUADERNOS (referencia del usuario) ===== */
 body:has(#vMenu:not([hidden])){background-color:#FFFFFF;background-image:linear-gradient(#B3CDEE 1.5px,transparent 1.5px),linear-gradient(90deg,#B3CDEE 1.5px,transparent 1.5px);background-size:38px 38px;color-scheme:light}
 #vMenu{color:#3A3A3A}
@@ -1902,10 +1918,11 @@ if(!ST){ST={};const old=S.get('ent-prog',null)||(S.get('cv2-solved',null)?{'calc
 let prefs=S.get('ent-prefs',{});
 let MODE=S.get('ent-mode',null);
 let MIS=S.get('ent-mis',null);
+let TAPU=S.get('ent-tapas',null);
 let NOTI=S.get('ent-noti',null);
 const cs=cid=>ST[cid]||(ST[cid]=blank());
 let cloud=null,pushT=null,cloudDone=false,onCloud=[];
-const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,mis:MIS||null,nick:NICK||null,noti:NOTI||null,updated:Date.now()});
+const cloudDoc=()=>({v:3,st:ST,mode:MODE||null,mis:MIS||null,tapas:TAPU||null,nick:NICK||null,noti:NOTI||null,updated:Date.now()});
 function saveLocal(){S.set('ent-st',ST)}
 let SYNCTXT='',SYNCON=false,NICK=S.get('ent-nick',null);
 function acctName(){const u=FBA&&FBA.auth.currentUser;if(!u)return null;return (NICK&&NICK.n)||UNAME||'Mi cuenta'}
@@ -1936,7 +1953,7 @@ let FBA=null,UNAME='';
 const okLabel=()=>'Progreso sincronizado con tu cuenta';
 function cloudFinish(){if(cloudDone)return;cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}
 function rerender(){try{if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();if(typeof modeUI==='function')modeUI()}catch(e){}}
-function mergeRemote(remote,rm,rmis){remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
+function mergeRemote(remote,rm,rmis,rtap){if(rtap&&rtap.ts&&rtap.m&&(!TAPU||(TAPU.ts||0)<rtap.ts)){TAPU=rtap;S.set('ent-tapas',TAPU)}remote=remote||{};const ids=new Set([...Object.keys(remote),...Object.keys(ST)]);ids.forEach(c=>{ST[c]=mergeC(ST[c],remote[c])});
   if(rm&&rm.ts&&(!MODE||!((MODE.ts||0)>=rm.ts))){MODE=rm;S.set('ent-mode',MODE)}
   if(rmis&&rmis.ts&&Array.isArray(rmis.sel)&&(!MIS||(MIS.ts||0)<rmis.ts)){MIS=rmis;S.set('ent-mis',MIS)}}
 function syncClick(){accountModal()}
@@ -1949,7 +1966,7 @@ async function claudeSync(){try{
   const ref=db.doc('data/users/'+uid+'/progress');const snap=await ref.get();
   let remote={};
   if(snap.exists){const d=snap.data();if(d.st)remote=d.st;else if(d.prog){for(const c in d.prog){remote[c]=blank();for(const id in d.prog[c])if(d.prog[c][id])remote[c].ex[id]={s:1,f:1,a:1}}}}
-  mergeRemote(remote,snap.exists?(snap.data()||{}).mode:null,snap.exists?(snap.data()||{}).mis:null);
+  mergeRemote(remote,snap.exists?(snap.data()||{}).mode:null,snap.exists?(snap.data()||{}).mis:null,snap.exists?(snap.data()||{}).tapas:null);
   cloud=ref;saveLocal();await ref.set(cloudDoc());setSync(okLabel(),true);rerender();
 }catch(e){setSync('Guardando solo en este navegador')}finally{cloudFinish()}}
 async function firebaseSync(){
@@ -1965,7 +1982,7 @@ async function firebaseSync(){
     logout:async()=>{if(!confirm('¿Cerrar sesión?\n\nTu progreso queda guardado en tu cuenta y se borrará de este navegador.'))return;
       clearTimeout(pushT);try{if(cloud)await cloud.set(cloudDoc())}catch(e){}
       cloud=null;try{await AU.signOut(auth)}catch(e){}
-      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode');localStorage.removeItem('ent-mis');localStorage.removeItem('ent-nick');localStorage.removeItem('ent-noti')}catch(e){}
+      try{localStorage.removeItem('ent-st');localStorage.removeItem('ent-mode');localStorage.removeItem('ent-mis');localStorage.removeItem('ent-tapas');localStorage.removeItem('ent-nick');localStorage.removeItem('ent-noti')}catch(e){}
       location.reload()}};
   AU.getRedirectResult(auth).catch(()=>{});
   AU.onAuthStateChanged(auth,async u=>{
@@ -1974,7 +1991,7 @@ async function firebaseSync(){
     try{setSync('Sincronizando…');markClickable();
       const ref=FS.doc(db,'users',u.uid,'data','progress');
       const snap=await FS.getDoc(ref);
-      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode,p.mis);if(p.nick&&p.nick.ts&&(!NICK||(NICK.ts||0)<p.nick.ts)){NICK=p.nick;S.set('ent-nick',NICK)}if(p.noti&&typeof notiMerge==='function')notiMerge(p.noti)}
+      if(snap.exists()){let p={};try{p=JSON.parse(snap.data().data||'{}')}catch(e){}mergeRemote(p.st,p.mode,p.mis,p.tapas);if(p.nick&&p.nick.ts&&(!NICK||(NICK.ts||0)<p.nick.ts)){NICK=p.nick;S.set('ent-nick',NICK)}if(p.noti&&typeof notiMerge==='function')notiMerge(p.noti)}
       cloud={set:d=>FS.setDoc(ref,{v:3,data:JSON.stringify({st:d.st,mode:d.mode,mis:d.mis,nick:d.nick,noti:d.noti}),updated:d.updated})};
       saveLocal();await cloud.set(cloudDoc());setSync(okLabel(),true);rerender();
     }catch(e){cloud=null;setSync('Sin conexión: guardado local')}finally{markClickable();cloudFinish()}
@@ -2156,17 +2173,40 @@ const TAPAS={
  lunares:(f,p)=>`background-color:${f};background-image:radial-gradient(circle 1.8cqw,${p} 0 80%,transparent 100%);background-size:6.8cqw 6.8cqw;background-position:6.4cqw -1cqw`,
  lunaresp:(f,p)=>{const r=`radial-gradient(circle 1.2cqw,color-mix(in srgb,${p} 100%,#fff 30%) 0 50%,${p} 85%,transparent 100%)`;return`background-color:${f};background-image:${r},${r};background-size:10.2cqw 10.2cqw;background-position:0 0,5.1cqw 5.1cqw`},
  estrellas:(f,p)=>`background-color:${f};background-size:26cqw 26cqw;background-position:3cqw 0;background-image:`+svgU('0 0 64 64',`<g fill="${p}" stroke="${p}" stroke-width="1.6" stroke-linejoin="round"><path transform="translate(16 16) scale(1.35)" d="${STAR}"/><path transform="translate(48 48) scale(1.35)" d="${STAR}"/></g>`),
- cielo:(f,p)=>{const st=[[14,12,.9],[62,22,.5],[92,8,.7],[38,44,1.2],[84,52,.55],[10,70,.6],[58,80,.85],[96,92,1],[28,100,.45]].map(([x,y,k])=>`<path transform="translate(${x} ${y}) scale(${k})" d="${STAR}"/>`).join('')+[[40,16,1],[72,40,.9],[20,38,.8],[100,70,.9],[36,76,1],[78,104,.8]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('');
+ cielo:(f,p,l,x)=>{p=x;const st=[[14,12,.9],[62,22,.5],[92,8,.7],[38,44,1.2],[84,52,.55],[10,70,.6],[58,80,.85],[96,92,1],[28,100,.45]].map(([x,y,k])=>`<path transform="translate(${x} ${y}) scale(${k})" d="${STAR}"/>`).join('')+[[40,16,1],[72,40,.9],[20,38,.8],[100,70,.9],[36,76,1],[78,104,.8]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('');
    return`background-color:${f};background-size:70cqw 70cqw;background-image:`+svgU('0 0 110 110',`<g fill="${p}">${st}</g>`)},
- cuadros:(f,p)=>{const a=n=>`color-mix(in srgb,${p} ${n}%,transparent)`,t=`transparent 0 2cqw,${a(22)} 2cqw 7cqw,transparent 7cqw 10cqw,${a(32)} 10cqw 10.6cqw,transparent 10.6cqw 12cqw,${a(32)} 12cqw 12.6cqw,transparent 12.6cqw 16.5cqw,${a(13)} 16.5cqw 20cqw,transparent 20cqw 23.5cqw,${a(28)} 23.5cqw 24cqw,transparent 24cqw 26cqw`;
+ cuadros:(f,p,l)=>{const a=n=>`color-mix(in srgb,${l} ${n}%,transparent)`,t=`transparent 0 2cqw,${a(22)} 2cqw 7cqw,transparent 7cqw 10cqw,${a(32)} 10cqw 10.6cqw,transparent 10.6cqw 12cqw,${a(32)} 12cqw 12.6cqw,transparent 12.6cqw 16.5cqw,${a(13)} 16.5cqw 20cqw,transparent 20cqw 23.5cqw,${a(28)} 23.5cqw 24cqw,transparent 24cqw 26cqw`;
    return`background-color:${f};background-image:repeating-linear-gradient(90deg,${t}),repeating-linear-gradient(0deg,${t})`},
  corazones:(f,p)=>`background-color:${f};background-size:14.8cqw 14.8cqw,auto,auto;background-image:`+svgU('0 0 52 52',`<g fill="${p}"><path transform="translate(9 8) scale(.9)" d="${HEART}"/><path transform="translate(35 34) scale(.9)" d="${HEART}"/></g>`)+`,repeating-linear-gradient(45deg,transparent 0 5cqw,rgba(60,0,10,.08) 5cqw 5.3cqw),repeating-linear-gradient(-45deg,transparent 0 5cqw,rgba(60,0,10,.08) 5cqw 5.3cqw)`,
  liso:f=>`background-color:${f}`
 };
-function tapaHTML(g){const t=g.tapa,[f,p,l,x]=t.c,fn=TAPAS[t.p]||TAPAS.liso;
-  return`<div class="tpbg" style='${fn(f,p)}'></div>`+(t.p==='liso'?`<div class="tpnm" style="--k:${p}"><b></b><b></b><u></u><s></s></div>`:'')+
+const tapaOf=g=>(TAPU&&TAPU.m&&TAPU.m[g.key])||g.tapa;
+function tapaHTML(g,t){t=t||tapaOf(g);const[f,p,l,x]=t.c,fn=TAPAS[t.p]||TAPAS.liso;
+  return`<div class="tpbg" style='${fn(f,p,l,x)}'></div>`+(t.p==='liso'?`<div class="tpnm" style="--k:${x}"><b></b><b></b><u></u><s></s></div>`:'')+
    `<div class="tplomo" style="background:${l}"><span style="color:${f}">NotPull</span></div><div class="tpbig" style="color:${x}">${(g.uni||'UTEC').toUpperCase()}</div>`}
-function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell');cell.dataset.k=g.key;const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',g.tapa?g.tapa.c[0]:NBCOL[gi%NBCOL.length]);
+/* Personalizar portada: patrón + paleta, guardado por usuario (ent-tapas, también en la nube) */
+const TPATS=[['lunares','Lunares'],['lunaresp','Lunares pequeños'],['estrellas','Estrellas'],['cielo','Cielo estrellado'],['cuadros','Cuadros'],['corazones','Corazones'],['liso','Liso']];
+const TPALS=[['Celeste',['#FDFBF2','#C7DCEA','#86B9E0','#86B9E0']],['Durazno',['#FCF6F0','#F3C6A5','#E89E6F','#E08F5E']],['Lila',['#F8F6F1','#D4C8E8','#A893CF','#9B84C6']],['Menta',['#F7FBF6','#BFE3CF','#7CC4A0','#6BB892']],
+ ['Salvia',['#FAFAF8','#C9CCC0','#A3A994','#98A08A']],['Azul grisáceo',['#F7F9FB','#C3CFDB','#8299AE','#7489A0']],['Clásico',['#FBF9F4','#3E3532','#3E3532','#3E3532']],['Crema y negro',['#EEEAE2','#343434','#1E1E1E','#111111']],
+ ['Frambuesa',['#B23F4D','#EFDCCF','#FCE4E6','#FFE7EC']],['Moca',['#7A6964','#E4AFC1','#F9D6E1','#FDE6EE']],['Azul noche',['#1F2A44','#E9E4D4','#E9E4D4','#F3EEDF']]];
+function setTapa(k,t){const m=Object.assign({},(TAPU&&TAPU.m)||{});if(t)m[k]=t;else delete m[k];TAPU={v:1,m,ts:Date.now()};S.set('ent-tapas',TAPU);push(0)}
+function tapaEditor(g){const orig=g.tapa,same=(a,b)=>a.p===b.p&&a.c.join()===b.c.join();let cur=JSON.parse(JSON.stringify(tapaOf(g)));
+  const n=el('div','tped');n.append(el('h2',null,'Portada de '+(g.nbn||g.name)),el('p','sub','Solo cambia en tu menú; los demás ven la portada original.'));
+  const pv=el('div','tpprev nbfront tp');n.append(pv);
+  n.append(el('p','tplab','Patrón'));const pr=el('div','tprow');n.append(pr);
+  n.append(el('p','tplab','Colores'));const cr=el('div','tprow');n.append(cr);
+  const pals=[['Original',orig.c]].concat(TPALS.filter(([,c])=>c.join()!==orig.c.join()));
+  function draw(){pv.innerHTML=tapaHTML(g,cur);pv.style.backgroundColor=cur.c[0];
+    pr.innerHTML='';TPATS.forEach(([k,lb])=>{const b=el('button','tppat'+(cur.p===k?' on':''),'<span class="tpmini nbfront tp">'+tapaHTML(g,{p:k,c:cur.c})+'</span><small>'+lb+'</small>');b.type='button';b.setAttribute('aria-pressed',cur.p===k);b.onclick=()=>{cur.p=k;draw()};pr.append(b)});
+    cr.innerHTML='';pals.forEach(([lb,c])=>{const on=cur.c.join()===c.join();const b=el('button','tpcol'+(on?' on':''));b.type='button';b.title=lb;b.setAttribute('aria-label',lb);b.setAttribute('aria-pressed',on);
+      b.style.background=`linear-gradient(90deg,${c[2]} 0 32%,${c[0]} 32% 100%)`;b.innerHTML=`<i style="background:${c[1]}"></i>`+(lb==='Original'?'<em>Orig.</em>':'');b.onclick=()=>{cur.c=c.slice();draw()};cr.append(b)})}
+  draw();
+  const bt=el('div','mbtns');const ok=el('button','pri','Guardar'),rnd=el('button',null,'🎲 Al azar'),rs=el('button',null,'Volver a la original'),cc=el('button',null,'Cancelar');
+  ok.onclick=()=>{setTapa(g.key,same(cur,orig)?null:cur);closeModal();renderMenu()};
+  rnd.onclick=()=>{let t;do{t={p:TPATS[Math.floor(Math.random()*TPATS.length)][0],c:TPALS[Math.floor(Math.random()*TPALS.length)][1].slice()}}while(same(t,cur));cur=t;draw()};
+  rs.onclick=()=>{cur=JSON.parse(JSON.stringify(orig));draw()};cc.onclick=closeModal;
+  bt.append(ok,rnd,rs,cc);n.append(bt);openModal(n,'wide')}
+function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell');cell.dataset.k=g.key;const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',tapaOf(g)?tapaOf(g).c[0]:NBCOL[gi%NBCOL.length]);
     if(!g.tapa&&COVERS[g.code])nb.style.setProperty('--img','url('+COVERS[g.code]+')');nb.tabIndex=0;nb.setAttribute('role','button');nb.setAttribute('aria-label',g.name);
     const pg=el('div','nbpage nbpaper');pg.append(el('span','nbhead',g.list.length>1?'Elige qué preparar':'Cobertura disponible'));
     g.list.forEach(c=>{if(c.soon){const b=el('button','nbopt nbsoon','<b>🔒 '+(c.short||c.exam.replace(/\s*\(.*?\)/,''))+'</b><span>Próximamente</span>');b.disabled=true;b.onclick=e=>e.stopPropagation();pg.append(b);return}
@@ -2174,7 +2214,7 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
       const b=el('button','nbopt','<b>'+(c.short||c.exam)+'</b><span>'+(c.sub?c.sub+(x.solved?' · '+p+' %':'')+(md?' · '+md[1]:''):(x.solved?p+' % avanzado':'Sin empezar')+(md?' · '+md[1]:''))+'</span><i><u style="width:'+p+'%"></u></i><em>Practicar →</em>');
       b.onclick=e=>{e.stopPropagation();openCourse(c.id)};pg.append(b)});
     const book=el('div','nbbook');
-    book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront'+(g.tapa?' tp">'+tapaHTML(g):'">')+'</div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
+    book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront'+(tapaOf(g)?' tp">'+tapaHTML(g):'">')+'</div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
     nb.append(book);
     nb.onmouseenter=()=>{if(HOVER.matches&&!editMenu&&!document.querySelector('.nbchosen'))openNb(nb)};nb.onmouseleave=()=>{if(HOVER.matches)closeNb(nb)};
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};
@@ -2184,9 +2224,10 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
     if(editMenu&&where){const x=el('button','misx'+(where==='otros'?' add':''),where==='otros'?'+':'−');x.type='button';
       x.setAttribute('aria-label',(where==='otros'?'Agregar ':'Quitar ')+g.name+(where==='otros'?' a':' de')+' Mis cursos');
       x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
+    if(editMenu&&where&&g.tapa){const t=el('button','misx mispt','🎨');t.type='button';t.setAttribute('aria-label','Cambiar portada de '+g.name);t.onclick=e=>{e.stopPropagation();tapaEditor(g)};cell.append(t)}
     return cell}
 function mkSort(grid){if(!window.Sortable)return;
-  SORTS.push(Sortable.create(grid,{group:'mc',draggable:'.nbcell',filter:'.misx',preventOnFilter:false,delay:180,delayOnTouchOnly:true,touchStartThreshold:10,forceFallback:true,fallbackTolerance:4,animation:180,
+  SORTS.push(Sortable.create(grid,{group:'mc',draggable:'.nbcell',filter:'.misx,.mispt',preventOnFilter:false,delay:180,delayOnTouchOnly:true,touchStartThreshold:10,forceFallback:true,fallbackTolerance:4,animation:180,
     ghostClass:'nbghost',chosenClass:'nbchosen',dragClass:'nbdrag',scroll:true,bubbleScroll:true,
     onChoose(e){if(e.originalEvent&&e.originalEvent.type&&e.originalEvent.type.startsWith('touch'))try{navigator.vibrate&&navigator.vibrate(15)}catch(x){}},
     onStart(){chosen=true;document.querySelectorAll('.nb').forEach(closeNb)},
