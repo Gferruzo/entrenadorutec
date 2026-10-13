@@ -275,6 +275,11 @@ code{font:0.9em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:
 .mcs .mcf{stroke:var(--bad);stroke-width:2.6}.mcs .mcfF{stroke:var(--curve);stroke-width:2.6}.mcs .mcah{fill:var(--bad)}.mcs .mcahF{fill:var(--curve)}.mcs .mcpan{fill:none;stroke:var(--line)}
 .kinw svg{touch-action:none}.kinw [data-k]{cursor:grab}.dclw .plfig{margin-bottom:.4em}.dcll{display:grid;gap:8px}
 .jbar{display:flex;gap:6px;flex-wrap:wrap;margin:.3em 0 .5em}.jm{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;font:700 .8rem ui-monospace,Menlo,monospace;cursor:pointer}.jm.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.biw{display:grid;gap:10px}.bisl{display:flex;flex-wrap:wrap;gap:6px;align-items:end}.bisel{display:flex;flex-direction:column;font:600 .78rem Figtree,sans-serif;color:var(--muted);gap:2px;flex:1;min-width:90px}.bisel select{font:600 .88rem Figtree,sans-serif;padding:6px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);max-width:100%}
+.bicards{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}.bicard{border:1.5px solid var(--line);border-radius:10px;padding:8px;background:var(--card);min-width:0}.bicard.bad{border-color:var(--bad);background:var(--bad-bg)}.bik{font:700 .78rem Figtree,sans-serif;color:var(--muted)}.biv{font:800 1.2rem Figtree,sans-serif;margin:2px 0 4px;color:var(--ink)}
+.bifs{display:flex;flex-direction:column;gap:4px}.bif{font:600 .68rem ui-monospace,Menlo,monospace;text-align:left;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:4px 6px;cursor:pointer;overflow-wrap:anywhere}.bif.on{border-color:var(--ok);background:var(--ok-bg)}.bif.on.wr{border-color:var(--bad);background:var(--bad-bg)}span.bif{cursor:default}.bint{font-size:.75rem;margin:4px 0 0;color:var(--ink)}
+.bivis h5{margin:.2em 0;font:800 .9rem Figtree,sans-serif}.bich [data-z]{fill:transparent;cursor:pointer}.bich svg{width:100%;max-width:360px;height:auto;display:block}.bibad{color:var(--bad);font-weight:700}
+.stw{display:grid;gap:8px}.stsvg{width:100%;max-width:360px;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:8px}.stt,.sthit{cursor:pointer}.stn{font:800 12px Figtree,sans-serif;fill:var(--ink)}.sts{font:600 9px Figtree,sans-serif;fill:var(--muted)}.stlab{font:800 11px Figtree,sans-serif;fill:var(--ink)}.sth{font-weight:800;margin:0}.stmsg ul{margin:0;padding-left:1.1em;font-size:.85rem;color:var(--bad)}.stok{color:var(--ok);font-weight:700;margin:0}
 .jtabs{display:flex;gap:8px;flex-wrap:wrap}.jtabs>.tbl{flex:1 1 140px}.jtabs caption,.jres caption{font:800 .85rem Figtree,sans-serif;text-align:left;padding:2px 0}
 tr.jok td{background:var(--ok-bg)}tr.jno td{opacity:.4}tr.jnul td{background:var(--bad-bg)}
 .numw{display:grid;gap:8px;margin:.2em 0 .4em}.nrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nrow .nl{min-width:2.6em;font-weight:700}.nrow .fin{width:112px}.nu{color:var(--muted);font-size:.9rem}
@@ -2805,6 +2810,114 @@ LW.join=(b,o)=>{const A=o.L,B=o.R,ka=o.lk||0,kb=o.rk||0;let mode='inner';
     res.innerHTML='';const w=el('div','tbl');const t=el('table');t.innerHTML='<caption>Resultado: '+rows.length+' filas</caption><tr>'+[...A.cols.map(c=>A.name[0].toLowerCase()+'.'+c),...B.cols.map(c=>B.name[0].toLowerCase()+'.'+c)].map(c=>'<th>'+c+'</th>').join('')+'</tr>'+rows.map(r=>'<tr class="'+r.c+'">'+r.v.map(v=>'<td'+(v==null?' class="nul"':'')+'>'+(v==null?'NULL':escX(v))+'</td>').join('')+'</tr>').join('');w.append(t);res.append(w)};
   draw()};
 
+/* ================= BI (Data Viz sem. 10): modelo estrella y mini Power BI =================
+   Usan C.retail = {tiendas, cats, prods:[[cat, precio_cent]], meses, dist, cdist:[distrito por cliente], fin, rows:[[t,p,c,cant,pu_cent,m]]}.
+   star (pregunta y LW): arma o arregla las relaciones del modelo. ch.start=[[dim,'Ventas','1n'|'n1'|'nn'|'11','u'|'b',activa]], ch.e
+   LW.bi: segmentadores Tienda/Categoría/Mes, tarjetas de medidas con versión correcta o del analista y gráfico con filtro cruzado.
+     o.ver={ven:1,…} versiones iniciales, o.axis 't'|'c'|'m', o.meas, o.only=[claves de medidas a mostrar] */
+const biNum=(v,d)=>{const s=Math.abs(v).toFixed(d).split('.');s[0]=s[0].replace(/\B(?=(\d{3})+(?!\d))/g,' ');return(v<0?'−':'')+s.join(',')};
+const biFmt=(v,u)=>v==null||isNaN(v)?'—':u==='S/'?'S/ '+biNum(v,2):u==='%'?biNum(v*100,1)+' %':u==='±%'?(v>=0?'+':'')+biNum(v*100,1)+' %':biNum(v,0);
+function biData(){const R=C&&C.retail;if(!R)return null;if(R._rows)return R;
+  R._rows=R.rows.map(r=>({t:r[0],c:R.prods[r[1]][0],cl:r[2],dc:R.cdist[r[2]-1],q:r[3],pu:r[4]/100,mo:r[3]*r[4]/100,lp:r[3]*R.prods[r[1]][1]/100,m:r[5]}));return R}
+function biAgg(R,x){const o={sum:0,n:0,q:0,spu:0,cli:new Set(),lp:0};R._rows.forEach(r=>{if(x.t!=null&&r.t!==x.t)return;if(x.c!=null&&r.c!==x.c)return;if(x.m!=null&&r.m!==x.m)return;if(x.d!=null&&r.dc!==x.d)return;
+  o.sum+=r.mo;o.n++;o.q+=r.q;o.spu+=r.pu;o.cli.add(r.cl);o.lp+=r.lp});o.nc=o.cli.size;return o}
+const BI_M=[
+ {k:'ven',n:'Ventas',u:'S/',v:[['SUM(Ventas[Monto])',(R,x)=>biAgg(R,x).sum],['SUM(Ventas[Precio_unitario])',(R,x)=>biAgg(R,x).spu,'Suma precios de una unidad: ignora la Cantidad.']]},
+ {k:'tra',n:'Transacciones',u:'',v:[['COUNTROWS(Ventas)',(R,x)=>biAgg(R,x).n]]},
+ {k:'uni',n:'Unidades',u:'',v:[['SUM(Ventas[Cantidad])',(R,x)=>biAgg(R,x).q],['COUNTROWS(Ventas)',(R,x)=>biAgg(R,x).n,'Cuenta ventas, no unidades.']]},
+ {k:'tic',n:'Ticket prom.',u:'S/',v:[['DIVIDE([Ventas], [Transacciones])',(R,x,V)=>{const n=biAgg(R,x).n;return n?V.ven(x)/n:null}],
+   ['AVERAGE(Ventas[Precio_unitario])',(R,x)=>{const a=biAgg(R,x);return a.n?a.spu/a.n:null},'Es el precio promedio de una unidad, no lo que se cobra por compra.'],
+   ['AVERAGEX(VALUES(Tiendas), DIVIDE(…))',(R,x,V)=>{const ts=x.t!=null?[x.t]:R.tiendas.map((_,i)=>i);const vs=ts.map(t=>{const y=Object.assign({},x,{t});const n=biAgg(R,y).n;return n?V.ven(y)/n:null}).filter(v=>v!=null);return vs.length?vs.reduce((a,b)=>a+b,0)/vs.length:null},'Promedio de promedios: no pondera por transacciones.']]},
+ {k:'cli',n:'Clientes act.',u:'',v:[['DISTINCTCOUNT(Ventas[ID_cliente])',(R,x)=>biAgg(R,x).nc],['COUNT(Ventas[ID_cliente])',(R,x)=>biAgg(R,x).n,'Cuenta filas: un cliente que compra 10 veces cuenta 10.']]},
+ {k:'pct',n:'% Ventas',u:'%',v:[['DIVIDE([Ventas], CALCULATE([Ventas], ALL(Productos)))',(R,x,V)=>{const d=V.ven(Object.assign({},x,{c:null}));return d?V.ven(x)/d:null}],
+   ['DIVIDE([Ventas], CALCULATE([Ventas], ALL(Tiendas)))',(R,x,V)=>{const d=V.ven(Object.assign({},x,{t:null}));return d?V.ven(x)/d:null},'Quita el filtro de Tiendas, no el de la categoría: por categoría todo da 100 %.']]},
+ {k:'dsc',n:'Descuento S/',u:'S/',v:[['[Monto lista] − [Ventas]',(R,x,V)=>biAgg(R,x).lp-V.ven(x)]]},
+ {k:'mom',n:'Var. MoM %',u:'±%',v:[['DIVIDE([Ventas] − [Ventas mes ant.], [Ventas mes ant.])',(R,x,V)=>{if(x.m==null||x.m===0)return null;const p=V.ven(Object.assign({},x,{m:x.m-1}));return p?(V.ven(x)-p)/p:null}]]}];
+LW.bi=(b,o)=>{const R=biData();if(!R){b.textContent='Faltan los datos del caso.';return}
+  const ver={};BI_M.forEach(m=>ver[m.k]=(o.ver&&o.ver[m.k])||0);const F={t:null,c:null,m:null};let axis=o.axis||'t',meas=o.meas||'ven';
+  const MS=o.only?BI_M.filter(m=>o.only.includes(m.k)):BI_M;
+  const V={};BI_M.forEach(m=>V[m.k]=x=>{const f=m.v[ver[m.k]][1];return f(R,x,V)});
+  const w=el('div','biw');b.append(w);
+  const sl=el('div','bisl');const dims=[['t','Tienda',R.tiendas],['c','Categoría',R.cats],['m','Mes',R.meses]];const sels={};
+  dims.forEach(([k,n,L])=>{const lb=el('label','bisel');lb.append(el('span',null,n));const s=el('select');s.innerHTML='<option value="">Todas</option>'+L.map((x,i)=>'<option value="'+i+'">'+escX(x)+'</option>').join('');s.onchange=()=>{F[k]=s.value===''?null:+s.value;draw()};lb.append(s);sels[k]=s;sl.append(lb)});
+  const clr=el('button','lwb','Quitar filtros');clr.type='button';clr.onclick=()=>{F.t=F.c=F.m=null;draw()};sl.append(clr);
+  const cards=el('div','bicards');const vis=el('div','bivis');const vbar=el('div','jbar');const mbar=el('div','jbar');const fig=el('div','chfig bich');const cap=el('p','note');
+  [['t','Por tienda'],['c','Por categoría'],['m','Por mes']].forEach(([k,n])=>{const x=el('button','jm'+(k===axis?' on':''),n);x.type='button';x.onclick=()=>{axis=k;vbar.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));draw()};vbar.append(x)});
+  MS.filter(m=>m.k!=='tra'&&m.k!=='mom').forEach(m=>{const x=el('button','lwb'+(m.k===meas?' on':''),m.n);x.type='button';x.onclick=()=>{meas=m.k;mbar.querySelectorAll('.lwb').forEach(y=>y.classList.toggle('on',y===x));draw()};mbar.append(x)});
+  vis.append(el('h5',null,'Visual (toca una barra para filtrar)'),vbar,mbar,fig,cap);
+  w.append(sl,cards,vis);
+  function draw(){dims.forEach(([k])=>sels[k].value=F[k]==null?'':F[k]);
+    cards.innerHTML='';MS.forEach(m=>{const c=el('div','bicard'+(ver[m.k]?' bad':''));const val=V[m.k](F);
+      c.append(el('div','bik',m.n),el('div','biv',biFmt(val,m.u)));
+      if(m.v.length>1){const sw=el('div','bifs');m.v.forEach((v,i)=>{const x=el('button','bif'+(i===ver[m.k]?' on':'')+(i?' wr':''),escX(v[0]));x.type='button';x.title=i?'Versión del analista':'Versión correcta';x.onclick=()=>{ver[m.k]=i;draw()};sw.append(x)});c.append(sw)}
+      else c.append(el('div','bifs','<span class="bif on">'+escX(m.v[0][0])+'</span>'));
+      const nt=ver[m.k]?m.v[ver[m.k]][2]:m.k==='mom'&&F.m==null?'Elige un mes en el segmentador.':m.k==='mom'&&F.m===R.meses.length-1?'⚠ '+R.meses[F.m]+' tiene datos solo hasta el '+R.fin+': no es comparable.':m.k==='pct'&&F.c==null?'Sin categoría en el contexto vale 100 %: úsala en un visual por categoría.':'';
+      if(nt)c.append(el('p','bint',nt));cards.append(c)});
+    const L=axis==='t'?R.tiendas:axis==='c'?R.cats:R.meses;const M=BI_M.find(m=>m.k===meas);
+    const idx=L.map((_,i)=>i).filter(i=>F[axis]==null||F[axis]===i);
+    const vals=idx.map(i=>{const v=V[meas](Object.assign({},F,{[axis]:i}));return v==null?0:+(M.u==='%'?v*100:v).toFixed(2)});
+    const spec={type:axis==='m'?'bar':'hbar',labels:idx.map(i=>L[i]),values:vals,vals:axis!=='m',unit:M.u==='%'?'%':M.u==='S/'?'S/':'',title:M.n+' '+(axis==='t'?'por tienda':axis==='c'?'por categoría':'por mes'),zones:idx.map((_,j)=>({on:'bar',i:j,id:String(idx[j])}))};
+    if(F[axis]!=null)spec.emph=L[F[axis]];
+    fig.innerHTML=chartSVG(spec);fig.querySelectorAll('[data-z]').forEach(z=>z.addEventListener('click',()=>{const k=+z.dataset.z;F[axis]=F[axis]===k?null:k;draw()}));
+    const fl=dims.filter(([k])=>F[k]!=null).map(([k,n,L2])=>n+' = '+L2[F[k]]);
+    cap.innerHTML=(fl.length?'Contexto de filtro: <b>'+fl.join(' · ')+'</b>. ':'Sin filtros. ')+(ver[meas]?'<span class="bibad">Ojo: el visual usa la versión del analista de '+M.n+'.</span>':'')}
+  draw()};
+/* ----- modelo estrella ----- */
+const ST_T={Ventas:[160,150],Tiendas:[62,42],Productos:[258,42],Clientes:[62,258],Calendario:[258,258]};
+const ST_D=['Tiendas','Productos','Clientes','Calendario'];
+const ST_CARD={'1n':'1 : * (la dimensión filtra Ventas)','n1':'* : 1 (al revés)','nn':'* : * (muchos a muchos)','11':'1 : 1'};
+function starStatus(L){const st={},warn=[];ST_D.forEach(d=>{const l=L.find(x=>x.a===d&&x.b==='Ventas');
+    if(!l)st[d]={ok:false,f:false,why:'Falta la relación '+d+'–Ventas.'};
+    else if(!l.act)st[d]={ok:false,f:false,why:'La relación '+d+'–Ventas está inactiva (línea punteada).'};
+    else if(l.card==='n1'||l.card==='11')st[d]={ok:false,f:false,why:'Power BI no crea '+d+'–Ventas como '+(l.card==='11'?'1 : 1':'* : 1')+': en Ventas el ID se repite.'};
+    else if(l.card==='nn')st[d]={ok:false,f:true,why:d+'–Ventas quedó muchos a muchos: '+d+' tiene un ID único, debe ser 1 : *.'};
+    else if(l.dir==='b')st[d]={ok:false,f:true,why:d+'–Ventas filtra en ambas direcciones: en una estrella va única.'};
+    else st[d]={ok:true,f:true}});
+  L.filter(x=>x.b!=='Ventas'&&x.a!=='Ventas').forEach(x=>warn.push('Sobra '+x.a+'–'+x.b+': en un modelo estrella las dimensiones no se unen entre sí.'));
+  return{st,warn}}
+function starUI(start,onCh){const R=biData();let L=(start||[]).map(s=>{let[a,b,card,dir,act]=s;if(a==='Ventas'){a=b;b='Ventas'}return{a,b,card:card||'1n',dir:dir||'u',act:act!==false}});let sel=null,pick=null,lk=false;
+  const w=el('div','stw');const fig=el('div','stfig');const ed=el('div','sted');const tabs=el('div','jbar');const prev=el('div','chfig bich');const msg=el('div','stmsg');w.append(fig,ed,msg,tabs,prev);
+  let pv='Tiendas';const PV={Tiendas:['t','Ventas por tienda'],Productos:['c','Ventas por categoría'],Calendario:['m','Ventas por mes'],Clientes:['d','Ventas por distrito del cliente']};
+  ST_D.forEach(d=>{const x=el('button','jm'+(d===pv?' on':''),PV[d][1].replace('Ventas por ','Por '));x.type='button';x.onclick=()=>{pv=d;tabs.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));draw()};tabs.append(x)});
+  const key=l=>l.a+'|'+l.b;
+  function tap(n){if(lk)return;if(pick==null||pick===n){pick=pick===n?null:n;sel=null;draw();return}
+    let a=pick,b=n;if(a==='Ventas'){a=n;b='Ventas'}else if(b!=='Ventas'&&a>b){const t=a;a=b;b=t}
+    let l=L.find(x=>x.a===a&&x.b===b);if(!l){l={a,b,card:'1n',dir:'u',act:true};L.push(l);onCh&&onCh()}sel=key(l);pick=null;draw()}
+  function draw(){const S=starStatus(L);let s='<svg viewBox="0 0 320 300" class="stsvg" xmlns="http://www.w3.org/2000/svg">';
+    L.forEach(l=>{const[x1,y1]=ST_T[l.a],[x2,y2]=ST_T[l.b];const mx=(x1+x2)/2,my=(y1+y2)/2;const isS=sel===key(l);const ok=l.b==='Ventas'&&S.st[l.a]&&S.st[l.a].ok;
+      const c=isS?'var(--sol)':ok?'var(--ok)':l.b!=='Ventas'||!(S.st[l.a]||{}).f?'var(--bad)':'var(--l2)';
+      s+='<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(isS?3.5:2.5)+'"'+(l.act?'':' stroke-dasharray="6 5"')+'/>';
+      const lab=(t,f)=>{const px=x1+(x2-x1)*f,py=y1+(y2-y1)*f;return'<circle cx="'+px+'" cy="'+py+'" r="9" fill="var(--card)" stroke="'+c+'"/><text x="'+px+'" y="'+(py+4)+'" text-anchor="middle" class="stlab">'+t+'</text>'};
+      const ca=l.card==='1n'?['1','*']:l.card==='n1'?['*','1']:l.card==='nn'?['*','*']:['1','1'];s+=lab(ca[0],.3)+lab(ca[1],.7);
+      const ang=Math.atan2(y2-y1,x2-x1)*180/Math.PI;const ar=(dx,rot)=>'<path d="M-6,-5 L4,0 L-6,5 Z" fill="'+c+'" transform="translate('+(mx+dx*Math.cos(ang*Math.PI/180))+','+(my+dx*Math.sin(ang*Math.PI/180))+') rotate('+(ang+rot)+')"/>';
+      s+=l.dir==='b'?ar(-7,180)+ar(7,0):ar(0,0);
+      s+='<line data-k="'+key(l)+'" x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="transparent" stroke-width="18" class="sthit"/>'});
+    Object.entries(ST_T).forEach(([n,[x,y]])=>{const f=n==='Ventas';const W=f?100:88,H=f?44:34;const on=pick===n;
+      s+='<g class="stt" data-t="'+n+'"><rect x="'+(x-W/2)+'" y="'+(y-H/2)+'" width="'+W+'" height="'+H+'" rx="8" fill="'+(on?'var(--sol-bg)':f?'var(--teo-bg)':'var(--card)')+'" stroke="'+(on?'var(--sol)':f?'var(--teo)':'var(--line)')+'" stroke-width="'+(on?2.5:1.5)+'"/><text x="'+x+'" y="'+(y+(f?-2:5))+'" text-anchor="middle" class="stn">'+n+'</text>'+(f?'<text x="'+x+'" y="'+(y+13)+'" text-anchor="middle" class="sts">hechos · 2 000 filas</text>':'')+'</g>'});
+    s+='</svg>';fig.innerHTML=s;
+    fig.querySelectorAll('.stt').forEach(g=>g.addEventListener('click',()=>tap(g.dataset.t)));
+    fig.querySelectorAll('.sthit').forEach(h=>h.addEventListener('click',()=>{if(lk)return;sel=sel===h.dataset.k?null:h.dataset.k;pick=null;draw()}));
+    ed.innerHTML='';const l=L.find(x=>key(x)===sel);
+    if(l&&!lk){ed.append(el('p','sth',l.a+' — '+l.b));const r1=el('div','jbar');Object.entries(ST_CARD).forEach(([k,n])=>{if(l.b!=='Ventas'&&k==='n1')return;const x=el('button','lwb'+(l.card===k?' on':''),l.b==='Ventas'?n:n.replace(' (la dimensión filtra Ventas)',''));x.type='button';x.onclick=()=>{l.card=k;onCh&&onCh();draw()};r1.append(x)});
+      const r2=el('div','jbar');[['u','Dirección única'],['b','Ambas direcciones']].forEach(([k,n])=>{const x=el('button','lwb'+(l.dir===k?' on':''),n);x.type='button';x.onclick=()=>{l.dir=k;onCh&&onCh();draw()};r2.append(x)});
+      const ac=el('button','lwb'+(l.act?' on':''),l.act?'✓ Activa':'Inactiva (punteada)');ac.type='button';ac.onclick=()=>{l.act=!l.act;onCh&&onCh();draw()};r2.append(ac);
+      const del=el('button','lwb','🗑 Quitar');del.type='button';del.onclick=()=>{L=L.filter(x=>x!==l);sel=null;onCh&&onCh();draw()};r2.append(del);
+      ed.append(el('span','plrl','Cardinalidad'),r1,el('span','plrl','Filtro'),r2)}
+    else if(!lk)ed.append(el('p','note',pick?'Ahora toca la otra tabla para relacionarlas.':'Toca dos tablas para crear una relación, o toca una línea para editarla.'));
+    const iss=ST_D.map(d=>S.st[d]).filter(x=>!x.ok).map(x=>x.why).concat(S.warn);
+    msg.innerHTML=iss.length?'<ul>'+iss.map(x=>'<li>'+escX(x)+'</li>').join('')+'</ul>':'<p class="stok">✓ Modelo estrella correcto: 4 relaciones 1 : *, activas y de dirección única.</p>';
+    if(R){const[ax,tt]=PV[pv];const Lb=ax==='t'?R.tiendas:ax==='c'?R.cats:ax==='m'?R.meses:R.dist;const f=(S.st[pv]||{}).f;const tot=biAgg(R,{}).sum;
+      const vals=Lb.map((_,i)=>+(f?biAgg(R,{[ax]:i}).sum:tot).toFixed(2));
+      prev.innerHTML=chartSVG({type:ax==='m'?'bar':'hbar',labels:Lb,values:vals,vals:ax!=='m',unit:'S/',title:tt,sub:f?'El filtro de '+pv+' llega a Ventas':'⚠ Todas iguales: el filtro de '+pv+' no llega a Ventas'})}}
+  draw();
+  return{el:w,get L(){return L},lock(){lk=true;sel=null;pick=null;draw()},set(nl){L=nl.map(x=>Object.assign({},x));draw()}}}
+LW.star=(b,o)=>{const u=starUI(o.start||[]);b.append(u.el)};
+IW.star=(ch,o)=>{let touched=false;const u=starUI(ch.start||[],()=>{touched=true;o.on&&o.on()});
+  return{el:u.el,note:'Toca dos tablas para relacionarlas; toca una línea para cambiar su cardinalidad, dirección o estado. El gráfico de abajo muestra el efecto en vivo.',need:'Cambia algo del modelo antes de comprobar.',okMsg:'¡Modelo estrella correcto!',
+   filled:()=>touched||!(ch.start||[]).length,
+   grade(){const S=starStatus(u.L);const ok=ST_D.filter(d=>S.st[d].ok).length;const f=Math.max(0,(ok-S.warn.length)/4);const iss=ST_D.map(d=>S.st[d]).filter(x=>!x.ok).map(x=>x.why).concat(S.warn);
+    return{f:f>=1?1:f,msg:f>=1?'':'Aún hay '+(iss.length===1?'un problema':iss.length+' problemas')+' en el modelo (mira la lista).'+(ch.e?'<br>'+ch.e:'')}},
+   mark(){},reveal(){u.set(ST_D.map(d=>({a:d,b:'Ventas',card:'1n',dir:'u',act:true})))},lock(){u.lock()}}};
 /* ================= MOTOR DE FÓRMULAS (MX) =================
    MX.parse(texto, vars) → árbol; MX.fn(árbol) → (env)=>número; MX.tex(árbol) → TeX para la vista previa.
    Sintaxis: + − * / ^, multiplicación implícita (2x, x(x+1), 3sen x), funciones sen/sin cos tan sec csc cot,
