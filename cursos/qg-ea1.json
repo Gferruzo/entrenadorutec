@@ -100,39 +100,49 @@
      "q": "<p>Clasifica: agua destilada, arena de mar, bicarbonato de sodio (NaHCO₃) y agua con aceite.</p>",
      "checks": [
       {
-       "p": "Agua destilada",
-       "o": [
-        "Compuesto",
+       "t": "cls",
+       "p": "Clasifica cada material.",
+       "cats": [
         "Elemento",
+        "Compuesto",
         "Mezcla homogénea",
         "Mezcla heterogénea"
-       ]
-      },
-      {
-       "p": "Arena de mar",
-       "o": [
-        "Mezcla heterogénea",
-        "Compuesto",
-        "Mezcla homogénea",
-        "Elemento"
-       ]
-      },
-      {
-       "p": "Bicarbonato de sodio",
-       "o": [
-        "Compuesto",
-        "Mezcla homogénea",
-        "Elemento",
-        "Mezcla heterogénea"
-       ]
-      },
-      {
-       "p": "Agua con aceite",
-       "o": [
-        "Mezcla heterogénea",
-        "Mezcla homogénea",
-        "Compuesto",
-        "Elemento"
+       ],
+       "items": [
+        {
+         "x": "Agua destilada",
+         "c": 1
+        },
+        {
+         "x": "Arena de mar",
+         "c": 3
+        },
+        {
+         "x": "Bicarbonato de sodio (NaHCO₃)",
+         "c": 1
+        },
+        {
+         "x": "Agua con aceite",
+         "c": 3
+        },
+        {
+         "x": "Nitrógeno gaseoso (N₂)",
+         "c": 0,
+         "e": "N₂ tiene un solo tipo de átomo: es un elemento aunque sea una molécula."
+        },
+        {
+         "x": "Aire filtrado",
+         "c": 2
+        },
+        {
+         "x": "Bronce",
+         "c": 2,
+         "e": "Una aleación uniforme es una mezcla homogénea."
+        },
+        {
+         "x": "Granito",
+         "c": 3
+        }
        ]
       }
      ],
@@ -169,13 +179,46 @@
      "q": "<p>¿Cuál de estos procesos es un <strong>cambio químico</strong>?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "La oxidación de un clavo de hierro",
-        "La sublimación del hielo seco",
-        "Disolver sal en agua",
-        "Romper un vidrio",
-        "Hervir agua"
+       "t": "cls",
+       "p": "¿Físico o químico?",
+       "cats": [
+        "Cambio físico",
+        "Cambio químico"
+       ],
+       "items": [
+        {
+         "x": "Oxidación de un clavo de hierro",
+         "c": 1
+        },
+        {
+         "x": "Fusión del hielo",
+         "c": 0
+        },
+        {
+         "x": "Combustión de papel",
+         "c": 1
+        },
+        {
+         "x": "Disolver azúcar en agua",
+         "c": 0,
+         "e": "Disolver no forma sustancias nuevas: el azúcar sigue siendo azúcar."
+        },
+        {
+         "x": "Cocinar un huevo",
+         "c": 1
+        },
+        {
+         "x": "Romper un vidrio",
+         "c": 0
+        },
+        {
+         "x": "Fermentación de la uva",
+         "c": 1
+        },
+        {
+         "x": "Evaporación del alcohol",
+         "c": 0
+        }
        ]
       }
      ],
@@ -204,31 +247,38 @@
      "q": "<p>Clasifica cada propiedad.</p>",
      "checks": [
       {
-       "p": "Inflamabilidad",
-       "o": [
-        "Química",
-        "Física"
-       ]
-      },
-      {
-       "p": "Volatilidad",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada propiedad.",
+       "cats": [
         "Física",
         "Química"
-       ]
-      },
-      {
-       "p": "Corrosividad",
-       "o": [
-        "Química",
-        "Física"
-       ]
-      },
-      {
-       "p": "Conductividad eléctrica",
-       "o": [
-        "Física",
-        "Química"
+       ],
+       "items": [
+        {
+         "x": "Inflamabilidad",
+         "c": 1
+        },
+        {
+         "x": "Volatilidad",
+         "c": 0,
+         "e": "Volatilidad = facilidad para evaporarse: no cambia la sustancia."
+        },
+        {
+         "x": "Corrosividad",
+         "c": 1
+        },
+        {
+         "x": "Conductividad eléctrica",
+         "c": 0
+        },
+        {
+         "x": "Densidad",
+         "c": 0
+        },
+        {
+         "x": "Reactividad con el oxígeno",
+         "c": 1
+        }
        ]
       }
      ],
@@ -265,33 +315,21 @@
      "q": "<p>Para el ion ³²₁₆S²⁻, indica protones, neutrones y electrones.</p>",
      "checks": [
       {
-       "p": "Protones",
-       "o": [
-        "16",
-        "18",
-        "32",
-        "14",
-        "2"
-       ]
-      },
-      {
-       "p": "Neutrones",
-       "o": [
-        "16",
-        "18",
-        "32",
-        "14",
-        "17"
-       ]
-      },
-      {
-       "p": "Electrones",
-       "o": [
-        "18",
-        "16",
-        "14",
-        "32",
-        "20"
+       "t": "num",
+       "p": "Partículas del ³²₁₆S²⁻",
+       "f": [
+        {
+         "l": "protones",
+         "a": 16
+        },
+        {
+         "l": "neutrones",
+         "a": 16
+        },
+        {
+         "l": "electrones",
+         "a": 18
+        }
        ]
       }
      ],
@@ -324,23 +362,17 @@
      "q": "<p>Para ²⁷₁₃Al³⁺, ¿cuántos electrones y neutrones hay?</p>",
      "checks": [
       {
-       "p": "Electrones",
-       "o": [
-        "10",
-        "13",
-        "16",
-        "3",
-        "14"
-       ]
-      },
-      {
-       "p": "Neutrones",
-       "o": [
-        "14",
-        "13",
-        "27",
-        "10",
-        "16"
+       "t": "num",
+       "p": "Partículas del ²⁷₁₃Al³⁺",
+       "f": [
+        {
+         "l": "electrones",
+         "a": 10
+        },
+        {
+         "l": "neutrones",
+         "a": 14
+        }
        ]
       }
      ],
@@ -369,24 +401,20 @@
      "q": "<p>Un elemento X tiene número de masa 32 y la misma cantidad de protones que de neutrones. Otro, Y, tiene 6 neutrones y número de masa 12.</p>",
      "checks": [
       {
-       "p": "X es",
-       "o": [
-        "Azufre (Z = 16)",
-        "Oxígeno (Z = 8)",
-        "Germanio (Z = 32)",
-        "Fósforo (Z = 15)",
-        "Calcio (Z = 20)"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento X.",
+       "a": [
+        "S"
+       ],
+       "e": "Si p = n y A = 32, entonces Z = 16."
       },
       {
-       "p": "Y es",
-       "o": [
-        "Carbono (Z = 6)",
-        "Magnesio (Z = 12)",
-        "Boro (Z = 5)",
-        "Nitrógeno (Z = 7)",
-        "Litio (Z = 3)"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento Y.",
+       "a": [
+        "C"
+       ],
+       "e": "Z = A − n = 12 − 6."
       }
      ],
      "steps": [
@@ -414,23 +442,23 @@
      "q": "<p>Tres isótopos de Bb tienen números de masa A, A+1 y A+3. La suma de los tres números de masa es 409 y el número de protones del más liviano es 59.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Valor de A",
-       "o": [
-        "135",
-        "136",
-        "133",
-        "138",
-        "102"
+       "f": [
+        {
+         "l": "A =",
+         "a": 135
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Neutrones del isótopo más pesado",
-       "o": [
-        "79",
-        "76",
-        "77",
-        "59",
-        "138"
+       "f": [
+        {
+         "l": "neutrones",
+         "a": 79
+        }
        ]
       },
       {
@@ -473,33 +501,24 @@
      "q": "<p>Bb tiene isótopos de números de masa A, A+2 y A+3, cuya suma es 167. El isótopo intermedio (A+2) posee 30 neutrones.</p>",
      "checks": [
       {
-       "p": "Valor de A",
-       "o": [
-        "54",
-        "56",
-        "55",
-        "52",
-        "58"
+       "t": "num",
+       "p": "Valor de A y Z",
+       "f": [
+        {
+         "l": "A =",
+         "a": 54
+        },
+        {
+         "l": "Z =",
+         "a": 26
+        }
        ]
       },
       {
-       "p": "Z de Bb",
-       "o": [
-        "26",
-        "24",
-        "30",
-        "28",
-        "56"
-       ]
-      },
-      {
-       "p": "Bb es",
-       "o": [
-        "Hierro, un metal de transición",
-        "Cromo, un metal de transición",
-        "Cinc, un metal",
-        "Níquel, un metaloide",
-        "Calcio, un alcalinotérreo"
+       "t": "ptab",
+       "p": "Toca Bb en la tabla.",
+       "a": [
+        "Fe"
        ]
       }
      ],
@@ -532,23 +551,17 @@
      "q": "<p>Un catión divalente X²⁺ tiene 18 electrones y 20 neutrones.</p>",
      "checks": [
       {
-       "p": "Número atómico de X",
-       "o": [
-        "20",
-        "18",
-        "16",
-        "22",
-        "38"
-       ]
-      },
-      {
-       "p": "Número de masa",
-       "o": [
-        "40",
-        "38",
-        "42",
-        "36",
-        "20"
+       "t": "num",
+       "p": "Número atómico y de masa de X",
+       "f": [
+        {
+         "l": "Z =",
+         "a": 20
+        },
+        {
+         "l": "A =",
+         "a": 40
+        }
        ]
       }
      ],
@@ -628,6 +641,95 @@
        "prop"
       ]
      ]
+    },
+    {
+     "id": "s1n1",
+     "lvl": 1,
+     "title": "Tabla de partículas",
+     "q": "<p>Completa protones, neutrones y electrones de cada especie.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa la tabla.",
+       "head": [
+        "Especie",
+        "p⁺",
+        "n⁰",
+        "e⁻"
+       ],
+       "rows": [
+        [
+         "²³₁₁Na⁺",
+         {
+          "a": 11
+         },
+         {
+          "a": 12
+         },
+         {
+          "a": 10
+         }
+        ],
+        [
+         "³⁵₁₇Cl⁻",
+         {
+          "a": 17
+         },
+         {
+          "a": 18
+         },
+         {
+          "a": 18
+         }
+        ],
+        [
+         "⁵⁶₂₆Fe³⁺",
+         {
+          "a": 26
+         },
+         {
+          "a": 30
+         },
+         {
+          "a": 23
+         }
+        ],
+        [
+         "¹⁶₈O²⁻",
+         {
+          "a": 8
+         },
+         {
+          "a": 8
+         },
+         {
+          "a": 10
+         }
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "p = Z (el subíndice). n = A − Z.",
+      "e⁻ = Z − carga: un catión tiene menos electrones; un anión, más.",
+      "Fe³⁺: 26 p, 56 − 26 = 30 n y 26 − 3 = 23 e⁻."
+     ],
+     "ans": "Na⁺ 11/12/10 · Cl⁻ 17/18/18 · Fe³⁺ 26/30/23 · O²⁻ 8/8/10",
+     "hint": "La carga solo cambia los electrones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ]
+     ]
     }
    ]
   },
@@ -651,23 +753,18 @@
      "q": "<p>Br (Z = 35).</p>",
      "checks": [
       {
-       "p": "Configuración",
-       "o": [
-        "[Ar] 4s² 3d¹⁰ 4p⁵",
-        "[Ar] 4s² 4p⁵",
-        "[Ar] 3d¹⁰ 4p⁷",
-        "[Kr] 4s² 4p⁵",
-        "[Ar] 4s² 3d⁹ 4p⁶"
-       ]
+       "t": "econf",
+       "p": "Completa la configuración del Br (Z = 35).",
+       "z": 35
       },
       {
+       "t": "num",
        "p": "Electrones de valencia",
-       "o": [
-        "7",
-        "17",
-        "5",
-        "35",
-        "1"
+       "f": [
+        {
+         "l": "e⁻ de valencia",
+         "a": 7
+        }
        ]
       },
       {
@@ -776,13 +873,10 @@
        ]
       },
       {
-       "p": "Elemento",
-       "o": [
-        "Selenio",
-        "Germanio",
-        "Azufre",
-        "Teluro",
-        "Cromo"
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Se"
        ]
       }
      ],
@@ -811,33 +905,24 @@
      "q": "<p>E1: 5 e⁻ de valencia y tres niveles de energía. E2: su anión estable es monovalente y tiene dos niveles. E3: metal alcalino cuyo ion estable es isoelectrónico con el Ar.</p>",
      "checks": [
       {
-       "p": "E1",
-       "o": [
-        "Fósforo",
-        "Nitrógeno",
-        "Arsénico",
-        "Aluminio",
-        "Cloro"
+       "t": "ptab",
+       "p": "Toca E1.",
+       "a": [
+        "P"
        ]
       },
       {
-       "p": "E2",
-       "o": [
-        "Flúor",
-        "Cloro",
-        "Oxígeno",
-        "Litio",
-        "Neón"
+       "t": "ptab",
+       "p": "Toca E2.",
+       "a": [
+        "F"
        ]
       },
       {
-       "p": "E3",
-       "o": [
-        "Potasio",
-        "Sodio",
-        "Calcio",
-        "Rubidio",
-        "Cloro"
+       "t": "ptab",
+       "p": "Toca E3.",
+       "a": [
+        "K"
        ]
       }
      ],
@@ -870,14 +955,12 @@
      "q": "<p>Un átomo tiene 22 neutrones, su catión estable es divalente y su nivel de valencia es 4.</p>",
      "checks": [
       {
-       "p": "Elemento",
-       "o": [
-        "Calcio",
-        "Magnesio",
-        "Titanio",
-        "Selenio",
-        "Argón"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Ca"
+       ],
+       "e": "Catión divalente y nivel de valencia 4 → grupo 2A, periodo 4."
       },
       {
        "p": "Notación de núclido",
@@ -890,13 +973,13 @@
        ]
       },
       {
-       "p": "Símbolo de Lewis",
-       "o": [
-        "Ca con 2 puntos",
-        "Ca con 4 puntos",
-        "Ca con 8 puntos",
-        "Ca con 1 punto",
-        "Ca sin puntos"
+       "t": "num",
+       "p": "Puntos en su símbolo de Lewis",
+       "f": [
+        {
+         "l": "puntos",
+         "a": 2
+        }
        ]
       }
      ],
@@ -929,35 +1012,46 @@
      "q": "<p>Clasifica Si, Al, Sb y F.</p>",
      "checks": [
       {
-       "p": "Si",
-       "o": [
-        "Metaloide",
+       "t": "cls",
+       "p": "Clasifica cada elemento.",
+       "cats": [
         "Metal",
-        "No metal"
-       ]
-      },
-      {
-       "p": "Al",
-       "o": [
-        "Metal",
-        "Metaloide",
-        "No metal"
-       ]
-      },
-      {
-       "p": "Sb",
-       "o": [
-        "Metaloide",
-        "Metal",
-        "No metal"
-       ]
-      },
-      {
-       "p": "F",
-       "o": [
         "No metal",
-        "Metaloide",
-        "Metal"
+        "Metaloide"
+       ],
+       "items": [
+        {
+         "x": "Si",
+         "c": 2
+        },
+        {
+         "x": "Al",
+         "c": 0
+        },
+        {
+         "x": "Sb",
+         "c": 2
+        },
+        {
+         "x": "F",
+         "c": 1
+        },
+        {
+         "x": "B",
+         "c": 2
+        },
+        {
+         "x": "S",
+         "c": 1
+        },
+        {
+         "x": "Fe",
+         "c": 0
+        },
+        {
+         "x": "Ge",
+         "c": 2
+        }
        ]
       }
      ],
@@ -1036,39 +1130,50 @@
      "q": "<p>Para Li, Al, S y F: ¿qué ion estable forma cada uno?</p>",
      "checks": [
       {
-       "p": "Li",
-       "o": [
-        "Li⁺",
-        "Li⁻",
-        "Li²⁺",
-        "Li³⁻"
-       ]
-      },
-      {
-       "p": "Al",
-       "o": [
-        "Al³⁺",
-        "Al³⁻",
-        "Al⁺",
-        "Al⁵⁻"
-       ]
-      },
-      {
-       "p": "S",
-       "o": [
-        "S²⁻",
-        "S²⁺",
-        "S⁶⁺",
-        "S⁻"
-       ]
-      },
-      {
-       "p": "F",
-       "o": [
-        "F⁻",
-        "F⁺",
-        "F⁷⁺",
-        "F²⁻"
+       "t": "cls",
+       "p": "¿Qué carga tiene el ion estable de cada uno?",
+       "cats": [
+        "+1",
+        "+2",
+        "+3",
+        "−1",
+        "−2",
+        "−3"
+       ],
+       "items": [
+        {
+         "x": "Li",
+         "c": 0
+        },
+        {
+         "x": "Al",
+         "c": 2
+        },
+        {
+         "x": "S",
+         "c": 4
+        },
+        {
+         "x": "F",
+         "c": 3
+        },
+        {
+         "x": "Mg",
+         "c": 1
+        },
+        {
+         "x": "N",
+         "c": 5,
+         "e": "N (5 e⁻ de valencia) gana 3 e⁻ para el octeto."
+        },
+        {
+         "x": "K",
+         "c": 0
+        },
+        {
+         "x": "O",
+         "c": 4
+        }
        ]
       }
      ],
@@ -1105,23 +1210,17 @@
      "q": "<p>Ff es el elemento con un protón menos que el elemento de configuración [Ar]4s²3d¹⁰4p¹.</p>",
      "checks": [
       {
-       "p": "Elemento de [Ar]4s²3d¹⁰4p¹",
-       "o": [
-        "Galio (Z = 31)",
-        "Cinc (Z = 30)",
-        "Aluminio (Z = 13)",
-        "Germanio (Z = 32)",
-        "Escandio (Z = 21)"
+       "t": "ptab",
+       "p": "Toca el elemento de configuración [Ar]4s²3d¹⁰4p¹.",
+       "a": [
+        "Ga"
        ]
       },
       {
-       "p": "Ff",
-       "o": [
-        "Cinc (Z = 30), metal de transición",
-        "Cobre (Z = 29)",
-        "Galio (Z = 31)",
-        "Calcio (Z = 20)",
-        "Germanio, metaloide"
+       "t": "ptab",
+       "p": "Toca Ff.",
+       "a": [
+        "Zn"
        ]
       }
      ],
@@ -1160,14 +1259,12 @@
        ]
       },
       {
-       "p": "Elemento",
-       "o": [
-        "Rubidio",
-        "Potasio",
-        "Sodio",
-        "Estroncio",
-        "Cesio"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Rb"
+       ],
+       "e": "1s² 2s² 3s² 4s² 5s¹ → 9 electrones en orbitales s."
       },
       {
        "p": "Ion estable",
@@ -1209,24 +1306,16 @@
      "q": "<p>Un elemento Ee está en el periodo 2 y su símbolo de Lewis tiene 6 puntos.</p>",
      "checks": [
       {
-       "p": "Ee es",
-       "o": [
-        "Oxígeno",
-        "Carbono",
-        "Azufre",
-        "Neón",
-        "Flúor"
+       "t": "ptab",
+       "p": "Toca Ee.",
+       "a": [
+        "O"
        ]
       },
       {
-       "p": "Configuración",
-       "o": [
-        "1s²2s²2p⁴",
-        "1s²2s²2p⁶",
-        "1s²2s²2p²",
-        "[Ne]3s²3p⁴",
-        "1s²2s⁶"
-       ]
+       "t": "econf",
+       "p": "Completa su configuración.",
+       "z": 8
       }
      ],
      "steps": [
@@ -1254,14 +1343,13 @@
      "q": "<p>¿Cuál par contiene un elemento líquido a 25 °C de cada tipo (metal y no metal)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "Hg (metal) y Br₂ (no metal)",
-        "Na (metal) y Cl₂ (no metal)",
-        "Ga (metal) y I₂ (no metal)",
-        "Fe (metal) y S (no metal)",
-        "Hg (metal) y Cl₂ (no metal)"
-       ]
+       "t": "ptab",
+       "p": "Toca los dos elementos líquidos a 25 °C (un metal y un no metal).",
+       "a": [
+        "Hg",
+        "Br"
+       ],
+       "multi": true
       }
      ],
      "steps": [
@@ -1281,6 +1369,62 @@
        "mnm"
       ]
      ]
+    },
+    {
+     "id": "s2n1",
+     "lvl": 2,
+     "title": "Configura, ubica y reconoce",
+     "q": "<p>Un átomo neutro tiene 33 electrones.</p>",
+     "checks": [
+      {
+       "t": "econf",
+       "p": "Completa su configuración en orden de llenado.",
+       "z": 33
+      },
+      {
+       "t": "num",
+       "p": "Ubicación y valencia",
+       "f": [
+        {
+         "l": "periodo",
+         "a": 4
+        },
+        {
+         "l": "e⁻ de valencia",
+         "a": 5
+        }
+       ]
+      },
+      {
+       "t": "ptab",
+       "p": "Tócalo en la tabla.",
+       "a": [
+        "As"
+       ]
+      }
+     ],
+     "steps": [
+      "Orden de Aufbau: 1s 2s 2p 3s 3p 4s 3d 4p…",
+      "Z = 33: [Ar] 4s² 3d¹⁰ 4p³ → nivel más alto n = 4 (periodo 4) con 2 + 3 = 5 e⁻ de valencia (grupo 5A).",
+      "Periodo 4, grupo 5A: arsénico (metaloide)."
+     ],
+     "ans": "[Ar] 4s² 3d¹⁰ 4p³ · periodo 4 · 5 e⁻ de valencia · As",
+     "hint": "Los electrones de valencia son los del nivel más alto (s + p).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "config"
+      ],
+      [
+       "ubicacion"
+      ],
+      [
+       "ubicacion"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -1517,13 +1661,10 @@
      "q": "<p>Dd es el <em>segundo</em> elemento al que le es más difícil perder un electrón en el tercer periodo.</p>",
      "checks": [
       {
-       "p": "Dd",
-       "o": [
-        "Cl",
-        "Ar",
-        "S",
-        "Na",
-        "F"
+       "t": "ptab",
+       "p": "Toca Dd.",
+       "a": [
+        "Cl"
        ]
       },
       {
@@ -1562,24 +1703,21 @@
      "q": "<p>Aa es el elemento con características de semiconductor del grupo 5A con la mayor tendencia a atraer electrones al formar un enlace.</p>",
      "checks": [
       {
-       "p": "Metaloides del grupo 5A",
-       "o": [
-        "As y Sb",
-        "N y P",
-        "P y As",
-        "Sb y Bi",
-        "Solo As"
-       ]
+       "t": "ptab",
+       "p": "Toca los metaloides del grupo 5A.",
+       "a": [
+        "As",
+        "Sb"
+       ],
+       "multi": true
       },
       {
-       "p": "Aa",
-       "o": [
-        "Arsénico",
-        "Antimonio",
-        "Fósforo",
-        "Nitrógeno",
-        "Bismuto"
-       ]
+       "t": "ptab",
+       "p": "Toca Aa.",
+       "a": [
+        "As"
+       ],
+       "e": "Entre As y Sb, el de arriba (menor radio) atrae más los electrones."
       }
      ],
      "steps": [
@@ -1607,13 +1745,10 @@
      "q": "<p>Aa es el elemento con el menor tamaño de los semiconductores de su grupo y posee 4 electrones de valencia.</p>",
      "checks": [
       {
-       "p": "Aa",
-       "o": [
-        "Silicio",
-        "Germanio",
-        "Carbono",
-        "Estaño",
-        "Boro"
+       "t": "ptab",
+       "p": "Toca Aa.",
+       "a": [
+        "Si"
        ]
       },
       {
@@ -1767,6 +1902,60 @@
        "en"
       ]
      ]
+    },
+    {
+     "id": "s3n1",
+     "lvl": 2,
+     "title": "Tendencias: ordena",
+     "q": "<p>Elementos: Na, Cl, K, F, Mg y Cs.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena de MAYOR a MENOR radio atómico.",
+       "items": [
+        "Cs",
+        "K",
+        "Na",
+        "Mg",
+        "Cl",
+        "F"
+       ]
+      },
+      {
+       "t": "order",
+       "p": "Ordena de MENOR a MAYOR energía de ionización.",
+       "items": [
+        "Cs",
+        "K",
+        "Na",
+        "Mg",
+        "Cl",
+        "F"
+       ]
+      }
+     ],
+     "steps": [
+      "Al bajar en un grupo se agregan niveles: el radio crece (Cs > K > Na). En un periodo, más Z con el mismo nivel: el radio baja (Na > Mg > Cl).",
+      "F está en el periodo 2: es el más pequeño.",
+      "La EI va al revés que el radio: cuanto más cerca y menos apantallado está el e⁻, más cuesta quitarlo."
+     ],
+     "ans": "Radio: Cs > K > Na > Mg > Cl > F. EI: el mismo orden, al revés.",
+     "hint": "Ubica cada elemento en la tabla: abajo-izquierda es grande, arriba-derecha pequeño.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ra"
+      ],
+      [
+       "ra"
+      ],
+      [
+       "ei"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -2110,33 +2299,25 @@
    "q": "<p><b>Industria aeronáutica.</b> Una pieza que colapsó se analizó en el laboratorio. La muestra 001 es una mezcla heterogénea de Aa, Bb y Cc:</p><ul><li>Aa: contiene 10 electrones menos que el catión más estable del Sr (Z = 38).</li><li>Bb: semiconductor del periodo 3 cuyo símbolo de Lewis tiene 4 puntos.</li><li>Cc: no metal del periodo 3 cuyo anión más estable es divalente.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "Fe (Z = 26)",
-      "Kr (Z = 36)",
-      "Ca (Z = 20)",
-      "Ni (Z = 28)",
-      "Mn (Z = 25)"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "Fe"
+     ],
+     "e": "Sr²⁺ tiene 36 e⁻; 10 menos son 26 → Z = 26."
+    },
+    {
+     "t": "ptab",
+     "p": "Toca Bb.",
+     "a": [
+      "Si"
      ]
     },
     {
-     "p": "Bb",
-     "o": [
-      "Si",
-      "C",
-      "Ge",
-      "P",
-      "Al"
-     ]
-    },
-    {
-     "p": "Cc",
-     "o": [
-      "S",
-      "Cl",
-      "P",
-      "O",
-      "Se"
+     "t": "ptab",
+     "p": "Toca Cc.",
+     "a": [
+      "S"
      ]
     },
     {
@@ -2185,33 +2366,24 @@
    "q": "<p>La muestra 002 es un compuesto formado por Dd, Ee y Ff:</p><ul><li>Dd: su catión más estable Dd³⁺ es isoelectrónico con el Ne.</li><li>Ee: su configuración termina en 4p³.</li><li>Ff: tiene 10 neutrones y número de masa 19.</li></ul>",
    "checks": [
     {
-     "p": "Dd",
-     "o": [
-      "Al",
-      "Na",
-      "B",
-      "Mg",
-      "Ga"
+     "t": "ptab",
+     "p": "Toca Dd.",
+     "a": [
+      "Al"
      ]
     },
     {
-     "p": "Ee",
-     "o": [
-      "As",
-      "P",
-      "Sb",
-      "Se",
-      "Ge"
+     "t": "ptab",
+     "p": "Toca Ee.",
+     "a": [
+      "As"
      ]
     },
     {
-     "p": "Ff",
-     "o": [
-      "F",
-      "K",
-      "Ne",
-      "O",
-      "Cl"
+     "t": "ptab",
+     "p": "Toca Ff.",
+     "a": [
+      "F"
      ]
     },
     {
@@ -2259,13 +2431,10 @@
    "q": "<p>Se analizan tres componentes:</p><ul><li>Aa: semiconductor del grupo 5A con la mayor tendencia a atraer electrones al formar un enlace.</li><li>Bb: tres isótopos A, A+1 y A+3 cuya suma de números de masa es 409; el más liviano tiene 59 protones.</li><li>Dd: segundo elemento al que le es más difícil perder un electrón en el tercer periodo.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "As",
-      "Sb",
-      "P",
-      "N",
-      "Bi"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "As"
      ]
     },
     {
@@ -2279,13 +2448,10 @@
      ]
     },
     {
-     "p": "Dd",
-     "o": [
-      "Cl",
-      "Ar",
-      "S",
-      "P",
-      "Na"
+     "t": "ptab",
+     "p": "Toca Dd.",
+     "a": [
+      "Cl"
      ]
     },
     {
@@ -2332,23 +2498,21 @@
    "q": "<p>Para los elementos Na, Mg, S y Cl (periodo 3) y K (periodo 4):</p>",
    "checks": [
     {
-     "p": "Orden de MAYOR a MENOR radio atómico",
-     "o": [
-      "K > Na > Mg > S > Cl",
-      "Cl > S > Mg > Na > K",
-      "Na > K > Mg > S > Cl",
-      "K > Na > Mg > Cl > S",
-      "Na > Mg > K > S > Cl"
-     ]
-    },
-    {
-     "p": "Mayor energía de ionización",
-     "o": [
-      "Cl",
+     "t": "order",
+     "p": "Ordena de MAYOR a MENOR radio atómico.",
+     "items": [
       "K",
       "Na",
       "Mg",
-      "S"
+      "S",
+      "Cl"
+     ]
+    },
+    {
+     "t": "ptab",
+     "p": "Toca el de mayor energía de ionización entre Na, Mg, S, Cl y K.",
+     "a": [
+      "Cl"
      ]
     },
     {
@@ -2455,12 +2619,10 @@
    "q": "<p>Requisitos de las piezas de la empresa A: <b>Ala</b>: resina con elementos semiconductores o no metales sólidos o ferromagnéticos. <b>Alerón</b>: material cuyos elementos en su mayoría son buenos conductores y se estabilizan formando cationes. Las muestras que fallaron son: 001 (Fe, Si, S — mezcla heterogénea) y 002 (Al, As, F — compuesto).</p>",
    "checks": [
     {
-     "p": "¿Qué elemento de la muestra 001 es ferromagnético?",
-     "o": [
-      "Fe",
-      "Si",
-      "S",
-      "Ninguno"
+     "t": "ptab",
+     "p": "Toca el elemento ferromagnético de la muestra 001 (Fe, Si, S).",
+     "a": [
+      "Fe"
      ]
     },
     {

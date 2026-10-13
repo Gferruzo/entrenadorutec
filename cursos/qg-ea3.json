@@ -140,31 +140,38 @@
      "q": "<p>Predice si cada par es miscible.</p>",
      "checks": [
       {
-       "p": "Agua – etanol",
-       "o": [
+       "t": "cls",
+       "p": "¿Miscibles?",
+       "cats": [
         "Miscibles",
         "Inmiscibles"
-       ]
-      },
-      {
-       "p": "Agua – aceite",
-       "o": [
-        "Inmiscibles",
-        "Miscibles"
-       ]
-      },
-      {
-       "p": "Glicerina – aceite",
-       "o": [
-        "Inmiscibles",
-        "Miscibles"
-       ]
-      },
-      {
-       "p": "Agua – acetona",
-       "o": [
-        "Miscibles",
-        "Inmiscibles"
+       ],
+       "items": [
+        {
+         "x": "Agua – etanol",
+         "c": 0
+        },
+        {
+         "x": "Agua – aceite",
+         "c": 1
+        },
+        {
+         "x": "Glicerina – aceite",
+         "c": 1
+        },
+        {
+         "x": "Agua – acetona",
+         "c": 0
+        },
+        {
+         "x": "Hexano – aceite",
+         "c": 0,
+         "e": "Ambos apolares: lo semejante disuelve a lo semejante."
+        },
+        {
+         "x": "Agua – hexano",
+         "c": 1
+        }
        ]
       }
      ],
@@ -201,30 +208,36 @@
      "q": "<p>En el diagrama de fases del agua:</p>",
      "checks": [
       {
-       "p": "Punto T",
-       "o": [
-        "Punto triple: coexisten sólido, líquido y gas",
-        "Punto crítico",
-        "Punto de ebullición normal",
-        "Punto de fusión normal"
+       "t": "tap",
+       "p": "Toca el <b>punto triple</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "T"
        ]
       },
       {
-       "p": "Punto C",
-       "o": [
-        "Punto crítico: más allá, fluido supercrítico",
-        "Punto triple",
-        "Punto de sublimación",
-        "Punto de fusión normal"
+       "t": "tap",
+       "p": "Toca el <b>punto crítico</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "C"
        ]
       },
       {
-       "p": "Punto B (sobre la curva L–G a 1 atm)",
-       "o": [
-        "Punto de ebullición normal",
-        "Punto de fusión normal",
-        "Punto triple",
-        "Punto crítico"
+       "t": "tap",
+       "p": "Toca el punto de <b>ebullición normal</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "B"
+       ],
+       "e": "Ebullición normal: la curva líquido–gas a 1 atm."
+      },
+      {
+       "t": "tap",
+       "p": "Toca la región donde el agua es <b>gas</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "rg"
        ]
       }
      ],
@@ -403,39 +416,42 @@
      "q": "<p>Indica el método adecuado.</p>",
      "checks": [
       {
-       "p": "Limaduras de hierro y arena",
-       "o": [
+       "t": "cls",
+       "p": "Método de separación",
+       "cats": [
         "Imantación",
-        "Destilación",
         "Decantación",
-        "Evaporación"
-       ]
-      },
-      {
-       "p": "Agua y aceite",
-       "o": [
-        "Decantación",
-        "Filtración",
-        "Imantación",
-        "Tamizado"
-       ]
-      },
-      {
-       "p": "Sal disuelta en agua (recuperar la sal)",
-       "o": [
         "Evaporación",
-        "Filtración",
-        "Decantación",
-        "Imantación"
-       ]
-      },
-      {
-       "p": "Agua y etanol",
-       "o": [
         "Destilación",
         "Filtración",
-        "Decantación",
         "Tamizado"
+       ],
+       "items": [
+        {
+         "x": "Limaduras de hierro y arena",
+         "c": 0
+        },
+        {
+         "x": "Agua y aceite",
+         "c": 1
+        },
+        {
+         "x": "Sal disuelta en agua (recuperar la sal)",
+         "c": 2
+        },
+        {
+         "x": "Agua y etanol",
+         "c": 3,
+         "e": "Líquidos miscibles con distinto Teb: destilación."
+        },
+        {
+         "x": "Arena y agua",
+         "c": 4
+        },
+        {
+         "x": "Piedras y arena",
+         "c": 5
+        }
        ]
       }
      ],
@@ -653,30 +669,21 @@
      "q": "<p>Masas atómicas: H 1, C 12, N 14, O 16, Na 23, S 32, Cl 35,5, Ca 40.</p>",
      "checks": [
       {
-       "p": "M de H₂O",
-       "o": [
-        "18 g/mol",
-        "17 g/mol",
-        "34 g/mol",
-        "16 g/mol"
-       ]
-      },
-      {
-       "p": "M de CaCO₃",
-       "o": [
-        "100 g/mol",
-        "68 g/mol",
-        "84 g/mol",
-        "116 g/mol"
-       ]
-      },
-      {
-       "p": "M de H₂SO₄",
-       "o": [
-        "98 g/mol",
-        "50 g/mol",
-        "96 g/mol",
-        "82 g/mol"
+       "t": "num",
+       "p": "Masas molares (g/mol)",
+       "f": [
+        {
+         "l": "H₂O",
+         "a": 18
+        },
+        {
+         "l": "CaCO₃",
+         "a": 100
+        },
+        {
+         "l": "H₂SO₄",
+         "a": 98
+        }
        ]
       }
      ],
@@ -709,12 +716,13 @@
      "q": "<p>¿Cuántos moles hay en 20 g de NaOH (M = 40 g/mol)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "0,5 mol",
-        "2 mol",
-        "800 mol",
-        "0,2 mol"
+       "t": "num",
+       "p": "Moles de NaOH",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.5
+        }
        ]
       }
      ],
@@ -740,12 +748,18 @@
      "q": "<p>¿Cuántas moléculas hay en 9 g de H₂O (M = 18 g/mol)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "3,011 × 10²³",
-        "6,022 × 10²³",
-        "1,2044 × 10²⁴",
-        "5,4198 × 10²⁴"
+       "t": "num",
+       "p": "Moléculas = a × 10ᵇ",
+       "f": [
+        {
+         "l": "a",
+         "a": 3.011,
+         "tol": 0.01
+        },
+        {
+         "l": "b",
+         "a": 23
+        }
        ]
       }
      ],
@@ -774,12 +788,18 @@
      "q": "<p>¿Cuántos átomos de H hay en 0,5 mol de CH₄?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "2 × 6,022 × 10²³ = 1,2044 × 10²⁴",
-        "0,5 × 6,022 × 10²³",
-        "4 × 6,022 × 10²³",
-        "6,022 × 10²³"
+       "t": "num",
+       "p": "Átomos de H = a × 10ᵇ",
+       "f": [
+        {
+         "l": "a",
+         "a": 1.2044,
+         "tol": 0.01
+        },
+        {
+         "l": "b",
+         "a": 24
+        }
        ]
       }
      ],
@@ -809,30 +829,21 @@
      "q": "<p>Convierte.</p>",
      "checks": [
       {
-       "p": "2,5 L a mL",
-       "o": [
-        "2500 mL",
-        "250 mL",
-        "0,0025 mL",
-        "25 000 mL"
-       ]
-      },
-      {
-       "p": "750 mg a g",
-       "o": [
-        "0,75 g",
-        "7,5 g",
-        "75 g",
-        "750 000 g"
-       ]
-      },
-      {
-       "p": "72 km/h a m/s",
-       "o": [
-        "20 m/s",
-        "72 000 m/s",
-        "7,2 m/s",
-        "259,2 m/s"
+       "t": "num",
+       "p": "Convierte",
+       "f": [
+        {
+         "l": "2,5 L en mL",
+         "a": 2500
+        },
+        {
+         "l": "750 mg en g",
+         "a": 0.75
+        },
+        {
+         "l": "72 km/h en m/s",
+         "a": 20
+        }
        ]
       }
      ],
@@ -865,12 +876,13 @@
      "q": "<p>El etanol tiene densidad 0,8 g/mL. ¿Qué masa tienen 250 mL?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "200 g",
-        "312,5 g",
-        "250 g",
-        "0,0032 g"
+       "t": "num",
+       "p": "Masa de 250 mL",
+       "f": [
+        {
+         "l": "m (g)",
+         "a": 200
+        }
        ]
       }
      ],
@@ -895,12 +907,13 @@
      "q": "<p>¿Cuántos moles hay en 46 mL de etanol (C₂H₅OH, M = 46 g/mol, ρ = 0,8 g/mL)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "0,8 mol",
-        "1 mol",
-        "1,25 mol",
-        "36,8 mol"
+       "t": "num",
+       "p": "Moles de etanol",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.8
+        }
        ]
       }
      ],
@@ -929,12 +942,13 @@
      "q": "<p>¿Cuántos litros hay en 2 m³?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "2000 L",
-        "200 L",
-        "2 L",
-        "20 000 L"
+       "t": "num",
+       "p": "Litros en 2 m³",
+       "f": [
+        {
+         "l": "V (L)",
+         "a": 2000
+        }
        ]
       }
      ],
@@ -989,21 +1003,17 @@
      "q": "<p>Se disuelven 10 g de NaCl en 90 g de agua.</p>",
      "checks": [
       {
-       "p": "Masa de solución",
-       "o": [
-        "100 g",
-        "90 g",
-        "80 g",
-        "10 g"
-       ]
-      },
-      {
-       "p": "%m/m",
-       "o": [
-        "10 %",
-        "11,1 %",
-        "9 %",
-        "90 %"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "masa de solución (g)",
+         "a": 100
+        },
+        {
+         "l": "%m/m",
+         "a": 10
+        }
        ]
       }
      ],
@@ -1032,12 +1042,13 @@
      "q": "<p>Un suero tiene 9 g de NaCl en 1000 mL de solución.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "%m/v",
-       "o": [
-        "0,9 %",
-        "9 %",
-        "0,09 %",
-        "90 %"
+       "f": [
+        {
+         "l": "%m/v",
+         "a": 0.9
+        }
        ]
       }
      ],
@@ -1062,12 +1073,13 @@
      "q": "<p>Un vino contiene 12 mL de etanol por cada 100 mL. ¿Cuánto etanol hay en una botella de 750 mL?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "90 mL",
-        "62,5 mL",
-        "12 mL",
-        "9 mL"
+       "t": "num",
+       "p": "Etanol en la botella",
+       "f": [
+        {
+         "l": "V (mL)",
+         "a": 90
+        }
        ]
       }
      ],
@@ -1093,21 +1105,17 @@
      "q": "<p>4 g de NaOH (M = 40 g/mol) en 250 mL de solución.</p>",
      "checks": [
       {
-       "p": "Moles de NaOH",
-       "o": [
-        "0,1 mol",
-        "10 mol",
-        "0,4 mol",
-        "1 mol"
-       ]
-      },
-      {
-       "p": "Molaridad",
-       "o": [
-        "0,4 M",
-        "0,016 M",
-        "16 M",
-        "0,1 M"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.1
+        },
+        {
+         "l": "M (mol/L)",
+         "a": 0.4
+        }
        ]
       }
      ],
@@ -1136,12 +1144,13 @@
      "q": "<p>¿Cuántos gramos de glucosa (C₆H₁₂O₆, M = 180 g/mol) se necesitan para preparar 500 mL de solución 0,2 M?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "18 g",
-        "36 g",
-        "180 g",
-        "0,1 g"
+       "t": "num",
+       "p": "Masa de glucosa",
+       "f": [
+        {
+         "l": "m (g)",
+         "a": 18
+        }
        ]
       }
      ],
@@ -1170,12 +1179,13 @@
      "q": "<p>Una muestra de 2 L de agua contiene 0,8 mg de plomo.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Concentración",
-       "o": [
-        "0,4 ppm",
-        "1,6 ppm",
-        "400 ppm",
-        "0,8 ppm"
+       "f": [
+        {
+         "l": "ppm",
+         "a": 0.4
+        }
        ]
       }
      ],
@@ -1200,12 +1210,13 @@
      "q": "<p>Se disuelven 0,5 mol de urea en 250 g de agua.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Molalidad",
-       "o": [
-        "2 mol/kg",
-        "0,125 mol/kg",
-        "0,002 mol/kg",
-        "125 mol/kg"
+       "f": [
+        {
+         "l": "m (mol/kg)",
+         "a": 2
+        }
        ]
       }
      ],
@@ -1234,30 +1245,21 @@
      "q": "<p>Una solución de NaOH al 20 %m/m tiene densidad 1,2 g/mL (M NaOH = 40 g/mol). Toma 1 L de solución.</p>",
      "checks": [
       {
-       "p": "Masa de 1 L de solución",
-       "o": [
-        "1200 g",
-        "1000 g",
-        "1,2 g",
-        "833 g"
-       ]
-      },
-      {
-       "p": "Masa de NaOH",
-       "o": [
-        "240 g",
-        "200 g",
-        "20 g",
-        "960 g"
-       ]
-      },
-      {
-       "p": "Molaridad",
-       "o": [
-        "6 M",
-        "5 M",
-        "0,6 M",
-        "24 M"
+       "t": "num",
+       "p": "Paso a paso",
+       "f": [
+        {
+         "l": "masa de 1 L (g)",
+         "a": 1200
+        },
+        {
+         "l": "masa de NaOH (g)",
+         "a": 240
+        },
+        {
+         "l": "M (mol/L)",
+         "a": 6
+        }
        ]
       }
      ],
@@ -1860,30 +1862,21 @@
    "q": "<p>Se disuelven 5,85 g de NaCl (M = 58,5 g/mol) en agua hasta 500 mL de solución (ρ ≈ 1 g/mL).</p>",
    "checks": [
     {
-     "p": "Molaridad",
-     "o": [
-      "0,2 M",
-      "0,1 M",
-      "2 M",
-      "11,7 M"
-     ]
-    },
-    {
-     "p": "%m/v",
-     "o": [
-      "1,17 %",
-      "5,85 %",
-      "0,585 %",
-      "11,7 %"
-     ]
-    },
-    {
-     "p": "Concentración en ppm (mg/L)",
-     "o": [
-      "11 700 ppm",
-      "5850 ppm",
-      "1170 ppm",
-      "117 ppm"
+     "t": "num",
+     "p": "Resultados",
+     "f": [
+      {
+       "l": "M (mol/L)",
+       "a": 0.2
+      },
+      {
+       "l": "%m/v",
+       "a": 1.17
+      },
+      {
+       "l": "ppm (mg/L)",
+       "a": 11700
+      }
      ]
     }
    ],
@@ -1916,30 +1909,21 @@
    "q": "<p>Una botella contiene 200 mL de alcohol etílico al 46 %v/v. Densidad del etanol: 0,8 g/mL; M = 46 g/mol.</p>",
    "checks": [
     {
-     "p": "Volumen de etanol",
-     "o": [
-      "92 mL",
-      "46 mL",
-      "108 mL",
-      "200 mL"
-     ]
-    },
-    {
-     "p": "Masa de etanol",
-     "o": [
-      "73,6 g",
-      "92 g",
-      "115 g",
-      "36,8 g"
-     ]
-    },
-    {
-     "p": "Moles de etanol",
-     "o": [
-      "1,6 mol",
-      "2 mol",
-      "0,8 mol",
-      "3,4 mol"
+     "t": "num",
+     "p": "Paso a paso",
+     "f": [
+      {
+       "l": "V de etanol (mL)",
+       "a": 92
+      },
+      {
+       "l": "m de etanol (g)",
+       "a": 73.6
+      },
+      {
+       "l": "n (mol)",
+       "a": 1.6
+      }
      ]
     }
    ],

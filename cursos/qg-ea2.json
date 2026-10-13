@@ -30,35 +30,50 @@
      "q": "<p>Indica el tipo de enlace.</p>",
      "checks": [
       {
-       "p": "NaCl",
-       "o": [
+       "t": "cls",
+       "p": "Tipo de enlace",
+       "cats": [
         "Iónico",
-        "Covalente",
-        "Metálico"
-       ]
-      },
-      {
-       "p": "Cu",
-       "o": [
         "Metálico",
-        "Iónico",
         "Covalente"
-       ]
-      },
-      {
-       "p": "CO₂",
-       "o": [
-        "Covalente",
-        "Iónico",
-        "Metálico"
-       ]
-      },
-      {
-       "p": "MgO",
-       "o": [
-        "Iónico",
-        "Covalente",
-        "Metálico"
+       ],
+       "items": [
+        {
+         "x": "NaCl",
+         "c": 0
+        },
+        {
+         "x": "Cu",
+         "c": 1
+        },
+        {
+         "x": "CO₂",
+         "c": 2
+        },
+        {
+         "x": "MgO",
+         "c": 0
+        },
+        {
+         "x": "Fe",
+         "c": 1
+        },
+        {
+         "x": "H₂O",
+         "c": 2
+        },
+        {
+         "x": "KBr",
+         "c": 0
+        },
+        {
+         "x": "CH₄",
+         "c": 2
+        },
+        {
+         "x": "Al",
+         "c": 1
+        }
        ]
       }
      ],
@@ -95,39 +110,50 @@
      "q": "<p>Escribe la fórmula del compuesto iónico.</p>",
      "checks": [
       {
-       "p": "Ca + O",
-       "o": [
-        "CaO",
-        "Ca₂O",
-        "CaO₂",
-        "Ca₂O₃"
-       ]
-      },
-      {
-       "p": "Al + O",
-       "o": [
-        "Al₂O₃",
-        "AlO",
-        "Al₃O₂",
-        "AlO₃"
-       ]
-      },
-      {
-       "p": "Mg + P",
-       "o": [
-        "Mg₃P₂",
-        "MgP",
-        "Mg₂P₃",
-        "MgP₃"
-       ]
-      },
-      {
-       "p": "K + S",
-       "o": [
-        "K₂S",
-        "KS",
-        "KS₂",
-        "K₃S"
+       "t": "fill",
+       "p": "Completa los subíndices de la fórmula neutra.",
+       "head": [
+        "Iones",
+        "Subíndice del catión",
+        "Subíndice del anión"
+       ],
+       "rows": [
+        [
+         "Ca²⁺ + O²⁻",
+         {
+          "a": 1
+         },
+         {
+          "a": 1
+         }
+        ],
+        [
+         "Al³⁺ + O²⁻",
+         {
+          "a": 2
+         },
+         {
+          "a": 3
+         }
+        ],
+        [
+         "Mg²⁺ + P³⁻",
+         {
+          "a": 3
+         },
+         {
+          "a": 2
+         }
+        ],
+        [
+         "K⁺ + S²⁻",
+         {
+          "a": 2
+         },
+         {
+          "a": 1
+         }
+        ]
        ]
       }
      ],
@@ -234,39 +260,83 @@
      "q": "<p>EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
      "checks": [
       {
-       "p": "O–H",
-       "o": [
-        "Polar, ΔEN = 1,4",
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 0,4",
-        "Polar, ΔEN = 5,6"
+       "t": "fill",
+       "p": "Calcula ΔEN de cada enlace.",
+       "head": [
+        "Enlace",
+        "ΔEN"
+       ],
+       "rows": [
+        [
+         "O–H",
+         {
+          "a": 1.4,
+          "tol": 0.01
+         }
+        ],
+        [
+         "Cl–Cl",
+         {
+          "a": 0,
+          "tol": 0.01
+         }
+        ],
+        [
+         "C–H",
+         {
+          "a": 0.4,
+          "tol": 0.01
+         }
+        ],
+        [
+         "C–Cl",
+         {
+          "a": 0.5,
+          "tol": 0.01
+         }
+        ],
+        [
+         "N–H",
+         {
+          "a": 0.9,
+          "tol": 0.01
+         }
+        ]
        ]
       },
       {
-       "p": "Cl–Cl",
-       "o": [
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 3,0",
-        "Polar, ΔEN = 6,0",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "C–H",
-       "o": [
-        "Apolar (excepción del curso)",
-        "Polar, ΔEN = 0,4",
-        "Polar, ΔEN = 4,6",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "C–Cl",
-       "o": [
-        "Polar, ΔEN = 0,5",
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 5,5",
-        "Apolar por ser covalente"
+       "t": "cls",
+       "p": "Clasifica cada enlace.",
+       "cats": [
+        "Polar",
+        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "O–H",
+         "c": 0
+        },
+        {
+         "x": "Cl–Cl",
+         "c": 1
+        },
+        {
+         "x": "C–H",
+         "c": 1,
+         "e": "C–H (ΔEN 0,4) se considera apolar por convención del curso."
+        },
+        {
+         "x": "C–Cl",
+         "c": 0
+        },
+        {
+         "x": "N–H",
+         "c": 0
+        },
+        {
+         "x": "C–S",
+         "c": 1
+        }
        ]
       }
      ],
@@ -333,27 +403,26 @@
      "q": "<p>Tres aplicaciones: (1) cable que conduzca como sólido; (2) sustancia que se disuelva en agua y conduzca en solución; (3) líquido que no conduzca.</p>",
      "checks": [
       {
-       "p": "(1)",
-       "o": [
+       "t": "cls",
+       "p": "Tipo de sustancia para cada aplicación",
+       "cats": [
         "Metálico",
         "Iónico",
-        "Covalente"
-       ]
-      },
-      {
-       "p": "(2)",
-       "o": [
-        "Iónico",
-        "Metálico",
-        "Covalente apolar"
-       ]
-      },
-      {
-       "p": "(3)",
-       "o": [
-        "Covalente (molecular)",
-        "Iónico",
-        "Metálico"
+        "Covalente (molecular)"
+       ],
+       "items": [
+        {
+         "x": "(1) Cable que conduzca como sólido",
+         "c": 0
+        },
+        {
+         "x": "(2) Se disuelve en agua y conduce en solución",
+         "c": 1
+        },
+        {
+         "x": "(3) Líquido que no conduce",
+         "c": 2
+        }
        ]
       }
      ],
@@ -427,23 +496,29 @@
      "q": "<p>Analiza los enlaces del isopropanol (C₃H₇OH). EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
      "checks": [
       {
-       "p": "Enlaces polares",
-       "o": [
-        "C–O y O–H",
-        "Solo C–H",
-        "C–C y C–H",
-        "Ninguno",
-        "Todos"
-       ]
-      },
-      {
-       "p": "Enlaces apolares",
-       "o": [
-        "C–C y C–H",
-        "C–O y O–H",
-        "Solo O–H",
-        "Ninguno",
-        "Todos"
+       "t": "cls",
+       "p": "Clasifica los enlaces del isopropanol.",
+       "cats": [
+        "Polar",
+        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "C–O",
+         "c": 0
+        },
+        {
+         "x": "O–H",
+         "c": 0
+        },
+        {
+         "x": "C–C",
+         "c": 1
+        },
+        {
+         "x": "C–H",
+         "c": 1
+        }
        ]
       }
      ],
@@ -523,43 +598,25 @@
      "q": "<p>Aplica el método a PCl₃.</p>",
      "checks": [
       {
-       "p": "N (individuales)",
-       "o": [
-        "32",
-        "26",
-        "8",
-        "24",
-        "40"
-       ]
-      },
-      {
-       "p": "V (valencia)",
-       "o": [
-        "26",
-        "32",
-        "24",
-        "20",
-        "29"
-       ]
-      },
-      {
-       "p": "Enlaces",
-       "o": [
-        "3",
-        "4",
-        "6",
-        "2",
-        "13"
-       ]
-      },
-      {
-       "p": "Pares libres totales",
-       "o": [
-        "10",
-        "13",
-        "3",
-        "9",
-        "7"
+       "t": "num",
+       "p": "Método del curso para PCl₃",
+       "f": [
+        {
+         "l": "N",
+         "a": 32
+        },
+        {
+         "l": "V",
+         "a": 26
+        },
+        {
+         "l": "enlaces",
+         "a": 3
+        },
+        {
+         "l": "pares libres",
+         "a": 10
+        }
        ]
       }
      ],
@@ -596,13 +653,13 @@
      "q": "<p>H₂O.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Pares libres en el O",
-       "o": [
-        "2",
-        "0",
-        "1",
-        "3",
-        "4"
+       "f": [
+        {
+         "l": "pares libres",
+         "a": 2
+        }
        ]
       },
       {
@@ -641,39 +698,48 @@
      "q": "<p>Indica la geometría molecular.</p>",
      "checks": [
       {
-       "p": "CO₂",
-       "o": [
+       "t": "cls",
+       "p": "Geometría molecular",
+       "cats": [
         "Lineal",
         "Angular",
         "Trigonal plana",
+        "Piramidal trigonal",
         "Tetraédrica"
-       ]
-      },
-      {
-       "p": "NH₃",
-       "o": [
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular"
-       ]
-      },
-      {
-       "p": "CCl₄",
-       "o": [
-        "Tetraédrica",
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Angular"
-       ]
-      },
-      {
-       "p": "CH₂O",
-       "o": [
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular",
-        "Piramidal trigonal"
+       ],
+       "items": [
+        {
+         "x": "CO₂",
+         "c": 0
+        },
+        {
+         "x": "NH₃",
+         "c": 3
+        },
+        {
+         "x": "CCl₄",
+         "c": 4
+        },
+        {
+         "x": "CH₂O",
+         "c": 2
+        },
+        {
+         "x": "H₂O",
+         "c": 1
+        },
+        {
+         "x": "BF₃",
+         "c": 2
+        },
+        {
+         "x": "CH₄",
+         "c": 4
+        },
+        {
+         "x": "HCN",
+         "c": 0
+        }
        ]
       }
      ],
@@ -711,13 +777,13 @@
      "q": "<p>[CO₃]²⁻.</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "24",
-        "22",
-        "26",
-        "32",
-        "20"
+       "t": "num",
+       "p": "V del [CO₃]²⁻",
+       "f": [
+        {
+         "l": "V",
+         "a": 24
+        }
        ]
       },
       {
@@ -731,12 +797,13 @@
        ]
       },
       {
+       "t": "num",
        "p": "CF de cada O con enlace simple",
-       "o": [
-        "−1",
-        "0",
-        "+1",
-        "−2"
+       "f": [
+        {
+         "l": "CF",
+         "a": -1
+        }
        ]
       },
       {
@@ -782,22 +849,27 @@
      "q": "<p>K⁺[NO₃]⁻: analiza el anión.</p>",
      "checks": [
       {
-       "p": "Enlazantes / libres",
-       "o": [
-        "8 / 16",
-        "6 / 18",
-        "8 / 15",
-        "10 / 14",
-        "6 / 16"
+       "t": "num",
+       "p": "Electrones en el [NO₃]⁻",
+       "f": [
+        {
+         "l": "enlazantes",
+         "a": 8
+        },
+        {
+         "l": "libres",
+         "a": 16
+        }
        ]
       },
       {
+       "t": "num",
        "p": "CF del N",
-       "o": [
-        "+1",
-        "0",
-        "−1",
-        "+5"
+       "f": [
+        {
+         "l": "CF",
+         "a": 1
+        }
        ]
       },
       {
@@ -839,21 +911,39 @@
      "q": "<p>[OCN]⁻ (C central). Tres estructuras posibles: (a) O=C=N, (b) O≡C–N, (c) O–C≡N.</p>",
      "checks": [
       {
-       "p": "CF en (a) [O, C, N]",
-       "o": [
-        "0, 0, −1",
-        "−1, 0, 0",
-        "+1, 0, −2",
-        "0, 0, 0"
+       "t": "num",
+       "p": "CF en (a) O=C=N",
+       "f": [
+        {
+         "l": "O",
+         "a": 0
+        },
+        {
+         "l": "C",
+         "a": 0
+        },
+        {
+         "l": "N",
+         "a": -1
+        }
        ]
       },
       {
-       "p": "CF en (c) [O, C, N]",
-       "o": [
-        "−1, 0, 0",
-        "0, 0, −1",
-        "+1, 0, −2",
-        "−2, 0, +1"
+       "t": "num",
+       "p": "CF en (c) O–C≡N",
+       "f": [
+        {
+         "l": "O",
+         "a": -1
+        },
+        {
+         "l": "C",
+         "a": 0
+        },
+        {
+         "l": "N",
+         "a": 0
+        }
        ]
       },
       {
@@ -912,21 +1002,39 @@
      "q": "<p>N₂O (N central): (a) N=N=O, (b) N≡N–O.</p>",
      "checks": [
       {
-       "p": "CF en (a) [N, N, O]",
-       "o": [
-        "−1, +1, 0",
-        "0, +1, −1",
-        "0, 0, 0",
-        "−2, +1, +1"
+       "t": "num",
+       "p": "CF en (a) N=N=O",
+       "f": [
+        {
+         "l": "N",
+         "a": -1
+        },
+        {
+         "l": "N central",
+         "a": 1
+        },
+        {
+         "l": "O",
+         "a": 0
+        }
        ]
       },
       {
-       "p": "CF en (b) [N, N, O]",
-       "o": [
-        "0, +1, −1",
-        "−1, +1, 0",
-        "0, 0, 0",
-        "+1, +1, −2"
+       "t": "num",
+       "p": "CF en (b) N≡N–O",
+       "f": [
+        {
+         "l": "N",
+         "a": 0
+        },
+        {
+         "l": "N central",
+         "a": 1
+        },
+        {
+         "l": "O",
+         "a": -1
+        }
        ]
       },
       {
@@ -1042,27 +1150,28 @@
      "q": "<p>Se necesitan dos precursores con la misma geometría: N₂O, H₂Se y SCl₂.</p>",
      "checks": [
       {
-       "p": "N₂O",
-       "o": [
+       "t": "cls",
+       "p": "Geometría de cada precursor",
+       "cats": [
         "Lineal",
         "Angular",
-        "Trigonal plana"
-       ]
-      },
-      {
-       "p": "H₂Se",
-       "o": [
-        "Angular",
-        "Lineal",
-        "Piramidal trigonal"
-       ]
-      },
-      {
-       "p": "SCl₂",
-       "o": [
-        "Angular",
-        "Lineal",
+        "Trigonal plana",
+        "Piramidal trigonal",
         "Tetraédrica"
+       ],
+       "items": [
+        {
+         "x": "N₂O",
+         "c": 0
+        },
+        {
+         "x": "H₂Se",
+         "c": 1
+        },
+        {
+         "x": "SCl₂",
+         "c": 1
+        }
        ]
       },
       {
@@ -1109,22 +1218,17 @@
      "q": "<p>Se requiere un anión trigonal plano. ¿Cumple el [PO₃]³⁻?</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "26",
-        "23",
-        "24",
-        "29",
-        "32"
-       ]
-      },
-      {
-       "p": "Pares libres en el P",
-       "o": [
-        "1",
-        "0",
-        "2",
-        "3"
+       "t": "num",
+       "p": "[PO₃]³⁻",
+       "f": [
+        {
+         "l": "V",
+         "a": 26
+        },
+        {
+         "l": "pares libres en P",
+         "a": 1
+        }
        ]
       },
       {
@@ -1166,30 +1270,28 @@
      "q": "<p>Geometría de cada especie.</p>",
      "checks": [
       {
-       "p": "CF₄",
-       "o": [
-        "Tetraédrica",
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Angular"
-       ]
-      },
-      {
-       "p": "PH₃",
-       "o": [
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular"
-       ]
-      },
-      {
-       "p": "[NO₂]⁻",
-       "o": [
-        "Angular",
+       "t": "cls",
+       "p": "Geometría de cada especie",
+       "cats": [
         "Lineal",
+        "Angular",
         "Trigonal plana",
-        "Piramidal trigonal"
+        "Piramidal trigonal",
+        "Tetraédrica"
+       ],
+       "items": [
+        {
+         "x": "CF₄",
+         "c": 4
+        },
+        {
+         "x": "PH₃",
+         "c": 3
+        },
+        {
+         "x": "[NO₂]⁻",
+         "c": 1
+        }
        ]
       }
      ],
@@ -1223,21 +1325,17 @@
      "q": "<p>[NH₄]⁺.</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "8",
-        "9",
-        "10",
-        "16"
-       ]
-      },
-      {
-       "p": "CF del N",
-       "o": [
-        "+1",
-        "0",
-        "−1",
-        "+4"
+       "t": "num",
+       "p": "[NH₄]⁺",
+       "f": [
+        {
+         "l": "V",
+         "a": 8
+        },
+        {
+         "l": "CF del N",
+         "a": 1
+        }
        ]
       },
       {
@@ -1304,31 +1402,46 @@
      "q": "<p>Clasifica cada molécula.</p>",
      "checks": [
       {
-       "p": "CO₂",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "H₂O",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada molécula.",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "CCl₄",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "NH₃",
-       "o": [
-        "Polar",
-        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "CO₂",
+         "c": 1
+        },
+        {
+         "x": "H₂O",
+         "c": 0
+        },
+        {
+         "x": "CCl₄",
+         "c": 1
+        },
+        {
+         "x": "NH₃",
+         "c": 0
+        },
+        {
+         "x": "CHCl₃",
+         "c": 0,
+         "e": "Tetraédrica pero con un C–H distinto: los dipolos no se cancelan."
+        },
+        {
+         "x": "CH₄",
+         "c": 1
+        },
+        {
+         "x": "BF₃",
+         "c": 1
+        },
+        {
+         "x": "HCl",
+         "c": 0
+        }
        ]
       }
      ],
@@ -1435,28 +1548,25 @@
      "q": "<p>El solvente es isopropanol. Se debe elegir la fragancia con la misma polaridad: acetato de nerilo (C₁₂H₂₀O₂) o mirceno (C₁₀H₁₆).</p>",
      "checks": [
       {
-       "p": "Isopropanol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad de cada sustancia",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "Acetato de nerilo",
-       "o": [
-        "Polar: tiene C=O y C–O sin simetría",
-        "Apolar: casi todos sus enlaces son C–H",
-        "Apolar: los C=O se cancelan",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "Mirceno",
-       "o": [
-        "Apolar: solo C–C, C=C y C–H",
-        "Polar: tiene dobles enlaces",
-        "Polar: es una molécula grande",
-        "Iónico"
+       ],
+       "items": [
+        {
+         "x": "Isopropanol",
+         "c": 0
+        },
+        {
+         "x": "Acetato de nerilo (C=O y C–O sin simetría)",
+         "c": 0
+        },
+        {
+         "x": "Mirceno (solo C–C, C=C y C–H)",
+         "c": 1
+        }
        ]
       },
       {
@@ -1502,19 +1612,22 @@
      "q": "<p>El solvente es dimetilformamida (polar). Candidatos: etilenglicol (HO–CH₂–CH₂–OH) y benzoquinona (C₆H₄O₂, anillo con dos C=O opuestos).</p>",
      "checks": [
       {
-       "p": "Etilenglicol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad de cada candidato",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "Benzoquinona",
-       "o": [
-        "Apolar: los dos C=O están opuestos y se cancelan",
-        "Polar: tiene enlaces C=O polares",
-        "Polar: tiene O",
-        "Iónica"
+       ],
+       "items": [
+        {
+         "x": "Etilenglicol",
+         "c": 0
+        },
+        {
+         "x": "Benzoquinona (dos C=O opuestos)",
+         "c": 1,
+         "e": "Los dos C=O apuntan en sentidos opuestos y se cancelan."
+        }
        ]
       },
       {
@@ -1554,31 +1667,37 @@
      "q": "<p>Clasifica cada interacción.</p>",
      "checks": [
       {
-       "p": "Enlace O–H en H₂O",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada interacción.",
+       "cats": [
         "Intramolecular",
         "Intermolecular"
-       ]
-      },
-      {
-       "p": "H₂O···H₂O",
-       "o": [
-        "Intermolecular",
-        "Intramolecular"
-       ]
-      },
-      {
-       "p": "Enlace metálico en Cu",
-       "o": [
-        "Intramolecular",
-        "Intermolecular"
-       ]
-      },
-      {
-       "p": "Na⁺···H₂O",
-       "o": [
-        "Intermolecular",
-        "Intramolecular"
+       ],
+       "items": [
+        {
+         "x": "Enlace O–H en H₂O",
+         "c": 0
+        },
+        {
+         "x": "H₂O···H₂O",
+         "c": 1
+        },
+        {
+         "x": "Enlace metálico en Cu",
+         "c": 0
+        },
+        {
+         "x": "Na⁺···H₂O",
+         "c": 1
+        },
+        {
+         "x": "Enlace C–H en CH₄",
+         "c": 0
+        },
+        {
+         "x": "HCl···HCl",
+         "c": 1
+        }
        ]
       }
      ],
@@ -1650,17 +1769,21 @@
      "q": "<p>Compara hexano (C₆H₁₄) y etanol (C₂H₅OH).</p>",
      "checks": [
       {
-       "p": "Hexano",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "Etanol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad",
+       "cats": [
         "Polar",
         "Apolar"
+       ],
+       "items": [
+        {
+         "x": "Hexano",
+         "c": 1
+        },
+        {
+         "x": "Etanol",
+         "c": 0
+        }
        ]
       }
      ],
@@ -1730,13 +1853,37 @@
      "q": "<p>¿Cuál proceso rompe enlaces <strong>intramoleculares</strong>?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "H₂O → H₂ + O₂",
-        "Hielo → agua",
-        "Agua → vapor",
-        "Disolver azúcar en agua",
-        "Sublimar CO₂ sólido"
+       "t": "cls",
+       "p": "¿Qué se rompe en cada proceso?",
+       "cats": [
+        "Enlaces (intramolecular)",
+        "Solo FIM (intermolecular)"
+       ],
+       "items": [
+        {
+         "x": "H₂O → H₂ + O₂",
+         "c": 0
+        },
+        {
+         "x": "Hervir agua",
+         "c": 1
+        },
+        {
+         "x": "Fundir hielo",
+         "c": 1
+        },
+        {
+         "x": "Quemar metano",
+         "c": 0
+        },
+        {
+         "x": "Disolver azúcar en agua",
+         "c": 1
+        },
+        {
+         "x": "Descomponer NaCl fundido en Na y Cl₂",
+         "c": 0
+        }
        ]
       }
      ],
@@ -2258,12 +2405,10 @@
    "q": "<p>Catalizador: material fácil de moldear en láminas, con brillo y que resiste altas temperaturas. Agente esterilizante: sustancia cuyos átomos comparten electrones.</p><ul><li>Aa: semiconductor del 5A con mayor tendencia a atraer e⁻ en un enlace.</li><li>Bb: isótopos A, A+1, A+3 con suma 409; el más liviano tiene 59 protones.</li><li>Cc₈H₉DdEe: Cc es C; Dd es el segundo elemento con mayor EI del periodo 3; Ee está en el periodo de Cc y su símbolo de Lewis tiene 6 puntos.</li><li>FfDd₂: Ff tiene un protón menos que [Ar]4s²3d¹⁰4p¹.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "As",
-      "Sb",
-      "P",
-      "Bi"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "As"
      ]
     },
     {
@@ -2344,21 +2489,17 @@
    "q": "<p>Catalizador geológico: sólido cristalino, fácil de moldear en láminas, con elevado punto de fusión. Agente reactivo: sustancia con enlaces covalentes.</p><ul><li>Aa: el semiconductor más pequeño de su grupo, con 4 e⁻ de valencia.</li><li>Bb: isótopos A, A+2, A+3 con suma 167; el isótopo A+2 tiene 30 neutrones.</li><li>CcDdEe₃: Cc es el único no metal gaseoso de su grupo (grupo 1A); Dd forma un anión estable trivalente y tiene 2 niveles; Ee tiene la segunda mayor EN del periodo 2.</li><li>Ff₂Ee: Ff tiene solo 9 e⁻ en orbitales s.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "Si",
-      "Ge",
-      "C",
-      "Sn"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "Si"
      ]
     },
     {
-     "p": "Bb",
-     "o": [
-      "Fe (Z = 26)",
-      "Cr (Z = 24)",
-      "Ni (Z = 28)",
-      "Mn (Z = 25)"
+     "t": "ptab",
+     "p": "Toca Bb.",
+     "a": [
+      "Fe"
      ]
     },
     {
@@ -2495,12 +2636,17 @@
    "q": "<p>Se necesitan dos precursores con la misma geometría: óxido nitroso (N₂O), seleniuro de hidrógeno (H₂Se) y dicloruro de azufre (SCl₂).</p>",
    "checks": [
     {
-     "p": "N₂O: enlazantes / libres",
-     "o": [
-      "8 / 8",
-      "6 / 10",
-      "8 / 10",
-      "4 / 12"
+     "t": "num",
+     "p": "N₂O: electrones",
+     "f": [
+      {
+       "l": "enlazantes",
+       "a": 8
+      },
+      {
+       "l": "libres",
+       "a": 8
+      }
      ]
     },
     {
@@ -2522,12 +2668,13 @@
      ]
     },
     {
+     "t": "num",
      "p": "SCl₂: pares libres totales",
-     "o": [
-      "8",
-      "10",
-      "6",
-      "4"
+     "f": [
+      {
+       "l": "pares libres",
+       "a": 8
+      }
      ]
     },
     {
@@ -2586,12 +2733,17 @@
      ]
     },
     {
-     "p": "CH₂O: enlazantes / libres",
-     "o": [
-      "8 / 4",
-      "6 / 6",
-      "8 / 6",
-      "4 / 8"
+     "t": "num",
+     "p": "CH₂O: electrones",
+     "f": [
+      {
+       "l": "enlazantes",
+       "a": 8
+      },
+      {
+       "l": "libres",
+       "a": 4
+      }
      ]
     },
     {

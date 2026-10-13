@@ -912,6 +912,9 @@ details.cinw summary{cursor:pointer;font-size:.88rem;color:var(--muted);padding:
 .qgsum{background:var(--sol-bg);border-radius:8px;padding:10px}
 .qgafig .dg{margin:4px 0}
 .qggrid{display:grid;grid-template-columns:16px repeat(18,minmax(0,1fr));gap:2px;margin:8px 0;max-width:720px}
+.qgptw .qgq{min-width:330px;margin:4px 0}.qgq .qgel{font-size:inherit}.qgel.good{outline:3px solid var(--ok);outline-offset:1px;background:var(--ok-bg)}.qgel.bad{outline:3px solid var(--bad);outline-offset:1px;background:var(--bad-bg)}.qgel:disabled{cursor:default}
+.qgec{display:flex;flex-wrap:wrap;gap:6px;margin:.3em 0 .5em}.qgecc{display:flex;align-items:flex-start;gap:2px;border:1px solid var(--line);border-radius:8px;padding:6px 6px 4px;background:var(--card)}
+.qgecl{font:700 1rem Figtree,sans-serif;padding-top:8px}.qgecc .fin{width:40px;padding:3px 2px;font-size:.85rem}
 .qghd{font:700 .55rem Figtree,sans-serif;color:var(--muted);text-align:center;align-self:center}
 .qgel{aspect-ratio:1;border:1px solid var(--line);border-radius:4px;padding:0;background:var(--card);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;min-width:0;line-height:1.05;overflow:hidden}
 .qgel b{font:800 clamp(.5rem,2.3vw,.85rem) Figtree,sans-serif}.qgel small{font-size:clamp(.38rem,1.4vw,.55rem);opacity:.75}.qgel i{font-style:normal;font-size:.5rem;display:none}
@@ -3171,6 +3174,33 @@ IW.cols=(ch,o)=>{const row=ch.sel==='row';const w=el('div','almat');if(ch.l)w.ap
    mark(){bs.forEach((b,k)=>{b.classList.toggle('good',sel.has(k)&&A.has(k));b.classList.toggle('bad',sel.has(k)&&!A.has(k))})},
    reveal(){bs.forEach((b,k)=>{b.classList.remove('on','bad');b.classList.toggle('good',A.has(k));if(sel.has(k)&&!A.has(k))b.classList.add('bad')})},
    lock(){lk=true;bs.forEach(b=>b.disabled=true)}}};
+/* ================= QUÍMICA: interactivos de práctica =================
+   ptab:  toca el elemento en la tabla periódica. ch.a=['Fe',…] (símbolos), ch.multi, ch.color (muestra colores por clase), ch.e
+   econf: completa la configuración electrónica en orden de Aufbau. ch.z (número atómico), ch.extra (casillas de más, por defecto 2), ch.e */
+IW.ptab=(ch,o)=>{const w=el('div','qgptw');const sc=el('div','almsc');const A=new Set(ch.a);const sel=new Set();let lk=false;
+  let h='<div class="qggrid qgq">';for(let g=1;g<=18;g++)h+='<div class="qghd" style="grid-column:'+(g+1)+';grid-row:1">'+qgGA(g)+'</div>';for(let p=1;p<=6;p++)h+='<div class="qghd" style="grid-column:1;grid-row:'+(p+1)+'">'+p+'</div>';
+  QG_PT.forEach(e=>{h+='<button type="button" class="qgel'+(ch.color?' qgc-'+e.c:'')+'" data-s="'+e.s+'" style="grid-column:'+(e.g+1)+';grid-row:'+(e.p+1)+'" title="'+e.n+'" aria-label="'+e.n+'"><small>'+e.z+'</small><b>'+e.s+'</b></button>'});
+  sc.innerHTML=h+'</div>';const ro=el('p','plro');w.append(sc,ro);const bs=[...sc.querySelectorAll('.qgel')];
+  const show=()=>{const L=[...sel].map(s=>{const e=QG_PT.find(x=>x.s===s);return'<b>'+s+'</b> ('+e.n+', Z = '+e.z+')'});ro.innerHTML=L.length?'Elegiste: '+L.join(' · '):'Toca '+(ch.multi?'los elementos':'el elemento')+' en la tabla.'};
+  bs.forEach(b=>b.onclick=()=>{if(lk)return;const s=b.dataset.s;if(ch.multi){sel.has(s)?sel.delete(s):sel.add(s)}else{const had=sel.has(s);sel.clear();if(!had)sel.add(s)}bs.forEach(x=>{x.classList.toggle('on',sel.has(x.dataset.s));x.classList.remove('good','bad')});show();o.on&&o.on()});show();
+  return{el:w,note:ch.multi?'Toca todos los que correspondan (otra vez para quitar).':'',need:'Toca '+(ch.multi?'al menos un elemento':'un elemento')+' antes de comprobar.',
+   filled:()=>sel.size>0,
+   grade(){const ok=sel.size===A.size&&[...sel].every(s=>A.has(s));const wr=[...sel].filter(s=>!A.has(s)).length,mi=[...A].filter(s=>!sel.has(s)).length;
+    return{f:ok?1:0,msg:ok?'':(ch.multi?(wr?'Marcaste '+wr+' que no va'+(wr>1?'n':'')+'. ':'')+(mi?'Te falta'+(mi>1?'n '+mi:' uno')+'.':''):'No es ese elemento.')+(ch.e?'<br>'+ch.e:'')}},
+   mark(){bs.forEach(b=>{const s=b.dataset.s;b.classList.toggle('good',sel.has(s)&&A.has(s));b.classList.toggle('bad',sel.has(s)&&!A.has(s))})},
+   reveal(){bs.forEach(b=>{const s=b.dataset.s;b.classList.remove('on');b.classList.toggle('good',A.has(s));b.classList.toggle('bad',sel.has(s)&&!A.has(s))});[...A].forEach(s=>sel.add(s));show()},
+   lock(){lk=true;bs.forEach(b=>b.disabled=true)}}};
+IW.econf=(ch,o)=>{const z=ch.z;let left=z;const ans=[];for(const [n,l,m] of QG_ORD){const e=Math.max(0,Math.min(m,left));ans.push({n,l,m,e});left-=e;if(left<=0&&ans.filter(x=>x.e===0).length>=(ch.extra!=null?ch.extra:2))break}
+  const w=el('div','qgec');const ins=ans.map(x=>{const c=el('label','qgecc');c.append(el('span','qgecl',x.n+x.l));const i=el('input','fin');i.inputMode='numeric';i.placeholder='–';i.autocomplete='off';i.setAttribute('aria-label','Electrones en '+x.n+x.l+' (máximo '+x.m+')');
+    i.oninput=()=>{i.classList.remove('bad','good');o.on&&o.on()};c.append(i);w.append(c);return{i,x}});
+  const val=s=>{s=s.trim();return s===''?0:Number(s)};const ok=y=>val(y.i.value)===y.x.e;
+  return{el:w,note:'Escribe cuántos electrones van en cada subnivel, en orden de llenado (s ≤ 2, p ≤ 6, d ≤ 10). Deja vacíos los que no se ocupan.',need:'Completa al menos un subnivel.',okMsg:'¡Configuración correcta!',
+   filled:()=>ins.some(y=>y.i.value.trim()!==''),
+   grade(){const bad=ins.filter(y=>!ok(y));const over=ins.filter(y=>val(y.i.value)>y.x.m);const tot=ins.reduce((t,y)=>t+(val(y.i.value)||0),0);
+    return{f:bad.length?0:1,msg:bad.length?(over.length?'Te pasaste del máximo en '+over.map(y=>y.x.n+y.x.l).join(', ')+'. ':'')+(tot!==z?'Sumaste '+tot+' electrones y deben ser '+z+'. ':'Revisa los subniveles en rojo.')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){ins.forEach(y=>{const k=ok(y);y.i.classList.toggle('good',k&&y.x.e>0);y.i.classList.toggle('bad',!k)})},
+   reveal(){ins.forEach(y=>{if(!ok(y)){y.i.value=y.x.e||'';y.i.classList.remove('bad');y.i.classList.add('rev')}else if(y.x.e)y.i.classList.add('good')})},
+   lock(){ins.forEach(y=>y.i.disabled=true)}}};
 /* Cónicas: tipo y deslizadores */
 function conicSpec(t,P){const {h=0,k=0,a=3,b=2,p=1}=P;const r={ps:[],pts:[],vas:[],has:[],lines:[]};
   if(t==='circ'){r.ps.push({x:h+'+'+a+'*cos(t)',y:k+'+'+a+'*sin(t)',t:[0,6.3]});r.pts.push({x:h,y:k,l:'C'});r.eq='(x-'+h+')^2+(y-'+k+')^2='+a*a}

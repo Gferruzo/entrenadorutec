@@ -100,39 +100,49 @@
      "q": "<p>Clasifica: agua destilada, arena de mar, bicarbonato de sodio (NaHCO₃) y agua con aceite.</p>",
      "checks": [
       {
-       "p": "Agua destilada",
-       "o": [
-        "Compuesto",
+       "t": "cls",
+       "p": "Clasifica cada material.",
+       "cats": [
         "Elemento",
+        "Compuesto",
         "Mezcla homogénea",
         "Mezcla heterogénea"
-       ]
-      },
-      {
-       "p": "Arena de mar",
-       "o": [
-        "Mezcla heterogénea",
-        "Compuesto",
-        "Mezcla homogénea",
-        "Elemento"
-       ]
-      },
-      {
-       "p": "Bicarbonato de sodio",
-       "o": [
-        "Compuesto",
-        "Mezcla homogénea",
-        "Elemento",
-        "Mezcla heterogénea"
-       ]
-      },
-      {
-       "p": "Agua con aceite",
-       "o": [
-        "Mezcla heterogénea",
-        "Mezcla homogénea",
-        "Compuesto",
-        "Elemento"
+       ],
+       "items": [
+        {
+         "x": "Agua destilada",
+         "c": 1
+        },
+        {
+         "x": "Arena de mar",
+         "c": 3
+        },
+        {
+         "x": "Bicarbonato de sodio (NaHCO₃)",
+         "c": 1
+        },
+        {
+         "x": "Agua con aceite",
+         "c": 3
+        },
+        {
+         "x": "Nitrógeno gaseoso (N₂)",
+         "c": 0,
+         "e": "N₂ tiene un solo tipo de átomo: es un elemento aunque sea una molécula."
+        },
+        {
+         "x": "Aire filtrado",
+         "c": 2
+        },
+        {
+         "x": "Bronce",
+         "c": 2,
+         "e": "Una aleación uniforme es una mezcla homogénea."
+        },
+        {
+         "x": "Granito",
+         "c": 3
+        }
        ]
       }
      ],
@@ -169,13 +179,46 @@
      "q": "<p>¿Cuál de estos procesos es un <strong>cambio químico</strong>?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "La oxidación de un clavo de hierro",
-        "La sublimación del hielo seco",
-        "Disolver sal en agua",
-        "Romper un vidrio",
-        "Hervir agua"
+       "t": "cls",
+       "p": "¿Físico o químico?",
+       "cats": [
+        "Cambio físico",
+        "Cambio químico"
+       ],
+       "items": [
+        {
+         "x": "Oxidación de un clavo de hierro",
+         "c": 1
+        },
+        {
+         "x": "Fusión del hielo",
+         "c": 0
+        },
+        {
+         "x": "Combustión de papel",
+         "c": 1
+        },
+        {
+         "x": "Disolver azúcar en agua",
+         "c": 0,
+         "e": "Disolver no forma sustancias nuevas: el azúcar sigue siendo azúcar."
+        },
+        {
+         "x": "Cocinar un huevo",
+         "c": 1
+        },
+        {
+         "x": "Romper un vidrio",
+         "c": 0
+        },
+        {
+         "x": "Fermentación de la uva",
+         "c": 1
+        },
+        {
+         "x": "Evaporación del alcohol",
+         "c": 0
+        }
        ]
       }
      ],
@@ -204,31 +247,38 @@
      "q": "<p>Clasifica cada propiedad.</p>",
      "checks": [
       {
-       "p": "Inflamabilidad",
-       "o": [
-        "Química",
-        "Física"
-       ]
-      },
-      {
-       "p": "Volatilidad",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada propiedad.",
+       "cats": [
         "Física",
         "Química"
-       ]
-      },
-      {
-       "p": "Corrosividad",
-       "o": [
-        "Química",
-        "Física"
-       ]
-      },
-      {
-       "p": "Conductividad eléctrica",
-       "o": [
-        "Física",
-        "Química"
+       ],
+       "items": [
+        {
+         "x": "Inflamabilidad",
+         "c": 1
+        },
+        {
+         "x": "Volatilidad",
+         "c": 0,
+         "e": "Volatilidad = facilidad para evaporarse: no cambia la sustancia."
+        },
+        {
+         "x": "Corrosividad",
+         "c": 1
+        },
+        {
+         "x": "Conductividad eléctrica",
+         "c": 0
+        },
+        {
+         "x": "Densidad",
+         "c": 0
+        },
+        {
+         "x": "Reactividad con el oxígeno",
+         "c": 1
+        }
        ]
       }
      ],
@@ -265,33 +315,21 @@
      "q": "<p>Para el ion ³²₁₆S²⁻, indica protones, neutrones y electrones.</p>",
      "checks": [
       {
-       "p": "Protones",
-       "o": [
-        "16",
-        "18",
-        "32",
-        "14",
-        "2"
-       ]
-      },
-      {
-       "p": "Neutrones",
-       "o": [
-        "16",
-        "18",
-        "32",
-        "14",
-        "17"
-       ]
-      },
-      {
-       "p": "Electrones",
-       "o": [
-        "18",
-        "16",
-        "14",
-        "32",
-        "20"
+       "t": "num",
+       "p": "Partículas del ³²₁₆S²⁻",
+       "f": [
+        {
+         "l": "protones",
+         "a": 16
+        },
+        {
+         "l": "neutrones",
+         "a": 16
+        },
+        {
+         "l": "electrones",
+         "a": 18
+        }
        ]
       }
      ],
@@ -324,23 +362,17 @@
      "q": "<p>Para ²⁷₁₃Al³⁺, ¿cuántos electrones y neutrones hay?</p>",
      "checks": [
       {
-       "p": "Electrones",
-       "o": [
-        "10",
-        "13",
-        "16",
-        "3",
-        "14"
-       ]
-      },
-      {
-       "p": "Neutrones",
-       "o": [
-        "14",
-        "13",
-        "27",
-        "10",
-        "16"
+       "t": "num",
+       "p": "Partículas del ²⁷₁₃Al³⁺",
+       "f": [
+        {
+         "l": "electrones",
+         "a": 10
+        },
+        {
+         "l": "neutrones",
+         "a": 14
+        }
        ]
       }
      ],
@@ -369,24 +401,20 @@
      "q": "<p>Un elemento X tiene número de masa 32 y la misma cantidad de protones que de neutrones. Otro, Y, tiene 6 neutrones y número de masa 12.</p>",
      "checks": [
       {
-       "p": "X es",
-       "o": [
-        "Azufre (Z = 16)",
-        "Oxígeno (Z = 8)",
-        "Germanio (Z = 32)",
-        "Fósforo (Z = 15)",
-        "Calcio (Z = 20)"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento X.",
+       "a": [
+        "S"
+       ],
+       "e": "Si p = n y A = 32, entonces Z = 16."
       },
       {
-       "p": "Y es",
-       "o": [
-        "Carbono (Z = 6)",
-        "Magnesio (Z = 12)",
-        "Boro (Z = 5)",
-        "Nitrógeno (Z = 7)",
-        "Litio (Z = 3)"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento Y.",
+       "a": [
+        "C"
+       ],
+       "e": "Z = A − n = 12 − 6."
       }
      ],
      "steps": [
@@ -414,23 +442,23 @@
      "q": "<p>Tres isótopos de Bb tienen números de masa A, A+1 y A+3. La suma de los tres números de masa es 409 y el número de protones del más liviano es 59.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Valor de A",
-       "o": [
-        "135",
-        "136",
-        "133",
-        "138",
-        "102"
+       "f": [
+        {
+         "l": "A =",
+         "a": 135
+        }
        ]
       },
       {
+       "t": "num",
        "p": "Neutrones del isótopo más pesado",
-       "o": [
-        "79",
-        "76",
-        "77",
-        "59",
-        "138"
+       "f": [
+        {
+         "l": "neutrones",
+         "a": 79
+        }
        ]
       },
       {
@@ -473,33 +501,24 @@
      "q": "<p>Bb tiene isótopos de números de masa A, A+2 y A+3, cuya suma es 167. El isótopo intermedio (A+2) posee 30 neutrones.</p>",
      "checks": [
       {
-       "p": "Valor de A",
-       "o": [
-        "54",
-        "56",
-        "55",
-        "52",
-        "58"
+       "t": "num",
+       "p": "Valor de A y Z",
+       "f": [
+        {
+         "l": "A =",
+         "a": 54
+        },
+        {
+         "l": "Z =",
+         "a": 26
+        }
        ]
       },
       {
-       "p": "Z de Bb",
-       "o": [
-        "26",
-        "24",
-        "30",
-        "28",
-        "56"
-       ]
-      },
-      {
-       "p": "Bb es",
-       "o": [
-        "Hierro, un metal de transición",
-        "Cromo, un metal de transición",
-        "Cinc, un metal",
-        "Níquel, un metaloide",
-        "Calcio, un alcalinotérreo"
+       "t": "ptab",
+       "p": "Toca Bb en la tabla.",
+       "a": [
+        "Fe"
        ]
       }
      ],
@@ -532,23 +551,17 @@
      "q": "<p>Un catión divalente X²⁺ tiene 18 electrones y 20 neutrones.</p>",
      "checks": [
       {
-       "p": "Número atómico de X",
-       "o": [
-        "20",
-        "18",
-        "16",
-        "22",
-        "38"
-       ]
-      },
-      {
-       "p": "Número de masa",
-       "o": [
-        "40",
-        "38",
-        "42",
-        "36",
-        "20"
+       "t": "num",
+       "p": "Número atómico y de masa de X",
+       "f": [
+        {
+         "l": "Z =",
+         "a": 20
+        },
+        {
+         "l": "A =",
+         "a": 40
+        }
        ]
       }
      ],
@@ -628,6 +641,95 @@
        "prop"
       ]
      ]
+    },
+    {
+     "id": "s1n1",
+     "lvl": 1,
+     "title": "Tabla de partículas",
+     "q": "<p>Completa protones, neutrones y electrones de cada especie.</p>",
+     "checks": [
+      {
+       "t": "fill",
+       "p": "Completa la tabla.",
+       "head": [
+        "Especie",
+        "p⁺",
+        "n⁰",
+        "e⁻"
+       ],
+       "rows": [
+        [
+         "²³₁₁Na⁺",
+         {
+          "a": 11
+         },
+         {
+          "a": 12
+         },
+         {
+          "a": 10
+         }
+        ],
+        [
+         "³⁵₁₇Cl⁻",
+         {
+          "a": 17
+         },
+         {
+          "a": 18
+         },
+         {
+          "a": 18
+         }
+        ],
+        [
+         "⁵⁶₂₆Fe³⁺",
+         {
+          "a": 26
+         },
+         {
+          "a": 30
+         },
+         {
+          "a": 23
+         }
+        ],
+        [
+         "¹⁶₈O²⁻",
+         {
+          "a": 8
+         },
+         {
+          "a": 8
+         },
+         {
+          "a": 10
+         }
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "p = Z (el subíndice). n = A − Z.",
+      "e⁻ = Z − carga: un catión tiene menos electrones; un anión, más.",
+      "Fe³⁺: 26 p, 56 − 26 = 30 n y 26 − 3 = 23 e⁻."
+     ],
+     "ans": "Na⁺ 11/12/10 · Cl⁻ 17/18/18 · Fe³⁺ 26/30/23 · O²⁻ 8/8/10",
+     "hint": "La carga solo cambia los electrones.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ],
+      [
+       "nuclido"
+      ]
+     ]
     }
    ]
   },
@@ -651,23 +753,18 @@
      "q": "<p>Br (Z = 35).</p>",
      "checks": [
       {
-       "p": "Configuración",
-       "o": [
-        "[Ar] 4s² 3d¹⁰ 4p⁵",
-        "[Ar] 4s² 4p⁵",
-        "[Ar] 3d¹⁰ 4p⁷",
-        "[Kr] 4s² 4p⁵",
-        "[Ar] 4s² 3d⁹ 4p⁶"
-       ]
+       "t": "econf",
+       "p": "Completa la configuración del Br (Z = 35).",
+       "z": 35
       },
       {
+       "t": "num",
        "p": "Electrones de valencia",
-       "o": [
-        "7",
-        "17",
-        "5",
-        "35",
-        "1"
+       "f": [
+        {
+         "l": "e⁻ de valencia",
+         "a": 7
+        }
        ]
       },
       {
@@ -776,13 +873,10 @@
        ]
       },
       {
-       "p": "Elemento",
-       "o": [
-        "Selenio",
-        "Germanio",
-        "Azufre",
-        "Teluro",
-        "Cromo"
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Se"
        ]
       }
      ],
@@ -811,33 +905,24 @@
      "q": "<p>E1: 5 e⁻ de valencia y tres niveles de energía. E2: su anión estable es monovalente y tiene dos niveles. E3: metal alcalino cuyo ion estable es isoelectrónico con el Ar.</p>",
      "checks": [
       {
-       "p": "E1",
-       "o": [
-        "Fósforo",
-        "Nitrógeno",
-        "Arsénico",
-        "Aluminio",
-        "Cloro"
+       "t": "ptab",
+       "p": "Toca E1.",
+       "a": [
+        "P"
        ]
       },
       {
-       "p": "E2",
-       "o": [
-        "Flúor",
-        "Cloro",
-        "Oxígeno",
-        "Litio",
-        "Neón"
+       "t": "ptab",
+       "p": "Toca E2.",
+       "a": [
+        "F"
        ]
       },
       {
-       "p": "E3",
-       "o": [
-        "Potasio",
-        "Sodio",
-        "Calcio",
-        "Rubidio",
-        "Cloro"
+       "t": "ptab",
+       "p": "Toca E3.",
+       "a": [
+        "K"
        ]
       }
      ],
@@ -870,14 +955,12 @@
      "q": "<p>Un átomo tiene 22 neutrones, su catión estable es divalente y su nivel de valencia es 4.</p>",
      "checks": [
       {
-       "p": "Elemento",
-       "o": [
-        "Calcio",
-        "Magnesio",
-        "Titanio",
-        "Selenio",
-        "Argón"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Ca"
+       ],
+       "e": "Catión divalente y nivel de valencia 4 → grupo 2A, periodo 4."
       },
       {
        "p": "Notación de núclido",
@@ -890,13 +973,13 @@
        ]
       },
       {
-       "p": "Símbolo de Lewis",
-       "o": [
-        "Ca con 2 puntos",
-        "Ca con 4 puntos",
-        "Ca con 8 puntos",
-        "Ca con 1 punto",
-        "Ca sin puntos"
+       "t": "num",
+       "p": "Puntos en su símbolo de Lewis",
+       "f": [
+        {
+         "l": "puntos",
+         "a": 2
+        }
        ]
       }
      ],
@@ -929,35 +1012,46 @@
      "q": "<p>Clasifica Si, Al, Sb y F.</p>",
      "checks": [
       {
-       "p": "Si",
-       "o": [
-        "Metaloide",
+       "t": "cls",
+       "p": "Clasifica cada elemento.",
+       "cats": [
         "Metal",
-        "No metal"
-       ]
-      },
-      {
-       "p": "Al",
-       "o": [
-        "Metal",
-        "Metaloide",
-        "No metal"
-       ]
-      },
-      {
-       "p": "Sb",
-       "o": [
-        "Metaloide",
-        "Metal",
-        "No metal"
-       ]
-      },
-      {
-       "p": "F",
-       "o": [
         "No metal",
-        "Metaloide",
-        "Metal"
+        "Metaloide"
+       ],
+       "items": [
+        {
+         "x": "Si",
+         "c": 2
+        },
+        {
+         "x": "Al",
+         "c": 0
+        },
+        {
+         "x": "Sb",
+         "c": 2
+        },
+        {
+         "x": "F",
+         "c": 1
+        },
+        {
+         "x": "B",
+         "c": 2
+        },
+        {
+         "x": "S",
+         "c": 1
+        },
+        {
+         "x": "Fe",
+         "c": 0
+        },
+        {
+         "x": "Ge",
+         "c": 2
+        }
        ]
       }
      ],
@@ -1036,39 +1130,50 @@
      "q": "<p>Para Li, Al, S y F: ¿qué ion estable forma cada uno?</p>",
      "checks": [
       {
-       "p": "Li",
-       "o": [
-        "Li⁺",
-        "Li⁻",
-        "Li²⁺",
-        "Li³⁻"
-       ]
-      },
-      {
-       "p": "Al",
-       "o": [
-        "Al³⁺",
-        "Al³⁻",
-        "Al⁺",
-        "Al⁵⁻"
-       ]
-      },
-      {
-       "p": "S",
-       "o": [
-        "S²⁻",
-        "S²⁺",
-        "S⁶⁺",
-        "S⁻"
-       ]
-      },
-      {
-       "p": "F",
-       "o": [
-        "F⁻",
-        "F⁺",
-        "F⁷⁺",
-        "F²⁻"
+       "t": "cls",
+       "p": "¿Qué carga tiene el ion estable de cada uno?",
+       "cats": [
+        "+1",
+        "+2",
+        "+3",
+        "−1",
+        "−2",
+        "−3"
+       ],
+       "items": [
+        {
+         "x": "Li",
+         "c": 0
+        },
+        {
+         "x": "Al",
+         "c": 2
+        },
+        {
+         "x": "S",
+         "c": 4
+        },
+        {
+         "x": "F",
+         "c": 3
+        },
+        {
+         "x": "Mg",
+         "c": 1
+        },
+        {
+         "x": "N",
+         "c": 5,
+         "e": "N (5 e⁻ de valencia) gana 3 e⁻ para el octeto."
+        },
+        {
+         "x": "K",
+         "c": 0
+        },
+        {
+         "x": "O",
+         "c": 4
+        }
        ]
       }
      ],
@@ -1105,23 +1210,17 @@
      "q": "<p>Ff es el elemento con un protón menos que el elemento de configuración [Ar]4s²3d¹⁰4p¹.</p>",
      "checks": [
       {
-       "p": "Elemento de [Ar]4s²3d¹⁰4p¹",
-       "o": [
-        "Galio (Z = 31)",
-        "Cinc (Z = 30)",
-        "Aluminio (Z = 13)",
-        "Germanio (Z = 32)",
-        "Escandio (Z = 21)"
+       "t": "ptab",
+       "p": "Toca el elemento de configuración [Ar]4s²3d¹⁰4p¹.",
+       "a": [
+        "Ga"
        ]
       },
       {
-       "p": "Ff",
-       "o": [
-        "Cinc (Z = 30), metal de transición",
-        "Cobre (Z = 29)",
-        "Galio (Z = 31)",
-        "Calcio (Z = 20)",
-        "Germanio, metaloide"
+       "t": "ptab",
+       "p": "Toca Ff.",
+       "a": [
+        "Zn"
        ]
       }
      ],
@@ -1160,14 +1259,12 @@
        ]
       },
       {
-       "p": "Elemento",
-       "o": [
-        "Rubidio",
-        "Potasio",
-        "Sodio",
-        "Estroncio",
-        "Cesio"
-       ]
+       "t": "ptab",
+       "p": "Toca el elemento.",
+       "a": [
+        "Rb"
+       ],
+       "e": "1s² 2s² 3s² 4s² 5s¹ → 9 electrones en orbitales s."
       },
       {
        "p": "Ion estable",
@@ -1209,24 +1306,16 @@
      "q": "<p>Un elemento Ee está en el periodo 2 y su símbolo de Lewis tiene 6 puntos.</p>",
      "checks": [
       {
-       "p": "Ee es",
-       "o": [
-        "Oxígeno",
-        "Carbono",
-        "Azufre",
-        "Neón",
-        "Flúor"
+       "t": "ptab",
+       "p": "Toca Ee.",
+       "a": [
+        "O"
        ]
       },
       {
-       "p": "Configuración",
-       "o": [
-        "1s²2s²2p⁴",
-        "1s²2s²2p⁶",
-        "1s²2s²2p²",
-        "[Ne]3s²3p⁴",
-        "1s²2s⁶"
-       ]
+       "t": "econf",
+       "p": "Completa su configuración.",
+       "z": 8
       }
      ],
      "steps": [
@@ -1254,14 +1343,13 @@
      "q": "<p>¿Cuál par contiene un elemento líquido a 25 °C de cada tipo (metal y no metal)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "Hg (metal) y Br₂ (no metal)",
-        "Na (metal) y Cl₂ (no metal)",
-        "Ga (metal) y I₂ (no metal)",
-        "Fe (metal) y S (no metal)",
-        "Hg (metal) y Cl₂ (no metal)"
-       ]
+       "t": "ptab",
+       "p": "Toca los dos elementos líquidos a 25 °C (un metal y un no metal).",
+       "a": [
+        "Hg",
+        "Br"
+       ],
+       "multi": true
       }
      ],
      "steps": [
@@ -1281,6 +1369,62 @@
        "mnm"
       ]
      ]
+    },
+    {
+     "id": "s2n1",
+     "lvl": 2,
+     "title": "Configura, ubica y reconoce",
+     "q": "<p>Un átomo neutro tiene 33 electrones.</p>",
+     "checks": [
+      {
+       "t": "econf",
+       "p": "Completa su configuración en orden de llenado.",
+       "z": 33
+      },
+      {
+       "t": "num",
+       "p": "Ubicación y valencia",
+       "f": [
+        {
+         "l": "periodo",
+         "a": 4
+        },
+        {
+         "l": "e⁻ de valencia",
+         "a": 5
+        }
+       ]
+      },
+      {
+       "t": "ptab",
+       "p": "Tócalo en la tabla.",
+       "a": [
+        "As"
+       ]
+      }
+     ],
+     "steps": [
+      "Orden de Aufbau: 1s 2s 2p 3s 3p 4s 3d 4p…",
+      "Z = 33: [Ar] 4s² 3d¹⁰ 4p³ → nivel más alto n = 4 (periodo 4) con 2 + 3 = 5 e⁻ de valencia (grupo 5A).",
+      "Periodo 4, grupo 5A: arsénico (metaloide)."
+     ],
+     "ans": "[Ar] 4s² 3d¹⁰ 4p³ · periodo 4 · 5 e⁻ de valencia · As",
+     "hint": "Los electrones de valencia son los del nivel más alto (s + p).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "config"
+      ],
+      [
+       "ubicacion"
+      ],
+      [
+       "ubicacion"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -1517,13 +1661,10 @@
      "q": "<p>Dd es el <em>segundo</em> elemento al que le es más difícil perder un electrón en el tercer periodo.</p>",
      "checks": [
       {
-       "p": "Dd",
-       "o": [
-        "Cl",
-        "Ar",
-        "S",
-        "Na",
-        "F"
+       "t": "ptab",
+       "p": "Toca Dd.",
+       "a": [
+        "Cl"
        ]
       },
       {
@@ -1562,24 +1703,21 @@
      "q": "<p>Aa es el elemento con características de semiconductor del grupo 5A con la mayor tendencia a atraer electrones al formar un enlace.</p>",
      "checks": [
       {
-       "p": "Metaloides del grupo 5A",
-       "o": [
-        "As y Sb",
-        "N y P",
-        "P y As",
-        "Sb y Bi",
-        "Solo As"
-       ]
+       "t": "ptab",
+       "p": "Toca los metaloides del grupo 5A.",
+       "a": [
+        "As",
+        "Sb"
+       ],
+       "multi": true
       },
       {
-       "p": "Aa",
-       "o": [
-        "Arsénico",
-        "Antimonio",
-        "Fósforo",
-        "Nitrógeno",
-        "Bismuto"
-       ]
+       "t": "ptab",
+       "p": "Toca Aa.",
+       "a": [
+        "As"
+       ],
+       "e": "Entre As y Sb, el de arriba (menor radio) atrae más los electrones."
       }
      ],
      "steps": [
@@ -1607,13 +1745,10 @@
      "q": "<p>Aa es el elemento con el menor tamaño de los semiconductores de su grupo y posee 4 electrones de valencia.</p>",
      "checks": [
       {
-       "p": "Aa",
-       "o": [
-        "Silicio",
-        "Germanio",
-        "Carbono",
-        "Estaño",
-        "Boro"
+       "t": "ptab",
+       "p": "Toca Aa.",
+       "a": [
+        "Si"
        ]
       },
       {
@@ -1767,6 +1902,60 @@
        "en"
       ]
      ]
+    },
+    {
+     "id": "s3n1",
+     "lvl": 2,
+     "title": "Tendencias: ordena",
+     "q": "<p>Elementos: Na, Cl, K, F, Mg y Cs.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Ordena de MAYOR a MENOR radio atómico.",
+       "items": [
+        "Cs",
+        "K",
+        "Na",
+        "Mg",
+        "Cl",
+        "F"
+       ]
+      },
+      {
+       "t": "order",
+       "p": "Ordena de MENOR a MAYOR energía de ionización.",
+       "items": [
+        "Cs",
+        "K",
+        "Na",
+        "Mg",
+        "Cl",
+        "F"
+       ]
+      }
+     ],
+     "steps": [
+      "Al bajar en un grupo se agregan niveles: el radio crece (Cs > K > Na). En un periodo, más Z con el mismo nivel: el radio baja (Na > Mg > Cl).",
+      "F está en el periodo 2: es el más pequeño.",
+      "La EI va al revés que el radio: cuanto más cerca y menos apantallado está el e⁻, más cuesta quitarlo."
+     ],
+     "ans": "Radio: Cs > K > Na > Mg > Cl > F. EI: el mismo orden, al revés.",
+     "hint": "Ubica cada elemento en la tabla: abajo-izquierda es grande, arriba-derecha pequeño.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ra"
+      ],
+      [
+       "ra"
+      ],
+      [
+       "ei"
+      ]
+     ],
+     "chain": true
     }
    ],
    "tools": [
@@ -1800,35 +1989,50 @@
      "q": "<p>Indica el tipo de enlace.</p>",
      "checks": [
       {
-       "p": "NaCl",
-       "o": [
+       "t": "cls",
+       "p": "Tipo de enlace",
+       "cats": [
         "Iónico",
-        "Covalente",
-        "Metálico"
-       ]
-      },
-      {
-       "p": "Cu",
-       "o": [
         "Metálico",
-        "Iónico",
         "Covalente"
-       ]
-      },
-      {
-       "p": "CO₂",
-       "o": [
-        "Covalente",
-        "Iónico",
-        "Metálico"
-       ]
-      },
-      {
-       "p": "MgO",
-       "o": [
-        "Iónico",
-        "Covalente",
-        "Metálico"
+       ],
+       "items": [
+        {
+         "x": "NaCl",
+         "c": 0
+        },
+        {
+         "x": "Cu",
+         "c": 1
+        },
+        {
+         "x": "CO₂",
+         "c": 2
+        },
+        {
+         "x": "MgO",
+         "c": 0
+        },
+        {
+         "x": "Fe",
+         "c": 1
+        },
+        {
+         "x": "H₂O",
+         "c": 2
+        },
+        {
+         "x": "KBr",
+         "c": 0
+        },
+        {
+         "x": "CH₄",
+         "c": 2
+        },
+        {
+         "x": "Al",
+         "c": 1
+        }
        ]
       }
      ],
@@ -1865,39 +2069,50 @@
      "q": "<p>Escribe la fórmula del compuesto iónico.</p>",
      "checks": [
       {
-       "p": "Ca + O",
-       "o": [
-        "CaO",
-        "Ca₂O",
-        "CaO₂",
-        "Ca₂O₃"
-       ]
-      },
-      {
-       "p": "Al + O",
-       "o": [
-        "Al₂O₃",
-        "AlO",
-        "Al₃O₂",
-        "AlO₃"
-       ]
-      },
-      {
-       "p": "Mg + P",
-       "o": [
-        "Mg₃P₂",
-        "MgP",
-        "Mg₂P₃",
-        "MgP₃"
-       ]
-      },
-      {
-       "p": "K + S",
-       "o": [
-        "K₂S",
-        "KS",
-        "KS₂",
-        "K₃S"
+       "t": "fill",
+       "p": "Completa los subíndices de la fórmula neutra.",
+       "head": [
+        "Iones",
+        "Subíndice del catión",
+        "Subíndice del anión"
+       ],
+       "rows": [
+        [
+         "Ca²⁺ + O²⁻",
+         {
+          "a": 1
+         },
+         {
+          "a": 1
+         }
+        ],
+        [
+         "Al³⁺ + O²⁻",
+         {
+          "a": 2
+         },
+         {
+          "a": 3
+         }
+        ],
+        [
+         "Mg²⁺ + P³⁻",
+         {
+          "a": 3
+         },
+         {
+          "a": 2
+         }
+        ],
+        [
+         "K⁺ + S²⁻",
+         {
+          "a": 2
+         },
+         {
+          "a": 1
+         }
+        ]
        ]
       }
      ],
@@ -2004,39 +2219,83 @@
      "q": "<p>EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
      "checks": [
       {
-       "p": "O–H",
-       "o": [
-        "Polar, ΔEN = 1,4",
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 0,4",
-        "Polar, ΔEN = 5,6"
+       "t": "fill",
+       "p": "Calcula ΔEN de cada enlace.",
+       "head": [
+        "Enlace",
+        "ΔEN"
+       ],
+       "rows": [
+        [
+         "O–H",
+         {
+          "a": 1.4,
+          "tol": 0.01
+         }
+        ],
+        [
+         "Cl–Cl",
+         {
+          "a": 0,
+          "tol": 0.01
+         }
+        ],
+        [
+         "C–H",
+         {
+          "a": 0.4,
+          "tol": 0.01
+         }
+        ],
+        [
+         "C–Cl",
+         {
+          "a": 0.5,
+          "tol": 0.01
+         }
+        ],
+        [
+         "N–H",
+         {
+          "a": 0.9,
+          "tol": 0.01
+         }
+        ]
        ]
       },
       {
-       "p": "Cl–Cl",
-       "o": [
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 3,0",
-        "Polar, ΔEN = 6,0",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "C–H",
-       "o": [
-        "Apolar (excepción del curso)",
-        "Polar, ΔEN = 0,4",
-        "Polar, ΔEN = 4,6",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "C–Cl",
-       "o": [
-        "Polar, ΔEN = 0,5",
-        "Apolar, ΔEN = 0",
-        "Polar, ΔEN = 5,5",
-        "Apolar por ser covalente"
+       "t": "cls",
+       "p": "Clasifica cada enlace.",
+       "cats": [
+        "Polar",
+        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "O–H",
+         "c": 0
+        },
+        {
+         "x": "Cl–Cl",
+         "c": 1
+        },
+        {
+         "x": "C–H",
+         "c": 1,
+         "e": "C–H (ΔEN 0,4) se considera apolar por convención del curso."
+        },
+        {
+         "x": "C–Cl",
+         "c": 0
+        },
+        {
+         "x": "N–H",
+         "c": 0
+        },
+        {
+         "x": "C–S",
+         "c": 1
+        }
        ]
       }
      ],
@@ -2103,27 +2362,26 @@
      "q": "<p>Tres aplicaciones: (1) cable que conduzca como sólido; (2) sustancia que se disuelva en agua y conduzca en solución; (3) líquido que no conduzca.</p>",
      "checks": [
       {
-       "p": "(1)",
-       "o": [
+       "t": "cls",
+       "p": "Tipo de sustancia para cada aplicación",
+       "cats": [
         "Metálico",
         "Iónico",
-        "Covalente"
-       ]
-      },
-      {
-       "p": "(2)",
-       "o": [
-        "Iónico",
-        "Metálico",
-        "Covalente apolar"
-       ]
-      },
-      {
-       "p": "(3)",
-       "o": [
-        "Covalente (molecular)",
-        "Iónico",
-        "Metálico"
+        "Covalente (molecular)"
+       ],
+       "items": [
+        {
+         "x": "(1) Cable que conduzca como sólido",
+         "c": 0
+        },
+        {
+         "x": "(2) Se disuelve en agua y conduce en solución",
+         "c": 1
+        },
+        {
+         "x": "(3) Líquido que no conduce",
+         "c": 2
+        }
        ]
       }
      ],
@@ -2197,23 +2455,29 @@
      "q": "<p>Analiza los enlaces del isopropanol (C₃H₇OH). EN: H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5 · P 2,1.</p>",
      "checks": [
       {
-       "p": "Enlaces polares",
-       "o": [
-        "C–O y O–H",
-        "Solo C–H",
-        "C–C y C–H",
-        "Ninguno",
-        "Todos"
-       ]
-      },
-      {
-       "p": "Enlaces apolares",
-       "o": [
-        "C–C y C–H",
-        "C–O y O–H",
-        "Solo O–H",
-        "Ninguno",
-        "Todos"
+       "t": "cls",
+       "p": "Clasifica los enlaces del isopropanol.",
+       "cats": [
+        "Polar",
+        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "C–O",
+         "c": 0
+        },
+        {
+         "x": "O–H",
+         "c": 0
+        },
+        {
+         "x": "C–C",
+         "c": 1
+        },
+        {
+         "x": "C–H",
+         "c": 1
+        }
        ]
       }
      ],
@@ -2293,43 +2557,25 @@
      "q": "<p>Aplica el método a PCl₃.</p>",
      "checks": [
       {
-       "p": "N (individuales)",
-       "o": [
-        "32",
-        "26",
-        "8",
-        "24",
-        "40"
-       ]
-      },
-      {
-       "p": "V (valencia)",
-       "o": [
-        "26",
-        "32",
-        "24",
-        "20",
-        "29"
-       ]
-      },
-      {
-       "p": "Enlaces",
-       "o": [
-        "3",
-        "4",
-        "6",
-        "2",
-        "13"
-       ]
-      },
-      {
-       "p": "Pares libres totales",
-       "o": [
-        "10",
-        "13",
-        "3",
-        "9",
-        "7"
+       "t": "num",
+       "p": "Método del curso para PCl₃",
+       "f": [
+        {
+         "l": "N",
+         "a": 32
+        },
+        {
+         "l": "V",
+         "a": 26
+        },
+        {
+         "l": "enlaces",
+         "a": 3
+        },
+        {
+         "l": "pares libres",
+         "a": 10
+        }
        ]
       }
      ],
@@ -2366,13 +2612,13 @@
      "q": "<p>H₂O.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Pares libres en el O",
-       "o": [
-        "2",
-        "0",
-        "1",
-        "3",
-        "4"
+       "f": [
+        {
+         "l": "pares libres",
+         "a": 2
+        }
        ]
       },
       {
@@ -2411,39 +2657,48 @@
      "q": "<p>Indica la geometría molecular.</p>",
      "checks": [
       {
-       "p": "CO₂",
-       "o": [
+       "t": "cls",
+       "p": "Geometría molecular",
+       "cats": [
         "Lineal",
         "Angular",
         "Trigonal plana",
+        "Piramidal trigonal",
         "Tetraédrica"
-       ]
-      },
-      {
-       "p": "NH₃",
-       "o": [
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular"
-       ]
-      },
-      {
-       "p": "CCl₄",
-       "o": [
-        "Tetraédrica",
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Angular"
-       ]
-      },
-      {
-       "p": "CH₂O",
-       "o": [
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular",
-        "Piramidal trigonal"
+       ],
+       "items": [
+        {
+         "x": "CO₂",
+         "c": 0
+        },
+        {
+         "x": "NH₃",
+         "c": 3
+        },
+        {
+         "x": "CCl₄",
+         "c": 4
+        },
+        {
+         "x": "CH₂O",
+         "c": 2
+        },
+        {
+         "x": "H₂O",
+         "c": 1
+        },
+        {
+         "x": "BF₃",
+         "c": 2
+        },
+        {
+         "x": "CH₄",
+         "c": 4
+        },
+        {
+         "x": "HCN",
+         "c": 0
+        }
        ]
       }
      ],
@@ -2481,13 +2736,13 @@
      "q": "<p>[CO₃]²⁻.</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "24",
-        "22",
-        "26",
-        "32",
-        "20"
+       "t": "num",
+       "p": "V del [CO₃]²⁻",
+       "f": [
+        {
+         "l": "V",
+         "a": 24
+        }
        ]
       },
       {
@@ -2501,12 +2756,13 @@
        ]
       },
       {
+       "t": "num",
        "p": "CF de cada O con enlace simple",
-       "o": [
-        "−1",
-        "0",
-        "+1",
-        "−2"
+       "f": [
+        {
+         "l": "CF",
+         "a": -1
+        }
        ]
       },
       {
@@ -2552,22 +2808,27 @@
      "q": "<p>K⁺[NO₃]⁻: analiza el anión.</p>",
      "checks": [
       {
-       "p": "Enlazantes / libres",
-       "o": [
-        "8 / 16",
-        "6 / 18",
-        "8 / 15",
-        "10 / 14",
-        "6 / 16"
+       "t": "num",
+       "p": "Electrones en el [NO₃]⁻",
+       "f": [
+        {
+         "l": "enlazantes",
+         "a": 8
+        },
+        {
+         "l": "libres",
+         "a": 16
+        }
        ]
       },
       {
+       "t": "num",
        "p": "CF del N",
-       "o": [
-        "+1",
-        "0",
-        "−1",
-        "+5"
+       "f": [
+        {
+         "l": "CF",
+         "a": 1
+        }
        ]
       },
       {
@@ -2609,21 +2870,39 @@
      "q": "<p>[OCN]⁻ (C central). Tres estructuras posibles: (a) O=C=N, (b) O≡C–N, (c) O–C≡N.</p>",
      "checks": [
       {
-       "p": "CF en (a) [O, C, N]",
-       "o": [
-        "0, 0, −1",
-        "−1, 0, 0",
-        "+1, 0, −2",
-        "0, 0, 0"
+       "t": "num",
+       "p": "CF en (a) O=C=N",
+       "f": [
+        {
+         "l": "O",
+         "a": 0
+        },
+        {
+         "l": "C",
+         "a": 0
+        },
+        {
+         "l": "N",
+         "a": -1
+        }
        ]
       },
       {
-       "p": "CF en (c) [O, C, N]",
-       "o": [
-        "−1, 0, 0",
-        "0, 0, −1",
-        "+1, 0, −2",
-        "−2, 0, +1"
+       "t": "num",
+       "p": "CF en (c) O–C≡N",
+       "f": [
+        {
+         "l": "O",
+         "a": -1
+        },
+        {
+         "l": "C",
+         "a": 0
+        },
+        {
+         "l": "N",
+         "a": 0
+        }
        ]
       },
       {
@@ -2682,21 +2961,39 @@
      "q": "<p>N₂O (N central): (a) N=N=O, (b) N≡N–O.</p>",
      "checks": [
       {
-       "p": "CF en (a) [N, N, O]",
-       "o": [
-        "−1, +1, 0",
-        "0, +1, −1",
-        "0, 0, 0",
-        "−2, +1, +1"
+       "t": "num",
+       "p": "CF en (a) N=N=O",
+       "f": [
+        {
+         "l": "N",
+         "a": -1
+        },
+        {
+         "l": "N central",
+         "a": 1
+        },
+        {
+         "l": "O",
+         "a": 0
+        }
        ]
       },
       {
-       "p": "CF en (b) [N, N, O]",
-       "o": [
-        "0, +1, −1",
-        "−1, +1, 0",
-        "0, 0, 0",
-        "+1, +1, −2"
+       "t": "num",
+       "p": "CF en (b) N≡N–O",
+       "f": [
+        {
+         "l": "N",
+         "a": 0
+        },
+        {
+         "l": "N central",
+         "a": 1
+        },
+        {
+         "l": "O",
+         "a": -1
+        }
        ]
       },
       {
@@ -2812,27 +3109,28 @@
      "q": "<p>Se necesitan dos precursores con la misma geometría: N₂O, H₂Se y SCl₂.</p>",
      "checks": [
       {
-       "p": "N₂O",
-       "o": [
+       "t": "cls",
+       "p": "Geometría de cada precursor",
+       "cats": [
         "Lineal",
         "Angular",
-        "Trigonal plana"
-       ]
-      },
-      {
-       "p": "H₂Se",
-       "o": [
-        "Angular",
-        "Lineal",
-        "Piramidal trigonal"
-       ]
-      },
-      {
-       "p": "SCl₂",
-       "o": [
-        "Angular",
-        "Lineal",
+        "Trigonal plana",
+        "Piramidal trigonal",
         "Tetraédrica"
+       ],
+       "items": [
+        {
+         "x": "N₂O",
+         "c": 0
+        },
+        {
+         "x": "H₂Se",
+         "c": 1
+        },
+        {
+         "x": "SCl₂",
+         "c": 1
+        }
        ]
       },
       {
@@ -2879,22 +3177,17 @@
      "q": "<p>Se requiere un anión trigonal plano. ¿Cumple el [PO₃]³⁻?</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "26",
-        "23",
-        "24",
-        "29",
-        "32"
-       ]
-      },
-      {
-       "p": "Pares libres en el P",
-       "o": [
-        "1",
-        "0",
-        "2",
-        "3"
+       "t": "num",
+       "p": "[PO₃]³⁻",
+       "f": [
+        {
+         "l": "V",
+         "a": 26
+        },
+        {
+         "l": "pares libres en P",
+         "a": 1
+        }
        ]
       },
       {
@@ -2936,30 +3229,28 @@
      "q": "<p>Geometría de cada especie.</p>",
      "checks": [
       {
-       "p": "CF₄",
-       "o": [
-        "Tetraédrica",
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Angular"
-       ]
-      },
-      {
-       "p": "PH₃",
-       "o": [
-        "Piramidal trigonal",
-        "Trigonal plana",
-        "Tetraédrica",
-        "Angular"
-       ]
-      },
-      {
-       "p": "[NO₂]⁻",
-       "o": [
-        "Angular",
+       "t": "cls",
+       "p": "Geometría de cada especie",
+       "cats": [
         "Lineal",
+        "Angular",
         "Trigonal plana",
-        "Piramidal trigonal"
+        "Piramidal trigonal",
+        "Tetraédrica"
+       ],
+       "items": [
+        {
+         "x": "CF₄",
+         "c": 4
+        },
+        {
+         "x": "PH₃",
+         "c": 3
+        },
+        {
+         "x": "[NO₂]⁻",
+         "c": 1
+        }
        ]
       }
      ],
@@ -2993,21 +3284,17 @@
      "q": "<p>[NH₄]⁺.</p>",
      "checks": [
       {
-       "p": "V",
-       "o": [
-        "8",
-        "9",
-        "10",
-        "16"
-       ]
-      },
-      {
-       "p": "CF del N",
-       "o": [
-        "+1",
-        "0",
-        "−1",
-        "+4"
+       "t": "num",
+       "p": "[NH₄]⁺",
+       "f": [
+        {
+         "l": "V",
+         "a": 8
+        },
+        {
+         "l": "CF del N",
+         "a": 1
+        }
        ]
       },
       {
@@ -3074,31 +3361,46 @@
      "q": "<p>Clasifica cada molécula.</p>",
      "checks": [
       {
-       "p": "CO₂",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "H₂O",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada molécula.",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "CCl₄",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "NH₃",
-       "o": [
-        "Polar",
-        "Apolar"
+       ],
+       "items": [
+        {
+         "x": "CO₂",
+         "c": 1
+        },
+        {
+         "x": "H₂O",
+         "c": 0
+        },
+        {
+         "x": "CCl₄",
+         "c": 1
+        },
+        {
+         "x": "NH₃",
+         "c": 0
+        },
+        {
+         "x": "CHCl₃",
+         "c": 0,
+         "e": "Tetraédrica pero con un C–H distinto: los dipolos no se cancelan."
+        },
+        {
+         "x": "CH₄",
+         "c": 1
+        },
+        {
+         "x": "BF₃",
+         "c": 1
+        },
+        {
+         "x": "HCl",
+         "c": 0
+        }
        ]
       }
      ],
@@ -3205,28 +3507,25 @@
      "q": "<p>El solvente es isopropanol. Se debe elegir la fragancia con la misma polaridad: acetato de nerilo (C₁₂H₂₀O₂) o mirceno (C₁₀H₁₆).</p>",
      "checks": [
       {
-       "p": "Isopropanol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad de cada sustancia",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "Acetato de nerilo",
-       "o": [
-        "Polar: tiene C=O y C–O sin simetría",
-        "Apolar: casi todos sus enlaces son C–H",
-        "Apolar: los C=O se cancelan",
-        "Iónico"
-       ]
-      },
-      {
-       "p": "Mirceno",
-       "o": [
-        "Apolar: solo C–C, C=C y C–H",
-        "Polar: tiene dobles enlaces",
-        "Polar: es una molécula grande",
-        "Iónico"
+       ],
+       "items": [
+        {
+         "x": "Isopropanol",
+         "c": 0
+        },
+        {
+         "x": "Acetato de nerilo (C=O y C–O sin simetría)",
+         "c": 0
+        },
+        {
+         "x": "Mirceno (solo C–C, C=C y C–H)",
+         "c": 1
+        }
        ]
       },
       {
@@ -3272,19 +3571,22 @@
      "q": "<p>El solvente es dimetilformamida (polar). Candidatos: etilenglicol (HO–CH₂–CH₂–OH) y benzoquinona (C₆H₄O₂, anillo con dos C=O opuestos).</p>",
      "checks": [
       {
-       "p": "Etilenglicol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad de cada candidato",
+       "cats": [
         "Polar",
         "Apolar"
-       ]
-      },
-      {
-       "p": "Benzoquinona",
-       "o": [
-        "Apolar: los dos C=O están opuestos y se cancelan",
-        "Polar: tiene enlaces C=O polares",
-        "Polar: tiene O",
-        "Iónica"
+       ],
+       "items": [
+        {
+         "x": "Etilenglicol",
+         "c": 0
+        },
+        {
+         "x": "Benzoquinona (dos C=O opuestos)",
+         "c": 1,
+         "e": "Los dos C=O apuntan en sentidos opuestos y se cancelan."
+        }
        ]
       },
       {
@@ -3324,31 +3626,37 @@
      "q": "<p>Clasifica cada interacción.</p>",
      "checks": [
       {
-       "p": "Enlace O–H en H₂O",
-       "o": [
+       "t": "cls",
+       "p": "Clasifica cada interacción.",
+       "cats": [
         "Intramolecular",
         "Intermolecular"
-       ]
-      },
-      {
-       "p": "H₂O···H₂O",
-       "o": [
-        "Intermolecular",
-        "Intramolecular"
-       ]
-      },
-      {
-       "p": "Enlace metálico en Cu",
-       "o": [
-        "Intramolecular",
-        "Intermolecular"
-       ]
-      },
-      {
-       "p": "Na⁺···H₂O",
-       "o": [
-        "Intermolecular",
-        "Intramolecular"
+       ],
+       "items": [
+        {
+         "x": "Enlace O–H en H₂O",
+         "c": 0
+        },
+        {
+         "x": "H₂O···H₂O",
+         "c": 1
+        },
+        {
+         "x": "Enlace metálico en Cu",
+         "c": 0
+        },
+        {
+         "x": "Na⁺···H₂O",
+         "c": 1
+        },
+        {
+         "x": "Enlace C–H en CH₄",
+         "c": 0
+        },
+        {
+         "x": "HCl···HCl",
+         "c": 1
+        }
        ]
       }
      ],
@@ -3420,17 +3728,21 @@
      "q": "<p>Compara hexano (C₆H₁₄) y etanol (C₂H₅OH).</p>",
      "checks": [
       {
-       "p": "Hexano",
-       "o": [
-        "Apolar",
-        "Polar"
-       ]
-      },
-      {
-       "p": "Etanol",
-       "o": [
+       "t": "cls",
+       "p": "Polaridad",
+       "cats": [
         "Polar",
         "Apolar"
+       ],
+       "items": [
+        {
+         "x": "Hexano",
+         "c": 1
+        },
+        {
+         "x": "Etanol",
+         "c": 0
+        }
        ]
       }
      ],
@@ -3500,13 +3812,37 @@
      "q": "<p>¿Cuál proceso rompe enlaces <strong>intramoleculares</strong>?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "H₂O → H₂ + O₂",
-        "Hielo → agua",
-        "Agua → vapor",
-        "Disolver azúcar en agua",
-        "Sublimar CO₂ sólido"
+       "t": "cls",
+       "p": "¿Qué se rompe en cada proceso?",
+       "cats": [
+        "Enlaces (intramolecular)",
+        "Solo FIM (intermolecular)"
+       ],
+       "items": [
+        {
+         "x": "H₂O → H₂ + O₂",
+         "c": 0
+        },
+        {
+         "x": "Hervir agua",
+         "c": 1
+        },
+        {
+         "x": "Fundir hielo",
+         "c": 1
+        },
+        {
+         "x": "Quemar metano",
+         "c": 0
+        },
+        {
+         "x": "Disolver azúcar en agua",
+         "c": 1
+        },
+        {
+         "x": "Descomponer NaCl fundido en Na y Cl₂",
+         "c": 0
+        }
        ]
       }
      ],
@@ -3719,13 +4055,31 @@
      "q": "<p>H₂O: FIM presentes y predominante.</p>",
      "checks": [
       {
-       "p": "Presentes",
-       "o": [
-        "London, dipolo–dipolo y puente de H",
-        "Solo London",
-        "London y dipolo–dipolo",
-        "Solo puente de H",
-        "Ion–dipolo"
+       "t": "cls",
+       "p": "¿Qué FIM están presentes en el agua?",
+       "cats": [
+        "Presente",
+        "No presente"
+       ],
+       "items": [
+        {
+         "x": "London",
+         "c": 0,
+         "e": "Todas las moléculas tienen London."
+        },
+        {
+         "x": "Dipolo–dipolo",
+         "c": 0
+        },
+        {
+         "x": "Puente de H",
+         "c": 0
+        },
+        {
+         "x": "Ion–dipolo",
+         "c": 1,
+         "e": "Ion–dipolo necesita un ion."
+        }
        ]
       },
       {
@@ -3765,35 +4119,47 @@
      "q": "<p>Indica la FIM predominante.</p>",
      "checks": [
       {
-       "p": "CH₄",
-       "o": [
+       "t": "cls",
+       "p": "FIM predominante",
+       "cats": [
         "London",
         "Dipolo–dipolo",
         "Puente de H"
-       ]
-      },
-      {
-       "p": "HCl",
-       "o": [
-        "Dipolo–dipolo",
-        "London",
-        "Puente de H"
-       ]
-      },
-      {
-       "p": "Acetona (CH₃COCH₃)",
-       "o": [
-        "Dipolo–dipolo",
-        "Puente de H",
-        "London"
-       ]
-      },
-      {
-       "p": "Etanol",
-       "o": [
-        "Puente de H",
-        "Dipolo–dipolo",
-        "London"
+       ],
+       "items": [
+        {
+         "x": "CH₄",
+         "c": 0
+        },
+        {
+         "x": "HCl",
+         "c": 1
+        },
+        {
+         "x": "Acetona (CH₃COCH₃)",
+         "c": 1,
+         "e": "Tiene C=O pero ningún H unido a O, N o F: no hay puente de H."
+        },
+        {
+         "x": "Etanol",
+         "c": 2
+        },
+        {
+         "x": "NH₃",
+         "c": 2
+        },
+        {
+         "x": "CO₂",
+         "c": 0
+        },
+        {
+         "x": "H₂S",
+         "c": 1
+        },
+        {
+         "x": "I₂",
+         "c": 0
+        }
        ]
       }
      ],
@@ -3861,6 +4227,15 @@
      "q": "<p>Cl₂ (Teb −34 °C), Br₂ (59 °C), I₂ (184 °C). ¿Qué explica la diferencia?</p>",
      "checks": [
       {
+       "t": "order",
+       "p": "Ordena de menor a mayor Teb.",
+       "items": [
+        "Cl₂",
+        "Br₂",
+        "I₂"
+       ]
+      },
+      {
        "p": "Cadena causal",
        "o": [
         "Más electrones → mayor polarizabilidad → London más intensa → Teb mayor",
@@ -3895,6 +4270,15 @@
      "title": "Isómeros del pentano (sesión 7)",
      "q": "<p>n-pentano (36 °C), isopentano (28 °C) y neopentano (10 °C) tienen la misma fórmula C₅H₁₂.</p>",
      "checks": [
+      {
+       "t": "order",
+       "p": "Ordena de mayor a menor Teb.",
+       "items": [
+        "n-pentano (cadena lineal)",
+        "isopentano (una ramificación)",
+        "neopentano (casi esférico)"
+       ]
+      },
       {
        "p": "Explicación",
        "o": [
@@ -4585,31 +4969,38 @@
      "q": "<p>Predice si cada par es miscible.</p>",
      "checks": [
       {
-       "p": "Agua – etanol",
-       "o": [
+       "t": "cls",
+       "p": "¿Miscibles?",
+       "cats": [
         "Miscibles",
         "Inmiscibles"
-       ]
-      },
-      {
-       "p": "Agua – aceite",
-       "o": [
-        "Inmiscibles",
-        "Miscibles"
-       ]
-      },
-      {
-       "p": "Glicerina – aceite",
-       "o": [
-        "Inmiscibles",
-        "Miscibles"
-       ]
-      },
-      {
-       "p": "Agua – acetona",
-       "o": [
-        "Miscibles",
-        "Inmiscibles"
+       ],
+       "items": [
+        {
+         "x": "Agua – etanol",
+         "c": 0
+        },
+        {
+         "x": "Agua – aceite",
+         "c": 1
+        },
+        {
+         "x": "Glicerina – aceite",
+         "c": 1
+        },
+        {
+         "x": "Agua – acetona",
+         "c": 0
+        },
+        {
+         "x": "Hexano – aceite",
+         "c": 0,
+         "e": "Ambos apolares: lo semejante disuelve a lo semejante."
+        },
+        {
+         "x": "Agua – hexano",
+         "c": 1
+        }
        ]
       }
      ],
@@ -4646,30 +5037,36 @@
      "q": "<p>En el diagrama de fases del agua:</p>",
      "checks": [
       {
-       "p": "Punto T",
-       "o": [
-        "Punto triple: coexisten sólido, líquido y gas",
-        "Punto crítico",
-        "Punto de ebullición normal",
-        "Punto de fusión normal"
+       "t": "tap",
+       "p": "Toca el <b>punto triple</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "T"
        ]
       },
       {
-       "p": "Punto C",
-       "o": [
-        "Punto crítico: más allá, fluido supercrítico",
-        "Punto triple",
-        "Punto de sublimación",
-        "Punto de fusión normal"
+       "t": "tap",
+       "p": "Toca el <b>punto crítico</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "C"
        ]
       },
       {
-       "p": "Punto B (sobre la curva L–G a 1 atm)",
-       "o": [
-        "Punto de ebullición normal",
-        "Punto de fusión normal",
-        "Punto triple",
-        "Punto crítico"
+       "t": "tap",
+       "p": "Toca el punto de <b>ebullición normal</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "B"
+       ],
+       "e": "Ebullición normal: la curva líquido–gas a 1 atm."
+      },
+      {
+       "t": "tap",
+       "p": "Toca la región donde el agua es <b>gas</b>.",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 300 220\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Diagrama de fases del agua\"><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"290\" y2=\"195\"/><line class=\"gl\" x1=\"40\" y1=\"195\" x2=\"40\" y2=\"12\"/><text class=\"dm\" x=\"285\" y=\"212\" text-anchor=\"end\">Temperatura</text><text class=\"dm\" x=\"12\" y=\"20\">P</text><path d=\"M50 190 Q95 182 120 165\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 L104 20\" fill=\"none\" class=\"gl\"/><path d=\"M120 165 Q200 140 250 45\" fill=\"none\" class=\"gl\"/><line class=\"dsh\" x1=\"40\" y1=\"120\" x2=\"290\" y2=\"120\"/><text class=\"dm\" x=\"44\" y=\"115\">1 atm</text><text class=\"dm\" x=\"62\" y=\"70\">Sólido</text><text class=\"dm\" x=\"150\" y=\"80\">Líquido</text><text class=\"dm\" x=\"170\" y=\"178\">Gas</text><circle class=\"dot\" cx=\"115\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"195.2\" cy=\"120\" r=\"3.5\"/><circle class=\"dot\" cx=\"120\" cy=\"165\" r=\"3.5\"/><circle class=\"dot\" cx=\"250\" cy=\"45\" r=\"3.5\"/><circle data-z=\"A\" cx=\"115\" cy=\"120\" r=\"11\"/><circle data-z=\"B\" cx=\"195.2\" cy=\"120\" r=\"11\"/><circle data-z=\"T\" cx=\"120\" cy=\"165\" r=\"11\"/><circle data-z=\"C\" cx=\"250\" cy=\"45\" r=\"11\"/><rect data-z=\"rs\" x=\"56\" y=\"55\" width=\"54\" height=\"22\" rx=\"5\"/><rect data-z=\"rl\" x=\"144\" y=\"65\" width=\"62\" height=\"22\" rx=\"5\"/><rect data-z=\"rg\" x=\"164\" y=\"163\" width=\"40\" height=\"22\" rx=\"5\"/></svg>",
+       "a": [
+        "rg"
        ]
       }
      ],
@@ -4848,39 +5245,42 @@
      "q": "<p>Indica el método adecuado.</p>",
      "checks": [
       {
-       "p": "Limaduras de hierro y arena",
-       "o": [
+       "t": "cls",
+       "p": "Método de separación",
+       "cats": [
         "Imantación",
-        "Destilación",
         "Decantación",
-        "Evaporación"
-       ]
-      },
-      {
-       "p": "Agua y aceite",
-       "o": [
-        "Decantación",
-        "Filtración",
-        "Imantación",
-        "Tamizado"
-       ]
-      },
-      {
-       "p": "Sal disuelta en agua (recuperar la sal)",
-       "o": [
         "Evaporación",
-        "Filtración",
-        "Decantación",
-        "Imantación"
-       ]
-      },
-      {
-       "p": "Agua y etanol",
-       "o": [
         "Destilación",
         "Filtración",
-        "Decantación",
         "Tamizado"
+       ],
+       "items": [
+        {
+         "x": "Limaduras de hierro y arena",
+         "c": 0
+        },
+        {
+         "x": "Agua y aceite",
+         "c": 1
+        },
+        {
+         "x": "Sal disuelta en agua (recuperar la sal)",
+         "c": 2
+        },
+        {
+         "x": "Agua y etanol",
+         "c": 3,
+         "e": "Líquidos miscibles con distinto Teb: destilación."
+        },
+        {
+         "x": "Arena y agua",
+         "c": 4
+        },
+        {
+         "x": "Piedras y arena",
+         "c": 5
+        }
        ]
       }
      ],
@@ -5098,30 +5498,21 @@
      "q": "<p>Masas atómicas: H 1, C 12, N 14, O 16, Na 23, S 32, Cl 35,5, Ca 40.</p>",
      "checks": [
       {
-       "p": "M de H₂O",
-       "o": [
-        "18 g/mol",
-        "17 g/mol",
-        "34 g/mol",
-        "16 g/mol"
-       ]
-      },
-      {
-       "p": "M de CaCO₃",
-       "o": [
-        "100 g/mol",
-        "68 g/mol",
-        "84 g/mol",
-        "116 g/mol"
-       ]
-      },
-      {
-       "p": "M de H₂SO₄",
-       "o": [
-        "98 g/mol",
-        "50 g/mol",
-        "96 g/mol",
-        "82 g/mol"
+       "t": "num",
+       "p": "Masas molares (g/mol)",
+       "f": [
+        {
+         "l": "H₂O",
+         "a": 18
+        },
+        {
+         "l": "CaCO₃",
+         "a": 100
+        },
+        {
+         "l": "H₂SO₄",
+         "a": 98
+        }
        ]
       }
      ],
@@ -5154,12 +5545,13 @@
      "q": "<p>¿Cuántos moles hay en 20 g de NaOH (M = 40 g/mol)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "0,5 mol",
-        "2 mol",
-        "800 mol",
-        "0,2 mol"
+       "t": "num",
+       "p": "Moles de NaOH",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.5
+        }
        ]
       }
      ],
@@ -5185,12 +5577,18 @@
      "q": "<p>¿Cuántas moléculas hay en 9 g de H₂O (M = 18 g/mol)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "3,011 × 10²³",
-        "6,022 × 10²³",
-        "1,2044 × 10²⁴",
-        "5,4198 × 10²⁴"
+       "t": "num",
+       "p": "Moléculas = a × 10ᵇ",
+       "f": [
+        {
+         "l": "a",
+         "a": 3.011,
+         "tol": 0.01
+        },
+        {
+         "l": "b",
+         "a": 23
+        }
        ]
       }
      ],
@@ -5219,12 +5617,18 @@
      "q": "<p>¿Cuántos átomos de H hay en 0,5 mol de CH₄?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "2 × 6,022 × 10²³ = 1,2044 × 10²⁴",
-        "0,5 × 6,022 × 10²³",
-        "4 × 6,022 × 10²³",
-        "6,022 × 10²³"
+       "t": "num",
+       "p": "Átomos de H = a × 10ᵇ",
+       "f": [
+        {
+         "l": "a",
+         "a": 1.2044,
+         "tol": 0.01
+        },
+        {
+         "l": "b",
+         "a": 24
+        }
        ]
       }
      ],
@@ -5254,30 +5658,21 @@
      "q": "<p>Convierte.</p>",
      "checks": [
       {
-       "p": "2,5 L a mL",
-       "o": [
-        "2500 mL",
-        "250 mL",
-        "0,0025 mL",
-        "25 000 mL"
-       ]
-      },
-      {
-       "p": "750 mg a g",
-       "o": [
-        "0,75 g",
-        "7,5 g",
-        "75 g",
-        "750 000 g"
-       ]
-      },
-      {
-       "p": "72 km/h a m/s",
-       "o": [
-        "20 m/s",
-        "72 000 m/s",
-        "7,2 m/s",
-        "259,2 m/s"
+       "t": "num",
+       "p": "Convierte",
+       "f": [
+        {
+         "l": "2,5 L en mL",
+         "a": 2500
+        },
+        {
+         "l": "750 mg en g",
+         "a": 0.75
+        },
+        {
+         "l": "72 km/h en m/s",
+         "a": 20
+        }
        ]
       }
      ],
@@ -5310,12 +5705,13 @@
      "q": "<p>El etanol tiene densidad 0,8 g/mL. ¿Qué masa tienen 250 mL?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "200 g",
-        "312,5 g",
-        "250 g",
-        "0,0032 g"
+       "t": "num",
+       "p": "Masa de 250 mL",
+       "f": [
+        {
+         "l": "m (g)",
+         "a": 200
+        }
        ]
       }
      ],
@@ -5340,12 +5736,13 @@
      "q": "<p>¿Cuántos moles hay en 46 mL de etanol (C₂H₅OH, M = 46 g/mol, ρ = 0,8 g/mL)?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "0,8 mol",
-        "1 mol",
-        "1,25 mol",
-        "36,8 mol"
+       "t": "num",
+       "p": "Moles de etanol",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.8
+        }
        ]
       }
      ],
@@ -5374,12 +5771,13 @@
      "q": "<p>¿Cuántos litros hay en 2 m³?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "2000 L",
-        "200 L",
-        "2 L",
-        "20 000 L"
+       "t": "num",
+       "p": "Litros en 2 m³",
+       "f": [
+        {
+         "l": "V (L)",
+         "a": 2000
+        }
        ]
       }
      ],
@@ -5434,21 +5832,17 @@
      "q": "<p>Se disuelven 10 g de NaCl en 90 g de agua.</p>",
      "checks": [
       {
-       "p": "Masa de solución",
-       "o": [
-        "100 g",
-        "90 g",
-        "80 g",
-        "10 g"
-       ]
-      },
-      {
-       "p": "%m/m",
-       "o": [
-        "10 %",
-        "11,1 %",
-        "9 %",
-        "90 %"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "masa de solución (g)",
+         "a": 100
+        },
+        {
+         "l": "%m/m",
+         "a": 10
+        }
        ]
       }
      ],
@@ -5477,12 +5871,13 @@
      "q": "<p>Un suero tiene 9 g de NaCl en 1000 mL de solución.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "%m/v",
-       "o": [
-        "0,9 %",
-        "9 %",
-        "0,09 %",
-        "90 %"
+       "f": [
+        {
+         "l": "%m/v",
+         "a": 0.9
+        }
        ]
       }
      ],
@@ -5507,12 +5902,13 @@
      "q": "<p>Un vino contiene 12 mL de etanol por cada 100 mL. ¿Cuánto etanol hay en una botella de 750 mL?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "90 mL",
-        "62,5 mL",
-        "12 mL",
-        "9 mL"
+       "t": "num",
+       "p": "Etanol en la botella",
+       "f": [
+        {
+         "l": "V (mL)",
+         "a": 90
+        }
        ]
       }
      ],
@@ -5538,21 +5934,17 @@
      "q": "<p>4 g de NaOH (M = 40 g/mol) en 250 mL de solución.</p>",
      "checks": [
       {
-       "p": "Moles de NaOH",
-       "o": [
-        "0,1 mol",
-        "10 mol",
-        "0,4 mol",
-        "1 mol"
-       ]
-      },
-      {
-       "p": "Molaridad",
-       "o": [
-        "0,4 M",
-        "0,016 M",
-        "16 M",
-        "0,1 M"
+       "t": "num",
+       "p": "Resultados",
+       "f": [
+        {
+         "l": "n (mol)",
+         "a": 0.1
+        },
+        {
+         "l": "M (mol/L)",
+         "a": 0.4
+        }
        ]
       }
      ],
@@ -5581,12 +5973,13 @@
      "q": "<p>¿Cuántos gramos de glucosa (C₆H₁₂O₆, M = 180 g/mol) se necesitan para preparar 500 mL de solución 0,2 M?</p>",
      "checks": [
       {
-       "p": "Respuesta",
-       "o": [
-        "18 g",
-        "36 g",
-        "180 g",
-        "0,1 g"
+       "t": "num",
+       "p": "Masa de glucosa",
+       "f": [
+        {
+         "l": "m (g)",
+         "a": 18
+        }
        ]
       }
      ],
@@ -5615,12 +6008,13 @@
      "q": "<p>Una muestra de 2 L de agua contiene 0,8 mg de plomo.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Concentración",
-       "o": [
-        "0,4 ppm",
-        "1,6 ppm",
-        "400 ppm",
-        "0,8 ppm"
+       "f": [
+        {
+         "l": "ppm",
+         "a": 0.4
+        }
        ]
       }
      ],
@@ -5645,12 +6039,13 @@
      "q": "<p>Se disuelven 0,5 mol de urea en 250 g de agua.</p>",
      "checks": [
       {
+       "t": "num",
        "p": "Molalidad",
-       "o": [
-        "2 mol/kg",
-        "0,125 mol/kg",
-        "0,002 mol/kg",
-        "125 mol/kg"
+       "f": [
+        {
+         "l": "m (mol/kg)",
+         "a": 2
+        }
        ]
       }
      ],
@@ -5679,30 +6074,21 @@
      "q": "<p>Una solución de NaOH al 20 %m/m tiene densidad 1,2 g/mL (M NaOH = 40 g/mol). Toma 1 L de solución.</p>",
      "checks": [
       {
-       "p": "Masa de 1 L de solución",
-       "o": [
-        "1200 g",
-        "1000 g",
-        "1,2 g",
-        "833 g"
-       ]
-      },
-      {
-       "p": "Masa de NaOH",
-       "o": [
-        "240 g",
-        "200 g",
-        "20 g",
-        "960 g"
-       ]
-      },
-      {
-       "p": "Molaridad",
-       "o": [
-        "6 M",
-        "5 M",
-        "0,6 M",
-        "24 M"
+       "t": "num",
+       "p": "Paso a paso",
+       "f": [
+        {
+         "l": "masa de 1 L (g)",
+         "a": 1200
+        },
+        {
+         "l": "masa de NaOH (g)",
+         "a": 240
+        },
+        {
+         "l": "M (mol/L)",
+         "a": 6
+        }
        ]
       }
      ],
@@ -6123,33 +6509,25 @@
    "q": "<p><b>Industria aeronáutica.</b> Una pieza que colapsó se analizó en el laboratorio. La muestra 001 es una mezcla heterogénea de Aa, Bb y Cc:</p><ul><li>Aa: contiene 10 electrones menos que el catión más estable del Sr (Z = 38).</li><li>Bb: semiconductor del periodo 3 cuyo símbolo de Lewis tiene 4 puntos.</li><li>Cc: no metal del periodo 3 cuyo anión más estable es divalente.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "Fe (Z = 26)",
-      "Kr (Z = 36)",
-      "Ca (Z = 20)",
-      "Ni (Z = 28)",
-      "Mn (Z = 25)"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "Fe"
+     ],
+     "e": "Sr²⁺ tiene 36 e⁻; 10 menos son 26 → Z = 26."
+    },
+    {
+     "t": "ptab",
+     "p": "Toca Bb.",
+     "a": [
+      "Si"
      ]
     },
     {
-     "p": "Bb",
-     "o": [
-      "Si",
-      "C",
-      "Ge",
-      "P",
-      "Al"
-     ]
-    },
-    {
-     "p": "Cc",
-     "o": [
-      "S",
-      "Cl",
-      "P",
-      "O",
-      "Se"
+     "t": "ptab",
+     "p": "Toca Cc.",
+     "a": [
+      "S"
      ]
     },
     {
@@ -6198,33 +6576,24 @@
    "q": "<p>La muestra 002 es un compuesto formado por Dd, Ee y Ff:</p><ul><li>Dd: su catión más estable Dd³⁺ es isoelectrónico con el Ne.</li><li>Ee: su configuración termina en 4p³.</li><li>Ff: tiene 10 neutrones y número de masa 19.</li></ul>",
    "checks": [
     {
-     "p": "Dd",
-     "o": [
-      "Al",
-      "Na",
-      "B",
-      "Mg",
-      "Ga"
+     "t": "ptab",
+     "p": "Toca Dd.",
+     "a": [
+      "Al"
      ]
     },
     {
-     "p": "Ee",
-     "o": [
-      "As",
-      "P",
-      "Sb",
-      "Se",
-      "Ge"
+     "t": "ptab",
+     "p": "Toca Ee.",
+     "a": [
+      "As"
      ]
     },
     {
-     "p": "Ff",
-     "o": [
-      "F",
-      "K",
-      "Ne",
-      "O",
-      "Cl"
+     "t": "ptab",
+     "p": "Toca Ff.",
+     "a": [
+      "F"
      ]
     },
     {
@@ -6272,13 +6641,10 @@
    "q": "<p>Se analizan tres componentes:</p><ul><li>Aa: semiconductor del grupo 5A con la mayor tendencia a atraer electrones al formar un enlace.</li><li>Bb: tres isótopos A, A+1 y A+3 cuya suma de números de masa es 409; el más liviano tiene 59 protones.</li><li>Dd: segundo elemento al que le es más difícil perder un electrón en el tercer periodo.</li></ul>",
    "checks": [
     {
-     "p": "Aa",
-     "o": [
-      "As",
-      "Sb",
-      "P",
-      "N",
-      "Bi"
+     "t": "ptab",
+     "p": "Toca Aa.",
+     "a": [
+      "As"
      ]
     },
     {
@@ -6292,13 +6658,10 @@
      ]
     },
     {
-     "p": "Dd",
-     "o": [
-      "Cl",
-      "Ar",
-      "S",
-      "P",
-      "Na"
+     "t": "ptab",
+     "p": "Toca Dd.",
+     "a": [
+      "Cl"
      ]
     },
     {
@@ -6345,12 +6708,17 @@
    "q": "<p>Se necesitan dos precursores con la misma geometría: óxido nitroso (N₂O), seleniuro de hidrógeno (H₂Se) y dicloruro de azufre (SCl₂).</p>",
    "checks": [
     {
-     "p": "N₂O: enlazantes / libres",
-     "o": [
-      "8 / 8",
-      "6 / 10",
-      "8 / 10",
-      "4 / 12"
+     "t": "num",
+     "p": "N₂O: electrones",
+     "f": [
+      {
+       "l": "enlazantes",
+       "a": 8
+      },
+      {
+       "l": "libres",
+       "a": 8
+      }
      ]
     },
     {
@@ -6372,12 +6740,13 @@
      ]
     },
     {
+     "t": "num",
      "p": "SCl₂: pares libres totales",
-     "o": [
-      "8",
-      "10",
-      "6",
-      "4"
+     "f": [
+      {
+       "l": "pares libres",
+       "a": 8
+      }
      ]
     },
     {
@@ -6436,12 +6805,17 @@
      ]
     },
     {
-     "p": "CH₂O: enlazantes / libres",
-     "o": [
-      "8 / 4",
-      "6 / 6",
-      "8 / 6",
-      "4 / 8"
+     "t": "num",
+     "p": "CH₂O: electrones",
+     "f": [
+      {
+       "l": "enlazantes",
+       "a": 8
+      },
+      {
+       "l": "libres",
+       "a": 4
+      }
      ]
     },
     {
@@ -6496,12 +6870,25 @@
    "q": "<p>Se dispone de Na⁺[OCN]⁻ y K⁺[NO₃]⁻. Se integra mejor el que contenga un ion con geometría trigonal plana. Incluye cálculo de electrones, Lewis y CF.</p>",
    "checks": [
     {
-     "p": "[OCN]⁻: N / V / enlazantes / libres",
-     "o": [
-      "24 / 16 / 8 / 8",
-      "24 / 15 / 9 / 6",
-      "24 / 17 / 7 / 10",
-      "16 / 24 / 8 / 8"
+     "t": "num",
+     "p": "[OCN]⁻",
+     "f": [
+      {
+       "l": "N",
+       "a": 24
+      },
+      {
+       "l": "V",
+       "a": 16
+      },
+      {
+       "l": "enlazantes",
+       "a": 8
+      },
+      {
+       "l": "libres",
+       "a": 8
+      }
      ]
     },
     {
@@ -6646,13 +7033,12 @@
    "q": "<p>Ordena de MENOR a MAYOR Teb: butano (C₄H₁₀), acetona (C₃H₆O) y 1-propanol (C₃H₇OH). Masas molares parecidas (58, 58 y 60 g/mol).</p>",
    "checks": [
     {
-     "p": "Orden de MENOR a MAYOR Teb",
-     "o": [
-      "Butano < acetona < 1-propanol",
-      "Acetona < butano < 1-propanol",
-      "1-propanol < acetona < butano",
-      "Butano < 1-propanol < acetona",
-      "Acetona < 1-propanol < butano"
+     "t": "order",
+     "p": "Ordena de MENOR a MAYOR Teb.",
+     "items": [
+      "Butano (C₄H₁₀)",
+      "Acetona (C₃H₆O)",
+      "1-propanol (C₃H₇OH)"
      ]
     },
     {
@@ -6822,30 +7208,21 @@
    "q": "<p>Se disuelven 5,85 g de NaCl (M = 58,5 g/mol) en agua hasta 500 mL de solución (ρ ≈ 1 g/mL).</p>",
    "checks": [
     {
-     "p": "Molaridad",
-     "o": [
-      "0,2 M",
-      "0,1 M",
-      "2 M",
-      "11,7 M"
-     ]
-    },
-    {
-     "p": "%m/v",
-     "o": [
-      "1,17 %",
-      "5,85 %",
-      "0,585 %",
-      "11,7 %"
-     ]
-    },
-    {
-     "p": "Concentración en ppm (mg/L)",
-     "o": [
-      "11 700 ppm",
-      "5850 ppm",
-      "1170 ppm",
-      "117 ppm"
+     "t": "num",
+     "p": "Resultados",
+     "f": [
+      {
+       "l": "M (mol/L)",
+       "a": 0.2
+      },
+      {
+       "l": "%m/v",
+       "a": 1.17
+      },
+      {
+       "l": "ppm (mg/L)",
+       "a": 11700
+      }
      ]
     }
    ],
@@ -6878,30 +7255,21 @@
    "q": "<p>Una botella contiene 200 mL de alcohol etílico al 46 %v/v. Densidad del etanol: 0,8 g/mL; M = 46 g/mol.</p>",
    "checks": [
     {
-     "p": "Volumen de etanol",
-     "o": [
-      "92 mL",
-      "46 mL",
-      "108 mL",
-      "200 mL"
-     ]
-    },
-    {
-     "p": "Masa de etanol",
-     "o": [
-      "73,6 g",
-      "92 g",
-      "115 g",
-      "36,8 g"
-     ]
-    },
-    {
-     "p": "Moles de etanol",
-     "o": [
-      "1,6 mol",
-      "2 mol",
-      "0,8 mol",
-      "3,4 mol"
+     "t": "num",
+     "p": "Paso a paso",
+     "f": [
+      {
+       "l": "V de etanol (mL)",
+       "a": 92
+      },
+      {
+       "l": "m de etanol (g)",
+       "a": 73.6
+      },
+      {
+       "l": "n (mol)",
+       "a": 1.6
+      }
      ]
     }
    ],
