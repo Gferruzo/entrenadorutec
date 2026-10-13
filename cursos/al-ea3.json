@@ -6,8 +6,8 @@
  "short": "EA3",
  "sub": "Sem. 9 a 11",
  "guide": true,
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La EA3 es en el laboratorio de la semana 11 (30 min)</b> y cubre transformaciones lineales. Por ahora está la semana 9 (linealidad y matriz estándar); las semanas 10 y 11 se suman cuando lleguen sus guías.",
- "form": "<p class=\"note\">Hoja de repaso de la EA3 (por ahora, semana 9).</p>\n<div class=\"fgrid\">\n<div><b>Lineal</b><br>\\(T(au+bv)=aT(u)+bT(v)\\)</div>\n<div><b>Descarte</b><br>\\(T(0)\\neq0\\Rightarrow\\) no lineal</div>\n<div><b>Matriz estándar</b><br>\\(A\\) \\(=[T(e_1)\\cdots T(e_n)]\\in\\mathbb R^{m\\times n}\\)</div>\n</div>",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La EA3 es en el laboratorio de la semana 11 (30 min)</b> y cubre transformaciones lineales. Ya están la semana 9 (linealidad y matriz estándar) y la <b>semana 10</b> (reflexiones, escalamientos, rotaciones, proyecciones, composición, núcleo, imagen y rango–nulidad); la semana 11 se suma cuando llegue su guía.",
+ "form": "<p class=\"note\">Hoja de repaso de la EA3 (por ahora, semanas 9 y 10).</p>\n<div class=\"fgrid\">\n<div><b>Lineal</b><br>\\(T(au+bv)=aT(u)+bT(v)\\)</div>\n<div><b>Descarte</b><br>\\(T(0)\\neq0\\Rightarrow\\) no lineal</div>\n<div><b>Matriz estándar</b><br>\\(A\\) \\(=[T(e_1)\\cdots T(e_n)]\\in\\mathbb R^{m\\times n}\\)</div>\n<div><b>Reflexiones</b><br>Eje x \\(\\operatorname{diag}(1,-1)\\) · eje y \\(\\operatorname{diag}(-1,1)\\)</div><div><b>Rotación</b><br>\\(R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}\\), \\(R^{-1}=R^T\\)</div><div><b>Proyección</b><br>\\(\\operatorname{diag}(1,0)\\): una dirección va a 0</div><div><b>Composición</b><br>Primero \\(A_1\\), luego \\(A_2\\): \\(A_2A_1\\)</div><div><b>Núcleo</b><br>\\(\\ker T\\): resolver \\(Ax=0\\)</div><div><b>Imagen</b><br>\\(\\operatorname{Im}T\\): columnas pivote de A</div><div><b>Dimensión</b><br>rango + nulidad = n</div><div><b>Sin pérdida</b><br>\\(\\ker T=\\{0\\}\\iff\\det A\\neq0\\)</div>\n<div><b>Reflexiones</b><br>Eje x \\(\\operatorname{diag}(1,-1)\\) · eje y \\(\\operatorname{diag}(-1,1)\\)</div><div><b>Rotación</b><br>\\(R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}\\), \\(R^{-1}=R^T\\)</div><div><b>Proyección</b><br>\\(\\operatorname{diag}(1,0)\\): una dirección va a 0</div><div><b>Composición</b><br>Primero \\(A_1\\), luego \\(A_2\\): \\(A_2A_1\\)</div><div><b>Núcleo</b><br>\\(\\ker T\\): resolver \\(Ax=0\\)</div><div><b>Imagen</b><br>\\(\\operatorname{Im}T\\): columnas pivote de A</div><div><b>Dimensión</b><br>rango + nulidad = n</div><div><b>Sin pérdida</b><br>\\(\\ker T=\\{0\\}\\iff\\det A\\neq0\\)</div>\n</div>",
  "formSim": false,
  "topics": [
   {
@@ -1032,6 +1032,1927 @@
      }
     }
    ]
+  },
+  {
+   "id": "s10",
+   "name": "Sem. 10 · Transformaciones comunes, núcleo e imagen",
+   "teo": "<p>Las <strong>transformaciones comunes</strong> se leen en las columnas de su matriz estándar, \\(A\\) \\(=[T(e_1)\\ T(e_2)]\\): las columnas dicen a dónde van \\(e_1\\) y \\(e_2\\).</p><ul><li><strong>Reflexión:</strong> cambia la orientación y no pierde información. Eje x: \\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\); eje y: \\(\\begin{pmatrix}-1&0\\\\0&1\\end{pmatrix}\\); recta \\(y=x\\): \\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\). Cumple \\(R^2=I\\) y \\(\\det=-1\\).</li><li><strong>Escalamiento:</strong> \\(\\operatorname{diag}(a,b)\\): \\(|a|\\gt1\\) expande, \\(0\\lt|a|\\lt1\\) contrae, un factor negativo además refleja. Si un factor es 0, deja de ser escalamiento y pierde información.</li><li><strong>Rotación antihoraria:</strong> \\(R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}\\). Conserva longitudes y ángulos, \\(R_\\theta^TR_\\theta=I\\), \\(\\det=1\\) y \\(R_\\theta^{-1}\\) \\(=R_\\theta^T\\) \\(=R_{-\\theta}\\). En R³, \\(R_z(\\theta)\\) gira el plano xy y deja z igual.</li><li><strong>Proyección:</strong> \\(\\begin{pmatrix}1&0\\\\0&0\\end{pmatrix}\\) manda \\(e_2\\) a 0: se pierde la coordenada y. En R³, sobre el plano xy: \\((x,y,z)\\mapsto(x,y,0)\\).</li></ul><p><strong>Composición:</strong> si primero aplicas \\(A_1\\) y luego \\(A_2\\), la matriz es \\(A_2A_1\\) (se lee de derecha a izquierda).</p><p><strong>Núcleo e imagen</strong> de \\(T(x)=Ax\\), \\(T:\\mathbb R^n\\) \\(\\to\\mathbb R^m\\):</p><ul><li>\\(\\ker T=\\operatorname{Nul}(A)\\) \\(=\\{x: Ax=0\\}\\subseteq\\mathbb R^n\\): lo que T «destruye». Se resuelve \\(Ax=0\\); su dimensión es la <strong>nulidad</strong>.</li><li>\\(\\operatorname{Im}T=\\operatorname{Col}(A)\\subseteq\\mathbb R^m\\): lo que T alcanza. Base: columnas pivote de la <strong>A original</strong>; su dimensión es el <strong>rango</strong>.</li><li><strong>Rango–nulidad:</strong> \\(\\operatorname{rango}+\\operatorname{nulidad}\\) \\(=n\\) (dimensión del dominio). Además \\(\\operatorname{rango}\\le\\min(m,n)\\).</li><li>\\(\\ker T=\\{0\\}\\) \\(\\iff\\) T no pierde información (entradas distintas dan salidas distintas). Si \\(T(p)=T(q)\\), entonces \\(p-q\\in\\ker T\\).</li></ul>",
+   "form": [
+    "Refl. eje x: \\(\\operatorname{diag}(1,-1)\\)",
+    "Refl. eje y: \\(\\operatorname{diag}(-1,1)\\)",
+    "Refl. \\(y=x\\): \\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\)",
+    "\\(R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}\\)",
+    "\\(R_{90^\\circ}=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
+    "Componer: primero \\(A_1\\), luego \\(A_2\\) ⇒ \\(A_2A_1\\)",
+    "\\(\\ker T=\\{x: Ax=0\\}\\)",
+    "\\(\\operatorname{Im}T=\\operatorname{Col}(A)\\)",
+    "\\(\\operatorname{rango}+\\operatorname{nulidad}=n\\)",
+    "\\(\\ker T=\\{0\\}\\iff\\) no pierde información"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una transformación lineal se entiende por lo que <strong>produce</strong> (la imagen) y por lo que <strong>anula</strong> (el núcleo). Reflexiones, rotaciones y escalamientos con factores no nulos tienen núcleo \\(\\{0\\}\\): no pierden nada. Las proyecciones mandan una dirección entera a 0.</p><h3>Cómo resolverlo</h3><ul><li><strong>1. Matriz:</strong> calcula \\(T(e_1),\\dots,T(e_n)\\) y ponlas como columnas. Para identificarla, mira dónde termina \\(e_1\\): la rotación de 90° antihoraria lo manda a \\((0,1)\\), la horaria a \\((0,-1)\\).</li><li><strong>2. Núcleo:</strong> escalona \\(Ax=0\\); cada variable libre da un vector de la base.</li><li><strong>3. Imagen:</strong> columnas pivote en rref(A), pero los vectores se toman de A.</li><li><strong>4. Verifica:</strong> rango + nulidad = número de columnas.</li></ul><div class=\\\"ej\\\"><b>Ejemplo (clase S10):</b> \\(A=\\begin{pmatrix}1&3\\\\2&6\\end{pmatrix}\\): \\(f_2-2f_1\\) deja \\(x_1+3x_2=0\\), así que \\(\\ker T\\) \\(=\\operatorname{Gen}\\{(-3,1)\\}\\) y \\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(1,2)\\}\\). Rango 1 + nulidad 1 = 2: todo el plano colapsa sobre la recta \\(y=2x\\).</div><div class=\\\"err\\\"><b>Errores comunes:</b> sacar la base de la imagen de las columnas de rref(A); creer que toda matriz cuadrada tiene núcleo trivial (solo si \\(\\det\\neq0\\)); escribir la composición en el orden en que se aplica (\\(A_1A_2\\) en vez de \\(A_2A_1\\)); confundir \\(R_{90^\\circ}\\) con su inversa porque ambas cumplen \\(R^TR=I\\).</div>",
+   "ex": [
+    {
+     "id": "s10e1",
+     "lvl": 1,
+     "title": "¿Qué transformación es?",
+     "q": "<p>Sin multiplicar, clasifica cada matriz de \\(\\mathbb R^2\\) según su efecto. Mira a dónde van \\(e_1\\) y \\(e_2\\) (las columnas).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica cada matriz",
+       "cats": [
+        "Reflexión",
+        "Escalamiento",
+        "Rotación",
+        "Proyección"
+       ],
+       "items": [
+        {
+         "x": "\\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\begin{pmatrix}3&0\\\\0&3\\end{pmatrix}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
+         "c": 2,
+         "e": "e₁ va a (0, 1): gira 90° antihorario."
+        },
+        {
+         "x": "\\(\\begin{pmatrix}1&0\\\\0&0\\end{pmatrix}\\)",
+         "c": 3,
+         "e": "e₂ va a 0: se pierde la coordenada y."
+        },
+        {
+         "x": "\\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\)",
+         "c": 0,
+         "e": "Intercambia x e y: reflexión en y = x (det = −1)."
+        },
+        {
+         "x": "\\(\\begin{pmatrix}2&0\\\\0&\\frac12\\end{pmatrix}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\)",
+         "c": 2,
+         "e": "det = 1 y conserva longitudes: es la rotación de 90° horaria."
+        },
+        {
+         "x": "\\(\\begin{pmatrix}0&0\\\\0&1\\end{pmatrix}\\)",
+         "c": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Reflexión: cambia de signo o intercambia coordenadas (\\(\\det=-1\\)).",
+      "Escalamiento: diagonal con factores no nulos. Rotación: columnas rotadas, \\(\\det=1\\).",
+      "Proyección: alguna columna es 0: una dirección se pierde."
+     ],
+     "ans": "Reflexión: diag(1,−1), [[0,1],[1,0]]; escalamiento: diag(3,3), diag(2,½); rotación: [[0,−1],[1,0]], [[0,1],[−1,0]]; proyección: diag(1,0), diag(0,1)",
+     "hint": "Una columna nula delata una proyección.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl",
+       "escl",
+       "rot"
+      ],
+      [
+       "escl",
+       "rot"
+      ],
+      [
+       "proy"
+      ]
+     ]
+    },
+    {
+     "id": "s10e2",
+     "lvl": 1,
+     "title": "Construye la matriz estándar",
+     "q": "<p>Escribe la matriz estándar de cada transformación de \\(\\mathbb R^2\\) (guía S10, ejercicio 1).</p>",
+     "checks": [
+      {
+       "t": "tlc",
+       "p": "a) Reflexión respecto al eje x.",
+       "a": [
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         -1
+        ]
+       ],
+       "e": "El eje x queda fijo: e₁ ↦ (1, 0) y e₂ ↦ (0, −1)."
+      },
+      {
+       "t": "mat",
+       "p": "b) Escalamiento uniforme con factor \\(k=\\frac12\\).",
+       "a": [
+        [
+         "1/2",
+         0
+        ],
+        [
+         0,
+         "1/2"
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "tlc",
+       "p": "c) Rotación antihoraria de 90°.",
+       "a": [
+        [
+         0,
+         -1
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "e": "e₁ = (1, 0) gira a (0, 1); e₂ = (0, 1) gira a (−1, 0)."
+      }
+     ],
+     "steps": [
+      "a) \\(T(e_1)=(1,0)\\), \\(T(e_2)=(0,-1)\\): \\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\).",
+      "b) \\(kI\\): \\(\\begin{pmatrix}\\frac12&0\\\\0&\\frac12\\end{pmatrix}\\) (contracción a la mitad).",
+      "c) \\(R_{90^\\circ}\\): \\(\\cos90^\\circ=0\\), \\(\\sin90^\\circ=1\\) ⇒ \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)."
+     ],
+     "ans": "[[1,0],[0,−1]]; [[½,0],[0,½]]; [[0,−1],[1,0]]",
+     "hint": "Las columnas son T(e₁) y T(e₂).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl",
+       "mest"
+      ],
+      [
+       "escl"
+      ],
+      [
+       "rot"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e3",
+     "lvl": 1,
+     "title": "Aplica y describe el efecto",
+     "q": "<p>Aplica las matrices del ejercicio anterior a \\(v=(4,-6)\\) (guía S10, ejercicio 2).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Reflexión respecto al eje x: dibuja \\(T(v)\\).",
+       "a": [
+        4,
+        6
+       ],
+       "l": "T(v)",
+       "given": [
+        {
+         "v": [
+          4,
+          -6
+         ],
+         "l": "v"
+        }
+       ]
+      },
+      {
+       "t": "vecdraw",
+       "p": "Escalamiento por \\(\\frac12\\): dibuja \\(T(v)\\).",
+       "a": [
+        2,
+        -3
+       ],
+       "l": "T(v)",
+       "given": [
+        {
+         "v": [
+          4,
+          -6
+         ],
+         "l": "v"
+        }
+       ]
+      },
+      {
+       "t": "vecdraw",
+       "p": "Rotación antihoraria de 90°: dibuja \\(T(v)\\).",
+       "a": [
+        6,
+        4
+       ],
+       "l": "T(v)",
+       "given": [
+        {
+         "v": [
+          4,
+          -6
+         ],
+         "l": "v"
+        }
+       ]
+      },
+      {
+       "p": "¿Cuál de las tres cambia la longitud de v?",
+       "o": [
+        "Solo el escalamiento",
+        "Solo la rotación",
+        "Solo la reflexión",
+        "Las tres",
+        "Ninguna"
+       ]
+      }
+     ],
+     "steps": [
+      "Reflexión: \\((4,6)\\), cambia de signo la coordenada y.",
+      "Escalamiento: \\((2,-3)\\), el vector se contrae a la mitad.",
+      "Rotación: \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\begin{pmatrix}4\\\\-6\\end{pmatrix}\\) \\(=(6,4)\\): gira 90° sin cambiar la longitud.",
+      "Reflexión y rotación conservan longitudes; el escalamiento por ½ la reduce a la mitad."
+     ],
+     "ans": "(4, 6); (2, −3); (6, 4)",
+     "hint": "Rotación 90° antihoraria: (x, y) ↦ (−y, x).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl"
+      ],
+      [
+       "escl"
+      ],
+      [
+       "rot"
+      ],
+      [
+       "escl",
+       "rot"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e4",
+     "lvl": 2,
+     "title": "Reflexión respecto de y = −x",
+     "q": "<p>Construye la matriz estándar de la reflexión respecto de la recta \\(y=-x\\) (laboratorio S10, ejercicio guiado 1).</p>",
+     "checks": [
+      {
+       "t": "tlc",
+       "p": "Arrastra \\(T(e_1)\\) y \\(T(e_2)\\).",
+       "a": [
+        [
+         0,
+         -1
+        ],
+        [
+         -1,
+         0
+        ]
+       ],
+       "e": "Reflejado en y = −x, e₁ = (1, 0) cae en (0, −1) y e₂ = (0, 1) en (−1, 0)."
+      },
+      {
+       "t": "num",
+       "p": "\\(T(2,5)\\)",
+       "f": [
+        {
+         "l": "1ª comp.",
+         "a": -5
+        },
+        {
+         "l": "2ª comp.",
+         "a": -2
+        }
+       ]
+      },
+      {
+       "p": "¿Qué vectores quedan fijos?",
+       "o": [
+        "Los de la recta \\(y=-x\\), \\(\\operatorname{Gen}\\{(1,-1)\\}\\)",
+        "Los de la recta \\(y=x\\), \\(\\operatorname{Gen}\\{(1,1)\\}\\)",
+        "Solo el vector 0",
+        "Los del eje x",
+        "Todos"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(T(e_1)=(0,-1)\\), \\(T(e_2)=(-1,0)\\) ⇒ \\(A=\\begin{pmatrix}0&-1\\\\-1&0\\end{pmatrix}\\).",
+      "\\(A(2,5)^T\\) \\(=(-5,-2)\\) y \\(A^2=I\\): reflejar dos veces devuelve el vector.",
+      "La recta de reflexión queda fija: \\((1,-1)\\mapsto(1,-1)\\). La perpendicular \\(\\operatorname{Gen}\\{(1,1)\\}\\) solo cambia de signo."
+     ],
+     "ans": "A = [[0, −1], [−1, 0]]; T(2, 5) = (−5, −2); fija la recta y = −x",
+     "hint": "Intercambia y cambia de signo las coordenadas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl",
+       "mest"
+      ],
+      [
+       "refl"
+      ],
+      [
+       "refl"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e5",
+     "lvl": 2,
+     "title": "Rotación de 90° y su inversa",
+     "q": "<p>Rota \\(v=(3,1)\\) un ángulo de 90° en sentido antihorario (laboratorio S10, ejercicio guiado 2).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(Rv\\).",
+       "a": [
+        -1,
+        3
+       ],
+       "l": "Rv",
+       "given": [
+        {
+         "v": [
+          3,
+          1
+         ],
+         "l": "v"
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Comprueba",
+       "f": [
+        {
+         "l": "‖Rv‖²",
+         "a": 10
+        },
+        {
+         "l": "(Rv)·v",
+         "a": 0,
+         "e": "Multiplica componente a componente y suma."
+        }
+       ]
+      },
+      {
+       "p": "¿Cómo recuperas \\(v\\) a partir de \\(Rv\\)?",
+       "o": [
+        "\\(v=R^T(Rv)\\), porque \\(R^{-1}=R^T\\)",
+        "\\(v=R(Rv)\\)",
+        "\\(v=-Rv\\)",
+        "No se puede: la rotación pierde información",
+        "\\(v=2Rv\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(R=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\), \\(Rv\\) \\(=(-1,3)\\).",
+      "\\(\\|v\\|^2=\\|Rv\\|^2=10\\) y \\((Rv)\\cdot v\\) \\(=-3+3=0\\): conserva la longitud y gira 90°.",
+      "\\(R^TR=I\\) ⇒ \\(R^{-1}=R^T\\): \\(R^T(-1,3)^T\\) \\(=(3,1)=v\\). \\(\\ker R=\\{0\\}\\)."
+     ],
+     "ans": "Rv = (−1, 3); ‖Rv‖² = 10; (Rv)·v = 0; v = Rᵀ(Rv)",
+     "hint": "(x, y) ↦ (−y, x).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ],
+      [
+       "rot",
+       "ker"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e6",
+     "lvl": 2,
+     "title": "Caza de errores: ¿antihoraria?",
+     "q": "<p>Un estudiante afirma que \\(M=\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\) es la rotación de 90° antihoraria «porque \\(M^TM=I\\)».</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(Me_1\\).",
+       "a": [
+        0,
+        -1
+       ],
+       "l": "Me₁",
+       "given": [
+        {
+         "v": [
+          1,
+          0
+         ],
+         "l": "e₁"
+        }
+       ],
+       "R": 3
+      },
+      {
+       "p": "¿Qué rotación es M en realidad?",
+       "o": [
+        "Rotación de 90° horaria (es \\(R_{90^\\circ}^T\\), la inversa)",
+        "Rotación de 90° antihoraria",
+        "Reflexión respecto de y = x",
+        "Rotación de 180°",
+        "No es una rotación"
+       ]
+      },
+      {
+       "p": "¿Dónde está el error?",
+       "o": [
+        "\\(M^TM=I\\) solo dice que conserva longitudes: el sentido se lee en \\(Me_1\\)",
+        "\\(M^TM\\neq I\\)",
+        "\\(\\det M=-1\\)",
+        "Faltó dividir entre el determinante",
+        "No hay error"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(M^TM=I\\) y \\(\\det M=1\\): sí es una rotación, pero eso no fija el ángulo ni el sentido.",
+      "\\(Me_1=(0,-1)\\), mientras que \\(R_{90^\\circ}e_1=(0,1)\\): M gira hacia abajo, 90° horario.",
+      "El signo de \\(-\\sin\\theta\\) quedó en la fila 2. \\(M=R_{-90^\\circ}\\) \\(=R_{90^\\circ}^T\\) \\(=R_{90^\\circ}^{-1}\\)."
+     ],
+     "ans": "M es la rotación de 90° horaria",
+     "hint": "Mira la primera columna: es Me₁.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e7",
+     "lvl": 2,
+     "title": "Composición: el orden importa",
+     "q": "<p>A \\(v=(3,2)\\) primero se le aplica la reflexión respecto al eje y, \\(B=\\begin{pmatrix}-1&0\\\\0&1\\end{pmatrix}\\), y luego la rotación antihoraria de 90°, \\(R\\) (guía S10, verificación con MATLAB).</p>",
+     "checks": [
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(w_1=Bv\\).",
+       "a": [
+        -3,
+        2
+       ],
+       "l": "w₁",
+       "given": [
+        {
+         "v": [
+          3,
+          2
+         ],
+         "l": "v"
+        }
+       ]
+      },
+      {
+       "t": "vecdraw",
+       "p": "Dibuja \\(w_2=Rw_1\\).",
+       "a": [
+        -2,
+        -3
+       ],
+       "l": "w₂",
+       "given": [
+        {
+         "v": [
+          3,
+          2
+         ],
+         "l": "v"
+        },
+        {
+         "v": [
+          -3,
+          2
+         ],
+         "l": "w₁"
+        }
+       ]
+      },
+      {
+       "p": "¿Qué matriz hace todo de una vez?",
+       "o": [
+        "\\(RB\\)",
+        "\\(BR\\)",
+        "\\(R+B\\)",
+        "\\(B^TR\\)",
+        "\\(R^{-1}B\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(w_1=Bv=(-3,2)\\): se invierte el signo de x.",
+      "\\(w_2=Rw_1=(-2,-3)\\) (\\((x,y)\\mapsto(-y,x)\\)).",
+      "La primera transformación queda a la derecha: \\(w_2=R(Bv)=(RB)v\\). En general \\(RB\\neq BR\\)."
+     ],
+     "ans": "w₁ = (−3, 2); w₂ = (−2, −3); matriz RB",
+     "hint": "Se lee de derecha a izquierda.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl"
+      ],
+      [
+       "rot"
+      ],
+      [
+       "comp"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e8",
+     "lvl": 1,
+     "title": "Núcleo de una transformación 2 × 2",
+     "q": "<p>Sea \\(T(x,y)\\) \\(=(x+2y,\\ 2x+4y)\\) (guía S10, ejercicio 3).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "Matriz estándar",
+       "a": [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "Base del núcleo: un vector \\((x, y)\\) con \\(y=1\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": -2,
+         "e": "De x + 2y = 0 con y = 1."
+        },
+        {
+         "l": "y",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "nulidad",
+         "a": 1
+        },
+        {
+         "l": "rango",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}\\).",
+      "\\(Av=0\\): la fila 2 es el doble de la 1, queda \\(x+2y=0\\) con y libre: \\(\\ker T\\) \\(=\\operatorname{Gen}\\{(-2,1)\\}\\).",
+      "Nulidad 1, rango \\(2-1=1\\): \\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(1,2)\\}\\)."
+     ],
+     "ans": "A = [[1, 2], [2, 4]]; ker T = Gen{(−2, 1)}; nulidad 1",
+     "hint": "Una ecuación independiente y dos incógnitas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "ker"
+      ],
+      [
+       "rnT"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e9",
+     "lvl": 2,
+     "title": "Núcleo en R³",
+     "q": "<p>Sea \\(T:\\mathbb R^3\\) \\(\\to\\mathbb R^3\\), \\(T(x,y,z)\\) \\(=(x,\\ x+y,\\ y)\\) (guía S10, ejercicio 4).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "Matriz estándar",
+       "a": [
+        [
+         1,
+         0,
+         0
+        ],
+        [
+         1,
+         1,
+         0
+        ],
+        [
+         0,
+         1,
+         0
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "p": "\\(\\ker T\\) es…",
+       "o": [
+        "\\(\\operatorname{Gen}\\{(0,0,1)\\}\\), el eje z",
+        "\\(\\{0\\}\\)",
+        "\\(\\operatorname{Gen}\\{(1,-1,1)\\}\\)",
+        "\\(\\operatorname{Gen}\\{(1,0,0)\\}\\)",
+        "Todo \\(\\mathbb R^3\\)"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "nulidad",
+         "a": 1
+        },
+        {
+         "l": "rango",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Columnas \\(T(e_1)=(1,1,0)\\), \\(T(e_2)=(0,1,1)\\), \\(T(e_3)=(0,0,0)\\).",
+      "\\(Av=0\\): \\(x=0\\), \\(y=0\\) y z libre ⇒ \\(\\ker T\\) \\(=\\operatorname{Gen}\\{e_3\\}\\).",
+      "Nulidad 1 ⇒ rango \\(3-1=2\\)."
+     ],
+     "ans": "ker T = Gen{(0, 0, 1)}; nulidad 1, rango 2",
+     "hint": "La tercera columna es nula.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "ker"
+      ],
+      [
+       "rnT"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e10",
+     "lvl": 2,
+     "title": "Espacio imagen (EA5 2024-0)",
+     "q": "<p>Sea \\(A=\\begin{pmatrix}2&0&-1\\\\4&0&-2\\\\0&0&0\\end{pmatrix}\\) la matriz de \\(T:\\mathbb R^3\\) \\(\\to\\mathbb R^3\\) (guía S10, ejercicio 5 y reto de la EA5 2024-0).</p>",
+     "checks": [
+      {
+       "t": "cols",
+       "p": "Toca las columnas de A que forman una base de \\(\\operatorname{Im}T\\).",
+       "m": [
+        [
+         2,
+         0,
+         -1
+        ],
+        [
+         4,
+         0,
+         -2
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "a": [
+        0
+       ],
+       "e": "Solo hay un pivote: la 3.ª columna es −½ de la 1.ª y la 2.ª es nula."
+      },
+      {
+       "p": "\\(\\operatorname{Im}T\\) es…",
+       "o": [
+        "\\(\\operatorname{Gen}\\{(2,4,0)\\}\\), una recta",
+        "\\(\\operatorname{Gen}\\{(2,4,0),(-1,-2,0)\\}\\), un plano",
+        "\\(\\operatorname{Gen}\\{(1,0,0)\\}\\)",
+        "Todo \\(\\mathbb R^3\\)",
+        "\\(\\{0\\}\\)"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "rango",
+         "a": 1
+        },
+        {
+         "l": "nulidad",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(Av=x(2,4,0)\\) \\(+y(0,0,0)\\) \\(+z(-1,-2,0)\\).",
+      "\\((-1,-2,0)\\) \\(=-\\frac12(2,4,0)\\): \\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(2,4,0)\\}\\).",
+      "Rango 1 ⇒ nulidad \\(3-1=2\\)."
+     ],
+     "ans": "Im T = Gen{(2, 4, 0)}; rango 1",
+     "hint": "Columnas proporcionales no suman dimensión.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "img"
+      ],
+      [
+       "img"
+      ],
+      [
+       "rnT"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e11",
+     "lvl": 2,
+     "title": "Dimensión de la imagen",
+     "q": "<p>Sea \\(T(x,y,z)\\) \\(=(x-y+z,\\ x+y-z,\\ 2x)\\) (guía S10, ejercicio 6).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "Matriz estándar",
+       "a": [
+        [
+         1,
+         -1,
+         1
+        ],
+        [
+         1,
+         1,
+         -1
+        ],
+        [
+         2,
+         0,
+         0
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones",
+       "f": [
+        {
+         "l": "dim Im T",
+         "a": 2
+        },
+        {
+         "l": "dim ker T",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "p": "Un vector del núcleo es…",
+       "o": [
+        "\\((0,1,1)\\)",
+        "\\((1,1,0)\\)",
+        "\\((1,0,1)\\)",
+        "\\((0,1,-1)\\)",
+        "\\((1,-1,1)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=\\begin{pmatrix}1&-1&1\\\\1&1&-1\\\\2&0&0\\end{pmatrix}\\).",
+      "La 3.ª columna es la opuesta de la 2.ª; las dos primeras son LI ⇒ rango 2.",
+      "Nulidad \\(3-2=1\\): \\(T(0,1,1)\\) \\(=(0,0,0)\\), así que \\(\\ker T\\) \\(=\\operatorname{Gen}\\{(0,1,1)\\}\\)."
+     ],
+     "ans": "dim Im T = 2; ker T = Gen{(0, 1, 1)}",
+     "hint": "Compara la 2.ª y la 3.ª columna.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "img",
+       "rnT"
+      ],
+      [
+       "ker"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e12",
+     "lvl": 3,
+     "title": "Núcleo, imagen y misma salida",
+     "q": "<p>\\(T(x)=Ax\\) con \\(A=\\begin{pmatrix}1&2&1\\\\2&4&3\\\\1&2&2\\end{pmatrix}\\) (laboratorio S10, ejercicio guiado 3). Usa el escalonador del tema si te ayuda.</p>",
+     "checks": [
+      {
+       "t": "cols",
+       "p": "Toca las columnas pivote.",
+       "m": [
+        [
+         1,
+         2,
+         1
+        ],
+        [
+         2,
+         4,
+         3
+        ],
+        [
+         1,
+         2,
+         2
+        ]
+       ],
+       "a": [
+        0,
+        2
+       ],
+       "e": "rref(A) = [[1, 2, 0], [0, 0, 1], [0, 0, 0]]."
+      },
+      {
+       "t": "num",
+       "p": "Base de \\(\\ker T\\): vector con \\(x_2=1\\)",
+       "f": [
+        {
+         "l": "x₁",
+         "a": -2
+        },
+        {
+         "l": "x₂",
+         "a": 1
+        },
+        {
+         "l": "x₃",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "\\(T(1,1,1)\\)",
+       "f": [
+        {
+         "l": "1ª",
+         "a": 4
+        },
+        {
+         "l": "2ª",
+         "a": 9
+        },
+        {
+         "l": "3ª",
+         "a": 5
+        }
+       ]
+      },
+      {
+       "p": "¿Por qué \\(T(-1,2,1)=T(1,1,1)\\)?",
+       "o": [
+        "Porque \\((-1,2,1)-(1,1,1)\\) \\(=(-2,1,0)\\in\\ker T\\)",
+        "Porque T es una rotación",
+        "Porque los dos vectores tienen la misma longitud",
+        "Porque \\(\\operatorname{Im}T=\\mathbb R^3\\)",
+        "Es casualidad"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{rref}(A)=\\begin{pmatrix}1&2&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\): pivotes en las columnas 1 y 3.",
+      "\\(x_1=-2x_2\\), \\(x_3=0\\): \\(\\ker T\\) \\(=\\operatorname{Gen}\\{(-2,1,0)\\}\\).",
+      "\\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(1,2,1),(1,3,2)\\}\\) (columnas de A). Rango–nulidad: \\(2+1=3\\).",
+      "\\(T(1,1,1)=(4,9,5)\\); sumando un vector del núcleo, \\(T(-1,2,1)\\) da lo mismo."
+     ],
+     "ans": "Pivotes 1 y 3; ker T = Gen{(−2, 1, 0)}; T(1, 1, 1) = (4, 9, 5)",
+     "hint": "Si dos entradas difieren en un vector del núcleo, tienen la misma imagen.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "img"
+      ],
+      [
+       "ker"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "ker"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e13",
+     "lvl": 2,
+     "title": "Caza de errores: base de la imagen",
+     "q": "<p>Para la matriz anterior, \\(\\operatorname{rref}(A)=\\begin{pmatrix}1&2&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}\\), un estudiante concluye que \\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(1,0,0),(0,1,0)\\}\\).</p>",
+     "checks": [
+      {
+       "p": "¿Pertenece \\((1,0,0)\\) a \\(\\operatorname{Im}T\\)?",
+       "o": [
+        "No: \\(c_1(1,2,1)+c_2(1,3,2)=(1,0,0)\\) no tiene solución",
+        "Sí: es la primera columna de rref(A)",
+        "Sí: toda base canónica está en la imagen",
+        "No se puede saber",
+        "Sí, con c₁ = c₂ = 1"
+       ]
+      },
+      {
+       "p": "¿Cuál fue el error?",
+       "o": [
+        "Tomó las columnas de rref(A) en vez de las columnas originales de A",
+        "Contó mal los pivotes",
+        "Escalonó mal",
+        "Usó filas en vez de columnas de A",
+        "No hay error"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Escribe \\(b=(2,5,3)\\) como \\(c_1(1,2,1)+c_2(1,3,2)\\)",
+       "f": [
+        {
+         "l": "c₁",
+         "a": 1
+        },
+        {
+         "l": "c₂",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "De las ecuaciones 2 y 3: \\(2c_1+3c_2=0\\), \\(c_1+2c_2=0\\) ⇒ \\(c_1=c_2=0\\), que no cumple \\(c_1+c_2=1\\).",
+      "Los pivotes se leen en rref(A), pero los vectores salen de A: base \\(\\{(1,2,1),(1,3,2)\\}\\).",
+      "\\((2,5,3)\\) \\(=(1,2,1)+(1,3,2)\\): sí está en la imagen (en MATLAB, rank([A b]) = rank(A))."
+     ],
+     "ans": "(1, 0, 0) ∉ Im T; base correcta {(1, 2, 1), (1, 3, 2)}; c₁ = c₂ = 1",
+     "hint": "Las operaciones de fila cambian el espacio columna.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "img"
+      ],
+      [
+       "img"
+      ],
+      [
+       "img"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e14",
+     "lvl": 2,
+     "title": "¿Dónde está el error? (núcleo trivial)",
+     "q": "<p>Para \\(A=\\begin{pmatrix}3&-6\\\\-1&2\\end{pmatrix}\\) un estudiante escribe: «Como A es 2 × 2, \\(Av=0\\) solo tiene la solución trivial; el núcleo es \\(\\{0\\}\\)».</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Base del núcleo: vector con \\(y=1\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Dimensiones reales",
+       "f": [
+        {
+         "l": "nulidad",
+         "a": 1
+        },
+        {
+         "l": "rango",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "p": "¿Qué error conceptual cometió?",
+       "o": [
+        "Creer que toda matriz cuadrada tiene núcleo trivial: solo pasa si \\(\\det A\\neq0\\)",
+        "Escalonó mal la matriz",
+        "Confundió núcleo e imagen",
+        "Usó el teorema de la dimensión al revés",
+        "No hay error"
+       ]
+      }
+     ],
+     "steps": [
+      "La fila 1 es \\(-3\\) veces la fila 2: queda \\(x-2y=0\\) con y libre.",
+      "\\(\\ker T\\) \\(=\\operatorname{Gen}\\{(2,1)\\}\\): nulidad 1, y por rango–nulidad, rango \\(2-1=1\\).",
+      "\\(\\det A=6-6=0\\): por eso el núcleo no es trivial."
+     ],
+     "ans": "ker T = Gen{(2, 1)}; nulidad 1, rango 1",
+     "hint": "Calcula el determinante.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ker"
+      ],
+      [
+       "rnT"
+      ],
+      [
+       "inyec"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e15",
+     "lvl": 1,
+     "title": "Teorema de la dimensión",
+     "q": "<p>Responde sin calcular matrices (checkpoints y «Comprueba tu aprendizaje» de la guía S10).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Completa",
+       "f": [
+        {
+         "l": "T: R⁴ → R³ con nulidad 2 ⇒ dim Im T",
+         "a": 2
+        },
+        {
+         "l": "T: R⁵ → R³ con rango 3 ⇒ nulidad",
+         "a": 2
+        },
+        {
+         "l": "T: R² → R⁵ ⇒ rango máximo",
+         "a": 2,
+         "e": "El rango no supera min(n, m)."
+        },
+        {
+         "l": "T: R³ → R² con dim ker T = 1 ⇒ dim Im T",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Rango + nulidad = n (dimensión del <strong>dominio</strong>): \\(4-2=2\\); \\(5-3=2\\); \\(3-1=2\\).",
+      "\\(\\operatorname{rango}\\le\\min(n,m)\\) \\(=\\min(2,5)=2\\)."
+     ],
+     "ans": "2; 2; 2; 2",
+     "hint": "n es el número de columnas (el dominio).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rnT"
+      ],
+      [
+       "rnT"
+      ]
+     ]
+    },
+    {
+     "id": "s10e16",
+     "lvl": 1,
+     "title": "¿Pierde información?",
+     "q": "<p>Clasifica cada transformación según si su núcleo es \\(\\{0\\}\\) (no pierde información) o no.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Pierde información?",
+       "cats": [
+        "No pierde: ker T = {0}",
+        "Pierde: ker T ≠ {0}"
+       ],
+       "items": [
+        {
+         "x": "Reflexión \\(\\operatorname{diag}(1,-1)\\)",
+         "c": 0
+        },
+        {
+         "x": "Escalamiento \\(\\operatorname{diag}(2,\\frac12)\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\operatorname{diag}(1,0)\\)",
+         "c": 1,
+         "e": "Manda e₂ a 0: es una proyección."
+        },
+        {
+         "x": "Rotación \\(R_\\theta\\)",
+         "c": 0
+        },
+        {
+         "x": "\\((x,y,z)\\mapsto(x,y,0)\\)",
+         "c": 1,
+         "e": "Todo el eje z va a 0."
+        },
+        {
+         "x": "\\(\\begin{pmatrix}1&3\\\\2&6\\end{pmatrix}\\)",
+         "c": 1,
+         "e": "Columnas proporcionales: det = 0 y ker = Gen{(−3, 1)}."
+        },
+        {
+         "x": "\\(\\operatorname{diag}(3,-2)\\)",
+         "c": 0,
+         "e": "Factores no nulos: det = −6 ≠ 0."
+        },
+        {
+         "x": "\\(T:\\mathbb R^3\\to\\mathbb R^2\\)",
+         "c": 1,
+         "e": "Rango ≤ 2, así que nulidad ≥ 3 − 2 = 1."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\ker T=\\{0\\}\\) \\(\\iff\\) rango = n \\(\\iff\\) (cuadrada) \\(\\det\\neq0\\).",
+      "Reflexiones, rotaciones y escalamientos con factores no nulos no pierden nada; proyecciones y matrices con columnas dependientes sí.",
+      "De \\(\\mathbb R^3\\) a \\(\\mathbb R^2\\) siempre se pierde algo: no caben 3 direcciones independientes en un plano."
+     ],
+     "ans": "No pierden: reflexión, diag(2,½), rotación, diag(3,−2). Pierden: diag(1,0), proyección a xy, [[1,3],[2,6]], R³ → R²",
+     "hint": "¿Alguna dirección va a 0?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inyec"
+      ],
+      [
+       "refl",
+       "rot",
+       "proy"
+      ],
+      [
+       "rnT"
+      ]
+     ]
+    },
+    {
+     "id": "s10e17",
+     "lvl": 3,
+     "title": "IRVA: espejos y lentes",
+     "q": "<p>Un instrumento óptico aplica a un rayo, en orden: un giro de 45° antihorario \\(A_g\\), una reflexión respecto al eje y \\(A_r\\) y una proyección sobre el eje x \\(A_p\\). El rayo de entrada es \\(v=\\left(\\frac{\\sqrt2}2,\\ -\\frac{\\sqrt2}2\\right)\\) (guía S10, Modelo IRVA 1).</p>",
+     "checks": [
+      {
+       "p": "I · ¿Qué matriz representa todo el instrumento?",
+       "o": [
+        "\\(M=A_pA_rA_g\\)",
+        "\\(M=A_gA_rA_p\\)",
+        "\\(M=A_rA_gA_p\\)",
+        "\\(M=A_p+A_r+A_g\\)",
+        "\\(M=A_gA_pA_r\\)"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "R/V · \\(Mv\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": -1
+        },
+        {
+         "l": "y",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "V · Dimensiones de M",
+       "f": [
+        {
+         "l": "rango",
+         "a": 1,
+         "e": "La última etapa es una proyección: la imagen cabe en el eje x."
+        },
+        {
+         "l": "nulidad",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "p": "A · ¿Qué describe \\(\\ker A_p\\)?",
+       "o": [
+        "El eje y: \\(\\operatorname{Gen}\\{(0,1)\\}\\)",
+        "El eje x: \\(\\operatorname{Gen}\\{(1,0)\\}\\)",
+        "\\(\\{0\\}\\)",
+        "Todo \\(\\mathbb R^2\\)",
+        "La recta \\(y=x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Primero el giro: \\(A_gv=(1,0)\\). Luego la reflexión: \\((-1,0)\\). La proyección lo deja igual: \\(Mv=(-1,0)\\).",
+      "\\(M=A_pA_rA_g\\) \\(=\\begin{pmatrix}-\\frac{\\sqrt2}2&\\frac{\\sqrt2}2\\\\0&0\\end{pmatrix}\\): la segunda fila es nula ⇒ rango 1, nulidad 1, \\(\\ker M\\) \\(=\\operatorname{Gen}\\{(1,1)\\}\\).",
+      "La componente y final es 0 porque la proyección borra la dirección vertical: se pierde información. Ojo: la clave de la guía calcula solo \\(A_rA_g\\) (rango 2); con la proyección incluida, el rango es 1.",
+      "\\(\\ker A_p\\) \\(=\\operatorname{Gen}\\{(0,1)\\}\\): todo lo vertical se anula."
+     ],
+     "ans": "M = ApArAg; Mv = (−1, 0); rango 1; ker Ap = eje y",
+     "hint": "La primera transformación aplicada va a la derecha.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ],
+      [
+       "rot",
+       "refl"
+      ],
+      [
+       "proy",
+       "rnT"
+      ],
+      [
+       "proy",
+       "ker"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e18",
+     "lvl": 2,
+     "title": "IRVA: cámaras de vigilancia",
+     "q": "<p>Una cámara proyecta la posición \\((x,y,z)\\) de un objeto sobre la pantalla (plano xy): \\(T(x,y,z)\\) \\(=(x,y,0)\\) (guía S10, Modelo IRVA 2).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "R · Matriz estándar",
+       "a": [
+        [
+         1,
+         0,
+         0
+        ],
+        [
+         0,
+         1,
+         0
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "V · Dimensiones",
+       "f": [
+        {
+         "l": "nulidad",
+         "a": 1
+        },
+        {
+         "l": "rango",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "p": "A · ¿Qué representan los vectores del núcleo?",
+       "o": [
+        "Desplazamientos solo en altura \\((0,0,z)\\): la cámara no distingue dos objetos que difieren solo en z",
+        "Los objetos que están en el suelo",
+        "Los puntos de la pantalla",
+        "Solo el origen",
+        "Objetos fuera de cámara"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=\\operatorname{diag}(1,1,0)\\). \\(Av=0\\) ⇒ \\(x=y=0\\), z libre: \\(\\ker T\\) \\(=\\operatorname{Gen}\\{(0,0,1)\\}\\).",
+      "\\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{e_1,e_2\\}\\) (el plano xy): rango 2, y \\(1+2=3\\) ✓.",
+      "Si dos objetos difieren en \\((0,0,h)\\), su diferencia está en el núcleo: dan la misma imagen."
+     ],
+     "ans": "A = diag(1, 1, 0); ker = eje z; nulidad 1, rango 2",
+     "hint": "¿Qué coordenada se borra?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proy",
+       "mest"
+      ],
+      [
+       "rnT"
+      ],
+      [
+       "ker"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e19",
+     "lvl": 2,
+     "title": "IRVA: brazo robótico",
+     "q": "<p>Un brazo robótico estira el eje x por 3 y refleja y escala el eje y por 2 (guía S10, Modelo IRVA 3). La pieza está en \\(v=(2,3)\\).</p>",
+     "checks": [
+      {
+       "t": "mat",
+       "p": "R · Matriz estándar",
+       "a": [
+        [
+         3,
+         0
+        ],
+        [
+         0,
+         -2
+        ]
+       ],
+       "l": "\\(A=\\)"
+      },
+      {
+       "t": "num",
+       "p": "V · \\(Av\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": 6
+        },
+        {
+         "l": "y",
+         "a": -6
+        }
+       ]
+      },
+      {
+       "p": "A · ¿Se puede recuperar la posición original?",
+       "o": [
+        "Sí: \\(\\det A=-6\\neq0\\), \\(\\ker A=\\{0\\}\\) y rango 2",
+        "No: \\(\\ker A\\neq\\{0\\}\\)",
+        "No: toda reflexión pierde información",
+        "Solo la coordenada x",
+        "Depende de v"
+       ]
+      }
+     ],
+     "steps": [
+      "Escalamiento \\(\\operatorname{diag}(3,1)\\) y reflexión con escala \\(\\operatorname{diag}(1,-2)\\): juntas, \\(A=\\operatorname{diag}(3,-2)\\).",
+      "\\(Av=(3\\cdot2,\\ -2\\cdot3)\\) \\(=(6,-6)\\).",
+      "Diagonal sin ceros: columnas LI, núcleo \\(\\{0\\}\\), rango 2. Se recupera con \\(A^{-1}\\) \\(=\\operatorname{diag}(\\frac13,-\\frac12)\\)."
+     ],
+     "ans": "A = diag(3, −2); Av = (6, −6); sí se recupera",
+     "hint": "Cada coordenada se multiplica por su factor.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "escl",
+       "refl"
+      ],
+      [
+       "escl"
+      ],
+      [
+       "inyec"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e20",
+     "lvl": 3,
+     "title": "IRVA: cámara cenital (laboratorio)",
+     "q": "<p>Una cámara registra piezas \\(p=(x,y,z)\\) en tres etapas: <b>F</b> espejo del sensor (reflexión respecto del plano xz), <b>S</b> ajuste a pantalla (escala ½ en x e y; z igual) y <b>R</b> rotación de 90° antihoraria alrededor del eje z (laboratorio S10).</p>",
+     "checks": [
+      {
+       "p": "R · La transformación completa es…",
+       "o": [
+        "\\(M=RSF\\)",
+        "\\(M=FSR\\)",
+        "\\(M=SRF\\)",
+        "\\(M=F+S+R\\)",
+        "\\(M=RFS^{-1}\\)"
+       ]
+      },
+      {
+       "t": "mat",
+       "p": "Calcula M",
+       "a": [
+        [
+         0,
+         "1/2",
+         0
+        ],
+        [
+         "1/2",
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         1
+        ]
+       ],
+       "l": "\\(M=\\)"
+      },
+      {
+       "t": "num",
+       "p": "V · \\(Mp_1\\) para \\(p_1=(10,4,0)\\)",
+       "f": [
+        {
+         "l": "1ª",
+         "a": 2
+        },
+        {
+         "l": "2ª",
+         "a": 5
+        },
+        {
+         "l": "3ª",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "V · Pieza que produce el registro \\((3,-1,2)\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": -2
+        },
+        {
+         "l": "y",
+         "a": 6
+        },
+        {
+         "l": "z",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "p": "A · \\(p_2=(10,4,15)\\) está encima de \\(p_1\\). ¿Tienen el mismo registro?",
+       "o": [
+        "No: \\(\\ker M=\\{0\\}\\) y \\(p_2-p_1=(0,0,15)\\notin\\ker M\\)",
+        "Sí: la cámara no ve la altura",
+        "Sí: \\(p_2-p_1\\in\\ker M\\)",
+        "Solo si z = 0",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "F actúa primero, así que va a la derecha: \\(M=RSF\\), con \\(F=\\operatorname{diag}(1,-1,1)\\), \\(S=\\operatorname{diag}(\\frac12,\\frac12,1)\\), \\(R=\\begin{pmatrix}0&-1&0\\\\1&0&0\\\\0&0&1\\end{pmatrix}\\).",
+      "\\(M=\\begin{pmatrix}0&\\frac12&0\\\\\\frac12&0&0\\\\0&0&1\\end{pmatrix}\\).",
+      "\\(Mp_1=(2,5,0)\\) y \\(Mp_2=(2,5,15)\\): distintos.",
+      "\\(Mx=(3,-1,2)\\): \\(\\frac y2=3\\), \\(\\frac x2=-1\\), \\(z=2\\) ⇒ \\(x=(-2,6,2)\\).",
+      "\\(\\det F=-1\\), \\(\\det S=\\frac14\\), \\(\\det R=1\\): ninguna etapa pierde información; \\(\\operatorname{rref}(M)=I\\), rango 3."
+     ],
+     "ans": "M = RSF = [[0, ½, 0], [½, 0, 0], [0, 0, 1]]; Mp₁ = (2, 5, 0); x = (−2, 6, 2)",
+     "hint": "Escribe cada etapa con sus T(eᵢ) y multiplica R·S·F.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "comp"
+      ],
+      [
+       "comp",
+       "rot"
+      ],
+      [
+       "mest"
+      ],
+      [
+       "img"
+      ],
+      [
+       "inyec"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e21",
+     "lvl": 3,
+     "title": "Dron agrícola (EP 2026-1)",
+     "q": "<p>El sistema de puntería de un dron se modela con \\(T:\\mathbb R^3\\) \\(\\to\\mathbb R^2\\), con \\(T(e_1)=(1,-2)\\), \\(T(e_2)=(-3,6)\\), \\(T(e_3)=(2,-4)\\) (reto del Examen Parcial 2026-1).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "a) Punto de impacto \\(T(2,1,5)\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": 9
+        },
+        {
+         "l": "y",
+         "a": -18
+        }
+       ]
+      },
+      {
+       "p": "b.1) ¿\\(u=(1,1,1)\\) está en \\(\\ker T\\)?",
+       "o": [
+        "Sí: \\(T(1,1,1)=(0,0)\\)",
+        "No: \\(T(1,1,1)=(1,-2)\\)",
+        "No: el núcleo es {0}",
+        "Solo si z = 0",
+        "No se puede saber"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "b.3) Valor de k para que \\(q=(k,-2)\\) esté en \\(\\operatorname{Im}T\\)",
+       "f": [
+        {
+         "l": "k",
+         "a": 1,
+         "e": "Toda la imagen está sobre la recta generada por (1, −2)."
+        }
+       ]
+      },
+      {
+       "t": "mat",
+       "p": "c) Matriz de \\(S=R_XT\\) (luego se refleja respecto al eje X)",
+       "a": [
+        [
+         1,
+         -3,
+         2
+        ],
+        [
+         2,
+         -6,
+         4
+        ]
+       ],
+       "l": "\\(R_XA=\\)"
+      }
+     ],
+     "steps": [
+      "\\(A=\\begin{pmatrix}1&-3&2\\\\-2&6&-4\\end{pmatrix}\\), \\(T(x,y,z)\\) \\(=(x-3y+2z,\\ -2x+6y-4z)\\); \\(T(2,1,5)=(9,-18)\\).",
+      "\\(T(1,1,1)\\) \\(=(1-3+2,\\ -2+6-4)\\) \\(=(0,0)\\) ⇒ \\(u\\in\\ker T\\).",
+      "Todas las columnas son múltiplos de \\((1,-2)\\): \\(\\operatorname{Im}T\\) \\(=\\operatorname{Gen}\\{(1,-2)\\}\\). \\(p=(3,-6)\\) \\(=3(1,-2)\\) sí está; \\((k,-2)\\) solo si \\(k=1\\).",
+      "\\(R_X=\\operatorname{diag}(1,-1)\\) cambia el signo de la 2.ª fila: \\(\\begin{pmatrix}1&-3&2\\\\2&-6&4\\end{pmatrix}\\)."
+     ],
+     "ans": "T(2, 1, 5) = (9, −18); u ∈ ker T; k = 1; RXA = [[1, −3, 2], [2, −6, 4]]",
+     "hint": "Las columnas son T(e₁), T(e₂), T(e₃).",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "mest"
+      ],
+      [
+       "ker"
+      ],
+      [
+       "img"
+      ],
+      [
+       "comp",
+       "refl"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e22",
+     "lvl": 2,
+     "title": "Rotaciones ortogonales (EA5 2024-0)",
+     "q": "<p>Toda matriz de rotación \\(R_\\theta\\) es ortogonal (reto de la EA5 2024-0).</p>",
+     "checks": [
+      {
+       "p": "¿Por qué?",
+       "o": [
+        "Sus columnas \\((\\cos\\theta,\\sin\\theta)\\) y \\((-\\sin\\theta,\\cos\\theta)\\) son ortogonales y de norma 1",
+        "Porque \\(\\det R_\\theta=0\\)",
+        "Porque es simétrica",
+        "Porque sus entradas son menores que 1",
+        "Porque \\(R_\\theta^2=I\\)"
+       ]
+      },
+      {
+       "t": "tlc",
+       "p": "Arma el giro que transforma \\((1,0)\\) en \\((0,1)\\).",
+       "a": [
+        [
+         0,
+         -1
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "e": "Si e₁ va a (0, 1), el giro es de 90° antihorario: e₂ va a (−1, 0)."
+      }
+     ],
+     "steps": [
+      "\\((\\cos\\theta,\\sin\\theta)\\cdot(-\\sin\\theta,\\cos\\theta)\\) \\(=0\\) y cada columna tiene norma \\(\\cos^2\\theta+\\sin^2\\theta=1\\) ⇒ \\(R^TR=I\\).",
+      "\\(e_1\\mapsto(0,1)\\) es \\(\\theta=90^\\circ\\): \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)."
+     ],
+     "ans": "Columnas ortonormales; [[0, −1], [1, 0]]",
+     "hint": "Producto punto de las columnas.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10e23",
+     "lvl": 2,
+     "title": "Ticket de salida",
+     "q": "<p>Preguntas del ticket de salida de teoría y laboratorio S10.</p>",
+     "checks": [
+      {
+       "p": "\\(\\operatorname{diag}(1,-1,1)\\) en \\(\\mathbb R^3\\) produce…",
+       "o": [
+        "Una reflexión respecto del plano xz",
+        "Una reflexión respecto del eje y",
+        "Una proyección sobre el plano xz",
+        "Una rotación de 180° alrededor de y",
+        "Un escalamiento por −1"
+       ]
+      },
+      {
+       "p": "\\(T:\\mathbb R^3\\to\\mathbb R^2\\) tiene rango 2 y \\(T(p)=T(q)\\) con \\(p\\neq q\\). Entonces…",
+       "o": [
+        "\\(p-q\\) está en \\(\\ker T\\), que es una recta (nulidad 1)",
+        "\\(p=q\\), contradicción",
+        "\\(p+q\\in\\ker T\\)",
+        "\\(\\ker T=\\{0\\}\\)",
+        "\\(p-q\\in\\operatorname{Im}T\\)"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Para \\(R_{90^\\circ}\\), ¿qué entrada produce \\((1,1)\\)?",
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "y",
+         "a": -1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Solo la coordenada y cambia de signo: el plano xz queda fijo (espejo).",
+      "\\(T(p-q)=0\\) ⇒ \\(p-q\\in\\ker T\\); nulidad \\(3-2=1\\).",
+      "\\(R^{-1}=R^T\\): \\(R^T(1,1)\\) \\(=(1,-1)\\), y en efecto \\(R(1,-1)=(1,1)\\). La rotación tiene imagen \\(\\mathbb R^2\\)."
+     ],
+     "ans": "Reflexión en el plano xz; p − q ∈ ker T; (1, −1)",
+     "hint": "Usa R⁻¹ = Rᵀ.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "refl"
+      ],
+      [
+       "ker",
+       "rnT"
+      ],
+      [
+       "rot"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10n1",
+     "lvl": 2,
+     "title": "Reconoce la transformación (interactivo)",
+     "q": "<p>Haz que la «F» coincida con la figura punteada arrastrando \\(T(e_1)\\) y \\(T(e_2)\\).</p>",
+     "checks": [
+      {
+       "t": "tlc",
+       "p": "Figura 1: la F quedó aplastada sobre el eje x (la meta punteada es un segmento).",
+       "a": [
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "ghost": true,
+       "e": "La F quedó aplastada sobre el eje x: proyección, e₂ ↦ (0, 0)."
+      },
+      {
+       "t": "tlc",
+       "p": "Figura 2",
+       "a": [
+        [
+         0,
+         -1
+        ],
+        [
+         -1,
+         0
+        ]
+       ],
+       "ghost": true,
+       "e": "Reflexión en y = −x: e₁ ↦ (0, −1), e₂ ↦ (−1, 0)."
+      },
+      {
+       "t": "tlc",
+       "p": "Figura 3",
+       "a": [
+        [
+         2,
+         0
+        ],
+        [
+         0,
+         -1
+        ]
+       ],
+       "ghost": true,
+       "e": "Estira ×2 en x y refleja en el eje x."
+      }
+     ],
+     "steps": [
+      "Proyección sobre el eje x: \\(\\begin{pmatrix}1&0\\\\0&0\\end{pmatrix}\\) (núcleo: el eje y).",
+      "Reflexión en \\(y=-x\\): \\(\\begin{pmatrix}0&-1\\\\-1&0\\end{pmatrix}\\).",
+      "\\(\\operatorname{diag}(2,-1)\\): escalamiento y reflexión."
+     ],
+     "ans": "diag(1, 0); [[0, −1], [−1, 0]]; diag(2, −1)",
+     "hint": "El palo vertical de la F sigue a e₂ y su brazo a e₁.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "proy"
+      ],
+      [
+       "refl"
+      ],
+      [
+       "escl",
+       "refl"
+      ]
+     ],
+     "chain": true
+    }
+   ],
+   "tools": [
+    {
+     "w": "tl",
+     "t": "Visualizador: ¿qué se pierde?",
+     "p": "Con A = [[1, 3], [2, 6]] todo el plano cae sobre la recta y = 2x: los vectores de Gen{(−3, 1)} van a 0. Prueba también los botones de reflexión, rotación y proyección.",
+     "o": {
+      "a": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        6
+       ]
+      ],
+      "v": [
+       -3,
+       1
+      ]
+     }
+    },
+    {
+     "w": "rref",
+     "t": "Escalonador: núcleo e imagen",
+     "p": "Matriz del laboratorio: mira las columnas pivote y la base del núcleo.",
+     "o": {
+      "m": [
+       [
+        1,
+        2,
+        1
+       ],
+       [
+        2,
+        4,
+        3
+       ],
+       [
+        1,
+        2,
+        2
+       ]
+      ],
+      "mode": "mat"
+     }
+    }
+   ]
   }
  ],
  "figs": {},
@@ -1317,6 +3238,60 @@
    "f": "Reflexión eje x \\(\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\) · Rotación 90° \\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
    "x": "Escalamiento horizontal: diag(k, 1). Proyección en el eje x: diag(1, 0).",
    "home": "s9"
+  },
+  "refl": {
+   "n": "Reflexión",
+   "f": "Eje x: \\(\\operatorname{diag}(1,-1)\\) · eje y: \\(\\operatorname{diag}(-1,1)\\) · \\(y=x\\): \\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\)",
+   "x": "Cambia la orientación (det = −1) y no pierde información: R² = I. La recta de reflexión queda fija.",
+   "home": "s10"
+  },
+  "escl": {
+   "n": "Escalamiento",
+   "f": "\\(\\operatorname{diag}(a,b)\\): \\((x,y)\\mapsto(ax,by)\\)",
+   "x": "|factor| > 1 expande, entre 0 y 1 contrae; un factor negativo además refleja. Un factor 0 ya es proyección.",
+   "home": "s10"
+  },
+  "rot": {
+   "n": "Rotación",
+   "f": "\\(R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}\\)",
+   "x": "Antihoraria; conserva longitudes y ángulos. RᵀR = I, det = 1, R⁻¹ = Rᵀ = R₋θ. El sentido se lee en Re₁ = (cos θ, sin θ).",
+   "home": "s10"
+  },
+  "proy": {
+   "n": "Proyección",
+   "f": "Sobre el eje x: \\(\\operatorname{diag}(1,0)\\)",
+   "x": "Conserva una dirección y manda otra a 0: pierde información (núcleo no trivial).",
+   "home": "s10"
+  },
+  "comp": {
+   "n": "Composición",
+   "f": "Primero \\(A_1\\), luego \\(A_2\\) ⇒ \\(A_2A_1\\)",
+   "x": "La primera transformación aplicada va a la derecha. En general A₂A₁ ≠ A₁A₂.",
+   "home": "s10"
+  },
+  "ker": {
+   "n": "Núcleo",
+   "f": "\\(\\ker T=\\{x: Ax=0\\}\\) \\(=\\operatorname{Nul}(A)\\)",
+   "x": "Vectores del dominio que T manda a 0. Se resuelve Ax = 0; su dimensión es la nulidad. Si T(p) = T(q), p − q ∈ ker T.",
+   "home": "s10"
+  },
+  "img": {
+   "n": "Imagen",
+   "f": "\\(\\operatorname{Im}T=\\operatorname{Col}(A)\\subseteq\\mathbb R^m\\)",
+   "x": "Salidas alcanzables. Base: columnas pivote de la A original (no de rref). Su dimensión es el rango. b ∈ Im T ⇔ Ax = b es consistente.",
+   "home": "s10"
+  },
+  "rnT": {
+   "n": "Rango–nulidad para T",
+   "f": "\\(\\dim\\operatorname{Im}T\\) \\(+\\dim\\ker T\\) \\(=n\\)",
+   "x": "n = dimensión del dominio (columnas de A). Además rango ≤ min(m, n).",
+   "home": "s10"
+  },
+  "inyec": {
+   "n": "¿Pierde información?",
+   "f": "\\(\\ker T=\\{0\\}\\iff\\) rango \\(=n\\)",
+   "x": "En matrices cuadradas: ⇔ det A ≠ 0. Si ker T ≠ {0}, entradas distintas dan la misma salida.",
+   "home": "s10"
   }
  },
  "simEx": [],
@@ -1324,40 +3299,54 @@
   "minutes": 30,
   "slots": [
    {
-    "pts": 5,
-    "name": "¿Es lineal?",
+    "pts": 4,
+    "name": "Sem. 9: ¿es lineal? y matriz estándar",
     "pool": [
      "s9e3",
-     "s9e8",
-     "s9e9",
-     "s9e13"
-    ]
-   },
-   {
-    "pts": 5,
-    "name": "Matriz estándar",
-    "pool": [
      "s9e5",
      "s9e6",
-     "s9e7",
+     "s9e8",
+     "s9e9",
+     "s9e13",
      "s9e14"
     ]
    },
    {
-    "pts": 5,
-    "name": "Linealidad desde otros vectores",
+    "pts": 4,
+    "name": "Sem. 10: transformaciones comunes y composición",
     "pool": [
-     "s9e12",
-     "s9e13",
-     "s9e15"
+     "s10e2",
+     "s10e4",
+     "s10e5",
+     "s10e6",
+     "s10e7",
+     "s10e22"
     ]
    },
    {
-    "pts": 5,
+    "pts": 6,
+    "name": "Sem. 10: núcleo, imagen y rango–nulidad",
+    "pool": [
+     "s10e8",
+     "s10e9",
+     "s10e10",
+     "s10e11",
+     "s10e12",
+     "s10e13",
+     "s10e14"
+    ]
+   },
+   {
+    "pts": 6,
     "name": "Aplicación IRVA",
     "pool": [
      "s9e11",
-     "s9e12"
+     "s9e12",
+     "s10e17",
+     "s10e18",
+     "s10e19",
+     "s10e20",
+     "s10e21"
     ]
    }
   ]

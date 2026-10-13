@@ -8,8 +8,8 @@
  "short": "Examen final",
  "sub": "Todo el curso",
  "free": true,
- "intro": "Repaso acumulado del curso con todos los temas abiertos. Primero lo del parcial y luego <b>la semana 9: fundamentos de visualización</b> (gráfico o tabla, contexto, elegir el gráfico por objetivo, escalas y sesgos, títulos y jerarquía visual), que pesa más en el simulacro. Ahora con gráficos de verdad: los auditas tocándolos, los arreglas con interruptores y escribes SQL que se ejecuta y se corrige solo. Se actualiza cada semana.",
- "form": "<p class=\"note\">Hoja de repaso del examen final: lo del parcial (datos, SQL, limpieza y descriptivo) y, desde la semana 9, visualización.</p><div class=\"fgrid\"><div><b>Gráfico o tabla</b><br>Patrón → gráfico · valor exacto → tabla</div><div><b>Contexto</b><br>Audiencia · decisión · idea en una frase</div><div><b>Comparar</b><br>Barras ordenadas</div><div><b>Tendencia</b><br>Líneas (revisa la cobertura del periodo)</div><div><b>Relación</b><br>Dispersión (también descarta hipótesis)</div><div><b>Composición</b><br>Barras · apiladas al 100 % entre grupos · pastel solo 2–3 partes</div><div><b>Escalas</b><br>Barras desde 0 · eje truncado exagera</div><div><b>Sesgos</b><br>3D · doble eje · colores engañosos · cherry picking · datos incompletos</div><div><b>Claridad</b><br>Título = conclusión · un color de énfasis · sin desorden</div><div><b>5 segundos</b><br>¿Qué se lleva el lector?</div></div>",
+ "intro": "Repaso acumulado del curso con todos los temas abiertos. Primero lo del parcial, luego <b>la semana 9: fundamentos de visualización</b> (gráfico o tabla, contexto, elegir el gráfico, escalas y sesgos, jerarquía visual) y <b>la semana 10: inteligencia de negocios</b> (conectar los datos, modelo estrella validado contra SQL y medidas DAX con KPI y semáforo), que pesan más en el simulacro. Ahora con gráficos de verdad: los auditas tocándolos, los arreglas con interruptores y escribes SQL que se ejecuta y se corrige solo. Se actualiza cada semana.",
+ "form": "<p class=\"note\">Hoja de repaso del examen final: lo del parcial (datos, SQL, limpieza y descriptivo) y, desde la semana 9, visualización e inteligencia de negocios.</p><div class=\"fgrid\"><div><b>Gráfico o tabla</b><br>Patrón → gráfico · valor exacto → tabla</div><div><b>Contexto</b><br>Audiencia · decisión · idea en una frase</div><div><b>Comparar</b><br>Barras ordenadas</div><div><b>Tendencia</b><br>Líneas (revisa la cobertura del periodo)</div><div><b>Relación</b><br>Dispersión (también descarta hipótesis)</div><div><b>Composición</b><br>Barras · apiladas al 100 % entre grupos · pastel solo 2–3 partes</div><div><b>Escalas</b><br>Barras desde 0 · eje truncado exagera</div><div><b>Sesgos</b><br>3D · doble eje · colores engañosos · cherry picking · datos incompletos</div><div><b>Claridad</b><br>Título = conclusión · un color de énfasis · sin desorden</div><div><b>5 segundos</b><br>¿Qué se lleva el lector?</div><div><b>Modelo estrella</b><br>Hechos al centro · relaciones 1 : * dirección única</div><div><b>Control</b><br>Tarjetas = SQL (Recuento, no Suma)</div><div><b>Ticket</b><br>DIVIDE([Ventas], [Transacciones])</div><div><b>Clientes</b><br>DISTINCTCOUNT (no se suma entre tiendas)</div><div><b>% del total</b><br>CALCULATE + ALL(dimensión del eje)</div><div><b>Tiempo</b><br>DATEADD con Calendario · ojo con meses incompletos</div><div><b>KPI</b><br>Meta + semáforo SWITCH(TRUE(), …)</div><div><b>Modelo estrella</b><br>Hechos al centro · relaciones 1 : * dirección única</div><div><b>Control</b><br>Tarjetas = SQL (Recuento, no Suma)</div><div><b>Ticket</b><br>DIVIDE([Ventas], [Transacciones])</div><div><b>Clientes</b><br>DISTINCTCOUNT (no se suma entre tiendas)</div><div><b>% del total</b><br>CALCULATE + ALL(dimensión del eje)</div><div><b>Tiempo</b><br>DATEADD con Calendario · ojo con meses incompletos</div><div><b>KPI</b><br>Meta + semáforo SWITCH(TRUE(), …)</div><div><b>Modelo estrella</b><br>Hechos al centro · relaciones 1 : * dirección única</div><div><b>Control</b><br>Tarjetas = SQL (Recuento, no Suma)</div><div><b>Ticket</b><br>DIVIDE([Ventas], [Transacciones])</div><div><b>Clientes</b><br>DISTINCTCOUNT (no se suma entre tiendas)</div><div><b>% del total</b><br>CALCULATE + ALL(dimensión del eje)</div><div><b>Tiempo</b><br>DATEADD con Calendario · ojo con meses incompletos</div><div><b>KPI</b><br>Meta + semáforo SWITCH(TRUE(), …)</div></div>",
  "topics": [
   {
    "id": "tipos",
@@ -5360,6 +5360,1399 @@
      }
     }
    ]
+  },
+  {
+   "id": "v10mod",
+   "name": "Sem. 10 · BI: conexión y modelo estrella",
+   "teo": "<p>Una <strong>plataforma de BI</strong> (Power BI, Looker Studio) conecta los datos, los organiza en un <strong>modelo</strong> y deja que la gerencia filtre por tienda, mes o categoría sin pedir un reporte nuevo.</p><p><b>1. Conectar.</b> Obtener datos → SQL Server (o Excel) en modo <em>Importar</em>. Antes de cargar, revisar en Power Query el <strong>tipo de cada columna</strong>: IDs como número entero, montos y precios como decimal, fechas como Fecha (no texto ni fecha/hora).</p><p><b>2. Modelo estrella.</b> Al centro la <strong>tabla de hechos</strong> (Ventas: una fila por venta, el grano más fino) y alrededor las <strong>dimensiones</strong> (Tiendas, Productos, Clientes, Calendario). Cada relación va de la dimensión a los hechos: <strong>uno a varios (1 : *)</strong> y filtro en dirección <strong>única</strong>. Nada de muchos a muchos ni relaciones inactivas.</p><p><b>3. Calendario.</b> Una tabla de fechas propia (CALENDAR), marcada como tabla de fechas y relacionada con Ventas[Fecha_venta]. La columna Mes es texto: se ordena por Año_mes para que «abr-26» no salga antes que «ago-25».</p><p><b>4. ¿El modelo cuadra con SQL?</b> Antes de graficar, una página <em>Control</em> con tarjetas que deben dar lo mismo que SQL: recuentos, suma de Monto y Cantidad, rango de fechas y ventas sin tienda.</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"N.º ventas\", \"Tiendas\", \"Productos\", \"Clientes\"], \"values\": [2000, 8, 52, 200], \"vals\": true, \"title\": \"Controles: recuentos que deben cuadrar\"}'></div>",
+   "form": [
+    "IDs: número entero · montos: decimal · fechas: Fecha",
+    "Hechos = 1 fila por evento · dimensiones = catálogos",
+    "Relaciones 1 : * con dirección única",
+    "Calendario marcada como tabla de fechas",
+    "Mes ordenado por Año_mes",
+    "Control: COUNT, SUM y MIN/MAX iguales a SQL"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Un tablero bonito con un modelo mal armado da números falsos con total seguridad. Por eso primero se <strong>modela y se valida</strong> contra SQL, y recién después se grafica.</p><h3>Controles del caso</h3><ul><li>N.º de ventas: <b>2 000</b> · tiendas / productos / clientes: <b>8 / 52 / 200</b>.</li><li>Ventas totales: <b>S/ 33 645,83</b> · unidades: <b>6 067</b>.</li><li>Fechas: <b>01/08/2025 – 14/08/2026</b> · ventas sin tienda: <b>0</b>.</li></ul><h3>Cómo leer los síntomas</h3><ul><li>Todas las tiendas con el mismo total → falta (o está inactiva) la relación Tiendas–Ventas.</li><li>ID_venta = 2 001 000 → la tarjeta está en <em>Suma</em>, no en <em>Recuento</em>.</li><li>Monto = S/ 67 291,66 → Ventas se cargó dos veces.</li><li>Fecha máxima 31/08/2026 → se usó la fecha de Calendario.</li></ul><div class=\"err\"><b>Error común:</b> arrastrar un ID a una tarjeta y dejarlo en Suma; o leer «33,65 mil» como error (es el mismo valor con unidades de visualización).</div>",
+   "ex": [
+    {
+     "id": "v10m1",
+     "lvl": 1,
+     "title": "Tipos de datos en Power Query",
+     "q": "<p class=\"note\">Caso del laboratorio: cadena retail de 8 tiendas en Lima, base <b>DVN_Retail</b> con Tiendas (8), Productos (52), Clientes (200) y Ventas (2 000, del 01/08/2025 al 14/08/2026).</p><p>Antes de cargar, revisas el tipo de cada columna.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Asigna el tipo correcto",
+       "cats": [
+        "Número entero",
+        "Número decimal",
+        "Fecha",
+        "Texto"
+       ],
+       "items": [
+        {
+         "x": "ID_tienda",
+         "c": 0
+        },
+        {
+         "x": "ID_cliente",
+         "c": 0
+        },
+        {
+         "x": "Monto",
+         "c": 1
+        },
+        {
+         "x": "Precio_unitario",
+         "c": 1,
+         "e": "Si queda como texto no se puede sumar ni dar formato S/."
+        },
+        {
+         "x": "Fecha_venta",
+         "c": 2,
+         "e": "Fecha (no Fecha/hora ni Texto): si no, falla la jerarquía y la relación con Calendario."
+        },
+        {
+         "x": "Fecha_registro",
+         "c": 2
+        },
+        {
+         "x": "Nombre_tienda",
+         "c": 3
+        },
+        {
+         "x": "Categoria",
+         "c": 3
+        }
+       ]
+      },
+      {
+       "p": "Si ID_tienda queda como texto en Ventas y como número en Tiendas, ¿qué pasa?",
+       "o": [
+        "La relación no se crea (texto vs número)",
+        "Nada: Power BI convierte solo",
+        "Se suman mal los montos",
+        "Las fechas fallan",
+        "El gráfico sale en 3D"
+       ]
+      }
+     ],
+     "steps": [
+      "IDs → número entero; Monto, Precio_unitario, Precio → decimal; fechas → Fecha; nombres y categorías → texto.",
+      "Las claves de una relación deben tener el mismo tipo en ambas tablas."
+     ],
+     "ans": "IDs entero · montos decimal · fechas Fecha · nombres texto",
+     "hint": "¿Con qué vas a operar y con qué vas a relacionar?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "bitipos"
+      ],
+      [
+       "bitipos",
+       "birel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10m2",
+     "lvl": 1,
+     "title": "Hechos y dimensiones",
+     "q": "<p class=\"note\">Caso del laboratorio: cadena retail de 8 tiendas en Lima, base <b>DVN_Retail</b> con Tiendas (8), Productos (52), Clientes (200) y Ventas (2 000, del 01/08/2025 al 14/08/2026).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Hechos o dimensión?",
+       "cats": [
+        "Tabla de hechos",
+        "Dimensión"
+       ],
+       "items": [
+        {
+         "x": "Ventas (una fila por venta)",
+         "c": 0
+        },
+        {
+         "x": "Tiendas",
+         "c": 1
+        },
+        {
+         "x": "Productos",
+         "c": 1
+        },
+        {
+         "x": "Clientes",
+         "c": 1
+        },
+        {
+         "x": "Calendario",
+         "c": 1,
+         "e": "Es la dimensión de tiempo: una fila por día."
+        }
+       ]
+      },
+      {
+       "p": "¿Por qué el modelo se llama «estrella»?",
+       "o": [
+        "Los hechos están al centro y cada dimensión se une a ellos con una relación 1 : *",
+        "Porque tiene 5 tablas",
+        "Porque todas las tablas se relacionan entre sí",
+        "Por las relaciones muchos a muchos",
+        "Porque usa colores"
+       ]
+      }
+     ],
+     "steps": [
+      "Ventas registra eventos (con montos y cantidades): es la tabla de hechos. Las demás describen el quién, qué, dónde y cuándo.",
+      "Dimensiones alrededor, hechos al centro: forma de estrella."
+     ],
+     "ans": "Ventas = hechos; Tiendas, Productos, Clientes, Calendario = dimensiones",
+     "hint": "¿Qué tabla crece cada día?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "biestrella"
+      ],
+      [
+       "biestrella"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10m3",
+     "lvl": 1,
+     "title": "Cardinalidad y dirección",
+     "q": "<p>En la vista de modelo, haces doble clic en la línea entre Tiendas[ID_tienda] y Ventas[ID_tienda].</p>",
+     "checks": [
+      {
+       "p": "¿Cómo debe quedar la relación?",
+       "o": [
+        "Uno a varios (1 : *), dirección única",
+        "Muchos a muchos, dirección doble",
+        "Uno a uno, dirección única",
+        "Varios a uno desde Ventas, dirección doble",
+        "Inactiva (línea punteada)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada tienda aparece una vez en Tiendas y muchas veces en Ventas: 1 : *. El filtro va de la dimensión a los hechos (única). Si sale muchos a muchos o punteada, se corrige antes de seguir."
+     ],
+     "ans": "1 : *, dirección única",
+     "hint": "¿Cuántas veces aparece cada tienda en cada tabla?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "birel"
+      ]
+     ]
+    },
+    {
+     "id": "v10m4",
+     "lvl": 2,
+     "title": "Síntoma → causa",
+     "q": "<p>Errores frecuentes del laboratorio. Relaciona cada síntoma con su causa.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Cuál es la causa?",
+       "cats": [
+        "Falta la relación Tiendas–Ventas",
+        "Tarjeta en Suma, no Recuento",
+        "Ventas cargada dos veces",
+        "Fecha de Calendario en vez de Fecha_venta",
+        "Mes sin ordenar por Año_mes"
+       ],
+       "items": [
+        {
+         "x": "Todas las tiendas muestran S/ 33 645,83",
+         "c": 0,
+         "e": "Sin relación, cada tienda ve el total sin filtrar."
+        },
+        {
+         "x": "ID_venta da 2 001 000",
+         "c": 1,
+         "e": "1 + 2 + … + 2 000 = 2 001 000: está sumando los IDs."
+        },
+        {
+         "x": "Monto suma S/ 67 291,66",
+         "c": 2,
+         "e": "Es exactamente el doble de 33 645,83."
+        },
+        {
+         "x": "La fecha máxima es 31/08/2026",
+         "c": 3,
+         "e": "Calendario llega al 31/08; las ventas, al 14/08."
+        },
+        {
+         "x": "Los meses salen en orden alfabético",
+         "c": 4
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Mismo total en todas las barras = el filtro de la dimensión no llega a los hechos.",
+      "Valores raros pero exactos (2 001 000, el doble del total, fin de mes) delatan la causa."
+     ],
+     "ans": "Relación · Recuento · duplicado · Fecha_venta · ordenar Mes",
+     "hint": "Compara cada número raro con el valor correcto.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "birel"
+      ],
+      [
+       "bicontrol"
+      ]
+     ]
+    },
+    {
+     "id": "v10m5",
+     "lvl": 2,
+     "title": "Recuento, no suma",
+     "q": "<p>Arrastras ID_venta a una tarjeta y Power BI muestra <b>2 001 000</b>. Los ID van de 1 a 2 000.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "¿Qué valor debería mostrar la tarjeta «N.º de ventas»?",
+       "f": [
+        {
+         "l": "Ventas",
+         "a": 2000
+        }
+       ]
+      },
+      {
+       "p": "¿Por qué salió 2 001 000?",
+       "o": [
+        "Sumó los ID: 1 + 2 + … + 2 000 = 2 000·2 001/2",
+        "Ventas está duplicada",
+        "Hay 2 001 000 ventas",
+        "Falta la relación con Tiendas",
+        "Es un redondeo de la tarjeta"
+       ]
+      }
+     ],
+     "steps": [
+      "El recuento correcto es 2 000 (SELECT COUNT(*) FROM Ventas).",
+      "Por defecto el campo numérico se resume con Suma: hay que cambiarlo a Recuento en la flecha del campo."
+     ],
+     "ans": "2 000; sumó los ID",
+     "hint": "Suma de 1 a n = n(n + 1)/2.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "bicontrol"
+      ],
+      [
+       "bicontrol"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10m6",
+     "lvl": 2,
+     "title": "Consultas de control en SQL",
+     "q": "<p>En la página <em>Control</em> cada tarjeta debe cuadrar con una consulta SQL. Usa la base del curso.</p>",
+     "checks": [
+      {
+       "t": "sql",
+       "p": "Escribe la consulta de referencia para la tarjeta «Ventas totales».",
+       "a": "SELECT SUM(Monto) FROM Ventas;",
+       "tables": [
+        "Ventas"
+       ]
+      },
+      {
+       "t": "sql",
+       "p": "Ahora la del control «Ventas sin tienda» (ventas cuyo ID_tienda no existe en Tiendas).",
+       "a": "SELECT COUNT(*) FROM Ventas v LEFT JOIN Tiendas t ON v.ID_tienda = t.ID_tienda WHERE t.ID_tienda IS NULL;",
+       "tables": [
+        "Ventas",
+        "Tiendas"
+       ]
+      }
+     ],
+     "steps": [
+      "Ventas totales = SUM(Monto). En el caso del laboratorio da S/ 33 645,83.",
+      "LEFT JOIN conserva todas las ventas; las que no encuentran tienda quedan con t.ID_tienda nulo. Debe dar 0."
+     ],
+     "ans": "SUM(Monto); LEFT JOIN … WHERE t.ID_tienda IS NULL",
+     "hint": "Para «no existe en la otra tabla», LEFT JOIN + IS NULL.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "bicontrol"
+      ],
+      [
+       "bicontrol",
+       "join"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10m7",
+     "lvl": 2,
+     "title": "Tabla Calendario",
+     "q": "<p>Creas la tabla con DAX:</p><pre class=\"code\">Calendario = ADDCOLUMNS(\n  CALENDAR(DATE(2025,8,1), DATE(2026,8,31)),\n  \"Año\", YEAR([Date]), \"Mes_num\", MONTH([Date]),\n  \"Mes\", FORMAT([Date], \"MMM-YY\"),\n  \"Año_mes\", YEAR([Date]) * 100 + MONTH([Date]))</pre>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "¿Qué valor de Año_mes tiene el 14/08/2026?",
+       "f": [
+        {
+         "l": "Año_mes",
+         "a": 202608
+        }
+       ]
+      },
+      {
+       "p": "En el gráfico, «abr-26» aparece antes que «ago-25». ¿Qué haces?",
+       "o": [
+        "Ordenar la columna Mes por Año_mes",
+        "Cambiar Mes a número decimal",
+        "Borrar la tabla Calendario",
+        "Usar Fecha_venta como eje sin jerarquía",
+        "Ordenar por Mes_num"
+       ]
+      },
+      {
+       "p": "¿Qué dos pasos faltan para usar DATEADD?",
+       "o": [
+        "Marcarla como tabla de fechas y relacionar Calendario[Date] con Ventas[Fecha_venta] (1 : *)",
+        "Convertir Date a texto y duplicarla",
+        "Relacionarla con Tiendas y Clientes",
+        "Ponerla como tabla de hechos",
+        "Nada: DATEADD funciona con cualquier columna"
+       ]
+      }
+     ],
+     "steps": [
+      "2026·100 + 8 = 202 608.",
+      "Mes es texto («abr-26» < «ago-25» alfabéticamente). Ordenar por Mes_num mezclaría los dos agostos.",
+      "Herramientas de tabla → Marcar como tabla de fechas, y la relación con Ventas[Fecha_venta]."
+     ],
+     "ans": "202608; ordenar Mes por Año_mes; marcar y relacionar",
+     "hint": "Mes_num se repite en ago-25 y ago-26.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "bical"
+      ],
+      [
+       "bical"
+      ],
+      [
+       "bical",
+       "birel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10m8",
+     "lvl": 1,
+     "title": "¿Se ve «33.65 mil»?",
+     "q": "<p>La tarjeta de Ventas totales muestra <b>33.65 mil</b> y SQL da 33 645,83.</p>",
+     "checks": [
+      {
+       "p": "¿Qué pasa?",
+       "o": [
+        "Es el mismo valor con unidades de visualización: se pone «Ninguno» para ver el número completo",
+        "El modelo está mal: falta una relación",
+        "Ventas está duplicada",
+        "Faltan las ventas de agosto",
+        "La tarjeta está en Recuento"
+       ]
+      }
+     ],
+     "steps": [
+      "33,65 mil ≈ 33 645,83: el formato abrevia. Unidades de visualización: Ninguno."
+     ],
+     "ans": "Mismo valor, solo formato",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "bicontrol"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "sql",
+     "t": "Laboratorio SQL: controles del modelo",
+     "p": "Prueba las consultas de control (COUNT, SUM, MIN/MAX, LEFT JOIN … IS NULL) con la base del curso.",
+     "o": {}
+    }
+   ]
+  },
+  {
+   "id": "v10dax",
+   "name": "Sem. 10 · Medidas DAX e indicadores",
+   "teo": "<p>Una <strong>medida</strong> DAX es un cálculo que se evalúa en el <strong>contexto de filtro</strong> del visual: la misma medida «Ventas» da el total en una tarjeta, el de cada tienda en un gráfico por tienda y el de julio si filtras julio. Se guardan juntas en una tabla vacía <em>_Medidas</em> y cada una lleva formato (S/ con 2 decimales, recuentos sin decimales, % con 1 decimal).</p><p><b>Nivel 1 · base:</b> Ventas = SUM(Ventas[Monto]) · Transacciones = COUNTROWS(Ventas) · Unidades = SUM(Ventas[Cantidad]) · Ticket prom. = DIVIDE([Ventas], [Transacciones]) · Clientes act. = DISTINCTCOUNT(Ventas[ID_cliente]).</p><p><b>Nivel 2 · proporciones:</b> % Ventas = DIVIDE([Ventas], CALCULATE([Ventas], ALL(Productos))) · Monto lista = SUMX(Ventas, Ventas[Cantidad] * RELATED(Productos[Precio])) · Descuento S/ = [Monto lista] − [Ventas].</p><p><b>Nivel 3 · tiempo</b> (requiere Calendario): Ventas mes ant. = CALCULATE([Ventas], DATEADD(Calendario[Date], −1, MONTH)) · Var. MoM % = DIVIDE([Ventas] − [Ventas mes ant.], [Ventas mes ant.]).</p><p><b>KPI con meta y semáforo:</b> Cumplimiento = DIVIDE([Ticket prom.], 17) y SWITCH(TRUE(), ≥ 1 → «Verde», ≥ 0,95 → «Ámbar», si no «Rojo»).</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"hbar\", \"labels\": [\"Miraflores\", \"La Molina\", \"Los Olivos\", \"SJL\", \"Chorrillos\", \"San Isidro\", \"San Borja\", \"Surco\"], \"values\": [18.01, 17.78, 17.11, 16.94, 16.4, 16.32, 16.27, 15.6], \"vals\": true, \"unit\": \"S/\", \"title\": \"Ticket prom. por tienda (meta S/ 17,00)\"}'></div>",
+   "form": [
+    "Ventas = SUM(Monto) · Transacciones = COUNTROWS",
+    "Ticket = DIVIDE([Ventas], [Transacciones])",
+    "Clientes = DISTINCTCOUNT(ID_cliente)",
+    "% del total: CALCULATE(…, ALL(dimensión del eje))",
+    "SUMX + RELATED: fila por fila con dato de la dimensión",
+    "DATEADD(…, −1, MONTH): mes anterior",
+    "Semáforo: SWITCH(TRUE(), …)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una medida que «funciona» puede responder otra pregunta. El ticket es <strong>ventas entre transacciones</strong>, no el promedio de una columna; los clientes son <strong>distintos</strong>; y un % del total quita el filtro de la <strong>misma</strong> dimensión que está en el eje.</p><h3>Valores de validación</h3><ul><li>Sin filtro: Ventas S/ 33 645,83 · Transacciones 2 000 · Unidades 6 067 · Ticket S/ 16,82 · Clientes 200 · Descuento S/ 558,67 · % ventas con dscto 20,8 %.</li><li>Miraflores: S/ 4 664,08 en 259 transacciones (ticket S/ 18,01).</li><li>Abarrotes: S/ 7 318,66 = 21,8 % del total. Julio 2026: S/ 2 953,29, +11,4 % vs junio.</li></ul><div class=\"err\"><b>Error común:</b> comparar agosto 2026 (datos solo hasta el día 14) con un mes completo y titular «las ventas se desploman».</div>",
+   "ex": [
+    {
+     "id": "v10d1",
+     "lvl": 2,
+     "title": "Detective 1: el ticket que no es ticket",
+     "q": "<p>Un analista escribió:</p><pre class=\"code\">Ticket prom. = AVERAGE(Ventas[Precio_unitario])</pre><p>La tarjeta muestra <b>S/ 5,59</b>.</p>",
+     "checks": [
+      {
+       "p": "¿Qué calcula realmente?",
+       "o": [
+        "El precio promedio de una unidad, sin cantidades: no es lo que gasta un cliente por compra",
+        "El gasto promedio por compra",
+        "Las ventas totales",
+        "El precio de lista promedio del catálogo",
+        "El descuento promedio"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Valor correcto del ticket con DIVIDE([Ventas], [Transacciones])",
+       "f": [
+        {
+         "l": "Ticket",
+         "a": 16.82,
+         "u": "S/",
+         "e": "S/ 33 645,83 entre 2 000 transacciones.",
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "AVERAGE(Precio_unitario) promedia precios unitarios: ignora que se compran varias unidades. Subestima el ticket a un tercio.",
+      "Ticket = 33 645,83 / 2 000 = S/ 16,82. Decisión equivocada: creer que cada compra vale S/ 5,59 y fijar metas o combos con ese número."
+     ],
+     "ans": "Precio unitario promedio; ticket correcto S/ 16,82",
+     "hint": "Ticket = lo que se cobra por transacción.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase"
+      ],
+      [
+       "daxbase",
+       "daxdiv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d2",
+     "lvl": 2,
+     "title": "Detective 2 y 3: ventas y clientes",
+     "q": "<p>Otras dos medidas del analista:</p><pre class=\"code\">Ventas = SUM(Ventas[Precio_unitario])        -- muestra S/ 11 173,25\nClientes act. = COUNT(Ventas[ID_cliente])   -- muestra 2 000</pre>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Qué calcula realmente cada una?",
+       "cats": [
+        "Suma de precios de una unidad (ignora Cantidad)",
+        "Cuenta filas de Ventas, no clientes distintos"
+       ],
+       "items": [
+        {
+         "x": "SUM(Ventas[Precio_unitario])",
+         "c": 0
+        },
+        {
+         "x": "COUNT(Ventas[ID_cliente])",
+         "c": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Valores correctos sin filtro",
+       "f": [
+        {
+         "l": "Ventas",
+         "a": 33645.83,
+         "u": "S/",
+         "e": "SUM(Ventas[Monto]).",
+         "tol": 0.006
+        },
+        {
+         "l": "Clientes act.",
+         "a": 200,
+         "e": "DISTINCTCOUNT(Ventas[ID_cliente])."
+        }
+       ]
+      },
+      {
+       "t": "sql",
+       "p": "Escribe en SQL la cuenta correcta de clientes activos.",
+       "a": "SELECT COUNT(DISTINCT ID_cliente) FROM Ventas;",
+       "tables": [
+        "Ventas"
+       ]
+      }
+     ],
+     "steps": [
+      "Sumar Precio_unitario es como si cada venta fuera de una sola unidad: S/ 11 173,25 en vez de S/ 33 645,83.",
+      "COUNT cuenta compras (2 000), no personas: un cliente que compra 10 veces cuenta 10.",
+      "DISTINCTCOUNT ↔ COUNT(DISTINCT …): 200 clientes."
+     ],
+     "ans": "Ventas = SUM(Monto) = S/ 33 645,83; Clientes = DISTINCTCOUNT = 200",
+     "hint": "Monto = Cantidad × Precio_unitario.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase"
+      ],
+      [
+       "daxbase"
+      ],
+      [
+       "daxbase"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d3",
+     "lvl": 2,
+     "title": "Detective 4 y 5: unidades y promedio de promedios",
+     "q": "<pre class=\"code\">Unidades = COUNTROWS(Ventas)   -- muestra 2 000\nTicket general = AVERAGEX(VALUES(Tiendas[Nombre_tienda]), [Ticket prom.])   -- muestra S/ 16,80</pre>",
+     "checks": [
+      {
+       "p": "¿Qué está mal en «Unidades»?",
+       "o": [
+        "Cuenta transacciones; las unidades son SUM(Ventas[Cantidad]) = 6 067",
+        "Nada: cada fila es una unidad",
+        "Debería ser DISTINCTCOUNT",
+        "Debería usar AVERAGE",
+        "Falta la relación con Productos"
+       ]
+      },
+      {
+       "p": "¿Y en «Ticket general»?",
+       "o": [
+        "Es un promedio de los 8 tickets por tienda: pesa igual una tienda con 229 ventas que una con 263",
+        "Nada: es el ticket correcto",
+        "Suma los tickets",
+        "Cuenta tiendas",
+        "Usa la fecha equivocada"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Ticket general correcto",
+       "f": [
+        {
+         "l": "Ticket",
+         "a": 16.82,
+         "u": "S/",
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Una venta puede tener varias unidades: 2 000 transacciones pero 6 067 unidades.",
+      "El promedio de promedios no pondera por transacciones (S/ 16,80). El ticket general es S/ 33 645,83 / 2 000 = S/ 16,82.",
+      "Diferencia pequeña aquí, pero con tiendas de tamaños muy distintos el error crece."
+     ],
+     "ans": "Unidades = 6 067; ticket general S/ 16,82",
+     "hint": "¿Qué es una fila de Ventas?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase"
+      ],
+      [
+       "daxdiv"
+      ],
+      [
+       "daxdiv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d4",
+     "lvl": 2,
+     "title": "Detective 6: el 100 % en todas las barras",
+     "q": "<p>En un gráfico de barras <b>por categoría</b> se usó:</p><pre class=\"code\">% Ventas = DIVIDE([Ventas], CALCULATE([Ventas], ALL(Tiendas)))</pre><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"bar\", \"labels\": [\"Abarr.\", \"Cuid.\", \"Lác.\", \"Limp.\", \"Pan.\", \"Beb.\", \"Snacks\"], \"values\": [100, 100, 100, 100, 100, 100, 100], \"unit\": \"%\", \"vals\": true, \"title\": \"% Ventas por categoría\"}'></div>",
+     "checks": [
+      {
+       "p": "¿Por qué todas valen 100 %?",
+       "o": [
+        "ALL quita el filtro de Tiendas, pero el eje filtra por Productos: numerador y denominador son iguales",
+        "Las 7 categorías venden lo mismo",
+        "Falta DIVIDE",
+        "La relación con Tiendas está inactiva",
+        "El formato % está mal"
+       ]
+      },
+      {
+       "p": "DAX corregido",
+       "o": [
+        "% Ventas = DIVIDE([Ventas], CALCULATE([Ventas], ALL(Productos)))",
+        "% Ventas = DIVIDE([Ventas], [Ventas])",
+        "% Ventas = SUM(Ventas[Monto]) / 100",
+        "% Ventas = CALCULATE([Ventas], ALL(Tiendas))",
+        "% Ventas = AVERAGE(Ventas[Monto])"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "¿Cuánto vale para Abarrotes?",
+       "f": [
+        {
+         "l": "Abarrotes",
+         "a": 21.8,
+         "u": "%",
+         "e": "S/ 7 318,66 / S/ 33 645,83.",
+         "tol": 0.06
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El denominador debe quitar el filtro de la dimensión que está en el eje (la categoría está en Productos).",
+      "Con ALL(Productos): Abarrotes = 7 318,66 / 33 645,83 = 21,8 %.",
+      "Por eso, sin filtro de producto, la medida vale 100 % (en Miraflores también): solo tiene sentido en un visual por categoría o producto."
+     ],
+     "ans": "ALL(Productos); Abarrotes 21,8 %",
+     "hint": "¿Qué tabla filtra el eje?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxcalc"
+      ],
+      [
+       "daxcalc"
+      ],
+      [
+       "daxcalc"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d5",
+     "lvl": 3,
+     "title": "Detective 7: «Ventas se desploman»",
+     "q": "<p>Una tarjeta filtrada en <b>ago-26</b> muestra Var. MoM % = <b>−61,2 %</b> con el título «Ventas se desploman». La fórmula no tiene ningún error.</p><div class=\"lw\" data-w=\"chart\" data-o='{\"type\": \"line\", \"labels\": [\"ago-25\", \"sep-25\", \"oct-25\", \"nov-25\", \"dic-25\", \"ene-26\", \"feb-26\", \"mar-26\", \"abr-26\", \"may-26\", \"jun-26\", \"jul-26\", \"ago-26\"], \"values\": [2658.23, 2535.32, 3046.93, 2613.71, 2655.18, 2655.3, 2525.24, 2827.15, 2747.04, 2630.8, 2650.76, 2953.29, 1146.88], \"unit\": \"S/\", \"title\": \"Ventas por mes\"}'></div>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el punto que no se puede comparar con los demás.",
+       "a": [
+        "ago"
+       ],
+       "chart": {
+        "type": "line",
+        "labels": [
+         "ago-25",
+         "sep-25",
+         "oct-25",
+         "nov-25",
+         "dic-25",
+         "ene-26",
+         "feb-26",
+         "mar-26",
+         "abr-26",
+         "may-26",
+         "jun-26",
+         "jul-26",
+         "ago-26"
+        ],
+        "values": [
+         2658.23,
+         2535.32,
+         3046.93,
+         2613.71,
+         2655.18,
+         2655.3,
+         2525.24,
+         2827.15,
+         2747.04,
+         2630.8,
+         2650.76,
+         2953.29,
+         1146.88
+        ],
+        "title": "Ventas por mes",
+        "zones": [
+         {
+          "on": "point",
+          "i": 12,
+          "id": "ago"
+         },
+         {
+          "on": "point",
+          "i": 11,
+          "id": "jul"
+         },
+         {
+          "on": "point",
+          "i": 2,
+          "id": "oct"
+         },
+         {
+          "on": "point",
+          "i": 1,
+          "id": "sep"
+         }
+        ]
+       },
+       "e": "Las ventas llegan solo al 14/08/2026."
+      },
+      {
+       "p": "¿Dónde está el problema?",
+       "o": [
+        "Agosto 2026 tiene datos solo hasta el día 14: se compara medio mes con un mes completo",
+        "DATEADD está mal escrito",
+        "Falta la relación Calendario–Ventas",
+        "Hubo una caída real de ventas",
+        "El formato % redondea mal"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Var. MoM % de jul-26 (vs jun-26)",
+       "f": [
+        {
+         "l": "Var. MoM",
+         "a": 11.4,
+         "u": "%",
+         "e": "(2 953,29 − 2 650,76) / 2 650,76.",
+         "tol": 0.06
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La cobertura del periodo importa: 14 de 31 días.",
+      "Con mes incompleto, la comparación no es válida: marcar ago-26 como incompleto, quitarlo o comparar los mismos días.",
+      "Julio sí es comparable: (2 953,29 − 2 650,76) / 2 650,76 = +11,4 %."
+     ],
+     "ans": "Mes incompleto; jul-26 +11,4 %",
+     "hint": "¿Qué días tiene cargados agosto 2026?",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sesgo"
+      ],
+      [
+       "daxtiempo",
+       "sesgo"
+      ],
+      [
+       "daxtiempo"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d6",
+     "lvl": 1,
+     "title": "Fábrica de medidas por niveles",
+     "q": "<p>Clasifica cada medida en su nivel.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "¿Qué nivel?",
+       "cats": [
+        "Nivel 1: base",
+        "Nivel 2: proporciones y relaciones",
+        "Nivel 3: tiempo"
+       ],
+       "items": [
+        {
+         "x": "Transacciones = COUNTROWS(Ventas)",
+         "c": 0
+        },
+        {
+         "x": "Clientes act. = DISTINCTCOUNT(Ventas[ID_cliente])",
+         "c": 0
+        },
+        {
+         "x": "Ticket prom. = DIVIDE([Ventas], [Transacciones])",
+         "c": 0
+        },
+        {
+         "x": "Monto lista = SUMX(Ventas, Ventas[Cantidad] * RELATED(Productos[Precio]))",
+         "c": 1
+        },
+        {
+         "x": "% Ventas = DIVIDE([Ventas], CALCULATE([Ventas], ALL(Productos)))",
+         "c": 1
+        },
+        {
+         "x": "Ventas mes ant. = CALCULATE([Ventas], DATEADD(Calendario[Date], -1, MONTH))",
+         "c": 2,
+         "e": "DATEADD necesita la tabla Calendario."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Base: sumas y recuentos. Nivel 2: combinan medidas, quitan filtros o traen datos de otra tabla. Nivel 3: desplazan el periodo y requieren Calendario."
+     ],
+     "ans": "Base · proporciones · tiempo",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase",
+       "daxcalc",
+       "daxtiempo"
+      ]
+     ]
+    },
+    {
+     "id": "v10d7",
+     "lvl": 2,
+     "title": "DAX y su equivalente",
+     "q": "<p>Relaciona cada función DAX con su equivalente en SQL o Excel.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Equivalente",
+       "cats": [
+        "COUNT(DISTINCT …)",
+        "WHERE aplicado a una medida",
+        "Quitar el WHERE (% del total)",
+        "JOIN / BUSCARV",
+        "SUMAPRODUCTO",
+        "CASE WHEN / SI anidados"
+       ],
+       "items": [
+        {
+         "x": "DISTINCTCOUNT",
+         "c": 0
+        },
+        {
+         "x": "CALCULATE",
+         "c": 1
+        },
+        {
+         "x": "ALL",
+         "c": 2
+        },
+        {
+         "x": "RELATED",
+         "c": 3
+        },
+        {
+         "x": "SUMX",
+         "c": 4,
+         "e": "Calcula fila por fila y luego suma."
+        },
+        {
+         "x": "SWITCH(TRUE(), …)",
+         "c": 5
+        }
+       ]
+      },
+      {
+       "p": "¿Por qué usar DIVIDE en vez de «/»?",
+       "o": [
+        "Divide sin error si el denominador es 0",
+        "Es más rápido",
+        "Redondea a 2 decimales",
+        "Quita filtros",
+        "Es obligatorio en tarjetas"
+       ]
+      }
+     ],
+     "steps": [
+      "Tabla de apoyo del laboratorio: cada función DAX tiene un análogo en SQL o Excel.",
+      "DIVIDE(a, b) devuelve vacío en lugar de error cuando b = 0."
+     ],
+     "ans": "DISTINCTCOUNT ↔ COUNT DISTINCT, CALCULATE ↔ WHERE, ALL ↔ quitar WHERE, RELATED ↔ JOIN, SUMX ↔ SUMAPRODUCTO, SWITCH ↔ CASE",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase",
+       "daxcalc"
+      ],
+      [
+       "daxdiv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d8",
+     "lvl": 2,
+     "title": "Página Validación: Miraflores",
+     "q": "<p>En la página Validación filtras la tienda <b>Miraflores</b>: Ventas S/ 4 664,08, Transacciones 259, Clientes act. 149.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ticket prom. de Miraflores",
+       "f": [
+        {
+         "l": "Ticket",
+         "a": 18.01,
+         "u": "S/",
+         "e": "S/ 4 664,08 / 259.",
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "p": "¿Por qué % Ventas vale 100 % en Miraflores?",
+       "o": [
+        "Su denominador solo quita el filtro de Productos: con una tienda filtrada y sin categoría, numerador = denominador",
+        "Miraflores vende el 100 % de la cadena",
+        "Hay un error en el modelo",
+        "ALL quita todos los filtros",
+        "Porque la tienda es la más grande"
+       ]
+      },
+      {
+       "p": "La suma de Clientes act. de las 8 tiendas da 1 145, pero sin filtro da 200. ¿Por qué?",
+       "o": [
+        "Un mismo cliente compra en varias tiendas: DISTINCTCOUNT no es aditivo",
+        "Hay clientes duplicados en la tabla Clientes",
+        "Error del modelo",
+        "La medida debería ser SUM",
+        "Faltan clientes en el total"
+       ]
+      }
+     ],
+     "steps": [
+      "4 664,08 / 259 = S/ 18,01.",
+      "ALL(Productos) no toca el filtro de tienda; sin categoría en el contexto, % Ventas = 100 %.",
+      "Cada tienda cuenta a sus clientes distintos; uno que compra en 3 tiendas aparece 3 veces en la suma pero 1 en el total."
+     ],
+     "ans": "S/ 18,01; % Ventas solo tiene sentido por categoría; los recuentos distintos no se suman",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxdiv"
+      ],
+      [
+       "daxcalc"
+      ],
+      [
+       "daxbase"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d9",
+     "lvl": 2,
+     "title": "Monto lista y descuento",
+     "q": "<p>Productos tiene el <b>Precio</b> de lista y Ventas el <b>Precio_unitario</b> cobrado.</p><pre class=\"code\">Monto lista = SUMX(Ventas, Ventas[Cantidad] * RELATED(Productos[Precio]))\nDescuento S/ = [Monto lista] - [Ventas]</pre>",
+     "checks": [
+      {
+       "p": "¿Qué hace RELATED aquí?",
+       "o": [
+        "Trae a cada fila de Ventas el precio de lista de su producto (como un BUSCARV)",
+        "Suma los precios",
+        "Quita el filtro de Productos",
+        "Cuenta productos distintos",
+        "Crea la relación"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Monto lista total = S/ 34 204,50. ¿Cuánto es el descuento?",
+       "f": [
+        {
+         "l": "Descuento",
+         "a": 558.67,
+         "u": "S/",
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "t": "tap",
+       "p": "Toca las dos tiendas que concentran más descuento.",
+       "a": [
+        "lo",
+        "lm"
+       ],
+       "multi": true,
+       "chart": {
+        "type": "hbar",
+        "labels": [
+         "Los Olivos",
+         "La Molina",
+         "Surco",
+         "San Isidro",
+         "Miraflores",
+         "SJL",
+         "San Borja",
+         "Chorrillos"
+        ],
+        "values": [
+         85.75,
+         84.92,
+         73.71,
+         69.58,
+         67.82,
+         64.36,
+         60.8,
+         51.73
+        ],
+        "vals": true,
+        "unit": "S/",
+        "title": "Descuento S/ por tienda",
+        "zones": [
+         {
+          "on": "bar",
+          "i": 0,
+          "id": "lo"
+         },
+         {
+          "on": "bar",
+          "i": 1,
+          "id": "lm"
+         },
+         {
+          "on": "bar",
+          "i": 2,
+          "id": "su"
+         },
+         {
+          "on": "bar",
+          "i": 3,
+          "id": "si"
+         },
+         {
+          "on": "bar",
+          "i": 4,
+          "id": "mi"
+         },
+         {
+          "on": "bar",
+          "i": 5,
+          "id": "sj"
+         },
+         {
+          "on": "bar",
+          "i": 6,
+          "id": "sb"
+         },
+         {
+          "on": "bar",
+          "i": 7,
+          "id": "ch"
+         }
+        ]
+       },
+       "e": "Las barras más largas."
+      }
+     ],
+     "steps": [
+      "SUMX recorre Ventas fila por fila; RELATED busca el Precio del producto relacionado (necesita la relación Productos–Ventas).",
+      "34 204,50 − 33 645,83 = S/ 558,67.",
+      "Los Olivos (S/ 85,75) y La Molina (S/ 84,92) concentran más descuento."
+     ],
+     "ans": "S/ 558,67; Los Olivos y La Molina",
+     "hint": "Descuento = lo que se habría cobrado a precio de lista − lo cobrado.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxcalc"
+      ],
+      [
+       "daxcalc"
+      ],
+      [
+       "kpi"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d10",
+     "lvl": 3,
+     "title": "De la pregunta al visual: combos para subir el ticket",
+     "q": "<p>Pregunta de negocio: <b>¿en qué tiendas conviene lanzar combos para subir el ticket?</b> Meta ilustrativa: S/ 17,00.</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca las 2 tiendas piloto (las de ticket más bajo).",
+       "a": [
+        "su",
+        "sb"
+       ],
+       "multi": true,
+       "chart": {
+        "type": "hbar",
+        "labels": [
+         "Miraflores",
+         "La Molina",
+         "Los Olivos",
+         "SJL",
+         "Chorrillos",
+         "San Isidro",
+         "San Borja",
+         "Surco"
+        ],
+        "values": [
+         18.01,
+         17.78,
+         17.11,
+         16.94,
+         16.4,
+         16.32,
+         16.27,
+         15.6
+        ],
+        "vals": true,
+        "unit": "S/",
+        "title": "Ticket prom. por tienda",
+        "zones": [
+         {
+          "on": "bar",
+          "i": 0,
+          "id": "mi"
+         },
+         {
+          "on": "bar",
+          "i": 1,
+          "id": "lm"
+         },
+         {
+          "on": "bar",
+          "i": 2,
+          "id": "lo"
+         },
+         {
+          "on": "bar",
+          "i": 3,
+          "id": "sj"
+         },
+         {
+          "on": "bar",
+          "i": 4,
+          "id": "ch"
+         },
+         {
+          "on": "bar",
+          "i": 5,
+          "id": "si"
+         },
+         {
+          "on": "bar",
+          "i": 6,
+          "id": "sb"
+         },
+         {
+          "on": "bar",
+          "i": 7,
+          "id": "su"
+         }
+        ]
+       },
+       "e": "Busca las barras más cortas."
+      },
+      {
+       "t": "num",
+       "p": "Cumplimiento de Miraflores = DIVIDE([Ticket prom.], 17)",
+       "f": [
+        {
+         "l": "Cumplimiento",
+         "a": 105.9,
+         "u": "%",
+         "e": "18,01 / 17.",
+         "tol": 0.06
+        }
+       ]
+      },
+      {
+       "t": "cls",
+       "p": "Semáforo: SWITCH(TRUE(), cumpl. ≥ 1 → Verde, ≥ 0,95 → Ámbar, si no Rojo)",
+       "cats": [
+        "Verde",
+        "Ámbar",
+        "Rojo"
+       ],
+       "items": [
+        {
+         "x": "Miraflores (S/ 18,01)",
+         "c": 0
+        },
+        {
+         "x": "Los Olivos (S/ 17,11)",
+         "c": 0
+        },
+        {
+         "x": "SJL (S/ 16,94)",
+         "c": 1
+        },
+        {
+         "x": "San Borja (S/ 16,27)",
+         "c": 1,
+         "e": "16,27 / 17 = 0,957 ≥ 0,95."
+        },
+        {
+         "x": "Surco (S/ 15,60)",
+         "c": 2,
+         "e": "15,60 / 17 = 0,918 < 0,95."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Barras horizontales ordenadas: Surco (S/ 15,60) y San Borja (S/ 16,27) son las de ticket más bajo.",
+      "18,01 / 17 = 1,059 → 105,9 %.",
+      "Umbral ámbar: 0,95 × 17 = S/ 16,15. Solo Surco queda en rojo."
+     ],
+     "ans": "Surco y San Borja; 105,9 %; Surco rojo",
+     "hint": "Ámbar desde S/ 16,15.",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "kpi"
+      ],
+      [
+       "kpi"
+      ],
+      [
+       "kpi"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d11",
+     "lvl": 1,
+     "title": "Pregunta con verbo de decisión",
+     "q": "<p>En la Matriz_Preguntas cada pregunta debe habilitar una decisión.</p>",
+     "checks": [
+      {
+       "p": "¿Cuál está bien planteada?",
+       "o": [
+        "¿En qué tienda conviene lanzar combos para subir el ticket?",
+        "¿Cuánto vendimos?",
+        "¿Cuántas tiendas hay?",
+        "¿Cuál es el precio promedio?",
+        "¿Qué datos tenemos?"
+       ]
+      },
+      {
+       "p": "Para «¿Las ventas mensuales crecen o caen?», el visual adecuado es…",
+       "o": [
+        "Línea por mes con ago-26 marcado como incompleto",
+        "Pastel por mes",
+        "Tarjeta con el total",
+        "Barras 3D por tienda",
+        "Tabla con los 2 000 registros"
+       ]
+      }
+     ],
+     "steps": [
+      "«¿Cuánto vendimos?» describe; «¿en qué tienda conviene…?» elige: indicador, medida, meta, visual, interacción y decisión.",
+      "Tendencia → línea; y avisar que el último mes no es comparable."
+     ],
+     "ans": "Combos por tienda; línea mensual con aviso",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "ctx"
+      ],
+      [
+       "objgraf",
+       "sesgo"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "v10d12",
+     "lvl": 2,
+     "title": "Texto fijo en FORMAT",
+     "q": "<p>Quieres que una tarjeta diga «S/ 33,645.83».</p>",
+     "checks": [
+      {
+       "p": "¿Qué fórmula lo logra sin romper el formato?",
+       "o": [
+        "\"S/ \" & FORMAT([Ventas], \"#,##0.00\")",
+        "FORMAT([Ventas], \"S/ #,##0.00\")",
+        "FORMAT(\"S/\", [Ventas])",
+        "[Ventas] & S/",
+        "SUM(\"S/ \" & Ventas[Monto])"
+       ]
+      }
+     ],
+     "steps": [
+      "Dentro de FORMAT, letras como S, M, H, D e Y son códigos de fecha y hora: el texto fijo va afuera con &."
+     ],
+     "ans": "\"S/ \" & FORMAT([Ventas], \"#,##0.00\")",
+     "hint": "La S dentro de FORMAT significa «segundos».",
+     "fig": null,
+     "draw": false,
+     "solfig": null,
+     "tags": [
+      [
+       "daxbase"
+      ]
+     ]
+    }
+   ]
   }
  ],
  "figs": {},
@@ -5591,6 +6984,66 @@
    "f": "Cada elemento se gana su lugar",
    "x": "Quitar cuadrícula intensa, bordes, leyendas repetidas, decoraciones; alinear y usar espacio en blanco.",
    "home": "v9clar"
+  },
+  "bitipos": {
+   "n": "Tipos de datos en BI",
+   "f": "IDs entero · montos decimal · fechas Fecha",
+   "x": "Si un ID queda como texto, la relación no se crea; si un monto es texto, no se suma; si la fecha es texto, no hay jerarquía ni relación con Calendario.",
+   "home": "v10mod"
+  },
+  "biestrella": {
+   "n": "Modelo estrella",
+   "f": "Hechos al centro, dimensiones alrededor",
+   "x": "Hechos: una fila por evento (Ventas). Dimensiones: catálogos (Tiendas, Productos, Clientes, Calendario).",
+   "home": "v10mod"
+  },
+  "birel": {
+   "n": "Relaciones del modelo",
+   "f": "1 : * de la dimensión a los hechos, dirección única",
+   "x": "Sin muchos a muchos ni relaciones inactivas. Si falta una, todas las barras muestran el total.",
+   "home": "v10mod"
+  },
+  "bical": {
+   "n": "Tabla Calendario",
+   "f": "CALENDAR + marcar como tabla de fechas",
+   "x": "Relacionada con Ventas[Fecha_venta]; Mes ordenado por Año_mes. Necesaria para DATEADD.",
+   "home": "v10mod"
+  },
+  "bicontrol": {
+   "n": "Control contra SQL",
+   "f": "Tarjeta BI = consulta SQL",
+   "x": "Recuentos (Recuento, no Suma), SUM(Monto), SUM(Cantidad), MIN/MAX de fecha y ventas sin tienda = 0.",
+   "home": "v10mod"
+  },
+  "daxbase": {
+   "n": "Medidas base",
+   "f": "SUM · COUNTROWS · DISTINCTCOUNT",
+   "x": "Ventas = SUM(Monto); Transacciones = COUNTROWS; Unidades = SUM(Cantidad); Clientes = DISTINCTCOUNT(ID_cliente).",
+   "home": "v10dax"
+  },
+  "daxdiv": {
+   "n": "Ticket con DIVIDE",
+   "f": "DIVIDE([Ventas], [Transacciones])",
+   "x": "Nunca AVERAGE de una columna ni promedio de promedios. DIVIDE evita el error por 0.",
+   "home": "v10dax"
+  },
+  "daxcalc": {
+   "n": "CALCULATE, ALL y RELATED",
+   "f": "% = DIVIDE([V], CALCULATE([V], ALL(dim. del eje)))",
+   "x": "ALL quita el filtro de la dimensión que está en el eje. SUMX + RELATED calcula fila por fila con datos de la dimensión.",
+   "home": "v10dax"
+  },
+  "daxtiempo": {
+   "n": "Medidas de tiempo",
+   "f": "CALCULATE([V], DATEADD(Calendario[Date], −1, MONTH))",
+   "x": "Var. MoM % = DIVIDE([V] − [V mes ant.], [V mes ant.]). Revisar que los meses comparados estén completos.",
+   "home": "v10dax"
+  },
+  "kpi": {
+   "n": "KPI con meta y semáforo",
+   "f": "Cumplimiento = DIVIDE([medida], meta)",
+   "x": "SWITCH(TRUE(), ≥ 1 → Verde, ≥ 0,95 → Ámbar, si no Rojo). La pregunta de negocio lleva verbo de decisión.",
+   "home": "v10dax"
   }
  },
  "simEx": [
@@ -6031,7 +7484,7 @@
     ]
    },
    {
-    "pts": 2,
+    "pts": 1,
     "name": "Repaso parcial: limpieza y descriptivo",
     "pool": [
      "im7",
@@ -6044,7 +7497,7 @@
     ]
    },
    {
-    "pts": 3,
+    "pts": 2,
     "name": "Sem. 9: gráfico o tabla y contexto",
     "pool": [
      "v9c1",
@@ -6056,7 +7509,7 @@
     ]
    },
    {
-    "pts": 4,
+    "pts": 2,
     "name": "Sem. 9: elegir el gráfico",
     "pool": [
      "v9t4",
@@ -6069,7 +7522,7 @@
     ]
    },
    {
-    "pts": 5,
+    "pts": 3,
     "name": "Sem. 9: escalas, errores y sesgos",
     "pool": [
      "v9e1",
@@ -6082,7 +7535,7 @@
     ]
    },
    {
-    "pts": 4,
+    "pts": 2,
     "name": "Sem. 9: claridad y jerarquía",
     "pool": [
      "v9l1",
@@ -6092,6 +7545,32 @@
      "v9s1",
      "v9l7",
      "v9s4"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 10: conexión, modelo y control",
+    "pool": [
+     "v10m1",
+     "v10m2",
+     "v10m4",
+     "v10m5",
+     "v10m6",
+     "v10m7"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Sem. 10: medidas DAX e indicadores",
+    "pool": [
+     "v10d1",
+     "v10d2",
+     "v10d3",
+     "v10d4",
+     "v10d5",
+     "v10d8",
+     "v10d9",
+     "v10d10"
     ]
    }
   ]
