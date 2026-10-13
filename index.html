@@ -1054,7 +1054,7 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 <div class="hero">
 <div class="topline"><button class="back" id="back">← Cursos</button><span class="clock" id="clock">⏱ 00:00:00</span><button class="modebtn" id="modebtn2">⏱ Modo de estudio</button><button class="themebtn" id="themebtn2" type="button">🌙</button><button class="modebtn acct" id="sync2" type="button">Iniciar sesión</button></div>
 <h1 id="cTitle"></h1>
-<p>Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente.</p>
+<p>Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Los temas siguen un orden sugerido, pero puedes empezar por el que quieras.</p>
 <div class="total"><div class="meter"><i id="tbar"></i></div><span id="ttxt"></span></div>
 <div class="statline" id="cstats"></div>
 </div>
@@ -2414,7 +2414,8 @@ const touchT=id=>{const t=exT[id];if(t&&t.id){const s=cs(C.id);(s.tp||(s.tp={}))
 const rec=id=>{touchT(id);return cs(C.id).ex[id]||(cs(C.id).ex[id]={})};
 const isDone=e=>e.draw||!!(cs(C.id).ex[e.id]||{}).s;
 const tDone=t=>t.ex.filter(isDone).length;
-const unlocked=i=>!!(C&&C.free)||i===0||T[i-1].ex.every(isDone);
+const unlocked=()=>true;/* sin candados: todos los temas abiertos; el orden es solo sugerido */
+const started=i=>!!T[i]&&(i===st.topic||T[i].ex.some(e=>!e.draw&&isDone(e)));
 function flash(text,good){msg.innerHTML='';const n=el('div','notice pop'+(good?' good':''),text);msg.append(n);clearTimeout(flash.t);flash.t=setTimeout(()=>n.remove(),4500)}
 function openCourse(id){C=COURSES.find(c=>c.id===id);if(!C)return;notiOpened(C.group||C.code);T=C.topics;F=C.figs;X=allEx(C);RV=null;PP=null;buildExT();seedTP();
   st=Object.assign({topic:0,level:0},prefs[C.id]||{});if(!(st.topic>=0&&st.topic<T.length)||!unlocked(st.topic))st.topic=0;
@@ -3808,14 +3809,15 @@ function buildTT(ch,box,fb,qi,pre,onTry,onBad,onGood){
 function markSolved(e,card,stt){
   if(RV&&!e.draw){revSolved(e,card,stt);return}
   if(e.draw){flash('Tu lectura coincide. 👌',true);return}
-  const r=rec(e.id);if(r.s)return;const i=st.topic,wasNext=i+1<T.length&&unlocked(i+1);
+  const r=rec(e.id);if(r.s)return;const i=st.topic,wasFull=tDone(T[i])===T[i].ex.length;
   r.s=1;r.f=(r.w||0)===0?1:0;save();bump();card.classList.add('solved');stt.textContent=stateText(e);topicHeader();renderChips();courseStats();
   const s=cs(C.id);
-  if(i+1<T.length&&!wasNext&&unlocked(i+1)&&!s.cel[T[i+1].id]){s.cel[T[i+1].id]=1;save();setTimeout(()=>unlockCeleb(i+1),350)}
-  else if(stats(C).complete&&!s.cel._final){s.cel._final=1;save();setTimeout(finalCeleb,350)}}
-function unlockCeleb(j){const n=el('div');n.innerHTML=LOCK+'<p class="sub" style="margin:0">Tema desbloqueado</p><h2>'+(j+1)+'. '+T[j].name+'</h2><p>Completaste «'+T[j-1].name+'» con '+pct(stats(C).per[j-1].acc||0)+' de acierto a la primera.</p>';
-  const bt=el('div','mbtns');const go=el('button','pri','Ir al nuevo tema');go.onclick=()=>{closeModal();goTopic(j)};const stay=el('button',null,'Seguir aquí');stay.onclick=closeModal;bt.append(go,stay);n.append(bt);
-  openModal(n,'celeb');confetti();const ch=chips.children[j];if(ch){ch.classList.add('glow');ch.scrollIntoView({inline:'center',block:'nearest'})}}
+  if(stats(C).complete&&!s.cel._final){s.cel._final=1;save();setTimeout(finalCeleb,350)}
+  else if(!wasFull&&tDone(T[i])===T[i].ex.length&&!s.cel['ok_'+T[i].id]){s.cel['ok_'+T[i].id]=1;save();setTimeout(()=>topicCeleb(i),350)}
+}
+function topicCeleb(i){const j=T.findIndex((t,k)=>k>i&&tDone(t)<t.ex.length);const n=el('div');n.innerHTML='<span class="bigico">🎉</span><p class="sub" style="margin:0">Tema completado</p><h2>'+(i+1)+'. '+T[i].name+'</h2><p>Lo terminaste con '+pct(stats(C).per[i].acc||0)+' de acierto a la primera.'+(j>=0?' Siguiente sugerido: <b>'+(j+1)+'. '+T[j].name+'</b>.':'')+'</p>';
+  const bt=el('div','mbtns');if(j>=0){const go=el('button','pri','Ir al siguiente tema');go.onclick=()=>{closeModal();goTopic(j)};bt.append(go)}const stay=el('button',j>=0?null:'pri','Seguir aquí');stay.onclick=closeModal;bt.append(stay);n.append(bt);
+  openModal(n,'celeb');confetti();const ch=j>=0&&chips.children[j];if(ch){ch.classList.add('glow');ch.scrollIntoView({inline:'center',block:'nearest'})}}
 function finalCeleb(){const x=stats(C);const n=el('div');
   const weak=x.per.filter(p=>p.acc!=null&&p.acc<.85).sort((a,b)=>a.acc-b.acc).slice(0,3);
   n.innerHTML='<span class="bigico">🎓</span><p class="sub" style="margin:0">Completaste los '+T.length+' temas de '+C.name+'</p><h2>Te falta un solo paso para el sobresaliente</h2>'+
@@ -3848,7 +3850,7 @@ function renderTopic(){const t=T[st.topic];main.innerHTML='';
     if(!st.level){const h=el('div','lvlhead',LN[l]);h.style.setProperty('--c',LC[l]);main.append(h)}exs.forEach(e=>{main.append(exCard(e));vis++})});
   if(!vis)main.append(el('p','empty','Este tema no tiene ejercicios de este nivel. Elige otro nivel arriba.'));
   const pend=t.ex.filter(e=>!isDone(e)&&st.level&&e.lvl!==st.level).length;
-  if(pend)main.append(el('p','note',pend+' ejercicio(s) pendiente(s) en otros niveles. Para desbloquear el siguiente tema necesitas todos.'));
+  if(pend)main.append(el('p','note',pend+' ejercicio(s) pendiente(s) en otros niveles. Complétalos todos para terminar el tema.'));
   pullpy.hook('topic',{t,main});
   topicHeader();document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.l===st.level));typeset(main);hlWhen(teo.querySelector('.hlz'))}
 document.querySelectorAll('.step').forEach(b=>b.onclick=()=>{st.level=+b.dataset.l;savePrefs();renderTopic()});
@@ -3856,7 +3858,7 @@ document.querySelectorAll('.step').forEach(b=>b.onclick=()=>{st.level=+b.dataset
 
 function showForm(){const n=el('div');n.innerHTML='<h2>'+(C.formLabel||'📋 Formulario')+'</h2><p class="sub">'+C.name+' · '+C.exam+'</p>'+C.form;const bt=el('div','mbtns');const c=el('button','pri','Cerrar');c.onclick=closeModal;bt.append(c);n.append(bt);openModal(n)}
 $('formbtn').onclick=showForm;
-function showLessons(){const n=el('div');n.innerHTML='<h2>📖 Teoría</h2><p class="sub">Elige el tema que quieres repasar. Puedes leer cualquiera, aunque aún no lo hayas desbloqueado.</p>';
+function showLessons(){const n=el('div');n.innerHTML='<h2>📖 Teoría</h2><p class="sub">Elige el tema que quieres repasar. Puedes leer cualquiera, en el orden que quieras.</p>';
   const list=el('div','lessl');T.forEach((t,i)=>{if(!t.lesson)return;const b=el('button','lessb','<span class="n">'+(i+1)+'</span><span>'+t.name+'</span>');b.onclick=()=>showLesson(i);list.append(b)});n.append(list);
   const bt=el('div','mbtns');const c=el('button',null,'Cerrar');c.onclick=closeModal;bt.append(c);n.append(bt);openModal(n)}
 function showLesson(i){const t=T[i];const n=el('div','lesson');n.innerHTML='<p class="sub" style="margin:0">Tema '+(i+1)+'</p><h2>'+t.name+'</h2><div class="hlz" data-src="les" data-tid="'+t.id+'">'+t.lesson+'</div>'+(t.form&&t.form.length?'<h3>'+(C.keyLabel||'Fórmulas y reglas')+'</h3><div class="fgrid">'+t.form.map(f=>'<div>'+f+'</div>').join('')+'</div>':'');
@@ -3936,10 +3938,10 @@ function auBar(){const a=AU.a;let b=$('aubar');
 $('audbtn').onclick=()=>C&&C.audios&&auModal(C.audios);
 {const f=closeModal;closeModal=function(){f();auBar()}}
 /* ---- práctica rápida ---- */
-function quickPool(){const gens=(GEN[C.id]||[]);const ok=new Set(T.filter((t,i)=>unlocked(i)).map(t=>t.id));return gens.filter(g=>ok.has(g.t))}
-$('quickbtn').onclick=()=>{const pool=quickPool();if(!pool.length)return flash('Aún no hay preguntas de práctica para los temas que desbloqueaste.');
+function quickPool(){const gens=(GEN[C.id]||[]);const ok=new Set(T.filter((t,i)=>started(i)).map(t=>t.id));return gens.filter(g=>ok.has(g.t))}
+$('quickbtn').onclick=()=>{const pool=quickPool();if(!pool.length)return flash('Aún no hay preguntas de práctica para los temas que ya empezaste.');
   const names=[...new Set(pool.map(g=>T.find(t=>t.id===g.t).name))];const n=el('div');
-  n.innerHTML='<span class="bigico">⚡</span><h2>Práctica rápida</h2><p>'+(C.quickTxt||'10 preguntas con <strong>datos nuevos</strong> generados al azar, 15 minutos.')+' Salen de tus temas desbloqueados: '+names.map(x=>'<b>'+x+'</b>').join(', ')+'.</p><div class="step1">Es práctica libre: no se guarda en tus estadísticas ni afecta tu progreso. '+(C.quickTxt2||'Cada vez los números cambian.')+'</div>';
+  n.innerHTML='<span class="bigico">⚡</span><h2>Práctica rápida</h2><p>'+(C.quickTxt||'10 preguntas con <strong>datos nuevos</strong> generados al azar, 15 minutos.')+' Salen de los temas que ya empezaste: '+names.map(x=>'<b>'+x+'</b>').join(', ')+'.</p><div class="step1">Es práctica libre: no se guarda en tus estadísticas ni afecta tu progreso. '+(C.quickTxt2||'Cada vez los números cambian.')+'</div>';
   const bt=el('div','mbtns');const go=el('button','pri','Empezar');go.onclick=()=>{closeModal();startQuick()};const l=el('button',null,'Cancelar');l.onclick=closeModal;bt.append(go,l);n.append(bt);openModal(n,'celeb')};
 function startQuick(){const pool=quickPool();const order=[];while(order.length<10){const sh=[...pool].sort(()=>Math.random()-.5);order.push(...sh)}
   const qs=order.slice(0,10).map((g,i)=>{const x=g.f();const tn=T.find(t=>t.id===g.t).name;return{slot:{name:tn,pts:1},sel:[],ex:{id:'qk'+i,title:x.title,q:x.q,checks:[{p:'Respuesta',o:x.o}],steps:x.steps,ans:x.ans,fig:null,solfig:null,tags:[]}}});
@@ -3979,19 +3981,19 @@ function revBtn(){$('hlbtn').hidden=!T.some(t=>t.teo||t.lesson);
   $('paperbtn').hidden=NOPAPER.has(C.id)||!T.some(t=>t.ex.some(optOnly));
   const b=$('revbtn');if(!T.length){b.hidden=true;return}b.hidden=false;const n=dueList().length,q=failedList().length;b.innerHTML='🧠 Repaso'+(n?'<span class="qbadge">'+n+'</span>':'');b.title=q?n+' para repasar hoy, '+q+' en la cola':''}
 function rescueMin(n){const sp=C.sim;const per=sp&&sp.minutes&&sp.slots.length?.6*sp.minutes/sp.slots.length:5;return Math.round(n*Math.min(8,Math.max(2.5,per)))}
-$('revbtn').onclick=()=>{const n=el('div');const fl=failedList(),wk=weakTopics(),ut=T.filter((t,i)=>unlocked(i)&&t.ex.some(okEx)).length;
+$('revbtn').onclick=()=>{const n=el('div');const fl=failedList(),wk=weakTopics(),ut=T.filter((t,i)=>started(i)&&t.ex.some(okEx)).length;
   n.innerHTML='<span class="bigico">🧠</span><h2>Repaso</h2><p class="sub">'+C.name+' · '+C.exam+'</p>';
   const g=el('div','modes');
-  const bm=el('button','mode','<b>🔀 Mezclado</b><span>10 ejercicios de tus temas desbloqueados, revueltos y <strong>sin decirte de qué tema son</strong>. Primero identifica qué te están pidiendo; el tema se revela cuando lo resuelves.</span>');
-  if(ut<2){bm.disabled=true;bm.querySelector('span').innerHTML+='<br><em>Necesitas al menos 2 temas desbloqueados.</em>'}
+  const bm=el('button','mode','<b>🔀 Mezclado</b><span>10 ejercicios de los temas que ya empezaste, revueltos y <strong>sin decirte de qué tema son</strong>. Primero identifica qué te están pidiendo; el tema se revela cuando lo resuelves.</span>');
+  if(ut<2){bm.disabled=true;bm.querySelector('span').innerHTML+='<br><em>Necesitas al menos 2 temas empezados.</em>'}
   const du=dueList().length;const bq=el('button','mode','<b>🔁 Repaso espaciado'+(fl.length?' ('+du+' para hoy)':'')+'</b><span>'+(fl.length?(du?'Hoy te tocan '+du+' de los '+fl.length+' ejercicios de tu cola. ':'Hoy no te toca nada; puedes adelantar, pero solo sube de caja el día que le toca. ')+'Lo que fallas vuelve al día siguiente; si lo aciertas <strong>a la primera y sin pista</strong>, sube de caja y vuelve en 2, 4 y 8 días. Sale de la cola al superar la caja 4.':'Tu cola está vacía: aquí aparecerán los ejercicios en los que te equivoques, en práctica o en simulacros.')+'</span>');
   if(!fl.length)bq.disabled=true;
   const rq=wk.length?Math.min(8,Math.max(4,wk.length*3)):0;
   const br=el('button','mode','<b>🚑 Modo rescate</b><span>'+(wk.length?'Mini simulacro de '+rq+' preguntas y '+rescueMin(rq)+' min, de los temas que más lo necesitan: '+wk.map(wkTxt).join(', ')+'. Prioriza los que fallaste.':'Aquí entran los temas donde aciertas a la primera menos del 85 %, los que tienen ejercicios en tu cola de fallados y los que no practicas hace 6 días o más. Por ahora no tienes ninguno.')+'</span>');
   if(!wk.length)br.disabled=true;
   bm.onclick=()=>{closeModal();startRev('mix')};bq.onclick=()=>{closeModal();startRev('queue')};br.onclick=()=>{closeModal();startRescue()};
-  const ba=el('button','mode','<b>🚀 Arranque rápido</b><span>Solo 3 ejercicios, empezando por los que te toca repasar. Para los días en que cuesta empezar.</span>');ba.onclick=()=>{closeModal();startStarter()};if(!T.some((t,i)=>unlocked(i)&&t.ex.some(okEx)))ba.disabled=true;g.append(bm,bq,ba,br);n.append(g);const bt=el('div','mbtns');const l=el('button',null,'Cancelar');l.onclick=closeModal;bt.append(l);n.append(bt);openModal(n,'celeb')};
-function pickMix(n){const tops=shuf(T.filter((t,i)=>unlocked(i)).map(t=>({id:t.id,ex:shuf(t.ex.filter(okEx)).sort((a,b)=>(a.lvl>=2?0:1)-(b.lvl>=2?0:1))})).filter(x=>x.ex.length));
+  const ba=el('button','mode','<b>🚀 Arranque rápido</b><span>Solo 3 ejercicios, empezando por los que te toca repasar. Para los días en que cuesta empezar.</span>');ba.onclick=()=>{closeModal();startStarter()};if(!T.some((t,i)=>started(i)&&t.ex.some(okEx)))ba.disabled=true;g.append(bm,bq,ba,br);n.append(g);const bt=el('div','mbtns');const l=el('button',null,'Cancelar');l.onclick=closeModal;bt.append(l);n.append(bt);openModal(n,'celeb')};
+function pickMix(n){const tops=shuf(T.filter((t,i)=>started(i)).map(t=>({id:t.id,ex:shuf(t.ex.filter(okEx)).sort((a,b)=>(a.lvl>=2?0:1)-(b.lvl>=2?0:1))})).filter(x=>x.ex.length));
   const out=[];let last=null;while(out.length<n&&tops.some(x=>x.ex.length)){let c=tops.filter(x=>x.ex.length&&x.id!==last);if(!c.length)c=tops.filter(x=>x.ex.length);
     const k=c[Math.floor(Math.random()*c.length)];out.push(k.ex.shift());last=k.id}return out}
 function startRev(kind,pre){const dl=dueList(),early=kind==='queue'&&!dl.length;const items=pre||(kind==='mix'?pickMix(10):shuf((early?failedList():dl).slice(0,10)).map(id=>X[id]).filter(Boolean));if(!items.length)return flash('No hay ejercicios para este repaso.');
@@ -4360,7 +4362,7 @@ const PRESETS={
 const OLDP={apr:'enf',par:'exa',flo:'sp'};
 const CUS_KEYS=['timer','work','brk','long','longMin','practice'];
 const PRAC={tema:['📚','Por tema','Avanzas tema por tema, como siempre.'],
-  mix:['🔀','Mezcla','10 ejercicios de tus temas desbloqueados, sin decirte de cuál son.'],
+  mix:['🔀','Mezcla','10 ejercicios de los temas que ya empezaste, sin decirte de cuál son.'],
   queue:['🔁','Repaso espaciado','Los ejercicios fallados que te toca repasar hoy.'],
   seq:['🔁','Repaso y luego mezcla','Primero lo que te toca repasar; cuando se acaba, pasa sola a Mezcla.'],
   start:['🚀','Arranque rápido','3 ejercicios y listo, para los días en que cuesta empezar.']};
@@ -4572,23 +4574,23 @@ function updPill(state){if(state==='idle'||!TM){if(document.title!==BASE_TITLE)d
 function toast(t,ms){document.querySelectorAll('.toast').forEach(x=>x.remove());const d=el('div','toast',t);d.setAttribute('role','status');document.body.append(d);setTimeout(()=>d.remove(),ms||5200)}
 
 /* ---------- sesión: arranca el temporizador, el calentamiento y la práctica ---------- */
-const mixOK=()=>T.filter((t,i)=>unlocked(i)&&t.ex.some(okEx)).length>=2;
+const mixOK=()=>T.filter((t,i)=>started(i)&&t.ex.some(okEx)).length>=2;
 function startSession(){if(!C)return;const m=curMode();SESS={seq:m.practice==='seq',practice:m.practice};if(!TM)tmStart(m);
   const go=ti=>{if(!C)return;if(m.practice==='tema'&&ti!=null&&ti!==st.topic&&unlocked(ti)&&view==='course')goTopic(ti);startPractice(m.practice)};
   if(m.blur)blurting(blurTopic(m.practice),go);else go();pillRender(true)}
 function startPractice(p){if(!C)return;
-  if(p==='mix'){if(!mixOK())return toast('Mezcla necesita al menos 2 temas desbloqueados. Por ahora, sigue por tema.');return startRev('mix')}
+  if(p==='mix'){if(!mixOK())return toast('Mezcla necesita al menos 2 temas empezados. Por ahora, sigue por tema.');return startRev('mix')}
   if(p==='queue'){if(dueList().length)return startRev('queue');return toast(failedList().length?'Hoy no te toca repasar nada. Sigue por tema o adelanta el repaso desde 🧠 Repaso.':'Tu cola de repaso está vacía. Sigue por tema.')}
   if(p==='seq'){if(dueList().length)return startRev('queue');if(mixOK()){toast('Hoy no tienes repasos pendientes: pasamos directo a Mezcla.');return startRev('mix')}
     return toast('Nada que repasar hoy y todavía no hay temas suficientes para Mezcla. Sigue por tema.')}
   if(p==='start')return startStarter()}
 function startStarter(){if(!C)return;const s=cs(C.id).ex;const due=shuf(dueList()).map(id=>X[id]).filter(Boolean);const seen=new Set(due.map(e=>e.id));
-  const pool=shuf(T.filter((t,i)=>unlocked(i)).flatMap(t=>t.ex.filter(okEx))).filter(e=>!seen.has(e.id))
+  const pool=shuf(T.filter((t,i)=>started(i)).flatMap(t=>t.ex.filter(okEx))).filter(e=>!seen.has(e.id))
     .map(e=>{const r=s[e.id]||{};return{e,k:e.lvl+(r.s?.5:0)}}).sort((a,b)=>a.k-b.k).map(x=>x.e);
   const items=due.concat(pool).slice(0,3);if(!items.length)return toast('Todavía no hay ejercicios para el arranque rápido en este curso.');startRev('start',items)}
 
 /* ---------- blurting: vaciado de memoria de 3 minutos ---------- */
-function blurTopic(p){const ul=T.map((t,i)=>i).filter(i=>unlocked(i));
+function blurTopic(p){const ul=T.map((t,i)=>i).filter(i=>started(i));
   if(p!=='tema'){const cnt={};dueList().forEach(id=>{const tid=(exT[id]||{}).id;if(tid)cnt[tid]=(cnt[tid]||0)+1});
     const best=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0];if(best){const i=T.findIndex(t=>t.id===best[0]);if(ul.includes(i))return i}}
   return ul.includes(st.topic)?st.topic:ul[ul.length-1]}
@@ -4598,7 +4600,7 @@ function blurQueue(t,k){if(!k)return 0;const s=cs(C.id).ex,now=Date.now();
   const pick=t.ex.filter(okEx).map(e=>({e,k:sc(e),r:Math.random()})).filter(x=>x.k<99).sort((a,b)=>(a.k-b.k)||(a.r-b.r)).slice(0,Math.min(3,k));
   pick.forEach(({e})=>{const r=rec(e.id);if(inQ(r)){r.dn=1;r.lr=now}else{r.bq=1;r.b=0;r.dn=1;r.lr=now}});return pick.length}
 function blurting(ti,done){let fin=false,stage=1;const finish=v=>{if(fin)return;fin=true;clearInterval(iv);done&&done(v)};
-  const ul=T.map((t,i)=>i).filter(i=>unlocked(i)&&T[i].form&&T[i].form.length);if(!ul.length){done&&done();return}if(!ul.includes(ti))ti=ul[0];
+  const ul=T.map((t,i)=>i).filter(i=>started(i)&&T[i].form&&T[i].form.length);if(!ul.length){done&&done();return}if(!ul.includes(ti))ti=ul[0];
   const n=el('div','blurm');n.innerHTML='<h2>Calentamiento: ¿qué recuerdas?</h2><p class="sub">Escribe todo lo que recuerdes del tema sin mirar nada: ideas, fórmulas, pasos, errores comunes. El orden no importa.</p>';
   const tl=el('label','bltop','Tema:');const sel=document.createElement('select');ul.forEach(i=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+T[i].name;if(i===ti)o.selected=true;sel.append(o)});tl.append(sel);
   const tm=el('div','bltimer','<b>3:00</b><i><u></u></i>');const ta=el('textarea','wta');ta.rows=8;ta.setAttribute('aria-label','Lo que recuerdas del tema');

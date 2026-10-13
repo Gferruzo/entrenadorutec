@@ -4721,7 +4721,7 @@
    }
   ]
  },
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>Mapa del parcial 2026-1:</b> fue todo de lógica, y lo que más puntos dio fueron los cuantificadores (6 de 20), seguidos de argumentos (5), tabla de verdad con FND/FNC (5) y valores de verdad (4). Los ejercicios «Tipo parcial» de cada tema son versiones modificadas de ese examen.",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Los temas siguen un orden sugerido, pero puedes empezar por el que quieras. <b>Mapa del parcial 2026-1:</b> fue todo de lógica, y lo que más puntos dio fueron los cuantificadores (6 de 20), seguidos de argumentos (5), tabla de verdad con FND/FNC (5) y valores de verdad (4). Los ejercicios «Tipo parcial» de cada tema son versiones modificadas de ese examen.",
  "guide": true,
  "short": "Examen parcial",
  "sub": "Sem. 1 a 7",

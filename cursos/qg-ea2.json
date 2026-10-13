@@ -6,7 +6,7 @@
  "short": "EA2",
  "sub": "Sem. 4 a 6",
  "guide": true,
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La EA2 fue en la semana 6</b> y cubrió enlace químico, Lewis, carga formal, geometría y polaridad de molécula. Ya pasó: úsala para repasar. El simulacro tiene las tres etapas de las EA de ciclos pasados (selección por enlace, polaridad, geometría y CF).",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Los temas siguen un orden sugerido, pero puedes empezar por el que quieras. <b>La EA2 fue en la semana 6</b> y cubrió enlace químico, Lewis, carga formal, geometría y polaridad de molécula. Ya pasó: úsala para repasar. El simulacro tiene las tres etapas de las EA de ciclos pasados (selección por enlace, polaridad, geometría y CF).",
  "form": "<p class=\"note\">Hoja de repaso de la EA2 (semanas 4 a 6).</p>\n<div class=\"fgrid\">\n<div><b>Tipo de enlace</b><br>Metal+no metal: iónico · no metales: covalente · metal: metálico</div>\n<div><b>ΔEN</b><br>= 0 apolar · > 0 polar · C–H apolar</div>\n<div><b>EN</b><br>H 2,1 · C 2,5 · N 3,0 · O 3,5 · F 4,0 · Cl 3,0 · S 2,5</div>\n<div><b>Lewis</b><br>Enlazantes = N − V · Libres = V − enlazantes</div>\n<div><b>Carga formal</b><br>CF = V − [NE + ½E]</div>\n<div><b>Geometrías</b><br>AX₂ lineal · AX₃ trig. plana · AX₂E angular</div>\n<div><b></b><br>AX₄ tetraédrica · AX₃E piramidal · AX₂E₂ angular</div>\n<div><b>Polaridad</b><br>Enlaces polares + asimetría → polar</div>\n</div>",
  "formSim": false,
  "topics": [

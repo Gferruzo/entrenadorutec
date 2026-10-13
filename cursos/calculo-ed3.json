@@ -8,7 +8,7 @@
  "short": "ED3",
  "sub": "Sem. 9 y 10",
  "guide": true,
- "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Completa todos los ejercicios de un tema para abrir el siguiente. <b>La ED3 es al cierre de la semana 10</b> (60 min, 20 puntos: conceptual 6, procedimental 9 y aplicación con IRCA 5) y evalúa optimización en contexto, antiderivada e integral indefinida, sustitución e integración por partes, y EDO de variables separables con condición inicial. El simulacro sigue ese formato. Ahora escribes tus respuestas como fórmulas (derivadas, integrales y límites) y se corrigen solas, aunque las escribas de otra forma equivalente. Hay graficador, tabla de signos, modelos de optimización con deslizador y campo de pendientes.",
+ "intro": "Resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento; la pista está siempre disponible. Los temas siguen un orden sugerido, pero puedes empezar por el que quieras. <b>La ED3 es al cierre de la semana 10</b> (60 min, 20 puntos: conceptual 6, procedimental 9 y aplicación con IRCA 5) y evalúa optimización en contexto, antiderivada e integral indefinida, sustitución e integración por partes, y EDO de variables separables con condición inicial. El simulacro sigue ese formato. Ahora escribes tus respuestas como fórmulas (derivadas, integrales y límites) y se corrigen solas, aunque las escribas de otra forma equivalente. Hay graficador, tabla de signos, modelos de optimización con deslizador y campo de pendientes.",
  "topics": [
   {
    "id": "w9graf",
