@@ -2152,7 +2152,7 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};
     nb.onkeydown=e=>{if(e.target===nb&&(e.key==='Enter'||e.key===' ')){e.preventDefault();enterGroup(nb,g)}};
     nb.onclick=()=>{if(editMenu||performance.now()-dragEnd<450)return;if(HOVER.matches)enterGroup(nb,g);else if(nb.classList.contains('open'))closeNb(nb);else openNb(nb)};
-    cell.append(nb,el('div','nbname',g.nbn||g.name));if(g.uni!=='UTEC')cell.append(el('div','nbuni',UNIS[g.uni]||g.uni));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
+    cell.append(nb,el('div','nbname',g.nbn||g.name));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
     if(editMenu&&where){const x=el('button','misx'+(where==='otros'?' add':''),where==='otros'?'+':'−');x.type='button';
       x.setAttribute('aria-label',(where==='otros'?'Agregar ':'Quitar ')+g.name+(where==='otros'?' a':' de')+' Mis cursos');
       x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
@@ -2222,7 +2222,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
 function hintDone(){S.set('ent-hint-drag',1)}
 function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(e){}});SORTS=[];m.innerHTML='';
   if(!MIS){const h=el('div','mishead');h.append(el('h2','mist','Todos los cursos'));const b=el('button','statsbtn','✓ Elegir mis cursos');b.onclick=()=>pickerModal();h.append(b);
-    m.append(h);const U=byUni(GROUPS);U.forEach(([u,L])=>{if(U.length>1)m.append(el('h3','unih',UNIS[u]||u));const gr=el('div','menu');L.forEach(g=>gr.append(mkCell(g)));m.append(gr)});m.append(aporteBox());bellUI();return}
+    const gr=el('div','menu');byUni(GROUPS).forEach(([u,L])=>L.forEach(g=>gr.append(mkCell(g))));m.append(h,gr,aporteBox());bellUI();return}
   const rest=GROUPS.filter(g=>!MIS.sel.includes(g.key));
   const h=el('div','mishead');h.append(el('h2','mist','Mis cursos'));
   const eb=el('button','statsbtn',editMenu?'✓ Listo':'✏️ Editar');eb.onclick=()=>{editMenu=!editMenu;if(editMenu)hintDone();renderMenu()};h.append(eb);m.append(h);
@@ -2233,13 +2233,13 @@ function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(
   MIS.sel.map(gByKey).filter(Boolean).forEach(g=>mine.append(mkCell(g,'mine')));m.append(mine);
   if(rest.length){const d=el('details','otros');d.open=otrosOpen||editMenu;d.ontoggle=()=>{if(!editMenu)otrosOpen=d.open};
     const sm=el('summary');sm.append(el('h2','mist','Otros cursos <small>'+rest.length+'</small>'));d.append(sm);
-    const U=byUni(rest);U.forEach(([u,L])=>{if(U.length>1)d.append(el('h3','unih',UNIS[u]||u));const og=el('div','menu otrosg'+(editMenu?' editing':''));L.forEach(g=>og.append(mkCell(g,'otros')));d.append(og);mkSort(og)});m.append(d)}
+    const og=el('div','menu otrosg'+(editMenu?' editing':''));byUni(rest).forEach(([u,L])=>L.forEach(g=>og.append(mkCell(g,'otros'))));d.append(og);m.append(d);mkSort(og)}
   m.append(aporteBox());mkSort(mine);bellUI()}
 function pickerModal(kind,after){const n=el('div');const nuevo=kind==='ciclo';
   n.append(el('h2',null,nuevo?'Nuevo ciclo: ¿actualizas tus cursos?':'¿Qué cursos llevas este ciclo?'),
     el('p','sub','Aparecerán primero en «Mis cursos». El resto queda en «Otros cursos», siempre a mano. Puedes cambiarlo cuando quieras con «✏️ Editar».'));
   const pre=new Set(MIS?MIS.sel:[]);const box=el('div','mpick');
-  {const U=byUni(GROUPS);U.forEach(([u,L])=>{if(U.length>1)box.append(el('div','unip',UNIS[u]||u));L.forEach(g=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';c.value=g.key;c.checked=pre.has(g.key);c.onchange=upd;l.append(c,document.createTextNode(g.name));box.append(l)})})}
+  {const U=byUni(GROUPS);U.forEach(([u,L])=>{L.forEach(g=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';c.value=g.key;c.checked=pre.has(g.key);c.onchange=upd;l.append(c,document.createTextNode(g.name));box.append(l)})})}
   n.append(box);const bt=el('div','mbtns');const ok=el('button','pri','Listo');const sk=el('button',null,MIS?'Dejar como está':'Ver todos los cursos');
   function upd(){const k=box.querySelectorAll('input:checked').length;ok.disabled=!k;ok.textContent=k?'Listo ('+k+')':'Elige al menos uno'}
   ok.onclick=()=>{const chk=[...box.querySelectorAll('input:checked')].map(i=>i.value);const keep=(MIS?MIS.sel:[]).filter(k=>chk.includes(k));
