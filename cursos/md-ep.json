@@ -3,7 +3,7 @@
  "formSim": false,
  "id": "md-ep",
  "code": "CS6005",
- "tapa": {"p": "liso", "c": ["#FBF9F4", "#3E3532", "#3E3532", "#3E3532"]},
+ "tapa": {"p": "liso", "c": ["#FBF9F4", "#6D6662", "#3E3532", "#3E3532"]},
  "name": "Matemáticas Discretas I",
  "exam": "Examen parcial 2026-2",
  "topics": [

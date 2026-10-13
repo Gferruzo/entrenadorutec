@@ -2186,9 +2186,9 @@ function tapaHTML(g,t){t=t||tapaOf(g);const[f,p,l,x]=t.c,fn=TAPAS[t.p]||TAPAS.li
    `<div class="tplomo" style="background:${l}"><span style="color:${f}">NotPull</span></div><div class="tpbig" style="color:${x}">${(g.uni||'UTEC').toUpperCase()}</div>`}
 /* Personalizar portada: patrón + paleta, guardado por usuario (ent-tapas, también en la nube) */
 const TPATS=[['lunares','Lunares'],['lunaresp','Lunares pequeños'],['estrellas','Estrellas'],['cielo','Cielo estrellado'],['cuadros','Cuadros'],['corazones','Corazones'],['liso','Liso']];
-const TPALS=[['Celeste',['#FDFBF2','#C7DCEA','#86B9E0','#86B9E0']],['Durazno',['#FCF6F0','#F3C6A5','#E89E6F','#E08F5E']],['Lila',['#F8F6F1','#D4C8E8','#A893CF','#9B84C6']],['Menta',['#F7FBF6','#BFE3CF','#7CC4A0','#6BB892']],
- ['Salvia',['#FAFAF8','#C9CCC0','#A3A994','#98A08A']],['Azul grisáceo',['#F7F9FB','#C3CFDB','#8299AE','#7489A0']],['Clásico',['#FBF9F4','#3E3532','#3E3532','#3E3532']],['Crema y negro',['#EEEAE2','#343434','#1E1E1E','#111111']],
- ['Frambuesa',['#B23F4D','#EFDCCF','#FCE4E6','#FFE7EC']],['Moca',['#7A6964','#E4AFC1','#F9D6E1','#FDE6EE']],['Azul noche',['#1F2A44','#E9E4D4','#E9E4D4','#F3EEDF']]];
+const TPALS=[['Celeste',['#FDFBF2','#C7DCEA','#4593CF','#2D77AF']],['Durazno',['#FCF6F0','#F3C6A5','#D96923','#B15822']],['Lila',['#F8F6F1','#D4C8E8','#947AC4','#7F61B6']],['Menta',['#F7FBF6','#BFE3CF','#459A70','#3D805F']],
+ ['Salvia',['#FAFAF8','#C9CCC0','#868E72','#6D755F']],['Azul grisáceo',['#F7F9FB','#C3CFDB','#738CA4','#5F758C']],['Clásico',['#FBF9F4','#6D6662','#3E3532','#3E3532']],['Crema y negro',['#EEEAE2','#474645','#1E1E1E','#111111']],
+ ['Frambuesa',['#B23F4D','#D49594','#FCE4E6','#FFE7EC']],['Moca',['#7A6964','#CA9EAA','#F9D6E1','#FDEBF1']],['Azul noche',['#1F2A44','#A2A3A2','#E9E4D4','#F3EEDF']]];
 function setTapa(k,t){const m=Object.assign({},(TAPU&&TAPU.m)||{});if(t)m[k]=t;else delete m[k];TAPU={v:1,m,ts:Date.now()};S.set('ent-tapas',TAPU);push(0)}
 function tapaEditor(g){const orig=g.tapa,same=(a,b)=>a.p===b.p&&a.c.join()===b.c.join();let cur=JSON.parse(JSON.stringify(tapaOf(g)));
   const n=el('div','tped');n.append(el('h2',null,'Portada de '+(g.nbn||g.name)),el('p','sub','Solo cambia en tu menú; los demás ven la portada original.'));

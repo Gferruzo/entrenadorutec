@@ -3,7 +3,7 @@
  "formSim": false,
  "id": "fc-ea4",
  "code": "CC6101",
- "tapa": {"p": "cuadros", "c": ["#FAFAF8", "#969691", "#A3A994", "#98A08A"]},
+ "tapa": {"p": "cuadros", "c": ["#FAFAF8", "#AAAAA6", "#868E72", "#6D755F"]},
  "name": "Fundamentos del Cálculo",
  "exam": "EA4 (semanas 7 a 9)",
  "topics": [

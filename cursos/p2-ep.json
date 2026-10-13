@@ -1,7 +1,7 @@
 {
  "id": "p2-ep",
  "code": "CS1112",
- "tapa": {"p": "cuadros", "c": ["#F7F9FB", "#5F7894", "#8299AE", "#7489A0"]},
+ "tapa": {"p": "cuadros", "c": ["#F7F9FB", "#9CACBD", "#738CA4", "#5F758C"]},
  "name": "Programación II (C++)",
  "gname": "Programación II (C++)",
  "exam": "Examen parcial 2026-2 (sem. 1–7)",

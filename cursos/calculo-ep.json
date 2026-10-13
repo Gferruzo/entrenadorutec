@@ -3,7 +3,7 @@
  "formSim": false,
  "id": "calculo-ep",
  "code": "CC6103",
- "tapa": {"p": "lunares", "c": ["#FDFBF2", "#C7DCEA", "#86B9E0", "#86B9E0"]},
+ "tapa": {"p": "lunares", "c": ["#FDFBF2", "#C7DCEA", "#4593CF", "#2D77AF"]},
  "name": "Cálculo de una Variable",
  "exam": "Examen parcial 2026-2",
  "short": "Parcial",

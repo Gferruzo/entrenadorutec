@@ -3,7 +3,7 @@
  "formSim": false,
  "id": "micro-ep",
  "code": "AD1002",
- "tapa": {"p": "estrellas", "c": ["#FCF6F0", "#F3C6A5", "#E89E6F", "#E08F5E"]},
+ "tapa": {"p": "estrellas", "c": ["#FCF6F0", "#F3C6A5", "#D96923", "#B15822"]},
  "name": "Microeconomía Aplicada",
  "exam": "Examen parcial 2026-2 (semana 8)",
  "topics": [

@@ -3,7 +3,7 @@
  "formSim": true,
  "id": "mecanica-ep",
  "code": "CC6201",
- "tapa": {"p": "cielo", "c": ["#EEEAE2", "#343434", "#1E1E1E", "#111111"]},
+ "tapa": {"p": "cielo", "c": ["#EEEAE2", "#474645", "#1E1E1E", "#111111"]},
  "name": "Introducción a la Mecánica",
  "nbname": "Intro. a la Mecánica",
  "exam": "Examen 1 (parcial) 2026-II",

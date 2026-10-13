@@ -1,7 +1,7 @@
 {
  "id": "alga-rep",
  "code": "ALGA-UC",
- "tapa": {"p": "liso", "c": ["#F7F8FB", "#2E3B5E", "#2E3B5E", "#2E3B5E"]},
+ "tapa": {"p": "liso", "c": ["#F7F8FB", "#606A85", "#2E3B5E", "#2E3B5E"]},
  "uni": "Continental",
  "name": "Álgebra Lineal y Geometría Analítica",
  "nbname": "Álgebra Lineal y Geometría Analítica",

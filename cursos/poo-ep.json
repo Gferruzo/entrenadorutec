@@ -1,7 +1,7 @@
 {
  "id": "poo-ep",
  "code": "CS6004",
- "tapa": {"p": "cielo", "c": ["#1F2A44", "#E9E4D4", "#E9E4D4", "#F3EEDF"]},
+ "tapa": {"p": "cielo", "c": ["#1F2A44", "#A2A3A2", "#E9E4D4", "#F3EEDF"]},
  "name": "Programación Orientada a Objetos",
  "exam": "Examen parcial 2026-2 (sem. 1–8)",
  "short": "Examen parcial",
