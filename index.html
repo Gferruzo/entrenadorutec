@@ -234,7 +234,7 @@ code{font:0.9em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:
 .vah.f{fill:var(--curve)}.vah.d1{fill:var(--tan)}.vah.d2{fill:var(--sol)}.vah.g{fill:var(--ok)}.vah.h{fill:var(--muted)}.vah.bad{fill:var(--bad)}
 .vhd{fill:transparent;stroke-width:2.5;cursor:grab}.vhd.f{stroke:var(--curve)}.vhd.d1{stroke:var(--tan)}.vhd.g{stroke:var(--ok)}
 .vpg{fill:var(--ok);fill-opacity:.08}.vseg{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}.varc{fill:none;stroke:var(--sol);stroke-width:2}
-.cnsl{display:grid;gap:4px;margin:.4em 0}.cnr{display:flex;align-items:center;gap:8px}.cnr b{min-width:4.6em;font-size:.88rem;white-space:nowrap}.cnr .plrg{flex:1;margin:0}
+.rotin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:.4em 0}.rotin .cnr b{min-width:1.1em}.rotin .fin{width:100%;min-width:0;box-sizing:border-box}.cnsl{display:grid;gap:4px;margin:.4em 0}.cnr{display:flex;align-items:center;gap:8px}.cnr b{min-width:4.6em;font-size:.88rem;white-space:nowrap}.cnr .plrg{flex:1;margin:0}
 .pbtnx{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:6px 12px;font:600 .88rem Figtree,sans-serif;cursor:pointer;margin:.3em 0}
 .pls{width:100%;max-width:360px;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:8px}
 .pls text{font:500 10.5px Figtree,sans-serif}.pls .cht{font:800 13px Figtree,sans-serif;fill:var(--ink)}.plk{fill:var(--muted)}.pll{font-weight:800;font-size:12px}.pll.f{fill:var(--curve)}.pll.d1{fill:var(--tan)}.pll.d2{fill:var(--sol)}.pll.g{fill:var(--ok)}.pll.h{fill:var(--muted)}
@@ -453,6 +453,7 @@ body:has(#vMenu:not([hidden])){background-color:#FFFFFF;background-image:linear-
 #vMenu .menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:30px 44px;padding:8px 0 10px}
 @media (max-width:520px){#vMenu .menu{gap:26px 20px;grid-template-columns:repeat(2,minmax(0,1fr))}}
 .nbcell{display:flex;flex-direction:column;align-items:center;min-width:0}
+.nbuni{text-align:center;font:800 .68rem Figtree,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:2px}.unih{font:800 .8rem Figtree,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 4px}.unip{grid-column:1/-1;font:800 .75rem Figtree,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:8px}
 .nbname{margin-top:10px;text-align:center;font:600 1.18rem/1.1 Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1;color:#3B3B3B;letter-spacing:-.015em}
 .nb{position:relative;width:100%;aspect-ratio:.86;perspective:1600px;cursor:pointer;outline:none;border-radius:6px 12px 12px 6px;z-index:1}
 .nb.open{z-index:6}
@@ -2114,7 +2115,10 @@ GEN['com2-ep']=[
    steps:['Una refutación pertinente plantea una excepción del mismo asunto: en caso de que '+s.x+'.','Las demás repiten el dato, enuncian la garantía (que apoya la tesis) o hablan de otro tema.'],ans:'En caso de que '+s.x}}}
 ];
 
-const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,nbn:c.nbname,list:[]});m.get(k).list.push(c)});return[...m.values()]})();
+const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,nbn:c.nbname,uni:c.uni||'UTEC',list:[]});m.get(k).list.push(c)});return[...m.values()]})();
+const UNIS={UTEC:'UTEC',Continental:'U. Continental',UPC:'UPC'};
+/* agrupa cursos por universidad (UTEC primero); devuelve [[uni,[g…]],…] */
+const byUni=L=>{const m=new Map();L.forEach(g=>{if(!m.has(g.uni))m.set(g.uni,[]);m.get(g.uni).push(g)});return[...m.entries()].sort((a,b)=>(a[0]==='UTEC'?0:1)-(b[0]==='UTEC'?0:1))};
 const NBCOL=['#CDBBE6','#F6C9A8','#AADCC4','#BBD5EF','#F0A69E','#F2DC9C','#D9C4AA'];
 const COVERS={"CI2": "img/portada-CI2.jpg", "CC6103": "img/portada-CC6103.jpg", "CC6201": "img/portada-CC6201.jpg", "IN6013": "img/portada-IN6013.jpg", "CS6005": "img/portada-CS6005.jpg", "AD6002": "img/portada-AD6002.jpg", "CC6101": "img/portada-CC6101.jpg"};
 const HOVER=matchMedia('(hover:hover) and (pointer:fine)');
@@ -2148,7 +2152,7 @@ function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell'
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};
     nb.onkeydown=e=>{if(e.target===nb&&(e.key==='Enter'||e.key===' ')){e.preventDefault();enterGroup(nb,g)}};
     nb.onclick=()=>{if(editMenu||performance.now()-dragEnd<450)return;if(HOVER.matches)enterGroup(nb,g);else if(nb.classList.contains('open'))closeNb(nb);else openNb(nb)};
-    cell.append(nb,el('div','nbname',g.nbn||g.name));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
+    cell.append(nb,el('div','nbname',g.nbn||g.name));if(g.uni!=='UTEC')cell.append(el('div','nbuni',UNIS[g.uni]||g.uni));{const tg=nbTag(g.key);if(tg)cell.append(el('span','nbtag'+(tg==='Nuevo'?'':' upd'),tg))}
     if(editMenu&&where){const x=el('button','misx'+(where==='otros'?' add':''),where==='otros'?'+':'−');x.type='button';
       x.setAttribute('aria-label',(where==='otros'?'Agregar ':'Quitar ')+g.name+(where==='otros'?' a':' de')+' Mis cursos');
       x.onclick=e=>{e.stopPropagation();const sel=MIS.sel.filter(k=>k!==g.key);if(where==='otros')sel.push(g.key);setMis(sel);renderMenu()};cell.append(x)}
@@ -2173,7 +2177,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   n.append(el('p','sub','Clases, PPTs, guías, prácticas o exámenes de ciclos pasados (PDF o fotos). Lo revisamos y, si sirve, lo agregamos al curso o armamos uno nuevo.'));
   const f=el('div','apf');
   const lc=el('label',null,'Curso');const sc=document.createElement('select');
-  GROUPS.forEach(g=>{const o=document.createElement('option');o.value=g.name+(g.code?' ('+g.code+')':'');o.textContent=g.name;sc.append(o)});
+  GROUPS.forEach(g=>{const o=document.createElement('option');const un=g.uni!=='UTEC'?' · '+(UNIS[g.uni]||g.uni):'';o.value=g.name+(g.code?' ('+g.code+')':'')+un;o.textContent=g.name+un;sc.append(o)});
   const on=document.createElement('option');on.value='__nuevo';on.textContent='➕ Otro curso (nuevo)';sc.append(on);lc.append(sc);
   const ln=el('label',null,'Nombre del curso nuevo');const inN=document.createElement('input');inN.type='text';inN.maxLength=80;inN.placeholder='Ej.: Física II (CC6202)';ln.append(inN);ln.hidden=true;
   sc.onchange=()=>{ln.hidden=sc.value!=='__nuevo'};
@@ -2218,7 +2222,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
 function hintDone(){S.set('ent-hint-drag',1)}
 function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(e){}});SORTS=[];m.innerHTML='';
   if(!MIS){const h=el('div','mishead');h.append(el('h2','mist','Todos los cursos'));const b=el('button','statsbtn','✓ Elegir mis cursos');b.onclick=()=>pickerModal();h.append(b);
-    const gr=el('div','menu');GROUPS.forEach(g=>gr.append(mkCell(g)));m.append(h,gr,aporteBox());bellUI();return}
+    m.append(h);const U=byUni(GROUPS);U.forEach(([u,L])=>{if(U.length>1)m.append(el('h3','unih',UNIS[u]||u));const gr=el('div','menu');L.forEach(g=>gr.append(mkCell(g)));m.append(gr)});m.append(aporteBox());bellUI();return}
   const rest=GROUPS.filter(g=>!MIS.sel.includes(g.key));
   const h=el('div','mishead');h.append(el('h2','mist','Mis cursos'));
   const eb=el('button','statsbtn',editMenu?'✓ Listo':'✏️ Editar');eb.onclick=()=>{editMenu=!editMenu;if(editMenu)hintDone();renderMenu()};h.append(eb);m.append(h);
@@ -2229,13 +2233,13 @@ function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(
   MIS.sel.map(gByKey).filter(Boolean).forEach(g=>mine.append(mkCell(g,'mine')));m.append(mine);
   if(rest.length){const d=el('details','otros');d.open=otrosOpen||editMenu;d.ontoggle=()=>{if(!editMenu)otrosOpen=d.open};
     const sm=el('summary');sm.append(el('h2','mist','Otros cursos <small>'+rest.length+'</small>'));d.append(sm);
-    const og=el('div','menu otrosg'+(editMenu?' editing':''));rest.forEach(g=>og.append(mkCell(g,'otros')));d.append(og);m.append(d);mkSort(og)}
+    const U=byUni(rest);U.forEach(([u,L])=>{if(U.length>1)d.append(el('h3','unih',UNIS[u]||u));const og=el('div','menu otrosg'+(editMenu?' editing':''));L.forEach(g=>og.append(mkCell(g,'otros')));d.append(og);mkSort(og)});m.append(d)}
   m.append(aporteBox());mkSort(mine);bellUI()}
 function pickerModal(kind,after){const n=el('div');const nuevo=kind==='ciclo';
   n.append(el('h2',null,nuevo?'Nuevo ciclo: ¿actualizas tus cursos?':'¿Qué cursos llevas este ciclo?'),
     el('p','sub','Aparecerán primero en «Mis cursos». El resto queda en «Otros cursos», siempre a mano. Puedes cambiarlo cuando quieras con «✏️ Editar».'));
   const pre=new Set(MIS?MIS.sel:[]);const box=el('div','mpick');
-  GROUPS.forEach(g=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';c.value=g.key;c.checked=pre.has(g.key);c.onchange=upd;l.append(c,document.createTextNode(g.name));box.append(l)});
+  {const U=byUni(GROUPS);U.forEach(([u,L])=>{if(U.length>1)box.append(el('div','unip',UNIS[u]||u));L.forEach(g=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';c.value=g.key;c.checked=pre.has(g.key);c.onchange=upd;l.append(c,document.createTextNode(g.name));box.append(l)})})}
   n.append(box);const bt=el('div','mbtns');const ok=el('button','pri','Listo');const sk=el('button',null,MIS?'Dejar como está':'Ver todos los cursos');
   function upd(){const k=box.querySelectorAll('input:checked').length;ok.disabled=!k;ok.textContent=k?'Listo ('+k+')':'Elige al menos uno'}
   ok.onclick=()=>{const chk=[...box.querySelectorAll('input:checked')].map(i=>i.value);const keep=(MIS?MIS.sel:[]).filter(k=>chk.includes(k));
@@ -3314,23 +3318,243 @@ IW.econf=(ch,o)=>{const z=ch.z;let left=z;const ans=[];for(const [n,l,m] of QG_O
    mark(){ins.forEach(y=>{const k=ok(y);y.i.classList.toggle('good',k&&y.x.e>0);y.i.classList.toggle('bad',!k)})},
    reveal(){ins.forEach(y=>{if(!ok(y)){y.i.value=y.x.e||'';y.i.classList.remove('bad');y.i.classList.add('rev')}else if(y.x.e)y.i.classList.add('good')})},
    lock(){ins.forEach(y=>y.i.disabled=true)}}};
+/* ===== Geometría analítica: herramientas genéricas (recta, recta–circunferencia, parábola por definición, elipse con hilo, rotación de cónicas, plano polar, cónicas polares, completar cuadrados) ===== */
+function gF(o){const W=o.w||320,H=o.h||320,P=16;const [x0,x1]=o.xr||[-6,6],[y0,y1]=o.yr||[-6,6];const sx=(W-2*P)/(x1-x0),sy=(H-2*P)/(y1-y0);
+  const X=x=>P+(x-x0)*sx,Y=y=>H-P-(y-y0)*sy;const id='g'+Math.random().toString(36).slice(2,8);
+  const F={W,H,X,Y,x0,x1,y0,y1,id,inv:(px,py)=>[x0+(px-P)/sx,y0+(H-P-py)/sy],
+    head(step,lab){step=step||1;lab=lab||2;let g='<svg class="pls vsv" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg"><clipPath id="'+id+'"><rect x="'+P+'" y="'+P+'" width="'+(W-2*P)+'" height="'+(H-2*P)+'"/></clipPath>';
+      for(let v=Math.ceil(x0/step)*step;v<=x1+1e-9;v+=step)g+='<line class="plg" x1="'+X(v)+'" y1="'+P+'" x2="'+X(v)+'" y2="'+(H-P)+'"/>';
+      for(let v=Math.ceil(y0/step)*step;v<=y1+1e-9;v+=step)g+='<line class="plg" x1="'+P+'" y1="'+Y(v)+'" x2="'+(W-P)+'" y2="'+Y(v)+'"/>';
+      if(y0<=0&&y1>=0)g+='<line class="pla" x1="'+P+'" y1="'+Y(0)+'" x2="'+(W-P)+'" y2="'+Y(0)+'"/>';if(x0<=0&&x1>=0)g+='<line class="pla" x1="'+X(0)+'" y1="'+P+'" x2="'+X(0)+'" y2="'+(H-P)+'"/>';
+      for(let v=Math.ceil(x0/lab)*lab;v<=x1+1e-9;v+=lab)if(Math.abs(v)>1e-9)g+='<text class="plk" x="'+X(v)+'" y="'+(Math.min(Math.max(Y(0),P),H-P)+12)+'" text-anchor="middle">'+fmtV(v)+'</text>';
+      for(let v=Math.ceil(y0/lab)*lab;v<=y1+1e-9;v+=lab)if(Math.abs(v)>1e-9)g+='<text class="plk" x="'+(Math.min(Math.max(X(0),P),W-P)-4)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+fmtV(v)+'</text>';
+      return g},
+    seg(a,b,c,d,cl){return'<line class="'+(cl||'vln f')+'" x1="'+X(a).toFixed(1)+'" y1="'+Y(b).toFixed(1)+'" x2="'+X(c).toFixed(1)+'" y2="'+Y(d).toFixed(1)+'" clip-path="url(#'+id+')"/>'},
+    /* recta a·x + b·y + c = 0, recortada al cuadro */
+    line(a,b,c,cl){const L=Math.max(x1-x0,y1-y0)*3;let px,py;if(Math.abs(b)>1e-12){px=(x0+x1)/2;py=-(a*px+c)/b}else{px=-c/a;py=(y0+y1)/2}const n=Math.hypot(a,b),dx=-b/n,dy=a/n;return F.seg(px-dx*L,py-dy*L,px+dx*L,py+dy*L,cl)},
+    path(P2,cl,closed){let d='',pen=false;P2.forEach(p=>{if(!p||!isFinite(p[0])||!isFinite(p[1])||Math.abs(p[0])>1e4||Math.abs(p[1])>1e4){pen=false;return}d+=(pen?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1);pen=true});return'<path class="'+(cl||'plf f')+'" d="'+d+(closed?'Z':'')+'" clip-path="url(#'+id+')"/>'},
+    circ(h,k,r,cl){return'<ellipse class="'+(cl||'plf f')+'" cx="'+X(h)+'" cy="'+Y(k)+'" rx="'+Math.abs(r*sx)+'" ry="'+Math.abs(r*sy)+'" clip-path="url(#'+id+')"/>'},
+    pt(x,y,l,cl,h){let g='<circle class="plp'+(cl?' '+cl:'')+'" cx="'+X(x).toFixed(1)+'" cy="'+Y(y).toFixed(1)+'" r="'+(h?6:3.8)+'"/>';if(h)g+='<circle data-h="'+h+'" cx="'+X(x).toFixed(1)+'" cy="'+Y(y).toFixed(1)+'" r="16" fill="transparent" style="cursor:grab"/>';if(l)g+='<text class="pll" x="'+(X(x)+7).toFixed(1)+'" y="'+(Y(y)-7).toFixed(1)+'">'+l+'</text>';return g},
+    txt(x,y,t,cl){return'<text class="'+(cl||'plk')+'" x="'+X(x).toFixed(1)+'" y="'+Y(y).toFixed(1)+'">'+t+'</text>'},
+    /* curva implícita G(x,y)=0 por cuadrados marchantes */
+    impl(G,cl,N){N=N||150;const dx=(x1-x0)/N,dy=(y1-y0)/N;const v=[];for(let i=0;i<=N;i++){v.push([]);for(let j=0;j<=N;j++)v[i].push(G(x0+i*dx,y0+j*dy))}
+      let d='';const I=(a,b)=>a/(a-b);
+      for(let i=0;i<N;i++)for(let j=0;j<N;j++){const a=v[i][j],b=v[i+1][j],c=v[i+1][j+1],e=v[i][j+1];const pts=[];
+        const xa=x0+i*dx,ya=y0+j*dy;
+        if((a>0)!==(b>0))pts.push([xa+dx*I(a,b),ya]);if((b>0)!==(c>0))pts.push([xa+dx,ya+dy*I(b,c)]);if((e>0)!==(c>0))pts.push([xa+dx*I(e,c),ya+dy]);if((a>0)!==(e>0))pts.push([xa,ya+dy*I(a,e)]);
+        for(let k=0;k+1<pts.length;k+=2)d+='M'+X(pts[k][0]).toFixed(1)+' '+Y(pts[k][1]).toFixed(1)+'L'+X(pts[k+1][0]).toFixed(1)+' '+Y(pts[k+1][1]).toFixed(1)}
+      return'<path class="'+(cl||'plf f')+'" d="'+d+'" clip-path="url(#'+id+')"/>'}};
+  return F}
+/* arrastre: fig = contenedor estable; get(h) → [x,y]; set(h,[x,y]) */
+function gDrag(fig,Fr,get,set,snap){let cur=null;const s=snap||0.5;
+  fig.addEventListener('pointerdown',ev=>{const h=ev.target.closest&&ev.target.closest('[data-h]');if(!h)return;cur=h.dataset.h;try{fig.setPointerCapture(ev.pointerId)}catch(e){}ev.preventDefault()});
+  fig.addEventListener('pointermove',ev=>{if(!cur)return;const sv=fig.querySelector('svg');if(!sv)return;const F=Fr();const [px,py]=svgPt(sv,ev,F.W,F.H);let [x,y]=F.inv(px,py);
+    x=Math.max(F.x0,Math.min(F.x1,Math.round(x/s)*s));y=Math.max(F.y0,Math.min(F.y1,Math.round(y/s)*s));x=+x.toFixed(6);y=+y.toFixed(6);const o=get(cur);if(o&&(o[0]!==x||o[1]!==y))set(cur,[x,y])});
+  const up=()=>{cur=null};fig.addEventListener('pointerup',up);fig.addEventListener('pointercancel',up)}
+const gSw=(l,on,set,redraw)=>{const x=el('button','chsw'+(on?' on':''),'<i></i><span>'+l+'</span>');x.type='button';x.onclick=()=>{x.classList.toggle('on');set(x.classList.contains('on'));redraw()};return x};
+const gSl=(lab,mi,ma,st,v,on,fmt)=>{const r=el('label','cnr');const i=el('input','plrg');i.type='range';i.min=mi;i.max=ma;i.step=st;i.value=v;const s=el('b',null,'');const sh=()=>{s.innerHTML=lab+' = '+(fmt?fmt(+i.value):fmtV(+i.value))};sh();i.oninput=()=>{sh();on(+i.value)};r.append(s,i);r.inp=i;r.sh=sh;return r};
+const gChips=(opts,cur,on)=>{const b=el('div','jbar');opts.forEach(([k,l])=>{const x=el('button','jm'+(k===cur?' on':''),l);x.type='button';x.onclick=()=>{b.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));on(k)};b.append(x)});return b};
+const gTs=n=>{try{MathJax.typesetPromise([n]).catch(()=>{})}catch(e){}};
+/* número bonito: fracción simple, raíz o decimal */
+function gN(v){if(!isFinite(v))return'—';if(Math.abs(v-Math.round(v))<1e-9)return String(Math.round(v)).replace('-','−');
+  for(let d=2;d<=12;d++){const n=Math.round(v*d);if(Math.abs(n/d-v)<1e-9)return(n<0?'−':'')+Math.abs(n)+'/'+d}
+  for(const q of[2,3,5,6,7,10,11,13,14,15,17,19,21])for(let d=1;d<=8;d++){const n=Math.round(v*d/Math.sqrt(q));if(n&&Math.abs(n)<=60&&Math.abs(n*Math.sqrt(q)/d-v)<1e-9)return(n<0?'−':'')+(Math.abs(n)===1?'':Math.abs(n))+'√'+q+(d>1?'/'+d:'')}
+  return fmtV(v).replace('-','−')}
+/* términos sin normalizar: [[coef,'x^2'],…] → "x^2-4x+3" */
+function gTerms(L){let t='';L.forEach(([k,v])=>{if(Math.abs(k)<1e-9)return;const n=Math.abs(k);t+=(k<0?'-':(t?'+':''))+(v&&Math.abs(n-1)<1e-9?'':gN(n).replace('−','-'))+v});return t||'0'}
+/* Ax + By + C = 0 con coeficientes enteros si se puede */
+function gLin(a,b,c,vx,vy){vx=vx||'x';vy=vy||'y';let m=1;for(const d of[1,2,3,4,5,6,8,10,12]){if([a,b,c].every(t=>Math.abs(t*d-Math.round(t*d))<1e-9)){m=d;break}}a=Math.round(a*m*1e9)/1e9;b=Math.round(b*m*1e9)/1e9;c=Math.round(c*m*1e9)/1e9;
+  if([a,b,c].every(Number.isInteger)){const g=LWQ.g(LWQ.g(a,b),c)||1;a/=g;b/=g;c/=g}if(a<0||(a===0&&b<0)){a=-a;b=-b;c=-c}
+  const tm=(k,v,first)=>{if(!k)return'';const s=k<0?'−':(first?'':'+');const n=Math.abs(k);return s+(v&&n===1?'':gN(n))+v};let t=tm(a,vx,true);t+=tm(b,vy,!t);t+=tm(c,'',!t);return(t||'0')+'=0'}
+
+/* 1. Completar cuadrados con áreas. o.b (coeficiente de x), o.v (variable) */
+LW.csq=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);let B=o.b!=null?o.b:6,st=0;const v=o.v||'x';
+  const nav=el('div','jbar');const pv=el('button','pbtnx','◀ Paso');const nx=el('button','pbtnx','Paso ▶');pv.type=nx.type='button';nav.append(pv,nx);
+  const sl=gSl('b',-10,10,1,B,x=>{B=x||1;if(!x){sl.inp.value=1;sl.sh()}draw()});ctl.append(sl,nav);
+  pv.onclick=()=>{st=Math.max(0,st-1);draw()};nx.onclick=()=>{st=Math.min(3,st+1);draw()};
+  const draw=()=>{const h=B/2,ah=Math.abs(h),S=120,u=Math.min(15,70/Math.max(ah,1)),w=ah*u,W=320,Hh=230,x0=40,y0=30;
+    let g='<svg class="pls" viewBox="0 0 '+W+' '+Hh+'" xmlns="http://www.w3.org/2000/svg">';
+    const R=(x,y,ww,hh,c,lab)=>'<rect x="'+x+'" y="'+y+'" width="'+ww+'" height="'+hh+'" style="fill:'+c+';fill-opacity:.22;stroke:'+c+';stroke-width:1.6"/>'+(lab?'<text class="pll" x="'+(x+ww/2)+'" y="'+(y+hh/2+4)+'" text-anchor="middle" style="fill:'+c+'">'+lab+'</text>':'');
+    g+=R(x0,y0,S,S,'var(--curve)',v+'²');
+    if(st===0)g+=R(x0+S,y0,2*w,S,'var(--tan)',(B<0?'−':'')+Math.abs(B)+v);
+    else{g+=R(x0+S,y0,w,S,'var(--tan)','');g+=R(x0,y0+S,S,w,'var(--tan)','');g+='<text class="pll" x="'+(x0+S+w/2)+'" y="'+(y0+S/2)+'" text-anchor="middle" style="fill:var(--tan)">'+gN(ah)+v+'</text><text class="pll" x="'+(x0+S/2)+'" y="'+(y0+S+w/2+4)+'" text-anchor="middle" style="fill:var(--tan)">'+gN(ah)+v+'</text>';
+      if(st>=2)g+=R(x0+S,y0+S,w,w,'var(--bad)',w>22?gN(ah*ah):'');}
+    g+='<text class="plk" x="'+(x0+S/2)+'" y="'+(y0-8)+'" text-anchor="middle">'+v+'</text><text class="plk" x="'+(x0-8)+'" y="'+(y0+S/2)+'" text-anchor="end">'+v+'</text>';
+    if(st>=1)g+='<text class="plk" x="'+(x0+S+w/2)+'" y="'+(y0-8)+'" text-anchor="middle">'+gN(ah)+'</text>';
+    if(st>=2){g+='<rect x="'+x0+'" y="'+y0+'" width="'+(S+w)+'" height="'+(S+w)+'" style="fill:none;stroke:var(--ink);stroke-width:2.2;stroke-dasharray:6 4"/>'}
+    g+='</svg>';fig.innerHTML=g;
+    const sg=B<0?'-':'+',hh=gN(ah).replace('−','-'),hq=gN(ah*ah);const bb=Math.abs(B);
+    const T=['\\('+v+'^2'+sg+bb+v+'\\): un cuadrado de lado \\('+v+'\\) y un rectángulo de \\('+bb+'\\times '+v+'\\).'+(B<0?' (Con \\(b\\lt0\\) el rectángulo se <b>resta</b>; el dibujo usa su tamaño.)':''),
+      'Parte el rectángulo en dos mitades de \\('+hh+'\\times '+v+'\\) y pega una a cada lado: \\('+v+'^2'+sg+hh+v+sg+hh+v+'\\).',
+      'Falta la esquina de \\('+hh+'\\times'+hh+'='+hq+'\\). Agrégala y el cuadrado queda completo: \\('+v+'^2'+sg+bb+v+'+'+hq+'=('+v+sg+hh+')^2\\).',
+      'Como sumaste \\('+hq+'\\), réstalo para no cambiar nada: <b>\\('+v+'^2'+sg+bb+v+'=('+v+sg+hh+')^2-'+hq+'\\)</b>. Regla: suma y resta \\(\\left(\\frac b2\\right)^2\\).'];
+    ro.innerHTML='<b>Paso '+(st+1)+' de 4.</b> '+T[st];pv.disabled=st===0;nx.disabled=st===3;gTs(ro)};
+  draw()};
+
+/* 2. Recta por dos puntos. o.a, o.b (puntos), o.p (punto P), o.par, o.dist */
+LW.recta=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||6;let Fr=gF({xr:[-R,R],yr:[-R,R]});
+  const P={A:(o.a||[-2,-1]).slice(),B:(o.b||[3,2]).slice(),P:(o.p||[-3,3]).slice()};let par=!!o.par,dist=!!o.dist;
+  const box=el('div','dcll');box.append(gSw('Paralela y perpendicular por P',par,x=>par=x,()=>draw()),gSw('Distancia de P a la recta',dist,x=>dist=x,()=>draw()));ctl.append(box);
+  const draw=()=>{const [x1,y1]=P.A,[x2,y2]=P.B;let g=Fr.head(1,2);ro.innerHTML='';
+    if(x1===x2&&y1===y2){fig.innerHTML=g+Fr.pt(x1,y1,'A','hot','A')+'</svg>';ro.innerHTML='A y B coinciden: sepáralos para tener una recta.';return}
+    const a=y2-y1,bb=x1-x2,c=-(a*x1+bb*y1);g+=Fr.line(a,bb,c,'vln f');
+    const vert=x1===x2,m=vert?null:(y2-y1)/(x2-x1);
+    if(par||dist){const [px,py]=P.P;if(par){g+=Fr.line(a,bb,-(a*px+bb*py),'vln d1 dsh');g+=Fr.line(bb,-a,-(bb*px-a*py),'vln d2 dsh')}
+      if(dist){const t=(a*px+bb*py+c)/(a*a+bb*bb),fx=px-a*t,fy=py-bb*t;g+=Fr.seg(px,py,fx,fy,'pltan')+Fr.pt(fx,fy,'H','op')}
+      g+=Fr.pt(px,py,'P','hot','P')}
+    g+=Fr.seg(x1,y1,x2,y1,'vseg')+Fr.seg(x2,y1,x2,y2,'vseg')+Fr.pt(x1,y1,'A','','A')+Fr.pt(x2,y2,'B','','B');fig.innerHTML=g+'</svg>';
+    let t='A = ('+gN(x1)+'; '+gN(y1)+') · B = ('+gN(x2)+'; '+gN(y2)+')<br>';
+    if(vert)t+='Recta vertical: <b>\\(x='+gN(x1).replace('−','-')+'\\)</b>, pendiente no definida (90°).';
+    else{const ang=(Math.atan(m)*180/Math.PI+180)%180;const fr='\\dfrac{'+gN(y2-y1).replace('−','-')+'}{'+gN(x2-x1).replace('−','-')+'}';t+='Pendiente \\(m='+fr+(Number.isInteger(y2-y1)&&Number.isInteger(x2-x1)&&LWQ.g(y2-y1,x2-x1)===1&&x2-x1>0?'':'='+gN(m).replace('−','-'))+'\\) · inclinación \\('+fmtV(ang)+'°\\)<br>Punto-pendiente: \\(y-'+'('+gN(y1).replace('−','-')+')='+gN(m).replace('−','-')+'(x-('+gN(x1).replace('−','-')+'))\\)'}
+    t+='<br>General: <b>\\('+gLin(a,bb,c).replace(/−/g,'-')+'\\)</b>';
+    if(par&&!vert)t+='<br><span style="color:var(--tan)">Paralela: misma \\(m='+gN(m).replace('−','-')+'\\)</span> · <span style="color:var(--sol)">perpendicular: \\(m_\\perp='+(m===0?'\\text{no definida}':gN(-1/m).replace('−','-'))+'\\) (\\(m\\cdot m_\\perp=-1\\))</span>';
+    if(dist){const [px,py]=P.P,dd=Math.abs(a*px+bb*py+c)/Math.hypot(a,bb);t+='<br>\\(d(P,L)=\\dfrac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}='+gN(dd).replace('−','-')+'\\)'}
+    ro.innerHTML=t;gTs(ro)};
+  gDrag(fig,()=>Fr,h=>P[h],(h,q)=>{P[h]=q;draw()},o.snap||0.5);draw()};
+
+/* 3. Posiciones relativas. o.mode 'rc' (recta y circunferencia) | 'cc' (dos circunferencias) */
+LW.rcirc=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||7;const Fr=gF({xr:[-R,R],yr:[-R,R]});let mode=o.mode||'rc';
+  const P={C:(o.c||[0,0]).slice(),A:(o.a||[-5,4]).slice(),B:(o.b||[5,1]).slice(),D:(o.d||[4,1]).slice()};let r1=o.r||3,r2=o.r2||2;
+  const s1=gSl('r',0.5,6,0.5,r1,v=>{r1=v;draw()}),s2=gSl('r₂',0.5,6,0.5,r2,v=>{r2=v;draw()});
+  ctl.append(gChips([['rc','Recta y circunferencia'],['cc','Dos circunferencias']],mode,k=>{mode=k;s2.hidden=mode!=='cc';s1.querySelector('b').innerHTML='';s1.sh();draw()}),s1,s2);s2.hidden=mode!=='cc';
+  const near=(a,c)=>Math.abs(a-c)<0.02;
+  const draw=()=>{const [h,k]=P.C;let g=Fr.head(1,2),t='';
+    if(mode==='rc'){const [x1,y1]=P.A,[x2,y2]=P.B;g+=Fr.circ(h,k,r1,'plf f');if(x1===x2&&y1===y2){fig.innerHTML=g+'</svg>';ro.innerHTML='Separa los puntos de la recta.';return}
+      const a=y2-y1,bb=x1-x2,c=-(a*x1+bb*y1),n=Math.hypot(a,bb),d=Math.abs(a*h+bb*k+c)/n,tt=(a*h+bb*k+c)/(n*n),fx=h-a*tt,fy=k-bb*tt;
+      g+=Fr.line(a,bb,c,'vln d1')+Fr.seg(h,k,fx,fy,'pltan')+Fr.pt(h,k,'C','','C')+Fr.pt(x1,y1,'','','A')+Fr.pt(x2,y2,'','','B');
+      const kind=near(d,r1)?'t':d>r1?'e':'s';const I=[];if(kind==='t')I.push([fx,fy]);else if(kind==='s'){const L=Math.sqrt(r1*r1-d*d),ux=-bb/n,uy=a/n;I.push([fx+ux*L,fy+uy*L],[fx-ux*L,fy-uy*L])}
+      I.forEach(p=>g+=Fr.pt(p[0],p[1],'','hot'));
+      t='Recta: \\('+gLin(a,bb,c).replace(/−/g,'-')+'\\) · centro \\(('+gN(h).replace('−','-')+','+gN(k).replace('−','-')+')\\), \\(r='+gN(r1)+'\\)<br>Distancia del centro a la recta: \\(d='+gN(d).replace('−','-')+'\\)<br>'+
+        ({e:'<b>\\(d\\gt r\\) → exterior</b>: no se cortan (al sustituir, \\(\\Delta\\lt0\\)).',t:'<b>\\(d=r\\) → tangente</b>: un punto (\\(\\Delta=0\\)).',s:'<b>\\(d\\lt r\\) → secante</b>: dos puntos (\\(\\Delta\\gt0\\)).'})[kind]+
+        (I.length?' Punto'+(I.length>1?'s':'')+': '+I.map(p=>'('+fmtV(p[0])+'; '+fmtV(p[1])+')').join(' y '):'')}
+    else{const [h2,k2]=P.D;g+=Fr.circ(h,k,r1,'plf f')+Fr.circ(h2,k2,r2,'plf d1')+Fr.seg(h,k,h2,k2,'vseg')+Fr.pt(h,k,'C₁','','C')+Fr.pt(h2,k2,'C₂','','D');
+      const d=Math.hypot(h2-h,k2-k),S=r1+r2,Df=Math.abs(r1-r2);let kind;
+      if(d<1e-9)kind=near(r1,r2)?'igual':'conc';else if(near(d,S))kind='te';else if(d>S)kind='ext';else if(near(d,Df))kind='ti';else if(d<Df)kind='int';else kind='sec';
+      if(['te','ti','sec'].includes(kind)){const a=(r1*r1-r2*r2+d*d)/(2*d),hh=Math.sqrt(Math.max(0,r1*r1-a*a)),ux=(h2-h)/d,uy=(k2-k)/d,mx=h+a*ux,my=k+a*uy;
+        (hh<0.03?[[mx,my]]:[[mx-uy*hh,my+ux*hh],[mx+uy*hh,my-ux*hh]]).forEach(p=>g+=Fr.pt(p[0],p[1],'','hot'))}
+      t='\\(d=|C_1C_2|='+gN(d).replace('−','-')+'\\) · \\(r_1+r_2='+gN(S)+'\\) · \\(|r_1-r_2|='+gN(Df)+'\\)<br><b>'+({ext:'\\(d\\gt r_1+r_2\\) → exteriores (ningún punto)',te:'\\(d=r_1+r_2\\) → tangentes exteriores (un punto)',sec:'\\(|r_1-r_2|\\lt d\\lt r_1+r_2\\) → secantes (dos puntos)',ti:'\\(d=|r_1-r_2|\\) → tangentes interiores (un punto)',int:'\\(d\\lt|r_1-r_2|\\) → interiores (ningún punto)',conc:'\\(d=0\\) → concéntricas',igual:'Son la misma circunferencia'})[kind]+'</b>'}
+    fig.innerHTML=g+'</svg>';ro.innerHTML=t;gTs(ro)};
+  gDrag(fig,()=>Fr,h=>P[h],(h,q)=>{P[h]=q;draw()},0.5);draw()};
+
+/* 4. Parábola por definición: arrastra V y F; mueve P. o.v=[h,k], o.p, o.dir 'v'|'h' */
+LW.pdef=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||7;const Fr=gF({xr:[-R,R],yr:[-R,R]});let dir=o.dir||'v';
+  let V=(o.v||[0,-1]).slice(),p=o.p!=null?o.p:1.5,t=o.t!=null?o.t:2.5;
+  const sl=gSl('Punto P (avanza sobre la curva)',-5,5,0.25,t,x=>{t=x;draw()},x=>'');
+  ctl.append(gChips([['v','Eje vertical'],['h','Eje horizontal']],dir,k=>{dir=k;draw()}),sl);
+  const Fp=()=>dir==='v'?[V[0],V[1]+p]:[V[0]+p,V[1]];
+  const draw=()=>{const [h,k]=V,[fx,fy]=Fp();let g=Fr.head(1,2);const pts=[];for(let i=-60;i<=60;i++){const s=i/6;pts.push(dir==='v'?[h+s,k+s*s/(4*p)]:[h+s*s/(4*p),k+s])}
+    g+=Fr.path(pts,'plf f');g+=dir==='v'?Fr.line(0,1,-(k-p),'vln h dsh'):Fr.line(1,0,-(h-p),'vln h dsh');
+    const P0=dir==='v'?[h+t,k+t*t/(4*p)]:[h+t*t/(4*p),k+t],D0=dir==='v'?[P0[0],k-p]:[h-p,P0[1]];const dF=Math.hypot(P0[0]-fx,P0[1]-fy),dD=Math.hypot(P0[0]-D0[0],P0[1]-D0[1]);
+    g+=Fr.seg(P0[0],P0[1],fx,fy,'vln d1')+Fr.seg(P0[0],P0[1],D0[0],D0[1],'vln d2')+Fr.pt(D0[0],D0[1],'','op')+Fr.pt(P0[0],P0[1],'P','hot');
+    g+=Fr.pt(h,k,'V','','V')+Fr.pt(fx,fy,'F','','F');fig.innerHTML=g+'</svg>';
+    const H=gN(h).replace('−','-'),K=gN(k).replace('−','-'),pp=gN(p).replace('−','-'),q=gN(4*p).replace('−','-');
+    const sub=(v,c)=>c===0?v:'('+v+(c<0?'+'+gN(-c):'-'+gN(c))+')';
+    const eq=dir==='v'?sub('x',h)+'^2='+q+sub('y',k):sub('y',k)+'^2='+q+sub('x',h);
+    const gen=(dir==='v'?gTerms([[1,'x^2'],[-2*h,'x'],[-4*p,'y'],[h*h+4*p*k,'']]):gTerms([[1,'y^2'],[-4*p,'x'],[-2*k,'y'],[k*k+4*p*h,'']]))+'=0';
+    ro.innerHTML='<span style="color:var(--tan)">\\(\\overline{PF}='+fmtV(dF)+'\\)</span> = <span style="color:var(--sol)">\\(\\overline{PD}='+fmtV(dD)+'\\)</span>: todo punto de la parábola está a la misma distancia del foco y de la directriz.<br>'+
+      '\\(p='+pp+'\\) · Abre hacia '+(dir==='v'?(p>0?'arriba':'abajo'):(p>0?'la derecha':'la izquierda'))+' · Foco \\(('+gN(fx).replace('−','-')+','+gN(fy).replace('−','-')+')\\) · Directriz \\('+(dir==='v'?'y='+gN(k-p).replace('−','-'):'x='+gN(h-p).replace('−','-'))+'\\) · \\(LR=|4p|='+gN(Math.abs(4*p))+'\\)<br>Ordinaria: <b>\\('+eq+'\\)</b> · General: \\('+gen.replace(/−/g,'-')+'\\)';gTs(ro)};
+  gDrag(fig,()=>Fr,h=>h==='V'?V:Fp(),(h,q)=>{if(h==='V')V=q;else{const np=dir==='v'?q[1]-V[1]:q[0]-V[0];if(Math.abs(np)>=0.25)p=np}draw()},0.25);draw()};
+
+/* 5. Elipse con hilo y tachuelas. o.a, o.c, o.dir 'h'|'v' */
+LW.hilo=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||7;const Fr=gF({xr:[-R,R],yr:[-R,R]});let a=o.a||5,c=o.c||3,dir=o.dir||'h',th=o.t!=null?o.t:1.1,timer=null,anim=false;
+  const sa=gSl('a',1,6.5,0.5,a,v=>{a=v;if(c>=a){c=a-0.5;sc.inp.value=c;sc.sh()}draw()}),sc=gSl('c',0,6,0.5,c,v=>{c=Math.min(v,a-0.5);if(c!==v){sc.inp.value=c;sc.sh()}draw()});
+  const play=el('button','pbtnx','✏️ Dibujar con el hilo');play.type='button';
+  play.onclick=()=>{if(timer){clearInterval(timer);timer=null;play.textContent='✏️ Dibujar con el hilo';return}th=0;anim=true;play.textContent='⏸ Pausa';timer=setInterval(()=>{th+=Math.PI/60;if(th>=2*Math.PI){th=2*Math.PI;anim=false;clearInterval(timer);timer=null;play.textContent='✏️ Dibujar con el hilo'}draw()},40)};
+  ctl.append(gChips([['h','Horizontal'],['v','Vertical']],dir,k=>{dir=k;draw()}),sa,sc,play);
+  const draw=()=>{const bb=Math.sqrt(a*a-c*c);const E=s=>dir==='h'?[a*Math.cos(s),bb*Math.sin(s)]:[bb*Math.cos(s),a*Math.sin(s)];const F1=dir==='h'?[c,0]:[0,c],F2=dir==='h'?[-c,0]:[0,-c];
+    let g=Fr.head(1,2);const all=[],done=[];for(let i=0;i<=120;i++){const s=2*Math.PI*i/120;all.push(E(s));if(!anim||s<=th+1e-9)done.push(E(s))}
+    g+=Fr.path(all,'plf h dsh')+Fr.path(done,'plf f');const P0=E(th);
+    g+=Fr.seg(F1[0],F1[1],P0[0],P0[1],'vln d1')+Fr.seg(F2[0],F2[1],P0[0],P0[1],'vln d2');
+    const Vt=dir==='h'?[[a,0],[-a,0]]:[[0,a],[0,-a]];Vt.forEach((v,i)=>g+=Fr.pt(v[0],v[1],i?'V₂':'V₁','op'));
+    g+=Fr.pt(F1[0],F1[1],'F₁')+Fr.pt(F2[0],F2[1],'F₂')+Fr.pt(P0[0],P0[1],'P','hot');fig.innerHTML=g+'</svg>';
+    const d1=Math.hypot(P0[0]-F1[0],P0[1]-F1[1]),d2=Math.hypot(P0[0]-F2[0],P0[1]-F2[1]);
+    ro.innerHTML='<span style="color:var(--tan)">\\(PF_1='+fmtV(d1)+'\\)</span> + <span style="color:var(--sol)">\\(PF_2='+fmtV(d2)+'\\)</span> \\(='+fmtV(d1+d2)+'=2a\\): el hilo mide siempre lo mismo.<br>'+
+      '\\(b=\\sqrt{a^2-c^2}='+gN(bb)+'\\) · \\(e=\\frac ca='+gN(c/a)+'\\) · \\(LR=\\frac{2b^2}{a}='+gN(2*bb*bb/a)+'\\) · directrices \\('+(dir==='h'?'x':'y')+'=\\pm\\frac{a^2}{c}'+(c?'=\\pm'+gN(a*a/c):'')+'\\)<br>Ecuación: <b>\\('+(dir==='h'?'\\frac{x^2}{'+gN(a*a)+'}+\\frac{y^2}{'+gN(bb*bb)+'}=1':'\\frac{x^2}{'+gN(bb*bb)+'}+\\frac{y^2}{'+gN(a*a)+'}=1')+'\\)</b>'+(c===0?' (con \\(c=0\\) es una circunferencia)':'');gTs(ro)};
+  draw()};
+
+/* 6. Rotación de cónicas. o.A..o.F (números o texto como "-6*sqrt(3)"), o.R */
+LW.rot=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||5;const Fr=gF({xr:[-R,R],yr:[-R,R]});
+  const K=['A','B','C','D','E','F'];const S={};K.forEach(k=>S[k]=String(o[k]!=null?o[k]:({A:7,B:'-6*sqrt(3)',C:13,D:0,E:0,F:-16})[k]));let phi=0,timer=null;
+  const PRE=o.presets||[['7x²−6√3xy+13y²−16=0',{A:7,B:'-6*sqrt(3)',C:13,D:0,E:0,F:-16}],['xy−1=0',{A:0,B:1,C:0,D:0,E:0,F:-1}],['x²−4xy+4y²+5√5y+1=0',{A:1,B:-4,C:4,D:0,E:'5*sqrt(5)',F:1}],['2x²−3xy+2y²−2x=0',{A:2,B:-3,C:2,D:-2,E:0,F:0}]];
+  const grid=el('div','rotin');const ins={};K.forEach(k=>{const l=el('label','cnr');l.append(el('b',null,k));const i=document.createElement('input');i.className='fin';i.value=S[k].replace(/\*?sqrt\((\d+(\.\d+)?)\)/g,'√$1');i.autocomplete='off';i.setAttribute('aria-label','Coeficiente '+k);i.oninput=()=>{S[k]=i.value;phi=0;sl.inp.value=0;draw()};ins[k]=i;l.append(i);grid.append(l)});
+  const pb=el('div','jbar');PRE.forEach(([l,v])=>{const x=el('button','jm',l);x.type='button';x.onclick=()=>{K.forEach(k=>{S[k]=String(v[k]);ins[k].value=S[k].replace(/\*?sqrt\((\d+(\.\d+)?)\)/g,'√$1')});phi=0;sl.inp.value=0;draw()};pb.append(x)});
+  const sl=gSl('Giro de ejes',0,90,0.5,0,v=>{phi=v;draw(1)},v=>fmtV(v)+'°');const play=el('button','pbtnx','↻ Girar hasta θ');play.type='button';
+  ctl.append(el('span','plrl','Escribe la ecuación \\(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\\) (acepta √, por ejemplo -6√3) o elige una del material:'),pb,grid,sl,play);gTs(ctl);
+  const val=s=>{try{const v=mxF(String(s).replace(/√\s*\(/g,'sqrt(').replace(/(\d)\s*√\s*(\d+(\.\d+)?)/g,'$1*sqrt($2)').replace(/√\s*(\d+(\.\d+)?)/g,'sqrt($1)').replace(/−/g,'-').replace(',','.')||'0',[])();return isFinite(v)?v:NaN}catch(e){return NaN}};
+  let TH=0;play.onclick=()=>{if(timer){clearInterval(timer);timer=null}phi=0;timer=setInterval(()=>{phi=Math.min(TH,phi+Math.max(0.5,TH/40));sl.inp.value=phi;sl.sh();draw(1);if(phi>=TH){clearInterval(timer);timer=null}},40)};
+  const fx=(k,v)=>{if(Math.abs(k)<1e-9)return'';const s=k<0?'-':'+';const n=Math.abs(k);return s+(v&&Math.abs(n-1)<1e-9?'':gN(n))+v};
+  const draw=(soft)=>{const C={};K.forEach(k=>C[k]=val(S[k]));K.forEach(k=>ins[k].classList.toggle('bad',isNaN(C[k])));if(K.some(k=>isNaN(C[k]))){ro.innerHTML='Revisa los coeficientes en rojo.';return}
+    const {A,B,C:Cc,D,E,F}=C;const th=Math.abs(B)<1e-12?0:Math.atan2(1,(A-Cc)/B)/2;TH=+(th*180/Math.PI).toFixed(4);sl.inp.max=Math.max(1,Math.ceil(TH));
+    const G=(x,y)=>A*x*x+B*x*y+Cc*y*y+D*x+E*y+F;let g=Fr.head(1,2)+Fr.impl(G,'plf f');
+    const p=phi*Math.PI/180,c=Math.cos(p),s=Math.sin(p),L=R*1.5,hot=Math.abs(phi-TH)<0.3;
+    g+=Fr.seg(-L*c,-L*s,L*c,L*s,'vln '+(hot?'g':'d1'))+Fr.seg(L*s,-L*c,-L*s,L*c,'vln '+(hot?'g':'d1'));g+=Fr.txt(0.82*R*c+0.2,0.82*R*s+0.25,"x′",'pll')+Fr.txt(-0.82*R*s+0.2,0.82*R*c,"y′",'pll');
+    fig.innerHTML=g+'</svg>';
+    const cs=Math.cos(th),sn=Math.sin(th);const A1=A*cs*cs+B*sn*cs+Cc*sn*sn,C1=A*sn*sn-B*sn*cs+Cc*cs*cs,D1=D*cs+E*sn,E1=-D*sn+E*cs,dlt=B*B-4*A*Cc;
+    const cls=Math.abs(dlt)<1e-9?'parábola':dlt<0?(Math.abs(A1-C1)<1e-9&&Math.abs(B)<1e-12?'circunferencia':'elipse'):'hipérbola';
+    let eq=(fx(A1,"x'^2")+fx(C1,"y'^2")+fx(D1,"x'")+fx(E1,"y'")+fx(F,'')).replace(/^\+/,'')||'0';eq+='=0';
+    let std='';if(Math.abs(D1)<1e-9&&Math.abs(E1)<1e-9&&Math.abs(F)>1e-9&&Math.abs(A1)>1e-9&&Math.abs(C1)>1e-9){const pa=-F/A1,pc=-F/C1;if(pa>0&&pc>0)std="\\frac{x'^2}{"+gN(pa)+"}+\\frac{y'^2}{"+gN(pc)+"}=1";else if(pa>0)std="\\frac{x'^2}{"+gN(pa)+"}-\\frac{y'^2}{"+gN(-pc)+"}=1";else if(pc>0)std="\\frac{y'^2}{"+gN(pc)+"}-\\frac{x'^2}{"+gN(-pa)+"}=1"}
+    ro.innerHTML='\\(B^2-4AC='+gN(dlt).replace('−','-')+'\\) → <b>'+cls+'</b>'+(Math.abs(dlt)<1e-9?' (\\(=0\\))':dlt<0?' (\\(\\lt0\\))':' (\\(\\gt0\\))')+'<br>'+
+      (Math.abs(B)<1e-12?'No hay término \\(xy\\): no hace falta girar.':'\\(\\cot2\\theta=\\frac{A-C}{B}='+gN((A-Cc)/B).replace('−','-')+'\\) → <b>\\(\\theta='+fmtV(TH)+'°\\)</b>'+(Math.abs(TH-Math.round(TH))<1e-6?'':' (≈)'))+
+      '<br>\\(x=x\'\\cos\\theta-y\'\\sin\\theta,\\ y=x\'\\sin\\theta+y\'\\cos\\theta\\)<br>Queda: \\('+eq+'\\)'+(std?' → <b>\\('+std+'\\)</b>':'')+
+      '<br><small>Invariantes: \\(A\'+C\'='+gN(A1+C1).replace('−','-')+'=A+C\\); \\(F\'=F\\)</small>'+(hot?'':'<br><small>Mueve el giro hasta θ: cuando los ejes verdes coinciden con los de la cónica, desaparece el \\(xy\\).</small>');gTs(ro)};
+  draw()};
+
+/* 7. Plano polar: ubicar puntos. o.r, o.t (grados), o.R */
+LW.ppt=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const RM=o.R||6;let r=o.r!=null?o.r:3,t=o.t!=null?o.t:60,rad=!!o.rad;
+  const PI=d=>{const q=d/180;for(let den=1;den<=12;den++){const n=Math.round(q*den);if(Math.abs(n/den-q)<1e-9){if(!n)return'0';return(n<0?'-':'')+'\\frac{'+(Math.abs(n)===1?'':Math.abs(n))+'\\pi}{'+den+'}'}}return fmtV(d)+'°'};
+  const fT=d=>rad?PI(d).replace(/\\frac\{(\d*)\\pi\}\{1\}/,(m,n)=>(n||'')+'\\pi'):fmtV(d)+'°';
+  const sr=gSl('r',-RM,RM,0.5,r,v=>{r=v;draw()}),st=gSl('θ',-360,360,15,t,v=>{t=v;draw()},v=>fmtV(v)+'°');
+  ctl.append(sr,st,gSw('Ver θ en radianes',rad,x=>rad=x,()=>draw()));
+  const draw=()=>{const W=320,C=160,S=(W/2-16)/RM,X=x=>C+x*S,Y=y=>C-y*S;let g='<svg class="pls" viewBox="0 0 '+W+' '+W+'" xmlns="http://www.w3.org/2000/svg">';
+    for(let i=1;i<=RM;i++)g+='<circle class="plg" fill="none" cx="'+C+'" cy="'+C+'" r="'+i*S+'"/>';
+    for(let a=0;a<360;a+=15){const q=a*Math.PI/180;g+='<line class="plg" x1="'+C+'" y1="'+C+'" x2="'+X(RM*Math.cos(q))+'" y2="'+Y(RM*Math.sin(q))+'"'+(a%90?'':' style="stroke:var(--ink);stroke-width:1.2"')+'/>';
+      if(a%30===0)g+='<text class="plk" x="'+X((RM-.45)*Math.cos(q))+'" y="'+(Y((RM-.45)*Math.sin(q))+4)+'" text-anchor="middle">'+a+'°</text>'}
+    for(let i=1;i<=RM;i++)g+='<text class="plk" x="'+(X(i)-3)+'" y="'+(C+11)+'" text-anchor="end">'+i+'</text>';
+    const q=t*Math.PI/180,x=r*Math.cos(q),y=r*Math.sin(q);
+    g+='<line class="vln h" x1="'+C+'" y1="'+C+'" x2="'+X(RM*Math.cos(q))+'" y2="'+Y(RM*Math.sin(q))+'"/>';
+    const ar=0.9,steps=Math.max(2,Math.round(Math.abs(t)/5));let d='';for(let i=0;i<=steps;i++){const s=q*i/steps;d+=(i?'L':'M')+X(ar*Math.cos(s)).toFixed(1)+' '+Y(ar*Math.sin(s)).toFixed(1)}g+='<path class="varc" d="'+d+'"/>';
+    if(r<0)g+='<line class="vln d2 dsh" x1="'+C+'" y1="'+C+'" x2="'+X(x)+'" y2="'+Y(y)+'" style="stroke-dasharray:5 4"/>';else g+='<line class="vln f" x1="'+C+'" y1="'+C+'" x2="'+X(x)+'" y2="'+Y(y)+'"/>';
+    g+='<circle class="plp hot" cx="'+X(x)+'" cy="'+Y(y)+'" r="5.5"/></svg>';fig.innerHTML=g;
+    const eq=[];const add=(rr,tt)=>{if(tt>=-360&&tt<=360&&!(rr===r&&tt===t)&&!eq.some(e=>e[0]===rr&&e[1]===tt))eq.push([rr,tt])};
+    [-720,-360,360,720].forEach(k=>add(r,t+k));[-540,-180,180,540].forEach(k=>add(-r,t+k));
+    ro.innerHTML='Punto \\(\\left('+gN(r).replace('−','-')+',\\ '+fT(t)+'\\right)\\)'+(r<0?': con <b>r negativo</b> se avanza en la dirección <b>opuesta</b> al ángulo.':'.')+
+      '<br>Mismo punto: '+eq.map(e=>'\\(('+gN(e[0]).replace('−','-')+',\\ '+fT(e[1])+')\\)').join(' · ')+
+      '<br>Cartesianas: \\(x=r\\cos\\theta='+fmtV(x)+'\\), \\(y=r\\sin\\theta='+fmtV(y)+'\\)';gTs(ro)};
+  draw()};
+
+/* 8. Cónicas en polares: r = e·d / (1 ± e cos θ) o (1 ± e sen θ). o.e, o.d, o.f 'c+'|'c-'|'s+'|'s-' */
+LW.cpol=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);const R=o.R||8;const Fr=gF({xr:[-R,R],yr:[-R,R]});let e=o.e!=null?o.e:0.5,dd=o.d||3,f=o.f||'c+';
+  const se=gSl('e',0,2,0.05,e,v=>{e=v;draw()}),sd=gSl('d (foco–directriz)',0.5,5,0.5,dd,v=>{dd=v;draw()});
+  ctl.append(gChips([['c+','1 + e cos θ'],['c-','1 − e cos θ'],['s+','1 + e sen θ'],['s-','1 − e sen θ']],f,k=>{f=k;draw()}),se,sd);
+  const draw=()=>{const sg=f[1]==='+'?1:-1,tr=f[0]==='c'?Math.cos:Math.sin;const rr=q=>e*dd/(1+sg*e*tr(q));let g=Fr.head(1,2);
+    const pts=[];let prev=null;for(let i=0;i<=1440;i++){const q=2*Math.PI*i/1440,den=1+sg*e*tr(q);if(Math.abs(den)<0.012){pts.push(null);prev=null;continue}const r=e*dd/den;const p=[r*Math.cos(q),r*Math.sin(q)];if(prev&&Math.hypot(p[0]-prev[0],p[1]-prev[1])>R){pts.push(null)}pts.push(p);prev=p}
+    g+=Fr.path(pts,'plf f');g+=f[0]==='c'?Fr.line(1,0,-sg*dd,'vln h dsh'):Fr.line(0,1,-sg*dd,'vln h dsh');
+    const qs=f[0]==='c'?[0,Math.PI]:[Math.PI/2,3*Math.PI/2];const V=[];qs.forEach(q=>{const den=1+sg*e*tr(q);if(Math.abs(den)>1e-9){const r=e*dd/den;V.push([r,q]);g+=Fr.pt(r*Math.cos(q),r*Math.sin(q),'','op')}});
+    g+=Fr.pt(0,0,'F (polo)','hot');fig.innerHTML=g+'</svg>';
+    const kind=e===0?'circunferencia degenerada (r = 0)':Math.abs(e-1)<1e-9?'parábola':e<1?'elipse':'hipérbola';const T=f[0]==='c'?'\\cos\\theta':'\\sin\\theta';
+    const qn=q=>({0:'0',[Math.PI]:'\\pi',[Math.PI/2]:'\\frac\\pi2',[3*Math.PI/2]:'\\frac{3\\pi}2'})[q];
+    ro.innerHTML='\\(r=\\dfrac{'+gN(e*dd)+'}{1'+(sg>0?'+':'-')+gN(e)+T+'}\\) · \\(e='+gN(e)+'\\) → <b>'+kind+'</b> ('+(e<1?'\\(e\\lt1\\)':e>1?'\\(e\\gt1\\)':'\\(e=1\\)')+')<br>Foco en el polo · directriz \\('+(f[0]==='c'?'x':'y')+'='+(sg>0?'':'-')+gN(dd)+'\\) · eje '+(f[0]==='c'?'polar (horizontal)':'vertical')+
+      (V.length?'<br>Vértices: '+V.map(v=>'\\(('+gN(v[0]).replace('−','-')+',\\ '+qn(v[1])+')\\)').join(' y ')+(V.some(v=>v[0]<0)?' (r negativo: está en la otra rama)':''):'')+
+      '<br><small>Si te dan \\(r=\\frac{N}{a\\pm b\\cos\\theta}\\), divide entre \\(a\\): \\(e=\\frac ba\\).</small>';gTs(ro)};
+  draw()};
 /* Cónicas: tipo y deslizadores */
 function conicSpec(t,P){const {h=0,k=0,a=3,b=2,p=1}=P;const r={ps:[],pts:[],vas:[],has:[],lines:[]};
   if(t==='circ'){r.ps.push({x:h+'+'+a+'*cos(t)',y:k+'+'+a+'*sin(t)',t:[0,6.3]});r.pts.push({x:h,y:k,l:'C'});r.eq='(x-'+h+')^2+(y-'+k+')^2='+a*a}
   else if(t==='pv'){r.ps.push({x:'t',y:k+'+(t-'+h+')^2/(4*'+p+')',t:[h-8,h+8]});r.pts.push({x:h,y:k,l:'V'},{x:h,y:k+p,l:'F'});r.has.push(k-p);r.eq='(x-'+h+')^2='+4*p+'(y-'+k+')'}
   else if(t==='ph'){r.ps.push({y:'t',x:h+'+(t-'+k+')^2/(4*'+p+')',t:[k-8,k+8]});r.pts.push({x:h,y:k,l:'V'},{x:h+p,y:k,l:'F'});r.vas.push(h-p);r.eq='(y-'+k+')^2='+4*p+'(x-'+h+')'}
   else if(t==='eli'){const c=Math.sqrt(Math.abs(a*a-b*b));r.ps.push({x:h+'+'+a+'*cos(t)',y:k+'+'+b+'*sin(t)',t:[0,6.3]});r.pts.push({x:h,y:k,l:'C'});if(a>=b)r.pts.push({x:h-c,y:k,l:'F'},{x:h+c,y:k,l:'F'});else r.pts.push({x:h,y:k-c,l:'F'},{x:h,y:k+c,l:'F'});r.eq='\\frac{(x-'+h+')^2}{'+a*a+'}+\\frac{(y-'+k+')^2}{'+b*b+'}=1';r.c=c}
-  else{const c=Math.sqrt(a*a+b*b);r.ps.push({x:h+'+'+a+'*cosh(t)',y:k+'+'+b+'*sinh(t)',t:[-2.5,2.5]},{x:h+'-'+a+'*cosh(t)',y:k+'+'+b+'*sinh(t)',t:[-2.5,2.5]});
+  else if(t==='hipv'){const c=Math.sqrt(a*a+b*b);r.ps.push({y:k+'+'+a+'*cosh(t)',x:h+'+'+b+'*sinh(t)',t:[-2.5,2.5]},{y:k+'-'+a+'*cosh(t)',x:h+'+'+b+'*sinh(t)',t:[-2.5,2.5]});r.ps.push({x:h+'+t',y:k+'+'+(a/b)+'*t',t:[-12,12],cl:'h',dash:1},{x:h+'+t',y:k+'-'+(a/b)+'*t',t:[-12,12],cl:'h',dash:1});r.ps.push({x:(h-b)+'+'+(2*b)+'*t',y:String(k+a),t:[0,1],cl:'h',dash:1},{x:(h-b)+'+'+(2*b)+'*t',y:String(k-a),t:[0,1],cl:'h',dash:1},{x:String(h-b),y:(k-a)+'+'+(2*a)+'*t',t:[0,1],cl:'h',dash:1},{x:String(h+b),y:(k-a)+'+'+(2*a)+'*t',t:[0,1],cl:'h',dash:1});r.pts.push({x:h,y:k,l:'C'},{x:h,y:k-c,l:'F'},{x:h,y:k+c,l:'F'});r.eq='\\frac{(y-'+k+')^2}{'+a*a+'}-\\frac{(x-'+h+')^2}{'+b*b+'}=1';r.c=c}
+  else{const c=Math.sqrt(a*a+b*b);r.ps.push({x:(h-a)+'+'+(2*a)+'*t',y:String(k+b),t:[0,1],cl:'h',dash:1},{x:(h-a)+'+'+(2*a)+'*t',y:String(k-b),t:[0,1],cl:'h',dash:1},{x:String(h-a),y:(k-b)+'+'+(2*b)+'*t',t:[0,1],cl:'h',dash:1},{x:String(h+a),y:(k-b)+'+'+(2*b)+'*t',t:[0,1],cl:'h',dash:1});r.ps.push({x:h+'+'+a+'*cosh(t)',y:k+'+'+b+'*sinh(t)',t:[-2.5,2.5]},{x:h+'-'+a+'*cosh(t)',y:k+'+'+b+'*sinh(t)',t:[-2.5,2.5]});
     r.ps.push({x:h+'+t',y:k+'+'+(b/a)+'*t',t:[-12,12],cl:'h',dash:1},{x:h+'+t',y:k+'-'+(b/a)+'*t',t:[-12,12],cl:'h',dash:1});r.pts.push({x:h,y:k,l:'C'},{x:h-c,y:k,l:'F'},{x:h+c,y:k,l:'F'});r.eq='\\frac{(x-'+h+')^2}{'+a*a+'}-\\frac{(y-'+k+')^2}{'+b*b+'}=1';r.c=c}
   r.eq=r.eq.replace(/-(-)/g,'+').replace(/\+-/g,'-').replace(/x-0\b/g,'x').replace(/y-0\b/g,'y').replace(/\((x|y)\)/g,'$1');return r}
 LW.conic=(b,o)=>{const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','plro');b.append(fig,ctl,ro);let t=o.t||'circ';const P={h:0,k:0,a:3,b:2,p:1};
-  const T=[['circ','Circunferencia'],['pv','Parábola ↑'],['ph','Parábola →'],['eli','Elipse'],['hip','Hipérbola']];const chips=el('div','jbar');
+  const T=[['circ','Circunferencia'],['pv','Parábola ↑'],['ph','Parábola →'],['eli','Elipse'],['hip','Hipérbola ↔'],['hipv','Hipérbola ↕']];const chips=el('div','jbar');
   T.forEach(([k,l])=>{const x=el('button','jm'+(k===t?' on':''),l);x.type='button';x.onclick=()=>{t=k;chips.querySelectorAll('.jm').forEach(y=>y.classList.toggle('on',y===x));sl();draw()};chips.append(x)});
   const sls=el('div','cnsl');ctl.append(chips,sls);
   const sl=()=>{sls.innerHTML='';const need=t==='circ'?[['h',-4,4,1],['k',-4,4,1],['a',1,5,0.5,'r']]:t==='pv'||t==='ph'?[['h',-4,4,1],['k',-4,4,1],['p',-3,3,0.5]]:[['h',-4,4,1],['k',-4,4,1],['a',1,6,0.5],['b',1,6,0.5]];
     need.forEach(([n,mi,ma,stp,lab])=>{const r=el('label','cnr');const i=el('input','plrg');i.type='range';i.min=mi;i.max=ma;i.step=stp;i.value=P[n];const s=el('b',null,(lab||n)+' = '+P[n]);i.oninput=()=>{P[n]=+i.value;if(n==='p'&&P.p===0)P.p=0.5;s.textContent=(lab||n)+' = '+P[n];draw()};r.append(s,i);sls.append(r)})};
   const draw=()=>{const c=conicSpec(t,P);fig.innerHTML=plotSVG({xr:[-10,10],yr:[-10,10],ps:c.ps,pts:c.pts,vas:c.vas,has:c.has,sx:2,sy:2,id:'cn'});
-    ro.innerHTML='\\('+c.eq+'\\)'+(c.c!=null?' · c = '+fmtV(c.c)+(t==='eli'?' (c² = a² − b²)':' (c² = a² + b²)'):'')+(t==='pv'||t==='ph'?' · foco F y directriz (línea punteada) a distancia |p| = '+fmtV(Math.abs(P.p))+' del vértice':'');try{MathJax.typesetPromise([ro]).catch(()=>{})}catch(e){}};
+    ro.innerHTML='\\('+c.eq+'\\)'+(c.c!=null?' · c = '+fmtV(c.c)+(t==='eli'?' (c² = a² − b²)':' (c² = a² + b²) · rectángulo fundamental punteado; sus diagonales son las asíntotas'):'')+(t==='pv'||t==='ph'?' · foco F y directriz (línea punteada) a distancia |p| = '+fmtV(Math.abs(P.p))+' del vértice':'');try{MathJax.typesetPromise([ro]).catch(()=>{})}catch(e){}};
   sl();draw()};
 /* fit: «ajusta la curva». ch.f (con parámetros), ch.ps=[{n,min,max,step,v} | {n,vals,lbl,v}], ch.target={n:valor}, ch.xr, ch.yr */
 IW.fit=(ch,o)=>{const w=el('div','fitw');const fig=el('div','plfig'),box=el('div','cnsl'),ro=el('p','plro');w.append(fig,box,ro);const vars=['x',...ch.ps.map(p=>p.n)];const g=MX.fn(MX.parse(ch.f,vars));

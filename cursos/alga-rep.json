@@ -1,0 +1,2044 @@
+{
+ "id": "alga-rep",
+ "code": "ALGA-UC",
+ "uni": "Continental",
+ "name": "Álgebra Lineal y Geometría Analítica",
+ "nbname": "Álgebra Lineal y Geometría Analítica",
+ "exam": "Repaso introductorio",
+ "short": "Repaso",
+ "sub": "Bases para el curso",
+ "guide": true,
+ "free": true,
+ "intro": "Bloque introductorio para entender el resto del curso: distancia y punto medio, la recta, distancia de un punto a una recta, completar cuadrados, discriminante, ecuación de la circunferencia y trigonometría para rotación y polares. Todos los temas están abiertos; resuelve en papel y toca «Verificar respuesta». La solución se desbloquea después de tu primer intento.",
+ "form": "<p class=\"note\">Hoja de repaso: lo básico que usa todo el curso.</p>\n<div class=\"fgrid\">\n<div><b>Distancia entre dos puntos</b><br>\\(d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\)</div>\n<div><b>Punto medio</b><br>\\(M=\\left(\\frac{x_1+x_2}2,\\frac{y_1+y_2}2\\right)\\)</div>\n<div><b>Pendiente</b><br>\\(m=\\frac{y_2-y_1}{x_2-x_1}=\\tan\\alpha\\)</div>\n<div><b>Formas de la recta</b><br>\\(y-y_1=m(x-x_1)\\) · \\(Ax+By+C=0\\)</div>\n<div><b>Paralelas y perpendiculares</b><br>\\(m_1=m_2\\) · \\(m_1m_2=-1\\)</div>\n<div><b>Distancia de un punto a una recta</b><br>\\(d=\\frac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}\\)</div>\n<div><b>Completar cuadrados</b><br>\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\)</div>\n<div><b>Discriminante</b><br>\\(\\Delta=b^2-4ac\\)</div>\n<div><b>Ecuación de la circunferencia</b><br>\\((x-h)^2+(y-k)^2=r^2\\)</div>\n<div><b>Trigonometría básica</b><br>\\(180^\\circ=\\pi\\) · \\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\)</div>\n</div>",
+ "formSim": false,
+ "topics": [
+  {
+   "id": "r1",
+   "name": "Repaso · Plano cartesiano: distancia y punto medio",
+   "teo": "<p>Cada punto del plano es un par \\((x,y)\\). Dos fórmulas sostienen todo el curso:</p><ul><li><strong>Distancia</strong>: \\(d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\). Sale de Pitágoras: las diferencias en x y en y son los catetos.</li><li><strong>Punto medio</strong>: \\(M=\\left(\\frac{x_1+x_2}2,\\frac{y_1+y_2}2\\right)\\), el promedio de las coordenadas.</li></ul><p>En las cónicas, el <em>radio</em> es una distancia (centro–punto), el <em>centro</em> es el punto medio de los vértices o de los focos y \\(2a\\), \\(2b\\), \\(2c\\) son distancias entre puntos.</p>",
+   "form": [
+    "\\(d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\)",
+    "\\(M=\\left(\\frac{x_1+x_2}2,\\frac{y_1+y_2}2\\right)\\)",
+    "Extremo: \\(B=2M-A\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Casi todos los datos de una cónica (radio, centro, distancia focal) se calculan con estas dos fórmulas.</p>\n<h3>Conceptos clave</h3><ul><li>Restar en el mismo orden: \\(x_2-x_1\\) y \\(y_2-y_1\\); el cuadrado elimina el signo.</li><li>El punto medio es el promedio: suma y divide entre 2.</li><li>Si conoces M y un extremo A, el otro extremo es \\(B=2M-A\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica \\((x_1,y_1)\\) y \\((x_2,y_2)\\).</li><li><strong>2.</strong> Reemplaza con paréntesis para no perder signos negativos.</li><li><strong>3.</strong> Simplifica la raíz si se puede.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(A(-2,3)\\), \\(B(4,-5)\\): \\(d=\\sqrt{6^2+(-8)^2}=10\\) y \\(M=(1,-1)\\).</div>\n<div class=\"err\"><b>Error común:</b> restar mal un negativo: \\(4-(-2)=6\\), no 2.</div>",
+   "ex": [
+    {
+     "id": "r1e1",
+     "lvl": 1,
+     "title": "Distancia entre dos puntos",
+     "q": "<p>Calcula la distancia entre \\(A(-2,3)\\) y \\(B(4,-5)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia",
+       "f": [
+        {
+         "l": "d",
+         "a": 10
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\Delta x=4-(-2)=6\\), \\(\\Delta y=-5-3=-8\\).",
+      "\\(d=\\sqrt{36+64}=\\sqrt{100}=10\\)."
+     ],
+     "ans": "\\(d=10\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dist"
+      ],
+      [
+       "dist"
+      ]
+     ]
+    },
+    {
+     "id": "r1e2",
+     "lvl": 1,
+     "title": "Punto medio",
+     "q": "<p>Halla el punto medio del segmento con extremos \\((3,-4)\\) y \\((-1,6)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Punto medio",
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "y",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x_M=\\frac{3+(-1)}2=1\\).",
+      "\\(y_M=\\frac{-4+6}2=1\\)."
+     ],
+     "ans": "\\(M(1,1)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pm"
+      ],
+      [
+       "pm"
+      ]
+     ]
+    },
+    {
+     "id": "r1e3",
+     "lvl": 2,
+     "title": "El otro extremo",
+     "q": "<p>El punto medio de \\(\\overline{AB}\\) es \\(M(2,1)\\) y \\(A(-1,3)\\). ¿Cuál es \\(B\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Coordenadas de B",
+       "f": [
+        {
+         "l": "x",
+         "a": 5
+        },
+        {
+         "l": "y",
+         "a": -1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(B=2M-A\\).",
+      "\\(B=(4-(-1),\\ 2-3)=(5,-1)\\)."
+     ],
+     "ans": "\\(B(5,-1)\\)",
+     "hint": "Despeja de la fórmula del punto medio: 2 = (−1 + x)/2.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pm"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r1e4",
+     "lvl": 2,
+     "title": "Radio desde el centro",
+     "q": "<p>Una circunferencia tiene centro \\((1,-3)\\) y pasa por \\((4,1)\\). ¿Cuánto mide su radio?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Radio",
+       "f": [
+        {
+         "l": "r",
+         "a": 5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El radio es la distancia del centro al punto.",
+      "\\(r=\\sqrt{3^2+4^2}=5\\)."
+     ],
+     "ans": "\\(r=5\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      [
+       "dist"
+      ]
+     ]
+    },
+    {
+     "id": "r1e5",
+     "lvl": 2,
+     "title": "Perímetro de un triángulo",
+     "q": "<p>Calcula el perímetro del triángulo con vértices \\(A(0,0)\\), \\(B(4,0)\\) y \\(C(0,3)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Perímetro",
+       "f": [
+        {
+         "l": "P",
+         "a": 12
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(AB=4\\), \\(AC=3\\).",
+      "\\(BC=\\sqrt{4^2+3^2}=5\\).",
+      "\\(P=4+3+5=12\\)."
+     ],
+     "ans": "\\(P=12\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "dist"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r1e6",
+     "lvl": 1,
+     "title": "Centro de una cónica",
+     "q": "<p>Los vértices de una elipse son \\(V_1(-3,2)\\) y \\(V_2(7,2)\\). ¿Dónde está su centro y cuánto vale \\(2a\\) (la distancia entre vértices)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro",
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Eje mayor",
+       "f": [
+        {
+         "l": "2a",
+         "a": 10
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El centro es el punto medio: \\(\\left(\\frac{-3+7}2,\\frac{2+2}2\\right)=(2,2)\\).",
+      "\\(2a=|7-(-3)|=10\\) (misma y)."
+     ],
+     "ans": "\\(C(2,2)\\), \\(2a=10\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pm"
+      ],
+      [
+       "dist"
+      ]
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "r2",
+   "name": "Repaso · La recta: pendiente, formas, paralelas y perpendiculares",
+   "teo": "<p>La <strong>pendiente</strong> \\(m=\\frac{y_2-y_1}{x_2-x_1}=\\tan\\alpha\\) mide la inclinación (\\(\\alpha\\) es el ángulo con el eje x).</p><ul><li><strong>Punto-pendiente</strong>: \\(y-y_1=m(x-x_1)\\).</li><li><strong>Pendiente-intercepto</strong>: \\(y=mx+b\\).</li><li><strong>General</strong>: \\(Ax+By+C=0\\), con \\(m=-\\frac AB\\).</li><li>Recta vertical \\(x=a\\): pendiente no definida; horizontal \\(y=b\\): \\(m=0\\).</li></ul><p><strong>Paralelas</strong>: \\(m_1=m_2\\). <strong>Perpendiculares</strong>: \\(m_1\\cdot m_2=-1\\). En el curso: la tangente a una circunferencia es perpendicular al radio, las directrices son rectas y las asíntotas de la hipérbola también.</p>",
+   "form": [
+    "\\(m=\\frac{y_2-y_1}{x_2-x_1}\\)",
+    "\\(y-y_1=m(x-x_1)\\)",
+    "\\(Ax+By+C=0\\Rightarrow m=-\\frac AB\\)",
+    "\\(\\parallel: m_1=m_2\\) · \\(\\perp: m_1m_2=-1\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Con un punto y la pendiente ya tienes la recta. Todo lo demás es reescribirla en la forma que pida el problema.</p>\n<h3>Conceptos clave</h3><ul><li>Paralela: copia la pendiente. Perpendicular: \\(m_\\perp=-\\frac1m\\).</li><li>De la general a la pendiente: despeja y.</li><li>Para la forma general, pasa todo a un lado y quita denominadores.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Calcula m (con dos puntos o despejando).</li><li><strong>2.</strong> Usa punto-pendiente con el punto dado.</li><li><strong>3.</strong> Ordena como Ax + By + C = 0 si lo piden.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Recta por \\((2,-1)\\) con \\(m=3\\): \\(y+1=3(x-2)\\Rightarrow 3x-y-7=0\\).</div>\n<div class=\"err\"><b>Error común:</b> para la perpendicular, cambiar solo el signo: de \\(m=2\\) la perpendicular es \\(-\\frac12\\), no \\(-2\\).</div>",
+   "tools": [
+    {
+     "w": "recta",
+     "t": "Recta por dos puntos",
+     "p": "Arrastra A y B: mira cómo cambian la pendiente y las ecuaciones. Activa la paralela y la perpendicular por P (arrástralo también).",
+     "o": {
+      "a": [
+       -2,
+       -1
+      ],
+      "b": [
+       3,
+       2
+      ],
+      "p": [
+       -3,
+       3
+      ],
+      "par": true
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "r2e1",
+     "lvl": 1,
+     "title": "Pendiente con dos puntos",
+     "q": "<p>Calcula la pendiente de la recta que pasa por \\((1,2)\\) y \\((4,8)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Pendiente",
+       "f": [
+        {
+         "l": "m",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m=\\frac{8-2}{4-1}=\\frac63=2\\)."
+     ],
+     "ans": "\\(m=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pend"
+      ]
+     ]
+    },
+    {
+     "id": "r2e2",
+     "lvl": 1,
+     "title": "Forma general",
+     "q": "<p>Escribe en forma general la recta que pasa por \\((2,-1)\\) con pendiente 3.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(3x-y-7=0\\)",
+        "\\(3x-y+7=0\\)",
+        "\\(3x+y-5=0\\)",
+        "\\(x-3y-5=0\\)",
+        "\\(3x-y-5=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y-(-1)=3(x-2)\\Rightarrow y+1=3x-6\\).",
+      "Todo a un lado: \\(3x-y-7=0\\)."
+     ],
+     "ans": "\\(3x-y-7=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "formas"
+      ],
+      [
+       "formas"
+      ]
+     ]
+    },
+    {
+     "id": "r2e3",
+     "lvl": 2,
+     "title": "Paralela por un punto",
+     "q": "<p>Halla la recta paralela a \\(2x-y+5=0\\) que pasa por \\((1,1)\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(2x-y-1=0\\)",
+        "\\(x+2y-3=0\\)",
+        "\\(2x-y+1=0\\)",
+        "\\(2x+y-3=0\\)",
+        "\\(2x-y+5=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Paralela: mismos A y B, solo cambia C: \\(2x-y+C=0\\).",
+      "Pasa por \\((1,1)\\): \\(2-1+C=0\\Rightarrow C=-1\\)."
+     ],
+     "ans": "\\(2x-y-1=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parperp"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r2e4",
+     "lvl": 2,
+     "title": "Perpendicular por un punto",
+     "q": "<p>Halla la recta perpendicular a \\(y=2x+1\\) que pasa por \\((4,0)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Pendiente de la perpendicular",
+       "f": [
+        {
+         "l": "m⊥",
+         "a": -0.5,
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x+2y-4=0\\)",
+        "\\(2x-y-8=0\\)",
+        "\\(x-2y-4=0\\)",
+        "\\(x+2y+4=0\\)",
+        "\\(2x+y-8=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m=2\\Rightarrow m_\\perp=-\\frac12\\).",
+      "\\(y-0=-\\frac12(x-4)\\Rightarrow 2y=-x+4\\Rightarrow x+2y-4=0\\)."
+     ],
+     "ans": "\\(x+2y-4=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parperp"
+      ],
+      [
+       "formas"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "r2e5",
+     "lvl": 1,
+     "title": "Leer la forma general",
+     "q": "<p>Para la recta \\(3x+4y-12=0\\), halla la pendiente y el punto donde corta al eje y.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Pendiente e intercepto",
+       "f": [
+        {
+         "l": "m",
+         "a": -0.75,
+         "tol": 0.006
+        },
+        {
+         "l": "b",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Despeja: \\(4y=-3x+12\\Rightarrow y=-\\frac34x+3\\).",
+      "\\(m=-\\frac34\\), corta al eje y en \\((0,3)\\)."
+     ],
+     "ans": "\\(m=-\\frac34\\), \\(b=3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "formas"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r2e6",
+     "lvl": 2,
+     "title": "¿Paralelas, perpendiculares o ninguna?",
+     "q": "<p>Clasifica cada par de rectas.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Paralelas",
+        "Perpendiculares",
+        "Ninguna"
+       ],
+       "items": [
+        {
+         "x": "\\(y=3x-1\\) y \\(y=3x+4\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(y=2x\\) y \\(y=-\\frac12x+3\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(x+y=1\\) y \\(x-y=5\\)",
+         "c": 1,
+         "e": "m = −1 y m = 1: su producto es −1."
+        },
+        {
+         "x": "\\(2x-4y=1\\) y \\(x-2y=7\\)",
+         "c": 0,
+         "e": "Ambas tienen m = 1/2."
+        },
+        {
+         "x": "\\(y=2x+1\\) y \\(y=-2x+1\\)",
+         "c": 2,
+         "e": "m₁m₂ = −4, no −1."
+        },
+        {
+         "x": "\\(x=3\\) y \\(y=-2\\)",
+         "c": 1,
+         "e": "Una vertical y una horizontal se cortan en ángulo recto."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Calcula la pendiente de cada recta (despeja y).",
+      "Iguales: paralelas; producto \\(-1\\): perpendiculares; si no, ninguna."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pend"
+      ],
+      [
+       "parperp"
+      ]
+     ]
+    },
+    {
+     "id": "r2e7",
+     "lvl": 2,
+     "title": "Recta por dos puntos",
+     "q": "<p>Escribe la recta que pasa por \\((-1,3)\\) y \\((2,-3)\\) en la forma \\(y=mx+b\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Ecuación",
+       "f": [
+        {
+         "l": "y =",
+         "a": "-2*x+1",
+         "v": [
+          "x"
+         ],
+         "mode": "eq"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(m=\\frac{-3-3}{2-(-1)}=-2\\).",
+      "\\(y-3=-2(x+1)\\Rightarrow y=-2x+1\\)."
+     ],
+     "ans": "\\(y=-2x+1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pend"
+      ],
+      [
+       "formas"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "r3",
+   "name": "Repaso · Distancia de un punto a una recta",
+   "teo": "<p>La distancia de \\(P(x_0,y_0)\\) a la recta \\(Ax+By+C=0\\) se mide por la perpendicular:</p><p style='text-align:center'>\\(d=\\dfrac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}\\)</p><ul><li>La recta debe estar en forma <strong>general</strong> (todo igualado a 0).</li><li>El valor absoluto hace que la distancia sea siempre positiva.</li><li>Entre dos paralelas \\(Ax+By+C_1=0\\) y \\(Ax+By+C_2=0\\): \\(d=\\frac{|C_1-C_2|}{\\sqrt{A^2+B^2}}\\).</li></ul><p>En la semana 9 es la clave: una recta es <strong>tangente</strong> a una circunferencia si la distancia del centro a la recta es igual al radio.</p>",
+   "form": [
+    "\\(d=\\frac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}\\)",
+    "Paralelas: \\(d=\\frac{|C_1-C_2|}{\\sqrt{A^2+B^2}}\\)",
+    "Tangente: \\(d(\\text{centro},L)=r\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La distancia más corta de un punto a una recta va por la perpendicular, y la fórmula la calcula sin dibujarla.</p>\n<h3>Conceptos clave</h3><ul><li>Primero lleva la recta a \\(Ax+By+C=0\\).</li><li>Reemplaza el punto en el numerador y toma valor absoluto.</li><li>El denominador solo usa A y B.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Escribe la recta en forma general.</li><li><strong>2.</strong> Sustituye el punto: |Ax₀ + By₀ + C|.</li><li><strong>3.</strong> Divide entre √(A² + B²).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(P(1,2)\\) y \\(3x+4y-1=0\\): \\(d=\\frac{|3+8-1|}{5}=2\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\(y=mx+b\\) directamente en la fórmula: primero pásala a la forma general.</div>",
+   "tools": [
+    {
+     "w": "recta",
+     "t": "Distancia de P a la recta",
+     "p": "Arrastra P y los puntos de la recta: el segmento rojo es la distancia (perpendicular).",
+     "o": {
+      "a": [
+       -4,
+       -2
+      ],
+      "b": [
+       4,
+       4
+      ],
+      "p": [
+       -2,
+       4
+      ],
+      "dist": true
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "r3e1",
+     "lvl": 1,
+     "title": "Aplicar la fórmula",
+     "q": "<p>Calcula la distancia del punto \\((1,2)\\) a la recta \\(3x+4y-1=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia",
+       "f": [
+        {
+         "l": "d",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Numerador: \\(|3(1)+4(2)-1|=10\\).",
+      "Denominador: \\(\\sqrt{9+16}=5\\). \\(d=2\\)."
+     ],
+     "ans": "\\(d=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ],
+      [
+       "dpr"
+      ]
+     ]
+    },
+    {
+     "id": "r3e2",
+     "lvl": 1,
+     "title": "Desde el origen",
+     "q": "<p>¿A qué distancia del origen está la recta \\(y=-x+\\sqrt2\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia",
+       "f": [
+        {
+         "l": "d",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Forma general: \\(x+y-\\sqrt2=0\\).",
+      "\\(d=\\frac{|0+0-\\sqrt2|}{\\sqrt{1+1}}=\\frac{\\sqrt2}{\\sqrt2}=1\\)."
+     ],
+     "ans": "\\(d=1\\)",
+     "hint": "Así se resolvió en clase el ejemplo de la circunferencia tangente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "formas"
+      ],
+      [
+       "dpr"
+      ]
+     ]
+    },
+    {
+     "id": "r3e3",
+     "lvl": 2,
+     "title": "Entre dos paralelas",
+     "q": "<p>Halla la distancia entre las rectas paralelas \\(3x-4y+2=0\\) y \\(3x-4y-8=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia",
+       "f": [
+        {
+         "l": "d",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Mismos A y B: \\(d=\\frac{|2-(-8)|}{\\sqrt{9+16}}\\).",
+      "\\(d=\\frac{10}5=2\\)."
+     ],
+     "ans": "\\(d=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r3e4",
+     "lvl": 2,
+     "title": "Radio de una circunferencia tangente",
+     "q": "<p>Una circunferencia de centro \\((2,-1)\\) es tangente a la recta \\(3x-4y+5=0\\). ¿Cuál es su radio?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Radio",
+       "f": [
+        {
+         "l": "r",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Tangente: el radio es la distancia del centro a la recta.",
+      "\\(r=\\frac{|6+4+5|}{5}=3\\)."
+     ],
+     "ans": "\\(r=3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      [
+       "dpr"
+      ]
+     ]
+    },
+    {
+     "id": "r3e5",
+     "lvl": 3,
+     "title": "Puntos a una distancia dada",
+     "q": "<p>¿Qué puntos del eje y están a distancia 2 de la recta \\(3x+4y-2=0\\)?</p>",
+     "checks": [
+      {
+       "p": "Puntos",
+       "o": [
+        "\\((0,3)\\) y \\((0,-2)\\)",
+        "\\((0,2)\\) y \\((0,-2)\\)",
+        "Solo \\((0,3)\\)",
+        "\\((3,0)\\) y \\((-2,0)\\)",
+        "\\((0,\\frac12)\\) y \\((0,-\\frac12)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Un punto del eje y es \\((0,y)\\): \\(\\frac{|4y-2|}{5}=2\\Rightarrow|4y-2|=10\\).",
+      "\\(4y-2=10\\Rightarrow y=3\\) o \\(4y-2=-10\\Rightarrow y=-2\\)."
+     ],
+     "ans": "\\((0,3)\\) y \\((0,-2)\\)",
+     "hint": "El valor absoluto da dos casos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "r4",
+   "name": "Repaso · Completar cuadrados",
+   "teo": "<p>Completar cuadrados convierte \\(x^2+bx\\) en un binomio al cuadrado:</p><p style='text-align:center'>\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\left(\\frac b2\\right)^2\\)</p><ul><li>Se toma la mitad del coeficiente de x, se eleva al cuadrado, se suma y se resta.</li><li>Si hay coeficiente delante: \\(ax^2+bx=a\\left(x^2+\\frac bax\\right)\\) y se completa adentro.</li><li>En una ecuación, lo que sumas en un lado lo sumas en el otro.</li></ul><p>Es el paso que lleva la <strong>ecuación general</strong> de cualquier cónica a su forma <strong>ordinaria</strong>, donde se leen centro, vértice, radio o semiejes.</p>",
+   "form": [
+    "\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\)",
+    "\\(ax^2+bx=a\\left(x+\\frac b{2a}\\right)^2-\\frac{b^2}{4a}\\)",
+    "Ecuación: suma lo mismo en ambos lados"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Ves un cuadrado incompleto y le agregas la esquina que le falta: eso es \\(\\left(\\frac b2\\right)^2\\).</p>\n<h3>Conceptos clave</h3><ul><li>Agrupa x con x y y con y; manda la constante al otro lado.</li><li>Si x² tiene coeficiente, factorízalo antes de completar.</li><li>Lo que agregues adentro de un factor \\(a\\) vale \\(a\\) veces en el otro lado.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa y ordena.</li><li><strong>2.</strong> Suma (b/2)² en cada grupo (y del otro lado).</li><li><strong>3.</strong> Escribe los binomios al cuadrado y simplifica.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(x^2+y^2+4x-6y-12=0\\Rightarrow(x+2)^2+(y-3)^2=12+4+9=25\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar sumar en el lado derecho lo que agregaste, o no multiplicarlo por el factor común.</div>",
+   "tools": [
+    {
+     "w": "csq",
+     "t": "Completar el cuadrado con áreas",
+     "p": "Mueve b y avanza paso a paso: el rectángulo bx se parte en dos y falta una esquina para tener un cuadrado.",
+     "o": {
+      "b": 6
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "r4e1",
+     "lvl": 1,
+     "title": "Completa el cuadrado",
+     "q": "<p>Escribe \\(x^2+8x\\) como \\((x+h)^2-k\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "h",
+         "a": 4
+        },
+        {
+         "l": "k",
+         "a": 16
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Mitad de 8: 4; al cuadrado: 16.",
+      "\\(x^2+8x=(x+4)^2-16\\)."
+     ],
+     "ans": "\\((x+4)^2-16\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "csq"
+      ]
+     ]
+    },
+    {
+     "id": "r4e2",
+     "lvl": 1,
+     "title": "Con término independiente",
+     "q": "<p>Escribe \\(x^2-10x+7\\) como \\((x-h)^2+k\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "h",
+         "a": 5
+        },
+        {
+         "l": "k",
+         "a": -18
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-10x=(x-5)^2-25\\).",
+      "\\((x-5)^2-25+7=(x-5)^2-18\\)."
+     ],
+     "ans": "\\((x-5)^2-18\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r4e3",
+     "lvl": 2,
+     "title": "Con coeficiente delante",
+     "q": "<p>Escribe \\(2x^2+12x+5\\) como \\(a(x+h)^2+k\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "a",
+         "a": 2
+        },
+        {
+         "l": "h",
+         "a": 3
+        },
+        {
+         "l": "k",
+         "a": -13
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Factoriza: \\(2(x^2+6x)+5\\).",
+      "\\(2[(x+3)^2-9]+5=2(x+3)^2-18+5\\).",
+      "\\(=2(x+3)^2-13\\)."
+     ],
+     "ans": "\\(2(x+3)^2-13\\)",
+     "hint": "El −9 queda multiplicado por 2.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "csq"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r4e4",
+     "lvl": 2,
+     "title": "De general a ordinaria (circunferencia)",
+     "q": "<p>\\(x^2+y^2+4x-6y-12=0\\). Halla centro y radio.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro y radio",
+       "f": [
+        {
+         "l": "h",
+         "a": -2
+        },
+        {
+         "l": "k",
+         "a": 3
+        },
+        {
+         "l": "r",
+         "a": 5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x^2+4x+4)+(y^2-6y+9)=12+4+9\\).",
+      "\\((x+2)^2+(y-3)^2=25\\): centro \\((-2,3)\\), \\(r=5\\)."
+     ],
+     "ans": "Centro \\((-2,3)\\), \\(r=5\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "r4e5",
+     "lvl": 2,
+     "title": "De general a ordinaria (parábola)",
+     "q": "<p>Lleva \\(y^2-6y-4x+17=0\\) a la forma \\((y-k)^2=4p(x-h)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": 3
+        },
+        {
+         "l": "p",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y^2-6y=4x-17\\).",
+      "\\((y-3)^2=4x-17+9=4x-8=4(x-2)\\).",
+      "\\(h=2\\), \\(k=3\\), \\(4p=4\\Rightarrow p=1\\)."
+     ],
+     "ans": "\\((y-3)^2=4(x-2)\\)",
+     "hint": "Es el ejemplo 1 de la clase de parábola (semana 10).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "csq"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r4e6",
+     "lvl": 1,
+     "title": "Ordena los pasos",
+     "q": "<p>Ordena los pasos para pasar \\(x^2+y^2-8x+2y+8=0\\) a la forma ordinaria.</p>",
+     "checks": [
+      {
+       "t": "order",
+       "p": "Del primero al último",
+       "items": [
+        "Agrupar: \\((x^2-8x)+(y^2+2y)=-8\\)",
+        "Sumar 16 y 1 en ambos lados",
+        "\\((x-4)^2+(y+1)^2=9\\)",
+        "Leer: centro \\((4,-1)\\), radio 3"
+       ]
+      }
+     ],
+     "steps": [
+      "Agrupa y deja la constante a la derecha.",
+      "Mitades al cuadrado: \\(16\\) y \\(1\\); la derecha queda \\(-8+17=9\\)."
+     ],
+     "ans": "Centro \\((4,-1)\\), \\(r=3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "r5",
+   "name": "Repaso · Sistemas de ecuaciones y discriminante",
+   "teo": "<p>Para cortar una recta con una cónica se <strong>sustituye</strong>: despejas una variable de la recta y la reemplazas en la cónica. Queda una cuadrática \\(ax^2+bx+c=0\\) y su <strong>discriminante</strong> \\(\\Delta=b^2-4ac\\) dice cuántos puntos hay:</p><ul><li>\\(\\Delta\\gt0\\): dos soluciones → la recta es <strong>secante</strong>.</li><li>\\(\\Delta=0\\): una solución → la recta es <strong>tangente</strong>.</li><li>\\(\\Delta\\lt0\\): ninguna solución real → la recta es <strong>exterior</strong>.</li></ul><p>Para un sistema de dos rectas basta sumar, restar o sustituir.</p>",
+   "form": [
+    "\\(x=\\frac{-b\\pm\\sqrt\\Delta}{2a}\\)",
+    "\\(\\Delta=b^2-4ac\\)",
+    "\\(\\Delta\\gt0\\): 2 · \\(\\Delta=0\\): 1 · \\(\\Delta\\lt0\\): 0"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Cortar dos curvas es resolver su sistema. Con una recta y una cónica, todo se reduce a una cuadrática.</p>\n<h3>Conceptos clave</h3><ul><li>Despeja la variable más fácil de la recta.</li><li>Al sustituir, desarrolla los cuadrados con cuidado.</li><li>El signo de \\(\\Delta\\) responde «¿cuántos puntos?» sin resolver.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Despeja y (o x) de la recta.</li><li><strong>2.</strong> Sustituye en la cónica y ordena como ax² + bx + c = 0.</li><li><strong>3.</strong> Calcula Δ y, si hace falta, las raíces.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(y=x+1\\) en \\(x^2+y^2=13\\): \\(2x^2+2x-12=0\\), \\(\\Delta=100\\gt0\\): dos puntos \\((2,3)\\) y \\((-3,-2)\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar el doble producto: \\((x+1)^2=x^2+2x+1\\).</div>",
+   "ex": [
+    {
+     "id": "r5e1",
+     "lvl": 1,
+     "title": "Sistema de dos rectas",
+     "q": "<p>Resuelve \\(x+y=5\\), \\(2x-y=1\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Solución",
+       "f": [
+        {
+         "l": "x",
+         "a": 2
+        },
+        {
+         "l": "y",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Suma las ecuaciones: \\(3x=6\\Rightarrow x=2\\).",
+      "\\(y=5-2=3\\)."
+     ],
+     "ans": "\\((2,3)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "r5e2",
+     "lvl": 1,
+     "title": "Leer el discriminante",
+     "q": "<p>¿Cuántas soluciones reales tiene \\(x^2+6x+9=0\\)?</p>",
+     "checks": [
+      {
+       "p": "Número de soluciones",
+       "o": [
+        "Una (Δ = 0)",
+        "Dos (Δ > 0)",
+        "Ninguna (Δ < 0)",
+        "Infinitas",
+        "Tres"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\Delta=36-36=0\\): una solución (\\(x=-3\\))."
+     ],
+     "ans": "Una",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "disc"
+      ]
+     ]
+    },
+    {
+     "id": "r5e3",
+     "lvl": 2,
+     "title": "Recta y circunferencia",
+     "q": "<p>Corta la recta \\(y=x+1\\) con la circunferencia \\(x^2+y^2=13\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Discriminante de la cuadrática en x",
+       "f": [
+        {
+         "l": "Δ",
+         "a": 100
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Puntos de corte (x₁ > x₂)",
+       "f": [
+        {
+         "l": "x₁",
+         "a": 2
+        },
+        {
+         "l": "y₁",
+         "a": 3
+        },
+        {
+         "l": "x₂",
+         "a": -3
+        },
+        {
+         "l": "y₂",
+         "a": -2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(x+1)^2=13\\Rightarrow 2x^2+2x-12=0\\).",
+      "\\(\\Delta=4+96=100\\gt0\\): dos puntos.",
+      "\\(x=\\frac{-2\\pm10}{4}\\): \\(x=2\\) o \\(x=-3\\); \\(y=x+1\\)."
+     ],
+     "ans": "\\((2,3)\\) y \\((-3,-2)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "disc"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "r5e4",
+     "lvl": 3,
+     "title": "¿Cuándo es tangente?",
+     "q": "<p>¿Para qué valores de \\(k\\) la recta \\(y=x+k\\) es tangente a \\(x^2+y^2=8\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor positivo de k",
+       "f": [
+        {
+         "l": "k",
+         "a": 4
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(x+k)^2=8\\Rightarrow 2x^2+2kx+k^2-8=0\\).",
+      "Tangente: \\(\\Delta=4k^2-8(k^2-8)=64-4k^2=0\\).",
+      "\\(k=\\pm4\\)."
+     ],
+     "ans": "\\(k=\\pm4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "disc"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r5e5",
+     "lvl": 2,
+     "title": "¿Cuántos puntos?",
+     "q": "<p>Clasifica cada cuadrática según su número de soluciones reales.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Dos",
+        "Una",
+        "Ninguna"
+       ],
+       "items": [
+        {
+         "x": "\\(x^2-5x+6=0\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(x^2+4x+4=0\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(x^2+x+1=0\\)",
+         "c": 2,
+         "e": "Δ = 1 − 4 = −3 < 0."
+        },
+        {
+         "x": "\\(2x^2-3x-2=0\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(x^2+6x=0\\)",
+         "c": 0,
+         "e": "Δ = 36 > 0: x = 0 y x = −6."
+        },
+        {
+         "x": "\\(4x^2-12x+9=0\\)",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Calcula \\(\\Delta=b^2-4ac\\) en cada una."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "disc"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "r6",
+   "name": "Repaso · Ecuación de la circunferencia",
+   "teo": "<p>La circunferencia es el conjunto de puntos a distancia \\(r\\) de un centro \\(C(h,k)\\).</p><ul><li><strong>Canónica</strong> (centro en el origen): \\(x^2+y^2=r^2\\).</li><li><strong>Ordinaria</strong>: \\((x-h)^2+(y-k)^2=r^2\\).</li><li><strong>General</strong>: \\(x^2+y^2+Dx+Ey+F=0\\). Completando cuadrados: centro \\(\\left(-\\frac D2,-\\frac E2\\right)\\) y \\(r^2=\\frac{D^2+E^2}4-F\\).</li></ul><p>Si al completar el lado derecho sale <strong>0</strong>, es un punto; si sale <strong>negativo</strong>, no hay lugar geométrico real.</p>",
+   "form": [
+    "\\((x-h)^2+(y-k)^2=r^2\\)",
+    "\\(x^2+y^2+Dx+Ey+F=0\\)",
+    "Centro \\(\\left(-\\frac D2,-\\frac E2\\right)\\)",
+    "\\(r^2=\\frac{D^2+E^2}4-F\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La semana 9 empieza con posiciones relativas: hay que leer centro y radio de inmediato.</p>\n<h3>Conceptos clave</h3><ul><li>Ojo con los signos: \\((x+2)^2\\) significa \\(h=-2\\).</li><li>Diámetro: el centro es el punto medio y el radio, la mitad.</li><li>En la general, x² e y² tienen el mismo coeficiente y no hay término xy.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Si viene general, completa cuadrados.</li><li><strong>2.</strong> Lee h, k y r² (r es la raíz).</li><li><strong>3.</strong> Si te dan datos, arma (x − h)² + (y − k)² = r².</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(x^2+y^2-8x+2y+8=0\\Rightarrow(x-4)^2+(y+1)^2=9\\): centro \\((4,-1)\\), \\(r=3\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar \\(r=9\\) en vez de \\(r=3\\): el lado derecho es \\(r^2\\).</div>",
+   "tools": [
+    {
+     "w": "conic",
+     "t": "Explorador de la circunferencia",
+     "p": "Mueve h, k y r y mira cómo cambia la ecuación ordinaria.",
+     "o": {
+      "t": "circ"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "r6e1",
+     "lvl": 1,
+     "title": "Escribir la ecuación",
+     "q": "<p>Circunferencia de centro \\((3,-2)\\) y radio 4.</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\((x-3)^2+(y+2)^2=16\\)",
+        "\\((x+3)^2+(y-2)^2=16\\)",
+        "\\((x-3)^2+(y+2)^2=4\\)",
+        "\\((x-3)^2+(y-2)^2=16\\)",
+        "\\((x+2)^2+(y-3)^2=16\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(h=3\\), \\(k=-2\\), \\(r^2=16\\)."
+     ],
+     "ans": "\\((x-3)^2+(y+2)^2=16\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "r6e2",
+     "lvl": 2,
+     "title": "De general a centro y radio",
+     "q": "<p>\\(x^2+y^2-8x+2y+8=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro y radio",
+       "f": [
+        {
+         "l": "h",
+         "a": 4
+        },
+        {
+         "l": "k",
+         "a": -1
+        },
+        {
+         "l": "r",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x-4)^2-16+(y+1)^2-1+8=0\\).",
+      "\\((x-4)^2+(y+1)^2=9\\)."
+     ],
+     "ans": "Centro \\((4,-1)\\), \\(r=3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "r6e3",
+     "lvl": 2,
+     "title": "Con el diámetro",
+     "q": "<p>Los extremos de un diámetro son \\(A(-1,2)\\) y \\(B(5,-6)\\). Halla centro y radio.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro y radio",
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": -2
+        },
+        {
+         "l": "r",
+         "a": 5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Centro: punto medio \\((2,-2)\\).",
+      "\\(r=\\frac{AB}2=\\frac{\\sqrt{36+64}}2=5\\)."
+     ],
+     "ans": "\\((x-2)^2+(y+2)^2=25\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pm"
+      ],
+      [
+       "dist"
+      ]
+     ]
+    },
+    {
+     "id": "r6e4",
+     "lvl": 2,
+     "title": "¿Es una circunferencia?",
+     "q": "<p>Completa cuadrados y clasifica cada ecuación.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Circunferencia real",
+        "Un punto",
+        "Ningún punto real"
+       ],
+       "items": [
+        {
+         "x": "\\(x^2+y^2-2x+4y-4=0\\)",
+         "c": 0,
+         "e": "(x−1)² + (y+2)² = 9."
+        },
+        {
+         "x": "\\(x^2+y^2+2x+4y+10=0\\)",
+         "c": 2,
+         "e": "(x+1)² + (y+2)² = −5 < 0."
+        },
+        {
+         "x": "\\(x^2+y^2-2x+4y+5=0\\)",
+         "c": 1,
+         "e": "(x−1)² + (y+2)² = 0: solo el punto (1, −2)."
+        },
+        {
+         "x": "\\(x^2+y^2-6y=0\\)",
+         "c": 0,
+         "e": "x² + (y−3)² = 9."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Lleva cada una a \\((x-h)^2+(y-k)^2=\\text{número}\\).",
+      "Positivo: circunferencia; cero: punto; negativo: nada."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "r6e5",
+     "lvl": 2,
+     "title": "Forma general",
+     "q": "<p>Escribe en forma general la circunferencia de centro \\((-1,2)\\) y radio 3.</p>",
+     "checks": [
+      {
+       "p": "Ecuación general",
+       "o": [
+        "\\(x^2+y^2+2x-4y-4=0\\)",
+        "\\(x^2+y^2-2x+4y-4=0\\)",
+        "\\(x^2+y^2+2x-4y+4=0\\)",
+        "\\(x^2+y^2+2x-4y-9=0\\)",
+        "\\(x^2+y^2+x-2y-4=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x+1)^2+(y-2)^2=9\\).",
+      "\\(x^2+2x+1+y^2-4y+4-9=0\\Rightarrow x^2+y^2+2x-4y-4=0\\)."
+     ],
+     "ans": "\\(x^2+y^2+2x-4y-4=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r6e6",
+     "lvl": 1,
+     "title": "Toca el centro",
+     "q": "<p>La gráfica es \\((x+2)^2+(y-1)^2=9\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el <b>centro</b>.",
+       "a": [
+        "C"
+       ],
+       "plot": {
+        "xr": [
+         -6,
+         3
+        ],
+        "yr": [
+         -3,
+         5
+        ],
+        "ps": [
+         {
+          "x": "-2+3*cos(t)",
+          "y": "1+3*sin(t)",
+          "t": [
+           0,
+           6.3
+          ]
+         }
+        ],
+        "sx": 1,
+        "sy": 1,
+        "zones": [
+         {
+          "t": "pt",
+          "x": -2,
+          "y": 1,
+          "id": "C"
+         },
+         {
+          "t": "pt",
+          "x": 2,
+          "y": -1,
+          "id": "a"
+         },
+         {
+          "t": "pt",
+          "x": 1,
+          "y": 1,
+          "id": "b"
+         },
+         {
+          "t": "pt",
+          "x": -2,
+          "y": -2,
+          "id": "c"
+         }
+        ]
+       },
+       "e": "h = −2 y k = 1: los signos se invierten al leer."
+      }
+     ],
+     "steps": [
+      "\\((x+2)^2\\Rightarrow h=-2\\); \\((y-1)^2\\Rightarrow k=1\\)."
+     ],
+     "ans": "\\((-2,1)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "r7",
+   "name": "Repaso · Trigonometría para rotación y polares",
+   "teo": "<p>Lo que se usa en las semanas 13 y 14:</p><ul><li><strong>Grados y radianes</strong>: \\(180^\\circ=\\pi\\). Para pasar a radianes multiplica por \\(\\frac{\\pi}{180}\\).</li><li><strong>Ángulos notables</strong>: \\(\\sin30^\\circ=\\cos60^\\circ=\\frac12\\), \\(\\sin45^\\circ=\\cos45^\\circ=\\frac{\\sqrt2}2\\), \\(\\sin60^\\circ=\\cos30^\\circ=\\frac{\\sqrt3}2\\).</li><li><strong>Signos por cuadrante</strong>: I todo positivo, II solo seno, III solo tangente, IV solo coseno.</li><li><strong>Ángulo doble</strong>: \\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\), \\(\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta\\).</li><li>\\(\\tan^{-1}\\) solo devuelve ángulos entre \\(-90^\\circ\\) y \\(90^\\circ\\): si el punto está en el II o III cuadrante, suma \\(180^\\circ\\); en el IV, suma \\(360^\\circ\\).</li></ul>",
+   "form": [
+    "\\(180^\\circ=\\pi\\)",
+    "\\(\\sin30^\\circ=\\frac12\\), \\(\\cos30^\\circ=\\frac{\\sqrt3}2\\)",
+    "\\(\\sin45^\\circ=\\cos45^\\circ=\\frac{\\sqrt2}2\\)",
+    "\\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\)",
+    "\\(\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta\\)",
+    "\\(\\cot\\alpha=\\frac1{\\tan\\alpha}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En rotación sale \\(\\cot2\\theta\\) y en polares \\(\\tan\\theta=\\frac yx\\): necesitas reconocer ángulos y corregir el cuadrante.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\cot2\\theta=\\frac1{\\sqrt3}\\iff 2\\theta=60^\\circ\\).</li><li>Si \\(\\cot2\\theta=0\\), \\(2\\theta=90^\\circ\\) y \\(\\theta=45^\\circ\\).</li><li>Con \\(\\sin\\theta\\) y el cuadrante sacas \\(\\cos\\theta\\) con Pitágoras.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Ubica el cuadrante por los signos de x e y.</li><li><strong>2.</strong> Calcula el ángulo de referencia con tan⁻¹.</li><li><strong>3.</strong> Corrige: +180° en II y III, +360° en IV.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Punto \\((-2,-6)\\): \\(\\tan^{-1}(3)\\approx71,57^\\circ\\); está en el III cuadrante: \\(\\theta\\approx251,57^\\circ\\).</div>\n<div class=\"err\"><b>Error común:</b> dejar el ángulo que da la calculadora para un punto del II o III cuadrante.</div>",
+   "tools": [
+    {
+     "w": "unit",
+     "t": "Círculo trigonométrico",
+     "p": "Mueve θ: el coseno es la sombra en x y el seno la altura en y.",
+     "o": {
+      "a": 150
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "r7e1",
+     "lvl": 1,
+     "title": "A radianes",
+     "q": "<p>Expresa \\(150^\\circ\\) en radianes.</p>",
+     "checks": [
+      {
+       "p": "Radianes",
+       "o": [
+        "\\(\\frac{5\\pi}6\\)",
+        "\\(\\frac{3\\pi}4\\)",
+        "\\(\\frac{5\\pi}3\\)",
+        "\\(\\frac{2\\pi}3\\)",
+        "\\(\\frac{7\\pi}6\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(150\\cdot\\frac{\\pi}{180}=\\frac{5\\pi}6\\)."
+     ],
+     "ans": "\\(\\frac{5\\pi}6\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ]
+     ]
+    },
+    {
+     "id": "r7e2",
+     "lvl": 1,
+     "title": "Ángulos notables",
+     "q": "<p>Calcula los valores exactos (en decimal).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "sen 30°",
+         "a": 0.5,
+         "tol": 0.006
+        },
+        {
+         "l": "cos 45°",
+         "a": 0.7071067811865476,
+         "tol": 0.006
+        },
+        {
+         "l": "cos 60°",
+         "a": 0.5,
+         "tol": 0.006
+        },
+        {
+         "l": "sen 60°",
+         "a": 0.8660254037844386,
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sin30^\\circ=\\cos60^\\circ=\\frac12\\).",
+      "\\(\\cos45^\\circ=\\frac{\\sqrt2}2\\approx0,707\\); \\(\\sin60^\\circ=\\frac{\\sqrt3}2\\approx0,866\\)."
+     ],
+     "ans": "0,5 · 0,707 · 0,5 · 0,866",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r7e3",
+     "lvl": 1,
+     "title": "¿En qué cuadrante?",
+     "q": "<p>Clasifica cada ángulo según su cuadrante.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Cuadrante",
+       "cats": [
+        "I",
+        "II",
+        "III",
+        "IV"
+       ],
+       "items": [
+        {
+         "x": "\\(60^\\circ\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(150^\\circ\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\frac{7\\pi}6\\)",
+         "c": 2,
+         "e": "7π/6 = 210°."
+        },
+        {
+         "x": "\\(-30^\\circ\\)",
+         "c": 3,
+         "e": "−30° equivale a 330°."
+        },
+        {
+         "x": "\\(\\frac{3\\pi}4\\)",
+         "c": 1,
+         "e": "3π/4 = 135°."
+        },
+        {
+         "x": "\\(300^\\circ\\)",
+         "c": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Pasa todo a grados entre 0° y 360°.",
+      "I: 0–90 · II: 90–180 · III: 180–270 · IV: 270–360."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r7e4",
+     "lvl": 2,
+     "title": "Ángulo doble",
+     "q": "<p>Si \\(\\sin\\theta=\\frac35\\) y \\(\\theta\\) está en el I cuadrante, calcula \\(\\sin2\\theta\\) y \\(\\cos2\\theta\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "sen 2θ",
+         "a": 0.96,
+         "tol": 0.006
+        },
+        {
+         "l": "cos 2θ",
+         "a": 0.28,
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos\\theta=\\sqrt{1-\\frac9{25}}=\\frac45\\).",
+      "\\(\\sin2\\theta=2\\cdot\\frac35\\cdot\\frac45=\\frac{24}{25}\\); \\(\\cos2\\theta=\\frac{16}{25}-\\frac9{25}=\\frac7{25}\\)."
+     ],
+     "ans": "\\(\\frac{24}{25}\\) y \\(\\frac7{25}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ],
+      [
+       "trig"
+      ]
+     ]
+    },
+    {
+     "id": "r7e5",
+     "lvl": 2,
+     "title": "Corregir el cuadrante",
+     "q": "<p>¿Qué ángulo (entre 0° y 360°) forma con el eje x positivo el segmento del origen al punto \\((-2,-6)\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulo",
+       "f": [
+        {
+         "l": "θ",
+         "a": 251.56505117707798,
+         "tol": 0.06,
+         "e": "La calculadora da 71,57°, pero el punto está en el III cuadrante."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\tan^{-1}\\frac{-6}{-2}=\\tan^{-1}3\\approx71,57^\\circ\\).",
+      "x e y negativos: III cuadrante. \\(\\theta=71,57^\\circ+180^\\circ=251,57^\\circ\\)."
+     ],
+     "ans": "\\(\\theta\\approx251,57^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "r7e6",
+     "lvl": 2,
+     "title": "Despejar desde la cotangente",
+     "q": "<p>Si \\(\\cot2\\theta=\\frac1{\\sqrt3}\\) y \\(0^\\circ\\lt\\theta\\lt90^\\circ\\), ¿cuánto vale \\(\\theta\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulo en grados",
+       "f": [
+        {
+         "l": "θ",
+         "a": 30
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cot2\\theta=\\frac1{\\sqrt3}\\iff\\tan2\\theta=\\sqrt3\\iff2\\theta=60^\\circ\\).",
+      "\\(\\theta=30^\\circ\\). Es justo el ángulo del ejemplo de rotación de la semana 13."
+     ],
+     "ans": "\\(\\theta=30^\\circ\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trig"
+      ],
+      []
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "dist": {
+   "n": "Distancia entre dos puntos",
+   "f": "\\(d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\)",
+   "x": "Es Pitágoras: los catetos son las diferencias de x y de y. Sirve para radios, focos y vértices.",
+   "home": "r1"
+  },
+  "pm": {
+   "n": "Punto medio",
+   "f": "\\(M=\\left(\\frac{x_1+x_2}2,\\frac{y_1+y_2}2\\right)\\)",
+   "x": "El promedio de las coordenadas. El centro de una cónica suele ser el punto medio de vértices o focos.",
+   "home": "r1"
+  },
+  "pend": {
+   "n": "Pendiente",
+   "f": "\\(m=\\frac{y_2-y_1}{x_2-x_1}=\\tan\\alpha\\)",
+   "x": "Cuánto sube y por cada unidad que avanza x. Recta vertical: pendiente no definida.",
+   "home": "r2"
+  },
+  "formas": {
+   "n": "Formas de la recta",
+   "f": "\\(y-y_1=m(x-x_1)\\) · \\(Ax+By+C=0\\)",
+   "x": "Punto-pendiente para escribirla rápido; general para fórmulas como la distancia. En la general, \\(m=-A/B\\).",
+   "home": "r2"
+  },
+  "parperp": {
+   "n": "Paralelas y perpendiculares",
+   "f": "\\(m_1=m_2\\) · \\(m_1m_2=-1\\)",
+   "x": "Paralelas: misma pendiente. Perpendiculares: pendientes inversas y de signo opuesto.",
+   "home": "r2"
+  },
+  "dpr": {
+   "n": "Distancia de un punto a una recta",
+   "f": "\\(d=\\frac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}\\)",
+   "x": "La recta debe estar en forma general. Es la base para saber si una recta es tangente a una circunferencia.",
+   "home": "r3"
+  },
+  "csq": {
+   "n": "Completar cuadrados",
+   "f": "\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\)",
+   "x": "Suma y resta (b/2)². Si hay coeficiente delante de x², sácalo primero como factor común.",
+   "home": "r4"
+  },
+  "disc": {
+   "n": "Discriminante",
+   "f": "\\(\\Delta=b^2-4ac\\)",
+   "x": "Δ > 0: dos soluciones; Δ = 0: una; Δ < 0: ninguna real. Al sustituir una recta en una cónica dice cuántos puntos de corte hay.",
+   "home": "r5"
+  },
+  "circ": {
+   "n": "Ecuación de la circunferencia",
+   "f": "\\((x-h)^2+(y-k)^2=r^2\\)",
+   "x": "Centro (h, k) y radio r. La general x² + y² + Dx + Ey + F = 0 se lleva a esta forma completando cuadrados.",
+   "home": "r6"
+  },
+  "trig": {
+   "n": "Trigonometría básica",
+   "f": "\\(180^\\circ=\\pi\\) · \\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\)",
+   "x": "Ángulos notables (30°, 45°, 60°), radianes y ángulo doble: se usan en rotación de cónicas y coordenadas polares.",
+   "home": "r7"
+  }
+ },
+ "simEx": [],
+ "sim": {
+  "minutes": 40,
+  "intro": "Simulacro corto del repaso (20 puntos, 40 min): una pregunta de cada base que usa el curso.",
+  "slots": [
+   {
+    "pts": 2,
+    "name": "Distancia y punto medio",
+    "pool": [
+     "r1e3",
+     "r1e4",
+     "r1e6"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "La recta",
+    "pool": [
+     "r2e3",
+     "r2e4",
+     "r2e7"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Distancia de un punto a una recta",
+    "pool": [
+     "r3e3",
+     "r3e4",
+     "r3e5"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Completar cuadrados",
+    "pool": [
+     "r4e3",
+     "r4e4",
+     "r4e5"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Discriminante",
+    "pool": [
+     "r5e3",
+     "r5e4"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Circunferencia",
+    "pool": [
+     "r6e2",
+     "r6e3",
+     "r6e5"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Trigonometría",
+    "pool": [
+     "r7e4",
+     "r7e5",
+     "r7e6"
+    ]
+   }
+  ]
+ }
+}

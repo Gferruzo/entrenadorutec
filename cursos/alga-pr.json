@@ -1,0 +1,5275 @@
+{
+ "id": "alga-pr",
+ "code": "ALGA-UC",
+ "uni": "Continental",
+ "name": "Álgebra Lineal y Geometría Analítica",
+ "nbname": "Álgebra Lineal y Geometría Analítica",
+ "exam": "Práctica (semanas 9 a 14)",
+ "short": "Práctica",
+ "sub": "Sem. 9 a 14",
+ "guide": true,
+ "free": true,
+ "intro": "Práctica de geometría analítica: circunferencia (posiciones relativas y tangencia), parábola, elipse, hipérbola, rotación de cónicas y coordenadas polares, con los ejemplos y ejercicios de las clases. Todos los temas están abiertos; si te falta base, empieza por el bloque <b>Repaso</b>. Interactivos: posiciones relativas, parábola por su definición, elipse con hilo y tachuelas, explorador de cónicas, rotador de cónicas, plano polar, graficador polar y cónicas polares. <b>Ojo con tres errores de las láminas</b>: el foco de la parábola vertical (sem. 10), el Δ del ejemplo de intersección (sem. 9) y el resultado del ejemplo de rotación de la sesión 1 (sem. 13); aquí están corregidos.",
+ "form": "<p class=\"note\">Hoja de repaso de la práctica (semanas 9 a 14).</p>\n<div class=\"fgrid\">\n<div><b>Recta y circunferencia</b><br>\\(d\\gt r\\) exterior · \\(d=r\\) tangente · \\(d\\lt r\\) secante</div>\n<div><b>Dos circunferencias</b><br>\\(d\\gt R+r\\) · \\(d=R+r\\) · \\(R-r\\lt d\\lt R+r\\) · \\(d=R-r\\) · \\(d\\lt R-r\\)</div>\n<div><b>Condición de tangencia</b><br>\\(\\Delta=b^2-4ac=0\\)</div>\n<div><b>Parábola</b><br>\\((x-h)^2=4p(y-k)\\) · \\((y-k)^2=4p(x-h)\\)</div>\n<div><b>Parábola: forma general</b><br>\\(x^2+Dx+Ey+F=0\\) · \\(y^2+Dx+Ey+F=0\\)</div>\n<div><b>Máximos y mínimos</b><br>Vértice \\((h,k)\\): \\(k\\) es el máximo o mínimo</div>\n<div><b>Elipse</b><br>\\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(a\\gt b\\)</div>\n<div><b>Elipse: relaciones</b><br>\\(a^2=b^2+c^2\\) · \\(e=\\frac ca\\lt1\\) · \\(LR=\\frac{2b^2}a\\)</div>\n<div><b>Elipse: forma general</b><br>\\(Ax^2+Cy^2+Dx+Ey+F=0\\), A y C del mismo signo</div>\n<div><b>Tangente a la elipse</b><br>\\(\\frac{x_0x}{a^2}+\\frac{y_0y}{b^2}=1\\) · \\(y=mx\\pm\\sqrt{a^2m^2+b^2}\\)</div>\n<div><b>Hipérbola</b><br>\\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\)</div>\n<div><b>Hipérbola: relaciones</b><br>\\(c^2=a^2+b^2\\) · \\(e=\\frac ca\\gt1\\) · \\(LR=\\frac{2b^2}a\\)</div>\n<div><b>Hipérbola: forma general</b><br>\\(Ax^2+Cy^2+Dx+Ey+F=0\\), A y C de distinto signo</div>\n<div><b>Ángulo de rotación</b><br>\\(\\cot2\\theta=\\frac{A-C}{B}\\)</div>\n<div><b>Ecuaciones de rotación</b><br>\\(x=x'\\cos\\theta-y'\\sin\\theta\\) · \\(y=x'\\sin\\theta+y'\\cos\\theta\\)</div>\n<div><b>Discriminante de una cónica</b><br>\\(B^2-4AC\\): \\(\\lt0\\) elipse · \\(=0\\) parábola · \\(\\gt0\\) hipérbola</div>\n<div><b>Invariantes</b><br>\\(F'=F\\) · \\(A'+C'=A+C\\) · \\(B'^2-4A'C'=B^2-4AC\\)</div>\n<div><b>Coordenadas polares</b><br>\\(P(r,\\theta)\\) · \\((r,\\theta)=(r,\\theta+2\\pi k)=(-r,\\theta+\\pi)\\)</div>\n<div><b>Conversión polar ↔ rectangular</b><br>\\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\) · \\(r^2=x^2+y^2\\), \\(\\tan\\theta=\\frac yx\\)</div>\n<div><b>Gráficas polares</b><br>\\(r=a\\pm b\\cos\\theta\\) limaçon · \\(r=a\\cos n\\theta\\) rosa</div>\n<div><b>Cónicas en polares</b><br>\\(r=\\frac{ep}{1\\pm e\\cos\\theta}\\) · \\(r=\\frac{ep}{1\\pm e\\sin\\theta}\\)</div>\n</div>",
+ "formSim": false,
+ "topics": [
+  {
+   "id": "s9a",
+   "name": "Sem. 9 · Posiciones relativas: recta y circunferencia, dos circunferencias",
+   "teo": "<p><strong>Recta y circunferencia.</strong> Compara la distancia \\(d\\) del centro a la recta con el radio \\(r\\):</p><ul><li>\\(d\\gt r\\): <strong>exterior</strong>, ningún punto común.</li><li>\\(d=r\\): <strong>tangente</strong>, un punto.</li><li>\\(d\\lt r\\): <strong>secante</strong>, dos puntos.</li></ul><p>Otra forma: resolver el sistema recta–circunferencia y contar soluciones (ver «Condición de tangencia»).</p><p><strong>Dos circunferencias</strong> de radios \\(R\\ge r\\) y centros a distancia \\(d\\):</p><ul><li>\\(d\\gt R+r\\): exteriores (ningún punto).</li><li>\\(d=R+r\\): tangentes exteriores (un punto).</li><li>\\(R-r\\lt d\\lt R+r\\): secantes (dos puntos).</li><li>\\(d=R-r\\): tangentes interiores (un punto).</li><li>\\(d\\lt R-r\\): interiores (ninguno); si \\(d=0\\), concéntricas.</li></ul>",
+   "form": [
+    "\\(d=\\frac{|Ah+Bk+C|}{\\sqrt{A^2+B^2}}\\)",
+    "\\(d\\gt r\\) · \\(d=r\\) · \\(d\\lt r\\)",
+    "\\(d=|C_1C_2|\\) vs \\(R+r\\) y \\(R-r\\)",
+    "Secantes: \\(R-r\\lt d\\lt R+r\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Todo se decide comparando distancias: centro–recta contra el radio, o centro–centro contra la suma y la resta de radios.</p>\n<h3>Conceptos clave</h3><ul><li>Para la recta usa la distancia de punto a recta (forma general).</li><li>Para dos circunferencias calcula \\(d\\) entre centros.</li><li>Si te piden los puntos, resuelve el sistema.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Saca centro y radio (completa cuadrados si hace falta).</li><li><strong>2.</strong> Calcula d.</li><li><strong>3.</strong> Compara y concluye; si hay cortes, resuelve el sistema.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(C_1:x^2+y^2=4\\), \\(C_2:(x+3)^2+y^2=4\\): \\(d=3\\), \\(R-r=0\\lt3\\lt4=R+r\\): secantes en \\(\\left(-\\frac32,\\pm\\frac{\\sqrt7}2\\right)\\).</div>\n<div class=\"err\"><b>Error común:</b> comparar \\(d\\) solo con \\(R+r\\) y olvidar el caso interior (\\(d\\lt R-r\\)).</div>",
+   "tools": [
+    {
+     "w": "rcirc",
+     "t": "Posiciones relativas",
+     "p": "Arrastra el centro C y los puntos A y B de la recta, o cambia a dos circunferencias y arrastra sus centros.",
+     "o": {
+      "mode": "rc",
+      "r": 3
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s9a1",
+     "lvl": 1,
+     "title": "Compara d con r",
+     "q": "<p>Clasifica cada caso (d es la distancia del centro a la recta).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Posición",
+       "cats": [
+        "Exterior",
+        "Tangente",
+        "Secante"
+       ],
+       "items": [
+        {
+         "x": "\\(d=5,\\ r=3\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(d=2,\\ r=2\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(d=1,\\ r=4\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(d=\\sqrt2,\\ r=3\\)",
+         "c": 2,
+         "e": "√2 ≈ 1,41 < 3."
+        },
+        {
+         "x": "\\(d=0,\\ r=2\\)",
+         "c": 2,
+         "e": "La recta pasa por el centro: corta en dos puntos."
+        },
+        {
+         "x": "\\(d=\\frac{10}3,\\ r=3\\)",
+         "c": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(d\\gt r\\): exterior; \\(d=r\\): tangente; \\(d\\lt r\\): secante."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "posrc"
+      ]
+     ]
+    },
+    {
+     "id": "s9a2",
+     "lvl": 1,
+     "title": "¿Tangente?",
+     "q": "<p>Recta \\(3x+4y-10=0\\) y circunferencia \\(x^2+y^2=4\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia del centro a la recta",
+       "f": [
+        {
+         "l": "d",
+         "a": 2
+        }
+       ]
+      },
+      {
+       "p": "Posición",
+       "o": [
+        "Tangente",
+        "Secante",
+        "Exterior",
+        "Pasa por el centro",
+        "No se puede saber"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((0,0)\\), \\(r=2\\). \\(d=\\frac{|-10|}{\\sqrt{9+16}}=2\\).",
+      "\\(d=r\\): tangente."
+     ],
+     "ans": "Tangente",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ],
+      [
+       "posrc"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9a3",
+     "lvl": 2,
+     "title": "Recta y circunferencia desplazada",
+     "q": "<p>Recta \\(x-y+1=0\\) y circunferencia \\((x-2)^2+(y-1)^2=9\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia",
+       "f": [
+        {
+         "l": "d",
+         "a": 1.4142135623730951
+        }
+       ]
+      },
+      {
+       "p": "Posición",
+       "o": [
+        "Secante",
+        "Tangente",
+        "Exterior",
+        "Interior",
+        "No se cortan"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((2,1)\\), \\(r=3\\): \\(d=\\frac{|2-1+1|}{\\sqrt2}=\\sqrt2\\approx1,41\\).",
+      "\\(d\\lt r\\): secante (dos puntos)."
+     ],
+     "ans": "Secante",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ],
+      [
+       "posrc"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9a4",
+     "lvl": 2,
+     "title": "Dos circunferencias que se cortan",
+     "q": "<p>\\(C_1:x^2+y^2=4\\) y \\(C_2:(x+3)^2+y^2=4\\) (ejemplo de clase). Halla los puntos de intersección.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia entre centros",
+       "f": [
+        {
+         "l": "d",
+         "a": 3
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Punto de corte con y positiva",
+       "f": [
+        {
+         "l": "x",
+         "a": -1.5,
+         "tol": 0.006
+        },
+        {
+         "l": "y",
+         "a": 1.3228756555322954
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(d=3\\); \\(R-r=0\\lt3\\lt4=R+r\\): secantes.",
+      "Resta las ecuaciones: \\((x+3)^2-x^2=0\\Rightarrow 6x+9=0\\Rightarrow x=-\\frac32\\).",
+      "\\(y^2=4-\\frac94=\\frac74\\Rightarrow y=\\pm\\frac{\\sqrt7}2\\)."
+     ],
+     "ans": "\\(\\left(-\\frac32,\\frac{\\sqrt7}2\\right)\\) y \\(\\left(-\\frac32,-\\frac{\\sqrt7}2\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "poscc"
+      ],
+      [],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9a5",
+     "lvl": 2,
+     "title": "Clasifica pares de circunferencias",
+     "q": "<p>Cada caso da la distancia entre centros y los radios.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Posición",
+       "cats": [
+        "Exteriores",
+        "Tangentes exteriores",
+        "Secantes",
+        "Tangentes interiores",
+        "Interiores"
+       ],
+       "items": [
+        {
+         "x": "\\(d=10;\\ 3\\text{ y }4\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(d=7;\\ 3\\text{ y }4\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(d=5;\\ 3\\text{ y }4\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(d=1;\\ 3\\text{ y }4\\)",
+         "c": 3,
+         "e": "d = R − r = 1."
+        },
+        {
+         "x": "\\(d=0,5;\\ 2\\text{ y }5\\)",
+         "c": 4,
+         "e": "0,5 < 5 − 2 = 3."
+        },
+        {
+         "x": "\\(d=4;\\ 2\\text{ y }5\\)",
+         "c": 2,
+         "e": "3 < 4 < 7."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Calcula \\(R+r\\) y \\(R-r\\).",
+      "Ubica \\(d\\) respecto a esos dos números."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "poscc"
+      ],
+      [
+       "poscc"
+      ]
+     ]
+    },
+    {
+     "id": "s9a6",
+     "lvl": 2,
+     "title": "Tangentes exteriores",
+     "q": "<p>\\(x^2+y^2=1\\) y \\((x-5)^2+y^2=16\\).</p>",
+     "checks": [
+      {
+       "p": "Posición",
+       "o": [
+        "Tangentes exteriores",
+        "Secantes",
+        "Tangentes interiores",
+        "Exteriores",
+        "Interiores"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Punto de tangencia",
+       "f": [
+        {
+         "l": "x",
+         "a": 1
+        },
+        {
+         "l": "y",
+         "a": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(d=5\\), \\(R+r=4+1=5\\): \\(d=R+r\\).",
+      "El punto está sobre el segmento entre centros, a 1 del origen: \\((1,0)\\)."
+     ],
+     "ans": "Tangentes exteriores en \\((1,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "poscc"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9a7",
+     "lvl": 3,
+     "title": "Centros iguales",
+     "q": "<p>\\((x-1)^2+(y+2)^2=1\\) y \\(x^2+y^2-2x+4y-11=0\\).</p>",
+     "checks": [
+      {
+       "p": "Posición",
+       "o": [
+        "Concéntricas (interiores)",
+        "Secantes",
+        "Tangentes interiores",
+        "Son la misma circunferencia",
+        "Exteriores"
+       ]
+      }
+     ],
+     "steps": [
+      "La segunda: \\((x-1)^2+(y+2)^2=16\\): mismo centro \\((1,-2)\\), radios 1 y 4.",
+      "\\(d=0\\lt R-r=3\\): una dentro de la otra, concéntricas."
+     ],
+     "ans": "Concéntricas",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "poscc"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9b",
+   "name": "Sem. 9 · Condición de tangencia, punto de tangencia y aplicaciones",
+   "teo": "<p>Para analizar \\(L: \\alpha x+\\beta y+\\delta=0\\) con \\(C: x^2+y^2+Dx+Ey+F=0\\):</p><ul><li>Despeja \\(y=-\\frac{\\delta+\\alpha x}{\\beta}\\) y reemplaza en \\(C\\).</li><li>Queda \\(ax^2+bx+c=0\\) con \\(\\Delta=b^2-4ac\\):<ul><li>\\(\\Delta\\gt0\\): se cortan en dos puntos (secante).</li><li>\\(\\Delta=0\\): un solo punto común (tangente). La raíz doble \\(x=-\\frac b{2a}\\) da el <strong>punto de tangencia</strong>.</li><li>\\(\\Delta\\lt0\\): no se cortan.</li></ul></li></ul><p>Otra herramienta: la tangente es <strong>perpendicular al radio</strong> en el punto de tangencia, y el radio es la distancia del centro a la tangente.</p>",
+   "form": [
+    "Sustituir la recta en la circunferencia",
+    "\\(\\Delta=0\\Rightarrow\\) tangente",
+    "Punto: \\(x=-\\frac b{2a}\\)",
+    "Tangente \\(\\perp\\) radio",
+    "\\(r=d(\\text{centro},L)\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La tangencia es un sistema con solución única. Por eso se pide \\(\\Delta=0\\).</p>\n<h3>Conceptos clave</h3><ul><li>Desarrolla bien el cuadrado del despeje (con su denominador).</li><li>Si el centro es conocido y la recta es tangente: \\(r=d\\).</li><li>En problemas de engranajes o ruedas, «acoplado» o «tangente exterior» significa \\(d=R+r\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Despeja y de la recta.</li><li><strong>2.</strong> Sustituye y ordena la cuadrática.</li><li><strong>3.</strong> Calcula Δ: si es 0, la raíz doble es el punto de tangencia.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(3x-2y+13=0\\) y \\(x^2+y^2=13\\): \\(13x^2+78x+117=0\\), \\(\\Delta=0\\), \\(x=-3\\Rightarrow y=2\\). Tangentes en \\((-3,2)\\).</div>\n<div class=\"err\"><b>Error común:</b> en la clase, el ejemplo de \\(2x-3y+12=0\\) dice \\(\\Delta=32\\); en realidad \\(x^2+6x=0\\) da \\(\\Delta=36\\) (igual es secante).</div>",
+   "tools": [
+    {
+     "w": "rcirc",
+     "t": "Busca la tangente",
+     "p": "Mueve la recta hasta que el segmento rojo (distancia) mida lo mismo que el radio: ahí hay un solo punto de corte.",
+     "o": {
+      "mode": "rc",
+      "r": 3,
+      "a": [
+       -6,
+       5
+      ],
+      "b": [
+       4,
+       4
+      ]
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s9b1",
+     "lvl": 2,
+     "title": "Punto de tangencia (ejemplo de clase)",
+     "q": "<p>Recta \\(3x-2y+13=0\\) y circunferencia \\(x^2+y^2=13\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Discriminante de la cuadrática en x",
+       "f": [
+        {
+         "l": "Δ",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Punto de tangencia",
+       "f": [
+        {
+         "l": "x",
+         "a": -3
+        },
+        {
+         "l": "y",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=\\frac{3x+13}2\\Rightarrow x^2+\\frac{(3x+13)^2}4=13\\).",
+      "\\(4x^2+9x^2+78x+169=52\\Rightarrow13x^2+78x+117=0\\). \\(\\Delta=78^2-4(13)(117)=0\\).",
+      "\\(x=-\\frac{78}{26}=-3\\), \\(y=\\frac{-9+13}2=2\\)."
+     ],
+     "ans": "\\((-3,2)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "tang"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9b2",
+     "lvl": 2,
+     "title": "Puntos de intersección",
+     "q": "<p>¿La recta \\(2x-3y+12=0\\) corta a \\((x+3)^2+(y-2)^2=13\\)? Si es así, halla los puntos.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Δ de la cuadrática en x",
+       "f": [
+        {
+         "l": "Δ",
+         "a": 36,
+         "e": "Al sustituir queda x² + 6x = 0."
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Puntos de corte (x₁ > x₂)",
+       "f": [
+        {
+         "l": "x₁",
+         "a": 0
+        },
+        {
+         "l": "y₁",
+         "a": 4
+        },
+        {
+         "l": "x₂",
+         "a": -6
+        },
+        {
+         "l": "y₂",
+         "a": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=\\frac{2x+12}3\\); al reemplazar en \\(x^2+y^2+6x-4y=0\\) queda \\(x^2+6x=0\\).",
+      "\\(\\Delta=36\\gt0\\) (la lámina dice 32 por error, pero la conclusión es la misma): secante.",
+      "\\(x=0\\Rightarrow y=4\\); \\(x=-6\\Rightarrow y=0\\)."
+     ],
+     "ans": "\\((0,4)\\) y \\((-6,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "tang"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9b3",
+     "lvl": 1,
+     "title": "Circunferencia tangente a una recta",
+     "q": "<p>Circunferencia con centro en el origen y tangente a \\(y=-x+\\sqrt2\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2+y^2=1\\)",
+        "\\(x^2+y^2=2\\)",
+        "\\(x^2+y^2=\\sqrt2\\)",
+        "\\(x^2+y^2=4\\)",
+        "\\((x-1)^2+y^2=1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=d(O,L)=\\frac{|-\\sqrt2|}{\\sqrt2}=1\\)."
+     ],
+     "ans": "\\(x^2+y^2=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dpr"
+      ]
+     ]
+    },
+    {
+     "id": "s9b4",
+     "lvl": 3,
+     "title": "Por dos puntos con centro en una recta",
+     "q": "<p>Halla la circunferencia que pasa por \\(P(2,3)\\) y \\(Q(-1,1)\\) y cuyo centro está en la recta \\(x-3y-11=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro y radio²",
+       "f": [
+        {
+         "l": "h",
+         "a": 3.5,
+         "tol": 0.006
+        },
+        {
+         "l": "k",
+         "a": -2.5,
+         "tol": 0.006
+        },
+        {
+         "l": "r²",
+         "a": 32.5,
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El centro equidista de P y Q: \\((h-2)^2+(k-3)^2=(h+1)^2+(k-1)^2\\Rightarrow6h+4k=11\\).",
+      "Con \\(h=3k+11\\): \\(22k=-55\\Rightarrow k=-\\frac52\\), \\(h=\\frac72\\).",
+      "\\(r^2=\\left(\\frac32\\right)^2+\\left(\\frac{11}2\\right)^2=\\frac{130}4=\\frac{65}2\\)."
+     ],
+     "ans": "\\(\\left(x-\\frac72\\right)^2+\\left(y+\\frac52\\right)^2=\\frac{65}2\\)",
+     "hint": "El centro está a la misma distancia de P y de Q.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dist"
+      ],
+      [],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "s9b5",
+     "lvl": 2,
+     "title": "Tangente en un punto",
+     "q": "<p>Halla la recta tangente a \\(x^2+y^2=25\\) en el punto \\((3,4)\\).</p>",
+     "checks": [
+      {
+       "p": "Recta tangente",
+       "o": [
+        "\\(3x+4y-25=0\\)",
+        "\\(4x-3y=0\\)",
+        "\\(3x-4y+7=0\\)",
+        "\\(4x+3y-24=0\\)",
+        "\\(x+y-7=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El radio va de \\((0,0)\\) a \\((3,4)\\): pendiente \\(\\frac43\\).",
+      "La tangente es perpendicular: \\(m=-\\frac34\\). \\(y-4=-\\frac34(x-3)\\Rightarrow3x+4y-25=0\\)."
+     ],
+     "ans": "\\(3x+4y-25=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parperp"
+      ],
+      [
+       "formas"
+      ]
+     ]
+    },
+    {
+     "id": "s9b6",
+     "lvl": 2,
+     "title": "Rueda de la fortuna",
+     "q": "<p>Una rueda de la fortuna tiene 18 m de diámetro y su centro está a 10 m del suelo. Toma el origen en el suelo, debajo del centro.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Altura de las canastillas a 3 m a la izquierda del centro (la de arriba)",
+       "f": [
+        {
+         "l": "y",
+         "a": 18.48528137423857
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Distancia horizontal al eje de una canastilla a 12 m de altura",
+       "f": [
+        {
+         "l": "x",
+         "a": 8.774964387392123
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2+(y-10)^2=81\\).",
+      "\\(x=-3\\): \\((y-10)^2=72\\Rightarrow y=10\\pm6\\sqrt2\\): arriba \\(\\approx18,49\\) m (abajo \\(\\approx1,51\\) m).",
+      "\\(y=12\\): \\(x^2=81-4=77\\Rightarrow x=\\pm\\sqrt{77}\\approx8,77\\) m."
+     ],
+     "ans": "\\(\\approx18,49\\) m y \\(\\approx8,77\\) m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "circ"
+      ],
+      [],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9b7",
+     "lvl": 3,
+     "title": "Engranajes acoplados",
+     "q": "<p>Un engranaje con centro en \\(C(-5,-4)\\) está acoplado (tangente exterior) a otro de ecuación \\(x^2+y^2-2x-10y+13=0\\). Halla su ecuación.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Radio² del engranaje",
+       "f": [
+        {
+         "l": "r²",
+         "a": 52
+        }
+       ]
+      },
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\((x+5)^2+(y+4)^2=52\\)",
+        "\\((x+5)^2+(y+4)^2=117\\)",
+        "\\((x-5)^2+(y-4)^2=52\\)",
+        "\\((x+5)^2+(y+4)^2=13\\)",
+        "\\((x+5)^2+(y+4)^2=39\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El otro: \\((x-1)^2+(y-5)^2=13\\), centro \\((1,5)\\), \\(r=\\sqrt{13}\\).",
+      "\\(d=\\sqrt{6^2+9^2}=\\sqrt{117}=3\\sqrt{13}\\).",
+      "Tangentes exteriores: \\(R=d-r=2\\sqrt{13}\\Rightarrow R^2=52\\)."
+     ],
+     "ans": "\\((x+5)^2+(y+4)^2=52\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "dist"
+      ],
+      [
+       "poscc"
+      ]
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "s10a",
+   "name": "Sem. 10 · Parábola: elementos y ecuaciones",
+   "teo": "<p>La <strong>parábola</strong> es el conjunto de puntos que están a la misma distancia de un punto fijo (el <strong>foco</strong>) y de una recta fija (la <strong>directriz</strong>).</p><ul><li><strong>Vertical</strong>: \\((x-h)^2=4p(y-k)\\). Foco \\((h,k+p)\\), directriz \\(y=k-p\\), eje \\(x=h\\). Abre hacia arriba si \\(p\\gt0\\), hacia abajo si \\(p\\lt0\\).</li><li><strong>Horizontal</strong>: \\((y-k)^2=4p(x-h)\\). Foco \\((h+p,k)\\), directriz \\(x=h-p\\), eje \\(y=k\\). Abre a la derecha si \\(p\\gt0\\).</li><li><strong>Lado recto</strong>: \\(LR=|4p|\\); sus extremos están a \\(|2p|\\) del foco.</li><li><strong>General</strong>: \\(x^2+Dx+Ey+F=0\\) (vertical) o \\(y^2+Dx+Ey+F=0\\) (horizontal): una sola variable al cuadrado.</li></ul><p class='note'>En la lámina de la semana 10, la parábola vertical con vértice en el origen dice foco \\((0,-p)\\) y directriz \\(y=p\\): lo correcto es foco \\((0,p)\\) y directriz \\(y=-p\\).</p>",
+   "form": [
+    "\\((x-h)^2=4p(y-k)\\): \\(F(h,k+p)\\), \\(y=k-p\\)",
+    "\\((y-k)^2=4p(x-h)\\): \\(F(h+p,k)\\), \\(x=h-p\\)",
+    "\\(LR=|4p|\\)",
+    "Extremos LR a \\(|2p|\\) del foco"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La variable al cuadrado dice el eje: si es x, la parábola es vertical; si es y, horizontal. El signo de p dice hacia dónde abre.</p>\n<h3>Conceptos clave</h3><ul><li>Foco y vértice están del mismo lado; la directriz del otro, a la misma distancia \\(|p|\\).</li><li>Si viene general, completa cuadrados en la variable al cuadrado.</li><li>\\(4p\\) es el número que multiplica a la variable lineal.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lleva a (variable − centro)² = 4p(otra − centro).</li><li><strong>2.</strong> Lee h, k y p.</li><li><strong>3.</strong> Ubica foco, directriz y lado recto.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(y^2-6y-4x+17=0\\Rightarrow(y-3)^2=4(x-2)\\): \\(V(2,3)\\), \\(p=1\\), \\(F(3,3)\\), directriz \\(x=1\\).</div>\n<div class=\"err\"><b>Error común:</b> poner el foco del lado de la directriz, o usar \\(4p\\) como si fuera \\(p\\).</div>",
+   "tools": [
+    {
+     "w": "pdef",
+     "t": "La parábola por su definición",
+     "p": "Arrastra el vértice V y el foco F; mueve P sobre la curva: las distancias a F y a la directriz siempre son iguales.",
+     "o": {
+      "v": [
+       0,
+       -1
+      ],
+      "p": 1.5
+     }
+    },
+    {
+     "w": "conic",
+     "t": "Explorador de parábolas",
+     "p": "Cambia h, k y p y mira la ecuación ordinaria.",
+     "o": {
+      "t": "pv"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s10a1",
+     "lvl": 1,
+     "title": "Directriz y lado recto (ejemplo de clase)",
+     "q": "<p>Para la parábola \\(3y^2=8x\\), halla el foco, la directriz y la longitud del lado recto.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Parámetro y foco",
+       "f": [
+        {
+         "l": "p",
+         "a": 0.6666666666666666
+        },
+        {
+         "l": "x foco",
+         "a": 0.6666666666666666
+        },
+        {
+         "l": "y foco",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Directriz y lado recto",
+       "f": [
+        {
+         "l": "x =",
+         "a": -0.6666666666666666
+        },
+        {
+         "l": "LR",
+         "a": 2.6666666666666665
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y^2=\\frac83x\\Rightarrow4p=\\frac83\\Rightarrow p=\\frac23\\).",
+      "Foco \\(\\left(\\frac23,0\\right)\\), directriz \\(x=-\\frac23\\).",
+      "\\(LR=|4p|=\\frac83\\)."
+     ],
+     "ans": "\\(F\\left(\\frac23,0\\right)\\), \\(x=-\\frac23\\), \\(LR=\\frac83\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "parab"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10a2",
+     "lvl": 2,
+     "title": "De general a ordinaria (ejemplo de clase)",
+     "q": "<p>\\(y^2-6y-4x+17=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Vértice y foco",
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": 3
+        },
+        {
+         "l": "x foco",
+         "a": 3
+        },
+        {
+         "l": "y foco",
+         "a": 3
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Directriz",
+       "f": [
+        {
+         "l": "x =",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\((y-3)^2=4x-17+9=4(x-2)\\).",
+      "\\(V(2,3)\\), \\(p=1\\gt0\\): abre a la derecha; \\(F(3,3)\\).",
+      "Directriz \\(x=2-1=1\\)."
+     ],
+     "ans": "\\((y-3)^2=4(x-2)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "parab"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10a3",
+     "lvl": 1,
+     "title": "¿Hacia dónde abre?",
+     "q": "<p>Clasifica cada parábola según hacia dónde abre.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Abre hacia",
+       "cats": [
+        "Arriba",
+        "Abajo",
+        "Derecha",
+        "Izquierda"
+       ],
+       "items": [
+        {
+         "x": "\\(x^2=8y\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(y^2=-12x\\)",
+         "c": 3
+        },
+        {
+         "x": "\\((x+1)^2=-12(y-2)\\)",
+         "c": 1
+        },
+        {
+         "x": "\\((y-3)^2=4(x-2)\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(3y^2=8x\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(x^2-6x+4y+5=0\\)",
+         "c": 1,
+         "e": "(x−3)² = −4(y−1): p < 0."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "x al cuadrado: arriba (\\(p\\gt0\\)) o abajo; y al cuadrado: derecha (\\(p\\gt0\\)) o izquierda.",
+      "El signo de \\(4p\\) decide."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s10a4",
+     "lvl": 2,
+     "title": "Todos los elementos",
+     "q": "<p>\\((x+1)^2=-12(y-2)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Vértice y p",
+       "f": [
+        {
+         "l": "h",
+         "a": -1
+        },
+        {
+         "l": "k",
+         "a": 2
+        },
+        {
+         "l": "p",
+         "a": -3
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Foco, directriz y lado recto",
+       "f": [
+        {
+         "l": "x foco",
+         "a": -1
+        },
+        {
+         "l": "y foco",
+         "a": -1
+        },
+        {
+         "l": "y =",
+         "a": 5
+        },
+        {
+         "l": "LR",
+         "a": 12
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(V(-1,2)\\), \\(4p=-12\\Rightarrow p=-3\\): abre hacia abajo.",
+      "Foco \\((-1,2-3)=(-1,-1)\\); directriz \\(y=2+3=5\\); \\(LR=12\\)."
+     ],
+     "ans": "\\(F(-1,-1)\\), \\(y=5\\), \\(LR=12\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10a5",
+     "lvl": 2,
+     "title": "Toca el foco",
+     "q": "<p>La gráfica es \\((y-1)^2=4(x+2)\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el <b>foco</b>.",
+       "a": [
+        "F"
+       ],
+       "plot": {
+        "sx": 1,
+        "sy": 1,
+        "xr": [
+         -5,
+         5
+        ],
+        "yr": [
+         -4,
+         6
+        ],
+        "ps": [
+         {
+          "x": "-2+(t-1)^2/4",
+          "y": "t",
+          "t": [
+           -6,
+           8
+          ]
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": -2,
+          "y": 1,
+          "id": "V"
+         },
+         {
+          "t": "pt",
+          "x": -1,
+          "y": 1,
+          "id": "F"
+         },
+         {
+          "t": "pt",
+          "x": -3,
+          "y": 1,
+          "id": "D"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 1,
+          "id": "Q"
+         }
+        ]
+       },
+       "e": "p = 1: el foco está 1 unidad a la derecha del vértice (−2, 1)."
+      }
+     ],
+     "steps": [
+      "\\(V(-2,1)\\), \\(4p=4\\Rightarrow p=1\\), abre a la derecha: \\(F(-1,1)\\)."
+     ],
+     "ans": "\\(F(-1,1)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ]
+     ]
+    },
+    {
+     "id": "s10a6",
+     "lvl": 2,
+     "title": "Forma general",
+     "q": "<p>Parábola de vértice \\((1,-2)\\), eje vertical y \\(p=2\\). Escríbela en forma general.</p>",
+     "checks": [
+      {
+       "p": "Ecuación general",
+       "o": [
+        "\\(x^2-2x-8y-15=0\\)",
+        "\\(x^2-2x-8y+15=0\\)",
+        "\\(x^2+2x-8y-15=0\\)",
+        "\\(y^2+4y-8x+12=0\\)",
+        "\\(x^2-2x-2y-3=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x-1)^2=8(y+2)\\).",
+      "\\(x^2-2x+1=8y+16\\Rightarrow x^2-2x-8y-15=0\\)."
+     ],
+     "ans": "\\(x^2-2x-8y-15=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "pgen"
+      ]
+     ]
+    },
+    {
+     "id": "s10a7",
+     "lvl": 2,
+     "title": "Extremos del lado recto",
+     "q": "<p>\\(x^2=12y\\). Halla el foco y los extremos L y R del lado recto.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Foco",
+       "f": [
+        {
+         "l": "x",
+         "a": 0
+        },
+        {
+         "l": "y",
+         "a": 3
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Extremos (L a la izquierda)",
+       "f": [
+        {
+         "l": "x L",
+         "a": -6
+        },
+        {
+         "l": "x R",
+         "a": 6
+        },
+        {
+         "l": "y",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4p=12\\Rightarrow p=3\\): \\(F(0,3)\\).",
+      "Los extremos están a \\(|2p|=6\\) del foco, en la recta \\(y=3\\): \\((-6,3)\\) y \\((6,3)\\)."
+     ],
+     "ans": "\\(L(-6,3)\\), \\(R(6,3)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "s10b",
+   "name": "Sem. 10 · Parábola: hallar la ecuación, máximos y aplicaciones",
+   "teo": "<p>Formas de hallar la ecuación según los datos:</p><ul><li><strong>Foco y directriz</strong>: el vértice está en el punto medio entre ambos; \\(p\\) es la distancia vértice–foco (con signo).</li><li><strong>Vértice, eje y un punto</strong>: escribe \\((y-k)^2=4p(x-h)\\) o \\((x-h)^2=4p(y-k)\\) y reemplaza el punto para despejar \\(p\\).</li><li><strong>Eje vertical y tres puntos</strong>: usa \\(y=ax^2+bx+c\\) y resuelve el sistema 3×3.</li></ul><p><strong>Máximos y mínimos</strong>: en una parábola de eje vertical, el vértice \\((h,k)\\) da el valor máximo \\(k\\) si abre hacia abajo y el mínimo si abre hacia arriba. Así se resuelve el problema de utilidad máxima.</p>",
+   "form": [
+    "Vértice = punto medio entre foco y directriz",
+    "\\(y=ax^2+bx+c\\) por 3 puntos",
+    "Máx./mín.: \\(k\\) del vértice",
+    "\\(a\\lt0\\): máximo · \\(a\\gt0\\): mínimo"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Elige la forma de la ecuación según los datos y reemplaza lo que conoces.</p>\n<h3>Conceptos clave</h3><ul><li>Con foco \\((3,0)\\) y directriz \\(x=-3\\), el vértice es \\((0,0)\\) y \\(p=3\\).</li><li>Si el punto está a la izquierda del vértice horizontal, \\(p\\) sale negativo.</li><li>Para máximos, completa cuadrados y lee el vértice.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Ubica el eje y el vértice.</li><li><strong>2.</strong> Escribe la forma ordinaria con p desconocido.</li><li><strong>3.</strong> Reemplaza el dato y despeja.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Vértice \\((-1,1)\\), eje horizontal, pasa por \\((-6,13)\\): \\(144=4p(-5)\\Rightarrow4p=-\\frac{144}5\\).</div>\n<div class=\"err\"><b>Error común:</b> usar la forma vertical cuando el eje es horizontal (o al revés).</div>",
+   "tools": [
+    {
+     "w": "conic",
+     "t": "Explorador de parábolas horizontales",
+     "p": "Cambia el tipo a «Parábola →» y busca la de foco (3, 0) y directriz x = −3.",
+     "o": {
+      "t": "ph"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s10b1",
+     "lvl": 1,
+     "title": "Con foco y directriz (ejemplo de clase)",
+     "q": "<p>Parábola con directriz \\(x=-3\\) y foco \\((3,0)\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(y^2=12x\\)",
+        "\\(y^2=6x\\)",
+        "\\(x^2=12y\\)",
+        "\\(y^2=-12x\\)",
+        "\\(y^2=3x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Vértice: punto medio entre foco y directriz, \\((0,0)\\). \\(p=3\\), abre a la derecha.",
+      "\\(y^2=4(3)x=12x\\)."
+     ],
+     "ans": "\\(y^2=12x\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s10b2",
+     "lvl": 2,
+     "title": "Vértice y un punto (ejemplo de clase)",
+     "q": "<p>Parábola de eje horizontal, vértice \\((-1,1)\\), que pasa por \\((-6,13)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor de 4p",
+       "f": [
+        {
+         "l": "4p",
+         "a": -28.8,
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "p": "Ecuación general",
+       "o": [
+        "\\(5y^2-10y+144x+149=0\\)",
+        "\\(5y^2+10y+144x+149=0\\)",
+        "\\(5y^2-10y-144x-139=0\\)",
+        "\\(5x^2+10x+144y-149=0\\)",
+        "\\(y^2-2y+144x+149=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((y-1)^2=4p(x+1)\\) con \\((-6,13)\\): \\(144=4p(-5)\\Rightarrow4p=-\\frac{144}5=-28,8\\).",
+      "\\(-5(y-1)^2=144(x+1)\\Rightarrow5y^2-10y+144x+149=0\\)."
+     ],
+     "ans": "\\(5y^2-10y+144x+149=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      [
+       "pgen"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s10b3",
+     "lvl": 3,
+     "title": "Por tres puntos (ejemplo de clase)",
+     "q": "<p>Parábola de eje vertical que pasa por \\((6,1)\\), \\((-2,3)\\) y \\((16,6)\\). Escríbela como \\(y=ax^2+bx+c\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Coeficientes",
+       "f": [
+        {
+         "l": "a",
+         "a": 0.041666666666666664,
+         "tol": 0.0006
+        },
+        {
+         "l": "b",
+         "a": -0.4166666666666667,
+         "tol": 0.0006
+        },
+        {
+         "l": "c",
+         "a": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Sistema: \\(36a+6b+c=1\\), \\(4a-2b+c=3\\), \\(256a+16b+c=6\\).",
+      "Resolviendo: \\(a=\\frac1{24}\\), \\(b=-\\frac{10}{24}=-\\frac5{12}\\), \\(c=2\\)."
+     ],
+     "ans": "\\(y=\\frac1{24}x^2-\\frac5{12}x+2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      []
+     ]
+    },
+    {
+     "id": "s10b4",
+     "lvl": 2,
+     "title": "Utilidad máxima",
+     "q": "<p>La utilidad \\(y\\) (miles de soles) por vender \\(x\\) miles de productos cumple \\(x^2-6x+4y+5=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Producción que maximiza y utilidad máxima",
+       "f": [
+        {
+         "l": "x (miles)",
+         "a": 3
+        },
+        {
+         "l": "y máx (miles de S/)",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-6x+9=-4y-5+9\\Rightarrow(x-3)^2=-4(y-1)\\).",
+      "Vértice \\((3,1)\\) y \\(p=-1\\lt0\\): abre hacia abajo, así que \\(k=1\\) es el máximo."
+     ],
+     "ans": "3 000 productos; utilidad máxima S/ 1 000",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "csq"
+      ],
+      [
+       "pmax"
+      ]
+     ]
+    },
+    {
+     "id": "s10b5",
+     "lvl": 1,
+     "title": "Vértice y foco",
+     "q": "<p>Vértice en el origen y foco en \\((0,-2)\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(x^2=-8y\\)",
+        "\\(x^2=8y\\)",
+        "\\(y^2=-8x\\)",
+        "\\(x^2=-2y\\)",
+        "\\(x^2=-4y\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Foco debajo del vértice: vertical con \\(p=-2\\).",
+      "\\(x^2=4(-2)y=-8y\\)."
+     ],
+     "ans": "\\(x^2=-8y\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s10b6",
+     "lvl": 2,
+     "title": "Ajusta la parábola",
+     "q": "<p>La parábola gris tiene vértice \\((2,-1)\\) y pasa por \\((4,1)\\). Ajusta \\(a\\), \\(h\\) y \\(k\\) en \\(y=a(x-h)^2+k\\).</p>",
+     "checks": [
+      {
+       "t": "fit",
+       "p": "Mueve los deslizadores hasta calzar.",
+       "f": "a*(x-h)^2+k",
+       "show": "a(x − h)² + k",
+       "xr": [
+        -3,
+        7
+       ],
+       "yr": [
+        -4,
+        6
+       ],
+       "target": {
+        "a": 0.5,
+        "h": 2,
+        "k": -1
+       },
+       "ps": [
+        {
+         "n": "a",
+         "min": -2,
+         "max": 2,
+         "step": 0.25,
+         "v": 1
+        },
+        {
+         "n": "h",
+         "min": -3,
+         "max": 5,
+         "step": 0.5,
+         "v": 0
+        },
+        {
+         "n": "k",
+         "min": -4,
+         "max": 4,
+         "step": 0.5,
+         "v": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El vértice da \\(h=2\\), \\(k=-1\\).",
+      "Con \\((4,1)\\): \\(1=a(2)^2-1\\Rightarrow a=\\frac12\\). En forma ordinaria: \\((x-2)^2=2(y+1)\\)."
+     ],
+     "ans": "\\(y=\\frac12(x-2)^2-1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s10b7",
+     "lvl": 2,
+     "title": "Antena parabólica",
+     "q": "<p>Una antena parabólica mide 2 m de diámetro y 0,25 m de profundidad. ¿A qué distancia del vértice debe ir el receptor (en el foco)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Distancia del vértice al foco",
+       "f": [
+        {
+         "l": "p",
+         "a": 1,
+         "e": "Usa x² = 4py con el borde en (1; 0,25)."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Vértice en el origen, abre hacia arriba: \\(x^2=4py\\). El borde está en \\((1;\\ 0{,}25)\\).",
+      "\\(1=4p(0{,}25)\\Rightarrow p=1\\): el receptor va a 1 m del vértice."
+     ],
+     "ans": "1 m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "parab"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s11a",
+   "name": "Sem. 11 · Elipse: elementos y ecuaciones",
+   "teo": "<p>La <strong>elipse</strong> es el conjunto de puntos cuya suma de distancias a dos focos es constante e igual a \\(2a\\).</p><ul><li>\\(a\\): semieje mayor (centro–vértice); \\(b\\): semieje menor; \\(c\\): centro–foco. <strong>Relación</strong>: \\(a^2=b^2+c^2\\) (con \\(a\\gt b\\)).</li><li><strong>Horizontal</strong>: \\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\); vértices \\((h\\pm a,k)\\), focos \\((h\\pm c,k)\\), directrices \\(x=h\\pm\\frac{a^2}c\\).</li><li><strong>Vertical</strong>: \\(\\frac{(x-h)^2}{b^2}+\\frac{(y-k)^2}{a^2}=1\\); vértices \\((h,k\\pm a)\\), focos \\((h,k\\pm c)\\), directrices \\(y=k\\pm\\frac{a^2}c\\).</li><li><strong>Excentricidad</strong> \\(e=\\frac ca\\lt1\\); <strong>lado recto</strong> \\(LR=\\frac{2b^2}a\\); eje mayor \\(2a\\), eje menor \\(2b\\).</li></ul><p>El denominador <strong>mayor</strong> es \\(a^2\\) y va debajo de la variable del eje mayor.</p>",
+   "form": [
+    "\\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\)",
+    "\\(a^2=b^2+c^2\\)",
+    "\\(e=\\frac ca\\)",
+    "\\(LR=\\frac{2b^2}a\\)",
+    "Directrices a \\(\\frac{a^2}c\\) del centro"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Primero identifica cuál denominador es mayor: ese es \\(a^2\\) y marca la dirección del eje mayor.</p>\n<h3>Conceptos clave</h3><ul><li>\\(c=\\sqrt{a^2-b^2}\\) (en la hipérbola se suma; aquí se resta).</li><li>Si la ecuación no está igualada a 1, divide todo.</li><li>Vértices, focos y directrices van sobre el eje mayor.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Lleva a la forma = 1.</li><li><strong>2.</strong> Identifica a² (el mayor) y b².</li><li><strong>3.</strong> Calcula c, e, LR y ubica los elementos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(9x^2+4y^2=36\\Rightarrow\\frac{x^2}4+\\frac{y^2}9=1\\): vertical, \\(a=3\\), \\(b=2\\), \\(c=\\sqrt5\\).</div>\n<div class=\"err\"><b>Error común:</b> tomar siempre el denominador de x como \\(a^2\\).</div>",
+   "tools": [
+    {
+     "w": "hilo",
+     "t": "La elipse con hilo y tachuelas",
+     "p": "Cambia a y c y toca «Dibujar»: el hilo F₁–P–F₂ mide siempre 2a. Así trazó el contratista el arco de la chimenea.",
+     "o": {
+      "a": 5,
+      "c": 3
+     }
+    },
+    {
+     "w": "conic",
+     "t": "Explorador de elipses",
+     "p": "Cambia a y b: si b > a, la elipse queda vertical.",
+     "o": {
+      "t": "eli"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s11a1",
+     "lvl": 2,
+     "title": "Todos los elementos (vertical)",
+     "q": "<p>\\(9x^2+4y^2=36\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Semiejes y c",
+       "f": [
+        {
+         "l": "a",
+         "a": 3
+        },
+        {
+         "l": "b",
+         "a": 2
+        },
+        {
+         "l": "c",
+         "a": 2.23606797749979
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Vértice y foco superiores",
+       "f": [
+        {
+         "l": "y vértice",
+         "a": 3
+        },
+        {
+         "l": "y foco",
+         "a": 2.23606797749979
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Excentricidad y lado recto",
+       "f": [
+        {
+         "l": "e",
+         "a": 0.7453559924999299,
+         "tol": 0.006
+        },
+        {
+         "l": "LR",
+         "a": 2.6666666666666665
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Divide entre 36: \\(\\frac{x^2}4+\\frac{y^2}9=1\\): \\(a^2=9\\) bajo y, vertical.",
+      "\\(c=\\sqrt{9-4}=\\sqrt5\\). Vértices \\((0,\\pm3)\\), focos \\((0,\\pm\\sqrt5)\\), ejes 6 y 4.",
+      "\\(e=\\frac{\\sqrt5}3\\approx0,745\\); \\(LR=\\frac{2(4)}3=\\frac83\\); directrices \\(y=\\pm\\frac9{\\sqrt5}\\)."
+     ],
+     "ans": "\\(a=3\\), \\(b=2\\), \\(c=\\sqrt5\\), \\(e=\\frac{\\sqrt5}3\\), \\(LR=\\frac83\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [
+       "erel"
+      ],
+      [
+       "erel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11a2",
+     "lvl": 2,
+     "title": "Todos los elementos (horizontal)",
+     "q": "<p>\\(x^2+4y^2=16\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Semiejes y c",
+       "f": [
+        {
+         "l": "a",
+         "a": 4
+        },
+        {
+         "l": "b",
+         "a": 2
+        },
+        {
+         "l": "c",
+         "a": 3.4641016151377544
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Excentricidad, lado recto y directriz derecha",
+       "f": [
+        {
+         "l": "e",
+         "a": 0.8660254037844386,
+         "tol": 0.006
+        },
+        {
+         "l": "LR",
+         "a": 2
+        },
+        {
+         "l": "x =",
+         "a": 4.618802153517007
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{x^2}{16}+\\frac{y^2}4=1\\): horizontal, \\(a=4\\), \\(b=2\\).",
+      "\\(c=\\sqrt{12}=2\\sqrt3\\); \\(e=\\frac{\\sqrt3}2\\); \\(LR=\\frac{2(4)}4=2\\); directrices \\(x=\\pm\\frac{16}{2\\sqrt3}=\\pm\\frac8{\\sqrt3}\\approx\\pm4,62\\)."
+     ],
+     "ans": "\\(a=4\\), \\(c=2\\sqrt3\\), \\(e=\\frac{\\sqrt3}2\\), \\(LR=2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [
+       "erel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11a3",
+     "lvl": 1,
+     "title": "Con vértices y focos",
+     "q": "<p>Vértices \\((\\pm4,0)\\) y focos \\((\\pm3,0)\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(\\frac{x^2}{16}+\\frac{y^2}7=1\\)",
+        "\\(\\frac{x^2}{16}+\\frac{y^2}9=1\\)",
+        "\\(\\frac{x^2}{7}+\\frac{y^2}{16}=1\\)",
+        "\\(\\frac{x^2}{16}-\\frac{y^2}7=1\\)",
+        "\\(\\frac{x^2}{4}+\\frac{y^2}3=1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=4\\), \\(c=3\\Rightarrow b^2=16-9=7\\); horizontal."
+     ],
+     "ans": "\\(\\frac{x^2}{16}+\\frac{y^2}7=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ]
+     ]
+    },
+    {
+     "id": "s11a4",
+     "lvl": 1,
+     "title": "Vertical con vértices y focos",
+     "q": "<p>Vértices \\((0,\\pm6)\\) y focos \\((0,\\pm4)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Denominadores",
+       "f": [
+        {
+         "l": "bajo x²",
+         "a": 20
+        },
+        {
+         "l": "bajo y²",
+         "a": 36
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=6\\), \\(c=4\\Rightarrow b^2=36-16=20\\).",
+      "Vertical: \\(\\frac{x^2}{20}+\\frac{y^2}{36}=1\\)."
+     ],
+     "ans": "\\(\\frac{x^2}{20}+\\frac{y^2}{36}=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ],
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "s11a5",
+     "lvl": 1,
+     "title": "¿Horizontal o vertical?",
+     "q": "<p>Clasifica cada elipse por su eje mayor.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Eje mayor",
+       "cats": [
+        "Horizontal",
+        "Vertical"
+       ],
+       "items": [
+        {
+         "x": "\\(\\frac{x^2}{25}+\\frac{y^2}9=1\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\frac{x^2}4+\\frac{y^2}9=1\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(x^2+4y^2=16\\)",
+         "c": 0,
+         "e": "x²/16 + y²/4 = 1."
+        },
+        {
+         "x": "\\(9x^2+4y^2=36\\)",
+         "c": 1,
+         "e": "x²/4 + y²/9 = 1."
+        },
+        {
+         "x": "\\(\\frac{(x-1)^2}{3}+\\frac{(y+2)^2}{12}=1\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(4x^2+5y^2=20\\)",
+         "c": 0,
+         "e": "x²/5 + y²/4 = 1."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Lleva a la forma = 1 y mira dónde está el denominador mayor."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "s11a6",
+     "lvl": 2,
+     "title": "Toca los focos",
+     "q": "<p>La gráfica es \\(\\frac{x^2}{25}+\\frac{y^2}{9}=1\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca <b>los dos focos</b>.",
+       "a": [
+        "F1",
+        "F2"
+       ],
+       "plot": {
+        "sx": 1,
+        "sy": 1,
+        "xr": [
+         -6,
+         6
+        ],
+        "yr": [
+         -4,
+         4
+        ],
+        "ps": [
+         {
+          "x": "5*cos(t)",
+          "y": "3*sin(t)",
+          "t": [
+           0,
+           6.3
+          ]
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 4,
+          "y": 0,
+          "id": "F1"
+         },
+         {
+          "t": "pt",
+          "x": -4,
+          "y": 0,
+          "id": "F2"
+         },
+         {
+          "t": "pt",
+          "x": 5,
+          "y": 0,
+          "id": "V1"
+         },
+         {
+          "t": "pt",
+          "x": -5,
+          "y": 0,
+          "id": "V2"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 3,
+          "id": "B"
+         },
+         {
+          "t": "pt",
+          "x": 3,
+          "y": 0,
+          "id": "X"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "c = √(25 − 9) = 4: focos en (±4, 0)."
+      }
+     ],
+     "steps": [
+      "\\(c=\\sqrt{25-9}=4\\): focos \\((\\pm4,0)\\), dentro de la elipse."
+     ],
+     "ans": "\\((\\pm4,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ]
+     ]
+    },
+    {
+     "id": "s11a7",
+     "lvl": 2,
+     "title": "Excentricidad",
+     "q": "<p>¿Qué pasa con la elipse cuando \\(e=\\frac ca\\) se acerca a 0?</p>",
+     "checks": [
+      {
+       "p": "Forma",
+       "o": [
+        "Se parece cada vez más a una circunferencia",
+        "Se aplana hasta ser un segmento",
+        "Se convierte en parábola",
+        "Se abre en dos ramas",
+        "No cambia"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e\\to0\\) significa \\(c\\to0\\): los focos se juntan en el centro y \\(b\\to a\\).",
+      "Con \\(e\\) cerca de 1 la elipse se aplana. Pruébalo con c en el hilo."
+     ],
+     "ans": "Se parece a una circunferencia",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s11b",
+   "name": "Sem. 11 · Elipse: ecuación general, tangentes y aplicaciones",
+   "teo": "<p><strong>Ecuación general</strong>: \\(Ax^2+Cy^2+Dx+Ey+F=0\\) con A y C del <strong>mismo signo</strong>. Al completar cuadrados puede salir una elipse, un <strong>punto</strong> (lado derecho 0) o <strong>nada</strong> (lado derecho negativo).</p><p><strong>Posición no ordinaria</strong>: si aparece el término \\(Bxy\\), los ejes de la elipse están inclinados (se ve en la semana 13).</p><p><strong>Tangentes</strong> a \\(b^2x^2+a^2y^2=a^2b^2\\):</p><ul><li>En el punto \\((x_0,y_0)\\) de la curva: \\(\\frac{x_0x}{a^2}+\\frac{y_0y}{b^2}=1\\).</li><li>Con pendiente \\(m\\): \\(y=mx\\pm\\sqrt{a^2m^2+b^2}\\).</li></ul><p><strong>Aplicaciones</strong> (túneles, arcos, puertas): pon el origen en el centro de la base; el semiancho es \\(a\\) y la altura es \\(b\\); la altura en \\(x\\) es \\(y=b\\sqrt{1-\\frac{x^2}{a^2}}\\).</p>",
+   "form": [
+    "\\(Ax^2+Cy^2+Dx+Ey+F=0\\)",
+    "Tangente en \\((x_0,y_0)\\): \\(\\frac{x_0x}{a^2}+\\frac{y_0y}{b^2}=1\\)",
+    "Pendiente m: \\(y=mx\\pm\\sqrt{a^2m^2+b^2}\\)",
+    "Arco: \\(y=b\\sqrt{1-\\frac{x^2}{a^2}}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>En los problemas de arcos, todo sale de poner bien el origen y leer a y b del dibujo.</p>\n<h3>Conceptos clave</h3><ul><li>Semiancho de la base = \\(a\\); altura máxima = \\(b\\) (si el arco es más ancho que alto).</li><li>Para un punto a distancia x del centro, la altura es \\(b\\sqrt{1-x^2/a^2}\\).</li><li>Con focos y un punto: \\(2a\\) = suma de distancias del punto a los focos.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Ubica el origen y escribe la ecuación.</li><li><strong>2.</strong> Reemplaza la x del dato.</li><li><strong>3.</strong> Despeja y (altura) o lo que pidan.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> Túnel de 5 m de base y 4 m de alto: \\(\\frac{x^2}{6{,}25}+\\frac{y^2}{16}=1\\); a 1 m del centro, \\(y=4\\sqrt{1-\\frac1{6{,}25}}\\approx3,67\\) m.</div>\n<div class=\"err\"><b>Error común:</b> usar el ancho completo como \\(a\\): es la mitad.</div>",
+   "ex": [
+    {
+     "id": "s11b1",
+     "lvl": 2,
+     "title": "De general a ordinaria",
+     "q": "<p>\\(9x^2+4y^2-8y-32=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro",
+       "f": [
+        {
+         "l": "h",
+         "a": 0
+        },
+        {
+         "l": "k",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Semiejes y c",
+       "f": [
+        {
+         "l": "a",
+         "a": 3
+        },
+        {
+         "l": "b",
+         "a": 2
+        },
+        {
+         "l": "c",
+         "a": 2.23606797749979
+        }
+       ]
+      },
+      {
+       "p": "Eje mayor",
+       "o": [
+        "Vertical",
+        "Horizontal",
+        "Inclinado",
+        "No es elipse",
+        "Es un punto"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(9x^2+4(y^2-2y+1)=32+4\\Rightarrow9x^2+4(y-1)^2=36\\).",
+      "\\(\\frac{x^2}4+\\frac{(y-1)^2}9=1\\): centro \\((0,1)\\), \\(a=3\\), \\(b=2\\), \\(c=\\sqrt5\\).",
+      "\\(a^2\\) bajo y: vertical. Vértices \\((0,4)\\), \\((0,-2)\\)."
+     ],
+     "ans": "\\(\\frac{x^2}4+\\frac{(y-1)^2}9=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "egen"
+      ],
+      [
+       "erel"
+      ],
+      [
+       "elip"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11b2",
+     "lvl": 2,
+     "title": "Completar en x y en y",
+     "q": "<p>\\(4x^2+9y^2+32x-18y+37=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro",
+       "f": [
+        {
+         "l": "h",
+         "a": -4
+        },
+        {
+         "l": "k",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "a, b y excentricidad",
+       "f": [
+        {
+         "l": "a",
+         "a": 3
+        },
+        {
+         "l": "b",
+         "a": 2
+        },
+        {
+         "l": "e",
+         "a": 0.7453559924999299,
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(4(x^2+8x+16)+9(y^2-2y+1)=-37+64+9=36\\).",
+      "\\(\\frac{(x+4)^2}9+\\frac{(y-1)^2}4=1\\): horizontal, \\(c=\\sqrt5\\), \\(e=\\frac{\\sqrt5}3\\)."
+     ],
+     "ans": "\\(\\frac{(x+4)^2}9+\\frac{(y-1)^2}4=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "egen"
+      ],
+      [
+       "erel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11b3",
+     "lvl": 2,
+     "title": "¿Son elipses?",
+     "q": "<p>Completa cuadrados y clasifica (ejercicio 4 de clase).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Representa",
+       "cats": [
+        "Elipse",
+        "Un punto",
+        "Nada (vacío)"
+       ],
+       "items": [
+        {
+         "x": "\\(9x^2+4y^2-8y-32=0\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(4x^2+9y^2+32x-18y+37=0\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(x^2+4y^2-4x+24y+40=0\\)",
+         "c": 1,
+         "e": "(x−2)² + 4(y+3)² = 0: solo el punto (2, −3)."
+        },
+        {
+         "x": "\\(x^2+4y^2+2x+17=0\\)",
+         "c": 2,
+         "e": "(x+1)² + 4y² = −16 < 0."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Completa cuadrados y mira el lado derecho: positivo, cero o negativo."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "egen"
+      ]
+     ]
+    },
+    {
+     "id": "s11b4",
+     "lvl": 3,
+     "title": "Por un punto con focos dados",
+     "q": "<p>Halla la elipse que pasa por \\(P(-4,3)\\) y tiene focos \\(F_1(-1,3)\\) y \\(F_2(-1,-1)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro",
+       "f": [
+        {
+         "l": "h",
+         "a": -1
+        },
+        {
+         "l": "k",
+         "a": 1
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "a y b²",
+       "f": [
+        {
+         "l": "a",
+         "a": 4
+        },
+        {
+         "l": "b²",
+         "a": 12
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Centro: punto medio \\((-1,1)\\); \\(c=2\\), eje vertical.",
+      "\\(2a=PF_1+PF_2=3+\\sqrt{9+16}=8\\Rightarrow a=4\\).",
+      "\\(b^2=16-4=12\\): \\(\\frac{(x+1)^2}{12}+\\frac{(y-1)^2}{16}=1\\)."
+     ],
+     "ans": "\\(\\frac{(x+1)^2}{12}+\\frac{(y-1)^2}{16}=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pm"
+      ],
+      [
+       "elip"
+      ],
+      [
+       "erel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11b5",
+     "lvl": 3,
+     "title": "Tangente en un punto",
+     "q": "<p>Recta tangente a \\(\\frac{x^2}{144}+\\frac{y^2}{25}=1\\) en el punto de abscisa \\(x=3\\) del primer cuadrante.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ordenada del punto",
+       "f": [
+        {
+         "l": "y₀",
+         "a": 4.841229182759271
+        }
+       ]
+      },
+      {
+       "p": "Recta tangente",
+       "o": [
+        "\\(5x+12\\sqrt{15}\\,y-240=0\\)",
+        "\\(12x+5\\sqrt{15}\\,y-240=0\\)",
+        "\\(5x-12\\sqrt{15}\\,y-240=0\\)",
+        "\\(5x+12\\sqrt{15}\\,y-144=0\\)",
+        "\\(x+\\sqrt{15}\\,y-25=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y_0=5\\sqrt{1-\\frac9{144}}=\\frac{5\\sqrt{15}}4\\approx4,84\\).",
+      "\\(\\frac{3x}{144}+\\frac{y_0y}{25}=1\\Rightarrow\\frac x{48}+\\frac{\\sqrt{15}}{20}y=1\\).",
+      "Por 240: \\(5x+12\\sqrt{15}\\,y-240=0\\)."
+     ],
+     "ans": "\\(5x+12\\sqrt{15}\\,y=240\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [],
+      [
+       "etan"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11b6",
+     "lvl": 2,
+     "title": "Tangentes con pendiente dada",
+     "q": "<p>Halla las tangentes de pendiente \\(-1\\) a la elipse \\(4x^2+5y^2=20\\).</p>",
+     "checks": [
+      {
+       "p": "Tangentes",
+       "o": [
+        "\\(y=-x\\pm3\\)",
+        "\\(y=-x\\pm\\sqrt5\\)",
+        "\\(y=-x\\pm9\\)",
+        "\\(y=x\\pm3\\)",
+        "\\(y=-x\\pm2\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{x^2}5+\\frac{y^2}4=1\\): \\(a^2=5\\), \\(b^2=4\\).",
+      "\\(y=-x\\pm\\sqrt{5(1)+4}=-x\\pm3\\)."
+     ],
+     "ans": "\\(y=-x\\pm3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [
+       "etan"
+      ]
+     ]
+    },
+    {
+     "id": "s11b7",
+     "lvl": 2,
+     "title": "Túnel minero (problema de clase)",
+     "q": "<p>Un túnel tiene sección semielíptica de 5 m de base y 4 m de altura. Se ponen puntales a 1,5 m y 1 m del centro (a lados opuestos) y un tercero, \\(d\\), que une sus extremos superiores.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Alturas de los puntales",
+       "f": [
+        {
+         "l": "h₁ (a 1,5 m)",
+         "a": 3.2
+        },
+        {
+         "l": "h₂ (a 1 m)",
+         "a": 3.666060555964672
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Longitud del puntal diagonal",
+       "f": [
+        {
+         "l": "d",
+         "a": 2.543071458261859
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=2{,}5\\), \\(b=4\\): \\(\\frac{x^2}{6{,}25}+\\frac{y^2}{16}=1\\).",
+      "\\(h_1=4\\sqrt{1-\\frac{2{,}25}{6{,}25}}=3{,}2\\) m; \\(h_2=4\\sqrt{1-\\frac1{6{,}25}}\\approx3{,}67\\) m.",
+      "Separación horizontal \\(2{,}5\\) m: \\(d=\\sqrt{2{,}5^2+0{,}47^2}\\approx2{,}54\\) m."
+     ],
+     "ans": "3,20 m; 3,67 m; 2,54 m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [],
+      [
+       "dist"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s11b8",
+     "lvl": 2,
+     "title": "Arco de chimenea",
+     "q": "<p>Un arco semielíptico mide 6 pies de ancho en la base y 2 pies de alto en el centro. ¿Dónde van las tachuelas (focos) y cuánto mide la cuerda?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Tachuela derecha y cuerda",
+       "f": [
+        {
+         "l": "x",
+         "a": 2.23606797749979
+        },
+        {
+         "l": "cuerda",
+         "a": 6
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=3\\), \\(b=2\\): \\(c=\\sqrt{9-4}=\\sqrt5\\approx2{,}24\\). Tachuelas en \\((\\pm\\sqrt5,0)\\).",
+      "La cuerda mide \\(2a=6\\) pies (la suma de distancias a los focos)."
+     ],
+     "ans": "\\((\\pm\\sqrt5,0)\\); 6 pies",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ],
+      [
+       "elip"
+      ]
+     ]
+    },
+    {
+     "id": "s11b9",
+     "lvl": 2,
+     "title": "Soportes de un arco",
+     "q": "<p>Un arco semielíptico tiene 150 m de claro y 45 m de altura máxima. Dos soportes verticales dividen el claro en tres partes iguales. ¿Cuánto miden?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Altura de cada soporte",
+       "f": [
+        {
+         "l": "y",
+         "a": 42.42640687119285
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=75\\), \\(b=45\\); los soportes están en \\(x=\\pm25\\).",
+      "\\(y=45\\sqrt{1-\\frac{625}{5625}}=45\\sqrt{\\frac89}=30\\sqrt2\\approx42{,}43\\) m."
+     ],
+     "ans": "\\(30\\sqrt2\\approx42{,}43\\) m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s11b10",
+     "lvl": 3,
+     "title": "Puntales cada 2 metros",
+     "q": "<p>Un arco semielíptico de concreto tiene 10 m de claro y 4 m de altura máxima. Se ponen puntales cada 2 m desde un apoyo (en x = 2, 4, 6 y 8). ¿Cuánto miden?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Alturas",
+       "f": [
+        {
+         "l": "en x = 2 y 8",
+         "a": 3.2
+        },
+        {
+         "l": "en x = 4 y 6",
+         "a": 3.919183588453085
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Centro en \\((5,0)\\), \\(a=5\\), \\(b=4\\): \\(\\frac{(x-5)^2}{25}+\\frac{y^2}{16}=1\\).",
+      "\\(x=2\\): \\(y=4\\sqrt{1-\\frac9{25}}=3{,}2\\) m; \\(x=4\\): \\(y=4\\sqrt{\\frac{24}{25}}\\approx3{,}92\\) m (simétrico en 6 y 8)."
+     ],
+     "ans": "3,2 m y 3,92 m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s11b11",
+     "lvl": 3,
+     "title": "Puerta semielíptica",
+     "q": "<p>La puerta de la iglesia de Maracará (Áncash) es semielíptica: 4,86 m de alto y 3,30 m de base. La parte superior es un alto relieve cuya base horizontal mide 2 m. ¿Cuál es la altura máxima del alto relieve?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Altura del alto relieve",
+       "f": [
+        {
+         "l": "h",
+         "a": 0.994266237742031,
+         "tol": 0.01
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=1{,}65\\), \\(b=4{,}86\\). La base del relieve toca la puerta en \\(x=\\pm1\\).",
+      "\\(y=4{,}86\\sqrt{1-\\frac1{1{,}65^2}}\\approx3{,}87\\) m.",
+      "Altura del relieve: \\(4{,}86-3{,}87\\approx0{,}99\\) m."
+     ],
+     "ans": "\\(\\approx0{,}99\\) m",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elip"
+      ],
+      [],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s12a",
+   "name": "Sem. 12 · Hipérbola: elementos, asíntotas y ecuaciones",
+   "teo": "<p>La <strong>hipérbola</strong> es el conjunto de puntos cuya <em>diferencia</em> de distancias a dos focos es constante (\\(2a\\)).</p><ul><li><strong>Horizontal</strong>: \\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\). Vértices \\((h\\pm a,k)\\), focos \\((h\\pm c,k)\\), asíntotas \\(y-k=\\pm\\frac ba(x-h)\\).</li><li><strong>Vertical</strong>: \\(\\frac{(y-k)^2}{a^2}-\\frac{(x-h)^2}{b^2}=1\\). Vértices \\((h,k\\pm a)\\), focos \\((h,k\\pm c)\\), asíntotas \\(y-k=\\pm\\frac ab(x-h)\\).</li><li><strong>Relación</strong>: \\(c^2=a^2+b^2\\) (el radio de la circunferencia que pasa por las esquinas del rectángulo fundamental es \\(c\\)).</li><li>\\(e=\\frac ca\\gt1\\), \\(LR=\\frac{2b^2}a\\), eje transverso \\(2a\\), eje conjugado \\(2b\\).</li><li><strong>Equilátera</strong>: \\(a=b\\); el rectángulo fundamental es un cuadrado y las asíntotas son perpendiculares (\\(y=\\pm x\\) si está centrada en el origen).</li></ul><p>Aquí \\(a^2\\) <strong>no</strong> es el denominador mayor: es el de la variable con signo positivo.</p>",
+   "form": [
+    "\\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\)",
+    "\\(c^2=a^2+b^2\\)",
+    "Asíntotas: \\(y-k=\\pm\\frac ba(x-h)\\)",
+    "\\(e=\\frac ca\\gt1\\), \\(LR=\\frac{2b^2}a\\)",
+    "Equilátera: \\(a=b\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>La variable positiva manda: define el eje transverso, dónde están vértices y focos, y cuál denominador es \\(a^2\\).</p>\n<h3>Conceptos clave</h3><ul><li>Las asíntotas son las diagonales del rectángulo fundamental de lados \\(2a\\) y \\(2b\\).</li><li>\\(c\\) se calcula sumando: \\(c=\\sqrt{a^2+b^2}\\).</li><li>Forma general: A y C de signos distintos.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica la variable positiva (eje transverso).</li><li><strong>2.</strong> Lee a², b² y calcula c.</li><li><strong>3.</strong> Escribe vértices, focos, asíntotas, e y LR.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\frac{(x-1)^2}4-\\frac{(y-3)^2}{25}=1\\): \\(a=2\\), \\(b=5\\), \\(c=\\sqrt{29}\\), \\(LR=25\\), asíntotas \\(y-3=\\pm\\frac52(x-1)\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\(c^2=a^2-b^2\\) como en la elipse.</div>",
+   "tools": [
+    {
+     "w": "conic",
+     "t": "Explorador de hipérbolas",
+     "p": "Cambia a y b: el rectángulo punteado tiene lados 2a y 2b y sus diagonales son las asíntotas. Prueba la vertical.",
+     "o": {
+      "t": "hip"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s12a1",
+     "lvl": 2,
+     "title": "Lado recto, excentricidad y asíntotas",
+     "q": "<p>\\(\\frac{(x-1)^2}{4}-\\frac{(y-3)^2}{25}=1\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Lado recto y excentricidad",
+       "f": [
+        {
+         "l": "LR",
+         "a": 25
+        },
+        {
+         "l": "e",
+         "a": 2.692582403567252,
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "p": "Asíntotas (forma general)",
+       "o": [
+        "\\(5x-2y+1=0\\) y \\(5x+2y-11=0\\)",
+        "\\(2x-5y+13=0\\) y \\(2x+5y-17=0\\)",
+        "\\(5x-2y-1=0\\) y \\(5x+2y+11=0\\)",
+        "\\(5x-2y+1=0\\) y \\(5x+2y+11=0\\)",
+        "\\(x-y+2=0\\) y \\(x+y-4=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a=2\\), \\(b=5\\), \\(c=\\sqrt{29}\\). \\(LR=\\frac{2(25)}2=25\\); \\(e=\\frac{\\sqrt{29}}2\\approx2{,}69\\).",
+      "\\(y-3=\\pm\\frac52(x-1)\\): \\(2y-6=5x-5\\Rightarrow5x-2y+1=0\\); \\(2y-6=-5x+5\\Rightarrow5x+2y-11=0\\)."
+     ],
+     "ans": "\\(LR=25\\), \\(e=\\frac{\\sqrt{29}}2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ],
+      [
+       "hrel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s12a2",
+     "lvl": 2,
+     "title": "Hipérbola vertical",
+     "q": "<p>\\(\\frac{(y-3)^2}{12}-\\frac{(x-1)^2}{10}=1\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "a², b² y c",
+       "f": [
+        {
+         "l": "a²",
+         "a": 12
+        },
+        {
+         "l": "b²",
+         "a": 10
+        },
+        {
+         "l": "c",
+         "a": 4.69041575982343
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Lado recto y excentricidad",
+       "f": [
+        {
+         "l": "LR",
+         "a": 5.773502691896258
+        },
+        {
+         "l": "e",
+         "a": 1.35400640077266,
+         "tol": 0.006
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "y es positiva: vertical, \\(a^2=12\\), \\(b^2=10\\), \\(c=\\sqrt{22}\\). Focos \\((1,3\\pm\\sqrt{22})\\).",
+      "\\(LR=\\frac{2(10)}{2\\sqrt3}=\\frac{10}{\\sqrt3}\\approx5{,}77\\); \\(e=\\frac{\\sqrt{22}}{2\\sqrt3}\\approx1{,}35\\). Asíntotas \\(y-3=\\pm\\sqrt{\\frac65}(x-1)\\)."
+     ],
+     "ans": "\\(c=\\sqrt{22}\\), \\(LR\\approx5{,}77\\), \\(e\\approx1{,}35\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hip"
+      ],
+      [
+       "hrel"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s12a3",
+     "lvl": 1,
+     "title": "¿Elipse, hipérbola horizontal o vertical?",
+     "q": "<p>Clasifica cada ecuación.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Es una",
+       "cats": [
+        "Elipse",
+        "Hipérbola horizontal",
+        "Hipérbola vertical"
+       ],
+       "items": [
+        {
+         "x": "\\(\\frac{x^2}9-\\frac{y^2}{16}=1\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\frac{y^2}{4}-\\frac{x^2}{25}=1\\)",
+         "c": 2,
+         "e": "Aunque 25 es mayor, la variable positiva es y."
+        },
+        {
+         "x": "\\(\\frac{x^2}9+\\frac{y^2}{16}=1\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(4x^2-y^2=4\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(y^2-x^2=1\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(9x^2-y^2-36x-6y+18=0\\)",
+         "c": 1,
+         "e": "9(x−2)² − (y+3)² = 9."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Signo +: elipse; signo −: hipérbola.",
+      "En la hipérbola, la variable positiva da el eje transverso."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hip"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s12a4",
+     "lvl": 2,
+     "title": "Toca los focos",
+     "q": "<p>La gráfica es \\(\\frac{x^2}{9}-\\frac{y^2}{16}=1\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca <b>los dos focos</b>.",
+       "a": [
+        "F1",
+        "F2"
+       ],
+       "plot": {
+        "sx": 1,
+        "sy": 2,
+        "xr": [
+         -7,
+         7
+        ],
+        "yr": [
+         -6,
+         6
+        ],
+        "ps": [
+         {
+          "x": "3*cosh(t)",
+          "y": "4*sinh(t)",
+          "t": [
+           -1.6,
+           1.6
+          ]
+         },
+         {
+          "x": "-3*cosh(t)",
+          "y": "4*sinh(t)",
+          "t": [
+           -1.6,
+           1.6
+          ]
+         }
+        ],
+        "zones": [
+         {
+          "t": "pt",
+          "x": 5,
+          "y": 0,
+          "id": "F1"
+         },
+         {
+          "t": "pt",
+          "x": -5,
+          "y": 0,
+          "id": "F2"
+         },
+         {
+          "t": "pt",
+          "x": 3,
+          "y": 0,
+          "id": "V1"
+         },
+         {
+          "t": "pt",
+          "x": -3,
+          "y": 0,
+          "id": "V2"
+         },
+         {
+          "t": "pt",
+          "x": 0,
+          "y": 4,
+          "id": "B"
+         }
+        ]
+       },
+       "multi": true,
+       "e": "c = √(9 + 16) = 5: focos en (±5, 0), fuera de los vértices."
+      }
+     ],
+     "steps": [
+      "\\(c=\\sqrt{9+16}=5\\): focos \\((\\pm5,0)\\), más afuera que los vértices \\((\\pm3,0)\\)."
+     ],
+     "ans": "\\((\\pm5,0)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ]
+     ]
+    },
+    {
+     "id": "s12a5",
+     "lvl": 1,
+     "title": "Hipérbola equilátera",
+     "q": "<p>\\(x^2-y^2=9\\).</p>",
+     "checks": [
+      {
+       "p": "Asíntotas y excentricidad",
+       "o": [
+        "\\(y=\\pm x\\), \\(e=\\sqrt2\\)",
+        "\\(y=\\pm3x\\), \\(e=\\sqrt2\\)",
+        "\\(y=\\pm x\\), \\(e=2\\)",
+        "\\(y=\\pm\\frac13x\\), \\(e=\\frac{\\sqrt{10}}3\\)",
+        "No tiene asíntotas"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{x^2}9-\\frac{y^2}9=1\\): \\(a=b=3\\), equilátera.",
+      "Asíntotas \\(y=\\pm\\frac33x=\\pm x\\); \\(c=3\\sqrt2\\Rightarrow e=\\sqrt2\\)."
+     ],
+     "ans": "\\(y=\\pm x\\), \\(e=\\sqrt2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s12a6",
+     "lvl": 1,
+     "title": "Relación entre a, b y c",
+     "q": "<p>Una hipérbola tiene \\(a=3\\) y \\(c=5\\). ¿Cuánto vale \\(b\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Semieje conjugado",
+       "f": [
+        {
+         "l": "b",
+         "a": 4
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(b^2=c^2-a^2=25-9=16\\Rightarrow b=4\\)."
+     ],
+     "ans": "\\(b=4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s12b",
+   "name": "Sem. 12 · Hipérbola: ecuación general, hallar la ecuación y aplicaciones",
+   "teo": "<p><strong>Ecuación general</strong>: \\(Ax^2+Cy^2+Dx+Ey+F=0\\) con A y C de <strong>distinto signo</strong>. Completando cuadrados se llega a la forma estándar. Si el lado derecho queda en <strong>0</strong>, no es una hipérbola sino <strong>dos rectas que se cortan</strong> (caso degenerado).</p><p>Para hallar la ecuación con datos:</p><ul><li>Con vértices y focos: el centro es el punto medio; \\(a\\) = centro–vértice, \\(c\\) = centro–foco, \\(b^2=c^2-a^2\\).</li><li>Con excentricidad: \\(c=ea\\).</li><li>Con puntos de paso: reemplaza cada punto y resuelve el sistema en \\(\\frac1{a^2}\\) y \\(\\frac1{b^2}\\).</li></ul><p>En las <strong>aplicaciones</strong> (escultura, base de reloj) se leen vértices y un punto de la figura.</p>",
+   "form": [
+    "A y C de distinto signo",
+    "Lado derecho 0 → dos rectas",
+    "\\(b^2=c^2-a^2\\)",
+    "\\(c=ea\\)",
+    "Por puntos: sistema en \\(\\frac1{a^2},\\frac1{b^2}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Es el mismo método que en la elipse, pero con resta: cuidado con los signos al completar cuadrados.</p>\n<h3>Conceptos clave</h3><ul><li>Al completar \\(-(y^2+6y)\\) se suma \\(-9\\) en el lado izquierdo.</li><li>Si sale \\((\\ldots)^2-(\\ldots)^2=0\\), se factoriza como diferencia de cuadrados: dos rectas.</li><li>La forma general se obtiene multiplicando por el mcm y pasando todo a un lado.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Agrupa y completa cuadrados respetando el signo de cada grupo.</li><li><strong>2.</strong> Divide para que quede = 1.</li><li><strong>3.</strong> Lee el centro y los elementos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(9x^2-y^2-36x-6y+18=0\\Rightarrow9(x-2)^2-(y+3)^2=9\\Rightarrow(x-2)^2-\\frac{(y+3)^2}9=1\\).</div>\n<div class=\"err\"><b>Error común:</b> olvidar que el grupo de y tiene signo negativo al sumar lo que completa.</div>",
+   "ex": [
+    {
+     "id": "s12b1",
+     "lvl": 2,
+     "title": "Centro, vértices y focos",
+     "q": "<p>\\(9x^2-y^2-36x-6y+18=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro",
+       "f": [
+        {
+         "l": "h",
+         "a": 2
+        },
+        {
+         "l": "k",
+         "a": -3
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "a, b y c",
+       "f": [
+        {
+         "l": "a",
+         "a": 1
+        },
+        {
+         "l": "b",
+         "a": 3
+        },
+        {
+         "l": "c",
+         "a": 3.1622776601683795
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Vértices (x de cada uno)",
+       "f": [
+        {
+         "l": "x derecho",
+         "a": 3
+        },
+        {
+         "l": "x izquierdo",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(9(x^2-4x+4)-(y^2+6y+9)=-18+36-9=9\\).",
+      "\\((x-2)^2-\\frac{(y+3)^2}9=1\\): \\(a=1\\), \\(b=3\\), \\(c=\\sqrt{10}\\).",
+      "Vértices \\((3,-3)\\) y \\((1,-3)\\); focos \\((2\\pm\\sqrt{10},-3)\\)."
+     ],
+     "ans": "\\(C(2,-3)\\), \\(V(3,-3)\\), \\(V(1,-3)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hgen"
+      ],
+      [
+       "hrel"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s12b2",
+     "lvl": 3,
+     "title": "¿Qué representa? (ejercicio c de clase)",
+     "q": "<p>\\(x^2-9y^2+2x-54y-80=0\\).</p>",
+     "checks": [
+      {
+       "p": "Representa",
+       "o": [
+        "Dos rectas que se cortan en \\((-1,-3)\\)",
+        "Una hipérbola horizontal de centro \\((-1,-3)\\)",
+        "Una hipérbola vertical de centro \\((1,3)\\)",
+        "Una elipse",
+        "Ningún punto real"
+       ]
+      }
+     ],
+     "steps": [
+      "\\((x+1)^2-1-9[(y+3)^2-9]-80=0\\Rightarrow(x+1)^2-9(y+3)^2=0\\).",
+      "Lado derecho 0: \\((x+1)=\\pm3(y+3)\\), dos rectas que se cortan en \\((-1,-3)\\). Es un caso degenerado: no se puede graficar como hipérbola."
+     ],
+     "ans": "Dos rectas (hipérbola degenerada)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hgen"
+      ],
+      [
+       "hgen"
+      ]
+     ]
+    },
+    {
+     "id": "s12b3",
+     "lvl": 2,
+     "title": "Con vértices y focos (horizontal)",
+     "q": "<p>Vértices \\((2,0)\\) y \\((6,0)\\); focos \\((0,0)\\) y \\((8,0)\\). Halla la ecuación general.</p>",
+     "checks": [
+      {
+       "p": "Ecuación general",
+       "o": [
+        "\\(3x^2-y^2-24x+36=0\\)",
+        "\\(3x^2+y^2-24x+36=0\\)",
+        "\\(x^2-3y^2-8x+4=0\\)",
+        "\\(3x^2-y^2+24x+36=0\\)",
+        "\\(3x^2-y^2-24x+48=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((4,0)\\), \\(a=2\\), \\(c=4\\Rightarrow b^2=12\\).",
+      "\\(\\frac{(x-4)^2}4-\\frac{y^2}{12}=1\\Rightarrow3(x-4)^2-y^2=12\\Rightarrow3x^2-y^2-24x+36=0\\)."
+     ],
+     "ans": "\\(3x^2-y^2-24x+36=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ],
+      [
+       "hgen"
+      ]
+     ]
+    },
+    {
+     "id": "s12b4",
+     "lvl": 2,
+     "title": "Con vértices y focos (vertical)",
+     "q": "<p>Vértices \\((3,4)\\) y \\((3,0)\\); focos \\((3,5)\\) y \\((3,-1)\\). Halla la ecuación general.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro, a² y b²",
+       "f": [
+        {
+         "l": "h",
+         "a": 3
+        },
+        {
+         "l": "k",
+         "a": 2
+        },
+        {
+         "l": "a²",
+         "a": 4
+        },
+        {
+         "l": "b²",
+         "a": 5
+        }
+       ]
+      },
+      {
+       "p": "Ecuación general",
+       "o": [
+        "\\(4x^2-5y^2-24x+20y+36=0\\)",
+        "\\(4x^2-5y^2+24x-20y+36=0\\)",
+        "\\(5x^2-4y^2-30x+16y+9=0\\)",
+        "\\(4x^2+5y^2-24x-20y+36=0\\)",
+        "\\(4x^2-5y^2-24x+20y-36=0\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((3,2)\\), \\(a=2\\), \\(c=3\\Rightarrow b^2=5\\); vertical.",
+      "\\(5(y-2)^2-4(x-3)^2=20\\Rightarrow-4x^2+5y^2+24x-20y-36=0\\), es decir \\(4x^2-5y^2-24x+20y+36=0\\)."
+     ],
+     "ans": "\\(4x^2-5y^2-24x+20y+36=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ],
+      [
+       "hgen"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s12b5",
+     "lvl": 2,
+     "title": "Con excentricidad",
+     "q": "<p>Vértices \\((2,4)\\) y \\((6,4)\\) y excentricidad \\(\\frac32\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro, a, c y b²",
+       "f": [
+        {
+         "l": "h",
+         "a": 4
+        },
+        {
+         "l": "k",
+         "a": 4
+        },
+        {
+         "l": "a",
+         "a": 2
+        },
+        {
+         "l": "c",
+         "a": 3
+        },
+        {
+         "l": "b²",
+         "a": 5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Centro \\((4,4)\\), \\(a=2\\); \\(c=ea=3\\).",
+      "\\(b^2=9-4=5\\): \\(\\frac{(x-4)^2}4-\\frac{(y-4)^2}5=1\\)."
+     ],
+     "ans": "\\(\\frac{(x-4)^2}4-\\frac{(y-4)^2}5=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hrel"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s12b6",
+     "lvl": 3,
+     "title": "Por dos puntos",
+     "q": "<p>Hipérbola con centro en el origen, eje transverso sobre el eje y, que pasa por \\((4,6)\\) y \\((1,-3)\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Denominadores",
+       "f": [
+        {
+         "l": "a²",
+         "a": 7.2
+        },
+        {
+         "l": "b²",
+         "a": 4
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{y^2}{a^2}-\\frac{x^2}{b^2}=1\\). Con \\(u=\\frac1{a^2}\\), \\(v=\\frac1{b^2}\\): \\(36u-16v=1\\) y \\(9u-v=1\\).",
+      "\\(v=9u-1\\Rightarrow36u-144u+16=1\\Rightarrow u=\\frac5{36}\\), \\(v=\\frac14\\).",
+      "\\(a^2=\\frac{36}5\\), \\(b^2=4\\): \\(\\frac{5y^2}{36}-\\frac{x^2}4=1\\)."
+     ],
+     "ans": "\\(\\frac{y^2}{36/5}-\\frac{x^2}4=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hip"
+      ],
+      [],
+      []
+     ]
+    },
+    {
+     "id": "s12b7",
+     "lvl": 3,
+     "title": "Focos en los vértices de una elipse",
+     "q": "<p>Halla la hipérbola cuyos focos están en los vértices de \\(\\frac{x^2}{100}+\\frac{y^2}{64}=1\\) y cuyas directrices pasan por los focos de esa elipse.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Denominadores de la hipérbola",
+       "f": [
+        {
+         "l": "a²",
+         "a": 60
+        },
+        {
+         "l": "b²",
+         "a": 40
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Elipse: vértices \\((\\pm10,0)\\), focos \\((\\pm6,0)\\). Hipérbola: \\(c=10\\).",
+      "Directrices en \\(x=\\pm\\frac{a^2}c=\\pm6\\Rightarrow a^2=60\\); \\(b^2=100-60=40\\)."
+     ],
+     "ans": "\\(\\frac{x^2}{60}-\\frac{y^2}{40}=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "erel"
+      ],
+      [
+       "hrel"
+      ]
+     ]
+    },
+    {
+     "id": "s12b8",
+     "lvl": 3,
+     "title": "Escultura hiperbólica",
+     "q": "<p>Una escultura tiene sección hiperbólica con vértices \\((\\pm1,0)\\) y pasa por \\((2,13)\\) (cada unidad es 1 pie).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "b² de la hipérbola",
+       "f": [
+        {
+         "l": "b²",
+         "a": 56.333333333333336
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Ancho de la escultura a 5 pies de altura",
+       "f": [
+        {
+         "l": "ancho",
+         "a": 2.4031537464328165
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^2-\\frac{y^2}{b^2}=1\\) con \\((2,13)\\): \\(4-\\frac{169}{b^2}=1\\Rightarrow b^2=\\frac{169}3\\). General: \\(169x^2-3y^2-169=0\\).",
+      "\\(y=5\\): \\(x^2=1+\\frac{3(25)}{169}=\\frac{244}{169}\\Rightarrow x\\approx1{,}20\\); ancho \\(\\approx2{,}40\\) pies."
+     ],
+     "ans": "\\(169x^2-3y^2-169=0\\); \\(\\approx2{,}40\\) pies",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "hip"
+      ],
+      []
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "name": "Sem. 13 · Rotación de cónicas",
+   "teo": "<p>Una cónica con ejes inclinados tiene término \\(xy\\): \\(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\\). Para quitarlo se <strong>giran los ejes</strong> un ángulo agudo \\(\\theta\\) tal que</p><p style='text-align:center'>\\(\\cot2\\theta=\\dfrac{A-C}{B}\\)</p><ul><li><strong>Ecuaciones de transformación</strong>: \\(x=x'\\cos\\theta-y'\\sin\\theta\\), \\(y=x'\\sin\\theta+y'\\cos\\theta\\). Se reemplazan en la ecuación y se simplifica.</li><li>Si \\(A=C\\), entonces \\(\\cot2\\theta=0\\) y \\(\\theta=45^\\circ\\).</li><li><strong>Coordenadas de un punto en el sistema girado</strong>: \\(x'=x\\cos\\theta+y\\sin\\theta\\), \\(y'=-x\\sin\\theta+y\\cos\\theta\\).</li><li><strong>Clasificación por el discriminante</strong> (salvo casos degenerados): \\(B^2-4AC\\lt0\\) elipse o circunferencia; \\(=0\\) parábola; \\(\\gt0\\) hipérbola.</li><li><strong>Invariantes</strong>: \\(F'=F\\), \\(A'+C'=A+C\\), \\(B'^2-4A'C'=B^2-4AC\\).</li></ul><p class='note'>En la lámina de la sesión 1, el ejemplo \\(7x^2-6\\sqrt3xy+13y^2-16=0\\) termina en \\(16x'^2+32y'^2=54\\): es un error. Lo correcto (como en la sesión 2) es \\(4x'^2+16y'^2=16\\), o sea \\(\\frac{x'^2}{4}+y'^2=1\\).</p>",
+   "form": [
+    "\\(\\cot2\\theta=\\frac{A-C}B\\)",
+    "\\(x=x'\\cos\\theta-y'\\sin\\theta\\)",
+    "\\(y=x'\\sin\\theta+y'\\cos\\theta\\)",
+    "\\(B^2-4AC\\): \\(\\lt0\\) E · \\(=0\\) P · \\(\\gt0\\) H",
+    "\\(A'+C'=A+C\\), \\(F'=F\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Girar los ejes es «enderezar» la cónica: en el sistema \\(x'y'\\) vuelve a ser una elipse, parábola o hipérbola de las semanas 10–12.</p>\n<h3>Conceptos clave</h3><ul><li>Para clasificar basta \\(B^2-4AC\\): no hace falta girar.</li><li>Con \\(\\cot2\\theta\\) sacas \\(2\\theta\\) y luego \\(\\theta\\) (entre 0° y 90°).</li><li>Al reemplazar, los términos en \\(x'y'\\) deben cancelarse: si no, revisa.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica A, B y C.</li><li><strong>2.</strong> Calcula cot 2θ y despeja θ.</li><li><strong>3.</strong> Reemplaza x e y con las ecuaciones de transformación y simplifica.</li><li><strong>4.</strong> Lleva a la forma estándar y grafica sobre los ejes girados.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(7x^2-6\\sqrt3xy+13y^2-16=0\\): \\(\\cot2\\theta=\\frac{-6}{-6\\sqrt3}=\\frac1{\\sqrt3}\\Rightarrow\\theta=30^\\circ\\); queda \\(\\frac{x'^2}4+\\frac{y'^2}1=1\\).</div>\n<div class=\"err\"><b>Error común:</b> usar \\(\\cot2\\theta\\) como si fuera \\(\\tan2\\theta\\).</div>",
+   "tools": [
+    {
+     "w": "rot",
+     "t": "Rotador de cónicas",
+     "p": "Elige una ecuación de clase o escribe la tuya. Toca «Girar hasta θ»: cuando los ejes verdes coinciden con la cónica, desaparece el término xy.",
+     "o": {}
+    },
+    {
+     "w": "tl",
+     "t": "La rotación como transformación lineal",
+     "p": "La matriz de rotación de 30° (cos 30°, sen 30°…) mueve los ejes: es la misma que usas en las ecuaciones de transformación.",
+     "o": {
+      "a": [
+       [
+        0.866,
+        -0.5
+       ],
+       [
+        0.5,
+        0.866
+       ]
+      ],
+      "v": [
+       2,
+       1
+      ]
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s13e1",
+     "lvl": 1,
+     "title": "Clasifica por el discriminante (ejemplos de clase)",
+     "q": "<p>Clasifica cada cónica usando \\(B^2-4AC\\).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Es una",
+       "cats": [
+        "Elipse",
+        "Parábola",
+        "Hipérbola"
+       ],
+       "items": [
+        {
+         "x": "\\(2x^2-3xy+2y^2-2x=0\\)",
+         "c": 0,
+         "e": "9 − 16 = −7 < 0."
+        },
+        {
+         "x": "\\(x^2-6xy+9y^2-2y+1=0\\)",
+         "c": 1,
+         "e": "36 − 36 = 0."
+        },
+        {
+         "x": "\\(3x^2+8xy+4y^2-7=0\\)",
+         "c": 2,
+         "e": "64 − 48 = 16 > 0."
+        },
+        {
+         "x": "\\(xy-4=0\\)",
+         "c": 2,
+         "e": "B = 1, A = C = 0: 1 > 0."
+        },
+        {
+         "x": "\\(7x^2-6\\sqrt3xy+13y^2-16=0\\)",
+         "c": 0,
+         "e": "108 − 364 < 0."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Calcula \\(B^2-4AC\\) con los coeficientes (B es el de \\(xy\\)).",
+      "Negativo: elipse; cero: parábola; positivo: hipérbola."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "discon"
+      ],
+      [
+       "discon"
+      ]
+     ]
+    },
+    {
+     "id": "s13e2",
+     "lvl": 2,
+     "title": "Elimina el término xy (ejemplo de clase)",
+     "q": "<p>\\(7x^2-6\\sqrt3xy+13y^2-16=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulo de rotación",
+       "f": [
+        {
+         "l": "θ (grados)",
+         "a": 30
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Coeficientes tras girar (A′x′² + C′y′² = 16)",
+       "f": [
+        {
+         "l": "A′",
+         "a": 4
+        },
+        {
+         "l": "C′",
+         "a": 16
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Forma estándar x′²/m + y′²/n = 1",
+       "f": [
+        {
+         "l": "m",
+         "a": 4
+        },
+        {
+         "l": "n",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cot2\\theta=\\frac{7-13}{-6\\sqrt3}=\\frac1{\\sqrt3}\\Rightarrow2\\theta=60^\\circ\\), \\(\\theta=30^\\circ\\).",
+      "\\(x=\\frac{\\sqrt3x'-y'}2\\), \\(y=\\frac{x'+\\sqrt3y'}2\\); al reemplazar: \\(4x'^2+16y'^2-16=0\\).",
+      "\\(\\frac{x'^2}{4}+\\frac{y'^2}1=1\\): elipse con \\(a=2\\), \\(b=1\\) sobre los ejes girados 30°. (Comprueba: \\(A'+C'=20=A+C\\).)"
+     ],
+     "ans": "\\(\\frac{x'^2}4+y'^2=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rotec"
+      ],
+      [
+       "inv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s13e3",
+     "lvl": 2,
+     "title": "La hipérbola xy = 1 (ejemplo de clase)",
+     "q": "<p>Elimina el término \\(xy\\) de \\(xy-1=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulo",
+       "f": [
+        {
+         "l": "θ (grados)",
+         "a": 45
+        }
+       ]
+      },
+      {
+       "p": "Forma estándar",
+       "o": [
+        "\\(\\frac{x'^2}2-\\frac{y'^2}2=1\\)",
+        "\\(\\frac{x'^2}2+\\frac{y'^2}2=1\\)",
+        "\\(x'^2-y'^2=1\\)",
+        "\\(\\frac{y'^2}2-\\frac{x'^2}2=1\\)",
+        "\\(2x'^2-2y'^2=1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=C=0\\Rightarrow\\cot2\\theta=0\\Rightarrow\\theta=45^\\circ\\).",
+      "\\(x=\\frac{x'-y'}{\\sqrt2}\\), \\(y=\\frac{x'+y'}{\\sqrt2}\\): \\(\\frac{x'^2-y'^2}2-1=0\\).",
+      "Vértices: \\((\\pm\\sqrt2,0)\\) en \\(x'y'\\); \\((1,1)\\) y \\((-1,-1)\\) en \\(xy\\)."
+     ],
+     "ans": "\\(\\frac{x'^2}2-\\frac{y'^2}2=1\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rotec"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s13e4",
+     "lvl": 2,
+     "title": "Un punto en el sistema girado",
+     "q": "<p>Encuentra las coordenadas \\((x',y')\\) del punto en el sistema girado.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "θ = 90°, punto (0, 3)",
+       "f": [
+        {
+         "l": "x′",
+         "a": 3
+        },
+        {
+         "l": "y′",
+         "a": 0
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "θ = 30°, punto (1, 3)",
+       "f": [
+        {
+         "l": "x′",
+         "a": 2.366025403784439
+        },
+        {
+         "l": "y′",
+         "a": 2.098076211353316
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "θ = 45°, punto (2, 1)",
+       "f": [
+        {
+         "l": "x′",
+         "a": 2.1213203435596424
+        },
+        {
+         "l": "y′",
+         "a": -0.7071067811865476
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x'=x\\cos\\theta+y\\sin\\theta\\), \\(y'=-x\\sin\\theta+y\\cos\\theta\\).",
+      "90°: \\((0+3,\\ 0+0)=(3,0)\\). 30°: \\(\\left(\\frac{\\sqrt3}2+\\frac32,\\ -\\frac12+\\frac{3\\sqrt3}2\\right)\\approx(2{,}37;\\ 2{,}10)\\).",
+      "45°: \\(\\left(\\frac3{\\sqrt2},-\\frac1{\\sqrt2}\\right)\\approx(2{,}12;\\ -0{,}71)\\)."
+     ],
+     "ans": "\\((3,0)\\); \\((2{,}37;\\ 2{,}10)\\); \\((2{,}12;\\ -0{,}71)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rotec"
+      ],
+      [],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s13e5",
+     "lvl": 2,
+     "title": "Determina el ángulo de giro",
+     "q": "<p>Halla el ángulo agudo \\(\\theta\\) que elimina el término \\(xy\\) (en grados, con 2 decimales).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulos",
+       "f": [
+        {
+         "l": "x²+2xy+y²=20",
+         "a": 45
+        },
+        {
+         "l": "40x²+36xy+8y²=50",
+         "a": 24.183230331714903,
+         "tol": 0.02
+        },
+        {
+         "l": "6x²−4xy+8y²+…=80",
+         "a": 31.717474411461005,
+         "tol": 0.02
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A=C\\Rightarrow\\cot2\\theta=0\\Rightarrow\\theta=45^\\circ\\).",
+      "\\(\\cot2\\theta=\\frac{32}{36}=\\frac89\\Rightarrow\\tan2\\theta=\\frac98\\Rightarrow2\\theta\\approx48{,}37^\\circ\\), \\(\\theta\\approx24{,}18^\\circ\\).",
+      "\\(\\cot2\\theta=\\frac{-2}{-4}=\\frac12\\Rightarrow\\tan2\\theta=2\\Rightarrow\\theta\\approx31{,}72^\\circ\\)."
+     ],
+     "ans": "45°; 24,18°; 31,72°",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ],
+      [
+       "rot"
+      ]
+     ]
+    },
+    {
+     "id": "s13e6",
+     "lvl": 1,
+     "title": "Identifica la cónica rotada (ejercicios de clase)",
+     "q": "<p>Clasifica cada ecuación.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Es una",
+       "cats": [
+        "Elipse",
+        "Parábola",
+        "Hipérbola"
+       ],
+       "items": [
+        {
+         "x": "\\(16x^2-8xy+y^2-10x+5y=0\\)",
+         "c": 1,
+         "e": "64 − 64 = 0."
+        },
+        {
+         "x": "\\(12x^2-6xy+7y^2-45=0\\)",
+         "c": 0,
+         "e": "36 − 336 < 0."
+        },
+        {
+         "x": "\\(36x^2-60xy+25y^2+9y=0\\)",
+         "c": 1,
+         "e": "3600 − 3600 = 0."
+        },
+        {
+         "x": "\\(x^2+4xy+4y^2-5x-y-3=0\\)",
+         "c": 1,
+         "e": "16 − 16 = 0."
+        },
+        {
+         "x": "\\(x^2+xy+4y^2+x+y=0\\)",
+         "c": 0,
+         "e": "1 − 16 < 0."
+        },
+        {
+         "x": "\\(x^2+4xy+y^2-1=0\\)",
+         "c": 2,
+         "e": "16 − 4 > 0."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Solo importan A, B y C: \\(B^2-4AC\\)."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "discon"
+      ]
+     ]
+    },
+    {
+     "id": "s13e7",
+     "lvl": 2,
+     "title": "Usa los invariantes",
+     "q": "<p>Al girar \\(2x^2-3xy+2y^2-2x=0\\) un ángulo de 45°, se obtiene \\(A'=\\frac12\\). Sin hacer toda la cuenta, ¿cuánto vale \\(C'\\)? ¿Y \\(F'\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Coeficientes",
+       "f": [
+        {
+         "l": "C′",
+         "a": 3.5,
+         "tol": 0.006
+        },
+        {
+         "l": "F′",
+         "a": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A'+C'=A+C=4\\Rightarrow C'=4-\\frac12=\\frac72\\).",
+      "\\(F'=F=0\\). (Comprueba el discriminante: \\(0-4\\cdot\\frac12\\cdot\\frac72=-7=9-16\\).)"
+     ],
+     "ans": "\\(C'=\\frac72\\), \\(F'=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "inv"
+      ],
+      [
+       "inv"
+      ]
+     ]
+    },
+    {
+     "id": "s13e8",
+     "lvl": 3,
+     "title": "Parábola rotada (ejemplo de clase)",
+     "q": "<p>\\(x^2-4xy+4y^2+5\\sqrt5\\,y+1=0\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Ángulo (grados)",
+       "f": [
+        {
+         "l": "θ",
+         "a": 26.56505117707799,
+         "tol": 0.02
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Coeficientes en x′y′ (A′x′² + C′y′² + D′x′ + E′y′ + 1 = 0)",
+       "f": [
+        {
+         "l": "A′",
+         "a": 0
+        },
+        {
+         "l": "C′",
+         "a": 5
+        },
+        {
+         "l": "D′",
+         "a": 5
+        },
+        {
+         "l": "E′",
+         "a": 10
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cot2\\theta=\\frac{1-4}{-4}=\\frac34\\Rightarrow\\cos2\\theta=\\frac35\\Rightarrow\\cos\\theta=\\frac2{\\sqrt5}\\), \\(\\sin\\theta=\\frac1{\\sqrt5}\\), \\(\\theta\\approx26{,}57^\\circ\\).",
+      "Reemplazando: \\(5y'^2+5x'+10y'+1=0\\): parábola (\\(A'=0\\)), como predice \\(B^2-4AC=0\\)."
+     ],
+     "ans": "\\(5y'^2+5x'+10y'+1=0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rot"
+      ],
+      [
+       "rotec"
+      ]
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "s14a",
+   "name": "Sem. 14 · Coordenadas polares: ubicar puntos y convertir",
+   "teo": "<p>En el <strong>plano polar</strong> un punto es \\(P(r,\\theta)\\): \\(r\\) es la distancia al <strong>polo</strong> \\(O\\) y \\(\\theta\\) el ángulo medido desde el <strong>eje polar</strong> (antihorario si es positivo, horario si es negativo).</p><ul><li><strong>Infinitas representaciones</strong>: \\((r,\\theta)=(r,\\theta\\pm2\\pi)=(-r,\\theta\\pm\\pi)\\).</li><li><strong>r negativo</strong>: se avanza en la dirección <em>opuesta</em> al ángulo.</li><li><strong>Polar → rectangular</strong>: \\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\).</li><li><strong>Rectangular → polar</strong>: \\(r=\\sqrt{x^2+y^2}\\), \\(\\theta=\\tan^{-1}\\frac yx\\) corrigiendo el cuadrante (+π en II y III, +2π en IV).</li><li>Arco: \\(s=r\\theta\\); sector: \\(A=\\frac12r^2\\theta\\) (θ en radianes).</li></ul>",
+   "form": [
+    "\\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\)",
+    "\\(r=\\sqrt{x^2+y^2}\\)",
+    "\\(\\theta=\\tan^{-1}\\frac yx\\) (+π en II, III)",
+    "\\((r,\\theta)=(-r,\\theta+\\pi)\\)",
+    "\\(s=r\\theta\\), \\(A=\\frac12r^2\\theta\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Primero gira el ángulo, después avanza r (hacia atrás si r es negativo).</p>\n<h3>Conceptos clave</h3><ul><li>Sumar o restar 360° no cambia el punto.</li><li>Cambiar el signo de r equivale a sumar 180°.</li><li>La calculadora no sabe el cuadrante: míralo con los signos de x e y.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Ubica el ángulo θ.</li><li><strong>2.</strong> Avanza r sobre ese rayo (o el opuesto si r < 0).</li><li><strong>3.</strong> Para convertir, usa las fórmulas y revisa el cuadrante.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\((-2,-6)\\): \\(r=\\sqrt{40}\\approx6{,}32\\); \\(\\tan^{-1}3\\approx1{,}25\\) rad, III cuadrante: \\(\\theta\\approx1{,}25+\\pi\\approx4{,}39\\) rad.</div>\n<div class=\"err\"><b>Error común:</b> dejar \\(\\theta\\approx1{,}25\\) rad para un punto del III cuadrante.</div>",
+   "tools": [
+    {
+     "w": "ppt",
+     "t": "Ubica puntos en el plano polar",
+     "p": "Mueve r y θ. Prueba r negativo: el punto se va al lado opuesto. Abajo ves otras coordenadas del mismo punto y sus cartesianas.",
+     "o": {
+      "r": 3,
+      "t": 60
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s14a1",
+     "lvl": 1,
+     "title": "Ubica el punto",
+     "q": "<p>Ubica el punto \\(\\left(2,\\frac{2\\pi}3\\right)\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el punto \\(\\left(2,\\frac{2\\pi}3\\right)\\).",
+       "a": [
+        "A"
+       ],
+       "polar": {
+        "R": 4,
+        "zones": [
+         {
+          "x": -1.0,
+          "y": 1.7321,
+          "id": "A"
+         },
+         {
+          "x": 1.0,
+          "y": 1.7321,
+          "id": "b"
+         },
+         {
+          "x": 1.0,
+          "y": -1.7321,
+          "id": "c"
+         },
+         {
+          "x": -1.0,
+          "y": -1.7321,
+          "id": "d"
+         },
+         {
+          "x": -1.5,
+          "y": 2.5981,
+          "id": "e"
+         }
+        ]
+       },
+       "e": "2π/3 = 120°: segundo cuadrante, a 2 del polo."
+      }
+     ],
+     "steps": [
+      "\\(\\frac{2\\pi}3=120^\\circ\\): rayo en el II cuadrante; avanza 2."
+     ],
+     "ans": "\\((-1,\\sqrt3)\\) en cartesianas",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polar"
+      ]
+     ]
+    },
+    {
+     "id": "s14a2",
+     "lvl": 2,
+     "title": "Con r negativo",
+     "q": "<p>Ubica el punto \\((-3,\\ 60^\\circ)\\).</p>",
+     "checks": [
+      {
+       "t": "tap",
+       "p": "Toca el punto \\((-3,\\ 60^\\circ)\\).",
+       "a": [
+        "A"
+       ],
+       "polar": {
+        "R": 4,
+        "zones": [
+         {
+          "x": -1.5,
+          "y": -2.5981,
+          "id": "A"
+         },
+         {
+          "x": 1.5,
+          "y": 2.5981,
+          "id": "b"
+         },
+         {
+          "x": -1.5,
+          "y": 2.5981,
+          "id": "c"
+         },
+         {
+          "x": 1.5,
+          "y": -2.5981,
+          "id": "d"
+         }
+        ]
+       },
+       "e": "r negativo: se avanza 3 en la dirección opuesta a 60°, es decir, hacia 240°."
+      },
+      {
+       "p": "Es el mismo punto que",
+       "o": [
+        "\\((3,\\ 240^\\circ)\\)",
+        "\\((3,\\ 60^\\circ)\\)",
+        "\\((3,\\ -60^\\circ)\\)",
+        "\\((-3,\\ 240^\\circ)\\)",
+        "\\((3,\\ 120^\\circ)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(r\\lt0\\) se va al rayo opuesto: \\(60^\\circ+180^\\circ=240^\\circ\\).",
+      "\\((-3,60^\\circ)=(3,240^\\circ)\\)."
+     ],
+     "ans": "\\((3,240^\\circ)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polar"
+      ],
+      [
+       "polar"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14a3",
+     "lvl": 2,
+     "title": "Otras coordenadas del mismo punto",
+     "q": "<p>Para \\((3,\\ 60^\\circ)\\), ¿cuál de estas coordenadas <b>no</b> representa el mismo punto (con \\(-360^\\circ\\le\\theta\\le360^\\circ\\))?</p>",
+     "checks": [
+      {
+       "p": "No es el mismo punto",
+       "o": [
+        "\\((-3,\\ 60^\\circ)\\)",
+        "\\((3,\\ -300^\\circ)\\)",
+        "\\((-3,\\ 240^\\circ)\\)",
+        "\\((-3,\\ -120^\\circ)\\)",
+        "\\((3,\\ 420^\\circ)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Mismo punto: \\((3,60^\\circ-360^\\circ)=(3,-300^\\circ)\\) y \\((-3,60^\\circ\\pm180^\\circ)\\): \\((-3,240^\\circ)\\), \\((-3,-120^\\circ)\\). (\\(420^\\circ\\) también, aunque se sale del rango.)",
+      "\\((-3,60^\\circ)\\) está en la dirección opuesta: es \\((3,240^\\circ)\\)."
+     ],
+     "ans": "\\((-3,60^\\circ)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polar"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s14a4",
+     "lvl": 1,
+     "title": "Polar a rectangular",
+     "q": "<p>Convierte a coordenadas rectangulares.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "\\(\\left(6,\\frac{2\\pi}3\\right)\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": -3
+        },
+        {
+         "l": "y",
+         "a": 5.196152422706632
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "\\(\\left(5,\\frac{5\\pi}4\\right)\\)",
+       "f": [
+        {
+         "l": "x",
+         "a": -3.5355339059327386
+        },
+        {
+         "l": "y",
+         "a": -3.5355339059327373
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=6\\cos\\frac{2\\pi}3=-3\\), \\(y=6\\sin\\frac{2\\pi}3=3\\sqrt3\\approx5{,}2\\).",
+      "\\(x=y=5\\cdot\\left(-\\frac{\\sqrt2}2\\right)\\approx-3{,}54\\)."
+     ],
+     "ans": "\\((-3;\\ 5{,}2)\\) y \\((-3{,}54;\\ -3{,}54)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [
+       "conv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14a5",
+     "lvl": 2,
+     "title": "Rectangular a polar (ejemplos de clase)",
+     "q": "<p>Convierte a polares (θ en radianes, entre 0 y 2π).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Punto (3, 5)",
+       "f": [
+        {
+         "l": "r",
+         "a": 5.830951894845301
+        },
+        {
+         "l": "θ",
+         "a": 1.0303768265243125,
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Punto (−2, −6)",
+       "f": [
+        {
+         "l": "r",
+         "a": 6.324555320336759
+        },
+        {
+         "l": "θ",
+         "a": 4.3906384259880475,
+         "tol": 0.006,
+         "e": "Está en el III cuadrante: suma π."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=\\sqrt{34}\\approx5{,}83\\), \\(\\theta=\\tan^{-1}\\frac53\\approx1{,}03\\) (I cuadrante).",
+      "\\(r=\\sqrt{40}\\approx6{,}32\\); \\(\\tan^{-1}3\\approx1{,}25\\), III cuadrante: \\(\\theta\\approx4{,}39\\)."
+     ],
+     "ans": "\\((5{,}83;\\ 1{,}03)\\) y \\((6{,}32;\\ 4{,}39)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [
+       "conv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14a6",
+     "lvl": 2,
+     "title": "En el cuarto cuadrante",
+     "q": "<p>Convierte \\((7,-2)\\) a polares, con θ en grados entre 0° y 360°.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Coordenadas polares",
+       "f": [
+        {
+         "l": "r",
+         "a": 7.280109889280518
+        },
+        {
+         "l": "θ",
+         "a": 344.05460409907715,
+         "tol": 0.06
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=\\sqrt{49+4}=\\sqrt{53}\\approx7{,}28\\).",
+      "\\(\\tan^{-1}\\left(-\\frac27\\right)\\approx-15{,}95^\\circ\\); IV cuadrante: \\(+360^\\circ\\Rightarrow\\theta\\approx344{,}05^\\circ\\)."
+     ],
+     "ans": "\\((7{,}28;\\ 344{,}05^\\circ)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [
+       "conv"
+      ]
+     ]
+    },
+    {
+     "id": "s14a7",
+     "lvl": 2,
+     "title": "Arco y sector",
+     "q": "<p>Usa \\(s=r\\theta\\) y \\(A=\\frac12r^2\\theta\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Longitud del arco entre (2, 30°) y (2, 90°)",
+       "f": [
+        {
+         "l": "s",
+         "a": 2.0943951023931953
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Área del sector entre el polo, (4, 30°) y (4, 90°)",
+       "f": [
+        {
+         "l": "A",
+         "a": 8.377580409572781
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "El ángulo entre ambos es \\(60^\\circ=\\frac\\pi3\\).",
+      "\\(s=2\\cdot\\frac\\pi3\\approx2{,}09\\); \\(A=\\frac12(16)\\frac\\pi3=\\frac{8\\pi}3\\approx8{,}38\\)."
+     ],
+     "ans": "\\(\\frac{2\\pi}3\\) y \\(\\frac{8\\pi}3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "polar"
+      ],
+      []
+     ],
+     "chain": true
+    }
+   ]
+  },
+  {
+   "id": "s14b",
+   "name": "Sem. 14 · Ecuaciones y gráficas polares",
+   "teo": "<p><strong>Convertir ecuaciones</strong>: usa \\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\), \\(r^2=x^2+y^2\\). Muchas veces conviene multiplicar por \\(r\\) (por ejemplo, \\(r=7\\cos\\theta\\) \\(\\Rightarrow r^2=7r\\cos\\theta\\) \\(\\Rightarrow x^2+y^2=7x\\)).</p><p><strong>Gráficas clásicas</strong>:</p><ul><li>Rectas: \\(\\theta=\\alpha\\); \\(r=a\\csc\\theta\\) (\\(y=a\\)); \\(r=a\\sec\\theta\\) (\\(x=a\\)).</li><li>Circunferencias: \\(r=a\\); \\(r=a\\cos\\theta\\) y \\(r=a\\sin\\theta\\) (pasan por el polo).</li><li><strong>Limaçon</strong> \\(r=a\\pm b\\cos\\theta\\) (o \\(\\sin\\)): \\(\\frac ab\\lt1\\) con lazo; \\(=1\\) <strong>cardioide</strong>; \\(1\\lt\\frac ab\\lt2\\) con hendidura; \\(\\ge2\\) convexa.</li><li><strong>Rosas</strong> \\(r=a\\cos n\\theta\\): \\(n\\) pétalos si \\(n\\) es impar, \\(2n\\) si es par.</li><li>Lemniscata \\(r^2=a^2\\cos2\\theta\\); espiral \\(r=\\theta\\).</li></ul><p><strong>Para graficar</strong>: intersecciones con los ejes, simetrías (eje polar: \\(\\theta\\to-\\theta\\); eje 90°: \\(\\theta\\to\\pi-\\theta\\); polo: \\(r\\to-r\\)), extensión (valor máximo de \\(|r|\\)) y una tabla de valores.</p>",
+   "form": [
+    "Multiplica por r: \\(r^2=x^2+y^2\\)",
+    "\\(r=a\\pm b\\cos\\theta\\): limaçon",
+    "\\(\\frac ab=1\\): cardioide",
+    "\\(r=a\\cos n\\theta\\): n o 2n pétalos",
+    "\\(r^2=a^2\\cos2\\theta\\): lemniscata"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Reconoce la familia por la forma de la ecuación y confirma con 3 o 4 puntos de la tabla.</p>\n<h3>Conceptos clave</h3><ul><li>Rosa: si n es par, el número de pétalos se duplica.</li><li>Limaçon: compara a con b.</li><li>Para convertir a rectangulares, busca \\(r\\cos\\theta\\), \\(r\\sin\\theta\\) o \\(r^2\\).</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Identifica la familia (recta, circunferencia, limaçon, rosa…).</li><li><strong>2.</strong> Busca intersecciones, simetrías y el valor máximo de r.</li><li><strong>3.</strong> Arma una tabla para θ entre 0 y π (o 2π).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r=2+2\\cos\\theta\\): cardioide (\\(a=b\\)), simétrica al eje polar, máximo \\(r=4\\) en \\(\\theta=0\\), pasa por el polo en \\(\\theta=\\pi\\).</div>\n<div class=\"err\"><b>Error común:</b> contar 3 pétalos en \\(r=\\cos2\\theta\\): son 4.</div>",
+   "tools": [
+    {
+     "w": "polar",
+     "t": "Graficador polar animado",
+     "p": "Toca «Dibujar» para ver cómo se traza la cardioide del ejemplo 9 y la limaçon del ejemplo 10 a medida que crece θ.",
+     "o": {
+      "R": 7.5,
+      "curves": [
+       {
+        "r": "2+2*cos(t)",
+        "l": "r = 2 + 2cos θ"
+       },
+       {
+        "r": "4-3*sin(t)",
+        "l": "r = 4 − 3sen θ"
+       }
+      ]
+     }
+    },
+    {
+     "w": "polar",
+     "t": "Rosas",
+     "p": "r = 3cos 2θ tiene 4 pétalos; r = 2sen 3θ, 3.",
+     "o": {
+      "R": 3.5,
+      "curves": [
+       {
+        "r": "3*cos(2*t)",
+        "l": "r = 3cos 2θ"
+       },
+       {
+        "r": "2*sin(3*t)",
+        "l": "r = 2sen 3θ"
+       }
+      ]
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s14b1",
+     "lvl": 2,
+     "title": "Polar a rectangular (ejemplo de clase)",
+     "q": "<p>Expresa \\(r=\\dfrac{8}{1+2\\cos\\theta}\\) en coordenadas rectangulares.</p>",
+     "checks": [
+      {
+       "p": "Ecuación rectangular",
+       "o": [
+        "\\(-3x^2+32x+y^2-64=0\\)",
+        "\\(3x^2+32x+y^2-64=0\\)",
+        "\\(x^2+y^2=64-16x\\)",
+        "\\(-3x^2-32x+y^2-64=0\\)",
+        "\\(x^2+y^2+2x=8\\)"
+       ]
+      },
+      {
+       "p": "Es una",
+       "o": [
+        "Hipérbola",
+        "Elipse",
+        "Parábola",
+        "Circunferencia",
+        "Recta"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r+2r\\cos\\theta=8\\Rightarrow\\sqrt{x^2+y^2}=8-2x\\).",
+      "\\(x^2+y^2=64-32x+4x^2\\Rightarrow-3x^2+32x+y^2-64=0\\).",
+      "A y C de distinto signo: hipérbola (en polares, \\(e=2\\gt1\\))."
+     ],
+     "ans": "\\(-3x^2+32x+y^2-64=0\\), hipérbola",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [],
+      [
+       "cpol"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14b2",
+     "lvl": 1,
+     "title": "Empareja con su gráfica",
+     "q": "<p>Clasifica cada ecuación polar según su forma rectangular.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Equivale a",
+       "cats": [
+        "Recta horizontal",
+        "Recta vertical",
+        "Recta por el polo",
+        "Circunferencia"
+       ],
+       "items": [
+        {
+         "x": "\\(r\\sin\\theta=7\\)",
+         "c": 0,
+         "e": "y = 7."
+        },
+        {
+         "x": "\\(r\\cos\\theta=-3\\)",
+         "c": 1,
+         "e": "x = −3."
+        },
+        {
+         "x": "\\(\\theta=\\frac\\pi{10}\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(r=8\\)",
+         "c": 3,
+         "e": "x² + y² = 64."
+        },
+        {
+         "x": "\\(r=2\\sec\\left(\\theta-\\frac\\pi2\\right)\\)",
+         "c": 0,
+         "e": "r·cos(θ − π/2) = r·sen θ = 2: y = 2 (ejemplo 8)."
+        },
+        {
+         "x": "\\(r=7\\cos\\theta\\)",
+         "c": 3,
+         "e": "x² + y² = 7x."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r\\sin\\theta=y\\), \\(r\\cos\\theta=x\\), \\(r^2=x^2+y^2\\).",
+      "\\(\\theta\\) constante: recta que pasa por el polo."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s14b3",
+     "lvl": 2,
+     "title": "Rectangular a polar",
+     "q": "<p>Convierte a polares.</p>",
+     "checks": [
+      {
+       "p": "\\(x^2+y^2-2x=0\\)",
+       "o": [
+        "\\(r=2\\cos\\theta\\)",
+        "\\(r=2\\sin\\theta\\)",
+        "\\(r=-2\\cos\\theta\\)",
+        "\\(r=2\\)",
+        "\\(r=\\cos\\theta\\)"
+       ]
+      },
+      {
+       "p": "\\(x^2+y^2=-2y\\)",
+       "o": [
+        "\\(r=-2\\sin\\theta\\)",
+        "\\(r=2\\sin\\theta\\)",
+        "\\(r=-2\\cos\\theta\\)",
+        "\\(r=-2\\)",
+        "\\(r^2=-2\\)"
+       ]
+      },
+      {
+       "p": "\\(y=-5\\)",
+       "o": [
+        "\\(r=-5\\csc\\theta\\)",
+        "\\(r=-5\\sec\\theta\\)",
+        "\\(r=5\\csc\\theta\\)",
+        "\\(\\theta=-5\\)",
+        "\\(r=-5\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r^2-2r\\cos\\theta=0\\Rightarrow r=2\\cos\\theta\\).",
+      "\\(r^2=-2r\\sin\\theta\\Rightarrow r=-2\\sin\\theta\\).",
+      "\\(r\\sin\\theta=-5\\Rightarrow r=-5\\csc\\theta\\)."
+     ],
+     "ans": "\\(r=2\\cos\\theta\\); \\(r=-2\\sin\\theta\\); \\(r=-5\\csc\\theta\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [
+       "conv"
+      ],
+      [
+       "conv"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14b4",
+     "lvl": 2,
+     "title": "La circunferencia r = 7cos θ",
+     "q": "<p>Convierte \\(r=7\\cos\\theta\\) a rectangulares y halla centro y radio.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Centro y radio",
+       "f": [
+        {
+         "l": "h",
+         "a": 3.5
+        },
+        {
+         "l": "k",
+         "a": 0
+        },
+        {
+         "l": "r",
+         "a": 3.5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Multiplica por r: \\(x^2+y^2=7x\\).",
+      "\\(\\left(x-\\frac72\\right)^2+y^2=\\frac{49}4\\): centro \\(\\left(\\frac72,0\\right)\\), radio \\(\\frac72\\)."
+     ],
+     "ans": "\\(\\left(x-\\frac72\\right)^2+y^2=\\frac{49}4\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "conv"
+      ],
+      [
+       "circ"
+      ]
+     ]
+    },
+    {
+     "id": "s14b5",
+     "lvl": 2,
+     "title": "Reconoce la gráfica",
+     "q": "<p>Clasifica cada ecuación polar (ejercicios de clase).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Es una",
+       "cats": [
+        "Cardioide",
+        "Limaçon con lazo",
+        "Limaçon sin lazo",
+        "Rosa",
+        "Lemniscata",
+        "Espiral"
+       ],
+       "items": [
+        {
+         "x": "\\(r=2+2\\cos\\theta\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(r=5-5\\sin\\theta\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(r=1-2\\cos\\theta\\)",
+         "c": 1,
+         "e": "a/b = 1/2 < 1."
+        },
+        {
+         "x": "\\(r=4-3\\sin\\theta\\)",
+         "c": 2,
+         "e": "a/b = 4/3, entre 1 y 2: con hendidura."
+        },
+        {
+         "x": "\\(r=3\\cos3\\theta\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(r^2=4\\cos2\\theta\\)",
+         "c": 4
+        },
+        {
+         "x": "\\(r=3\\theta,\\ \\theta\\ge0\\)",
+         "c": 5
+        },
+        {
+         "x": "\\(r=3+2\\cos\\theta\\)",
+         "c": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Limaçon \\(a\\pm b\\cos\\theta\\): compara \\(\\frac ab\\) con 1.",
+      "\\(\\cos n\\theta\\) sin término constante: rosa; \\(r^2\\) con \\(\\cos2\\theta\\): lemniscata."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "graf"
+      ],
+      [
+       "graf"
+      ]
+     ]
+    },
+    {
+     "id": "s14b6",
+     "lvl": 1,
+     "title": "¿Cuántos pétalos?",
+     "q": "<p>Cuenta los pétalos de cada rosa.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Pétalos",
+       "f": [
+        {
+         "l": "r = sen 2θ",
+         "a": 4
+        },
+        {
+         "l": "r = cos 5θ",
+         "a": 5
+        },
+        {
+         "l": "r = 3 sen 4θ",
+         "a": 8
+        },
+        {
+         "l": "r = 2 sen 9θ",
+         "a": 9
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "n impar: n pétalos; n par: 2n pétalos."
+     ],
+     "ans": "4, 5, 8 y 9",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "graf"
+      ]
+     ]
+    },
+    {
+     "id": "s14b7",
+     "lvl": 2,
+     "title": "Analiza la cardioide (ejemplo de clase)",
+     "q": "<p>\\(r=2+2\\cos\\theta\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor máximo de r y ángulo donde pasa por el polo",
+       "f": [
+        {
+         "l": "r máx",
+         "a": 4
+        },
+        {
+         "l": "θ (grados)",
+         "a": 180
+        }
+       ]
+      },
+      {
+       "p": "Simetría",
+       "o": [
+        "Respecto al eje polar",
+        "Respecto al eje a 90°",
+        "Respecto al polo",
+        "No tiene simetría",
+        "Respecto a la recta θ = 45°"
+       ]
+      }
+     ],
+     "steps": [
+      "Máximo cuando \\(\\cos\\theta=1\\): \\(r=4\\) en \\(\\theta=0\\).",
+      "\\(r=0\\iff\\cos\\theta=-1\\iff\\theta=\\pi\\).",
+      "\\(\\cos(-\\theta)=\\cos\\theta\\): simétrica respecto al eje polar."
+     ],
+     "ans": "\\(r_{máx}=4\\); polo en \\(\\theta=\\pi\\); simétrica al eje polar",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "graf"
+      ],
+      [],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14b8",
+     "lvl": 2,
+     "title": "Tabla de valores",
+     "q": "<p>Para \\(r=4-3\\sin\\theta\\) (ejemplo 10), calcula \\(r\\) en \\(\\theta=\\frac\\pi2\\) y \\(\\theta=\\frac{3\\pi}2\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valores",
+       "f": [
+        {
+         "l": "r(π/2)",
+         "a": 1
+        },
+        {
+         "l": "r(3π/2)",
+         "a": 7
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r\\left(\\frac\\pi2\\right)=4-3=1\\); \\(r\\left(\\frac{3\\pi}2\\right)=4+3=7\\).",
+      "Por eso la curva se alarga hacia abajo: el punto más lejano es \\(\\left(7,\\frac{3\\pi}2\\right)\\)."
+     ],
+     "ans": "1 y 7",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "graf"
+      ],
+      []
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s14c",
+   "name": "Sem. 14 · Cónicas en coordenadas polares",
+   "teo": "<p>Con un foco en el polo, toda cónica tiene una ecuación polar sencilla:</p><p style='text-align:center'>\\(r=\\dfrac{ep}{1\\pm e\\cos\\theta}\\) (eje horizontal) · \\(r=\\dfrac{ep}{1\\pm e\\sin\\theta}\\) (eje vertical)</p><ul><li>\\(e\\) es la <strong>excentricidad</strong>: \\(0\\lt e\\lt1\\) elipse, \\(e=1\\) parábola, \\(e\\gt1\\) hipérbola.</li><li>\\(p\\) es la distancia del foco (polo) a la directriz.</li><li>Si el denominador no empieza con 1, divide numerador y denominador: \\(r=\\frac{3}{4+\\cos\\theta}=\\frac{3/4}{1+\\frac14\\cos\\theta}\\Rightarrow e=\\frac14\\).</li><li><strong>Vértices</strong>: evalúa en \\(\\theta=0\\) y \\(\\pi\\) (o \\(\\frac\\pi2\\) y \\(\\frac{3\\pi}2\\) si es con seno).</li><li>Directriz: \\(x=\\pm p\\) con coseno, \\(y=\\pm p\\) con seno (signo como en el denominador).</li></ul><p>Así se describen órbitas: el Sol está en un foco de la órbita de la Tierra.</p>",
+   "form": [
+    "\\(r=\\frac{ep}{1\\pm e\\cos\\theta}\\)",
+    "\\(r=\\frac{ep}{1\\pm e\\sin\\theta}\\)",
+    "\\(e\\lt1\\) E · \\(e=1\\) P · \\(e\\gt1\\) H",
+    "Normaliza: denominador \\(1\\pm\\ldots\\)",
+    "Vértices en \\(0,\\pi\\) o \\(\\frac\\pi2,\\frac{3\\pi}2\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Todo está en el denominador: después de normalizar, el número que acompaña a cos o sen es la excentricidad.</p>\n<h3>Conceptos clave</h3><ul><li>Divide entre el término independiente del denominador.</li><li>Seno: eje vertical; coseno: eje horizontal.</li><li>En la hipérbola un vértice puede salir con r negativo: está en la otra rama.</li></ul>\n<h3>Cómo resolverlo</h3><ul><li><strong>1.</strong> Normaliza el denominador para que empiece con 1.</li><li><strong>2.</strong> Lee e y clasifica.</li><li><strong>3.</strong> Evalúa los vértices y ubica la directriz.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(r=\\frac4{3-2\\sin\\theta}=\\frac{4/3}{1-\\frac23\\sin\\theta}\\): \\(e=\\frac23\\), elipse vertical; vértices \\(\\left(4,\\frac\\pi2\\right)\\) y \\(\\left(\\frac45,\\frac{3\\pi}2\\right)\\).</div>\n<div class=\"err\"><b>Error común:</b> leer \\(e=2\\) en \\(\\frac{3}{4+2\\cos\\theta}\\) sin dividir entre 4 (es \\(e=\\frac12\\)).</div>",
+   "tools": [
+    {
+     "w": "cpol",
+     "t": "La excentricidad decide la cónica",
+     "p": "Mueve e: menor que 1 es elipse, igual a 1 parábola y mayor que 1 hipérbola. El foco siempre está en el polo.",
+     "o": {
+      "e": 0.5,
+      "d": 3
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s14c1",
+     "lvl": 1,
+     "title": "Identifica la cónica (ejercicios de clase)",
+     "q": "<p>Normaliza y clasifica.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Es una",
+       "cats": [
+        "Elipse",
+        "Parábola",
+        "Hipérbola"
+       ],
+       "items": [
+        {
+         "x": "\\(r=\\frac2{1-\\sin\\theta}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(r=\\frac2{2-\\cos\\theta}\\)",
+         "c": 0,
+         "e": "Divide entre 2: e = 1/2."
+        },
+        {
+         "x": "\\(r=\\frac{16}{4+\\cos\\theta}\\)",
+         "c": 0,
+         "e": "e = 1/4."
+        },
+        {
+         "x": "\\(r=\\frac5{2+2\\sin\\theta}\\)",
+         "c": 1,
+         "e": "e = 2/2 = 1."
+        },
+        {
+         "x": "\\(r=\\frac4{1+2\\sin\\theta}\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(r=\\frac{18}{3-6\\cos\\theta}\\)",
+         "c": 2,
+         "e": "e = 6/3 = 2."
+        },
+        {
+         "x": "\\(r=\\frac2{2+5\\cos\\theta}\\)",
+         "c": 2,
+         "e": "e = 5/2."
+        },
+        {
+         "x": "\\(r=\\frac{-4}{\\cos\\theta-1}\\)",
+         "c": 1,
+         "e": "Es 4/(1 − cos θ): e = 1."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Divide para que el denominador empiece con 1.",
+      "El coeficiente de cos o sen es \\(e\\)."
+     ],
+     "ans": "Ver clasificación",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      [
+       "cpol"
+      ]
+     ]
+    },
+    {
+     "id": "s14c2",
+     "lvl": 2,
+     "title": "Elipse vertical (ejemplo de clase)",
+     "q": "<p>\\(r=\\dfrac4{3-2\\sin\\theta}\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Excentricidad",
+       "f": [
+        {
+         "l": "e",
+         "a": 0.6666666666666666,
+         "tol": 0.006
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Vértices: r en θ = π/2 y en θ = 3π/2",
+       "f": [
+        {
+         "l": "r(π/2)",
+         "a": 4
+        },
+        {
+         "l": "r(3π/2)",
+         "a": 0.8
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=\\frac{4/3}{1-\\frac23\\sin\\theta}\\): \\(e=\\frac23\\lt1\\), elipse de eje vertical.",
+      "\\(r\\left(\\frac\\pi2\\right)=\\frac4{3-2}=4\\); \\(r\\left(\\frac{3\\pi}2\\right)=\\frac4{3+2}=\\frac45\\)."
+     ],
+     "ans": "\\(e=\\frac23\\); vértices \\(\\left(4,\\frac\\pi2\\right)\\) y \\(\\left(\\frac45,\\frac{3\\pi}2\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14c3",
+     "lvl": 2,
+     "title": "Parábola (ejemplo de clase)",
+     "q": "<p>\\(r=\\dfrac1{1-\\cos\\theta}\\).</p>",
+     "checks": [
+      {
+       "p": "Es una",
+       "o": [
+        "Parábola de eje horizontal",
+        "Elipse de eje horizontal",
+        "Hipérbola",
+        "Parábola de eje vertical",
+        "Circunferencia"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Vértice (r en θ = π) e intersección con θ = π/2",
+       "f": [
+        {
+         "l": "r(π)",
+         "a": 0.5
+        },
+        {
+         "l": "r(π/2)",
+         "a": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e=1\\) y coseno: parábola de eje horizontal; no está definida en \\(\\theta=0\\), así que abre hacia la derecha.",
+      "Vértice \\(\\left(\\frac12,\\pi\\right)\\); corta al eje a 90° en \\(\\left(1,\\frac\\pi2\\right)\\) y \\(\\left(1,\\frac{3\\pi}2\\right)\\)."
+     ],
+     "ans": "Vértice \\(\\left(\\frac12,\\pi\\right)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      []
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14c4",
+     "lvl": 3,
+     "title": "Hipérbola (ejemplo de clase)",
+     "q": "<p>\\(r=\\dfrac2{1+2\\cos\\theta}\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Excentricidad y vértices",
+       "f": [
+        {
+         "l": "e",
+         "a": 2
+        },
+        {
+         "l": "r(0)",
+         "a": 0.6666666666666666
+        },
+        {
+         "l": "r(π)",
+         "a": -2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(e=2\\gt1\\): hipérbola de eje horizontal.",
+      "\\(r(0)=\\frac23\\); \\(r(\\pi)=\\frac2{1-2}=-2\\): el punto \\((-2,\\pi)\\) es \\((2,0)\\) en rectangulares, en la otra rama."
+     ],
+     "ans": "Vértices \\(\\left(\\frac23,0\\right)\\) y \\((-2,\\pi)\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s14c5",
+     "lvl": 2,
+     "title": "Directriz",
+     "q": "<p>\\(r=\\dfrac6{2+\\cos\\theta}\\). Halla la excentricidad y la directriz.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "e y directriz x = p",
+       "f": [
+        {
+         "l": "e",
+         "a": 0.5,
+         "tol": 0.006
+        },
+        {
+         "l": "p",
+         "a": 6
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r=\\frac3{1+\\frac12\\cos\\theta}\\): \\(e=\\frac12\\), \\(ep=3\\).",
+      "\\(p=\\frac3{1/2}=6\\): directriz \\(x=6\\) (signo + y coseno)."
+     ],
+     "ans": "\\(e=\\frac12\\), directriz \\(x=6\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s14c6",
+     "lvl": 3,
+     "title": "Centro y semieje de la elipse",
+     "q": "<p>\\(r=\\dfrac{25}{10-5\\cos\\theta}\\). Halla los vértices, el centro y \\(a\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Vértices en rectangulares (x de cada uno)",
+       "f": [
+        {
+         "l": "x en θ = 0",
+         "a": 5
+        },
+        {
+         "l": "x en θ = π",
+         "a": -1.6666666666666667
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Centro y semieje mayor",
+       "f": [
+        {
+         "l": "x centro",
+         "a": 1.6666666666666667
+        },
+        {
+         "l": "a",
+         "a": 3.3333333333333335
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(r(0)=\\frac{25}5=5\\Rightarrow(5,0)\\); \\(r(\\pi)=\\frac{25}{15}=\\frac53\\Rightarrow\\left(-\\frac53,0\\right)\\).",
+      "Centro: punto medio \\(\\left(\\frac53,0\\right)\\); \\(2a=5+\\frac53=\\frac{20}3\\Rightarrow a=\\frac{10}3\\)."
+     ],
+     "ans": "Centro \\(\\left(\\frac53,0\\right)\\), \\(a=\\frac{10}3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      [
+       "pm"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s14c7",
+     "lvl": 2,
+     "title": "Escribe la ecuación polar",
+     "q": "<p>Parábola con foco en el polo y directriz \\(y=-2\\).</p>",
+     "checks": [
+      {
+       "p": "Ecuación",
+       "o": [
+        "\\(r=\\frac2{1-\\sin\\theta}\\)",
+        "\\(r=\\frac2{1+\\sin\\theta}\\)",
+        "\\(r=\\frac2{1-\\cos\\theta}\\)",
+        "\\(r=\\frac{-2}{1-\\sin\\theta}\\)",
+        "\\(r=\\frac1{1-2\\sin\\theta}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Parábola: \\(e=1\\), \\(p=2\\). Directriz horizontal debajo del polo: seno con signo menos.",
+      "\\(r=\\frac{1\\cdot2}{1-\\sin\\theta}\\)."
+     ],
+     "ans": "\\(r=\\frac2{1-\\sin\\theta}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cpol"
+      ],
+      []
+     ]
+    }
+   ]
+  }
+ ],
+ "figs": {},
+ "concepts": {
+  "dist": {
+   "n": "Distancia entre dos puntos",
+   "f": "\\(d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\)",
+   "x": "Es Pitágoras: los catetos son las diferencias de x y de y. Sirve para radios, focos y vértices.",
+   "home": "s9b"
+  },
+  "pm": {
+   "n": "Punto medio",
+   "f": "\\(M=\\left(\\frac{x_1+x_2}2,\\frac{y_1+y_2}2\\right)\\)",
+   "x": "El promedio de las coordenadas. El centro de una cónica suele ser el punto medio de vértices o focos.",
+   "home": "s11b"
+  },
+  "formas": {
+   "n": "Formas de la recta",
+   "f": "\\(y-y_1=m(x-x_1)\\) · \\(Ax+By+C=0\\)",
+   "x": "Punto-pendiente para escribirla rápido; general para fórmulas como la distancia. En la general, \\(m=-A/B\\).",
+   "home": "s9b"
+  },
+  "parperp": {
+   "n": "Paralelas y perpendiculares",
+   "f": "\\(m_1=m_2\\) · \\(m_1m_2=-1\\)",
+   "x": "Paralelas: misma pendiente. Perpendiculares: pendientes inversas y de signo opuesto.",
+   "home": "s9b"
+  },
+  "dpr": {
+   "n": "Distancia de un punto a una recta",
+   "f": "\\(d=\\frac{|Ax_0+By_0+C|}{\\sqrt{A^2+B^2}}\\)",
+   "x": "La recta debe estar en forma general. Es la base para saber si una recta es tangente a una circunferencia.",
+   "home": "s9a"
+  },
+  "csq": {
+   "n": "Completar cuadrados",
+   "f": "\\(x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}4\\)",
+   "x": "Suma y resta (b/2)². Si hay coeficiente delante de x², sácalo primero como factor común.",
+   "home": "s9a"
+  },
+  "circ": {
+   "n": "Ecuación de la circunferencia",
+   "f": "\\((x-h)^2+(y-k)^2=r^2\\)",
+   "x": "Centro (h, k) y radio r. La general x² + y² + Dx + Ey + F = 0 se lleva a esta forma completando cuadrados.",
+   "home": "s9b"
+  },
+  "posrc": {
+   "n": "Recta y circunferencia",
+   "f": "\\(d\\gt r\\) exterior · \\(d=r\\) tangente · \\(d\\lt r\\) secante",
+   "x": "d es la distancia del centro a la recta. Equivale a mirar el discriminante del sistema.",
+   "home": "s9a"
+  },
+  "poscc": {
+   "n": "Dos circunferencias",
+   "f": "\\(d\\gt R+r\\) · \\(d=R+r\\) · \\(R-r\\lt d\\lt R+r\\) · \\(d=R-r\\) · \\(d\\lt R-r\\)",
+   "x": "Exteriores, tangentes exteriores, secantes, tangentes interiores e interiores; d = distancia entre centros.",
+   "home": "s9a"
+  },
+  "tang": {
+   "n": "Condición de tangencia",
+   "f": "\\(\\Delta=b^2-4ac=0\\)",
+   "x": "Al sustituir la recta en la circunferencia, la cuadrática tiene una sola raíz: el punto de tangencia.",
+   "home": "s9b"
+  },
+  "parab": {
+   "n": "Parábola",
+   "f": "\\((x-h)^2=4p(y-k)\\) · \\((y-k)^2=4p(x-h)\\)",
+   "x": "Vértice (h, k); foco a |p| del vértice hacia donde abre; directriz a |p| al otro lado; LR = |4p|.",
+   "home": "s10a"
+  },
+  "pgen": {
+   "n": "Parábola: forma general",
+   "f": "\\(x^2+Dx+Ey+F=0\\) · \\(y^2+Dx+Ey+F=0\\)",
+   "x": "Solo una variable al cuadrado. Se completa cuadrados para llegar a la ordinaria.",
+   "home": "s10a"
+  },
+  "pmax": {
+   "n": "Máximos y mínimos",
+   "f": "Vértice \\((h,k)\\): \\(k\\) es el máximo o mínimo",
+   "x": "Si la parábola vertical abre hacia abajo, k es el valor máximo; si abre hacia arriba, el mínimo.",
+   "home": "s10b"
+  },
+  "elip": {
+   "n": "Elipse",
+   "f": "\\(\\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}=1\\), \\(a\\gt b\\)",
+   "x": "a² va debajo de la variable del eje mayor. Vértices a distancia a del centro, focos a distancia c.",
+   "home": "s11a"
+  },
+  "erel": {
+   "n": "Elipse: relaciones",
+   "f": "\\(a^2=b^2+c^2\\) · \\(e=\\frac ca\\lt1\\) · \\(LR=\\frac{2b^2}a\\)",
+   "x": "Directrices a distancia a²/c del centro. Si e se acerca a 0 la elipse se parece a una circunferencia.",
+   "home": "s11a"
+  },
+  "egen": {
+   "n": "Elipse: forma general",
+   "f": "\\(Ax^2+Cy^2+Dx+Ey+F=0\\), A y C del mismo signo",
+   "x": "Completando cuadrados puede salir una elipse, un punto o nada.",
+   "home": "s11b"
+  },
+  "etan": {
+   "n": "Tangente a la elipse",
+   "f": "\\(\\frac{x_0x}{a^2}+\\frac{y_0y}{b^2}=1\\) · \\(y=mx\\pm\\sqrt{a^2m^2+b^2}\\)",
+   "x": "La primera usa el punto de tangencia; la segunda, la pendiente.",
+   "home": "s11b"
+  },
+  "hip": {
+   "n": "Hipérbola",
+   "f": "\\(\\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}=1\\)",
+   "x": "a² va debajo de la variable positiva (eje transverso). Vértices a distancia a, focos a distancia c.",
+   "home": "s12a"
+  },
+  "hrel": {
+   "n": "Hipérbola: relaciones",
+   "f": "\\(c^2=a^2+b^2\\) · \\(e=\\frac ca\\gt1\\) · \\(LR=\\frac{2b^2}a\\)",
+   "x": "Asíntotas: y − k = ±(b/a)(x − h) si es horizontal; ±(a/b) si es vertical. Equilátera: a = b.",
+   "home": "s12a"
+  },
+  "hgen": {
+   "n": "Hipérbola: forma general",
+   "f": "\\(Ax^2+Cy^2+Dx+Ey+F=0\\), A y C de distinto signo",
+   "x": "Si al completar cuadrados el lado derecho sale 0, son dos rectas que se cortan (caso degenerado).",
+   "home": "s12b"
+  },
+  "rot": {
+   "n": "Ángulo de rotación",
+   "f": "\\(\\cot2\\theta=\\frac{A-C}{B}\\)",
+   "x": "Girar los ejes ese ángulo agudo elimina el término xy de Ax² + Bxy + Cy² + Dx + Ey + F = 0.",
+   "home": "s13"
+  },
+  "rotec": {
+   "n": "Ecuaciones de rotación",
+   "f": "\\(x=x'\\cos\\theta-y'\\sin\\theta\\) · \\(y=x'\\sin\\theta+y'\\cos\\theta\\)",
+   "x": "Se reemplazan en la ecuación original. Para pasar un punto al sistema girado: x′ = x cos θ + y sen θ, y′ = −x sen θ + y cos θ.",
+   "home": "s13"
+  },
+  "discon": {
+   "n": "Discriminante de una cónica",
+   "f": "\\(B^2-4AC\\): \\(\\lt0\\) elipse · \\(=0\\) parábola · \\(\\gt0\\) hipérbola",
+   "x": "Clasifica la cónica sin girar (salvo casos degenerados). Es invariante bajo rotación.",
+   "home": "s13"
+  },
+  "inv": {
+   "n": "Invariantes",
+   "f": "\\(F'=F\\) · \\(A'+C'=A+C\\) · \\(B'^2-4A'C'=B^2-4AC\\)",
+   "x": "Sirven para comprobar las cuentas después de girar.",
+   "home": "s13"
+  },
+  "polar": {
+   "n": "Coordenadas polares",
+   "f": "\\(P(r,\\theta)\\) · \\((r,\\theta)=(r,\\theta+2\\pi k)=(-r,\\theta+\\pi)\\)",
+   "x": "r es la distancia al polo y θ el ángulo desde el eje polar. Un punto tiene infinitas representaciones; con r negativo se va en la dirección opuesta.",
+   "home": "s14a"
+  },
+  "conv": {
+   "n": "Conversión polar ↔ rectangular",
+   "f": "\\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\) · \\(r^2=x^2+y^2\\), \\(\\tan\\theta=\\frac yx\\)",
+   "x": "Al usar tan⁻¹, corrige el cuadrante: +π en II y III, +2π en IV.",
+   "home": "s14a"
+  },
+  "graf": {
+   "n": "Gráficas polares",
+   "f": "\\(r=a\\pm b\\cos\\theta\\) limaçon · \\(r=a\\cos n\\theta\\) rosa",
+   "x": "a/b < 1: con lazo; a/b = 1: cardioide; 1 < a/b < 2: con hendidura; a/b ≥ 2: convexa. Rosa: n pétalos si n es impar, 2n si es par.",
+   "home": "s14b"
+  },
+  "cpol": {
+   "n": "Cónicas en polares",
+   "f": "\\(r=\\frac{ep}{1\\pm e\\cos\\theta}\\) · \\(r=\\frac{ep}{1\\pm e\\sin\\theta}\\)",
+   "x": "Foco en el polo. e < 1 elipse, e = 1 parábola, e > 1 hipérbola. Primero haz que el denominador empiece con 1.",
+   "home": "s14c"
+  }
+ },
+ "simEx": [],
+ "sim": {
+  "minutes": 90,
+  "intro": "Simulacro de práctica de las semanas 9 a 14 (20 puntos, 90 min). Sin el sílabo todavía no sabemos el formato real de la evaluación: las semanas más recientes pesan más.",
+  "slots": [
+   {
+    "pts": 2,
+    "name": "Sem. 9: posiciones relativas",
+    "pool": [
+     "s9a3",
+     "s9a4",
+     "s9a6",
+     "s9a7"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 9: tangencia y aplicaciones",
+    "pool": [
+     "s9b1",
+     "s9b2",
+     "s9b4",
+     "s9b6",
+     "s9b7"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 10: parábola",
+    "pool": [
+     "s10a2",
+     "s10a4",
+     "s10b2",
+     "s10b3",
+     "s10b4"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 11: elipse",
+    "pool": [
+     "s11a1",
+     "s11b1",
+     "s11b2",
+     "s11b4",
+     "s11b7",
+     "s11b9",
+     "s11b10"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 12: hipérbola",
+    "pool": [
+     "s12a1",
+     "s12a2",
+     "s12b1",
+     "s12b4",
+     "s12b6",
+     "s12b8"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 13: rotación de cónicas",
+    "pool": [
+     "s13e2",
+     "s13e3",
+     "s13e5",
+     "s13e8"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 14: coordenadas y ecuaciones polares",
+    "pool": [
+     "s14a5",
+     "s14a6",
+     "s14b1",
+     "s14b3",
+     "s14b4"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 14: cónicas en polares",
+    "pool": [
+     "s14c2",
+     "s14c4",
+     "s14c6"
+    ]
+   }
+  ]
+ }
+}
