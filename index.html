@@ -19,7 +19,7 @@ document.querySelector('meta[name="theme-color"]').content=d?'#0F1726':'#F4F7FA'
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="NotPull">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;600;800&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@1,900&family=Pinyon+Script&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,100,1&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;600;800&family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@1,900&family=Pinyon+Script&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,100,1&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
 <script>
 window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{enableMenu:false},
  startup:{typeset:false,ready(){MathJax.startup.defaultReady();MathJax.startup.promise.then(()=>{window.__mj=true;window.__tq&&window.__tq();});}}};
@@ -439,6 +439,17 @@ details.sotros>summary{cursor:pointer;font:800 .8rem Figtree;text-transform:uppe
 
 
 
+/* ===== PORTADAS DE CUADERNO (tapa: patrón + colores en el JSON) ===== */
+.nbfront.tp{container-type:inline-size;overflow:hidden}
+.tpbg{position:absolute;inset:0}
+.tplomo{position:absolute;left:0;top:0;bottom:0;width:7%;display:flex;justify-content:center;padding-top:8cqw}
+.tplomo span{writing-mode:vertical-rl;font:900 6cqw Nunito,Figtree,sans-serif;letter-spacing:-.01em}
+.tpbig{position:absolute;left:10%;bottom:8%;font:900 13.2cqw/.8 Nunito,Figtree,sans-serif;letter-spacing:-.055em;white-space:nowrap}
+.tpnm{position:absolute;left:44%;right:5%;top:40%;--k:#3E3532}
+.tpnm b{display:block;border-bottom:1px solid var(--k);height:6cqw}
+.tpnm u{display:block;position:relative;height:9cqw;margin-top:6cqw;border:1px solid var(--k);background-image:linear-gradient(90deg,var(--k) .6px,transparent .6px),linear-gradient(var(--k) .6px,transparent .6px);background-size:9.3% 33.4%}
+.tpnm u::after{content:'';position:absolute;left:50%;top:-1px;bottom:-1px;width:1.5px;background:var(--k)}
+.tpnm s{display:block;height:5cqw;border-bottom:1px solid var(--k)}
 /* ===== MENÚ ESTILO CUADERNOS (referencia del usuario) ===== */
 body:has(#vMenu:not([hidden])){background-color:#FFFFFF;background-image:linear-gradient(#B3CDEE 1.5px,transparent 1.5px),linear-gradient(90deg,#B3CDEE 1.5px,transparent 1.5px);background-size:38px 38px;color-scheme:light}
 #vMenu{color:#3A3A3A}
@@ -2115,7 +2126,7 @@ GEN['com2-ep']=[
    steps:['Una refutación pertinente plantea una excepción del mismo asunto: en caso de que '+s.x+'.','Las demás repiten el dato, enuncian la garantía (que apoya la tesis) o hablan de otro tema.'],ans:'En caso de que '+s.x}}}
 ];
 
-const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,nbn:c.nbname,uni:c.uni||'UTEC',list:[]});m.get(k).list.push(c)});return[...m.values()]})();
+const GROUPS=(()=>{const m=new Map();COURSES.forEach(c=>{const k=c.group||c.code;if(!m.has(k))m.set(k,{key:k,code:c.code,name:c.gname||c.name,nbn:c.nbname,uni:c.uni||'UTEC',list:[]});m.get(k).list.push(c);if(c.tapa&&!m.get(k).tapa)m.get(k).tapa=c.tapa});return[...m.values()]})();
 const UNIS={UTEC:'UTEC',Continental:'U. Continental',UPC:'UPC'};
 /* agrupa cursos por universidad (UTEC primero); devuelve [[uni,[g…]],…] */
 const byUni=L=>{const m=new Map();L.forEach(g=>{if(!m.has(g.uni))m.set(g.uni,[]);m.get(g.uni).push(g)});return[...m.entries()].sort((a,b)=>(a[0]==='UTEC'?0:1)-(b[0]==='UTEC'?0:1))};
@@ -2138,15 +2149,32 @@ const ciclo=()=>{const d=new Date(),y=d.getFullYear(),mo=d.getMonth()+1;return y
 let editMenu=false,otrosOpen=false,SORTS=[],dragEnd=0,chosen=false;
 const gByKey=k=>GROUPS.find(g=>g.key===k);
 function setMis(sel){MIS={v:1,sel:sel.filter(k=>gByKey(k)),known:GROUPS.map(g=>g.key),ciclo:ciclo(),ts:Date.now()};S.set('ent-mis',MIS);push(0)}
-function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell');cell.dataset.k=g.key;const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',NBCOL[gi%NBCOL.length]);
-    if(COVERS[g.code])nb.style.setProperty('--img','url('+COVERS[g.code]+')');nb.tabIndex=0;nb.setAttribute('role','button');nb.setAttribute('aria-label',g.name);
+/* Portadas: g.tapa = {p: patrón, c: [fondo, patrón, lomo, letra]}; la palabra grande es la universidad */
+const STAR='M0-5l1.18 3.38 3.58.07-2.85 2.17 1.04 3.43L0 1.02-2.95 3.05l1.04-3.43-2.85-2.17 3.58-.07z',HEART='M5 9L1 5a2.3 2.3 0 0 1 4-3a2.3 2.3 0 0 1 4 3z';
+const svgU=(vb,body)=>'url("data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+vb+'">'+body+'</svg>')+'")';
+const TAPAS={
+ lunares:(f,p)=>`background-color:${f};background-image:radial-gradient(circle 1.8cqw,${p} 0 80%,transparent 100%);background-size:6.8cqw 6.8cqw;background-position:6.4cqw -1cqw`,
+ lunaresp:(f,p)=>{const r=`radial-gradient(circle 1.2cqw,color-mix(in srgb,${p} 100%,#fff 30%) 0 50%,${p} 85%,transparent 100%)`;return`background-color:${f};background-image:${r},${r};background-size:10.2cqw 10.2cqw;background-position:0 0,5.1cqw 5.1cqw`},
+ estrellas:(f,p)=>`background-color:${f};background-size:26cqw 26cqw;background-position:3cqw 0;background-image:`+svgU('0 0 64 64',`<g fill="${p}" stroke="${p}" stroke-width="1.6" stroke-linejoin="round"><path transform="translate(16 16) scale(1.35)" d="${STAR}"/><path transform="translate(48 48) scale(1.35)" d="${STAR}"/></g>`),
+ cielo:(f,p)=>{const st=[[14,12,.9],[62,22,.5],[92,8,.7],[38,44,1.2],[84,52,.55],[10,70,.6],[58,80,.85],[96,92,1],[28,100,.45]].map(([x,y,k])=>`<path transform="translate(${x} ${y}) scale(${k})" d="${STAR}"/>`).join('')+[[40,16,1],[72,40,.9],[20,38,.8],[100,70,.9],[36,76,1],[78,104,.8]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('');
+   return`background-color:${f};background-size:70cqw 70cqw;background-image:`+svgU('0 0 110 110',`<g fill="${p}">${st}</g>`)},
+ cuadros:(f,p)=>{const a=n=>`color-mix(in srgb,${p} ${n}%,transparent)`,t=`transparent 0 2cqw,${a(22)} 2cqw 7cqw,transparent 7cqw 10cqw,${a(32)} 10cqw 10.6cqw,transparent 10.6cqw 12cqw,${a(32)} 12cqw 12.6cqw,transparent 12.6cqw 16.5cqw,${a(13)} 16.5cqw 20cqw,transparent 20cqw 23.5cqw,${a(28)} 23.5cqw 24cqw,transparent 24cqw 26cqw`;
+   return`background-color:${f};background-image:repeating-linear-gradient(90deg,${t}),repeating-linear-gradient(0deg,${t})`},
+ corazones:(f,p)=>`background-color:${f};background-size:14.8cqw 14.8cqw,auto,auto;background-image:`+svgU('0 0 52 52',`<g fill="${p}"><path transform="translate(9 8) scale(.9)" d="${HEART}"/><path transform="translate(35 34) scale(.9)" d="${HEART}"/></g>`)+`,repeating-linear-gradient(45deg,transparent 0 5cqw,rgba(60,0,10,.08) 5cqw 5.3cqw),repeating-linear-gradient(-45deg,transparent 0 5cqw,rgba(60,0,10,.08) 5cqw 5.3cqw)`,
+ liso:f=>`background-color:${f}`
+};
+function tapaHTML(g){const t=g.tapa,[f,p,l,x]=t.c,fn=TAPAS[t.p]||TAPAS.liso;
+  return`<div class="tpbg" style='${fn(f,p)}'></div>`+(t.p==='liso'?`<div class="tpnm" style="--k:${p}"><b></b><b></b><u></u><s></s></div>`:'')+
+   `<div class="tplomo" style="background:${l}"><span style="color:${f}">NotPull</span></div><div class="tpbig" style="color:${x}">${(g.uni||'UTEC').toUpperCase()}</div>`}
+function mkCell(g,where){const gi=GROUPS.indexOf(g);const cell=el('div','nbcell');cell.dataset.k=g.key;const nb=el('div','nb'+(g.list.length>3?' many':''));nb.style.setProperty('--nbc',g.tapa?g.tapa.c[0]:NBCOL[gi%NBCOL.length]);
+    if(!g.tapa&&COVERS[g.code])nb.style.setProperty('--img','url('+COVERS[g.code]+')');nb.tabIndex=0;nb.setAttribute('role','button');nb.setAttribute('aria-label',g.name);
     const pg=el('div','nbpage nbpaper');pg.append(el('span','nbhead',g.list.length>1?'Elige qué preparar':'Cobertura disponible'));
     g.list.forEach(c=>{if(c.soon){const b=el('button','nbopt nbsoon','<b>🔒 '+(c.short||c.exam.replace(/\s*\(.*?\)/,''))+'</b><span>Próximamente</span>');b.disabled=true;b.onclick=e=>e.stopPropagation();pg.append(b);return}
       const x=stats(c),md=medal(c),p=x.total?Math.round(100*x.solved/x.total):0;
       const b=el('button','nbopt','<b>'+(c.short||c.exam)+'</b><span>'+(c.sub?c.sub+(x.solved?' · '+p+' %':'')+(md?' · '+md[1]:''):(x.solved?p+' % avanzado':'Sin empezar')+(md?' · '+md[1]:''))+'</span><i><u style="width:'+p+'%"></u></i><em>Practicar →</em>');
       b.onclick=e=>{e.stopPropagation();openCourse(c.id)};pg.append(b)});
     const book=el('div','nbbook');
-    book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront"></div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
+    book.append(el('div','nbback'),pg,el('div','nbcover','<div class="nbfront'+(g.tapa?' tp">'+tapaHTML(g):'">')+'</div><div class="nbinside"><div><small>Cuaderno de…</small><b>'+g.name+'</b></div></div>'));
     nb.append(book);
     nb.onmouseenter=()=>{if(HOVER.matches&&!editMenu&&!document.querySelector('.nbchosen'))openNb(nb)};nb.onmouseleave=()=>{if(HOVER.matches)closeNb(nb)};
     nb.onfocus=()=>{if(nb.matches(':focus-visible'))openNb(nb)};nb.onblur=e=>{if(!nb.contains(e.relatedTarget)&&!nb.matches(':hover'))closeNb(nb)};

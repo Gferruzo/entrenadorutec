@@ -1,6 +1,7 @@
 {
  "id": "al-ea1",
  "code": "CC6105",
+ "tapa": {"p": "estrellas", "c": ["#F8F6F1", "#D4C8E8", "#A893CF", "#9B84C6"]},
  "name": "Álgebra Lineal",
  "exam": "EA1 (semana 3)",
  "short": "EA1",

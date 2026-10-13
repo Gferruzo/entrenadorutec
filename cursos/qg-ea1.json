@@ -1,6 +1,7 @@
 {
  "id": "qg-ea1",
  "code": "CC6301",
+ "tapa": {"p": "lunares", "c": ["#F7FBF6", "#BFE3CF", "#7CC4A0", "#6BB892"]},
  "name": "Química General",
  "exam": "EA1 (semana 3)",
  "short": "EA1",

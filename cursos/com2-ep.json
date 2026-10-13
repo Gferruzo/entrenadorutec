@@ -5,6 +5,7 @@
  "formSim": false,
  "id": "com2-ep",
  "code": "CI2",
+ "tapa": {"p": "corazones", "c": ["#B23F4D", "#EFDCCF", "#FCE4E6", "#FFE7EC"]},
  "name": "Comunicación Integral II",
  "exam": "Examen parcial 2026-2",
  "quickTxt": "10 preguntas de Toulmin con <strong>argumentos nuevos</strong> armados al azar, 15 minutos.",

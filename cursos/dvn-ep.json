@@ -4,6 +4,7 @@
  "formSim": false,
  "id": "dvn-ep",
  "code": "IN6013",
+ "tapa": {"p": "lunaresp", "c": ["#7A6964", "#E4AFC1", "#F9D6E1", "#FDE6EE"]},
  "name": "Data, Visualization y Storytelling",
  "exam": "Examen parcial 2026-2 (Teoría 1)",
  "topics": [
