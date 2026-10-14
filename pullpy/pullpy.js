@@ -24,14 +24,14 @@
     error: ['Tranqui, de los errores se aprende.', 'Revisa la teoría del tema, ahí está la clave.', 'Casi. Mira la pista si la necesitas.', 'Respira y vuelve a intentarlo.'],
     toque: ['Aquí estoy.', '¿Seguimos?', 'Tú puedes.', 'Un tema a la vez.'],
     consejos: [
-      'Consejo: intenta el ejercicio antes de ver la solución.',
-      'Consejo: si fallas, vuelve a hacerlo mañana. Así se queda.',
-      'Consejo: estudia en bloques cortos y descansa entre ellos.',
-      'Consejo: explica el tema en voz alta, como si enseñaras.',
-      'Consejo: deja el celular lejos mientras estudias.',
-      'Consejo: repasa primero los temas donde más fallas.',
-      'Consejo: duerme bien antes del examen, también es estudiar.',
-      'Consejo: anota tus errores y revísalos antes del examen.'
+      'Intenta el ejercicio antes de ver la solución.',
+      'Si fallas, vuelve a hacerlo mañana. Así se queda.',
+      'Estudia en bloques cortos y descansa entre ellos.',
+      'Explica el tema en voz alta, como si enseñaras.',
+      'Deja el celular lejos mientras estudias.',
+      'Repasa primero los temas donde más fallas.',
+      'Duerme bien antes del examen, también es estudiar.',
+      'Anota tus errores y revísalos antes del examen.'
     ],
     extrane: 'Te extrañé. ¿Retomamos?',
     racha: n => 'Llevas ' + n + ' días seguidos 🔥',
