@@ -9,7 +9,7 @@
  * Para agregar una función de Pullpy: agregar una entrada en TASKS (abajo)
  * y su contraparte en PULLPY.fx dentro de index.html.
  */
-const FB_PROJECT = 'entrenadorutec';            // proyecto de Firebase de NotPull (login)
+const FB_PROJECT = 'notpull';            // proyecto de Firebase de NotPull (login)
 const ORIGENES = ['https://gferruzo.github.io']; // páginas que pueden usar a Pullpy
 // Se prueban en orden; si Google retira uno (404), pasa al siguiente.
 const MODELOS = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.5-flash-lite', 'gemini-3.6-flash', 'gemini-3.1-flash-lite'];

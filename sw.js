@@ -1,6 +1,6 @@
 // Service worker del Entrenador: siempre intenta traer lo más nuevo de internet
 // y solo usa la copia guardada cuando no hay conexión.
-const CACHE = 'entrenador-v1';
+const CACHE = 'notpull-v1';
 // Los audios guardados por el usuario van aparte para no borrarse al actualizar
 const AUDIOS = 'entrenador-audios';
 const CDN = ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com'];

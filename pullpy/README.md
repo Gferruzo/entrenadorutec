@@ -3,7 +3,7 @@
 La base ya está en la app, **apagada** mientras `PULLPY.url` (en `index.html`) esté vacía.
 
 ## Piezas
-- `pullpy/worker.js`: Cloudflare Worker que guarda la API key de Gemini y recibe los pedidos de la app. Verifica el login de Firebase (proyecto `entrenadorutec`), solo acepta pedidos desde gferruzo.github.io y, si tiene un KV `LIMITES`, pone un límite diario por usuario.
+- `pullpy/worker.js`: Cloudflare Worker que guarda la API key de Gemini y recibe los pedidos de la app. Verifica el login de Firebase (proyecto `notpull`), solo acepta pedidos desde gferruzo.github.io y, si tiene un KV `LIMITES`, pone un límite diario por usuario.
 - `index.html` → bloque «PULLPY (IA de NotPull)»: configuración (`PULLPY`), llamadas al Worker (`pullpy.ask`), contexto del ejercicio (`pullpy.data`), burbuja (`pullpy.box`) y botón (`pullpy.btn`).
 - Enganches ya puestos en la app: `error` (falló una alternativa), `ex` (cada tarjeta de ejercicio), `topic` (al abrir un tema) y `simq` (cada pregunta del simulacro ya corregida).
 
