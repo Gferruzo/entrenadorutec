@@ -4010,9 +4010,9 @@ function buildSol(e,sol,stepwise){sol.dataset.built=1;sol.append(el('h4',null,'S
   show();nx.onclick=()=>{k++;show()};all.onclick=()=>{k=lis.length;show()};sol.append(ol,nav,ans);if(e.play)sol.append(playBox(e));if(stepwise)sol.append(el('p','note','Ver la solución no marca el ejercicio como resuelto.'))}
 function renderTopic(){const t=T[st.topic];main.innerHTML='';
   main.append(el('div','ttl','<h2>'+(st.topic+1)+'. '+t.name+'</h2><span></span>'),el('div','tmeter','<i></i>'));
-  const teo=el('details','blk teo','<summary>Teoría</summary><div class="hlz" data-src="teo" data-tid="'+t.id+'">'+t.teo+'</div>');teo.open=true;
-  const fo=el('details','blk for','<summary>'+(C.keyLabel||'Fórmulas clave')+'</summary><div class="fgrid">'+t.form.map(f=>'<div>'+f+'</div>').join('')+'</div>');fo.open=true;main.append(teo,fo);
-  if(t.tools&&t.tools.length){const lb=el('details','blk lab','<summary>🧪 Interactivo</summary>');lb.open=true;t.tools.forEach(w=>{const d=el('div','lwrap',(w.t?'<h4>'+w.t+'</h4>':'')+(w.p?'<p class="note">'+w.p+'</p>':''));const x=el('div','lw');x.dataset.w=w.w;x.dataset.o=JSON.stringify(w.o||{});d.append(x);lb.append(d)});main.append(lb)}
+  const teo=el('details','blk teo','<summary>Teoría</summary><div class="hlz" data-src="teo" data-tid="'+t.id+'">'+t.teo+'</div>');teo.open=false;
+  const fo=el('details','blk for','<summary>'+(C.keyLabel||'Fórmulas clave')+'</summary><div class="fgrid">'+t.form.map(f=>'<div>'+f+'</div>').join('')+'</div>');fo.open=false;main.append(teo,fo);
+  if(t.tools&&t.tools.length){const lb=el('details','blk lab','<summary>🧪 Interactivo</summary>');lb.open=false;t.tools.forEach(w=>{const d=el('div','lwrap',(w.t?'<h4>'+w.t+'</h4>':'')+(w.p?'<p class="note">'+w.p+'</p>':''));const x=el('div','lw');x.dataset.w=w.w;x.dataset.o=JSON.stringify(w.o||{});d.append(x);lb.append(d)});main.append(lb)}
   let vis=0;
   [1,2,3].forEach(l=>{const exs=t.ex.filter(e=>e.lvl===l);if(!exs.length||(st.level&&st.level!==l))return;
     if(!st.level){const h=el('div','lvlhead',LN[l]);h.style.setProperty('--c',LC[l]);main.append(h)}exs.forEach(e=>{main.append(exCard(e));vis++})});
