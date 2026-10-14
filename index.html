@@ -1950,6 +1950,8 @@ function mergeC(a,b){if(!a)return b;if(!b)return a;const best=better(a.best,b.be
 const FB_CFG={apiKey:"AIzaSyB9G4iWj8yCxrVP3MRlYLigiiLDAB91IGc",authDomain:"entrenadorutec.firebaseapp.com",projectId:"entrenadorutec",storageBucket:"entrenadorutec.firebasestorage.app",messagingSenderId:"841954228208",appId:"1:841954228208:web:e6c793c0bc81f07df60f35"};
 const FBV='10.12.2';
 let FBA=null,UNAME='';
+/* Analítica (Google Analytics de Firebase; solo si FB_CFG trae measurementId) */
+let GAN=null;const GAQ=[];function track(n,p){if(GAN)GAN.log(n,p);else if(GAQ.length<50)GAQ.push([n,p])}
 const okLabel=()=>'Progreso sincronizado con tu cuenta';
 function cloudFinish(){if(cloudDone)return;cloudDone=true;onCloud.splice(0).forEach(g=>{try{g()}catch(e){}})}
 function rerender(){try{if(view==='course'){renderChips();renderTopic();courseStats()}else if(view==='menu')renderMenu();if(typeof modeUI==='function')modeUI()}catch(e){}}
@@ -1974,6 +1976,7 @@ async function firebaseSync(){
   const B='https://www.gstatic.com/firebasejs/'+FBV+'/';
   const [A,AU,FS]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-auth.js'),import(B+'firebase-firestore.js')]);
   const app=A.initializeApp(FB_CFG),auth=AU.getAuth(app),db=FS.getFirestore(app);
+  if(FB_CFG.measurementId)import(B+'firebase-analytics.js').then(async GA=>{if(!(await GA.isSupported()))return;const an=GA.getAnalytics(app);GAN={log:(n,p)=>{try{GA.logEvent(an,n,p||{})}catch(e){}},uid:u=>{try{GA.setUserId(an,u)}catch(e){}}};GAQ.splice(0).forEach(a=>GAN.log(a[0],a[1]))}).catch(()=>{});
   const prov=new AU.GoogleAuthProvider();prov.setCustomParameters({prompt:'select_account'});
   FBA={auth,
     login:async()=>{try{await AU.signInWithPopup(auth,prov)}catch(e){const c=e&&e.code;
@@ -1987,7 +1990,7 @@ async function firebaseSync(){
   AU.getRedirectResult(auth).catch(()=>{});
   AU.onAuthStateChanged(auth,async u=>{
     if(!u){cloud=null;UNAME='';setSync('Guardando solo en este navegador');markClickable();cloudFinish();return}
-    UNAME=(u.displayName||u.email||'').split(' ')[0];
+    UNAME=(u.displayName||u.email||'').split(' ')[0];track('login',{method:'Google'});
     try{setSync('Sincronizando…');markClickable();
       const ref=FS.doc(db,'users',u.uid,'data','progress');
       const snap=await FS.getDoc(ref);
@@ -2238,7 +2241,7 @@ function mkSort(grid){if(!window.Sortable)return;
 const BUZON='https://script.google.com/macros/s/AKfycbxDDwrpRzMVAMoqvmyMfWF72TxPkhLmFDqIIhxStEdHuEClpvX7vd3pcOCbtQrpjF5K/exec';
 function aporteBox(){const b=el('div','aporte');b.append(el('p',null,'¿Tienes clases, guías o exámenes pasados?<small>Pásanos el material y lo convertimos en práctica para todos.</small>'));
   const bt=el('button','statsbtn','📤 Aportar material');bt.onclick=aporteModal;b.append(bt);return b}
-function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar material'));
+function aporteModal(){track('aportar_material');const n=el('div');n.append(el('h2',null,'📤 Aportar material'));
   const u=FBA&&FBA.auth.currentUser;
   if(!u){const g=el('div','acguest','<b>Inicia sesión para enviar material.</b><br>Así sabemos de quién viene y evitamos spam.');
     if(FBA){const lb=el('div','mbtns');const li=el('button','pri','Iniciar sesión con Google');li.onclick=()=>{closeModal();FBA.login()};lb.append(li);g.append(lb)}
@@ -2455,7 +2458,7 @@ const tDone=t=>t.ex.filter(isDone).length;
 const unlocked=()=>true;/* sin candados: todos los temas abiertos; el orden es solo sugerido */
 const started=i=>!!T[i]&&(i===st.topic||T[i].ex.some(e=>!e.draw&&isDone(e)));
 function flash(text,good){msg.innerHTML='';const n=el('div','notice pop'+(good?' good':''),text);msg.append(n);clearTimeout(flash.t);flash.t=setTimeout(()=>n.remove(),4500)}
-function openCourse(id){C=COURSES.find(c=>c.id===id);if(!C)return;notiOpened(C.group||C.code);T=C.topics;F=C.figs;X=allEx(C);RV=null;PP=null;buildExT();seedTP();
+function openCourse(id){C=COURSES.find(c=>c.id===id);if(!C)return;track('abrir_curso',{curso:C.group||C.code||C.id,bloque:C.id,uni:C.uni||'UTEC'});notiOpened(C.group||C.code);T=C.topics;F=C.figs;X=allEx(C);RV=null;PP=null;buildExT();seedTP();
   st=Object.assign({topic:0,level:0},prefs[C.id]||{});if(!(st.topic>=0&&st.topic<T.length)||!unlocked(st.topic))st.topic=0;
   $('cTitle').innerHTML=C.name.replace(/(\S+)$/,'<i>$1</i>');view='course';lastAct=Date.now();
   $('vMenu').hidden=true;$('vSim').hidden=true;$('vCourse').hidden=false;msg.innerHTML='';
@@ -2472,7 +2475,7 @@ function renderChips(){chips.innerHTML='';
   const all=T.reduce((a,t)=>a+t.ex.length,0),d=T.reduce((a,t)=>a+tDone(t),0);
   $('tbar').style.width=(100*d/all)+'%';$('ttxt').textContent=d+' de '+all+' ejercicios resueltos';
   const cur=chips.children[st.topic];cur&&cur.scrollIntoView({inline:'nearest',block:'nearest'})}
-function goTopic(i){st.topic=i;savePrefs();msg.innerHTML='';renderTopic();renderChips();window.scrollTo({top:0})}
+function goTopic(i){st.topic=i;try{track('abrir_tema',{bloque:C.id,tema:T[i].id})}catch(e){}savePrefs();msg.innerHTML='';renderTopic();renderChips();window.scrollTo({top:0})}
 function topicHeader(){const t=T[st.topic];const h=main.querySelector('.ttl span'),m=main.querySelector('.tmeter i');if(h)h.textContent=tDone(t)+' de '+t.ex.length+' resueltos';if(m)m.style.width=(100*tDone(t)/t.ex.length)+'%'}
 function stateText(e){if(e.write)return wState(e);if(RV){const v=RV.res[e.id];return v==='ok'?'✓ A la primera':v==='done'?'✓ Resuelto':RV.bad[e.id]?'✗ Con error':'Pendiente'}if(e.draw)return e.open?'Desarrollo: autoevaluación':'Trazo: completado';const r=cs(C.id).ex[e.id]||{};if(r.s)return r.f?'✓ A la primera':'✓ Resuelto';return r.a?'En intento':'Pendiente'}
 function exCard(e){if(e.write)return writeCard(e);
@@ -4331,7 +4334,7 @@ function simIntro(){const sp=C.sim;const n=el('div');const tot=Math.round(sp.slo
   '<ol>'+sp.slots.map(s=>'<li>'+s.name+' ('+s.pts+' pts)</li>').join('')+'</ol>';
   n.append(el('p','note','«Sin límite de tiempo» no cuenta para tu mejor nota ni para el sobresaliente, pero sí te dice cuánto demoraste y alimenta tu cola de fallados.'));
   const bt=el('div','mbtns');const go=el('button','red','⏱ Comenzar con cronómetro');go.onclick=()=>{closeModal();startSim(false)};const fr=el('button',null,'Sin límite de tiempo');fr.onclick=()=>{closeModal();startSim(true)};const l=el('button',null,'Cancelar');l.onclick=closeModal;bt.append(go,fr,l);n.append(bt);openModal(n,'celeb')}
-function startSim(free){const sp=C.sim;const s=cs(C.id);const seed=(s.sim.n||0)+'-'+Date.now();
+function startSim(free){const sp=C.sim;track('simulacro',{bloque:C.id});const s=cs(C.id);const seed=(s.sim.n||0)+'-'+Date.now();
   SIMS={mode:'sim',free:!!free,seed,left:sp.minutes*60,limit:sp.minutes*60,used:0,tq:{},done:false,qs:sp.slots.map(sl=>({slot:sl,ex:X[sl.pool[Math.floor(Math.random()*sl.pool.length)]],sel:[]}))};
   view='sim';RV=null;$('vCourse').hidden=true;$('vSim').hidden=false;$('simsend').hidden=false;$('simteo').hidden=true;$('simform').hidden=!(C.form&&C.formSim);$('simclock').textContent=free?'⏱ 00:00':pad(sp.minutes)+':00';renderSim();window.scrollTo({top:0})}
 function renderSim(){const m=$('simmain');m.innerHTML='';
