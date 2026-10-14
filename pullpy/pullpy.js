@@ -101,6 +101,11 @@
 #ppet.dock .pp-bub{right:auto;left:84%;bottom:70%;transform-origin:bottom left}
 #ppet.dock .pp-bub::after{right:auto;left:14px}
 #ppet.brk{width:118px}
+#ppet.sheet{position:fixed;left:14px;right:auto;top:auto;width:66px;z-index:53}
+#ppet.sheet .pp-floor,#ppet.sheet .pp-bub{display:none}
+#ppet.side{position:fixed;top:16px;left:calc(100vw - var(--pp-side,360px) + 18px);right:auto;bottom:auto;width:104px;z-index:46}
+#ppet.side .pp-bub{right:auto;left:96%;bottom:46%;max-width:210px;transform-origin:bottom left}
+#ppet.side .pp-bub::after{right:auto;left:14px}
 #ppet.mini{width:46px}
 #ppet.mini .pp-body{border-radius:50%;overflow:hidden;background:var(--card,#fff);border:2px solid var(--ink,#2B2B2B);animation:none;aspect-ratio:1}
 #ppet.mini .pp-body img{inset:auto;top:-8%;left:-14%;width:128%;height:auto;filter:none}
@@ -252,6 +257,7 @@
     if (longPress) return;
     if (mini) return toggleMini(false);
     if (speaking) close();
+    if (Chat.isOpen) { set('happy'); return; }
     Chat.open();
   });
   function toggleMini(on) {
@@ -289,7 +295,7 @@
 #ppchat .pc-bg{position:absolute;inset:0;background:rgba(10,18,32,.45);animation:pc-fade .2s ease}
 #ppchat .pc-sh{position:absolute;left:0;right:0;bottom:0;max-height:min(78dvh,640px);display:flex;flex-direction:column;background:var(--card,#fff);color:var(--ink,#2B2B2B);border-radius:20px 20px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px);animation:pc-up .25s cubic-bezier(.2,.8,.3,1)}
 @media (min-width:760px){#ppchat .pc-sh{left:auto;right:20px;bottom:20px;width:400px;border-radius:20px;max-height:min(80dvh,640px)}}
-#ppchat .pc-hd{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;border-bottom:1px solid var(--line,#e3e7ee)}
+#ppchat .pc-hd{display:flex;align-items:center;gap:10px;padding:12px 14px 10px 92px;border-bottom:1px solid var(--line,#e3e7ee)}
 #ppchat .pc-av{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--paper,#f4f7fa);border:1.5px solid var(--line,#e3e7ee);flex:0 0 40px;position:relative}
 #ppchat .pc-av img{position:absolute;width:128%;left:-14%;top:-6%}
 #ppchat .pc-tt{flex:1;min-width:0}#ppchat .pc-tt b{display:block;font:800 1rem Figtree,system-ui,sans-serif}
@@ -315,6 +321,13 @@
 #ppchat .pc-in textarea:focus{outline:none;border-color:var(--ink,#2B2B2B)}
 #ppchat .pc-in button{flex:0 0 44px;height:44px;align-self:flex-end;border:0;border-radius:50%;background:var(--ink,#2B2B2B);color:var(--card,#fff);font-size:18px;cursor:pointer}
 #ppchat .pc-in button:disabled{opacity:.4}
+#ppchat.side{inset:auto;top:0;right:0;bottom:0;width:var(--pp-side,360px);z-index:45;display:block}
+#ppchat.side .pc-bg,#ppchat.side .pc-x{display:none}
+#ppchat.side .pc-sh{position:absolute;inset:0;width:auto;max-height:none;border-radius:0;border-left:1px solid var(--line,#e3e7ee);box-shadow:none;animation:none;padding-top:158px}
+#ppchat.side .pc-hd{border-top:1px solid var(--line,#e3e7ee);padding-left:16px}
+#ppchat .pc-av{display:none!important}
+html.pp-side body{padding-right:var(--pp-side,360px)}
+html.pp-side #pill{right:calc(var(--pp-side,360px) + 16px)}
 @keyframes pc-up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
 @keyframes pc-fade{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){#ppchat .pc-sh,#ppchat .pc-bg{animation:none}}
@@ -369,10 +382,21 @@
       if (!el) build();
       const c = ctx(), k = c ? c.curso + '|' + c.tema : 'menu';
       if (k !== ctxKey) { ctxKey = k; reset(); }
-      sub(); setChips(); el.classList.add('on'); open = true; W.hidden = true;
+      sub(); setChips(); el.classList.add('on'); open = true; place(true);
       if (innerWidth >= 760) setTimeout(() => input.focus(), 50);
     }
-    function hide() { if (!el) return; el.classList.remove('on'); open = false; input.blur(); place(true); }
+    function hide() { if (!el || side) return; el.classList.remove('on'); open = false; input.blur(); place(true); }
+    /* compu: panel fijo a la derecha, siempre abierto (se esconde en el simulacro) */
+    let side = false;
+    const wide = () => innerWidth >= 1100;
+    function sync() {
+      const b = B(); const exam = !!(b && b.examNow && b.examNow());
+      const want = wide() && !exam;
+      if (want && !side) { if (!el) build(); side = true; el.classList.add('side', 'on'); open = true; document.documentElement.classList.add('pp-side'); ctxKey = ''; }
+      else if (!want && side) { side = false; el.classList.remove('side', 'on'); open = false; document.documentElement.classList.remove('pp-side'); }
+      if (side) { const c = ctx(), k = c ? c.curso + '|' + c.tema : 'menu'; if (k !== ctxKey && !busy) { ctxKey = k; reset(); } sub(); }
+    }
+    function sheetTop() { if (!el || !open || side) return innerHeight; return el.querySelector('.pc-sh').getBoundingClientRect().top; }
 
     /* respuestas sin IA */
     function local(id) {
@@ -427,7 +451,7 @@
         busy = false; sendB.disabled = false; setChips(); ev('idle'); list.scrollTop = list.scrollHeight;
       }
     }
-    return { open: show, close: hide, get isOpen() { return open; } };
+    return { open: show, close: hide, sync, sheetTop, get isOpen() { return open; }, get side() { return side; } };
   })();
 
   /* ---------- racha de días de estudio ---------- */
@@ -478,8 +502,9 @@
     const b = B(); if (!b) return;
     const v = b.view;
     let want;
-    if (Chat.isOpen) want = 'off';
-    else if (b.examNow && b.examNow()) want = 'off';
+    if (b.examNow && b.examNow()) want = 'off';
+    else if (Chat.side) want = 'side';
+    else if (Chat.isOpen) want = 'sheet';
     else if (v === 'menu') want = 'hero';
     else want = 'dock';
     if (want === 'dock' && typingInput && innerWidth < 760) want = 'off';
@@ -489,11 +514,13 @@
         hero.classList.add('pp-on'); hero.style.position = 'relative';
         if (W.parentNode !== hero) hero.appendChild(W);
         W.classList.remove('dock');
-      } else if (want === 'dock') {
+      } else if (want !== 'off') {
         if (hero) hero.classList.remove('pp-on');
         if (W.parentNode !== document.body) document.body.appendChild(W);
-        W.classList.add('dock');
       }
+      W.classList.toggle('dock', want === 'dock');
+      W.classList.toggle('side', want === 'side');
+      W.classList.toggle('sheet', want === 'sheet');
       W.hidden = want === 'off';
       if (want === 'off') close();
       mode = want;
@@ -510,6 +537,12 @@
       let bot = 8;
       if (ab && !ab.hidden && ab.offsetParent !== null) { const r = ab.getBoundingClientRect(); if (r.left < 120) bot = Math.max(8, innerHeight - r.top + 8); }
       W.style.bottom = 'calc(env(safe-area-inset-bottom,0px) + ' + bot + 'px)';
+    } else if (want === 'sheet') {
+      W.style.top = ''; W.style.right = '';
+      const sh = Chat.sheetTop();
+      W.style.bottom = Math.max(0, innerHeight - sh - 22) + 'px';
+    } else if (want === 'side') {
+      W.style.top = ''; W.style.right = ''; W.style.bottom = '';
     }
   }
 
@@ -557,13 +590,13 @@
   }
 
   /* ---------- arranque ---------- */
-  function tick() { place(); pomo(); greet(); }
+  function tick() { Chat.sync(); place(); pomo(); greet(); }
   function boot() {
     if (!B()) return setTimeout(boot, 300);
-    paint(base()); place(true);
+    Chat.sync(); paint(base()); place(true);
     setTimeout(() => { greet(); }, 1200);
     setInterval(tick, 1000);
-    addEventListener('resize', () => place(true));
+    addEventListener('resize', () => { Chat.sync(); place(true); });
   }
   window.pullpyPet = { ev, say, set, close, FR, chat: Chat };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
