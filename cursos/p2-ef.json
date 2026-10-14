@@ -7,8 +7,8 @@
  "short": "Examen final",
  "sub": "Todo el curso",
  "free": true,
- "intro": "Repaso acumulado con los temas ordenados por semana y todos abiertos desde el inicio. El examen final pone el énfasis en las semanas 9 en adelante (POO en C++); el simulacro tiene la mayoría de preguntas de esas semanas y una parte de repaso. Se actualiza cada vez que se agrega una semana nueva. Igual que en el parcial, elige si practicar en computadora o escrito.",
- "form": "<p class=\"note\">Hoja de repaso del examen final: semanas 1 a 7 y, al final, lo nuevo desde la semana 9.</p>\n<div class=\"fgrid\">\n<div><b>Esqueleto</b><br><code>#include &lt;iostream&gt;</code> · <code>using namespace std;</code> · <code>int main() { … return 0; }</code></div>\n<div><b>Entrada/salida</b><br><code>cin &gt;&gt; x;</code> · <code>cout &lt;&lt; x &lt;&lt; endl;</code> · <code>getline(cin, s)</code></div>\n<div><b>Decimales</b><br><code>#include &lt;iomanip&gt;</code> · <code>cout &lt;&lt; fixed &lt;&lt; setprecision(2)</code></div>\n<div><b>Tipos</b><br>int · long long · float · double · char · bool · string</div>\n<div><b>Operadores</b><br><code>/</code> (entera entre int) · <code>%</code> · <code>++ --</code> · <code>&amp;&amp; || !</code> · <code>== !=</code></div>\n<div><b>Conversión</b><br><code>static_cast&lt;double&gt;(x)</code> · <code>(int)x</code> trunca</div>\n<div><b>Selectivas</b><br><code>if / else if / else</code> · <code>switch</code> con <code>break</code> y <code>default</code></div>\n<div><b>Repetitivas</b><br><code>for</code> · <code>while</code> · <code>do { } while ();</code> · <code>break</code> · <code>continue</code></div>\n<div><b>Funciones</b><br><code>tipo f(int valor, int &amp;ref)</code> · prototipo antes del main · sobrecarga</div>\n<div><b>Recursión</b><br><code>if (caso base) return …; return … f(n − 1) …;</code></div>\n<div><b>Punteros</b><br><code>int *p = &amp;a;</code> · <code>*p</code> · <code>nullptr</code> · <code>int **pp</code></div>\n<div><b>Memoria dinámica</b><br><code>new int(5)</code> / <code>delete p</code> · <code>new int[n]</code> / <code>delete[] v</code></div>\n<div><b>Arreglos</b><br><code>v[i] ≡ *(v + i)</code> · pasar <code>(int *v, int n)</code></div>\n<div><b>Matriz dinámica</b><br><code>int **m = new int*[f]; m[i] = new int[c];</code> · liberar filas y luego m</div>\n<div><b>vector</b><br><code>#include &lt;vector&gt;</code> · <code>push_back · insert(v.begin()+i, x) · erase(v.begin()+i) · pop_back · size</code></div>\n<div><b>Aleatorios</b><br><code>#include &lt;cstdlib&gt; &lt;ctime&gt;</code> · <code>srand(time(0));</code> · <code>rand() % 6 + 1</code></div>\n<div><b>Clase</b><br><code>class X { private: int a; public: X(int a) { this-&gt;a = a; } int getA() { return a; } };</code></div>\n<div><b>Destructor</b><br><code>~X() { }</code> · orden inverso a la creación · <code>delete p</code> lo llama</div>\n<div><b>Objetos dinámicos</b><br><code>X *p = new X(1); p-&gt;getA(); delete p;</code> · arreglo <code>new X[n]</code> / <code>delete[]</code></div>\n</div>",
+ "intro": "Repaso acumulado con los temas ordenados por semana y todos abiertos desde el inicio. El examen final pone el énfasis en las semanas 9 en adelante (POO en C++): ya están la semana 9 (clases, constructores y destructores) y la 10 (arreglos de objetos, punteros dobles y relaciones entre clases, con un mapa de memoria para ver el stack y el heap). El simulacro tiene la mayoría de preguntas de esas semanas y una parte de repaso. Se actualiza cada vez que se agrega una semana nueva. Igual que en el parcial, elige si practicar en computadora o escrito.",
+ "form": "<p class=\"note\">Hoja de repaso del examen final: semanas 1 a 7 y, al final, lo nuevo desde la semana 9.</p>\n<div class=\"fgrid\">\n<div><b>Esqueleto</b><br><code>#include &lt;iostream&gt;</code> · <code>using namespace std;</code> · <code>int main() { … return 0; }</code></div>\n<div><b>Entrada/salida</b><br><code>cin &gt;&gt; x;</code> · <code>cout &lt;&lt; x &lt;&lt; endl;</code> · <code>getline(cin, s)</code></div>\n<div><b>Decimales</b><br><code>#include &lt;iomanip&gt;</code> · <code>cout &lt;&lt; fixed &lt;&lt; setprecision(2)</code></div>\n<div><b>Tipos</b><br>int · long long · float · double · char · bool · string</div>\n<div><b>Operadores</b><br><code>/</code> (entera entre int) · <code>%</code> · <code>++ --</code> · <code>&amp;&amp; || !</code> · <code>== !=</code></div>\n<div><b>Conversión</b><br><code>static_cast&lt;double&gt;(x)</code> · <code>(int)x</code> trunca</div>\n<div><b>Selectivas</b><br><code>if / else if / else</code> · <code>switch</code> con <code>break</code> y <code>default</code></div>\n<div><b>Repetitivas</b><br><code>for</code> · <code>while</code> · <code>do { } while ();</code> · <code>break</code> · <code>continue</code></div>\n<div><b>Funciones</b><br><code>tipo f(int valor, int &amp;ref)</code> · prototipo antes del main · sobrecarga</div>\n<div><b>Recursión</b><br><code>if (caso base) return …; return … f(n − 1) …;</code></div>\n<div><b>Punteros</b><br><code>int *p = &amp;a;</code> · <code>*p</code> · <code>nullptr</code> · <code>int **pp</code></div>\n<div><b>Memoria dinámica</b><br><code>new int(5)</code> / <code>delete p</code> · <code>new int[n]</code> / <code>delete[] v</code></div>\n<div><b>Arreglos</b><br><code>v[i] ≡ *(v + i)</code> · pasar <code>(int *v, int n)</code></div>\n<div><b>Matriz dinámica</b><br><code>int **m = new int*[f]; m[i] = new int[c];</code> · liberar filas y luego m</div>\n<div><b>vector</b><br><code>#include &lt;vector&gt;</code> · <code>push_back · insert(v.begin()+i, x) · erase(v.begin()+i) · pop_back · size</code></div>\n<div><b>Aleatorios</b><br><code>#include &lt;cstdlib&gt; &lt;ctime&gt;</code> · <code>srand(time(0));</code> · <code>rand() % 6 + 1</code></div>\n<div><b>Clase</b><br><code>class X { private: int a; public: X(int a) { this-&gt;a = a; } int getA() { return a; } };</code></div>\n<div><b>Destructor</b><br><code>~X() { }</code> · orden inverso a la creación · <code>delete p</code> lo llama</div>\n<div><b>Objetos dinámicos</b><br><code>X *p = new X(1); p-&gt;getA(); delete p;</code> · arreglo <code>new X[n]</code> / <code>delete[]</code></div>\n<div><b>Punteros dobles</b><br><code>X** v = new X*[n];</code> · <code>v[i] = new X(…);</code> · liberar <code>delete v[i]</code> → <code>delete[] v</code> → <code>v = nullptr</code></div>\n<div><b>vector y shared_ptr</b><br><code>vector&lt;X&gt;</code> solo · <code>vector&lt;X*&gt;</code> delete a cada uno · <code>make_shared&lt;X&gt;(…)</code> solo</div>\n<div><b>Relaciones</b><br>Asociación «usa un» <code>X*</code> + set · Composición «es parte de» <code>: parte(…)</code> · Agregación «tiene un» <code>vector&lt;X*&gt;</code></div>\n</div>",
  "formSim": true,
  "formLabel": "📋 Hoja de repaso",
  "keyLabel": "Claves del tema",
@@ -1307,6 +1307,1765 @@
     }
    ],
    "lesson": "<h3>Idea central</h3><p>La POO junta datos y comportamiento y protege los datos detrás de métodos. La PC2 de ciclos anteriores pidió leer clases (Detector, Punto2D) y razonar qué hace cada línea.</p>\n<h3>Conceptos clave</h3><ul><li>Clase vs. objeto, privado vs. público.</li><li>Constructores sobrecargados y <code>this</code>.</li><li>Destructores, objetos dinámicos y arreglos de objetos.</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> <code>Punto2D origen(0, 0); origen.mostrar();</code> → <code>P(x:0,y:0)</code>.</div>\n<div class=\"err\"><b>Error común:</b> escribir <code>edad = edad;</code> en el constructor cuando el parámetro se llama igual: el atributo no cambia.</div>"
+  },
+  {
+   "id": "w10mem",
+   "name": "Sem. 10 · Arreglos de objetos y punteros dobles",
+   "teo": "<p>Un <b>objeto estático</b> vive en el stack: <code>CPunto2D p1(5, 2);</code>. Un puntero puede apuntarlo: <code>CPunto2D* ptr = &amp;p1;</code> y entonces <code>ptr-&gt;getX()</code> es lo mismo que <code>(*ptr).getX()</code>. Un <b>objeto dinámico</b> vive en el heap: <code>CPunto2D* p2 = new CPunto2D(5, 2);</code>; se libera con <code>delete p2;</code> y conviene dejar <code>p2 = nullptr;</code>.</p><p><b>Arreglo de objetos</b>: <code>CPunto2D* puntos = new CPunto2D[5];</code> crea 5 objetos seguidos en un solo bloque y ejecuta el <b>constructor sin parámetros</b> una vez por elemento (por eso la clase lo necesita). Se usan con punto: <code>puntos[i].getX()</code> o <code>(*(puntos + i)).getY()</code>. También se pueden inicializar: <code>new CPunto2D[5]{CPunto2D(5,4), …}</code>. Se libera con <b>un</b> <code>delete[] puntos;</code>.</p><p><b>Arreglo de punteros (puntero doble)</b>: <code>CPunto2D** puntos = new CPunto2D*[5];</code> crea 5 <i>punteros</i> (8 bytes cada uno en 64 bits); cada objeto se crea aparte: <code>puntos[i] = new CPunto2D(5, 4);</code> y se usa con flecha: <code>puntos[i]-&gt;getX()</code>. Para liberar, de adentro hacia afuera: <code>for (…) delete puntos[i];</code> → <code>delete[] puntos;</code> → <code>puntos = nullptr;</code>. Si borras primero el arreglo, pierdes las direcciones de los objetos (fuga).</p><p><b>Simple vs. doble.</b> El doble usa más memoria (los punteros) y es más trabajo liberarlo, pero permite agregar objetos sin mover los demás y <b>mover o compartir</b> un objeto entre arreglos copiando solo su dirección.</p><p><b>Con vectores</b>: <code>vector&lt;CPunto2D&gt;</code> libera todo solo; <code>vector&lt;CPunto2D*&gt;</code> es semi-automático (el vector se libera solo, pero cada objeto creado con <code>new</code> necesita su <code>delete</code>); <code>vector&lt;shared_ptr&lt;CPunto2D&gt;&gt;</code> con <code>make_shared&lt;CPunto2D&gt;(5,4)</code> libera todo solo.</p><p class=\"note\">En las láminas aparece «int = 8 bytes»: en las PC actuales un <code>int</code> ocupa 4 bytes (por eso su propio dibujo avanza de 4 en 4); el que ocupa 8 es el puntero.</p>",
+   "form": [
+    "<code>X* p = new X(…);</code> · <code>p-&gt;m()</code> ≡ <code>(*p).m()</code> · <code>delete p;</code>",
+    "<code>X* v = new X[n];</code> (constructor sin parámetros ×n) · <code>v[i].m()</code> · <code>delete[] v;</code>",
+    "<code>X** v = new X*[n];</code> · <code>v[i] = new X(…);</code> · <code>v[i]-&gt;m()</code>",
+    "Liberar doble: <code>delete v[i]</code> (cada uno) → <code>delete[] v</code> → <code>v = nullptr</code>",
+    "<code>vector&lt;X&gt;</code> solo · <code>vector&lt;X*&gt;</code> delete a cada uno · <code>vector&lt;shared_ptr&lt;X&gt;&gt;</code> solo",
+    "Puntero: 8 bytes (64 bits) · int: 4 bytes"
+   ],
+   "ex": [
+    {
+     "id": "p10m1",
+     "lvl": 2,
+     "title": "Mapa de memoria: punteros dobles",
+     "q": "<p>Completa las líneas que faltan para crear 3 puntos con un arreglo de punteros y dejar la memoria limpia. Usa ▶ para ver qué pasa en el stack y el heap con tu versión.</p>",
+     "checks": [
+      {
+       "t": "mem",
+       "p": "Completa las líneas que faltan",
+       "cls": "CPunto2D",
+       "lines": [
+        {
+         "c": "int main() {",
+         "op": []
+        },
+        {
+         "ind": 4,
+         "h": [
+          {
+           "c": "CPunto2D** v = new CPunto2D*[3];",
+           "op": [
+            [
+             "newp",
+             "v",
+             3
+            ]
+           ]
+          },
+          {
+           "c": "CPunto2D** v = new CPunto2D[3];",
+           "op": [
+            [
+             "fail",
+             "No compila: new CPunto2D[3] devuelve CPunto2D*, no CPunto2D**. Para guardar punteros se crea new CPunto2D*[3]."
+            ]
+           ],
+           "e": "new CPunto2D[3] crea 3 objetos (devuelve CPunto2D*); para un arreglo de punteros es new CPunto2D*[3]."
+          },
+          {
+           "c": "CPunto2D** v = nullptr;",
+           "op": [
+            [
+             "ptr",
+             "v"
+            ]
+           ],
+           "e": "v queda en nullptr: v[i] = new … escribiría en ninguna parte."
+          }
+         ]
+        },
+        {
+         "c": "    for (int i = 0; i < 3; ++i)",
+         "op": []
+        },
+        {
+         "c": "        v[i] = new CPunto2D(i, 2 * i);",
+         "op": [
+          [
+           "seti",
+           "v",
+           0,
+           0,
+           0
+          ],
+          [
+           "seti",
+           "v",
+           1,
+           1,
+           2
+          ],
+          [
+           "seti",
+           "v",
+           2,
+           2,
+           4
+          ]
+         ]
+        },
+        {
+         "c": "    cout << v[2]->getY() << endl;",
+         "op": [
+          [
+           "usei",
+           "v",
+           2
+          ]
+         ]
+        },
+        {
+         "c": "    for (int i = 0; i < 3; ++i)",
+         "op": []
+        },
+        {
+         "ind": 8,
+         "h": [
+          {
+           "c": "delete v[i];",
+           "op": [
+            [
+             "delall",
+             "v"
+            ]
+           ]
+          },
+          {
+           "c": "delete[] v[i];",
+           "op": [
+            [
+             "fail",
+             "delete[] v[0]: ese objeto se creó con new, sin corchetes; debe ser delete v[i]."
+            ]
+           ],
+           "e": "cada v[i] es UN objeto creado con new (sin corchetes): se libera con delete v[i], sin corchetes."
+          },
+          {
+           "c": "v[i] = nullptr;",
+           "op": [
+            [
+             "nulli",
+             "v",
+             0
+            ],
+            [
+             "nulli",
+             "v",
+             1
+            ],
+            [
+             "nulli",
+             "v",
+             2
+            ]
+           ],
+           "e": "poner nullptr no libera nada: los 3 objetos se quedan en el heap sin nadie que los apunte (fuga)."
+          }
+         ]
+        },
+        {
+         "ind": 4,
+         "h": [
+          {
+           "c": "delete[] v;",
+           "op": [
+            [
+             "dela",
+             "v"
+            ]
+           ]
+          },
+          {
+           "c": "delete v;",
+           "op": [
+            [
+             "del",
+             "v"
+            ]
+           ],
+           "e": "v se creó con new CPunto2D*[3] (con corchetes): se libera con delete[] v."
+          },
+          {
+           "c": "// no hace falta liberar v",
+           "op": [],
+           "e": "el arreglo de 3 punteros también está en el heap: si no haces delete[] v, queda una fuga."
+          }
+         ]
+        },
+        {
+         "c": "    v = nullptr;",
+         "op": [
+          [
+           "null",
+           "v"
+          ]
+         ]
+        },
+        {
+         "c": "    return 0;",
+         "op": []
+        },
+        {
+         "c": "}",
+         "op": [
+          [
+           "end"
+          ]
+         ]
+        }
+       ],
+       "e": "Regla: lo que se crea con <code>new</code> se libera con <code>delete</code>; lo que se crea con <code>new[]</code>, con <code>delete[]</code>. Primero los objetos, después el arreglo de punteros."
+      }
+     ],
+     "steps": [
+      "<code>new CPunto2D*[3]</code> crea el arreglo de 3 punteros; cada <code>v[i] = new CPunto2D(…)</code> crea un objeto aparte.",
+      "Cada objeto se creó con <code>new</code> sin corchetes: se libera con <code>delete v[i]</code>.",
+      "Al final se libera el arreglo de punteros con <code>delete[] v</code> (se creó con corchetes) y se deja <code>v = nullptr</code>."
+     ],
+     "ans": "<code>new CPunto2D*[3]</code> · <code>delete v[i]</code> · <code>delete[] v</code>",
+     "hint": "Tu versión deja la memoria limpia",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pptr"
+      ],
+      [
+       "delarr",
+       "pptr"
+      ],
+      [
+       "delarr"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10m2",
+     "lvl": 2,
+     "title": "Mapa de memoria: arreglo de objetos",
+     "q": "<p>Completa las líneas que faltan. Esta vez los puntos están <b>dentro</b> del arreglo (no hay punteros a cada uno).</p>",
+     "checks": [
+      {
+       "t": "mem",
+       "p": "Completa las líneas que faltan",
+       "cls": "CPunto2D",
+       "lines": [
+        {
+         "c": "int main() {",
+         "op": []
+        },
+        {
+         "ind": 4,
+         "h": [
+          {
+           "c": "CPunto2D* p = new CPunto2D[3];",
+           "op": [
+            [
+             "newa",
+             "p",
+             3
+            ]
+           ]
+          },
+          {
+           "c": "CPunto2D* p = new CPunto2D(3);",
+           "op": [
+            [
+             "fail",
+             "No compila: CPunto2D no tiene un constructor con un solo parámetro. Para 3 puntos es new CPunto2D[3]."
+            ]
+           ],
+           "e": "con paréntesis llamas a un constructor (crearías UN objeto); para un arreglo van corchetes."
+          },
+          {
+           "c": "CPunto2D* p = new CPunto2D*[3];",
+           "op": [
+            [
+             "fail",
+             "No compila: new CPunto2D*[3] devuelve CPunto2D**, no CPunto2D*."
+            ]
+           ],
+           "e": "eso crea 3 punteros, no 3 puntos; además no coincide con el tipo CPunto2D*."
+          }
+         ]
+        },
+        {
+         "c": "    p[0] = CPunto2D(5, 4);",
+         "op": [
+          [
+           "asg",
+           "p",
+           0,
+           5,
+           4
+          ]
+         ]
+        },
+        {
+         "c": "    p[1] = CPunto2D(6, 2);",
+         "op": [
+          [
+           "asg",
+           "p",
+           1,
+           6,
+           2
+          ]
+         ]
+        },
+        {
+         "c": "    cout << p[1].getX() << endl;",
+         "op": [
+          [
+           "use",
+           "p"
+          ]
+         ]
+        },
+        {
+         "ind": 4,
+         "h": [
+          {
+           "c": "delete[] p;",
+           "op": [
+            [
+             "dela",
+             "p"
+            ]
+           ]
+          },
+          {
+           "c": "delete p;",
+           "op": [
+            [
+             "del",
+             "p"
+            ]
+           ],
+           "e": "p se creó con new CPunto2D[3]: se libera con delete[] p."
+          },
+          {
+           "c": "for (int i = 0; i < 3; ++i) delete p[i];",
+           "op": [
+            [
+             "fail",
+             "No compila: p[i] es un CPunto2D (un objeto), no un puntero; no se le puede hacer delete."
+            ]
+           ],
+           "e": "aquí los objetos están uno al lado del otro en un solo bloque: no hay punteros que liberar uno por uno."
+          }
+         ]
+        },
+        {
+         "c": "    p = nullptr;",
+         "op": [
+          [
+           "null",
+           "p"
+          ]
+         ]
+        },
+        {
+         "c": "    return 0;",
+         "op": []
+        },
+        {
+         "c": "}",
+         "op": [
+          [
+           "end"
+          ]
+         ]
+        }
+       ],
+       "e": "Un arreglo de objetos (<code>CPunto2D*</code>) es un solo bloque: se crea con un <code>new[]</code> y se libera con un <code>delete[]</code>."
+      }
+     ],
+     "steps": [
+      "<code>new CPunto2D[3]</code> crea un solo bloque con 3 objetos (llama 3 veces al constructor sin parámetros).",
+      "Como es un solo bloque creado con <code>new[]</code>, se libera con un único <code>delete[] p</code>."
+     ],
+     "ans": "<code>new CPunto2D[3]</code> · <code>delete[] p</code>",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arrobj"
+      ],
+      [
+       "delarr"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10m3",
+     "lvl": 2,
+     "title": "Mapa de memoria: vector y shared_ptr",
+     "q": "<p>¿Qué línea falta para que el programa no tenga fugas?</p>",
+     "checks": [
+      {
+       "t": "mem",
+       "p": "Completa la línea que falta",
+       "cls": "CPunto2D",
+       "lines": [
+        {
+         "c": "int main() {",
+         "op": []
+        },
+        {
+         "c": "    vector<CPunto2D*> a = {new CPunto2D(1,1),",
+         "op": []
+        },
+        {
+         "c": "                           new CPunto2D(2,2)};",
+         "op": [
+          [
+           "vecp",
+           "a",
+           [
+            [
+             1,
+             1
+            ],
+            [
+             2,
+             2
+            ]
+           ]
+          ]
+         ]
+        },
+        {
+         "c": "    vector<shared_ptr<CPunto2D>> b = {",
+         "op": []
+        },
+        {
+         "c": "        make_shared<CPunto2D>(3,3),",
+         "op": []
+        },
+        {
+         "c": "        make_shared<CPunto2D>(4,4)};",
+         "op": [
+          [
+           "sptr",
+           "b",
+           [
+            [
+             3,
+             3
+            ],
+            [
+             4,
+             4
+            ]
+           ]
+          ]
+         ]
+        },
+        {
+         "ind": 4,
+         "h": [
+          {
+           "c": "for (auto p : a) delete p;",
+           "op": [
+            [
+             "delall",
+             "a"
+            ]
+           ]
+          },
+          {
+           "c": "for (auto p : b) delete p;",
+           "op": [
+            [
+             "fail",
+             "No compila: un shared_ptr no se borra con delete; se libera solo cuando nadie lo usa."
+            ]
+           ],
+           "e": "los shared_ptr se liberan solos; delete no se usa con ellos."
+          },
+          {
+           "c": "// nada: los vectores se limpian solos",
+           "op": [],
+           "e": "el vector a libera su arreglo de punteros, pero NO los objetos a los que apuntan: fuga."
+          }
+         ]
+        },
+        {
+         "c": "    return 0;",
+         "op": []
+        },
+        {
+         "c": "}",
+         "op": [
+          [
+           "end"
+          ]
+         ]
+        }
+       ],
+       "e": "<code>vector&lt;T*&gt;</code> es «semi-automático»: el vector se libera solo, los objetos no. Con <code>shared_ptr</code> todo es automático."
+      }
+     ],
+     "steps": [
+      "El vector <code>a</code> guarda punteros: al terminar se libera el vector, pero no los objetos creados con <code>new</code>.",
+      "Los <code>shared_ptr</code> de <code>b</code> se liberan solos: no se les hace <code>delete</code>."
+     ],
+     "ans": "<code>for (auto p : a) delete p;</code>",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "smart"
+      ],
+      [
+       "smart"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10t1",
+     "lvl": 1,
+     "title": "Flecha o punto",
+     "q": "<p>Con <code>CPunto2D* p = new CPunto2D(5, 2);</code>, ¿cuál de estas expresiones <b>NO</b> sirve para leer x (suponiendo que x es público)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "<code>*p.x</code>",
+        "<code>p-&gt;x</code>",
+        "<code>(*p).x</code>",
+        "<code>p[0].x</code>",
+        "<code>(&amp;(*p))-&gt;x</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "El punto tiene más prioridad que el asterisco: <code>*p.x</code> se lee como <code>*(p.x)</code>, y p es un puntero, no tiene .x.",
+      "<code>p-&gt;x</code> es la forma corta de <code>(*p).x</code>; <code>p[0]</code> es lo mismo que <code>*p</code>."
+     ],
+     "ans": "<code>*p.x</code>",
+     "hint": "Fíjate en la prioridad de * y del punto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objdin"
+      ],
+      [
+       "objdin"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10t2",
+     "lvl": 1,
+     "title": "¿Qué constructor se ejecuta?",
+     "q": "<p>La clase <code>CPunto2D</code> tiene <code>CPunto2D()</code> y <code>CPunto2D(int x, int y)</code>. ¿Qué pasa con <code>CPunto2D* v = new CPunto2D[5];</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Se ejecuta <code>CPunto2D()</code> 5 veces, una por elemento",
+        "Se ejecuta <code>CPunto2D(int, int)</code> 5 veces con basura",
+        "No se ejecuta ningún constructor hasta asignar cada elemento",
+        "Se ejecuta <code>CPunto2D()</code> una sola vez para todo el arreglo",
+        "Da error: un arreglo dinámico de objetos necesita <code>CPunto2D**</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "<code>new X[n]</code> construye n objetos seguidos y usa el constructor sin parámetros en cada uno.",
+      "Si la clase no tuviera constructor sin parámetros, habría que inicializar con llaves: <code>new CPunto2D[2]{CPunto2D(1,1), CPunto2D(2,2)}</code>."
+     ],
+     "ans": "Se ejecuta <code>CPunto2D()</code> 5 veces, una por elemento",
+     "hint": "Cada elemento es un objeto completo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arrobj"
+      ],
+      [
+       "arrobj",
+       "ctor"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10t3",
+     "lvl": 2,
+     "title": "Bytes en el heap",
+     "q": "<p>Una clase tiene dos atributos <code>double</code> (8 bytes cada uno). En una PC de 64 bits, ¿cuántos bytes reserva cada instrucción (solo ese bloque)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Bytes",
+       "f": [
+        {
+         "l": "new P[5]",
+         "a": 80,
+         "u": "bytes",
+         "e": "5 objetos × (8 + 8) bytes."
+        },
+        {
+         "l": "new P*[5]",
+         "a": 40,
+         "u": "bytes",
+         "e": "5 punteros × 8 bytes: los objetos todavía no existen."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "<code>new P[5]</code>: 5 objetos completos de 16 bytes = 80 bytes.",
+      "<code>new P*[5]</code>: solo 5 punteros de 8 bytes = 40 bytes; cada objeto se reserva después con su propio new."
+     ],
+     "ans": "new P[5]: 80 bytes · new P*[5]: 40 bytes",
+     "hint": "Un puntero ocupa 8 bytes, apunte a lo que apunte.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "arrobj"
+      ],
+      [
+       "pptr"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10t4",
+     "lvl": 2,
+     "title": "¿Cómo se libera?",
+     "q": "<p>Clasifica cada cosa según cómo se libera su memoria.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "Se libera sola",
+        "delete",
+        "delete[]"
+       ],
+       "items": [
+        {
+         "x": "<code>CPunto2D p(1, 2);</code>",
+         "c": 0,
+         "e": "Está en el stack: muere al terminar su bloque."
+        },
+        {
+         "x": "<code>vector&lt;CPunto2D&gt; v(5);</code>",
+         "c": 0,
+         "e": "El vector libera sus objetos solo."
+        },
+        {
+         "x": "<code>make_shared&lt;CPunto2D&gt;(1, 2)</code>",
+         "c": 0,
+         "e": "El shared_ptr lo libera cuando ya nadie lo usa."
+        },
+        {
+         "x": "<code>new CPunto2D(1, 2)</code>",
+         "c": 1,
+         "e": "Un objeto creado con new, sin corchetes."
+        },
+        {
+         "x": "cada <code>v[i] = new CPunto2D(…)</code> de un <code>CPunto2D**</code>",
+         "c": 1,
+         "e": "Cada elemento es un objeto creado con new."
+        },
+        {
+         "x": "<code>new CPunto2D[5]</code>",
+         "c": 2,
+         "e": "Creado con corchetes ⇒ delete[]."
+        },
+        {
+         "x": "<code>new CPunto2D*[5]</code>",
+         "c": 2,
+         "e": "El arreglo de punteros se creó con corchetes ⇒ delete[]."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Stack, vector de objetos y shared_ptr: automático.",
+      "new sin corchetes ⇒ delete; new con corchetes ⇒ delete[]."
+     ],
+     "ans": "Clasificación correcta",
+     "hint": "Mira si hay new y si lleva corchetes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "smart"
+      ],
+      [
+       "delarr"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10t5",
+     "lvl": 2,
+     "title": "Simple vs. doble",
+     "q": "<p>¿Cuál es una <b>ventaja</b> de <code>CPunto2D** v = new CPunto2D*[n]</code> frente a <code>CPunto2D* v = new CPunto2D[n]</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Se puede mover o compartir un objeto entre arreglos copiando solo su dirección",
+        "Ocupa menos memoria en total",
+        "Se libera con un solo <code>delete[]</code>",
+        "No hace falta un <code>new</code> por cada objeto",
+        "Los objetos quedan uno al lado del otro en memoria"
+       ]
+      }
+     ],
+     "steps": [
+      "Con punteros, reordenar, mover o compartir un objeto es copiar 8 bytes, sin copiar ni reconstruir el objeto.",
+      "Desventajas: usa memoria extra para los punteros, necesita un new por objeto y liberar es más trabajo (cada objeto y luego el arreglo)."
+     ],
+     "ans": "Se puede mover o compartir un objeto entre arreglos copiando solo su dirección",
+     "hint": "Piensa en qué se copia cuando mueves un elemento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pptr"
+      ],
+      [
+       "pptr",
+       "delarr"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10o1",
+     "lvl": 2,
+     "title": "Arreglo de punteros: ¿qué imprime?",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass CPunto2D {\n    int x, y;\npublic:\n    CPunto2D(int x, int y) { this-&gt;x = x; this-&gt;y = y; }\n    int getX() { return x; }\n    int getY() { return y; }\n};\n\nint main() {\n    CPunto2D** v = new CPunto2D*[3];\n    for (int i = 0; i &lt; 3; ++i)\n        v[i] = new CPunto2D(i + 1, 10 * (i + 1));\n    CPunto2D* t = v[0];\n    v[0] = v[2];\n    v[2] = t;\n    for (int i = 0; i &lt; 3; ++i)\n        cout &lt;&lt; v[i]-&gt;getX() &lt;&lt; \",\" &lt;&lt; v[i]-&gt;getY() &lt;&lt; \" \";\n    cout &lt;&lt; endl;\n    for (int i = 0; i &lt; 3; ++i)\n        delete v[i];\n    delete[] v;\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">3,30 2,20 1,10 </code>",
+        "<code class=\"out\">1,10 2,20 3,30 </code>",
+        "<code class=\"out\">3,10 2,20 1,30 </code>",
+        "<code class=\"out\">3,30 2,20 3,30 </code>",
+        "<code class=\"out\">No compila: no se pueden intercambiar punteros</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Se intercambian las <b>direcciones</b> guardadas en v[0] y v[2]; los objetos no se mueven ni se copian.",
+      "Por eso el recorrido muestra primero el objeto (3,30) y al final el (1,10). Cada objeto se sigue liberando una sola vez."
+     ],
+     "ans": "<code class=\"out\">3,30 2,20 1,10 </code>",
+     "hint": "Solo se cambian los punteros.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pptr"
+      ],
+      [
+       "pptr",
+       "delarr"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass CPunto2D {\n    int x, y;\npublic:\n    CPunto2D(int x, int y) { this->x = x; this->y = y; }\n    int getX() { return x; }\n    int getY() { return y; }\n};\n\nint main() {\n    CPunto2D** v = new CPunto2D*[3];\n    for (int i = 0; i < 3; ++i)\n        v[i] = new CPunto2D(i + 1, 10 * (i + 1));\n    CPunto2D* t = v[0];\n    v[0] = v[2];\n    v[2] = t;\n    for (int i = 0; i < 3; ++i)\n        cout << v[i]->getX() << \",\" << v[i]->getY() << \" \";\n    cout << endl;\n    for (int i = 0; i < 3; ++i)\n        delete v[i];\n    delete[] v;\n    return 0;\n}"
+    },
+    {
+     "id": "p10c1",
+     "lvl": 3,
+     "title": "Crear y liberar un arreglo de punteros",
+     "q": "<p>Completa dos funciones:</p><ul><li><code>CPunto2D** crearPuntos(int n)</code>: crea un arreglo dinámico de <code>n</code> punteros y en cada posición <code>i</code> un punto nuevo <code>(i, 2*i)</code>.</li><li><code>void liberar(CPunto2D**&amp; v, int n)</code>: libera todos los puntos, después el arreglo, y deja <code>v</code> en <code>nullptr</code>.</li></ul><p class=\"note\"><code>CPunto2D::vivos</code> cuenta cuántos puntos existen: si al final no es 0, te faltó un <code>delete</code>.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\nusing namespace std;\n\nclass CPunto2D {\n    int x, y;\npublic:\n    inline static int vivos = 0;   // cuántos puntos existen ahora (para comprobar que liberas todo)\n    CPunto2D(int x, int y) { this->x = x; this->y = y; vivos++; }\n    ~CPunto2D() { vivos--; }\n    int getX() { return x; }\n    int getY() { return y; }\n};\n\nCPunto2D** crearPuntos(int n) {\n}\n\nvoid liberar(CPunto2D**& v, int n) {\n}\n",
+       "tests": [
+        {
+         "n": "Crea los puntos (i, 2i)",
+         "main": "CPunto2D** v = crearPuntos(4);\nfor (int i = 0; i < 4; ++i) {\n    if (i) cout << \" \";\n    cout << v[i]->getX() << \",\" << v[i]->getY();\n}\ncout << endl;\ncout << CPunto2D::vivos << endl;\nliberar(v, 4);",
+         "out": "0,0 1,2 2,4 3,6\n4"
+        },
+        {
+         "n": "Libera todo y deja nullptr",
+         "main": "CPunto2D** v = crearPuntos(3);\nliberar(v, 3);\ncout << CPunto2D::vivos << \" \" << (v == nullptr) << endl;",
+         "out": "0 1"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "<code>new CPunto2D*[n]</code> crea los n punteros; cada <code>v[i] = new CPunto2D(i, 2*i)</code> crea un punto.",
+      "Para liberar: primero cada <code>delete v[i]</code>, luego <code>delete[] v</code>. El parámetro es <code>CPunto2D**&amp;</code> (por referencia) para poder dejar la variable del main en nullptr.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass CPunto2D {\n    int x, y;\npublic:\n    inline static int vivos = 0;   // cuántos puntos existen ahora (para comprobar que liberas todo)\n    CPunto2D(int x, int y) { this-&gt;x = x; this-&gt;y = y; vivos++; }\n    ~CPunto2D() { vivos--; }\n    int getX() { return x; }\n    int getY() { return y; }\n};\n\nCPunto2D** crearPuntos(int n) {\n    CPunto2D** v = new CPunto2D*[n];\n    for (int i = 0; i &lt; n; ++i)\n        v[i] = new CPunto2D(i, 2 * i);\n    return v;\n}\n\nvoid liberar(CPunto2D**&amp; v, int n) {\n    for (int i = 0; i &lt; n; ++i)\n        delete v[i];\n    delete[] v;\n    v = nullptr;\n}\n</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Libera de adentro hacia afuera.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pptr"
+      ],
+      [
+       "delarr",
+       "pptr"
+      ],
+      [
+       "pptr"
+      ]
+     ],
+     "lang": "cpp"
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Todo lo que se crea con <code>new</code> hay que liberarlo una vez, con el <code>delete</code> que le corresponde. Con punteros dobles hay dos niveles: los objetos y el arreglo de punteros.</p><h3>Conceptos clave</h3><ul><li><code>new X[n]</code> ↔ <code>delete[]</code>; <code>new X(…)</code> ↔ <code>delete</code>.</li><li><code>X* v</code>: objetos seguidos (se usa <code>v[i].m()</code>). <code>X** v</code>: punteros a objetos (se usa <code>v[i]-&gt;m()</code>).</li><li>Fuga: memoria del heap que ya nadie apunta. Colgante: puntero a memoria ya liberada.</li><li>vector y shared_ptr liberan solos.</li></ul><div class=\"ej\"><b>Ejemplo:</b> <code>CPunto2D** v = new CPunto2D*[3];</code> → <code>v[i] = new CPunto2D(i, i);</code> → <code>delete v[i];</code> (cada uno) → <code>delete[] v;</code>.</div><div class=\"err\"><b>Error común:</b> hacer <code>delete[] v;</code> antes de borrar cada <code>v[i]</code>: los objetos quedan en el heap sin nadie que los apunte.</div>",
+   "tools": [
+    {
+     "w": "mem",
+     "t": "Objeto en el stack vs. objeto dinámico",
+     "p": "Toca ▶ para avanzar línea por línea y mira dónde vive cada cosa.",
+     "o": {
+      "cls": "CPunto2D",
+      "lines": [
+       {
+        "c": "int main() {",
+        "op": []
+       },
+       {
+        "c": "    CPunto2D p1(5, 2);",
+        "op": [
+         [
+          "sobj",
+          "p1",
+          5,
+          2
+         ]
+        ]
+       },
+       {
+        "c": "    CPunto2D* ptrP1 = &p1;",
+        "op": [
+         [
+          "ref",
+          "ptrP1",
+          "p1"
+         ]
+        ]
+       },
+       {
+        "c": "    CPunto2D* p2 = new CPunto2D(5, 2);",
+        "op": [
+         [
+          "new",
+          "p2",
+          5,
+          2
+         ]
+        ]
+       },
+       {
+        "c": "    cout << p2->getX() << (*p2).getY();",
+        "op": [
+         [
+          "use",
+          "p2"
+         ]
+        ]
+       },
+       {
+        "c": "    delete p2;",
+        "op": [
+         [
+          "del",
+          "p2"
+         ]
+        ]
+       },
+       {
+        "c": "    p2 = nullptr;",
+        "op": [
+         [
+          "null",
+          "p2"
+         ]
+        ]
+       },
+       {
+        "c": "    return 0;",
+        "op": []
+       },
+       {
+        "c": "}",
+        "op": [
+         [
+          "end"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "w": "mem",
+     "t": "Arreglo de objetos: new CPunto2D[5]",
+     "p": "Un solo bloque con los 5 objetos seguidos.",
+     "o": {
+      "cls": "CPunto2D",
+      "lines": [
+       {
+        "c": "int main() {",
+        "op": []
+       },
+       {
+        "c": "    CPunto2D* puntos = new CPunto2D[5];",
+        "op": [
+         [
+          "newa",
+          "puntos",
+          5
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[0] = CPunto2D(5, 4);",
+        "op": [
+         [
+          "asg",
+          "puntos",
+          0,
+          5,
+          4
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[1] = CPunto2D(6, 2);",
+        "op": [
+         [
+          "asg",
+          "puntos",
+          1,
+          6,
+          2
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[2] = CPunto2D(1, 1);",
+        "op": [
+         [
+          "asg",
+          "puntos",
+          2,
+          1,
+          1
+         ]
+        ]
+       },
+       {
+        "c": "    cout << (*(puntos + 1)).getX();",
+        "op": [
+         [
+          "use",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    delete[] puntos;",
+        "op": [
+         [
+          "dela",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    puntos = nullptr;",
+        "op": [
+         [
+          "null",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    return 0;",
+        "op": []
+       },
+       {
+        "c": "}",
+        "op": [
+         [
+          "end"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "w": "mem",
+     "t": "Arreglo de punteros: new CPunto2D*[5]",
+     "p": "Fíjate en el orden de liberación: primero cada objeto, después el arreglo.",
+     "o": {
+      "cls": "CPunto2D",
+      "lines": [
+       {
+        "c": "int main() {",
+        "op": []
+       },
+       {
+        "c": "    CPunto2D** puntos = new CPunto2D*[5];",
+        "op": [
+         [
+          "newp",
+          "puntos",
+          5
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[0] = new CPunto2D(5, 4);",
+        "op": [
+         [
+          "seti",
+          "puntos",
+          0,
+          5,
+          4
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[1] = new CPunto2D(6, 2);",
+        "op": [
+         [
+          "seti",
+          "puntos",
+          1,
+          6,
+          2
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[2] = new CPunto2D(1, 1);",
+        "op": [
+         [
+          "seti",
+          "puntos",
+          2,
+          1,
+          1
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[3] = new CPunto2D(3, 1);",
+        "op": [
+         [
+          "seti",
+          "puntos",
+          3,
+          3,
+          1
+         ]
+        ]
+       },
+       {
+        "c": "    puntos[4] = new CPunto2D(2, 2);",
+        "op": [
+         [
+          "seti",
+          "puntos",
+          4,
+          2,
+          2
+         ]
+        ]
+       },
+       {
+        "c": "    for (int i = 0; i < 5; ++i)",
+        "op": []
+       },
+       {
+        "c": "        delete puntos[i];",
+        "op": [
+         [
+          "delall",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    delete[] puntos;",
+        "op": [
+         [
+          "dela",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    puntos = nullptr;",
+        "op": [
+         [
+          "null",
+          "puntos"
+         ]
+        ]
+       },
+       {
+        "c": "    return 0;",
+        "op": []
+       },
+       {
+        "c": "}",
+        "op": [
+         [
+          "end"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "w": "mem",
+     "t": "vector, vector de punteros y shared_ptr",
+     "p": "Al llegar al final, ¿qué se liberó solo y qué no?",
+     "o": {
+      "cls": "CPunto2D",
+      "lines": [
+       {
+        "c": "int main() {",
+        "op": []
+       },
+       {
+        "c": "    vector<CPunto2D> a = {CPunto2D(5,4), CPunto2D(6,2)};",
+        "op": [
+         [
+          "vec",
+          "a",
+          [
+           [
+            5,
+            4
+           ],
+           [
+            6,
+            2
+           ]
+          ]
+         ]
+        ]
+       },
+       {
+        "c": "    vector<CPunto2D*> b = {new CPunto2D(1,1),",
+        "op": []
+       },
+       {
+        "c": "                           new CPunto2D(3,1)};",
+        "op": [
+         [
+          "vecp",
+          "b",
+          [
+           [
+            1,
+            1
+           ],
+           [
+            3,
+            1
+           ]
+          ]
+         ]
+        ]
+       },
+       {
+        "c": "    vector<shared_ptr<CPunto2D>> c = {",
+        "op": []
+       },
+       {
+        "c": "        make_shared<CPunto2D>(2,2),",
+        "op": []
+       },
+       {
+        "c": "        make_shared<CPunto2D>(7,7)};",
+        "op": [
+         [
+          "sptr",
+          "c",
+          [
+           [
+            2,
+            2
+           ],
+           [
+            7,
+            7
+           ]
+          ]
+         ]
+        ]
+       },
+       {
+        "c": "    for (auto p : b) delete p;",
+        "op": [
+         [
+          "delall",
+          "b"
+         ]
+        ]
+       },
+       {
+        "c": "    return 0;",
+        "op": []
+       },
+       {
+        "c": "}",
+        "op": [
+         [
+          "end"
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "w10rel",
+   "name": "Sem. 10 · Relaciones entre clases: asociación, composición y agregación",
+   "teo": "<p>Una <b>relación</b> es un vínculo entre objetos de clases distintas que se necesitan para hacer algo (un alumno <i>aprueba</i> un curso, un chofer <i>conduce</i> un taxi). Hay tres tipos, y cada uno se valida con una frase:</p><p><b>Asociación — «usa un».</b> Dos objetos independientes trabajan juntos: el taxi usa un chofer, el cliente usa una tarjeta. Si se quita la tarjeta, el cliente sigue existiendo. En UML es una línea con <b>flecha</b> hacia la clase asociada. En C++: un atributo <b>puntero</b> (<code>Chofer* m_Chofer;</code>) y un método que la asocia (<code>void setChofer(Chofer* c)</code>); luego se accede a través de él: <code>m_Chofer-&gt;getNombres()</code>.</p><p><b>Composición — «es parte de».</b> Un objeto grande está formado por partes que <b>nacen y mueren con él</b>: el motor es parte del auto, el muro es parte del usuario, la fecha y la hora son parte del evento. En UML: línea con <b>rombo lleno</b> junto a la clase «todo». En C++: atributos que son <b>objetos</b> (no punteros): <code>CTime m_Time; CDate m_Day;</code>, y un constructor que los construye con la <b>lista de inicialización</b>: <code>CEvent(…) : m_Time(h, m), m_Day(mes, d, a) { … }</code>. Las partes se construyen <i>antes</i> que el todo y se destruyen <i>después</i>.</p><p><b>Agregación — «tiene un(os)».</b> El todo agrupa objetos que pueden existir sin él: la universidad tiene estudiantes, el estudiante tiene cursos. En UML: línea con <b>rombo vacío</b> junto al «todo». En C++: un atributo con la colección de partes, normalmente <code>vector&lt;Estudiante*&gt;</code>, y un método que agrega (<code>void agregar(Estudiante* e)</code>). Se usan <b>punteros</b> porque el todo no es dueño de las partes: si se destruye la universidad, los estudiantes siguen existiendo.</p><p class=\"note\">En las láminas hay detalles por corregir: con un puntero (<code>CEvent* pEvent = new CEvent()</code>) se llama <code>pEvent-&gt;setEventData(…)</code>, no <code>pEvent .setEventData</code>; los nombres de clase y constructor deben coincidir (<code>CDate::CDate()</code>, <code>CEvent</code>) y en <code>printEventData</code> el atributo es <code>m_Name</code>.</p>",
+   "form": [
+    "Asociación: «usa un» · flecha → · <code>Chofer* m_Chofer;</code> + <code>setChofer(Chofer*)</code>",
+    "Composición: «es parte de» · rombo lleno ◆ en el todo · <code>CTime m_Time;</code> · nacen y mueren juntos",
+    "Lista de inicialización: <code>CEvent(…) : m_Time(h, m), m_Day(d, mes, a) { }</code>",
+    "Agregación: «tiene un(os)» · rombo vacío ◇ en el todo · <code>vector&lt;Est*&gt;</code> + <code>agregar(Est*)</code>",
+    "Orden: partes antes que el todo al construir; al revés al destruir"
+   ],
+   "ex": [
+    {
+     "id": "p10r1",
+     "lvl": 1,
+     "title": "¿Qué relación es?",
+     "q": "<p>Clasifica cada pareja según su relación (usa las frases «usa un», «es parte de», «tiene un»).</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "Asociación",
+        "Composición",
+        "Agregación"
+       ],
+       "items": [
+        {
+         "x": "Taxi – Chofer",
+         "c": 0,
+         "e": "El taxi usa un chofer; ambos existen por separado."
+        },
+        {
+         "x": "Cliente – Tarjeta de crédito",
+         "c": 0,
+         "e": "Se puede quitar la tarjeta y el cliente sigue existiendo."
+        },
+        {
+         "x": "Ingeniero – Computadora",
+         "c": 0,
+         "e": "El ingeniero usa una computadora."
+        },
+        {
+         "x": "Auto – Motor",
+         "c": 1,
+         "e": "El motor es parte del auto."
+        },
+        {
+         "x": "Usuario de Facebook – Muro",
+         "c": 1,
+         "e": "El muro se crea con la cuenta y muere con ella."
+        },
+        {
+         "x": "Evento – Fecha y hora",
+         "c": 1,
+         "e": "La fecha y la hora son parte del evento."
+        },
+        {
+         "x": "Universidad – Estudiantes",
+         "c": 2,
+         "e": "La universidad tiene (agrupa) estudiantes que existen sin ella."
+        },
+        {
+         "x": "Estudiante – Cursos",
+         "c": 2,
+         "e": "Un estudiante tiene varios cursos."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "«Usa un» ⇒ asociación; «es parte de» y nacen/mueren juntos ⇒ composición.",
+      "«Tiene un(os)», un conjunto de objetos con vida propia ⇒ agregación."
+     ],
+     "ans": "Clasificación correcta",
+     "hint": "Prueba cada frase con la pareja.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "asoc",
+       "compo"
+      ],
+      [
+       "agreg"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10r2",
+     "lvl": 1,
+     "title": "Notación UML",
+     "q": "<p>En un diagrama de clases, ¿qué representa una línea con un <b>rombo lleno</b> junto a la clase <code>Auto</code> y la otra punta en <code>Motor</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Composición: el motor es parte del auto y muere con él",
+        "Agregación: el auto tiene motores que existen por separado",
+        "Asociación: el auto usa un motor",
+        "Herencia: el motor es un tipo de auto",
+        "Composición: el auto es parte del motor"
+       ]
+      }
+     ],
+     "steps": [
+      "Rombo lleno ⇒ composición; rombo vacío ⇒ agregación; flecha simple ⇒ asociación.",
+      "El rombo va pegado a la clase «todo» (Auto); la otra punta es la parte (Motor)."
+     ],
+     "ans": "Composición: el motor es parte del auto y muere con él",
+     "hint": "El rombo marca al «todo».",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "uml",
+       "compo"
+      ],
+      [
+       "uml"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10r3",
+     "lvl": 2,
+     "title": "¿Por qué punteros en la agregación?",
+     "q": "<p>En <code>class Universidad { vector&lt;Estudiante*&gt; estudiantes; … };</code>, ¿por qué se guardan punteros y no objetos <code>Estudiante</code>?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Porque los estudiantes existen por su cuenta: la universidad solo los referencia y no debe destruirlos ni copiarlos",
+        "Porque un vector no puede guardar objetos de una clase",
+        "Porque los punteros ocupan siempre menos memoria y son más rápidos",
+        "Porque así la universidad destruye a sus estudiantes en su destructor",
+        "Porque la agregación exige usar new dentro de la clase"
+       ]
+      }
+     ],
+     "steps": [
+      "En la agregación el todo no es dueño de las partes: guardar punteros permite apuntar a estudiantes que ya existen (y que pueden estar en otras universidades).",
+      "Si guardara objetos, tendría copias que nacerían y morirían con la universidad: eso sería composición."
+     ],
+     "ans": "Porque los estudiantes existen por su cuenta: la universidad solo los referencia y no debe destruirlos ni copiarlos",
+     "hint": "¿Quién es dueño de los estudiantes?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "agreg"
+      ],
+      [
+       "agreg",
+       "compo"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10r4",
+     "lvl": 2,
+     "title": "Asociación: ¿dónde va cada cosa?",
+     "q": "<p>Para que <code>Taxi</code> «use un» <code>Chofer</code>, ¿qué necesita la clase Taxi?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Un atributo <code>Chofer*</code> y un método <code>setChofer(Chofer*)</code> que lo asigne",
+        "Un atributo <code>Chofer</code> construido en la lista de inicialización",
+        "Que Chofer tenga un atributo <code>Taxi*</code> y nada más",
+        "Un <code>vector&lt;Chofer&gt;</code> con todos los choferes",
+        "Heredar de Chofer: <code>class Taxi : public Chofer</code>"
+       ]
+      }
+     ],
+     "steps": [
+      "La asociación se arma con un atributo del tipo de la clase asociada (puntero, porque el chofer existe aparte) y un método que hace la asociación.",
+      "Luego el taxi accede a los datos de su chofer a través de él: <code>m_Chofer-&gt;getNombres()</code>."
+     ],
+     "ans": "Un atributo <code>Chofer*</code> y un método <code>setChofer(Chofer*)</code> que lo asigne",
+     "hint": "El chofer ya existe; el taxi solo lo apunta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "asoc"
+      ],
+      [
+       "asoc"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10r5",
+     "lvl": 1,
+     "title": "Encuentra el error",
+     "q": "<pre class=\"cpp\"><code>CEvent* pEvent = new CEvent();\npEvent.setEventData(6, 0, 12, 25, 2019, \"Navidad\");\npEvent.printEventData(cout);</code></pre><p>¿Por qué no compila?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "pEvent es un puntero: se debe usar <code>pEvent-&gt;setEventData(…)</code>",
+        "Falta <code>delete pEvent;</code> antes de llamar a los métodos",
+        "<code>new CEvent()</code> no se puede usar si la clase tiene atributos de otras clases",
+        "printEventData no puede recibir <code>cout</code>",
+        "Los métodos de una composición solo se llaman desde el constructor"
+       ]
+      }
+     ],
+     "steps": [
+      "Con un objeto se usa el punto; con un puntero, la flecha (o <code>(*pEvent).setEventData(…)</code>).",
+      "Además falta liberar al final con <code>delete pEvent;</code>, aunque eso no impide compilar."
+     ],
+     "ans": "pEvent es un puntero: se debe usar <code>pEvent-&gt;setEventData(…)</code>",
+     "hint": "¿pEvent es un objeto o un puntero?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "objdin"
+      ],
+      [
+       "objdin"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10r6",
+     "lvl": 2,
+     "title": "Composición: orden de construcción",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\nusing namespace std;\n\nclass Motor {\npublic:\n    Motor() { cout &lt;&lt; \"M+ \"; }\n    ~Motor() { cout &lt;&lt; \"M- \"; }\n};\n\nclass Llanta {\npublic:\n    Llanta() { cout &lt;&lt; \"L+ \"; }\n    ~Llanta() { cout &lt;&lt; \"L- \"; }\n};\n\nclass Auto {\n    Motor motor;\n    Llanta llanta;\npublic:\n    Auto() { cout &lt;&lt; \"A+ \"; }\n    ~Auto() { cout &lt;&lt; \"A- \"; }\n};\n\nint main() {\n    Auto a;\n    cout &lt;&lt; \"| \";\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">M+ L+ A+ | A- L- M- </code>",
+        "<code class=\"out\">A+ M+ L+ | A- L- M- </code>",
+        "<code class=\"out\">M+ L+ A+ | M- L- A- </code>",
+        "<code class=\"out\">A+ M+ L+ | M- L- A- </code>",
+        "<code class=\"out\">M+ L+ A+ | A- </code>"
+       ]
+      }
+     ],
+     "steps": [
+      "Las partes (atributos objeto) se construyen <b>antes</b> que el cuerpo del constructor del todo, en el orden en que están declaradas: Motor, Llanta y luego Auto.",
+      "Al destruir es al revés: primero el destructor de Auto y después sus partes en orden inverso (Llanta, Motor). Las partes mueren con el todo."
+     ],
+     "ans": "<code class=\"out\">M+ L+ A+ | A- L- M- </code>",
+     "hint": "Primero las piezas, luego el auto.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compo"
+      ],
+      [
+       "compo",
+       "dtor"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\nusing namespace std;\n\nclass Motor {\npublic:\n    Motor() { cout << \"M+ \"; }\n    ~Motor() { cout << \"M- \"; }\n};\n\nclass Llanta {\npublic:\n    Llanta() { cout << \"L+ \"; }\n    ~Llanta() { cout << \"L- \"; }\n};\n\nclass Auto {\n    Motor motor;\n    Llanta llanta;\npublic:\n    Auto() { cout << \"A+ \"; }\n    ~Auto() { cout << \"A- \"; }\n};\n\nint main() {\n    Auto a;\n    cout << \"| \";\n    return 0;\n}"
+    },
+    {
+     "id": "p10r7",
+     "lvl": 2,
+     "title": "Agregación: ¿quién sobrevive?",
+     "q": "<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\n#include &lt;vector&gt;\nusing namespace std;\n\nclass Estudiante {\n    string nombre;\npublic:\n    Estudiante(string n) { nombre = n; }\n    ~Estudiante() { cout &lt;&lt; \"~\" &lt;&lt; nombre &lt;&lt; \" \"; }\n};\n\nclass Universidad {\n    vector&lt;Estudiante*&gt; estudiantes;\npublic:\n    void agregar(Estudiante* e) { estudiantes.push_back(e); }\n    ~Universidad() { cout &lt;&lt; \"~Uni \"; }\n};\n\nint main() {\n    Estudiante ana(\"Ana\"), beto(\"Beto\");\n    {\n        Universidad u;\n        u.agregar(&amp;ana);\n        u.agregar(&amp;beto);\n    }\n    cout &lt;&lt; \"| \";\n    return 0;\n}</code></pre><p>¿Qué imprime este programa?</p>",
+     "checks": [
+      {
+       "p": "Salida",
+       "o": [
+        "<code class=\"out\">~Uni | ~Beto ~Ana </code>",
+        "<code class=\"out\">~Ana ~Beto ~Uni | </code>",
+        "<code class=\"out\">~Uni ~Ana ~Beto | </code>",
+        "<code class=\"out\">~Beto ~Ana ~Uni | </code>",
+        "<code class=\"out\">| ~Uni ~Beto ~Ana </code>"
+       ]
+      }
+     ],
+     "steps": [
+      "La universidad muere al cerrar su bloque, pero solo guardaba <b>punteros</b>: destruirla no destruye a los estudiantes.",
+      "Ana y Beto mueren al terminar main, en orden inverso a su creación (Beto, Ana). Así se ve la diferencia con la composición."
+     ],
+     "ans": "<code class=\"out\">~Uni | ~Beto ~Ana </code>",
+     "hint": "¿La universidad es dueña de sus estudiantes?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "agreg"
+      ],
+      [
+       "agreg",
+       "dtor"
+      ]
+     ],
+     "lang": "cpp",
+     "play": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Estudiante {\n    string nombre;\npublic:\n    Estudiante(string n) { nombre = n; }\n    ~Estudiante() { cout << \"~\" << nombre << \" \"; }\n};\n\nclass Universidad {\n    vector<Estudiante*> estudiantes;\npublic:\n    void agregar(Estudiante* e) { estudiantes.push_back(e); }\n    ~Universidad() { cout << \"~Uni \"; }\n};\n\nint main() {\n    Estudiante ana(\"Ana\"), beto(\"Beto\");\n    {\n        Universidad u;\n        u.agregar(&ana);\n        u.agregar(&beto);\n    }\n    cout << \"| \";\n    return 0;\n}"
+    },
+    {
+     "id": "p10c2",
+     "lvl": 2,
+     "title": "Asociación: Taxi usa un Chofer",
+     "q": "<p>Completa la clase <code>Taxi</code> para que «use un» <code>Chofer</code>:</p><ul><li><code>void setChofer(Chofer* c)</code>: asocia el chofer.</li><li><code>string getNombreChofer()</code>: devuelve el nombre del chofer, o <code>\"Sin chofer\"</code> si todavía no tiene.</li></ul>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Chofer {\n    string nombre;\npublic:\n    Chofer(string n) { nombre = n; }\n    string getNombre() { return nombre; }\n};\n\nclass Taxi {\n    string placa;\n    Chofer* chofer;\npublic:\n    Taxi(string p) {\n        placa = p;\n        chofer = nullptr;\n    }\n    // completa: void setChofer(Chofer* c) y string getNombreChofer()\n};\n",
+       "tests": [
+        {
+         "n": "Sin chofer",
+         "main": "Taxi t(\"A1Z521\");\ncout << t.getNombreChofer() << endl;",
+         "out": "Sin chofer"
+        },
+        {
+         "n": "Asociar un chofer",
+         "main": "Chofer juan(\"Juan Perez\");\nTaxi t(\"A1Z521\");\nt.setChofer(&juan);\ncout << t.getNombreChofer() << endl;",
+         "out": "Juan Perez"
+        },
+        {
+         "n": "Cambiar de chofer",
+         "main": "Chofer a(\"Ana\"), b(\"Beto\");\nTaxi t(\"B2X100\");\nt.setChofer(&a);\nt.setChofer(&b);\ncout << t.getNombreChofer() << endl;",
+         "out": "Beto"
+        },
+        {
+         "n": "El chofer sigue existiendo sin el taxi",
+         "main": "Chofer ana(\"Ana\");\n{\n    Taxi t(\"C3Y200\");\n    t.setChofer(&ana);\n}\ncout << ana.getNombre() << endl;",
+         "out": "Ana"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La asociación necesita un atributo puntero (ya está: <code>Chofer* chofer</code>) y un método que lo asigne.",
+      "Antes de usar <code>chofer-&gt;</code> hay que comprobar que no sea <code>nullptr</code>. El taxi no hace <code>delete</code> del chofer: no es su dueño.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass Chofer {\n    string nombre;\npublic:\n    Chofer(string n) { nombre = n; }\n    string getNombre() { return nombre; }\n};\n\nclass Taxi {\n    string placa;\n    Chofer* chofer;\npublic:\n    Taxi(string p) {\n        placa = p;\n        chofer = nullptr;\n    }\n    void setChofer(Chofer* c) { chofer = c; }\n    string getNombreChofer() {\n        if (chofer == nullptr) return \"Sin chofer\";\n        return chofer-&gt;getNombre();\n    }\n};\n</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Comprueba nullptr antes de usar la flecha.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "asoc"
+      ],
+      [
+       "asoc"
+      ],
+      [
+       "asoc"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10c3",
+     "lvl": 3,
+     "title": "Composición: un evento con fecha y hora",
+     "q": "<p><code>CEvento</code> está <b>compuesto</b> por una <code>CFecha</code> y una <code>CHora</code>. Completa:</p><ul><li>El constructor <code>CEvento(string n, int d, int m, int a, int h, int mi)</code>, que construye la fecha y la hora.</li><li><code>void imprimir()</code>, que muestra <code>Navidad: 25/12/2019 06:00</code> y salta de línea (usa los <code>imprimir()</code> de cada parte).</li></ul><p class=\"note\">Ojo: CFecha y CHora no tienen constructor sin parámetros.</p>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <iomanip>\n#include <string>\nusing namespace std;\n\nclass CFecha {\n    int dia, mes, anio;\npublic:\n    CFecha(int d, int m, int a) { dia = d; mes = m; anio = a; }\n    void imprimir() {\n        cout << setfill('0') << setw(2) << dia << \"/\" << setw(2) << mes << \"/\" << anio;\n    }\n};\n\nclass CHora {\n    int hora, minuto;\npublic:\n    CHora(int h, int m) {\n        hora = (h >= 0 && h < 24) ? h : 0;\n        minuto = (m >= 0 && m < 60) ? m : 0;\n    }\n    void imprimir() {\n        cout << setfill('0') << setw(2) << hora << \":\" << setw(2) << minuto;\n    }\n};\n\nclass CEvento {\n    string nombre;\n    CFecha fecha;\n    CHora hora;\npublic:\n    // completa: CEvento(string n, int d, int m, int a, int h, int mi)\n    //           void imprimir()  ->  Navidad: 25/12/2019 06:00\n};\n",
+       "tests": [
+        {
+         "n": "Navidad",
+         "main": "CEvento e(\"Navidad\", 25, 12, 2019, 6, 0);\ne.imprimir();",
+         "out": "Navidad: 25/12/2019 06:00"
+        },
+        {
+         "n": "Hora inválida",
+         "main": "CEvento e(\"Open Day\", 9, 3, 2026, 25, 15);\ne.imprimir();",
+         "out": "Open Day: 09/03/2026 00:15"
+        },
+        {
+         "n": "Dos eventos",
+         "main": "CEvento a(\"Parcial\", 6, 10, 2026, 8, 30), b(\"Final\", 1, 12, 2026, 14, 5);\na.imprimir();\nb.imprimir();",
+         "out": "Parcial: 06/10/2026 08:30\nFinal: 01/12/2026 14:05"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Como las partes no tienen constructor sin parámetros, se construyen en la <b>lista de inicialización</b>: <code>: fecha(d, m, a), hora(h, mi)</code>.",
+      "imprimir delega en las partes: el evento no sabe cómo se imprime una fecha, se lo pide a su CFecha.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;iomanip&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nclass CFecha {\n    int dia, mes, anio;\npublic:\n    CFecha(int d, int m, int a) { dia = d; mes = m; anio = a; }\n    void imprimir() {\n        cout &lt;&lt; setfill('0') &lt;&lt; setw(2) &lt;&lt; dia &lt;&lt; \"/\" &lt;&lt; setw(2) &lt;&lt; mes &lt;&lt; \"/\" &lt;&lt; anio;\n    }\n};\n\nclass CHora {\n    int hora, minuto;\npublic:\n    CHora(int h, int m) {\n        hora = (h &gt;= 0 &amp;&amp; h &lt; 24) ? h : 0;\n        minuto = (m &gt;= 0 &amp;&amp; m &lt; 60) ? m : 0;\n    }\n    void imprimir() {\n        cout &lt;&lt; setfill('0') &lt;&lt; setw(2) &lt;&lt; hora &lt;&lt; \":\" &lt;&lt; setw(2) &lt;&lt; minuto;\n    }\n};\n\nclass CEvento {\n    string nombre;\n    CFecha fecha;\n    CHora hora;\npublic:\n    CEvento(string n, int d, int m, int a, int h, int mi) : fecha(d, m, a), hora(h, mi) {\n        nombre = n;\n    }\n    void imprimir() {\n        cout &lt;&lt; nombre &lt;&lt; \": \";\n        fecha.imprimir();\n        cout &lt;&lt; \" \";\n        hora.imprimir();\n        cout &lt;&lt; endl;\n    }\n};\n</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Después de los dos puntos del constructor.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "compo"
+      ],
+      [
+       "compo"
+      ],
+      [
+       "compo"
+      ]
+     ],
+     "lang": "cpp"
+    },
+    {
+     "id": "p10c4",
+     "lvl": 3,
+     "title": "Agregación: un estudiante tiene cursos",
+     "q": "<p>Un <code>Estudiante</code> <b>tiene</b> varios <code>Curso</code>. Completa:</p><ul><li><code>void agregar(Curso* c)</code>: lo agrega si no es <code>nullptr</code> y si no estaba ya.</li><li><code>int cantidad()</code>: cuántos cursos tiene.</li><li><code>void listar()</code>: imprime <code>Ana: Prog2, Calculo</code> (o <code>Ana: sin cursos</code>) y salta de línea.</li></ul>",
+     "checks": [
+      {
+       "t": "code",
+       "lang": "cpp",
+       "p": "Escribe tu código y compruébalo con las pruebas",
+       "start": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Curso {\n    string nombre;\npublic:\n    Curso(string n) { nombre = n; }\n    string getNombre() { return nombre; }\n};\n\nclass Estudiante {\n    string nombre;\n    vector<Curso*> cursos;\npublic:\n    Estudiante(string n) { nombre = n; }\n    // completa: void agregar(Curso* c), int cantidad(), void listar()\n};\n",
+       "tests": [
+        {
+         "n": "Agregar y listar",
+         "main": "Curso p(\"Prog2\"), c(\"Calculo\");\nEstudiante e(\"Ana\");\ne.agregar(&p);\ne.agregar(&c);\ne.listar();\ncout << e.cantidad() << endl;",
+         "out": "Ana: Prog2, Calculo\n2"
+        },
+        {
+         "n": "Sin cursos",
+         "main": "Estudiante e(\"Luis\");\ne.listar();",
+         "out": "Luis: sin cursos"
+        },
+        {
+         "n": "No repite ni acepta nullptr",
+         "main": "Curso p(\"Prog2\");\nEstudiante e(\"Rosa\");\ne.agregar(&p);\ne.agregar(&p);\ne.agregar(nullptr);\ncout << e.cantidad() << endl;",
+         "out": "1"
+        },
+        {
+         "n": "El curso existe sin el estudiante",
+         "main": "Curso p(\"Prog2\");\n{\n    Estudiante e(\"Beto\");\n    e.agregar(&p);\n}\ncout << p.getNombre() << endl;",
+         "out": "Prog2"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La agregación guarda punteros a objetos que existen aparte (<code>vector&lt;Curso*&gt;</code>) y tiene un método para agregarlos.",
+      "Para no repetir, se compara la dirección: el mismo curso es el mismo puntero.",
+      "El estudiante no hace <code>delete</code> de los cursos: no es su dueño.",
+      "Una solución posible:<pre class=\"cpp\"><code>#include &lt;iostream&gt;\n#include &lt;string&gt;\n#include &lt;vector&gt;\nusing namespace std;\n\nclass Curso {\n    string nombre;\npublic:\n    Curso(string n) { nombre = n; }\n    string getNombre() { return nombre; }\n};\n\nclass Estudiante {\n    string nombre;\n    vector&lt;Curso*&gt; cursos;\npublic:\n    Estudiante(string n) { nombre = n; }\n    void agregar(Curso* c) {\n        if (c == nullptr) return;\n        for (Curso* x : cursos)\n            if (x == c) return;\n        cursos.push_back(c);\n    }\n    int cantidad() { return cursos.size(); }\n    void listar() {\n        cout &lt;&lt; nombre &lt;&lt; \": \";\n        if (cursos.empty()) cout &lt;&lt; \"sin cursos\";\n        for (int i = 0; i &lt; (int)cursos.size(); ++i) {\n            if (i) cout &lt;&lt; \", \";\n            cout &lt;&lt; cursos[i]-&gt;getNombre();\n        }\n        cout &lt;&lt; endl;\n    }\n};\n</code></pre>"
+     ],
+     "ans": "Tu código pasa todas las pruebas",
+     "hint": "Recorre el vector antes de hacer push_back.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "agreg"
+      ],
+      [
+       "agreg"
+      ],
+      [
+       "agreg"
+      ],
+      [
+       "agreg"
+      ]
+     ],
+     "lang": "cpp"
+    }
+   ],
+   "lesson": "<h3>Idea central</h3><p>Lo que cambia entre las tres relaciones es <b>quién vive cuánto</b>: en la composición las partes mueren con el todo; en la asociación y la agregación cada objeto tiene vida propia.</p><h3>Conceptos clave</h3><ul><li>Asociación: «usa un» · flecha · atributo puntero + set.</li><li>Composición: «es parte de» · rombo lleno · atributos objeto + lista de inicialización.</li><li>Agregación: «tiene un(os)» · rombo vacío · vector de punteros + agregar.</li></ul><div class=\"ej\"><b>Ejemplo:</b> <code>CEvent e(6, 0, 12, 25, 2019, \"Navidad\");</code> construye primero <code>m_Time</code> y <code>m_Day</code>, y luego el cuerpo del constructor de CEvent.</div><div class=\"err\"><b>Error común:</b> en una composición asignar las partes dentro de las llaves del constructor cuando no tienen constructor sin parámetros: no compila. Van en la lista de inicialización, después de los dos puntos.</div>"
   }
  ],
  "figs": {},
@@ -1502,6 +3261,48 @@
    "f": "<code>X v[n];</code> · <code>new X[n]</code>",
    "x": "Se llama al constructor sin parámetros por elemento.",
    "home": "w9poo"
+  },
+  "pptr": {
+   "n": "Arreglo de punteros a objetos",
+   "f": "<code>X** v = new X*[n]; v[i] = new X(…);</code>",
+   "x": "Cada objeto se crea y se libera aparte; se usa con flecha.",
+   "home": "w10mem"
+  },
+  "delarr": {
+   "n": "delete vs. delete[]",
+   "f": "<code>new</code> ↔ <code>delete</code> · <code>new[]</code> ↔ <code>delete[]</code>",
+   "x": "Liberar de adentro hacia afuera y dejar nullptr.",
+   "home": "w10mem"
+  },
+  "smart": {
+   "n": "vector y shared_ptr",
+   "f": "<code>vector&lt;X*&gt;</code> · <code>make_shared&lt;X&gt;(…)</code>",
+   "x": "vector&lt;X*&gt; no libera los objetos; shared_ptr sí.",
+   "home": "w10mem"
+  },
+  "asoc": {
+   "n": "Asociación",
+   "f": "«usa un» · <code>X* m_x;</code> + <code>setX(X*)</code>",
+   "x": "Objetos independientes que trabajan juntos.",
+   "home": "w10rel"
+  },
+  "compo": {
+   "n": "Composición",
+   "f": "«es parte de» · <code>: parte(…)</code>",
+   "x": "Las partes nacen y mueren con el todo.",
+   "home": "w10rel"
+  },
+  "agreg": {
+   "n": "Agregación",
+   "f": "«tiene un(os)» · <code>vector&lt;X*&gt;</code>",
+   "x": "El todo agrupa objetos que existen sin él.",
+   "home": "w10rel"
+  },
+  "uml": {
+   "n": "Notación UML de relaciones",
+   "f": "→ asociación · ◆ composición · ◇ agregación",
+   "x": "El rombo va junto a la clase «todo».",
+   "home": "w10rel"
   }
  },
  "simEx": [],
@@ -1509,7 +3310,7 @@
   "minutes": 100,
   "slots": [
    {
-    "pts": 7,
+    "pts": 4,
     "name": "Clases: atributos, constructores y métodos (sem. 9)",
     "pool": [
      "oo10",
@@ -1517,15 +3318,25 @@
     ]
    },
    {
-    "pts": 7,
-    "name": "Objetos dinámicos y arreglos de objetos (sem. 9)",
+    "pts": 5,
+    "name": "Objetos dinámicos, arreglos de objetos y punteros dobles (sem. 9–10)",
     "pool": [
      "oo12",
-     "oo13"
+     "oo13",
+     "p10c1"
     ]
    },
    {
-    "pts": 6,
+    "pts": 7,
+    "name": "Relaciones entre clases (sem. 10)",
+    "pool": [
+     "p10c2",
+     "p10c3",
+     "p10c4"
+    ]
+   },
+   {
+    "pts": 4,
     "name": "Repaso: arreglos dinámicos y punteros",
     "pool": [
      "fpc_temps",
@@ -1534,15 +3345,15 @@
     ]
    }
   ],
-  "intro": "Simulacro acumulativo del examen final: la mayor parte es de la semana 9 en adelante y una pregunta de repaso. Se actualiza cada semana.",
+  "intro": "Simulacro acumulativo del examen final: la mayor parte es de las semanas 9 y 10 y una pregunta de repaso. Se actualiza cada semana.",
   "versions": [
    {
     "name": "💻 En computadora",
-    "desc": "Tres programas en 100 minutos, con compilador.",
+    "desc": "Cuatro programas en 100 minutos, con compilador.",
     "minutes": 100,
     "slots": [
      {
-      "pts": 7,
+      "pts": 4,
       "name": "Clases: atributos, constructores y métodos (sem. 9)",
       "pool": [
        "oo10",
@@ -1550,15 +3361,25 @@
       ]
      },
      {
-      "pts": 7,
-      "name": "Objetos dinámicos y arreglos de objetos (sem. 9)",
+      "pts": 5,
+      "name": "Objetos dinámicos, arreglos de objetos y punteros dobles (sem. 9–10)",
       "pool": [
        "oo12",
-       "oo13"
+       "oo13",
+       "p10c1"
       ]
      },
      {
-      "pts": 6,
+      "pts": 7,
+      "name": "Relaciones entre clases (sem. 10)",
+      "pool": [
+       "p10c2",
+       "p10c3",
+       "p10c4"
+      ]
+     },
+     {
+      "pts": 4,
       "name": "Repaso: arreglos dinámicos y punteros",
       "pool": [
        "fpc_temps",
@@ -1567,11 +3388,11 @@
       ]
      }
     ],
-    "intro": "Simulacro acumulativo del examen final: la mayor parte es de la semana 9 en adelante y una pregunta de repaso. Se actualiza cada semana."
+    "intro": "Simulacro acumulativo del examen final: la mayor parte es de las semanas 9 y 10 y una pregunta de repaso. Se actualiza cada semana."
    },
    {
     "name": "✍️ Escrito",
-    "desc": "Opción múltiple (lectura de código) y dos programas sin compilar.",
+    "desc": "Opción múltiple (lectura de código y teoría) y dos programas sin compilar.",
     "minutes": 100,
     "slots": [
      {
@@ -1587,40 +3408,68 @@
       "name": "Objetos dinámicos y this",
       "pool": [
        "oo4",
-       "oo6"
+       "oo6",
+       "p10t1"
       ]
      },
      {
       "pts": 1,
-      "name": "Encapsulamiento",
+      "name": "Encapsulamiento y lectura de clases",
       "pool": [
        "oo1",
        "oo5",
-       "oo7"
-      ]
-     },
-     {
-      "pts": 1,
-      "name": "Leer una clase (tipo PC2)",
-      "pool": [
+       "oo7",
        "oo8",
        "oo9"
       ]
      },
      {
       "pts": 1,
-      "name": "Repaso: funciones y punteros",
+      "name": "Memoria: new, delete y delete[] (sem. 10)",
       "pool": [
-       "ffu1",
-       "fpu2",
-       "fpu5",
-       "fpu6"
+       "p10m1",
+       "p10m2",
+       "p10m3",
+       "p10t4"
       ]
      },
      {
       "pts": 1,
-      "name": "Repaso: arreglos y vectores",
+      "name": "Arreglos de objetos y punteros dobles (sem. 10)",
       "pool": [
+       "p10t2",
+       "p10t3",
+       "p10t5",
+       "p10o1"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Tipos de relación y UML (sem. 10)",
+      "pool": [
+       "p10r1",
+       "p10r2",
+       "p10r3",
+       "p10r4"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Composición y agregación en código (sem. 10)",
+      "pool": [
+       "p10r5",
+       "p10r6",
+       "p10r7"
+      ]
+     },
+     {
+      "pts": 1,
+      "name": "Repaso: funciones, punteros, arreglos y vectores",
+      "pool": [
+       "ffu1",
+       "fpu2",
+       "fpu5",
+       "fpu6",
        "far4",
        "fma3",
        "fve3",
@@ -1628,19 +3477,23 @@
       ]
      },
      {
-      "pts": 7,
-      "name": "Escribe una clase (a mano)",
+      "pts": 6,
+      "name": "Escribe una clase o un arreglo de objetos (a mano)",
       "pool": [
        "oo10",
-       "oo11"
+       "oo11",
+       "oo12",
+       "oo13",
+       "p10c1"
       ]
      },
      {
-      "pts": 7,
-      "name": "Objetos dinámicos o arreglo de objetos (a mano)",
+      "pts": 6,
+      "name": "Relaciones entre clases (a mano)",
       "pool": [
-       "oo12",
-       "oo13"
+       "p10c2",
+       "p10c3",
+       "p10c4"
       ]
      }
     ],

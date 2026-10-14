@@ -1038,6 +1038,28 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 .pdots{display:inline-flex;gap:4px;padding:6px 0}.pdots i{width:7px;height:7px;border-radius:50%;background:var(--sol);opacity:.3;animation:pdot 1s infinite}.pdots i:nth-child(2){animation-delay:.15s}.pdots i:nth-child(3){animation-delay:.3s}
 @keyframes pdot{50%{opacity:1;transform:translateY(-3px)}}
 .ppbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--sol);background:var(--sol-bg);color:var(--sol);font:700 .85rem Figtree,sans-serif;padding:6px 12px;border-radius:999px;cursor:pointer}.ppbtn img{width:20px;height:20px;border-radius:50%}
+.memw{display:grid;gap:8px;min-width:0}
+.memc{background:var(--grid);border:1px solid var(--line);border-radius:8px;padding:6px 0;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto}
+.memc .ml{padding:1px 10px;white-space:pre;border-left:3px solid transparent;min-height:1.5em}
+.memc .ml.done{color:var(--muted)}.memc .ml.cur{background:color-mix(in srgb,var(--cyan) 18%,transparent);border-left-color:var(--cyan);color:var(--ink)}
+.memc .ml.err{background:var(--bad-bg);border-left-color:var(--bad);color:var(--ink)}
+.memc select{font:inherit;max-width:calc(100% - 4px);border:1.5px dashed var(--teo);border-radius:6px;background:var(--card);color:var(--ink);padding:1px 4px}
+.memc select.good,.memc select.rev{border:1.5px solid var(--ok);background:var(--ok-bg)}.memc select.bad{border:1.5px solid var(--bad);background:var(--bad-bg)}
+.memb{display:flex;gap:6px;flex-wrap:wrap}.memb button{min-width:44px}
+.memm{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:8px}
+.mmc{border:1.5px solid var(--line);border-radius:8px;padding:6px;min-height:64px;background:var(--card);min-width:0}
+.mmc.hp{display:flex;flex-wrap:wrap;gap:0 5px;align-content:flex-start}.mmc.hp>*{flex:1 1 100%}.mmc.hp>.mb.sm{flex:1 1 84px;max-width:calc(50% - 3px)}
+.mmc h5{margin:0 0 2px;font:800 .72rem Figtree,sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.mme{margin:4px 0;color:var(--muted);font-size:.8rem}
+.mv,.mb{border:1.5px solid var(--ink);border-radius:6px;padding:3px 6px;margin:4px 0;font:11.5px/1.4 ui-monospace,Menlo,Consolas,monospace;background:var(--card);overflow-wrap:anywhere}
+.mb{border-left:5px solid var(--c)}.mb .mh{display:flex;flex-wrap:wrap;gap:2px 6px;font-weight:700}
+.mb .mh i,.pv i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c,var(--muted));margin-right:3px;vertical-align:middle}
+.mb .cells{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px}.cell{border:1px solid var(--line);border-radius:4px;padding:0 4px;white-space:nowrap}
+.mb.freed{opacity:.5;border-style:dashed}.mb.freed .cells{text-decoration:line-through}
+.mb.lost{border-color:var(--bad);border-left-color:var(--bad);background:var(--bad-bg)}
+.memw .tg{font:700 10.5px Figtree,sans-serif;color:var(--muted)}.memw .tg.bad{color:var(--bad)}
+.pv{font-weight:700;color:var(--c,var(--ink));white-space:nowrap}.pv.bad{color:var(--bad)}
+.mmsg p{margin:3px 0;font-size:.9rem}.mmsg .bad{color:var(--bad)}.mmsg .ok{color:var(--ok)}
 </style>
 </head>
 <body>
@@ -3824,6 +3846,111 @@ LW.kin=(b,o)=>{const fig=el('div','plfig kinw'),ro=el('div','plro');b.append(fig
   draw()};
 LW.graph=(b,o)=>{b.innerHTML='<div class="chfig">'+plotSVG(o)+'</div>'};
 
+/* ================= MEMORIA C++ (Programación II) =================
+   Mapa de memoria stack/heap paso a paso. Cada línea: {c:"código", op:[[…],…]} o hueco {h:[{c,op,e},…]} (la correcta primero; se baraja).
+   Ops: sobj v x y · ptr v · ref v w · new v x y · newa v n [[x,y]…] · newp v n · seti v i x y · asg v i x y · del v · dela v ·
+        deli v i · delall v · null v · nulli v i · use v · usei v i · vec v [[x,y]…] · vecp v [[x,y]…] · sptr v [[x,y]…] · fail msg (no compila) · end
+   Pregunta: {"t":"mem","lines":[…],"e":…} (nota = huecos bien). Herramienta: {"w":"mem","o":{"lines":[…],"cls":"CPunto2D"}}. */
+const MEMCOL=['#2C5BD0','#17875A','#D06A12','#7446C0','#B03A7A','#0098C8','#C58A00','#5B6882'];
+function memRun(lines,pick,upto){
+  const S={st:[],hp:[],err:null,errLine:-1,line:-1,ended:false,notes:[]};let oa=0x1008,pa=0x2000,nid=0;
+  const sv=n=>S.st.find(x=>x.n===n),get=id=>S.hp.find(x=>x.id===id);
+  const nb=(kind,o)=>{const b={id:nid++,kind,vals:o.vals||[],slots:o.slots||[],alive:true,auto:!!o.auto,col:MEMCOL[nid%MEMCOL.length]};
+    if(kind==='parr'||kind==='vbuf'){b.addr=pa;pa+=8*Math.max(1,b.slots.length)}else{b.addr=oa;oa+=8*Math.max(1,b.vals.length)}S.hp.push(b);return b};
+  const P=n=>{const v=sv(n);if(!v)throw 'La variable '+n+' no existe todavía.';return v};
+  const tgt=(n)=>{const v=P(n);if(v.to==null)throw 'Usas '+n+' pero vale nullptr.';if(typeof v.to==='string')return null;const b=get(v.to);if(!b.alive)throw 'Usas '+n+' pero esa memoria ya se liberó (puntero colgante).';return b};
+  const setp=(n,to)=>{let o=sv(n);if(!o){o={n,k:'ptr'};S.st.push(o)}o.to=to};
+  const free=b=>{b.alive=false;b.freed=S.line};
+  const kid=(b,i)=>{if(i>=b.slots.length)throw 'Índice '+i+' fuera del arreglo (tiene '+b.slots.length+').';return b.slots[i]};
+  const ops={
+   sobj:(n,x,y)=>S.st.push({n,k:'obj',x,y}),
+   ptr:n=>setp(n,null),
+   ref:(n,w)=>{P(w);setp(n,'s:'+w)},
+   new:(n,x,y)=>setp(n,nb('obj',{vals:[[x,y]]}).id),
+   newa:(n,k,vals)=>setp(n,nb('arr',{vals:Array.from({length:k},(_,i)=>(vals&&vals[i])||[0,0])}).id),
+   newp:(n,k)=>setp(n,nb('parr',{slots:Array(k).fill(null)}).id),
+   seti:(n,i,x,y)=>{const b=tgt(n);if(!b||b.kind!=='parr')throw n+' no es un arreglo de punteros: '+n+'['+i+'] = new … no corresponde.';kid(b,i);b.slots[i]=nb('obj',{vals:[[x,y]]}).id},
+   asg:(n,i,x,y)=>{const b=tgt(n);if(!b||b.kind!=='arr')throw n+' no es un arreglo de objetos.';if(i>=b.vals.length)throw 'Índice '+i+' fuera del arreglo.';b.vals[i]=[x,y]},
+   del:n=>{const o=P(n);if(o.to==null){S.notes.push('delete '+n+' con nullptr no hace nada.');return}
+     if(typeof o.to==='string')throw 'delete '+n+': '+n+' apunta a una variable del stack, que no se creó con new.';
+     const b=get(o.to);if(!b.alive)throw 'delete '+n+' por segunda vez: esa memoria ya estaba liberada (doble delete).';
+     if(b.kind!=='obj')throw 'delete '+n+' con un arreglo creado con new[]: debe ser delete[] '+n+'.';free(b)},
+   dela:n=>{const o=P(n);if(o.to==null){S.notes.push('delete[] con nullptr no hace nada.');return}
+     if(typeof o.to==='string')throw 'delete[] '+n+': no se creó con new[].';const b=get(o.to);if(!b.alive)throw 'delete[] '+n+' por segunda vez (doble delete).';
+     if(b.kind==='obj')throw 'delete[] '+n+' con un solo objeto (creado con new, sin corchetes): debe ser delete '+n+'.';free(b)},
+   deli:(n,i)=>{const b=tgt(n);if(!b||(b.kind!=='parr'&&b.kind!=='vbuf'))throw n+'['+i+'] no es un puntero: '+n+' es un arreglo de objetos, no de punteros.';const id=kid(b,i);
+     if(id==null){S.notes.push('delete '+n+'['+i+'] con nullptr no hace nada.');return}const c=get(id);if(!c.alive)throw 'delete '+n+'['+i+'] por segunda vez (doble delete).';if(c.auto)throw n+'['+i+'] lo maneja un shared_ptr: no se borra con delete.';free(c)},
+   delall:n=>{const b=tgt(n);if(!b||(b.kind!=='parr'&&b.kind!=='vbuf'))throw 'delete '+n+'[i]: '+n+' no guarda punteros.';b.slots.forEach((id,i)=>ops.deli(n,i))},
+   null:n=>{P(n).to=null},
+   nulli:(n,i)=>{const b=tgt(n);kid(b,i);b.slots[i]=null},
+   use:n=>{tgt(n)},
+   usei:(n,i)=>{const b=tgt(n);if(b&&(b.kind==='parr'||b.kind==='vbuf')){const id=kid(b,i);if(id==null)throw n+'['+i+'] vale nullptr.';if(!get(id).alive)throw n+'['+i+'] apunta a memoria ya liberada (colgante).'}},
+   vec:(n,vals)=>S.st.push({n,k:'vec',to:nb('arr',{vals:vals.map(v=>v.slice()),auto:true}).id}),
+   vecp:(n,vals)=>{const s=vals.map(p=>nb('obj',{vals:[p]}).id);S.st.push({n,k:'vecp',to:nb('vbuf',{slots:s,auto:true}).id})},
+   sptr:(n,vals)=>{const s=vals.map(p=>nb('obj',{vals:[p],auto:true}).id);S.st.push({n,k:'sptr',to:nb('vbuf',{slots:s,auto:true}).id})},
+   fail:m=>{throw m},
+   end:()=>{S.ended=true;S.hp.forEach(b=>{if(b.alive&&b.auto)free(b)})}};
+  for(let i=0;i<=Math.min(upto,lines.length-1);i++){const l=lines[i];S.line=i;
+    if(l.h&&(pick[i]==null||pick[i]<0)){S.err='Elige la línea que falta para seguir.';S.errLine=i;S.miss=true;break}
+    const op=l.h?l.h[pick[i]].op:l.op;
+    try{(op||[]).forEach(a=>{const f=ops[a[0]];if(!f)throw 'Operación desconocida: '+a[0];f(...a.slice(1))})}catch(e){S.err=String(e);S.errLine=i;break}}
+  /* alcanzables desde el stack */
+  const seen=new Set(),q=[];S.st.forEach(v=>{if(typeof v.to==='number')q.push(v.to)});
+  while(q.length){const id=q.pop();if(seen.has(id))continue;const b=get(id);if(!b||!b.alive)continue;seen.add(id);b.slots.forEach(s=>{if(s!=null)q.push(s)})}
+  S.hp.forEach(b=>{b.lost=b.alive&&!b.auto&&!seen.has(b.id);b.leak=S.ended&&b.alive&&!b.auto});
+  S.get=get;return S}
+function memUI(lines,o){o=o||{};const cls=o.cls||'CPunto2D';const w=el('div','memw');
+  const code=el('div','memc'),bar=el('div','memb'),map=el('div','memm'),msg=el('div','mmsg');
+  const hx=a=>'0x'+a.toString(16).toUpperCase();const es=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const pick=lines.map(l=>l.h?-1:null);const sels=[];const rows=[];let cur=-1,lk=false;
+  lines.forEach((l,i)=>{const r=el('div','ml');
+    if(l.h){const ind=(l.c||'').match(/^\s*/)[0]||(l.ind?' '.repeat(l.ind):'');if(ind)r.append(document.createTextNode(ind));
+      const s=document.createElement('select');s.setAttribute('aria-label','Línea que falta '+(i+1));const z=document.createElement('option');z.value='-1';z.textContent='— elige —';s.append(z);
+      const ord=l.h.map((_,k)=>k);if(!o.noShuffle)for(let k=ord.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[ord[k],ord[j]]=[ord[j],ord[k]]}
+      ord.forEach(k=>{const op=document.createElement('option');op.value=k;op.textContent=l.h[k].c.trim();s.append(op)});
+      s.onchange=()=>{pick[i]=+s.value;s.classList.remove('good','bad');cur=-1;draw();o.on&&o.on()};r.append(s);sels.push({s,i})}
+    else r.innerHTML=es(l.c);code.append(r);rows.push(r)});
+  const b0=el('button',null,'⏮');b0.type='button';b0.setAttribute('aria-label','Volver al inicio');
+  const b1=el('button','pri','▶ Paso');b1.type='button';const b2=el('button',null,'⏩ Todo');b2.type='button';
+  b0.onclick=()=>{cur=-1;draw()};b1.onclick=()=>{if(cur<lines.length-1)cur++;draw()};b2.onclick=()=>{cur=lines.length-1;draw()};bar.append(b0,b1,b2);
+  const cs=el('div','mmc'),ch=el('div','mmc hp');map.append(cs,ch);
+  function draw(){const S=memRun(lines,pick,cur);const get=S.get;
+    rows.forEach((r,i)=>{r.classList.toggle('cur',i===cur&&!S.err);r.classList.toggle('done',i<cur);r.classList.toggle('err',i===S.errLine)});
+    const pv=to=>{if(to==null)return'<span class="pv">nullptr</span>';if(typeof to==='string')return'<span class="pv">&amp;'+es(to.slice(2))+'</span>';const b=get(to);
+      return'<span class="pv'+(b.alive?'':' bad')+'" style="--c:'+b.col+'"><i></i>'+hx(b.addr)+(b.alive?'':' ⚠️')+'</span>'};
+    cs.innerHTML='<h5>Stack</h5>';ch.innerHTML='<h5>Heap</h5>';
+    if(!S.st.length)cs.append(el('p','mme','(vacío)'));
+    S.st.forEach(v=>{let h='<b>'+es(v.n)+'</b> ';
+      if(v.k==='obj')h+='<span class="cell">x:'+v.x+' y:'+v.y+'</span> <span class="tg">'+cls+'</span>';
+      else if(v.k==='ptr'){h+='→ '+pv(v.to);const b=typeof v.to==='number'&&get(v.to);if(b&&!b.alive)h+=' <span class="tg bad">colgante</span>'}
+      else h+='→ '+pv(v.to)+' <span class="tg">'+({vec:'vector&lt;'+cls+'&gt;',vecp:'vector&lt;'+cls+'*&gt;',sptr:'vector&lt;shared_ptr&gt;'})[v.k]+'</span>';
+      cs.append(el('div','mv',h))});
+    const hp=S.hp.filter(b=>b.alive||b.freed===S.line);if(!hp.length)ch.append(el('p','mme','(vacío)'));
+    hp.forEach(b=>{const d=el('div','mb'+(b.kind==='obj'?' sm':'')+(b.alive?'':' freed')+(b.lost||b.leak?' lost':''));d.style.setProperty('--c',b.col);
+      const nm=b.kind==='obj'?cls:b.kind==='arr'?cls+'['+b.vals.length+']':b.kind==='parr'?cls+'*['+b.slots.length+']':'búfer del vector';
+      let tg=b.auto?'<span class="tg">automático</span>':'';if(!b.alive)tg='<span class="tg">liberado</span>';else if(b.leak)tg='<span class="tg bad">fuga</span>';else if(b.lost)tg='<span class="tg bad">perdido</span>';
+      let h='<div class="mh"><span><i></i>'+hx(b.addr)+'</span><span>'+nm+'</span>'+tg+'</div><div class="cells">';
+      if(b.kind==='obj'||b.kind==='arr')h+=b.vals.map(v=>'<span class="cell">'+v[0]+','+v[1]+'</span>').join('');
+      else h+=b.slots.map(s=>'<span class="cell">'+(s==null?'null':pv(s))+'</span>').join('');
+      d.innerHTML=h+'</div>';ch.append(d)});
+    const m=[];if(cur<0)m.push(['','Toca ▶ para ejecutar línea por línea.']);
+    else if(S.err)m.push([S.miss?'':'bad',(S.miss?'✋ ':'❌ Línea '+(S.errLine+1)+': ')+es(S.err)]);
+    else{S.notes.forEach(t=>m.push(['',es(t)]));const lost=S.hp.filter(b=>b.lost&&!S.ended);if(lost.length)m.push(['bad','🔴 '+(lost.length===1?'Un bloque quedó':lost.length+' bloques quedaron')+' sin ningún puntero que lo apunte: ya no se puede liberar (fuga).']);
+      if(S.ended){const lk2=S.hp.filter(b=>b.leak);if(lk2.length)m.push(['bad','🔴 El programa terminó con '+lk2.length+(lk2.length===1?' bloque':' bloques')+' sin liberar: fuga de memoria.']);
+        else m.push(['ok','✅ Memoria limpia: todo lo que se creó con new se liberó.'+(S.hp.some(b=>b.auto)?' Lo automático (vector, shared_ptr) se liberó solo.':'')]);
+        const dg=S.st.filter(v=>typeof v.to==='number'&&!get(v.to).alive&&v.k==='ptr');if(dg.length&&!lk2.length)m.push(['','💡 '+dg.map(v=>v.n).join(', ')+' quedó apuntando a memoria liberada. No falla, pero lo seguro es asignarle nullptr.'])}}
+    msg.innerHTML=m.map(x=>'<p class="'+x[0]+'">'+x[1]+'</p>').join('');w.dataset.st=S.err?'err':S.ended?(S.hp.some(b=>b.leak)?'leak':'ok'):'run'}
+  w.append(code,bar,map,msg);draw();
+  return{el:w,sels,pick,draw,run(){cur=lines.length-1;draw()},reset(){cur=-1;draw()},get lk(){return lk},set lk(v){lk=v;sels.forEach(x=>x.s.disabled=v)}}}
+LW.mem=(b,o)=>{b.append(memUI(o.lines||[],o).el)};
+IW.mem=(ch,o)=>{const u=memUI(ch.lines,{cls:ch.cls,on:o.on});const H=u.sels;
+  return{el:u.el,note:'Elige cada línea que falta y usa ▶ o ⏩ para ver qué pasa en la memoria con tu versión.',need:'Elige todas las líneas que faltan.',
+   filled:()=>H.every(x=>u.pick[x.i]>=0),
+   grade(){const bad=H.filter(x=>u.pick[x.i]!==0);const ex=bad.map(x=>{const e=ch.lines[x.i].h[u.pick[x.i]].e;return e?'<br>• <code>'+ch.lines[x.i].h[u.pick[x.i]].c.trim().replace(/</g,'&lt;')+'</code>: '+e:''}).join('');
+    return{f:(H.length-bad.length)/H.length,msg:bad.length?(bad.length===1?'Una línea no va (en rojo).':bad.length+' líneas no van (en rojo).')+ex+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){H.forEach(x=>{const k=u.pick[x.i]===0;x.s.classList.toggle('good',k);x.s.classList.toggle('bad',!k)});u.run()},
+   reveal(){H.forEach(x=>{if(u.pick[x.i]!==0){x.s.value='0';u.pick[x.i]=0;x.s.classList.remove('bad');x.s.classList.add('rev')}else x.s.classList.add('good')});u.run()},
+   lock(){u.lk=true}}};
 const isIW=ch=>!!(ch&&ch.t&&IW[ch.t]);
 /* Práctica/guía: widget + botón Comprobar. cb={onTry,onBad,onGood} */
 function iwPractice(ch,box,fb,qi,pre,cb,e,key){const w=IW[ch.t](ch,{key,pre});box.append(w.el);
