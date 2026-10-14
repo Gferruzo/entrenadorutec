@@ -4810,12 +4810,7 @@ if(cloudDone)firstCheck();else{onCloud.push(firstCheck);setTimeout(()=>{if(!clou
 tmTick();
 
 /* Puente de solo lectura para la mascota (pullpy/pullpy.js) */
-window.PPB={get view(){return view},get TM(){return TM},get NOTI(){return NOTI},nvList,nvCounts,examNow,confetti,typeset,
-  get ctx(){try{if(!C||view==='menu')return null;const t=(view==='course'&&T&&st)?T[st.topic]:null;return{curso:C.name,bloque:C.exam||'',tema:t?t.name:'',teoria:t?pullpy.txt(t.teo,3500):''}}catch(e){return null}},
-  review(){const out=[];(COURSES||[]).forEach(c=>{try{if(c.soon||!c.topics)return;const x=stats(c);if(!x.solved)return;
-    const w=x.per.filter(p=>p.acc!=null&&p.acc<.85).sort((a,b)=>a.acc-b.acc)[0];const nx=x.per.find(p=>p.d>0&&p.d<p.n)||x.per.find(p=>p.d<p.n);
-    out.push({curso:c.name,bloque:c.exam||'',debil:w?w.name:null,acc:w?w.acc:null,sig:nx?nx.name:null,pct:x.total?x.solved/x.total:0})}catch(e){}});return out},
-  logged(){return !!pullpy.user()},login(){syncClick()}};
+window.PPB={get view(){return view},get TM(){return TM},get NOTI(){return NOTI},nvList,nvCounts,examNow,confetti};
 
 renderMenu();
 })();
