@@ -16,17 +16,42 @@ const MODELOS = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.5-flash-li
 const NECESITA_LOGIN = true;                     // solo usuarios con sesión iniciada
 const MAX_DATA = 16000;                          // tamaño máximo de lo que manda la app
 
-const PERSONA = `Eres Pullpy, el pulpito con birrete de NotPull, una app gratuita para que estudiantes de la UTEC (Lima, Perú) practiquen para sus exámenes.
+const PERSONA = `Eres Pullpy, el pulpito con birrete de NotPull, una app gratuita para que universitarios en Perú (empezó en la UTEC, Lima) practiquen para sus exámenes.
 Hablas en español peruano, casual y cercano, pero claro y preciso. Respuestas cortas, pensadas para leerse en el celular.
 Te basas solo en el material del curso que te pasa la app (teoría, enunciado, solución). Si algo no está ahí, no lo inventes.
-Escribe las fórmulas en LaTeX entre \\( y \\). Usa **negritas** con moderación. No uses tablas ni encabezados.`;
+Escribe las fórmulas en LaTeX entre \\( y \\). Usa **negritas** con moderación. No uses tablas, encabezados ni emojis.`;
 
 /* Cada tarea: prompt(d) arma el mensaje con los datos que manda la app.
  * Opcionales: sys (instrucciones extra), max (tokens de salida), temp (temperatura). */
 const TASKS = {
   prueba: { max: 120, temp: 0.8, prompt: () => 'Saluda en una sola línea y di que ya estás conectado a NotPull.' },
-  // Aquí van las funciones de Pullpy, por ejemplo:
-  // explica: { max: 500, sys: '...', prompt: d => `...${JSON.stringify(d)}` },
+  // Chat (se abre al tocar a Pullpy). d = {modo, mensaje, curso, bloque, tema, teoria, historial:[{de,texto}]}
+  chat: {
+    max: 450, temp: 0.5,
+    sys: `Estás en el chat de NotPull. Habla solo de estudio: los cursos y temas del estudiante, técnicas para estudiar, organizarse para exámenes, manejar el estrés de los exámenes y cómo usar NotPull.
+Si te piden algo fuera de eso (tareas para copiar, otros temas, chistes, código ajeno al curso), dilo amablemente en una línea y ofrece volver al estudio.
+Nunca hagas la tarea o examen por el estudiante: guíalo para que entienda y lo resuelva.
+Si el estudiante menciona algo emocional serio (se siente muy mal, no puede más), responde con calma y empatía, y sugiérele hablar con alguien de confianza o con el área de bienestar de su universidad.
+Máximo unas 120 palabras, salvo que pida un plan de estudio. Termina, cuando tenga sentido, con una pregunta corta para seguir.`,
+    prompt: d => {
+      const modo = {
+        facil: 'Explica el tema actual de forma más sencilla, con una idea clave y una analogía corta.',
+        ejemplo: 'Da un ejemplo resuelto corto del tema actual, paso a paso, distinto a los típicos si puedes.',
+        pregunta: 'Hazle al estudiante UNA pregunta corta para comprobar si entendió el tema actual. No des la respuesta; espera a que responda.',
+        plan: 'Ayúdale a organizarse para su examen. Si no sabes cuándo es o qué curso, pregúntaselo primero en una línea. Si ya lo sabes, arma un plan breve día por día.',
+        libre: 'Responde el mensaje del estudiante.',
+      }[d.modo] || 'Responde el mensaje del estudiante.';
+      const h = (Array.isArray(d.historial) ? d.historial : []).slice(-6).map(m => (m.de === 'pullpy' ? 'Pullpy: ' : 'Estudiante: ') + String(m.texto || '').slice(0, 700)).join('\n');
+      return [
+        'Tarea: ' + modo,
+        d.curso ? 'Curso: ' + d.curso + (d.bloque ? ' (' + d.bloque + ')' : '') : 'El estudiante está en el menú principal (no hay un curso abierto).',
+        d.tema ? 'Tema actual: ' + d.tema : '',
+        d.teoria ? 'Teoría del tema (material de NotPull):\n' + String(d.teoria).slice(0, 3500) : '',
+        h ? 'Conversación hasta ahora:\n' + h : '',
+        'Mensaje del estudiante: ' + String(d.mensaje || '').slice(0, 400),
+      ].filter(Boolean).join('\n\n');
+    },
+  },
 };
 
 export default {

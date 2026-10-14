@@ -243,7 +243,7 @@
   }
   bub.addEventListener('click', close);
 
-  /* ---------- toque: feliz (+ frase o consejo) · mantener presionado: esconder ---------- */
+  /* ---------- toque: abre el chat · mantener presionado: esconder ---------- */
   let pressT = null, longPress = false;
   hit.addEventListener('pointerdown', () => { longPress = false; pressT = setTimeout(() => { longPress = true; toggleMini(true); }, 650); });
   ['pointerup', 'pointerleave', 'pointercancel'].forEach(e => hit.addEventListener(e, () => clearTimeout(pressT)));
@@ -252,9 +252,7 @@
     if (longPress) return;
     if (mini) return toggleMini(false);
     if (speaking) close();
-    set('happy');
-    if (tired()) { setTimeout(() => say(FR.sinEnergia), 900); return; }
-    if (Math.random() < .55) setTimeout(() => say(Math.random() < .6 ? pick('consejos') : pick('toque'), { hold: 4500 }), 900);
+    Chat.open();
   });
   function toggleMini(on) {
     mini = on; SS.set('pp-mini', on ? '1' : '0');
@@ -263,6 +261,174 @@
     if (on) { close(); }
     place(true);
   }
+
+
+  /* ================= CHAT con Pullpy =================
+   * Se abre al tocarlo. Botones rápidos según dónde estés (menú o curso) + cuadro para escribir.
+   * Lo que se puede responder sin IA (qué repasar, cómo usar NotPull) no gasta cupo.
+   * La IA usa la tarea 'chat' de pullpy/worker.js. Máximo 3 respuestas de IA por conversación. */
+  const AYUDA = {
+    'El modo GUÍA y el simulacro': 'En cada curso, el botón «Guía y simulacro» te deja elegir. La GUÍA tiene preguntas tipo examen con la solución paso a paso, la teoría y el formulario a la mano. El SIMULACRO es como el examen real: con tiempo y la nota al final. Lo ideal es hacer primero la guía y después el simulacro.',
+    'El modo de estudio y el Pomodoro': 'Arriba está el botón del modo de estudio. «Enfocado» usa Pomodoro: 45 minutos de estudio y 10 de descanso. «Modo Examen» te prepara con simulacros, «Sin presión» es sin temporizador y en «A tu medida» eliges tus propios tiempos. Yo te aviso cuando falta poco para el descanso.',
+    'Guardar mi progreso': 'Toca «Iniciar sesión» arriba a la izquierda y entra con Google. Así tu progreso se guarda en la nube y lo ves en cualquier celular o compu. Sin sesión, se guarda solo en este navegador.',
+    'Mis cursos y novedades': 'Con «Elegir mis cursos» pones primero los cursos que llevas este ciclo; el resto queda en «Otros cursos». La campanita te avisa cuando hay un curso nuevo o uno se actualizó.',
+    'Aportar material': 'En el menú hay una sección para aportar material: clases, guías o exámenes pasados. Llega directo al equipo de NotPull y lo revisamos para agregarlo a los cursos.'
+  };
+  const MODOS = {
+    facil: 'Explícame este tema más fácil',
+    ejemplo: 'Dame un ejemplo',
+    pregunta: 'Hazme una pregunta',
+    plan: 'Organízame para mi examen'
+  };
+  const Chat = (() => {
+    let el = null, list, input, chips, sendB, open = false, ctxKey = '', hist = [], aiN = 0, busy = false;
+    const MAX_IA = 3;
+    const ccss = `
+#ppchat{position:fixed;inset:0;z-index:52;display:none}
+#ppchat.on{display:block}
+#ppchat .pc-bg{position:absolute;inset:0;background:rgba(10,18,32,.45);animation:pc-fade .2s ease}
+#ppchat .pc-sh{position:absolute;left:0;right:0;bottom:0;max-height:min(78dvh,640px);display:flex;flex-direction:column;background:var(--card,#fff);color:var(--ink,#2B2B2B);border-radius:20px 20px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px);animation:pc-up .25s cubic-bezier(.2,.8,.3,1)}
+@media (min-width:760px){#ppchat .pc-sh{left:auto;right:20px;bottom:20px;width:400px;border-radius:20px;max-height:min(80dvh,640px)}}
+#ppchat .pc-hd{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;border-bottom:1px solid var(--line,#e3e7ee)}
+#ppchat .pc-av{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--paper,#f4f7fa);border:1.5px solid var(--line,#e3e7ee);flex:0 0 40px;position:relative}
+#ppchat .pc-av img{position:absolute;width:128%;left:-14%;top:-6%}
+#ppchat .pc-tt{flex:1;min-width:0}#ppchat .pc-tt b{display:block;font:800 1rem Figtree,system-ui,sans-serif}
+#ppchat .pc-tt small{display:block;font:500 .78rem Figtree,system-ui,sans-serif;color:var(--muted,#6b7486);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#ppchat .pc-x{border:0;background:none;color:inherit;font-size:22px;line-height:1;width:36px;height:36px;border-radius:50%;cursor:pointer}
+#ppchat .pc-x:hover{background:var(--paper,#f1f4f8)}
+#ppchat .pc-ls{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:120px;overscroll-behavior:contain}
+#ppchat .pc-m{max-width:86%;padding:9px 12px;border-radius:16px;font:500 .93rem/1.45 Figtree,system-ui,sans-serif;word-wrap:break-word}
+#ppchat .pc-m p{margin:.2em 0}#ppchat .pc-m ul{margin:.25em 0;padding-left:1.2em}
+#ppchat .pc-p{align-self:flex-start;background:var(--paper,#f1f4f8);border-bottom-left-radius:4px}
+#ppchat .pc-u{align-self:flex-end;background:var(--ink,#2B2B2B);color:var(--card,#fff);border-bottom-right-radius:4px}
+#ppchat .pc-m.err{color:var(--bad,#c0392b)}
+#ppchat .pc-m .pc-b{display:inline-block;margin-top:6px;border:1.5px solid var(--ink,#2B2B2B);background:var(--card,#fff);color:var(--ink,#2B2B2B);font:700 .85rem Figtree,system-ui,sans-serif;padding:6px 12px;border-radius:999px;cursor:pointer}
+#ppchat .pc-dots i{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:currentColor;opacity:.3;animation:pp-dot 1.2s infinite}
+#ppchat .pc-dots i:nth-child(2){animation-delay:.2s}#ppchat .pc-dots i:nth-child(3){animation-delay:.4s}
+#ppchat .pc-ch{display:flex;gap:6px;overflow-x:auto;padding:8px 14px 2px;scrollbar-width:none}
+#ppchat .pc-ch::-webkit-scrollbar{display:none}
+#ppchat .pc-ch button{flex:0 0 auto;border:1.5px solid var(--line,#d5dbe5);background:var(--card,#fff);color:var(--ink,#2B2B2B);font:600 .84rem Figtree,system-ui,sans-serif;padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#ppchat .pc-ch button:hover{border-color:var(--ink,#2B2B2B)}
+#ppchat .pc-ch button:disabled{opacity:.45;cursor:default}
+#ppchat .pc-in{display:flex;gap:8px;padding:8px 14px 12px}
+#ppchat .pc-in textarea{flex:1;resize:none;border:1.5px solid var(--line,#d5dbe5);background:var(--paper,#f8fafc);color:inherit;border-radius:14px;padding:9px 12px;font:500 16px/1.35 Figtree,system-ui,sans-serif;max-height:110px}
+#ppchat .pc-in textarea:focus{outline:none;border-color:var(--ink,#2B2B2B)}
+#ppchat .pc-in button{flex:0 0 44px;height:44px;align-self:flex-end;border:0;border-radius:50%;background:var(--ink,#2B2B2B);color:var(--card,#fff);font-size:18px;cursor:pointer}
+#ppchat .pc-in button:disabled{opacity:.4}
+@keyframes pc-up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pc-fade{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){#ppchat .pc-sh,#ppchat .pc-bg{animation:none}}
+`;
+    function build() {
+      const st = document.createElement('style'); st.textContent = ccss; document.head.appendChild(st);
+      el = document.createElement('div'); el.id = 'ppchat';
+      el.innerHTML = '<div class="pc-bg"></div><div class="pc-sh" role="dialog" aria-label="Chat con Pullpy">' +
+        '<div class="pc-hd"><div class="pc-av"><img src="' + IMG + '" alt=""></div><div class="pc-tt"><b>Pullpy</b><small></small></div><button class="pc-x" type="button" aria-label="Cerrar">×</button></div>' +
+        '<div class="pc-ls" aria-live="polite"></div><div class="pc-ch"></div>' +
+        '<form class="pc-in"><textarea rows="1" maxlength="400" placeholder="Escríbele a Pullpy…" aria-label="Mensaje para Pullpy"></textarea><button type="submit" aria-label="Enviar">➤</button></form></div>';
+      document.body.appendChild(el);
+      list = el.querySelector('.pc-ls'); chips = el.querySelector('.pc-ch'); input = el.querySelector('textarea'); sendB = el.querySelector('.pc-in button');
+      el.querySelector('.pc-bg').onclick = hide; el.querySelector('.pc-x').onclick = hide;
+      el.querySelector('form').onsubmit = e => { e.preventDefault(); const t = input.value.trim(); if (!t) return; input.value = ''; grow(); ai('libre', t); };
+      input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && innerWidth >= 760) { e.preventDefault(); el.querySelector('form').requestSubmit(); } });
+      input.addEventListener('input', grow);
+      document.addEventListener('keydown', e => { if (open && e.key === 'Escape') hide(); });
+    }
+    function grow() { input.style.height = 'auto'; input.style.height = Math.min(110, input.scrollHeight) + 'px'; }
+    const esc = t => String(t).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+    function msg(who, html, cls) {
+      const m = document.createElement('div'); m.className = 'pc-m ' + (who === 'u' ? 'pc-u' : 'pc-p') + (cls ? ' ' + cls : '');
+      m.innerHTML = html; list.appendChild(m); list.scrollTop = list.scrollHeight; return m;
+    }
+    function ctx() { const b = B(); return b && b.ctx; }
+    function sub() {
+      const c = ctx(); el.querySelector('.pc-tt small').textContent = c ? (c.tema ? c.tema : c.curso) : 'Tu compañero de estudio';
+    }
+    function setChips() {
+      chips.innerHTML = '';
+      const c = ctx(), L = [];
+      if (c && c.tema) L.push(['ia', 'facil'], ['ia', 'ejemplo'], ['ia', 'pregunta']);
+      else if (c) L.push(['ia', 'plan']);
+      L.push(['local', 'repaso']);
+      if (!c) L.push(['ia', 'plan']);
+      L.push(['local', 'ayuda']);
+      L.forEach(([k, id]) => {
+        const b = document.createElement('button'); b.type = 'button';
+        b.textContent = id === 'repaso' ? '¿Qué repaso hoy?' : id === 'ayuda' ? '¿Cómo uso NotPull?' : MODOS[id];
+        b.onclick = () => k === 'ia' ? ai(id, MODOS[id]) : local(id);
+        b.disabled = busy; chips.appendChild(b);
+      });
+    }
+    function welcome() {
+      const c = ctx(), h = new Date().getHours();
+      const hola = h < 5 ? 'Hola, ¿estudiando de madrugada?' : h < 12 ? 'Buenos días.' : h < 19 ? 'Buenas tardes.' : 'Buenas noches.';
+      msg('p', '<p>' + hola + ' ' + (c && c.tema ? 'Estás en <b>' + esc(c.tema) + '</b>. ¿En qué te ayudo con este tema?' : c ? 'Estás en <b>' + esc(c.curso) + '</b>. ¿En qué te ayudo?' : '¿En qué te ayudo hoy?') + '</p>');
+    }
+    function reset() { list.innerHTML = ''; hist = []; aiN = 0; welcome(); setChips(); }
+    function show() {
+      if (!el) build();
+      const c = ctx(), k = c ? c.curso + '|' + c.tema : 'menu';
+      if (k !== ctxKey) { ctxKey = k; reset(); }
+      sub(); setChips(); el.classList.add('on'); open = true; W.hidden = true;
+      if (innerWidth >= 760) setTimeout(() => input.focus(), 50);
+    }
+    function hide() { if (!el) return; el.classList.remove('on'); open = false; input.blur(); place(true); }
+
+    /* respuestas sin IA */
+    function local(id) {
+      if (id === 'repaso') {
+        msg('u', esc('¿Qué repaso hoy?'));
+        const b = B(); const r = (b && b.review && b.review()) || [];
+        if (!r.length) { msg('p', '<p>Todavía no empiezas ningún curso. Elige uno del menú y empecemos por el primer tema.</p>'); return; }
+        r.sort((a, z) => (a.acc == null ? 1 : a.acc) - (z.acc == null ? 1 : z.acc));
+        const li = r.slice(0, 3).map(x => '<li><b>' + esc(x.curso) + '</b>: ' + (x.debil ? 'repasa <b>' + esc(x.debil) + '</b> (aciertas ' + Math.round(x.acc * 100) + '% a la primera)' : x.sig ? 'sigue con <b>' + esc(x.sig) + '</b>' : 'ya lo terminaste, prueba un simulacro') + '</li>').join('');
+        msg('p', '<p>Según tu progreso, te recomiendo:</p><ul>' + li + '</ul>');
+        return;
+      }
+      if (id === 'ayuda') {
+        msg('u', esc('¿Cómo uso NotPull?'));
+        const m = msg('p', '<p>¿Sobre qué quieres saber?</p>');
+        Object.keys(AYUDA).forEach(t => { const x = document.createElement('button'); x.className = 'pc-b'; x.type = 'button'; x.textContent = t; x.style.marginRight = '6px';
+          x.onclick = () => { msg('u', esc(t)); msg('p', '<p>' + esc(AYUDA[t]) + '</p>'); }; m.appendChild(x); });
+      }
+    }
+
+    /* respuestas con IA */
+    async function ai(modo, texto) {
+      if (busy) return;
+      msg('u', esc(texto));
+      const P = window.pullpy;
+      if (tired()) { msg('p', '<p>' + esc(FR.sinEnergia) + '</p>'); return; }
+      if (!P || !P.on || !P.on()) { msg('p', '<p>Todavía estoy aprendiendo a responder preguntas. Muy pronto podré ayudarte con eso.</p>'); return; }
+      const b = B();
+      if (b && b.logged && !b.logged()) {
+        const m = msg('p', '<p>Para responderte necesito que inicies sesión. Así también se guarda tu progreso.</p>');
+        const x = document.createElement('button'); x.className = 'pc-b'; x.type = 'button'; x.textContent = 'Iniciar sesión';
+        x.onclick = () => { hide(); b.login(); }; m.appendChild(x); return;
+      }
+      if (aiN >= MAX_IA) {
+        const m = msg('p', '<p>Ya hablamos bastante de esto. Empecemos una conversación nueva para seguir.</p>');
+        const x = document.createElement('button'); x.className = 'pc-b'; x.type = 'button'; x.textContent = 'Nueva conversación';
+        x.onclick = reset; m.appendChild(x); return;
+      }
+      busy = true; setChips(); sendB.disabled = true;
+      const w = msg('p', '<span class="pc-dots"><i></i><i></i><i></i></span>');
+      ev('think');
+      const c = ctx() || {};
+      try {
+        const t = await P.ask('chat', { modo, mensaje: texto.slice(0, 400), curso: c.curso || '', bloque: c.bloque || '', tema: c.tema || '', teoria: c.teoria || '', historial: hist.slice(-6) });
+        aiN++; hist.push({ de: 'estudiante', texto: texto.slice(0, 400) }, { de: 'pullpy', texto: String(t).slice(0, 700) });
+        w.innerHTML = P.md(t);
+        try { b && b.typeset && b.typeset(w); } catch (e) {}
+      } catch (e) {
+        const code = e && e.message || e;
+        w.classList.add('err'); w.innerHTML = '<p>' + esc(code === 'limite' ? FR.sinEnergia : P.msg(code)) + '</p>';
+      } finally {
+        busy = false; sendB.disabled = false; setChips(); ev('idle'); list.scrollTop = list.scrollHeight;
+      }
+    }
+    return { open: show, close: hide, get isOpen() { return open; } };
+  })();
 
   /* ---------- racha de días de estudio ---------- */
   function days() { return LS.get('pp-dias', []); }
@@ -312,7 +478,8 @@
     const b = B(); if (!b) return;
     const v = b.view;
     let want;
-    if (b.examNow && b.examNow()) want = 'off';
+    if (Chat.isOpen) want = 'off';
+    else if (b.examNow && b.examNow()) want = 'off';
     else if (v === 'menu') want = 'hero';
     else want = 'dock';
     if (want === 'dock' && typingInput && innerWidth < 760) want = 'off';
@@ -398,6 +565,6 @@
     setInterval(tick, 1000);
     addEventListener('resize', () => place(true));
   }
-  window.pullpyPet = { ev, say, set, close, FR };
+  window.pullpyPet = { ev, say, set, close, FR, chat: Chat };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
