@@ -1321,7 +1321,9 @@ const $=id=>document.getElementById(id);
      'topic' (tema abierto: {t,main}), 'simq' (pregunta del simulacro ya corregida: {q,qi,box,acts}).
    · Ayudas: pullpy.data(e,extra) arma el contexto del ejercicio; pullpy.box(padre) crea la burbuja
      (.load(), .say(texto), .err(código)); pullpy.btn(texto,fn) crea el botón con su estilo. */
-const PULLPY={url:'https://pullpy.gferruzo2007.workers.dev',name:'Pullpy',img:'',needLogin:true,fx:{}};
+const PULLPY={url:'https://pullpy.gferruzo2007.workers.dev',name:'Pullpy',img:'pullpy/pullpy.webp',needLogin:true,fx:{}};
+/* Mascota (pullpy/pullpy.js): avisa a Pullpy lo que pasa en la app */
+const PET=(k,d)=>{try{window.pullpyPet&&window.pullpyPet.ev(k,d)}catch(e){}};
 try{const u=S.get('pullpy-url','');if(u)PULLPY.url=u}catch(e){}
 const pullpy={
   on(){return !!PULLPY.url},
@@ -1339,8 +1341,9 @@ const pullpy={
   async ask(task,data){if(!this.on())throw new Error('off');const h={'Content-Type':'application/json'};const u=this.user();
     if(u){try{h.Authorization='Bearer '+await u.getIdToken()}catch(e){}}else if(PULLPY.needLogin)throw new Error('login');
     let r,j={};try{r=await fetch(PULLPY.url,{method:'POST',headers:h,body:JSON.stringify({task,data:data||{}})});j=await r.json()}catch(e){throw new Error('red')}
-    if(!r.ok||!j.ok){if(j.detalle)console.warn('Pullpy:',j.detalle);throw new Error(j.error||'ia')}return j.text},
-  msg(c){return({login:'Inicia sesión para hablar conmigo 🐙',limite:'Ya usaste tus consultas de hoy. ¡Mañana seguimos!',ocupado:'Estoy con muchas consultas ahorita. Intenta en un minuto.',red:'No tengo conexión. Revisa tu internet e intenta de nuevo.'})[c]||'No pude responder ahora. Intenta de nuevo en un rato.'},
+    if(j&&j.quedan!=null)PET('quedan',j.quedan);
+    if(!r.ok||!j.ok){if(j.detalle)console.warn('Pullpy:',j.detalle);if(j.error==='limite')PET('limite');throw new Error(j.error||'ia')}return j.text},
+  msg(c){return({login:'Inicia sesión para hablar conmigo.',limite:'Ya usaste tus consultas de hoy. ¡Mañana seguimos!',ocupado:'Estoy con muchas consultas ahorita. Intenta en un minuto.',red:'No tengo conexión. Revisa tu internet e intenta de nuevo.'})[c]||'No pude responder ahora. Intenta de nuevo en un rato.'},
   md(t){const esc=x=>x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     return esc(t).split(/\n{2,}/).map(b=>{const L=b.split('\n');
       if(L.every(l=>/^\s*([-*•]|\d+[.)])\s+/.test(l)))return '<ul>'+L.map(l=>'<li>'+l.replace(/^\s*([-*•]|\d+[.)])\s+/,'')+'</li>').join('')+'</ul>';
@@ -1348,9 +1351,9 @@ const pullpy={
   box(parent,where){const b=el('div','pullpy');const av=el('div','pav',PULLPY.img?'<img src="'+PULLPY.img+'" alt="">':'🐙');const bd=el('div','pbody');
     bd.append(el('div','pname',PULLPY.name));const out=el('div','pout');bd.append(out);b.append(av,bd);
     if(parent){if(where==='after')parent.after(b);else parent.append(b)}
-    b.load=()=>{out.innerHTML='<span class="pdots"><i></i><i></i><i></i></span>';return b};
-    b.say=t=>{out.innerHTML=pullpy.md(t);typeset(out);return b};
-    b.err=c=>{out.innerHTML='<p class="perr">'+pullpy.msg(c&&c.message||c)+'</p>';return b};
+    b.load=()=>{out.innerHTML='<span class="pdots"><i></i><i></i><i></i></span>';PET('think');return b};
+    b.say=t=>{out.innerHTML=pullpy.md(t);typeset(out);PET('idle');return b};
+    b.err=c=>{out.innerHTML='<p class="perr">'+pullpy.msg(c&&c.message||c)+'</p>';PET('idle');return b};
     return b},
   btn(label,fn){const x=el('button','ppbtn',(PULLPY.img?'<img src="'+PULLPY.img+'" alt="">':'🐙 ')+'<span>'+label+'</span>');x.type='button';x.onclick=fn;return x},
   test(){return this.ask('prueba',{}).then(t=>{console.log('Pullpy:',t);return t})}
@@ -2646,9 +2649,9 @@ function playBox(e){const pg=el('div','play');pg.append(el('h4',null,'▶ Pruéb
   pg.append(codeBox({start:e.play,tests:[{in:e.playIn||''}],files:e.playFiles,lang:e.lang||'py'},{noCheck:true,autoload:false}).el);return pg}
 function buildVer(e,ver,card,stt,setBs){ver.dataset.built=1;const ok=new Array(e.checks.length).fill(false);const pre=!RV&&!!(cs(C.id).ex[e.id]||{}).s;
   const onTry=()=>{if(RV){RV.att[e.id]=1;setBs();return}if(!e.draw){const r=rec(e.id);if(!r.a){r.a=1;setBs()}}};
-  const onBad=()=>{if(!e.draw){const r=rec(e.id);qBad(r,Date.now());if(RV)RV.bad[e.id]=1;save();stt.textContent=stateText(e)}};
+  const onBad=()=>{PET('bad');if(!e.draw){const r=rec(e.id);qBad(r,Date.now());if(RV)RV.bad[e.id]=1;save();stt.textContent=stateText(e)}};
   const boxes=[],nC=e.checks.length,chain=!!e.chain&&nC>1;
-  const onGood=qi=>{ok[qi]=true;if(chain&&boxes[qi+1]&&boxes[qi+1].hidden){const nx=boxes[qi+1];nx.hidden=false;nx.classList.add('pop');typeset(nx);setTimeout(()=>nx.scrollIntoView({behavior:'smooth',block:'nearest'}),120)}if(ok.every(Boolean))markSolved(e,card,stt);else if(!e.draw)save()};
+  const onGood=qi=>{PET('good');ok[qi]=true;if(chain&&boxes[qi+1]&&boxes[qi+1].hidden){const nx=boxes[qi+1];nx.hidden=false;nx.classList.add('pop');typeset(nx);setTimeout(()=>nx.scrollIntoView({behavior:'smooth',block:'nearest'}),120)}if(ok.every(Boolean))markSolved(e,card,stt);else if(!e.draw)save()};
   e.checks.forEach((ch,qi)=>{const box=el('div','chk'+(chain?' chn':''));box.append(el('p',null,(chain?'<span class="cpart">Parte '+(qi+1)+' de '+nC+'</span> ':'')+ch.p));const fb=el('p','fb');boxes.push(box);if(chain&&!pre&&qi>0)box.hidden=true;
     if(isIW(ch)){iwPractice(ch,box,fb,qi,pre,{onTry,onBad,onGood},e,C.id+'/'+e.id+'#'+qi+(RV?RV.seed:''));box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
     if(ch.t==='tt'){buildTT(ch,box,fb,qi,pre,onTry,onBad,onGood);box.append(fb);ver.append(box);if(pre)ok[qi]=true;return}
@@ -3980,13 +3983,14 @@ function markSolved(e,card,stt){
   const r=rec(e.id);if(r.s)return;const i=st.topic,wasFull=tDone(T[i])===T[i].ex.length;
   r.s=1;r.f=(r.w||0)===0?1:0;save();bump();card.classList.add('solved');stt.textContent=stateText(e);topicHeader();renderChips();courseStats();
   const s=cs(C.id);
+  {const x=stats(C);if(!x.complete&&x.total&&x.solved/x.total>=.5&&!s.cel._half){s.cel._half=1;save();PET('half')}}
   if(stats(C).complete&&!s.cel._final){s.cel._final=1;save();setTimeout(finalCeleb,350)}
   else if(!wasFull&&tDone(T[i])===T[i].ex.length&&!s.cel['ok_'+T[i].id]){s.cel['ok_'+T[i].id]=1;save();setTimeout(()=>topicCeleb(i),350)}
 }
-function topicCeleb(i){const j=T.findIndex((t,k)=>k>i&&tDone(t)<t.ex.length);const n=el('div');n.innerHTML='<span class="bigico">🎉</span><p class="sub" style="margin:0">Tema completado</p><h2>'+(i+1)+'. '+T[i].name+'</h2><p>Lo terminaste con '+pct(stats(C).per[i].acc||0)+' de acierto a la primera.'+(j>=0?' Siguiente sugerido: <b>'+(j+1)+'. '+T[j].name+'</b>.':'')+'</p>';
+function topicCeleb(i){PET('topic');const j=T.findIndex((t,k)=>k>i&&tDone(t)<t.ex.length);const n=el('div');n.innerHTML='<span class="bigico">🎉</span><p class="sub" style="margin:0">Tema completado</p><h2>'+(i+1)+'. '+T[i].name+'</h2><p>Lo terminaste con '+pct(stats(C).per[i].acc||0)+' de acierto a la primera.'+(j>=0?' Siguiente sugerido: <b>'+(j+1)+'. '+T[j].name+'</b>.':'')+'</p>';
   const bt=el('div','mbtns');if(j>=0){const go=el('button','pri','Ir al siguiente tema');go.onclick=()=>{closeModal();goTopic(j)};bt.append(go)}const stay=el('button',j>=0?null:'pri','Seguir aquí');stay.onclick=closeModal;bt.append(stay);n.append(bt);
   openModal(n,'celeb');confetti();const ch=j>=0&&chips.children[j];if(ch){ch.classList.add('glow');ch.scrollIntoView({inline:'center',block:'nearest'})}}
-function finalCeleb(){const x=stats(C);const n=el('div');
+function finalCeleb(){PET('course');const x=stats(C);const n=el('div');
   const weak=x.per.filter(p=>p.acc!=null&&p.acc<.85).sort((a,b)=>a.acc-b.acc).slice(0,3);
   n.innerHTML='<span class="bigico">🎓</span><p class="sub" style="margin:0">Completaste los '+T.length+' temas de '+C.name+'</p><h2>Te falta un solo paso para el sobresaliente</h2>'+
    '<div class="kpis"><div class="kpi"><small>Acierto a la primera</small><b>'+pct(x.acc)+'</b></div><div class="kpi"><small>Tiempo de estudio</small><b>'+dur(x.time)+'</b></div></div>'+
@@ -4487,7 +4491,7 @@ async function gradeSim(timeout){if(!SIMS||SIMS.done||SIMS.grading)return;
     $('simsend').disabled=false;SIMS.grading=false}
   gradeSimNow(timeout)}
 const box0=qi=>$('sq'+qi);
-function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;let nota=0;
+function gradeSimNow(timeout){if(SIMS.done)return;SIMS.done=true;if(SIMS.mode==='sim'||SIMS.mode==='rescue')PET('sim');let nota=0;
   SIMS.qs.forEach((q,qi)=>{const n=q.ex.checks.length;let ok=0;q.ex.checks.forEach((ch,ci)=>{if(isIW(ch)){const w=q.w&&q.w[ci];if(w){const g=w.filled()?w.grade():{f:0};ok+=g.f;w.mark(g);w.reveal();w.lock();box0(qi).querySelectorAll('.iwrs').forEach(b=>b.remove())}}else if(ch.t==='code')ok+=(q.cs&&q.cs[ci])||0;else if(q.sel[ci]===0)ok++});ok=Math.round(ok*1000)/1000;q.pts=q.slot.pts*ok/n;nota+=q.pts;
     const box=$('sq'+qi);box.classList.add(ok===n?'right':'wrong');if(q.cb)Object.keys(q.cb).forEach(ci=>{const xb=q.cb[ci],r=q.cr&&q.cr[ci];xb.lock();if(r&&r.res)xb.show(r.res);else{xb.out.hidden=false;xb.out.innerHTML='';xb.out.append(el('p','fb bad',r?PYTO:PYFAIL))}});
     box.querySelectorAll('.opts').forEach(g=>{const ci=+g.dataset.ci;g.querySelectorAll('.opt').forEach(b=>{b.disabled=true;const oi=+b.dataset.oi;if(oi===0)b.classList.add('good');else if(q.sel[ci]===oi)b.classList.add('bad')})});
@@ -4805,6 +4809,9 @@ onCloud.push(()=>{modeUI();if(view==='course')revBtn()});
 if(cloudDone)firstCheck();else{onCloud.push(firstCheck);setTimeout(()=>{if(!cloudDone)firstCheck()},4000)}
 tmTick();
 
+/* Puente de solo lectura para la mascota (pullpy/pullpy.js) */
+window.PPB={get view(){return view},get TM(){return TM},get NOTI(){return NOTI},nvList,nvCounts,examNow,confetti};
+
 renderMenu();
 })();
 </script>
@@ -4842,5 +4849,6 @@ renderMenu();
   paint();
 })();
 </script>
+<script src="pullpy/pullpy.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
  * Configuración en Cloudflare (Worker → Settings → Variables and Secrets):
  *   GEMINI_KEY  (secreto, obligatorio)  API key de Google AI Studio
  *   MODEL       (opcional)              modelo de Gemini a probar primero (si no, la lista MODELOS)
- *   LIMITE_DIA  (opcional)              consultas por usuario al día; por defecto 40
+ *   LIMITE_DIA  (opcional)              consultas por usuario al día; por defecto 10
  * KV opcional (Bindings → KV namespace) con el nombre LIMITES: activa el límite diario.
  *
  * Para agregar una función de Pullpy: agregar una entrada en TASKS (abajo)
@@ -64,7 +64,7 @@ export default {
     // Límite diario por usuario (solo si hay KV LIMITES)
     let quedan = null;
     if (env.LIMITES && uid) {
-      const lim = parseInt(env.LIMITE_DIA || '40', 10);
+      const lim = parseInt(env.LIMITE_DIA || '10', 10);
       const dia = new Date(Date.now() - 5 * 3600e3).toISOString().slice(0, 10); // día en Lima
       const k = uid + ':' + dia;
       const n = parseInt((await env.LIMITES.get(k)) || '0', 10);
