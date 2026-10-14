@@ -2245,11 +2245,18 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
     n.append(g);const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n);return}
   n.append(el('p','sub','Clases, PPTs, guías, prácticas o exámenes de ciclos pasados (PDF, fotos, PPT o una carpeta en .zip). Lo revisamos y, si sirve, lo agregamos al curso o armamos uno nuevo.'));
   const f=el('div','apf');
-  const lc=el('label',null,'Curso');const sc=document.createElement('select');
-  GROUPS.forEach(g=>{const o=document.createElement('option');const un=g.uni!=='UTEC'?' · '+(UNIS[g.uni]||g.uni):'';o.value=g.name+(g.code?' ('+g.code+')':'')+un;o.textContent=g.name+un;sc.append(o)});
-  const on=document.createElement('option');on.value='__nuevo';on.textContent='➕ Otro curso (nuevo)';sc.append(on);lc.append(sc);
+  const lu=el('label',null,'Universidad');const su=document.createElement('select');
+  Object.keys(UNIS).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=UNIS[k];su.append(o)});
+  const ou=document.createElement('option');ou.value='__otra';ou.textContent='➕ Otra universidad';su.append(ou);lu.append(su);
+  const lun=el('label',null,'¿Cuál universidad?');const inU=document.createElement('input');inU.type='text';inU.maxLength=60;inU.placeholder='Ej.: PUCP, UNI, U. de Lima';lun.append(inU);lun.hidden=true;
+  const lc=el('label',null,'Curso');const sc=document.createElement('select');lc.append(sc);
   const ln=el('label',null,'Nombre del curso nuevo');const inN=document.createElement('input');inN.type='text';inN.maxLength=80;inN.placeholder='Ej.: Física II (CC6202)';ln.append(inN);ln.hidden=true;
-  sc.onchange=()=>{ln.hidden=sc.value!=='__nuevo'};
+  const fillC=()=>{sc.innerHTML='';const un=su.value;
+    GROUPS.filter(g=>(g.uni||'UTEC')===un).forEach(g=>{const o=document.createElement('option');const sf=un!=='UTEC'?' · '+(UNIS[un]||un):'';o.value=g.name+(g.code?' ('+g.code+')':'')+sf;o.textContent=g.name;sc.append(o)});
+    const on=document.createElement('option');on.value='__nuevo';on.textContent=sc.options.length?'➕ Otro curso (nuevo)':'➕ Curso nuevo';sc.append(on);
+    lun.hidden=un!=='__otra';ln.hidden=sc.value!=='__nuevo'};
+  su.onchange=fillC;sc.onchange=()=>{ln.hidden=sc.value!=='__nuevo'};fillC();
+  const uniTxt=()=>su.value==='__otra'?inU.value.trim():(UNIS[su.value]||su.value);
   const r2=el('div','row2');
   const lw=el('label',null,'Semana');const sw=document.createElement('select');['—',...Array.from({length:16},(_,i)=>String(i+1))].forEach(v=>{const o=document.createElement('option');o.textContent=v;sw.append(o)});lw.append(sw);
   const lt=el('label',null,'Tipo');const st=document.createElement('select');['Clase / PPT','Guía o práctica','Examen pasado','Solucionario','Otro'].forEach(v=>{const o=document.createElement('option');o.textContent=v;st.append(o)});lt.append(st);
@@ -2292,13 +2299,14 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   drop.ondragover=e=>{e.preventDefault();drop.classList.add('on')};drop.ondragleave=()=>drop.classList.remove('on');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('on');addF(e.dataTransfer.files)};
   lf.append(drop,lst,fi);
   const lnt=el('label',null,'Nota (opcional)');const ta=document.createElement('textarea');ta.maxLength=500;ta.placeholder='Ej.: parcial 2025-2, profe X, trae solucionario…';lnt.append(ta);
-  f.append(lc,ln,r2,lf,lnt);n.append(f);
+  f.append(lu,lun,lc,ln,r2,lf,lnt);n.append(f);
   const stx=el('p','apst');n.append(stx);
   const bt=el('div','mbtns');const cl=el('button',null,'Cancelar');cl.onclick=closeModal;const go=el('button','pri','Enviar');bt.append(go,cl);n.append(bt);
   const say=(t,c)=>{stx.textContent=t;stx.className='apst'+(c?' '+c:'')};
   const b64=fl=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=()=>rej(r.error);r.readAsDataURL(fl)});
   const lote=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));let hechas=0,recib=0;
   go.onclick=async()=>{const fs=FL.slice();
+    if(su.value==='__otra'&&!inU.value.trim())return say('Escribe el nombre de tu universidad.','bad');
     if(sc.value==='__nuevo'&&!inN.value.trim())return say('Escribe el nombre del curso nuevo.','bad');
     if(!fs.length)return say('Elige al menos un archivo.','bad');
     if(fs.length>MAXN)return say('Máximo '+MAXN+' archivos por envío. Quita algunos o envíalo en dos veces.','bad');
@@ -2307,7 +2315,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
     if(fs.reduce((a,x)=>a+x.size,0)>MAXT)return say('En total no puede pasar de 120 MB. Envíalo en dos veces.','bad');
     const parts=[];let cur=[],sz=0;for(const x of fs){if(cur.length&&(cur.length>=10||sz+x.size>20*1048576)){parts.push(cur);cur=[];sz=0}cur.push(x);sz+=x.size}parts.push(cur);
     go.disabled=cl.disabled=true;
-    const base={curso:sc.value==='__nuevo'?'NUEVO: '+inN.value.trim():sc.value,semana:sw.value==='—'?'':sw.value,tipo:st.value,nota:ta.value.trim(),usuario:acctName()||'',email:u.email||'',uid:u.uid,lote,partes:hechas+parts.length};
+    const base={curso:sc.value==='__nuevo'?'NUEVO: '+inN.value.trim()+(su.value!=='UTEC'?' · '+uniTxt():''):sc.value,universidad:uniTxt(),semana:sw.value==='—'?'':sw.value,tipo:st.value,nota:ta.value.trim(),usuario:acctName()||'',email:u.email||'',uid:u.uid,lote,partes:hechas+parts.length};
     try{for(let i=0;i<parts.length;i++){
         say(parts.length>1?'Enviando parte '+(i+1)+' de '+parts.length+'… no cierres esta ventana.':'Enviando… no cierres esta ventana.');
         const files=[];for(const x of parts[i])files.push({name:x.name,mime:mimeOf(x),data:await b64(x)});

@@ -90,6 +90,7 @@ function titulo_(b) {
 
 function info_(b) {
   return [
+    'Universidad: ' + (b.universidad || 'UTEC'),
     'Curso: ' + (b.curso || ''),
     'Semana: ' + (b.semana || '—'),
     'Tipo: ' + (b.tipo || ''),
@@ -105,6 +106,7 @@ function aviso_(b, titulo, carpeta, total) {
   const cuerpo = [
     'Nuevo aporte en NotPull',
     '',
+    'Universidad: ' + (b.universidad || 'UTEC'),
     'Curso: ' + (b.curso || ''),
     'Semana: ' + (b.semana || '—'),
     'Tipo: ' + (b.tipo || ''),
