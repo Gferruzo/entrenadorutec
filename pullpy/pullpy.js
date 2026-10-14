@@ -74,7 +74,7 @@
 #ppet .pp-hit:focus-visible{outline:2px solid var(--ink,#2B2B2B);outline-offset:2px}
 #ppet .pp-body{position:absolute;left:0;top:0;width:100%;aspect-ratio:466/520;transform-origin:50% 90%;animation:pp-float 3s ease-in-out infinite;pointer-events:none}
 #ppet .pp-body img,#ppet .pp-body svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-#ppet .pp-body img{filter:drop-shadow(0 2px 3px rgba(61,18,20,.2))}
+#ppet .pp-body img{filter:drop-shadow(1.2px 0 0 #3D1214) drop-shadow(-1.2px 0 0 #3D1214) drop-shadow(0 1.2px 0 #3D1214) drop-shadow(0 -1.2px 0 #3D1214) drop-shadow(0 2px 3px rgba(61,18,20,.2))}
 #ppet .pp-floor{position:absolute;left:50%;bottom:0;width:56%;height:9%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse at center,rgba(20,30,50,.2) 0%,transparent 70%);animation:pp-floorA 3s ease-in-out infinite;pointer-events:none}
 #ppet .lid{opacity:0}#ppet .lid ellipse,#ppet .lid .cv,#ppet .pp-mt .cv{fill:#FFB794;stroke:none}
 #ppet .lid path{fill:none;stroke:#3D1214;stroke-width:4;stroke-linecap:round}
