@@ -2243,7 +2243,7 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   if(!u){const g=el('div','acguest','<b>Inicia sesión para enviar material.</b><br>Así sabemos de quién viene y evitamos spam.');
     if(FBA){const lb=el('div','mbtns');const li=el('button','pri','Iniciar sesión con Google');li.onclick=()=>{closeModal();FBA.login()};lb.append(li);g.append(lb)}
     n.append(g);const bt=el('div','mbtns');const cl=el('button',null,'Cerrar');cl.onclick=closeModal;bt.append(cl);n.append(bt);openModal(n);return}
-  n.append(el('p','sub','Clases, PPTs, guías, prácticas o exámenes de ciclos pasados (PDF o fotos). Lo revisamos y, si sirve, lo agregamos al curso o armamos uno nuevo.'));
+  n.append(el('p','sub','Clases, PPTs, guías, prácticas o exámenes de ciclos pasados (PDF, fotos, PPT o una carpeta en .zip). Lo revisamos y, si sirve, lo agregamos al curso o armamos uno nuevo.'));
   const f=el('div','apf');
   const lc=el('label',null,'Curso');const sc=document.createElement('select');
   GROUPS.forEach(g=>{const o=document.createElement('option');const un=g.uni!=='UTEC'?' · '+(UNIS[g.uni]||g.uni):'';o.value=g.name+(g.code?' ('+g.code+')':'')+un;o.textContent=g.name+un;sc.append(o)});
@@ -2254,13 +2254,41 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   const lw=el('label',null,'Semana');const sw=document.createElement('select');['—',...Array.from({length:16},(_,i)=>String(i+1))].forEach(v=>{const o=document.createElement('option');o.textContent=v;sw.append(o)});lw.append(sw);
   const lt=el('label',null,'Tipo');const st=document.createElement('select');['Clase / PPT','Guía o práctica','Examen pasado','Solucionario','Otro'].forEach(v=>{const o=document.createElement('option');o.textContent=v;st.append(o)});lt.append(st);
   r2.append(lw,lt);
-  const lf=el('div','apfl');lf.append(el('span','apflt','Archivos (hasta 10, máx. 15 MB c/u)'));const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*';fi.hidden=true;
-  let FL=[];const drop=el('button','apdrop','<b>📎 Elegir archivos</b><small>o arrástralos aquí · PDF o fotos</small>');drop.type='button';const lst=el('div','aplist');
+  const lf=el('div','apfl');const lft=el('span','apflt','Archivos (PDF, fotos, PPT, Word o .zip · máx. 15 MB c/u)');lf.append(lft);const fi=document.createElement('input');fi.type='file';fi.multiple=true;fi.accept='.pdf,application/pdf,image/*,.ppt,.pptx,.doc,.docx,.zip,application/zip';fi.hidden=true;
+  let FL=[];const drop=el('button','apdrop','<b>📎 Elegir archivos</b><small>o arrástralos aquí · PDF, fotos, PPT o .zip</small>');drop.type='button';const lst=el('div','aplist');
+  const MAXN=40,MAXF=15*1048576,MAXT=120*1048576;
   const kb=x=>x<1048576?Math.max(1,Math.round(x/1024))+' KB':(x/1048576).toFixed(1).replace('.',',')+' MB';
-  const draw=()=>{lst.innerHTML='';FL.forEach((x,i)=>{const r=el('div','apfi');r.append(el('span','apfn',(/pdf$/i.test(x.name)?'📄 ':'🖼️ ')+x.name.replace(/[&<>]/g,'')),el('small',null,kb(x.size)));const q=el('button','apx','✕');q.type='button';q.setAttribute('aria-label','Quitar');q.onclick=()=>{FL.splice(i,1);draw()};r.append(q);lst.append(r)});
-    drop.querySelector('b').textContent=FL.length?'📎 Agregar más archivos':'📎 Elegir archivos'};
-  const addF=fs=>{const seen=new Set(FL.map(x=>x.name+x.size));[...fs].forEach(x=>{if(!seen.has(x.name+x.size))FL.push(x)});draw()};
-  drop.onclick=()=>fi.click();fi.onchange=()=>{addF(fi.files);fi.value=''};
+  const EXT=/\.(pdf|jpe?g|png|webp|heic|pptx?|docx?)$/i;
+  const MIME={pdf:'application/pdf',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp',heic:'image/heic',ppt:'application/vnd.ms-powerpoint',pptx:'application/vnd.openxmlformats-officedocument.presentationml.presentation',doc:'application/msword',docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'};
+  const extOf=fl=>(fl.name.split('.').pop()||'').toLowerCase();
+  const mimeOf=fl=>MIME[extOf(fl)]||fl.type||'';
+  const icon=fl=>{const x=extOf(fl);return x==='pdf'?'📄 ':/^pptx?$/.test(x)?'📊 ':/^docx?$/.test(x)?'📝 ':'🖼️ '};
+  const isZip=fl=>/\.zip$/i.test(fl.name)||/zip/.test(fl.type||'');
+  const draw=()=>{lst.innerHTML='';FL.forEach((x,i)=>{const r=el('div','apfi');r.append(el('span','apfn',icon(x)+x.name.replace(/[&<>]/g,'')),el('small',null,kb(x.size)));const q=el('button','apx','✕');q.type='button';q.setAttribute('aria-label','Quitar');q.onclick=()=>{FL.splice(i,1);draw()};r.append(q);lst.append(r)});
+    drop.querySelector('b').textContent=FL.length?'📎 Agregar más archivos':'📎 Elegir archivos';
+    lft.textContent=FL.length?FL.length+' archivo'+(FL.length>1?'s':'')+' · '+kb(FL.reduce((a,x)=>a+x.size,0)):'Archivos (PDF, fotos, PPT, Word o .zip · máx. 15 MB c/u)'};
+  let JSZ=null;const getZip=()=>JSZ||(JSZ=new Promise((res,rej)=>{if(window.JSZip)return res(window.JSZip);const sc2=document.createElement('script');sc2.src='https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';sc2.onload=()=>window.JSZip?res(window.JSZip):rej(new Error('jszip'));sc2.onerror=()=>{JSZ=null;rej(new Error('jszip'))};document.head.append(sc2)}));
+  const unzip=async z=>{const zp=await (await getZip()).loadAsync(z);const out=[];let skip=0,big=0,tot=0;
+    for(const e of Object.values(zp.files)){if(e.dir)continue;const base=e.name.split('/').pop();
+      if(/(^|\/)__MACOSX\//.test(e.name)||!base||base.startsWith('.')||base.startsWith('~$')||/^(thumbs\.db|desktop\.ini)$/i.test(base))continue;
+      if(!EXT.test(base)){skip++;continue}
+      const bl=await e.async('blob');if(bl.size>MAXF){big++;continue}
+      tot+=bl.size;if(tot>MAXT)break;
+      out.push(new File([bl],base,{type:MIME[(base.split('.').pop()||'').toLowerCase()]||''}))}
+    return{out,skip,big}};
+  const addF=async fs=>{const seen=new Set(FL.map(x=>x.name+x.size));const msg=[];let bad=false;
+    const push=y=>{const k=y.name+y.size;if(!seen.has(k)){seen.add(k);FL.push(y)}};
+    for(const x of [...fs]){
+      if(!isZip(x)){push(x);continue}
+      say('Abriendo '+x.name+'…');
+      try{const r=await unzip(x);r.out.forEach(push);
+        let t=x.name+': '+r.out.length+' archivo'+(r.out.length===1?'':'s')+' útil'+(r.out.length===1?'':'es');
+        if(r.skip)t+=', '+r.skip+' de otro formato ignorado'+(r.skip>1?'s':'');
+        if(r.big)t+=', '+r.big+' de más de 15 MB fuera';
+        msg.push(t);if(!r.out.length)bad=true}
+      catch(e){console.error(e);msg.push('No se pudo abrir '+x.name+'.');bad=true}}
+    draw();say(msg.join(' · '),bad?'bad':'')};
+  drop.onclick=()=>fi.click();fi.onchange=()=>{const fs=[...fi.files];fi.value='';addF(fs)};
   drop.ondragover=e=>{e.preventDefault();drop.classList.add('on')};drop.ondragleave=()=>drop.classList.remove('on');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('on');addF(e.dataTransfer.files)};
   lf.append(drop,lst,fi);
   const lnt=el('label',null,'Nota (opcional)');const ta=document.createElement('textarea');ta.maxLength=500;ta.placeholder='Ej.: parcial 2025-2, profe X, trae solucionario…';lnt.append(ta);
@@ -2268,25 +2296,27 @@ function aporteModal(){const n=el('div');n.append(el('h2',null,'📤 Aportar mat
   const stx=el('p','apst');n.append(stx);
   const bt=el('div','mbtns');const cl=el('button',null,'Cancelar');cl.onclick=closeModal;const go=el('button','pri','Enviar');bt.append(go,cl);n.append(bt);
   const say=(t,c)=>{stx.textContent=t;stx.className='apst'+(c?' '+c:'')};
-  const mimeOf=fl=>fl.type||({pdf:'application/pdf',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp',heic:'image/heic'})[(fl.name.split('.').pop()||'').toLowerCase()]||'';
-  const ok=['application/pdf','image/jpeg','image/png','image/webp','image/heic'];
   const b64=fl=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=()=>rej(r.error);r.readAsDataURL(fl)});
+  const lote=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));let hechas=0,recib=0;
   go.onclick=async()=>{const fs=FL.slice();
     if(sc.value==='__nuevo'&&!inN.value.trim())return say('Escribe el nombre del curso nuevo.','bad');
     if(!fs.length)return say('Elige al menos un archivo.','bad');
-    if(fs.length>10)return say('Máximo 10 archivos por envío.','bad');
-    if(fs.some(x=>!ok.includes(mimeOf(x))))return say('Solo se aceptan PDF o fotos (JPG, PNG, WEBP, HEIC).','bad');
-    if(fs.some(x=>x.size>15*1048576))return say('Cada archivo debe pesar menos de 15 MB.','bad');
-    if(fs.reduce((a,x)=>a+x.size,0)>35*1048576)return say('En total no puede pasar de 35 MB. Envíalo en partes.','bad');
-    go.disabled=cl.disabled=true;say('Preparando archivos…');
-    try{const files=[];for(const x of fs)files.push({name:x.name,mime:mimeOf(x),data:await b64(x)});
-      say('Enviando… no cierres esta ventana.');
-      const body={curso:sc.value==='__nuevo'?'NUEVO: '+inN.value.trim():sc.value,semana:sw.value==='—'?'':sw.value,tipo:st.value,nota:ta.value.trim(),usuario:acctName()||'',email:u.email||'',uid:u.uid,files};
-      const r=await fetch(BUZON,{method:'POST',body:JSON.stringify(body)});const j=await r.json();
-      if(!j.ok)throw new Error(j.error||'error');
-      say('¡Listo! Recibimos '+j.n+' archivo'+(j.n>1?'s':'')+'. Gracias por aportar 🙌','ok');
+    if(fs.length>MAXN)return say('Máximo '+MAXN+' archivos por envío. Quita algunos o envíalo en dos veces.','bad');
+    if(fs.some(x=>!mimeOf(x)||!EXT.test(x.name)&&!/^image\//.test(x.type)))return say('Solo se aceptan PDF, fotos, PPT, Word o .zip.','bad');
+    if(fs.some(x=>x.size>MAXF))return say('Cada archivo debe pesar menos de 15 MB.','bad');
+    if(fs.reduce((a,x)=>a+x.size,0)>MAXT)return say('En total no puede pasar de 120 MB. Envíalo en dos veces.','bad');
+    const parts=[];let cur=[],sz=0;for(const x of fs){if(cur.length&&(cur.length>=10||sz+x.size>20*1048576)){parts.push(cur);cur=[];sz=0}cur.push(x);sz+=x.size}parts.push(cur);
+    go.disabled=cl.disabled=true;
+    const base={curso:sc.value==='__nuevo'?'NUEVO: '+inN.value.trim():sc.value,semana:sw.value==='—'?'':sw.value,tipo:st.value,nota:ta.value.trim(),usuario:acctName()||'',email:u.email||'',uid:u.uid,lote,partes:hechas+parts.length};
+    try{for(let i=0;i<parts.length;i++){
+        say(parts.length>1?'Enviando parte '+(i+1)+' de '+parts.length+'… no cierres esta ventana.':'Enviando… no cierres esta ventana.');
+        const files=[];for(const x of parts[i])files.push({name:x.name,mime:mimeOf(x),data:await b64(x)});
+        const r=await fetch(BUZON,{method:'POST',body:JSON.stringify({...base,parte:hechas+1,files})});const j=await r.json();
+        if(!j.ok)throw new Error(j.error||'error');
+        hechas++;recib+=j.n||files.length;FL=FL.filter(x=>!parts[i].includes(x));draw()}
+      say('¡Listo! Recibimos '+recib+' archivo'+(recib>1?'s':'')+'. Gracias por aportar 🙌','ok');
       bt.innerHTML='';const fin=el('button','pri','Cerrar');fin.onclick=closeModal;bt.append(fin)}
-    catch(e){console.error(e);go.disabled=cl.disabled=false;say('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.','bad')}};
+    catch(e){console.error(e);go.disabled=cl.disabled=false;say(hechas?'Se cortó a la mitad: lo que ya no está en la lista sí llegó. Toca Enviar para mandar el resto.':'No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.','bad')}};
   openModal(n)}
 function hintDone(){S.set('ent-hint-drag',1)}
 function renderMenu(){const m=$('menu');SORTS.forEach(x=>{try{x.destroy()}catch(e){}});SORTS=[];m.innerHTML='';
