@@ -279,7 +279,7 @@
      "id": "ffu10",
      "lvl": 3,
      "title": "Ganancia recursiva (PC1 2026-1)",
-     "q": "<p>Implementa <code>double gananciaRecursiva(double capital, double interes, int t)</code> que calcule, <b>de forma recursiva</b> y reduciendo t en cada llamada, la ganancia de invertir <code>capital</code> durante t años a <code>interes</code> % anual: \\(\\text{ganancia} = \\text{capital}\\,(1 + i/100)^t - \\text{capital}\\).</p>",
+     "q": "<p>Implementa <code>double gananciaRecursiva(double capital, double interes, int t)</code> que calcule, <b>de forma recursiva</b> y reduciendo t en cada llamada, la ganancia de invertir <code>capital</code> durante t años a <code>interes</code> % anual: \\(\\text{ganancia}\\) \\(= \\text{capital}\\,(1 + i/100)^t\\) \\(- \\text{capital}\\).</p>",
      "checks": [
       {
        "t": "code",

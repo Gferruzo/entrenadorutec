@@ -591,17 +591,17 @@
       {
        "p": "Igualdad",
        "o": [
-        "\\(x+23=(x-2)+25=5k+25=5(k+5)\\)",
-        "\\(x+23=5k+23\\)",
-        "\\(x+23=x-2+21=5(k+21)\\)",
-        "\\(x+23=5(x+23)\\)",
-        "\\(x=5k\\Rightarrow x+23=5k+23\\)"
+        "\\(x+23\\) \\(=(x-2)+25\\) \\(=5k+25\\) \\(=5(k+5)\\)",
+        "\\(x+23\\) \\(=5k+23\\)",
+        "\\(x+23\\) \\(=x-2+21\\) \\(=5(k+21)\\)",
+        "\\(x+23\\) \\(=5(x+23)\\)",
+        "\\(x\\) \\(=5k\\Rightarrow x+23\\) \\(=5k+23\\)"
        ]
       }
      ],
      "steps": [
       "«Múltiplo de 5» = 5 · (entero). Por hipótesis \\(x-2=5k\\).",
-      "Truco: escribe \\(x+23\\) usando \\(x-2\\): \\(x+23=(x-2)+25=5k+25=5(k+5)\\), y \\(k+5\\) es entero."
+      "Truco: escribe \\(x+23\\) usando \\(x-2\\): \\(x+23\\) \\(=(x-2)+25\\) \\(=5k+25\\) \\(=5(k+5)\\), y \\(k+5\\) es entero."
      ],
      "ans": "\\(5(k+5)\\)",
      "hint": "Escribe x + 23 usando x − 2.",
@@ -1429,28 +1429,28 @@
       {
        "p": "«Es suficiente que \\(-2\\lt a\\lt2\\) para que \\(|a|\\lt2\\)»",
        "o": [
-        "\\((-2\\lt a\\lt2)\\to(|a|\\lt2)\\)",
-        "\\((|a|\\lt2)\\to(-2\\lt a\\lt2)\\)",
-        "\\((-2\\lt a\\lt2)\\wedge(|a|\\lt2)\\)",
-        "\\(\\neg(-2\\lt a\\lt2)\\to\\neg(|a|\\lt2)\\)",
-        "\\((-2\\lt a\\lt2)\\vee(|a|\\lt2)\\)"
+        "\\((-2\\lt a\\lt2)\\) \\(\\to(|a|\\lt2)\\)",
+        "\\((|a|\\lt2)\\) \\(\\to(-2\\lt a\\lt2)\\)",
+        "\\((-2\\lt a\\lt2)\\) \\(\\wedge(|a|\\lt2)\\)",
+        "\\(\\neg(-2\\lt a\\lt2)\\) \\(\\to\\neg(|a|\\lt2)\\)",
+        "\\((-2\\lt a\\lt2)\\) \\(\\vee(|a|\\lt2)\\)"
        ]
       },
       {
        "p": "«Una condición necesaria para que \\(a^2+b^2+c^2=0\\) es que \\(a=b=c=0\\)»",
        "o": [
-        "\\((a^2+b^2+c^2=0)\\to(a=0\\wedge b=0\\wedge c=0)\\)",
-        "\\((a=0\\wedge b=0\\wedge c=0)\\to(a^2+b^2+c^2=0)\\)",
-        "\\((a^2+b^2+c^2=0)\\to(a=0\\vee b=0\\vee c=0)\\)",
-        "\\((a^2+b^2+c^2=0)\\wedge(a=b=c=0)\\)",
-        "\\((a=b=c=0)\\leftrightarrow\\neg(a^2+b^2+c^2=0)\\)"
+        "\\((a^2+b^2+c^2=0)\\) \\(\\to(a=0\\wedge b=0\\wedge c=0)\\)",
+        "\\((a=0\\wedge b=0\\wedge c=0)\\) \\(\\to(a^2+b^2+c^2=0)\\)",
+        "\\((a^2+b^2+c^2=0)\\) \\(\\to(a=0\\vee b=0\\vee c=0)\\)",
+        "\\((a^2+b^2+c^2=0)\\) \\(\\wedge(a=b=c=0)\\)",
+        "\\((a=b=c=0)\\) \\(\\leftrightarrow\\neg(a^2+b^2+c^2=0)\\)"
        ]
       }
      ],
      "steps": [
       "Truco: lo <b>suficiente</b> va antes de la flecha; lo <b>necesario</b> va después.",
-      "Primera: «\\(-2\\lt a\\lt2\\)» es lo suficiente, va primero: \\((-2\\lt a\\lt2)\\to(|a|\\lt2)\\).",
-      "Segunda: «\\(a=b=c=0\\)» es lo necesario, va después: \\((a^2+b^2+c^2=0)\\to(a=0\\wedge b=0\\wedge c=0)\\)."
+      "Primera: «\\(-2\\lt a\\lt2\\)» es lo suficiente, va primero: \\((-2\\lt a\\lt2)\\) \\(\\to(|a|\\lt2)\\).",
+      "Segunda: «\\(a=b=c=0\\)» es lo necesario, va después: \\((a^2+b^2+c^2=0)\\) \\(\\to(a=0\\wedge b=0\\wedge c=0)\\)."
      ],
      "ans": "Suficiente → antecedente; necesaria → consecuente",
      "hint": "«Necesaria» va después de la flecha.",
@@ -2108,11 +2108,11 @@
       {
        "p": "Una FNC de t",
        "o": [
-        "\\((\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\wedge(p\\vee q\\vee\\neg r)\\wedge(p\\vee q\\vee r)\\)",
-        "\\((p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(\\neg p\\vee\\neg q\\vee r)\\)",
-        "\\((\\neg p\\vee q\\vee r)\\wedge(p\\vee\\neg q\\vee r)\\wedge(p\\vee q\\vee\\neg r)\\)",
-        "\\((p\\vee\\neg q\\vee\\neg r)\\wedge(\\neg p\\vee q\\vee\\neg r)\\wedge(\\neg p\\vee\\neg q\\vee r)\\wedge(\\neg p\\vee\\neg q\\vee\\neg r)\\)",
-        "\\((p\\wedge\\neg q\\wedge\\neg r)\\vee(\\neg p\\wedge q\\wedge\\neg r)\\vee(\\neg p\\wedge\\neg q\\wedge r)\\)"
+        "\\((\\neg p\\vee q\\vee r)\\) \\(\\wedge(p\\vee\\neg q\\vee r)\\) \\(\\wedge(p\\vee q\\vee\\neg r)\\) \\(\\wedge(p\\vee q\\vee r)\\)",
+        "\\((p\\vee\\neg q\\vee\\neg r)\\) \\(\\wedge(\\neg p\\vee q\\vee\\neg r)\\) \\(\\wedge(\\neg p\\vee\\neg q\\vee r)\\)",
+        "\\((\\neg p\\vee q\\vee r)\\) \\(\\wedge(p\\vee\\neg q\\vee r)\\) \\(\\wedge(p\\vee q\\vee\\neg r)\\)",
+        "\\((p\\vee\\neg q\\vee\\neg r)\\) \\(\\wedge(\\neg p\\vee q\\vee\\neg r)\\) \\(\\wedge(\\neg p\\vee\\neg q\\vee r)\\) \\(\\wedge(\\neg p\\vee\\neg q\\vee\\neg r)\\)",
+        "\\((p\\wedge\\neg q\\wedge\\neg r)\\) \\(\\vee(\\neg p\\wedge q\\wedge\\neg r)\\) \\(\\vee(\\neg p\\wedge\\neg q\\wedge r)\\)"
        ]
       }
      ],
