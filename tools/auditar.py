@@ -2,9 +2,14 @@
 """Auditoría completa de NotPull en el navegador.
 
 Uso:
-  python3 tools/auditar.py                 # Chromium, todos los bloques
-  python3 tools/auditar.py --webkit        # motor de Safari (instalar: python3 -m playwright install webkit)
+  python3 tools/auditar.py                   # solo lo que cambió respecto de origin/main (segundos)
+  python3 tools/auditar.py --todo            # todos los bloques (~6 min)
   python3 tools/auditar.py calculo-ep p2-ef  # solo esos bloques
+  python3 tools/auditar.py --webkit …        # motor de Safari (instalar: python3 -m playwright install webkit)
+
+Sin argumentos: revisa completos los bloques cuyo JSON cambió y, si cambió index.html, una
+muestra de pocos temas que juntos cubren cada tipo de pregunta y herramienta, y las pruebas
+de arrastre.
 
 Qué hace, por cada tema de cada bloque publicado:
   · abre el tema, construye todas las preguntas y soluciones y las pasa por MathJax
@@ -98,7 +103,7 @@ TOPIC_JS=r"""async (i)=>{
 
 DRAG=[("tlc","check"),("vecdraw","check"),("tl","tool"),("det","tool"),("vec","tool"),("recta","tool"),("pdef","tool"),("rcirc","tool")]
 BASE='http://notpull.test/'
-async def main(engine,only):
+async def main(engine,only,drag=True):
   res=[];probs=collections.defaultdict(list)
   async with async_playwright() as p:
     b=await getattr(p,engine).launch()
@@ -110,9 +115,11 @@ async def main(engine,only):
     await pg.wait_for_timeout(2500);await pg.evaluate("document.getElementById('ovl')&&(document.getElementById('ovl').innerHTML='')")
     ids=await pg.evaluate('__X.COURSES.filter(c=>!c.soon&&c.topics.length).map(c=>c.id)')
     for cid in ids:
-      if only and cid not in only:continue
+      if only is not None and cid not in only:continue
       n=await pg.evaluate('id=>{__X.openCourse(id);return __X.T.length}',cid)
+      sel=only.get(cid) if only is not None else None
       for i in range(n):
+        if sel is not None and i not in sel:continue
         perr.clear()
         try:r=await asyncio.wait_for(pg.evaluate(TOPIC_JS,i),120)
         except Exception as ex:r={'i':i,'err':['TIMEOUT/EXC '+str(ex)[:200]]}
@@ -129,7 +136,7 @@ async def main(engine,only):
       for x in perr:probs['errores JS'].append(cid+' simulacro: '+x)
     # arrastres
     await pg.evaluate("document.getElementById('ovl').innerHTML=''")
-    for t,kind in DRAG:
+    for t,kind in (DRAG if drag else []):
       loc=await pg.evaluate("""([t,kind])=>{for(const c of __X.COURSES){if(c.soon)continue;for(const [i,tp] of c.topics.entries()){
          if(kind==='tool'&&(tp.tools||[]).some(w=>w.w===t))return{c:c.id,i};
          if(kind==='check')for(const e of tp.ex)for(const [q,ch] of e.checks.entries())if(ch.t===t)return{c:c.id,i,e:e.id,q}}}return null}""",[t,kind])
@@ -167,6 +174,38 @@ async def main(engine,only):
     if not k.startswith('aviso'):nerr+=len(v)
   print('\n'+('✅ Sin errores' if not nerr else '❌ '+str(nerr)+' errores'))
   return nerr
+def cambios():
+  """Archivos cambiados respecto de origin/main (commits sin subir + cambios sin commit)."""
+  def g(*a):
+    r=subprocess.run(['git','-C',REPO]+list(a),capture_output=True,text=True);return r.stdout.split()
+  subprocess.run(['git','-C',REPO,'fetch','-q','origin','main'],capture_output=True)
+  return set(g('diff','--name-only','origin/main')+g('ls-files','--others','--exclude-standard'))
+def muestra():
+  """Pocos temas que juntos cubren cada tipo de pregunta y herramienta ."""
+  idx=json.load(open(os.path.join(REPO,'cursos','indice.json')))['cursos']
+  temas=[];sel=collections.defaultdict(set)
+  for cid in idx:
+    d=json.load(open(os.path.join(REPO,'cursos',cid+'.json')))
+    if d.get('soon') or not d['topics']:continue
+    for i,t in enumerate(d['topics']):
+      k={'c:'+(ch.get('t') or 'opt') for e in t['ex'] for ch in e['checks']}|{'w:'+w.get('w','') for w in t.get('tools',[])}
+      temas.append((cid,i,k))
+  falta=set().union(*(k for _,_,k in temas))
+  while falta:
+    cid,i,k=max(temas,key=lambda x:len(x[2]&falta));sel[cid].add(i);falta-=k
+  return dict(sel)
 if __name__=='__main__':
-  a=sys.argv[1:];eng='webkit' if '--webkit' in a else 'chromium';only=[x for x in a if not x.startswith('--')]
-  bajar();sys.exit(1 if asyncio.run(main(eng,only or None)) else 0)
+  a=sys.argv[1:];eng='webkit' if '--webkit' in a else 'chromium';ids=[x for x in a if not x.startswith('--')]
+  bajar();drag=True
+  if ids:only={c:None for c in ids}
+  elif '--todo' in a:only=None
+  else:
+    ch=cambios();only={}
+    bl={os.path.basename(f)[:-5] for f in ch if f.startswith('cursos/') and f.endswith('.json') and not f.endswith(('indice.json','novedades.json'))}
+    app='index.html' in ch
+    if app:only.update(muestra())
+    for c in bl:only[c]=None
+    drag=app
+    if not only:print('No hay cambios respecto de origin/main. Para revisar todo: --todo');sys.exit(0)
+    print('Revisando',('la app (muestra de cada tipo de pregunta) y ' if app else '')+(', '.join(sorted(bl)) or 'ningún bloque'),flush=True)
+  sys.exit(1 if asyncio.run(main(eng,only,drag)) else 0)
