@@ -1,0 +1,3335 @@
+{
+ "code": "1AMA0758",
+ "uni": "UPC",
+ "name": "Cálculo I",
+ "nbname": "Cálculo I",
+ "guide": true,
+ "free": true,
+ "formSim": false,
+ "figs": {},
+ "simEx": [],
+ "id": "cupc-pr",
+ "exam": "Práctica (semanas 7 a 9)",
+ "short": "Práctica",
+ "sub": "Sem. 7 a 9",
+ "intro": "Práctica de cálculo integral de la unidad 3, con las lecturas del curso: antiderivadas, integral definida como área, propiedades, teorema fundamental (parte 2), sustitución, integrales trigonométricas, sustitución trigonométrica y razonamiento cuantitativo. Todos los temas están abiertos; si te falta base, empieza por el bloque <b>Repaso</b>. Las integrales se corrigen solas: acepta cualquier antiderivada correcta. Interactivos: acumulador del área con signo, «¿qué u elijo?» y el triángulo de la sustitución trigonométrica. <b>Ojo con dos detalles de las lecturas</b>: el final del ejemplo 6 de sustitución y la respuesta de la práctica de razonamiento cuantitativo; aquí están corregidos. Se irá actualizando con las siguientes semanas.",
+ "form": "<p class=\"note\">Hoja de repaso de la unidad 3.</p>\n<div class=\"fgrid\">\n<div><b>Antiderivada e integral indefinida</b><br>\\(F'=f\\Leftrightarrow\\int f\\,dx=F+C\\) · \\(\\int x^ndx=\\frac{x^{n+1}}{n+1}+C\\ (n\\neq-1)\\) · \\(\\int\\frac1xdx=\\ln|x|+C\\) · \\(\\int e^xdx=e^x+C\\) · \\(\\int\\cos x=\\operatorname{sen}x\\) · \\(\\int\\operatorname{sen}x=-\\cos x\\) · \\(\\int\\sec^2x=\\tan x\\) · \\(\\int\\frac{dx}{1+x^2}=\\arctan x\\)</div>\n<div><b>Integral definida como área</b><br>\\(\\int_a^bf\\,dx\\) = área sobre el eje − área bajo el eje · Indefinida: funciones · definida: número · Triángulo \\(\\frac{bh}2\\) · trapecio \\(\\frac{(B+b)h}2\\) · semicírculo \\(\\frac{\\pi r^2}2\\)</div>\n<div><b>Propiedades de la integral definida</b><br>\\(\\int_a^b=-\\int_b^a\\) · \\(\\int_a^a=0\\) · \\(\\int_a^bc\\,dx=c(b-a)\\) · \\(\\int(f\\pm g)=\\int f\\pm\\int g\\) · \\(\\int cf=c\\int f\\) · \\(\\int_a^c+\\int_c^b=\\int_a^b\\)</div>\n<div><b>Teorema fundamental del cálculo (parte 2)</b><br>\\(\\int_a^bf=F(b)-F(a)\\), con \\(F'=f\\) · \\(\\int_a^bF'(x)dx=F(b)-F(a)\\) · En definidas no va + C</div>\n<div><b>Regla de sustitución</b><br>\\(u=g(x)\\Rightarrow du=g'(x)dx\\) · \\(\\int f(g(x))g'(x)dx=\\int f(u)du\\) · Definida: \\(\\int_{g(a)}^{g(b)}f(u)du\\) · \\(\\int\\frac{dx}{ax+b}=\\frac1a\\ln|ax+b|\\)</div>\n<div><b>Integrales trigonométricas</b><br>Impar: separa un factor y \\(\\operatorname{sen}^2=1-\\cos^2\\) · Pares: \\(\\operatorname{sen}^2=\\frac{1-\\cos2x}2\\), \\(\\cos^2=\\frac{1+\\cos2x}2\\) · tan impar: separa \\(\\sec x\\tan x\\), \\(u=\\sec x\\) · sec par: separa \\(\\sec^2x\\), \\(u=\\tan x\\)</div>\n<div><b>Sustitución trigonométrica</b><br>\\(\\sqrt{a^2-x^2}\\): \\(x=a\\operatorname{sen}\\theta\\) → \\(a\\cos\\theta\\) · \\(\\sqrt{a^2+x^2}\\): \\(x=a\\tan\\theta\\) → \\(a\\sec\\theta\\) · \\(\\sqrt{x^2-a^2}\\): \\(x=a\\sec\\theta\\) → \\(a\\tan\\theta\\) · Regresa a x con el triángulo</div>\n<div><b>Razonamiento cuantitativo con integrales</b><br>Integral de una tasa = cambio total · Potencia (kW) → energía (kWh) · Rúbrica: interpretación · representación · cálculo · argumentación</div>\n</div>",
+ "topics": [
+  {
+   "id": "s7a",
+   "name": "Sem. 7 · Antiderivada e integral indefinida",
+   "teo": "<p>F es una <b>antiderivada</b> de f si \\(F'(x)=f(x)\\). Si hay una, hay infinitas: todas difieren en una constante. La <b>integral indefinida</b> es esa familia:</p><p style='text-align:center'>\\(\\int f(x)\\,dx=F(x)+C\\)</p><p><b>Tabla básica:</b> \\(\\int x^n dx=\\frac{x^{n+1}}{n+1}+C\\) (\\(n\\neq-1\\)) · \\(\\int\\frac1x dx=\\ln|x|+C\\) · \\(\\int e^xdx=e^x+C\\) · \\(\\int\\cos x\\,dx=\\operatorname{sen}x+C\\) · \\(\\int\\operatorname{sen}x\\,dx=-\\cos x+C\\) · \\(\\int\\sec^2x\\,dx=\\tan x+C\\) · \\(\\int\\sec x\\tan x\\,dx=\\sec x+C\\) · \\(\\int\\frac{dx}{1+x^2}=\\arctan x+C\\) · \\(\\int\\frac{dx}{\\sqrt{1-x^2}}=\\operatorname{arcsen}x+C\\).</p><p><b>Propiedades:</b> \\(\\int[f\\pm g]=\\int f\\pm\\int g\\) y \\(\\int kf=k\\int f\\). <b>No</b> hay regla para productos ni cocientes: hay que simplificar antes (o usar sustitución).</p><p>Si te dan un dato como \\(f(-1)=2\\), lo usas al final para hallar C.</p>",
+   "form": [
+    "\\(F'=f\\Leftrightarrow\\int f\\,dx=F+C\\)",
+    "\\(\\int x^ndx=\\frac{x^{n+1}}{n+1}+C\\ (n\\neq-1)\\)",
+    "\\(\\int\\frac1xdx=\\ln|x|+C\\) · \\(\\int e^xdx=e^x+C\\)",
+    "\\(\\int\\cos x=\\operatorname{sen}x\\) · \\(\\int\\operatorname{sen}x=-\\cos x\\)",
+    "\\(\\int\\sec^2x=\\tan x\\) · \\(\\int\\frac{dx}{1+x^2}=\\arctan x\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Integrar es preguntarse «¿qué función, al derivarla, da esto?». Siempre puedes comprobarlo derivando.</p><div class=\"ej\"><b>Ejemplo:</b> \\(\\int(4x^3)dx=x^4+C\\) porque \\((x^4)'=4x^3\\).</div><div class=\"err\"><b>Error común:</b> olvidar la + C o integrar un cociente «dividiendo integrales».</div>",
+   "ex": [
+    {
+     "id": "s7a1",
+     "lvl": 1,
+     "title": "¿Cuál no es antiderivada?",
+     "q": "<p>¿Cuál de estas funciones <b>no</b> es una antiderivada de \\(f(x)=3x^2\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(6x\\)",
+        "\\(x^3\\)",
+        "\\(x^3+5\\)",
+        "\\(x^3-\\pi\\)",
+        "\\(x^3+100\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "F es antiderivada de f si \\(F'=f\\). Todas las \\(x^3+C\\) cumplen \\((x^3+C)'=3x^2\\).",
+      "\\(6x\\) es la <b>derivada</b> de \\(3x^2\\), no su antiderivada."
+     ],
+     "ans": "\\(6x\\)",
+     "hint": "Deriva cada opción.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "antider"
+      ],
+      [
+       "antider"
+      ]
+     ]
+    },
+    {
+     "id": "s7a2",
+     "lvl": 1,
+     "title": "Término a término",
+     "q": "<p>Calcula \\(\\int\\left(6x-\\frac3x+5\\cos x\\right)dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "3*x^2-3*ln(abs(x))+5*sen(x)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.4,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Propiedades: la integral de una suma es la suma de integrales y las constantes salen.",
+      "\\(6\\int x\\,dx-3\\int\\frac1x dx+5\\int\\cos x\\,dx\\).",
+      "\\(=3x^2-3\\ln|x|+5\\operatorname{sen}x+C\\)."
+     ],
+     "ans": "\\(3x^2-3\\ln|x|+5\\operatorname{sen}x+C\\)",
+     "hint": "\\(\\int\\frac1x dx=\\ln|x|\\).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "propind"
+      ],
+      [
+       "propind"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s7a3",
+     "lvl": 2,
+     "title": "Primero divide",
+     "q": "<p>Calcula \\(\\int\\dfrac{x^5-2x+1}{x}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "x^5/5-2*x+ln(abs(x))",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.4,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Divide cada término entre x: \\(x^4-2+\\frac1x\\).",
+      "Integra: \\(\\frac{x^5}{5}-2x+\\ln|x|+C\\)."
+     ],
+     "ans": "\\(\\frac{x^5}5-2x+\\ln|x|+C\\)",
+     "hint": "No hay regla del cociente para integrar: simplifica antes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s7a4",
+     "lvl": 2,
+     "title": "Exponentes fraccionarios",
+     "q": "<p>Halla la antiderivada general de \\(f(x)=7x^{2/5}+8x^{-4/5}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "F(x) =",
+         "a": "5*x^(7/5)+40*x^(1/5)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.4,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int x^n dx=\\frac{x^{n+1}}{n+1}\\): \\(7\\cdot\\frac{x^{7/5}}{7/5}=5x^{7/5}\\).",
+      "\\(8\\cdot\\frac{x^{1/5}}{1/5}=40x^{1/5}\\). Resultado: \\(5x^{7/5}+40x^{1/5}+C\\)."
+     ],
+     "ans": "\\(5x^{7/5}+40x^{1/5}+C\\)",
+     "hint": "Dividir entre 7/5 es multiplicar por 5/7.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s7a5",
+     "lvl": 1,
+     "title": "Trigonométricas",
+     "q": "<p>Calcula \\(\\int\\left(2\\operatorname{sen}t-\\sec^2t\\right)dt\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dt =",
+         "a": "-2*cos(t)-tan(t)",
+         "v": [
+          "t"
+         ],
+         "mode": "anti",
+         "dom": {
+          "t": [
+           0.2,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int\\operatorname{sen}t\\,dt=-\\cos t\\) y \\(\\int\\sec^2t\\,dt=\\tan t\\).",
+      "\\(-2\\cos t-\\tan t+C\\)."
+     ],
+     "ans": "\\(-2\\cos t-\\tan t+C\\)",
+     "hint": "Ojo con el signo de la integral del seno.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tabla"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s7a6",
+     "lvl": 2,
+     "title": "Con condición inicial",
+     "q": "<p>Encuentra f si \\(f'(x)=5x^4-3x^2+4\\) y \\(f(-1)=2\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "f(x) =",
+         "a": "x^5-x^3+4*x+6",
+         "v": [
+          "x"
+         ],
+         "mode": "eq",
+         "dom": {
+          "x": [
+           -2,
+           2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Integra: \\(f(x)=x^5-x^3+4x+C\\).",
+      "\\(f(-1)=-1+1-4+C=2\\Rightarrow C=6\\).",
+      "\\(f(x)=x^5-x^3+4x+6\\)."
+     ],
+     "ans": "\\(f(x)=x^5-x^3+4x+6\\)",
+     "hint": "La condición sirve para hallar C.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "antider"
+      ],
+      [
+       "cini"
+      ],
+      [
+       "cini"
+      ]
+     ]
+    },
+    {
+     "id": "s7a7",
+     "lvl": 2,
+     "title": "De la velocidad a la posición",
+     "q": "<p>Una partícula se mueve con velocidad \\(v(t)=2t\\) m/s y en \\(t=0\\) está en \\(s=3\\) m. ¿Dónde está?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "s(t) =",
+         "a": "t^2+3",
+         "v": [
+          "t"
+         ],
+         "mode": "eq",
+         "dom": {
+          "t": [
+           0,
+           4
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La posición es una antiderivada de la velocidad: \\(s(t)=t^2+C\\).",
+      "\\(s(0)=C=3\\) ⇒ \\(s(t)=t^2+3\\). La antiderivada reconstruye el movimiento a partir de su tasa de cambio."
+     ],
+     "ans": "\\(s(t)=t^2+3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "antider"
+      ],
+      [
+       "cini"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s7b",
+   "name": "Sem. 7 · Integral definida como área",
+   "teo": "<p>La <b>integral definida</b> \\(\\int_a^bf(x)\\,dx\\) es un <b>número</b>: si f es positiva, el área entre la curva, el eje x y las rectas x = a, x = b.</p><p>Si f toma valores negativos, esa parte <b>resta</b>: la integral es el <b>área neta</b> \\(A_1-A_2+A_3\\dots\\)</p><p>Existe siempre que f sea continua (o tenga un número finito de saltos). Cuando la figura es conocida (triángulos, trapecios, círculos), puedes calcularla sin fórmulas.</p><p>Diferencia clave: la indefinida es una <b>familia de funciones</b> (\\(F(x)+C\\)); la definida es <b>un número</b>.</p>",
+   "form": [
+    "\\(\\int_a^bf\\,dx\\) = área sobre el eje − área bajo el eje",
+    "Indefinida: funciones · definida: número",
+    "Triángulo \\(\\frac{bh}2\\) · trapecio \\(\\frac{(B+b)h}2\\) · semicírculo \\(\\frac{\\pi r^2}2\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Mira la gráfica: arriba suma, abajo resta.</p><div class=\"err\"><b>Error común:</b> sumar todas las áreas como positivas cuando la pregunta es la integral.</div>",
+   "tools": [
+    {
+     "w": "acum",
+     "t": "Acumulador: área con signo",
+     "p": "Mueve a y b. Lo verde suma, lo rojo resta.",
+     "o": {
+      "f": "x-1",
+      "F": "x^2/2-x",
+      "xr": [
+       -1,
+       4
+      ],
+      "yr": [
+       -2.5,
+       3.5
+      ],
+      "a": 0,
+      "b": 3,
+      "fl": "x − 1"
+     }
+    },
+    {
+     "w": "acum",
+     "t": "Con seno",
+     "p": "Prueba de 0 a π, de π a 2π y de 0 a 2π.",
+     "o": {
+      "f": "sin(x)",
+      "F": "-cos(x)",
+      "xr": [
+       0,
+       7
+      ],
+      "yr": [
+       -1.5,
+       1.5
+      ],
+      "a": 0,
+      "b": 3.14,
+      "step": 0.01,
+      "fl": "sen x"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s7b1",
+     "lvl": 1,
+     "title": "Con triángulos",
+     "q": "<p>Evalúa \\(\\int_0^3(x-1)\\,dx\\) usando áreas.</p><div class=\"lw\" data-w=\"graph\" data-o='{\"f\": \"x-1\", \"xr\": [-0.5, 3.5], \"yr\": [-1.5, 2.5], \"fs\": [{\"f\": \"x-1\", \"cl\": \"f\", \"l\": \"y = x − 1\"}], \"id\": \"g71\"}'></div>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 1.5
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "De 0 a 1 la recta está bajo el eje: triángulo de área \\(\\frac{1\\cdot1}2=\\frac12\\) que <b>resta</b>.",
+      "De 1 a 3 está sobre el eje: triángulo de área \\(\\frac{2\\cdot2}2=2\\) que <b>suma</b>.",
+      "\\(2-\\frac12=\\frac32\\)."
+     ],
+     "ans": "\\(\\frac32\\)",
+     "hint": "Lo que está bajo el eje resta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ]
+     ]
+    },
+    {
+     "id": "s7b2",
+     "lvl": 2,
+     "title": "Semicírculo",
+     "q": "<p>Evalúa \\(\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx\\) interpretándola como un área.</p><div class=\"lw\" data-w=\"graph\" data-o='{\"f\": \"sqrt(4-x^2)\", \"xr\": [-2.5, 2.5], \"yr\": [-0.5, 2.5], \"fs\": [{\"f\": \"sqrt(4-x^2)\", \"cl\": \"f\"}], \"id\": \"g72\"}'></div>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "2*π",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(y=\\sqrt{4-x^2}\\) es la mitad de arriba de la circunferencia de radio 2.",
+      "Área del semicírculo: \\(\\frac{\\pi\\cdot2^2}{2}=2\\pi\\)."
+     ],
+     "ans": "\\(2\\pi\\)",
+     "hint": "Eleva al cuadrado: \\(x^2+y^2=4\\).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ]
+     ]
+    },
+    {
+     "id": "s7b3",
+     "lvl": 2,
+     "title": "Mueve b hasta que se anule",
+     "q": "<p>Con \\(f(x)=x-1\\) y \\(a=0\\), mueve b hasta que \\(\\int_0^b(x-1)\\,dx=0\\).</p>",
+     "checks": [
+      {
+       "t": "acum",
+       "p": "Mueve b",
+       "f": "x-1",
+       "F": "x^2/2-x",
+       "xr": [
+        0,
+        4
+       ],
+       "yr": [
+        -1.5,
+        3
+       ],
+       "a": 0,
+       "b0": 3.5,
+       "ans": 2,
+       "tol": 0.051,
+       "step": 0.05,
+       "fl": "x − 1",
+       "e": "Busca el punto donde lo verde (que suma) es igual a lo rojo (que resta)."
+      }
+     ],
+     "steps": [
+      "Lo rojo de 0 a 1 mide \\(\\frac12\\).",
+      "Lo verde de 1 a b mide \\(\\frac{(b-1)^2}{2}\\); se iguala a \\(\\frac12\\) cuando \\(b=2\\)."
+     ],
+     "ans": "\\(b=2\\)",
+     "hint": "La integral es área neta.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ]
+     ]
+    },
+    {
+     "id": "s7b4",
+     "lvl": 1,
+     "title": "¿Qué mide la integral?",
+     "q": "<p>Si f toma valores positivos y negativos en [a; b], \\(\\int_a^bf(x)\\,dx\\) es…</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "el área sobre el eje menos el área bajo el eje",
+        "la suma de todas las áreas, sin signo",
+        "siempre un número positivo",
+        "el área bajo el eje menos el área sobre el eje",
+        "una función de x"
+       ]
+      }
+     ],
+     "steps": [
+      "La integral definida es un <b>área neta</b>: lo de arriba suma y lo de abajo resta.",
+      "Es un número (no depende de x). Si quieres el área total sin signo, tienes que separar los tramos."
+     ],
+     "ans": "Área sobre el eje − área bajo el eje",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "defi"
+      ]
+     ]
+    },
+    {
+     "id": "s7b5",
+     "lvl": 2,
+     "title": "¿Positiva, negativa o cero?",
+     "q": "<p>Clasifica cada integral sin calcularla.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "Positiva",
+        "Negativa",
+        "Cero"
+       ],
+       "items": [
+        {
+         "x": "\\(\\int_0^{\\pi}\\operatorname{sen}x\\,dx\\)",
+         "c": 0,
+         "e": "El seno es positivo entre 0 y π."
+        },
+        {
+         "x": "\\(\\int_{-1}^{1}x^2\\,dx\\)",
+         "c": 0,
+         "e": "x² nunca es negativa."
+        },
+        {
+         "x": "\\(\\int_{\\pi}^{2\\pi}\\operatorname{sen}x\\,dx\\)",
+         "c": 1,
+         "e": "El seno es negativo entre π y 2π."
+        },
+        {
+         "x": "\\(\\int_0^{2}(x-3)\\,dx\\)",
+         "c": 1,
+         "e": "x − 3 es negativa en [0; 2]."
+        },
+        {
+         "x": "\\(\\int_0^{2\\pi}\\operatorname{sen}x\\,dx\\)",
+         "c": 2,
+         "e": "La parte de arriba y la de abajo son iguales."
+        },
+        {
+         "x": "\\(\\int_{-1}^{1}x^3\\,dx\\)",
+         "c": 2,
+         "e": "x³ es impar: lo de la izquierda cancela lo de la derecha."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Mira el signo de f en el intervalo.",
+      "Si hay partes arriba y abajo iguales (funciones impares en intervalos simétricos), se cancelan."
+     ],
+     "ans": "Clasificación correcta",
+     "hint": "Dibuja la función mentalmente.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ]
+     ]
+    },
+    {
+     "id": "s7b6",
+     "lvl": 1,
+     "title": "Áreas que se cancelan",
+     "q": "<p>Evalúa \\(\\int_0^4(2-x)\\,dx\\) con áreas.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "De 0 a 2: triángulo sobre el eje de área 2.",
+      "De 2 a 4: triángulo bajo el eje de área 2. Neto: \\(2-2=0\\)."
+     ],
+     "ans": "\\(0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "areasig"
+      ],
+      [
+       "areasig"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s8a",
+   "name": "Sem. 8 · Propiedades de la integral definida",
+   "teo": "<ol><li>\\(\\int_a^bf=-\\int_b^af\\) (invertir límites cambia el signo)</li><li>\\(\\int_a^af=0\\)</li><li>\\(\\int_a^bc\\,dx=c(b-a)\\)</li><li>\\(\\int_a^b[f\\pm g]=\\int_a^bf\\pm\\int_a^bg\\)</li><li>\\(\\int_a^bcf=c\\int_a^bf\\)</li><li>\\(\\int_a^cf+\\int_c^bf=\\int_a^bf\\) (aditividad)</li></ol><p>La aditividad se ve en el dibujo: el área de a a c más la de c a b es la de a a b. Sirve en física: la distancia total es la suma de las distancias de cada tramo.</p>",
+   "form": [
+    "\\(\\int_a^b=-\\int_b^a\\) · \\(\\int_a^a=0\\)",
+    "\\(\\int_a^bc\\,dx=c(b-a)\\)",
+    "\\(\\int(f\\pm g)=\\int f\\pm\\int g\\) · \\(\\int cf=c\\int f\\)",
+    "\\(\\int_a^c+\\int_c^b=\\int_a^b\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Con las propiedades calculas integrales sin conocer f: solo combinas los datos.</p><div class=\"err\"><b>Error común:</b> olvidar el signo al invertir límites.</div>",
+   "tools": [
+    {
+     "w": "acum",
+     "t": "Aditividad en vivo",
+     "p": "Pon a = 0 y b = 2, luego a = 2 y b = 4, y compáralo con a = 0, b = 4.",
+     "o": {
+      "f": "x^2-2*x",
+      "F": "x^3/3-x^2",
+      "xr": [
+       -1,
+       4.5
+      ],
+      "yr": [
+       -2,
+       8
+      ],
+      "a": 0,
+      "b": 4,
+      "fl": "x² − 2x"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s8a1",
+     "lvl": 1,
+     "title": "Partir el intervalo",
+     "q": "<p>Si \\(\\int_0^7f(x)\\,dx=12\\) y \\(\\int_0^5f(x)\\,dx=9\\), halla \\(\\int_5^7f(x)\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Propiedad aditiva: \\(\\int_0^5f+\\int_5^7f=\\int_0^7f\\).",
+      "\\(\\int_5^7f=12-9=3\\)."
+     ],
+     "ans": "\\(3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aditiva"
+      ],
+      [
+       "aditiva"
+      ]
+     ]
+    },
+    {
+     "id": "s8a2",
+     "lvl": 1,
+     "title": "Linealidad",
+     "q": "<p>Si \\(\\int_8^{12}f(x)\\,dx=32\\) y \\(\\int_8^{12}g(x)\\,dx=4\\), calcula \\(\\int_8^{12}[3f(x)+2g(x)]\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 104
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Se separa la suma y salen las constantes: \\(3\\int f+2\\int g\\).",
+      "\\(3(32)+2(4)=104\\)."
+     ],
+     "ans": "\\(104\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lineal"
+      ],
+      [
+       "lineal"
+      ]
+     ]
+    },
+    {
+     "id": "s8a3",
+     "lvl": 2,
+     "title": "Una sola integral",
+     "q": "<p>Escribe como una sola integral: \\(\\int_{-2}^{2}f\\,dx+\\int_{2}^{5}f\\,dx-\\int_{-2}^{-1}f\\,dx\\)</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(\\int_{-1}^{5}f\\,dx\\)",
+        "\\(\\int_{-2}^{5}f\\,dx\\)",
+        "\\(\\int_{-1}^{2}f\\,dx\\)",
+        "\\(\\int_{-2}^{-1}f\\,dx\\)",
+        "\\(\\int_{2}^{5}f\\,dx\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Las dos primeras se juntan: \\(\\int_{-2}^{5}f\\).",
+      "Quitar \\(\\int_{-2}^{-1}f\\) deja \\(\\int_{-1}^{5}f\\)."
+     ],
+     "ans": "\\(\\int_{-1}^{5}f\\,dx\\)",
+     "hint": "Pega los intervalos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "aditiva"
+      ],
+      [
+       "aditiva"
+      ]
+     ]
+    },
+    {
+     "id": "s8a4",
+     "lvl": 1,
+     "title": "Constante",
+     "q": "<p>Calcula \\(\\int_2^7 4\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 20
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int_a^bc\\,dx=c(b-a)\\): un rectángulo.",
+      "\\(4(7-2)=20\\)."
+     ],
+     "ans": "\\(20\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "const"
+      ],
+      [
+       "const"
+      ]
+     ]
+    },
+    {
+     "id": "s8a5",
+     "lvl": 2,
+     "title": "¿Tiene razón?",
+     "q": "<p>Una estudiante afirma que \\(\\int_a^bf(x)\\,dx=\\int_b^af(x)\\,dx\\). ¿Es correcto?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "No: al invertir los límites cambia el signo, \\(\\int_a^bf=-\\int_b^af\\)",
+        "Sí, el área es la misma",
+        "Sí, siempre que f sea continua",
+        "No: la segunda siempre vale 0",
+        "Solo si a < b"
+       ]
+      }
+     ],
+     "steps": [
+      "Propiedad 1: \\(\\int_a^bf=-\\int_b^af\\).",
+      "Solo serían iguales si la integral vale 0."
+     ],
+     "ans": "Cambia el signo",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invertir"
+      ],
+      [
+       "invertir"
+      ]
+     ]
+    },
+    {
+     "id": "s8a6",
+     "lvl": 1,
+     "title": "Mismo límite",
+     "q": "<p>Calcula \\(\\int_3^3(x^2+e^x)\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\int_a^af=0\\): no hay ancho.",
+      "No hace falta integrar."
+     ],
+     "ans": "\\(0\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "invertir"
+      ],
+      [
+       "invertir"
+      ]
+     ]
+    },
+    {
+     "id": "s8a7",
+     "lvl": 2,
+     "title": "Invertir y multiplicar",
+     "q": "<p>Si \\(\\int_1^4f(x)\\,dx=5\\), ¿cuánto vale \\(\\int_4^1 2f(x)\\,dx\\)?</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "∫ =",
+         "a": -10
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Sale el 2: \\(2\\int_4^1f\\).",
+      "Invertir límites cambia el signo: \\(2(-5)=-10\\)."
+     ],
+     "ans": "\\(-10\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "lineal"
+      ],
+      [
+       "invertir"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s8b",
+   "name": "Sem. 8 · Teorema fundamental del cálculo (parte 2)",
+   "teo": "<p>Si f es continua en [a; b] y F es <b>cualquier</b> antiderivada de f:</p><p style='text-align:center'>\\(\\int_a^bf(x)\\,dx=F(x)\\Big|_a^b=F(b)-F(a)\\)</p><p>Une las dos mitades del cálculo: el área (integral) se calcula con una antiderivada, sin sumas de Riemann. La C se cancela al restar, por eso no se pone.</p><p>Otra forma: \\(\\int_a^bF'(x)\\,dx=F(b)-F(a)\\): integrar una tasa de cambio da el <b>cambio total</b>. Por ejemplo, integrar la velocidad da el desplazamiento.</p>",
+   "form": [
+    "\\(\\int_a^bf=F(b)-F(a)\\), con \\(F'=f\\)",
+    "\\(\\int_a^bF'(x)dx=F(b)-F(a)\\)",
+    "En definidas no va + C"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Halla una antiderivada, evalúa arriba, evalúa abajo y resta.</p><div class=\"ej\"><b>Ejemplo:</b> \\(\\int_0^2x\\,dx=\\frac{x^2}2\\Big|_0^2=2-0=2\\).</div><div class=\"err\"><b>Error común:</b> restar al revés \\(F(a)-F(b)\\) o evaluar mal los signos de F(a) cuando a es negativo.</div>",
+   "tools": [
+    {
+     "w": "acum",
+     "t": "Área = F(b) − F(a)",
+     "p": "Mueve a y b: la suma de áreas siempre coincide con F(b) − F(a).",
+     "o": {
+      "f": "x^2",
+      "F": "x^3/3",
+      "xr": [
+       -2,
+       4
+      ],
+      "yr": [
+       -1,
+       12
+      ],
+      "a": -1,
+      "b": 3,
+      "fl": "x²"
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s8b1",
+     "lvl": 1,
+     "title": "Potencia",
+     "q": "<p>Calcula \\(\\int_{-1}^{5}x^2\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "42",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=\\frac{x^3}{3}\\).",
+      "\\(F(5)-F(-1)=\\frac{125}3-\\left(-\\frac13\\right)=\\frac{126}3=42\\)."
+     ],
+     "ans": "\\(42\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b2",
+     "lvl": 1,
+     "title": "Logaritmo",
+     "q": "<p>Calcula \\(\\int_1^3\\frac1x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "ln(3)",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=\\ln|x|\\).",
+      "\\(\\ln3-\\ln1=\\ln3\\)."
+     ],
+     "ans": "\\(\\ln{\\left(3 \\right)}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b3",
+     "lvl": 1,
+     "title": "Arcotangente",
+     "q": "<p>Calcula \\(\\int_0^1\\frac{1}{1+x^2}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "π/4",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=\\arctan x\\).",
+      "\\(\\arctan1-\\arctan0=\\frac\\pi4\\)."
+     ],
+     "ans": "\\(\\frac{\\pi}{4}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b4",
+     "lvl": 1,
+     "title": "Potencia negativa",
+     "q": "<p>Calcula \\(\\int_1^2\\frac{1}{x^2}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "1/2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x^{-2}\\Rightarrow F(x)=-\\frac1x\\).",
+      "\\(-\\frac12-(-1)=\\frac12\\)."
+     ],
+     "ans": "\\(\\frac{1}{2}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo",
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b5",
+     "lvl": 1,
+     "title": "Exponencial",
+     "q": "<p>Calcula \\(\\int_0^6e^x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "e^6-1",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=e^x\\).",
+      "\\(e^6-e^0=e^6-1\\)."
+     ],
+     "ans": "\\(-1 + e^{6}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b6",
+     "lvl": 2,
+     "title": "Polinomio",
+     "q": "<p>Calcula \\(\\int_0^3(x^3-6x)\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "-27/4",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=\\frac{x^4}4-3x^2\\).",
+      "\\(F(3)-F(0)=\\frac{81}4-27=-\\frac{27}4\\). Sale negativo: hay más área bajo el eje."
+     ],
+     "ans": "\\(- \\frac{27}{4}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc",
+       "areasig"
+      ]
+     ]
+    },
+    {
+     "id": "s8b7",
+     "lvl": 2,
+     "title": "Con la derivada",
+     "q": "<p>f(1) = 7, f′ es continua y \\(\\int_1^5f'(x)\\,dx=23\\). Halla f(5).</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Valor",
+       "f": [
+        {
+         "l": "f(5) =",
+         "a": 30
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "TFC: \\(\\int_1^5f'(x)\\,dx=f(5)-f(1)\\).",
+      "\\(f(5)-7=23\\Rightarrow f(5)=30\\)."
+     ],
+     "ans": "\\(30\\)",
+     "hint": "Una antiderivada de f′ es f.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b8",
+     "lvl": 2,
+     "title": "Con t",
+     "q": "<p>Calcula \\(\\int_1^4(t^2-t-6)\\,dt\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "-9/2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(t)=\\frac{t^3}3-\\frac{t^2}2-6t\\).",
+      "\\(F(4)-F(1)=-\\frac{32}{3}-\\left(-\\frac{37}{6}\\right)=-\\frac92\\)."
+     ],
+     "ans": "\\(- \\frac{9}{2}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b9",
+     "lvl": 1,
+     "title": "Un arco del seno",
+     "q": "<p>Calcula el área bajo un arco de \\(y=\\operatorname{sen}x\\) (de 0 a π).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(x)=-\\cos x\\).",
+      "\\(-\\cos\\pi-(-\\cos0)=1+1=2\\)."
+     ],
+     "ans": "\\(2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s8b10",
+     "lvl": 2,
+     "title": "Seno más coseno",
+     "q": "<p>Calcula \\(\\int_0^{\\pi/3}(\\operatorname{sen}\\theta+\\cos\\theta)\\,d\\theta\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "(1+sqrt(3))/2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(F(\\theta)=-\\cos\\theta+\\operatorname{sen}\\theta\\).",
+      "\\(F(\\frac\\pi3)-F(0)=\\left(-\\frac12+\\frac{\\sqrt3}2\\right)-(-1)=\\frac{1+\\sqrt3}{2}\\approx1{,}37\\)."
+     ],
+     "ans": "\\(\\frac{1}{2} + \\frac{\\sqrt{3}}{2}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "tfc"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9a",
+   "name": "Sem. 9 · Regla de sustitución",
+   "teo": "<p>Es la <b>regla de la cadena al revés</b>. Si en la integral aparece una función \\(g(x)\\) y también su derivada \\(g'(x)\\):</p><p style='text-align:center'>\\(\\int f(g(x))\\,g'(x)\\,dx=\\int f(u)\\,du\\), con \\(u=g(x)\\), \\(du=g'(x)\\,dx\\).</p><p><b>Pasos:</b> 1) elige u (casi siempre «lo de adentro»), 2) calcula du y despeja dx, 3) reemplaza: no debe quedar ninguna x, 4) integra y 5) regresa a x.</p><p><b>En definidas</b> también cambian los límites: si \\(u=g(x)\\), van de \\(g(a)\\) a \\(g(b)\\) y ya no se regresa a x.</p><p>Útiles: \\(\\int\\frac{dx}{ax+b}=\\frac1a\\ln|ax+b|\\) · \\(\\int e^{kx}dx=\\frac{e^{kx}}k\\) · \\(\\int\\cos(kx)dx=\\frac{\\operatorname{sen}kx}k\\).</p>",
+   "form": [
+    "\\(u=g(x)\\Rightarrow du=g'(x)dx\\)",
+    "\\(\\int f(g(x))g'(x)dx=\\int f(u)du\\)",
+    "Definida: \\(\\int_{g(a)}^{g(b)}f(u)du\\)",
+    "\\(\\int\\frac{dx}{ax+b}=\\frac1a\\ln|ax+b|\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Buscas «una función y su derivada» dentro de la integral. Si eliges bien u, la integral se vuelve de tabla.</p><div class=\"ej\"><b>Ejemplo:</b> \\(\\int2x\\cos(x^2)dx\\): \\(u=x^2\\) ⇒ \\(\\int\\cos u\\,du=\\operatorname{sen}(x^2)+C\\).</div><div class=\"err\"><b>Error común:</b> dejar x mezcladas con u, o en definidas no cambiar los límites.</div>",
+   "tools": [
+    {
+     "w": "usub",
+     "t": "¿Qué u elijo?",
+     "p": "Toca cada opción y mira cómo queda la integral.",
+     "o": {
+      "int": "\\int\\frac{x^2}{1+x^3}\\,dx",
+      "opts": [
+       {
+        "u": "1+x^3",
+        "du": "3x^2\\,dx",
+        "new": "\\frac13\\int\\frac{du}{u}",
+        "ok": true,
+        "e": "Queda de tabla: \\(\\frac13\\ln|1+x^3|+C\\)."
+       },
+       {
+        "u": "x^3",
+        "du": "3x^2\\,dx",
+        "new": "\\frac13\\int\\frac{du}{1+u}",
+        "ok": true,
+        "e": "También funciona, aunque deja un paso más."
+       },
+       {
+        "u": "x^2",
+        "du": "2x\\,dx",
+        "new": "\\int\\frac{u}{1+x^3}\\cdot\\frac{du}{2x}",
+        "ok": false,
+        "e": "Quedan x mezcladas con u."
+       },
+       {
+        "u": "\\frac{1}{1+x^3}",
+        "du": "-\\frac{3x^2}{(1+x^3)^2}dx",
+        "new": "-\\frac13\\int\\frac{du}{u}",
+        "ok": true,
+        "e": "Curiosamente también sale, pero es más difícil de ver."
+       }
+      ]
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s9a1",
+     "lvl": 1,
+     "title": "¿Qué u elijo? (1)",
+     "q": "<p>Para calcular la integral, ¿qué conviene llamar u?</p>",
+     "checks": [
+      {
+       "t": "usub",
+       "p": "Elige u",
+       "int": "\\int x^4(x^5+3)^6\\,dx",
+       "opts": [
+        {
+         "u": "x^5+3",
+         "du": "5x^4\\,dx",
+         "new": "\\frac15\\int u^6\\,du",
+         "ok": true,
+         "e": "La derivada de lo de adentro (x⁴) ya está afuera."
+        },
+        {
+         "u": "x^4",
+         "du": "4x^3\\,dx",
+         "new": "\\int u\\,(x^5+3)^6\\frac{du}{4x^3}",
+         "ok": false,
+         "e": "Siguen quedando x sueltas."
+        },
+        {
+         "u": "(x^5+3)^6",
+         "du": "30x^4(x^5+3)^5\\,dx",
+         "new": "\\frac1{30}\\int\\frac{u\\,du}{(x^5+3)^5}",
+         "ok": false,
+         "e": "Es demasiado: deja una potencia de x⁵ + 3 sin resolver."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Busca una función de adentro cuya derivada aparezca afuera.",
+      "\\(u=x^5+3\\), \\(du=5x^4dx\\): queda \\(\\frac15\\int u^6du\\)."
+     ],
+     "ans": "\\(u=x^5+3\\)",
+     "hint": "Lo de adentro del paréntesis.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elegu"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a2",
+     "lvl": 2,
+     "title": "¿Qué u elijo? (2)",
+     "q": "<p>¿Qué conviene llamar u?</p>",
+     "checks": [
+      {
+       "t": "usub",
+       "p": "Elige u",
+       "int": "\\int\\frac{\\ln x}{x}\\,dx",
+       "opts": [
+        {
+         "u": "\\ln x",
+         "du": "\\frac1x\\,dx",
+         "new": "\\int u\\,du",
+         "ok": true,
+         "e": "1/x es justo la derivada de ln x."
+        },
+        {
+         "u": "x",
+         "du": "dx",
+         "new": "\\int\\frac{\\ln u}{u}\\,du",
+         "ok": false,
+         "e": "No cambia nada: es la misma integral."
+        },
+        {
+         "u": "\\frac1x",
+         "du": "-\\frac1{x^2}\\,dx",
+         "new": "-\\int\\ln x\\cdot x\\,du",
+         "ok": false,
+         "e": "Quedan x y ln x sin resolver."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La derivada de ln x es 1/x, que está en la integral.",
+      "\\(\\int u\\,du=\\frac{u^2}2=\\frac{(\\ln x)^2}2+C\\)."
+     ],
+     "ans": "\\(u=\\ln x\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elegu"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a3",
+     "lvl": 1,
+     "title": "Lineal adentro",
+     "q": "<p>Calcula \\(\\int(2x+1)^5\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "(2*x+1)^6/12",
+         "v": [
+          "x"
+         ],
+         "mode": "anti"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=2x+1\\), \\(du=2dx\\Rightarrow dx=\\frac{du}2\\).",
+      "\\(\\frac12\\int u^5du=\\frac{u^6}{12}\\).",
+      "\\(\\frac{(2x+1)^6}{12}+C\\)."
+     ],
+     "ans": "\\(\\frac{(2x+1)^6}{12}+C\\)",
+     "hint": "No olvides dividir entre 2.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a4",
+     "lvl": 2,
+     "title": "La del ejemplo",
+     "q": "<p>Calcula \\(\\int x^4(x^5+3)^6\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "(x^5+3)^7/35",
+         "v": [
+          "x"
+         ],
+         "mode": "anti"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^5+3\\), \\(du=5x^4dx\\).",
+      "\\(\\frac15\\int u^6du=\\frac{u^7}{35}\\).",
+      "\\(\\frac{(x^5+3)^7}{35}+C\\)."
+     ],
+     "ans": "\\(\\frac{(x^5+3)^7}{35}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elegu"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a5",
+     "lvl": 2,
+     "title": "Logaritmo",
+     "q": "<p>Calcula \\(\\int\\frac{1}{7-5x}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "-ln(abs(7-5*x))/5",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=7-5x\\), \\(du=-5dx\\Rightarrow dx=-\\frac{du}5\\).",
+      "\\(-\\frac15\\int\\frac{du}u=-\\frac15\\ln|u|\\).",
+      "\\(-\\frac15\\ln|7-5x|+C\\)."
+     ],
+     "ans": "\\(-\\frac15\\ln|7-5x|+C\\)",
+     "hint": "Ojo con el signo de du.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a6",
+     "lvl": 2,
+     "title": "Exponencial",
+     "q": "<p>Calcula \\(\\int\\frac{e^{2x}}{e^{2x}+3}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "ln(exp(2*x)+3)/2",
+         "v": [
+          "x"
+         ],
+         "mode": "anti"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=e^{2x}+3\\), \\(du=2e^{2x}dx\\).",
+      "\\(\\frac12\\int\\frac{du}{u}=\\frac12\\ln(e^{2x}+3)+C\\) (siempre positivo, no hace falta el valor absoluto)."
+     ],
+     "ans": "\\(\\frac12\\ln(e^{2x}+3)+C\\)",
+     "hint": "Abajo hay una función cuya derivada está arriba.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "elegu"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a7",
+     "lvl": 2,
+     "title": "Con raíz",
+     "q": "<p>Calcula \\(\\int\\frac{x}{\\sqrt{x^2+1}}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sqrt(x^2+1)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=x^2+1\\), \\(du=2x\\,dx\\).",
+      "\\(\\frac12\\int u^{-1/2}du=u^{1/2}=\\sqrt{x^2+1}+C\\)."
+     ],
+     "ans": "\\(\\sqrt{x^2+1}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a8",
+     "lvl": 2,
+     "title": "Exponente cúbico",
+     "q": "<p>Calcula \\(\\int x^2e^{-x^3}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "-exp(-x^3)/3",
+         "v": [
+          "x"
+         ],
+         "mode": "anti"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=-x^3\\), \\(du=-3x^2dx\\).",
+      "\\(-\\frac13\\int e^udu=-\\frac13e^{-x^3}+C\\)."
+     ],
+     "ans": "\\(-\\frac13e^{-x^3}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9a9",
+     "lvl": 2,
+     "title": "Definida: cambia los límites",
+     "q": "<p>Calcula \\(\\int_0^1\\frac{x^2}{1+x^3}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "ln(2)/3",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=1+x^3\\), \\(du=3x^2dx\\). Límites: x = 0 → u = 1; x = 1 → u = 2.",
+      "\\(\\frac13\\int_1^2\\frac{du}u=\\frac13[\\ln u]_1^2=\\frac13\\ln2\\).",
+      "<span class='note'>En la lectura, al final de este ejemplo aparece una línea copiada de otro ejercicio («reemplazando u = 7 − 5x»): ignórala, el resultado es \\(\\frac13\\ln2\\).</span>"
+     ],
+     "ans": "\\(\\frac13\\ln2\\)",
+     "hint": "Si cambias los límites, no regresas a x.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sustdef"
+      ],
+      [
+       "sustdef"
+      ],
+      []
+     ]
+    },
+    {
+     "id": "s9a10",
+     "lvl": 1,
+     "title": "Los nuevos límites",
+     "q": "<p>En \\(\\int_0^1\\frac{x^2}{1+x^3}dx\\) con \\(u=1+x^3\\), ¿entre qué valores va u?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "De 1 a 2",
+        "De 0 a 1",
+        "De 0 a 2",
+        "De 1 a 3",
+        "Los límites no cambian"
+       ]
+      }
+     ],
+     "steps": [
+      "Se reemplaza cada límite en \\(u=1+x^3\\): \\(1+0=1\\) y \\(1+1=2\\).",
+      "Así no hay que volver a x al final."
+     ],
+     "ans": "De 1 a 2",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sustdef"
+      ],
+      [
+       "sustdef"
+      ]
+     ]
+    },
+    {
+     "id": "s9a11",
+     "lvl": 2,
+     "title": "Logaritmo sobre x",
+     "q": "<p>Calcula \\(\\int_1^2\\frac{\\ln x}{x}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "ln(2)^2/2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(u=\\ln x\\), \\(du=\\frac{dx}x\\). Límites: 1 → 0, 2 → ln 2.",
+      "\\(\\int_0^{\\ln2}u\\,du=\\frac{(\\ln2)^2}2\\approx0{,}24\\)."
+     ],
+     "ans": "\\(\\frac{(\\ln2)^2}{2}\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sustdef"
+      ],
+      [
+       "sustdef"
+      ]
+     ]
+    },
+    {
+     "id": "s9a12",
+     "lvl": 3,
+     "title": "Separar y sustituir",
+     "q": "<p>Calcula \\(\\int\\frac{1+t}{1+t^2}\\,dt\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dt =",
+         "a": "arctan(t)+ln(1+t^2)/2",
+         "v": [
+          "t"
+         ],
+         "mode": "anti",
+         "dom": {
+          "t": [
+           -2,
+           2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Separa: \\(\\int\\frac{dt}{1+t^2}+\\int\\frac{t\\,dt}{1+t^2}\\).",
+      "La primera es \\(\\arctan t\\). En la segunda \\(u=1+t^2\\): \\(\\frac12\\ln(1+t^2)\\).",
+      "\\(\\arctan t+\\frac12\\ln(1+t^2)+C\\)."
+     ],
+     "ans": "\\(\\arctan t+\\frac12\\ln(1+t^2)+C\\)",
+     "hint": "Una fracción con suma arriba se separa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "propind"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9b",
+   "name": "Sem. 9 · Integrales trigonométricas",
+   "teo": "<p><b>\\(\\int\\operatorname{sen}^mx\\cos^nx\\,dx\\)</b></p><ul><li><b>Caso I (alguna impar):</b> separas un factor de la impar (un sen x o un cos x) y lo demás lo pasas a la otra función con \\(\\operatorname{sen}^2=1-\\cos^2\\). Luego \\(u=\\cos x\\) o \\(u=\\operatorname{sen}x\\).</li><li><b>Caso II (ambas pares):</b> bajas el grado con \\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}2\\) y \\(\\cos^2x=\\frac{1+\\cos2x}2\\) (las veces que haga falta).</li></ul><p><b>\\(\\int\\tan^mx\\sec^nx\\,dx\\)</b></p><ul><li><b>Caso III (tan impar):</b> separas \\(\\sec x\\tan x\\), usas \\(\\tan^2=\\sec^2-1\\) y \\(u=\\sec x\\).</li><li><b>Caso IV (sec par):</b> separas \\(\\sec^2x\\), usas \\(\\sec^2=\\tan^2+1\\) y \\(u=\\tan x\\).</li></ul><p>Tabla extra: \\(\\int\\tan x=\\ln|\\sec x|\\) · \\(\\int\\sec x=\\ln|\\sec x+\\tan x|\\) · \\(\\int\\csc^2x=-\\cot x\\).</p>",
+   "form": [
+    "Impar: separa un factor y \\(\\operatorname{sen}^2=1-\\cos^2\\)",
+    "Pares: \\(\\operatorname{sen}^2=\\frac{1-\\cos2x}2\\), \\(\\cos^2=\\frac{1+\\cos2x}2\\)",
+    "tan impar: separa \\(\\sec x\\tan x\\), \\(u=\\sec x\\)",
+    "sec par: separa \\(\\sec^2x\\), \\(u=\\tan x\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Siempre buscas dejar «una función y su derivada»: sen con cos, tan con sec². La identidad es solo para lograrlo.</p><div class=\"err\"><b>Error común:</b> usar ángulo mitad cuando hay una potencia impar (se complica muchísimo).</div>",
+   "ex": [
+    {
+     "id": "s9b1",
+     "lvl": 2,
+     "title": "¿Qué caso es?",
+     "q": "<p>Clasifica cada integral según la estrategia que usarías.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "sen o cos impar",
+        "sen y cos pares",
+        "tan impar (con sec)",
+        "sec par (con tan)"
+       ],
+       "items": [
+        {
+         "x": "\\(\\int\\operatorname{sen}^3x\\cos^4x\\,dx\\)",
+         "c": 0,
+         "e": "El seno tiene potencia impar: separas un sen x."
+        },
+        {
+         "x": "\\(\\int\\cos^5x\\,dx\\)",
+         "c": 0,
+         "e": "Potencia impar de coseno: separas un cos x."
+        },
+        {
+         "x": "\\(\\int\\operatorname{sen}^4x\\,dx\\)",
+         "c": 1,
+         "e": "Solo potencias pares: ángulo mitad."
+        },
+        {
+         "x": "\\(\\int\\operatorname{sen}^2x\\cos^2x\\,dx\\)",
+         "c": 1,
+         "e": "Ambas pares: ángulo mitad."
+        },
+        {
+         "x": "\\(\\int\\tan^5x\\sec x\\,dx\\)",
+         "c": 2,
+         "e": "tan impar: separas sec x tan x, u = sec x."
+        },
+        {
+         "x": "\\(\\int\\sqrt{\\tan x}\\sec^4x\\,dx\\)",
+         "c": 3,
+         "e": "sec par: separas sec²x, u = tan x."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Senos y cosenos: si alguna potencia es impar, separas un factor; si todas son pares, bajas el grado con el ángulo mitad.",
+      "tan y sec: con tan impar, u = sec x; con sec par, u = tan x."
+     ],
+     "ans": "Clasificación correcta",
+     "hint": "Mira qué potencia es impar.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "trigcasos"
+      ]
+     ]
+    },
+    {
+     "id": "s9b2",
+     "lvl": 1,
+     "title": "El primer paso",
+     "q": "<p>Para \\(\\int\\operatorname{sen}^3x\\cos^4x\\,dx\\), ¿cuál es el primer paso?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "Separar un sen x y escribir \\(\\operatorname{sen}^2x=1-\\cos^2x\\), con \\(u=\\cos x\\)",
+        "Usar \\(\\cos^2x=\\frac{1+\\cos2x}2\\) dos veces",
+        "Hacer \\(u=\\operatorname{sen}x\\) directamente",
+        "Integrar cada factor por separado",
+        "Usar \\(x=\\operatorname{sen}\\theta\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "El seno tiene potencia impar: separas uno, que formará el du.",
+      "Lo demás queda en cosenos y \\(u=\\cos x\\), \\(du=-\\operatorname{sen}x\\,dx\\)."
+     ],
+     "ans": "Separar un sen x",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "trigcasos"
+      ]
+     ]
+    },
+    {
+     "id": "s9b3",
+     "lvl": 2,
+     "title": "Seno impar",
+     "q": "<p>Calcula \\(\\int\\operatorname{sen}^3x\\cos^4x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "-cos(x)^5/5+cos(x)^7/7",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{sen}^2x\\operatorname{sen}x=(1-\\cos^2x)\\operatorname{sen}x\\); \\(u=\\cos x\\).",
+      "\\(-\\int(1-u^2)u^4du=-\\frac{u^5}5+\\frac{u^7}7\\).",
+      "\\(-\\frac{\\cos^5x}5+\\frac{\\cos^7x}7+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9b4",
+     "lvl": 2,
+     "title": "Coseno impar",
+     "q": "<p>Calcula \\(\\int\\cos^5x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sen(x)-2*sen(x)^3/3+sen(x)^5/5",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos^4x\\cos x=(1-\\operatorname{sen}^2x)^2\\cos x\\); \\(u=\\operatorname{sen}x\\).",
+      "\\(\\int(1-2u^2+u^4)du=u-\\frac{2u^3}3+\\frac{u^5}5\\).",
+      "\\(\\operatorname{sen}x-\\frac23\\operatorname{sen}^3x+\\frac15\\operatorname{sen}^5x+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9b5",
+     "lvl": 3,
+     "title": "Seno a la quinta",
+     "q": "<p>Calcula \\(\\int\\operatorname{sen}^5x\\cos^2x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "-cos(x)^3/3+2*cos(x)^5/5-cos(x)^7/7",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{sen}^4x=(1-\\cos^2x)^2\\); \\(u=\\cos x\\).",
+      "\\(-\\int(1-u^2)^2u^2du=-\\int(u^2-2u^4+u^6)du\\).",
+      "\\(-\\frac{\\cos^3x}3+\\frac{2\\cos^5x}5-\\frac{\\cos^7x}7+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9b6",
+     "lvl": 3,
+     "title": "Potencia par",
+     "q": "<p>Calcula \\(\\int\\operatorname{sen}^4x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "3*x/8-sen(2*x)/4+sen(4*x)/32",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{sen}^4x=\\left(\\frac{1-\\cos2x}2\\right)^2=\\frac14(1-2\\cos2x+\\cos^22x)\\).",
+      "Otra vez ángulo mitad: \\(\\cos^22x=\\frac{1+\\cos4x}2\\).",
+      "\\(\\frac{3x}8-\\frac{\\operatorname{sen}2x}4+\\frac{\\operatorname{sen}4x}{32}+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos",
+       "idtrig"
+      ],
+      [
+       "idtrig"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s9b7",
+     "lvl": 2,
+     "title": "Ambas pares",
+     "q": "<p>Calcula \\(\\int\\operatorname{sen}^2x\\cos^2x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "x/8-sen(4*x)/32",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\operatorname{sen}x\\cos x=\\frac12\\operatorname{sen}2x\\) ⇒ el integrando es \\(\\frac14\\operatorname{sen}^22x\\).",
+      "\\(\\frac14\\cdot\\frac{1-\\cos4x}2=\\frac18-\\frac{\\cos4x}8\\).",
+      "\\(\\frac x8-\\frac{\\operatorname{sen}4x}{32}+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "idtrig"
+      ],
+      [
+       "idtrig"
+      ],
+      [
+       "tabla"
+      ]
+     ]
+    },
+    {
+     "id": "s9b8",
+     "lvl": 2,
+     "title": "tan impar",
+     "q": "<p>Calcula \\(\\int\\tan^3x\\sec^5x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sec(x)^7/7-sec(x)^5/5",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Separa \\(\\sec x\\tan x\\): \\(\\tan^2x\\sec^4x\\cdot\\sec x\\tan x\\), con \\(\\tan^2x=\\sec^2x-1\\).",
+      "\\(u=\\sec x\\): \\(\\int(u^2-1)u^4du\\).",
+      "\\(\\frac{\\sec^7x}7-\\frac{\\sec^5x}5+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9b9",
+     "lvl": 3,
+     "title": "tan a la quinta",
+     "q": "<p>Calcula \\(\\int\\tan^5x\\sec x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sec(x)^5/5-2*sec(x)^3/3+sec(x)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\tan^4x\\cdot\\sec x\\tan x=(\\sec^2x-1)^2\\sec x\\tan x\\).",
+      "\\(u=\\sec x\\): \\(\\int(u^4-2u^2+1)du\\).",
+      "\\(\\frac{\\sec^5x}5-\\frac23\\sec^3x+\\sec x+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    },
+    {
+     "id": "s9b10",
+     "lvl": 3,
+     "title": "sec par",
+     "q": "<p>Calcula \\(\\int\\sqrt{\\tan x}\\,\\sec^4x\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "2*tan(x)^(3/2)/3+2*tan(x)^(7/2)/7",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           0.15,
+           1.2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Separa \\(\\sec^2x\\): \\(\\sqrt{\\tan x}(\\tan^2x+1)\\sec^2x\\).",
+      "\\(u=\\tan x\\): \\(\\int(u^{5/2}+u^{1/2})du\\).",
+      "\\(\\frac27\\tan^{7/2}x+\\frac23\\tan^{3/2}x+C\\)."
+     ],
+     "ans": "Tu antiderivada coincide (ver solución)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigcasos"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "sust"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9c",
+   "name": "Sem. 9 · Sustitución trigonométrica",
+   "teo": "<p>Sirve para integrales con raíces de la forma:</p><ul><li>\\(\\sqrt{a^2-x^2}\\): \\(x=a\\operatorname{sen}\\theta\\), \\(dx=a\\cos\\theta\\,d\\theta\\), la raíz queda \\(a\\cos\\theta\\).</li><li>\\(\\sqrt{a^2+x^2}\\): \\(x=a\\tan\\theta\\), \\(dx=a\\sec^2\\theta\\,d\\theta\\), la raíz queda \\(a\\sec\\theta\\).</li><li>\\(\\sqrt{x^2-a^2}\\): \\(x=a\\sec\\theta\\), \\(dx=a\\sec\\theta\\tan\\theta\\,d\\theta\\), la raíz queda \\(a\\tan\\theta\\).</li></ul><p>Al final hay que <b>regresar a x</b>: dibujas el triángulo rectángulo que dice la sustitución (por ejemplo \\(\\operatorname{sen}\\theta=\\frac xa\\): opuesto x, hipotenusa a) y lees la razón que necesites. En definidas puedes cambiar los límites a θ y no regresar.</p><p>Antes de usarla, mira si una sustitución simple basta: \\(\\int\\frac{x}{\\sqrt{9+x^2}}dx\\) sale con \\(u=9+x^2\\).</p>",
+   "form": [
+    "\\(\\sqrt{a^2-x^2}\\): \\(x=a\\operatorname{sen}\\theta\\) → \\(a\\cos\\theta\\)",
+    "\\(\\sqrt{a^2+x^2}\\): \\(x=a\\tan\\theta\\) → \\(a\\sec\\theta\\)",
+    "\\(\\sqrt{x^2-a^2}\\): \\(x=a\\sec\\theta\\) → \\(a\\tan\\theta\\)",
+    "Regresa a x con el triángulo"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Cada raíz es un lado de un triángulo rectángulo. La sustitución elige qué lado es x.</p><div class=\"err\"><b>Error común:</b> elegir la sustitución por el signo equivocado: si x² va primero (\\(x^2-a^2\\)), es secante.</div>",
+   "tools": [
+    {
+     "w": "tri",
+     "t": "El triángulo de cada raíz",
+     "p": "Toca cada tipo de raíz: mira dónde va x, a y la raíz, y cómo se lee cada razón.",
+     "o": {
+      "a": 3
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "s9c1",
+     "lvl": 1,
+     "title": "¿Qué sustitución?",
+     "q": "<p>Clasifica cada raíz según la sustitución que conviene.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "x = a sen θ",
+        "x = a tan θ",
+        "x = a sec θ"
+       ],
+       "items": [
+        {
+         "x": "\\(\\sqrt{25-x^2}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\sqrt{4-x^2}\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(\\sqrt{9+x^2}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\sqrt{x^2+1}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\sqrt{x^2-16}\\)",
+         "c": 2,
+         "e": "x² va primero: secante."
+        },
+        {
+         "x": "\\(\\sqrt{x^2-3}\\)",
+         "c": 2
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(a^2-x^2\\) → seno; \\(a^2+x^2\\) → tangente; \\(x^2-a^2\\) → secante.",
+      "Cada una usa la identidad que borra la raíz."
+     ],
+     "ans": "Clasificación correcta",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "trigsust"
+      ]
+     ]
+    },
+    {
+     "id": "s9c2",
+     "lvl": 2,
+     "title": "Arma el triángulo: a² − x²",
+     "q": "<p>Para \\(\\int\\frac{dx}{\\sqrt{4-x^2}}\\), arma la sustitución y el triángulo.</p>",
+     "checks": [
+      {
+       "t": "tri",
+       "p": "Sustitución y triángulo",
+       "a": 2,
+       "k": "resta",
+       "ask": [
+        "sen"
+       ],
+       "e": "Con x = 2 sen θ, la hipotenusa es 2 y el cateto opuesto es x."
+      }
+     ],
+     "steps": [
+      "\\(x=2\\operatorname{sen}\\theta\\Rightarrow\\operatorname{sen}\\theta=\\frac x2\\): opuesto x, hipotenusa 2.",
+      "Adyacente: \\(\\sqrt{4-x^2}\\)."
+     ],
+     "ans": "x = 2 sen θ · hip 2 · op x · ady √(4 − x²)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c3",
+     "lvl": 2,
+     "title": "Arma el triángulo: a² + x²",
+     "q": "<p>Para \\(\\int\\frac{x\\,dx}{\\sqrt{9+x^2}}\\), arma la sustitución y el triángulo, y lee sec θ.</p>",
+     "checks": [
+      {
+       "t": "tri",
+       "p": "Sustitución y triángulo",
+       "a": 3,
+       "k": "suma",
+       "ask": [
+        "sec"
+       ],
+       "e": "Con x = 3 tan θ: opuesto x, adyacente 3 y la raíz es la hipotenusa."
+      }
+     ],
+     "steps": [
+      "\\(\\tan\\theta=\\frac x3\\): opuesto x, adyacente 3, hipotenusa \\(\\sqrt{9+x^2}\\).",
+      "\\(\\sec\\theta=\\frac{\\sqrt{9+x^2}}{3}\\)."
+     ],
+     "ans": "x = 3 tan θ · sec θ = √(9 + x²) / 3",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c4",
+     "lvl": 2,
+     "title": "Arma el triángulo: x² − a²",
+     "q": "<p>Para \\(\\int\\frac{\\sqrt{x^2-4}}{x}dx\\), arma la sustitución y el triángulo, y lee tan θ.</p>",
+     "checks": [
+      {
+       "t": "tri",
+       "p": "Sustitución y triángulo",
+       "a": 2,
+       "k": "menos",
+       "ask": [
+        "tan"
+       ],
+       "e": "Con x = 2 sec θ: hipotenusa x, adyacente 2 y la raíz es el opuesto."
+      }
+     ],
+     "steps": [
+      "\\(\\sec\\theta=\\frac x2\\): hipotenusa x, adyacente 2, opuesto \\(\\sqrt{x^2-4}\\).",
+      "\\(\\tan\\theta=\\frac{\\sqrt{x^2-4}}2\\)."
+     ],
+     "ans": "x = 2 sec θ · tan θ = √(x² − 4) / 2",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c5",
+     "lvl": 2,
+     "title": "Caso seno",
+     "q": "<p>Calcula \\(\\int\\frac{dx}{\\sqrt{4-x^2}}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "arcsen(x/2)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           -1.5,
+           1.5
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=2\\operatorname{sen}\\theta\\), \\(dx=2\\cos\\theta\\,d\\theta\\), \\(\\sqrt{4-x^2}=2\\cos\\theta\\).",
+      "\\(\\int\\frac{2\\cos\\theta}{2\\cos\\theta}d\\theta=\\theta+C\\).",
+      "\\(\\theta=\\operatorname{arcsen}\\frac x2\\): resultado \\(\\operatorname{arcsen}\\frac x2+C\\)."
+     ],
+     "ans": "\\(\\operatorname{arcsen}\\frac x2+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c6",
+     "lvl": 2,
+     "title": "Caso tangente",
+     "q": "<p>Calcula \\(\\int\\frac{x\\,dx}{\\sqrt{9+x^2}}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sqrt(9+x^2)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           -2,
+           2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=3\\tan\\theta\\), \\(dx=3\\sec^2\\theta\\,d\\theta\\), \\(\\sqrt{9+x^2}=3\\sec\\theta\\).",
+      "\\(\\int3\\tan\\theta\\sec\\theta\\,d\\theta=3\\sec\\theta\\).",
+      "Del triángulo \\(\\sec\\theta=\\frac{\\sqrt{9+x^2}}3\\): resultado \\(\\sqrt{9+x^2}+C\\). (También sale con \\(u=9+x^2\\).)"
+     ],
+     "ans": "\\(\\sqrt{9+x^2}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c7",
+     "lvl": 3,
+     "title": "Caso secante, definida",
+     "q": "<p>Calcula \\(\\int_2^{2\\sqrt2}\\frac{\\sqrt{x^2-4}}{x}\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "2-π/2",
+         "v": []
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=2\\sec\\theta\\), \\(dx=2\\sec\\theta\\tan\\theta\\,d\\theta\\), \\(\\sqrt{x^2-4}=2\\tan\\theta\\). Límites: x = 2 → θ = 0; x = 2√2 → θ = π/4.",
+      "\\(\\int_0^{\\pi/4}2\\tan^2\\theta\\,d\\theta=2\\int_0^{\\pi/4}(\\sec^2\\theta-1)d\\theta\\).",
+      "\\(2[\\tan\\theta-\\theta]_0^{\\pi/4}=2\\left(1-\\frac\\pi4\\right)=2-\\frac\\pi2\\approx0{,}43\\)."
+     ],
+     "ans": "\\(2-\\frac\\pi2\\)",
+     "hint": "Cambia los límites a θ.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "idtrig"
+      ],
+      [
+       "tfc"
+      ]
+     ]
+    },
+    {
+     "id": "s9c8",
+     "lvl": 2,
+     "title": "x² − 1",
+     "q": "<p>Calcula \\(\\int\\frac{x\\,dx}{\\sqrt{x^2-1}}\\) (x &gt; 1).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "sqrt(x^2-1)",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           1.2,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Con \\(x=\\sec\\theta\\): \\(\\int\\frac{\\sec\\theta}{\\tan\\theta}\\sec\\theta\\tan\\theta\\,d\\theta=\\int\\sec^2\\theta\\,d\\theta=\\tan\\theta\\).",
+      "Del triángulo \\(\\tan\\theta=\\sqrt{x^2-1}\\). (Con \\(u=x^2-1\\) sale más rápido: si ves la derivada afuera, usa sustitución simple.)"
+     ],
+     "ans": "\\(\\sqrt{x^2-1}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "s9c9",
+     "lvl": 3,
+     "title": "Potencia 3/2",
+     "q": "<p>Calcula \\(\\int\\frac{dx}{(x^2+9)^{3/2}}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe una antiderivada (puedes agregar + C).",
+       "f": [
+        {
+         "l": "∫ … dx =",
+         "a": "x/(9*sqrt(x^2+9))",
+         "v": [
+          "x"
+         ],
+         "mode": "anti",
+         "dom": {
+          "x": [
+           -2,
+           2
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x=3\\tan\\theta\\): \\((x^2+9)^{3/2}=27\\sec^3\\theta\\), \\(dx=3\\sec^2\\theta\\,d\\theta\\).",
+      "\\(\\frac19\\int\\cos\\theta\\,d\\theta=\\frac19\\operatorname{sen}\\theta\\).",
+      "Triángulo: \\(\\operatorname{sen}\\theta=\\frac{x}{\\sqrt{x^2+9}}\\) ⇒ \\(\\frac{x}{9\\sqrt{x^2+9}}+C\\)."
+     ],
+     "ans": "\\(\\frac{x}{9\\sqrt{x^2+9}}+C\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "trigsust"
+      ],
+      [
+       "trigsust"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s9d",
+   "name": "Sem. 9 · Razonamiento cuantitativo con integrales",
+   "teo": "<p>Si \\(r(t)\\) es una <b>tasa de cambio</b> (gaviotas por año, kW = energía por hora, litros por minuto…), entonces</p><p style='text-align:center'>\\(\\int_a^br(t)\\,dt\\) = cantidad acumulada entre a y b.</p><p>La UPC califica estos problemas con una rúbrica de cuatro partes:</p><ol><li><b>Interpretación:</b> qué te piden, qué datos tienes y qué concepto usarás.</li><li><b>Representación:</b> variables con unidades, restricciones y el modelo (la integral con sus límites).</li><li><b>Cálculo:</b> el procedimiento (TFC, sustitución) y el número.</li><li><b>Análisis y argumentación:</b> la respuesta en una oración con unidades, verificando que tenga sentido.</li></ol>",
+   "form": [
+    "Integral de una tasa = cambio total",
+    "Potencia (kW) → energía (kWh)",
+    "Rúbrica: interpretación · representación · cálculo · argumentación"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Antes de integrar, traduce el texto: ¿qué es una tasa?, ¿cuáles son los límites en la variable del problema?</p><div class=\"err\"><b>Error común:</b> poner los años (2027, 2032) como límites cuando t cuenta desde 2025.</div>",
+   "ex": [
+    {
+     "id": "s9d1",
+     "lvl": 2,
+     "title": "Gaviotas en Paracas",
+     "q": "<p>La tasa de crecimiento de una población de gaviotas es \\(r(t)=\\frac{500}{(1+0{,}2t)^2}\\) gaviotas por año, con t en años desde 2025. ¿Cuántas gaviotas se suman entre 2027 y 2032?</p>",
+     "checks": [
+      {
+       "p": "Interpretación: ¿qué representa \\(\\int r(t)\\,dt\\) en un intervalo?",
+       "o": [
+        "La cantidad de gaviotas nuevas en ese intervalo",
+        "La población total en 2032",
+        "La tasa de crecimiento promedio",
+        "Cuántas gaviotas nacen por año",
+        "La población en 2027"
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Representación: límites de integración",
+       "f": [
+        {
+         "l": "t inicial =",
+         "a": 2,
+         "e": "2027 − 2025."
+        },
+        {
+         "l": "t final =",
+         "a": 7,
+         "e": "2032 − 2025."
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Cálculo: \\(N=\\int_2^7r(t)\\,dt\\)",
+       "f": [
+        {
+         "l": "N ≈",
+         "a": 744.05,
+         "tol": 0.6
+        }
+       ]
+      },
+      {
+       "p": "Conclusión",
+       "o": [
+        "Entre 2027 y 2032 la población aumenta en unas 744 gaviotas",
+        "En 2032 habrá 744 gaviotas en total",
+        "La población crece 744 gaviotas por año",
+        "Entre 2027 y 2032 se pierden 744 gaviotas",
+        "En 2027 había 744 gaviotas"
+       ]
+      }
+     ],
+     "steps": [
+      "Integrar una tasa da el cambio total en el intervalo.",
+      "t = 2 es 2027 y t = 7 es 2032.",
+      "\\(u=1+0{,}2t\\), \\(dt=5\\,du\\): \\(2500\\int_{1{,}4}^{2{,}4}u^{-2}du=2500\\left[\\frac1{1{,}4}-\\frac1{2{,}4}\\right]\\approx744{,}05\\).",
+      "Es lo que se <b>suma</b> a la población, no la población total."
+     ],
+     "ans": "≈ 744 gaviotas más",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rcuant"
+      ],
+      [
+       "rcuant"
+      ],
+      [
+       "sustdef"
+      ],
+      [
+       "rcuant"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9d2",
+     "lvl": 2,
+     "title": "Energía de un motor",
+     "q": "<p>Un motor consume una potencia \\(P(t)=2t+\\frac12\\cos\\left(\\frac{\\pi t}{4}\\right)\\) kW (t en horas). La energía es la integral de la potencia. Halla la energía entre la hora 2 y la hora 6 y su costo a \\$0,15 por kWh.</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Energía exacta en kWh.",
+       "f": [
+        {
+         "a": "32-4/π",
+         "v": [],
+         "l": "E ="
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Costo",
+       "f": [
+        {
+         "l": "Costo",
+         "a": 4.61,
+         "u": "$",
+         "tol": 0.011
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(E=\\int_2^6\\left[2t+\\frac12\\cos\\frac{\\pi t}4\\right]dt=\\left[t^2+\\frac2\\pi\\operatorname{sen}\\frac{\\pi t}4\\right]_2^6\\).",
+      "\\(=(36-4)+\\frac2\\pi(-1-1)=32-\\frac4\\pi\\approx30{,}73\\) kWh.",
+      "Costo: \\(30{,}73\\times0{,}15\\approx\\$4{,}61\\)."
+     ],
+     "ans": "\\(32-\\frac4\\pi\\approx30{,}73\\) kWh · \\$4,61",
+     "hint": "kW × h = kWh.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rcuant"
+      ],
+      [
+       "sust"
+      ],
+      [
+       "rcuant"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9d3",
+     "lvl": 3,
+     "title": "¿Tiene razón el jefe?",
+     "q": "<p>Un motor textil consume \\(P(t)=1{,}5t+\\frac34\\cos\\left(\\frac{\\pi t}{3}\\right)\\) kW. El jefe de mantenimiento dice que, entre la hora 1 y la hora 4, a \\$0,50 por kWh, el costo <b>no supera</b> los \\$4.</p>",
+     "checks": [
+      {
+       "t": "num",
+       "p": "Energía entre t = 1 y t = 4",
+       "f": [
+        {
+         "l": "E ≈",
+         "a": 10.01,
+         "u": "kWh",
+         "tol": 0.03
+        }
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Costo",
+       "f": [
+        {
+         "l": "Costo ≈",
+         "a": 5.0,
+         "u": "$",
+         "tol": 0.02
+        }
+       ]
+      },
+      {
+       "p": "¿El jefe tiene razón?",
+       "o": [
+        "No: el costo es de unos \\$5,00, así que sí supera los \\$4",
+        "Sí: el costo es menor que \\$4",
+        "Sí: la energía es menor que 4 kWh",
+        "No se puede saber sin la potencia máxima",
+        "No: el costo es de unos \\$20"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(E=\\left[0{,}75t^2+\\frac{9}{4\\pi}\\operatorname{sen}\\frac{\\pi t}3\\right]_1^4=11{,}25-\\frac{9\\sqrt3}{4\\pi}\\approx10{,}01\\) kWh.",
+      "Costo: \\(10{,}01\\times0{,}50\\approx\\$5{,}00\\).",
+      "Supera los \\$4: el jefe se equivoca. <span class='note'>Ojo: la respuesta de la lectura dice «no supera los 4 dólares» y a la vez que el jefe está equivocado; lo correcto es que el costo <b>sí supera</b> los \\$4.</span>"
+     ],
+     "ans": "≈ 10,01 kWh · ≈ \\$5,00 · el jefe se equivoca",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "sust"
+      ],
+      [
+       "rcuant"
+      ],
+      [
+       "rcuant"
+      ]
+     ],
+     "chain": true
+    },
+    {
+     "id": "s9d4",
+     "lvl": 1,
+     "title": "Unidades",
+     "q": "<p>Si P(t) está en kilovatios y t en horas, ¿en qué unidades sale \\(\\int_a^bP(t)\\,dt\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "kWh (kilovatios-hora)",
+        "kW (kilovatios)",
+        "kW/h",
+        "horas",
+        "kW²"
+       ]
+      }
+     ],
+     "steps": [
+      "Una integral multiplica la función por el diferencial: kW × h.",
+      "Integrar una tasa (potencia = energía por tiempo) da la cantidad acumulada (energía)."
+     ],
+     "ans": "kWh",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "rcuant"
+      ],
+      [
+       "rcuant"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "concepts": {
+  "antider": {
+   "n": "Antiderivada",
+   "f": "\\(F'=f\\)",
+   "x": "Todas las antiderivadas difieren en una constante.",
+   "home": "s7a"
+  },
+  "tabla": {
+   "n": "Tabla de integrales",
+   "f": "\\(\\int x^n=\\frac{x^{n+1}}{n+1}\\) · \\(\\int\\frac1x=\\ln|x|\\)",
+   "x": "Las derivadas leídas al revés.",
+   "home": "s7a"
+  },
+  "propind": {
+   "n": "Propiedades de la indefinida",
+   "f": "\\(\\int(f\\pm g)=\\int f\\pm\\int g\\) · \\(\\int kf=k\\int f\\)",
+   "x": "No hay regla para productos ni cocientes.",
+   "home": "s7a"
+  },
+  "cini": {
+   "n": "Condición inicial",
+   "f": "\\(f(x_0)=y_0\\Rightarrow C\\)",
+   "x": "Un dato fija la constante.",
+   "home": "s7a"
+  },
+  "areasig": {
+   "n": "Área con signo",
+   "f": "\\(\\int_a^bf=A_{\\text{arriba}}-A_{\\text{abajo}}\\)",
+   "x": "La integral definida es área neta.",
+   "home": "s7b"
+  },
+  "defi": {
+   "n": "Integral definida",
+   "f": "\\(\\int_a^bf(x)dx\\in\\mathbb R\\)",
+   "x": "Es un número, no una función.",
+   "home": "s7b"
+  },
+  "aditiva": {
+   "n": "Aditividad",
+   "f": "\\(\\int_a^c+\\int_c^b=\\int_a^b\\)",
+   "x": "Se pegan intervalos.",
+   "home": "s8a"
+  },
+  "lineal": {
+   "n": "Linealidad",
+   "f": "\\(\\int(\\alpha f+\\beta g)=\\alpha\\int f+\\beta\\int g\\)",
+   "x": "Sumas y constantes salen.",
+   "home": "s8a"
+  },
+  "invertir": {
+   "n": "Invertir límites",
+   "f": "\\(\\int_a^b=-\\int_b^a\\) · \\(\\int_a^a=0\\)",
+   "x": "Cambia el signo.",
+   "home": "s8a"
+  },
+  "const": {
+   "n": "Integral de una constante",
+   "f": "\\(\\int_a^bc\\,dx=c(b-a)\\)",
+   "x": "Un rectángulo.",
+   "home": "s8a"
+  },
+  "tfc": {
+   "n": "TFC (parte 2)",
+   "f": "\\(\\int_a^bf=F(b)-F(a)\\)",
+   "x": "Con cualquier antiderivada; la C se cancela.",
+   "home": "s8b"
+  },
+  "elegu": {
+   "n": "Elegir u",
+   "f": "u = lo de adentro, su derivada afuera",
+   "x": "Si quedan x mezcladas, cambia de u.",
+   "home": "s9a"
+  },
+  "sust": {
+   "n": "Regla de sustitución",
+   "f": "\\(\\int f(g(x))g'(x)dx=\\int f(u)du\\)",
+   "x": "La cadena al revés.",
+   "home": "s9a"
+  },
+  "sustdef": {
+   "n": "Sustitución en definidas",
+   "f": "\\(\\int_{g(a)}^{g(b)}f(u)du\\)",
+   "x": "Cambian los límites.",
+   "home": "s9a"
+  },
+  "trigcasos": {
+   "n": "Casos de integrales trigonométricas",
+   "f": "impar: separa un factor · pares: ángulo mitad",
+   "x": "Busca una función y su derivada.",
+   "home": "s9b"
+  },
+  "trigsust": {
+   "n": "Sustitución trigonométrica",
+   "f": "\\(a^2-x^2\\): sen · \\(a^2+x^2\\): tan · \\(x^2-a^2\\): sec",
+   "x": "Cada raíz es un lado del triángulo.",
+   "home": "s9c"
+  },
+  "rcuant": {
+   "n": "Razonamiento cuantitativo",
+   "f": "\\(\\int_a^b\\text{tasa}\\,dt\\) = cambio total",
+   "x": "Interpretar, representar, calcular y argumentar.",
+   "home": "s9d"
+  },
+  "expo": {
+   "n": "Leyes de exponentes",
+   "f": "\\(\\frac1{x^n}=x^{-n}\\) · \\(\\sqrt[n]{x^m}=x^{m/n}\\)",
+   "x": "Reescribe antes de integrar.",
+   "home": "s7a"
+  },
+  "idtrig": {
+   "n": "Identidades trigonométricas",
+   "f": "\\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}2\\) · \\(\\tan^2=\\sec^2-1\\)",
+   "x": "Transforman la integral en una de tabla.",
+   "home": "s9b"
+  },
+  "triang": {
+   "n": "Triángulo rectángulo",
+   "f": "sen = op/hip · tan = op/ady · sec = hip/ady",
+   "x": "Pitágoras da el lado que falta.",
+   "home": "s9c"
+  }
+ },
+ "sim": {
+  "minutes": 90,
+  "intro": "Simulacro de la unidad 3 (20 puntos, 90 min), con una pregunta de cada tema.",
+  "slots": [
+   {
+    "pts": 2,
+    "name": "Sem. 7: antiderivadas",
+    "pool": [
+     "s7a3",
+     "s7a4",
+     "s7a6"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 7: integral definida como área",
+    "pool": [
+     "s7b1",
+     "s7b2",
+     "s7b5"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 8: propiedades",
+    "pool": [
+     "s8a2",
+     "s8a3",
+     "s8a7"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 8: teorema fundamental",
+    "pool": [
+     "s8b6",
+     "s8b8",
+     "s8b10"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 9: sustitución",
+    "pool": [
+     "s9a4",
+     "s9a5",
+     "s9a9",
+     "s9a11"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 9: integrales trigonométricas",
+    "pool": [
+     "s9b3",
+     "s9b4",
+     "s9b7",
+     "s9b8"
+    ]
+   },
+   {
+    "pts": 2,
+    "name": "Sem. 9: sustitución trigonométrica",
+    "pool": [
+     "s9c5",
+     "s9c7",
+     "s9c9"
+    ]
+   },
+   {
+    "pts": 3,
+    "name": "Sem. 9: razonamiento cuantitativo",
+    "pool": [
+     "s9d1",
+     "s9d2",
+     "s9d3"
+    ]
+   }
+  ]
+ }
+}

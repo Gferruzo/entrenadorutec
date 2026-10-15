@@ -1118,6 +1118,22 @@ button.qgterm{cursor:pointer}.qgterm s{color:var(--bad);text-decoration-thicknes
 .bqesp.lk .bqctl{pointer-events:none;opacity:.6}
 .bqwarn{border:1.5px solid var(--exe);background:var(--exe-bg);border-radius:8px;padding:8px 12px;font-size:.88rem;margin:10px 0}
 /* BQ-CSS-END */
+.acw,.usw,.triw{display:grid;gap:8px;min-width:0}
+.acsl{display:flex;align-items:center;gap:6px}.acsl .plrg{flex:1;min-width:0}.acsl b{min-width:3em;text-align:right}
+.acp{fill:color-mix(in srgb,var(--ok) 35%,transparent);stroke:none}.acn{fill:color-mix(in srgb,var(--bad) 35%,transparent);stroke:none}
+line.acl{stroke:var(--ink);stroke-width:1.2;stroke-dasharray:4 3}text.acl{fill:var(--ink);font-weight:700}
+.acro p{margin:3px 0}.acpos{color:var(--ok);font-weight:700}.acneg{color:var(--bad);font-weight:700}
+.usint{font-size:1.15em;text-align:center;overflow-x:auto}.usops{display:flex;flex-wrap:wrap;gap:6px}
+.usb{border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:4px 10px}.usb.on{border-color:var(--teo);background:var(--teo-bg)}
+.usb.good{border-color:var(--ok);background:var(--ok-bg)}.usb.bad{border-color:var(--bad);background:var(--bad-bg)}
+.usout{border-left:3px solid var(--teo);padding:2px 10px;min-height:1em;overflow-x:auto}.usout p{margin:4px 0}.usout .ok{color:var(--ok)}.usout .bad{color:var(--bad)}
+.trifig{max-width:300px;margin:0 auto;width:100%}.trisvg{width:100%;height:auto;display:block}
+.trip{fill:var(--teo-bg);stroke:var(--ink);stroke-width:2}.tria{fill:none;stroke:var(--ink);stroke-width:1.5}
+.trit{font:700 14px Figtree,sans-serif;fill:var(--ink)}.tril{font:700 13px ui-monospace,Menlo,monospace;fill:var(--teo)}
+.trirow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}.trirow span{font-weight:700;font-size:.9rem}
+.trirow select{font:inherit;border:1.5px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);padding:2px 4px;max-width:100%}
+.trirow select.good,.trirow select.rev{border-color:var(--ok);background:var(--ok-bg)}.trirow select.bad{border-color:var(--bad);background:var(--bad-bg)}
+.trito p{margin:4px 0;font-size:.92rem}
 </style>
 </head>
 <body>
@@ -4012,6 +4028,82 @@ IW.mem=(ch,o)=>{const u=memUI(ch.lines,{cls:ch.cls,on:o.on});const H=u.sels;
    mark(){H.forEach(x=>{const k=u.pick[x.i]===0;x.s.classList.toggle('good',k);x.s.classList.toggle('bad',!k)});u.run()},
    reveal(){H.forEach(x=>{if(u.pick[x.i]!==0){x.s.value='0';u.pick[x.i]=0;x.s.classList.remove('bad');x.s.classList.add('rev')}else x.s.classList.add('good')});u.run()},
    lock(){u.lk=true}}};
+/* ================= INTEGRALES (Cálculo I UPC y otros) =================
+   acum: acumulador del TFC. Herramienta {"w":"acum","o":{f,F,xr,yr,a,b,step,fl}} (F opcional = antiderivada para mostrar F(b) − F(a)).
+         Pregunta {"t":"acum",f,F,xr,yr,a,b0,ans (valor de b correcto),tol,lock:"a"|"b",e}: el alumno mueve b (o a) hasta cumplir lo pedido.
+   usub: ¿qué u elijo? {"t":"usub","int":TeX de la integral,"opts":[{"u":TeX,"du":TeX,"new":TeX,"ok":true,"e":texto}],"e"}. Herramienta {"w":"usub","o":{igual}}.
+   tri:  triángulo de la sustitución trigonométrica {"t":"tri","a":3,"k":"resta"|"suma"|"menos","ask":["sec","tan"],"e"}. Herramienta {"w":"tri","o":{"a":3}}. */
+const tsL=n=>setTimeout(()=>typeset(n),0);
+function acumUI(o,on){const w=el('div','acw');const fig=el('div','plfig'),ctl=el('div','plctl'),ro=el('div','acro');w.append(fig,ctl,ro);
+  const f=mxF(o.f),F=o.F?mxF(o.F):null;const [x0,x1]=o.xr||[-1,5],[y0,y1]=o.yr||[-3,5];const st=o.step||0.05;const uid='ac'+Math.random().toString(36).slice(2,7);
+  let a=o.a!=null?o.a:x0,b=o.b!=null?o.b:(o.b0!=null?o.b0:x1);
+  const W=320,H=240,L=30,R=10,T=10,B=24,X=x=>L+(W-L-R)*(x-x0)/(x1-x0),Y=y=>T+(H-T-B)*(y1-y)/(y1-y0);
+  const simp=(p,q)=>{if(p===q)return 0;const n=400,h=(q-p)/n;let s=f(p)+f(q);for(let i=1;i<n;i++)s+=(i%2?4:2)*f(p+i*h);return s*h/3};
+  const parts=(p,q)=>{const lo=Math.min(p,q),hi=Math.max(p,q),n=600,h=(hi-lo)/n;let pos=0,neg=0;for(let i=0;i<n;i++){const xm=lo+(i+.5)*h,v=f(xm);if(!isFinite(v))continue;if(v>0)pos+=v*h;else neg-=v*h}return{pos,neg}};
+  const fmt=v=>Math.abs(v)<5e-4?'0':fmtV(Math.round(v*1000)/1000);
+  const sl=(lab,val,set)=>{const r=el('label','acsl');r.append(el('span','plrl',lab));const i=el('input','plrg');i.type='range';i.min=x0;i.max=x1;i.step=st;i.value=val;i.setAttribute('aria-label','Mover '+lab);
+    const v=el('b',null,fmtV(val));i.oninput=()=>{set(+i.value);v.textContent=fmtV(+i.value);draw();on&&on()};r.append(i,v);return{r,i,v}};
+  const SA=o.lock==='a'?null:sl('a =',a,v=>a=v),SB=o.lock==='b'?null:sl('b =',b,v=>b=v);if(SA)ctl.append(SA.r);if(SB)ctl.append(SB.r);
+  function draw(){let svg=plotSVG({f:o.f,xr:[x0,x1],yr:[y0,y1],fs:[{f:o.f,cl:'f',l:o.fl||'f'}],id:uid});
+    const lo=Math.min(a,b),hi=Math.max(a,b),n=160;let pp='',pn='';const z=Y(Math.max(y0,Math.min(y1,0)));
+    for(let i=0;i<n;i++){const xa=lo+(hi-lo)*i/n,xb=lo+(hi-lo)*(i+1)/n,v=f((xa+xb)/2);if(!isFinite(v))continue;const yy=Math.max(T,Math.min(H-B,Y(v)));
+      const r='M'+X(xa).toFixed(1)+' '+z.toFixed(1)+'L'+X(xa).toFixed(1)+' '+yy.toFixed(1)+'L'+X(xb).toFixed(1)+' '+yy.toFixed(1)+'L'+X(xb).toFixed(1)+' '+z.toFixed(1)+'Z';if(v>=0)pp+=r;else pn+=r}
+    const ln=(x,c)=>'<line class="acl '+c+'" x1="'+X(x)+'" y1="'+T+'" x2="'+X(x)+'" y2="'+(H-B)+'"/><text class="plk acl '+c+'" x="'+(X(x)+3)+'" y="'+(T+10)+'">'+c+'</text>';
+    svg=svg.replace('<path class="plf','<path class="acp" d="'+pp+'"/><path class="acn" d="'+pn+'"/><path class="plf').replace('</svg>',ln(a,'a')+ln(b,'b')+'</svg>');fig.innerHTML=svg;
+    const P=parts(a,b),sg=b>=a?1:-1,I=simp(a,b);
+    let h='<p><span class="acpos">■ suma: '+fmt(P.pos)+'</span> · <span class="acneg">■ resta: '+fmt(P.neg)+'</span></p>'+
+      '<p>\\(\\int_{'+fmtV(a).replace(',','{,}')+'}^{'+fmtV(b).replace(',','{,}')+'}f(x)\\,dx\\)'+(sg<0?' = −(':' = ')+fmt(P.pos)+' − '+fmt(P.neg)+(sg<0?')':'')+' = <b>'+fmt(I)+'</b></p>';
+    if(F){const v=F(b)-F(a);h+='<p>TFC: \\(F(b)-F(a)\\) = '+fmt(F(b))+' − '+fmt(F(a))+' = <b>'+fmt(v)+'</b> '+(Math.abs(v-I)<1e-3*Math.max(1,Math.abs(I))?'✅ coincide':'')+'</p>'}
+    if(sg<0)h+='<p class="note">b está a la izquierda de a: la integral cambia de signo (\\(\\int_a^b=-\\int_b^a\\)).</p>';
+    ro.innerHTML=h;(ro.isConnected?typeset:tsL)(ro);w.dataset.v=I}
+  draw();return{el:w,get a(){return a},get b(){return b},set b(v){b=v;if(SB){SB.i.value=v;SB.v.textContent=fmtV(v)}draw()},set a(v){a=v;if(SA){SA.i.value=v;SA.v.textContent=fmtV(v)}draw()},lock(){[SA,SB].forEach(s=>s&&(s.i.disabled=true))}}}
+LW.acum=(b,o)=>{b.append(acumUI(o).el)};
+IW.acum=(ch,o)=>{let touched=false;const u=acumUI(Object.assign({},ch,{lock:ch.lock||'a'}),()=>{touched=true;o.on&&o.on()});const mv=ch.lock==='b'?'a':'b';
+  const ok=()=>Math.abs(u[mv]-ch.ans)<=(ch.tol!=null?ch.tol:0.051);
+  return{el:u.el,note:'Mueve '+mv+' con el deslizador hasta cumplir lo pedido.',need:'Mueve el deslizador primero.',filled:()=>touched,
+   grade(){return{f:ok()?1:0,msg:ok()?'':'Todavía no. '+(ch.e||'')}},mark(){},reveal(){u[mv]=ch.ans},lock(){u.lock()}}};
+
+function usubUI(ch,pick){const w=el('div','usw');w.append(el('div','usint','\\('+ch.int+'\\)'));
+  if(pick)w.append(el('p','note','¿Qué llamarías u? Toca una opción para ver cómo queda la integral.'));
+  const row=el('div','usops');const out=el('div','usout');let sel=-1;const bs=[];
+  ch.opts.forEach((p,i)=>{const b=el('button','usb','\\(u='+p.u+'\\)');b.type='button';b.onclick=()=>{if(w.__lk)return;sel=i;bs.forEach(x=>x.classList.toggle('on',x===b));show(i);pick&&pick(i)};row.append(b);bs.push(b)});
+  function show(i){const p=ch.opts[i];out.innerHTML='<p>\\(du='+p.du+'\\)</p><p>Queda: \\('+p.new+'\\)</p>'+(pick?'':'<p class="'+(p.ok?'ok':'bad')+'">'+(p.ok?'✅ ':'❌ ')+(p.e||'')+'</p>');(out.isConnected?typeset:tsL)(out)}
+  w.append(row,out);tsL(w);return{el:w,bs,get sel(){return sel},set sel(v){sel=v},show}}
+LW.usub=(b,o)=>{b.append(usubUI(o).el)};
+IW.usub=(ch,o)=>{const u=usubUI(ch,()=>o.on&&o.on());
+  return{el:u.el,note:'',need:'Elige una opción para u.',filled:()=>u.sel>=0,
+   grade(){const p=ch.opts[u.sel];return{f:p.ok?1:0,msg:p.ok?'':'Con esa u la integral no se simplifica. '+(p.e||'')+(ch.e?'<br>'+ch.e:'')}},
+   mark(){u.bs.forEach((b,i)=>{b.classList.toggle('good',i===u.sel&&ch.opts[i].ok);b.classList.toggle('bad',i===u.sel&&!ch.opts[i].ok)})},
+   reveal(){const k=ch.opts.findIndex(p=>p.ok);u.sel=k;u.bs.forEach((b,i)=>{b.classList.toggle('good',i===k);b.classList.remove('on','bad')});u.show(k)},
+   lock(){u.el.__lk=true}}};
+
+const TRI_K={resta:{r:(a)=>a+'² − x²',s:'x = a·sen θ',hip:'a',op:'x',ad:'R'},suma:{r:(a)=>a+'² + x²',s:'x = a·tan θ',hip:'R',op:'x',ad:'a'},menos:{r:(a)=>'x² − '+a+'²',s:'x = a·sec θ',hip:'x',op:'R',ad:'a'}};
+const TRI_F={sen:['op','hip'],cos:['ad','hip'],tan:['op','ad'],cot:['ad','op'],sec:['hip','ad'],csc:['hip','op']};
+function triSVG(lb){return '<svg class="trisvg" viewBox="0 0 240 150"><polygon points="20,130 210,130 210,20" class="trip"/><path d="M198 130 V118 H210" class="tria"/>'+
+  '<path d="M52 130 A32 32 0 0 0 48 114" class="tria"/><text x="58" y="124" class="trit">θ</text>'+
+  '<text x="96" y="64" class="tril" text-anchor="end">'+(lb.hip||'?')+'</text><text x="216" y="80" class="tril">'+(lb.op||'?')+'</text><text x="115" y="146" class="tril" text-anchor="middle">'+(lb.ad||'?')+'</text></svg>'}
+function triSol(a,k){const K=TRI_K[k],R='√('+K.r(a)+')',v=x=>x==='R'?R:x==='a'?String(a):'x';return{s:K.s.replace('a',a),hip:v(K.hip),op:v(K.op),ad:v(K.ad),R}}
+LW.tri=(b,o)=>{const a=o.a||3;const w=el('div','triw');const top=el('div','plctl');const fig=el('div','trifig'),tx=el('div','trito');w.append(top,fig,tx);b.append(w);
+  const draw=k=>{const S=triSol(a,k);fig.innerHTML=triSVG({hip:S.hip,op:S.op,ad:S.ad});
+    tx.innerHTML='<p>Raíz \\(\\sqrt{'+({resta:a+'^2-x^2',suma:a+'^2+x^2',menos:'x^2-'+a+'^2'})[k]+'}\\) → sustituye <b>'+S.s+'</b>.</p><p>Para volver a x lees el triángulo: '+
+      Object.keys(TRI_F).map(f=>{const [p,q]=TRI_F[f];return f+' θ = '+(p==='op'?S.op:p==='ad'?S.ad:S.hip)+' / '+(q==='op'?S.op:q==='ad'?S.ad:S.hip)}).join(' · ')+'</p>';(tx.isConnected?typeset:tsL)(tx)};
+  [['resta','a² − x²'],['suma','a² + x²'],['menos','x² − a²']].forEach(([k,l],i)=>{const bt=el('button','lwb'+(i?'':' on'),'√('+l+')');bt.type='button';bt.onclick=()=>{top.querySelectorAll('.lwb').forEach(x=>x.classList.toggle('on',x===bt));draw(k)};top.append(bt)});draw('resta')};
+IW.tri=(ch,o)=>{const a=ch.a,S=triSol(a,ch.k);const w=el('div','triw');let lk=false;const sels=[];
+  const mk=(lab,opts,ans)=>{const r=el('label','trirow');r.append(el('span',null,lab));const s=document.createElement('select');const z=document.createElement('option');z.value='';z.textContent='— elige —';s.append(z);
+    opts.forEach(x=>{const q=document.createElement('option');q.value=x;q.textContent=x;s.append(q)});s.onchange=()=>{s.classList.remove('good','bad');lb();o.on&&o.on()};r.append(s);sels.push({s,ans});return r};
+  w.append(el('p','note','Raíz: √('+TRI_K[ch.k].r(a)+')'));
+  w.append(mk('1. Sustitución:',['x = '+a+'·sen θ','x = '+a+'·tan θ','x = '+a+'·sec θ'],S.s));
+  const sides=['x',String(a),S.R];const fig=el('div','trifig');
+  const H=mk('2. Hipotenusa:',sides,S.hip),Op=mk('Cateto opuesto a θ:',sides,S.op),Ad=mk('Cateto adyacente a θ:',sides,S.ad);
+  w.append(fig,H,Op,Ad);
+  const val=(p)=>p==='op'?S.op:p==='ad'?S.ad:S.hip;const rat=[];sides.forEach(p=>sides.forEach(q=>{if(p!==q)rat.push(p+' / '+q)}));
+  (ch.ask||[]).forEach((f,i)=>{const [p,q]=TRI_F[f];w.append(mk((i?'':'3. ')+f+' θ en términos de x:',rat,val(p)+' / '+val(q)))});
+  function lb(){const g=i=>sels[i]&&sels[i].s.value||'?';fig.innerHTML=triSVG({hip:g(1),op:g(2),ad:g(3)})}lb();
+  return{el:w,note:'Elige cada parte; el triángulo se dibuja con lo que eliges.',need:'Completa todas las casillas.',filled:()=>sels.every(x=>x.s.value),
+   grade(){const bad=sels.filter(x=>x.s.value!==x.ans).length;return{f:(sels.length-bad)/sels.length,msg:bad?(bad===1?'Una casilla no está bien (en rojo).':bad+' casillas no están bien (en rojo).')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){sels.forEach(x=>{const k=x.s.value===x.ans;x.s.classList.toggle('good',k);x.s.classList.toggle('bad',!k)})},
+   reveal(){sels.forEach(x=>{if(x.s.value!==x.ans){x.s.value=x.ans;x.s.classList.remove('bad');x.s.classList.add('rev')}else x.s.classList.add('good')});lb()},
+   lock(){lk=true;sels.forEach(x=>x.s.disabled=true)}}};
 const isIW=ch=>!!(ch&&ch.t&&IW[ch.t]);
 /* BQ-JS-START */
 /* ================= ANÁLISIS BIOQUÍMICO (XTART): interactivos =================

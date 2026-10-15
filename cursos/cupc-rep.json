@@ -1,0 +1,866 @@
+{
+ "code": "1AMA0758",
+ "uni": "UPC",
+ "name": "Cálculo I",
+ "nbname": "Cálculo I",
+ "guide": true,
+ "free": true,
+ "formSim": false,
+ "figs": {},
+ "simEx": [],
+ "id": "cupc-rep",
+ "tapa": {
+  "p": "lunares",
+  "c": [
+   "#FFF0EC",
+   "#F08C78",
+   "#A8382A",
+   "#7A231A"
+  ]
+ },
+ "exam": "Repaso introductorio",
+ "short": "Repaso",
+ "sub": "Bases para integrar",
+ "intro": "Lo mínimo que necesitas antes de integrar: derivadas y regla de la cadena, exponentes, identidades trigonométricas y el triángulo rectángulo. Es corto a propósito: si ya lo dominas, pasa directo a la <b>Práctica</b>.",
+ "form": "<p class=\"note\">Hoja de repaso: lo que usa el cálculo integral.</p>\n<div class=\"fgrid\">\n<div><b>Derivadas y regla de la cadena</b><br>\\((x^n)'=nx^{n-1}\\) · \\((e^u)'=e^u\\,u'\\) · \\((\\ln u)'=\\frac{u'}{u}\\) · \\((\\operatorname{sen}u)'=\\cos u\\,u'\\) · \\((\\cos u)'=-\\operatorname{sen}u\\,u'\\) · \\(u=g(x)\\Rightarrow du=g'(x)\\,dx\\)</div>\n<div><b>Exponentes y raíces</b><br>\\(\\frac1{x^n}=x^{-n}\\) · \\(\\sqrt[n]{x^m}=x^{m/n}\\) · \\(x^ax^b=x^{a+b}\\) · \\(\\frac{x^a}{x^b}=x^{a-b}\\)</div>\n<div><b>Identidades trigonométricas</b><br>\\(\\operatorname{sen}^2x+\\cos^2x=1\\) · \\(1+\\tan^2x=\\sec^2x\\) · \\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}2\\) · \\(\\cos^2x=\\frac{1+\\cos2x}2\\) · \\(\\operatorname{sen}2x=2\\operatorname{sen}x\\cos x\\)</div>\n<div><b>Triángulo rectángulo y razones trigonométricas</b><br>sen = op/hip · cos = ady/hip · tan = op/ady · sec = hip/ady · csc = hip/op · cot = ady/op · Pitágoras: hip² = op² + ady²</div>\n</div>",
+ "topics": [
+  {
+   "id": "rp1",
+   "name": "Repaso · Derivadas y regla de la cadena",
+   "teo": "<p>Integrar es derivar al revés, así que necesitas las derivadas a la mano:</p><ul><li>\\((x^n)'=nx^{n-1}\\) · \\((e^x)'=e^x\\) · \\((\\ln x)'=\\frac1x\\)</li><li>\\((\\operatorname{sen}x)'=\\cos x\\) · \\((\\cos x)'=-\\operatorname{sen}x\\) · \\((\\tan x)'=\\sec^2x\\) · \\((\\sec x)'=\\sec x\\tan x\\)</li></ul><p><b>Regla de la cadena:</b> \\((f(g(x)))'=f'(g(x))\\cdot g'(x)\\). Ejemplo: \\((\\operatorname{sen}3x)'=3\\cos3x\\).</p><p><b>Diferencial:</b> si \\(u=g(x)\\), entonces \\(du=g'(x)\\,dx\\). Ejemplo: \\(u=x^2+1\\Rightarrow du=2x\\,dx\\). Esto es lo que se usa en la regla de sustitución.</p>",
+   "form": [
+    "\\((x^n)'=nx^{n-1}\\)",
+    "\\((e^u)'=e^u\\,u'\\) · \\((\\ln u)'=\\frac{u'}{u}\\)",
+    "\\((\\operatorname{sen}u)'=\\cos u\\,u'\\) · \\((\\cos u)'=-\\operatorname{sen}u\\,u'\\)",
+    "\\(u=g(x)\\Rightarrow du=g'(x)\\,dx\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Si sabes derivar, puedes comprobar cualquier integral: derivas tu resultado y debe salir lo de adentro.</p><div class=\"ej\"><b>Ejemplo:</b> \\(\\int2x\\,e^{x^2}dx=e^{x^2}+C\\) porque \\((e^{x^2})'=2xe^{x^2}\\).</div><div class=\"err\"><b>Error común:</b> olvidar multiplicar por la derivada de lo de adentro.</div>",
+   "ex": [
+    {
+     "id": "rp1e1",
+     "lvl": 1,
+     "title": "Potencias",
+     "q": "<p>Deriva \\(f(x)=3x^5-\\dfrac{2}{x}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "f′(x) =",
+         "a": "15*x^4+2/x^2",
+         "v": [
+          "x"
+         ],
+         "mode": "eq",
+         "dom": {
+          "x": [
+           0.5,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Escribe \\(\\frac2x=2x^{-1}\\).",
+      "Regla de la potencia: \\((x^n)'=nx^{n-1}\\).",
+      "\\(f'(x)=15x^4+2x^{-2}=15x^4+\\frac{2}{x^2}\\)."
+     ],
+     "ans": "\\(15x^4+\\frac{2}{x^2}\\)",
+     "hint": "Pasa 2/x a potencia negativa.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "dpot"
+      ],
+      [
+       "dpot"
+      ]
+     ]
+    },
+    {
+     "id": "rp1e2",
+     "lvl": 1,
+     "title": "Regla de la cadena: seno",
+     "q": "<p>Deriva \\(y=\\operatorname{sen}(3x)\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "y′ =",
+         "a": "3*cos(3*x)",
+         "v": [
+          "x"
+         ],
+         "mode": "eq"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Afuera: seno → coseno. Adentro: \\(3x\\), su derivada es 3.",
+      "\\(y'=\\cos(3x)\\cdot3\\)."
+     ],
+     "ans": "\\(3\\cos(3x)\\)",
+     "hint": "Deriva lo de afuera y multiplica por la derivada de lo de adentro.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cadena"
+      ],
+      [
+       "cadena"
+      ]
+     ]
+    },
+    {
+     "id": "rp1e3",
+     "lvl": 2,
+     "title": "Regla de la cadena: exponencial",
+     "q": "<p>Deriva \\(y=e^{x^2}\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la derivada (usa exp(…) o e^(…)).",
+       "f": [
+        {
+         "l": "y′ =",
+         "a": "2*x*exp(x^2)",
+         "v": [
+          "x"
+         ],
+         "mode": "eq"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La derivada de \\(e^{u}\\) es \\(e^{u}\\cdot u'\\).",
+      "Con \\(u=x^2\\): \\(y'=e^{x^2}\\cdot2x\\)."
+     ],
+     "ans": "\\(2xe^{x^2}\\)",
+     "hint": "Lo de adentro es x².",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cadena"
+      ],
+      [
+       "cadena"
+      ]
+     ]
+    },
+    {
+     "id": "rp1e4",
+     "lvl": 2,
+     "title": "Diferencial",
+     "q": "<p>Si \\(v=\\ln(5x)\\), entonces \\(dv=\\;?\\,dx\\).</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "dv/dx =",
+         "a": "1/x",
+         "v": [
+          "x"
+         ],
+         "mode": "eq",
+         "dom": {
+          "x": [
+           0.5,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\((\\ln u)'=\\frac{u'}{u}\\): \\(\\frac{5}{5x}=\\frac1x\\).",
+      "Por eso \\(dv=\\frac1x\\,dx\\). Las diferenciales son la base de la sustitución."
+     ],
+     "ans": "\\(\\frac1x\\)",
+     "hint": "El 5 se cancela.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cadena"
+      ],
+      [
+       "difer"
+      ]
+     ]
+    },
+    {
+     "id": "rp1e5",
+     "lvl": 1,
+     "title": "¿Qué dice la regla de la cadena?",
+     "q": "<p>Para \\(y=f(g(x))\\), ¿cuál es \\(y'\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(f'(g(x))\\cdot g'(x)\\)",
+        "\\(f'(x)\\cdot g'(x)\\)",
+        "\\(f'(g'(x))\\)",
+        "\\(f(g'(x))\\cdot g(x)\\)",
+        "\\(f'(g(x))+g'(x)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Derivas la de afuera evaluada en la de adentro y multiplicas por la derivada de la de adentro.",
+      "La regla de sustitución es esta regla al revés: por eso buscas «una función y su derivada»."
+     ],
+     "ans": "\\(f'(g(x))\\cdot g'(x)\\)",
+     "hint": "Afuera por adentro.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "cadena"
+      ],
+      [
+       "cadena"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rp2",
+   "name": "Repaso · Exponentes y raíces",
+   "teo": "<p>Antes de integrar casi siempre hay que <b>reescribir</b> la función como suma de potencias de x, porque \\(\\int x^n dx=\\frac{x^{n+1}}{n+1}+C\\) solo sirve con potencias.</p><ul><li>\\(\\frac{1}{x^n}=x^{-n}\\)</li><li>\\(\\sqrt[n]{x^m}=x^{m/n}\\)</li><li>\\(x^a\\cdot x^b=x^{a+b}\\) · \\(\\frac{x^a}{x^b}=x^{a-b}\\)</li><li>Una fracción con un solo término abajo se reparte: \\(\\frac{a+b}{x}=\\frac ax+\\frac bx\\).</li></ul>",
+   "form": [
+    "\\(\\frac1{x^n}=x^{-n}\\)",
+    "\\(\\sqrt[n]{x^m}=x^{m/n}\\)",
+    "\\(x^ax^b=x^{a+b}\\) · \\(\\frac{x^a}{x^b}=x^{a-b}\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Raíces y fracciones se convierten en exponentes para poder usar la regla de la potencia.</p><div class=\"err\"><b>Error común:</b> repartir una fracción con suma abajo: \\(\\frac{1}{x+1}\\neq\\frac1x+1\\).</div>",
+   "ex": [
+    {
+     "id": "rp2e1",
+     "lvl": 1,
+     "title": "Fracción a potencia",
+     "q": "<p>Escribe \\(\\dfrac{1}{x^3}=x^{n}\\). ¿Cuánto vale n?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe n.",
+       "f": [
+        {
+         "a": "-3",
+         "v": [],
+         "l": "n ="
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\frac{1}{x^a}=x^{-a}\\).",
+      "\\(n=-3\\)."
+     ],
+     "ans": "\\(-3\\)",
+     "hint": "El exponente sube con signo cambiado.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "expo"
+      ]
+     ]
+    },
+    {
+     "id": "rp2e2",
+     "lvl": 1,
+     "title": "Raíz a potencia",
+     "q": "<p>Escribe \\(\\dfrac{1}{\\sqrt[3]{x^2}}=x^{n}\\). ¿Cuánto vale n?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe n (puede ser una fracción, como 1/2).",
+       "f": [
+        {
+         "a": "-2/3",
+         "v": [],
+         "l": "n ="
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sqrt[3]{x^2}=x^{2/3}\\).",
+      "En el denominador cambia de signo: \\(x^{-2/3}\\)."
+     ],
+     "ans": "\\(-\\frac23\\)",
+     "hint": "Raíz n-ésima = exponente 1/n.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "expo"
+      ]
+     ]
+    },
+    {
+     "id": "rp2e3",
+     "lvl": 1,
+     "title": "Producto de potencias",
+     "q": "<p>Escribe \\(x\\sqrt{x}=x^{n}\\). ¿Cuánto vale n?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe n.",
+       "f": [
+        {
+         "a": "3/2",
+         "v": [],
+         "l": "n ="
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sqrt x=x^{1/2}\\).",
+      "\\(x^1\\cdot x^{1/2}=x^{3/2}\\): los exponentes se suman."
+     ],
+     "ans": "\\(\\frac32\\)",
+     "hint": "Se suman los exponentes.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "expo"
+      ]
+     ]
+    },
+    {
+     "id": "rp2e4",
+     "lvl": 2,
+     "title": "Dividir término a término",
+     "q": "<p>¿Cómo queda \\(\\dfrac{x^5-2x+1}{x}\\) lista para integrar?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(x^4-2+\\frac1x\\)",
+        "\\(x^4-2x+1\\)",
+        "\\(x^4-2+x\\)",
+        "\\(x^5-2+\\frac1x\\)",
+        "\\(x^4-\\frac2x+1\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Cada término del numerador se divide entre x: \\(\\frac{x^5}{x}-\\frac{2x}{x}+\\frac1x\\).",
+      "Queda \\(x^4-2+\\frac1x\\), que se integra término a término."
+     ],
+     "ans": "\\(x^4-2+\\frac1x\\)",
+     "hint": "Divide cada término.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "expo"
+      ],
+      [
+       "expo"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rp3",
+   "name": "Repaso · Identidades trigonométricas",
+   "teo": "<p>Las integrales trigonométricas casi nunca se resuelven directo: primero se transforma con una identidad.</p><ul><li>\\(\\operatorname{sen}^2x+\\cos^2x=1\\)</li><li>\\(1+\\tan^2x=\\sec^2x\\) · \\(1+\\cot^2x=\\csc^2x\\)</li><li>\\(\\operatorname{sen}2x=2\\operatorname{sen}x\\cos x\\)</li><li>\\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}{2}\\) · \\(\\cos^2x=\\frac{1+\\cos2x}{2}\\)</li></ul>",
+   "form": [
+    "\\(\\operatorname{sen}^2x+\\cos^2x=1\\)",
+    "\\(1+\\tan^2x=\\sec^2x\\)",
+    "\\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}2\\) · \\(\\cos^2x=\\frac{1+\\cos2x}2\\)",
+    "\\(\\operatorname{sen}2x=2\\operatorname{sen}x\\cos x\\)"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Pitagórica para cambiar seno por coseno (o tan por sec); ángulo mitad para bajar cuadrados.</p><div class=\"err\"><b>Error común:</b> confundir el signo de \\(\\frac{1\\pm\\cos2x}{2}\\): seno lleva menos.</div>",
+   "ex": [
+    {
+     "id": "rp3e1",
+     "lvl": 1,
+     "title": "Bajar el cuadrado del seno",
+     "q": "<p>¿Cuál identidad convierte \\(\\operatorname{sen}^2x\\) en algo sin cuadrados?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}{2}\\)",
+        "\\(\\operatorname{sen}^2x=\\frac{1+\\cos2x}{2}\\)",
+        "\\(\\operatorname{sen}^2x=2\\operatorname{sen}x\\cos x\\)",
+        "\\(\\operatorname{sen}^2x=1+\\cos^2x\\)",
+        "\\(\\operatorname{sen}^2x=\\operatorname{sen}(x^2)\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "Es la identidad del ángulo mitad: con menos para el seno y más para el coseno.",
+      "Se usa para integrar potencias pares de seno y coseno."
+     ],
+     "ans": "\\(\\frac{1-\\cos2x}{2}\\)",
+     "hint": "Seno lleva menos.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "idtrig"
+      ],
+      [
+       "idtrig"
+      ]
+     ]
+    },
+    {
+     "id": "rp3e2",
+     "lvl": 1,
+     "title": "Tangente al cuadrado",
+     "q": "<p>Completa: \\(\\tan^2x=\\;?\\)</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(\\sec^2x-1\\)",
+        "\\(1-\\sec^2x\\)",
+        "\\(\\sec^2x+1\\)",
+        "\\(\\csc^2x-1\\)",
+        "\\(1-\\cos^2x\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "De \\(1+\\tan^2x=\\sec^2x\\).",
+      "Se usa con \\(\\int\\tan^m\\sec^n\\) y en la sustitución \\(x=a\\tan\\theta\\)."
+     ],
+     "ans": "\\(\\sec^2x-1\\)",
+     "hint": "Divide \\(\\operatorname{sen}^2+\\cos^2=1\\) entre \\(\\cos^2\\).",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "idtrig"
+      ],
+      [
+       "idtrig"
+      ]
+     ]
+    },
+    {
+     "id": "rp3e3",
+     "lvl": 1,
+     "title": "¿De quién es esta derivada?",
+     "q": "<p>Clasifica cada expresión según la función de la que es derivada.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "cats": [
+        "sen x",
+        "cos x",
+        "tan x",
+        "sec x"
+       ],
+       "items": [
+        {
+         "x": "\\(\\cos x\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(-\\operatorname{sen}x\\)",
+         "c": 1,
+         "e": "La derivada del coseno lleva signo menos."
+        },
+        {
+         "x": "\\(\\sec^2x\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(\\sec x\\tan x\\)",
+         "c": 3
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Estas parejas son la tabla de integrales leída al revés.",
+      "Por ejemplo \\(\\int\\sec^2x\\,dx=\\tan x+C\\)."
+     ],
+     "ans": "sen → cos · cos → −sen · tan → sec² · sec → sec·tan",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "dtrig"
+      ],
+      [
+       "dtrig"
+      ]
+     ]
+    },
+    {
+     "id": "rp3e4",
+     "lvl": 2,
+     "title": "Ángulo doble",
+     "q": "<p>Si \\(\\operatorname{sen}\\theta=\\frac35\\) y θ es agudo, ¿cuánto vale \\(\\operatorname{sen}2\\theta\\)?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "24/25",
+         "v": [],
+         "l": "sen 2θ ="
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\cos\\theta=\\sqrt{1-\\frac{9}{25}}=\\frac45\\).",
+      "\\(\\operatorname{sen}2\\theta=2\\operatorname{sen}\\theta\\cos\\theta=2\\cdot\\frac35\\cdot\\frac45=\\frac{24}{25}\\)."
+     ],
+     "ans": "\\(\\frac{24}{25}\\)",
+     "hint": "Primero halla el coseno.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "idtrig"
+      ],
+      [
+       "idtrig"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rp4",
+   "name": "Repaso · Triángulo rectángulo y razones trigonométricas",
+   "teo": "<p>En un triángulo rectángulo con ángulo θ:</p><p>\\(\\operatorname{sen}\\theta=\\frac{\\text{op}}{\\text{hip}}\\) · \\(\\cos\\theta=\\frac{\\text{ady}}{\\text{hip}}\\) · \\(\\tan\\theta=\\frac{\\text{op}}{\\text{ady}}\\)</p><p>\\(\\sec\\theta=\\frac{\\text{hip}}{\\text{ady}}\\) · \\(\\csc\\theta=\\frac{\\text{hip}}{\\text{op}}\\) · \\(\\cot\\theta=\\frac{\\text{ady}}{\\text{op}}\\)</p><p>Si conoces una razón, dibujas el triángulo, hallas el lado que falta con Pitágoras y lees cualquier otra. Es exactamente el último paso de la <b>sustitución trigonométrica</b> (sem. 9).</p>",
+   "form": [
+    "sen = op/hip · cos = ady/hip · tan = op/ady",
+    "sec = hip/ady · csc = hip/op · cot = ady/op",
+    "Pitágoras: hip² = op² + ady²"
+   ],
+   "lesson": "<h3>Idea central</h3><p>Una razón trigonométrica = dos lados del triángulo. Pitágoras te da el tercero.</p><div class=\"err\"><b>Error común:</b> poner la raíz en el lado equivocado: con \\(\\tan\\theta=\\frac x3\\) la raíz es la hipotenusa.</div>",
+   "tools": [
+    {
+     "w": "tri",
+     "t": "El triángulo de cada raíz",
+     "p": "Toca cada tipo de raíz y mira qué lado es cada cosa.",
+     "o": {
+      "a": 3
+     }
+    }
+   ],
+   "ex": [
+    {
+     "id": "rp4e1",
+     "lvl": 1,
+     "title": "Del triángulo a la secante",
+     "q": "<p>Si θ es agudo y \\(\\tan\\theta=\\frac43\\), ¿cuánto vale \\(\\sec\\theta\\)?</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe el valor exacto (puedes usar π, e, ln, sqrt).",
+       "f": [
+        {
+         "a": "5/3",
+         "v": [],
+         "l": "sec θ ="
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Opuesto 4, adyacente 3 ⇒ hipotenusa \\(\\sqrt{16+9}=5\\).",
+      "\\(\\sec\\theta=\\frac{\\text{hip}}{\\text{ady}}=\\frac53\\)."
+     ],
+     "ans": "\\(\\frac53\\)",
+     "hint": "Dibuja el triángulo y usa Pitágoras.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "triang"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "rp4e2",
+     "lvl": 2,
+     "title": "Con x en el triángulo",
+     "q": "<p>Si \\(\\operatorname{sen}\\theta=\\frac{x}{2}\\), escribe \\(\\cos\\theta\\) en términos de x.</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "cos θ =",
+         "a": "sqrt(4-x^2)/2",
+         "v": [
+          "x"
+         ],
+         "mode": "eq",
+         "dom": {
+          "x": [
+           -1.5,
+           1.5
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Opuesto x, hipotenusa 2 ⇒ adyacente \\(\\sqrt{4-x^2}\\).",
+      "\\(\\cos\\theta=\\frac{\\sqrt{4-x^2}}{2}\\)."
+     ],
+     "ans": "\\(\\frac{\\sqrt{4-x^2}}2\\)",
+     "hint": "Pitágoras: ady² = hip² − op².",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "triang"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "rp4e3",
+     "lvl": 2,
+     "title": "Tangente con x",
+     "q": "<p>Si \\(\\tan\\theta=\\frac{x}{3}\\), escribe \\(\\sec\\theta\\) en términos de x.</p>",
+     "checks": [
+      {
+       "t": "expr",
+       "p": "Escribe la expresión.",
+       "f": [
+        {
+         "l": "sec θ =",
+         "a": "sqrt(9+x^2)/3",
+         "v": [
+          "x"
+         ],
+         "mode": "eq",
+         "dom": {
+          "x": [
+           -3,
+           3
+          ]
+         }
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Opuesto x, adyacente 3 ⇒ hipotenusa \\(\\sqrt{9+x^2}\\).",
+      "\\(\\sec\\theta=\\frac{\\text{hip}}{\\text{ady}}=\\frac{\\sqrt{9+x^2}}{3}\\)."
+     ],
+     "ans": "\\(\\frac{\\sqrt{9+x^2}}3\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "triang"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    },
+    {
+     "id": "rp4e4",
+     "lvl": 2,
+     "title": "Secante con x",
+     "q": "<p>Si \\(\\sec\\theta=\\frac{x}{2}\\) (θ agudo), ¿cuánto vale \\(\\tan\\theta\\)?</p>",
+     "checks": [
+      {
+       "p": "Respuesta",
+       "o": [
+        "\\(\\frac{\\sqrt{x^2-4}}{2}\\)",
+        "\\(\\frac{2}{\\sqrt{x^2-4}}\\)",
+        "\\(\\frac{\\sqrt{4-x^2}}{2}\\)",
+        "\\(\\frac{x}{\\sqrt{x^2-4}}\\)",
+        "\\(\\frac{\\sqrt{x^2+4}}{2}\\)"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\sec\\theta=\\frac{\\text{hip}}{\\text{ady}}\\): hipotenusa x, adyacente 2.",
+      "Opuesto \\(\\sqrt{x^2-4}\\) ⇒ \\(\\tan\\theta=\\frac{\\sqrt{x^2-4}}{2}\\)."
+     ],
+     "ans": "\\(\\frac{\\sqrt{x^2-4}}2\\)",
+     "hint": "",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "triang"
+      ],
+      [
+       "triang"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "concepts": {
+  "dpot": {
+   "n": "Regla de la potencia",
+   "f": "\\((x^n)'=nx^{n-1}\\)",
+   "x": "Baja el exponente y réstale 1.",
+   "home": "rp1"
+  },
+  "cadena": {
+   "n": "Regla de la cadena",
+   "f": "\\((f(g(x)))'=f'(g(x))g'(x)\\)",
+   "x": "Afuera por la derivada de adentro.",
+   "home": "rp1"
+  },
+  "difer": {
+   "n": "Diferencial",
+   "f": "\\(du=g'(x)\\,dx\\)",
+   "x": "Es lo que se reemplaza en la sustitución.",
+   "home": "rp1"
+  },
+  "expo": {
+   "n": "Leyes de exponentes",
+   "f": "\\(\\frac1{x^n}=x^{-n}\\) · \\(\\sqrt[n]{x^m}=x^{m/n}\\)",
+   "x": "Reescribe antes de integrar.",
+   "home": "rp2"
+  },
+  "idtrig": {
+   "n": "Identidades trigonométricas",
+   "f": "\\(\\operatorname{sen}^2x=\\frac{1-\\cos2x}2\\) · \\(\\tan^2=\\sec^2-1\\)",
+   "x": "Transforman la integral en una de tabla.",
+   "home": "rp3"
+  },
+  "dtrig": {
+   "n": "Derivadas trigonométricas",
+   "f": "\\((\\tan x)'=\\sec^2x\\) · \\((\\sec x)'=\\sec x\\tan x\\)",
+   "x": "La tabla de integrales al revés.",
+   "home": "rp3"
+  },
+  "triang": {
+   "n": "Triángulo rectángulo",
+   "f": "sen = op/hip · tan = op/ady · sec = hip/ady",
+   "x": "Pitágoras da el lado que falta.",
+   "home": "rp4"
+  }
+ },
+ "sim": {
+  "minutes": 30,
+  "intro": "Simulacro corto del repaso (20 puntos, 30 min): una pregunta de cada base.",
+  "slots": [
+   {
+    "pts": 5,
+    "name": "Derivadas y regla de la cadena",
+    "pool": [
+     "rp1e2",
+     "rp1e3",
+     "rp1e4"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Exponentes y raíces",
+    "pool": [
+     "rp2e2",
+     "rp2e3",
+     "rp2e4"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Identidades trigonométricas",
+    "pool": [
+     "rp3e1",
+     "rp3e2",
+     "rp3e4"
+    ]
+   },
+   {
+    "pts": 5,
+    "name": "Triángulo rectángulo",
+    "pool": [
+     "rp4e1",
+     "rp4e2",
+     "rp4e3",
+     "rp4e4"
+    ]
+   }
+  ]
+ }
+}
