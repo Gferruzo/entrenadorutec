@@ -15,7 +15,8 @@ os.chdir(RAIZ)
 
 TIPOS = {"num", "expr", "cls", "code", "mat", "tap", "ptab", "order", "sql", "esc",
          "shift", "vecdraw", "cols", "tlc", "fill", "dcl", "tt", "econf", "fit",
-         "fix", "signs", "star", "mem", "acum", "usub", "tri", "lab", "tree", "mkt", "tira", "micro", "espec"}
+         "fix", "signs", "star", "mem", "acum", "usub", "tri", "lab", "tree", "mkt", "tira", "micro", "espec",
+         "val", "ley", "arg", "mundo", "venn"}
 OBLIG_CURSO = ["id", "code", "name", "exam", "short", "form", "topics", "concepts", "sim"]
 OBLIG_TEMA = ["id", "name", "teo", "form", "lesson", "ex"]
 OBLIG_EJ = ["id", "title", "q", "checks", "steps"]
@@ -67,6 +68,12 @@ def revisar_ej(f, e, conceptos, com2, donde):
                 E(f, f"{eid} parte {i+1}: opciones repetidas")
         elif t not in TIPOS:
             E(f, f"{eid} parte {i+1}: tipo «{t}» no existe en index.html")
+        elif t == "arg" and not c.get("sol"):
+            E(f, f"{eid} parte {i+1}: «arg» sin «sol» (la deducción modelo)")
+        elif t == "venn" and not (c.get("a") if c.get("mode", "tap") == "tap" else isinstance(c.get("v"), dict)):
+            E(f, f"{eid} parte {i+1}: «venn» sin respuesta («a» en tap, «v» en num)")
+        elif t == "mundo" and not c.get("sol"):
+            E(f, f"{eid} parte {i+1}: «mundo» sin «sol» (un mundo que cumpla)")
         elif t == "num":
             for fl in c.get("f", []):
                 if not isinstance(fl.get("a"), (int, float)):

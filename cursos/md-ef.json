@@ -27,35 +27,78 @@
      "id": "r1",
      "lvl": 1,
      "title": "Racional o irracional",
-     "q": "<p>¿Cuál de estos números es racional?</p>",
+     "q": "<p>Clasifica cada número como racional o irracional.</p>",
      "checks": [
       {
-       "p": "Racional",
-       "o": [
-        "\\(0{,}\\overline{3}\\)",
-        "\\(\\sqrt2\\)",
-        "\\(\\pi\\)",
-        "\\(\\sqrt3\\)",
-        "\\(1+\\sqrt5\\)"
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Racional",
+        "Irracional"
+       ],
+       "items": [
+        {
+         "x": "\\(0{,}\\overline{3}\\)",
+         "c": 0,
+         "e": "\\(0{,}333\\ldots\\) es periódico: es \\(\\tfrac13\\)."
+        },
+        {
+         "x": "\\(\\sqrt{2}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\sqrt{9}\\)",
+         "c": 0,
+         "e": "\\(\\sqrt9=3\\), que es entero."
+        },
+        {
+         "x": "\\(\\pi\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\tfrac{22}{7}\\)",
+         "c": 0,
+         "e": "\\(\\tfrac{22}{7}\\) es cociente de enteros: solo se parece a \\(\\pi\\)."
+        },
+        {
+         "x": "\\(\\sqrt2\\cdot\\sqrt8\\)",
+         "c": 0,
+         "e": "\\(\\sqrt2\\cdot\\sqrt8=\\sqrt{16}=4\\)."
+        },
+        {
+         "x": "\\(0{,}1010010001\\ldots\\)",
+         "c": 1,
+         "e": "Sus decimales no se repiten en bloque: no es periódico."
+        },
+        {
+         "x": "\\(1+\\sqrt3\\)",
+         "c": 1,
+         "e": "Racional + irracional siempre es irracional."
+        }
        ]
       }
      ],
      "steps": [
-      "Racional = se puede escribir como fracción de enteros \\(\\frac ab\\). \\(0{,}\\overline3=0{,}333\\ldots=\\frac13\\): es racional.",
-      "Los demás no se pueden escribir como fracción (son irracionales, como \\(\\sqrt2\\) o \\(\\pi\\))."
+      "Un número es racional si se puede escribir como \\(\\frac ab\\) con \\(a,b\\) enteros y \\(b\\ne0\\). En decimal: finito o periódico.",
+      "Racionales: \\(0{,}\\overline3=\\frac13\\), \\(\\sqrt9=3\\), \\(\\frac{22}7\\) y \\(\\sqrt2\\cdot\\sqrt8=\\sqrt{16}=4\\).",
+      "Irracionales: \\(\\sqrt2\\), \\(\\pi\\), \\(0{,}1010010001\\ldots\\) (no periódico) y \\(1+\\sqrt3\\) (racional + irracional)."
      ],
-     "ans": "\\(0{,}\\overline3\\)",
-     "hint": "Periódico = racional.",
+     "ans": "Racionales: \\(0{,}\\overline3\\), \\(\\sqrt9\\), \\(\\frac{22}7\\), \\(\\sqrt2\\cdot\\sqrt8\\)",
+     "hint": "Simplifica las raíces antes de decidir.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
       [
-       "racdef",
-       "divsuc"
+       "racdef"
       ],
-      []
+      [
+       "racdef"
+      ],
+      [
+       "racdef"
+      ]
      ]
     },
     {
@@ -123,17 +166,19 @@
      "id": "r3",
      "lvl": 1,
      "title": "Inecuación cuadrática",
-     "q": "<p>Resuelve \\(x(8-x)\\ge0\\).</p>",
+     "q": "<p>Resuelve \\(x(8-x)\\ge0\\) y marca en la recta los tramos y puntos que forman la solución.</p>",
      "checks": [
       {
-       "p": "Conjunto solución",
-       "o": [
-        "\\([0,8]\\)",
-        "\\((0,8)\\)",
-        "\\((-\\infty,0]\\cup[8,\\infty)\\)",
-        "\\([8,\\infty)\\)",
-        "\\(\\mathbb{R}\\)"
-       ]
+       "t": "tap",
+       "p": "Marca la solución (tramos y extremos)",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 320 80\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"10\" y1=\"46\" x2=\"310\" y2=\"46\"/><path class=\"gl\" d=\"M304 41l8 5l-8 5\" /><path class=\"gl\" d=\"M16 41l-8 5l8 5\" /><line class=\"gl\" x1=\"40.0\" y1=\"40\" x2=\"40.0\" y2=\"52\"/><text class=\"dl\" x=\"40.0\" y=\"68\" text-anchor=\"middle\">0</text><line class=\"gl\" x1=\"280.0\" y1=\"40\" x2=\"280.0\" y2=\"52\"/><text class=\"dl\" x=\"280.0\" y=\"68\" text-anchor=\"middle\">8</text><rect data-z=\"i1\" x=\"27.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i2\" x=\"49.0\" y=\"37\" width=\"222.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i3\" x=\"289.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><circle data-z=\"p1\" cx=\"40.0\" cy=\"46\" r=\"9\"/><circle data-z=\"p2\" cx=\"280.0\" cy=\"46\" r=\"9\"/></svg>",
+       "a": [
+        "i2",
+        "p1",
+        "p2"
+       ],
+       "multi": true,
+       "e": "Los extremos entran porque la desigualdad es \\(\\ge\\): en 0 y en 8 el producto vale 0."
       }
      ],
      "steps": [
@@ -159,17 +204,19 @@
      "id": "r4",
      "lvl": 2,
      "title": "Cuadrado acotado",
-     "q": "<p>Resuelve \\((x+4)^2\\le4\\).</p>",
+     "q": "<p>Resuelve \\((x+4)^2\\le4\\) y marca en la recta los tramos y puntos de la solución.</p>",
      "checks": [
       {
-       "p": "Conjunto solución",
-       "o": [
-        "\\([-6,-2]\\)",
-        "\\([-2,2]\\)",
-        "\\((-\\infty,-6]\\cup[-2,\\infty)\\)",
-        "\\([-4,0]\\)",
-        "\\([2,6]\\)"
-       ]
+       "t": "tap",
+       "p": "Marca la solución (tramos y extremos)",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 320 80\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"10\" y1=\"46\" x2=\"310\" y2=\"46\"/><path class=\"gl\" d=\"M304 41l8 5l-8 5\" /><path class=\"gl\" d=\"M16 41l-8 5l8 5\" /><line class=\"gl\" x1=\"40.0\" y1=\"40\" x2=\"40.0\" y2=\"52\"/><text class=\"dl\" x=\"40.0\" y=\"68\" text-anchor=\"middle\">−6</text><line class=\"gl\" x1=\"280.0\" y1=\"40\" x2=\"280.0\" y2=\"52\"/><text class=\"dl\" x=\"280.0\" y=\"68\" text-anchor=\"middle\">−2</text><rect data-z=\"i1\" x=\"27.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i2\" x=\"49.0\" y=\"37\" width=\"222.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i3\" x=\"289.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><circle data-z=\"p1\" cx=\"40.0\" cy=\"46\" r=\"9\"/><circle data-z=\"p2\" cx=\"280.0\" cy=\"46\" r=\"9\"/></svg>",
+       "a": [
+        "i2",
+        "p1",
+        "p2"
+       ],
+       "multi": true,
+       "e": "\\(|x+4|\\le2\\) da \\(-6\\le x\\le-2\\), con extremos incluidos."
       }
      ],
      "steps": [
@@ -227,17 +274,63 @@
      "id": "r6",
      "lvl": 3,
      "title": "Inecuación racional (lista del curso)",
-     "q": "<p>Resuelve \\(\\dfrac{x^2-5x+6}{x^2+x-42}\\ge0\\).</p>",
+     "q": "<p>Resuelve \\(\\dfrac{x^2-5x+6}{x^2+x-42}\\ge0\\).</p><p>Factoriza: \\(\\dfrac{(x-2)(x-3)}{(x+7)(x-6)}\\).</p>",
      "checks": [
       {
-       "p": "Conjunto solución",
-       "o": [
-        "\\((-\\infty,-7)\\cup[2,3]\\cup(6,\\infty)\\)",
-        "\\((-\\infty,-7]\\cup[2,3]\\cup[6,\\infty)\\)",
-        "\\([-7,2]\\cup[3,6]\\)",
-        "\\((-7,2)\\cup(3,6)\\)",
-        "\\([2,3]\\)"
+       "t": "signs",
+       "p": "Parte 1 · Completa la tabla de signos",
+       "pts": [
+        "-7",
+        "2",
+        "3",
+        "6"
+       ],
+       "rows": [
+        {
+         "n": "\\((x-2)(x-3)\\)",
+         "a": [
+          "+",
+          "+",
+          "-",
+          "+",
+          "+"
+         ]
+        },
+        {
+         "n": "\\((x+7)(x-6)\\)",
+         "a": [
+          "+",
+          "-",
+          "-",
+          "-",
+          "+"
+         ]
+        },
+        {
+         "n": "Cociente",
+         "a": [
+          "+",
+          "-",
+          "+",
+          "-",
+          "+"
+         ]
+        }
        ]
+      },
+      {
+       "t": "tap",
+       "p": "Parte 2 · Marca la solución en la recta",
+       "svg": "<svg class=\"dg\" viewBox=\"0 0 320 80\" xmlns=\"http://www.w3.org/2000/svg\"><line class=\"gl\" x1=\"10\" y1=\"46\" x2=\"310\" y2=\"46\"/><path class=\"gl\" d=\"M304 41l8 5l-8 5\" /><path class=\"gl\" d=\"M16 41l-8 5l8 5\" /><line class=\"gl\" x1=\"40.0\" y1=\"40\" x2=\"40.0\" y2=\"52\"/><text class=\"dl\" x=\"40.0\" y=\"68\" text-anchor=\"middle\">−7</text><line class=\"gl\" x1=\"120.0\" y1=\"40\" x2=\"120.0\" y2=\"52\"/><text class=\"dl\" x=\"120.0\" y=\"68\" text-anchor=\"middle\">2</text><line class=\"gl\" x1=\"200.0\" y1=\"40\" x2=\"200.0\" y2=\"52\"/><text class=\"dl\" x=\"200.0\" y=\"68\" text-anchor=\"middle\">3</text><line class=\"gl\" x1=\"280.0\" y1=\"40\" x2=\"280.0\" y2=\"52\"/><text class=\"dl\" x=\"280.0\" y=\"68\" text-anchor=\"middle\">6</text><rect data-z=\"i1\" x=\"27.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i2\" x=\"49.0\" y=\"37\" width=\"62.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i3\" x=\"129.0\" y=\"37\" width=\"62.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i4\" x=\"209.0\" y=\"37\" width=\"62.0\" height=\"18\" rx=\"6\"/><rect data-z=\"i5\" x=\"289.0\" y=\"37\" width=\"4.0\" height=\"18\" rx=\"6\"/><circle data-z=\"p1\" cx=\"40.0\" cy=\"46\" r=\"9\"/><circle data-z=\"p2\" cx=\"120.0\" cy=\"46\" r=\"9\"/><circle data-z=\"p3\" cx=\"200.0\" cy=\"46\" r=\"9\"/><circle data-z=\"p4\" cx=\"280.0\" cy=\"46\" r=\"9\"/></svg>",
+       "a": [
+        "i1",
+        "p2",
+        "i3",
+        "p3",
+        "i5"
+       ],
+       "multi": true,
+       "e": "Los puntos donde se anula el <b>denominador</b> (−7 y 6) nunca entran; los del numerador (2 y 3) sí, porque es \\(\\ge\\)."
       }
      ],
      "steps": [
@@ -257,7 +350,8 @@
       ],
       [],
       []
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "r7",
@@ -414,16 +508,24 @@
      "id": "dv2",
      "lvl": 1,
      "title": "Resto con negativos",
-     "q": "<p>Al dividir \\(-17\\) entre 5 con el algoritmo de la división, ¿cuál es el resto?</p>",
+     "q": "<p>Al dividir \\(-17\\) entre 5 con el algoritmo de la división \\(-17=5q+r\\), con \\(0\\le r\\lt5\\), ¿cuánto valen \\(q\\) y \\(r\\)?</p>",
      "checks": [
       {
-       "p": "Resto",
-       "o": [
-        "\\(3\\)",
-        "\\(-2\\)",
-        "\\(2\\)",
-        "\\(-3\\)",
-        "\\(4\\)"
+       "t": "num",
+       "p": "Cociente y resto",
+       "f": [
+        {
+         "l": "q =",
+         "a": -4,
+         "tol": 0,
+         "e": "El resto debe quedar entre 0 y 4: baja hasta \\(5\\cdot(-4)=-20\\)."
+        },
+        {
+         "l": "r =",
+         "a": 3,
+         "tol": 0,
+         "e": "\\(r=-17-5q\\), y nunca es negativo."
+        }
        ]
       }
      ],
@@ -431,7 +533,7 @@
       "En el algoritmo de la división el resto debe cumplir \\(0\\le r\\lt5\\): nunca es negativo. \\(-17=5(-3)-2\\) tiene resto −2, no vale.",
       "Baja una vez más el cociente: \\(-17=5(-4)+3\\). Ahora el resto es 3 y cumple."
      ],
-     "ans": "\\(r=3\\)",
+     "ans": "\\(q=-4,\\ r=3\\)",
      "hint": "El resto está entre 0 y 4.",
      "fig": null,
      "draw": false,
@@ -551,6 +653,87 @@
      ]
     },
     {
+     "id": "dv8",
+     "lvl": 2,
+     "title": "¿Par, impar o depende?",
+     "q": "<p>Sea \\(n\\) un entero cualquiera. Clasifica cada expresión.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Siempre par",
+        "Siempre impar",
+        "Depende de n"
+       ],
+       "items": [
+        {
+         "x": "\\(n(n+1)\\)",
+         "c": 0,
+         "e": "Uno de dos consecutivos es par."
+        },
+        {
+         "x": "\\(2n+7\\)",
+         "c": 1,
+         "e": "\\(2n+7=2(n+3)+1\\)."
+        },
+        {
+         "x": "\\(n^2+n+1\\)",
+         "c": 1,
+         "e": "\\(n^2+n=n(n+1)\\) es par, más 1."
+        },
+        {
+         "x": "\\(n^2-n\\)",
+         "c": 0,
+         "e": "\\(n^2-n=(n-1)n\\): consecutivos."
+        },
+        {
+         "x": "\\(3n+1\\)",
+         "c": 2,
+         "e": "Con \\(n=1\\) da 4 (par) y con \\(n=2\\) da 7 (impar)."
+        },
+        {
+         "x": "\\(n^2+1\\)",
+         "c": 2,
+         "e": "\\(n=1\\to2\\), \\(n=2\\to5\\)."
+        },
+        {
+         "x": "\\((2n+1)^2\\)",
+         "c": 1,
+         "e": "Impar por impar es impar."
+        },
+        {
+         "x": "\\(4n-2\\)",
+         "c": 0,
+         "e": "\\(4n-2=2(2n-1)\\)."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Escribe la expresión como \\(2k\\) (par) o \\(2k+1\\) (impar) con \\(k\\) entero.",
+      "Truco: \\(n(n+1)\\) y \\(n(n-1)\\) son productos de consecutivos, siempre pares.",
+      "Si con un \\(n\\) sale par y con otro impar, «depende»: basta un ejemplo de cada tipo."
+     ],
+     "ans": "Par: \\(n(n+1)\\), \\(n^2-n\\), \\(4n-2\\). Impar: \\(2n+7\\), \\(n^2+n+1\\), \\((2n+1)^2\\). Depende: \\(3n+1\\), \\(n^2+1\\).",
+     "hint": "Prueba con n = 1 y n = 2 antes de decidir.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "paridad"
+      ],
+      [
+       "paridad"
+      ],
+      [
+       "paridad"
+      ]
+     ]
+    },
+    {
      "id": "dv6",
      "lvl": 3,
      "title": "Verifica la demostración (IA)",
@@ -643,13 +826,14 @@
      "q": "<p>¿Cuánto vale \\(\\text{mcd}(42,70)\\)?</p>",
      "checks": [
       {
-       "p": "mcd",
-       "o": [
-        "14",
-        "7",
-        "2",
-        "21",
-        "210"
+       "t": "num",
+       "p": "Escribe el mcd",
+       "f": [
+        {
+         "l": "mcd(42, 70) =",
+         "a": 14,
+         "tol": 0
+        }
        ]
       }
      ],
@@ -731,16 +915,66 @@
      "id": "m3",
      "lvl": 2,
      "title": "Algoritmo de Euclides",
-     "q": "<p>Calcula \\(\\text{mcd}(360,150)\\) con Euclides.</p>",
+     "q": "<p>Calcula \\(\\text{mcd}(360,150)\\) con el algoritmo de Euclides. Completa cada división \\(a=b\\cdot q+r\\): el divisor y el resto pasan a la fila de abajo.</p>",
      "checks": [
       {
-       "p": "mcd",
-       "o": [
-        "30",
-        "60",
-        "15",
-        "10",
-        "150"
+       "t": "fill",
+       "p": "Parte 1 · Divisiones sucesivas",
+       "head": [
+        "Dividendo",
+        "Divisor",
+        "Cociente",
+        "Resto"
+       ],
+       "rows": [
+        [
+         360,
+         150,
+         {
+          "a": 2
+         },
+         {
+          "a": 60
+         }
+        ],
+        [
+         150,
+         {
+          "a": 60
+         },
+         {
+          "a": 2
+         },
+         {
+          "a": 30
+         }
+        ],
+        [
+         {
+          "a": 60
+         },
+         {
+          "a": 30
+         },
+         {
+          "a": 2
+         },
+         {
+          "a": 0
+         }
+        ]
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Parte 2 · Resultado",
+       "f": [
+        {
+         "l": "mcd(360, 150) =",
+         "a": 30,
+         "tol": 0,
+         "e": "Es el último resto <b>distinto de cero</b>."
+        }
        ]
       }
      ],
@@ -763,7 +997,8 @@
       [
        "algdiv"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "m4",
@@ -772,13 +1007,15 @@
      "q": "<p>¿Cuánto vale \\(\\text{mcm}(12,18)\\)?</p>",
      "checks": [
       {
-       "p": "mcm",
-       "o": [
-        "36",
-        "216",
-        "72",
-        "6",
-        "18"
+       "t": "num",
+       "p": "Escribe el mcm",
+       "f": [
+        {
+         "l": "mcm(12, 18) =",
+         "a": 36,
+         "tol": 0,
+         "e": "Usa \\(\\text{mcm}=\\frac{12\\cdot18}{\\text{mcd}}\\)."
+        }
        ]
       }
      ],
@@ -900,10 +1137,72 @@
      "id": "m7",
      "lvl": 3,
      "title": "Bézout con coprimos",
-     "q": "<p>\\(\\text{mcd}(250,11)=1\\). ¿Qué par cumple \\(250x+11y=1\\)?</p>",
+     "q": "<p>Halla enteros \\(x,y\\) con \\(250x+11y=1\\). Primero haz Euclides y luego despeja los restos de abajo hacia arriba.</p>",
      "checks": [
       {
-       "p": "\\((x,y)\\)",
+       "t": "fill",
+       "p": "Parte 1 · Euclides con 250 y 11",
+       "head": [
+        "Dividendo",
+        "Divisor",
+        "Cociente",
+        "Resto"
+       ],
+       "rows": [
+        [
+         250,
+         11,
+         {
+          "a": 22
+         },
+         {
+          "a": 8
+         }
+        ],
+        [
+         11,
+         {
+          "a": 8
+         },
+         {
+          "a": 1
+         },
+         {
+          "a": 3
+         }
+        ],
+        [
+         {
+          "a": 8
+         },
+         {
+          "a": 3
+         },
+         {
+          "a": 2
+         },
+         {
+          "a": 2
+         }
+        ],
+        [
+         {
+          "a": 3
+         },
+         {
+          "a": 2
+         },
+         {
+          "a": 1
+         },
+         {
+          "a": 1
+         }
+        ]
+       ]
+      },
+      {
+       "p": "Parte 2 · ¿Qué par cumple \\(250x+11y=1\\)?",
        "o": [
         "\\((-4,91)\\)",
         "\\((4,-91)\\)",
@@ -933,6 +1232,87 @@
        "bezout"
       ],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "m8",
+     "lvl": 1,
+     "title": "¿Primo o compuesto?",
+     "q": "<p>Clasifica cada número.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "Primo",
+        "Compuesto",
+        "Ni primo ni compuesto"
+       ],
+       "items": [
+        {
+         "x": "97",
+         "c": 0,
+         "e": "No lo divide ningún primo ≤ 9 (2, 3, 5, 7)."
+        },
+        {
+         "x": "91",
+         "c": 1,
+         "e": "\\(91=7\\cdot13\\)."
+        },
+        {
+         "x": "1",
+         "c": 2,
+         "e": "Un primo necesita exactamente dos divisores positivos; 1 tiene uno."
+        },
+        {
+         "x": "2",
+         "c": 0
+        },
+        {
+         "x": "221",
+         "c": 1,
+         "e": "\\(221=13\\cdot17\\)."
+        },
+        {
+         "x": "2025",
+         "c": 1,
+         "e": "Termina en 5: \\(2025=3^4\\cdot5^2\\)."
+        },
+        {
+         "x": "101",
+         "c": 0,
+         "e": "Basta probar 2, 3, 5 y 7 (\\(\\sqrt{101}\\lt11\\))."
+        },
+        {
+         "x": "0",
+         "c": 2,
+         "e": "0 no es primo ni compuesto."
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Primo: entero mayor que 1 cuyos únicos divisores positivos son 1 y él mismo.",
+      "Para saber si \\(n\\) es primo basta probar los primos \\(\\le\\sqrt n\\).",
+      "1 y 0 no son primos ni compuestos."
+     ],
+     "ans": "Primos: 97, 2, 101. Compuestos: 91, 221, 2025. Ninguno: 1, 0.",
+     "hint": "Prueba solo con primos hasta la raíz cuadrada.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "fact"
+      ],
+      [
+       "fact"
+      ],
+      [
+       "fact"
+      ]
      ]
     }
    ],
@@ -956,13 +1336,14 @@
      "q": "<p>\\((1011)_2\\) en base 10 es:</p>",
      "checks": [
       {
-       "p": "Valor",
-       "o": [
-        "11",
-        "13",
-        "1011",
-        "9",
-        "7"
+       "t": "num",
+       "p": "Valor en base 10",
+       "f": [
+        {
+         "l": "\\((1011)_2=\\)",
+         "a": 11,
+         "tol": 0
+        }
        ]
       }
      ],
@@ -985,16 +1366,75 @@
      "id": "b2",
      "lvl": 1,
      "title": "Decimal a binario",
-     "q": "<p>25 en base 2 es:</p>",
+     "q": "<p>Convierte 25 a base 2 con divisiones sucesivas entre 2.</p>",
      "checks": [
       {
-       "p": "Binario",
-       "o": [
-        "\\((11001)_2\\)",
-        "\\((10011)_2\\)",
-        "\\((11010)_2\\)",
-        "\\((10101)_2\\)",
-        "\\((11101)_2\\)"
+       "t": "fill",
+       "p": "Parte 1 · Divide hasta llegar a 0",
+       "head": [
+        "n",
+        "Cociente (n ÷ 2)",
+        "Resto"
+       ],
+       "rows": [
+        [
+         25,
+         {
+          "a": 12
+         },
+         {
+          "a": 1
+         }
+        ],
+        [
+         12,
+         {
+          "a": 6
+         },
+         {
+          "a": 0
+         }
+        ],
+        [
+         6,
+         {
+          "a": 3
+         },
+         {
+          "a": 0
+         }
+        ],
+        [
+         3,
+         {
+          "a": 1
+         },
+         {
+          "a": 1
+         }
+        ],
+        [
+         1,
+         {
+          "a": 0
+         },
+         {
+          "a": 1
+         }
+        ]
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Parte 2 · Lee los restos de abajo hacia arriba",
+       "f": [
+        {
+         "l": "25 =",
+         "a": 11001,
+         "tol": 0,
+         "u": "₂",
+         "e": "El primer resto (el de 25) es la última cifra."
+        }
        ]
       }
      ],
@@ -1015,7 +1455,8 @@
       [
        "divsuc"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "b3",
@@ -1080,16 +1521,49 @@
      "id": "b4",
      "lvl": 2,
      "title": "Base 4 a decimal",
-     "q": "<p>\\((213)_4\\) en base 10 es:</p>",
+     "q": "<p>Pasa \\((213)_4\\) a base 10 con la expansión posicional.</p>",
      "checks": [
       {
-       "p": "Valor",
-       "o": [
-        "39",
-        "213",
-        "27",
-        "35",
-        "57"
+       "t": "fill",
+       "p": "Valor de cada cifra",
+       "head": [
+        "Cifra",
+        "Posición",
+        "Producto"
+       ],
+       "rows": [
+        [
+         2,
+         "\\(4^2=16\\)",
+         {
+          "a": 32
+         }
+        ],
+        [
+         1,
+         "\\(4^1=4\\)",
+         {
+          "a": 4
+         }
+        ],
+        [
+         3,
+         "\\(4^0=1\\)",
+         {
+          "a": 3
+         }
+        ]
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Suma",
+       "f": [
+        {
+         "l": "\\((213)_4=\\)",
+         "a": 39,
+         "tol": 0
+        }
        ]
       }
      ],
@@ -1150,16 +1624,74 @@
      "id": "b6",
      "lvl": 3,
      "title": "Base 10 a base 3",
-     "q": "<p>100 en base 3 es:</p>",
+     "q": "<p>Convierte 100 a base 3 con divisiones sucesivas entre 3.</p>",
      "checks": [
       {
-       "p": "Base 3",
-       "o": [
-        "\\((10201)_3\\)",
-        "\\((10210)_3\\)",
-        "\\((1021)_3\\)",
-        "\\((10102)_3\\)",
-        "\\((2101)_3\\)"
+       "t": "fill",
+       "p": "Parte 1 · Divide hasta llegar a 0",
+       "head": [
+        "n",
+        "Cociente (n ÷ 3)",
+        "Resto"
+       ],
+       "rows": [
+        [
+         100,
+         {
+          "a": 33
+         },
+         {
+          "a": 1
+         }
+        ],
+        [
+         33,
+         {
+          "a": 11
+         },
+         {
+          "a": 0
+         }
+        ],
+        [
+         11,
+         {
+          "a": 3
+         },
+         {
+          "a": 2
+         }
+        ],
+        [
+         3,
+         {
+          "a": 1
+         },
+         {
+          "a": 0
+         }
+        ],
+        [
+         1,
+         {
+          "a": 0
+         },
+         {
+          "a": 1
+         }
+        ]
+       ]
+      },
+      {
+       "t": "num",
+       "p": "Parte 2 · Lee los restos de abajo hacia arriba",
+       "f": [
+        {
+         "l": "100 =",
+         "a": 10201,
+         "tol": 0,
+         "u": "₃"
+        }
        ]
       }
      ],
@@ -1178,7 +1710,8 @@
       [
        "divsuc"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "b7",
@@ -1233,16 +1766,53 @@
      "id": "p1",
      "lvl": 1,
      "title": "¿Es una proposición?",
-     "q": "<p>¿Cuál de estos enunciados es una proposición lógica?</p>",
+     "q": "<p>Clasifica cada enunciado.</p>",
      "checks": [
       {
-       "p": "Proposición",
-       "o": [
-        "17 es un número par",
-        "¡Qué bonita mañana!",
-        "Levántate y haz tus ejercicios",
-        "El número x es entero",
-        "¿Qué hora es?"
+       "t": "cls",
+       "p": "¿Es proposición?",
+       "cats": [
+        "Es proposición",
+        "No es proposición"
+       ],
+       "items": [
+        {
+         "x": "17 es un número par",
+         "c": 0,
+         "e": "Es falsa, pero tiene valor de verdad: sí es proposición."
+        },
+        {
+         "x": "¡Qué bonita mañana!",
+         "c": 1
+        },
+        {
+         "x": "Levántate y haz tus ejercicios",
+         "c": 1,
+         "e": "Una orden no es V ni F."
+        },
+        {
+         "x": "El número x es entero",
+         "c": 1,
+         "e": "Depende de x: es un predicado, no una proposición."
+        },
+        {
+         "x": "¿Qué hora es?",
+         "c": 1
+        },
+        {
+         "x": "2 + 2 = 5",
+         "c": 0,
+         "e": "Es falsa: tiene valor de verdad."
+        },
+        {
+         "x": "Lima es la capital del Perú",
+         "c": 0
+        },
+        {
+         "x": "x + 1 = 3",
+         "c": 1,
+         "e": "Tiene una variable libre."
+        }
        ]
       }
      ],
@@ -1251,7 +1821,7 @@
       "«17 es un número par» es falsa, pero eso no importa: tiene valor de verdad, así que sí es proposición.",
       "Las otras no: una exclamación o una orden no son V ni F, una pregunta tampoco, y «x es entero» depende de quién sea x (es un predicado)."
      ],
-     "ans": "17 es un número par",
+     "ans": "Proposiciones: «17 es un número par», «2 + 2 = 5», «Lima es la capital del Perú»",
      "hint": "Ser falsa no impide ser proposición.",
      "fig": null,
      "draw": false,
@@ -1395,14 +1965,20 @@
      "q": "<p>Si \\((\\neg p\\wedge q)\\to p\\) es falsa, ¿cuáles son los valores de \\(p\\) y \\(q\\)?</p>",
      "checks": [
       {
-       "p": "\\((p,q)\\)",
-       "o": [
-        "p = F, q = V",
-        "p = V, q = V",
-        "p = F, q = F",
-        "p = V, q = F",
-        "No se puede determinar"
-       ]
+       "t": "val",
+       "p": "Dale valores a \\(p\\) y \\(q\\)",
+       "vars": [
+        "p",
+        "q"
+       ],
+       "live": false,
+       "conds": [
+        {
+         "f": "(¬p∧q)→p",
+         "v": false
+        }
+       ],
+       "e": "Una condicional es falsa solo si el antecedente es V y el consecuente F."
       }
      ],
      "steps": [
@@ -1512,13 +2088,26 @@
      "q": "<p>Con \\(x=1\\) antes de cada sentencia: a) <code>if 2+3=5 then x:=x+1</code>; b) <code>if (1+1=5) OR (2+2=5) then x:=x+1</code>; c) <code>if (1+1=2) XOR (1+2=3) then x:=x+1</code>. Valores finales de x en a, b y c:</p>",
      "checks": [
       {
-       "p": "(a, b, c)",
-       "o": [
-        "(2, 1, 1)",
-        "(2, 1, 2)",
-        "(2, 2, 1)",
-        "(1, 1, 1)",
-        "(2, 2, 2)"
+       "t": "num",
+       "p": "Valor final de x en cada sentencia",
+       "f": [
+        {
+         "l": "a) x =",
+         "a": 2,
+         "tol": 0
+        },
+        {
+         "l": "b) x =",
+         "a": 1,
+         "tol": 0,
+         "e": "Las dos igualdades son falsas: F OR F = F."
+        },
+        {
+         "l": "c) x =",
+         "a": 1,
+         "tol": 0,
+         "e": "V XOR V = F."
+        }
        ]
       }
      ],
@@ -1648,13 +2237,28 @@
      "q": "<p>Se sabe que \\((p\\veebar q)\\wedge(r\\to s)\\) es verdadera, que \\(s\\) es falsa y que \\(p\\to r\\) es verdadera.</p>",
      "checks": [
       {
-       "p": "a) Valores de \\(p,\\ q,\\ r\\)",
-       "o": [
-        "p = F, q = V, r = F",
-        "p = V, q = F, r = F",
-        "p = F, q = V, r = V",
-        "p = V, q = F, r = V",
-        "No se pueden determinar"
+       "t": "val",
+       "p": "a) Valores de \\(p,\\ q,\\ r\\) (y \\(s\\))",
+       "vars": [
+        "p",
+        "q",
+        "r",
+        "s"
+       ],
+       "live": false,
+       "conds": [
+        {
+         "f": "(p⊻q)∧(r→s)",
+         "v": true
+        },
+        {
+         "f": "s",
+         "v": false
+        },
+        {
+         "f": "p→r",
+         "v": true
+        }
        ]
       },
       {
@@ -1970,18 +2574,38 @@
     {
      "id": "e7",
      "lvl": 3,
-     "title": "Ordena la simplificación",
-     "q": "<p>Demuestra que \\(\\neg(p\\vee\\neg q)\\vee(\\neg p\\wedge\\neg q)\\equiv\\neg p\\).</p>",
+     "title": "Simplifica por leyes",
+     "q": "<p>Demuestra que \\(\\neg(p\\vee\\neg q)\\vee(\\neg p\\wedge\\neg q)\\equiv\\neg p\\) eligiendo la ley de cada paso.</p>",
      "checks": [
       {
-       "t": "order",
-       "p": "Ordena los pasos",
-       "items": [
-        "\\(\\neg(p\\vee\\neg q)\\vee(\\neg p\\wedge\\neg q)\\)",
-        "\\(\\equiv(\\neg p\\wedge q)\\vee(\\neg p\\wedge\\neg q)\\) — De Morgan y doble negación",
-        "\\(\\equiv\\neg p\\wedge(q\\vee\\neg q)\\) — distributiva",
-        "\\(\\equiv\\neg p\\wedge V\\) — tercio excluido",
-        "\\(\\equiv\\neg p\\) — identidad"
+       "t": "ley",
+       "p": "Elige la ley de cada paso",
+       "start": "¬(p∨¬q)∨(¬p∧¬q)",
+       "steps": [
+        {
+         "to": "(¬p∧¬¬q)∨(¬p∧¬q)",
+         "law": "De Morgan",
+         "e": "Hay un \\(\\neg\\) delante de un paréntesis: empieza por quitarlo."
+        },
+        {
+         "to": "(¬p∧q)∨(¬p∧¬q)",
+         "law": "Doble negación"
+        },
+        {
+         "to": "¬p∧(q∨¬q)",
+         "law": "Distributiva",
+         "e": "\\(\\neg p\\) se repite en los dos paréntesis: sácalo como factor común."
+        },
+        {
+         "to": "¬p∧V",
+         "law": "Complemento",
+         "e": "\\(q\\vee\\neg q\\) siempre es V."
+        },
+        {
+         "to": "¬p",
+         "law": "Identidad",
+         "e": "\\(p\\wedge\\mathrm V\\equiv p\\)."
+        }
        ]
       }
      ],
@@ -2001,6 +2625,173 @@
        "leyes"
       ],
       []
+     ]
+    },
+    {
+     "id": "e10",
+     "lvl": 3,
+     "title": "Simplifica: condicional negada",
+     "q": "<p>Simplifica \\(\\neg(p\\to q)\\vee(p\\wedge q)\\) hasta llegar a \\(p\\).</p>",
+     "checks": [
+      {
+       "t": "ley",
+       "p": "Elige la ley de cada paso",
+       "start": "¬(p→q)∨(p∧q)",
+       "steps": [
+        {
+         "to": "¬(¬p∨q)∨(p∧q)",
+         "law": "Condicional",
+         "e": "Primero cambia la condicional por una disyunción."
+        },
+        {
+         "to": "(¬¬p∧¬q)∨(p∧q)",
+         "law": "De Morgan"
+        },
+        {
+         "to": "(p∧¬q)∨(p∧q)",
+         "law": "Doble negación"
+        },
+        {
+         "to": "p∧(¬q∨q)",
+         "law": "Distributiva"
+        },
+        {
+         "to": "p∧V",
+         "law": "Complemento"
+        },
+        {
+         "to": "p",
+         "law": "Identidad"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Condicional: \\(p\\to q\\equiv\\neg p\\vee q\\).",
+      "De Morgan y doble negación: \\(\\neg(\\neg p\\vee q)\\equiv p\\wedge\\neg q\\).",
+      "Distributiva: \\((p\\wedge\\neg q)\\vee(p\\wedge q)\\equiv p\\wedge(\\neg q\\vee q)\\).",
+      "Complemento e identidad: \\(p\\wedge\\mathrm V\\equiv p\\)."
+     ],
+     "ans": "\\(p\\)",
+     "hint": "Nunca apliques De Morgan a una condicional: primero conviértela en disyunción.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyes"
+      ],
+      [
+       "demorgan"
+      ],
+      [
+       "leyes"
+      ],
+      [
+       "leyes"
+      ]
+     ]
+    },
+    {
+     "id": "e11",
+     "lvl": 3,
+     "title": "Simplifica: distributiva al revés",
+     "q": "<p>Simplifica \\(\\neg(\\neg p\\wedge q)\\wedge(p\\vee q)\\) hasta llegar a \\(p\\).</p>",
+     "checks": [
+      {
+       "t": "ley",
+       "p": "Elige la ley de cada paso",
+       "start": "¬(¬p∧q)∧(p∨q)",
+       "steps": [
+        {
+         "to": "(¬¬p∨¬q)∧(p∨q)",
+         "law": "De Morgan"
+        },
+        {
+         "to": "(p∨¬q)∧(p∨q)",
+         "law": "Doble negación"
+        },
+        {
+         "to": "p∨(¬q∧q)",
+         "law": "Distributiva",
+         "e": "\\(p\\) está en los dos paréntesis: factorízalo."
+        },
+        {
+         "to": "p∨F",
+         "law": "Complemento",
+         "e": "\\(\\neg q\\wedge q\\) siempre es F."
+        },
+        {
+         "to": "p",
+         "law": "Identidad"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "De Morgan y doble negación: \\(\\neg(\\neg p\\wedge q)\\equiv p\\vee\\neg q\\).",
+      "Distributiva: \\((p\\vee\\neg q)\\wedge(p\\vee q)\\equiv p\\vee(\\neg q\\wedge q)\\).",
+      "Complemento: \\(\\neg q\\wedge q\\equiv\\mathrm F\\); identidad: \\(p\\vee\\mathrm F\\equiv p\\)."
+     ],
+     "ans": "\\(p\\)",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "demorgan"
+      ],
+      [
+       "leyes"
+      ],
+      [
+       "leyes"
+      ]
+     ]
+    },
+    {
+     "id": "e12",
+     "lvl": 2,
+     "title": "¿Tautología? Simplifica y verás",
+     "q": "<p>Simplifica \\([p\\wedge(p\\vee q)]\\vee\\neg p\\). ¿Qué tipo de proposición es?</p>",
+     "checks": [
+      {
+       "t": "ley",
+       "p": "Elige la ley de cada paso",
+       "start": "(p∧(p∨q))∨¬p",
+       "steps": [
+        {
+         "to": "p∨¬p",
+         "law": "Absorción",
+         "e": "\\(p\\wedge(p\\vee q)\\): una variable con un paréntesis que la contiene."
+        },
+        {
+         "to": "V",
+         "law": "Complemento"
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Absorción: \\(p\\wedge(p\\vee q)\\equiv p\\).",
+      "Complemento: \\(p\\vee\\neg p\\equiv\\mathrm V\\). Es una tautología."
+     ],
+     "ans": "\\(\\mathrm V\\) (tautología)",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "leyes"
+      ],
+      [
+       "taut"
+      ]
      ]
     },
     {
@@ -2160,24 +2951,64 @@
      "id": "i1",
      "lvl": 1,
      "title": "Identifica la regla",
-     "q": "<p>\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\) es:</p>",
+     "q": "<p>Clasifica cada argumento según la regla que usa. Si no es válido, márcalo como inválido.</p><p>MP = modus ponens, MT = modus tollens, SH = silogismo hipotético, SD = silogismo disyuntivo.</p>",
      "checks": [
       {
-       "p": "Regla",
-       "o": [
-        "Modus tollens",
-        "Modus ponens",
-        "Silogismo disyuntivo",
-        "Afirmación del consecuente",
-        "Generalización"
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "MP",
+        "MT",
+        "SH",
+        "SD",
+        "Inválido"
+       ],
+       "items": [
+        {
+         "x": "\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(p\\to q,\\ p\\ \\therefore q\\)",
+         "c": 0
+        },
+        {
+         "x": "\\(p\\vee q,\\ \\neg p\\ \\therefore q\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(p\\to q,\\ q\\to r\\ \\therefore p\\to r\\)",
+         "c": 2
+        },
+        {
+         "x": "\\(p\\to q,\\ q\\ \\therefore p\\)",
+         "c": 4,
+         "e": "Afirmar el consecuente: con p = F y q = V las premisas son V y la conclusión F."
+        },
+        {
+         "x": "\\(p\\to q,\\ \\neg p\\ \\therefore\\neg q\\)",
+         "c": 4,
+         "e": "Negar el antecedente: con p = F y q = V falla."
+        },
+        {
+         "x": "\\(\\neg r\\to s,\\ \\neg r\\ \\therefore s\\)",
+         "c": 0,
+         "e": "Es MP con antecedente \\(\\neg r\\)."
+        },
+        {
+         "x": "\\(p\\vee\\neg q,\\ q\\ \\therefore p\\)",
+         "c": 3,
+         "e": "\\(q\\) niega a \\(\\neg q\\): queda \\(p\\)."
+        }
        ]
       }
      ],
      "steps": [
-      "Tenemos «si p, entonces q» y nos dicen que q NO pasó.",
-      "Si p hubiera pasado, q también habría pasado. Como q no pasó, p tampoco: \\(\\neg p\\). Eso es <b>modus tollens</b> (niegas el final, niegas el inicio)."
+      "MP: de \\(p\\to q\\) y el antecedente \\(p\\) sale \\(q\\). MT: de \\(p\\to q\\) y \\(\\neg q\\) sale \\(\\neg p\\).",
+      "SH encadena dos condicionales; SD elimina una opción de una disyunción.",
+      "Las dos falacias clásicas: afirmar el consecuente (\\(p\\to q,\\ q\\ \\therefore p\\)) y negar el antecedente (\\(p\\to q,\\ \\neg p\\ \\therefore\\neg q\\))."
      ],
-     "ans": "Modus tollens",
+     "ans": "MT, MP, SD, SH, inválido, inválido, MP, SD",
      "hint": "Tollens = negar.",
      "fig": null,
      "draw": false,
@@ -2185,11 +3016,14 @@
      "solfig": null,
      "tags": [
       [
-       "cond",
-       "reglas",
-       "falacia"
+       "reglas"
       ],
-      []
+      [
+       "reglas"
+      ],
+      [
+       "falacia"
+      ]
      ]
     },
     {
@@ -2224,6 +3058,58 @@
        "falacia"
       ],
       []
+     ]
+    },
+    {
+     "id": "i13",
+     "lvl": 1,
+     "title": "Rompe la falacia",
+     "q": "<p>«Si estudio (\\(p\\)), apruebo (\\(q\\)). Aprobé. Por lo tanto, estudié.» Encuentra valores con las premisas verdaderas y la conclusión falsa.</p>",
+     "checks": [
+      {
+       "t": "val",
+       "p": "Contraejemplo",
+       "vars": [
+        "p",
+        "q"
+       ],
+       "conds": [
+        {
+         "f": "p→q",
+         "v": true
+        },
+        {
+         "f": "q",
+         "v": true
+        },
+        {
+         "f": "p",
+         "v": false
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Un argumento es inválido si existe una fila con todas las premisas V y la conclusión F.",
+      "Con \\(p=\\)F y \\(q=\\)V: \\(p\\to q\\) es V, \\(q\\) es V y la conclusión \\(p\\) es F.",
+      "Es la falacia de afirmar el consecuente: aprobar no prueba que estudiaste."
+     ],
+     "ans": "\\(p=\\)F, \\(q=\\)V",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "falacia"
+      ],
+      [
+       "falacia"
+      ],
+      [
+       "falacia"
+      ]
      ]
     },
     {
@@ -2327,24 +3213,39 @@
      "id": "i5",
      "lvl": 2,
      "title": "Verifica la validez (clase)",
-     "q": "<p>¿Es válido \\(p\\to q,\\ r\\to\\neg q\\ \\therefore p\\to\\neg r\\)?</p>",
+     "q": "<p>Demuestra que \\(p\\to q,\\ r\\to\\neg q\\ \\therefore p\\to\\neg r\\) es válido armando la deducción.</p>",
      "checks": [
       {
-       "p": "Veredicto",
-       "o": [
-        "Válido: la contrarrecíproca de r → ¬q es q → ¬r, y por transitividad p → ¬r",
-        "Inválido: afirmación del consecuente",
-        "Válido por modus ponens directo",
-        "Inválido: faltan premisas",
-        "Válido solo si p es verdadera"
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "p→q",
+        "r→¬q"
+       ],
+       "goal": "p→¬r",
+       "sol": [
+        [
+         "CR",
+         [
+          2
+         ]
+        ],
+        [
+         "SH",
+         [
+          1,
+          3
+         ]
+        ]
        ]
       }
      ],
      "steps": [
-      "La idea es unir p con \\(\\neg r\\) con una cadena de flechas. \\(r\\to\\neg q\\) vale lo mismo que su contrarrecíproca \\(q\\to\\neg r\\) (se invierte y se niega).",
-      "Ahora tienes \\(p\\to q\\) y \\(q\\to\\neg r\\). Encadenadas (silogismo hipotético): \\(p\\to\\neg r\\). Es <b>válido</b>."
+      "1. \\(p\\to q\\) (premisa) y 2. \\(r\\to\\neg q\\) (premisa).",
+      "3. \\(q\\to\\neg r\\): contrarrecíproca de 2 (\\(\\neg\\neg q\\to\\neg r\\)).",
+      "4. \\(p\\to\\neg r\\): silogismo hipotético con 1 y 3."
      ],
-     "ans": "Válido",
+     "ans": "Válido: CR en 2 y luego SH",
      "hint": "Usa la contrarrecíproca.",
      "fig": null,
      "draw": false,
@@ -2352,8 +3253,10 @@
      "solfig": null,
      "tags": [
       [
-       "contrar",
-       "verif"
+       "reglas"
+      ],
+      [
+       "contrar"
       ],
       [
        "reglas"
@@ -2367,19 +3270,35 @@
      "q": "<p>Premisas: \\(p\\to q\\), \\(q\\to r\\), \\(p\\). Deduce \\(r\\).</p>",
      "checks": [
       {
-       "t": "order",
-       "p": "Ordena los pasos",
-       "items": [
-        "1. \\(p\\to q\\) (premisa)",
-        "2. \\(p\\) (premisa)",
-        "3. \\(q\\) (modus ponens en 1 y 2)",
-        "4. \\(q\\to r\\) (premisa)",
-        "5. \\(r\\) (modus ponens en 3 y 4)"
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "p→q",
+        "q→r",
+        "p"
+       ],
+       "goal": "r",
+       "sol": [
+        [
+         "MP",
+         [
+          1,
+          3
+         ]
+        ],
+        [
+         "MP",
+         [
+          2,
+          4
+         ]
+        ]
        ]
       }
      ],
      "steps": [
-      "Siempre que tengas «si A, entonces B» y tengas A, consigues B (modus ponens). Con \\(p\\to q\\) y \\(p\\) obtienes \\(q\\); con \\(q\\to r\\) y ese \\(q\\), obtienes \\(r\\)."
+      "4. \\(q\\): modus ponens con 1 y 3.",
+      "5. \\(r\\): modus ponens con 2 y 4. (También sirve SH con 1 y 2 y luego MP.)"
      ],
      "ans": "\\(r\\)",
      "hint": "Primero consigue q.",
@@ -2389,7 +3308,9 @@
      "solfig": null,
      "tags": [
       [
-       "cond",
+       "reglas"
+      ],
+      [
        "reglas"
       ]
      ]
@@ -2432,34 +3353,62 @@
      "id": "i8",
      "lvl": 2,
      "title": "Tipo parcial: encadenar tollens",
-     "q": "<p>¿Es válido el argumento: \\(p\\to\\neg r\\), \\(q\\to r\\), \\(\\neg s\\to p\\ \\ \\therefore\\ q\\to s\\)?</p>",
+     "q": "<p>Demuestra que es válido: \\(p\\to\\neg r\\), \\(q\\to r\\), \\(\\neg s\\to p\\ \\ \\therefore\\ q\\to s\\).</p>",
      "checks": [
       {
-       "p": "Veredicto",
-       "o": [
-        "Válido",
-        "Inválido: con q = V y s = F las premisas son verdaderas",
-        "Inválido: afirmación del consecuente",
-        "Válido solo si p es verdadera",
-        "Inválido: falta una premisa con s"
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "p→¬r",
+        "q→r",
+        "¬s→p"
+       ],
+       "goal": "q→s",
+       "sol": [
+        [
+         "CR",
+         [
+          2
+         ]
+        ],
+        [
+         "SH",
+         [
+          1,
+          4
+         ]
+        ],
+        [
+         "SH",
+         [
+          3,
+          5
+         ]
+        ],
+        [
+         "CR",
+         [
+          6
+         ]
+        ]
        ]
       }
      ],
      "steps": [
-      "La conclusión es \\(q\\to s\\): supón \\(q\\) verdadera y trata de llegar a \\(s\\).",
-      "Con \\(q\\) y \\(q\\to r\\): \\(r\\) (modus ponens).",
-      "Con \\(r\\) verdadera, \\(\\neg r\\) es F. En \\(p\\to\\neg r\\) el final es F, así que \\(p\\) es F (modus tollens).",
-      "En \\(\\neg s\\to p\\), ahora \\(p\\) es F, así que \\(\\neg s\\) es F: \\(s\\) es V (modus tollens). Llegamos a s: <b>válido.</b>"
+      "4. \\(\\neg r\\to\\neg q\\): contrarrecíproca de 2.",
+      "5. \\(p\\to\\neg q\\): SH con 1 y 4.",
+      "6. \\(\\neg s\\to\\neg q\\): SH con 3 y 5.",
+      "7. \\(q\\to s\\): contrarrecíproca de 6. Es válido."
      ],
      "ans": "Válido",
-     "hint": "Supón q y avanza.",
+     "hint": "La meta empieza con q: busca una condicional que termine en ¬q y dale la vuelta.",
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
       [
-       "cond"
+       "contrar"
       ],
       [
        "reglas"
@@ -2467,7 +3416,9 @@
       [
        "reglas"
       ],
-      []
+      [
+       "contrar"
+      ]
      ]
     },
     {
@@ -2477,13 +3428,37 @@
      "q": "<p>¿Es válido: \\((p\\to q)\\wedge(r\\to s)\\), \\(q\\vee s\\ \\ \\therefore\\ p\\vee r\\)?</p>",
      "checks": [
       {
-       "p": "Veredicto",
+       "p": "Parte 1 · Veredicto",
        "o": [
         "Inválido: con p = F, r = F y q = V las premisas son V y la conclusión F",
         "Válido por dilema constructivo",
         "Válido por modus ponens",
         "Inválido: las premisas se contradicen",
         "Válido por silogismo disyuntivo"
+       ]
+      },
+      {
+       "t": "val",
+       "p": "Parte 2 · Encuentra valores que lo rompan (premisas V, conclusión F)",
+       "vars": [
+        "p",
+        "q",
+        "r",
+        "s"
+       ],
+       "conds": [
+        {
+         "f": "(p→q)∧(r→s)",
+         "v": true
+        },
+        {
+         "f": "q∨s",
+         "v": true
+        },
+        {
+         "f": "p∨r",
+         "v": false
+        }
        ]
       }
      ],
@@ -2508,7 +3483,8 @@
       [
        "falacia"
       ]
-     ]
+     ],
+     "chain": true
     },
     {
      "id": "i10",
@@ -2517,13 +3493,31 @@
      "q": "<p>¿Es válido: \\((p\\to q)\\wedge(r\\to s)\\), \\(\\neg q\\vee\\neg s\\ \\ \\therefore\\ \\neg p\\vee\\neg r\\)?</p>",
      "checks": [
       {
-       "p": "Veredicto",
+       "p": "Parte 1 · Veredicto",
        "o": [
         "Válido (dilema destructivo)",
         "Inválido: negación del antecedente",
         "Inválido: con p = V y r = V las premisas son V",
         "Válido solo si q es falsa",
         "Inválido: afirmación del consecuente"
+       ]
+      },
+      {
+       "t": "arg",
+       "p": "Parte 2 · Demuéstralo en un paso",
+       "prem": [
+        "(p→q)∧(r→s)",
+        "¬q∨¬s"
+       ],
+       "goal": "¬p∨¬r",
+       "sol": [
+        [
+         "DD",
+         [
+          1,
+          2
+         ]
+        ]
        ]
       }
      ],
@@ -2546,6 +3540,175 @@
       ],
       [],
       []
+     ],
+     "chain": true
+    },
+    {
+     "id": "i11",
+     "lvl": 2,
+     "title": "Arma la deducción: eliminar una opción",
+     "q": "<p>Premisas: \\(p\\vee q\\), \\(p\\to r\\), \\(\\neg r\\). Deduce \\(q\\).</p>",
+     "checks": [
+      {
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "p∨q",
+        "p→r",
+        "¬r"
+       ],
+       "goal": "q",
+       "sol": [
+        [
+         "MT",
+         [
+          2,
+          3
+         ]
+        ],
+        [
+         "SD",
+         [
+          1,
+          4
+         ]
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "4. \\(\\neg p\\): modus tollens con 2 y 3.",
+      "5. \\(q\\): silogismo disyuntivo con 1 y 4."
+     ],
+     "ans": "\\(q\\) (MT y luego SD)",
+     "hint": "¿Qué dice ¬r sobre p?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "reglas"
+      ],
+      [
+       "reglas"
+      ]
+     ]
+    },
+    {
+     "id": "i12",
+     "lvl": 2,
+     "title": "Arma la deducción: juntar antes de usar",
+     "q": "<p>Premisas: \\((p\\wedge q)\\to r\\), \\(p\\), \\(q\\). Deduce \\(r\\).</p>",
+     "checks": [
+      {
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "(p∧q)→r",
+        "p",
+        "q"
+       ],
+       "goal": "r",
+       "sol": [
+        [
+         "Conj",
+         [
+          2,
+          3
+         ]
+        ],
+        [
+         "MP",
+         [
+          1,
+          4
+         ]
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "4. \\(p\\wedge q\\): conjunción de 2 y 3 (toca primero la 2 y luego la 3).",
+      "5. \\(r\\): modus ponens con 1 y 4."
+     ],
+     "ans": "\\(r\\)",
+     "hint": "El modus ponens necesita el antecedente completo.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "reglas"
+      ],
+      [
+       "reglas"
+      ]
+     ]
+    },
+    {
+     "id": "i14",
+     "lvl": 3,
+     "title": "Arma la deducción en tres pasos",
+     "q": "<p>Premisas: \\(p\\to r\\), \\(q\\to s\\), \\(p\\vee q\\), \\(\\neg r\\). Deduce \\(s\\).</p>",
+     "checks": [
+      {
+       "t": "arg",
+       "p": "Arma la deducción",
+       "prem": [
+        "p→r",
+        "q→s",
+        "p∨q",
+        "¬r"
+       ],
+       "goal": "s",
+       "sol": [
+        [
+         "MT",
+         [
+          1,
+          4
+         ]
+        ],
+        [
+         "SD",
+         [
+          3,
+          5
+         ]
+        ],
+        [
+         "MP",
+         [
+          2,
+          6
+         ]
+        ]
+       ]
+      }
+     ],
+     "steps": [
+      "5. \\(\\neg p\\): MT con 1 y 4.",
+      "6. \\(q\\): SD con 3 y 5.",
+      "7. \\(s\\): MP con 2 y 6."
+     ],
+     "ans": "\\(s\\)",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "reglas"
+      ],
+      [
+       "reglas"
+      ],
+      [
+       "reglas"
+      ]
      ]
     }
    ],
@@ -2827,6 +3990,289 @@
      ]
     },
     {
+     "id": "q12",
+     "lvl": 1,
+     "title": "Mundo: rompe el «para todo»",
+     "q": "<p>En este mundo todos los círculos son rojos. Agrega o cambia figuras para que la fórmula sea <b>falsa</b>.</p>",
+     "checks": [
+      {
+       "t": "mundo",
+       "p": "Arma el mundo",
+       "w": [
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        },
+        {
+         "s": "c",
+         "c": "r",
+         "g": 1
+        },
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        }
+       ],
+       "f": [
+        {
+         "f": "∀x(Circ(x)→Rojo(x))",
+         "v": false
+        }
+       ],
+       "sol": [
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        },
+        {
+         "s": "c",
+         "c": "r",
+         "g": 1
+        },
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        },
+        {
+         "s": "c",
+         "c": "a",
+         "g": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "Para que un «para todo» sea falso basta <b>un contraejemplo</b>.",
+      "\\(\\neg\\forall x\\,(\\text{Circ}(x)\\to\\text{Rojo}(x))\\) \\(\\equiv\\exists x\\,(\\text{Circ}(x)\\wedge\\neg\\text{Rojo}(x))\\).",
+      "Agrega un círculo que no sea rojo (o pinta de otro color uno de los que ya están)."
+     ],
+     "ans": "Un círculo que no sea rojo",
+     "hint": "¿Qué figura haría fallar la regla «si es círculo, es rojo»?",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ],
+      [
+       "negq"
+      ],
+      [
+       "ejce"
+      ]
+     ]
+    },
+    {
+     "id": "q13",
+     "lvl": 3,
+     "title": "Mundo: el orden de los cuantificadores",
+     "q": "<p>Arma un mundo donde la primera fórmula sea <b>V</b> y la segunda <b>F</b>.</p><p>La primera dice «para cada figura hay una roja de su misma forma»; la segunda, «hay una roja con la forma de todas».</p>",
+     "checks": [
+      {
+       "t": "mundo",
+       "p": "Arma el mundo",
+       "w": [
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        }
+       ],
+       "f": [
+        {
+         "f": "∀x∃y(Rojo(y)∧MismaForma(x,y))",
+         "v": true
+        },
+        {
+         "f": "∃y∀x(Rojo(y)∧MismaForma(x,y))",
+         "v": false
+        }
+       ],
+       "sol": [
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        },
+        {
+         "s": "q",
+         "c": "r",
+         "g": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "En \\(\\forall x\\,\\exists y\\) el \\(y\\) puede cambiar según \\(x\\); en \\(\\exists y\\,\\forall x\\) un mismo \\(y\\) tiene que servir para todos.",
+      "Con un círculo rojo y un cuadrado rojo: cada figura tiene una roja de su forma (ella misma), así que la primera es V.",
+      "Pero ninguna figura roja tiene la forma de las dos a la vez: la segunda es F."
+     ],
+     "ans": "Por ejemplo, un círculo rojo y un cuadrado rojo",
+     "hint": "Necesitas figuras de al menos dos formas.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ],
+      [
+       "negq"
+      ],
+      [
+       "negq"
+      ]
+     ]
+    },
+    {
+     "id": "q14",
+     "lvl": 2,
+     "title": "Mundo: negar un existencial",
+     "q": "<p>Arma un mundo donde las dos fórmulas sean verdaderas.</p>",
+     "checks": [
+      {
+       "t": "mundo",
+       "p": "Arma el mundo",
+       "w": [
+        {
+         "s": "t",
+         "c": "r",
+         "g": 1
+        },
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        }
+       ],
+       "f": [
+        {
+         "f": "¬∃x(Tri(x)∧Grande(x))",
+         "v": true
+        },
+        {
+         "f": "∃x Tri(x)",
+         "v": true
+        }
+       ],
+       "sol": [
+        {
+         "s": "t",
+         "c": "r",
+         "g": 0
+        },
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(\\neg\\exists x\\,(\\text{Tri}(x)\\wedge\\text{Grande}(x))\\) \\(\\equiv\\forall x\\,(\\text{Tri}(x)\\to\\neg\\text{Grande}(x))\\): ningún triángulo es grande.",
+      "La segunda pide que haya al menos un triángulo.",
+      "Basta achicar el triángulo grande (o cambiarlo por uno pequeño)."
+     ],
+     "ans": "Triángulos, sí, pero todos pequeños",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ],
+      [
+       "negq"
+      ],
+      [
+       "negq"
+      ]
+     ]
+    },
+    {
+     "id": "q15",
+     "lvl": 2,
+     "title": "Mundo: una condicional y su recíproca",
+     "q": "<p>Arma un mundo donde la primera fórmula sea <b>V</b> y la segunda <b>F</b>.</p>",
+     "checks": [
+      {
+       "t": "mundo",
+       "p": "Arma el mundo",
+       "w": [
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        },
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        }
+       ],
+       "f": [
+        {
+         "f": "∀x(Azul(x)→Cuad(x))",
+         "v": true
+        },
+        {
+         "f": "∀x(Cuad(x)→Azul(x))",
+         "v": false
+        }
+       ],
+       "sol": [
+        {
+         "s": "q",
+         "c": "a",
+         "g": 0
+        },
+        {
+         "s": "c",
+         "c": "r",
+         "g": 0
+        },
+        {
+         "s": "q",
+         "c": "r",
+         "g": 0
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "La primera dice «todo lo azul es cuadrado»; la segunda, «todo cuadrado es azul». Son recíprocas: no son equivalentes.",
+      "Para que la segunda falle hace falta un cuadrado que no sea azul.",
+      "Un cuadrado rojo no rompe la primera, porque no es azul."
+     ],
+     "ans": "Agrega un cuadrado que no sea azul",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "negq"
+      ],
+      [
+       "ejce"
+      ],
+      [
+       "negq"
+      ]
+     ]
+    },
+    {
      "id": "q8",
      "lvl": 2,
      "title": "Tipo parcial: fracciones y cuantificadores",
@@ -3071,7 +4517,45 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Los cuantificadores convierten predicados en proposiciones.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\forall\\): todos; \\(\\exists\\): al menos uno.</li><li>\\(\\neg\\forall x\\,P\\equiv\\exists x\\,\\neg P\\).</li><li>El orden de cuantificadores importa.</li><li>Un contraejemplo refuta un \\(\\forall\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\neg\\forall x\\,(x^2\\gt0)\\equiv\\exists x\\,(x^2\\le0)\\) (verdadero con \\(x=0\\)).</div>\n<div class=\"err\"><b>Error común:</b> negar solo el cuantificador y no el predicado.</div>"
+   "lesson": "<h3>Idea central</h3><p>Los cuantificadores convierten predicados en proposiciones.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\forall\\): todos; \\(\\exists\\): al menos uno.</li><li>\\(\\neg\\forall x\\,P\\equiv\\exists x\\,\\neg P\\).</li><li>El orden de cuantificadores importa.</li><li>Un contraejemplo refuta un \\(\\forall\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\neg\\forall x\\,(x^2\\gt0)\\equiv\\exists x\\,(x^2\\le0)\\) (verdadero con \\(x=0\\)).</div>\n<div class=\"err\"><b>Error común:</b> negar solo el cuantificador y no el predicado.</div>",
+   "tools": [
+    {
+     "w": "mundo",
+     "t": "Laboratorio de cuantificadores",
+     "p": "Cambia el mundo y mira cómo cambia el valor de cada fórmula.",
+     "o": {
+      "w": [
+       {
+        "s": "c",
+        "c": "r",
+        "g": 1
+       },
+       {
+        "s": "q",
+        "c": "a",
+        "g": 0
+       },
+       {
+        "s": "t",
+        "c": "r",
+        "g": 0
+       },
+       {
+        "s": "c",
+        "c": "v",
+        "g": 0
+       }
+      ],
+      "f": [
+       "∀x(Circ(x)→Rojo(x))",
+       "∃x(Circ(x)∧Rojo(x))",
+       "∀x∃y(x≠y∧MismoColor(x,y))",
+       "∃y∀x(x≠y→MasGrande(y,x))",
+       "¬∃x Tri(x)"
+      ]
+     }
+    }
+   ]
   },
   {
    "id": "demo",
@@ -3212,71 +4696,83 @@
      ]
     },
     {
-     "id": "t4",
+     "id": "t11",
      "lvl": 2,
      "title": "Elige el método",
-     "q": "<p>¿Qué método conviene para «si \\(n^2\\) es par, entonces \\(n\\) es par»?</p>",
+     "q": "<p>¿Qué método conviene para cada afirmación?</p>",
      "checks": [
       {
-       "p": "Método",
-       "o": [
-        "Contraposición",
-        "Directa, despejando n de n² = 2k",
-        "Contraejemplo",
-        "Por inducción",
-        "No se puede demostrar"
-       ]
-      }
-     ],
-     "steps": [
-      "Directa sería partir de \\(n^2=2k\\) y despejar \\(n=\\sqrt{2k}\\), que no ayuda.",
-      "Mejor la contraposición: «si n es impar, n² es impar», que vale lo mismo. Con \\(n=2k+1\\) sale fácil: \\(n^2=2(2k^2+2k)+1\\)."
-     ],
-     "ans": "Contraposición",
-     "hint": "¿Qué hipótesis es más fácil de usar?",
-     "fig": null,
-     "draw": false,
-     "open": false,
-     "solfig": null,
-     "tags": [
-      [],
-      [
-       "paridad",
-       "ejce",
-       "contrar"
-      ]
-     ]
-    },
-    {
-     "id": "t5",
-     "lvl": 2,
-     "title": "Irracionalidad",
-     "q": "<p>Para demostrar que \\(\\sqrt2\\) es irracional, ¿qué método se usa?</p>",
-     "checks": [
-      {
-       "p": "Método",
-       "o": [
-        "Contradicción",
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
         "Directa",
-        "Contraejemplo",
-        "Contraposición sobre 2",
-        "Por casos"
+        "Contraposición",
+        "Contradicción",
+        "Contraejemplo"
+       ],
+       "items": [
+        {
+         "x": "Si \\(n\\) es impar, \\(n^2\\) es impar.",
+         "c": 0,
+         "e": "De la hipótesis \\(n=2k+1\\) se llega directo a \\(n^2\\)."
+        },
+        {
+         "x": "Si \\(n^2\\) es par, \\(n\\) es par.",
+         "c": 1,
+         "e": "Partir de «\\(n^2\\) par» no da una fórmula para \\(n\\); la contrarrecíproca sí."
+        },
+        {
+         "x": "\\(\\sqrt2\\) es irracional.",
+         "c": 2,
+         "e": "«Irracional» es una negación: supón que es racional."
+        },
+        {
+         "x": "«Todo primo es impar» es falsa.",
+         "c": 3,
+         "e": "Basta un caso: 2."
+        },
+        {
+         "x": "Hay infinitos primos.",
+         "c": 2,
+         "e": "Supón que son finitos y construye uno nuevo."
+        },
+        {
+         "x": "Si \\(3\\nmid n^2\\), entonces \\(3\\nmid n\\).",
+         "c": 1,
+         "e": "Su contrarrecíproca es «si \\(3\\mid n\\), entonces \\(3\\mid n^2\\)», que es directa."
+        },
+        {
+         "x": "Si \\(a\\) y \\(b\\) son pares, \\(a+b\\) es par.",
+         "c": 0
+        },
+        {
+         "x": "«\\(n^2+n+41\\) es primo para todo \\(n\\)» es falsa.",
+         "c": 3,
+         "e": "Con \\(n=40\\): \\(40^2+40+41=41^2\\)."
+        }
        ]
       }
      ],
      "steps": [
-      "«Irracional» significa «no es racional». Para probar un «no», suele convenir la contradicción: se supone que \\(\\sqrt2\\) es una fracción y se llega a algo imposible."
+      "Directa: partes de la hipótesis y llegas a la tesis. Contraposición: pruebas \\(\\neg q\\to\\neg p\\) cuando la hipótesis es difícil de usar.",
+      "Contradicción: para afirmaciones que niegan algo (irracional, infinitos, no existe).",
+      "Contraejemplo: para refutar un «para todo» basta un caso que falle."
      ],
-     "ans": "Contradicción",
-     "hint": "Es una afirmación negativa.",
+     "ans": "Directa: impar², a + b. Contraposición: n² par, 3 ∤ n². Contradicción: √2, infinitos primos. Contraejemplo: primos impares, n² + n + 41.",
+     "hint": null,
      "fig": null,
      "draw": false,
      "open": false,
      "solfig": null,
      "tags": [
       [
-       "racdef",
+       "contrar"
+      ],
+      [
        "contrad"
+      ],
+      [
+       "ejce"
       ]
      ]
     },
@@ -3570,17 +5066,17 @@
      "id": "c3",
      "lvl": 2,
      "title": "Diagrama de Venn (2 conjuntos)",
-     "q": "<p>¿Qué diagrama representa \\(A-B\\)?</p>",
+     "q": "<p>Sombrea en el diagrama la región \\(A-B\\).</p>",
      "checks": [
       {
-       "p": "Región sombreada",
-       "o": [
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c1A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c1B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m1_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c1A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m1_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c2A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c2B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m2_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c2B)\"><g clip-path=\"url(#c2A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m2_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c3A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c3B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m3_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m3_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_0)\"/></g><g clip-path=\"url(#c3B)\"><g clip-path=\"url(#c3A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m3_1)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c4A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c4B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m4_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c4B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m4_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 170 116\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c5A\"><circle cx=\"62\" cy=\"58\" r=\"34\"/></clipPath><clipPath id=\"c5B\"><circle cx=\"108\" cy=\"58\" r=\"34\"/></clipPath><mask id=\"m5_0\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"108\" cy=\"58\" r=\"34\" fill=\"black\"/></mask><mask id=\"m5_1\"><rect x=\"0\" y=\"0\" width=\"170\" height=\"116\" fill=\"white\"/><circle cx=\"62\" cy=\"58\" r=\"34\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c5A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_0)\"/></g><g clip-path=\"url(#c5B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"162\" height=\"108\" mask=\"url(#m5_1)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"162\" height=\"108\"/><circle class=\"vc\" cx=\"62\" cy=\"58\" r=\"34\"/><circle class=\"vc\" cx=\"108\" cy=\"58\" r=\"34\"/><text class=\"dl\" x=\"22\" y=\"28\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"144\" y=\"28\" text-anchor=\"middle\">B</text><text class=\"dm\" x=\"160\" y=\"16\" text-anchor=\"end\">U</text></svg>"
-       ]
+       "t": "venn",
+       "p": "Toca las regiones",
+       "n": 2,
+       "mode": "tap",
+       "a": [
+        "A"
+       ],
+       "e": "\\(A-B\\) son los elementos de \\(A\\) que <b>no</b> están en \\(B\\)."
       }
      ],
      "steps": [
@@ -3649,24 +5145,31 @@
      "id": "c5",
      "lvl": 2,
      "title": "Inclusión–exclusión",
-     "q": "<p>En un salón de 40 estudiantes, 25 llevan Discretas, 20 llevan Cálculo y 10 llevan ambos. ¿Cuántos no llevan ninguno?</p>",
+     "q": "<p>En un salón de 40 estudiantes, 25 llevan Discretas (\\(D\\)), 20 llevan Cálculo (\\(C\\)) y 10 llevan ambos. Completa el diagrama con cuántos hay en cada región.</p>",
      "checks": [
       {
-       "p": "Ninguno",
-       "o": [
-        "5",
-        "15",
-        "0",
-        "10",
-        "35"
-       ]
+       "t": "venn",
+       "p": "Completa cada región",
+       "n": 2,
+       "lab": [
+        "D",
+        "C"
+       ],
+       "mode": "num",
+       "v": {
+        "D": 15,
+        "C": 10,
+        "DC": 10,
+        "o": 5
+       }
       }
      ],
      "steps": [
-      "Si sumas 25 + 20, los 10 que llevan ambos se cuentan dos veces. Réstalos una vez: \\(25+20-10=35\\) llevan al menos uno.",
-      "Ninguno: \\(40-35=5\\)."
+      "Empieza por el centro: ambos = 10.",
+      "Solo Discretas: \\(25-10=15\\). Solo Cálculo: \\(20-10=10\\).",
+      "Ninguno: \\(40-(15+10+10)=5\\). Es lo mismo que \\(40-|D\\cup C|\\), con \\(|D\\cup C|=25+20-10=35\\)."
      ],
-     "ans": "5",
+     "ans": "Solo D: 15 · ambos: 10 · solo C: 10 · ninguno: 5",
      "hint": "No cuentes dos veces a los de ambos.",
      "fig": null,
      "draw": false,
@@ -3676,24 +5179,31 @@
       [
        "card"
       ],
-      []
+      [
+       "card"
+      ],
+      [
+       "card"
+      ]
      ]
     },
     {
      "id": "c6",
      "lvl": 3,
      "title": "Diagrama de Venn (3 conjuntos)",
-     "q": "<p>¿Qué diagrama representa \\((A\\cup B)-C\\)?</p>",
+     "q": "<p>Sombrea en el diagrama la región \\((A\\cup B)-C\\).</p>",
      "checks": [
       {
-       "p": "Región sombreada",
-       "o": [
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c6A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c6C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m6_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m6_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_0)\"/></g><g clip-path=\"url(#c6B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_1)\"/></g><g clip-path=\"url(#c6B)\"><g clip-path=\"url(#c6A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m6_2)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c7A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c7C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m7_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_3\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_4\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/></mask><mask id=\"m7_5\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/></mask></defs><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_0)\"/></g><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_1)\"/></g><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_2)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_3)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_4)\"/></g></g><g clip-path=\"url(#c7C)\"><g clip-path=\"url(#c7B)\"><g clip-path=\"url(#c7A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m7_5)\"/></g></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c8A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c8C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m8_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c8B)\"><g clip-path=\"url(#c8A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m8_0)\"/></g></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c9A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c9C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m9_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c9C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m9_0)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>",
-        "<svg class=\"dg venn\" viewBox=\"0 0 172 136\" xmlns=\"http://www.w3.org/2000/svg\"><defs><clipPath id=\"c10A\"><circle cx=\"66\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10B\"><circle cx=\"106\" cy=\"52\" r=\"30\"/></clipPath><clipPath id=\"c10C\"><circle cx=\"86\" cy=\"88\" r=\"30\"/></clipPath><mask id=\"m10_0\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_1\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"86\" cy=\"88\" r=\"30\" fill=\"black\"/></mask><mask id=\"m10_2\"><rect x=\"0\" y=\"0\" width=\"172\" height=\"136\" fill=\"white\"/><circle cx=\"66\" cy=\"52\" r=\"30\" fill=\"black\"/><circle cx=\"106\" cy=\"52\" r=\"30\" fill=\"black\"/></mask></defs><g clip-path=\"url(#c10A)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_0)\"/></g><g clip-path=\"url(#c10B)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_1)\"/></g><g clip-path=\"url(#c10C)\"><rect class=\"vs\" x=\"4\" y=\"4\" width=\"164\" height=\"128\" mask=\"url(#m10_2)\"/></g><rect class=\"vu\" x=\"4\" y=\"4\" width=\"164\" height=\"128\"/><circle class=\"vc\" cx=\"66\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"106\" cy=\"52\" r=\"30\"/><circle class=\"vc\" cx=\"86\" cy=\"88\" r=\"30\"/><text class=\"dl\" x=\"30\" y=\"26\" text-anchor=\"middle\">A</text><text class=\"dl\" x=\"138\" y=\"26\" text-anchor=\"middle\">B</text><text class=\"dl\" x=\"86\" y=\"129\" text-anchor=\"middle\">C</text><text class=\"dm\" x=\"162\" y=\"16\" text-anchor=\"end\">U</text></svg>"
-       ]
+       "t": "venn",
+       "p": "Toca las regiones",
+       "n": 3,
+       "mode": "tap",
+       "a": [
+        "A",
+        "B",
+        "AB"
+       ],
+       "e": "Primero todo lo que está en A o en B; luego quita todo lo que toca a C."
       }
      ],
      "steps": [
@@ -3776,7 +5286,76 @@
      ]
     }
    ],
-   "lesson": "<h3>Idea central</h3><p>Un conjunto es una colección sin orden ni repetidos; se opera con unión, intersección y diferencia.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\in\\) (elemento) vs \\(\\subseteq\\) (subconjunto).</li><li>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</li><li>\\(|\\mathcal P(A)|=2^n\\), \\(|A\\times B|=|A||B|\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\varnothing\\subseteq A\\) siempre, pero \\(\\varnothing\\in A\\) solo si está listado.</div>\n<div class=\"err\"><b>Error común:</b> sumar \\(|A|+|B|\\) sin restar la intersección.</div>"
+   "lesson": "<h3>Idea central</h3><p>Un conjunto es una colección sin orden ni repetidos; se opera con unión, intersección y diferencia.</p>\n<h3>Conceptos clave</h3><ul><li>\\(\\in\\) (elemento) vs \\(\\subseteq\\) (subconjunto).</li><li>\\(|A\\cup B|=|A|+|B|-|A\\cap B|\\).</li><li>\\(|\\mathcal P(A)|=2^n\\), \\(|A\\times B|=|A||B|\\).</li></ul>\n<div class=\"ej\"><b>Ejemplo:</b> \\(\\varnothing\\subseteq A\\) siempre, pero \\(\\varnothing\\in A\\) solo si está listado.</div>\n<div class=\"err\"><b>Error común:</b> sumar \\(|A|+|B|\\) sin restar la intersección.</div>",
+   "tools": [
+    {
+     "w": "venn",
+     "t": "Laboratorio de Venn",
+     "p": "Toca una operación para ver su región, o sombrea tú las regiones.",
+     "o": {
+      "n": 3,
+      "ex": [
+       {
+        "l": "A\\cup B",
+        "a": [
+         "A",
+         "B",
+         "AB",
+         "AC",
+         "BC",
+         "ABC"
+        ]
+       },
+       {
+        "l": "A\\cap B",
+        "a": [
+         "AB",
+         "ABC"
+        ]
+       },
+       {
+        "l": "A-B",
+        "a": [
+         "A",
+         "AC"
+        ]
+       },
+       {
+        "l": "\\overline A",
+        "a": [
+         "B",
+         "C",
+         "BC",
+         "o"
+        ]
+       },
+       {
+        "l": "(A\\cup B)-C",
+        "a": [
+         "A",
+         "B",
+         "AB"
+        ]
+       },
+       {
+        "l": "A\\cap B\\cap C",
+        "a": [
+         "ABC"
+        ]
+       },
+       {
+        "l": "A\\triangle B",
+        "a": [
+         "A",
+         "B",
+         "AC",
+         "BC"
+        ]
+       }
+      ]
+     }
+    }
+   ]
   },
   {
    "id": "c9def",
@@ -4021,6 +5600,85 @@
       ],
       []
      ]
+    },
+    {
+     "id": "cj8",
+     "lvl": 2,
+     "title": "¿Elemento o subconjunto?",
+     "q": "<p>Sea \\(A=\\{1,\\{1\\},\\{1,2\\}\\}\\). Para cada objeto decide si es elemento de \\(A\\), subconjunto de \\(A\\), las dos cosas o ninguna.</p>",
+     "checks": [
+      {
+       "t": "cls",
+       "p": "Clasifica",
+       "cats": [
+        "∈ A",
+        "⊆ A",
+        "Las dos",
+        "Ninguna"
+       ],
+       "items": [
+        {
+         "x": "\\(1\\)",
+         "c": 0,
+         "e": "1 es uno de los elementos listados; no es un conjunto."
+        },
+        {
+         "x": "\\(\\{1\\}\\)",
+         "c": 2,
+         "e": "Está listado (∈) y además su único elemento, 1, está en A (⊆)."
+        },
+        {
+         "x": "\\(\\{1,2\\}\\)",
+         "c": 0,
+         "e": "Está listado, pero 2 no es elemento de A: no es subconjunto."
+        },
+        {
+         "x": "\\(\\{2\\}\\)",
+         "c": 3
+        },
+        {
+         "x": "\\(\\varnothing\\)",
+         "c": 1,
+         "e": "El vacío es subconjunto de todo, pero no está listado."
+        },
+        {
+         "x": "\\(\\{\\{1\\}\\}\\)",
+         "c": 1,
+         "e": "Su elemento \\(\\{1\\}\\) está en A, así que es subconjunto."
+        },
+        {
+         "x": "\\(\\{1,\\{1\\}\\}\\)",
+         "c": 1
+        },
+        {
+         "x": "\\(\\{\\{1,2\\}\\}\\)",
+         "c": 1
+        }
+       ]
+      }
+     ],
+     "steps": [
+      "\\(x\\in A\\): \\(x\\) aparece tal cual en la lista de A.",
+      "\\(X\\subseteq A\\): <b>cada elemento</b> de X aparece en la lista de A.",
+      "Un mismo objeto puede ser las dos cosas, como \\(\\{1\\}\\) aquí."
+     ],
+     "ans": "∈: 1, {1,2} · ⊆: ∅, {{1}}, {1,{1}}, {{1,2}} · las dos: {1} · ninguna: {2}",
+     "hint": "Para ⊆, abre las llaves y revisa cada elemento.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "pert"
+      ],
+      [
+       "subc"
+      ],
+      [
+       "pert"
+      ]
+     ]
     }
    ]
   },
@@ -4217,17 +5875,18 @@
     {
      "id": "cs6",
      "lvl": 2,
-     "title": "Transitividad",
-     "q": "<p>Para demostrar que si \\(A\\subseteq B\\) y \\(B\\subseteq C\\) entonces \\(A\\subseteq C\\), ¿cuál es el primer paso correcto?</p>",
+     "title": "Ordena: la contención es transitiva",
+     "q": "<p>Demuestra: si \\(A\\subseteq B\\) y \\(B\\subseteq C\\), entonces \\(A\\subseteq C\\).</p>",
      "checks": [
       {
-       "p": "Primer paso",
-       "o": [
-        "Tomar \\(x\\in A\\) arbitrario",
-        "Tomar \\(x\\in C\\) arbitrario",
-        "Suponer \\(A=C\\)",
-        "Dar un ejemplo con \\(A=\\{1\\}\\)",
-        "Suponer \\(x\\notin B\\)"
+       "t": "order",
+       "p": "Ordena los pasos",
+       "items": [
+        "Sea \\(x\\in A\\) arbitrario.",
+        "Como \\(A\\subseteq B\\), \\(x\\in B\\).",
+        "Como \\(B\\subseteq C\\), \\(x\\in C\\).",
+        "Como \\(x\\) era arbitrario, todo elemento de \\(A\\) está en \\(C\\).",
+        "Por lo tanto, \\(A\\subseteq C\\)."
        ]
       }
      ],
@@ -4235,7 +5894,7 @@
       "Para probar \\(A\\subseteq C\\) se parte de un elemento arbitrario de \\(A\\).",
       "\\(x\\in A\\Rightarrow x\\in B\\) (porque \\(A\\subseteq B\\)) \\(\\Rightarrow x\\in C\\) (porque \\(B\\subseteq C\\))."
      ],
-     "ans": "Tomar x ∈ A arbitrario",
+     "ans": "Tomar \\(x\\in A\\) arbitrario y llevarlo hasta \\(C\\)",
      "hint": "",
      "fig": null,
      "draw": false,
@@ -4464,33 +6123,45 @@
      "id": "co6",
      "lvl": 2,
      "title": "Contar con Venn",
-     "q": "<p>En un salón de 40, 25 llevan Cálculo, 18 llevan Discretas y 8 llevan ambos. ¿Cuántos no llevan ninguno?</p>",
+     "q": "<p>En un salón de 40, 25 llevan Cálculo (\\(C\\)), 18 llevan Discretas (\\(D\\)) y 8 llevan ambos. Completa el diagrama.</p>",
      "checks": [
       {
-       "p": "Ninguno",
-       "o": [
-        "5",
-        "13",
-        "3",
-        "0",
-        "8"
-       ]
+       "t": "venn",
+       "p": "Completa cada región",
+       "n": 2,
+       "lab": [
+        "C",
+        "D"
+       ],
+       "mode": "num",
+       "v": {
+        "C": 17,
+        "D": 10,
+        "CD": 8,
+        "o": 5
+       }
       }
      ],
      "steps": [
-      "\\(|C\\cup D|=25+18-8=35\\).",
-      "Ninguno: \\(40-35=5\\)."
+      "Centro: ambos = 8.",
+      "Solo Cálculo: \\(25-8=17\\). Solo Discretas: \\(18-8=10\\).",
+      "Ninguno: \\(40-(17+8+10)=5\\)."
      ],
-     "ans": "5",
+     "ans": "17 · 8 · 10 · ninguno: 5",
      "hint": "No cuentes dos veces la intersección.",
      "fig": null,
      "draw": false,
      "solfig": null,
      "tags": [
       [
-       "card"
+       "opsc"
       ],
-      []
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ]
      ]
     },
     {
@@ -4527,6 +6198,210 @@
        "demorgan"
       ]
      ]
+    },
+    {
+     "id": "co8",
+     "lvl": 3,
+     "title": "Venn de 3: inclusión–exclusión",
+     "q": "<p>De 100 estudiantes: 45 usan Python (\\(P\\)), 40 Excel (\\(E\\)) y 35 R (\\(R\\)); 15 usan P y E, 12 P y R, 10 E y R, y 5 usan los tres. Completa el diagrama.</p>",
+     "checks": [
+      {
+       "t": "venn",
+       "p": "Completa cada región",
+       "n": 3,
+       "lab": [
+        "P",
+        "E",
+        "R"
+       ],
+       "mode": "num",
+       "v": {
+        "PER": 5,
+        "PE": 10,
+        "PR": 7,
+        "ER": 5,
+        "P": 23,
+        "E": 20,
+        "R": 18,
+        "o": 12
+       }
+      }
+     ],
+     "steps": [
+      "Centro primero: los tres = 5.",
+      "Dos y solo dos: P y E \\(15-5=10\\); P y R \\(12-5=7\\); E y R \\(10-5=5\\).",
+      "Solo uno: P \\(45-10-7-5=23\\); E \\(40-10-5-5=20\\); R \\(35-7-5-5=18\\).",
+      "Ninguno: \\(100-88=12\\). Con la fórmula: \\(|P\\cup E\\cup R|\\) \\(=45+40+35-15-12-10+5\\) \\(=88\\)."
+     ],
+     "ans": "P: 23 · E: 20 · R: 18 · PE: 10 · PR: 7 · ER: 5 · los tres: 5 · ninguno: 12",
+     "hint": "Si empiezas por afuera vas a contar dos veces la intersección.",
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ]
+     ]
+    },
+    {
+     "id": "co9",
+     "lvl": 2,
+     "title": "Sombrea con tres conjuntos",
+     "q": "<p>Sombrea \\((A\\cap B)\\cup(C-A)\\).</p>",
+     "checks": [
+      {
+       "t": "venn",
+       "p": "Toca las regiones",
+       "n": 3,
+       "mode": "tap",
+       "a": [
+        "AB",
+        "ABC",
+        "C",
+        "BC"
+       ]
+      }
+     ],
+     "steps": [
+      "\\(A\\cap B\\): las dos regiones comunes a A y B (con y sin C).",
+      "\\(C-A\\): lo de C que no toca a A (solo C, y B∩C sin A).",
+      "La unión junta las cuatro regiones."
+     ],
+     "ans": "4 regiones: AB, ABC, solo C y BC sin A",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ]
+     ]
+    },
+    {
+     "id": "co10",
+     "lvl": 2,
+     "title": "El complemento de una intersección",
+     "q": "<p>Sombrea \\(\\overline{A\\cap B}\\).</p>",
+     "checks": [
+      {
+       "t": "venn",
+       "p": "Toca las regiones",
+       "n": 2,
+       "mode": "tap",
+       "a": [
+        "A",
+        "B",
+        "o"
+       ],
+       "e": "Es todo lo que <b>no</b> está en el centro, incluida la región de afuera."
+      }
+     ],
+     "steps": [
+      "\\(\\overline{A\\cap B}\\) es todo \\(U\\) menos la intersección.",
+      "Por De Morgan, \\(\\overline{A\\cap B}=\\overline A\\cup\\overline B\\): solo A, solo B y lo de afuera."
+     ],
+     "ans": "Todo menos el centro",
+     "hint": null,
+     "fig": null,
+     "draw": false,
+     "open": false,
+     "solfig": null,
+     "tags": [
+      [
+       "opsc"
+      ],
+      [
+       "opsc"
+      ]
+     ]
+    }
+   ],
+   "tools": [
+    {
+     "w": "venn",
+     "t": "Laboratorio de Venn",
+     "p": "Toca una operación para ver su región, o sombrea tú las regiones.",
+     "o": {
+      "n": 3,
+      "ex": [
+       {
+        "l": "A\\cup B",
+        "a": [
+         "A",
+         "B",
+         "AB",
+         "AC",
+         "BC",
+         "ABC"
+        ]
+       },
+       {
+        "l": "A\\cap B",
+        "a": [
+         "AB",
+         "ABC"
+        ]
+       },
+       {
+        "l": "A-B",
+        "a": [
+         "A",
+         "AC"
+        ]
+       },
+       {
+        "l": "\\overline A",
+        "a": [
+         "B",
+         "C",
+         "BC",
+         "o"
+        ]
+       },
+       {
+        "l": "(A\\cup B)-C",
+        "a": [
+         "A",
+         "B",
+         "AB"
+        ]
+       },
+       {
+        "l": "A\\cap B\\cap C",
+        "a": [
+         "ABC"
+        ]
+       },
+       {
+        "l": "A\\triangle B",
+        "a": [
+         "A",
+         "B",
+         "AC",
+         "BC"
+        ]
+       }
+      ]
+     }
     }
    ]
   }
@@ -5600,7 +7475,10 @@
      "co5",
      "co6",
      "co7",
-     "cx3"
+     "cx3",
+     "co8",
+     "co9",
+     "co10"
     ]
    }
   ]

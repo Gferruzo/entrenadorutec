@@ -323,6 +323,28 @@ tr.jok td{background:var(--ok-bg)}tr.jno td{opacity:.4}tr.jnul td{background:var
 table.tt{border-collapse:collapse;background:var(--card);margin:.3em 0}table.tt th,table.tt td{border:1px solid var(--line);padding:4px 10px;text-align:center}table.tt .tth{background:var(--teo-bg)}
 .ttb{min-width:38px;min-height:34px;border:1.5px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font:800 .95rem Figtree;cursor:pointer}
 .ttb.good{border-color:var(--ok);background:var(--ok-bg)}.ttb.bad{border-color:var(--bad);background:var(--bad-bg)}
+.ttb.rev{border-color:var(--ok);border-style:dashed}.ttb:disabled{cursor:default;color:var(--ink)}
+.lgvars{display:flex;flex-wrap:wrap;gap:10px;margin:.3em 0 .6em}.lgvar{display:flex;align-items:center;gap:6px;font-weight:700}
+.lgconds{display:flex;flex-direction:column;gap:6px;margin:.3em 0}.lgcond{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--card)}
+.lgcond.good{border-color:var(--ok);background:var(--ok-bg)}.lgcond.bad{border-color:var(--bad);background:var(--bad-bg)}.lgf{flex:1 1 auto;min-width:0;overflow-x:auto}
+.lgwant{font-size:.82rem;color:var(--muted)}.lgnow{font:700 .82rem Figtree,sans-serif;padding:1px 7px;border-radius:10px}.lgnow.ok{background:var(--ok-bg);color:var(--ok)}.lgnow.no{background:var(--bad-bg);color:var(--bad)}
+.lggoal{font-weight:700;margin:.2em 0 .5em}.lghint{font-size:.85rem;color:var(--muted);margin:.4em 0 .2em}
+.lgpath{display:flex;flex-direction:column;gap:4px}.lgline{display:grid;grid-template-columns:18px minmax(0,1fr);gap:2px 6px;align-items:center;padding:4px 6px;border-radius:7px}
+.lgline.cur{background:var(--teo-bg);outline:1.5px solid var(--line)}.lgx{min-width:0;overflow-x:auto}.lgeq{font-weight:800;color:var(--muted);text-align:center}
+.lglaw{grid-column:2;justify-self:start;font:700 .75rem Figtree,sans-serif;color:var(--ok);background:var(--ok-bg);border-radius:10px;padding:1px 8px}.lglaw.miss{color:var(--tan);background:var(--bad-bg)}
+.lgbtns{display:flex;flex-wrap:wrap;gap:6px;margin:.4em 0}.lgb{min-height:36px;padding:4px 11px;border:1.5px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);font:700 .85rem Figtree,sans-serif;cursor:pointer}
+.lgb.on{border-color:var(--sol);background:var(--teo-bg)}.lgb.bad{border-color:var(--bad);background:var(--bad-bg);opacity:.75}.lgb:disabled{cursor:default}
+.lghelp{margin:.4em 0;font-size:.88rem}.lghelp summary{cursor:pointer;font-weight:700;color:var(--muted)}.lghelp ul{margin:.3em 0;padding-left:1.2em}.lghelp li{margin:.2em 0}
+.lglines{margin:.2em 0;padding-left:1.8em;display:flex;flex-direction:column;gap:5px}.lgln{border:1.5px solid var(--line);border-radius:8px;padding:5px 9px;background:var(--card);cursor:pointer;display:flex;flex-wrap:wrap;gap:2px 10px;align-items:center}
+.lgln.on{border-color:var(--sol);background:var(--teo-bg)}.lgln.goal{border-color:var(--ok);background:var(--ok-bg)}.lgj{font-size:.76rem;color:var(--muted);margin-left:auto}.lgbar{display:flex;gap:6px}
+.mwgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:360px}.mwc{display:flex;flex-direction:column;align-items:center;border:1.5px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);padding:4px 2px;cursor:pointer;font:600 .7rem Figtree,sans-serif}
+.mwc.empty{border-style:dashed;color:var(--muted)}.mwc.on{border-color:var(--sol);box-shadow:0 0 0 2px var(--sol)}.mwsv{width:52px;height:52px}.mwplus{font:700 26px Figtree,sans-serif;fill:var(--muted)}
+.mwtb{margin:.5em 0;display:flex;flex-direction:column;gap:5px}.mwrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px}.mwl{font:700 .78rem Figtree,sans-serif;color:var(--muted);width:56px}
+.mwb{min-height:32px;padding:3px 9px;border:1.5px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font:600 .8rem Figtree,sans-serif;cursor:pointer}.mwb.on{border-color:var(--sol);background:var(--teo-bg)}.mwb.col{border-left:10px solid var(--mwc)}
+.vnw{position:relative;max-width:360px}.vnsv{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line);touch-action:manipulation}
+.vnu{fill:none;stroke:var(--ink);stroke-width:1.4}.vnc{fill:none;stroke:var(--ink);stroke-width:1.6;pointer-events:none}.vnl{font:700 15px Figtree,sans-serif;fill:var(--ink);pointer-events:none}.vnl.u{font-size:13px;fill:var(--muted)}
+.vnr{fill:var(--sol);fill-opacity:0;cursor:pointer}.vnr.on{fill-opacity:.38}.vnr.good{fill:var(--ok);fill-opacity:.42}.vnr.bad{fill:var(--bad);fill-opacity:.42}.vnw.lk .vnr,.vnw.num .vnr{cursor:default}
+.vnin{position:absolute;transform:translate(-50%,-50%)}.vnin .fin{width:44px;padding:3px 2px;text-align:center;font-size:.9rem}.vngv{display:inline-block;min-width:26px;text-align:center;background:var(--teo-bg);border-radius:6px;padding:1px 4px;font-size:.9rem}
 .opt .dg.venn{width:150px;max-width:150px;background:transparent}
 .dg.venn .vs{fill:var(--sol);opacity:.55}.dg.venn .vc{fill:none;stroke:var(--ink);stroke-width:1.6}.dg.venn .vu{fill:none;stroke:var(--ink);stroke-width:1.2}
 .fillt{border-collapse:collapse;background:var(--card);font-size:.92rem}.fillt th,.fillt td{border:1px solid var(--line);padding:4px 8px;text-align:center}.fillt th{background:var(--teo-bg);font-weight:800}
@@ -4314,6 +4336,262 @@ IW.tri=(ch,o)=>{const a=ch.a,S=triSol(a,ch.k);const w=el('div','triw');let lk=fa
    mark(){sels.forEach(x=>{const k=x.s.value===x.ans;x.s.classList.toggle('good',k);x.s.classList.toggle('bad',!k)})},
    reveal(){sels.forEach(x=>{if(x.s.value!==x.ans){x.s.value=x.ans;x.s.classList.remove('bad');x.s.classList.add('rev')}else x.s.classList.add('good')});lb()},
    lock(){lk=true;sels.forEach(x=>x.s.disabled=true)}}};
+/* ================= DISCRETAS: lógica, argumentos, cuantificadores y Venn =================
+   Motor LG (lógica): LG.parse('¬(p∧q)→r') → árbol · LG.tex(árbol) → LaTeX · LG.ev(árbol,{p:true,…}).
+   Sintaxis: variables en minúscula (p q r s t), constantes V F, ¬ ~ !, ∧ &, ∨ |, ⊻, → ->, ↔ <->,
+   ∀x ∃x (cuantifican lo que sigue: usar paréntesis), predicados con mayúscula Circ(x), MismoColor(x,y), x=y, x≠y.
+   IW.tt    tabla de verdad: {vars:['p','q'],cols:[{h:LaTeX,v:['V','F',…]} | {h,f:'p->q'} | {h,f,give:true}]}
+   IW.val   dar valores V/F: {vars,conds:[{f,v:true|false}],live:true|false,a:{p:false,…}(opcional),e}
+   IW.ley   simplificar eligiendo la ley de cada paso: {start,steps:[{to,law:'De Morgan'|[…],e}],laws:[…](opcional)}
+   IW.arg   armar el argumento: {prem:[…],goal,rules:[…](opcional),sol:[['MT',[2,3]],…]} (números de línea desde 1)
+   IW.mundo mundo de figuras: {w:[{s:'c'|'q'|'t',c:'r'|'a'|'v',g:0|1}|null,…],f:[{f,v}],sol:[…],n:6}
+   IW.venn  {n:2|3,lab:['A','B','C'],mode:'tap',a:['A','AB','o',…]} | {n,mode:'num',v:{A:15,AB:10,…,o:5},give:{…}}
+            (regiones = letras de los conjuntos a los que pertenece, en orden; 'o' = fuera de todos)
+   Herramientas: {w:'mundo',o:{w,f:[…]}}, {w:'venn',o:{n,ex:[{l,a}]}}, {w:'arg',o:{prem,goal}}. */
+const LG=(()=>{
+  const lex=s=>{const T=[];let i=0;s=String(s);
+    while(i<s.length){const c=s[i];
+      if(/\s/.test(c)){i++;continue}
+      if(s.startsWith('<->',i)){T.push('↔');i+=3;continue}
+      if(s.startsWith('->',i)){T.push('→');i+=2;continue}
+      if(s.startsWith('!=',i)){T.push('≠');i+=2;continue}
+      if('¬~!'.includes(c)){T.push('¬');i++;continue}
+      if('∧&'.includes(c)){T.push('∧');i++;continue}
+      if('∨|'.includes(c)){T.push('∨');i++;continue}
+      if('⊻→↔∀∃(),=≠'.includes(c)){T.push(c);i++;continue}
+      const m=s.slice(i).match(/^[A-Za-zÁÉÍÓÚáéíóúñ][A-Za-zÁÉÍÓÚáéíóúñ0-9_]*/);if(m){T.push({id:m[0]});i+=m[0].length;continue}
+      throw new Error('Símbolo no reconocido: '+c)}
+    return T};
+  function parse(s){const T=lex(s);let i=0;const pk=()=>T[i],nx=()=>T[i++];
+    const exp=t=>{if(pk()!==t)throw new Error('Se esperaba '+t+' en '+s);i++};
+    const iff=()=>{let a=imp();while(pk()==='↔'){i++;a={k:'iff',a,b:imp()}}return a};
+    const imp=()=>{const a=or();if(pk()==='→'){i++;return{k:'imp',a,b:imp()}}return a};
+    const or=()=>{let a=and();while(pk()==='∨'||pk()==='⊻'){const op=nx()==='∨'?'or':'xor';a={k:op,a,b:and()}}return a};
+    const and=()=>{let a=un();while(pk()==='∧'){i++;a={k:'and',a,b:un()}}return a};
+    const un=()=>{const t=pk();
+      if(t==='¬'){i++;return{k:'not',a:un()}}
+      if(t==='∀'||t==='∃'){i++;const v=nx();if(!v||!v.id)throw new Error('Falta la variable del cuantificador');return{k:'q',q:t==='∀'?'all':'ex',x:v.id,a:un()}}
+      if(t==='('){i++;const a=iff();exp(')');return a}
+      if(t&&t.id){i++;const id=t.id;
+        if(pk()==='('){i++;const args=[];while(true){const v=nx();if(!v||!v.id)throw new Error('Argumento inválido');args.push(v.id);if(pk()===','){i++;continue}exp(')');break}return{k:'pred',n:id,args}}
+        if(pk()==='='||pk()==='≠'){const neg=nx()==='≠';const y=nx();return{k:'eq',x:id,y:y.id,neg}}
+        if(id==='V'||id==='F')return{k:'const',v:id==='V'};
+        return{k:'var',n:id}}
+      throw new Error('Fórmula incompleta: '+s)};
+    const r=iff();if(i<T.length)throw new Error('Sobra algo en '+s);return r}
+  const P={iff:1,imp:2,or:3,xor:3,and:4};const OP={iff:'\\leftrightarrow ',imp:'\\to ',or:'\\vee ',xor:'\\veebar ',and:'\\wedge '};
+  const wr=c=>P[c.k]?'('+tex(c)+')':tex(c);
+  function tex(n,pp){pp=pp||0;let s,p=P[n.k]||5;
+    if(n.k==='var')s=n.n;else if(n.k==='const')s='\\mathrm{'+(n.v?'V':'F')+'}';
+    else if(n.k==='not')s='\\neg '+wr(n.a);
+    else if(n.k==='q')s=(n.q==='all'?'\\forall ':'\\exists ')+n.x+'\\,'+wr(n.a);
+    else if(n.k==='pred')s='\\text{'+n.n+'}('+n.args.join(',')+')';
+    else if(n.k==='eq')s=n.x+(n.neg?'\\ne ':'=')+n.y;
+    else{const side=c=>{const cp=P[c.k]||5;const need=cp<5&&!(c.k===n.k&&(n.k==='and'||n.k==='or'));return need?'('+tex(c,0)+')':tex(c,p)};s=side(n.a)+OP[n.k]+side(n.b)}
+    return s}
+  function ev(n,env,W){switch(n.k){
+    case'var':if(!(n.n in env))throw new Error('Falta el valor de '+n.n);return !!env[n.n];
+    case'const':return n.v;case'not':return !ev(n.a,env,W);
+    case'and':return ev(n.a,env,W)&&ev(n.b,env,W);case'or':return ev(n.a,env,W)||ev(n.b,env,W);
+    case'xor':return ev(n.a,env,W)!==ev(n.b,env,W);case'imp':return !ev(n.a,env,W)||ev(n.b,env,W);
+    case'iff':return ev(n.a,env,W)===ev(n.b,env,W);
+    case'q':{const D=W.dom,f=o=>ev(n.a,Object.assign({},env,{[n.x]:o}),W);return n.q==='all'?D.every(f):D.some(f)}
+    case'pred':return W.pred(n.n,n.args.map(a=>env[a]));
+    case'eq':{const r=env[n.x]===env[n.y];return n.neg?!r:r}}}
+  const key=n=>n.k==='var'?n.n:n.k==='const'?(n.v?'V':'F'):n.k==='not'?'¬'+key(n.a):n.k==='q'?(n.q+n.x+'.'+key(n.a)):n.k==='pred'?n.n+'('+n.args+')':n.k==='eq'?n.x+(n.neg?'≠':'=')+n.y:'('+key(n.a)+n.k+key(n.b)+')';
+  const eq=(a,b)=>key(a)===key(b);
+  const neg=n=>n.k==='not'?n.a:{k:'not',a:n};
+  const vars=(n,s)=>{s=s||new Set();if(n.k==='var')s.add(n.n);['a','b'].forEach(k=>n[k]&&vars(n[k],s));return s};
+  const tt=(f,vs)=>{const t=typeof f==='string'?parse(f):f;const R=1<<vs.length,out=[];for(let r=0;r<R;r++){const env={};vs.forEach((v,j)=>env[v]=!((r>>(vs.length-1-j))&1));out.push(ev(t,env)?'V':'F')}return out};
+  const find=(vs,ok)=>{for(let r=0;r<(1<<vs.length);r++){const env={};vs.forEach((v,j)=>env[v]=!((r>>(vs.length-1-j))&1));if(ok(env))return env}return null};
+  return{parse,tex,ev,eq,key,neg,vars,tt,find}})();
+const lgT=s=>{try{return LG.tex(LG.parse(s))}catch(e){return String(s)}};
+/* ---------- tabla de verdad (reemplaza a buildTT; mismo formato) ---------- */
+IW.tt=(ch,o)=>{const vars=ch.vars,n=vars.length,R=1<<n;let lk=false;
+  const cols=ch.cols.map(c=>({c,v:c.v||LG.tt(c.f,vars)}));
+  const t=el('table','tt');t.innerHTML='<tr>'+vars.map(v=>'<th>\\('+v+'\\)</th>').join('')+cols.map(c=>'<th class="tth">\\('+c.c.h+'\\)</th>').join('')+'</tr>';
+  const cells=[];
+  for(let r=0;r<R;r++){const tr=el('tr');for(let j=0;j<n;j++){const bit=(r>>(n-1-j))&1;tr.append(el('td','tv',bit?'F':'V'))}
+    cols.forEach(c=>{const td=el('td');if(c.c.give){td.textContent=c.v[r];tr.append(td);return}
+      const b=el('button','ttb','?');b.type='button';const C={b,a:c.v[r],v:null};
+      b.onclick=()=>{if(lk)return;C.v=C.v==='V'?'F':'V';b.textContent=C.v;b.classList.remove('bad','good','rev');o.on&&o.on()};td.append(b);tr.append(td);cells.push(C)});t.append(tr)}
+  const w=el('div','tbl');w.append(t);
+  return{el:w,note:'Toca cada celda para alternar entre V y F.',need:'Completa todas las celdas.',okMsg:'¡Tabla correcta!',
+   filled:()=>cells.every(c=>c.v),
+   grade(){const bad=cells.filter(c=>c.v!==c.a).length;return{f:(cells.length-bad)/cells.length,msg:(bad===1?'Una celda está mal':bad+' celdas están mal')+' (en rojo).'}},
+   mark(){cells.forEach(c=>{c.b.classList.toggle('good',c.v===c.a);c.b.classList.toggle('bad',c.v!==c.a)})},
+   reveal(){cells.forEach(c=>{if(c.v!==c.a){c.v=c.a;c.b.textContent=c.a;c.b.classList.remove('bad');c.b.classList.add('rev')}else c.b.classList.add('good')})},
+   lock(){lk=true;cells.forEach(c=>c.b.disabled=true)},
+   reset(){cells.forEach(c=>{c.v=null;c.b.textContent='?';c.b.className='ttb'});o.on&&o.on()}}};
+/* ---------- dar valores V/F a las variables ---------- */
+IW.val=(ch,o)=>{const vars=ch.vars;const st={};vars.forEach(v=>st[v]=null);let lk=false;const live=ch.live!==false;
+  const w=el('div','lgval');const row=el('div','lgvars');const list=el('div','lgconds');w.append(row,list);
+  const bs={};vars.forEach(v=>{const g=el('div','lgvar');g.append(el('span','lgvn','\\('+v+'\\)'));const b=el('button','ttb','?');b.type='button';
+    b.onclick=()=>{if(lk)return;st[v]=st[v]===true?false:true;draw();o.on&&o.on()};g.append(b);bs[v]=b;row.append(g)});
+  const items=ch.conds.map(c=>{const t=LG.parse(c.f);const r=el('div','lgcond');const now=el('span','lgnow');
+    r.append(el('span','lgf','\\('+(c.h||LG.tex(t))+'\\)'),el('span','lgwant','debe ser <b>'+(c.v?'V':'F')+'</b>'),now);list.append(r);return{c,t,r,now}});
+  const full=()=>vars.every(v=>st[v]!==null);const ev=I=>LG.ev(I.t,st);
+  const draw=()=>{vars.forEach(v=>{bs[v].textContent=st[v]===null?'?':st[v]?'V':'F';bs[v].classList.remove('good','bad')});
+    items.forEach(I=>{I.r.classList.remove('good','bad');if(live&&full()){const x=ev(I);I.now.textContent='ahora: '+(x?'V':'F');I.now.className='lgnow '+(x===I.c.v?'ok':'no')}else{I.now.textContent='';I.now.className='lgnow'}})};
+  draw();
+  return{el:w,note:'Toca cada variable para darle V o F.'+(live?' Al lado de cada fórmula ves qué valor tiene con tus valores.':''),need:'Dale un valor a cada variable.',okMsg:ch.ok||'¡Esos valores cumplen todo!',
+   filled:full,
+   grade(){const bad=items.filter(I=>ev(I)!==I.c.v);return{f:bad.length?0:1,msg:bad.length?(bad.length===1?'Una fórmula no queda con el valor pedido (en rojo).':bad.length+' fórmulas no quedan con el valor pedido (en rojo).')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){items.forEach(I=>{const k=ev(I)===I.c.v;I.r.classList.toggle('good',k);I.r.classList.toggle('bad',!k);const x=ev(I);I.now.textContent='queda: '+(x?'V':'F')})},
+   reveal(){const a=ch.a||LG.find(vars,env=>items.every(I=>LG.ev(I.t,env)===I.c.v));if(a)vars.forEach(v=>st[v]=!!a[v]);draw();items.forEach(I=>I.r.classList.add('good'))},
+   lock(){lk=true;Object.values(bs).forEach(b=>b.disabled=true)},
+   reset(){vars.forEach(v=>st[v]=null);draw();o.on&&o.on()}}};
+/* ---------- simplificar por leyes ---------- */
+const LG_LAWS={'Doble negación':'\\(\\neg\\neg p\\equiv p\\)','De Morgan':'\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\), \\(\\neg(p\\vee q)\\equiv\\neg p\\wedge\\neg q\\)',
+  'Conmutativa':'\\(p\\wedge q\\equiv q\\wedge p\\)','Asociativa':'\\((p\\vee q)\\vee r\\equiv p\\vee(q\\vee r)\\)',
+  'Distributiva':'\\(p\\wedge(q\\vee r)\\equiv(p\\wedge q)\\vee(p\\wedge r)\\) y al revés','Absorción':'\\(p\\vee(p\\wedge q)\\equiv p\\), \\(p\\wedge(p\\vee q)\\equiv p\\)',
+  'Idempotencia':'\\(p\\vee p\\equiv p\\), \\(p\\wedge p\\equiv p\\)','Complemento':'\\(p\\vee\\neg p\\equiv\\mathrm V\\), \\(p\\wedge\\neg p\\equiv\\mathrm F\\)',
+  'Identidad':'\\(p\\wedge\\mathrm V\\equiv p\\), \\(p\\vee\\mathrm F\\equiv p\\)','Dominación':'\\(p\\vee\\mathrm V\\equiv\\mathrm V\\), \\(p\\wedge\\mathrm F\\equiv\\mathrm F\\)',
+  'Condicional':'\\(p\\to q\\equiv\\neg p\\vee q\\)','Bicondicional':'\\(p\\leftrightarrow q\\equiv(p\\to q)\\wedge(q\\to p)\\)','Contrarrecíproca':'\\(p\\to q\\equiv\\neg q\\to\\neg p\\)'};
+const LG_LAWDEF=['Doble negación','De Morgan','Distributiva','Absorción','Idempotencia','Complemento','Identidad','Dominación','Condicional'];
+IW.ley=(ch,o)=>{const S=ch.steps,n=S.length;let cur=0,lk=false;const miss=new Array(n).fill(0);const laws=ch.laws||LG_LAWDEF;const acc=s=>[].concat(s.law);
+  const w=el('div','lgley');const path=el('div','lgpath');const pad=el('div','lgpad');const fb=el('p','bqtfb');
+  w.append(el('p','lggoal','Meta: llegar a \\('+lgT(S[n-1].to)+'\\)'),path,pad,fb);
+  const hl=el('details','lghelp','<summary>📖 Ver las leyes</summary>');const ul=el('ul');laws.forEach(L=>ul.append(el('li',null,'<b>'+L+':</b> '+(LG_LAWS[L]||''))));hl.append(ul);w.append(hl);
+  const draw=()=>{path.innerHTML='';const xs=[ch.start,...S.slice(0,cur).map(s=>s.to)];
+    xs.forEach((x,i)=>{const d=el('div','lgline'+(i===xs.length-1&&cur<n?' cur':''));d.append(el('span','lgeq',i?'≡':''),el('span','lgx','\\('+lgT(x)+'\\)'));if(i)d.append(el('span','lglaw'+(miss[i-1]?' miss':''),acc(S[i-1])[0]));path.append(d)});
+    pad.innerHTML='';if(cur>=n){path.append(el('div','bqend','🏁 Llegaste a la meta.'));typeset(w);return}
+    pad.append(el('p','bqtqq','<b>Paso '+(cur+1)+' de '+n+'.</b> ¿Qué ley aplicas a la última línea?'));
+    const g=el('div','lgbtns');laws.forEach(L=>{const b=el('button','lgb',L);b.type='button';
+      b.onclick=()=>{if(lk)return;if(acc(S[cur]).includes(L)){fb.textContent='';fb.className='bqtfb';cur++;draw();o.on&&o.on()}
+        else{b.classList.add('bad');b.disabled=true;miss[cur]=1;fb.className='bqtfb bad';fb.innerHTML='✗ '+((S[cur].x&&S[cur].x[L])||S[cur].e||'Con «'+L+'» no avanzas aquí. Mira qué conector está más afuera.');typeset(fb);o.on&&o.on()}};g.append(b)});
+    pad.append(g);typeset(w)};
+  draw();
+  return{el:w,note:'Elige la ley de cada paso: la expresión se reescribe sola. Abre «Ver las leyes» si no recuerdas alguna.',need:'Llega hasta la meta antes de comprobar.',okMsg:'¡Simplificación sin errores!',
+   filled:()=>cur>=n,
+   grade(){const m=miss.reduce((a,b)=>a+b,0);return{f:(n-m)/n,msg:m?'Llegaste, pero fallaste la ley en '+(m===1?'un paso':m+' pasos')+' (en naranja).':''}},
+   mark(){},reveal(){cur=n;draw()},lock(){lk=true;pad.innerHTML=''},
+   reset(){cur=0;miss.fill(0);fb.textContent='';draw();o.on&&o.on()}}};
+/* ---------- armar el argumento con reglas de inferencia ---------- */
+const LG_RULES=(()=>{const L=LG,im=(a,b)=>({k:'imp',a,b}),or=(a,b)=>({k:'or',a,b}),and=(a,b)=>({k:'and',a,b});
+  const isI=x=>x.k==='imp',dc=(a,b,c)=>isI(a)&&isI(b)&&c.k==='or'&&L.eq(c.a,a.a)&&L.eq(c.b,b.a)?[or(a.b,b.b)]:null,
+    dd=(a,b,c)=>isI(a)&&isI(b)&&c.k==='or'&&L.eq(c.a,L.neg(a.b))&&L.eq(c.b,L.neg(b.b))?[or(L.neg(a.a),L.neg(b.a))]:null;
+  return{
+  MP:{n:'Modus ponens',k:[2],f:(a,b)=>isI(a)&&L.eq(a.a,b)?[a.b]:null,bad:(a,b)=>isI(a)&&L.eq(a.b,b)&&!L.eq(a.a,b)?'Eso es <b>afirmar el consecuente</b>: de \\(p\\to q\\) y \\(q\\) no se deduce \\(p\\). El modus ponens necesita el <i>antecedente</i>.':null},
+  MT:{n:'Modus tollens',k:[2],f:(a,b)=>isI(a)&&L.eq(L.neg(a.b),b)?[L.neg(a.a)]:null,bad:(a,b)=>isI(a)&&L.eq(L.neg(a.a),b)?'Eso es <b>negar el antecedente</b>: de \\(p\\to q\\) y \\(\\neg p\\) no se deduce \\(\\neg q\\). El modus tollens necesita negar el <i>consecuente</i>.':null},
+  SH:{n:'Silogismo hipotético',k:[2],f:(a,b)=>isI(a)&&isI(b)&&L.eq(a.b,b.a)?[im(a.a,b.b)]:null},
+  SD:{n:'Silogismo disyuntivo',k:[2],f:(a,b)=>a.k!=='or'?null:L.eq(b,L.neg(a.a))?[a.b]:L.eq(b,L.neg(a.b))?[a.a]:null},
+  Simp:{n:'Simplificación',k:[1],f:a=>a.k==='and'?[a.a,a.b]:null},
+  Conj:{n:'Conjunción',k:[2],f:(a,b)=>[and(a,b)],ord:true},
+  Ad:{n:'Adición',k:[1],f:(a,_,G)=>{let r=null;const walk=n=>{if(!n||r)return;if(n.k==='or'&&(L.eq(n.a,a)||L.eq(n.b,a)))r=n;['a','b'].forEach(k=>n[k]&&typeof n[k]==='object'&&walk(n[k]))};G.forEach(walk);return r?[r]:null},
+    why:'Adición: de \\(p\\) sacas \\(p\\vee q\\); aquí solo sirve si esa disyunción aparece en la meta o en otra línea.'},
+  DC:{n:'Dilema constructivo',k:[2,3],f:(a,b,c)=>c?dc(a,b,c):a.k==='and'?dc(a.a,a.b,b):null},
+  DD:{n:'Dilema destructivo',k:[2,3],f:(a,b,c)=>c?dd(a,b,c):a.k==='and'?dd(a.a,a.b,b):null},
+  CR:{n:'Contrarrecíproca',k:[1],f:a=>isI(a)?[im(L.neg(a.b),L.neg(a.a))]:null},
+  Cond:{n:'Condicional',k:[1],f:a=>isI(a)?[or(L.neg(a.a),a.b)]:a.k==='or'?[im(L.neg(a.a),a.b)]:null},
+  DN:{n:'Doble negación',k:[1],f:a=>a.k==='not'&&a.a.k==='not'?[a.a.a]:null},
+  DM:{n:'De Morgan',k:[1],f:a=>a.k!=='not'?null:a.a.k==='and'?[or(L.neg(a.a.a),L.neg(a.a.b))]:a.a.k==='or'?[and(L.neg(a.a.a),L.neg(a.a.b))]:null}}})();
+const LG_RDEF=['MP','MT','SH','SD','Simp','Conj','Ad','DC','DD','CR','Cond','DM'];
+function argUI(ch,on){const goal=LG.parse(ch.goal);const prem=ch.prem.map(s=>LG.parse(s));const rules=ch.rules||LG_RDEF;let L=[],sel=[],lk=false,done=false;
+  const w=el('div','lgarg');const list=el('ol','lglines');const gl=el('p','lggoal','Meta: \\(\\therefore\\ '+LG.tex(goal)+'\\)');const pad=el('div','lgbtns');const fb=el('p','bqtfb');const bt=el('div','lgbar');
+  const undo=el('button','lgb','↶ Deshacer');undo.type='button';bt.append(undo);
+  w.append(gl,list,el('p','lghint','1) Toca una, dos o tres líneas. 2) Toca la regla.'),pad,bt,fb);
+  const hl=el('details','lghelp','<summary>📖 Ver las reglas</summary>');const ul=el('ul');
+  const RX={MP:'\\(p\\to q,\\ p\\ \\therefore q\\)',MT:'\\(p\\to q,\\ \\neg q\\ \\therefore\\neg p\\)',SH:'\\(p\\to q,\\ q\\to r\\ \\therefore p\\to r\\)',SD:'\\(p\\vee q,\\ \\neg p\\ \\therefore q\\)',Simp:'\\(p\\wedge q\\ \\therefore p\\) (y \\(q\\))',Conj:'\\(p,\\ q\\ \\therefore p\\wedge q\\)',Ad:'\\(p\\ \\therefore p\\vee q\\)',DC:'\\((p\\to q)\\wedge(r\\to s),\\ p\\vee r\\ \\therefore q\\vee s\\)',DD:'\\((p\\to q)\\wedge(r\\to s),\\ \\neg q\\vee\\neg s\\ \\therefore\\neg p\\vee\\neg r\\)',CR:'\\(p\\to q\\ \\equiv\\ \\neg q\\to\\neg p\\)',Cond:'\\(p\\to q\\ \\equiv\\ \\neg p\\vee q\\)',DN:'\\(\\neg\\neg p\\equiv p\\)',DM:'\\(\\neg(p\\wedge q)\\equiv\\neg p\\vee\\neg q\\)'};
+  rules.forEach(r=>ul.append(el('li',null,'<b>'+r+'</b> ('+LG_RULES[r].n+'): '+RX[r])));hl.append(ul);w.append(hl);
+  const init=()=>{L=prem.map(f=>({f,j:'premisa'}));sel=[];done=false};
+  const msg=(t,c)=>{fb.className='bqtfb'+(c?' '+c:'');fb.innerHTML=t;typeset(fb)};
+  const draw=()=>{list.innerHTML='';L.forEach((x,i)=>{const li=el('li','lgln'+(sel.includes(i)?' on':'')+(LG.eq(x.f,goal)?' goal':''));li.append(el('span','lgx','\\('+LG.tex(x.f)+'\\)'),el('span','lgj',x.j));
+      if(!lk)li.onclick=()=>{if(done)return;const k=sel.indexOf(i);if(k>=0)sel.splice(k,1);else{if(sel.length>=3)sel.shift();sel.push(i)}draw()};list.append(li)});
+    undo.disabled=lk||L.length<=prem.length;typeset(list)};
+  const apply=(r,idx,quiet)=>{const R=LG_RULES[r];if(!R.k.includes(idx.length)){if(!quiet)msg('<b>'+r+'</b> usa '+R.k.join(' o ')+' línea'+(R.k[0]>1?'s':'')+'. Elegiste '+idx.length+'.','bad');return false}
+    const fs=idx.map(i=>L[i].f);const pr=R.ord||fs.length===1?[fs]:fs.length===2?[fs,[fs[1],fs[0]]]:[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]].map(p=>p.map(k=>fs[k]));
+    const ex=[goal,...L.map(x=>x.f)];let out=null,bad=null;for(const p of pr){out=r==='Ad'?R.f(p[0],null,ex):R.f(...p);if(out)break;if(R.bad&&!bad)bad=R.bad(p[0],p[1])}
+    if(!out){if(!quiet)msg('✗ '+(bad||R.why||'<b>'+R.n+'</b> no se puede aplicar a esas líneas. Revisa la forma que pide la regla (📖).'),'bad');return false}
+    const nums=idx.map(i=>i+1).sort((a,b)=>a-b).join(', ');let added=0;
+    out.forEach(f=>{if(L.some(x=>LG.eq(x.f,f)))return;L.push({f,j:r+' '+nums});added++});
+    if(!added){if(!quiet)msg('Esa línea ya la tienes. Prueba otra cosa.','');return false}
+    sel=[];if(L.some(x=>LG.eq(x.f,goal))){done=true;if(!quiet)msg('🏁 ¡Llegaste a la meta! '+(on?'Toca «Comprobar».':''),'good')}else if(!quiet)msg('');
+    on&&on();return true};
+  rules.forEach(r=>{const b=el('button','lgb',r);b.type='button';b.title=LG_RULES[r].n;b.onclick=()=>{if(lk||done)return;if(!sel.length){msg('Primero toca la(s) línea(s) que vas a usar.','bad');return}apply(r,sel.slice());draw()};pad.append(b)});
+  undo.onclick=()=>{if(lk||L.length<=prem.length)return;L.pop();done=L.some(x=>LG.eq(x.f,goal));sel=[];msg('');draw();on&&on()};
+  init();draw();
+  return{el:w,get done(){return done},
+    solve(){init();(ch.sol||[]).forEach(([r,ns])=>apply(r,ns.map(n=>n-1),true));draw();if(done)msg('🏁 Así se llega a la meta.','good')},
+    lock(){lk=true;pad.querySelectorAll('button').forEach(b=>b.disabled=true);undo.disabled=true;draw()},
+    reset(){init();msg('');draw();on&&on()}}}
+IW.arg=(ch,o)=>{const u=argUI(ch,()=>o.on&&o.on());
+  return{el:u.el,need:'Llega a la meta (la conclusión) antes de comprobar.',okMsg:'¡Argumento demostrado!',
+   filled:()=>u.done,grade:()=>({f:u.done?1:0,msg:u.done?'':'Todavía no llegas a la conclusión.'}),
+   mark(){},reveal(){u.solve()},lock(){u.lock()},reset(){u.reset()}}};
+LW.arg=(b,o)=>{b.append(argUI(o,null).el)};
+/* ---------- mundo de figuras (cuantificadores) ---------- */
+const MW_S={c:'círculo',q:'cuadrado',t:'triángulo'},MW_C={r:['rojo','#E45756'],a:['azul','#4C78A8'],v:['verde','#54A24B']};
+const MW_P={Circ:x=>x.s==='c',Cuad:x=>x.s==='q',Tri:x=>x.s==='t',Rojo:x=>x.c==='r',Azul:x=>x.c==='a',Verde:x=>x.c==='v',Grande:x=>x.g===1,Peq:x=>x.g!==1,
+  MismoColor:(x,y)=>x.c===y.c,MismaForma:(x,y)=>x.s===y.s,MasGrande:(x,y)=>(x.g||0)>(y.g||0)};
+const MW_TXT={Circ:'x es un círculo',Cuad:'x es un cuadrado',Tri:'x es un triángulo',Rojo:'x es rojo',Azul:'x es azul',Verde:'x es verde',Grande:'x es grande',Peq:'x es pequeño',MismoColor:'x e y tienen el mismo color',MismaForma:'x e y tienen la misma forma',MasGrande:'x es más grande que y'};
+const mwFig=(x,big)=>{if(!x)return'<svg viewBox="0 0 60 60" class="mwsv"><text x="30" y="37" text-anchor="middle" class="mwplus">+</text></svg>';const r=x.g?24:14,c=MW_C[x.c][1];let s='<svg viewBox="0 0 60 60" class="mwsv">';
+  if(x.s==='c')s+='<circle cx="30" cy="30" r="'+r+'" fill="'+c+'"/>';else if(x.s==='q')s+='<rect x="'+(30-r*.9)+'" y="'+(30-r*.9)+'" width="'+(1.8*r)+'" height="'+(1.8*r)+'" rx="3" fill="'+c+'"/>';
+  else s+='<polygon points="30,'+(30-r)+' '+(30+r*1.05)+','+(30+r*.8)+' '+(30-r*1.05)+','+(30+r*.8)+'" fill="'+c+'"/>';return s+'</svg>'};
+function mundoUI(o,on){const N=o.n||6;let W=Array.from({length:N},(_,i)=>o.w&&o.w[i]?Object.assign({},o.w[i]):null);let cur=-1,lk=false;
+  const fs=(o.f||[]).map(f=>typeof f==='string'?{f}:f).map(f=>({f,t:LG.parse(f.f)}));
+  const w=el('div','mww');const grid=el('div','mwgrid');const tb=el('div','mwtb');const list=el('div','lgconds');w.append(grid,tb,list);
+  const used=new Set();fs.forEach(F=>{const walk=n=>{if(!n)return;if(n.k==='pred')used.add(n.n);walk(n.a);walk(n.b)};walk(F.t)});
+  if(used.size){const hl=el('details','lghelp','<summary>📖 Predicados</summary>');const ul=el('ul');[...used].forEach(p=>ul.append(el('li',null,'\\(\\text{'+p+'}('+(MW_P[p].length>1?'x,y':'x')+')\\)'+': '+(MW_TXT[p]||''))));hl.append(ul);w.append(hl)}
+  const world=()=>({dom:W.filter(Boolean),pred:(n,a)=>{const f=MW_P[n];if(!f)throw new Error('Predicado desconocido: '+n);return f(...a)}});
+  const val=F=>{try{return LG.ev(F.t,{},world())}catch(e){return null}};
+  const rows=fs.map(F=>{const r=el('div','lgcond');const now=el('span','lgnow');r.append(el('span','lgf','\\('+LG.tex(F.t)+'\\)'));if(F.f.v!=null)r.append(el('span','lgwant','debe ser <b>'+(F.f.v?'V':'F')+'</b>'));r.append(now);list.append(r);return{F,r,now}});
+  const draw=()=>{grid.innerHTML='';W.forEach((x,i)=>{const b=el('button','mwc'+(i===cur?' on':'')+(x?'':' empty'),mwFig(x)+'<span>'+(x?MW_C[x.c][0]+' · '+(x.g?'grande':'pequeño'):'vacío')+'</span>');b.type='button';
+      b.setAttribute('aria-label',x?MW_S[x.s]+' '+MW_C[x.c][0]+' '+(x.g?'grande':'pequeño'):'Casilla vacía');b.onclick=()=>{if(lk)return;cur=cur===i?-1:i;draw()};grid.append(b)});
+    tb.innerHTML='';if(cur>=0&&!lk){const x=W[cur];const mk=(lab,act,on2)=>{const b=el('button','mwb'+(on2?' on':''),lab);b.type='button';b.onclick=()=>{act();draw();on&&on()};return b};
+      const r1=el('div','mwrow');r1.append(el('span','mwl','Forma'));Object.keys(MW_S).forEach(s=>r1.append(mk({c:'●',q:'■',t:'▲'}[s]+' '+MW_S[s],()=>{W[cur]=Object.assign({c:'r',g:0},W[cur]||{},{s})},x&&x.s===s)));tb.append(r1);
+      if(x){const r2=el('div','mwrow');r2.append(el('span','mwl','Color'));Object.keys(MW_C).forEach(c=>{const b=mk(MW_C[c][0],()=>{W[cur].c=c},x.c===c);b.style.setProperty('--mwc',MW_C[c][1]);b.classList.add('col');r2.append(b)});tb.append(r2);
+        const r3=el('div','mwrow');r3.append(el('span','mwl','Tamaño'),mk('pequeño',()=>{W[cur].g=0},!x.g),mk('grande',()=>{W[cur].g=1},!!x.g),mk('🗑 Quitar',()=>{W[cur]=null}));tb.append(r3)}}
+    rows.forEach(R=>{const v=val(R.F);R.r.classList.remove('good','bad');if(o.live===false){R.now.textContent='';return}R.now.textContent=v==null?'':'ahora: '+(v?'V':'F');R.now.className='lgnow'+(R.F.f.v==null?'':v===R.F.f.v?' ok':' no')})};
+  draw();
+  return{el:w,rows,val,get W(){return W},set(nw){W=Array.from({length:N},(_,i)=>nw[i]?Object.assign({},nw[i]):null);cur=-1;draw()},lock(){lk=true;cur=-1;draw()},draw}}
+IW.mundo=(ch,o)=>{const u=mundoUI(ch,()=>o.on&&o.on());let touched=false;u.el.addEventListener('click',()=>{touched=true});
+  const ok=R=>u.val(R.F)===R.F.f.v;const nonE=()=>ch.empty||u.W.some(Boolean);
+  return{el:u.el,note:'Toca una casilla para poner, cambiar o quitar una figura. '+(ch.live===false?'':'Cada fórmula muestra su valor en tu mundo.'),need:'Arma tu mundo antes de comprobar.',okMsg:ch.ok||'¡Tu mundo cumple todo!',
+   filled:()=>touched&&nonE(),
+   grade(){const bad=u.rows.filter(R=>!ok(R));return{f:bad.length||!nonE()?0:1,msg:!nonE()?'El mundo no puede quedar vacío.':bad.length?(bad.length===1?'Una fórmula no tiene el valor pedido (en rojo).':'Hay '+bad.length+' fórmulas con el valor equivocado (en rojo).')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){u.rows.forEach(R=>{R.r.classList.toggle('good',ok(R));R.r.classList.toggle('bad',!ok(R))})},
+   reveal(){if(ch.sol)u.set(ch.sol);touched=true;u.rows.forEach(R=>R.r.classList.toggle('good',ok(R)))},lock(){u.lock()},reset(){u.set(ch.w||[]);touched=false;o.on&&o.on()}}};
+LW.mundo=(b,o)=>{b.append(mundoUI(o,null).el)};
+/* ---------- diagramas de Venn (tocar regiones o escribir cantidades) ---------- */
+const VN_G={2:{W:300,H:200,c:[[115,102,70],[185,102,70]],lp:[[40,30],[260,30]]},3:{W:300,H:236,c:[[120,90,62],[180,90,62],[150,146,62]],lp:[[44,30],[256,30],[230,206]]}};
+const vnCache={};
+function vnGeo(n,lab){const G=VN_G[n];const k=n+lab.join('');if(vnCache[k])return vnCache[k];
+  const reg=(x,y)=>{let s='';G.c.forEach((c,i)=>{if((x-c[0])**2+(y-c[1])**2<=c[2]*c[2])s+=lab[i]});return s||'o'};
+  const acc={};for(let x=6;x<G.W-6;x+=2)for(let y=6;y<G.H-6;y+=2){const r=reg(x,y);(acc[r]||(acc[r]=[0,0,0]));acc[r][0]+=x;acc[r][1]+=y;acc[r][2]++}
+  const cen={};for(const r in acc)cen[r]=[acc[r][0]/acc[r][2],acc[r][1]/acc[r][2]];cen.o=[24,G.H-18];
+  const ids=Object.keys(acc);return vnCache[k]={G,reg,cen,ids}}
+function vennSVG(n,lab,uid){const{G,ids}=vnGeo(n,lab);let d='<defs>';G.c.forEach((c,i)=>d+='<clipPath id="'+uid+'c'+i+'"><circle cx="'+c[0]+'" cy="'+c[1]+'" r="'+c[2]+'"/></clipPath>');
+  let body='';ids.forEach(r=>{const inn=[],out=[];lab.slice(0,n).forEach((L,i)=>(r.includes(L)?inn:out).push(i));
+    d+='<mask id="'+uid+'m'+r+'"><rect x="0" y="0" width="'+G.W+'" height="'+G.H+'" fill="white"/>'+out.map(i=>'<circle cx="'+G.c[i][0]+'" cy="'+G.c[i][1]+'" r="'+G.c[i][2]+'" fill="black"/>').join('')+'</mask>';
+    let g='<rect class="vnr" data-r="'+r+'" x="4" y="4" width="'+(G.W-8)+'" height="'+(G.H-8)+'" mask="url(#'+uid+'m'+r+')"/>';inn.forEach(i=>g='<g clip-path="url(#'+uid+'c'+i+')">'+g+'</g>');body+=g});
+  let s='<svg class="vnsv" viewBox="0 0 '+G.W+' '+G.H+'" xmlns="http://www.w3.org/2000/svg">'+d+'</defs><rect class="vnu" x="4" y="4" width="'+(G.W-8)+'" height="'+(G.H-8)+'" rx="6"/>'+body;
+  G.c.forEach((c,i)=>s+='<circle class="vnc" cx="'+c[0]+'" cy="'+c[1]+'" r="'+c[2]+'"/><text class="vnl" x="'+G.lp[i][0]+'" y="'+G.lp[i][1]+'" text-anchor="middle">'+lab[i]+'</text>');
+  return s+'<text class="vnl u" x="'+(G.W-12)+'" y="22" text-anchor="end">U</text></svg>'}
+function vennUI(ch,on){const n=ch.n||2,lab=(ch.lab||['A','B','C']).slice(0,n);const{G,reg,cen,ids}=vnGeo(n,lab);const uid='vn'+Math.random().toString(36).slice(2,8);
+  const w=el('div','vnw'+(ch.mode==='num'?' num':''));w.innerHTML=vennSVG(n,lab,uid);const svg=w.querySelector('svg');const R={};svg.querySelectorAll('.vnr').forEach(x=>R[x.dataset.r]=x);
+  const sel=new Set();let lk=false;const ins={};
+  if(ch.mode==='num'){ids.forEach(r=>{const c=cen[r];const p=el('div','vnin');p.style.left=(c[0]/G.W*100)+'%';p.style.top=(c[1]/G.H*100)+'%';
+      if(ch.give&&ch.give[r]!=null){p.append(el('b','vngv',String(ch.give[r])));}else{const i=el('input','fin');i.inputMode='numeric';i.placeholder='?';i.autocomplete='off';i.setAttribute('aria-label','Región '+(r==='o'?'fuera de todos':r));i.oninput=()=>{i.classList.remove('good','bad');on&&on()};p.append(i);ins[r]=i}w.append(p)})}
+  else svg.addEventListener('click',ev=>{if(lk)return;const b=svg.getBoundingClientRect();const x=(ev.clientX-b.left)*G.W/b.width,y=(ev.clientY-b.top)*G.H/b.height;if(x<4||y<4||x>G.W-4||y>G.H-4)return;const r=reg(x,y);sel.has(r)?sel.delete(r):sel.add(r);paint();on&&on()});
+  const paint=()=>{for(const r in R){R[r].classList.toggle('on',sel.has(r));R[r].classList.remove('good','bad','rev')}};
+  return{el:w,sel,ins,R,set(rs){sel.clear();rs.forEach(r=>sel.add(r));paint()},lock(){lk=true;Object.values(ins).forEach(i=>i.disabled=true);w.classList.add('lk')}}}
+IW.venn=(ch,o)=>{const u=vennUI(ch,()=>o.on&&o.on());
+  if(ch.mode==='num'){const ok=r=>numOk(numV(u.ins[r].value),ch.v[r],0);const rs=Object.keys(u.ins);
+    return{el:u.el,note:'Escribe cuántos elementos hay en cada región (solo en esa región). Tip: empieza por la del centro.',need:'Completa todas las regiones.',okMsg:'¡Diagrama completo y correcto!',
+     filled:()=>rs.every(r=>u.ins[r].value.trim()!==''),
+     grade(){const bad=rs.filter(r=>!ok(r));return{f:(rs.length-bad.length)/rs.length,msg:bad.length?(bad.length===1?'Una región no está bien (en rojo).':bad.length+' regiones no están bien (en rojo).')+(ch.e?'<br>'+ch.e:'<br>Recuerda: cada número va <b>solo</b> en su región; resta lo que ya contaste en las intersecciones.'):''}},
+     mark(){rs.forEach(r=>{const k=ok(r);u.ins[r].classList.toggle('good',k);u.ins[r].classList.toggle('bad',!k)})},
+     reveal(){rs.forEach(r=>{if(!ok(r)){u.ins[r].value=String(ch.v[r]);u.ins[r].classList.remove('bad');u.ins[r].classList.add('rev')}else u.ins[r].classList.add('good')})},
+     lock(){u.lock()},reset(){rs.forEach(r=>{u.ins[r].value='';u.ins[r].className='fin'});o.on&&o.on()}}}
+  const A=new Set(ch.a);
+  return{el:u.el,note:'Toca las regiones que forman el conjunto (toca otra vez para quitar). La región de afuera también cuenta.',need:'Sombrea al menos una región.',okMsg:'¡Esa es la región!',
+   filled:()=>u.sel.size>0,
+   grade(){const wr=[...u.sel].filter(r=>!A.has(r)).length,mi=[...A].filter(r=>!u.sel.has(r)).length;return{f:wr||mi?0:1,msg:wr||mi?(wr?'Sombreaste '+(wr===1?'una región que no va':wr+' regiones que no van')+'. ':'')+(mi?'Te falta'+(mi===1?' una región':'n '+mi+' regiones')+'.':'')+(ch.e?'<br>'+ch.e:''):''}},
+   mark(){for(const r in u.R){const s=u.sel.has(r);u.R[r].classList.toggle('good',s&&A.has(r));u.R[r].classList.toggle('bad',s&&!A.has(r))}},
+   reveal(){for(const r in u.R){const s=u.sel.has(r);u.R[r].classList.remove('on','bad');u.R[r].classList.toggle('good',A.has(r));if(s&&!A.has(r))u.R[r].classList.add('bad')}u.set([...A]);for(const r in u.R)u.R[r].classList.toggle('good',A.has(r))},
+   lock(){u.lock()},reset(){u.set([]);o.on&&o.on()}}};
+LW.venn=(b,o)=>{const u=vennUI({n:o.n||3,lab:o.lab},null);b.append(u.el);if(o.ex){const bar=el('div','lgbtns');o.ex.forEach(x=>{const bt=el('button','lgb','\\('+x.l+'\\)');bt.type='button';bt.onclick=()=>{bar.querySelectorAll('.lgb').forEach(y=>y.classList.remove('on'));bt.classList.add('on');u.set(x.a)};bar.append(bt)});const cl=el('button','lgb','Limpiar');cl.type='button';cl.onclick=()=>{u.set([]);bar.querySelectorAll('.lgb').forEach(y=>y.classList.remove('on'))};bar.append(cl);b.append(bar)}};
 const isIW=ch=>!!(ch&&ch.t&&IW[ch.t]);
 /* BQ-JS-START */
 /* ================= ANÁLISIS BIOQUÍMICO (XTART): interactivos =================
