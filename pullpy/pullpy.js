@@ -341,9 +341,9 @@
       W.style.top = ''; W.style.right = '';
       const ab = document.getElementById('aubar');
       let bot = 8;
-      if (ab && !ab.hidden && ab.offsetParent !== null) { const r = ab.getBoundingClientRect(); if (r.left < 120) bot = Math.max(8, innerHeight - r.top + 8); }
+      if (ab && !ab.hidden && ab.getClientRects().length) { const r = ab.getBoundingClientRect(); if (r.left < 120) bot = Math.max(8, innerHeight - r.top + 8); }
       const sn = document.getElementById('snav');
-      if (sn && sn.offsetParent !== null) { const r = sn.getBoundingClientRect(); if (r.top > innerHeight / 2 && r.left < 120) bot = Math.max(bot, innerHeight - r.top + 6); }
+      if (sn && sn.getClientRects().length) { const r = sn.getBoundingClientRect(); if (r.top > innerHeight / 2 && r.left < 120) bot = Math.max(bot, innerHeight - r.top + 6); }
       W.style.bottom = bot > 8 ? bot + 'px' : 'calc(env(safe-area-inset-bottom,0px) + ' + bot + 'px)';
     }
   }

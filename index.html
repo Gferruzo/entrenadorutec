@@ -395,6 +395,7 @@ body.snMini #snav .tbtn,body.snMini #snav .simbtn{justify-content:center;padding
  #snsheet[hidden]{display:none}#snsheet .tbtn{border-color:transparent;padding:9px 8px;font-size:.9rem}
  #vCourse{padding-bottom:70px}
  body:has(#vCourse:not([hidden])) #pill,body:has(#vCourse:not([hidden])) #aubar{bottom:calc(env(safe-area-inset-bottom,0px) + 80px)}}
+@media (max-width:640px){body:has(#vCourse:not([hidden])):not(:has(#pill[hidden])) #aubar{bottom:calc(env(safe-area-inset-bottom,0px) + 148px)}}
 
 .simbtn:disabled{background:transparent;color:var(--muted);border-color:var(--line);border-style:dashed;cursor:not-allowed}
 .acts button:disabled{opacity:.55;cursor:not-allowed;border-style:dashed}
