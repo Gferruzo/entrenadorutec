@@ -365,6 +365,37 @@ table.tt{border-collapse:collapse;background:var(--card);margin:.3em 0}table.tt 
 .statline{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-top:8px}
 .statline b{color:var(--ink)}
 .xbtns{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;align-items:center}.simbtn{border:1.5px solid var(--l3);background:var(--l3);color:#fff;border-radius:8px;padding:8px 14px;font:800 .88rem Figtree;cursor:pointer}
+
+
+/* barra lateral / inferior del curso */
+#snav{position:fixed;z-index:20;display:flex;flex-direction:column;gap:10px;top:50%;transform:translateY(-50%);width:190px;max-height:calc(100vh - 40px);overflow-y:auto;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px;box-shadow:0 6px 22px rgba(10,18,32,.08)}
+body.snL #snav{left:14px}body.snR #snav{right:14px}
+.snhd{display:flex;justify-content:space-between;gap:6px}.snhd button{border:0;background:none;color:var(--muted);font:700 1rem Figtree;cursor:pointer;padding:2px 6px;border-radius:6px}.snhd button:hover{background:var(--paper);color:var(--ink)}
+.sng{display:flex;flex-direction:column;gap:4px}.sngl{font:800 .68rem Figtree;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:2px 4px}
+#snav .tbtn,#snav .simbtn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;position:relative}
+#snav .tbtn{border-color:transparent;padding:7px 8px;font-size:.86rem}#snav .tbtn:hover{border-color:var(--line);background:var(--paper)}
+#snav .simbtn{padding:10px}.ni{flex:none;width:1.4em;text-align:center}.nl{min-width:0}
+#snav .qbadge{margin-left:auto}#snmore{display:none}
+body.snMini #snav{width:58px;padding:8px 6px}body.snMini .sngl,body.snMini #snav .nl,body.snMini #snside{display:none}body.snMini .snhd{justify-content:center}
+body.snMini #snav .tbtn,body.snMini #snav .simbtn{justify-content:center;padding:8px 0}body.snMini #snav .qbadge{position:absolute;top:-4px;right:-2px;margin:0;font-size:.62rem;min-width:16px;line-height:15px;padding:0 4px}
+@media (min-width:900px){
+ body.snL:has(#vCourse:not([hidden])) .wrap{padding-left:max(16px,calc(220px - (100vw - 880px)/2))}
+ body.snR:has(#vCourse:not([hidden])) .wrap{padding-right:max(16px,calc(220px - (100vw - 880px)/2))}
+ body.snL.snMini:has(#vCourse:not([hidden])) .wrap{padding-left:max(16px,calc(88px - (100vw - 880px)/2))}
+ body.snR.snMini:has(#vCourse:not([hidden])) .wrap{padding-right:max(16px,calc(88px - (100vw - 880px)/2))}}
+@media (max-width:899px){
+ #snav{top:auto;bottom:0;left:0;right:0;transform:none;width:auto;max-height:none;overflow:visible;flex-direction:row;gap:0;border-radius:14px 14px 0 0;border-width:1.5px 0 0;padding:6px 4px calc(env(safe-area-inset-bottom,0px) + 6px);box-shadow:0 -4px 18px rgba(10,18,32,.08);z-index:46}
+ .snhd,.sngl{display:none}.sng{display:contents}
+ #snav>.sng>.tbtn,#snav>.sng>.simbtn,#snav #snmore{flex:1 1 0;min-width:0;flex-direction:column;justify-content:center;gap:2px;padding:4px 2px;font-size:.68rem;line-height:1.15;text-align:center;border-radius:10px}
+ #snav>.sng>.tbtn,#snav #snmore{border-color:transparent;background:none}
+ #snmore{display:flex}#snmore[hidden]{display:none}#snav .ni{font-size:1.2rem;width:auto}
+ #snav>.sng>.simbtn{margin:0 2px}
+ #snav>.sng .qbadge{position:absolute;top:0;right:calc(50% - 22px);margin:0;font-size:.62rem;min-width:16px;line-height:15px;padding:0 4px}
+ #snsheet{position:absolute;right:8px;bottom:calc(100% + 8px);display:flex;flex-direction:column;gap:4px;min-width:200px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 26px rgba(10,18,32,.18)}
+ #snsheet[hidden]{display:none}#snsheet .tbtn{border-color:transparent;padding:9px 8px;font-size:.9rem}
+ #vCourse{padding-bottom:70px}
+ body:has(#vCourse:not([hidden])) #pill,body:has(#vCourse:not([hidden])) #aubar{bottom:calc(env(safe-area-inset-bottom,0px) + 80px)}}
+
 .simbtn:disabled{background:transparent;color:var(--muted);border-color:var(--line);border-style:dashed;cursor:not-allowed}
 .acts button:disabled{opacity:.55;cursor:not-allowed;border-style:dashed}
 .badge{align-self:flex-start;font:800 .75rem Figtree;border-radius:999px;padding:3px 10px;border:1.5px solid var(--line);color:var(--muted)}
@@ -1190,13 +1221,15 @@ line.acl{stroke:var(--ink);stroke-width:1.2;stroke-dasharray:4 3}text.acl{fill:v
 </div>
 <div class="bar">
 <div class="chips" id="chips" role="toolbar" aria-label="Temas"></div>
-<div class="row2">
-<div class="steps" role="toolbar" aria-label="Nivel">
-<button class="step" data-l="1">Básico</button><button class="step" data-l="2">Intermedio</button><button class="step" data-l="3">Nivel examen</button><button class="step" data-l="0">Todos</button>
 </div>
-<span class="xbtns"><button class="tbtn" id="teobtn">📖 Teoría</button><button class="tbtn" id="audbtn" hidden>🎧 Resumen semanal</button><button class="tbtn" id="formbtn">📋 Formulario</button><button class="tbtn" id="quickbtn">⚡ Práctica rápida</button><button class="tbtn" id="paperbtn">✏️ Papel</button><button class="tbtn" id="revbtn">🧠 Repaso</button><button class="tbtn" id="hlbtn">🖍 Subrayados</button><button class="simbtn" id="simbtn">🎯 Simulacro final</button></span>
-</div>
-</div>
+<nav id="snav" aria-label="Herramientas del curso">
+<div class="snhd"><button type="button" id="snmini" title="Plegar o desplegar la barra">⇤</button><button type="button" id="snside" title="Cambiar la barra de lado">⇄</button></div>
+<div class="sng"><span class="sngl">Estudiar</span><button class="tbtn" id="teobtn" aria-label="Teoría"><span class="ni">📖</span><span class="nl">Teoría</span></button><button class="tbtn" id="audbtn" hidden aria-label="Resumen semanal"><span class="ni">🎧</span><span class="nl">Resumen semanal</span></button><button class="tbtn" id="formbtn" aria-label="Formulario"><span class="ni">📋</span><span class="nl">Formulario</span></button><button class="tbtn" id="hlbtn" aria-label="Subrayados"><span class="ni">🖍</span><span class="nl">Subrayados</span></button></div>
+<div class="sng"><span class="sngl">Practicar</span><button class="tbtn" id="quickbtn" aria-label="Práctica rápida"><span class="ni">⚡</span><span class="nl">Práctica rápida</span></button><button class="tbtn" id="paperbtn" aria-label="Papel"><span class="ni">✏️</span><span class="nl">Papel</span></button><button class="tbtn" id="revbtn" aria-label="Repaso"><span class="ni">🧠</span><span class="nl">Repaso</span></button></div>
+<div class="sng snev"><button class="simbtn" id="simbtn" aria-label="Simulacro final"><span class="ni">🎯</span><span class="nl">Simulacro final</span></button></div>
+<button type="button" class="tbtn" id="snmore" aria-expanded="false" aria-label="Más"><span class="ni">☰</span><span class="nl">Más</span></button>
+<div id="snsheet" hidden></div>
+</nav>
 <div id="msg"></div>
 <main id="main"></main>
 <div class="foot"><span>Las gráficas de estimación están redibujadas desde los simulacros; tu lectura puede variar un poco. El tiempo se pausa al salir del curso, al cambiar de pestaña o tras 5 minutos sin actividad.</span></div>
@@ -2789,14 +2822,14 @@ const unlocked=()=>true;/* sin candados: todos los temas abiertos; el orden es s
 const started=i=>!!T[i]&&(i===st.topic||T[i].ex.some(e=>!e.draw&&isDone(e)));
 function flash(text,good){msg.innerHTML='';const n=el('div','notice pop'+(good?' good':''),text);msg.append(n);clearTimeout(flash.t);flash.t=setTimeout(()=>n.remove(),4500)}
 function openCourse(id){C=COURSES.find(c=>c.id===id);if(!C)return;track('abrir_curso',{curso:C.group||C.code||C.id,bloque:C.id,uni:C.uni||'UTEC'});notiOpened(C.group||C.code);T=C.topics;F=C.figs;X=allEx(C);RV=null;PP=null;buildExT();seedTP();
-  st=Object.assign({topic:0,level:0},prefs[C.id]||{});if(!(st.topic>=0&&st.topic<T.length)||!unlocked(st.topic))st.topic=0;
+  st=Object.assign({topic:0,level:0},prefs[C.id]||{});st.level=0;if(!(st.topic>=0&&st.topic<T.length)||!unlocked(st.topic))st.topic=0;
   $('cTitle').innerHTML=C.name.replace(/(\S+)$/,'<i>$1</i>');view='course';lastAct=Date.now();
   $('vMenu').hidden=true;$('vSim').hidden=true;$('vCourse').hidden=false;msg.innerHTML='';
-  {const ci=document.querySelector('#vCourse .hero > p');if(ci){ci.dataset.d=ci.dataset.d||ci.innerHTML;ci.innerHTML=C.intro||ci.dataset.d}}$('clock').textContent='⏱ '+hms(totalTime(C.id));$('formbtn').hidden=!C.form;$('teobtn').hidden=!T.some(t=>t.lesson);$('audbtn').hidden=!(C.audios&&C.audios.length);$('formbtn').textContent=C.formLabel||'📋 Formulario';renderChips();renderTopic();courseStats();revBtn();modeUI();ubBar();window.scrollTo({top:0})}
+  {const ci=document.querySelector('#vCourse .hero > p');if(ci){ci.dataset.d=ci.dataset.d||ci.innerHTML;ci.innerHTML=C.intro||ci.dataset.d}}$('clock').textContent='⏱ '+hms(totalTime(C.id));$('formbtn').hidden=!C.form;$('teobtn').hidden=!T.some(t=>t.lesson);$('audbtn').hidden=!(C.audios&&C.audios.length);nbl($('formbtn'),C.formLabel||'📋 Formulario');renderChips();renderTopic();courseStats();revBtn();modeUI();ubBar();window.scrollTo({top:0})}
 function savePrefs(){prefs[C.id]={topic:st.topic,level:st.level};S.set('ent-prefs',prefs)}
 $('back').onclick=()=>{saveLocal();push(0);view='menu';C=null;$('vCourse').hidden=true;$('vMenu').hidden=false;renderMenu();pillRender(true);window.scrollTo({top:0})};
 function courseStats(){const x=stats(C);$('cstats').innerHTML='<span>Acierto a la primera: <b>'+(x.nd?pct(x.acc):'—')+'</b></span><span>Con pista: <b>'+x.hint+'</b></span>'+(x.simBest!=null?'<span>Mejor simulacro: <b>'+x.simBest+'/20</b></span>':'');
-  const sb=$('simbtn');sb.disabled=false;sb.textContent=C.guide?'🎯 Guía y simulacro':'🎯 Simulacro final';sb.title=x.complete?'':'Disponible siempre; te irá mejor si antes practicas los temas'}
+  const sb=$('simbtn');sb.disabled=false;nbl(sb,C.guide?'🎯 Guía y simulacro':'🎯 Simulacro final');sb.title=x.complete?'':'Disponible siempre; te irá mejor si antes practicas los temas'}
 $('simbtn').onclick=()=>{if(!C.sim||!C.sim.slots.length)return flash('Este curso todavía no tiene simulacro.');if(C.guide)return simChoice();if(C.sim.versions)return verChoice();simIntro()};
 function renderChips(){chips.innerHTML='';
   T.forEach((t,i)=>{const b=el('button','chip');const lk=!unlocked(i),full=tDone(t)===t.ex.length;if(lk)b.classList.add('locked');if(full)b.classList.add('full');
@@ -4871,8 +4904,27 @@ function renderTopic(){const t=T[st.topic];main.innerHTML='';
   const pend=t.ex.filter(e=>!isDone(e)&&st.level&&e.lvl!==st.level).length;
   if(pend)main.append(el('p','note',pend+' ejercicio(s) pendiente(s) en otros niveles. Complétalos todos para terminar el tema.'));
   pullpy.hook('topic',{t,main});
-  topicHeader();document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.l===st.level));typeset(main);hlWhen(teo.querySelector('.hlz'))}
-document.querySelectorAll('.step').forEach(b=>b.onclick=()=>{st.level=+b.dataset.l;savePrefs();renderTopic()});
+  topicHeader();typeset(main);hlWhen(teo.querySelector('.hlz'))}
+/* BARRA LATERAL (escritorio) / BARRA INFERIOR (celular) */
+function nbl(b,t,x){const m=String(t).match(/^(\S+)\s+(.*)$/),ic=m?m[1]:'',lb=m?m[2]:t;b.innerHTML='<span class="ni">'+ic+'</span><span class="nl">'+lb+'</span>'+(x||'');b.setAttribute('aria-label',lb)}
+const SN={side:'l',mini:false};try{Object.assign(SN,JSON.parse(localStorage.getItem('ent-nav')||'{}'))}catch(e){}
+const snMQ=matchMedia('(max-width:899px)'),SNSEC=['formbtn','paperbtn','hlbtn','audbtn'];
+function snApply(){const nv=$('snav'),mob=snMQ.matches;document.body.classList.toggle('snR',!mob&&SN.side==='r');document.body.classList.toggle('snL',!mob&&SN.side!=='r');document.body.classList.toggle('snMini',!mob&&!!SN.mini);
+  $('snmini').textContent=SN.mini?(SN.side==='r'?'⇤':'⇥'):(SN.side==='r'?'⇥':'⇤');
+  const g=nv.querySelectorAll('.sng');const home={formbtn:[g[0],$('hlbtn')],audbtn:[g[0],$('formbtn')],hlbtn:[g[0],null],paperbtn:[g[1],$('revbtn')]};
+  if(mob)SNSEC.forEach(i=>$('snsheet').append($(i)));else{['hlbtn','formbtn','audbtn','paperbtn'].forEach(i=>{const[pa,bf]=home[i];pa.insertBefore($(i),bf&&bf.parentNode===pa?bf:null)});snClose()}
+  snMore()}
+function snMore(){const h=!snMQ.matches||!SNSEC.some(i=>!$(i).hidden);if($('snmore').hidden!==h)$('snmore').hidden=h}
+function snClose(){$('snsheet').hidden=true;$('snmore').setAttribute('aria-expanded','false')}
+function snSave(){try{localStorage.setItem('ent-nav',JSON.stringify(SN))}catch(e){}}
+$('snmini').onclick=()=>{SN.mini=!SN.mini;snSave();snApply()};
+$('snside').onclick=()=>{SN.side=SN.side==='r'?'l':'r';snSave();snApply()};
+$('snmore').onclick=e=>{e.stopPropagation();const o=$('snsheet').hidden;$('snsheet').hidden=!o;$('snmore').setAttribute('aria-expanded',String(o))};
+$('snsheet').addEventListener('click',()=>setTimeout(snClose,0));
+document.addEventListener('click',e=>{if(!$('snsheet').hidden&&!e.target.closest('#snav'))snClose()});
+snMQ.addEventListener('change',snApply);
+{const mo=new MutationObserver(snMore);SNSEC.forEach(i=>mo.observe($(i),{attributes:true,attributeFilter:['hidden']}))}
+snApply();
 
 
 function showForm(){const n=el('div');n.innerHTML='<h2>'+(C.formLabel||'📋 Formulario')+'</h2><p class="sub">'+C.name+' · '+C.exam+'</p>'+C.form;const bt=el('div','mbtns');const c=el('button','pri','Cerrar');c.onclick=closeModal;bt.append(c);n.append(bt);openModal(n)}
@@ -4998,7 +5050,7 @@ function weakTopics(){const x=stats(C);const fq={};failedList().forEach(id=>{con
 const wkTxt=w=>'<strong>'+w.name+'</strong> ('+[w.acc!=null?pct(w.acc)+' a la primera':null,w.fq?w.fq+' en cola':null,w.old?'sin practicar hace '+w.dd+' días':null].filter(Boolean).join(', ')+')';
 function revBtn(){$('hlbtn').hidden=!T.some(t=>t.teo||t.lesson);
   $('paperbtn').hidden=NOPAPER.has(C.id)||(C.custom&&C.srcIds.every(i=>NOPAPER.has(i)))||!T.some(t=>t.ex.some(optOnly));
-  const b=$('revbtn');if(!T.length){b.hidden=true;return}b.hidden=false;const n=dueList().length,q=failedList().length;b.innerHTML='🧠 Repaso'+(n?'<span class="qbadge">'+n+'</span>':'');b.title=q?n+' para repasar hoy, '+q+' en la cola':''}
+  const b=$('revbtn');if(!T.length){b.hidden=true;return}b.hidden=false;const n=dueList().length,q=failedList().length;nbl(b,'🧠 Repaso',n?'<span class="qbadge">'+n+'</span>':'');b.title=q?n+' para repasar hoy, '+q+' en la cola':''}
 function rescueMin(n){const sp=C.sim;const per=sp&&sp.minutes&&sp.slots.length?.6*sp.minutes/sp.slots.length:5;return Math.round(n*Math.min(8,Math.max(2.5,per)))}
 $('revbtn').onclick=()=>{const n=el('div');const fl=failedList(),wk=weakTopics(),ut=T.filter((t,i)=>started(i)&&t.ex.some(okEx)).length;
   n.innerHTML='<span class="bigico">🧠</span><h2>Repaso</h2><p class="sub">'+C.name+' · '+C.exam+'</p>';
